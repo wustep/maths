@@ -25,7 +25,10 @@
 
 - Sibling finished with no dent (best verified colouring length 3703). Methods stolen: `CardEnc.atmost` only; few-flip SAT around the published seed; treat a one-violation min-conflicts stall as a cage; CEGAR on a product template and stop if leftovers plateau.
 - Scripts: `search_fewflip_sat.py`, `search_minconflicts_cage.py`, `search_cegar_product.py`. A 367-set is not a dent. No \(\Theta(C_7)\) claim.
+- **Few-flip SAT.** Cadical195 + `CardEnc.atmost` (kmtotalizer; at-least via negated at-most). Free vertices 0. Hamming \(\le 9\) is UNSAT, including 4-out/5-in (4806 candidates, 67s). Hamming 11 with 5 removals timed out. Local cage, not a bound.
+- **Min-conflicts cage.** 367 plus one extra, 8 trials: stalled at 787–846 adjacent pairs. Not one leftover; still a cage, not optimality.
+- **Product CEGAR.** SAT built a 10-set in \(C_7^{\boxtimes 2}\) and a 33-set in \(C_7^{\boxtimes 3}\). Product has size 330 and empty residual. Incremental constraints have nothing to add; leftover count is already 0 and the size is 38 short. Stopped.
 
 ## Result
 
-No independent set of size \(\ge 368\). No certificate that 367 is maximum: Lovász still allows 401, and a full MIS on 16807 vertices was not run. Do not claim a new \(\Theta(C_7)\). \(367^{1/5}\approx 3.25787 < 3.258805\).
+No independent set of size \(\ge 368\). A 367-set is not a dent. No certificate that 367 is maximum: Lovász still allows 401; few-flip SAT only kills a Hamming ball of radius 9 around one seed. Do not claim a new \(\Theta(C_7)\). \(367^{1/5}\approx 3.25787 < 3.258805\).

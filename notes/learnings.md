@@ -28,3 +28,8 @@ encoding), write one paragraph here so the other solver can steal it.
 
 - Homemade sequential counters can over-forbid if the s-variables are free. For few-flip SAT around the 367-set, encode cardinality only with `pysat.card.CardEnc.atmost` (at-least-k is at-most on the negated literals; kmtotalizer). Do not roll a one-way “at least j” gadget.
 - A 368-set at Hamming distance \(2r+1\) from the seed deletes \(r\) vertices and adds \(r+1\). Only vertices adjacent to at most \(r\) seed points are addable. That is the cheap exact check to run before a wide MIS SAT.
+
+- Cadical + `CardEnc.atmost` refuted every odd Hamming distance \(\le 9\) from the 367-set (add-one through 4-out/5-in). \(k=11\) (5-out) timed out on the 8518-candidate instance. This is a local cage, not \(\alpha\le 367\).
+- Min-conflicts from 367 plus one extra stalled at ~800 adjacent pairs, not one leftover. Same moral as W(2,7): a stuck repair is not a bound. The leftover count here is just larger.
+
+- A product template \(10\times 33\) in \(C_7^{\boxtimes 2}\boxtimes C_7^{\boxtimes 3}\) gives an independent 330-set whose residual is empty. CEGAR has nothing to add: the leftover count is already zero and the size is 38 short. Complementary product halves can kill every leftover and still miss the record. Stop; do not treat maximality of the template as \(\alpha\le 367\).
