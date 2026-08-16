@@ -1,6 +1,7 @@
 # Sets with no unique sum mod p
 
 - Slug: `unique-sum`
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
 - Status: open
 - Area: Additive combinatorics
 - Sources: Green 100 #27; Bedert, Combinatorica 2024 (arXiv:2303.15134); Cao–Yuan, arXiv:2608.06728 (Aug 2026); OEIS A398173

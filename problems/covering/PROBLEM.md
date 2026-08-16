@@ -1,6 +1,7 @@
 # Linear covering codes of radius two
 
 - Slug: `covering`
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
 - Status: finite dent certified; asymptotic problem open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Table 5.1); Kaikkonen–Rosendahl

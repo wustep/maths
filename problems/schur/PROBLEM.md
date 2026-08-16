@@ -1,6 +1,7 @@
 # Improve the lower bound for the seventh Schur number
 
 - Slug: `schur`
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
 - Status: open — no 1697 coloring found
 - Area: Ramsey theory / additive combinatorics
 - Sources: Rowley, arXiv:2107.03560 (S(7)≥1696); Bengone et al., arXiv:2607.15034 (shifted S-templates)
