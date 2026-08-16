@@ -1,0 +1,284 @@
+% Draft note for arXiv math.CO / cs.IT.
+% Plain article class; no packages beyond amsmath, amssymb, amsthm, hyperref.
+% Compile: pdflatex note.tex
+\documentclass[11pt,a4paper]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[hidelinks]{hyperref}
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\HH}{\boldsymbol{H}}
+
+\title{A binary $[50,40]_2$ code of covering radius $2$,\\
+and a new seed for the $R=2$ iterative family}
+\author{Stephen Wu}
+\date{16 August 2026}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We exhibit a binary linear $[50,40]_2$ code of covering radius $2$, showing
+$\ell_2(10,2)\le 50$ and improving by one the length $51$ of the
+Kaikkonen--Rosendahl code of 2003, which is the entry recorded for $r=10$ in
+Table~5.1 of Davydov, Marcugini and Pambianco
+(arXiv:2511.02542, November 2025). The parity-check matrix admits a
+$(2,0)$-partition into $p(\HH)=10$ subsets, one fewer than the
+computer-searched $p(\HH_{KR})=11$ of that paper. Since their infinite $R=2$
+family is seeded by the $r=10$ entry, substituting this code moves the whole
+iteration: Construction $\mathrm{QM}_2^2$ gives $[815,797]_22$ and
+$[1631,1611]_22$ codes at $r=18$ and $r=20$, against the published $831$ and
+$1663$, and iterating gives $n=51\cdot2^{r/2-5}-1$ for the reachable even $r$,
+with asymptotic covering density $51^2/2^{11}\approx1.27002$ in place of
+$26^2/2^{9}\approx1.32031$. All claims are exhaustively machine-checked from
+the committed matrices; verification code accompanies the note.
+\end{abstract}
+
+\section{Introduction}
+
+Let $\ell_2(r,R)$ denote the smallest length of a binary linear code with
+codimension $r$ and covering radius $R$. If $\HH$ is an $r\times n$
+parity-check matrix with column set $S\subset\FF_2^{\,r}$, then the code has
+covering radius at most $2$ if and only if
+\begin{equation}\label{eq:cover}
+\{0\}\cup S\cup(S+S)=\FF_2^{\,r}.
+\end{equation}
+The covering density of an $[n,n-r]_2 2$ code is
+$\mu=\bigl(1+n+\binom n2\bigr)/2^r$, and
+$\bar\mu(2)=\liminf_{r\to\infty}\mu$ along a family.
+
+Davydov, Marcugini and Pambianco~\cite{DMP2025} recently improved the upper
+bounds on $\ell_2(r,2)$ for many $r$ and produced a new infinite family with
+$\bar\mu(2)\approx1.32031$, superseding the value $\approx1.42383$ that had
+stood since 1992. Their Table~5.1 records, for $r=10$, the length $51$ of the
+Kaikkonen--Rosendahl code~\cite{KR2003}; that entry is not improved in their
+paper.
+
+The $r=10$ entry is load-bearing. Their family (\cite{DMP2025}, Theorem~5.7)
+has lengths
+\[
+\Phi(r)=26\cdot2^{r/2-4}-1=2^{m}(51+1)-1,\qquad m=r/2-5,
+\]
+which is precisely the Kaikkonen--Rosendahl length $51$ pushed forward by
+Construction $\mathrm{QM}_2^2$; their Theorem~5.7(i) states that the
+$2$-partitions of $\HH_{KR}$ are ``very important for the next iterative
+process''. A shorter seed admitting a small enough $2$-partition therefore
+re-seeds the entire family.
+
+\section{The code}
+
+\begin{theorem}\label{thm:main}
+Let $\HH$ be the $10\times50$ binary matrix listed in Appendix~\ref{app:H}.
+Then $\HH$ has $\FF_2$-rank $10$, its $50$ columns are distinct and nonzero,
+and its column set satisfies \eqref{eq:cover}. Hence $\HH$ is the parity-check
+matrix of a binary $[50,40,3]_2 2$ code of covering radius exactly $2$, and
+\[
+\ell_2(10,2)\le 50 .
+\]
+Its covering density is $\mu=319/256=1.24609375$, against
+$1327/1024\approx1.29590$ for the Kaikkonen--Rosendahl code.
+\end{theorem}
+
+\begin{proof}
+Finite verification. Enumerating the empty sum, the $50$ singletons and all
+$\binom{50}{2}=1225$ unordered pairs of columns and tabulating the resulting
+$1276$ syndromes shows that all $1024$ elements of $\FF_2^{10}$ occur, with
+multiplicity histogram
+$\{1{:}859,\ 2{:}129,\ 4{:}24,\ 5{:}9,\ 6{:}3\}$.
+Exactly $973$ syndromes are neither $0$ nor a column of $\HH$, so the covering
+radius is not $1$; it is therefore exactly $2$. The rank and distinctness
+claims are immediate from the listing. Minimum distance $3$ follows from the
+$10$ linearly dependent triples reported in Proposition~\ref{prop:aux}.
+\end{proof}
+
+\begin{proposition}\label{prop:aux}
+With $\HH$ as in Theorem~\ref{thm:main}:
+\begin{enumerate}
+\item[(i)] Deleting any single column of $\HH$ leaves at least $9$ elements of
+$\FF_2^{10}$ uncovered; the best deletions, of the columns $381$, $479$ and
+$927$, leave exactly $9$. Consequently the column set is a minimal
+$1$-saturating set in $PG(9,2)$, equivalently a locally optimal covering code.
+\item[(ii)] $\HH$ has minimum distance $d=3$ and exactly $10$ linearly
+dependent triples of columns.
+\end{enumerate}
+\end{proposition}
+
+\begin{proof}
+Finite verification; for (i), $50$ recounts over all $2^{10}$ syndromes.
+\end{proof}
+
+\section{A $2$-partition with $p(\HH)=10$}
+
+We use Definition~3.2 of~\cite{DMP2025}: a partition of the column set of
+$\HH$ into nonempty subsets is a $(2,0)$-partition if every element of
+$\FF_2^{\,r}$, including $0$, is a sum of at most two columns of $\HH$
+belonging to distinct subsets, and $p(\HH)$ denotes the number of subsets.
+
+\begin{theorem}\label{thm:part}
+The partition $\mathscr P$ of the columns of $\HH$ into the ten subsets
+\begin{align*}
+&\{2,128,202,212,771,855,897,981\},\ \{86\},\ \{381,893,1003\},\ \{183,297\},\\
+&\{1,65,247,256,320,438,502,734\},\ \{15,173,329,366,460,559,653,846\},\\
+&\{4,16,391,491,742,754,869,881\},\ \{479,1004\},\ \{403\},\\
+&\{32,341,373,576,608,777,789,821,927\}
+\end{align*}
+(columns written as integers, cf.\ Appendix~\ref{app:H}) is a
+$(2,0)$-partition, so $p(\HH;\mathscr P)=10$. Moreover the columns
+$491$, $734$, $821$ sum to the zero column and lie in three distinct subsets
+of $\mathscr P$.
+\end{theorem}
+
+\begin{proof}
+Finite verification. Of the $1024$ syndromes, one is zero and $50$ are columns
+of $\HH$, both admissible by Definition~3.2; each of the remaining $973$ is
+realised by a pair of columns from distinct subsets. For the last claim,
+$491\oplus734\oplus821=0$ and these lie in the seventh, fifth and tenth subsets
+as listed.
+\end{proof}
+
+By comparison, \cite{DMP2025} Theorem~5.2 obtains $p(\HH_{KR})=11$ by computer
+search. The final assertion of Theorem~\ref{thm:part} is the analogue of their
+Theorem~5.2(ii), which they require in order to apply Construction
+$\mathrm{QM}_5^2$ at $r=28$.
+
+\begin{remark}
+The partition is tight in the following sense: $821$ of the $973$ syndromes
+requiring a pair have a \emph{unique} such representation, and each of those
+forces its two columns into distinct subsets.
+\end{remark}
+
+\section{Propagation}
+
+Construction $\mathrm{QM}_2^2$ (\cite{DMP2025}, Theorem~4.1, equations (4.2)
+and (4.4)) takes an $[n_0,n_0-r_0]_2 2$ code with a $2$-partition into
+$p(\HH_0)$ subsets, an indicator set $\mathscr B=\FF_{2^m}$ subject to
+$n_0\ge2^m\ge p(\HH_0)$, and $\boldsymbol D=\boldsymbol D_1(2)$, and returns an
+$[n,n-r]_2 2$ code with
+\[
+n=2^m(n_0+1)-1,\qquad r=r_0+2m,\qquad p(\HH_C)\le2^{m+1}+1 .
+\]
+With $n_0=50$ and $p(\HH_0)=10$ the condition $n_0\ge2^m\ge p(\HH_0)$ holds
+exactly for $m=4$ and $m=5$.
+
+\begin{theorem}\label{thm:prop}
+Applying $\mathrm{QM}_2^2$ to the code of Theorem~\ref{thm:main} with the
+partition of Theorem~\ref{thm:part} yields
+\begin{align*}
+m=4:&\quad [815,797]_2 2,\ r=18,\ \mu=332521/262144\approx1.26847,\\
+m=5:&\quad [1631,1611]_2 2,\ r=20,\ \mu=1330897/1048576\approx1.26924,
+\end{align*}
+so $\ell_2(18,2)\le815$ and $\ell_2(20,2)\le1631$. The published values are
+$\Phi(18)=831$ and $\Phi(20)=1663$.
+\end{theorem}
+
+\begin{proof}
+The two matrices are constructed explicitly and each is verified by complete
+enumeration of $\FF_2^{18}$ and $\FF_2^{20}$ respectively: $262144/262144$ and
+$1048576/1048576$ syndromes are covered, and both matrices have full rank.
+\end{proof}
+
+\begin{corollary}\label{cor:family}
+Iterating $\mathrm{QM}_2^2$ from the seed of Theorem~\ref{thm:main}, a state
+$(r,p)$ with length $n(r)=51\cdot2^{r/2-5}-1$ admits a step with parameter $m$
+whenever $n(r)\ge2^m\ge p$, producing codimension $r+2m$ and
+$p\le2^{m+1}+1$. The even $r\le64$ so reachable are
+\[
+10,\ 18,\ 20,\ 30,\ 32,\ 34,\ 36,\ 38,\ 40,\ 46,\ 48,\ 50,\ 52,\ 54,\ 56,\
+58,\ 60,\ 62,\ 64,
+\]
+with $\ell_2(r,2)\le51\cdot2^{r/2-5}-1$ and
+\[
+\mu(r)=\frac{51^2}{2^{11}}-\frac{51}{2^{r/2+1}}+\frac{1}{2^{r}}
+\ \nearrow\ \frac{51^2}{2^{11}}=\frac{2601}{2048}\approx1.27002 .
+\]
+Hence $\bar\mu(2)\le2601/2048$, and since Green's $f(2)$ is a
+$\liminf$ over $r$, also $f(2)\le2601/2048$.
+\end{corollary}
+
+The even $r\in\{12,14,16,22,24,26,28,42,44\}$ are \emph{not} reachable by
+$\mathrm{QM}_2^2$ from this seed. In~\cite{DMP2025} the analogous gaps at
+$r=22,24,26$ are filled by Construction $\mathrm{QM}_3^2$ and $r=28$ by
+$\mathrm{QM}_5^2$, with $r=42,44$ following from the $r=28$ code. The
+ingredient that $\mathrm{QM}_5^2$ requires is present here, by the last
+assertion of Theorem~\ref{thm:part}, but those constructions are not carried
+out in this note and no claim is made for those $r$.
+
+\section{What is not claimed}
+
+The length $50$ is not shown to be optimal: the sphere-covering bound gives
+only $\ell_2(10,2)\ge45$, since $1+n+\binom n2\ge1024$ fails at $n=44$.
+Proposition~\ref{prop:aux}(i) shows only that this particular $50$-set has no
+redundant column. An annealing run at $n=49$ terminated with $7$ uncovered
+syndromes; that is search residue and not a lower bound.
+
+Theorems~\ref{thm:main}, \ref{thm:part} and~\ref{thm:prop} are established by
+complete enumeration. Corollary~\ref{cor:family} is not: beyond $m=4,5$ it
+inherits the bound $p(\HH_C)\le2^{m+1}+1$ of~\cite{DMP2025} (4.4) rather than
+exhibiting the partitions, exactly as the corresponding argument
+in~\cite{DMP2025} does. Computing those partitions explicitly would strengthen
+the corollary.
+
+Table~5.1 of~\cite{DMP2025} is stated to be best ``as far as the authors
+know''. We have not been able to search the ACCT proceedings exhaustively and
+make no priority claim for $\ell_2(10,2)\le50$.
+
+\section*{Verification}
+
+The matrix of Appendix~\ref{app:H}, the partition of Theorem~\ref{thm:part},
+and the two propagated matrices of Theorem~\ref{thm:prop} are accompanied by
+two independent verifiers, in Python and in Rust, which read the matrices from
+plain text and re-derive every number in this note by exhaustive enumeration:
+no stored certificate is consulted and no sampling is used. The two use
+opposite algorithms --- one enumerates pairs and marks the syndromes they hit,
+the other sweeps the syndromes and searches for a partner column --- and their
+outputs are compared automatically. The complete run takes about a second and
+is deterministic.
+
+The matrix was located by targeted simulated annealing seeded from
+$\HH_{KR}$, run by an automated agent. The search procedure is not part of the
+argument: Theorem~\ref{thm:main} is a finite decidable assertion about a fixed
+matrix.
+
+\appendix
+
+\section{The matrix $\HH$}\label{app:H}
+
+Rows $1$ to $10$ from top to bottom, columns left to right.
+
+\input{appendix_matrix}
+
+\begin{thebibliography}{9}
+
+\bibitem{DMP2025}
+A.~A. Davydov, S.~Marcugini, F.~Pambianco,
+\emph{New upper bounds for binary linear covering codes},
+arXiv:2511.02542 [cs.IT], November 2025.
+
+\bibitem{KR2003}
+M.~Kaikkonen, C.~Rosendahl,
+\emph{New covering codes from an ADS-like construction},
+IEEE Trans.\ Inform.\ Theory \textbf{49} (2003), no.~7, 1809--1812.
+\url{https://doi.org/10.1109/TIT.2003.813508}.
+
+\bibitem{CHLL}
+G.~Cohen, I.~Honkala, S.~Litsyn, A.~Lobstein,
+\emph{Covering Codes}, North-Holland Mathematical Library \textbf{54},
+Elsevier, Amsterdam, 1997.
+
+\bibitem{Green}
+B.~Green, \emph{100 open problems}, Problem 40.
+Available at \url{https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf}.
+
+\end{thebibliography}
+
+\end{document}

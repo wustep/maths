@@ -18,6 +18,8 @@ f(2)=\liminf_{r\to\infty}\frac{1+\ell_2(r,2)+\binom{\ell_2(r,2)}{2}}{2^r}.
 \]
 The known range is \(1\le f(2)\le 1.4238\); it is not even known whether \(f(2)=1\). Tonight is not \(f(2)\). Tonight is a documented finite length.
 
+**Stale as written.** The \(1.4238\) had already been superseded by arXiv:2511.02542 (\(\approx 1.32031\)) before this line was typed, and the \(n=50\) seed brings it to \(2601/2048\approx 1.27002\). See [`result/NOTE.md`](result/NOTE.md) §6.
+
 The November 2025 table of Davydov–Marcugini–Pambianco (arXiv:2511.02542v1, Table 5.1) lists \(\ell_2(10,2)\le 51\) (Kaikkonen–Rosendahl), density \(1327/1024\approx 1.29590\). Secondary holes in the same table: \(\ell_2(8,2)\le 26\) and \(\ell_2(9,2)\le 39\).
 
 ## Precise statement
