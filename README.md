@@ -49,7 +49,7 @@ propagation to \(r=18,20\):
 cd problems/covering/result && ./run_all.sh
 ```
 
-Interactive explainer: [problems/covering/explainer.html](problems/covering/explainer.html).
+Explainers: [HTML](problems/covering/explainer.html), [PDF](problems/covering/explainer.pdf).
 
 ## Lean
 
