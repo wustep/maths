@@ -1,0 +1,4 @@
+trials 8171255
+best_gain 0
+hit False
+seconds 419.0

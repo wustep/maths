@@ -1,0 +1,9 @@
+seed /workspace/problems/c7-shannon/compute/R367.txt size 367
+free 0
+1-out none
+2-out none trials=67161
+3-out-sample 3000 none
+4-out-sample 3000 none
+anneal_best 367
+no 368-set
+seconds 4.4
