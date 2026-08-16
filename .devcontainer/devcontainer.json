@@ -1,0 +1,14 @@
+{
+  "name": "maths",
+  "build": { "dockerfile": "../Dockerfile" },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "leanprover.lean4",
+        "ms-python.python"
+      ]
+    }
+  },
+  "postCreateCommand": "lake update && lake exe cache get || true",
+  "remoteUser": "root"
+}
