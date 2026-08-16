@@ -56,3 +56,5 @@ and does **not** determine \(f(2)\). An \(n=49\) anneal left 7 uncovered syndrom
 ## Figures
 
 Regenerated from `compute/search_results.json`: [`figures/q1_density_vs_length.png`](figures/q1_density_vs_length.png).
+
+Interactive explainer (Claude Opus and Fable 5): [`explainer.html`](explainer.html).
