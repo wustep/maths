@@ -1,0 +1,82 @@
+{
+  "quest": "q1-overnight",
+  "date": "2026-08-16",
+  "result": "residue-no-1697-witness",
+  "published_1680_calibration": {
+    "result": "valid",
+    "schur_pairs_checked": 705600,
+    "class_sizes": [206, 156, 380, 146, 160, 284, 348]
+  },
+  "full_reflection_1697": {
+    "result": "unsat",
+    "reason": "the orbit 566 <-> 1132 is also the equation 566 + 566 = 1132",
+    "lean_certificate": "../lean/Schur1697SymmetryObstruction.lean"
+  },
+  "published_536_seed_frame": {
+    "target_1696": {
+      "result": "unsat",
+      "variable_orbits": 311,
+      "boolean_variables": 2177,
+      "folded_schur_clauses": 92270,
+      "z3_seconds": 0.076576
+    },
+    "target_1697_with_exceptional_split": {
+      "result": "unsat",
+      "exceptional_split": [566, 1132],
+      "variable_orbits": 313,
+      "boolean_variables": 2191,
+      "folded_schur_clauses": 93628,
+      "z3_seconds": 0.068024
+    },
+    "all_modular_equivalents_at_1696": {
+      "solver": "cadical195",
+      "conflict_budget_each": 50000,
+      "candidates": 356,
+      "proved_unsat": 356,
+      "budget_interrupted": 0,
+      "elapsed_seconds": 4.69113
+    }
+  },
+  "unrestricted_orbit_sat_calibration": {
+    "solver": "cadical195",
+    "conflict_budget": 100000,
+    "target_1696": {
+      "known_externally_to_be_sat": true,
+      "solver_result": "interrupted",
+      "orbit_variables": 848,
+      "boolean_variables": 5936,
+      "orbit_triples": 239984,
+      "cnf_clauses": 1703633,
+      "elapsed_seconds": 19.576433
+    },
+    "target_1697": {
+      "solver_result": "interrupted",
+      "exceptional_split": [566, 1132],
+      "orbit_variables": 850,
+      "boolean_variables": 5950,
+      "orbit_triples": 241115,
+      "cnf_clauses": 1711606,
+      "elapsed_seconds": 18.660076
+    }
+  },
+  "weighted_local_search": {
+    "target_1696_structural_calibration": {
+      "random_seeds": [11, 22],
+      "seconds_each": 90,
+      "restarts": [18, 17],
+      "best_folded_violations": 1
+    },
+    "target_1697": {
+      "random_seed": 3,
+      "seconds": 120,
+      "moves": 32958,
+      "best_folded_violations": 1,
+      "near_coloring": "near_1697_two_violations.txt",
+      "integer_violations": [
+        [537, 537, 1074, 6],
+        [537, 624, 1161, 6]
+      ]
+    }
+  },
+  "warning": "Interrupted means no SAT/UNSAT conclusion. This quest does not improve the lower bound for S(7)."
+}

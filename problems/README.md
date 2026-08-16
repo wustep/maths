@@ -57,3 +57,17 @@ Links only. Quote sparingly.
 - Keep raw computer output in `compute/` rather than pasting megabytes here.
 - If Lean is involved, record the toolchain version (`lean --version`).
 - Never check in secrets, API keys, or unpublished personal data.
+
+## Overnight 2026-08-16 (recovered)
+
+Reconstructed under this tree from Codex rollouts after `/maths` vanished.
+
+| Slug | Residue |
+| --- | --- |
+| `linear-covering-code-radius-two` | **dent:** ℓ₂(10,2) ≤ 50. Matrix verifies 1024/1024. n=49 still 7 holes. |
+| `brocard-ramanujan-factorial-square` | Lean lemmas recovered (`FactorialMod151.lean`, `FactorialPrimePower.lean`). Conjecture open. |
+| `no-unique-sum-mod-p` | q1 predicate wrong; q2 `green_m_p.csv` matches A398173 through p=47. |
+| `no-three-in-line-grid` | n=71 rct4 SAT UNKNOWN. CNF not recovered. |
+| `schur-number-seven-bound` | no 1697 coloring; 2-violation specimen bytes lost. |
+
+See `/workspace/maths/loop/RECOVERY.md`.
