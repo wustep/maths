@@ -1,0 +1,6 @@
+best 367 shift (40, 123, 40, 123, 40)
+note stopped after recovering the published translation; other sampled
+translations at den=109 scored 357-360 (M around 325-329, residual I 29-35).
+structured (a,b,a,b,a) grid and 80 random translations were started (343
+planned) but exact MIS on published-scale leftovers was too slow to finish.
+No 368-set appeared in the completed prefix.

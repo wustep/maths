@@ -1,0 +1,14 @@
+seed R367.txt size 367
+free 0
+encoding CardEnc.atmost kmtotalizer (atleast via negated atmost)
+blocker_histogram {1: 8, 2: 254, 3: 1505, 4: 3039, 5: 3712, 6: 3897, 7: 2842, 8: 921, 9: 199, 10: 61, 11: 2}
+k=1 r=0 UNSAT cands=0 free=0
+k=3 r=1 UNSAT cands=8 clauses=1580 vars=1153 sec=0.00
+k=5 r=2 UNSAT cands=262 clauses=24698 vars=5881 sec=0.09
+k=7 r=3 UNSAT cands=1767 clauses=168178 vars=22635 sec=3.93
+k=9 r=4 UNSAT cands=4806 clauses=739414 vars=59531 sec=67.67
+k=11 r=4 UNSAT cands=4806 clauses=746568 vars=60554 sec=68.18
+k=11 r=5 UNKNOWN timeout after ~10min (8518-candidate instance not finished)
+no 368-set in completed few-flip balls
+Cadical195 + CardEnc.atmost refuted Hamming distance <=9 (4-out/5-in) and all smaller odd distances.
+This is a local cage around the seed, not alpha<=367.
