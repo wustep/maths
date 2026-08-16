@@ -319,7 +319,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 
   <p>Going from 51 to 50 looks like a small win. It is not, and the reason lies in how the published tables get built.</p>
 
-  <p>Davydov, Marcugini and Pambianco published the current best bounds in November 2025. Their tables list a value for every redundancy <code>r</code> up to 64. They do not find each value separately. Instead they use a construction that grows a short code into a long one.</p>
+  <p>Davydov, Marcugini and Pambianco published the current best bounds in November 2025. Their tables list a value for every redundancy <code>r</code> up to 64. They do not find each value separately. Instead they use a construction they call QM₂² that grows a short code into a long one.</p>
 
   <div class="math">
     n<sub>new</sub> = 2<sup>m</sup>(n<sub>old</sub> + 1) &minus; 1 &nbsp;&nbsp;&nbsp; r<sub>new</sub> = r<sub>old</sub> + 2m
@@ -342,7 +342,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 
   <div class="defn">
     <span class="t">Valid block split</span>
-    <p>Sort the columns into blocks. The split is valid when every syndrome still has a representation that uses columns from <em>different</em> blocks. Write <code>p(H)</code> for the number of blocks.</p>
+    <p>Sort the columns into blocks. The split is valid when every syndrome still has a representation that uses columns from <em>different</em> blocks. Write <code>p(H)</code> for the number of blocks. The paper calls a valid split a <em>(2,0)-partition</em>.</p>
   </div>
 
   <p>The number of blocks controls how much you can grow the code in one step. The construction requires <code>p(H) ≤ 2ᵐ ≤ n</code>. Fewer blocks means larger steps are legal.</p>
@@ -366,14 +366,14 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     <tbody>
       <tr class="win"><td>10</td><td>50</td><td class="was">51</td><td>1.24609</td><td>1024 of 1024</td></tr>
       <tr class="win"><td>18</td><td>815</td><td class="was">831</td><td>1.26847</td><td>262,144 of 262,144</td></tr>
-      <tr class="win"><td>20</td><td>1631</td><td class="was">1663</td><td>1.26925</td><td>1,048,576 of 1,048,576</td></tr>
-      <tr><td>2t</td><td>51&middot;2<sup>t&minus;5</sup> &minus; 1</td><td>26&middot;2<sup>t&minus;4</sup> &minus; 1</td><td>&rarr; 1.26999</td><td>by construction</td></tr>
+      <tr class="win"><td>20</td><td>1631</td><td class="was">1663</td><td>1.26924</td><td>1,048,576 of 1,048,576</td></tr>
+      <tr><td>2t</td><td>51&middot;2<sup>t&minus;5</sup> &minus; 1</td><td>26&middot;2<sup>t&minus;4</sup> &minus; 1</td><td>&rarr; 1.27002</td><td>by construction</td></tr>
     </tbody>
   </table>
 
   <p>The fourth column of that table has a name. It is the <em>covering density</em>: the total number of representations divided by the number of syndromes. It is the average number of ways each syndrome gets reached. It can never drop below 1. A value near 1 means an efficient code.</p>
 
-  <p>As redundancy grows, this family drives the density toward <code>2601/2048 ≈ 1.2700</code>. Compare that to the record before it.</p>
+  <p>As redundancy grows, this family drives the density toward <code>2601/2048 ≈ 1.27002</code>. Compare that to the record before it.</p>
 
   <div class="scale">
     <div class="eyebrow">Best density that a known family approaches &mdash; lower is better</div>
@@ -397,7 +397,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     <li><b>The failed search at 49 proves nothing.</b> One run stopped with 7 syndromes uncovered. That describes the search program. It says nothing about whether 49 columns exist.</li>
     <li><b>Nobody has confirmed priority yet.</b> The published table says "best as far as the authors know". Somebody must check the older workshop proceedings and the field bibliography before anyone claims a record.</li>
     <li><b>The far end of the family is weaker.</b> The steps at <code>m = 4</code> and <code>m = 5</code> got checked exhaustively. Later steps rely on a bound from the paper instead of a directly computed block split. A referee will ask about this first.</li>
-    <li><b>The big question stays open.</b> Nobody knows the smallest density any family can reach. It might be as low as 1. This work moves an upper limit and nothing else.</li>
+    <li><b>The big question stays open.</b> The limit of the best possible densities as redundancy grows has a name: Green's <code>f(2)</code>. Nobody knows its value. It might be as low as 1. This work moves an upper limit on it and nothing else.</li>
     <li><b>Nearby cases did not fall.</b> The same search failed at redundancy 8 and 9. It missed 3 and 8 syndromes there.</li>
   </ul>
 
@@ -413,6 +413,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     Grok Bot (4.6), Opus 5, GPT Sol 5.6<br>
     <span style="font-size:9px;letter-spacing:.04em">with instructions from Stephen Wu</span><br>
     A simulated annealing search found the matrix during an unsupervised run on 16 August 2026. It started from the Kaikkonen&ndash;Rosendahl matrix.<br>
+    One encoding note: this page and the repo write each column LSB-first, so bit i of the integer is row i+1. The paper's hex listing of the Kaikkonen&ndash;Rosendahl matrix is MSB-first, so rebuilding it from the paper means reversing the ten bits of every column.<br>
     The block split, the growth steps and every figure on this page got derived and checked afterward. This page computes all of its numbers in your browser from the 50 columns.<br>
     Reference: Davydov, Marcugini and Pambianco, <em>New upper bounds for binary linear covering codes</em>, arXiv:2511.02542, Table 5.1.
   </footer>
