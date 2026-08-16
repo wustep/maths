@@ -1,0 +1,20 @@
+Brocard--Ramanujan q2 unitary-factorization run
+command: /workspace/maths/problems/brocard/compute/unitary_factorization.py --max-n 100
+source sha256: 69ea4edb5206d59010900f273d15236e47d779de68232680fc92c23c6ac90b50
+range: [4, 100]
+method: exact meet-in-the-middle enumeration of unitary divisors of n!/4; the largest divisor at most sqrt(n!/4) gives the minimum gap
+structural solutions: [{'n': 4, 'm': 5, 'a': 2, 'b': 3, 'odd_prime_power_signs': [{'prime': 3, 'modulus': '3', 'congruence': '-1'}]}, {'n': 5, 'm': 11, 'a': 5, 'b': 6, 'odd_prime_power_signs': [{'prime': 3, 'modulus': '3', 'congruence': '-1'}, {'prime': 5, 'modulus': '5', 'congruence': '+1'}]}, {'n': 7, 'm': 71, 'a': 35, 'b': 36, 'odd_prime_power_signs': [{'prime': 3, 'modulus': '9', 'congruence': '-1'}, {'prime': 5, 'modulus': '5', 'congruence': '+1'}, {'prime': 7, 'modulus': '7', 'congruence': '+1'}]}]
+direct square solutions: [{'n': 4, 'm': 5}, {'n': 5, 'm': 11}, {'n': 7, 'm': 71}]
+methods agree: True
+at n=100: blocks=25, sign vectors up to swap=16777216, minimum gap=6416205253186450251185486465874250479345851454158858911763215688534498269
+
+Selected exact closest pairs:
+  n=4: a=2, b=3, gap=1, blocks=2
+  n=5: a=5, b=6, gap=1, blocks=3
+  n=6: a=9, b=20, gap=11, blocks=3
+  n=7: a=35, b=36, gap=1, blocks=4
+  n=8: a=63, b=160, gap=97, blocks=4
+  n=10: a=567, b=1600, gap=1033, blocks=4
+  n=20: a=778240000, b=781539759, gap=3299759, blocks=8
+  n=50: a=87163198094081747739728616095744, b=87233184035093504669025146484375, gap=69985941011756929296530388631, blocks=15
+  n=100: a=4830271510895903628248967121677857357312684155222360064000000000000000000000000, b=4830277927101156814699218307164323231563163501073814222858911763215688534498269, gap=6416205253186450251185486465874250479345851454158858911763215688534498269, blocks=25

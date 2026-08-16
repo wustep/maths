@@ -175,11 +175,13 @@ but have a nontrivial affine stabilizer. The other 39 saved witnesses are
 non-AP and have trivial affine stabilizer. This describes one solver witness
 per prime, not the complete orbit set of all extremizers.
 
-![Exact m(p) against log p and log-squared p for every prime at most 200](figures/m_p.png)
+![Recovered m(p) against log p and log-squared p through p=47, matching OEIS A398173](figures/m_p.png)
 
-The left linear fit against \(\log p\) has \(R^2\approx0.974\) on this finite
-range; the fit against \((\log p)^2\) has \(R^2\approx0.926\). Those numbers
-are descriptive diagnostics, not evidence for a new asymptotic theorem.
+The recovered table is the 14 primes through \(p=47\) in `compute/green_m_p.csv`,
+not the invalidated \(p\le200\) claim above. On that range the linear fit
+against \(\log p\) has \(R^2\approx0.978\); the fit against \((\log p)^2\)
+has \(R^2\approx0.994\). Those numbers are descriptive diagnostics, not
+evidence for a new asymptotic theorem.
 
 ## 6. Proven vs still open
 

@@ -92,5 +92,4 @@ and against \((\log p)^2\).
 
 ## Figures
 
-None yet. The overnight quest should embed `figures/m-vs-log.png` and
-`figures/m-vs-log2.png` here.
+Recovered table through \(p=47\): [`figures/m_p.png`](figures/m_p.png).
