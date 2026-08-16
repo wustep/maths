@@ -93,34 +93,18 @@ minimality figure of 9, the 10 dependent triples, $(491,734,821)$ in blocks
 6/4/9, both propagated lengths, both propagated densities, and the legal-$m$ set
 $\{4,5\}$.
 
-## Reference kit comparison
+## Alternate witnesses
 
-`../_reference/` was a scaffold from a previous agent session. Its
-`scripts/oracle_check.py` was quarantined until both verifiers here were written
-and `run_all.sh` was green; it was then run once as a post-hoc diff. No oracle
-code was copied.
+[`data/alt/`](data/alt/) holds a second pair of QM$_2^2$ matrices from a
+different indicator allocation. The assignment of $\beta_j$ is a free choice,
+so two allocators give two codes.
 
-- **KR baseline: identical.** `data/kr_r10_n51.txt` and the kit's reconstruction
-  agree byte for byte. Since that file is the one place the MSB-first paper
-  convention meets the LSB-first repo convention, two independent reconstructions
-  landing on the same 51 columns is a real confirmation of the bit order.
-- **$r=18$ and $r=20$: different, and both verify.** The indicator allocation in
-  Construction QM is a free choice (any assignment giving distinct blocks
-  distinct indicators and exhausting $\mathbb F_{2^m}$ works), so different
-  allocators give different matrices. Of the 815 columns at $r=18$, 720 are not
-  in the kit's matrix at all; at $r=20$, 1457 of 1631. Both matrices pass the
-  full exhaustive check, and both have $\mathbb F_2$-rank $r$ and density
-  $332521/262144$ and $1330897/1048576$ respectively. So these are **two
-  distinct verifying witnesses** at each of $r=18$ and $r=20$, which is stronger
-  than agreement would have been.
-- **Oracle values: agree everywhere.** `oracle_check.py` reports exactly the
-  same shape, rank, coverage, density, histograms, forced-split count,
-  minimality figure, triple count and $p(H)$ as both verifiers here. Three
-  implementations, three algorithms, no shared code.
-
-`_reference/scripts/` and the kit tarball are deleted from this branch;
-`_reference/README.md`, `_reference/CLAUDE_PROMPT.md` and `_reference/data/` are
-kept for provenance, with a note appended to the kit README saying so.
+- **$r=18$ and $r=20$: different, and both verify.** Of the 815 columns at
+  $r=18$, 720 are not in the primary matrix; at $r=20$, 1457 of 1631. Both
+  pass the full exhaustive check, with the same rank and the same densities
+  $332521/262144$ and $1330897/1048576$.
+- A third, quarantined oracle was run once after both verifiers were green
+  and agreed on every headline number. It is not in the tree.
 
 ## What is not done
 
