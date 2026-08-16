@@ -12,6 +12,8 @@ container, no smoke tests.
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through \(p=47\). |
 | [three-in-line](problems/three-in-line) | \(n=71\) SAT UNKNOWN. |
 | [schur](problems/schur) | No 1697-coloring found. |
+| [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of \([3703]\). Does not extend to 3704. No dent. |
+| [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in \(C_7^{\boxtimes 5}\). No 368. No dent. |
 
 Each problem folder:
 

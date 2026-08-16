@@ -1,0 +1,201 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "violations": 17708,
+      "elapsed": 3.6
+    },
+    {
+      "round": 2,
+      "violations": 14550,
+      "elapsed": 7.347
+    },
+    {
+      "round": 3,
+      "violations": 12130,
+      "elapsed": 11.535
+    },
+    {
+      "round": 4,
+      "violations": 11970,
+      "elapsed": 16.052
+    },
+    {
+      "round": 5,
+      "violations": 11558,
+      "elapsed": 19.9
+    },
+    {
+      "round": 6,
+      "violations": 11306,
+      "elapsed": 23.736
+    },
+    {
+      "round": 7,
+      "violations": 11216,
+      "elapsed": 27.467
+    },
+    {
+      "round": 8,
+      "violations": 11488,
+      "elapsed": 31.081
+    },
+    {
+      "round": 9,
+      "violations": 11360,
+      "elapsed": 34.946
+    },
+    {
+      "round": 10,
+      "violations": 11248,
+      "elapsed": 38.722
+    },
+    {
+      "round": 11,
+      "violations": 11062,
+      "elapsed": 42.499
+    },
+    {
+      "round": 12,
+      "violations": 11034,
+      "elapsed": 46.477
+    },
+    {
+      "round": 13,
+      "violations": 11392,
+      "elapsed": 50.348
+    },
+    {
+      "round": 14,
+      "violations": 11070,
+      "elapsed": 54.494
+    },
+    {
+      "round": 15,
+      "violations": 11254,
+      "elapsed": 58.248
+    },
+    {
+      "round": 16,
+      "violations": 11192,
+      "elapsed": 62.14
+    },
+    {
+      "round": 17,
+      "violations": 10990,
+      "elapsed": 66.004
+    },
+    {
+      "round": 18,
+      "violations": 11138,
+      "elapsed": 69.978
+    },
+    {
+      "round": 19,
+      "violations": 11104,
+      "elapsed": 73.875
+    },
+    {
+      "round": 20,
+      "violations": 10754,
+      "elapsed": 77.849
+    },
+    {
+      "round": 21,
+      "violations": 11228,
+      "elapsed": 81.615
+    },
+    {
+      "round": 22,
+      "violations": 11500,
+      "elapsed": 85.599
+    },
+    {
+      "round": 23,
+      "violations": 11142,
+      "elapsed": 89.298
+    },
+    {
+      "round": 24,
+      "violations": 11132,
+      "elapsed": 93.061
+    },
+    {
+      "round": 25,
+      "violations": 11074,
+      "elapsed": 96.751
+    },
+    {
+      "round": 26,
+      "violations": 10698,
+      "elapsed": 100.398
+    },
+    {
+      "round": 27,
+      "violations": 10882,
+      "elapsed": 104.089
+    },
+    {
+      "round": 28,
+      "violations": 11078,
+      "elapsed": 108.054
+    },
+    {
+      "round": 29,
+      "violations": 11106,
+      "elapsed": 111.847
+    },
+    {
+      "round": 30,
+      "violations": 11292,
+      "elapsed": 115.415
+    },
+    {
+      "round": 31,
+      "violations": 11252,
+      "elapsed": 119.008
+    },
+    {
+      "round": 32,
+      "violations": 11046,
+      "elapsed": 122.553
+    },
+    {
+      "round": 33,
+      "violations": 11672,
+      "elapsed": 126.092
+    },
+    {
+      "round": 34,
+      "violations": 11032,
+      "elapsed": 129.655
+    },
+    {
+      "round": 35,
+      "violations": 11218,
+      "elapsed": 133.214
+    },
+    {
+      "round": 36,
+      "violations": 11272,
+      "elapsed": 136.777
+    },
+    {
+      "round": 37,
+      "violations": 11198,
+      "elapsed": 140.444
+    },
+    {
+      "round": 38,
+      "violations": 11390,
+      "elapsed": 144.063
+    },
+    {
+      "round": 39,
+      "violations": 11002,
+      "elapsed": 147.682
+    }
+  ],
+  "sat": false,
+  "elapsed": 147.683
+}
