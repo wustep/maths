@@ -1,0 +1,10 @@
+S 382
+isolates 327
+conflict 55
+conflict_edges 35
+alpha_conflict 30
+M 357
+residual 4
+residual_edges 0
+I 4
+R 361

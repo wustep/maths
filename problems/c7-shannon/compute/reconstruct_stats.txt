@@ -1,0 +1,6 @@
+folded_unique 382
+M 327
+residual_verts 71
+residual_edges 85
+I 40
+R 367
