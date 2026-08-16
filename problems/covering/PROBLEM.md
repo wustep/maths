@@ -53,4 +53,4 @@ and does **not** determine \(f(2)\). An \(n=49\) anneal left 7 uncovered syndrom
 
 ## Figures
 
-q1 density figure was generated overnight (`figures/q1_density_vs_length.png`) but the PNG was not recovered from transcripts.
+Regenerated from `compute/search_results.json`: [`figures/q1_density_vs_length.png`](figures/q1_density_vs_length.png).
