@@ -21,6 +21,11 @@
 - **Fold-and-repair on near-miss orbits** (317, 382, 309, 303, 301, 339, 367, 362). Best is the published shift on \(n=382\), \(q=7\), den=109: 327+40=367. Other 382-translations scored 357–360. Smaller \(n\) collapsed to \(M\sim 30\) and totals \(\sim 250\).
 - **Shifts.** Published \((40,123,40,123,40)\) recovered as the best completed score. Broader translation grid not finished (exact MIS on 70-vertex leftovers is slow). No 368 in the completed prefix.
 
+## 2026-08-16 — steal from W(2,7)
+
+- Sibling finished with no dent (best verified colouring length 3703). Methods stolen: `CardEnc.atmost` only; few-flip SAT around the published seed; treat a one-violation min-conflicts stall as a cage; CEGAR on a product template and stop if leftovers plateau.
+- Scripts: `search_fewflip_sat.py`, `search_minconflicts_cage.py`, `search_cegar_product.py`. A 367-set is not a dent. No \(\Theta(C_7)\) claim.
+
 ## Result
 
 No independent set of size \(\ge 368\). No certificate that 367 is maximum: Lovász still allows 401, and a full MIS on 16807 vertices was not run. Do not claim a new \(\Theta(C_7)\). \(367^{1/5}\approx 3.25787 < 3.258805\).

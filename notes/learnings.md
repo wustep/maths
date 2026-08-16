@@ -23,3 +23,8 @@ encoding), write one paragraph here so the other solver can steal it.
 - Do not replace “delete every non-isolated folded vertex” by an MIS of the folded image. On the 382-orbit that upgrade is 357+4=361, worse than 327+40=367: the leftover graph is worth more than the conflict vertices.
 - The 367-set is maximal. Exhaustive 1-out, 2-out, and 3-out (\(8.17\times 10^6\) triples) all have gain 0. That is a local obstruction, not an \(\alpha\le 367\) proof.
 - Good 3-dimensional \(\mathbb F_7\)-codes of size 343 seen here have empty residual (\(V+\{-1,0,1\}^5\) covers the space). Linear seeds do not grow. Use neighborhood-marking (`closed_neighbors`) for residuals; pairwise scans of 10k-vertex leftovers waste the run.
+
+## 2026-08-16 C7 steal from W(2,7)
+
+- Homemade sequential counters can over-forbid if the s-variables are free. For few-flip SAT around the 367-set, encode cardinality only with `pysat.card.CardEnc.atmost` (at-least-k is at-most on the negated literals; kmtotalizer). Do not roll a one-way “at least j” gadget.
+- A 368-set at Hamming distance \(2r+1\) from the seed deletes \(r\) vertices and adds \(r+1\). Only vertices adjacent to at most \(r\) seed points are addable. That is the cheap exact check to run before a wide MIS SAT.
