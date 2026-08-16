@@ -32,6 +32,8 @@ at $r=18$ and $r=20$, and to the family
 $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 This note explains the problem, how the matrix was found, what was proved,
 and how to re-check every number from the committed text.
+The matrices, verifiers, and \LaTeX\ source live at
+\url{https://github.com/wustep/maths}.
 \end{abstract}
 
 \tableofcontents
@@ -293,13 +295,21 @@ partitions. That is the weakest link.
 
 \subsection{How to re-run}
 
+The code is the public repository
+\url{https://github.com/wustep/maths}.
+Clone it, then run the pipeline from the covering-result directory:
+
 \begin{verbatim}
-cd problems/covering/result
+git clone https://github.com/wustep/maths.git
+cd maths/problems/covering/result
 ./run_all.sh
 \end{verbatim}
-Needs \texttt{python3} and \texttt{rustc}. No network, no packages, no
-RNG. Seventy-four named assertions, exit~$0$, output byte-identical
-across runs (about two seconds).
+Needs \texttt{python3} and \texttt{rustc}. After the clone, no network,
+no packages, no RNG. Seventy-four named assertions, exit~$0$, output
+byte-identical across runs (about two seconds). Direct links:
+\url{https://github.com/wustep/maths/tree/main/problems/covering/result}
+and
+\href{https://github.com/wustep/maths/blob/main/problems/covering/result/run_all.sh}{\texttt{result/run\_all.sh}}.
 
 \subsection{Two verifiers, opposite algorithms}
 
@@ -357,21 +367,25 @@ $r\in\{12,14,16,22,24,26,28,42,44\}$.
 untouched.
 \item Priority is unresolved. Table~5.1 of~\cite{DMP2025} is ``best as
 far as the authors know''. A $\ellr(10,2)\le 50$ may already exist in
-ACCT proceedings. See \path{result/PRIORITY.md}.
+ACCT proceedings. See
+\href{https://github.com/wustep/maths/blob/main/problems/covering/result/PRIORITY.md}{\texttt{result/PRIORITY.md}}
+in the repository.
 \end{itemize}
 
 \section{Where the files live}
 
-This document is self-contained. The paths below matter only to a reader
-who also has the repository.
+This document is self-contained. Everything named below is in the public
+repository \url{https://github.com/wustep/maths}, under
+\texttt{problems/covering/} on \texttt{main}.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}ll@{}}
 \toprule
-path & what \\
+in the repo & what \\
 \midrule
-\path{result/NOTE.md} & repo companion, for a referee with the tree \\
+\url{https://github.com/wustep/maths} & the repository \\
+\path{result/NOTE.md} & repo companion \\
 \path{result/note.tex} & arXiv-style draft of the same claims \\
 \path{result/run_all.sh} & the pipeline \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
@@ -382,6 +396,11 @@ path & what \\
 \bottomrule
 \end{tabular}
 \end{center}
+
+The HTML explainer is
+\href{https://github.com/wustep/maths/blob/main/problems/covering/explainer.html}{\path{explainer.html}}.
+The matrix is
+\href{https://github.com/wustep/maths/blob/main/problems/covering/result/data/H_r10_n50.txt}{\path{H_r10_n50.txt}}.
 
 \appendix
 \section{The matrix as bits}
