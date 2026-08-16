@@ -3,242 +3,247 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Math · 16 August 2026</title>
+  <title>Math</title>
   <style>
     :root {
-      --bg: #0e1116;
-      --bg-2: #161b22;
-      --bg-3: #1c2330;
-      --line: #2b3340;
-      --text: #e6edf3;
-      --muted: #8b98a5;
-      --user: #1f6feb;
-      --user-text: #f0f6ff;
-      --math: #21262d;
-      --math-border: #30363d;
-      --accent: #3fb950;
-      --warn: #d29922;
-      --card: #1a2030;
-      --danger: #f85149;
+      --bg: #000000;
+      --bubble-math: #212121;
+      --bubble-user: #383838;
+      --ink: #f2f2f2;
+      --muted: #8a8a8a;
+      --code: #ff6b6b;
+      --line: #2a2a2a;
+      --card: #1a1a1a;
+      --btn: #2a2a2a;
+      --done: #1f8a4c;
+      --branch: #a78bfa;
+      --plus: #c8c8c8;
     }
     * { box-sizing: border-box; }
     html, body {
-      margin: 0; padding: 0;
+      margin: 0; padding: 0; height: 100%;
       background: var(--bg);
-      color: var(--text);
-      font: 15px/1.45 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
-      height: 100%;
+      color: var(--ink);
+      font: 15px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
     }
     body { display: flex; flex-direction: column; }
-    a { color: #79c0ff; }
+    a { color: #7cb3ff; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
     header {
-      position: sticky; top: 0; z-index: 5;
-      background: rgba(14,17,22,.96);
-      border-bottom: 1px solid var(--line);
-      backdrop-filter: blur(8px);
-    }
-    .banner {
-      background: #3d2f0b;
-      color: #f0d78c;
-      font-size: 12px;
-      letter-spacing: .02em;
-      text-align: center;
-      padding: 6px 12px;
-    }
-    .head {
-      display: flex; align-items: center; gap: 12px;
-      padding: 10px 16px 12px;
-      max-width: 860px; margin: 0 auto;
-    }
-    .head img.avatar {
-      width: 40px; height: 40px; border-radius: 50%;
-      background: #000; object-fit: cover;
-      border: 1px solid var(--line);
-    }
-    .head h1 {
-      margin: 0; font-size: 16px; font-weight: 650;
-    }
-    .head .sub { color: var(--muted); font-size: 12px; margin-top: 2px; }
-    .controls {
-      display: flex; flex-wrap: wrap; gap: 6px; margin-left: auto;
+      flex: 0 0 auto;
+      display: flex;
       align-items: center;
+      gap: 10px;
+      padding: 12px 16px 10px;
+      background: #000;
     }
-    button, .chip-btn {
-      background: var(--bg-3);
-      color: var(--text);
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      padding: 6px 12px;
-      font-size: 12px;
-      cursor: pointer;
+    header img.avatar {
+      width: 28px; height: 28px; border-radius: 50%;
+      object-fit: cover; background: #111;
     }
-    button.primary { background: #1f6feb; border-color: #388bfd; }
-    button:disabled { opacity: .45; cursor: default; }
+    header h1 {
+      margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em;
+    }
+    header .spacer { flex: 1; }
+    header button.ghost {
+      background: none; border: 0; color: var(--muted);
+      font-size: 13px; cursor: pointer; padding: 4px 8px;
+    }
+    header button.ghost:hover { color: var(--ink); }
+
     #thread {
       flex: 1;
       overflow: auto;
-      padding: 18px 12px 48px;
+      padding: 8px 12px 8px;
     }
-    .wrap { max-width: 760px; margin: 0 auto; }
+    .wrap { max-width: 720px; margin: 0 auto; }
+
     .day {
       text-align: center;
       color: var(--muted);
-      font-size: 11px;
-      letter-spacing: .04em;
-      text-transform: uppercase;
-      margin: 18px 0 10px;
+      font-size: 12px;
+      margin: 18px 0 12px;
     }
+
     .row {
       display: flex;
-      gap: 8px;
-      margin: 8px 0;
-      align-items: flex-end;
+      margin: 6px 0;
     }
-    .row.user { flex-direction: row-reverse; }
-    .row .who {
-      width: 28px; height: 28px; border-radius: 50%;
-      flex: 0 0 28px;
-      background: #111;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      display: flex; align-items: center; justify-content: center;
-      font-size: 12px; font-weight: 700; color: #c9d1d9;
-    }
-    .row .who img { width: 100%; height: 100%; object-fit: cover; }
-    .col { max-width: min(640px, calc(100% - 40px)); display: flex; flex-direction: column; }
+    .row.user { justify-content: flex-end; }
+    .row.math { justify-content: flex-start; }
+    .col { max-width: min(560px, 86%); display: flex; flex-direction: column; }
     .row.user .col { align-items: flex-end; }
+
     .bubble {
-      background: var(--math);
-      border: 1px solid var(--math-border);
-      border-radius: 16px 16px 16px 4px;
-      padding: 9px 12px;
+      background: var(--bubble-math);
+      color: var(--ink);
+      border-radius: 18px;
+      padding: 10px 14px;
       white-space: pre-wrap;
       word-wrap: break-word;
       overflow-wrap: anywhere;
     }
-    .row.user .bubble {
-      background: var(--user);
-      border-color: #388bfd;
-      color: var(--user-text);
-      border-radius: 16px 16px 4px 16px;
-    }
-    .bubble.reconstructed { outline: 1px dashed var(--warn); }
-    .meta {
-      font-size: 11px;
-      color: var(--muted);
-      margin-top: 3px;
-      padding: 0 4px;
-    }
+    .row.user .bubble { background: var(--bubble-user); }
     .bubble img.fig {
       display: block;
       max-width: 100%;
-      max-height: 360px;
-      border-radius: 10px;
+      max-height: 380px;
+      border-radius: 12px;
       margin-top: 8px;
-      background: #000;
+      background: #111;
     }
     .missing {
       margin-top: 8px;
-      border: 1px dashed #6e7681;
-      border-radius: 10px;
-      padding: 14px 12px;
-      color: var(--muted);
-      font-size: 12px;
-      background: #0d1117;
-    }
-    .missing strong { color: #e6edf3; display: block; margin-bottom: 4px; }
-    .missing code { font-size: 11px; color: #ffa198; }
-    .card {
-      background: var(--card);
-      border: 1px solid var(--line);
+      border: 1px dashed #444;
       border-radius: 12px;
-      padding: 12px 14px;
-      min-width: 240px;
-    }
-    .card .kicker {
-      font-size: 10px; letter-spacing: .08em; text-transform: uppercase;
-      color: var(--muted); margin-bottom: 6px;
-    }
-    .card h3 { margin: 0 0 6px; font-size: 14px; }
-    .card p { margin: 0 0 8px; color: var(--muted); font-size: 13px; }
-    .opts { display: flex; flex-direction: column; gap: 6px; }
-    .opt {
-      border: 1px solid var(--line);
-      background: var(--bg-2);
-      border-radius: 8px;
-      padding: 7px 10px;
+      padding: 12px;
+      color: var(--muted);
       font-size: 13px;
     }
-    .opt.primary { border-color: #388bfd; }
-    .attach {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 8px;
-      background: var(--bg-2);
-      border: 1px solid var(--line);
-      border-radius: 10px;
-      padding: 8px 10px;
-      font-size: 13px;
-      text-decoration: none;
-      color: var(--text);
-    }
-    .attach .ico {
-      width: 28px; height: 28px; border-radius: 6px;
-      background: #3d2f0b; color: #f0d78c;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 10px; font-weight: 700;
-    }
+    .missing code { color: var(--code); }
+
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 12.5px;
-      background: rgba(110,118,129,.2);
-      padding: 1px 4px;
-      border-radius: 4px;
+      font-size: 13px;
+      color: var(--code);
+      background: none;
+      padding: 0;
     }
     pre {
-      background: #0d1117;
-      border: 1px solid var(--line);
-      border-radius: 8px;
+      background: #141414;
+      border-radius: 10px;
       padding: 8px 10px;
       overflow: auto;
-      font-size: 12px;
+      font-size: 12.5px;
       white-space: pre-wrap;
     }
-    pre code { background: none; padding: 0; }
-    .hidden { display: none !important; }
-    footer {
-      max-width: 760px; margin: 8px auto 0; padding: 0 8px;
-      color: var(--muted); font-size: 11px;
+    pre code { color: #e8e8e8; }
+
+    .card {
+      background: var(--card);
+      border: 1px solid #2c2c2c;
+      border-radius: 14px;
+      padding: 12px 14px;
+      min-width: 280px;
+    }
+    .card-head {
+      display: flex; align-items: center; gap: 8px;
+      margin-bottom: 8px;
+    }
+    .card-head h3 {
+      margin: 0; font-size: 14px; font-weight: 600; flex: 1;
+    }
+    .badge {
+      font-size: 12px; font-weight: 600;
+      background: var(--done); color: #fff;
+      border-radius: 999px;
+      padding: 2px 8px 2px 6px;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .badge i {
+      width: 7px; height: 7px; border-radius: 50%;
+      background: #fff; display: inline-block;
+    }
+    .branch {
+      color: var(--branch);
+      font-size: 13px;
+      display: flex; align-items: center; gap: 6px;
+      margin: 4px 0 6px;
+    }
+    .stats { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
+    .stats .add { color: #3fb950; }
+    .card-actions { display: flex; gap: 8px; }
+    .card-actions a, .opt {
+      background: var(--btn);
+      border: 1px solid #3a3a3a;
+      color: var(--ink);
+      border-radius: 10px;
+      padding: 7px 10px;
+      font-size: 13px;
+      text-decoration: none;
+      display: inline-flex; align-items: center; gap: 6px;
+    }
+    .opts { display: flex; flex-direction: column; gap: 6px; }
+    .opt.primary { border-color: #555; }
+    .kicker { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
+
+    .attach {
+      display: inline-flex; align-items: center; gap: 8px;
+      margin-top: 4px;
+      background: #2a2a2a;
+      border-radius: 12px;
+      padding: 8px 10px;
+      color: var(--ink);
+      text-decoration: none;
+      font-size: 13px;
+    }
+
+    .composer-wrap {
+      flex: 0 0 auto;
+      background: #000;
+      padding: 8px 12px 14px;
+      position: relative;
+    }
+    #toBottom {
+      position: absolute;
+      left: 50%; transform: translateX(-50%);
+      top: -36px;
+      width: 32px; height: 32px;
+      border-radius: 50%;
+      border: 1px solid #333;
+      background: #1a1a1a;
+      color: #ddd;
+      cursor: pointer;
+      display: none;
+    }
+    #toBottom.show { display: block; }
+    .composer {
+      max-width: 720px; margin: 0 auto;
+      display: flex; align-items: center; gap: 10px;
+      background: #1c1c1c;
+      border-radius: 22px;
+      padding: 8px 10px 8px 12px;
+    }
+    .composer .plus, .composer .icon {
+      color: var(--plus); font-size: 20px; line-height: 1;
+      width: 28px; text-align: center; user-select: none;
+    }
+    .composer .field {
+      flex: 1; color: #666; font-size: 15px;
+      pointer-events: none;
+    }
+    .composer .send {
+      width: 28px; height: 28px; border-radius: 50%;
+      background: #3a3a3a; color: #eee;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 14px;
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="banner">Draft. Not on main. May be removed. This is the working chat, not the covering proof.</div>
-    <div class="head">
-      <img class="avatar" src="media/math-avatar.png" alt="Math">
-      <div>
-        <h1>Math · 16 August 2026</h1>
-        <div class="sub">Grok Bot (Math) · working chat</div>
-      </div>
-      <div class="controls">
-        <button class="primary" id="playBtn" type="button">Play</button>
-        <button id="resetBtn" type="button">Full thread</button>
-        <button id="jumpOvernight" type="button">Overnight</button>
-        <button id="jumpCovering" type="button">Covering</button>
-        <span class="sub" id="pos"></span>
-      </div>
-    </div>
+    <img class="avatar" src="media/math-avatar.png" alt="">
+    <h1>Math</h1>
+    <div class="spacer"></div>
+    <button class="ghost" id="playBtn" type="button">Play</button>
   </header>
   <div id="thread">
     <div class="wrap" id="log"></div>
-    <footer id="foot"></footer>
+  </div>
+  <div class="composer-wrap">
+    <button id="toBottom" type="button" aria-label="Scroll to bottom">↓</button>
+    <div class="composer">
+      <div class="plus">+</div>
+      <div class="field">Message</div>
+      <div class="icon">🎤</div>
+      <div class="send">↑</div>
+    </div>
   </div>
   <script type="application/json" id="transcript">
 {
-  "title": "Math · 16 August 2026",
-  "subtitle": "Grok Bot (Math) working chat — not the covering proof",
-  "draft": true,
-  "banner": "Draft. Not on main. May be removed.",
+  "title": "Math",
+  "subtitle": "16 August 2026",
   "extraction": {
     "method": "Visible chat only. Unique user bubbles by [tNu] (first occurrence); summary-replay duplicates dropped. Every SendMessage kept in send order. Hidden wakes and system wrappers stripped. Raw 2MB jsonl is not in this repo.",
     "source_lines": 1428,
@@ -4509,10 +4514,30 @@
     }
   ]
 }
-</script>
+  </script>
   <script>
   (function () {
-    const AVATAR = "media/math-avatar.png";
+    const AGENTS = {
+      "bc-3330e5e4-491e-4b2b-90c7-fbe47fecd449": {
+        title: "C7 fifth power Grok 4.6",
+        branch: "cursor/c7-shannon-fifth-power-d449",
+        pr: 1,
+        files: 37,
+        additions: 4032,
+        url: "https://github.com/wustep/maths/pull/1",
+        state: "Done"
+      },
+      "bc-9b575b07-97e3-4da8-ac81-065cc8f05755": {
+        title: "vdw-w27: verified 3703 residue coloring, no dent at 3704",
+        branch: "cursor/vdw-w27-lower-bound-5755",
+        pr: 2,
+        files: 39,
+        additions: 2648,
+        url: "https://github.com/wustep/maths/pull/2",
+        state: "Done"
+      }
+    };
+
     let data = null;
     let playTimer = null;
     let playIndex = 0;
@@ -4546,7 +4571,7 @@
     function shortTime(ts) {
       if (!ts) return "";
       const m = ts.match(/(\d{1,2}:\d{2}\s*[AP]M)/);
-      return m ? m[1] : ts;
+      return m ? m[1] : "";
     }
 
     function dayLabel(ts) {
@@ -4557,38 +4582,43 @@
     function figBlock(im) {
       if (!im) return "";
       if (im.missing || !im.src) {
-        return '<div class="missing"><strong>Missing figure</strong><code>' +
+        return '<div class="missing">Missing figure<br><code>' +
           escapeHtml(im.original || "") + "</code></div>";
       }
-      const alt = escapeHtml(im.alt || "");
-      return '<img class="fig" src="' + escapeHtml(im.src) + '" alt="' + alt + '">';
+      return '<img class="fig" src="' + escapeHtml(im.src) + '" alt="">';
     }
 
     function attachChip(att) {
       if (!att) return "";
-      const name = escapeHtml(att.filename || (att.original || "").split("/").pop() || "attachment");
+      const name = escapeHtml(att.filename || (att.original || "").split("/").pop() || "file");
       if (att.missing || !att.src) {
-        return '<div class="missing"><strong>Missing attachment</strong><code>' +
-          escapeHtml(att.original || "") + "</code></div>";
+        return '<div class="missing">Missing file<br><code>' + escapeHtml(att.original || "") + "</code></div>";
       }
-      return '<a class="attach" href="' + escapeHtml(att.src) + '" target="_blank" rel="noopener">' +
-        '<span class="ico">PDF</span><span>' + name + "</span></a>";
+      return '<a class="attach" href="' + escapeHtml(att.src) + '" target="_blank" rel="noopener">' + name + "</a>";
+    }
+
+    function agentCard(m) {
+      const info = AGENTS[m.bcId] || {};
+      const title = escapeHtml(info.title || m.label || "Cloud agent");
+      const branch = info.branch ? escapeHtml(info.branch) + (info.pr ? " PR #" + info.pr : "") : escapeHtml(m.bcId || "");
+      const stats = info.files != null
+        ? ('± ' + info.files + ' files changed <span class="add">+' + info.additions + "</span>")
+        : "";
+      const done = info.state === "Done" ? '<span class="badge"><i></i>Done</span>' : "";
+      const view = info.url
+        ? '<a href="' + info.url + '" target="_blank" rel="noopener">View PR ↗</a>'
+        : "";
+      return '<div class="card"><div class="card-head"><h3>' + title + "</h3>" + done +
+        '</div><div class="branch">⎇ ' + branch + "</div>" +
+        (stats ? '<div class="stats">' + stats + "</div>" : "") +
+        '<div class="card-actions">' + view + "</div></div>";
     }
 
     function renderMessage(m, i) {
       const row = document.createElement("div");
       row.className = "row " + (m.role === "user" ? "user" : "math");
-      row.dataset.i = String(i);
-      const who = document.createElement("div");
-      who.className = "who";
-      if (m.role === "assistant") {
-        who.innerHTML = '<img src="' + AVATAR + '" alt="Math">';
-      } else {
-        who.textContent = "S";
-      }
       const col = document.createElement("div");
       col.className = "col";
-
       let inner = "";
       if (m.type === "widget" && m.widget) {
         const w = m.widget;
@@ -4596,34 +4626,23 @@
           return '<div class="opt' + (o.style === "primary" ? " primary" : "") + '">' +
             escapeHtml(o.label || o.value || "") + "</div>";
         }).join("");
-        inner = '<div class="card"><div class="kicker">Widget</div><h3>' +
-          escapeHtml(w.prompt || "") + "</h3><p>" + escapeHtml(w.helpText || "") +
-          "</p><div class=\"opts\">" + opts + "</div></div>";
+        inner = '<div class="card"><div class="kicker">' + escapeHtml(w.prompt || "") +
+          "</div><div class=\"opts\">" + opts + "</div></div>";
       } else if (m.type === "secret-request") {
         const s = m.secret || {};
-        inner = '<div class="card"><div class="kicker">Secret request</div><h3>' +
-          escapeHtml(s.label || "Secret") + "</h3><p>" + escapeHtml(s.description || "") +
-          "</p></div>";
+        inner = '<div class="card"><div class="kicker">' +
+          escapeHtml(s.label || "Secret") + "</div></div>";
       } else if (m.type === "cursor-agent") {
-        inner = '<div class="card"><div class="kicker">Cursor agent</div><h3>' +
-          escapeHtml(m.label || "Cursor agent") + "</h3><p><code>" +
-          escapeHtml(m.bcId || "") + "</code></p></div>";
+        inner = agentCard(m);
       } else if (m.type === "attachment") {
         inner = '<div class="bubble">' + attachChip(m.attachment) + "</div>";
       } else {
-        const recon = m.reconstructed ? " reconstructed" : "";
-        inner = '<div class="bubble' + recon + '">' + renderMd(m.text || "");
+        inner = '<div class="bubble">' + renderMd(m.text || "");
         (m.images || []).forEach(function (im) { inner += figBlock(im); });
         if (m.attachment) inner += attachChip(m.attachment);
         inner += "</div>";
       }
-      const metaBits = [];
-      if (m.role === "user" && m.timestamp) metaBits.push(shortTime(m.timestamp));
-      if (m.reconstructed) metaBits.push("reconstructed — jsonl lagged");
-      if (m.id) metaBits.push(m.id);
-      if (metaBits.length) inner += '<div class="meta">' + escapeHtml(metaBits.join(" · ")) + "</div>";
       col.innerHTML = inner;
-      row.appendChild(who);
       row.appendChild(col);
       return row;
     }
@@ -4636,20 +4655,18 @@
       let lastDay = "";
       for (let i = 0; i < limit; i++) {
         const m = msgs[i];
-        const ts = m.timestamp || m.after || "";
-        const day = ts.split(",")[0] + (ts.match(/AM|PM/) ? " " + (ts.includes("AM") && ts.includes("2:") && ts.includes("AM") ? "" : "") : "");
-        const mark = ts.replace(/, 2026.*$/, "").replace("Sunday, Aug 16", "Sun 16 Aug");
-        const hourKey = (m.timestamp || "").slice(0, 22);
-        if (m.role === "user" && m.timestamp && hourKey !== lastDay) {
-          const d = document.createElement("div");
-          d.className = "day";
-          d.textContent = dayLabel(m.timestamp);
-          log.appendChild(d);
-          lastDay = hourKey;
+        if (m.role === "user" && m.timestamp) {
+          const key = m.timestamp.replace(/:\\d{2} /, ":xx ");
+          if (key !== lastDay) {
+            const d = document.createElement("div");
+            d.className = "day";
+            d.textContent = dayLabel(m.timestamp);
+            log.appendChild(d);
+            lastDay = key;
+          }
         }
         log.appendChild(renderMessage(m, i));
       }
-      $("pos").textContent = limit + " / " + msgs.length;
       const thread = $("thread");
       thread.scrollTop = thread.scrollHeight;
     }
@@ -4662,17 +4679,13 @@
 
     function stepPlay() {
       if (!playing) return;
-      if (playIndex >= data.messages.length) {
-        stopPlay();
-        return;
-      }
+      if (playIndex >= data.messages.length) { stopPlay(); return; }
       playIndex += 1;
       build(playIndex);
       const m = data.messages[playIndex - 1] || {};
-      let delay = 70;
-      if (m.role === "user") delay = 220;
-      if ((m.images && m.images.length) || m.type === "widget" || m.type === "attachment") delay = 380;
-      if ((m.text || "").length > 400) delay = 260;
+      let delay = 60;
+      if (m.role === "user") delay = 200;
+      if ((m.images && m.images.length) || m.type === "widget" || m.type === "attachment") delay = 320;
       playTimer = setTimeout(stepPlay, delay);
     }
 
@@ -4685,88 +4698,22 @@
       stepPlay();
     }
 
-    function findIndex(pred) {
-      return data.messages.findIndex(pred);
-    }
-
     function loadData(obj) {
       data = obj;
-      const ex = obj.extraction || {};
-      $("foot").textContent =
-        (ex.unique_user_bubbles || "?") + " user bubbles · " +
-        (ex.send_messages || "?") + " Math replies · " +
-        "images " + (ex.unique_images_resolved || 0) + "/" + (ex.unique_image_urls || 0) + " unique resolved · " +
-        "unrecovered " + ((ex.unrecovered_user_messages || []).join(", ") || "none") +
-        ". Visible chat only; raw jsonl is not in the repo.";
       $("playBtn").onclick = function () {
-        if (playing) { stopPlay(); }
-        else { startPlay(playIndex && playIndex < data.messages.length ? playIndex : 0); }
+        if (playing) stopPlay();
+        else startPlay(playIndex && playIndex < data.messages.length ? playIndex : 0);
       };
-      $("resetBtn").onclick = function () { stopPlay(); playIndex = data.messages.length; build(null); };
-      $("jumpOvernight").onclick = function () {
-        stopPlay();
-        const i = findIndex(function (m) { return m.id === "t15u"; });
-        playIndex = i < 0 ? 0 : i;
-        build(Math.min(data.messages.length, playIndex + 40));
-      };
-      $("jumpCovering").onclick = function () {
-        stopPlay();
-        const i = findIndex(function (m) { return m.id === "t29u"; });
-        playIndex = i < 0 ? 0 : i;
-        build(Math.min(data.messages.length, playIndex + 25));
-      };
-      const params = new URLSearchParams(location.search);
-      if (params.get("demo") === "1") {
-        runDemo();
-      } else if (params.get("until")) {
-        build(parseInt(params.get("until"), 10));
-      } else if (params.get("id")) {
-        const want = params.get("id");
-        const i = findIndex(function (m) { return m.id === want; });
-        build(i < 0 ? null : Math.min(data.messages.length, i + 8));
-      } else {
-        build(null);
-      }
-    }
-
-    function runDemo() {
-      // 20–40s walkthrough: open, play early chat + image, then covering stretch, then full scroll.
-      const msgs = data.messages;
-      const firstImg = msgs.findIndex(function (m) { return m.images && m.images.length; });
-      const covering = msgs.findIndex(function (m) { return m.id === "t29u"; });
-      const overnightImg = msgs.findIndex(function (m) {
-        return (m.images || []).some(function (im) {
-          return (im.original || "").indexOf("covering") >= 0 || (im.original || "").indexOf("q1_density") >= 0;
-        });
+      const thread = $("thread");
+      const toBottom = $("toBottom");
+      thread.addEventListener("scroll", function () {
+        const near = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 80;
+        toBottom.classList.toggle("show", !near);
       });
-      build(Math.max(6, firstImg + 1));
-      setTimeout(function () { startPlay(0); }, 800);
-      setTimeout(function () {
-        stopPlay();
-        const at = overnightImg > 0 ? overnightImg + 1 : 80;
-        build(at);
-      }, 12000);
-      setTimeout(function () {
-        const at = covering > 0 ? covering + 8 : msgs.length - 20;
-        build(at);
-      }, 20000);
-      setTimeout(function () {
-        build(null);
-        const thread = $("thread");
-        thread.scrollTop = 0;
-        const start = performance.now();
-        function tick(now) {
-          const t = Math.min(1, (now - start) / 8000);
-          thread.scrollTop = t * (thread.scrollHeight - thread.clientHeight);
-          if (t < 1) requestAnimationFrame(tick);
-        }
-        requestAnimationFrame(tick);
-      }, 28000);
-    }
-
-    function boot(obj) {
-      if (!obj || !obj.messages) throw new Error("bad transcript");
-      loadData(obj);
+      toBottom.onclick = function () { thread.scrollTop = thread.scrollHeight; };
+      const params = new URLSearchParams(location.search);
+      if (params.get("until")) build(parseInt(params.get("until"), 10));
+      else build(null);
     }
 
     function fromEmbed() {
@@ -4777,15 +4724,9 @@
     }
 
     const embedded = fromEmbed();
-    if (embedded && embedded.messages) {
-      boot(embedded);
-    } else {
-      fetch("transcript.json")
-        .then(function (r) { return r.json(); })
-        .then(boot)
-        .catch(function (err) {
-          $("log").textContent = "Could not load transcript.json (" + err + ").";
-        });
+    if (embedded && embedded.messages) loadData(embedded);
+    else {
+      fetch("transcript.json").then(function (r) { return r.json(); }).then(loadData);
     }
   })();
   </script>

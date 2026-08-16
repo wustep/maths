@@ -1,8 +1,6 @@
 {
-  "title": "Math · 16 August 2026",
-  "subtitle": "Grok Bot (Math) working chat — not the covering proof",
-  "draft": true,
-  "banner": "Draft. Not on main. May be removed.",
+  "title": "Math",
+  "subtitle": "16 August 2026",
   "extraction": {
     "method": "Visible chat only. Unique user bubbles by [tNu] (first occurrence); summary-replay duplicates dropped. Every SendMessage kept in send order. Hidden wakes and system wrappers stripped. Raw 2MB jsonl is not in this repo.",
     "source_lines": 1428,
