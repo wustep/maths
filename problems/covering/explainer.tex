@@ -48,11 +48,21 @@ some codeword. Equivalently, if $\HH$ is an $r\times n$ parity-check
 matrix with column set $S\subset\FF_2^r$, every syndrome is a sum of at
 most $R$ columns of $\HH$. Write $\ellr(r,R)$ for the least such length.
 
+A binary linear code of length $n$ and dimension $k=n-r$ is written
+$[n,k]_2$; when the covering radius is $R$ we append it, $[n,k]_2\,R$.
+So a $[50,40]_2\,2$ code is binary of length $50$ and dimension $40$,
+has covering radius $2$, and hence redundancy $r=10$.
+
 For $R=2$ the condition is
 \begin{equation}
 \label{eq:cover}
 \{0\}\cup S\cup(S+S)=\FF_2^r.
 \end{equation}
+A $(2,0)$-partition of the columns (Definition~3.2 of~\cite{DMP2025}) is a
+partition into nonempty blocks such that every syndrome, including $0$, is
+a sum of at most two columns from \emph{distinct} blocks. Write $p(\HH)$
+for the number of blocks.
+
 The finite covering density of an $[n,n-r]_2 2$ code is the exact rational
 \[
 \mu=\frac{1+n+\binom{n}{2}}{2^r}.
@@ -61,11 +71,18 @@ Green's Problem~40 asks for the asymptotic density
 \[
 f(2)=\liminf_{r\to\infty}\mu\bigl(\ellr(r,2),r\bigr).
 \]
+For an infinite family of $[n(r),n(r)-r]_2\,2$ codes, write $\bar\mu(2)$
+for the $\liminf$ of $\mu$ along the family as $r\to\infty$. Green's
+$f(2)$ takes the $\liminf$ over the \emph{optimal} lengths $\ellr(r,2)$,
+so any family bound $\bar\mu(2)\le c$ gives $f(2)\le c$.
 It is not even known whether $f(2)=1$. The pre-2025 upper bound
 $f(2)\le 729/512\approx 1.42383$ had stood since 1992. Davydov, Marcugini
 and Pambianco~\cite{DMP2025} brought it to $2704/2048\approx 1.32031$ in
 November 2025, by iterating a construction they call $\mathrm{QM}_2^2$
-from a single seed.
+from a single seed. $\mathrm{QM}_2^2$ grows a short radius-$2$ covering
+code into a longer one, provided the seed admits a $(2,0)$-partition into
+few enough blocks; its exact input--output formula is recalled in
+Section~\ref{sec:prop}.
 
 \subsection{Why the $r=10$ cell is load-bearing}
 
@@ -83,13 +100,8 @@ that one table cell pushed forward. Theorem~5.7(i) says the $2$-partitions
 of $\HH_{KR}$ are ``very important for the next iterative process''.
 
 So a $50$-column matrix at $r=10$ is not a one-cell footnote. If it admits
-a small enough $(2,0)$-partition, it re-seeds the family.
-
-A $(2,0)$-partition of the columns (Definition~3.2 of~\cite{DMP2025}) is a
-partition into nonempty blocks such that every syndrome, including $0$, is
-a sum of at most two columns from \emph{distinct} blocks. Write $p(\HH)$
-for the number of blocks. The paper's computer search found
-$p(\HH_{KR})=11$.
+a small enough $(2,0)$-partition, it re-seeds the family. The paper's
+computer search found $p(\HH_{KR})=11$.
 
 \section{The process}
 
@@ -170,7 +182,9 @@ so the radius is not $1$.
 Deleting any one of the $50$ columns leaves at least $9$ syndromes
 uncovered. The best deletions --- columns $381$, $479$ and $927$ --- leave
 exactly $9$. So the $50$-set is a minimal $1$-saturating set in $PG(9,2)$,
-equivalently a locally optimal (LO) covering code. It is not padded.
+equivalently a locally optimal (LO) covering code (the geometric name for
+a covering-radius-$2$ column set with no redundant column). It is not
+padded.
 
 \subsection{A $(2,0)$-partition with $p(\HH)=10$}
 
@@ -208,6 +222,7 @@ Construction~$\mathrm{QM}_5^2$ needs at $r=28$. That construction is
 \emph{not} carried out here.
 
 \subsection{Propagation}
+\label{sec:prop}
 
 Construction $\mathrm{QM}_2^2$ (\cite{DMP2025}, Theorem~4.1) takes an
 $[n_0,n_0-r_0]_2 2$ code with a $2$-partition into $p(\HH_0)$ blocks, an
@@ -327,7 +342,8 @@ everywhere; it is not in the tree.
 
 \begin{itemize}
 \item $50$ is not shown optimal. Sphere-covering gives only
-$\ellr(10,2)\ge 45$, since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$.
+$\ellr(10,2)\ge 45$, since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$,
+which gives only $991$.
 Minimality says this particular $50$-set has no redundant column, which
 says nothing about a different $49$-set.
 \item The $n=49$ run leaving $7$ uncovered syndromes is search residue,
@@ -346,13 +362,16 @@ ACCT proceedings. See \path{result/PRIORITY.md}.
 
 \section{Where the files live}
 
+This document is self-contained. The paths below matter only to a reader
+who also has the repository.
+
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}ll@{}}
 \toprule
 path & what \\
 \midrule
-\path{result/NOTE.md} & the writeup a referee should read \\
+\path{result/NOTE.md} & repo companion, for a referee with the tree \\
 \path{result/note.tex} & arXiv-style draft of the same claims \\
 \path{result/run_all.sh} & the pipeline \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
