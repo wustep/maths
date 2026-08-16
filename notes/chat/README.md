@@ -12,4 +12,4 @@ then [http://127.0.0.1:8765/](http://127.0.0.1:8765/).
 
 `transcript.json` is the chat: every user message and every reply, in order. `index.html` embeds the same JSON, so `file://` works if fetch is blocked.
 
-Play walks the thread. Images that still exist are in `media/`.
+Play walks the thread. Every image the transcript references is in `media/`.
