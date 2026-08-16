@@ -1,0 +1,21 @@
+[
+  {
+    "turn": false,
+    "length": 1234,
+    "max_run": 6,
+    "cyclic_7ap_free": true,
+    "linear_7ap_free": true,
+    "cyclic_hit": null
+  },
+  {
+    "turn": true,
+    "length": 1234,
+    "max_run": 9,
+    "cyclic_7ap_free": false,
+    "linear_7ap_free": false,
+    "cyclic_hit": {
+      "start": 63,
+      "diff": 1
+    }
+  }
+]

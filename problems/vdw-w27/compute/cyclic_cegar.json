@@ -1,0 +1,37 @@
+[
+  {
+    "n": 618,
+    "sat": false,
+    "timeout": true,
+    "rounds": 14,
+    "last_violations": 2605
+  },
+  {
+    "n": 619,
+    "sat": false,
+    "timeout": true,
+    "rounds": 15,
+    "last_violations": 2695
+  },
+  {
+    "n": 620,
+    "sat": false,
+    "timeout": true,
+    "rounds": 15,
+    "last_violations": 2550
+  },
+  {
+    "n": 621,
+    "sat": false,
+    "timeout": true,
+    "rounds": 15,
+    "last_violations": 2673
+  },
+  {
+    "n": 622,
+    "sat": false,
+    "timeout": true,
+    "rounds": 15,
+    "last_violations": 2684
+  }
+]

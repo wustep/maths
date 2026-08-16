@@ -1,0 +1,28 @@
+{
+  "prime": 617,
+  "zero_color": 0,
+  "cycle_reports": [
+    {
+      "zero_color": 0,
+      "max_cyclic_run": 6,
+      "cyclic_7ap": null
+    },
+    {
+      "zero_color": 1,
+      "max_cyclic_run": 6,
+      "cyclic_7ap": null
+    }
+  ],
+  "coloring_3702_ok": true,
+  "coloring_3703_ok": true,
+  "extra_color": 1,
+  "append_to_3702": [
+    1
+  ],
+  "append_to_3703": [],
+  "files": [
+    "cycle_617.txt",
+    "coloring_3702.txt",
+    "coloring_3703.txt"
+  ]
+}
