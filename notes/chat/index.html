@@ -4,241 +4,162 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Math</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg: #000000;
       --bubble-math: #212121;
       --bubble-user: #383838;
-      --ink: #f2f2f2;
+      --ink: #ececec;
       --muted: #8a8a8a;
       --code: #ff6b6b;
-      --line: #2a2a2a;
       --card: #1a1a1a;
       --btn: #2a2a2a;
       --done: #1f8a4c;
       --branch: #a78bfa;
-      --plus: #c8c8c8;
     }
     * { box-sizing: border-box; }
     html, body {
       margin: 0; padding: 0; height: 100%;
       background: var(--bg);
       color: var(--ink);
-      font: 15px/1.45 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+      font-family: Inter, "Inter var", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      font-weight: 400;
+      line-height: 1.5;
+      font-feature-settings: "cv02", "cv03", "cv04", "cv11";
     }
     body { display: flex; flex-direction: column; }
     a { color: #7cb3ff; text-decoration: none; }
     a:hover { text-decoration: underline; }
 
-    header {
-      flex: 0 0 auto;
+    header { flex: 0 0 auto; background: #000; }
+    header .bar {
+      max-width: 720px;
+      margin: 0 auto;
       display: flex;
       align-items: center;
-      gap: 10px;
-      padding: 12px 16px 10px;
-      background: #000;
+      gap: 8px;
+      padding: 14px 16px 10px;
     }
     header img.avatar {
-      width: 28px; height: 28px; border-radius: 50%;
-      object-fit: cover; background: #111;
+      width: 22px; height: 22px; border-radius: 50%;
+      object-fit: cover; background: #111; display: block;
     }
     header h1 {
-      margin: 0; font-size: 17px; font-weight: 600; letter-spacing: -.01em;
+      margin: 0;
+      font-size: 15px;
+      font-weight: 500;
+      letter-spacing: -.01em;
+      line-height: 22px;
     }
     header .spacer { flex: 1; }
-    header button.ghost {
-      background: none; border: 0; color: var(--muted);
-      font-size: 13px; cursor: pointer; padding: 4px 8px;
+    header button.icon-btn {
+      width: 28px; height: 28px;
+      border: 0; border-radius: 8px;
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      padding: 0;
+      display: flex; align-items: center; justify-content: center;
     }
-    header button.ghost:hover { color: var(--ink); }
+    header button.icon-btn:hover { color: var(--ink); background: #1a1a1a; }
+    header button.icon-btn svg { width: 16px; height: 16px; display: block; }
+    header button.icon-btn .pause { display: none; }
+    header button.icon-btn.playing .play { display: none; }
+    header button.icon-btn.playing .pause { display: block; }
 
-    #thread {
-      flex: 1;
-      overflow: auto;
-      padding: 8px 12px 8px;
-    }
+    #thread { flex: 1; overflow: auto; padding: 4px 16px 28px; }
     .wrap { max-width: 720px; margin: 0 auto; }
-
     .day {
       text-align: center;
       color: var(--muted);
       font-size: 12px;
-      margin: 18px 0 12px;
+      font-weight: 400;
+      margin: 16px 0 10px;
     }
-
-    .row {
-      display: flex;
-      margin: 6px 0;
-    }
+    .row { display: flex; margin: 5px 0; }
     .row.user { justify-content: flex-end; }
     .row.math { justify-content: flex-start; }
     .col { max-width: min(560px, 86%); display: flex; flex-direction: column; }
     .row.user .col { align-items: flex-end; }
-
     .bubble {
       background: var(--bubble-math);
       color: var(--ink);
       border-radius: 18px;
-      padding: 10px 14px;
+      padding: 9px 13px;
       white-space: pre-wrap;
       word-wrap: break-word;
       overflow-wrap: anywhere;
+      font-weight: 400;
     }
     .row.user .bubble { background: var(--bubble-user); }
     .bubble img.fig {
-      display: block;
-      max-width: 100%;
-      max-height: 380px;
-      border-radius: 12px;
-      margin-top: 8px;
-      background: #111;
+      display: block; max-width: 100%; max-height: 380px;
+      border-radius: 12px; margin-top: 8px; background: #111;
     }
     .missing {
-      margin-top: 8px;
-      border: 1px dashed #444;
-      border-radius: 12px;
-      padding: 12px;
-      color: var(--muted);
-      font-size: 13px;
+      margin-top: 8px; border: 1px dashed #444; border-radius: 12px;
+      padding: 12px; color: var(--muted); font-size: 13px;
     }
     .missing code { color: var(--code); }
-
     code {
       font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
-      font-size: 13px;
-      color: var(--code);
-      background: none;
-      padding: 0;
+      font-size: 13px; font-weight: 400; color: var(--code);
+      background: none; padding: 0;
     }
     pre {
-      background: #141414;
-      border-radius: 10px;
-      padding: 8px 10px;
-      overflow: auto;
-      font-size: 12.5px;
-      white-space: pre-wrap;
+      background: #141414; border-radius: 10px; padding: 8px 10px;
+      overflow: auto; font-size: 12.5px; white-space: pre-wrap;
     }
     pre code { color: #e8e8e8; }
-
     .card {
-      background: var(--card);
-      border: 1px solid #2c2c2c;
-      border-radius: 14px;
-      padding: 12px 14px;
-      min-width: 280px;
+      background: var(--card); border: 1px solid #2c2c2c;
+      border-radius: 14px; padding: 12px 14px; min-width: 280px;
     }
-    .card-head {
-      display: flex; align-items: center; gap: 8px;
-      margin-bottom: 8px;
-    }
-    .card-head h3 {
-      margin: 0; font-size: 14px; font-weight: 600; flex: 1;
-    }
+    .card-head { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+    .card-head h3 { margin: 0; font-size: 14px; font-weight: 500; flex: 1; }
     .badge {
-      font-size: 12px; font-weight: 600;
-      background: var(--done); color: #fff;
-      border-radius: 999px;
-      padding: 2px 8px 2px 6px;
+      font-size: 12px; font-weight: 500; background: var(--done); color: #fff;
+      border-radius: 999px; padding: 2px 8px 2px 6px;
       display: inline-flex; align-items: center; gap: 5px;
     }
-    .badge i {
-      width: 7px; height: 7px; border-radius: 50%;
-      background: #fff; display: inline-block;
-    }
-    .branch {
-      color: var(--branch);
-      font-size: 13px;
-      display: flex; align-items: center; gap: 6px;
-      margin: 4px 0 6px;
-    }
+    .badge i { width: 7px; height: 7px; border-radius: 50%; background: #fff; display: inline-block; }
+    .branch { color: var(--branch); font-size: 13px; display: flex; align-items: center; gap: 6px; margin: 4px 0 6px; }
     .stats { color: var(--muted); font-size: 13px; margin-bottom: 10px; }
     .stats .add { color: #3fb950; }
     .card-actions { display: flex; gap: 8px; }
     .card-actions a, .opt {
-      background: var(--btn);
-      border: 1px solid #3a3a3a;
-      color: var(--ink);
-      border-radius: 10px;
-      padding: 7px 10px;
-      font-size: 13px;
-      text-decoration: none;
-      display: inline-flex; align-items: center; gap: 6px;
+      background: var(--btn); border: 1px solid #3a3a3a; color: var(--ink);
+      border-radius: 10px; padding: 7px 10px; font-size: 13px; font-weight: 400;
+      text-decoration: none; display: inline-flex; align-items: center; gap: 6px;
     }
     .opts { display: flex; flex-direction: column; gap: 6px; }
     .opt.primary { border-color: #555; }
     .kicker { color: var(--muted); font-size: 12px; margin-bottom: 6px; }
-
     .attach {
-      display: inline-flex; align-items: center; gap: 8px;
-      margin-top: 4px;
-      background: #2a2a2a;
-      border-radius: 12px;
-      padding: 8px 10px;
-      color: var(--ink);
-      text-decoration: none;
-      font-size: 13px;
-    }
-
-    .composer-wrap {
-      flex: 0 0 auto;
-      background: #000;
-      padding: 8px 12px 14px;
-      position: relative;
-    }
-    #toBottom {
-      position: absolute;
-      left: 50%; transform: translateX(-50%);
-      top: -36px;
-      width: 32px; height: 32px;
-      border-radius: 50%;
-      border: 1px solid #333;
-      background: #1a1a1a;
-      color: #ddd;
-      cursor: pointer;
-      display: none;
-    }
-    #toBottom.show { display: block; }
-    .composer {
-      max-width: 720px; margin: 0 auto;
-      display: flex; align-items: center; gap: 10px;
-      background: #1c1c1c;
-      border-radius: 22px;
-      padding: 8px 10px 8px 12px;
-    }
-    .composer .plus, .composer .icon {
-      color: var(--plus); font-size: 20px; line-height: 1;
-      width: 28px; text-align: center; user-select: none;
-    }
-    .composer .field {
-      flex: 1; color: #666; font-size: 15px;
-      pointer-events: none;
-    }
-    .composer .send {
-      width: 28px; height: 28px; border-radius: 50%;
-      background: #3a3a3a; color: #eee;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 14px;
+      display: inline-flex; align-items: center; gap: 8px; margin-top: 4px;
+      background: #2a2a2a; border-radius: 12px; padding: 8px 10px;
+      color: var(--ink); text-decoration: none; font-size: 13px;
     }
   </style>
 </head>
 <body>
   <header>
-    <img class="avatar" src="media/math-avatar.png" alt="">
-    <h1>Math</h1>
-    <div class="spacer"></div>
-    <button class="ghost" id="playBtn" type="button">Play</button>
+    <div class="bar">
+      <img class="avatar" src="media/math-avatar.png" alt="">
+      <h1>Math</h1>
+      <div class="spacer"></div>
+      <button class="icon-btn" id="playBtn" type="button" aria-label="Play">
+        <svg class="play" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 2.8v10.4c0 .6.7 1 1.2.6l8-5.2c.5-.3.5-1.1 0-1.4l-8-5.2C4.7 1.8 4 2.2 4 2.8z"/></svg>
+        <svg class="pause" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M4 3h2.4v10H4V3zm5.6 0H12v10H9.6V3z"/></svg>
+      </button>
+    </div>
   </header>
   <div id="thread">
     <div class="wrap" id="log"></div>
-  </div>
-  <div class="composer-wrap">
-    <button id="toBottom" type="button" aria-label="Scroll to bottom">↓</button>
-    <div class="composer">
-      <div class="plus">+</div>
-      <div class="field">Message</div>
-      <div class="icon">🎤</div>
-      <div class="send">↑</div>
-    </div>
   </div>
   <script type="application/json" id="transcript">
 {
@@ -4674,7 +4595,7 @@
     function stopPlay() {
       playing = false;
       if (playTimer) { clearTimeout(playTimer); playTimer = null; }
-      $("playBtn").textContent = "Play";
+      $("playBtn").classList.remove("playing"); $("playBtn").setAttribute("aria-label","Play");
     }
 
     function stepPlay() {
@@ -4693,7 +4614,7 @@
       stopPlay();
       playing = true;
       playIndex = from == null ? 0 : from;
-      $("playBtn").textContent = "Pause";
+      $("playBtn").classList.add("playing"); $("playBtn").setAttribute("aria-label","Pause");
       build(playIndex);
       stepPlay();
     }
@@ -4705,12 +4626,6 @@
         else startPlay(playIndex && playIndex < data.messages.length ? playIndex : 0);
       };
       const thread = $("thread");
-      const toBottom = $("toBottom");
-      thread.addEventListener("scroll", function () {
-        const near = thread.scrollHeight - thread.scrollTop - thread.clientHeight < 80;
-        toBottom.classList.toggle("show", !near);
-      });
-      toBottom.onclick = function () { thread.scrollTop = thread.scrollHeight; };
       const params = new URLSearchParams(location.search);
       if (params.get("until")) build(parseInt(params.get("until"), 10));
       else build(null);
