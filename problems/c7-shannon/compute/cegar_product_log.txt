@@ -1,0 +1,2 @@
+product 330 residual 0 need 38
+empty residual; product is maximal

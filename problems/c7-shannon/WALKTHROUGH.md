@@ -16,6 +16,10 @@ A 368-set is already a dent. Its fifth root is about 3.2596, which would also be
 
 **Small swaps.** The 367-set is maximal (0 free vertices). Exhaustive 1-out, 2-out, and 3-out searches have gain 0. That matches the paper's 3-out/4-in report and extends it to a complete 3-out census (8,171,255 triples).
 
+**Few-flip SAT (stolen from W(2,7)).** Cadical with library `CardEnc.atmost` refuted every odd Hamming distance \(\le 9\) from the seed, so 4-out/5-in is also empty. That is still a ball around one seed, not \(\alpha\le 367\).
+
+**Product template.** \(10\times 33=330\) is already a maximal independent set. CEGAR cannot grow it. A template can be leftover-free and still 38 short.
+
 ## 2. The useful failure
 
 The isolate/residual split is a real tradeoff, not a sloppy deletion. The 327 isolates leave a 71-vertex, 85-edge residual whose independence number is 40. Eating the conflict vertices first spends that leftover. Any attempt to beat 367 has to change the 327-core, not just re-pack the 71.
@@ -38,7 +42,7 @@ Then the homomorphism search, the S' MIS, the swap census, the linear residuals,
 - `compute/R_reconstructed.txt` — pipeline 367-set, verifier OK, differs in 2 vertices
 - `compute/R361_sprime.txt` — S' MIS construction, size 361, verifier OK
 - `compute/verify_set.py` — pairwise checker
-- logs: `orbit_search_wide.txt`, `three_out_log.txt`, `fold_near.txt`, `linear_probe.txt`, `local_search_log.txt`
+- logs: `orbit_search_wide.txt`, `three_out_log.txt`, `fold_near.txt`, `linear_probe.txt`, `local_search_log.txt`, `fewflip_sat_log.txt`, `minconflicts_cage.txt`, `cegar_product_log.txt`
 
 ## 6. What is proved vs still open
 

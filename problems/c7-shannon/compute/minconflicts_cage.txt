@@ -1,0 +1,12 @@
+minconflicts from 367 plus one extra; stall count is not a bound
+trial=0 extra blockers=1 stall_pairs=792 size=368
+trial=1 extra blockers=1 stall_pairs=808 size=368
+trial=2 extra blockers=1 stall_pairs=834 size=368
+trial=3 extra blockers=1 stall_pairs=817 size=368
+trial=4 extra blockers=1 stall_pairs=790 size=368
+trial=5 extra blockers=1 stall_pairs=787 size=368
+trial=6 extra blockers=1 stall_pairs=846 size=368
+trial=7 extra blockers=1 stall_pairs=814 size=368
+stall_pair_histogram {787:1, 790:1, 792:1, 808:1, 814:1, 817:1, 834:1, 846:1}
+Unlike the W(2,7) sibling (one leftover AP), this cage is hundreds of adjacent pairs.
+That stall is not evidence that 367 is maximum. Stopped after 8 trials; no 368-set.

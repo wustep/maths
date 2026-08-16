@@ -72,32 +72,22 @@ def mis_small(dim: int, target: int) -> list[tuple[int, ...]]:
 
 
 def mis_dim3(target: int = 33) -> list[tuple[int, ...]]:
-    """Known α(C7^{⊠3})=33. Random-greedy then SAT on a reduced pool if needed."""
+    """Known α(C7^{⊠3})=33. SAT with CardEnc.atmost, not a greedy hope."""
     verts = list(itertools.product(range(N), repeat=3))
-    best: list[tuple[int, ...]] = []
-    import random
-
-    rng = random.Random(0)
-    for _ in range(40):
-        order = verts[:]
-        rng.shuffle(order)
-        taken = []
-        banned = set()
-        for v in order:
-            if v in banned:
-                continue
-            taken.append(v)
-            banned.add(v)
-            for w in verts:
-                if w not in banned and pair_adj(v, w):
-                    banned.add(w)
-        if len(taken) > len(best):
-            best = taken
-            if len(best) >= target:
-                return best
-    if len(best) < target:
-        raise SystemExit(f"failed to find 33-set in C7^3, best={len(best)}")
-    return best
+    n = len(verts)
+    lits = list(range(1, n + 1))
+    solver = Cadical195()
+    for i, u in enumerate(verts):
+        for j in range(i + 1, n):
+            if pair_adj(u, verts[j]):
+                solver.add_clause([-lits[i], -lits[j]])
+    extra, _ = atmost([-x for x in lits], n - target, n)
+    for cl in extra:
+        solver.add_clause(cl)
+    if not solver.solve():
+        raise SystemExit(f"SAT found no independent set of size {target} in C7^3")
+    model = set(solver.get_model())
+    return [verts[i] for i, lit in enumerate(lits) if lit in model]
 
 
 def main() -> None:

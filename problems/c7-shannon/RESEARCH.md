@@ -31,3 +31,7 @@ URLs actually opened this session.
 - 2607.21517 / 2607.27869 / 2607.29681 were checked only to confirm that 367 is still the fifth-power record. Their new numbers live in dimensions 10 and 200.
 - FunSearch `cyclic_graphs/` has no public C7 file (C11 754-set only).
 - Gao `inputs/R367.txt` is the same seed; not re-downloaded after Itty's copy verified.
+
+## W(2,7) steal (no new URL)
+
+Methods came from the sibling agent's finish note, not from a new page: `CardEnc.atmost` instead of a homemade sequential counter; few-flip SAT around a published seed; one-violation min-conflicts as a cage; CEGAR on a cyclic/product template with a leftover plateau stop. PySAT `Cadical195` was used locally. No new \(\Theta(C_7)\) paper was opened.
