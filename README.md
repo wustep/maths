@@ -49,6 +49,8 @@ propagation to \(r=18,20\):
 cd problems/covering/result && ./run_all.sh
 ```
 
+Interactive explainer: [problems/covering/explainer.html](problems/covering/explainer.html).
+
 ## Lean
 
 `lean-toolchain` pins Lean 4.32.0. Formal files live under the problem that
