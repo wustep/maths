@@ -1,0 +1,63 @@
+[
+  {
+    "p": 653,
+    "run": 7,
+    "seven_strings": [
+      218,
+      304,
+      343,
+      429
+    ],
+    "repair": null
+  },
+  {
+    "p": 677,
+    "run": 7,
+    "seven_strings": [
+      26,
+      54,
+      617,
+      645
+    ],
+    "repair": null
+  },
+  {
+    "p": 691,
+    "run": 7,
+    "seven_strings": [
+      33,
+      72,
+      334,
+      351,
+      613,
+      652
+    ],
+    "repair": null
+  },
+  {
+    "p": 821,
+    "run": 7,
+    "seven_strings": [
+      55,
+      193,
+      388,
+      427,
+      622,
+      760
+    ],
+    "repair": null
+  },
+  {
+    "p": 823,
+    "run": 7,
+    "seven_strings": [
+      332,
+      341,
+      367,
+      450,
+      476,
+      485
+    ],
+    "repair": null
+  }
+]
