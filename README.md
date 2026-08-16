@@ -44,3 +44,8 @@ python problems/covering/compute/verify_certificate.py
 
 `lean-toolchain` pins Lean 4.32.0. Formal files live under the problem that
 owns them, not at the repo root.
+
+## refs
+
+OpenAI walkthroughs, the ten-proofs PDF, and the house style live in
+[refs/](refs/).
