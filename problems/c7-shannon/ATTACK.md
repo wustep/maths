@@ -4,15 +4,23 @@
 
 - Folder created. Grok 4.6 cloud agent launched.
 
-## 2026-08-16 — q1, reconstruction
+## 2026-08-16 — reconstruction
 
 - Read Polak–Schrijver IPL 2019 / arXiv:1808.07438. The 367-set is an adapted Reed–Solomon orbit in \(C_{108,382}^{\boxtimes 5}\), not a linear \(\mathbb F_7\)-code (those max out at \(7^3=343\)).
-- July 2026 papers (Itty et al. 2607.21517, Gao 2607.27869, Buys–Polak–Zuiddam 2607.29681) improve \(\Theta(C_7)\) in dimensions 10 and 200. All three still treat 367 as the fifth-power record. A 368-set would be a finite dent; \(368^{1/5}\approx 3.2596\) would also beat 3.258805, but that is not the tonight target.
-- Copied the published 367 words from [Itty `c7/R367.txt`](https://raw.githubusercontent.com/nathanielitty/lower-bounds-for-shannon-capacity/main/c7/R367.txt) into `compute/R367.txt`. Verifier: `python compute/verify_set.py compute/R367.txt`.
-- Reconstruction script `compute/reconstruct_polak.py` replays §3 (shift, fold, isolate, residual MIS).
-- Search scripts, not yet a 368-set:
-  - `search_orbits.py` — geometric orbits with \(k(n,5,q)\ge 2n/7\) (direct homomorphism into \(C_7\)).
-  - `search_fold.py` — nearby \((n,q)\) fold-and-repair, the method that produced 367.
-  - `search_linear.py` — all RREF 3-dimensional \(\mathbb F_7\)-codes, greedy residual extension.
-  - `search_local.py` — 1-out/2-out exact, sampled 3-out/4-out, annealing from the 367 seed.
-- No 368-set claimed. No claim that 367 is maximum (Lovász still allows 401).
+- July 2026 papers (Itty et al. 2607.21517, Gao 2607.27869, Buys–Polak–Zuiddam 2607.29681) improve \(\Theta(C_7)\) in dimensions 10 and 200. All three still treat 367 as the fifth-power record.
+- Copied the published 367 words from [Itty `c7/R367.txt`](https://raw.githubusercontent.com/nathanielitty/lower-bounds-for-shannon-capacity/main/c7/R367.txt) into `compute/R367.txt`.
+- Verifier `python compute/verify_set.py compute/R367.txt --min-size 367` → OK, 367 unique, independent.
+- `reconstruct_polak.py` replays §3: fold unique 382, \(|M|=327\), residual 71 verts / 85 edges, \(\alpha=40\), \(|R|=367\). Matches the paper. Reconstructed set differs from the published list in 2 vertices (two different 40-sets in the same residual). Both verify.
+
+## 2026-08-16 — searches, no 368
+
+- **Direct geometric orbits.** `search_orbits.py` over \(n=300..600\): no pair with \(k(n,5,q)\ge 2n/7\). Closest misses: \(317/90\approx 3.522\) (\(q=31\), one short of the homomorphism) and the published \(382/108\approx 3.537\). Random non-geometric generators \(t\cdot(1,a,b,c,d)\) for \(n=368..400\), 80 samples each: no hit.
+- **S' MIS instead of isolates.** Conflict component of the folded 382-set has 55 verts, 35 edges, \(\alpha=30\). Isolates + that MIS gives \(M=357\), residual 4, total **361** (`R361_sprime.txt`, verifies). Greedy on \(S'\) shrinks the leftover that was worth 40.
+- **Local swaps from the 367-set.** Free vertices: 0 (maximal). Exhaustive 1-out: none. Exhaustive 2-out: 67161 trials, none. Exhaustive 3-out: 8171255 trials, `best_gain=0` in 419s. Sampled 4-out (3000) and two anneal restarts: stayed at 367.
+- **Linear 3-dim codes.** 30 random good \(\mathbb F_7^3\) subspaces: every residual empty, total stuck at 343. \(V+\{-1,0,1\}^5=(\mathbb Z/7\mathbb Z)^5\).
+- **Fold-and-repair on near-miss orbits** (317, 382, 309, 303, 301, 339, 367, 362). Best is the published shift on \(n=382\), \(q=7\), den=109: 327+40=367. Other 382-translations scored 357–360. Smaller \(n\) collapsed to \(M\sim 30\) and totals \(\sim 250\).
+- **Shifts.** Published \((40,123,40,123,40)\) recovered as the best completed score. Broader translation grid not finished (exact MIS on 70-vertex leftovers is slow). No 368 in the completed prefix.
+
+## Result
+
+No independent set of size \(\ge 368\). No certificate that 367 is maximum: Lovász still allows 401, and a full MIS on 16807 vertices was not run. Do not claim a new \(\Theta(C_7)\). \(367^{1/5}\approx 3.25787 < 3.258805\).

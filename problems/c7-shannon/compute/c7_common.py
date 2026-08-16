@@ -88,3 +88,18 @@ def blocked_mask(selected) -> list[bool]:
 def residual_of(selected) -> list[int]:
     blocked = blocked_mask(selected)
     return [x for x in range(NVERTS) if not blocked[x]]
+
+
+def greedy_mis_fast(verts) -> list[int]:
+    """Greedy MIS using closed neighborhoods; linear in |verts| * 243."""
+    vset = set(verts)
+    banned: set[int] = set()
+    taken: list[int] = []
+    for v in verts:
+        if v in banned:
+            continue
+        taken.append(v)
+        for u in closed_neighbors(v):
+            if u in vset:
+                banned.add(u)
+    return taken

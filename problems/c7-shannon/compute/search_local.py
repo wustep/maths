@@ -93,10 +93,21 @@ def residual_mis(cands: list[int], neigh: list[list[int]], limit: int = 40) -> l
     return [cands[i] for i in range(n) if (best_mask >> i) & 1]
 
 
+def newly_free(removed: list[int], blocked: list[int], neigh: list[list[int]]) -> list[int]:
+    cand = []
+    seen = set()
+    for v in removed:
+        for u in neigh[v]:
+            if blocked[u] == 0 and u not in seen:
+                seen.add(u)
+                cand.append(u)
+    return cand
+
+
 def try_k_out(selected: set[int], blocked: list[int], neigh: list[list[int]], remove: list[int]) -> list[int] | None:
     for v in remove:
         rem_vertex(v, selected, blocked, neigh)
-    freed = [v for v in range(NVERTS) if blocked[v] == 0]
+    freed = newly_free(remove, blocked, neigh)
     add = residual_mis(freed, neigh)
     gained = len(add) - len(remove)
     if gained >= 1:
@@ -123,7 +134,7 @@ def anneal(selected: set[int], blocked: list[int], neigh: list[list[int]], steps
         v = rng.choice(cur)
         rem_vertex(v, selected, blocked, neigh)
         cur.remove(v)
-        freed = [u for u in range(NVERTS) if blocked[u] == 0]
+        freed = newly_free([v], blocked, neigh)
         if freed:
             # add a random maximal packing of freed vertices
             rng.shuffle(freed)

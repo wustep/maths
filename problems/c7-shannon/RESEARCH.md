@@ -23,3 +23,11 @@ URLs actually opened this session.
 
 - [Ben Green, 100 Open Problems, P38](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf) — \(\Theta(C_7)\) between \(367^{1/5}\) and \(\vartheta(C_7)\). The July 2026 papers moved the capacity lower bound via higher powers; the fifth-power independence number is the finite leftover.
 - Table from Polak–Schrijver: \(\alpha(C_7^{\boxtimes 5})\) sits in \(367\)–\(401\) (Lovász \(\vartheta^5\)).
+
+## What the URLs were used for
+
+- ar5iv 1808.07438 supplied the pipeline (shift, fold 54.5, isolate, residual) and the appendix words.
+- Itty `R367.txt` was the working seed; it matches the appendix and verifies.
+- 2607.21517 / 2607.27869 / 2607.29681 were checked only to confirm that 367 is still the fifth-power record. Their new numbers live in dimensions 10 and 200.
+- FunSearch `cyclic_graphs/` has no public C7 file (C11 754-set only).
+- Gao `inputs/R367.txt` is the same seed; not re-downloaded after Itty's copy verified.
