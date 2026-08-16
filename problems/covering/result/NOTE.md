@@ -294,8 +294,6 @@ Every assertion in this note is re-derivable in under a second from
 `data/*.txt` by two programs in two languages that share no code. How the matrix
 was found is a matter of history; whether it works is a matter of enumeration.
 
-The scaffold kit in `../_reference/` was prepared by a previous agent session
-and is retained for provenance: `../_reference/data/` contains independently
-generated matrices used here only as post-hoc comparison witnesses. Its
-`scripts/` directory was quarantined until both verifiers in `verify/` were
-written and passing. See [`RESULT.md`](RESULT.md) for what the comparison showed.
+A second pair of QM$_2^2$ matrices, from a different indicator allocation,
+lives in [`data/alt/`](data/alt/). Both pass the exhaustive check. See
+[`RESULT.md`](RESULT.md).
