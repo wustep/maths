@@ -1,0 +1,38 @@
+{
+  "flip_search": {
+    "ok": false,
+    "attempts": [
+      {
+        "color": 0,
+        "blockers": 1
+      },
+      {
+        "color": 1,
+        "blockers": 6
+      }
+    ]
+  },
+  "minconflicts": [
+    {
+      "ok": false,
+      "best_violations": 1,
+      "moves": 2937,
+      "elapsed": 25.005,
+      "random_seed": 1
+    },
+    {
+      "ok": false,
+      "best_violations": 1,
+      "moves": 2923,
+      "elapsed": 25.001,
+      "random_seed": 2
+    },
+    {
+      "ok": false,
+      "best_violations": 1,
+      "moves": 2887,
+      "elapsed": 25.006,
+      "random_seed": 3
+    }
+  ]
+}

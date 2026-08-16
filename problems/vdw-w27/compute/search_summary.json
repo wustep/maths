@@ -1,0 +1,22 @@
+{
+  "best_verified_length": 3703,
+  "dent": false,
+  "published_bound": "W(2,7)>3703",
+  "best_residue": "coloring_3703.txt quadratic-residue 6-fold of p=617 plus extra",
+  "near_3704": {
+    "color0_violations": 1,
+    "color1_violations": 6,
+    "note": "appending 0 leaves exactly the class-2 d=617 AP; appending 1 leaves six APs"
+  },
+  "prime_scan_50k": {
+    "hits_run_le_6": [],
+    "run_7_primes": [653, 677, 691, 821, 823, 881, 907, 947, 1069]
+  },
+  "obstructions": [
+    "6-flip SAT UNSAT from the 3703 seed",
+    "tail-619 SAT UNSAT (5 QR periods do not extend to 3704)",
+    "no QR prime 619..50000 with cyclic run <= 6",
+    "turned complementary zip CEGAR plateau ~11000 cyclic 7-APs",
+    "cyclic CEGAR n=618..622 timeout with ~2600 violations"
+  ]
+}

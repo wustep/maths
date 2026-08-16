@@ -1,0 +1,50 @@
+[
+  {
+    "flip_1based": 2,
+    "ok": false,
+    "hit": {
+      "start": 2,
+      "diff": 285
+    }
+  },
+  {
+    "flip_1based": 619,
+    "ok": false,
+    "hit": {
+      "start": 597,
+      "diff": 11
+    }
+  },
+  {
+    "flip_1based": 1236,
+    "ok": false,
+    "hit": {
+      "start": 1214,
+      "diff": 11
+    }
+  },
+  {
+    "flip_1based": 1853,
+    "ok": false,
+    "hit": {
+      "start": 1831,
+      "diff": 11
+    }
+  },
+  {
+    "flip_1based": 2470,
+    "ok": false,
+    "hit": {
+      "start": 2448,
+      "diff": 11
+    }
+  },
+  {
+    "flip_1based": 3087,
+    "ok": false,
+    "hit": {
+      "start": 3065,
+      "diff": 11
+    }
+  }
+]

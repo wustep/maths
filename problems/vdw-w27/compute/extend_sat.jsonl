@@ -1,0 +1,5 @@
+{"flips": 2, "mode": "tail", "sat": false, "tail": 24, "target": 3704}
+{"flips": 2, "mode": "tail", "sat": false, "tail": 64, "target": 3704}
+{"flips": 2, "mode": "tail", "sat": false, "tail": 128, "target": 3704}
+{"flips": 2, "mode": "tail", "sat": false, "tail": 256, "target": 3704}
+{"flips": 2, "mode": "tail", "sat": false, "tail": 619, "target": 3704}
