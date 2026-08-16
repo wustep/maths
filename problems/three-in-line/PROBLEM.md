@@ -1,6 +1,7 @@
 # No-three-in-line at n=71
 
 - Slug: `three-in-line`
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
 - Status: open
 - Area: Discrete geometry
 - Sources: Green 100 #72; Dudeney 1900 / Guy–Kelly 1968; Prellberg, arXiv:2602.07751; Heule 2026 (Flammenkamp database); MathWorld

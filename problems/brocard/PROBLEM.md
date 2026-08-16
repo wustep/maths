@@ -1,6 +1,7 @@
 # Brocard–Ramanujan modular hunt
 
 - Slug: `brocard`
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
 - Status: open
 - Area: Diophantine equations
 - Sources: DeepMind formal-conjectures #1417; Berndt–Galway 2000; OEIS A085692; Erdős #398
