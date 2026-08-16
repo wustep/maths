@@ -7,7 +7,7 @@ container, no smoke tests.
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | \(\ell_2(10,2)\le 50\). Certified \([50,40]\) radius-2 code. \(n=49\) still 7 holes. |
+| [covering](problems/covering) | \(\ell_2(10,2)\le 50\). Certified \([50,40]\) radius-2 code, \(p(H)=10\), propagated to \(\bar\mu(2)\le 2601/2048\). \(n=49\) still 7 holes. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through \(p=47\). |
 | [three-in-line](problems/three-in-line) | \(n=71\) SAT UNKNOWN. |
@@ -38,6 +38,15 @@ The one finite record is the covering matrix:
 
 ```bash
 python problems/covering/compute/verify_certificate.py
+```
+
+Written up as a standalone artifact in
+[problems/covering/result](problems/covering/result) — two independent
+verifiers, the \((2,0)\)-partition with \(p(H)=10\), and the QM\(_2^2\)
+propagation to \(r=18,20\):
+
+```bash
+cd problems/covering/result && ./run_all.sh
 ```
 
 ## Lean
