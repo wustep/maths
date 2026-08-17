@@ -104,9 +104,17 @@ Independently checked all 1044 stored 7-vertex cores in `certs/c7_8reg_verified.
 
 Independently replayed `verify_certificate.py` on the stored F4 flag-algebra certificate: c=0.34645, min eig(Q)=9.53e-9, worst F=-0.12343, all 32 coordinates < -0.05. Q is 8x8 PSD from the JSON alone. This is 5e-5 below the published HKN 0.3465 (a four-decimal rounding). Did **not** beat the 0.3388 personal communication. Did **not** independently replay drat-trim on the n=12,15,16,17 SAT proofs. n=18 d=6 remains UNKNOWN (residue). Conjecture 1/3 open.
 
+### P31 projective plane of order 12 — `problems/projective-plane-order-twelve`
+
+Residue. Independently replayed `replay_identities.py` (v=157, 12246 pairs, |det B|=13*12^78, Bruck–Ryser silent) and `classify_types.py` (all_ok; leftover Aut types: involutory elation, planar PG(2,3), generalized elation f in {1,4,7,10}). Independently verified both involution 2-MOLS (`verify_involution_mols.py`): Latin, pairwise orthogonal, L[r+6][c]=L[r][c]+6. Intercalate counts 108+108 (MacNeish) vs 90+78 (SAT), so not isotopic. Did **not** independently replay drat-trim on the mate-UNSAT proofs. t=3 kissat UNKNOWN is a timeout, not an exclusion. Published Aut still |G| in {1,2,3}. Plane still open.
+
+### P41 R(5,5) — `problems/ramsey-r55`
+
+Residue. Independently replayed `verify_mckay.py` on `refs/r55_42some.g6` (sha256 067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb): 328 lines, 328 ok, 328 complements also (5,5), 0 self-complementary, unique_fp=173, delta=19, Delta=22, no regular graphs. That is the published 656 (graph + complement). Independently replayed `py_circulant.py` 42 and 43: empty in the legal degree window. Did **not** independently replay the C Cayley census, extend_check, or involution SAT. Published record still 43 <= R(5,5) <= 46. Do not cite the folder as a bound.
+
 ## In flight
 
-- P31 projective plane of order 12
-- P41 R(5,5) (launching)
+- P39 graph reconstruction n=14
+- P44 lonely runner 14
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

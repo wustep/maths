@@ -71,6 +71,8 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [two-smooth-summands](problems/two-smooth-summands) | Residue. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=23$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
 | [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | F$_4$ certificate $c=0.34645$, $5\cdot 10^{-5}$ below HKN $0.3465$. Did not replay DRAT. $n=18$ residue. Conjecture $1/3$ open. |
+| [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
+| [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 
 Each problem folder:
 

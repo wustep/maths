@@ -1,0 +1,103 @@
+{
+  "checks": [
+    {
+      "name": "v=157",
+      "ok": true,
+      "detail": "v=157"
+    },
+    {
+      "name": "v mod 2",
+      "ok": true,
+      "detail": "157%2=1"
+    },
+    {
+      "name": "v mod 3",
+      "ok": true,
+      "detail": "157%3=1"
+    },
+    {
+      "name": "bruck-ryser silent",
+      "ok": true,
+      "detail": "12%4=0"
+    },
+    {
+      "name": "det identity integer",
+      "ok": true,
+      "detail": "13*12^78"
+    },
+    {
+      "name": "12 even",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "12 not square",
+      "ok": true,
+      "detail": ""
+    },
+    {
+      "name": "2 divides n (elation order)",
+      "ok": true,
+      "detail": "elation group order | n"
+    },
+    {
+      "name": "n not 2 mod 4",
+      "ok": true,
+      "detail": "the n\u22612 (mod 4) involution ban is silent"
+    },
+    {
+      "name": "possible f start at 1",
+      "ok": true,
+      "detail": "[1, 4, 7, 10, 13, 16]"
+    },
+    {
+      "name": "true homology f=14 forbidden by v",
+      "ok": true,
+      "detail": "14%3=2"
+    },
+    {
+      "name": "true homology 3 divides n-1",
+      "ok": true,
+      "detail": "11%3=2"
+    },
+    {
+      "name": "no generalized homology of order 3",
+      "ok": true,
+      "detail": "survivors=[]"
+    },
+    {
+      "name": "Fano line extra points",
+      "ok": true,
+      "detail": "10%3=1"
+    },
+    {
+      "name": "PG(2,3) line extra points ok",
+      "ok": true,
+      "detail": "9%3=0"
+    },
+    {
+      "name": "g.e. candidates",
+      "ok": true,
+      "detail": "f in [1, 4, 7, 10, 13]; f=13 is the 1981 true-elation case"
+    }
+  ],
+  "all_ok": true,
+  "remaining": {
+    "order_2": [
+      "involutory elation (unique Baer type)"
+    ],
+    "order_3": [
+      "planar with Fix \u2245 PG(2,3)",
+      "generalized elation with f in {1,4,7,10}"
+    ],
+    "excluded_here_by_divisibility": [
+      "true homology of order 3",
+      "generalized homology of order 3",
+      "planar with Fix \u2245 PG(2,2)"
+    ],
+    "excluded_in_literature": [
+      "true elation of order 3 (Janko\u2013van Trung 1981)",
+      "any |G| not in {1,2,3} (Akiyama\u2013Suetake\u2013Tanaka 2023)"
+    ]
+  }
+}

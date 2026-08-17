@@ -1,0 +1,395 @@
+HIT n=29 deg=12 S=4 8 10 11 12 14 mask=23824
+HIT n=29 deg=14 S=4 8 9 10 11 12 14 mask=24336
+HIT n=29 deg=12 S=4 7 8 10 12 14 mask=21904
+HIT n=29 deg=14 S=4 7 8 9 10 12 14 mask=22416
+HIT n=29 deg=12 S=4 6 10 11 13 14 mask=27728
+HIT n=29 deg=14 S=4 6 10 11 12 13 14 mask=31824
+HIT n=29 deg=12 S=4 6 8 11 12 14 mask=22864
+HIT n=29 deg=14 S=4 6 8 9 11 12 14 mask=23376
+HIT n=29 deg=12 S=4 6 7 9 13 14 mask=25296
+HIT n=29 deg=12 S=4 6 7 9 12 13 mask=13008
+HIT n=29 deg=14 S=4 6 7 9 12 13 14 mask=29392
+HIT n=29 deg=14 S=4 6 7 9 11 12 13 mask=15056
+HIT n=29 deg=14 S=4 6 7 8 10 13 14 mask=26064
+HIT n=29 deg=14 S=4 6 7 8 10 12 14 mask=21968
+HIT n=29 deg=14 S=4 6 7 8 9 13 14 mask=25552
+HIT n=29 deg=14 S=4 6 7 8 9 12 14 mask=21456
+HIT n=29 deg=14 S=4 5 8 10 11 12 14 mask=23856
+HIT n=29 deg=12 S=4 5 7 11 12 13 mask=14512
+HIT n=29 deg=12 S=4 5 7 9 13 14 mask=25264
+HIT n=29 deg=12 S=4 5 7 9 12 13 mask=12976
+HIT n=29 deg=14 S=4 5 7 9 12 13 14 mask=29360
+HIT n=29 deg=14 S=4 5 7 8 9 13 14 mask=25520
+HIT n=29 deg=14 S=4 5 6 10 11 13 14 mask=27760
+HIT n=29 deg=14 S=4 5 6 8 9 12 14 mask=21360
+HIT n=29 deg=12 S=4 5 6 7 11 13 mask=10480
+HIT n=29 deg=14 S=4 5 6 7 9 13 14 mask=25328
+HIT n=29 deg=14 S=4 5 6 7 9 12 13 mask=13040
+HIT n=29 deg=16 S=4 5 6 7 9 12 13 14 mask=29424
+HIT n=29 deg=14 S=4 5 6 7 8 11 13 mask=10736
+HIT n=29 deg=14 S=4 5 6 7 8 10 14 mask=17904
+HIT n=29 deg=16 S=4 5 6 7 8 10 13 14 mask=26096
+HIT n=29 deg=16 S=4 5 6 7 8 9 13 14 mask=25584
+HIT n=29 deg=16 S=4 5 6 7 8 9 12 14 mask=21488
+HIT n=29 deg=12 S=3 7 8 10 12 14 mask=21896
+HIT n=29 deg=14 S=3 7 8 10 12 13 14 mask=30088
+HIT n=29 deg=12 S=3 6 8 10 11 14 mask=19784
+HIT n=29 deg=14 S=3 6 8 9 10 11 14 mask=20296
+HIT n=29 deg=14 S=3 6 7 8 10 12 14 mask=21960
+HIT n=29 deg=12 S=3 5 8 11 12 14 mask=22824
+HIT n=29 deg=12 S=3 5 8 10 11 14 mask=19752
+HIT n=29 deg=14 S=3 5 8 10 11 12 14 mask=23848
+HIT n=29 deg=14 S=3 5 7 8 11 12 14 mask=22952
+HIT n=29 deg=12 S=3 5 7 8 10 14 mask=17832
+HIT n=29 deg=14 S=3 5 6 7 8 10 14 mask=17896
+HIT n=29 deg=12 S=3 4 8 11 12 14 mask=22808
+HIT n=29 deg=14 S=3 4 8 10 11 12 14 mask=23832
+HIT n=29 deg=14 S=3 4 8 9 11 12 14 mask=23320
+HIT n=29 deg=16 S=3 4 8 9 10 11 12 14 mask=24344
+HIT n=29 deg=14 S=3 4 6 9 10 11 14 mask=20056
+HIT n=29 deg=14 S=3 4 5 9 12 13 14 mask=29240
+HIT n=29 deg=14 S=3 4 5 9 11 12 14 mask=23096
+HIT n=29 deg=14 S=3 4 5 8 11 12 14 mask=22840
+HIT n=29 deg=14 S=3 4 5 8 10 11 14 mask=19768
+HIT n=29 deg=16 S=3 4 5 8 10 11 12 14 mask=23864
+HIT n=29 deg=14 S=3 4 5 7 11 12 13 mask=14520
+HIT n=29 deg=14 S=3 4 5 7 10 13 14 mask=25784
+HIT n=29 deg=12 S=3 4 5 7 9 13 mask=8888
+HIT n=29 deg=14 S=3 4 5 7 9 13 14 mask=25272
+HIT n=29 deg=14 S=3 4 5 7 9 10 13 mask=9912
+HIT n=29 deg=14 S=3 4 5 7 8 10 14 mask=17848
+HIT n=29 deg=14 S=3 4 5 6 7 11 13 mask=10488
+HIT n=29 deg=12 S=2 8 10 12 13 14 mask=29956
+HIT n=29 deg=12 S=2 8 10 11 12 13 mask=15620
+HIT n=29 deg=14 S=2 8 10 11 12 13 14 mask=32004
+HIT n=29 deg=12 S=2 8 9 10 12 14 mask=22276
+HIT n=29 deg=14 S=2 8 9 10 12 13 14 mask=30468
+HIT n=29 deg=14 S=2 7 9 10 12 13 14 mask=30340
+HIT n=29 deg=12 S=2 7 8 10 12 14 mask=21892
+HIT n=29 deg=14 S=2 7 8 10 12 13 14 mask=30084
+HIT n=29 deg=12 S=2 7 8 10 11 12 mask=7556
+HIT n=29 deg=14 S=2 7 8 10 11 12 14 mask=23940
+HIT n=29 deg=14 S=2 7 8 10 11 12 13 mask=15748
+HIT n=29 deg=16 S=2 7 8 10 11 12 13 14 mask=32132
+HIT n=29 deg=12 S=2 6 8 11 12 14 mask=22852
+HIT n=29 deg=12 S=2 6 8 10 11 12 mask=7492
+HIT n=29 deg=14 S=2 6 8 10 11 12 14 mask=23876
+HIT n=29 deg=12 S=2 6 8 9 11 12 mask=6980
+HIT n=29 deg=14 S=2 6 8 9 11 12 13 mask=15172
+HIT n=29 deg=14 S=2 6 7 9 10 12 13 mask=14020
+HIT n=29 deg=14 S=2 6 7 8 11 12 14 mask=22980
+HIT n=29 deg=14 S=2 6 7 8 10 12 14 mask=21956
+HIT n=29 deg=14 S=2 6 7 8 10 12 13 mask=13764
+HIT n=29 deg=14 S=2 6 7 8 10 11 12 mask=7620
+HIT n=29 deg=16 S=2 6 7 8 10 11 12 14 mask=24004
+HIT n=29 deg=14 S=2 5 8 10 12 13 14 mask=29988
+HIT n=29 deg=14 S=2 5 8 10 11 12 13 mask=15652
+HIT n=29 deg=16 S=2 5 8 10 11 12 13 14 mask=32036
+HIT n=29 deg=14 S=2 5 7 11 12 13 14 mask=30884
+HIT n=29 deg=14 S=2 5 7 8 11 12 13 mask=14756
+HIT n=29 deg=16 S=2 5 7 8 11 12 13 14 mask=31140
+HIT n=29 deg=12 S=2 5 6 11 13 14 mask=26724
+HIT n=29 deg=14 S=2 5 6 10 11 13 14 mask=27748
+HIT n=29 deg=14 S=2 5 6 9 11 13 14 mask=27236
+HIT n=29 deg=14 S=2 5 6 8 11 13 14 mask=26980
+HIT n=29 deg=12 S=2 5 6 8 9 14 mask=17252
+HIT n=29 deg=14 S=2 5 6 8 9 13 14 mask=25444
+HIT n=29 deg=14 S=2 5 6 8 9 11 14 mask=19300
+HIT n=29 deg=16 S=2 5 6 8 9 11 13 14 mask=27492
+HIT n=29 deg=14 S=2 5 6 7 8 9 14 mask=17380
+HIT n=29 deg=14 S=2 4 7 9 12 13 14 mask=29332
+HIT n=29 deg=14 S=2 4 7 8 10 11 12 mask=7572
+HIT n=29 deg=14 S=2 4 6 10 11 13 14 mask=27732
+HIT n=29 deg=12 S=2 4 6 7 9 13 mask=8916
+HIT n=29 deg=14 S=2 4 6 7 9 12 13 mask=13012
+HIT n=29 deg=14 S=2 4 6 7 9 10 13 mask=9940
+HIT n=29 deg=14 S=2 4 5 7 11 12 13 mask=14516
+HIT n=29 deg=14 S=2 4 5 7 9 12 13 mask=12980
+HIT n=29 deg=14 S=2 4 5 6 11 13 14 mask=26740
+HIT n=29 deg=16 S=2 4 5 6 10 11 13 14 mask=27764
+HIT n=29 deg=12 S=2 4 5 6 7 11 mask=2292
+HIT n=29 deg=14 S=2 4 5 6 7 10 11 mask=3316
+HIT n=29 deg=12 S=2 4 5 6 7 9 mask=756
+HIT n=29 deg=14 S=2 4 5 6 7 9 13 mask=8948
+HIT n=29 deg=14 S=2 4 5 6 7 9 12 mask=4852
+HIT n=29 deg=16 S=2 4 5 6 7 9 12 13 mask=13044
+HIT n=29 deg=14 S=2 4 5 6 7 9 10 mask=1780
+HIT n=29 deg=16 S=2 4 5 6 7 9 10 13 mask=9972
+HIT n=29 deg=12 S=2 3 10 12 13 14 mask=29708
+HIT n=29 deg=12 S=2 3 10 11 13 14 mask=27660
+HIT n=29 deg=14 S=2 3 10 11 12 13 14 mask=31756
+HIT n=29 deg=12 S=2 3 9 11 12 14 mask=23052
+HIT n=29 deg=14 S=2 3 9 11 12 13 14 mask=31244
+HIT n=29 deg=12 S=2 3 9 10 12 14 mask=22028
+HIT n=29 deg=14 S=2 3 9 10 12 13 14 mask=30220
+HIT n=29 deg=14 S=2 3 9 10 11 13 14 mask=28172
+HIT n=29 deg=14 S=2 3 9 10 11 12 14 mask=24076
+HIT n=29 deg=16 S=2 3 9 10 11 12 13 14 mask=32268
+HIT n=29 deg=14 S=2 3 8 10 12 13 14 mask=29964
+HIT n=29 deg=14 S=2 3 8 10 11 12 14 mask=23820
+HIT n=29 deg=12 S=2 3 8 9 11 12 mask=6924
+HIT n=29 deg=14 S=2 3 8 9 11 12 14 mask=23308
+HIT n=29 deg=14 S=2 3 8 9 11 12 13 mask=15116
+HIT n=29 deg=16 S=2 3 8 9 11 12 13 14 mask=31500
+HIT n=29 deg=14 S=2 3 8 9 10 12 14 mask=22284
+HIT n=29 deg=16 S=2 3 8 9 10 12 13 14 mask=30476
+HIT n=29 deg=14 S=2 3 7 10 12 13 14 mask=29836
+HIT n=29 deg=14 S=2 3 7 10 11 13 14 mask=27788
+HIT n=29 deg=16 S=2 3 7 10 11 12 13 14 mask=31884
+HIT n=29 deg=14 S=2 3 7 8 10 12 14 mask=21900
+HIT n=29 deg=16 S=2 3 7 8 10 12 13 14 mask=30092
+HIT n=29 deg=12 S=2 3 7 8 10 11 mask=3468
+HIT n=29 deg=14 S=2 3 7 8 10 11 12 mask=7564
+HIT n=29 deg=12 S=2 3 6 8 10 11 mask=3404
+HIT n=29 deg=14 S=2 3 6 8 10 11 14 mask=19788
+HIT n=29 deg=14 S=2 3 6 8 10 11 12 mask=7500
+HIT n=29 deg=14 S=2 3 6 8 9 10 11 mask=3916
+HIT n=29 deg=16 S=2 3 6 8 9 10 11 14 mask=20300
+HIT n=29 deg=16 S=2 3 6 7 8 10 12 14 mask=21964
+HIT n=29 deg=14 S=2 3 6 7 8 10 11 mask=3532
+HIT n=29 deg=16 S=2 3 6 7 8 10 11 12 mask=7628
+HIT n=29 deg=12 S=2 3 5 11 12 14 mask=22572
+HIT n=29 deg=12 S=2 3 5 10 13 14 mask=25644
+HIT n=29 deg=14 S=2 3 5 8 11 12 14 mask=22828
+HIT n=29 deg=12 S=2 3 5 8 10 14 mask=17708
+HIT n=29 deg=14 S=2 3 5 8 10 11 14 mask=19756
+HIT n=29 deg=14 S=2 3 5 7 11 12 14 mask=22700
+HIT n=29 deg=14 S=2 3 5 7 10 13 14 mask=25772
+HIT n=29 deg=14 S=2 3 5 7 9 10 13 mask=9900
+HIT n=29 deg=16 S=2 3 5 7 8 11 12 14 mask=22956
+HIT n=29 deg=12 S=2 3 5 7 8 9 mask=940
+HIT n=29 deg=14 S=2 3 5 7 8 9 14 mask=17324
+HIT n=29 deg=14 S=2 3 5 7 8 9 12 mask=5036
+HIT n=29 deg=14 S=2 3 5 6 8 9 14 mask=17260
+HIT n=29 deg=14 S=2 3 5 6 7 8 9 mask=1004
+HIT n=29 deg=16 S=2 3 5 6 7 8 9 14 mask=17388
+HIT n=29 deg=12 S=2 3 4 11 12 14 mask=22556
+HIT n=29 deg=12 S=2 3 4 10 12 14 mask=21532
+HIT n=29 deg=14 S=2 3 4 10 11 12 14 mask=23580
+HIT n=29 deg=14 S=2 3 4 9 12 13 14 mask=29212
+HIT n=29 deg=14 S=2 3 4 9 11 12 14 mask=23068
+HIT n=29 deg=14 S=2 3 4 9 10 12 14 mask=22044
+HIT n=29 deg=16 S=2 3 4 9 10 11 12 14 mask=24092
+HIT n=29 deg=14 S=2 3 4 8 11 12 14 mask=22812
+HIT n=29 deg=14 S=2 3 4 8 9 11 12 mask=6940
+HIT n=29 deg=16 S=2 3 4 8 9 11 12 14 mask=23324
+HIT n=29 deg=14 S=2 3 4 7 8 10 11 mask=3484
+HIT n=29 deg=16 S=2 3 4 7 8 10 11 12 mask=7580
+HIT n=29 deg=14 S=2 3 4 6 11 12 14 mask=22620
+HIT n=29 deg=14 S=2 3 4 6 10 12 14 mask=21596
+HIT n=29 deg=16 S=2 3 4 6 10 11 12 14 mask=23644
+HIT n=29 deg=14 S=2 3 4 6 9 10 14 mask=18012
+HIT n=29 deg=16 S=2 3 4 6 9 10 11 14 mask=20060
+HIT n=29 deg=14 S=2 3 4 6 7 10 12 mask=5340
+HIT n=29 deg=14 S=2 3 4 6 7 10 11 mask=3292
+HIT n=29 deg=16 S=2 3 4 6 7 10 11 12 mask=7388
+HIT n=29 deg=12 S=2 3 4 6 7 9 mask=732
+HIT n=29 deg=14 S=2 3 4 6 7 9 14 mask=17116
+HIT n=29 deg=14 S=2 3 4 6 7 9 10 mask=1756
+HIT n=29 deg=14 S=2 3 4 5 11 12 14 mask=22588
+HIT n=29 deg=14 S=2 3 4 5 10 13 14 mask=25660
+HIT n=29 deg=16 S=2 3 4 5 8 11 12 14 mask=22844
+HIT n=29 deg=14 S=2 3 4 5 8 10 14 mask=17724
+HIT n=29 deg=16 S=2 3 4 5 8 10 11 14 mask=19772
+HIT n=29 deg=14 S=2 3 4 5 7 11 12 mask=6332
+HIT n=29 deg=14 S=2 3 4 5 7 8 11 mask=2492
+HIT n=29 deg=16 S=2 3 4 5 7 8 11 12 mask=6588
+HIT n=29 deg=14 S=2 3 4 5 6 7 11 mask=2300
+HIT n=29 deg=14 S=1 8 9 10 12 13 14 mask=30466
+HIT n=29 deg=12 S=1 6 9 10 13 14 mask=26178
+HIT n=29 deg=14 S=1 6 9 10 12 13 14 mask=30274
+HIT n=29 deg=14 S=1 6 8 9 10 13 14 mask=26434
+HIT n=29 deg=12 S=1 6 7 9 12 13 mask=12994
+HIT n=29 deg=14 S=1 6 7 9 11 12 13 mask=15042
+HIT n=29 deg=12 S=1 6 7 9 10 13 mask=9922
+HIT n=29 deg=14 S=1 6 7 8 9 11 12 mask=7106
+HIT n=29 deg=14 S=1 6 7 8 9 10 13 mask=10178
+HIT n=29 deg=14 S=1 5 8 11 12 13 14 mask=31010
+HIT n=29 deg=14 S=1 5 8 10 11 12 13 mask=15650
+HIT n=29 deg=16 S=1 5 8 10 11 12 13 14 mask=32034
+HIT n=29 deg=12 S=1 5 8 9 13 14 mask=25378
+HIT n=29 deg=14 S=1 5 8 9 12 13 14 mask=29474
+HIT n=29 deg=14 S=1 5 8 9 11 13 14 mask=27426
+HIT n=29 deg=12 S=1 5 7 8 12 13 mask=12706
+HIT n=29 deg=14 S=1 5 7 8 11 12 13 mask=14754
+HIT n=29 deg=12 S=1 5 7 8 9 13 mask=9122
+HIT n=29 deg=14 S=1 5 7 8 9 11 13 mask=11170
+HIT n=29 deg=14 S=1 5 7 8 9 10 13 mask=10146
+HIT n=29 deg=12 S=1 5 6 9 13 14 mask=25186
+HIT n=29 deg=14 S=1 5 6 9 12 13 14 mask=29282
+HIT n=29 deg=12 S=1 5 6 7 10 13 mask=9442
+HIT n=29 deg=14 S=1 5 6 7 10 13 14 mask=25826
+HIT n=29 deg=14 S=1 5 6 7 9 10 13 mask=9954
+HIT n=29 deg=12 S=1 5 6 7 8 13 mask=8674
+HIT n=29 deg=14 S=1 5 6 7 8 11 13 mask=10722
+HIT n=29 deg=14 S=1 5 6 7 8 10 13 mask=9698
+HIT n=29 deg=14 S=1 5 6 7 8 10 11 mask=3554
+HIT n=29 deg=14 S=1 5 6 7 8 9 13 mask=9186
+HIT n=29 deg=16 S=1 5 6 7 8 9 11 13 mask=11234
+HIT n=29 deg=16 S=1 5 6 7 8 9 10 13 mask=10210
+HIT n=29 deg=12 S=1 4 10 11 12 13 mask=15378
+HIT n=29 deg=14 S=1 4 10 11 12 13 14 mask=31762
+HIT n=29 deg=14 S=1 4 7 10 11 12 13 mask=15506
+HIT n=29 deg=14 S=1 4 6 10 11 13 14 mask=27730
+HIT n=29 deg=14 S=1 4 6 10 11 12 13 mask=15442
+HIT n=29 deg=16 S=1 4 6 10 11 12 13 14 mask=31826
+HIT n=29 deg=12 S=1 4 6 9 10 13 mask=9810
+HIT n=29 deg=14 S=1 4 6 8 11 12 14 mask=22866
+HIT n=29 deg=14 S=1 4 6 8 9 11 12 mask=6994
+HIT n=29 deg=14 S=1 4 6 8 9 10 13 mask=10066
+HIT n=29 deg=14 S=1 4 6 7 9 12 13 mask=13010
+HIT n=29 deg=16 S=1 4 6 7 9 11 12 13 mask=15058
+HIT n=29 deg=14 S=1 4 6 7 9 10 13 mask=9938
+HIT n=29 deg=16 S=1 4 6 7 8 9 11 12 mask=7122
+HIT n=29 deg=16 S=1 4 6 7 8 9 10 13 mask=10194
+HIT n=29 deg=12 S=1 4 5 9 13 14 mask=25138
+HIT n=29 deg=14 S=1 4 5 9 12 13 14 mask=29234
+HIT n=29 deg=12 S=1 4 5 9 11 13 mask=10802
+HIT n=29 deg=12 S=1 4 5 7 12 13 mask=12466
+HIT n=29 deg=14 S=1 4 5 7 12 13 14 mask=28850
+HIT n=29 deg=14 S=1 4 5 7 9 13 14 mask=25266
+HIT n=29 deg=14 S=1 4 5 7 9 12 13 mask=12978
+HIT n=29 deg=16 S=1 4 5 7 9 12 13 14 mask=29362
+HIT n=29 deg=14 S=1 4 5 6 9 13 14 mask=25202
+HIT n=29 deg=16 S=1 4 5 6 9 12 13 14 mask=29298
+HIT n=29 deg=12 S=1 4 5 6 9 11 mask=2674
+HIT n=29 deg=14 S=1 4 5 6 9 11 13 mask=10866
+HIT n=29 deg=12 S=1 4 5 6 8 9 mask=882
+HIT n=29 deg=14 S=1 4 5 6 8 9 12 mask=4978
+HIT n=29 deg=14 S=1 4 5 6 8 9 11 mask=2930
+HIT n=29 deg=12 S=1 4 5 6 7 11 mask=2290
+HIT n=29 deg=14 S=1 4 5 6 7 11 13 mask=10482
+HIT n=29 deg=12 S=1 4 5 6 7 10 mask=1266
+HIT n=29 deg=14 S=1 4 5 6 7 10 14 mask=17650
+HIT n=29 deg=14 S=1 4 5 6 7 10 13 mask=9458
+HIT n=29 deg=16 S=1 4 5 6 7 10 13 14 mask=25842
+HIT n=29 deg=14 S=1 4 5 6 7 9 13 mask=8946
+HIT n=29 deg=14 S=1 4 5 6 7 9 11 mask=2802
+HIT n=29 deg=12 S=1 4 5 6 7 8 mask=498
+HIT n=29 deg=14 S=1 4 5 6 7 8 13 mask=8690
+HIT n=29 deg=14 S=1 4 5 6 7 8 12 mask=4594
+HIT n=29 deg=14 S=1 4 5 6 7 8 11 mask=2546
+HIT n=29 deg=16 S=1 4 5 6 7 8 11 13 mask=10738
+HIT n=29 deg=14 S=1 4 5 6 7 8 10 mask=1522
+HIT n=29 deg=16 S=1 4 5 6 7 8 10 13 mask=9714
+HIT n=29 deg=14 S=1 4 5 6 7 8 9 mask=1010
+HIT n=29 deg=16 S=1 4 5 6 7 8 9 12 mask=5106
+HIT n=29 deg=16 S=1 4 5 6 7 8 9 11 mask=3058
+HIT n=29 deg=12 S=1 3 8 11 12 14 mask=22794
+HIT n=29 deg=14 S=1 3 8 11 12 13 14 mask=30986
+HIT n=29 deg=12 S=1 3 8 10 11 14 mask=19722
+HIT n=29 deg=14 S=1 3 8 10 11 13 14 mask=27914
+HIT n=29 deg=14 S=1 3 8 10 11 12 14 mask=23818
+HIT n=29 deg=16 S=1 3 8 10 11 12 13 14 mask=32010
+HIT n=29 deg=14 S=1 3 8 9 12 13 14 mask=29450
+HIT n=29 deg=16 S=1 3 8 9 10 12 13 14 mask=30474
+HIT n=29 deg=12 S=1 3 7 8 9 12 mask=5002
+HIT n=29 deg=14 S=1 3 7 8 9 10 12 mask=6026
+HIT n=29 deg=14 S=1 3 6 8 10 11 14 mask=19786
+HIT n=29 deg=14 S=1 3 6 8 9 10 14 mask=18250
+HIT n=29 deg=14 S=1 3 5 8 11 12 14 mask=22826
+HIT n=29 deg=14 S=1 3 5 8 10 11 14 mask=19754
+HIT n=29 deg=16 S=1 3 5 8 10 11 12 14 mask=23850
+HIT n=29 deg=14 S=1 3 5 7 8 9 12 mask=5034
+HIT n=29 deg=14 S=1 3 5 6 9 13 14 mask=25194
+HIT n=29 deg=14 S=1 3 5 6 8 10 11 mask=3434
+HIT n=29 deg=14 S=1 3 4 10 11 12 13 mask=15386
+HIT n=29 deg=12 S=1 3 4 7 10 12 mask=5274
+HIT n=29 deg=14 S=1 3 4 7 10 12 13 mask=13466
+HIT n=29 deg=14 S=1 3 4 7 10 11 12 mask=7322
+HIT n=29 deg=16 S=1 3 4 7 10 11 12 13 mask=15514
+HIT n=29 deg=14 S=1 3 4 7 9 10 12 mask=5786
+HIT n=29 deg=14 S=1 3 4 7 8 10 12 mask=5530
+HIT n=29 deg=14 S=1 3 4 7 8 9 12 mask=5018
+HIT n=29 deg=16 S=1 3 4 7 8 9 10 12 mask=6042
+HIT n=29 deg=12 S=1 3 4 6 9 10 mask=1626
+HIT n=29 deg=14 S=1 3 4 6 9 10 14 mask=18010
+HIT n=29 deg=14 S=1 3 4 6 8 9 10 mask=1882
+HIT n=29 deg=12 S=1 3 4 6 7 9 mask=730
+HIT n=29 deg=14 S=1 3 4 6 7 9 14 mask=17114
+HIT n=29 deg=14 S=1 3 4 6 7 9 11 mask=2778
+HIT n=29 deg=12 S=1 3 4 5 9 13 mask=8762
+HIT n=29 deg=14 S=1 3 4 5 9 13 14 mask=25146
+HIT n=29 deg=14 S=1 3 4 5 9 11 14 mask=19002
+HIT n=29 deg=14 S=1 3 4 5 9 11 13 mask=10810
+HIT n=29 deg=14 S=1 3 4 5 9 10 13 mask=9786
+HIT n=29 deg=14 S=1 3 4 5 8 11 14 mask=18746
+HIT n=29 deg=14 S=1 3 4 5 7 10 14 mask=17594
+HIT n=29 deg=16 S=1 3 4 5 7 10 13 14 mask=25786
+HIT n=29 deg=14 S=1 3 4 5 7 9 13 mask=8890
+HIT n=29 deg=16 S=1 3 4 5 7 9 13 14 mask=25274
+HIT n=29 deg=16 S=1 3 4 5 7 9 10 13 mask=9914
+HIT n=29 deg=12 S=1 3 4 5 6 9 mask=634
+HIT n=29 deg=14 S=1 3 4 5 6 9 14 mask=17018
+HIT n=29 deg=14 S=1 3 4 5 6 9 13 mask=8826
+HIT n=29 deg=16 S=1 3 4 5 6 9 13 14 mask=25210
+HIT n=29 deg=14 S=1 3 4 5 6 9 11 mask=2682
+HIT n=29 deg=16 S=1 3 4 5 6 9 11 13 mask=10874
+HIT n=29 deg=14 S=1 3 4 5 6 8 11 mask=2426
+HIT n=29 deg=14 S=1 3 4 5 6 7 11 mask=2298
+HIT n=29 deg=16 S=1 3 4 5 6 7 11 13 mask=10490
+HIT n=29 deg=14 S=1 3 4 5 6 7 9 mask=762
+HIT n=29 deg=16 S=1 3 4 5 6 7 9 14 mask=17146
+HIT n=29 deg=16 S=1 3 4 5 6 7 9 11 mask=2810
+HIT n=29 deg=14 S=1 2 8 9 10 12 14 mask=22278
+HIT n=29 deg=14 S=1 2 6 9 11 12 13 mask=14918
+HIT n=29 deg=14 S=1 2 6 8 11 12 14 mask=22854
+HIT n=29 deg=14 S=1 2 6 8 10 11 12 mask=7494
+HIT n=29 deg=16 S=1 2 6 8 10 11 12 14 mask=23878
+HIT n=29 deg=14 S=1 2 6 8 9 11 12 mask=6982
+HIT n=29 deg=14 S=1 2 6 8 9 10 14 mask=18246
+HIT n=29 deg=12 S=1 2 6 7 9 13 mask=8902
+HIT n=29 deg=14 S=1 2 6 7 9 12 13 mask=12998
+HIT n=29 deg=14 S=1 2 6 7 9 10 13 mask=9926
+HIT n=29 deg=14 S=1 2 6 7 8 10 13 mask=9670
+HIT n=29 deg=14 S=1 2 6 7 8 10 11 mask=3526
+HIT n=29 deg=14 S=1 2 5 7 8 12 13 mask=12710
+HIT n=29 deg=12 S=1 2 5 6 7 13 mask=8422
+HIT n=29 deg=14 S=1 2 5 6 7 10 13 mask=9446
+HIT n=29 deg=14 S=1 2 5 6 7 9 13 mask=8934
+HIT n=29 deg=16 S=1 2 5 6 7 9 10 13 mask=9958
+HIT n=29 deg=14 S=1 2 4 9 11 12 13 mask=14870
+HIT n=29 deg=16 S=1 2 4 6 9 11 12 13 mask=14934
+HIT n=29 deg=14 S=1 2 4 6 9 10 13 mask=9814
+HIT n=29 deg=14 S=1 2 4 6 7 9 13 mask=8918
+HIT n=29 deg=16 S=1 2 4 6 7 9 12 13 mask=13014
+HIT n=29 deg=16 S=1 2 4 6 7 9 10 13 mask=9942
+HIT n=29 deg=14 S=1 2 4 5 9 11 13 mask=10806
+HIT n=29 deg=14 S=1 2 4 5 7 12 13 mask=12470
+HIT n=29 deg=16 S=1 2 4 5 7 9 12 13 mask=12982
+HIT n=29 deg=14 S=1 2 4 5 6 9 11 mask=2678
+HIT n=29 deg=16 S=1 2 4 5 6 9 11 13 mask=10870
+HIT n=29 deg=12 S=1 2 3 10 11 13 mask=11278
+HIT n=29 deg=12 S=1 2 3 10 11 12 mask=7182
+HIT n=29 deg=12 S=1 2 3 9 11 12 mask=6670
+HIT n=29 deg=14 S=1 2 3 9 11 12 13 mask=14862
+HIT n=29 deg=14 S=1 2 3 9 10 12 14 mask=22030
+HIT n=29 deg=12 S=1 2 3 8 10 11 mask=3342
+HIT n=29 deg=14 S=1 2 3 8 10 11 14 mask=19726
+HIT n=29 deg=14 S=1 2 3 8 10 11 12 mask=7438
+HIT n=29 deg=16 S=1 2 3 8 9 10 12 14 mask=22286
+HIT n=29 deg=14 S=1 2 3 7 10 11 13 mask=11406
+HIT n=29 deg=14 S=1 2 3 7 8 9 12 mask=5006
+HIT n=29 deg=14 S=1 2 3 6 10 11 12 mask=7246
+HIT n=29 deg=14 S=1 2 3 6 8 10 11 mask=3406
+HIT n=29 deg=16 S=1 2 3 6 8 10 11 14 mask=19790
+HIT n=29 deg=16 S=1 2 3 6 8 10 11 12 mask=7502
+HIT n=29 deg=16 S=1 2 3 6 8 9 10 14 mask=18254
+HIT n=29 deg=14 S=1 2 3 6 7 9 13 mask=8910
+HIT n=29 deg=14 S=1 2 3 5 10 11 13 mask=11310
+HIT n=29 deg=14 S=1 2 3 5 10 11 12 mask=7214
+HIT n=29 deg=14 S=1 2 3 5 9 11 13 mask=10798
+HIT n=29 deg=14 S=1 2 3 5 9 11 12 mask=6702
+HIT n=29 deg=14 S=1 2 3 5 8 10 14 mask=17710
+HIT n=29 deg=14 S=1 2 3 5 8 10 11 mask=3374
+HIT n=29 deg=16 S=1 2 3 5 8 10 11 14 mask=19758
+HIT n=29 deg=16 S=1 2 3 5 8 10 11 12 mask=7470
+HIT n=29 deg=14 S=1 2 3 5 7 10 13 mask=9390
+HIT n=29 deg=16 S=1 2 3 5 7 9 10 13 mask=9902
+HIT n=29 deg=14 S=1 2 3 5 7 8 9 mask=942
+HIT n=29 deg=16 S=1 2 3 5 7 8 9 12 mask=5038
+HIT n=29 deg=14 S=1 2 3 5 6 11 13 mask=10350
+HIT n=29 deg=16 S=1 2 3 5 6 9 11 13 mask=10862
+HIT n=29 deg=14 S=1 2 3 5 6 7 13 mask=8430
+HIT n=29 deg=16 S=1 2 3 5 6 7 9 13 mask=8942
+DONE n=29 scanned=16341 legal=16341 hits=394 sec=0.011

@@ -1,0 +1,11 @@
+{
+  "n": 656,
+  "any_sat": false,
+  "total_nodes": 883980,
+  "total_sec": 31.091,
+  "k4_range": [
+    1099,
+    1216
+  ],
+  "done_line": "DONE graphs_pairs=328 any_extension=0 tot_nodes=883980 sec=31.103"
+}

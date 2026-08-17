@@ -1,0 +1,14 @@
+{
+  "statement": "No inverse-closed undirected Cayley (5,5)-graph of order 42 with degrees in [17,24] exists on any of the six groups of order 42.",
+  "degree_window": [17, 24],
+  "groups": [
+    {"name": "C42", "ninv": 1, "leaves": 1167322, "hits": 0, "seconds": 0.854, "log": "logs/circulant42.txt"},
+    {"name": "D21", "ninv": 21, "leaves": 154888897, "pruned": 107925216, "hits": 0, "seconds": 97.242, "log": "logs/dihedral_fast.txt"},
+    {"name": "C7xS3", "ninv": 3, "leaves": 365033, "pruned": 219588, "hits": 0, "seconds": 3.454, "log": "logs/c7s3.txt"},
+    {"name": "C3xD7", "ninv": 7, "leaves": 1284757, "pruned": 808861, "hits": 0, "seconds": 0.994, "log": "logs/c3d7.txt"},
+    {"name": "AGL(1,7)", "ninv": 7, "leaves": 949786, "pruned": 963521, "hits": 0, "seconds": 0.893, "log": "logs/agl17.txt"},
+    {"name": "C2xF21", "ninv": 1, "leaves": 106226, "pruned": 280759, "hits": 0, "seconds": 0.242, "log": "logs/c2f21.txt"}
+  ],
+  "group_laws": "check_groups.py: identity, two-sided inverses, full associativity on all five non-cyclic tables plus D21",
+  "note": "Not a bound on R(5,5). The 656 published (5,5,42)-graphs are therefore non-Cayley."
+}

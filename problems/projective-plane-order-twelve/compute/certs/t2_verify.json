@@ -1,0 +1,36 @@
+{
+  "t": 2,
+  "latin": [
+    {
+      "k": 0,
+      "ok": true,
+      "msg": "ok"
+    },
+    {
+      "k": 1,
+      "ok": true,
+      "msg": "ok"
+    }
+  ],
+  "involution": [
+    {
+      "k": 0,
+      "ok": true,
+      "msg": "ok"
+    },
+    {
+      "k": 1,
+      "ok": true,
+      "msg": "ok"
+    }
+  ],
+  "orthogonal": [
+    {
+      "k": 0,
+      "kp": 1,
+      "ok": true,
+      "msg": "ok"
+    }
+  ],
+  "ok": true
+}

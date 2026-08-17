@@ -1,0 +1,7 @@
+{
+  "involution17": "SAT (validated (5,5,17) graph)",
+  "involution43_fat": "UNKNOWN at 900s",
+  "involution43_slim": "UNKNOWN at 1200s",
+  "order3_43_slim": "UNKNOWN at 600s",
+  "policy": "Isolated SAT timeouts are not a dent."
+}
