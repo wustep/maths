@@ -15,3 +15,9 @@ It is unknown whether the Cohn–Elkies linear-programming scheme itself can att
 ## Tonight
 
 An exact admissible function (algebraic coefficients, independently checkable Fourier sign conditions) that meets or strictly improves a published Cohn–Elkies ratio, or a documented obstruction. Numerical LP output without exact certificates is residue. Fetch Green #42 and Cohn–Elkies before searching.
+
+## Outcome (2026-08-17)
+
+Exact Laguerre–Gaussian certificate in `compute/certs/ce_d2_m5.json`, replay `compute/verify.py`.
+
+`R = 3627599/500000 = 7.255198` gives center density `≤ R/(8π) ≈ 0.28867515620`, ratio `1.00000007485` against hexagonal `√3/6`. Meets Cohn–Elkies 2003 Table 3 (`0.28868`) and is strictly below the printed Table 4 value `2πr² = 7.25520`. Not a magic function; Green #42 remains open.

@@ -1,0 +1,22 @@
+{
+  "cube_plus_axes": {
+    "cube_independent_set": 16,
+    "plus_10_axes": 26,
+    "beats_40": false,
+    "note": "A(Q5)=16, cube+axes spherical code has size 26."
+  },
+  "D5_plus_holes": {
+    "conflicts_per_hole": [
+      20
+    ],
+    "best_D5_minus_N_S_plus_even_holes": 40,
+    "best_n_holes_used": 0,
+    "beats_40": false
+  },
+  "simplex_crosspoly": {
+    "simplex_size": 6,
+    "crosspoly_size": 10,
+    "union_without_rescaling_not_on_one_sphere": true,
+    "note": "Equal-norm simplex+crosspoly is the 16-cell / 5-cell mix; not a 41-point lead."
+  }
+}

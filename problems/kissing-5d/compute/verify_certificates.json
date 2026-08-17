@@ -1,0 +1,35 @@
+{
+  "D5_inner_products": {
+    "certified": true,
+    "bound": "42",
+    "float_bound": 42.0,
+    "f_on_T": {
+      "-1": "0",
+      "-1/2": "0",
+      "0": "0",
+      "1/2": "0"
+    },
+    "c_k_nonneg": true,
+    "excludes": [
+      43,
+      44
+    ]
+  },
+  "L5_inner_products": {
+    "certified": true,
+    "bound": "239925/5456",
+    "float_bound": 43.97452346041056,
+    "f_on_T": {
+      "-1": "-10773/5456",
+      "-3/4": "0",
+      "-1/2": "0",
+      "-1/4": "0",
+      "0": "0",
+      "1/2": "0"
+    },
+    "c_k_nonneg": true,
+    "excludes": [
+      44
+    ]
+  }
+}
