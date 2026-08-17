@@ -31,16 +31,16 @@ lean/             only if there is a lemma
 
 Codex proposed 50 problems; Grok+Codex picked five. Notes:
 
-- [notes/proposed-50.md](notes/proposed-50.md)
-- [notes/pick-5.md](notes/pick-5.md)
-- [notes/judge-codex.md](notes/judge-codex.md)
+- [notes/lists/proposed-50.md](notes/lists/proposed-50.md)
+- [notes/picks/pick-5.md](notes/picks/pick-5.md)
+- [notes/picks/judge-codex.md](notes/picks/judge-codex.md)
 
 Historical lists (status 2026-08-17):
 
-- [notes/hilbert.md](notes/hilbert.md) — Hilbert 23 (1900)
-- [notes/smale.md](notes/smale.md) — Smale 18 (1998)
-- [notes/landau.md](notes/landau.md) — Landau 4 (1912)
-- [notes/ideation-historical.md](notes/ideation-historical.md) — pick for tonight
+- [notes/lists/hilbert.md](notes/lists/hilbert.md) — Hilbert 23 (1900)
+- [notes/lists/smale.md](notes/lists/smale.md) — Smale 18 (1998)
+- [notes/lists/landau.md](notes/lists/landau.md) — Landau 4 (1912)
+- [notes/picks/ideation-historical.md](notes/picks/ideation-historical.md) — pick for tonight
 
 The one finite record is the covering matrix:
 

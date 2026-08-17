@@ -2,7 +2,7 @@
 
 ## 2026-08-17 — pick
 
-See `notes/ideation-historical.md`. Landau 4 chosen over the rest of Hilbert/Smale/Landau because it is still open and has a checkable finite list plus Iwaniec's P2 theorem as a nearby object.
+See `notes/picks/ideation-historical.md`. Landau 4 chosen over the rest of Hilbert/Smale/Landau because it is still open and has a checkable finite list plus Iwaniec's P2 theorem as a nearby object.
 
 ## 2026-08-17 — first compute
 
