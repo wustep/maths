@@ -73,7 +73,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | F$_4$ certificate $c=0.34645$, $5\cdot 10^{-5}$ below HKN $0.3465$. Did not replay DRAT. $n=18$ residue. Conjecture $1/3$ open. |
 | [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
-| [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Counted 8,571,837 n=14 graphs of sequence $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
+| [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Incomplete. Inclusion $r_{13}(1/14\mathbb Z)\subseteq r_{13}(1/p\mathbb Z)$ replayed; two p=191 witnesses. LRC(13) open. |
 
 Each problem folder:
