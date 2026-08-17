@@ -59,10 +59,11 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P14/P16/P20 finished. Verified: cosine-zeros C=200 in Bedert; two-squares a=3 witnesses m≤250; Ulam L=22 word beats CS 1.454. Started P09 and P33.
 
+- SuperGrok P08/P09/P33 finished. Verified: long-gap SAT table through p=71, no C>2; BEL √(8/3) family replayed, no thinner liminf; union-closed 0.38285 on {b,1} Example-4 mix (recovers Liu 0.382709). Started P17, P27, P30.
+
 ## Open / in flight
 
-- SuperGrok four-run watch (P29, P07, P15, Landau 4). Wrap before the
-  weekly pool dies. Do not buy more usage.
+- SuperGrok watch: P17, P27, P30 live. Wrap before the weekly pool dies. Do not buy more usage.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.

@@ -16,6 +16,9 @@
 | two-squares gap | `problems/two-squares-gap` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | cosine zeros | `problems/cosine-zeros` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | Ulam sequence | `problems/ulam-sequence` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
-| long-gap dilate | `problems/long-gap-dilate` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| union-closed | `problems/union-closed` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| long-gap dilate | `problems/long-gap-dilate` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| union-closed | `problems/union-closed` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| kissing number 5d | `problems/kissing-5d` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |

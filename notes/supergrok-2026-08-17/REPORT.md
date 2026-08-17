@@ -56,12 +56,22 @@ Claim: G(n) < 2√2 n^{1/4} − 3 for 2 ≤ n ≤ 1.024e15 except {3,6,21,91}. I
 
 Independently certified the L=22 word `2313131131313131311313` has F2=9690750 and C_F < 1.442 by integer comparison, beating Clément–Steinerberger 1.454. nwords matches the closed admissible-language count 4316282880. Did not re-enumerate 4.3e9 words. Density still open.
 
+### P08 long-gap dilate — `problems/long-gap-dilate`
+
+No certified \(C>2\). Independently replayed Shakan on listed sets (`verify.py`, 104 reports, 0 failures) and every SAT witness through \(p=71\) (`verify_sat_witnesses.py`, 0 failures). For \(17\le p\le 71\) and \(n=\mathrm{round}\sqrt p\), \(G(p,n)\ge 2.1\sqrt p\) with a checked witness. Isolated small-\(p\) table, not a universal constant. Record still Shakan's 2.
+
+### P09 thin cyclic bases — `problems/thin-cyclic-bases`
+
+Independently replayed Bevan–Erskine–Lewis certificates through \(q=61\) (\(n=21594\), ratio \(1.660\)) and Haanpää's twelve cyclic table rows: all `A+A` covers (`verify.py` exit 0). No family with liminf strictly below \(\sqrt{8/3}\). Counting-optimal \(\sqrt2\) still open. Isolated Haanpää-scale tables are not an infinite-family dent.
+
+### P33 union-closed — `problems/union-closed`
+
+Independently replayed `compute/verify.py` (ALL_OK). On the \(\{b,1\}\) family, iid + Liu Example-4 mix at \(\beta=1/5\) has Gilmer ratio \(\ge 1.000077\) whenever the mean is \(\le 0.38285\) (5.1M mesh cells). Recovers Liu's Example-5 number \(0.382709087918735\). Same hypothesis class as Liu Theorem 13 (optimizer family, not every measure on \([0,1]\)). Not \(1/2\). Not a new reduction.
+
 ## In flight
 
-- P08 long-gap dilate
-- P09 thin cyclic bases
-- P33 union-closed
-
-
+- P17 random 0/1 polynomials
+- P27 Cohn–Elkies planar certificate
+- P30 kissing number in dimension 5
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

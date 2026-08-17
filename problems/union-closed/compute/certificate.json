@@ -1,0 +1,20 @@
+{
+  "claim": "On every 2-atomic law supported on {b,1}, the iid + Liu-Example-4 mix with beta=1/5 has Gilmer ratio >= 1 whenever the mean is at most 0.38285.",
+  "claimed_c": 0.38285,
+  "claimed_beta": 0.2,
+  "beats": {
+    "name": "Liu 2023 Example-5 numerical constant",
+    "value": 0.382709087918741,
+    "arxiv": "2306.08824",
+    "independently_recomputed": 0.382709087918735
+  },
+  "mesh_first_crossing_ex4_beta020": 0.38289680852720065,
+  "mesh_min_ratio_at_claimed_c": 1.0000771402076711,
+  "not_claimed": [
+    "Frankl 1/2",
+    "unconditional bound for every measure on [0,1]",
+    "universe size 13",
+    "|F| = 51"
+  ],
+  "replay": "compute/verify.py"
+}
