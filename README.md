@@ -14,6 +14,7 @@ container, no smoke tests.
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of \([3703]\). Does not extend to 3704. No dent. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in \(C_7^{\boxtimes 5}\). No 368. No dent. |
+| [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 12391 primes \(n^2+1\) for \(n\le 200000\). Infinitude open. |
 
 Each problem folder:
 
@@ -33,6 +34,13 @@ Codex proposed 50 problems; Grok+Codex picked five. Notes:
 - [notes/proposed-50.md](notes/proposed-50.md)
 - [notes/pick-5.md](notes/pick-5.md)
 - [notes/judge-codex.md](notes/judge-codex.md)
+
+Historical lists (status 2026-08-17):
+
+- [notes/hilbert.md](notes/hilbert.md) — Hilbert 23 (1900)
+- [notes/smale.md](notes/smale.md) — Smale 18 (1998)
+- [notes/landau.md](notes/landau.md) — Landau 4 (1912)
+- [notes/ideation-historical.md](notes/ideation-historical.md) — pick for tonight
 
 The one finite record is the covering matrix:
 
