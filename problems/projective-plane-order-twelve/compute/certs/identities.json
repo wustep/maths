@@ -1,0 +1,15 @@
+{
+  "n": 12,
+  "v": 157,
+  "block_size": 13,
+  "pairs": 12246,
+  "line_pairs": 12246,
+  "pairs_match": true,
+  "detB": 19502062504259715177796717507099199265600970231313964266423019742039123547420520087552,
+  "detB_formula": "13 * 12**78",
+  "detB_ok": true,
+  "bruck_ryser_applies": false,
+  "12_is_sum_of_two_squares": false,
+  "v_mod_2": 1,
+  "v_mod_3": 1
+}

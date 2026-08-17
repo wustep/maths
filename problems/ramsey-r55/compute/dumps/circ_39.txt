@@ -1,0 +1,1 @@
+DONE n=39 scanned=418132 legal=418132 hits=0 sec=0.300
