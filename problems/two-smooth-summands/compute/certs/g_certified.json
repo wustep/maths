@@ -1,0 +1,30 @@
+{
+  "method": "C word-bitset S_y shifted by y-smooth a <= small_bound, plus two-pointer on the published G(y)",
+  "is_dent": false,
+  "note": "Finite G(y). Independently reproduces A062241 through y=79.",
+  "rows": [
+    {"y": 1, "G": 3, "certified": true, "engine": "python"},
+    {"y": 2, "G": 7, "certified": true, "engine": "python+C"},
+    {"y": 3, "G": 23, "certified": true, "engine": "python+C"},
+    {"y": 5, "G": 71, "certified": true, "engine": "python"},
+    {"y": 7, "G": 311, "certified": true, "engine": "python+C"},
+    {"y": 11, "G": 479, "certified": true, "engine": "python"},
+    {"y": 13, "G": 1559, "certified": true, "engine": "python"},
+    {"y": 17, "G": 5711, "certified": true, "engine": "python"},
+    {"y": 19, "G": 10559, "certified": true, "engine": "python"},
+    {"y": 23, "G": 18191, "certified": true, "engine": "python"},
+    {"y": 29, "G": 31391, "certified": true, "engine": "python"},
+    {"y": 31, "G": 118271, "certified": true, "engine": "python+C", "nsmooth": 6598},
+    {"y": 37, "G": 366791, "certified": true, "engine": "C", "nsmooth": 13354},
+    {"y": 41, "G": 366791, "certified": true, "engine": "C", "nsmooth": 15343},
+    {"y": 43, "G": 2155919, "certified": true, "engine": "C", "nsmooth": 42095},
+    {"y": 47, "G": 2155919, "certified": true, "engine": "C", "nsmooth": 48274},
+    {"y": 53, "G": 2155919, "certified": true, "engine": "C", "nsmooth": 54486},
+    {"y": 59, "G": 6077111, "certified": true, "engine": "C", "nsmooth": 102546},
+    {"y": 61, "G": 6077111, "certified": true, "engine": "C", "nsmooth": 114680},
+    {"y": 67, "G": 98538359, "certified": true, "engine": "C", "nsmooth": 501974},
+    {"y": 71, "G": 120293879, "certified": true, "engine": "C", "nsmooth": 621781},
+    {"y": 73, "G": 131486759, "certified": true, "engine": "C", "nsmooth": 727473},
+    {"y": 79, "G": 131486759, "certified": true, "engine": "C", "nsmooth": 808372}
+  ]
+}

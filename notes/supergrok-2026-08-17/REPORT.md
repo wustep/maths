@@ -92,9 +92,13 @@ Independently enumerated all 10! linear extensions of the stored covers of \(W_{
 
 Independently recomputed first/second neighbourhoods on seven stored n=8 certificates. All seven are Pisa (strong, \(\Delta=0\)). Three are irregular non-matchings: missing-degree \(3^2 2^6\), \(3^4 2^4\), \(3^6 2^2\). Also a non-tight 2-regular missing example. Headline witness `certs/n8_irregular_pisa.json` (ternary 145923119419): margins (0,-1,0,0,-1,-1,0,0). Did **not** re-run the 2.5B geng orientation census, so “exactly seven types” is their claim. Seymour still open. Eulerian \(n=2\delta+3\) tables do not beat Kaneko–Locke.
 
+### P12 two smooth summands — `problems/two-smooth-summands`
+
+Documented residue. Independently: split 649+131486110 realises F(131486759)=83; M is not a 73-smooth or 79-smooth sum (808372 / 727473 smooth integers through M-1); Jacobi(-M/q)=1 for the 21 odd primes q<=79. G(y) replayed through y=23, matching the stored A062241 values. Stored exception witnesses check: 3 for n^{1/2} (last 23), 16 for n^{2/5} (last 479), 76 for n^{1/3} (last 18191). Square-plus-remainder template holds on [2,5000] plus large spots. Did **not** re-run the C bitset covering [2,G(y)-1] for y>=31, so G(y) through 79 is their claim. Did not beat Balog 4/(9 sqrt(e)). Green #59 open.
+
 ## In flight
 
-- P12 two smooth summands
-- P38 Tuza triangle packing-covering (launching)
+- P38 Tuza triangle packing-covering
+- P36 Caccetta–Häggkvist (launching)
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.
