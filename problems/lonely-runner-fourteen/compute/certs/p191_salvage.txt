@@ -1,0 +1,19 @@
+p=191 k=13 m=14
+inclusion: r_13(1/14 Z) subset r_13(1/191 Z)  (191>182)
+
+p-independent unsaved vectors, all p-saved at 191 (0 unsaved):
+
+family (all odd speeds 0, at least one even speed 0, not all-zero)
+  count 2702726 = 14^6 - 13^6 - 1
+  tool  enum_and_salvage --p 191 --rem-max 1
+  replay family_salvage --p 191
+
+mixed leftover r-columns
+  rem<=2  patterns-with-hit 447  vectors 3464589   enum_and_salvage --rem-max 2 --no-family
+  rem=3   patterns 1275  hit 311  vectors 5350341  leftover_csp --rem-min 3 --rem-max 3
+  rem=4   patterns 965   hit 125  vectors 1968902  leftover_csp --rem-min 4 --rem-max 4
+
+independent witness checker: verify_witness.py
+  family example v=0,0,0,0,0,0,0,0,0,0,0,1,0  s=1 j=16  t=415/2674  min_d=205>=191
+  mixed example  v=1,0,0,12,6,10,0,1,0,4,0,10,0  s=1 j=12  t=359/2674  min_d=230>=191
+  mixed example  v=0,0,0,1,0,7,0,1,0,1,0,1,7    s=1 j=24  t=527/2674  min_d=205>=191

@@ -112,9 +112,14 @@ Residue. Independently replayed `replay_identities.py` (v=157, 12246 pairs, |det
 
 Residue. Independently replayed `verify_mckay.py` on `refs/r55_42some.g6` (sha256 067902e853d87b49bcef0d1d4c0e3bbadd238ee18bc65341b079a3ca4780eccb): 328 lines, 328 ok, 328 complements also (5,5), 0 self-complementary, unique_fp=173, delta=19, Delta=22, no regular graphs. That is the published 656 (graph + complement). Independently replayed `py_circulant.py` 42 and 43: empty in the legal degree window. Did **not** independently replay the C Cayley census, extend_check, or involution SAT. Published record still 43 <= R(5,5) <= 46. Do not cite the folder as a bound.
 
-## In flight
+### P39 graph reconstruction n=14 — `problems/graph-reconstruction-next-order`
 
-- P39 graph reconstruction n=14
-- P44 lonely runner 14
+SuperGrok claimed every 14-vertex graph of degree sequence 4^11 6^3 is reconstructible from its full deck (8,571,837 unlabelled graphs; 0 full-deck and 0 reduced-deck SHA-256 collisions). Independently: counted `bireg46_s3all.g6` = 8,571,837 lines and `bireg46_s3.g6` = 8,571,676; 200,000-prefix plus all 17,143 `labelg` samples are n=14 with sequence 4^11 6^3; `verify_labelg.py` on `sample_bireg46_s3all.txt`: checked=17143 mismatches=0. Also counted `bireg46_s4.g6` = 41,538,279; `labelg` samples checked=20769 mismatches=0. Did **not** independently re-sort the 8.5M (or 41M) deck hashes, re-run `geng`/`shortg`, or replay `degcheck` on the full lists. Uniqueness, and therefore reconstructibility, is their `deckrecon` sort. McKay all-graphs n=13 unchanged.
 
-Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.
+### P44 lonely runner 14 — `problems/lonely-runner-fourteen`
+
+Incomplete (quota death, no WALKTHROUGH). Independently: `rk_inclusion.py --selftest` OK (k=10 at 103,107,109; k=12 at 149,151; k=13 at 173,179,181 and p>182). Family count 14^6-13^6-1=2,702,726. Two p=191 witnesses via `verify_witness.py`: v=(0..0,1,0) s=1 j=16 min_d=205; mixed v=(1,0,0,12,6,10,0,1,0,4,0,10,0) s=1 j=12 min_d=230. Did **not** replay leftover_csp / exhaustive rem>=4 salvage. LRC(13) open.
+
+## Wrap
+
+Weekly SuperGrok/Build pool returned 402 Payment Required (balance exhausted) on both live runs. Stopped launching. Did not buy Extra Usage. Local g6 lists for P39 are not in git (hundreds of MB).

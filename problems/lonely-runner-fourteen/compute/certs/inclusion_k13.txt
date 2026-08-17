@@ -1,0 +1,5 @@
+k=13 threshold k(k+1)=182
+holds_below_threshold 173,179,181
+holds_above (first) 191,193,197,199,211,223,227,229,233,239,241
+ST26 footnote replay: k=10 {103,107,109}; k=12 {149,151}; plus p>k(k+1).
+Source: compute/rk_inclusion.py --selftest

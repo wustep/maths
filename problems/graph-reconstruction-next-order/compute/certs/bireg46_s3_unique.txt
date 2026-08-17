@@ -1,0 +1,12 @@
+START hash s3 Mon Aug 17 17:14:28 UTC 2026
+deckrecon: kept=1048576 read=1048576 full_coll=0 set_coll=0
+deckrecon: kept=2097152 read=2097152 full_coll=0 set_coll=0
+deckrecon: kept=3145728 read=3145728 full_coll=0 set_coll=0
+deckrecon: kept=4194304 read=4194304 full_coll=0 set_coll=0
+deckrecon: kept=5242880 read=5242880 full_coll=0 set_coll=0
+deckrecon: kept=6291456 read=6291456 full_coll=0 set_coll=0
+deckrecon: kept=7340032 read=7340032 full_coll=0 set_coll=0
+deckrecon: kept=8388608 read=8388608 full_coll=0 set_coll=0
+hashed Mon Aug 17 17:16:47 UTC 2026 lines=8571677
+lines=8571676 full_dup_keys=0 set_dup_keys=0
+checked=21429 mismatches=0 labelg=/workspace/maths/problems/graph-reconstruction-next-order/compute/bin/labelg

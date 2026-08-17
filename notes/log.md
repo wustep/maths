@@ -75,6 +75,7 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P36 finished. Verified F4 certificate c=0.34645 (5e-5 below HKN 0.3465). Did not replay DRAT. n=18 residue. Started P41 R(5,5). P31 still running.
 - SuperGrok P31/P41 finished. Residue: PP(12) two involution 2-MOLS replayed (108+108 vs 90+78 intercalates); t=3 timeout; Aut still |G| in {1,2,3}. R(5,5): 328+328 McKay graphs replayed, circulant 42/43 empty; interval still 43–46. Started P39 reconstruction n=14 and P44 lonely runner 14.
+- SuperGrok P39/P44 hit 402 (pool exhausted). P39: counted 8,571,837 graphs of claimed sequence 4^11 6^3; 17,143 labelg samples matched; uniqueness not independently re-sorted. P44: inclusion and two p=191 witnesses replayed; leftover salvage unfinished. Stopped launching.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.
