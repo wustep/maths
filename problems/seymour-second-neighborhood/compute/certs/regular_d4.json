@@ -1,0 +1,9 @@
+{
+  "delta": 4,
+  "n": 11,
+  "eulerian": true,
+  "status": "INFEASIBLE",
+  "solve_time": 2.740364903,
+  "conflicts": 44722,
+  "branches": 152203
+}

@@ -1,0 +1,121 @@
+{
+  "n": 8,
+  "method": "nauty geng representatives, all 2^e orientations, bitmask Delta and strong connectivity",
+  "unlabeled_undirected_graphs": 12346,
+  "orientations_of_reps": 2496391267,
+  "pisa_orients_on_reps": 162,
+  "missing_degree_types": [
+    {
+      "missing_deg": [
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5,
+        5
+      ],
+      "pisa_orients_on_rep": 2,
+      "example": "n8_miss5regular.json",
+      "notes": "directed C8"
+    },
+    {
+      "missing_deg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "pisa_orients_on_rep": 20,
+      "example": "n8_miss3regular.json",
+      "notes": "includes C8^2 and C4[E2]"
+    },
+    {
+      "missing_deg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        2,
+        2
+      ],
+      "pisa_orients_on_rep": 12,
+      "example": "n8_miss22333333.json",
+      "notes": "irregular; not in Halkiewicz n<=7 pattern"
+    },
+    {
+      "missing_deg": [
+        3,
+        3,
+        3,
+        3,
+        2,
+        2,
+        2,
+        2
+      ],
+      "pisa_orients_on_rep": 32,
+      "example": "n8_miss33222222.json",
+      "notes": "irregular"
+    },
+    {
+      "missing_deg": [
+        3,
+        3,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "pisa_orients_on_rep": 16,
+      "example": "n8_irregular_pisa.json",
+      "notes": "C4 plus K4-e"
+    },
+    {
+      "missing_deg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "pisa_orients_on_rep": 32,
+      "example": "n8_miss2regular.json",
+      "notes": "K8 minus 2-factor; not tight"
+    },
+    {
+      "missing_deg": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "pisa_orients_on_rep": 48,
+      "example": "n8_miss1regular.json",
+      "notes": "K8 minus perfect matching; includes C8^3"
+    }
+  ],
+  "absent_types_of_interest": [
+    "0^8 (tournaments): none, n even",
+    "4^8: SAT INFEASIBLE and geng found none",
+    "6^8: none (underlying 1-regular is disconnected)",
+    "incomplete matchings 1^k 0^{8-k} for k<8: none"
+  ],
+  "beats": "Halkiewicz arXiv:2601.21563v3 n<=7 census and Conjecture 5.1 / n=7 regular-missing pattern"
+}

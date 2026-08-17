@@ -1,0 +1,11 @@
+{
+  "n": 6,
+  "unlabeled_undirected": 156,
+  "orientations_of_reps": 141795,
+  "pisa_on_reps": 264,
+  "note": "counts are over geng representatives, not labeled graphs",
+  "missing_degree_types": [
+    {"missing_deg": [1,1,0,0,0,0], "pisa_orients": 24, "undirected_graphs": 24},
+    {"missing_deg": [0,0,0,0,0,0], "pisa_orients": 240, "undirected_graphs": 240}
+  ]
+}

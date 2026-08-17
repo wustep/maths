@@ -1,0 +1,17 @@
+{
+  "name": "W10",
+  "description": "Unique unlabelled 10-element width-3 poset with delta < 14/39. Naturally labelled so the identity is a linear extension.",
+  "n": 10,
+  "down": [0, 0, 1, 1, 7, 11, 23, 87, 95, 255],
+  "covers": [[0, 2], [0, 3], [1, 4], [1, 5], [2, 4], [3, 5], [3, 8], [4, 6], [5, 9], [6, 7], [6, 8], [7, 9]],
+  "e": 187,
+  "best_pair": [3, 4, 121, 66],
+  "delta": [6, 17],
+  "delta_unreduced": [66, 187],
+  "width": 3,
+  "antichains_of_size_3": [[1, 2, 3], [5, 7, 8]],
+  "published_width3_record_beaten": [14, 39],
+  "strictly_above_one_third": true,
+  "n_natural_labellings_below_14_39": 187,
+  "note": "n_below_14_39 equals e(W10), so this is the unique unlabelled width-3 poset on 10 elements beating 14/39."
+}

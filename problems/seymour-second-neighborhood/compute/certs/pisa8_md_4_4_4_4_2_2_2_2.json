@@ -1,0 +1,12 @@
+{
+  "status": "UNKNOWN",
+  "n": 8,
+  "rounds": [
+    {
+      "round": 0,
+      "status": "UNKNOWN",
+      "time": 30.018425127,
+      "conflicts": 10685
+    }
+  ]
+}

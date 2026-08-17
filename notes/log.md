@@ -67,7 +67,7 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P05/P17 finished. Verified: affine-013 T <= ceil(n^2/2), beats Aaronson 3/4 (1/3 still open); 0/1 polynomials BSKK theta 0.00373556, census n<=20 consistent, p_n->1 open. Started P37 and P12. P34 still running.
 
-- SuperGrok watch: P34, P37, P12 live. Wrap before the weekly pool dies. Do not buy more usage.
+- SuperGrok P34/P37 finished. Verified: width-3 \(W_{10}\) has \(\delta=6/17<14/39\), e=187, still \(>1/3\) (10! LE count; uniqueness not independently replayed); n=8 Pisa graphs with irregular missing degrees \(3^2 2^6\), \(3^4 2^4\), \(3^6 2^2\) (seven stored witnesses replayed; 2.5B geng census not replayed). Started P38 Tuza. P12 still running.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.

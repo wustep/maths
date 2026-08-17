@@ -1,0 +1,984 @@
+{
+  "status": "UNKNOWN",
+  "n": 8,
+  "rounds": [
+    {
+      "round": 0,
+      "status": "OPTIMAL",
+      "time": 0.058229022000000005,
+      "conflicts": 16
+    },
+    {
+      "round": 1,
+      "status": "OPTIMAL",
+      "time": 0.058026481000000005,
+      "conflicts": 11
+    },
+    {
+      "round": 2,
+      "status": "OPTIMAL",
+      "time": 0.046808748000000004,
+      "conflicts": 146
+    },
+    {
+      "round": 3,
+      "status": "OPTIMAL",
+      "time": 0.040748480000000004,
+      "conflicts": 0
+    },
+    {
+      "round": 4,
+      "status": "OPTIMAL",
+      "time": 0.038604081000000005,
+      "conflicts": 59
+    },
+    {
+      "round": 5,
+      "status": "OPTIMAL",
+      "time": 0.036075431000000005,
+      "conflicts": 45
+    },
+    {
+      "round": 6,
+      "status": "OPTIMAL",
+      "time": 0.036126787,
+      "conflicts": 0
+    },
+    {
+      "round": 7,
+      "status": "OPTIMAL",
+      "time": 0.038044198,
+      "conflicts": 78
+    },
+    {
+      "round": 8,
+      "status": "OPTIMAL",
+      "time": 0.03646555,
+      "conflicts": 58
+    },
+    {
+      "round": 9,
+      "status": "OPTIMAL",
+      "time": 0.037031706000000005,
+      "conflicts": 75
+    },
+    {
+      "round": 10,
+      "status": "OPTIMAL",
+      "time": 0.039357496000000006,
+      "conflicts": 159
+    },
+    {
+      "round": 11,
+      "status": "OPTIMAL",
+      "time": 0.038477975000000005,
+      "conflicts": 41
+    },
+    {
+      "round": 12,
+      "status": "OPTIMAL",
+      "time": 0.035525608,
+      "conflicts": 0
+    },
+    {
+      "round": 13,
+      "status": "OPTIMAL",
+      "time": 0.038247761000000005,
+      "conflicts": 24
+    },
+    {
+      "round": 14,
+      "status": "OPTIMAL",
+      "time": 0.038928153,
+      "conflicts": 84
+    },
+    {
+      "round": 15,
+      "status": "OPTIMAL",
+      "time": 0.03228351,
+      "conflicts": 0
+    },
+    {
+      "round": 16,
+      "status": "OPTIMAL",
+      "time": 0.039258211,
+      "conflicts": 29
+    },
+    {
+      "round": 17,
+      "status": "OPTIMAL",
+      "time": 0.030518120000000003,
+      "conflicts": 0
+    },
+    {
+      "round": 18,
+      "status": "OPTIMAL",
+      "time": 0.039317567000000005,
+      "conflicts": 77
+    },
+    {
+      "round": 19,
+      "status": "OPTIMAL",
+      "time": 0.032038084,
+      "conflicts": 0
+    },
+    {
+      "round": 20,
+      "status": "OPTIMAL",
+      "time": 0.038718691,
+      "conflicts": 74
+    },
+    {
+      "round": 21,
+      "status": "OPTIMAL",
+      "time": 0.035812879,
+      "conflicts": 0
+    },
+    {
+      "round": 22,
+      "status": "OPTIMAL",
+      "time": 0.038257776,
+      "conflicts": 57
+    },
+    {
+      "round": 23,
+      "status": "OPTIMAL",
+      "time": 0.038060896000000004,
+      "conflicts": 53
+    },
+    {
+      "round": 24,
+      "status": "OPTIMAL",
+      "time": 0.040106961000000003,
+      "conflicts": 76
+    },
+    {
+      "round": 25,
+      "status": "OPTIMAL",
+      "time": 0.043127325,
+      "conflicts": 26
+    },
+    {
+      "round": 26,
+      "status": "OPTIMAL",
+      "time": 0.03584339,
+      "conflicts": 0
+    },
+    {
+      "round": 27,
+      "status": "OPTIMAL",
+      "time": 0.03912985,
+      "conflicts": 0
+    },
+    {
+      "round": 28,
+      "status": "OPTIMAL",
+      "time": 0.038711487,
+      "conflicts": 80
+    },
+    {
+      "round": 29,
+      "status": "OPTIMAL",
+      "time": 0.038344329,
+      "conflicts": 32
+    },
+    {
+      "round": 30,
+      "status": "OPTIMAL",
+      "time": 0.037672223000000005,
+      "conflicts": 69
+    },
+    {
+      "round": 31,
+      "status": "OPTIMAL",
+      "time": 0.038728825,
+      "conflicts": 37
+    },
+    {
+      "round": 32,
+      "status": "OPTIMAL",
+      "time": 0.039851920000000006,
+      "conflicts": 19
+    },
+    {
+      "round": 33,
+      "status": "OPTIMAL",
+      "time": 0.034821830000000005,
+      "conflicts": 0
+    },
+    {
+      "round": 34,
+      "status": "OPTIMAL",
+      "time": 0.037557758000000004,
+      "conflicts": 69
+    },
+    {
+      "round": 35,
+      "status": "OPTIMAL",
+      "time": 0.03847943,
+      "conflicts": 58
+    },
+    {
+      "round": 36,
+      "status": "OPTIMAL",
+      "time": 0.038580720000000006,
+      "conflicts": 69
+    },
+    {
+      "round": 37,
+      "status": "OPTIMAL",
+      "time": 0.038541762,
+      "conflicts": 78
+    },
+    {
+      "round": 38,
+      "status": "OPTIMAL",
+      "time": 0.030964993000000003,
+      "conflicts": 0
+    },
+    {
+      "round": 39,
+      "status": "OPTIMAL",
+      "time": 0.028200790000000003,
+      "conflicts": 0
+    },
+    {
+      "round": 40,
+      "status": "OPTIMAL",
+      "time": 0.039703769,
+      "conflicts": 67
+    },
+    {
+      "round": 41,
+      "status": "OPTIMAL",
+      "time": 0.041229916000000005,
+      "conflicts": 72
+    },
+    {
+      "round": 42,
+      "status": "OPTIMAL",
+      "time": 0.038368863,
+      "conflicts": 0
+    },
+    {
+      "round": 43,
+      "status": "OPTIMAL",
+      "time": 0.043101566,
+      "conflicts": 65
+    },
+    {
+      "round": 44,
+      "status": "OPTIMAL",
+      "time": 0.037819105000000006,
+      "conflicts": 0
+    },
+    {
+      "round": 45,
+      "status": "OPTIMAL",
+      "time": 0.04105438,
+      "conflicts": 91
+    },
+    {
+      "round": 46,
+      "status": "OPTIMAL",
+      "time": 0.048359534,
+      "conflicts": 95
+    },
+    {
+      "round": 47,
+      "status": "OPTIMAL",
+      "time": 0.039491283,
+      "conflicts": 68
+    },
+    {
+      "round": 48,
+      "status": "OPTIMAL",
+      "time": 0.047732281,
+      "conflicts": 203
+    },
+    {
+      "round": 49,
+      "status": "OPTIMAL",
+      "time": 0.038906956,
+      "conflicts": 0
+    },
+    {
+      "round": 50,
+      "status": "OPTIMAL",
+      "time": 0.048048072000000004,
+      "conflicts": 114
+    },
+    {
+      "round": 51,
+      "status": "OPTIMAL",
+      "time": 0.042641998,
+      "conflicts": 57
+    },
+    {
+      "round": 52,
+      "status": "OPTIMAL",
+      "time": 0.04159124,
+      "conflicts": 63
+    },
+    {
+      "round": 53,
+      "status": "OPTIMAL",
+      "time": 0.037819776,
+      "conflicts": 0
+    },
+    {
+      "round": 54,
+      "status": "OPTIMAL",
+      "time": 0.040239608,
+      "conflicts": 92
+    },
+    {
+      "round": 55,
+      "status": "OPTIMAL",
+      "time": 0.041436215000000005,
+      "conflicts": 59
+    },
+    {
+      "round": 56,
+      "status": "OPTIMAL",
+      "time": 0.040834518,
+      "conflicts": 77
+    },
+    {
+      "round": 57,
+      "status": "OPTIMAL",
+      "time": 0.041002022000000006,
+      "conflicts": 107
+    },
+    {
+      "round": 58,
+      "status": "OPTIMAL",
+      "time": 0.040999511,
+      "conflicts": 72
+    },
+    {
+      "round": 59,
+      "status": "OPTIMAL",
+      "time": 0.044474481,
+      "conflicts": 94
+    },
+    {
+      "round": 60,
+      "status": "OPTIMAL",
+      "time": 0.036117915,
+      "conflicts": 0
+    },
+    {
+      "round": 61,
+      "status": "OPTIMAL",
+      "time": 0.043361621,
+      "conflicts": 139
+    },
+    {
+      "round": 62,
+      "status": "OPTIMAL",
+      "time": 0.044314318000000005,
+      "conflicts": 97
+    },
+    {
+      "round": 63,
+      "status": "OPTIMAL",
+      "time": 0.042140693,
+      "conflicts": 130
+    },
+    {
+      "round": 64,
+      "status": "OPTIMAL",
+      "time": 0.039165573,
+      "conflicts": 66
+    },
+    {
+      "round": 65,
+      "status": "OPTIMAL",
+      "time": 0.030886775,
+      "conflicts": 0
+    },
+    {
+      "round": 66,
+      "status": "OPTIMAL",
+      "time": 0.03955012,
+      "conflicts": 10
+    },
+    {
+      "round": 67,
+      "status": "OPTIMAL",
+      "time": 0.036883573,
+      "conflicts": 0
+    },
+    {
+      "round": 68,
+      "status": "OPTIMAL",
+      "time": 0.040692974,
+      "conflicts": 95
+    },
+    {
+      "round": 69,
+      "status": "OPTIMAL",
+      "time": 0.045382242,
+      "conflicts": 81
+    },
+    {
+      "round": 70,
+      "status": "OPTIMAL",
+      "time": 0.042512110000000006,
+      "conflicts": 78
+    },
+    {
+      "round": 71,
+      "status": "OPTIMAL",
+      "time": 0.040135387,
+      "conflicts": 78
+    },
+    {
+      "round": 72,
+      "status": "OPTIMAL",
+      "time": 0.040787434000000004,
+      "conflicts": 88
+    },
+    {
+      "round": 73,
+      "status": "OPTIMAL",
+      "time": 0.043161347,
+      "conflicts": 78
+    },
+    {
+      "round": 74,
+      "status": "OPTIMAL",
+      "time": 0.043230859,
+      "conflicts": 59
+    },
+    {
+      "round": 75,
+      "status": "OPTIMAL",
+      "time": 0.046230802,
+      "conflicts": 156
+    },
+    {
+      "round": 76,
+      "status": "OPTIMAL",
+      "time": 0.054951818000000006,
+      "conflicts": 189
+    },
+    {
+      "round": 77,
+      "status": "OPTIMAL",
+      "time": 0.043693156000000004,
+      "conflicts": 71
+    },
+    {
+      "round": 78,
+      "status": "OPTIMAL",
+      "time": 0.045061517,
+      "conflicts": 226
+    },
+    {
+      "round": 79,
+      "status": "OPTIMAL",
+      "time": 0.042166593,
+      "conflicts": 46
+    },
+    {
+      "round": 80,
+      "status": "OPTIMAL",
+      "time": 0.03023214,
+      "conflicts": 0
+    },
+    {
+      "round": 81,
+      "status": "OPTIMAL",
+      "time": 0.036561125,
+      "conflicts": 0
+    },
+    {
+      "round": 82,
+      "status": "OPTIMAL",
+      "time": 0.035619094000000004,
+      "conflicts": 0
+    },
+    {
+      "round": 83,
+      "status": "OPTIMAL",
+      "time": 0.041746239000000004,
+      "conflicts": 52
+    },
+    {
+      "round": 84,
+      "status": "OPTIMAL",
+      "time": 0.039020257,
+      "conflicts": 0
+    },
+    {
+      "round": 85,
+      "status": "OPTIMAL",
+      "time": 0.035441931,
+      "conflicts": 0
+    },
+    {
+      "round": 86,
+      "status": "OPTIMAL",
+      "time": 0.035440279000000005,
+      "conflicts": 0
+    },
+    {
+      "round": 87,
+      "status": "OPTIMAL",
+      "time": 0.058916912,
+      "conflicts": 29
+    },
+    {
+      "round": 88,
+      "status": "OPTIMAL",
+      "time": 0.037679267,
+      "conflicts": 0
+    },
+    {
+      "round": 89,
+      "status": "OPTIMAL",
+      "time": 0.048710263000000004,
+      "conflicts": 115
+    },
+    {
+      "round": 90,
+      "status": "OPTIMAL",
+      "time": 0.032643842,
+      "conflicts": 0
+    },
+    {
+      "round": 91,
+      "status": "OPTIMAL",
+      "time": 0.043486412,
+      "conflicts": 83
+    },
+    {
+      "round": 92,
+      "status": "OPTIMAL",
+      "time": 0.045543297,
+      "conflicts": 160
+    },
+    {
+      "round": 93,
+      "status": "OPTIMAL",
+      "time": 0.043653529,
+      "conflicts": 102
+    },
+    {
+      "round": 94,
+      "status": "OPTIMAL",
+      "time": 0.043972368000000005,
+      "conflicts": 27
+    },
+    {
+      "round": 95,
+      "status": "OPTIMAL",
+      "time": 0.037088587,
+      "conflicts": 0
+    },
+    {
+      "round": 96,
+      "status": "OPTIMAL",
+      "time": 0.043867153000000006,
+      "conflicts": 101
+    },
+    {
+      "round": 97,
+      "status": "OPTIMAL",
+      "time": 0.052454181,
+      "conflicts": 289
+    },
+    {
+      "round": 98,
+      "status": "OPTIMAL",
+      "time": 0.047952188,
+      "conflicts": 79
+    },
+    {
+      "round": 99,
+      "status": "OPTIMAL",
+      "time": 0.044961213,
+      "conflicts": 68
+    },
+    {
+      "round": 100,
+      "status": "OPTIMAL",
+      "time": 0.049630417,
+      "conflicts": 170
+    },
+    {
+      "round": 101,
+      "status": "OPTIMAL",
+      "time": 0.044617062000000006,
+      "conflicts": 69
+    },
+    {
+      "round": 102,
+      "status": "OPTIMAL",
+      "time": 0.043339347,
+      "conflicts": 57
+    },
+    {
+      "round": 103,
+      "status": "OPTIMAL",
+      "time": 0.048036841000000004,
+      "conflicts": 221
+    },
+    {
+      "round": 104,
+      "status": "OPTIMAL",
+      "time": 0.048844099,
+      "conflicts": 118
+    },
+    {
+      "round": 105,
+      "status": "OPTIMAL",
+      "time": 0.045350819,
+      "conflicts": 86
+    },
+    {
+      "round": 106,
+      "status": "OPTIMAL",
+      "time": 0.045570778000000006,
+      "conflicts": 99
+    },
+    {
+      "round": 107,
+      "status": "OPTIMAL",
+      "time": 0.053863856,
+      "conflicts": 400
+    },
+    {
+      "round": 108,
+      "status": "OPTIMAL",
+      "time": 0.050135775,
+      "conflicts": 76
+    },
+    {
+      "round": 109,
+      "status": "OPTIMAL",
+      "time": 0.047803466,
+      "conflicts": 153
+    },
+    {
+      "round": 110,
+      "status": "OPTIMAL",
+      "time": 0.041700519000000005,
+      "conflicts": 0
+    },
+    {
+      "round": 111,
+      "status": "OPTIMAL",
+      "time": 0.046747258,
+      "conflicts": 71
+    },
+    {
+      "round": 112,
+      "status": "OPTIMAL",
+      "time": 0.054175227000000006,
+      "conflicts": 309
+    },
+    {
+      "round": 113,
+      "status": "OPTIMAL",
+      "time": 0.046837547,
+      "conflicts": 187
+    },
+    {
+      "round": 114,
+      "status": "OPTIMAL",
+      "time": 0.047758599000000006,
+      "conflicts": 182
+    },
+    {
+      "round": 115,
+      "status": "OPTIMAL",
+      "time": 0.044894177,
+      "conflicts": 54
+    },
+    {
+      "round": 116,
+      "status": "OPTIMAL",
+      "time": 0.049370588,
+      "conflicts": 160
+    },
+    {
+      "round": 117,
+      "status": "OPTIMAL",
+      "time": 0.049154670000000004,
+      "conflicts": 0
+    },
+    {
+      "round": 118,
+      "status": "OPTIMAL",
+      "time": 0.050935123000000006,
+      "conflicts": 86
+    },
+    {
+      "round": 119,
+      "status": "OPTIMAL",
+      "time": 0.047863738,
+      "conflicts": 101
+    },
+    {
+      "round": 120,
+      "status": "OPTIMAL",
+      "time": 0.033862549,
+      "conflicts": 0
+    },
+    {
+      "round": 121,
+      "status": "OPTIMAL",
+      "time": 0.04680054,
+      "conflicts": 189
+    },
+    {
+      "round": 122,
+      "status": "OPTIMAL",
+      "time": 0.047411255000000006,
+      "conflicts": 244
+    },
+    {
+      "round": 123,
+      "status": "OPTIMAL",
+      "time": 0.045057455,
+      "conflicts": 144
+    },
+    {
+      "round": 124,
+      "status": "OPTIMAL",
+      "time": 0.044414001,
+      "conflicts": 121
+    },
+    {
+      "round": 125,
+      "status": "OPTIMAL",
+      "time": 0.049289681,
+      "conflicts": 332
+    },
+    {
+      "round": 126,
+      "status": "OPTIMAL",
+      "time": 0.043773725,
+      "conflicts": 98
+    },
+    {
+      "round": 127,
+      "status": "OPTIMAL",
+      "time": 0.054084101,
+      "conflicts": 113
+    },
+    {
+      "round": 128,
+      "status": "OPTIMAL",
+      "time": 0.048817066000000006,
+      "conflicts": 284
+    },
+    {
+      "round": 129,
+      "status": "OPTIMAL",
+      "time": 0.046360061,
+      "conflicts": 142
+    },
+    {
+      "round": 130,
+      "status": "OPTIMAL",
+      "time": 0.047558834,
+      "conflicts": 143
+    },
+    {
+      "round": 131,
+      "status": "OPTIMAL",
+      "time": 0.0325791,
+      "conflicts": 0
+    },
+    {
+      "round": 132,
+      "status": "OPTIMAL",
+      "time": 0.050267375,
+      "conflicts": 320
+    },
+    {
+      "round": 133,
+      "status": "OPTIMAL",
+      "time": 0.051381795,
+      "conflicts": 402
+    },
+    {
+      "round": 134,
+      "status": "OPTIMAL",
+      "time": 0.048310647000000005,
+      "conflicts": 47
+    },
+    {
+      "round": 135,
+      "status": "OPTIMAL",
+      "time": 0.050651075000000004,
+      "conflicts": 267
+    },
+    {
+      "round": 136,
+      "status": "OPTIMAL",
+      "time": 0.051652304,
+      "conflicts": 449
+    },
+    {
+      "round": 137,
+      "status": "OPTIMAL",
+      "time": 0.052706102000000005,
+      "conflicts": 333
+    },
+    {
+      "round": 138,
+      "status": "OPTIMAL",
+      "time": 0.049709726,
+      "conflicts": 166
+    },
+    {
+      "round": 139,
+      "status": "OPTIMAL",
+      "time": 0.055361479000000005,
+      "conflicts": 311
+    },
+    {
+      "round": 140,
+      "status": "OPTIMAL",
+      "time": 0.052012603000000004,
+      "conflicts": 362
+    },
+    {
+      "round": 141,
+      "status": "OPTIMAL",
+      "time": 0.052524201000000006,
+      "conflicts": 191
+    },
+    {
+      "round": 142,
+      "status": "OPTIMAL",
+      "time": 0.06725144200000001,
+      "conflicts": 75
+    },
+    {
+      "round": 143,
+      "status": "OPTIMAL",
+      "time": 0.054618759,
+      "conflicts": 319
+    },
+    {
+      "round": 144,
+      "status": "OPTIMAL",
+      "time": 0.058965617000000005,
+      "conflicts": 241
+    },
+    {
+      "round": 145,
+      "status": "OPTIMAL",
+      "time": 0.053787875000000006,
+      "conflicts": 188
+    },
+    {
+      "round": 146,
+      "status": "OPTIMAL",
+      "time": 0.056727861000000004,
+      "conflicts": 198
+    },
+    {
+      "round": 147,
+      "status": "OPTIMAL",
+      "time": 0.060364457,
+      "conflicts": 64
+    },
+    {
+      "round": 148,
+      "status": "OPTIMAL",
+      "time": 0.051480975000000005,
+      "conflicts": 352
+    },
+    {
+      "round": 149,
+      "status": "OPTIMAL",
+      "time": 0.050177525,
+      "conflicts": 144
+    },
+    {
+      "round": 150,
+      "status": "OPTIMAL",
+      "time": 0.060561750000000004,
+      "conflicts": 633
+    },
+    {
+      "round": 151,
+      "status": "OPTIMAL",
+      "time": 0.060963281,
+      "conflicts": 485
+    },
+    {
+      "round": 152,
+      "status": "OPTIMAL",
+      "time": 0.058457520000000006,
+      "conflicts": 216
+    },
+    {
+      "round": 153,
+      "status": "OPTIMAL",
+      "time": 0.061840758,
+      "conflicts": 664
+    },
+    {
+      "round": 154,
+      "status": "OPTIMAL",
+      "time": 0.071160847,
+      "conflicts": 1118
+    },
+    {
+      "round": 155,
+      "status": "OPTIMAL",
+      "time": 0.048934178,
+      "conflicts": 173
+    },
+    {
+      "round": 156,
+      "status": "OPTIMAL",
+      "time": 0.096624208,
+      "conflicts": 359
+    },
+    {
+      "round": 157,
+      "status": "OPTIMAL",
+      "time": 0.106947042,
+      "conflicts": 0
+    },
+    {
+      "round": 158,
+      "status": "OPTIMAL",
+      "time": 0.097638419,
+      "conflicts": 824
+    },
+    {
+      "round": 159,
+      "status": "OPTIMAL",
+      "time": 0.060366799000000006,
+      "conflicts": 687
+    },
+    {
+      "round": 160,
+      "status": "OPTIMAL",
+      "time": 0.11880718300000001,
+      "conflicts": 2838
+    },
+    {
+      "round": 161,
+      "status": "OPTIMAL",
+      "time": 0.32173466300000003,
+      "conflicts": 89
+    },
+    {
+      "round": 162,
+      "status": "UNKNOWN",
+      "time": 22.337544432,
+      "conflicts": 373728
+    }
+  ]
+}

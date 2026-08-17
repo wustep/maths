@@ -1,0 +1,16 @@
+{
+  "n": 8,
+  "unlabeled_undirected": 12346,
+  "orientations_of_reps": 2496391267,
+  "pisa_on_reps": 162,
+  "note": "counts are over geng representatives, not labeled graphs",
+  "missing_degree_types": [
+    {"missing_deg": [5,5,5,5,5,5,5,5], "pisa_orients": 2, "undirected_graphs": 2},
+    {"missing_deg": [3,3,3,3,3,3,3,3], "pisa_orients": 20, "undirected_graphs": 20},
+    {"missing_deg": [3,3,3,3,3,3,2,2], "pisa_orients": 12, "undirected_graphs": 12},
+    {"missing_deg": [3,3,3,3,2,2,2,2], "pisa_orients": 32, "undirected_graphs": 32},
+    {"missing_deg": [3,3,2,2,2,2,2,2], "pisa_orients": 16, "undirected_graphs": 16},
+    {"missing_deg": [2,2,2,2,2,2,2,2], "pisa_orients": 32, "undirected_graphs": 32},
+    {"missing_deg": [1,1,1,1,1,1,1,1], "pisa_orients": 48, "undirected_graphs": 48}
+  ]
+}

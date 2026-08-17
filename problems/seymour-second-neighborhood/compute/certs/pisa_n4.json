@@ -1,0 +1,11 @@
+{
+  "n": 4,
+  "labeled_oriented": 729,
+  "strong": 66,
+  "delta_ge0": 729,
+  "pisa": 6,
+  "pisa_tight": 6,
+  "missing_degree_types": [
+    {"missing_deg": [1, 1, 1, 1], "count": 6}
+  ]
+}
