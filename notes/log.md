@@ -34,7 +34,7 @@ Public repo: https://github.com/wustep/maths
 ## 2026-08-17
 
 - Added Hilbert 23, Smale 18, and Landau 4 lists
-  (`notes/lists/{hilbert,smale,landau}.md`). Dated the 50-list and the pick files.
+  (`notes/lists/{hilbert,smale,landau}.md`). Dated the 50-list and the pick files; dropped the one-line path stubs.
   Ideation pick: Landau 4
   (infinitude of primes \(n^2+1\)).
 - Started `problems/landau-n2-plus-1`. Certified prefix: exactly 12391
