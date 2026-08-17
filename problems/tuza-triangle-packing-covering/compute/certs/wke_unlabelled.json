@@ -1,0 +1,727 @@
+{
+  "5": {
+    "n": 5,
+    "unlabelled_total": 34,
+    "unlabelled_connected": 21,
+    "unlabelled_nonwke": 3,
+    "unlabelled_connected_nonwke": 3,
+    "unlabelled_disconnected_nonwke": 0,
+    "conn_nonwke_min_n_ge4": 1,
+    "conn_nonwke_min_n_ge5": 0,
+    "conn_nonwke_min_n_ge6": 0,
+    "conn_nonwke_min_delta": 4,
+    "n_ge4_hist": {
+      "1": 1,
+      "3": 1,
+      "5": 1
+    },
+    "n_ge5_hist": {
+      "0": 3
+    },
+    "n_ge6_hist": {
+      "0": 3
+    },
+    "delta_hist": {
+      "4": 3
+    },
+    "min_delta_examples": [
+      {
+        "g6": "D]{",
+        "deg": [
+          3,
+          3,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 1,
+        "n_ge5": 0
+      },
+      {
+        "g6": "D^{",
+        "deg": [
+          3,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "D~{",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      }
+    ],
+    "few_ge5_examples": [
+      {
+        "g6": "D]{",
+        "deg": [
+          3,
+          3,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 1,
+        "n_ge5": 0
+      },
+      {
+        "g6": "D^{",
+        "deg": [
+          3,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "D~{",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      }
+    ]
+  },
+  "6": {
+    "n": 6,
+    "unlabelled_total": 156,
+    "unlabelled_connected": 112,
+    "unlabelled_nonwke": 7,
+    "unlabelled_connected_nonwke": 4,
+    "unlabelled_disconnected_nonwke": 3,
+    "conn_nonwke_min_n_ge4": 6,
+    "conn_nonwke_min_n_ge5": 0,
+    "conn_nonwke_min_n_ge6": 0,
+    "conn_nonwke_min_delta": 4,
+    "n_ge4_hist": {
+      "6": 4
+    },
+    "n_ge5_hist": {
+      "0": 1,
+      "2": 1,
+      "4": 1,
+      "6": 1
+    },
+    "n_ge6_hist": {
+      "0": 4
+    },
+    "delta_hist": {
+      "4": 1,
+      "5": 3
+    },
+    "min_delta_examples": [
+      {
+        "g6": "E]~o",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      }
+    ],
+    "few_ge5_examples": [
+      {
+        "g6": "E]~o",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      }
+    ]
+  },
+  "7": {
+    "n": 7,
+    "unlabelled_total": 1044,
+    "unlabelled_connected": 853,
+    "unlabelled_nonwke": 124,
+    "unlabelled_connected_nonwke": 117,
+    "unlabelled_disconnected_nonwke": 7,
+    "conn_nonwke_min_n_ge4": 3,
+    "conn_nonwke_min_n_ge5": 0,
+    "conn_nonwke_min_n_ge6": 0,
+    "conn_nonwke_min_delta": 4,
+    "n_ge4_hist": {
+      "5": 34,
+      "4": 12,
+      "6": 42,
+      "3": 3,
+      "7": 26
+    },
+    "n_ge5_hist": {
+      "1": 16,
+      "2": 23,
+      "0": 13,
+      "3": 19,
+      "4": 24,
+      "5": 10,
+      "6": 8,
+      "7": 4
+    },
+    "n_ge6_hist": {
+      "0": 73,
+      "1": 26,
+      "2": 10,
+      "3": 4,
+      "4": 2,
+      "5": 1,
+      "7": 1
+    },
+    "delta_hist": {
+      "5": 60,
+      "6": 44,
+      "4": 13
+    },
+    "min_delta_examples": [
+      {
+        "g6": "FEhzo",
+        "deg": [
+          2,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEzeW",
+        "deg": [
+          4,
+          4,
+          2,
+          2,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEzvO",
+        "deg": [
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEnf_",
+        "deg": [
+          4,
+          3,
+          3,
+          4,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEnbo",
+        "deg": [
+          3,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEndg",
+        "deg": [
+          4,
+          2,
+          3,
+          4,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FFzeo",
+        "deg": [
+          4,
+          4,
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FFzvO",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 7,
+        "n_ge5": 0
+      }
+    ],
+    "few_ge5_examples": [
+      {
+        "g6": "FEhzo",
+        "deg": [
+          2,
+          3,
+          3,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEzeW",
+        "deg": [
+          4,
+          4,
+          2,
+          2,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEzvO",
+        "deg": [
+          4,
+          4,
+          3,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEnf_",
+        "deg": [
+          4,
+          3,
+          3,
+          4,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEnbo",
+        "deg": [
+          3,
+          3,
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 3,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FEndg",
+        "deg": [
+          4,
+          2,
+          3,
+          4,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FFzeo",
+        "deg": [
+          4,
+          4,
+          3,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 5,
+        "n_ge5": 0
+      },
+      {
+        "g6": "FFzvO",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 7,
+        "n_ge5": 0
+      }
+    ]
+  },
+  "8": {
+    "n": 8,
+    "unlabelled_total": 12346,
+    "unlabelled_connected": 11117,
+    "unlabelled_nonwke": 573,
+    "unlabelled_connected_nonwke": 443,
+    "unlabelled_disconnected_nonwke": 130,
+    "conn_nonwke_min_n_ge4": 1,
+    "conn_nonwke_min_n_ge5": 0,
+    "conn_nonwke_min_n_ge6": 0,
+    "conn_nonwke_min_delta": 4,
+    "n_ge4_hist": {
+      "1": 1,
+      "4": 7,
+      "5": 8,
+      "6": 41,
+      "2": 1,
+      "3": 2,
+      "7": 171,
+      "8": 212
+    },
+    "n_ge5_hist": {
+      "1": 12,
+      "0": 8,
+      "2": 15,
+      "3": 16,
+      "4": 43,
+      "5": 84,
+      "6": 127,
+      "7": 98,
+      "8": 40
+    },
+    "n_ge6_hist": {
+      "0": 87,
+      "1": 84,
+      "2": 75,
+      "3": 68,
+      "4": 51,
+      "5": 43,
+      "6": 19,
+      "7": 11,
+      "8": 5
+    },
+    "delta_hist": {
+      "5": 79,
+      "4": 8,
+      "6": 232,
+      "7": 124
+    },
+    "min_delta_examples": [
+      {
+        "g6": "G?rFeW",
+        "deg": [
+          4,
+          4,
+          1,
+          1,
+          3,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?ouUW",
+        "deg": [
+          3,
+          3,
+          1,
+          1,
+          4,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 2,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rLeW",
+        "deg": [
+          4,
+          3,
+          1,
+          1,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rLeS",
+        "deg": [
+          4,
+          3,
+          1,
+          1,
+          4,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rNeW",
+        "deg": [
+          4,
+          4,
+          1,
+          1,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEjbtg",
+        "deg": [
+          4,
+          3,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEnfbW",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 8,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEnbvG",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 8,
+        "n_ge5": 0
+      }
+    ],
+    "few_ge5_examples": [
+      {
+        "g6": "G?rFeW",
+        "deg": [
+          4,
+          4,
+          1,
+          1,
+          3,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?ouUW",
+        "deg": [
+          3,
+          3,
+          1,
+          1,
+          4,
+          3,
+          3,
+          4
+        ],
+        "n_ge4": 2,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rLeW",
+        "deg": [
+          4,
+          3,
+          1,
+          1,
+          4,
+          4,
+          3,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rLeS",
+        "deg": [
+          4,
+          3,
+          1,
+          1,
+          4,
+          3,
+          4,
+          4
+        ],
+        "n_ge4": 4,
+        "n_ge5": 0
+      },
+      {
+        "g6": "G?rNeW",
+        "deg": [
+          4,
+          4,
+          1,
+          1,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEjbtg",
+        "deg": [
+          4,
+          3,
+          4,
+          4,
+          3,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 6,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEnfbW",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 8,
+        "n_ge5": 0
+      },
+      {
+        "g6": "GEnbvG",
+        "deg": [
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4,
+          4
+        ],
+        "n_ge4": 8,
+        "n_ge5": 0
+      }
+    ]
+  }
+}

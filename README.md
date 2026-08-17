@@ -69,6 +69,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [one-third-two-thirds](problems/one-third-two-thirds) | Width-3 $W_{10}$ has $\delta=6/17<14/39$, $e=187$, still $>1/3$. Did not re-run the n=10 census. Conjecture open. |
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Residue. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=23$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
+| [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
 
 Each problem folder:
 

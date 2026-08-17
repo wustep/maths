@@ -1,0 +1,1000 @@
+{
+  "4": {
+    "n": 4,
+    "graphs": 9,
+    "counterexamples": 0,
+    "tight": 1,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "C~",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      }
+    ]
+  },
+  "5": {
+    "n": 5,
+    "graphs": 21,
+    "counterexamples": 0,
+    "tight": 3,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "DTk",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "DT{",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "D~{",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      }
+    ]
+  },
+  "6": {
+    "n": 6,
+    "graphs": 56,
+    "counterexamples": 0,
+    "tight": 6,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "ECeW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "ECfW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "ECfw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "ECuw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "ETmw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      },
+      {
+        "g6": "ETnw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 5
+      }
+    ]
+  },
+  "7": {
+    "n": 7,
+    "graphs": 164,
+    "counterexamples": 0,
+    "tight": 11,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "F?aKW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "F?aMW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "F?aNW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "F?aNw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "F?bLW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "F?bLw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "F?qkw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "FCe[w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      },
+      {
+        "g6": "FCe]w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 5
+      },
+      {
+        "g6": "FCe^w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "FCf\\w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      }
+    ]
+  },
+  "8": {
+    "n": 8,
+    "graphs": 557,
+    "counterexamples": 0,
+    "tight": 19,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "G?ACKK",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "G?ACMK",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "G?ACNK",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "G?ACNk",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "G?ACN{",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "G?AELK",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "G?AELk",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "G?AEL{",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "G?AFK{",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "G?BDKk",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "G?BDK{",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "G?bDKk",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "G?aK[[",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      },
+      {
+        "g6": "G?aK][",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 5
+      },
+      {
+        "g6": "G?aK^[",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "G?aK^{",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "G?aM\\[",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "G?aM\\{",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "G?bL[{",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      }
+    ]
+  },
+  "9": {
+    "n": 9,
+    "graphs": 2223,
+    "counterexamples": 0,
+    "tight": 30,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "H??CCEB",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "H??CCFB",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "H??CCFb",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "H??CCFr",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "H??CCFz",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "H??CCF~",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H??CEEb",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "H??CEEr",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "H??CEEz",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "H??CEE~",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H??CFEZ",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "H??CFE^",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H??EDER",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "H??EDEZ",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "H??EDE^",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H??EDeN",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H?AEDER",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "H?AEDEZ",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "H?ACKMF",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACKNF",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACKNf",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACKNv",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACKN~",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACMMf",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACMMv",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACMM~",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "H?ACNM^",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "H?AELMV",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "H?AELM^",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "H?BDKmN",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      }
+    ]
+  },
+  "10": {
+    "n": 10,
+    "graphs": 10766,
+    "counterexamples": 0,
+    "tight": 46,
+    "tight_nonclassical": 0,
+    "new_examples": [],
+    "tight_all": [
+      {
+        "g6": "I???CA@_W",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 6,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@oW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 7,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@wW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@{W",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@}W",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@~W",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I???CA@~w",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB@gW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 8,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB@kW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB@mW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB@nW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB@nw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB`eW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB`fW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I???CB`fw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???CBpbw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???EA`cW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 9,
+        "omega": 4
+      },
+      {
+        "g6": "I???EA`eW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "I???EA`fW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I???EA`fw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???EApbW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I???EApbw",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I???FAX`w",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I??CEA`cW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 4
+      },
+      {
+        "g6": "I??CEA`eW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 4
+      },
+      {
+        "g6": "I??CEA`fW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I??CEApbW",
+        "nu": 1,
+        "tau": 2,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 4
+      },
+      {
+        "g6": "I??CCEB_w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 10,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCEBow",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 11,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCEBww",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCEB{w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCEB}w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCEB~w",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFBgw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 12,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFBkw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFBmw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFBnw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFbew",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "I??CCFbfw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I??CEEbcw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 13,
+        "omega": 5
+      },
+      {
+        "g6": "I??CEEbew",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "I??CEEbfw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I??CEErbw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I??EDERaw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 14,
+        "omega": 5
+      },
+      {
+        "g6": "I??EDERbw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      },
+      {
+        "g6": "I?AEDERaw",
+        "nu": 2,
+        "tau": 4,
+        "classical": true,
+        "n_edges": 15,
+        "omega": 5
+      }
+    ]
+  }
+}
