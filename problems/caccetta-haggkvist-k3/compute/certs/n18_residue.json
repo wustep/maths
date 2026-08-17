@@ -1,0 +1,12 @@
+{
+  "n": 18,
+  "d": 6,
+  "why_open": "ceil(18/3)=6 < 0.3465*18=6.237, and < 0.3388*18=6.098. First exact order not implied by Hoàng–Reed or HKN.",
+  "cnf": "ch-18-6-sb.cnf",
+  "header": "p cnf 819 465269",
+  "solver": "kissat 4.0.4",
+  "symmetry": "N+(0)={1..6}, lex out-neighbourhoods",
+  "status": "UNKNOWN at 20 min / 10.3M conflicts / 302 variables remaining (37%)",
+  "timeout_s": 2400,
+  "note": "n=17 d=6 was UNSAT in 63s / 0.65M conflicts with the same encoding. n=18 did not finish tonight."
+}

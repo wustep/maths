@@ -70,6 +70,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Residue. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=23$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
+| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | F$_4$ certificate $c=0.34645$, $5\cdot 10^{-5}$ below HKN $0.3465$. Did not replay DRAT. $n=18$ residue. Conjecture $1/3$ open. |
 
 Each problem folder:
 

@@ -1,0 +1,99 @@
+{
+  "published_hkn": 0.3465,
+  "personal_communication_3388": 0.3388,
+  "n_types": 317,
+  "grid": [
+    {
+      "c": 0.3465,
+      "status": "optimal_inaccurate",
+      "feasible": false,
+      "worst": 9.174939488701057,
+      "n_pos": 15,
+      "Q4_min_eig": -3.246304377933086e-11,
+      "Q5_min_eig": -4.462770312617214e-11
+    },
+    {
+      "c": 0.346,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.345,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.344,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.343,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.342,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.34,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.3388,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.337,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    },
+    {
+      "c": 0.336,
+      "status": "infeasible",
+      "feasible": false,
+      "worst": null,
+      "n_pos": null,
+      "Q4_min_eig": null,
+      "Q5_min_eig": null
+    }
+  ],
+  "sdp_threshold": null,
+  "certificate": null
+}

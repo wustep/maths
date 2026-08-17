@@ -72,6 +72,8 @@ Public repo: https://github.com/wustep/maths
 - SuperGrok P12 finished. Residue: F(131486759)=83, not a 79-smooth sum; G(y) through y=23 replayed; no exponent below Balog. Started P36 Caccetta–Häggkvist. P38 still running.
 
 - SuperGrok P38 finished. Verified: every 8-regular codegree-7 edge is a Puleo reducible pair (1044 cores, including STS(9) on K7). Does not prove Tuza for Delta<=8. Started P31 PP(12). P36 still running.
+
+- SuperGrok P36 finished. Verified F4 certificate c=0.34645 (5e-5 below HKN 0.3465). Did not replay DRAT. n=18 residue. Started P41 R(5,5). P31 still running.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.

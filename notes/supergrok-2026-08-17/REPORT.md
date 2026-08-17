@@ -100,9 +100,13 @@ Documented residue. Independently: split 649+131486110 realises F(131486759)=83;
 
 Independently checked all 1044 stored 7-vertex cores in `certs/c7_8reg_verified.json` (1002 template, 42 ILP): each (S,X) is a Puleo witness on the 9-vertex local graph (S edge-disjoint, |X|<=2|S|, every uv-through triangle hits X, S-edges off the hubs lie in X). 1044 distinct order-7 graph6 strings, matching the known count of unlabelled graphs on 7 vertices. The K7 core `F~~~w` is an STS(9) / affine plane of order 3: 12 triples, every pair once, |X|=22. Did **not** re-run geng, the n=8 WKE census, or the split n<=10 table. Does **not** prove Tuza for Delta<=8. Haxell 66/23 unchanged.
 
+### P36 Caccetta–Häggkvist — `problems/caccetta-haggkvist-k3`
+
+Independently replayed `verify_certificate.py` on the stored F4 flag-algebra certificate: c=0.34645, min eig(Q)=9.53e-9, worst F=-0.12343, all 32 coordinates < -0.05. Q is 8x8 PSD from the JSON alone. This is 5e-5 below the published HKN 0.3465 (a four-decimal rounding). Did **not** beat the 0.3388 personal communication. Did **not** independently replay drat-trim on the n=12,15,16,17 SAT proofs. n=18 d=6 remains UNKNOWN (residue). Conjecture 1/3 open.
+
 ## In flight
 
-- P36 Caccetta–Häggkvist
-- P31 projective plane of order 12 (launching)
+- P31 projective plane of order 12
+- P41 R(5,5) (launching)
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.
