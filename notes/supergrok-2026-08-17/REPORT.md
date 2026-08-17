@@ -114,11 +114,11 @@ Residue. Independently replayed `verify_mckay.py` on `refs/r55_42some.g6` (sha25
 
 ### P39 graph reconstruction n=14 — `problems/graph-reconstruction-next-order`
 
-SuperGrok claimed every 14-vertex graph of degree sequence 4^11 6^3 is reconstructible from its full deck (8,571,837 unlabelled graphs; 0 full-deck and 0 reduced-deck SHA-256 collisions). Independently: counted `bireg46_s3all.g6` = 8,571,837 lines and `bireg46_s3.g6` = 8,571,676; 200,000-prefix plus all 17,143 `labelg` samples are n=14 with sequence 4^11 6^3; `verify_labelg.py` on `sample_bireg46_s3all.txt`: checked=17143 mismatches=0. Also counted `bireg46_s4.g6` = 41,538,279; `labelg` samples checked=20769 mismatches=0. Did **not** independently re-sort the 8.5M (or 41M) deck hashes, re-run `geng`/`shortg`, or replay `degcheck` on the full lists. Uniqueness, and therefore reconstructibility, is their `deckrecon` sort. McKay all-graphs n=13 unchanged.
+SuperGrok claimed every 14-vertex graph of degree sequence 4^11 6^3 is reconstructible from its full deck (8,571,837 unlabelled graphs; 0 full-deck and 0 reduced-deck SHA-256 collisions). Independently: counted `bireg46_s3all.g6` = 8,571,837 and `bireg46_s3.g6` = 8,571,676; Python census of **every** record in both files is n=14 with sequence 4^11 6^3 (one sequence). `verify_labelg.py` on `sample_bireg46_s3all.txt`: checked=17143 mismatches=0. Also counted `bireg46_s4.g6` = 41,538,279; streamed sample 15,996 all 4^10 6^4; `labelg` samples checked=20769 mismatches=0. Did **not** independently re-sort the 8.5M (or 41M) deck hashes, re-run `geng`/`shortg`, or replay `degcheck`. Uniqueness, and therefore reconstructibility, is their `deckrecon` sort. McKay all-graphs n=13 unchanged.
 
 ### P44 lonely runner 14 — `problems/lonely-runner-fourteen`
 
-Incomplete (quota death, no WALKTHROUGH). Independently: `rk_inclusion.py --selftest` OK (k=10 at 103,107,109; k=12 at 149,151; k=13 at 173,179,181 and p>182). Family count 14^6-13^6-1=2,702,726. Two p=191 witnesses via `verify_witness.py`: v=(0..0,1,0) s=1 j=16 min_d=205; mixed v=(1,0,0,12,6,10,0,1,0,4,0,10,0) s=1 j=12 min_d=230. Did **not** replay leftover_csp / exhaustive rem>=4 salvage. LRC(13) open.
+Incomplete (quota death, no WALKTHROUGH). Independently: `rk_inclusion.py --selftest` OK (k=10 at 103,107,109; k=12 at 149,151; k=13 at 173,179,181 and p>182). Family count 14^6-13^6-1=2,702,726. p-independent (s,r) covering is false for v=(0..0,1,0) and the mixed vector (brute over (Z/14Z)^2). Two p=191 witnesses via `verify_witness.py`: v=(0..0,1,0) s=1 j=16 min_d=205; mixed v=(1,0,0,12,6,10,0,1,0,4,0,10,0) s=1 j=12 min_d=230. Did **not** replay leftover_csp / exhaustive rem>=4 salvage. LRC(13) open.
 
 ## Wrap
 
