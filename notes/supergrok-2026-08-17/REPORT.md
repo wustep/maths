@@ -76,10 +76,18 @@ Exact rational Laguerre–Gaussian from Cohn–Elkies Table 4 nodes. Independent
 
 Independently replayed `compute/verify_certificates.py` (exit 0). Restricted Delsarte: T_D5 bound 42 (excludes 43, 44); T_L5 bound 239925/5456 ≈ 43.9745 (excludes 44). Unrestricted range still 40 ≤ τ_5 ≤ 44. Restricted certificates, not the unrestricted kissing number.
 
+### P05 affine {0,1,3} copies — `problems/affine-013`
+
+Verified: for every finite S subset Z with |S|=n, Aaronson's T(S) = #{(x,y,z) in S^3 : x+2y=3z} satisfies T(S) <= ceil(n^2/2). Replay `python3 compute/verify_half.py` (ALL OK): sum identity through n=399, exhaustive fibres through n=7, 2360 random sets. Beats Aaronson's published 3/4. Interval still ~n^2/3. Conjecture 1/3 open.
+
+### P17 random 0/1 polynomials — `problems/zero-one-polynomials`
+
+Independently replayed `verify_fourier.py` (exit 0): BSKK N=2 theta = 0.00373556, published 0.003736 is a 4e-7 over-round. Stored census n=1..20 internally consistent (`verify_census.py`). 0/1-factor counts through n=16 sit under the rho^n majorant. Did not re-factor n=20. Unconditional p_n -> 1 still open.
+
 ## In flight
 
-- P17 random 0/1 polynomials
-- P05 affine copies of {0,1,3}
 - P34 1/3–2/3 posets
+- P37 Seymour second neighborhood
+- P12 two smooth summands
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

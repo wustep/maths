@@ -64,6 +64,8 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [union-closed](problems/union-closed) | $0.38285$ on $\{b,1\}$ with iid+Example-4 at $\beta=1/5$ (mesh min ratio $1.000077$). Recovers Liu $0.382709$. Not $1/2$. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
 | [kissing-5d](problems/kissing-5d) | Restricted Delsarte: $T_{D_5}$ bound 42, $T_{L_5}$ bound $239925/5456<44$. Unrestricted $40\le\tau_5\le 44$ unchanged. |
+| [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
+| [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
 
 Each problem folder:
 

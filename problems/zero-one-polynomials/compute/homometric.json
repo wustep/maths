@@ -1,0 +1,32 @@
+{
+  "source": "compute/homometric.c, run 2026-08-17",
+  "definition": "A runs over 2^n subsets of {0,...,n} containing 0. images = #distinct difference multisets. expected_if_only_reflection = 2^{n-1} + (#symmetric)/2. extra_loss = expected - images. Filaseta-Kalogirou Conjecture 1 is extra_loss = o(2^n).",
+  "rows": [
+    {"n": 1, "total": 2, "images": 2, "symmetric": 2, "extra_loss": 0.0},
+    {"n": 2, "total": 4, "images": 4, "symmetric": 4, "extra_loss": 0.0},
+    {"n": 3, "total": 8, "images": 7, "symmetric": 6, "extra_loss": 0.0},
+    {"n": 4, "total": 16, "images": 13, "symmetric": 10, "extra_loss": 0.0},
+    {"n": 5, "total": 32, "images": 23, "symmetric": 14, "extra_loss": 0.0},
+    {"n": 6, "total": 64, "images": 43, "symmetric": 22, "extra_loss": 0.0},
+    {"n": 7, "total": 128, "images": 79, "symmetric": 30, "extra_loss": 0.0},
+    {"n": 8, "total": 256, "images": 151, "symmetric": 46, "extra_loss": 0.0},
+    {"n": 9, "total": 512, "images": 287, "symmetric": 62, "extra_loss": 0.0},
+    {"n": 10, "total": 1024, "images": 559, "symmetric": 94, "extra_loss": 0.0},
+    {"n": 11, "total": 2048, "images": 1085, "symmetric": 126, "extra_loss": 2.0},
+    {"n": 12, "total": 4096, "images": 2135, "symmetric": 190, "extra_loss": 8.0},
+    {"n": 13, "total": 8192, "images": 4203, "symmetric": 254, "extra_loss": 20.0},
+    {"n": 14, "total": 16384, "images": 8347, "symmetric": 382, "extra_loss": 36.0},
+    {"n": 15, "total": 32768, "images": 16566, "symmetric": 510, "extra_loss": 73.0},
+    {"n": 16, "total": 65536, "images": 33023, "symmetric": 766, "extra_loss": 128.0},
+    {"n": 17, "total": 131072, "images": 65813, "symmetric": 1022, "extra_loss": 234.0},
+    {"n": 18, "total": 262144, "images": 131445, "symmetric": 1534, "extra_loss": 394.0},
+    {"n": 19, "total": 524288, "images": 262485, "symmetric": 2046, "extra_loss": 682.0},
+    {"n": 20, "total": 1048576, "images": 524717, "symmetric": 3070, "extra_loss": 1106.0},
+    {"n": 21, "total": 2097152, "images": 1048777, "symmetric": 4094, "extra_loss": 1846.0},
+    {"n": 22, "total": 4194304, "images": 2097390, "symmetric": 6142, "extra_loss": 2833.0},
+    {"n": 23, "total": 8388608, "images": 4193813, "symmetric": 8190, "extra_loss": 4586.0},
+    {"n": 24, "total": 16777216, "images": 8387595, "symmetric": 12286, "extra_loss": 7156.0},
+    {"n": 25, "total": 33554432, "images": 16774052, "symmetric": 16382, "extra_loss": 11355.0},
+    {"n": 26, "total": 67108864, "images": 33549592, "symmetric": 24574, "extra_loss": 17127.0}
+  ]
+}

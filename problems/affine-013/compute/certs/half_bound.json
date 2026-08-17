@@ -1,0 +1,108 @@
+{
+  "bound": "T(S) <= ceil(n^2 / 2)",
+  "implies": "gamma_{1,2,-3} <= 1/2",
+  "beats": "Hardy-Littlewood / Aaronson 3/4",
+  "ok": true,
+  "identity_ok": true,
+  "interval_ok": true,
+  "exhaustive": [
+    {
+      "n": 3,
+      "dmax": 12,
+      "n_sets": 66,
+      "T_max_observed": 4,
+      "bound": 5,
+      "T_interval": 3
+    },
+    {
+      "n": 4,
+      "dmax": 12,
+      "n_sets": 220,
+      "T_max_observed": 6,
+      "bound": 8,
+      "T_interval": 6
+    },
+    {
+      "n": 5,
+      "dmax": 12,
+      "n_sets": 495,
+      "T_max_observed": 9,
+      "bound": 13,
+      "T_interval": 9
+    },
+    {
+      "n": 6,
+      "dmax": 12,
+      "n_sets": 792,
+      "T_max_observed": 13,
+      "bound": 18,
+      "T_interval": 12
+    },
+    {
+      "n": 7,
+      "dmax": 14,
+      "n_sets": 3003,
+      "T_max_observed": 17,
+      "bound": 25,
+      "T_interval": 17
+    }
+  ],
+  "n_random": 2360,
+  "random_ok": true,
+  "witnesses": [
+    {
+      "name": "interval_30",
+      "n": 30,
+      "T": 300,
+      "bound": 450,
+      "T_interval": 300,
+      "fibre_ok": true,
+      "bound_sum": 450
+    },
+    {
+      "name": "n3_013",
+      "n": 3,
+      "T": 4,
+      "bound": 5,
+      "T_interval": 3,
+      "fibre_ok": true,
+      "bound_sum": 5
+    },
+    {
+      "name": "n6_hole",
+      "n": 6,
+      "T": 13,
+      "bound": 18,
+      "T_interval": 12,
+      "fibre_ok": true,
+      "bound_sum": 18
+    },
+    {
+      "name": "n7_sparse",
+      "n": 7,
+      "T": 18,
+      "bound": 25,
+      "T_interval": 17,
+      "fibre_ok": true,
+      "bound_sum": 25
+    },
+    {
+      "name": "n9_hole",
+      "n": 9,
+      "T": 28,
+      "bound": 41,
+      "T_interval": 27,
+      "fibre_ok": true,
+      "bound_sum": 41
+    },
+    {
+      "name": "plus1_n36",
+      "n": 36,
+      "T": 433,
+      "bound": 648,
+      "T_interval": 432,
+      "fibre_ok": true,
+      "bound_sum": 648
+    }
+  ]
+}
