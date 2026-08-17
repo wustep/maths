@@ -1,0 +1,32 @@
+{
+  "vtx": "509_parts.vtx",
+  "n": 509,
+  "m": 2442,
+  "min_degree": 4,
+  "max_degree": 36,
+  "degree_histogram": {
+    "4": 6,
+    "5": 42,
+    "6": 56,
+    "7": 62,
+    "8": 45,
+    "9": 40,
+    "10": 69,
+    "11": 50,
+    "12": 61,
+    "13": 28,
+    "14": 15,
+    "15": 14,
+    "16": 6,
+    "17": 4,
+    "18": 4,
+    "22": 6,
+    "36": 1
+  },
+  "n_large_no_sqrt5": 374,
+  "n_rotated_has_sqrt5": 135,
+  "near_unit_float_not_exact": 0,
+  "parse_seconds": 0.07460105000063777,
+  "edge_seconds": 2.5227072080015205,
+  "origin_present": true
+}

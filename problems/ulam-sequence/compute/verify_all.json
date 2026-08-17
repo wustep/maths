@@ -1,0 +1,90 @@
+{
+  "ok": true,
+  "checks": [
+    {
+      "name": "oeis_bfile",
+      "ok": true,
+      "detail": {
+        "terms": 10000,
+        "last": 132788
+      }
+    },
+    {
+      "name": "certify_L16",
+      "ok": true,
+      "detail": {
+        "F2": 150408,
+        "CF": 1.451408682527181,
+        "beats_1.454": true,
+        "beats_1.452": true,
+        "nwords": 10379520,
+        "count": 10379520
+      }
+    },
+    {
+      "name": "certify_L21",
+      "ok": true,
+      "detail": {
+        "F2": 4845788,
+        "CF": 1.442697712197638,
+        "beats_1.454": true,
+        "beats_1.443": true,
+        "nwords": 1579869184,
+        "count": 1579869184
+      }
+    },
+    {
+      "name": "certify_L22",
+      "ok": true,
+      "detail": {
+        "F2": 9690750,
+        "CF": 1.4413878263110487,
+        "beats_1.454": true,
+        "beats_1.442": true,
+        "nwords": 4316282880,
+        "count": 4316282880
+      }
+    },
+    {
+      "name": "python_enum_L16",
+      "ok": true,
+      "detail": {
+        "L": 16,
+        "nwords": 10379520,
+        "seconds": 31.29640660699806,
+        "max_F2": 150408,
+        "CF": 1.451408682527181,
+        "wordF": "2313131131311313"
+      }
+    },
+    {
+      "name": "prefix_1.443_n200",
+      "ok": true,
+      "detail": {
+        "fails": []
+      }
+    },
+    {
+      "name": "prefix_1.442_n200_only3",
+      "ok": true,
+      "detail": {
+        "fails": [
+          3
+        ]
+      }
+    },
+    {
+      "name": "steinerberger_cos_sign_5k",
+      "ok": true,
+      "detail": {
+        "positive": [
+          2,
+          3,
+          47,
+          69
+        ],
+        "mean_cos": -0.7934426662649768
+      }
+    }
+  ]
+}

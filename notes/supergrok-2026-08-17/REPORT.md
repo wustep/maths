@@ -30,11 +30,38 @@ python3 problems/sidon-second-term/compute/verify_beat_hz.py
 
 Does **not** change the four-decimal statement 0.9435. Same lemma, longer boundary. Residue if the bar is a new method or a 0.9434-level constant.
 
+
+### P29 unit-distance 509 — `problems/unit-distance-509`
+
+No smaller 5-chromatic unit-distance graph. Independently rebuilt Parts 509: n=509, m=2442, field Q(√3,√5,√11). Cadical 4-coloring UNSAT with drat-trim `s VERIFIED`. Vertex-critical (509/509 deletions 4-colorable). 1-for-2 swaps on degree-4 pairs against the radius-2.55 lattice/ρ reserve: 0 hits. A 514-vertex swap graph is also critical and does not beat 509. Published record still 509.
+
+Replay of the exact rebuild: `python3 problems/unit-distance-509/compute/verify_graph.py 509_parts.vtx`.
+
+### Landau 4 — `problems/landau-n2-plus-1`
+
+Extended the certified prefix. At N=10^6: 54110 primes n^2+1, matching Wolf / OEIS A083844 π_q(10^{12})=54110. True Ω=2 composites: 147612. Iwaniec P2s: 201722. Bateman–Horn ratio 1.00260. No new prime. Infinitude still open.
+
+Replay: `python3 compute/sieve_n2p1.py --n-max 1000000` then `python3 compute/verify.py`.
+
+
+### P16 cosine zeros — `problems/cosine-zeros`
+
+Verified: for {0,1}-cosine sums, Z(N) ≥ log log N / (200 log log log N) whenever the right-hand side is ≥ 4. Replay `cd problems/cosine-zeros && ./compute/run_all.sh` (exit 0). Names the constant in Bedert's (log log N)^{1-o(1)}. Does **not** beat the exponent or the O((N log N)^{2/3}) barrier.
+
+### P14 two-squares gap — `problems/two-squares-gap`
+
+Claim: G(n) < 2√2 n^{1/4} − 3 for 2 ≤ n ≤ 1.024e15 except {3,6,21,91}. Independently checked the stored m≤250 witnesses: 15993/15993, 0 bad (`verify_a3_cert.py a3_cert_m250.json`). Did not re-run the m≤8000 search. Does **not** prove Green's 1/10. Beats Jameson's published additive −2 on that range.
+
+### P20 Ulam sequence — `problems/ulam-sequence`
+
+Independently certified the L=22 word `2313131131313131311313` has F2=9690750 and C_F < 1.442 by integer comparison, beating Clément–Steinerberger 1.454. nwords matches the closed admissible-language count 4316282880. Did not re-enumerate 4.3e9 words. Density still open.
+
 ## In flight
 
-- P29 unit-distance 509
-- Landau 4 (`n^2+1` primes)
-- P14 two-squares gap (started after P07/P15 finished)
-- P16 cosine zeros (started after P07/P15 finished)
+- P08 long-gap dilate
+- P09 thin cyclic bases
+- P33 union-closed
+
+
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

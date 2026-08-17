@@ -1,0 +1,33 @@
+{
+  "vtx": "swap_v310_e6.vtx",
+  "n": 514,
+  "m": 2478,
+  "min_degree": 4,
+  "max_degree": 36,
+  "degree_histogram": {
+    "4": 5,
+    "5": 43,
+    "6": 56,
+    "7": 59,
+    "8": 51,
+    "9": 41,
+    "10": 60,
+    "11": 56,
+    "12": 59,
+    "13": 34,
+    "14": 13,
+    "15": 16,
+    "16": 4,
+    "17": 6,
+    "18": 4,
+    "22": 5,
+    "23": 1,
+    "36": 1
+  },
+  "n_large_no_sqrt5": 379,
+  "n_rotated_has_sqrt5": 135,
+  "near_unit_float_not_exact": 0,
+  "parse_seconds": 0.06970969900430646,
+  "edge_seconds": 2.5039558650023537,
+  "origin_present": true
+}

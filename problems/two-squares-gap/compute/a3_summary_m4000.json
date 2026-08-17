@@ -1,0 +1,14 @@
+{
+  "m_max": 4000,
+  "n_max_bound": 64000016000001,
+  "known_exceptions": [
+    3,
+    6,
+    21,
+    91
+  ],
+  "n_danger_tops": 4005993,
+  "n_witnesses": 0,
+  "n_unsaved": 0,
+  "unsaved": []
+}

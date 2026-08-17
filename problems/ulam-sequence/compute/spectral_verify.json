@@ -1,0 +1,199 @@
+{
+  "N": 20000,
+  "a_N": 268553,
+  "known_exceptions": [
+    2,
+    3,
+    47,
+    69
+  ],
+  "steinerberger_2015": {
+    "alpha": 2.5714474995,
+    "N": 20000,
+    "a_N": 268553,
+    "cos_negative": 19996,
+    "cos_positive": 4,
+    "cos_tiny": 0,
+    "positive_or_tiny": [
+      {
+        "a": 2,
+        "cos": 0.41733070262870486
+      },
+      {
+        "a": 3,
+        "cos": 0.13918577174048308
+      },
+      {
+        "a": 47,
+        "cos": 0.09314945116148635
+      },
+      {
+        "a": 69,
+        "cos": 0.07005004608158771
+      }
+    ],
+    "exceptions_match_published": true,
+    "mean_cos": -0.7934496466528408
+  },
+  "mccranie_lo": {
+    "alpha": 2.57144749846,
+    "N": 20000,
+    "a_N": 268553,
+    "cos_negative": 19996,
+    "cos_positive": 4,
+    "cos_tiny": 0,
+    "positive_or_tiny": [
+      {
+        "a": 2,
+        "cos": 0.41733070073849493
+      },
+      {
+        "a": 3,
+        "cos": 0.13918577483011416
+      },
+      {
+        "a": 47,
+        "cos": 0.09314949982895969
+      },
+      {
+        "a": 69,
+        "cos": 0.07005011766532054
+      }
+    ],
+    "exceptions_match_published": true,
+    "mean_cos": -0.7934372742188972
+  },
+  "mccranie_hi": {
+    "alpha": 2.5714474985,
+    "N": 20000,
+    "a_N": 268553,
+    "cos_negative": 19996,
+    "cos_positive": 4,
+    "cos_tiny": 0,
+    "positive_or_tiny": [
+      {
+        "a": 2,
+        "cos": 0.41733070081119533
+      },
+      {
+        "a": 3,
+        "cos": 0.13918577471128218
+      },
+      {
+        "a": 47,
+        "cos": 0.09314949795713706
+      },
+      {
+        "a": 69,
+        "cos": 0.07005011491209678
+      }
+    ],
+    "exceptions_match_published": true,
+    "mean_cos": -0.7934377504584651
+  },
+  "mccranie_mid": {
+    "alpha": 2.57144749848,
+    "N": 20000,
+    "a_N": 268553,
+    "cos_negative": 19996,
+    "cos_positive": 4,
+    "cos_tiny": 0,
+    "positive_or_tiny": [
+      {
+        "a": 2,
+        "cos": 0.41733070077484513
+      },
+      {
+        "a": 3,
+        "cos": 0.13918577477069818
+      },
+      {
+        "a": 47,
+        "cos": 0.09314949889305546
+      },
+      {
+        "a": 69,
+        "cos": 0.07005011628869448
+      }
+    ],
+    "exceptions_match_published": true,
+    "mean_cos": -0.7934375123426204
+  },
+  "packet_steinerberger": [
+    {
+      "ell": 0,
+      "mean_cos": 1.0
+    },
+    {
+      "ell": 1,
+      "mean_cos": -0.7934496466528408
+    },
+    {
+      "ell": 2,
+      "mean_cos": 0.2868473958738794
+    },
+    {
+      "ell": 3,
+      "mean_cos": 0.2538408422630102
+    },
+    {
+      "ell": 4,
+      "mean_cos": -0.5747248086210118
+    },
+    {
+      "ell": 5,
+      "mean_cos": 0.5756075230617902
+    },
+    {
+      "ell": 6,
+      "mean_cos": -0.3418187843711579
+    },
+    {
+      "ell": 7,
+      "mean_cos": 0.060083393962196155
+    },
+    {
+      "ell": 8,
+      "mean_cos": 0.11213426499059276
+    }
+  ],
+  "packet_mccranie_mid": [
+    {
+      "ell": 0,
+      "mean_cos": 1.0
+    },
+    {
+      "ell": 1,
+      "mean_cos": -0.7934375123426204
+    },
+    {
+      "ell": 2,
+      "mean_cos": 0.2868071796854297
+    },
+    {
+      "ell": 3,
+      "mean_cos": 0.25390763478995454
+    },
+    {
+      "ell": 4,
+      "mean_cos": -0.5748053250116508
+    },
+    {
+      "ell": 5,
+      "mean_cos": 0.5756918154918569
+    },
+    {
+      "ell": 6,
+      "mean_cos": -0.3419071840492687
+    },
+    {
+      "ell": 7,
+      "mean_cos": 0.06017889966476571
+    },
+    {
+      "ell": 8,
+      "mean_cos": 0.11204123170092464
+    }
+  ],
+  "note": "Finite cosine sign pattern on an independently generated prefix. Does not prove a limiting measure, nor that the density exists."
+}

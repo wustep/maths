@@ -55,6 +55,10 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P07 (Sidon) and P15 (Chowla) finished. Verified: Hou–Zhao L=6 lift (8e-8 below γ0, does not change 0.9435); Chowla K(n) ≥ n^{1/7}/18 (does not beat Bedert 1/5−o(1)). Report: notes/supergrok-2026-08-17/REPORT.md. Next launches: P14 two-squares, P16 cosine zeros. Keep going until ~10% weekly SuperGrok remains.
 
+- SuperGrok P29 finished: no smaller unit-distance graph; rebuilt 509 as 5-chromatic and vertex-critical. Landau 4 sieve to N=10^6 matches Wolf 54110. Started P08 (long-gap dilate) and P20 (Ulam).
+
+- SuperGrok P14/P16/P20 finished. Verified: cosine-zeros C=200 in Bedert; two-squares a=3 witnesses m≤250; Ulam L=22 word beats CS 1.454. Started P09 and P33.
+
 ## Open / in flight
 
 - SuperGrok four-run watch (P29, P07, P15, Landau 4). Wrap before the

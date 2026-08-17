@@ -1,0 +1,13 @@
+{
+  "vtx": "509_parts.vtx",
+  "n": 509,
+  "m": 2442,
+  "skip": [],
+  "triangle": [
+    0,
+    149,
+    152
+  ],
+  "status": "UNSAT",
+  "sat_seconds": 2.454979365997133
+}

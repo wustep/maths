@@ -1,0 +1,54 @@
+{
+  "published": {
+    "source": "https://github.com/vasnesterov/HadwigerNelson/blob/master/vtx/509_parts.vtx",
+    "sourced_from": "Polymath16 fifteenth thread, as cited by the Lean formalization README",
+    "paper": "arXiv:2010.12665",
+    "claimed_n": 509,
+    "claimed_m": 2442,
+    "verified_n": 509,
+    "verified_m": 2442,
+    "field": "Q(sqrt(3),sqrt(5),sqrt(11))",
+    "split": {"unrotated_L": 374, "rho_S_minus_origin": 135}
+  },
+  "heule_510": {
+    "source": "https://github.com/vasnesterov/HadwigerNelson/blob/master/vtx/510_heule.vtx",
+    "identical_to_cnp_sat_510_vtx": true,
+    "verified_n": 510,
+    "verified_m": 2504
+  },
+  "four_color_unsat": {
+    "solver": "Cadical 1.9.5 via python-sat",
+    "vars": 2036,
+    "clauses": 10280,
+    "triangle": [0, 149, 152],
+    "status": "UNSAT",
+    "seconds": 2.455,
+    "drat": "color509.drat",
+    "drat_trim": "s VERIFIED",
+    "clause_core": 9170
+  },
+  "vertex_critical": {
+    "G_minus_v_SAT": 509,
+    "G_minus_v_UNSAT": 0,
+    "log": "shrink_singles.jsonl",
+    "elapsed_seconds": 90.08
+  },
+  "lattice_reserve": {
+    "r_max": 2.55,
+    "unused_disk_or_rho": 156300,
+    "deg_at_least_4": 677,
+    "max_deg_into_G": 10,
+    "file": "candidates.json"
+  },
+  "swaps": {
+    "top12_extras_drop_one_lowdeg": {"tested": 24, "UNSAT": 0, "log": "expand_reduce.jsonl"},
+    "full677_replace_v310": {"status": "UNSAT", "n": 1185},
+    "binary_reduced_extras_for_v310": {"n_extra": 6, "n": 514, "file": "swap_v310_e6.vtx"},
+    "G514_vertex_critical": {"SAT": 514, "UNSAT": 0},
+    "one_extra_two_deg4": {"jobs": 10155, "hits": 0, "log": "double_swap_deg4.jsonl"},
+    "one_extra_deg_ge6_two_deg4": {"jobs": 2925, "hits": 0, "log": "double_swap_noadj.jsonl"},
+    "one_extra_two_deg_le5_adjacent": {"jobs": 68, "hits": 0, "log": "double_swap_d5adj.jsonl"}
+  },
+  "dent": false,
+  "published_record_still": 509
+}
