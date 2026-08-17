@@ -3,7 +3,7 @@
 - Slug: `two-squares-gap`
 - List: P14
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
-- Status: open
+- Status: open for Green’s `1/10`. Jameson `a=2` improved to `a=3` for all `2≤n≤1.024e15` except `{3,6,21,91}` (computer-assisted). Do not claim Landau–Ramanujan.
 - Area: Number theory
 - Sources: Green 100 #66; Erdős Problem #143
 - Started: 2026-08-17

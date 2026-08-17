@@ -1,0 +1,2 @@
+{"phase": "start", "n_extra": 677, "targets": [310, 313, 316, 319, 322, 325]}
+{"phase": "max_swap", "v": 310, "deg": 4, "n": 1185, "m": 7426, "status": "UNSAT", "seconds": 7.941092542008846}

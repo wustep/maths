@@ -1,0 +1,14 @@
+{
+  "oeis_terms": 10000,
+  "oeis_last": 132788,
+  "generated_last": 132788,
+  "match_bfile": true,
+  "n_mismatch": 0,
+  "first_mismatches": [],
+  "value_cutoff_len": 10000,
+  "two_generators_agree": true,
+  "a_10": 18,
+  "a_100": 690,
+  "a_1000": 12294,
+  "a_10000": 132788
+}

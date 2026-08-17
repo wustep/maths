@@ -1,0 +1,18 @@
+{
+  "N": 20000,
+  "hits": {
+    "E": [],
+    "I": [
+      {
+        "idx": 6,
+        "a_n": 8,
+        "a_next": 11
+      }
+    ],
+    "II": []
+  },
+  "max_gap_over_eggleton": 0.75,
+  "median_gap_over_eggleton": 7.42831674342594e-05,
+  "max_true_gap": 315,
+  "a_N": 268553
+}

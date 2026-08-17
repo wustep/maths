@@ -52,7 +52,13 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No dent. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. No dent. |
-| [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 12391 primes $n^2+1$ for $n\le 200000$. Infinitude open. |
+| [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
+| [sidon-second-term](problems/sidon-second-term) | Hou–Zhao L=6: $\sqrt{ab}=0.9434925085$, $8.22\times 10^{-8}$ below $\gamma_0$. Four-decimal 0.9435 unchanged. |
+| [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
+| [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
+| [cosine-zeros](problems/cosine-zeros) | $Z(N)\ge\log\log N/(200\log\log\log N)$ when RHS $\ge 4$. Does not beat Bedert's exponent. |
+| [two-squares-gap](problems/two-squares-gap) | Jameson $a=3$ on $n\le 1.024\cdot 10^{15}$ except $\{3,6,21,91\}$ (m$\le$250 cert replayed). Green's $1/10$ open. |
+| [ulam-sequence](problems/ulam-sequence) | L=22 word with $C_F<1.442$, beating CS 1.454. Density open. |
 
 Each problem folder:
 
@@ -78,4 +84,4 @@ owns them, not at the repo root.
 ## refs
 
 OpenAI walkthroughs, the ten-proofs PDF, and the house style live in
-[refs/](refs/).
+`refs/`.

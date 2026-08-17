@@ -1,0 +1,32 @@
+{
+  "vtx": "510_heule.vtx",
+  "n": 510,
+  "m": 2504,
+  "min_degree": 4,
+  "max_degree": 36,
+  "degree_histogram": {
+    "4": 8,
+    "5": 27,
+    "6": 54,
+    "7": 60,
+    "8": 51,
+    "9": 52,
+    "10": 61,
+    "11": 73,
+    "12": 39,
+    "13": 21,
+    "14": 20,
+    "15": 13,
+    "16": 6,
+    "17": 8,
+    "18": 10,
+    "24": 6,
+    "36": 1
+  },
+  "n_large_no_sqrt5": 375,
+  "n_rotated_has_sqrt5": 135,
+  "near_unit_float_not_exact": 0,
+  "parse_seconds": 0.07631167100043967,
+  "edge_seconds": 2.4049593429954257,
+  "origin_present": true
+}

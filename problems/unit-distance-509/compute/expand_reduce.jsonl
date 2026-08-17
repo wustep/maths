@@ -1,0 +1,25 @@
+{"phase": "start", "n_seed": 509, "n_extra": 12, "extra_degs": [10, 10, 10, 10, 9, 9, 9, 9, 9, 9, 9, 9]}
+{"phase": "swap1", "dropped": 310, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 0.761503489993629}
+{"phase": "swap1", "dropped": 313, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 0.9368296309985453}
+{"phase": "swap1", "dropped": 316, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 0.08951411099405959}
+{"phase": "swap1", "dropped": 319, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 0.16543880899553187}
+{"phase": "swap1", "dropped": 322, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 1.4401415679894853}
+{"phase": "swap1", "dropped": 325, "drop_deg": 4, "n": 520, "m": 2553, "status": "SAT", "seconds": 0.1692407689988613}
+{"phase": "swap1", "dropped": 100, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.08405643899459392}
+{"phase": "swap1", "dropped": 103, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 2.176351367001189}
+{"phase": "swap1", "dropped": 104, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.5408392489916878}
+{"phase": "swap1", "dropped": 107, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 1.8063481279968983}
+{"phase": "swap1", "dropped": 108, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.6623800550005399}
+{"phase": "swap1", "dropped": 111, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.08808050700463355}
+{"phase": "swap1", "dropped": 217, "drop_deg": 5, "n": 520, "m": 2551, "status": "SAT", "seconds": 1.6910232969967183}
+{"phase": "swap1", "dropped": 220, "drop_deg": 5, "n": 520, "m": 2551, "status": "SAT", "seconds": 0.7866271590028191}
+{"phase": "swap1", "dropped": 243, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 1.061873280996224}
+{"phase": "swap1", "dropped": 244, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.28515828600211535}
+{"phase": "swap1", "dropped": 245, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.6242822310014162}
+{"phase": "swap1", "dropped": 298, "drop_deg": 5, "n": 520, "m": 2551, "status": "SAT", "seconds": 1.829556185999536}
+{"phase": "swap1", "dropped": 303, "drop_deg": 5, "n": 520, "m": 2551, "status": "SAT", "seconds": 1.9181727309915004}
+{"phase": "swap1", "dropped": 344, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.01842315999965649}
+{"phase": "swap1", "dropped": 345, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.07910745900881011}
+{"phase": "swap1", "dropped": 346, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.5885481040022569}
+{"phase": "swap1", "dropped": 357, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.019298269995488226}
+{"phase": "swap1", "dropped": 358, "drop_deg": 5, "n": 520, "m": 2552, "status": "SAT", "seconds": 0.032668138010194525}

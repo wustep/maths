@@ -1,0 +1,11 @@
+{
+  "c_littlewood_01_with_cosine_half": 0.0026525823848649226,
+  "F_prefactor": "11520 \u03c0 (d+1) 3^{2m} X",
+  "C": 200,
+  "max_logF_over_d_logd_d_4_to_2000": 183.3624821291954,
+  "max_at_d": 4,
+  "two_X_checked": "d=2..400",
+  "ratio_checked": "d=4..2000",
+  "claim": "Z(N) >= loglog N / (200 logloglog N) whenever the RHS is >= 4. Does not beat Bedert's exponent (log log N)^{1-o(1)}.",
+  "failures": []
+}
