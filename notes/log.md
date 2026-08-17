@@ -65,7 +65,9 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P27/P30 finished. Verified: Cohn–Elkies R=3627599/500000=7.255198 (beats printed 7.25520, not magic); kissing-5d restricted duals 42 and 239925/5456 (unrestricted 40–44 unchanged). Started P05 and P34. P17 still running.
 
-- SuperGrok watch: P17, P05, P34 live. Wrap before the weekly pool dies. Do not buy more usage.
+- SuperGrok P05/P17 finished. Verified: affine-013 T <= ceil(n^2/2), beats Aaronson 3/4 (1/3 still open); 0/1 polynomials BSKK theta 0.00373556, census n<=20 consistent, p_n->1 open. Started P37 and P12. P34 still running.
+
+- SuperGrok watch: P34, P37, P12 live. Wrap before the weekly pool dies. Do not buy more usage.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.
