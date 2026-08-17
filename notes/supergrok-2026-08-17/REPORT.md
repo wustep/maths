@@ -84,10 +84,17 @@ Verified: for every finite S subset Z with |S|=n, Aaronson's T(S) = #{(x,y,z) in
 
 Independently replayed `verify_fourier.py` (exit 0): BSKK N=2 theta = 0.00373556, published 0.003736 is a 4e-7 over-round. Stored census n=1..20 internally consistent (`verify_census.py`). 0/1-factor counts through n=16 sit under the rho^n majorant. Did not re-factor n=20. Unconditional p_n -> 1 still open.
 
+### P34 1/3–2/3 posets — `problems/one-third-two-thirds`
+
+Independently enumerated all 10! linear extensions of the stored covers of \(W_{10}\): e=187, pair 121:66, \(\delta=6/17<14/39\), still \(>1/3\). Width-3 via antichains {1,2,3} and {5,7,8}. Replay of the brute-force LE count, not of `verify_W10.py`'s DP. Did **not** re-run the 204M naturally labelled n=10 census, so uniqueness is their claim. All computed 3-chain boxes still \(\ge 1/3\); Olson–Sagan Q3.9 open. Unrestricted conjecture open.
+
+### P37 Seymour second neighborhood — `problems/seymour-second-neighborhood`
+
+Independently recomputed first/second neighbourhoods on seven stored n=8 certificates. All seven are Pisa (strong, \(\Delta=0\)). Three are irregular non-matchings: missing-degree \(3^2 2^6\), \(3^4 2^4\), \(3^6 2^2\). Also a non-tight 2-regular missing example. Headline witness `certs/n8_irregular_pisa.json` (ternary 145923119419): margins (0,-1,0,0,-1,-1,0,0). Did **not** re-run the 2.5B geng orientation census, so “exactly seven types” is their claim. Seymour still open. Eulerian \(n=2\delta+3\) tables do not beat Kaneko–Locke.
+
 ## In flight
 
-- P34 1/3–2/3 posets
-- P37 Seymour second neighborhood
 - P12 two smooth summands
+- P38 Tuza triangle packing-covering (launching)
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

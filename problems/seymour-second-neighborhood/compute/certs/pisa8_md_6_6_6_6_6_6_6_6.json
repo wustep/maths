@@ -1,0 +1,25 @@
+{
+  "status": "INFEASIBLE",
+  "n": 8,
+  "miss_deg": [
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6
+  ],
+  "require_not_matching": false,
+  "irregular_missing": false,
+  "rounds": [
+    {
+      "round": 0,
+      "status": "INFEASIBLE",
+      "time": 0.013851718,
+      "conflicts": 0
+    }
+  ],
+  "total_time": 0.013851718000001512
+}

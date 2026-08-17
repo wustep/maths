@@ -1,0 +1,15 @@
+{
+  "delta": 2,
+  "n": 7,
+  "n_vars": 380,
+  "n_clauses": 2016,
+  "pairs": 21,
+  "status": "UNSAT",
+  "build_time": 0.003144502639770508,
+  "solve_time": 0.005622386932373047,
+  "dimacs": "/workspace/maths/problems/seymour-second-neighborhood/compute/certs/eulerian_n7_d2.cnf",
+  "stats": {
+    "time": 0.00016860400000000275
+  },
+  "claim": "UNSAT means every Eulerian oriented graph on n=2\u03b4+3 vertices has a Seymour vertex"
+}

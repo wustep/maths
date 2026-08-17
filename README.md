@@ -66,6 +66,8 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [kissing-5d](problems/kissing-5d) | Restricted Delsarte: $T_{D_5}$ bound 42, $T_{L_5}$ bound $239925/5456<44$. Unrestricted $40\le\tau_5\le 44$ unchanged. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
+| [one-third-two-thirds](problems/one-third-two-thirds) | Width-3 $W_{10}$ has $\delta=6/17<14/39$, $e=187$, still $>1/3$. Did not re-run the n=10 census. Conjecture open. |
+| [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 
 Each problem folder:
 

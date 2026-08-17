@@ -1,0 +1,15 @@
+{
+  "n": 6,
+  "labeled_oriented": 14348907,
+  "strong": 2895570,
+  "delta_ge0": 14348907,
+  "pisa": 1050,
+  "pisa_tight": 270,
+  "missing_degree_types": [
+    {"missing_deg": [3, 3, 3, 3, 3, 3], "count": 120},
+    {"missing_deg": [1, 1, 1, 1, 1, 1], "count": 150},
+    {"missing_deg": [1, 1, 0, 0, 0, 0], "count": 360},
+    {"missing_deg": [1, 1, 1, 1, 0, 0], "count": 180},
+    {"missing_deg": [0, 0, 0, 0, 0, 0], "count": 240}
+  ]
+}

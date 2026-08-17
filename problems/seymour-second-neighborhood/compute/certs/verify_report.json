@@ -1,0 +1,208 @@
+{
+  "halkiewicz": [
+    {
+      "n": 6,
+      "pisa": 1050,
+      "pisa_tight": 270,
+      "types": {
+        "(3, 3, 3, 3, 3, 3)": 120,
+        "(1, 1, 1, 1, 1, 1)": 150,
+        "(1, 1, 0, 0, 0, 0)": 360,
+        "(1, 1, 1, 1, 0, 0)": 180,
+        "(0, 0, 0, 0, 0, 0)": 240
+      },
+      "matches_halkiewicz": true
+    },
+    {
+      "n": 7,
+      "pisa": 4080,
+      "pisa_tight": 4080,
+      "types": {
+        "(2, 2, 2, 2, 2, 2, 2)": 720,
+        "(4, 4, 4, 4, 4, 4, 4)": 720,
+        "(0, 0, 0, 0, 0, 0, 0)": 2640
+      },
+      "matches_halkiewicz": true
+    }
+  ],
+  "constructions": [
+    {
+      "name": "C7^2",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": false,
+      "missing_deg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "C8^2",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": false,
+      "missing_deg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "C8^3",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": true,
+      "missing_deg": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ]
+    },
+    {
+      "name": "C9^2",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": false,
+      "missing_deg": [
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4,
+        4
+      ]
+    },
+    {
+      "name": "C9^3",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": false,
+      "missing_deg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "C9^4",
+      "pisa": true,
+      "tight": true,
+      "matching_missing": true,
+      "missing_deg": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  ],
+  "sat_witnesses": [
+    {
+      "file": "pisa8_irregular2.json",
+      "n": 8,
+      "code": 145923119419,
+      "pisa": true
+    },
+    {
+      "file": "pisa8_md_2_2_2_2_2_2_2_2.json",
+      "n": 8,
+      "code": 10896680928669,
+      "pisa": true
+    },
+    {
+      "file": "pisa8_md_3_3_3_3_2_2_2_2.json",
+      "n": 8,
+      "code": 11106931761932,
+      "pisa": true
+    },
+    {
+      "file": "pisa8_md_3_3_3_3_3_3_2_2.json",
+      "n": 8,
+      "code": 10867656012644,
+      "pisa": true
+    },
+    {
+      "file": "pisa8_md_5_5_5_5_5_5_5_5.json",
+      "n": 8,
+      "code": 18618998231887,
+      "pisa": true
+    },
+    {
+      "file": "pisa8_reg3.json",
+      "n": 8,
+      "code": 14648865216353,
+      "pisa": true
+    }
+  ],
+  "regular_dense": [
+    {
+      "file": "regular_d2.json",
+      "delta": 2,
+      "n": 7,
+      "status": "INFEASIBLE",
+      "eulerian": true,
+      "solve_time": 0.017785593000000002
+    },
+    {
+      "file": "regular_d3.json",
+      "delta": 3,
+      "n": 9,
+      "status": "INFEASIBLE",
+      "eulerian": true,
+      "solve_time": 0.10837870100000001
+    },
+    {
+      "file": "regular_d4.json",
+      "delta": 4,
+      "n": 11,
+      "status": "INFEASIBLE",
+      "eulerian": true,
+      "solve_time": 2.740364903
+    },
+    {
+      "file": "regular_d5.json",
+      "delta": 5,
+      "n": 13,
+      "status": "INFEASIBLE",
+      "eulerian": true,
+      "solve_time": 41.653077637
+    },
+    {
+      "file": "regular_d6.json",
+      "delta": 6,
+      "n": 15,
+      "status": "UNKNOWN",
+      "eulerian": true,
+      "solve_time": 300.094577575
+    }
+  ]
+}

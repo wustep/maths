@@ -1,0 +1,26 @@
+{
+  "note": "Naturally labelled posets of width <= 3. Every unlabelled poset appears after relabelling by a linear extension. Counts from compute/census.c (gcc -O3), replayed through n=9 and independently checked at n<=8 by compute/width3_census.py.",
+  "published_width3_min_through_9": ["14", "39"],
+  "published_source": "Trotter-Gehrlein-Fishburn 1992 (n<=9 width-3 no smaller than 14/39); Olson-Sagan 2018 (all posets n<=9, width>2 no smaller than 14/39); Saks 1985 (M7 = 14/39).",
+  "census": [
+    {"n": 3, "n_natural": 7, "n_width3": 1, "min_delta": [1, 2], "n_below_14_39": 0, "n_below_1_3": 0},
+    {"n": 4, "n_natural": 39, "n_width3": 16, "min_delta": [1, 2], "n_below_14_39": 0, "n_below_1_3": 0},
+    {"n": 5, "n_natural": 314, "n_width3": 212, "min_delta": [4, 11], "n_below_14_39": 0, "n_below_1_3": 0, "min_e": 11},
+    {"n": 6, "n_natural": 3339, "n_width3": 2842, "min_delta": [4, 11], "n_below_14_39": 0, "n_below_1_3": 0, "min_e": 11},
+    {"n": 7, "n_natural": 43502, "n_width3": 40916, "min_delta": [14, 39], "n_below_14_39": 0, "n_below_1_3": 0, "min_e": 39, "M7_down": [0, 0, 1, 1, 7, 7, 31]},
+    {"n": 8, "n_natural": 657363, "n_width3": 643236, "min_delta": [14, 39], "n_below_14_39": 0, "n_below_1_3": 0, "min_e": 39, "note": "minimum achieved by M7 plus a 1-chain (linear sum)"},
+    {"n": 9, "n_natural": 11106683, "n_width3": 11026537, "min_delta": [14, 39], "n_below_14_39": 0, "n_below_1_3": 0, "min_e": 39, "note": "replays Olson-Sagan / TGF n<=9"},
+    {
+      "n": 10,
+      "n_natural": 204767041,
+      "n_width3": 204298353,
+      "min_delta": [6, 17],
+      "min_delta_unreduced": [66, 187],
+      "n_below_14_39": 187,
+      "n_below_1_3": 0,
+      "min_e": 187,
+      "W10_down": [0, 0, 1, 1, 7, 11, 23, 87, 95, 255],
+      "note": "unique unlabelled width-3 poset beating 14/39: n_below equals e(W10). Independently checked in verify_W10.py."
+    }
+  ]
+}
