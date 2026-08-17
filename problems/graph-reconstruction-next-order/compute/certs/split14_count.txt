@@ -1,0 +1,6 @@
+# geng 2.9.1 counts, 2026-08-17
+# nauty geng -u -S 14
+n=14 split graphs (all): 67997750
+# geng -u -c -S 14
+n=14 connected split graphs: 62930604
+n=14 disconnected split graphs: 5067146
