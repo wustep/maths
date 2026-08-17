@@ -3,7 +3,7 @@ Read /workspace/maths/notes/supergrok-2026-08-17/house.md and follow it.
 Your folder: /workspace/maths/problems/chowla-cosine
 Your problem: P15, Chowla's cosine problem.
 
-Read PROBLEM.md, notes/lists/proposed-50.md P15, notes/picks/judge-codex.md P15, refs/walkthrough-style.md.
+Read PROBLEM.md, notes/lists/2026-08-16-proposed-50.md P15, notes/picks/2026-08-16-judge-codex.md P15, refs/walkthrough-style.md.
 
 Goal: a certified explicit constant c that is new, or an auxiliary trigonometric polynomial whose bound is independently checkable and strictly beats the best published universal (or n>=n0) constant you can cite.
 

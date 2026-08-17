@@ -3,6 +3,45 @@
 Notebook for a few open problems. One folder per problem. No package, no
 container, no smoke tests.
 
+## Interesting results
+
+So far there is one.
+
+### Covering: \(\ell_2(10,2)\le 50\)
+
+A binary linear code of length 50 and dimension 40 has covering radius
+exactly 2. Equivalently, the \(10\times 50\) parity-check matrix
+`problems/covering/compute/H_r10_n50.txt` hits every syndrome in
+\(\mathbb F_2^{10}\) as a sum of at most two columns (1024/1024,
+two independent verifiers). That is
+
+\[
+\ell_2(10,2)\le 50.
+\]
+
+The November 2025 table (Davydov–Marcugini–Pambianco, arXiv:2511.02542,
+Table 5.1) had \(\ell_2(10,2)\le 51\). This is a construction, an upper
+bound, not a conjecture. Sphere covering still only gives \(\ge 45\),
+and an \(n=49\) search left 7 holes, so 50 is not shown optimal.
+
+The same matrix has a \((2,0)\)-partition with \(p(H)=10\). The
+\(\mathrm{QM}_2^2\) construction then produces longer codes
+(\(r=18\), \(n=815\); \(r=20\), \(n=1631\)) and the density bound
+\(\bar\mu(2)\le 2601/2048\approx 1.27002\). That is the interesting
+part: a finite seed that moves the asymptotic constant, not just a
+table entry.
+
+Replay:
+
+```bash
+python problems/covering/compute/verify_certificate.py
+cd problems/covering/result && ./run_all.sh
+```
+
+Standalone writeup in [problems/covering/result](problems/covering/result).
+Explainers: [HTML](problems/covering/explainer.html),
+[PDF](problems/covering/explainer.pdf).
+
 ## Problems
 
 | Folder | Status |
@@ -27,39 +66,10 @@ compute/          scripts, certificates, tables
 lean/             only if there is a lemma
 ```
 
-## Overnight 2026-08-16
+## Notes
 
-Codex proposed 50 problems; Grok+Codex picked five. Notes:
-
-- [notes/lists/proposed-50.md](notes/lists/proposed-50.md)
-- [notes/picks/pick-5.md](notes/picks/pick-5.md)
-- [notes/picks/judge-codex.md](notes/picks/judge-codex.md)
-
-Historical lists (status 2026-08-17):
-
-- [notes/lists/hilbert.md](notes/lists/hilbert.md) — Hilbert 23 (1900)
-- [notes/lists/smale.md](notes/lists/smale.md) — Smale 18 (1998)
-- [notes/lists/landau.md](notes/lists/landau.md) — Landau 4 (1912)
-- [notes/picks/ideation-historical.md](notes/picks/ideation-historical.md) — pick for tonight
-
-The one finite record is the covering matrix:
-
-`problems/covering/compute/H_r10_n50.txt`
-
-```bash
-python problems/covering/compute/verify_certificate.py
-```
-
-Written up as a standalone artifact in
-[problems/covering/result](problems/covering/result) — two independent
-verifiers, the \((2,0)\)-partition with \(p(H)=10\), and the QM\(_2^2\)
-propagation to \(r=18,20\):
-
-```bash
-cd problems/covering/result && ./run_all.sh
-```
-
-Explainers: [HTML](problems/covering/explainer.html), [PDF](problems/covering/explainer.pdf).
+Chronicle of the repo and the runs: [notes/log.md](notes/log.md).
+Lists, picks, and process notes live under [notes/](notes/).
 
 ## Lean
 
