@@ -3,7 +3,7 @@ Read /workspace/maths/notes/supergrok-2026-08-17/house.md and follow it.
 Your folder: /workspace/maths/problems/landau-n2-plus-1
 Your problem: Landau 4, infinitely many primes n^2+1.
 
-Read PROBLEM.md, ATTACK.md, RESEARCH.md, notes/lists/landau.md, notes/picks/ideation-historical.md, refs/walkthrough-style.md.
+Read PROBLEM.md, ATTACK.md, RESEARCH.md, notes/lists/landau.md, notes/picks/2026-08-17-ideation-historical.md, refs/walkthrough-style.md.
 
 A sieve is already running / present under compute/. Extend it. Do not claim infinitude.
 

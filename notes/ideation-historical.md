@@ -1,1 +1,1 @@
-Moved to [picks/ideation-historical.md](picks/ideation-historical.md).
+Moved to [picks/2026-08-17-ideation-historical.md](picks/2026-08-17-ideation-historical.md).
