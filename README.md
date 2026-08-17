@@ -1,7 +1,6 @@
 # maths
 
-Notebook for a few open problems. One folder per problem. No package, no
-container, no smoke tests.
+Notebook for a few open problems.
 
 ## Interesting results
 
