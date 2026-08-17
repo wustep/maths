@@ -1,0 +1,9 @@
+{
+  "ok": true,
+  "Cstar_int": 215816,
+  "C7": 6906112,
+  "prod_2048_Cstar": 441991168,
+  "18_to_7": 612220032,
+  "c": "1/18",
+  "statement": "For every integer n>=1 and every set A of n positive integers, min_x sum_{a in A} cos(a x) <= - n^{1/7}/18."
+}
