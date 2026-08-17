@@ -68,10 +68,18 @@ Independently replayed Bevan–Erskine–Lewis certificates through \(q=61\) (\(
 
 Independently replayed `compute/verify.py` (ALL_OK). On the \(\{b,1\}\) family, iid + Liu Example-4 mix at \(\beta=1/5\) has Gilmer ratio \(\ge 1.000077\) whenever the mean is \(\le 0.38285\) (5.1M mesh cells). Recovers Liu's Example-5 number \(0.382709087918735\). Same hypothesis class as Liu Theorem 13 (optimizer family, not every measure on \([0,1]\)). Not \(1/2\). Not a new reduction.
 
+### P27 Cohn–Elkies planar — `problems/cohn-elkies`
+
+Exact rational Laguerre–Gaussian from Cohn–Elkies Table 4 nodes. Independently replayed `compute/verify.py` (ALL CHECKS PASSED): R = 3627599/500000 = 7.255198, center density ≤ 0.2886751562026082, ratio to hexagonal 1.0000000748515987. Beats the printed Table 4 value 7.25520; meets Table 3 0.28868. Not a magic function (target 4π/√3). Green #42 still open.
+
+### P30 kissing number 5d — `problems/kissing-5d`
+
+Independently replayed `compute/verify_certificates.py` (exit 0). Restricted Delsarte: T_D5 bound 42 (excludes 43, 44); T_L5 bound 239925/5456 ≈ 43.9745 (excludes 44). Unrestricted range still 40 ≤ τ_5 ≤ 44. Restricted certificates, not the unrestricted kissing number.
+
 ## In flight
 
 - P17 random 0/1 polynomials
-- P27 Cohn–Elkies planar certificate
-- P30 kissing number in dimension 5
+- P05 affine copies of {0,1,3}
+- P34 1/3–2/3 posets
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

@@ -1,0 +1,84 @@
+{
+  "A4_vs_D4": {
+    "A4_histogram": {
+      "-1": 10,
+      "-1/2": 60,
+      "0": 60,
+      "1/2": 60
+    },
+    "n_antipodal_20_subsets_of_D4": 66,
+    "n_matching_A4_histogram": 0,
+    "A4_is_D4_minus_two_pairs": false
+  },
+  "Q5_equator": {
+    "max_norm2_on_A4_polytope_sum0": "6/5",
+    "target_norm2": "2",
+    "max_norm2_lt_2": true,
+    "equatorial_extension_impossible": true,
+    "two_level_vertices": [
+      {
+        "k_high": 1,
+        "a^2": "8/5",
+        "(a-b)^2": "5/2",
+        "A4_feasible": false
+      },
+      {
+        "k_high": 2,
+        "a^2": "3/5",
+        "(a-b)^2": "5/3",
+        "A4_feasible": false
+      },
+      {
+        "k_high": 3,
+        "a^2": "4/15",
+        "(a-b)^2": "5/3",
+        "A4_feasible": false
+      },
+      {
+        "k_high": 4,
+        "a^2": "1/10",
+        "(a-b)^2": "5/2",
+        "A4_feasible": false
+      }
+    ]
+  },
+  "numerical_41st_L5": {
+    "method": "Powell-on-sphere",
+    "n_starts": 91,
+    "best_slack": -0.26491106406735176,
+    "best_x": [
+      1.2649110640673515,
+      0.0,
+      0.0,
+      0.0,
+      0.632455532033676
+    ],
+    "positive_slack": false
+  },
+  "numerical_41st_Q5": {
+    "method": "Powell-on-sphere",
+    "n_starts": 91,
+    "best_slack": -0.264911064067352,
+    "best_x": [
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676
+    ],
+    "positive_slack": false
+  },
+  "numerical_41st_R5": {
+    "method": "Powell-on-sphere",
+    "n_starts": 91,
+    "best_slack": -0.264911064067352,
+    "best_x": [
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676,
+      0.632455532033676
+    ],
+    "positive_slack": false
+  }
+}

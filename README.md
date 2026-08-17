@@ -62,6 +62,8 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [long-gap-dilate](problems/long-gap-dilate) | SAT $G(p,\mathrm{round}\sqrt p)$ through $p=71$. No universal $C>2$. Record still Shakan 2. |
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
 | [union-closed](problems/union-closed) | $0.38285$ on $\{b,1\}$ with iid+Example-4 at $\beta=1/5$ (mesh min ratio $1.000077$). Recovers Liu $0.382709$. Not $1/2$. |
+| [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
+| [kissing-5d](problems/kissing-5d) | Restricted Delsarte: $T_{D_5}$ bound 42, $T_{L_5}$ bound $239925/5456<44$. Unrestricted $40\le\tau_5\le 44$ unchanged. |
 
 Each problem folder:
 

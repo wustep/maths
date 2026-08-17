@@ -1,0 +1,183 @@
+# Walkthrough — five-dimensional kissing number
+
+## 0. What was actually missing
+
+The published range is still \(40\le\tau_5\le 44\). The missing object is
+not a better floating 3-point SDP — Mittelmann–Vallentin already have
+\(s_{14}(5)=44.99899685\ldots\), which is how 45 died, and the house
+rule is that a restricted numerical SDP without an exact positivity
+certificate is residue.
+
+What *would* move the needle is either
+
+- a polynomial (or SOS matrix) whose Gegenbauer / Bachoc–Vallentin
+  data are exactly nonnegative and whose value is strictly less than 44,
+  43, 42 or 41 on the *unrestricted* interval \(t\le 1/2\), or
+- forty-one explicit points on \(S^4\) with all inner products
+  \(\le 1/2\).
+
+Neither exists in the 2026 record. The degree of freedom that *is*
+available overnight is the inner-product support: if a putative 41–44
+point code is forced to live in a finite set \(T\subset[-1,1/2]\), the
+Delsarte dual only has to be nonpositive on \(T\), not on the whole
+interval, and that LP is small enough to solve over \(\mathbb Q\).
+
+## 1. Named false starts
+
+**Add a 41st point to \(D_5\).** For unit \(x\), the \(D_5\) roots demand
+\(|x_i|+|x_j|\le 1/\sqrt{2}\) for every pair. The minimum of the largest
+pair-sum on \(S^4\) is \(2/\sqrt{5}\), and \(4/5>1/2\). Dead on arrival;
+this is maximality of \(D_5\), not a new code.
+
+**Stack a 24-cell equator under the \(Q_5\) caps.** \(Q_5\) is
+\(10+20+10\) along the all-ones axis. Replacing the 20-point \(A_4\)
+equator by a 24-cell would be a 44-point code. \(A_4\) is not a 24-cell
+minus two antipodal pairs (66 histograms, no match), and more simply
+the equatorial polytope \(\sum x_i=0\), \(x_i-x_j\le 1\) has
+\(|x|^2\le 6/5<2\). There is no extra equatorial vector at all.
+
+**Unrestricted high-degree Delsarte.** Levenshtein is exactly 48.
+Odlyzko–Sloane already took the continuum dual to \(\approx 46.345\).
+Sidelnikov / Boyvalenkov–Danev–Bumova say you cannot beat Levenshtein
+by a few extra degrees, and the 1979 table is the known continuum
+optimum in this dimension. We did not rerun that search as a claim.
+
+**Enlarging \(T\) until it looks unrestricted.** Adding \(Q_5\)'s extra
+angles \(\{-4/5,-3/10,1/5\}\) to the \(L_5\) dual lifts the exact bound
+from \(43.97\) to \(45.66\) or \(54.8\). The moment \(T\) contains all
+four known 40-point angle sets, Delsarte is back above 44.
+
+**Numerical 41st point against \(L_5,Q_5,R_5\).** Powell on the sphere,
+91 starts each, best slack \(\approx-0.2649\). The optimiser sits on a
+deep hole (inner product \(2/\sqrt{5}\)). Evidence of maximality, not a
+certificate, and not a construction.
+
+## 2. The useful failure
+
+The \(Q_5\)-equator attempt forced a clean description of extra points
+over a *fixed* 4-dimensional kissing code. Once the equator is a
+24-cell — which \(D_5\) and \(L_5\) both contain — the same calculation
+gives a height constraint \(h^2\ge 1/2\) and then Rankin's
+\(A(4,0)\le 8\) in each open hemisphere. That is an exact 40-point cap
+for every 5-dimensional kissing code that contains a 24-cell.
+
+The other useful failure was the *real* Delsarte relaxation on
+\(T_{D_5}=\{-1,-1/2,0,1/2\}\): it allows \(N=42\) with
+\(A=(-1\mapsto 1,\,-1/2\mapsto 12.8,\,0\mapsto 14.4,\,1/2\mapsto 12.8)\).
+Those averages are not integer pair-counts. The integrality slice is
+empty at 42, 43 and 44, and at 41 it is nonempty only when there are
+exactly twenty antipodal pairs.
+
+## 3. The click
+
+Delsarte on a *finite* \(T\) is an interpolation problem, not an SDP.
+The numerical \(L_5\) dual used six Gegenbauer coefficients
+\((c_0,c_1,c_2,c_3,c_4,c_9)\) and vanished on five angles. That is a
+\(5\times 5\) linear system over \(\mathbb Q\). Solving it produces
+
+\[
+\frac{f(1)}{f_0}=\frac{239925}{5456}=44-\frac{139}{5456}<44
+\]
+
+with every \(c_k\ge 0\) and \(f\le 0\) on
+\(T_{L_5}=\{-1,-3/4,-1/2,-1/4,0,1/2\}\). The same pattern for \(T_{D_5}\)
+gives the integer bound 42.
+
+Together with the 24-cell lemma and the integer slice, every
+\(k\in\{41,42,43,44\}\) is now excluded in at least one exact restricted
+class, and 44 is excluded in two of them (\(T_{L_5}\), and anything
+containing a 24-cell).
+
+## 4. The argument, in the order it was found
+
+### 4.1. The four 40-point codes are real
+
+\(D_5\) is the permutations of \((\pm 1,\pm 1,0,0,0)\). \(L_5\) replaces
+the layer \(x_5=+1\) by the odd-sign half-spinor. \(Q_5\) (resp. \(R_5\))
+replaces the coordinate-sum \(+2\) layer of \(D_5\) (resp. \(L_5\)) by
+the reflection of the \(-2\) layer across \(\sum x_i=0\). All four have
+squared norm 2 and max inner product 1, and the pair histograms match
+Cohn–Rajagopal Table 2.1.
+
+### 4.2. No 24-cell, no 41
+
+Rotate a 24-cell to the hyperplane \(x_5=0\). An extra unit point at
+height \(h\) has direction \(u\in S^3\) satisfying
+\(\varphi(u)\le 1/\sqrt{2(1-h^2)}\). Because \(\varphi\ge 1\), one has
+\(|h|\ge 1/\sqrt{2}\) (or a pole). In a single open hemisphere the
+projected 4-vectors have pairwise inner products \(\le 0\), so there
+are at most \(A(4,0)\le 8\) of them. The bound \(A(4,0)\le 8\) is the
+polynomial \(t^2+t\), whose dimension-4 Gegenbauer expansion is
+\(\frac14 P_0+P_1+\frac34 P_2\). Poles are incompatible with any other
+extra point in the same hemisphere. Hence at most \(24+8+8=40\) points.
+
+### 4.3. Exact dual for Leech's angles
+
+Let \(P_k^{(5)}\) be the dimension-5 Gegenbauer polynomials normalised
+by \(P_k(1)=1\), recurrence
+\((k+3)P_{k+1}=(2k+3)t P_k-k P_{k-1}\). The polynomial
+
+\[
+\begin{align*}
+f&=P_0+\frac{169541}{45136}P_1+\frac{28}{3}P_2+\frac{6095}{651}P_3\\
+&\qquad+\frac{32}{3}P_4+\frac{131072}{13299}P_9
+\end{align*}
+\]
+
+has nonnegative coefficients, vanishes at
+\(t\in\{-3/4,-1/2,-1/4,0,1/2\}\), and takes the value \(-10773/5456<0\)
+at \(t=-1\). Therefore any spherical code in \(S^4\) whose distinct
+inner products lie in that set has size at most \(239925/5456<44\).
+
+### 4.4. The \(D_5\) angle set, with integrality
+
+The companion polynomial
+\(P_0+(49/45)P_1+(28/3)P_2+(32/3)P_4+(896/45)P_5\) vanishes on
+\(\{-1,-1/2,0,1/2\}\) and gives the real bound 42. Enumerating integer
+pair-counts at Gegenbauer degree 8 shows there is no such distribution
+of size 42, 43 or 44, and the only size-41 distributions have exactly
+twenty antipodal pairs. Those twenty pairs are a 40-point
+\(\{-1,-1/2,0,1/2\}\)-code, hence (scaling by \(\sqrt{2}\)) forty roots
+of an even lattice of rank \(\le 5\), hence a copy of \(D_5\), which
+cannot be extended.
+
+## 5. Computer residue
+
+- `compute/certs/restricted_delsarte.json` — the two exact duals.
+- `compute/integer_d5.json` — the integer slice, including the empty
+  \(n_{-1}\le 19\) scan at \(N=41\).
+- `compute/q5_extend.json` — numerical slacks \(\approx-0.2649\) against
+  \(L_5,Q_5,R_5\); equatorial obstruction \(|x|^2\le 6/5\).
+- `compute/construct_search.json` — cube+axes \(=26\); \(D_5\) plus holes
+  never exceeds 40.
+- `figures/restricted_duals.png` — the two duals on \([-1,1/2]\). They
+  *are* allowed to be positive between the points of \(T\); that is the
+  whole point of restricting \(T\).
+
+Replay: `sh compute/run_all.sh`, or just
+`compute/.venv/bin/python compute/verify_certificates.py`.
+
+## 6. What is proved vs still open
+
+**Proved here (restricted).**
+
+- No 5-dimensional kissing code containing a 24-cell has more than 40
+  points. In particular \(k\in\{41,42,43,44\}\) is impossible in that
+  class, and \(D_5\) and \(L_5\) are maximal.
+- No spherical code in \(S^4\) with inner products in
+  \(\{-1,-3/4,-1/2,-1/4,0,1/2\}\) has 44 points.
+- No spherical code in \(S^4\) with inner products in
+  \(\{-1,-1/2,0,1/2\}\) has 41, 42, 43 or 44 points.
+- \(Q_5\) has no additional equatorial point.
+
+**Still open.**
+
+- The unrestricted kissing number: \(40\le\tau_5\le 44\), unchanged.
+- Existence of a 41–44 point code whose angle set is not contained in
+  \(T_{L_5}\) and which does not contain a 24-cell. \(Q_5\) and \(R_5\)
+  already show that such angle sets exist at size 40.
+- An exact (SOS) certificate that the Bachoc–Vallentin number
+  \(s_d(5)\) is \(<44\) for some \(d\). The published \(44.998\ldots\)
+  is high-accuracy numerical, not a rational Gram matrix.
+- Maximality of \(Q_5\) and \(R_5\) as spherical codes (numerical slack
+  is negative, not a proof).

@@ -1,0 +1,82 @@
+{
+  "L5_exact_dual": {
+    "name": "L5_interp_c0c1c2c3c4c9",
+    "c": [
+      "1",
+      "169541/45136",
+      "28/3",
+      "6095/651",
+      "32/3",
+      "0",
+      "0",
+      "0",
+      "0",
+      "131072/13299"
+    ],
+    "f_on_T": {
+      "-1": "-10773/5456",
+      "-3/4": "0",
+      "-1/2": "0",
+      "-1/4": "0",
+      "0": "0",
+      "1/2": "0"
+    },
+    "f(1)": "239925/5456",
+    "f0": "1",
+    "bound": "239925/5456",
+    "float_bound": 43.97452346041056,
+    "c_k_nonneg": true,
+    "f_le_0_on_T": true,
+    "certified": true,
+    "excludes": [
+      44
+    ]
+  },
+  "D5_interp_dual": {
+    "name": "D5_interp_c0c1c2c4c5",
+    "c": [
+      "1",
+      "49/45",
+      "28/3",
+      "0",
+      "32/3",
+      "896/45"
+    ],
+    "f_on_T": {
+      "-1": "0",
+      "-1/2": "0",
+      "0": "0",
+      "1/2": "0"
+    },
+    "f(1)": "42",
+    "f0": "1",
+    "bound": "42",
+    "float_bound": 42.0,
+    "c_k_nonneg": true,
+    "f_le_0_on_T": true,
+    "certified": true,
+    "excludes": [
+      43,
+      44
+    ]
+  },
+  "D5_even_dual": {
+    "name": "D5_even_c0c2c4c6",
+    "certified": false,
+    "error": "singular"
+  },
+  "D5_integer_N42": [
+    {
+      "N": 42,
+      "symmetric_half_search_first_hit": [],
+      "any_symmetric_hit": false
+    }
+  ],
+  "D5_integer_N44": [
+    {
+      "N": 44,
+      "symmetric_half_search_first_hit": [],
+      "any_symmetric_hit": false
+    }
+  ]
+}

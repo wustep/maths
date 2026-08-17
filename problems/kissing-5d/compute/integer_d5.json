@@ -1,0 +1,41 @@
+{
+  "40": {
+    "n_hits_recorded": 1,
+    "first_hit": {
+      "n_{-1}": 19,
+      "n_{-1/2}": 239,
+      "n_0": 277,
+      "n_{1/2}": 245
+    },
+    "delsarte_integer_feasible": true
+  },
+  "41": {
+    "n_hits_recorded": 1,
+    "first_hit": {
+      "n_{-1}": 20,
+      "n_{-1/2}": 254,
+      "n_0": 289,
+      "n_{1/2}": 257
+    },
+    "delsarte_integer_feasible": true
+  },
+  "42": {
+    "n_hits_recorded": 0,
+    "first_hit": null,
+    "delsarte_integer_feasible": false
+  },
+  "43": {
+    "n_hits_recorded": 0,
+    "first_hit": null,
+    "delsarte_integer_feasible": false
+  },
+  "44": {
+    "n_hits_recorded": 0,
+    "first_hit": null,
+    "delsarte_integer_feasible": false
+  },
+  "41_n_{-1}_le_19": {
+    "feasible": false,
+    "first_hit": null
+  }
+}

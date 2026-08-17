@@ -63,7 +63,9 @@ Public repo: https://github.com/wustep/maths
 
 ## Open / in flight
 
-- SuperGrok watch: P17, P27, P30 live. Wrap before the weekly pool dies. Do not buy more usage.
+- SuperGrok P27/P30 finished. Verified: Cohn–Elkies R=3627599/500000=7.255198 (beats printed 7.25520, not magic); kissing-5d restricted duals 42 and 239925/5456 (unrestricted 40–44 unchanged). Started P05 and P34. P17 still running.
+
+- SuperGrok watch: P17, P05, P34 live. Wrap before the weekly pool dies. Do not buy more usage.
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.

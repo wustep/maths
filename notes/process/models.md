@@ -20,5 +20,7 @@
 | thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | union-closed | `problems/union-closed` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| kissing number 5d | `problems/kissing-5d` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| kissing number 5d | `problems/kissing-5d` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| affine {0,1,3} copies | `problems/affine-013` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
