@@ -1,0 +1,356 @@
+[
+  {
+    "n": 4,
+    "d": 1,
+    "header": "p cnf 16 38",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 4,
+      "d": 1,
+      "narcs": 4,
+      "outdeg": [
+        1,
+        1,
+        1,
+        1
+      ],
+      "min_out": 1,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 4,
+    "d": 2,
+    "header": "p cnf 16 39",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 5,
+    "d": 1,
+    "header": "p cnf 25 75",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 5,
+      "d": 1,
+      "narcs": 5,
+      "outdeg": [
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "min_out": 1,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 5,
+    "d": 2,
+    "header": "p cnf 25 81",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 6,
+    "d": 1,
+    "header": "p cnf 36 133",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 6,
+      "d": 1,
+      "narcs": 6,
+      "outdeg": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "min_out": 1,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 6,
+    "d": 2,
+    "header": "p cnf 36 158",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 7,
+    "d": 2,
+    "header": "p cnf 49 288",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 7,
+      "d": 2,
+      "narcs": 14,
+      "outdeg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "min_out": 2,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 7,
+    "d": 3,
+    "header": "p cnf 49 317",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 8,
+    "d": 2,
+    "header": "p cnf 64 493",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 8,
+      "d": 2,
+      "narcs": 16,
+      "outdeg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "min_out": 2,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 8,
+    "d": 3,
+    "header": "p cnf 64 606",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 9,
+    "d": 2,
+    "header": "p cnf 81 799",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 9,
+      "d": 2,
+      "narcs": 18,
+      "outdeg": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2,
+        2
+      ],
+      "min_out": 2,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 9,
+    "d": 3,
+    "header": "p cnf 81 1106",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 10,
+    "d": 3,
+    "header": "p cnf 100 1927",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 10,
+      "d": 3,
+      "narcs": 30,
+      "outdeg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "min_out": 3,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 10,
+    "d": 4,
+    "header": "p cnf 100 2408",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 11,
+    "d": 3,
+    "header": "p cnf 121 3214",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 11,
+      "d": 3,
+      "narcs": 33,
+      "outdeg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "min_out": 3,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 11,
+    "d": 4,
+    "header": "p cnf 121 4502",
+    "status": "UNSAT",
+    "verified": true,
+    "model": null
+  },
+  {
+    "n": 12,
+    "d": 4,
+    "header": "p cnf 144 8057",
+    "status": "UNKNOWN",
+    "verified": false,
+    "model": "NO-RESULT\ns UNKNOWN"
+  },
+  {
+    "n": 12,
+    "d": 3,
+    "header": "p cnf 144 5152",
+    "status": "SAT",
+    "verified": true,
+    "model": {
+      "n": 12,
+      "d": 3,
+      "narcs": 36,
+      "outdeg": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "min_out": 3,
+      "two_cycles": [],
+      "triangles": [],
+      "ok": true
+    }
+  },
+  {
+    "n": 12,
+    "d": 4,
+    "header": "p cnf 333 8822",
+    "status": "UNSAT",
+    "verified": true,
+    "sb": true,
+    "conflicts": 2993,
+    "time_s": 0.07,
+    "drat": "VERIFIED",
+    "note": "Ho\u00e0ng\u2013Reed r=4"
+  },
+  {
+    "n": 15,
+    "d": 5,
+    "header": "p cnf 549 62417",
+    "status": "UNSAT",
+    "verified": true,
+    "sb": true,
+    "conflicts": 137486,
+    "time_s": 5.96,
+    "drat": "VERIFIED",
+    "note": "Ho\u00e0ng\u2013Reed r=5"
+  },
+  {
+    "n": 16,
+    "d": 6,
+    "header": "p cnf 633 153806",
+    "status": "UNSAT",
+    "verified": true,
+    "sb": true,
+    "conflicts": 35382,
+    "time_s": 3.46,
+    "drat": "VERIFIED",
+    "note": "implied by HKN 0.3465"
+  },
+  {
+    "n": 17,
+    "d": 6,
+    "header": "p cnf 723 272021",
+    "status": "UNSAT",
+    "verified": true,
+    "sb": true,
+    "conflicts": 654582,
+    "time_s": 63.45,
+    "drat": "VERIFIED",
+    "note": "implied by HKN 0.3465"
+  }
+]

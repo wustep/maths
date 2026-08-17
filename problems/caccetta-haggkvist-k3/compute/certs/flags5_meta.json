@@ -1,0 +1,10 @@
+{
+  "n_types": 317,
+  "labeled_total": 30535,
+  "pi_row_sum_minmax": [
+    1.0,
+    1.0
+  ],
+  "AC5_nnz": 6770,
+  "missed_L": 0
+}

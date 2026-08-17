@@ -1,0 +1,91 @@
+# Walkthrough — Caccetta–Häggkvist for directed triangles
+
+## 0. What was actually missing
+
+The refereed unrestricted threshold is Hladký–Král'–Norin 0.3465 (*Combinatorica* 2017): every n-vertex oriented graph with δ⁺ ≥ 0.3465 n has a directed triangle. The cyclic construction meets the conjectured 1/3, so the exact finite statement is
+
+> δ⁺ ≥ ⌈n/3⌉ forces a C₃.
+
+Hoàng–Reed (r ≤ 5) plus HKN leave a first open order: **n=18, δ⁺=6**, because 0.3465·18 = 6.237 > 6. (The 0.3388 figure cited from 2014 is a personal communication, F₆, no public certificate; even that number still has 0.3388·18 > 6.)
+
+A dent tonight is either a checkable certificate with some c < 0.3465, or a DRAT-verified proof that no 6-outregular C₃-free oriented graph on 18 vertices exists. Isolated random-graph statistics are not a dent.
+
+## 1. Named false starts
+
+**Treat 0.3388 as the published record.** Grzesik–Volec (IMRN 2023) cite it as [18] “personal communication”. HKN v4 (arXiv, 2016) says de Joannis de Verclos–Sereni–Volec pushed the bound to 0.3388 in March 2014 using F₆ “and several additional bounds”. There is no paper and no Maple/SDP file. The refereed number remains 0.3465. We compare against Combinatorica and *say* we did not beat 0.3388.
+
+**Replay (4.22) from the printed aᵢ.** HKN exhibit four vectors with two decimal places and a 32-term expansion they call exact. Rebuilding AC, AR, BR, IndT, IndV, Fork from the 32 types (549 labeled C₃-free oriented graphs on 4 vertices) matches Tables 1–2 and (4.14)–(4.15) exactly. Feeding in the printed aᵢ does *not* match (4.22). The display rounding kills the combination. The Maple worksheet `CH.mw` stores the real aᵢ as encoded floats; we did not decode them. (4.22) is not a certificate we can check.
+
+**Sinz cardinality, first CNF.** n=6, d=2 came back SAT in a millisecond. Caccetta–Häggkvist already proved r=2. The model had min out-degree 1, 2-cycles, and triangles. The sequential counter was attaching the wrong literals. Thrown away.
+
+**Verifier that parsed the kissat banner.** Version strings and dates became “positive variables”. Fixed by reading only `v`-lines.
+
+**F₅ SDP as a feasibility problem F ≤ −1.** 317 types, 14×14 λ-flag SOS. SCS reported infeasible at 0.3465, which is absurd: the F₄ certificate pulled back along the 4-vertex marginal is already a feasible F₅ ray. After adding the pulled-back 8×8 F₄ SOS block, SCS still could not find a strictly better c. Random PSD + LP on the same lift (`optimize_f5.py`) sat at the F₄ threshold. The 0.3388 communication used F₆ and extra bounds we do not have.
+
+**n=12 without symmetry.** 144 variables, 8k clauses, Hoàng–Reed says UNSAT. Kissat burned 180s / 1.8M conflicts and returned UNKNOWN. The binomial encoding is correct and hopeless without a symmetry cut.
+
+## 2. The useful failure
+
+The HKN F₄ system, independently rebuilt, is a 32-dimensional Farkas problem: Q ≽ 0 on eight β-flags, 14 out-regularity rows, two order-3 induction forms, one CSS-fork form. Linear-only (no SOS) dies only around c ≈ 0.38. The SOS is what takes 0.38 down to 0.3465. An SDP on that exact system saturates at **0.346439**. HKN’s 0.3465 is a four-decimal rounding of this (or of a nearby) number. There is no more juice in F₄.
+
+That is why n=18 is the finite handle. HKN does not imply δ⁺=6 forces a triangle on 18 vertices. A SAT proof there is not implied by any published threshold.
+
+The n=12 UNKNOWN, next to the n=9 UNSAT in 0.01s, said the encoding was fine and the symmetry was missing. Lex order on out-neighbourhoods of N⁺(0) = {1,…,d} (and of the complement) collapsed n=12 to 2993 conflicts.
+
+## 3. The click
+
+Two small ones.
+
+**The published 0.3465 is a rounding.** Once the matrices matched and the SDP sat at 0.346439, a certificate at 0.34645 was just “don’t round up”. `certs/f4_certificate.json`: Q ≽ 0 (min eigenvalue 9.5·10⁻⁹), worst F-coordinate −0.12343. Replayed against the rebuilt matrices.
+
+**Lex SB turns Hoàng–Reed into a SAT proof.** With N⁺(0) fixed and out-neighbourhoods of 1 < 2 < ⋯ < d lex-ordered, kissat + `drat-trim` give independently checkable UNSAT proofs at the first two Hoàng–Reed orders and at the first HKN-only order:
+
+| n | d | conflicts | time | DRAT |
+| ---: | ---: | ---: | ---: | --- |
+| 12 | 4 | 2993 | 0.07s | VERIFIED |
+| 15 | 5 | 137486 | 5.96s | VERIFIED |
+| 16 | 6 | 35382 | 3.46s | VERIFIED |
+| 17 | 6 | 654582 | 63s | VERIFIED |
+
+n=16 is the first n with ⌈n/3⌉ = 6. HKN already covers it (0.3465·16 < 6). n=18 is the first n it does not.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Sullivan’s AIM summary, HKN arXiv:0908.2791v4 + `CH.mw`, Grzesik–Volec 2102.12830, Razborov math/0604317, Hamburger–Haxell–Kostochka. Record 0.3465 as refereed, 0.3388 as personal communication.
+2. Rebuild the 32 types and the matrices. Match the paper. Fail to replay (4.22) from two-decimal aᵢ.
+3. Re-optimise Q and the linear multipliers. The system dies at 0.346439. Freeze a certificate at 0.34645.
+4. Try F₅. No improvement.
+5. SAT with a broken cardinality encoding. Catch it on n=6 d=2.
+6. Binomial encoding. Census n≤11 matches the cyclic construction (SAT) and the conjecture (UNSAT).
+7. n=12 without SB does not finish. Add lex SB. n=12, 15, 16, 17 go UNSAT. DRAT-check the first three.
+8. Start n=18 d=6, the first open order. Hunt-from-circulant never finds a 6-regular C₃-free graph on 18 vertices. n=17 DRAT-checked after the fact.
+
+The F₄ certificate is checked as follows. The 8×8 slices Mₖ of AC, the 14×32 matrices AR, BR, and the linear forms IndT(c), IndV(c), Fork(c) are those of HKN, independently counted. For the stored Q, b, cT, cV, d and c = 0.34645,
+
+    Fₖ = ⟨Q, Mₖ⟩ + b·(BR − c AR)ₖ + cT IndTₖ + cV IndVₖ + d Forkₖ
+
+is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eigenvalue. Hence no density vector r ≥ 0, ‖r‖₁=1 can lie in R(c), hence no homomorphism of the flag algebra of triangle-free oriented graphs has δα ≥ 0.34645.
+
+## 5. Computer residue
+
+- F₄ matrices and type census: `certs/flags4.json`.
+- F₄ certificate: `certs/f4_certificate.json`. Replay: `verify_certificate.py`.
+- F₄ SDP log: `certs/sdp_bound.json` (saturation ≈ 0.346439).
+- F₅ types (317) and lift: `certs/flags5.pkl`, `optimize_f5.json`. No better c.
+- Small-n SAT: `certs/small_n_census.json`.
+- DRAT-verified UNSAT: `certs/ch-{12-4,15-5,16-6,17-6}-sb.{cnf,drat}`.
+- n=18 d=6: `certs/ch-18-6-sb.cnf`, `certs/n18_residue.json`. Kissat 4.0.4 still UNKNOWN at 20 min / 10.3M conflicts / 302 remaining variables. Residue.
+- Circulant-plus-one hunt: `certs/hunt_plus_one.json`. No C₃-free (r+1)-regular example on n≤24.
+
+## 6. What is proved vs still open
+
+**Proved tonight (checkable).**
+
+- Every n-vertex oriented graph with δ⁺ ≥ 0.34645 n has a directed triangle. This is the HKN F₄ method with an independent matrix rebuild and a stored PSD certificate. It is 5·10⁻⁵ below the published 0.3465. It is not below 0.3388.
+- Exact CH-triangle at n=12 (d=4), n=15 (d=5), n=16 (d=6), n=17 (d=6), with DRAT proofs. n=12 and n=15 recover Hoàng–Reed; n=16 and n=17 are implied by HKN.
+
+**Still open.**
+
+- The conjecture (c = 1/3).
+- Any improvement of the 0.3388 personal communication.
+- The exact statement at n=18, δ⁺=6 — the first order not implied by Hoàng–Reed or HKN — unless the running SAT instance finishes UNSAT. That is the residue.
