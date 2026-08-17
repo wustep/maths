@@ -1,0 +1,50 @@
+[
+  {
+    "n": 31,
+    "m": 8,
+    "covered": 29,
+    "ok": false,
+    "ratio": 1.4368424162141993,
+    "counting": 8
+  },
+  {
+    "n": 31,
+    "m": 9,
+    "covered": 31,
+    "ok": true,
+    "ratio": 1.6164477182409742,
+    "counting": 8
+  },
+  {
+    "n": 57,
+    "m": 11,
+    "covered": 52,
+    "ok": false,
+    "ratio": 1.4569855927715483,
+    "counting": 11
+  },
+  {
+    "n": 57,
+    "m": 12,
+    "covered": 57,
+    "ok": true,
+    "ratio": 1.5894388284780525,
+    "counting": 11
+  },
+  {
+    "n": 72,
+    "m": 12,
+    "covered": 62,
+    "ok": false,
+    "ratio": 1.4142135623730951,
+    "counting": 12
+  },
+  {
+    "n": 72,
+    "m": 13,
+    "covered": 66,
+    "ok": false,
+    "ratio": 1.5320646925708532,
+    "counting": 12
+  }
+]

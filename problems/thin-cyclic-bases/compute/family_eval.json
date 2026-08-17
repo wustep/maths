@@ -1,0 +1,260 @@
+{
+  "two_ap": [
+    {
+      "n": 10,
+      "m": 6,
+      "covered": 10,
+      "missed": 0,
+      "ratio": 1.8973665961010275,
+      "counting": 4,
+      "slack": 2,
+      "ok": true,
+      "family": "two_ap"
+    },
+    {
+      "n": 25,
+      "m": 9,
+      "covered": 25,
+      "missed": 0,
+      "ratio": 1.8,
+      "counting": 7,
+      "slack": 2,
+      "ok": true,
+      "family": "two_ap"
+    },
+    {
+      "n": 50,
+      "m": 14,
+      "covered": 50,
+      "missed": 0,
+      "ratio": 1.979898987322333,
+      "counting": 10,
+      "slack": 4,
+      "ok": true,
+      "family": "two_ap"
+    },
+    {
+      "n": 100,
+      "m": 19,
+      "covered": 100,
+      "missed": 0,
+      "ratio": 1.9,
+      "counting": 14,
+      "slack": 5,
+      "ok": true,
+      "family": "two_ap"
+    },
+    {
+      "n": 200,
+      "m": 28,
+      "covered": 200,
+      "missed": 0,
+      "ratio": 1.979898987322333,
+      "counting": 20,
+      "slack": 8,
+      "ok": true,
+      "family": "two_ap"
+    },
+    {
+      "n": 400,
+      "m": 39,
+      "covered": 400,
+      "missed": 0,
+      "ratio": 1.95,
+      "counting": 28,
+      "slack": 11,
+      "ok": true,
+      "family": "two_ap"
+    }
+  ],
+  "mrose": [
+    {
+      "n": 76,
+      "m": 17,
+      "covered": 76,
+      "missed": 0,
+      "ratio": 1.9500337378997747,
+      "counting": 12,
+      "slack": 5,
+      "ok": true,
+      "family": "mrose",
+      "t": 2
+    },
+    {
+      "n": 156,
+      "m": 24,
+      "covered": 156,
+      "missed": 0,
+      "ratio": 1.9215378456610455,
+      "counting": 18,
+      "slack": 6,
+      "ok": true,
+      "family": "mrose",
+      "t": 3
+    },
+    {
+      "n": 264,
+      "m": 31,
+      "covered": 264,
+      "missed": 0,
+      "ratio": 1.9079181101796572,
+      "counting": 23,
+      "slack": 8,
+      "ok": true,
+      "family": "mrose",
+      "t": 4
+    },
+    {
+      "n": 400,
+      "m": 38,
+      "covered": 400,
+      "missed": 0,
+      "ratio": 1.9,
+      "counting": 28,
+      "slack": 10,
+      "ok": true,
+      "family": "mrose",
+      "t": 5
+    },
+    {
+      "n": 976,
+      "m": 59,
+      "covered": 976,
+      "missed": 0,
+      "ratio": 1.8885439790102156,
+      "counting": 44,
+      "slack": 15,
+      "ok": true,
+      "family": "mrose",
+      "t": 8
+    }
+  ],
+  "bel": [
+    {
+      "family": "bel",
+      "q": 7,
+      "ok": false,
+      "error": "params"
+    },
+    {
+      "n": 546,
+      "m": 48,
+      "covered": 546,
+      "missed": 0,
+      "ratio": 2.054210364052382,
+      "counting": 33,
+      "slack": 15,
+      "ok": true,
+      "family": "bel",
+      "q": 13
+    },
+    {
+      "n": 1482,
+      "m": 72,
+      "covered": 1478,
+      "missed": 4,
+      "ratio": 1.8702876004780722,
+      "counting": 54,
+      "slack": 18,
+      "ok": false,
+      "family": "bel",
+      "q": 19
+    },
+    {
+      "n": 2850,
+      "m": 96,
+      "covered": 2822,
+      "missed": 28,
+      "ratio": 1.7982447582368526,
+      "counting": 75,
+      "slack": 21,
+      "ok": false,
+      "family": "bel",
+      "q": 25
+    },
+    {
+      "n": 4650,
+      "m": 120,
+      "covered": 4600,
+      "missed": 50,
+      "ratio": 1.7597653802562394,
+      "counting": 96,
+      "slack": 24,
+      "ok": false,
+      "family": "bel",
+      "q": 31
+    }
+  ],
+  "three_ap": [
+    {
+      "n": 12,
+      "m": 4,
+      "covered": 9,
+      "missed": 3,
+      "ratio": 1.1547005383792517,
+      "counting": 5,
+      "slack": -1,
+      "ok": false,
+      "family": "three_ap",
+      "d": 2,
+      "e": 5,
+      "ell": 2
+    },
+    {
+      "n": 27,
+      "m": 7,
+      "covered": 21,
+      "missed": 6,
+      "ratio": 1.3471506281091268,
+      "counting": 7,
+      "slack": 0,
+      "ok": false,
+      "family": "three_ap",
+      "d": 6,
+      "e": 10,
+      "ell": 3
+    },
+    {
+      "n": 48,
+      "m": 10,
+      "covered": 35,
+      "missed": 13,
+      "ratio": 1.4433756729740645,
+      "counting": 10,
+      "slack": 0,
+      "ok": false,
+      "family": "three_ap",
+      "d": 4,
+      "e": 13,
+      "ell": 4
+    },
+    {
+      "n": 75,
+      "m": 13,
+      "covered": 58,
+      "missed": 17,
+      "ratio": 1.5011106998930268,
+      "counting": 12,
+      "slack": 1,
+      "ok": false,
+      "family": "three_ap",
+      "d": 10,
+      "e": 16,
+      "ell": 5
+    },
+    {
+      "n": 108,
+      "m": 16,
+      "covered": 82,
+      "missed": 26,
+      "ratio": 1.539600717839002,
+      "counting": 15,
+      "slack": 1,
+      "ok": false,
+      "family": "three_ap",
+      "d": 13,
+      "e": 19,
+      "ell": 6
+    }
+  ]
+}

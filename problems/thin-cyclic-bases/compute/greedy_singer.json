@@ -1,0 +1,97 @@
+[
+  {
+    "kind": "singer-greedy",
+    "q": 3,
+    "n": 13,
+    "m": 6,
+    "ok": true,
+    "ratio": 1.6641005886756874,
+    "counting": 5,
+    "added": [
+      4,
+      2
+    ],
+    "seed_m": 4,
+    "covered": 13
+  },
+  {
+    "kind": "singer-greedy",
+    "q": 5,
+    "n": 31,
+    "m": 9,
+    "ok": true,
+    "ratio": 1.6164477182409742,
+    "counting": 8,
+    "added": [
+      0,
+      1,
+      28
+    ],
+    "seed_m": 6,
+    "covered": 31
+  },
+  {
+    "kind": "singer-greedy",
+    "q": 7,
+    "n": 57,
+    "m": 13,
+    "ok": true,
+    "ratio": 1.721892064184557,
+    "counting": 11,
+    "added": [
+      1,
+      36,
+      6,
+      13,
+      23
+    ],
+    "seed_m": 8,
+    "covered": 57
+  },
+  {
+    "kind": "singer-greedy",
+    "q": 11,
+    "n": 133,
+    "m": 21,
+    "ok": false,
+    "ratio": 1.8209309360006518,
+    "counting": 16,
+    "added": [
+      0,
+      24,
+      2,
+      42,
+      35,
+      54,
+      89,
+      110,
+      4
+    ],
+    "seed_m": 12,
+    "covered": 132
+  },
+  {
+    "kind": "singer-greedy",
+    "q": 13,
+    "n": 183,
+    "m": 25,
+    "ok": true,
+    "ratio": 1.8480531773864322,
+    "counting": 19,
+    "added": [
+      6,
+      17,
+      38,
+      128,
+      11,
+      25,
+      143,
+      68,
+      56,
+      149,
+      36
+    ],
+    "seed_m": 14,
+    "covered": 183
+  }
+]
