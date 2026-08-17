@@ -11,5 +11,7 @@
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Cursor Grok 4.6 | solver | 2026-08-16 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| Sidon second term | `problems/sidon-second-term` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
-| Chowla cosine | `problems/chowla-cosine` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| Sidon second term | `problems/sidon-second-term` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| Chowla cosine | `problems/chowla-cosine` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
+| two-squares gap | `problems/two-squares-gap` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| cosine zeros | `problems/cosine-zeros` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |

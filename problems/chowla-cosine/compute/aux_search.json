@@ -1,0 +1,13 @@
+{
+  "bedert_Cstar_preview": 215800.82039814437,
+  "best_preview": {
+    "alpha": 1.0,
+    "beta": 1.0,
+    "phi": 0.7853981633974483,
+    "gap": 0.707106781186547,
+    "C_r": 32.0,
+    "Cstar_preview": 215800.82039814437
+  },
+  "improved": false,
+  "note": "float search only; certified bound uses exact Bedert point unless upgraded"
+}

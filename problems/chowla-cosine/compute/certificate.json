@@ -1,0 +1,145 @@
+{
+  "lemma72": {
+    "psi_max": [
+      "4",
+      "1/2"
+    ],
+    "phi_B": [
+      "4",
+      "1"
+    ],
+    "phi_max": [
+      "4",
+      "2"
+    ],
+    "gap": [
+      "0",
+      "1/2"
+    ],
+    "verified_by": "verify_lemma72.py"
+  },
+  "lemma71": {
+    "C_Q1": 3,
+    "C_Q2": 14,
+    "note": "|Q1| <= 3(hat1_A+K), ||Q2||_2 <= 14 K^2"
+  },
+  "C_r": 32,
+  "quadratic": {
+    "A_alg": [
+      "140",
+      "224"
+    ],
+    "B_alg": [
+      "980",
+      "1856"
+    ],
+    "A_up": "2284/5",
+    "B_up": "126172/35",
+    "disc_up": "39040032/175",
+    "sqrt_disc_up": "29519981126591/62500000000",
+    "z_up": "58069981126591/125000000000",
+    "Cstar_up": "3372122708042634945567281281/15625000000000000000000",
+    "Cstar_pub": "3372138333042634945567281281/15625000000000000000000",
+    "Cstar_int": 215816,
+    "sqrt2_up": "99/70",
+    "sqrt2_dn": "7/5"
+  },
+  "symmetric": {
+    "N_le": "6906112 K^7 on the energy branch",
+    "C7": 6906112,
+    "C7_frac": "3372138333042634945567281281/488281250000000000000",
+    "K_sym_ge_min_of": [
+      "sqrt(N/2)",
+      "(N/6906112)^(1/7)"
+    ]
+  },
+  "chowla_positive": {
+    "K_n_ge_min_of": [
+      "n^(1/2)/2",
+      "1/18 n^(1/7)"
+    ],
+    "c_1_7": "1/18",
+    "c_1_7_float_preview": 0.05820240297604766,
+    "seventh_root_upper_of_64_C7": 18,
+    "statement": "For every n>=1 and every n-element set A of positive integers, min_x sum_{a in A} cos(a x) <= - min(sqrt(n)/2, (1/18) n^{1/7})."
+  },
+  "polylog_rows": [
+    {
+      "M": 5,
+      "pi_M": 3,
+      "N_exp_num": 1,
+      "N_exp_den": 3,
+      "denom": 21581600
+    },
+    {
+      "M": 7,
+      "pi_M": 4,
+      "N_exp_num": 2,
+      "N_exp_den": 4,
+      "denom": 42299936
+    },
+    {
+      "M": 11,
+      "pi_M": 5,
+      "N_exp_num": 3,
+      "N_exp_den": 5,
+      "denom": 104454944
+    },
+    {
+      "M": 13,
+      "pi_M": 6,
+      "N_exp_num": 4,
+      "N_exp_den": 6,
+      "denom": 145891616
+    },
+    {
+      "M": 19,
+      "pi_M": 8,
+      "N_exp_num": 6,
+      "N_exp_den": 8,
+      "denom": 311638304
+    },
+    {
+      "M": 23,
+      "pi_M": 9,
+      "N_exp_num": 7,
+      "N_exp_den": 9,
+      "denom": 456666656
+    },
+    {
+      "M": 31,
+      "pi_M": 11,
+      "N_exp_num": 9,
+      "N_exp_den": 11,
+      "denom": 829596704
+    },
+    {
+      "M": 43,
+      "pi_M": 14,
+      "N_exp_num": 12,
+      "N_exp_den": 14,
+      "denom": 1596175136
+    },
+    {
+      "M": 61,
+      "pi_M": 18,
+      "N_exp_num": 16,
+      "N_exp_den": 18,
+      "denom": 3212205344
+    },
+    {
+      "M": 79,
+      "pi_M": 22,
+      "N_exp_num": 20,
+      "N_exp_den": 22,
+      "denom": 5387630624
+    },
+    {
+      "M": 97,
+      "pi_M": 25,
+      "N_exp_num": 23,
+      "N_exp_den": 25,
+      "denom": 8122450976
+    }
+  ]
+}

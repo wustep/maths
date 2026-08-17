@@ -53,6 +53,8 @@ Public repo: https://github.com/wustep/maths
   (gitignored). House rule: each run writes only under its own folder;
   no invented dents; no git from the CLI.
 
+- SuperGrok P07 (Sidon) and P15 (Chowla) finished. Verified: Hou–Zhao L=6 lift (8e-8 below γ0, does not change 0.9435); Chowla K(n) ≥ n^{1/7}/18 (does not beat Bedert 1/5−o(1)). Report: notes/supergrok-2026-08-17/REPORT.md. Next launches: P14 two-squares, P16 cosine zeros. Keep going until ~10% weekly SuperGrok remains.
+
 ## Open / in flight
 
 - SuperGrok four-run watch (P29, P07, P15, Landau 4). Wrap before the

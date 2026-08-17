@@ -1,0 +1,29 @@
+{
+  "published_record_2026-08-17": {
+    "CHO25": 0.98183,
+    "HouZhao_stated": 0.9435,
+    "HouZhao_gamma0": 0.943492590713545,
+    "HouZhao_arxiv": "2607.01169v2",
+    "Erdos30_status": "OPEN as of 2026-04-06 page / 2026-08-17 access",
+    "Green31": "open, Dec 2025 update cites 0.98183"
+  },
+  "our_certificate": {
+    "file": "certs/hz_kernels_L6.json",
+    "L": 6,
+    "m": 32,
+    "R": 8,
+    "gamma": 0.9434925085033526,
+    "stated_C": 0.94349251,
+    "delta_vs_HouZhao_gamma0": 8.221019232035331e-08,
+    "a_unchanged": true,
+    "verifiers": [
+      "verify_certificate.py --beat 0.94349259",
+      "verify_beat_hz.py"
+    ]
+  },
+  "lower_bound_residue": {
+    "singer_extras_in_interval": 0,
+    "bose_extras_in_interval_p_ge_7": 0,
+    "second_term_singer": "-> 1/2"
+  }
+}
