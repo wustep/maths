@@ -25,5 +25,6 @@
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | Seymour second neighborhood | `problems/seymour-second-neighborhood` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
-| two smooth summands | `problems/two-smooth-summands` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| two smooth summands | `problems/two-smooth-summands` | SuperGrok `grok-4.6` xhigh | solver | 2026-08-17 |
 | Tuza triangles | `problems/tuza-triangle-packing-covering` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |
+| Caccetta–Häggkvist | `problems/caccetta-haggkvist-k3` | SuperGrok `grok-4.6` xhigh | solver (in flight) | 2026-08-17 |

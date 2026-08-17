@@ -1,0 +1,67 @@
+{
+  "range": [
+    2,
+    200000
+  ],
+  "failures_in_range": [],
+  "worst_ratio_in_range": {
+    "n": 197136,
+    "F_split_over_sqrt": 1.9977477477477477
+  },
+  "large_spot": [
+    {
+      "n": 1000000000000,
+      "a": 999998000001,
+      "b": 1999999,
+      "P_a": 37,
+      "P_b": 1657,
+      "F_split": 1657,
+      "bound": 2000001.0,
+      "ok": true
+    },
+    {
+      "n": 1000000000007,
+      "a": 1000000000000,
+      "b": 7,
+      "P_a": 5,
+      "P_b": 7,
+      "F_split": 7,
+      "bound": 2000001.000007,
+      "ok": true
+    },
+    {
+      "n": 1000000000000000003,
+      "a": 1000000000000000000,
+      "b": 3,
+      "P_a": 5,
+      "P_b": 3,
+      "F_split": 5,
+      "bound": 2000000001.0,
+      "ok": true
+    },
+    {
+      "n": 9998200081,
+      "a": 9998000100,
+      "b": 199981,
+      "P_a": 101,
+      "P_b": 6451,
+      "F_split": 6451,
+      "bound": 199983.0,
+      "ok": true
+    },
+    {
+      "n": 131486759,
+      "a": 131469156,
+      "b": 17603,
+      "P_a": 13,
+      "P_b": 607,
+      "F_split": 607,
+      "bound": 22934.535183220225,
+      "ok": true
+    }
+  ],
+  "extra_failures": [],
+  "statement": "F(n) < 2*sqrt(n)+1 for every n>=2 via n = m^2+r or (m-1)^2+(2m-1).",
+  "is_dent": false,
+  "reason": "Balog 1989 already calls the N^{1/2} statement almost trivial."
+}

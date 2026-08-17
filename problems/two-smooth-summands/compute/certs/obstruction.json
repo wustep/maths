@@ -1,0 +1,459 @@
+{
+  "M_star": 131486759,
+  "A045535_prefix_check": [
+    {
+      "n": 0,
+      "m": 7,
+      "y": 2,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 1,
+      "m": 23,
+      "y": 3,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 2,
+      "m": 71,
+      "y": 5,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 3,
+      "m": 311,
+      "y": 7,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 4,
+      "m": 479,
+      "y": 11,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 5,
+      "m": 1559,
+      "y": 13,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 6,
+      "m": 5711,
+      "y": 17,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 7,
+      "m": 10559,
+      "y": 19,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 8,
+      "m": 18191,
+      "y": 23,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 9,
+      "m": 31391,
+      "y": 29,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 10,
+      "m": 118271,
+      "y": 31,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 11,
+      "m": 366791,
+      "y": 37,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 12,
+      "m": 366791,
+      "y": 41,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 13,
+      "m": 2155919,
+      "y": 43,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 14,
+      "m": 2155919,
+      "y": 47,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 15,
+      "m": 2155919,
+      "y": 53,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 16,
+      "m": 6077111,
+      "y": 59,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 17,
+      "m": 6077111,
+      "y": 61,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": true
+    },
+    {
+      "n": 18,
+      "m": 98538359,
+      "y": 67,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": false
+    },
+    {
+      "n": 19,
+      "m": 120293879,
+      "y": 71,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": false
+    },
+    {
+      "n": 20,
+      "m": 131486759,
+      "y": 73,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": false
+    },
+    {
+      "n": 21,
+      "m": 131486759,
+      "y": 79,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": false
+    },
+    {
+      "n": 22,
+      "m": 508095719,
+      "y": 83,
+      "ok": true,
+      "smaller": null,
+      "leastness_checked": false
+    }
+  ],
+  "A045535_prefix_failures": [],
+  "roots_M_star": [
+    {
+      "q": 3,
+      "r": 1,
+      "ok": true
+    },
+    {
+      "q": 5,
+      "r": 1,
+      "ok": true
+    },
+    {
+      "q": 7,
+      "r": 3,
+      "ok": true
+    },
+    {
+      "q": 11,
+      "r": 5,
+      "ok": true
+    },
+    {
+      "q": 13,
+      "r": 5,
+      "ok": true
+    },
+    {
+      "q": 17,
+      "r": 8,
+      "ok": true
+    },
+    {
+      "q": 19,
+      "r": 9,
+      "ok": true
+    },
+    {
+      "q": 23,
+      "r": 3,
+      "ok": true
+    },
+    {
+      "q": 29,
+      "r": 13,
+      "ok": true
+    },
+    {
+      "q": 31,
+      "r": 12,
+      "ok": true
+    },
+    {
+      "q": 37,
+      "r": 17,
+      "ok": true
+    },
+    {
+      "q": 41,
+      "r": 6,
+      "ok": true
+    },
+    {
+      "q": 43,
+      "r": 19,
+      "ok": true
+    },
+    {
+      "q": 47,
+      "r": 21,
+      "ok": true
+    },
+    {
+      "q": 53,
+      "r": 26,
+      "ok": true
+    },
+    {
+      "q": 59,
+      "r": 13,
+      "ok": true
+    },
+    {
+      "q": 61,
+      "r": 12,
+      "ok": true
+    },
+    {
+      "q": 67,
+      "r": 2,
+      "ok": true
+    },
+    {
+      "q": 71,
+      "r": 22,
+      "ok": true
+    },
+    {
+      "q": 73,
+      "r": 29,
+      "ok": true
+    },
+    {
+      "q": 79,
+      "r": 29,
+      "ok": true
+    }
+  ],
+  "roots_failures": [],
+  "lemma_small_m": [
+    {
+      "m": 7,
+      "y": 2,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 23,
+      "y": 3,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 71,
+      "y": 5,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 311,
+      "y": 7,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 479,
+      "y": 11,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 1559,
+      "y": 13,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 5711,
+      "y": 17,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 10559,
+      "y": 19,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 18191,
+      "y": 23,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 31391,
+      "y": 29,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 118271,
+      "y": 31,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 366791,
+      "y": 37,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 366791,
+      "y": 41,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 2155919,
+      "y": 43,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 2155919,
+      "y": 47,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 2155919,
+      "y": 53,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 6077111,
+      "y": 59,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    },
+    {
+      "m": 6077111,
+      "y": 61,
+      "is_neg_pseudosquare": true,
+      "representation": null,
+      "blocked_as_predicted": true
+    }
+  ],
+  "lemma_small_failures": [],
+  "F_M_star": {
+    "value": 83,
+    "split": [
+      649,
+      131486110
+    ],
+    "factors_a": [
+      11,
+      59
+    ],
+    "factors_b": [
+      2,
+      5,
+      7,
+      7,
+      53,
+      61,
+      83
+    ],
+    "P_a": 59,
+    "P_b": 83,
+    "neg_pseudosquare_through_79": true,
+    "has_79_smooth_split": false,
+    "no_prime_between_79_and_83": true,
+    "conclusion": true
+  },
+  "smooth_counts_through_M_star": {
+    "y73": 727473,
+    "y79": 808372
+  },
+  "is_dent": false,
+  "reason": "Exact pointwise F and the reciprocity obstruction; not an exponent."
+}
