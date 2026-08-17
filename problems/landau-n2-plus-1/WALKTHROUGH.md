@@ -9,7 +9,7 @@ and the Iwaniec P2s next to it, not a proof.
 
 Hilbert 16 / Smale 13 (limit cycles) and Smale 7 (Fekete) were the other
 computational reads. Both need a heavier pipeline than a primality sieve.
-Landau 3 is already checked through 2^64. See `notes/ideation-historical.md`.
+Landau 3 is already checked through 2^64. See `notes/picks/ideation-historical.md`.
 
 ## 2. Useful failure
 
