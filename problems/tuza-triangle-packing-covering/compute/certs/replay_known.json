@@ -1,0 +1,52 @@
+{
+  "K3": {
+    "nu": 1,
+    "tau": 1,
+    "ratio": 1.0
+  },
+  "K4": {
+    "nu": 1,
+    "tau": 2,
+    "ratio": 2.0
+  },
+  "K5": {
+    "nu": 2,
+    "tau": 4,
+    "ratio": 2.0
+  },
+  "K6": {
+    "nu": 4,
+    "tau": 6,
+    "ratio": 1.5
+  },
+  "K7": {
+    "nu": 7,
+    "tau": 9,
+    "ratio": 1.2857142857142858
+  },
+  "K8": {
+    "nu": 8,
+    "tau": 12,
+    "ratio": 1.5
+  },
+  "K4_pendant": {
+    "nu": 1,
+    "tau": 2,
+    "ratio": 2.0
+  },
+  "K5_pendant": {
+    "nu": 2,
+    "tau": 4,
+    "ratio": 2.0
+  },
+  "K4_path_3": {
+    "nu": 3,
+    "tau": 6,
+    "ratio": 2.0
+  },
+  "two_K4_share_vertex": {
+    "nu": 2,
+    "tau": 4,
+    "ratio": 2.0
+  }
+}

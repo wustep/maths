@@ -96,9 +96,13 @@ Independently recomputed first/second neighbourhoods on seven stored n=8 certifi
 
 Documented residue. Independently: split 649+131486110 realises F(131486759)=83; M is not a 73-smooth or 79-smooth sum (808372 / 727473 smooth integers through M-1); Jacobi(-M/q)=1 for the 21 odd primes q<=79. G(y) replayed through y=23, matching the stored A062241 values. Stored exception witnesses check: 3 for n^{1/2} (last 23), 16 for n^{2/5} (last 479), 76 for n^{1/3} (last 18191). Square-plus-remainder template holds on [2,5000] plus large spots. Did **not** re-run the C bitset covering [2,G(y)-1] for y>=31, so G(y) through 79 is their claim. Did not beat Balog 4/(9 sqrt(e)). Green #59 open.
 
+### P38 Tuza triangles — `problems/tuza-triangle-packing-covering`
+
+Independently checked all 1044 stored 7-vertex cores in `certs/c7_8reg_verified.json` (1002 template, 42 ILP): each (S,X) is a Puleo witness on the 9-vertex local graph (S edge-disjoint, |X|<=2|S|, every uv-through triangle hits X, S-edges off the hubs lie in X). 1044 distinct order-7 graph6 strings, matching the known count of unlabelled graphs on 7 vertices. The K7 core `F~~~w` is an STS(9) / affine plane of order 3: 12 triples, every pair once, |X|=22. Did **not** re-run geng, the n=8 WKE census, or the split n<=10 table. Does **not** prove Tuza for Delta<=8. Haxell 66/23 unchanged.
+
 ## In flight
 
-- P38 Tuza triangle packing-covering
-- P36 Caccetta–Häggkvist (launching)
+- P36 Caccetta–Häggkvist
+- P31 projective plane of order 12 (launching)
 
 Keep launching leftover 50-list problems until about 10% of the weekly SuperGrok pool remains, then wrap. Do not buy usage.

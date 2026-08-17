@@ -1,0 +1,8 @@
+{
+  "labelled_total": 2097152,
+  "labelled_nonwke": 167871,
+  "labelled_connected_nonwke": 166793,
+  "labelled_connected_nonwke_n_ge4_lt3": 0,
+  "labelled_connected_nonwke_n_ge4_eq3": 4620,
+  "labelled_disconnected_nonwke_n_ge4_lt3": 315
+}
