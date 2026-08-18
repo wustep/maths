@@ -77,6 +77,8 @@ static uint64_t full_mask[MAX_W];
 
 static int max_single_pop = 0;
 static int max_pair_pop = 0;
+static int *suf_max_single;  /* [k]: max single popcount over items >= k */
+static int *suf_max_pair;    /* [k]: max pair popcount over rows >= k */
 
 static long long witnesses_found = 0;
 static long long total_nodes = 0;
@@ -290,24 +292,41 @@ static void build_masks(void) {
                    stride * sizeof(uint64_t));
         }
     }
-    for (int i = 0; i < item_count; ++i) {
+    suf_max_single = calloc((size_t)item_count + 1, sizeof(int));
+    suf_max_pair = calloc((size_t)item_count + 1, sizeof(int));
+    if (suf_max_single == NULL || suf_max_pair == NULL) {
+        fprintf(stderr, "out of memory\n");
+        exit(2);
+    }
+    for (int i = item_count - 1; i >= 0; --i) {
         int pop = 0;
+        int rowmax = 0;
         for (int w = 0; w < words; ++w) {
             pop += __builtin_popcountll(single_mask[(size_t)i * stride + w]);
         }
         if (pop > max_single_pop) {
             max_single_pop = pop;
         }
-        for (int j = 0; j < i; ++j) {
+        for (int j = 0; j < item_count; ++j) {
             int ppop = 0;
+            if (j == i) {
+                continue;
+            }
             for (int w = 0; w < words; ++w) {
                 ppop += __builtin_popcountll(
                     pair_mask[((size_t)i * item_count + j) * stride + w]);
             }
-            if (ppop > max_pair_pop) {
-                max_pair_pop = ppop;
+            if (ppop > rowmax) {
+                rowmax = ppop;
             }
         }
+        if (rowmax > max_pair_pop) {
+            max_pair_pop = rowmax;
+        }
+        suf_max_single[i] = pop > suf_max_single[i + 1] ? pop
+                                                        : suf_max_single[i + 1];
+        suf_max_pair[i] = rowmax > suf_max_pair[i + 1] ? rowmax
+                                                       : suf_max_pair[i + 1];
     }
 }
 
@@ -483,9 +502,9 @@ static void dfs(Ctx *ctx, int start) {
         if (q < 0) {
             return; /* budget infeasible */
         }
-        long bound = (long)q * max_single_pop +
+        long bound = (long)q * suf_max_single[start] +
                      ((long)q * (q - 1) / 2 + (long)q * ctx->depth) *
-                         (long)max_pair_pop;
+                         (long)suf_max_pair[start];
         if (uncovered > bound) {
             return;
         }

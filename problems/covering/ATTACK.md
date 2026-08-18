@@ -47,12 +47,16 @@ Sweep driver: [`compute/q4/run_all_groups.sh`](compute/q4/run_all_groups.sh) →
 
 ### Angle 2 — exhaustive k-swap prover from 7-hole residues
 
-[`compute/q4/kswap.c`](compute/q4/kswap.c): given a 49-column configuration, decide *exactly* whether any swap of ≤ K columns reaches zero holes. Re-add search branches on the first live hole (fresh column = hole, hole^kept, hole^placed), with an explicit defer branch for holes covered by two future columns, resolved in an exact endgame (anchored chain closure + floating-pair components, which are always placeable by translation). Planted controls: corrupting k columns of the certified 50-set (compiled at N=50) is caught at exactly j=k for k=1,2 (k=3,4 running).
+[`compute/q4/kswap.c`](compute/q4/kswap.c): given a 49-column configuration, decide *exactly* whether any swap of ≤ K columns reaches zero holes. Re-add search branches on the first live hole (fresh column = hole, hole^kept, hole^placed), with an explicit defer branch for holes covered by two future columns, resolved in an exact endgame (anchored chain closure + floating-pair components, which are always placeable by translation), plus a top-s coverage-count bound that prunes ~300×. Planted controls: corrupting k columns of the certified 50-set (compiled at `-DN_COLS=50`) is caught at exactly j=k for all k = 1, 2, 3, 4.
 
-Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-hole floor quickly; two structurally different 7-hole configs harvested:
+Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-hole floor quickly; two 7-hole configs harvested:
 
 - `best_sa_config.cols`: holes {68, 95, 106, 214, 248, 679, 760}
 - `best_lifted_config.cols`: holes {52, 471, 483, 544, 706, 833, 931}
+
+**Results.** `best_sa_config` admits **no swap of ≤ 5 columns** reaching zero holes (exhaustive: C(49,5) = 1,906,884 removal sets, 94.6M re-add nodes). `best_lifted_config` admits no swap of ≤ 4 (j=5 running). These local optima are deep.
+
+**Finding: two inequivalent canonical near-misses.** Both hole sets have rank 5 and exactly one zero-sum quadruple (an affine parallelogram) among the 7 holes; both configs have *identical* GL-invariants (multiplicity histogram, unique-coverage distribution per column, dependent-triple count). Yet [`compute/q4/find_equivalence.py`](compute/q4/find_equivalence.py) — color-guided backtracking over basis images, self-tested on identity and random GL(10,2) transforms — proves there is **no linear map sending one 49-set to the other**. The 7-hole floor is not one canonical configuration; the landscape has at least two distinct deep basins with the same signature.
 
 ### Angle 3 — SAT with a frame reduction
 

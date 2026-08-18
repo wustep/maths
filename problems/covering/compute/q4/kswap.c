@@ -44,6 +44,8 @@ static int columns[N];
 static int counts[V];          /* representation multiplicities */
 static unsigned char member[V];
 static int prove_k = 0;
+static int slice_modulo = 1;
+static int slice_residue = 0;
 static const char *input_path = NULL;
 static const char *emit_path = NULL;
 static long long readd_nodes = 0;
@@ -332,6 +334,11 @@ static int endgame(const int *deferred, int nd) {
     return float_embeds(live, m, slots);
 }
 
+/* epoch-stamped coverage counter for the top-s bound */
+static int cover_cnt[V];
+static int cover_epoch_of[V];
+static int cover_epoch = 0;
+
 static int readd_dfs(const int *holes, int nh, const int *deferred, int nd) {
     ++readd_nodes;
     /* drop holes now covered by placed columns */
@@ -357,6 +364,62 @@ static int readd_dfs(const int *holes, int nh, const int *deferred, int nd) {
     }
     if (n_added == slots_total) {
         return 0;
+    }
+    /* Bound: a fresh column c covers live hole h iff c = h or
+     * c ^ h is kept/placed; count, for every possible fresh value,
+     * how many live holes it covers, and compare the top-s sum
+     * (plus internal-pair capacity C(s,2), which caps deferrals and
+     * fresh-fresh covers) against the number of live holes. */
+    {
+        int slots = slots_total - n_added;
+        int defer_capacity = slots * (slots - 1) / 2 - dm;
+        if (defer_capacity < 0) {
+            return 0;
+        }
+        ++cover_epoch;
+        int touched[8192];
+        int nt = 0;
+        int overflow = 0;
+        for (int i = 0; i < m && !overflow; ++i) {
+            int h2 = live[i];
+            for (int t = -1; t < nk + n_added; ++t) {
+                int c = t < 0 ? h2
+                              : (t < nk ? (h2 ^ kept[t]) : (h2 ^ added[t - nk]));
+                if (c == 0 || kept_member[c] || value_in_added(c)) {
+                    continue;
+                }
+                if (cover_epoch_of[c] != cover_epoch) {
+                    if (nt >= 8192) {
+                        overflow = 1;
+                        break;
+                    }
+                    cover_epoch_of[c] = cover_epoch;
+                    cover_cnt[c] = 0;
+                    touched[nt++] = c;
+                }
+                ++cover_cnt[c];
+            }
+        }
+        if (!overflow) {
+            int top[8] = {0};
+            for (int i = 0; i < nt; ++i) {
+                int cnt = cover_cnt[touched[i]];
+                for (int s = 0; s < slots; ++s) {
+                    if (cnt > top[s]) {
+                        int tmp = top[s];
+                        top[s] = cnt;
+                        cnt = tmp;
+                    }
+                }
+            }
+            long best = 0;
+            for (int s = 0; s < slots; ++s) {
+                best += top[s];
+            }
+            if ((long)m > best + defer_capacity) {
+                return 0;
+            }
+        }
     }
     int h = live[0];
     int cand[N + 12];
@@ -487,7 +550,8 @@ static int prove(void) {
         }
         for (;;) {
             ++sets;
-            if (try_removal(idx, j, witness)) {
+            if (sets % slice_modulo == slice_residue &&
+                try_removal(idx, j, witness)) {
                 printf("KSWAP-FOUND j=%d after %lld removal sets\n", j, sets);
                 emit_witness(witness);
                 return 1;
@@ -504,8 +568,8 @@ static int prove(void) {
                 idx[t] = idx[t - 1] + 1;
             }
         }
-        printf("NO-KSWAP j=%d removal_sets=%lld readd_nodes=%lld\n", j, sets,
-               readd_nodes);
+        printf("NO-KSWAP j=%d removal_sets=%lld readd_nodes=%lld slice=%d/%d\n",
+               j, sets, readd_nodes, slice_residue, slice_modulo);
         fflush(stdout);
     }
     return 0;
@@ -519,9 +583,14 @@ int main(int argc, char **argv) {
             prove_k = (int)strtol(argv[++i], NULL, 0);
         } else if (strcmp(argv[i], "--emit") == 0 && i + 1 < argc) {
             emit_path = argv[++i];
+        } else if (strcmp(argv[i], "--modulo") == 0 && i + 1 < argc) {
+            slice_modulo = (int)strtol(argv[++i], NULL, 0);
+        } else if (strcmp(argv[i], "--residue") == 0 && i + 1 < argc) {
+            slice_residue = (int)strtol(argv[++i], NULL, 0);
         } else {
             fprintf(stderr,
-                    "usage: %s --input COLS --prove K [--emit PATH]\n",
+                    "usage: %s --input COLS --prove K [--emit PATH] "
+                    "[--modulo M --residue R]\n",
                     argv[0]);
             return 2;
         }
