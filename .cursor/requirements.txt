@@ -4,6 +4,8 @@ numpy==2.4.4
 scipy==1.18.0
 sympy==1.14.0
 matplotlib==3.11.1
-# SAT solving (imported as `pysat`). Upstream only publishes dev wheels; keep a
-# floor rather than an exact pin so the environment keeps building.
-python-sat>=1.8
+# SAT solving (imported as `pysat`). Upstream only publishes pre-release/dev
+# wheels, so leave this unpinned: pip falls back to the newest pre-release when
+# no stable version exists. A version specifier like `>=1.8` would match nothing
+# without --pre and break the build.
+python-sat
