@@ -26,3 +26,34 @@
 - Soft spot, stated in the note: only \(m=4,5\) are exhaustively verified. The rest of the family inherits the paper's \(p(H_C)\le 2^{m+1}+1\) instead of computing partitions. That is the first thing a referee will push on.
 - One number in the brief lost to the code: \(2601/2048\) is \(1.27002\), not \(1.26999\). Fraction right, decimal wrong; no bound changes.
 - Priority unresolved — Table 5.1 is "best as far as the authors know". Checklist and a drafted email to Davydov/Marcugini/Pambianco in [`result/PRIORITY.md`](result/PRIORITY.md). Nothing goes out before a human works that list.
+
+## 2026-08-18 — q4 (Claude, `cursor/covering-n49-attack-48dc` branch): push 50 → 49
+
+Target: \(\ell_2(10,2)\le 49\) — 49 distinct nonzero 10-bit columns, rank 10, singletons + pair-XORs covering all 1024 syndromes. Budget check: \(1+49+\binom{49}{2}=1226\ge 1024\), slack 202, density would be \(1226/1024\approx 1.19727\). Everything new lives in [`compute/q4/`](compute/q4/); the certified n=50 matrix and `result/` are untouched.
+
+### Angle 1 — symmetry: 49 = 7×7 (new this quest)
+
+If a 49-covering is invariant under a subgroup \(G\le GL(10,2)\), it is a union of \(G\)-orbits, and coverage collapses to orbit-class space (the pair-sum multiset of two orbits is \(G\)-invariant). For \(|G|=7\) the orbit classes number ~147 and a selection is just 7 orbits of size 7 — small enough to exhaust *completely*. Tools:
+
+- [`compute/q4/gen_groups.py`](compute/q4/gen_groups.py) — deterministic generator of subgroup representatives: every cyclic order-\(L\) class for \(L\in\{3,5,7,9,15,21,35,45,105\}\) as block-diagonal companion matrices (deduped by cyclotomic-coset relabeling under \(M\mapsto M^k\)), plus \(C_7\times C_7\) two-generator groups (orbit sizes 1/7/49). One conjugacy representative suffices: conjugation maps invariant coverings to invariant coverings.
+- [`compute/q4/orbit_dfs.c`](compute/q4/orbit_dfs.c) — exhaustive DFS over orbit selections with exact weight 49. Safe prunes only: subset-sum budget DP, an optimistic class-count bound, and suffix reachability masks (a class no remaining single/pair mask can cover kills the branch). Witnesses are re-verified in-process by flat pair enumeration and must still pass the Python verifier.
+- Validation: planted-witness tests (direct-sum coverings \(W_1^*\cup W_2^*\) are invariant and found at n=62/78), `--no-prune` node-count comparisons, and [`compute/q4/naive_enum.c`](compute/q4/naive_enum.c), an independent dumb enumerator, agreeing on small cases.
+
+Sweep driver: [`compute/q4/run_all_groups.sh`](compute/q4/run_all_groups.sh) → [`compute/q4/orbit_runs.log`](compute/q4/orbit_runs.log). Results so far (each line is an *exhaustive* claim for that subgroup class):
+
+- order-7, trivial part dim 1, blocks \(c_1^3\): **no invariant 49-covering** (4.36e9 nodes, 44 s).
+- order-7, trivial part dim 1, blocks \(c_1^2 c_2\): **no invariant 49-covering** (8.94e9 nodes).
+- (sweep continuing: order-7 dim-4/dim-7 fixed spaces, order-9, order-15/21/35/45/105, \(C_7\times C_7\) — updated below as they land.)
+
+### Angle 2 — exhaustive k-swap prover from 7-hole residues
+
+[`compute/q4/kswap.c`](compute/q4/kswap.c): given a 49-column configuration, decide *exactly* whether any swap of ≤ K columns reaches zero holes. Re-add search branches on the first live hole (fresh column = hole, hole^kept, hole^placed), with an explicit defer branch for holes covered by two future columns, resolved in an exact endgame (anchored chain closure + floating-pair components, which are always placeable by translation). Planted controls: corrupting k columns of the certified 50-set (compiled at N=50) is caught at exactly j=k for k=1,2 (k=3,4 running).
+
+Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-hole floor quickly; two structurally different 7-hole configs harvested:
+
+- `best_sa_config.cols`: holes {68, 95, 106, 214, 248, 679, 760}
+- `best_lifted_config.cols`: holes {52, 471, 483, 544, 706, 833, 931}
+
+### Angle 3 — SAT with a frame reduction
+
+[`compute/q4/sat_n49.py`](compute/q4/sat_n49.py): full CNF (pair auxiliaries + coverage clauses + seqcounter cardinality ≤ 49) with the WLOG reduction that a rank-10 covering can be assumed to contain all ten unit vectors (GL(10,2) frame normalization). Cadical, long timeout, background. A long shot; UNSAT would be a theorem but is not expected to terminate.
