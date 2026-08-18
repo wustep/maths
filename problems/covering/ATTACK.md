@@ -61,3 +61,14 @@ Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-h
 ### Angle 3 — SAT with a frame reduction
 
 [`compute/q4/sat_n49.py`](compute/q4/sat_n49.py): full CNF (pair auxiliaries + coverage clauses + seqcounter cardinality ≤ 49) with the WLOG reduction that a rank-10 covering can be assumed to contain all ten unit vectors (GL(10,2) frame normalization). Cadical, long timeout, background. A long shot; UNSAT would be a theorem but is not expected to terminate.
+
+### Wrap (stopped on request, 06:09 UTC)
+
+**No 49-covering found. No dent. Everything below is certified residue / certified exclusion, all replayable.**
+
+- **Symmetry exhaustions** ([`compute/q4/orbit_runs.log`](compute/q4/orbit_runs.log)): 79 subgroup classes exhausted at n=49, **zero invariant coverings in every one**: all 50 \(C_7\times C_7\) classes (orbit sizes 1/7/49 — the "49 = 7×7" resonance is dead for two-generator symmetry), 12 order-15 classes, 10 order-21 classes, 7 order-105 classes, and the two order-7 classes with 1-dimensional fixed space (4.4e9 and 8.9e9 node exhaustions). 11 of the 79 are instant budget infeasibilities (orbit sizes cannot sum to 49, e.g. pure order-3/5/11 actions). **Not settled**: order-7 with fixed-space dim 4 (two classes) and dim 7, plus two order-15 stragglers — timed out at 300–1800 s, no witness seen; and the order-9/-35/-45/-63/-3/-5 files the sweep never reached. Rerun: `CASE_TIMEOUT=big ./compute/q4/run_all_groups.sh` (skips completed cases).
+- **k-swap exhaustion**: `best_sa_config` (7 holes) has **no ≤5-swap** to zero holes — exhaustive over all C(49,j) removals, j ≤ 5 (1.9M removal sets, 94.6M re-add nodes, [`compute/q4/kswap5_sa.log`](compute/q4/kswap5_sa.log)). `best_lifted_config` (7 holes): **no ≤4-swap** (j=5 was mid-run when stopped). Prover validated by 4/4 planted controls.
+- **Inequivalence**: the two 7-hole optima are *not* GL(10,2)-equivalent despite identical invariant profiles (see Angle 2). At least two distinct deep basins at 7 holes.
+- **SAT**: instance built (1.14M clauses), no verdict before stop. [`compute/q4/harvest_optima.sh`](compute/q4/harvest_optima.sh) + [`compute/q4/dedupe_optima.py`](compute/q4/dedupe_optima.py) are ready but unrun.
+- Best hole count this quest: **7** (matching q2), now with teeth: provably ≥6-swap-deep (SA config) and two inequivalent basins.
+- Certified n=50 matrix and `result/` untouched. Replay: `python3 compute/q4/verify_config.py compute/q4/best_sa_config.cols` (prints the 7 holes); `gcc -O3 ... compute/q4/kswap.c && ./compute/q4/kswap --input compute/q4/best_sa_config.cols --prove 5`; `./compute/q4/orbit_dfs --group compute/q4/groups/<case>.grp --n 49`.

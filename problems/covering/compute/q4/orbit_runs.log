@@ -1,0 +1,434 @@
+=== cyc_L7_t1_7_1__7_1__7_1 04:31:25
+group=compute/q4/groups/cyc_L7_t1_7_1__7_1__7_1.grp generators=1 orbits=147 classes=147
+orbit sizes: 7^146 1^1
+max_single_classes=2 max_pair_classes=7 target_n=49
+RESULT group=compute/q4/groups/cyc_L7_t1_7_1__7_1__7_1.grp n=49 witnesses=0 nodes=4355851566 (exhausted: no invariant covering)
+=== cyc_L7_t1_7_1__7_1__7_3 04:32:07
+group=compute/q4/groups/cyc_L7_t1_7_1__7_1__7_3.grp generators=1 orbits=147 classes=147
+orbit sizes: 7^146 1^1
+max_single_classes=4 max_pair_classes=7 target_n=49
+RESULT group=compute/q4/groups/cyc_L7_t1_7_1__7_1__7_3.grp n=49 witnesses=0 nodes=8935456695 (exhausted: no invariant covering)
+=== cyc_L7_t4_7_1__7_1 04:33:31
+group=compute/q4/groups/cyc_L7_t4_7_1__7_1.grp generators=1 orbits=159 classes=159
+orbit sizes: 7^144 1^15
+max_single_classes=2 max_pair_classes=7 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L7_t4_7_1__7_1.grp
+=== cyc_L7_t4_7_1__7_3 05:03:31
+group=compute/q4/groups/cyc_L7_t4_7_1__7_3.grp generators=1 orbits=159 classes=159
+orbit sizes: 7^144 1^15
+max_single_classes=4 max_pair_classes=7 target_n=49
+=== cyc_L7_t4_7_1__7_1 05:32:13
+group=compute/q4/groups/cyc_L7_t4_7_1__7_1.grp generators=1 orbits=159 classes=159
+orbit sizes: 7^144 1^15
+max_single_classes=2 max_pair_classes=7 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L7_t4_7_1__7_1.grp
+=== cyc_L7_t4_7_1__7_3 05:37:13
+group=compute/q4/groups/cyc_L7_t4_7_1__7_3.grp generators=1 orbits=159 classes=159
+orbit sizes: 7^144 1^15
+max_single_classes=4 max_pair_classes=7 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L7_t4_7_1__7_3.grp
+=== cyc_L7_t7_7_1 05:42:13
+group=compute/q4/groups/cyc_L7_t7_7_1.grp generators=1 orbits=255 classes=255
+orbit sizes: 7^128 1^127
+max_single_classes=2 max_pair_classes=2 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L7_t7_7_1.grp
+=== c7c7_t1_l0_m1 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m1.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m1.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l0_m2 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m2.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m2.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l0_m3 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m3.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m3.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l0_m4 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m4.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m4.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l0_m5 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m5.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m5.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l0_m6 05:59:40
+group=compute/q4/groups/c7c7_t1_l0_m6.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l0_m6.grp n=49 witnesses=0 nodes=7864 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l1_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l1_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l1_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l2_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l2_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l2_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l3_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l3_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l3_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l4_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l4_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l4_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l5_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l5_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l5_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m0 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m0.grp generators=2 orbits=39 classes=39
+orbit sizes: 49^18 7^20 1^1
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m0.grp n=49 witnesses=0 nodes=8561 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m1 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m1.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m1.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m2 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m2.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m2.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m3 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m3.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m3.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m4 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m4.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m4.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m5 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m5.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m5.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t1_l6_m6 05:59:41
+group=compute/q4/groups/c7c7_t1_l6_m6.grp generators=2 orbits=27 classes=27
+orbit sizes: 49^20 7^6 1^1
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/c7c7_t1_l6_m6.grp n=49 witnesses=0 nodes=20 (exhausted: no invariant covering)
+=== c7c7_t4 05:59:41
+group=compute/q4/groups/c7c7_t4.grp generators=2 orbits=63 classes=63
+orbit sizes: 49^16 7^32 1^15
+max_single_classes=4 max_pair_classes=4 target_n=49
+RESULT group=compute/q4/groups/c7c7_t4.grp n=49 witnesses=0 nodes=4565922 (exhausted: no invariant covering)
+=== cyc_L105_t0_15_1__21_1 05:59:41
+group=compute/q4/groups/cyc_L105_t0_15_1__21_1.grp generators=1 orbits=13 classes=13
+orbit sizes: 21^3 15^1
+max_single_classes=11 max_pair_classes=13 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t0_15_1__21_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L105_t0_5_1__21_1 05:59:41
+group=compute/q4/groups/cyc_L105_t0_5_1__21_1.grp generators=1 orbits=15 classes=15
+orbit sizes: 21^3 5^3
+max_single_classes=12 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t0_5_1__21_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L105_t0_7_1__7_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L105_t0_7_1__7_1__15_1.grp generators=1 orbits=19 classes=19
+orbit sizes: 15^1 7^9
+max_single_classes=3 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t0_7_1__7_1__15_1.grp n=49 witnesses=0 nodes=3 (exhausted: no invariant covering)
+=== cyc_L105_t0_7_1__7_3__15_1 05:59:41
+group=compute/q4/groups/cyc_L105_t0_7_1__7_3__15_1.grp generators=1 orbits=19 classes=19
+orbit sizes: 15^1 7^9
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t0_7_1__7_3__15_1.grp n=49 witnesses=0 nodes=3 (exhausted: no invariant covering)
+=== cyc_L105_t1_3_1__5_1__7_1 05:59:41
+group=compute/q4/groups/cyc_L105_t1_3_1__5_1__7_1.grp generators=1 orbits=31 classes=31
+orbit sizes: 35^6 21^2 15^6 7^2 5^6 3^2 1^1
+max_single_classes=12 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t1_3_1__5_1__7_1.grp n=49 witnesses=0 nodes=561 (exhausted: no invariant covering)
+=== cyc_L105_t1_3_1__7_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L105_t1_3_1__7_1__15_1.grp generators=1 orbits=23 classes=23
+orbit sizes: 21^2 15^8 7^2 3^2 1^1
+max_single_classes=10 max_pair_classes=10 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t1_3_1__7_1__15_1.grp n=49 witnesses=0 nodes=154 (exhausted: no invariant covering)
+=== cyc_L105_t3_7_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L105_t3_7_1__15_1.grp generators=1 orbits=31 classes=31
+orbit sizes: 15^8 7^8 1^7
+max_single_classes=4 max_pair_classes=4 target_n=49
+RESULT group=compute/q4/groups/cyc_L105_t3_7_1__15_1.grp n=49 witnesses=0 nodes=2043 (exhausted: no invariant covering)
+=== cyc_L15_t0_3_1__15_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__15_1__15_1.grp generators=1 orbits=69 classes=69
+orbit sizes: 15^68 3^1
+max_single_classes=4 max_pair_classes=15 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__15_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t0_3_1__15_1__15_7 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__15_1__15_7.grp generators=1 orbits=69 classes=69
+orbit sizes: 15^68 3^1
+max_single_classes=7 max_pair_classes=15 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__15_1__15_7.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t0_3_1__3_1__3_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__3_1__3_1__15_1.grp generators=1 orbits=85 classes=85
+orbit sizes: 15^64 3^21
+max_single_classes=4 max_pair_classes=9 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__3_1__3_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t0_3_1__3_1__3_1__5_1 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__3_1__3_1__5_1.grp generators=1 orbits=87 classes=87
+orbit sizes: 15^63 5^3 3^21
+max_single_classes=6 max_pair_classes=9 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__3_1__3_1__5_1.grp n=49 witnesses=0 nodes=14451 (exhausted: no invariant covering)
+=== cyc_L15_t0_3_1__5_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__5_1__15_1.grp generators=1 orbits=71 classes=71
+orbit sizes: 15^67 5^3 3^1
+max_single_classes=8 max_pair_classes=15 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__5_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t0_3_1__5_1__5_1 05:59:41
+group=compute/q4/groups/cyc_L15_t0_3_1__5_1__5_1.grp generators=1 orbits=103 classes=103
+orbit sizes: 15^51 5^51 3^1
+max_single_classes=6 max_pair_classes=10 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t0_3_1__5_1__5_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t2_15_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L15_t2_15_1__15_1.grp generators=1 orbits=71 classes=71
+orbit sizes: 15^68 1^3
+max_single_classes=2 max_pair_classes=15 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t2_15_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t2_15_1__15_7 05:59:41
+group=compute/q4/groups/cyc_L15_t2_15_1__15_7.grp generators=1 orbits=71 classes=71
+orbit sizes: 15^68 1^3
+max_single_classes=8 max_pair_classes=15 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t2_15_1__15_7.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t2_3_1__3_1__15_1 05:59:41
+group=compute/q4/groups/cyc_L15_t2_3_1__3_1__15_1.grp generators=1 orbits=87 classes=87
+orbit sizes: 15^64 3^20 1^3
+max_single_classes=5 max_pair_classes=9 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t2_3_1__3_1__15_1.grp n=49 witnesses=0 nodes=16284103 (exhausted: no invariant covering)
+=== cyc_L15_t2_3_1__3_1__5_1 05:59:41
+group=compute/q4/groups/cyc_L15_t2_3_1__3_1__5_1.grp generators=1 orbits=95 classes=95
+orbit sizes: 15^60 5^12 3^20 1^3
+max_single_classes=6 max_pair_classes=9 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t2_3_1__3_1__5_1.grp n=49 witnesses=0 nodes=22835000 (exhausted: no invariant covering)
+=== cyc_L15_t2_5_1__15_1 05:59:42
+group=compute/q4/groups/cyc_L15_t2_5_1__15_1.grp generators=1 orbits=79 classes=79
+orbit sizes: 15^64 5^12 1^3
+max_single_classes=8 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t2_5_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L15_t4_3_1__15_1 05:59:42
+group=compute/q4/groups/cyc_L15_t4_3_1__15_1.grp generators=1 orbits=95 classes=95
+orbit sizes: 15^64 3^16 1^15
+max_single_classes=5 max_pair_classes=5 target_n=49
+RESULT group=compute/q4/groups/cyc_L15_t4_3_1__15_1.grp n=49 witnesses=0 nodes=22044244 (exhausted: no invariant covering)
+=== cyc_L15_t4_3_1__5_1 05:59:42
+group=compute/q4/groups/cyc_L15_t4_3_1__5_1.grp generators=1 orbits=127 classes=127
+orbit sizes: 15^48 5^48 3^16 1^15
+max_single_classes=6 max_pair_classes=6 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L15_t4_3_1__5_1.grp
+=== cyc_L15_t6_15_1 06:04:42
+group=compute/q4/groups/cyc_L15_t6_15_1.grp generators=1 orbits=127 classes=127
+orbit sizes: 15^64 1^63
+max_single_classes=2 max_pair_classes=2 target_n=49
+TIMEOUT group=compute/q4/groups/cyc_L15_t6_15_1.grp
+=== cyc_L21_t0_3_1__3_1__21_1 06:09:42
+group=compute/q4/groups/cyc_L21_t0_3_1__3_1__21_1.grp generators=1 orbits=53 classes=53
+orbit sizes: 21^48 3^5
+max_single_classes=8 max_pair_classes=21 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t0_3_1__3_1__21_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+=== cyc_L21_t0_3_1__3_1__7_1__7_1 06:09:42
+group=compute/q4/groups/cyc_L21_t0_3_1__3_1__7_1__7_1.grp generators=1 orbits=59 classes=59
+orbit sizes: 21^45 7^9 3^5
+max_single_classes=3 max_pair_classes=21 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t0_3_1__3_1__7_1__7_1.grp n=49 witnesses=0 nodes=9678 (exhausted: no invariant covering)
+=== cyc_L21_t0_3_1__3_1__7_1__7_3 06:09:42
+group=compute/q4/groups/cyc_L21_t0_3_1__3_1__7_1__7_3.grp generators=1 orbits=59 classes=59
+orbit sizes: 21^45 7^9 3^5
+max_single_classes=8 max_pair_classes=21 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t0_3_1__3_1__7_1__7_3.grp n=49 witnesses=0 nodes=10452 (exhausted: no invariant covering)
+=== cyc_L21_t1_3_1__3_1__3_1__7_1 06:09:42
+group=compute/q4/groups/cyc_L21_t1_3_1__3_1__3_1__7_1.grp generators=1 orbits=87 classes=87
+orbit sizes: 21^42 7^2 3^42 1^1
+max_single_classes=4 max_pair_classes=6 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t1_3_1__3_1__3_1__7_1.grp n=49 witnesses=0 nodes=72719699 (exhausted: no invariant covering)
+=== cyc_L21_t1_7_1__21_1 06:09:42
+group=compute/q4/groups/cyc_L21_t1_7_1__21_1.grp generators=1 orbits=51 classes=51
+orbit sizes: 21^48 7^2 1^1
+max_single_classes=9 max_pair_classes=17 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t1_7_1__21_1.grp n=49 witnesses=0 nodes=2771 (exhausted: no invariant covering)
+=== cyc_L21_t1_7_1__21_5 06:09:42
+group=compute/q4/groups/cyc_L21_t1_7_1__21_5.grp generators=1 orbits=51 classes=51
+orbit sizes: 21^48 7^2 1^1
+max_single_classes=11 max_pair_classes=16 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t1_7_1__21_5.grp n=49 witnesses=0 nodes=2785 (exhausted: no invariant covering)
+=== cyc_L21_t2_3_1__21_1 06:09:42
+group=compute/q4/groups/cyc_L21_t2_3_1__21_1.grp generators=1 orbits=55 classes=55
+orbit sizes: 21^48 3^4 1^3
+max_single_classes=9 max_pair_classes=12 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t2_3_1__21_1.grp n=49 witnesses=0 nodes=3679 (exhausted: no invariant covering)
+=== cyc_L21_t2_3_1__7_1__7_1 06:09:42
+group=compute/q4/groups/cyc_L21_t2_3_1__7_1__7_1.grp generators=1 orbits=79 classes=79
+orbit sizes: 21^36 7^36 3^4 1^3
+max_single_classes=4 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t2_3_1__7_1__7_1.grp n=49 witnesses=0 nodes=10440804 (exhausted: no invariant covering)
+=== cyc_L21_t2_3_1__7_1__7_3 06:09:43
+group=compute/q4/groups/cyc_L21_t2_3_1__7_1__7_3.grp generators=1 orbits=79 classes=79
+orbit sizes: 21^36 7^36 3^4 1^3
+max_single_classes=8 max_pair_classes=14 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t2_3_1__7_1__7_3.grp n=49 witnesses=0 nodes=10441149 (exhausted: no invariant covering)
+=== cyc_L21_t3_3_1__3_1__7_1 06:09:43
+group=compute/q4/groups/cyc_L21_t3_3_1__3_1__7_1.grp generators=1 orbits=95 classes=95
+orbit sizes: 21^40 7^8 3^40 1^7
+max_single_classes=4 max_pair_classes=6 target_n=49
+RESULT group=compute/q4/groups/cyc_L21_t3_3_1__3_1__7_1.grp n=49 witnesses=0 nodes=3540840547 (exhausted: no invariant covering)
