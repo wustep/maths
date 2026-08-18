@@ -1,0 +1,9 @@
+# Python packages used by the compute/ pipelines across problems/.
+# numpy ships in the base image; pinned here so a fresh environment is reproducible.
+numpy==2.4.4
+scipy==1.18.0
+sympy==1.14.0
+matplotlib==3.11.1
+# SAT solving (imported as `pysat`). Upstream only publishes dev wheels; keep a
+# floor rather than an exact pin so the environment keeps building.
+python-sat>=1.8
