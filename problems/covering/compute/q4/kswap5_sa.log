@@ -1,0 +1,7 @@
+loaded compute/q4/best_sa_config.cols holes=7
+NO-KSWAP j=1 removal_sets=49 readd_nodes=49 slice=0/1
+NO-KSWAP j=2 removal_sets=1176 readd_nodes=1225 slice=0/1
+NO-KSWAP j=3 removal_sets=18424 readd_nodes=27606 slice=0/1
+NO-KSWAP j=4 removal_sets=211876 readd_nodes=1608574 slice=0/1
+NO-KSWAP j=5 removal_sets=1906884 readd_nodes=94551112 slice=0/1
+ALLDONE
