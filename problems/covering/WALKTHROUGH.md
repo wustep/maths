@@ -78,3 +78,13 @@ The matrix, all 1,024 certificate entries, the certificate generator, the indepe
 What is not proved matters just as much. The search did not show that 50 is optimal; its \(n=49\) run stopped with seven uncovered syndromes. It did not resolve the 25-versus-26 gap at redundancy 8 or the 38-versus-39 gap at redundancy 9. Most importantly, one finite upper-bound improvement does not determine, or even claim to determine, Green's asymptotic constant \(f(2)\).
 
 The durable idea is the separation between discovery and proof. The heuristic only had to find the columns once. After that, a short syndrome argument and an exhaustive, independent certificate carried the mathematical claim.
+
+## 7. The 49 push (quest q4): certified residue, no dent
+
+A later session attacked \(\ell_2(10,2)\le 49\) directly and did not land it. What it left behind is negative knowledge with certificates, under [`compute/q4/`](compute/q4/):
+
+- **Symmetry is dead at 49 = 7×7.** If a 49-covering were invariant under a subgroup of \(GL(10,2)\), it would be a union of orbits, and coverage collapses to orbit-class space where exhaustive search is feasible. Seventy-nine subgroup classes were exhausted with zero witnesses, including *every* \(C_7\times C_7\) class (orbit sizes 1/7/49) and the order-7 classes with one-dimensional fixed space (up to 8.9 billion nodes each). The engine's negatives were validated three ways: planted direct-sum coverings recovered at n=62/78, a no-prune rerun, and an independent naive enumerator agreeing on 7.26 million leaves. A few fixed-space-heavy classes timed out and remain open.
+- **The 7-hole floor is real and deep.** Fresh deterministic anneals reproduce exactly 7 uncovered syndromes. One such configuration is provably not within *any* swap of 5 columns of a covering (exhaustive over all 1.9M removal sets with an exact re-add search, validated on 4/4 planted controls); a second is proven to depth 4.
+- **There are at least two basins.** The two 7-hole optima have identical GL-invariants — same multiplicity histogram, same hole-set structure (rank 5, one zero-sum quadruple) — yet an exhaustive color-guided search proves no linear map carries one onto the other.
+
+None of this is a lower bound. \(\ell_2(10,2)=49\) remains possible; what is excluded is every highly symmetric 49-covering in the classes listed, and every small perturbation of the best-known near-misses.
