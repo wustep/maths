@@ -87,7 +87,7 @@ KNOWN = {
     2: ("antipodes", antipodes, -math.log(2.0)),
     3: ("equilateral", triangle, -1.5 * math.log(3.0)),
     4: ("tetrahedron", tetrahedron, 3.0 * math.log(3.0 / 8.0)),
-    5: ("triangular_bipyramid", triangular_bipyramid, None),
+    5: ("triangular_bipyramid", triangular_bipyramid, -4.0 * math.log(2.0) - 1.5 * math.log(3.0)),
     6: ("octahedron", octahedron, -9.0 * math.log(2.0)),
     7: ("pentagonal_bipyramid", pentagonal_bipyramid, None),
     12: ("icosahedron", icosahedron, None),

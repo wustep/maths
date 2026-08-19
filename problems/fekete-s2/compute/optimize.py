@@ -36,9 +36,10 @@ def spiral(n: int) -> np.ndarray:
     r = np.sqrt(np.clip(1.0 - z * z, 0.0, 1.0))
     # cumulative longitude ~ 3.6 / sqrt(N) style
     theta = np.zeros(n)
-    if n > 1:
-        theta[1:] = np.cumsum(3.6 / np.sqrt(n * (1.0 - z[1:-1] ** 2) + 1e-15))
-        # last point longitude unused (pole)
+    if n > 2:
+        mid = z[1:-1]
+        dtheta = 3.6 / np.sqrt(np.clip(n * (1.0 - mid * mid), 1e-15, None))
+        theta[1:-1] = np.cumsum(dtheta)
     return np.column_stack([r * np.cos(theta), r * np.sin(theta), z])
 
 
@@ -51,19 +52,13 @@ def rng_points(n: int, seed: int) -> np.ndarray:
 def energy_and_riemannian_grad(pts: np.ndarray):
     """E and the tangent-space gradient of E at unit points."""
     n = len(pts)
-    grams = pts @ pts.T
-    sq = np.clip(2.0 * (1.0 - grams), 1e-300, 4.0)
+    diff = pts[:, None, :] - pts[None, :, :]
+    sq = np.einsum("ijk,ijk->ij", diff, diff)
+    np.fill_diagonal(sq, np.inf)
+    inv = 1.0 / sq
+    grad = -(diff * inv[:, :, None]).sum(axis=1)
     i, j = np.triu_indices(n, k=1)
     e = float(-0.5 * np.log(sq[i, j]).sum())
-    # dE/d xi from |xi-xj|^2: E = -1/2 sum log sq
-    # ∂E/∂xi += -(xi-xj) / |xi-xj|^2   (then project)
-    grad = np.zeros_like(pts)
-    for a in range(n):
-        d = pts[a] - pts
-        inv = 1.0 / np.clip(np.sum(d * d, axis=1), 1e-300, None)
-        inv[a] = 0.0
-        grad[a] = -(d * inv[:, None]).sum(axis=0)
-    # Riemannian: subtract normal component
     grad = grad - (np.sum(grad * pts, axis=1))[:, None] * pts
     return e, grad
 
@@ -118,6 +113,19 @@ def seeds_for(n: int, n_random: int, base_seed: int):
             yield "known", KNOWN[n][1]()
     except Exception:
         pass
+    rathbun = Path("/tmp/fekete-data/rathbun") / f"log.3.{n}.80"
+    if rathbun.exists():
+        try:
+            from replay_published import parse_pari
+
+            pts, _ = parse_pari(rathbun)
+            yield "rathbun", pts
+            rng = np.random.default_rng(base_seed + 17 * n)
+            for k, eps in enumerate((1e-3, 3e-3, 1e-2, 3e-2)):
+                kick = project_to_sphere(pts + eps * rng.standard_normal(pts.shape))
+                yield f"kick{k}", kick
+        except Exception:
+            pass
     for k in range(n_random):
         yield f"rng{k}", rng_points(n, base_seed + 10007 * k + n)
 

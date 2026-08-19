@@ -96,3 +96,41 @@ the first (global) Table 3 entry for that \(N\), by more than rounding
 (\(\gtrsim 10^{-7}\)), with the points stored and the verifier agreeing.
 Rathbun–Ridgway's 77-digit refinement of the same table is the sharper
 form of the same record for \(N\le 65\).
+
+## Independent checks (this folder)
+
+- `compute/known.py` — PASS. Closed forms for \(N=2,3,4,5,6\) match
+  `energy.py` to \(10^{-15}\). \(N=7\) 1:5:1 and \(N=12\) icosahedron
+  match Table 3 to the printed 8 decimals.
+- `compute/replay_published.py` — PASS on Zenodo 5595366 `log.3.N.80`
+  for \(N=2\)–\(65\). Recomputed \(E\) equals the file `ener=` to
+  \(\sim 10^{-13}\) (N=34 has no `ener=` line). Table 3 globals match
+  to \(|\Delta|<5\times 10^{-8}\).
+- `compute/optimize.py` — recovered the same globals at
+  \(N=7,8,9,10,14,19,24,32,33,46,48\). Fibonacci / spiral / rng recover
+  several of them without published seeds. No energy below the record
+  by more than rounding.
+- Beltrán–Lizarte \(N=7\) printed \(-16.3649557\) is \(2E\). Convention,
+  not a second table.
+
+## What we did not beat
+
+- Any Table 3 global, or the Rathbun–Ridgway 77-digit refinement.
+- Smale 7 (polynomial-time \(c\log N\) approximation).
+- A published \(E_{\min}\) for \(N>65\): Amore–Figueroa–Ramos 2025
+  explores the landscape to \(N=160\) but does not print a record
+  table, and their 591 MB Zenodo dump was not treated as a citation
+  number.
+
+## How to replay
+
+```bash
+cd problems/fekete-s2/compute
+sh run_all.sh
+```
+
+Expected: `PASS` from `verify_replay.py`, closed-form matches for
+\(N=2\)–\(6\), and checkpoint energies agreeing with `energy.py`.
+If `/tmp/fekete-data/rathbun` is present, the full \(N=2\)–\(65\)
+coordinate replay is re-run; otherwise use the stored
+`replay_rathbun.json`.

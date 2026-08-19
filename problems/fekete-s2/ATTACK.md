@@ -75,5 +75,72 @@ to many more digits.
 - `compute/known.py` — exact \(N=2\)–\(6,12\) and 1:5:1 for \(N=7\).
 - `compute/optimize.py` — deterministic multi-start descent.
 - `compute/ridgway2018.json` — Table 3 globals extracted from the
-  author PDF.
+  author PDF (checked against `pdftotext` of that PDF).
+- `compute/replay_published.py` — parse Rathbun GP-Pari files.
+- `compute/replay_rathbun.json` — \(N=2\)–\(65\) recomputed energies.
+- `compute/checkpoints/N*.json` — search points + start log.
 - `compute/run_all.sh` — replay.
+
+## 2026-08-19 — verifier sanity
+
+`compute/known.py` + `energy.py`:
+
+| \(N\) | config | \(E\) | Table 3 |
+| ---: | --- | ---: | ---: |
+| 4 | tetrahedron \(3\log(3/8)\) | \(-2.942487759035\) | \(-2.9424878\) |
+| 5 | 1:3:1 \(-4\log 2-1.5\log 3\) | \(-4.420507155242\) | \(-4.4205072\) |
+| 6 | octahedron \(-9\log 2\) | \(-6.238324625040\) | \(-6.2383246\) |
+| 7 | 1:5:1 | \(-8.182477864445\) | \(-8.1824779\) |
+| 12 | icosahedron | \(-21.606145230445\) | \(-21.6061452\) |
+
+Beltrán–Lizarte's printed \(E_{\log}=-16.3649557\) for \(N=7\) is
+exactly \(2E\) (their \(\sum_{i\neq j}\)). Convention check, not a beat.
+
+## 2026-08-19 — full Table 3 replay from published coordinates
+
+Zenodo 5595366 `log.3.N.80` parsed and run through `energy.py`. Every
+\(N=2\)–\(65\) matches the file `ener=` to \(\sim 10^{-13}\) (N=34 has
+no `ener=` line; we still recompute \(E=-142.3758522709\) vs Table 3
+\(-142.3758523\)). Every Table 3 global matches to the printed 8
+decimals (\(|\Delta|<5\times 10^{-8}\), the rounding of the last digit).
+Table: `compute/replay_rathbun.json`.
+
+This is a replay of the published record, not a dent.
+
+## 2026-08-19 — search at slack \(N\)
+
+Deterministic seeds (Fibonacci, RSZ spiral, square-antiprism heights
+for \(N=8\), 32 RNG seeds with base 4102, plus Rathbun + four kicks).
+Riemannian Armijo descent. Independent verifier on stored points.
+
+| \(N\) | our \(E\) | Table 3 | \(\Delta\) | from-scratch? |
+| ---: | ---: | ---: | ---: | --- |
+| 7 | \(-8.182477864445\) | \(-8.1824779\) | \(+3.6\cdot 10^{-8}\) | yes (1:5:1) |
+| 8 | \(-10.428017781460\) | \(-10.4280178\) | \(+1.9\cdot 10^{-8}\) | yes (antiprism) |
+| 9 | \(-12.887752725759\) | \(-12.8877527\) | \(-2.6\cdot 10^{-8}\) | rounding only |
+| 10 | \(-15.563123389022\) | \(-15.5631234\) | \(+1.1\cdot 10^{-8}\) | yes |
+| 14 | \(-28.407813009242\) | \(-28.407813\) | \(-9\cdot 10^{-9}\) | rounding only |
+| 19 | \(-49.199891565787\) | \(-49.1998916\) | \(+3.4\cdot 10^{-8}\) | rng within \(10^{-7}\) |
+| 24 | \(-75.213984788629\) | \(-75.2139848\) | \(+1.1\cdot 10^{-8}\) | yes (all seeds) |
+| 32 | \(-127.378867614780\) | \(-127.3788676\) | \(-1.5\cdot 10^{-8}\) | yes (all seeds) |
+| 33 | \(-134.747820824333\) | \(-134.7478208\) | \(-2.4\cdot 10^{-8}\) | no; rng \(\sim 10^{-6}\) high |
+| 46 | \(-249.455847900857\) | \(-249.4558479\) | \(-9\cdot 10^{-10}\) | yes (spiral, some rng) |
+| 48 | \(-270.117949959283\) | \(-270.11795\) | \(+4.1\cdot 10^{-8}\) | yes (all seeds) |
+
+No \(\Delta < -10^{-7}\). The tiny negatives are extra digits of the
+same 8-decimal print. Not a beat.
+
+\(N=46\) independently recovers the 2018 new global from spiral and
+several rng starts. Many rng land on the published local
+\(-249.454650\), which is Table 3's second line. Fibonacci stalls at
+\(-249.44978\), a still-worse basin. That is the residue: the landscape
+has the old and new globals close together, and we found both, not a
+third.
+
+\(N=33\) is the paper's saddle/global struggle. Kicks from the published
+point stay at the global; 32 random starts do not reach it within
+\(10^{-6}\). We did not improve it.
+
+## Stop
+
+No certified beat. Outcome (B): replay + residue. Smale 7 not claimed.
