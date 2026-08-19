@@ -1,0 +1,58 @@
+{
+  "construction": "QM_3^2, arXiv:2511.02542 Theorem 5.1",
+  "format": "covering-qm3-build-manifest-v1",
+  "partition": "result/data/partition_p10.json",
+  "records": [
+    {
+      "density_denominator": 1048576,
+      "density_numerator": 1382369,
+      "distinct_indicators": 10,
+      "distinct_nonzero_columns": 3325,
+      "field_modulus_hex": "0x43",
+      "improvement": 64,
+      "length": 3325,
+      "m": 6,
+      "matrix": "compute/H_r22_n3325.txt",
+      "published_length_arxiv_2511_02542": 3389,
+      "rank": 22,
+      "redundancy": 22,
+      "seed_partition_blocks": 10,
+      "warning": "constructed only; certify with verify_radius2_matrix"
+    },
+    {
+      "density_denominator": 4194304,
+      "density_numerator": 5533633,
+      "distinct_indicators": 10,
+      "distinct_nonzero_columns": 6653,
+      "field_modulus_hex": "0x83",
+      "improvement": 128,
+      "length": 6653,
+      "m": 7,
+      "matrix": "compute/H_r24_n6653.txt",
+      "published_length_arxiv_2511_02542": 6781,
+      "rank": 24,
+      "redundancy": 24,
+      "seed_partition_blocks": 10,
+      "warning": "constructed only; certify with verify_radius2_matrix"
+    },
+    {
+      "density_denominator": 16777216,
+      "density_numerator": 22142849,
+      "distinct_indicators": 10,
+      "distinct_nonzero_columns": 13309,
+      "field_modulus_hex": "0x11B",
+      "improvement": 256,
+      "length": 13309,
+      "m": 8,
+      "matrix": "compute/H_r26_n13309.txt",
+      "published_length_arxiv_2511_02542": 13565,
+      "rank": 26,
+      "redundancy": 26,
+      "seed_partition_blocks": 10,
+      "warning": "constructed only; certify with verify_radius2_matrix"
+    }
+  ],
+  "seed": "compute/H_r10_n50.txt",
+  "seed_partition_reverified": true,
+  "warning": "Matrix-only exhaustive verification is separate."
+}
