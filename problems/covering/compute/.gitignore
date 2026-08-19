@@ -11,3 +11,5 @@ search_partition_merges
 verify_radius2_matrix
 search_n49_guided
 search_n49_lifted
+q7a/verify_n49
+q7a/*.log
