@@ -7,7 +7,7 @@ at least one of its original block-pair representations must retain different
 colors.  The emitted labels must be checked independently with
 verify_radius2_matrix.c.
 
-Requires the optional ``python-sat`` package and a power-of-two target.
+Requires the optional ``python-sat`` package.
 """
 
 from __future__ import annotations
@@ -136,8 +136,8 @@ def solve_colors(
     target: int,
     solver_name: str,
 ) -> tuple[list[int], int, int]:
-    bits = int(math.log2(target))
-    assert 1 << bits == target and bits > 0
+    bits = math.ceil(math.log2(target))
+    assert bits > 0
     variables = Variables()
     block_bits = [
         [variables.take() for _ in range(bits)] for _ in range(blocks)
@@ -153,6 +153,15 @@ def solve_colors(
         for variable in block_bits[0]:
             solver.add_clause([-variable])
             clause_count += 1
+
+        # Exclude unused bit patterns when target is not a power of two.
+        for block in range(blocks):
+            for color in range(target, 1 << bits):
+                solver.add_clause([
+                    -variable if (color >> bit) & 1 else variable
+                    for bit, variable in enumerate(block_bits[block])
+                ])
+                clause_count += 1
 
         for edge_identifier in relevant_edges:
             left, right = edges[edge_identifier]
@@ -228,8 +237,7 @@ def main() -> None:
     parser.add_argument("--solver", default="cadical195")
     args = parser.parse_args()
 
-    assert args.target > 1 and args.target & (args.target - 1) == 0, (
-        "target must be a power of two")
+    assert args.target > 1
     redundancy, length, columns = read_matrix(args.matrix)
     assert (redundancy, length) == (args.expected_r, args.expected_n)
     assert len(set(columns)) == length and all(columns)
