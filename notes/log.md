@@ -79,3 +79,4 @@ Public repo: https://github.com/wustep/maths
 - Draft PR #4 chat transcript: leave unmerged unless asked.
 - Covering authors (arXiv:2511.02542) not yet emailed. Construction, not
   a conjecture; 50 is an upper bound, not shown optimal.
+- Codex q4 covering (20xx): independently replayed QM3^2/QM5^2 dents ℓ₂(22,2)≤3325, ℓ₂(24,2)≤6653, ℓ₂(26,2)≤13309, ℓ₂(28,2)≤26111. 42/44 theorem-only. n=49 still 7 holes.

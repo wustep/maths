@@ -38,6 +38,18 @@ Quest q1 found a binary \([50,40]\) code of covering radius exactly 2. The expli
 \]
 and does **not** determine \(f(2)\). An \(n=49\) anneal left 7 uncovered syndromes — a search residue, not a lower bound.
 
+
+## Certified finite dents (quest q5, 2026-08-19)
+
+From the same 50-set, constructions $\mathrm{QM}_3^2$ and $\mathrm{QM}_5^2$ of arXiv:2511.02542 were implemented and independently replayed (official C verifier plus a second bitset checker; full $2^r$ sweeps):
+
+- $\ell_2(22,2)\le 3325$ (paper 3389) — [`compute/H_r22_n3325.txt`](compute/H_r22_n3325.txt)
+- $\ell_2(24,2)\le 6653$ (paper 6781) — [`compute/H_r24_n6653.txt`](compute/H_r24_n6653.txt)
+- $\ell_2(26,2)\le 13309$ (paper 13565) — [`compute/H_r26_n13309.txt`](compute/H_r26_n13309.txt)
+- $\ell_2(28,2)\le 26111$ (paper 26623) — [`compute/H_r28_n26111.txt`](compute/H_r28_n26111.txt), $p(H)\le 66$
+
+Theorem-only from the $r=28$ seed: $\ell_2(42,2)\le 3342335$, $\ell_2(44,2)\le 6684671$ (not enumerated). $n=49$ is still a 7-hole search residue, not a lower bound.
+
 ## What a solution looks like
 
 - An explicit matrix under `compute/` and a verifier that checks F\(_2\)-rank \(r\) and that every syndrome is a sum of at most 2 columns.
