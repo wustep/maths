@@ -41,10 +41,15 @@ $\ell_2(42,2)\le 3342335$, and $\ell_2(44,2)\le 6684671$
 (not enumerated). Same seed plus Golay gives
 $\ell_2(26,3)\le 817$ (paper 818). QM$_4^4$ with the
 same 50-set gives $\ell_2(31,4)\le 689$ (paper 690),
-blockwise certificate for $2^{31}$. Replay:
+blockwise certificate for $2^{31}$. The $r=18$ and $r=20$
+lifts have verified partitions $p(H_{18})\le 17$ and
+$p(H_{20})\le 14$, so QM$_5^3$ gives theorem-only
+$\ell_2(38,3)\le 13102$ and $\ell_2(41,3)\le 26206$
+(paper 13118, 26238; not enumerated). Replay:
 `problems/covering/compute/run_qm3_checks.sh`,
 `run_qm5_checks.sh`, `run_qm35_checks.sh`,
-`run_p64_checks.sh`, and `run_qm44_checks.sh`.
+`run_p64_checks.sh`, `run_qm44_checks.sh`, and
+`run_q7c_checks.sh`.
 
 Replay:
 
@@ -61,7 +66,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\mathrm{QM}$ $22/24/26/28$ and $p\le 64$. $n=49$ still 7 holes. |
+| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\ell_2(38,3)\le 13102$; $\ell_2(41,3)\le 26206$; $\mathrm{QM}$ $22/24/26/28$ and $p(H_{18})\le 17$, $p(H_{20})\le 14$, $p\le 64$. $n=49$ still 7 holes. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |
