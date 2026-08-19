@@ -1,19 +1,24 @@
 #!/usr/bin/env python3
-"""Build the r=26, n=817 radius-3 descendant via Construction QM_5^3.
+"""Build the Golay radius-3 descendants via Construction QM_5^3.
 
 This implements Davydov--Marcugini--Pambianco, arXiv:2511.02542,
-Theorem 7.3 (called QM_3^5 in the q6b brief).  It glues the perfect binary
-Golay [23,12,7] radius-3 code to the certified r=10, n=50 radius-2 code.
+Theorem 7.3 (also denoted QM_3^5).  It glues the perfect binary Golay
+[23,12,7] radius-3 code to certified radius-2 codes V_{2m}.  Repeated
+--radius2/--output options build the m=5,9,10 cases at r=26,38,41.
 
 The builder checks its inputs and output structurally, but it is not the
-certificate.  The standalone C programs verify the exact-three-sum seed
-property and exhaustively sweep all 2^26 output syndromes independently.
+certificate.  The standalone checks verify each V_{2m}, every construction
+identity, and (only where feasible) sweep all 2^26 output syndromes.
 
 Run from problems/covering/:
 
   python3 compute/build_qm35.py \
       --radius2 compute/H_r10_n50.txt \
+      --radius2 result/data/H_r18_n815.txt \
+      --radius2 result/data/H_r20_n1631.txt \
       --output compute/H_R3_r26_n817.txt \
+      --output compute/H_R3_r38_n13102.txt \
+      --output compute/H_R3_r41_n26206.txt \
       --manifest compute/qm35_build_manifest.json
 
 All integer columns are LSB-first: bit i is matrix row i+1.
@@ -41,6 +46,30 @@ from build_qm3 import (
 GOLAY_GENERATOR_POLYNOMIAL = sum(
     1 << exponent for exponent in (0, 1, 5, 6, 7, 9, 11)
 )
+
+EXPECTED_CASES = {
+    5: {
+        "radius2_redundancy": 10,
+        "radius2_length": 50,
+        "output_redundancy": 26,
+        "output_length": 817,
+        "published_length": 818,
+    },
+    9: {
+        "radius2_redundancy": 18,
+        "radius2_length": 815,
+        "output_redundancy": 38,
+        "output_length": 13102,
+        "published_length": 13118,
+    },
+    10: {
+        "radius2_redundancy": 20,
+        "radius2_length": 1631,
+        "output_redundancy": 41,
+        "output_length": 26206,
+        "published_length": 26238,
+    },
+}
 
 
 def parity(value: int) -> int:
@@ -143,15 +172,19 @@ def exact_three_sum_count(columns: list[int], redundancy: int) -> int:
 
 
 def build_qm35(
-    golay_columns: list[int], radius2_columns: list[int]
-) -> tuple[int, list[int], list[int]]:
-    """Return the QM_5^3 matrix with D=D_4 for m=5."""
-    m = 5
+    golay_columns: list[int],
+    radius2_redundancy: int,
+    radius2_columns: list[int],
+) -> tuple[int, list[int], list[int], int]:
+    """Return the QM_5^3 matrix with D=D_4 and V_{2m}."""
+    assert radius2_redundancy % 2 == 0
+    m = radius2_redundancy // 2
+    assert m in EXPECTED_CASES
     size = 1 << m
     r0 = 11
     gf_selftest(m)
     assert len(golay_columns) == 23 <= size - 1
-    assert len(radius2_columns) == 50
+    assert len(radius2_columns) == EXPECTED_CASES[m]["radius2_length"]
 
     # The Golay seed uses the trivial (3,0)-partition, so its 23 columns get
     # 23 distinct nonzero field indicators, as required by Theorem 7.3.
@@ -182,12 +215,15 @@ def build_qm35(
 
     r = r0 + 3 * m
     expected_n = size * (len(golay_columns) + 1) + len(radius2_columns) - 1
-    assert r == 26 and expected_n == 817 and len(columns) == expected_n
+    case = EXPECTED_CASES[m]
+    assert r == case["output_redundancy"]
+    assert expected_n == case["output_length"]
+    assert len(columns) == expected_n
     assert all(0 < column < (1 << r) for column in columns)
     assert len(set(columns)) == expected_n
     assert binary_rank(columns) == r
     assert has_dependent_triple(columns), "output should have minimum distance 3"
-    return r, columns, indicators
+    return r, columns, indicators, m
 
 
 def density(n: int, r: int) -> Fraction:
@@ -196,75 +232,127 @@ def density(n: int, r: int) -> Fraction:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description=__doc__.splitlines()[0])
-    parser.add_argument("--radius2", type=Path, required=True)
-    parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--radius2", type=Path, action="append", required=True)
+    parser.add_argument("--output", type=Path, action="append", required=True)
     parser.add_argument("--manifest", type=Path, required=True)
     args = parser.parse_args()
 
-    radius2_r, radius2_n, radius2_columns = read_matrix(args.radius2)
-    assert (radius2_r, radius2_n) == (10, 50), (
-        "radius-2 input is %d x %d, expected 10 x 50" %
-        (radius2_r, radius2_n)
-    )
-    assert binary_rank(radius2_columns) == radius2_r
-    assert len(set(radius2_columns)) == radius2_n and all(radius2_columns)
-    three_sum_count = exact_three_sum_count(radius2_columns, radius2_r)
-    assert three_sum_count == 1 << radius2_r, (
-        "radius-2 input fails exact-three-sum property: %d/%d" %
-        (three_sum_count, 1 << radius2_r)
-    )
+    assert len(args.radius2) == len(args.output), (
+        "each --radius2 must have one corresponding --output")
+    assert len(set(args.radius2)) == len(args.radius2), (
+        "radius-2 input paths must be distinct")
+    assert len(set(args.output)) == len(args.output), (
+        "output paths must be distinct")
 
     golay_columns, golay_check_rows = golay_parity_check()
-    r, columns, indicators = build_qm35(golay_columns, radius2_columns)
-    n = len(columns)
-    args.output.parent.mkdir(parents=True, exist_ok=True)
-    write_matrix(
-        args.output,
-        r,
-        columns,
-        [
-            "Construction QM_5^3 (arXiv:2511.02542 Theorem 7.3;",
-            "called QM_3^5 in the q6b brief), with m=5 and D=D_4.",
-            "C0 is the cyclic perfect binary Golay [23,12,7]_2 radius-3 code;",
-            "V_10 is the certified H_r10_n50 radius-2 code.",
-            "Golay generator polynomial 0x%X; GF(32) modulus 0x%X." %
-            (GOLAY_GENERATOR_POLYNOMIAL, MODULUS[5]),
-            "The 23 Golay singleton blocks use distinct indicators 1..23.",
-            "r=11+3*5=26; n=32*(23+1)+50-1=817.",
-            "LSB-first: bit i of a column integer is row i+1.",
-            "26 rows, 817 columns; generated by compute/build_qm35.py.",
-        ],
-    )
+    records = []
+    seen_m: set[int] = set()
+    for radius2_path, output_path in zip(args.radius2, args.output):
+        radius2_r, radius2_n, radius2_columns = read_matrix(radius2_path)
+        assert radius2_r % 2 == 0
+        m = radius2_r // 2
+        assert m in EXPECTED_CASES, "unsupported V_2m redundancy %d" % radius2_r
+        assert m not in seen_m, "duplicate m=%d case" % m
+        seen_m.add(m)
+        case = EXPECTED_CASES[m]
+        assert (radius2_r, radius2_n) == (
+            case["radius2_redundancy"], case["radius2_length"]
+        ), (
+            "radius-2 input is %d x %d, expected %d x %d for m=%d" %
+            (
+                radius2_r,
+                radius2_n,
+                case["radius2_redundancy"],
+                case["radius2_length"],
+                m,
+            )
+        )
+        assert binary_rank(radius2_columns) == radius2_r
+        assert len(set(radius2_columns)) == radius2_n and all(radius2_columns)
 
-    mu = density(n, r)
+        three_sum_count = None
+        if m == 5:
+            three_sum_count = exact_three_sum_count(radius2_columns, radius2_r)
+            assert three_sum_count == 1 << radius2_r, (
+                "V_10 fails exact-three-sum property: %d/%d" %
+                (three_sum_count, 1 << radius2_r)
+            )
+
+        r, columns, indicators, built_m = build_qm35(
+            golay_columns, radius2_r, radius2_columns)
+        assert built_m == m
+        n = len(columns)
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        write_matrix(
+            output_path,
+            r,
+            columns,
+            [
+                "Construction QM_5^3 / QM_3^5 (arXiv:2511.02542 Theorem 7.3),",
+                "with m=%d and D=D_4." % m,
+                "C0 is the cyclic perfect binary Golay [23,12,7]_2 radius-3",
+                "code; V_%d is the certified %s radius-2 code." %
+                (2 * m, radius2_path),
+                "Golay generator polynomial 0x%X; GF(2^%d) modulus 0x%X." %
+                (GOLAY_GENERATOR_POLYNOMIAL, m, MODULUS[m]),
+                "The 23 Golay singleton blocks use distinct indicators 1..23.",
+                "r=11+3*%d=%d; n=2^%d*(23+1)+%d-1=%d." %
+                (m, r, m, radius2_n, n),
+                "LSB-first: bit i of a column integer is row i+1.",
+                "%d rows, %d columns; generated by compute/build_qm35.py." %
+                (r, n),
+            ],
+        )
+
+        mu = density(n, r)
+        records.append({
+            "m": m,
+            "radius2_input": str(radius2_path),
+            "radius2_redundancy": radius2_r,
+            "radius2_length": radius2_n,
+            "radius2_exact_three_sum_syndromes": three_sum_count,
+            "field_modulus_hex": "0x%X" % MODULUS[m],
+            "indicators_decimal": indicators,
+            "golay_partition_blocks": 23,
+            "matrix": str(output_path),
+            "redundancy": r,
+            "length": n,
+            "rank": binary_rank(columns),
+            "distinct_nonzero_columns": len(set(columns)),
+            "published_length_arxiv_2511_02542": case["published_length"],
+            "improvement": case["published_length"] - n,
+            "density_numerator": mu.numerator,
+            "density_denominator": mu.denominator,
+            "coverage_status": (
+                "exhaustive matrix sweep" if r == 26
+                else "Theorem 7.3 after independent hypothesis and identity checks"
+            ),
+        })
+        print(
+            "built %s: m=%d r=%d n=%d rank=%d improvement=%d" %
+            (
+                output_path,
+                m,
+                r,
+                n,
+                r,
+                case["published_length"] - n,
+            )
+        )
+
     manifest = {
-        "format": "covering-qm35-build-manifest-v1",
-        "construction": "QM_5^3 (Theorem 7.3; q6b calls it QM_3^5)",
-        "radius2_input": str(args.radius2),
-        "radius2_exact_three_sum_syndromes": three_sum_count,
+        "format": "covering-qm35-build-manifest-v2",
+        "construction": "QM_5^3 / QM_3^5, arXiv:2511.02542 Theorem 7.3",
         "golay_generator_polynomial_hex": "0x%X" % GOLAY_GENERATOR_POLYNOMIAL,
         "golay_parity_check_rows_hex": ["0x%X" % row for row in golay_check_rows],
         "golay_parity_check_columns_decimal": golay_columns,
-        "field_modulus_hex": "0x%X" % MODULUS[5],
-        "indicators_decimal": indicators,
-        "matrix": str(args.output),
-        "redundancy": r,
-        "length": n,
-        "rank": binary_rank(columns),
-        "distinct_nonzero_columns": len(set(columns)),
-        "published_length_arxiv_2511_02542": 818,
-        "improvement": 1,
-        "density_numerator": mu.numerator,
-        "density_denominator": mu.denominator,
+        "golay_partition": "23 singleton blocks (a (3,0)-partition)",
+        "records": sorted(records, key=lambda record: record["m"]),
         "warning": "Builder checks are not the certificate; run run_qm35_checks.sh.",
     }
     args.manifest.write_text(
         json.dumps(manifest, indent=2, sort_keys=True) + "\n",
         encoding="utf-8",
-    )
-    print(
-        "built %s: r=%d n=%d rank=%d exact_three_seed=%d/%d improvement=1" %
-        (args.output, r, n, r, three_sum_count, 1 << radius2_r)
     )
 
 
