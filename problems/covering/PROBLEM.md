@@ -60,6 +60,12 @@ Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3
 
 - $\ell_2(31,4)\le 689$ (paper 690) — [`compute/H_R4_r31_n689.txt`](compute/H_R4_r31_n689.txt). QM$_4^4$ from OK2 plus the 50-set. Blockwise certificate for all $2^{31}$ syndromes; radius exactly 4. Independent C replay in `/tmp`, not a flat sweep.
 
+## Certified finite dents (quest q7c, 2026-08-19)
+
+- $p(H_{18})\le 17$ on the certified $r=18$, $n=815$ matrix — [`compute/partition_r18_n815_p17.txt`](compute/partition_r18_n815_p17.txt). Full $2^{18}$ cross-block sweep.
+- $p(H_{20})\le 14$ on the certified $r=20$, $n=1631$ matrix — [`compute/partition_r20_n1631_p14.txt`](compute/partition_r20_n1631_p14.txt). Full $2^{20}$ cross-block sweep.
+- Theorem-only $\ell_2(38,3)\le 13102$ (paper 13118) and $\ell_2(41,3)\le 26206$ (paper 26238) via QM$_5^3$ / Theorem 7.3. Not enumerated.
+
 
 ## What a solution looks like
 
