@@ -56,6 +56,11 @@ Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3
 - $\ell_2(26,3)\le 817$ (paper 818) — [`compute/H_R3_r26_n817.txt`](compute/H_R3_r26_n817.txt). Full $2^{26}$ radius-3 sweep.
 - $p(H)\le 64$ on the $r=28$ matrix — [`compute/partition_r28_n26111_p64.txt`](compute/partition_r28_n26111_p64.txt). Unlocks theorem-only $\ell_2(40,2)\le 1671167$.
 
+## Certified finite dent (quest q6c, 2026-08-19)
+
+- $\ell_2(31,4)\le 689$ (paper 690) — [`compute/H_R4_r31_n689.txt`](compute/H_R4_r31_n689.txt). QM$_4^4$ from OK2 plus the 50-set. Blockwise certificate for all $2^{31}$ syndromes; radius exactly 4. Independent C replay in `/tmp`, not a flat sweep.
+
+
 ## What a solution looks like
 
 - An explicit matrix under `compute/` and a verifier that checks F\(_2\)-rank \(r\) and that every syndrome is a sum of at most 2 columns.
