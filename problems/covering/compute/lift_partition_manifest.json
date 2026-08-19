@@ -1,0 +1,240 @@
+{
+  "construction": "Theorem 5.4 proof: beta interim blocks, xi split, D last; then a statically recorded certified coarsening",
+  "format": "covering-lift-partitions-v2",
+  "records": [
+    {
+      "coarsening_map": [
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        0,
+        1,
+        1,
+        0,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        9,
+        12,
+        11,
+        13,
+        14,
+        15,
+        16
+      ],
+      "constructive_cross_block_covered": 262144,
+      "constructive_partition": "compute/partition_r18_n815.txt",
+      "constructive_partition_blocks": 33,
+      "constructive_partition_sha256": "0d4d6035ef7e17a6110ce383444b9ae49c2b4aaa85d3e2d98eb3880ae2457ce9",
+      "cross_block_covered": 262144,
+      "field_modulus_hex": "0x13",
+      "indicator_sets_by_seed_block": {
+        "0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "1": [
+          7
+        ],
+        "2": [
+          8
+        ],
+        "3": [
+          9
+        ],
+        "4": [
+          10
+        ],
+        "5": [
+          11
+        ],
+        "6": [
+          12
+        ],
+        "7": [
+          13
+        ],
+        "8": [
+          14
+        ],
+        "9": [
+          15
+        ]
+      },
+      "length": 815,
+      "m": 4,
+      "matrix": "result/data/H_r18_n815.txt",
+      "matrix_sha256": "5ef57a4a416c3a6d1482104d3baf425f99fed9e1a9c3549bf2e6f2dd56893924",
+      "minimality_claimed": false,
+      "partition": "compute/partition_r18_n815_p17.txt",
+      "partition_blocks": 17,
+      "partition_sha256": "7b2de09852acfa2b224e5bd9cdcfefc7925d7281dd24f48cdc5c1a82a0200ff7",
+      "redundancy": 18,
+      "syndrome_space": 262144
+    },
+    {
+      "coarsening_map": [
+        0,
+        1,
+        0,
+        1,
+        2,
+        0,
+        0,
+        1,
+        0,
+        1,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        1,
+        0,
+        3,
+        4,
+        5,
+        6,
+        5,
+        6,
+        7,
+        8,
+        7,
+        1,
+        8,
+        7,
+        7,
+        8,
+        8,
+        7,
+        7,
+        8,
+        8,
+        7,
+        8,
+        7,
+        7,
+        8,
+        9,
+        8,
+        10,
+        11,
+        10,
+        11,
+        5,
+        6,
+        11,
+        10,
+        11,
+        10,
+        10,
+        11,
+        4,
+        3,
+        10,
+        11,
+        3,
+        2,
+        12,
+        13,
+        9
+      ],
+      "constructive_cross_block_covered": 1048576,
+      "constructive_partition": "compute/partition_r20_n1631.txt",
+      "constructive_partition_blocks": 65,
+      "constructive_partition_sha256": "34c57d6128f37f6d1b39b7cafbf262db4ced3fca425c1075f60883c6ab2eb473",
+      "cross_block_covered": 1048576,
+      "field_modulus_hex": "0x25",
+      "indicator_sets_by_seed_block": {
+        "0": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "1": [
+          8
+        ],
+        "2": [
+          9,
+          10,
+          11
+        ],
+        "3": [
+          12,
+          13
+        ],
+        "4": [
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21
+        ],
+        "5": [
+          22,
+          23,
+          24,
+          25,
+          26,
+          27
+        ],
+        "6": [
+          28
+        ],
+        "7": [
+          29
+        ],
+        "8": [
+          30
+        ],
+        "9": [
+          31
+        ]
+      },
+      "length": 1631,
+      "m": 5,
+      "matrix": "result/data/H_r20_n1631.txt",
+      "matrix_sha256": "967038e3285153d4fa7ef357cedfde7b6b2ff31fe8f48b8bb3be1ad26490c539",
+      "minimality_claimed": false,
+      "partition": "compute/partition_r20_n1631_p14.txt",
+      "partition_blocks": 14,
+      "partition_sha256": "77990243711f438ca2ae9908c598c09e0bf9a75e93c0005ca3b00e4abb84d41f",
+      "redundancy": 20,
+      "syndrome_space": 1048576
+    }
+  ],
+  "seed": "compute/H_r10_n50.txt",
+  "seed_partition": "result/data/partition_p10.json",
+  "seed_partition_blocks": 10,
+  "warning": "No partition minimality is claimed."
+}
