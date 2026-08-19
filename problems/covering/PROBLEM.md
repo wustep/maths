@@ -46,9 +46,15 @@ From the same 50-set, constructions $\mathrm{QM}_3^2$ and $\mathrm{QM}_5^2$ of a
 - $\ell_2(22,2)\le 3325$ (paper 3389) — [`compute/H_r22_n3325.txt`](compute/H_r22_n3325.txt)
 - $\ell_2(24,2)\le 6653$ (paper 6781) — [`compute/H_r24_n6653.txt`](compute/H_r24_n6653.txt)
 - $\ell_2(26,2)\le 13309$ (paper 13565) — [`compute/H_r26_n13309.txt`](compute/H_r26_n13309.txt)
-- $\ell_2(28,2)\le 26111$ (paper 26623) — [`compute/H_r28_n26111.txt`](compute/H_r28_n26111.txt), $p(H)\le 66$
+- $\ell_2(28,2)\le 26111$ (paper 26623) — [`compute/H_r28_n26111.txt`](compute/H_r28_n26111.txt), $p(H)\le 64$
 
-Theorem-only from the $r=28$ seed: $\ell_2(42,2)\le 3342335$, $\ell_2(44,2)\le 6684671$ (not enumerated). $n=49$ is still a 7-hole search residue, not a lower bound.
+Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3342335$, $\ell_2(44,2)\le 6684671$ (not enumerated). $n=49$ is still a 7-hole search residue, not a lower bound.
+
+## Certified finite dents (quest q6b, 2026-08-19)
+
+- Exact 3-sum: every vector of $\mathbb F_2^{10}$ is a sum of exactly three distinct columns of the 50-set (1024/1024).
+- $\ell_2(26,3)\le 817$ (paper 818) — [`compute/H_R3_r26_n817.txt`](compute/H_R3_r26_n817.txt). Full $2^{26}$ radius-3 sweep.
+- $p(H)\le 64$ on the $r=28$ matrix — [`compute/partition_r28_n26111_p64.txt`](compute/partition_r28_n26111_p64.txt). Unlocks theorem-only $\ell_2(40,2)\le 1671167$.
 
 ## What a solution looks like
 

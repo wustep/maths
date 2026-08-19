@@ -35,11 +35,14 @@ The same seed, via $\mathrm{QM}_3^2$ and $\mathrm{QM}_5^2$
 $\ell_2(22,2)\le 3325$, $\ell_2(24,2)\le 6653$,
 $\ell_2(26,2)\le 13309$, $\ell_2(28,2)\le 26111$ (paper 3389, 6781,
 13565, 26623). Full $2^r$ sweeps, including $2^{28}$. The $r=28$
-matrix has a verified 66-block partition, so $\mathrm{QM}_2^2$
-propagates theorem-only to $\ell_2(42,2)\le 3342335$ and
-$\ell_2(44,2)\le 6684671$ (not enumerated). Replay:
-`problems/covering/compute/run_qm3_checks.sh` and
-`run_qm5_checks.sh`.
+matrix has a verified 64-block partition, so $\mathrm{QM}_2^2$
+propagates theorem-only to $\ell_2(40,2)\le 1671167$,
+$\ell_2(42,2)\le 3342335$, and $\ell_2(44,2)\le 6684671$
+(not enumerated). Same seed plus Golay gives
+$\ell_2(26,3)\le 817$ (paper 818). Replay:
+`problems/covering/compute/run_qm3_checks.sh`,
+`run_qm5_checks.sh`, `run_qm35_checks.sh`, and
+`run_p64_checks.sh`.
 
 Replay:
 
@@ -56,7 +59,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $\ell_2(10,2)\le 50$, then $\mathrm{QM}_3^2/\mathrm{QM}_5^2$: $\ell_2(22,2)\le 3325$, $\ell_2(24,2)\le 6653$, $\ell_2(26,2)\le 13309$, $\ell_2(28,2)\le 26111$. $n=49$ still 7 holes. |
+| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(26,3)\le 817$; $\mathrm{QM}$: $\ell_2(22,2)\le 3325$, $\ell_2(24,2)\le 6653$, $\ell_2(26,2)\le 13309$, $\ell_2(28,2)\le 26111$, $p\le 64$. $n=49$ still 7 holes. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |

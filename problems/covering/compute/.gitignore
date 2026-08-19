@@ -5,3 +5,9 @@ q4/orbit_dfs
 q4/search_n49
 q4/search_n49_lifted
 q4/*.log
+verify_radius3_matrix
+verify_three_sum
+search_partition_merges
+verify_radius2_matrix
+search_n49_guided
+search_n49_lifted
