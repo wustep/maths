@@ -4,6 +4,7 @@
 | --- | --- | --- | --- | --- |
 | covering / $\ell_2(10,2)$ | `problems/covering` | Codex `gpt-5.6-sol` Max | solver | 2026-08-16 |
 | covering / QM3 QM5 | `problems/covering` | Codex `gpt-5.6-sol` Max (20xx) | solver | 2026-08-19 |
+| covering / QM35 p64 | `problems/covering` | Codex `gpt-5.6-sol` Max (20xx) | solver | 2026-08-19 |
 | Brocard–Ramanujan | `problems/brocard` | Codex `gpt-5.6-sol` Max | solver | 2026-08-16 |
 | unique-sum mod p | `problems/unique-sum` | Codex `gpt-5.6-sol` Max | solver | 2026-08-16 |
 | no-three-in-line n=71 | `problems/three-in-line` | Codex `gpt-5.6-sol` Max | solver | 2026-08-16 |
