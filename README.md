@@ -37,7 +37,7 @@ $\ell_2(26,2)\le 13070$, $\ell_2(28,2)\le 26111$ (paper 3389, 6781,
 13565, 26623). Full $2^r$ sweeps, including $2^{28}$. The $r=26$
 matrix has a verified 19-block partition, so $\mathrm{QM}_2^2$
 gives theorem-only $\ell_2(36,2)\le 418271$. The $r=28$
-matrix has a verified 64-block partition, so $\mathrm{QM}_2^2$
+matrix has a verified 28-block partition, so $\mathrm{QM}_2^2$
 propagates theorem-only to $\ell_2(40,2)\le 1671167$,
 $\ell_2(42,2)\le 3342335$, and $\ell_2(44,2)\le 6684671$
 (not enumerated). Same seed plus Golay gives
@@ -50,7 +50,7 @@ $\ell_2(38,3)\le 13102$ and $\ell_2(41,3)\le 26206$
 (paper 13118, 26238; not enumerated). Replay:
 `problems/covering/compute/run_qm3_checks.sh`,
 `run_qm5_checks.sh`, `run_qm35_checks.sh`,
-`run_p64_checks.sh`, `run_qm44_checks.sh`,
+`run_p64_checks.sh`, `run_p28_checks.sh`, `run_qm44_checks.sh`,
 `run_q7c_checks.sh`, `run_qm21_checks.sh`, and
 `run_qm43_checks.sh`.
 
@@ -69,7 +69,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(21,3)\le 303$; $\ell_2(26,2)\le 13070$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\ell_2(36,2)\le 418271$; $\ell_2(38,3)\le 13102$; $\ell_2(41,3)\le 26206$; $\mathrm{QM}$ $22/24/28$ and $p(H_{18})\le 17$, $p(H_{20})\le 14$, $p(H_{26})\le 19$, $p\le 64$. $n=49$ still 7 holes. |
+| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(21,3)\le 303$; $\ell_2(26,2)\le 13070$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\ell_2(36,2)\le 418271$; $\ell_2(38,3)\le 13102$; $\ell_2(41,3)\le 26206$; $\mathrm{QM}$ $22/24/28$ and $p(H_{18})\le 17$, $p(H_{20})\le 14$, $p(H_{26})\le 19$, $p(H_{28})\le 28$. $n=49$ still 7 holes. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |
