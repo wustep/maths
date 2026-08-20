@@ -104,3 +104,13 @@ Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-h
 - With \(m=9\) and \(V_{18}\) of length 815, the explicit matrix [`compute/H_R3_r38_n13102.txt`](compute/H_R3_r38_n13102.txt) has \(r=11+3m=38\) and \(n=2^m(23+1)+815-1=13102\). With \(m=10\) and \(V_{20}\) of length 1631, [`compute/H_R3_r41_n26206.txt`](compute/H_R3_r41_n26206.txt) has \(r=41\) and \(n=26206\). Theorem 7.3 therefore proves \(\ell_2(38,3)\le13102\) and \(\ell_2(41,3)\le26206\), improving the paper's 13118 and 26238 by 16 and 32. These are theorem-only covering certificates; no \(2^{38}\) or \(2^{41}\) flat sweep is claimed or performed.
 - Reproduction: run [`compute/run_q7c_checks.sh`](compute/run_q7c_checks.sh). It regenerates and independently sweeps the four partition certificates, rebuilds only the two new large matrices in a temporary directory and compares them byte-for-byte, then rechecks all Theorem 7.3 hypotheses and construction identities. `result/` is read only. No optimality or \(f(2)\) claim is made.
 
+## 2026-08-20 — odd-r Table 5.1 holes (wrap: residue only)
+
+Hard wrap. No shorter radius-2 matrix. Paper lengths still \(\ell_2(11,2)\le 79\) and \(\ell_2(13,2)\le 159\). No \(f(2)\) claim.
+
+- Rebuilt the GDT \(f(r)\) seed ([`compute/build_gabidulin.py`](compute/build_gabidulin.py)): \(m=6\) is an explicit 79-set covering \(2048/2048\); \(m=7\) is a 159-set covering \(8192/8192\). These reconstruct the table, they do not dent it.
+- Every 1-deletion of the 79-set leaves \(16,29,30,36,\) or \(64\) holes. The four 16-hole punctures are [`compute/odd_r11_n78_16hole_a.cols`](compute/odd_r11_n78_16hole_a.cols) and siblings. Exhaustive 1-swap on puncture \(a\) stays at 16 holes.
+- No 2-out-1-in replacement from that 79-set reaches 0 holes (best 2-deletion leftover: 34).
+- Compiled SA at \(n=78\) did not find a covering. Residues: 16 holes from a Gabidulin puncture; 37 holes from a 78-subset of a longer union-greedy set. See [`compute/odd_r_residue_2026-08-20.json`](compute/odd_r_residue_2026-08-20.json).
+- \(r=13\) 1-deletions of the 159-set leave 32–128 holes; no \(n=158\) run finished before wrap.
+

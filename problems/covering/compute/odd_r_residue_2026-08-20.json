@@ -1,0 +1,60 @@
+{
+  "format": "odd-r-table-5.1-residue-v1",
+  "status": "search residue, no dent",
+  "warning": "Positive hole counts are search residues or local exclusions, not lower bounds. The paper lengths ell_2(11,2)<=79 and ell_2(13,2)<=159 still stand.",
+  "paper": {
+    "r11": 79,
+    "r13": 159,
+    "family": "f(r)=5*2^{(r-3)/2}-1 Gabidulin-Davydov-Tombak"
+  },
+  "exclusions": [
+    {
+      "claim": "Gabidulin m=6 w1=1 w2=2 is an explicit 11x79 covering",
+      "file": "compute/odd_r11_n79_gabidulin.cols",
+      "covered": "2048/2048",
+      "note": "Reconstructs the paper upper bound. Not a dent."
+    },
+    {
+      "claim": "Every 1-column deletion of that 79-set leaves 16, 29, 30, 36, or 64 uncovered syndromes",
+      "best_deletion_holes": 16,
+      "best_deleted_columns": [1, 1025, 513, 1537],
+      "files": [
+        "compute/odd_r11_n78_16hole_a.cols",
+        "compute/odd_r11_n78_16hole_b.cols",
+        "compute/odd_r11_n78_16hole_c.cols",
+        "compute/odd_r11_n78_16hole_d.cols"
+      ]
+    },
+    {
+      "claim": "Exhaustive 1-swap on the 16-hole puncture (delete column 1) finds no improvement",
+      "start_holes": 16,
+      "end_holes": 16,
+      "file": "compute/odd_r11_n78_repair_a.json"
+    },
+    {
+      "claim": "No 2-out-1-in replacement from the same 79-set reaches 0 holes",
+      "best_2_deletion_holes": 34
+    }
+  ],
+  "search_residues": [
+    {
+      "r": 11,
+      "n": 78,
+      "best_uncovered": 16,
+      "seed": "Gabidulin 79 minus one",
+      "file": "compute/odd_r11_n78_checkpoint.json"
+    },
+    {
+      "r": 11,
+      "n": 78,
+      "best_uncovered": 37,
+      "seed": "78-subset of a longer union-greedy covering",
+      "file": "compute/odd_r11_n78_from85.json"
+    },
+    {
+      "r": 13,
+      "n": 158,
+      "note": "Gabidulin m=7 1-deletions leave 32 to 128 holes; no n=158 search completed before wrap"
+    }
+  ]
+}
