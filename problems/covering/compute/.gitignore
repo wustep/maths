@@ -10,5 +10,6 @@ verify_three_sum
 verify_qm44
 search_partition_merges
 verify_radius2_matrix
+search_odd_r
 search_n49_guided
 search_n49_lifted
