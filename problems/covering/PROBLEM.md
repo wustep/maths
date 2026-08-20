@@ -75,6 +75,10 @@ Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](
 - $\ell_2(26,2)\le 13070$ (paper 13565; previous certified 13309) — [`compute/H_r26_n13070.txt`](compute/H_r26_n13070.txt). QM$_2^1$ from $p(H_{18})\le 17$. Full $2^{26}$ sweep: $67108864/67108864$.
 - $p(H_{26})\le 19$ — [`compute/partition_r26_n13070_p19.txt`](compute/partition_r26_n13070_p19.txt). Unlocks theorem-only $\ell_2(36,2)\le 418271$ (paper 425983). Not enumerated.
 
+## Certified finite dent (quest q8c, 2026-08-19)
+
+- $p(H_{28})\le 28$ on the certified $r=28$, $n=26111$ matrix — [`compute/partition_r28_n26111_p28.txt`](compute/partition_r28_n26111_p28.txt). Full $2^{28}$ cross-block sweep. Improves the previous $p\le 64$. No new $r=38$ table length.
+
 
 ## What a solution looks like
 
