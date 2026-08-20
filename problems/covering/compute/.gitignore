@@ -8,6 +8,8 @@ q4/*.log
 verify_radius3_matrix
 verify_three_sum
 verify_qm44
+verify_qm21_identity
+verify_qm43_identity
 search_partition_merges
 verify_radius2_matrix
 search_n49_guided

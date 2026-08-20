@@ -124,7 +124,7 @@ Methods “can be used” for \(R\ge 5\); only sporadic examples exist.
 - KR hex (4.9) and \(P_{KR}\) (5.3) / \(P_{KR}^*\) (5.9) against [50].
 - \(h_5+h_{27}+h_{29}=0\) (Thm 5.2(ii)).
 - Lemma 7.5 on KR, and the same 3-sum property on *our* 50-set.
-- \(M_{OK}\) last word `ICE` (6.10) — invalid hex; likely `1CE`.
+- \(M_{OK}\) last word `ICE` (6.10) — invalid hex; independently recovered as `1CE` (unique among 512 last words). See `compute/recover_mok.py`.
 - Table 5.1 commas (`1,56219`) are decimal-comma typos.
 - Abstract densities vs (5.15): \(\mu(2)\approx 262/2^9\approx 1.32031\).
 - IEEE vs arXiv v1: abstract numbers match; we did not line-diff the body.

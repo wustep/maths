@@ -1,0 +1,103 @@
+{
+  "construction": "QM_4^3, arXiv:2511.02542 Theorems 6.4, 7.1, 7.2",
+  "density_denominator": 32768,
+  "density_numerator": 72447,
+  "distinct_nonzero_columns": 303,
+  "field_modulus_hex": "0x13",
+  "format": "covering-qm43-build-manifest-v1",
+  "improvement_vs_pre_paper": 5,
+  "indicator_kinds": {
+    "field": 17,
+    "star": 1
+  },
+  "length": 303,
+  "matrix": "compute/H_R3_r21_n303.txt",
+  "ok_columns_decimal_lsb_first": [
+    1,
+    2,
+    4,
+    8,
+    16,
+    32,
+    64,
+    128,
+    256,
+    11,
+    93,
+    330,
+    413,
+    464,
+    46,
+    288,
+    355,
+    231
+  ],
+  "ok_covered_le1": 19,
+  "ok_covered_le2": 163,
+  "ok_covered_le3": 512,
+  "ok_dependent_triple_one_based": [
+    6,
+    9,
+    16
+  ],
+  "ok_hex_msb_first": [
+    "0x1A0",
+    "0x174",
+    "0x0A5",
+    "0x173",
+    "0x017",
+    "0x0E8",
+    "0x009",
+    "0x18D",
+    "0x1CE"
+  ],
+  "ok_last_word_paper_ocr": "ICE",
+  "ok_last_word_recovered": "0x1CE",
+  "ok_partition_one_based": [
+    [
+      1,
+      2,
+      4
+    ],
+    [
+      3
+    ],
+    [
+      5,
+      8
+    ],
+    [
+      6,
+      17
+    ],
+    [
+      7,
+      10
+    ],
+    [
+      11,
+      14
+    ],
+    [
+      12
+    ],
+    [
+      13,
+      18
+    ],
+    [
+      15
+    ],
+    [
+      9
+    ],
+    [
+      16
+    ]
+  ],
+  "previous_table_length_theorem_6_3": 308,
+  "published_length_arxiv_2511_02542": 303,
+  "rank": 21,
+  "redundancy": 21,
+  "warning": "Builder checks are not the certificate; run run_qm43_checks.sh."
+}
