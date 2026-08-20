@@ -10,7 +10,7 @@
 
 ## Statement
 
-For \(P_n(x)=1+a_1x+\cdots+a_{n-1}x^{n-1}+x^n\) with independent Bernoulli \(a_i\), it is unknown unconditionally whether \(\Pr(P_n\text{ irreducible over }\mathbb Z)\to 1\). GRH-conditional and broader-alphabet results are known.
+For $P_n(x)=1+a_1x+\cdots+a_{n-1}x^{n-1}+x^n$ with independent Bernoulli $a_i$, it is unknown unconditionally whether $\Pr(P_n\text{ irreducible over }\mathbb Z)\to 1$. GRH-conditional and broader-alphabet results are known.
 
 ## Tonight
 

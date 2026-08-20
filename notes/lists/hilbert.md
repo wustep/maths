@@ -11,12 +11,12 @@ question. Sources: [Wikipedia](https://en.wikipedia.org/wiki/Hilbert%27s_problem
 | # | Header (1902) | Status | Note |
 | ---: | --- | --- | --- |
 | 1 | Continuum hypothesis | Controversial | Gödel–Cohen: independent of ZFC (1940, 1963). ICM 2026: Asperó–Schindler on extra axioms. |
-| 2 | Consistency of arithmetic | Controversial | Gödel 1931; Gentzen 1936 via \(\varepsilon_0\). Not Hilbert-finitistic. |
+| 2 | Consistency of arithmetic | Controversial | Gödel 1931; Gentzen 1936 via $\varepsilon_0$. Not Hilbert-finitistic. |
 | 3 | Scissor congruence of equal-volume polyhedra | Resolved (no) | Dehn 1900. |
 | 4 | Straight line as shortest distance | Too vague | |
 | 5 | Lie groups without differentiability | Partial | Gleason 1953 for manifolds. Hilbert–Smith still open. |
 | 6 | Axioms of physics | Split | (a) Kolmogorov 1933. (b) Deng–Hani–Ma arXiv:2503.01800 (2025), peer review. |
-| 7 | Transcendence of \(a^b\) | Resolved (yes) | Gelfond–Schneider 1934. |
+| 7 | Transcendence of $a^b$ | Resolved (yes) | Gelfond–Schneider 1934. |
 | 8 | Problems of prime numbers | Open | (a) RH. (b) Goldbach / twins (see `landau.md`). (c) Dedekind zeta / GRH. |
 | 9 | Most general reciprocity law | Open | Artin for abelian; non-abelian still conjectural. |
 | 10 | Algorithm for Diophantine solvability | Resolved (impossible) | Matiyasevich 1970 (Davis–Putnam–Robinson). |

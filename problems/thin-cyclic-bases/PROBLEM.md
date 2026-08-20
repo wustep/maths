@@ -19,6 +19,6 @@ An infinite parametric family, or a certified finite construction beating the pu
 ## Record after 2026-08-17
 
 Green #33 remains open. Replayed Bevan–Erskine–Lewis: infinitely
-many \(n=6q(q-2)\) with \(\mathrm{SS}(n,2)=(4+o(1))q\), ratio
-\(\sqrt{8/3}+o(1)\). No family with a smaller liminf was found.
+many $n=6q(q-2)$ with $\mathrm{SS}(n,2)=(4+o(1))q$, ratio
+$\sqrt{8/3}+o(1)$. No family with a smaller liminf was found.
 See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.

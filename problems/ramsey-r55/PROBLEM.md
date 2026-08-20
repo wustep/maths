@@ -18,4 +18,4 @@ A certified 43-vertex Ramsey graph, a nonexistence proof at 45 with an independe
 
 ## Status (2026-08-17)
 
-Published record still \(43\le R(5,5)\le 46\) (Radziszowski rev. 18; Angeltveit–McKay). No endpoint moved. Residue: the 656 McKay graphs independently verified and non-extending; no circulant \((5,5)\)-graph on 42–45 vertices; no Cayley \((5,5)\)-graph on any group of order 42. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.
+Published record still $43\le R(5,5)\le 46$ (Radziszowski rev. 18; Angeltveit–McKay). No endpoint moved. Residue: the 656 McKay graphs independently verified and non-extending; no circulant $(5,5)$-graph on 42–45 vertices; no Cayley $(5,5)$-graph on any group of order 42. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.

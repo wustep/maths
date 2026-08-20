@@ -3,19 +3,19 @@
 ## Status (accessed 2026-08-17)
 
 - [Erdős Problem #30](https://www.erdosproblems.com/30) — **OPEN**. Page last
-  edited 2026-04-06. $1000 form: \(h(N)=N^{1/2}+O_\varepsilon(N^\varepsilon)\).
+  edited 2026-04-06. $1000 form: $h(N)=N^{1/2}+O_\varepsilon(N^\varepsilon)$.
   Zero claimed proofs. Do not claim Erdős–Turán.
 - [Green, *100 Open Problems*, Problem 31](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf)
-  (Dec 2025 update): improve, for infinitely many \(N\),
-  \(N^{1/2}+O(1)\le F(N)\le N^{1/2}+N^{1/4}+O(1)\). Comments record BFR 0.998
+  (Dec 2025 update): improve, for infinitely many $N$,
+  $N^{1/2}+O(1)\le F(N)\le N^{1/2}+N^{1/4}+O(1)$. Comments record BFR 0.998
   and CHO 0.98183.
-- [Tao et al., constant \(C_{5a}\)](https://teorth.github.io/optimizationproblems/constants/5a.html)
+- [Tao et al., constant $C_{5a}$](https://teorth.github.io/optimizationproblems/constants/5a.html)
   — published upper bounds stop at CHO25 0.98183; 0.97633 listed as unpublished
   AlphaEvolve (Carter–Georgiev–Gómez-Serrano–Hunter–O’Bryant–Tao–Wagner, 2025).
   Forum note (Tao, 17 Feb 2026) mentions a tentative ~0.947 argument “subject
   to confirmation”.
 
-## Published upper bounds on the \(N^{1/4}\) coefficient
+## Published upper bounds on the $N^{1/4}$ coefficient
 
 | C | Reference |
 | --- | --- |
@@ -51,7 +51,7 @@ instead of L=4 (a valid instance of their Lemma 2.1). Exact certificate
 
 - a is the Claim 4.1 fraction (kernels unchanged)
 - √(ab) = 0.9434925085033526
-- so \(F(N)\le N^{1/2}+0.94349251\,N^{1/4}+O(1)\)
+- so $F(N)\le N^{1/2}+0.94349251\,N^{1/4}+O(1)$
 - this is 8.22×10^{-8} below Hou–Zhao’s γ0, and below (0.94349251)²
 
 Verifiers (do not import each other):
@@ -73,7 +73,7 @@ argument and not an improvement of the four-decimal statement 0.9435.
 ## Did not beat
 
 - Erdős–Turán / the $1000 form.
-- \(F(N)\ge\sqrt{N}+\omega(1)\) for infinitely many N. Singer gives +½+o(1);
+- $F(N)\ge\sqrt{N}+\omega(1)$ for infinitely many N. Singer gives +½+o(1);
   Shakan’s gap 2√p unwraps to another O(1). Greedy extras stay bounded.
 - A constant at the 0.9434 level or below. L-lifts saturate by L=6;
   1-kernel search stays ~0.946; m-refinement of the same histograms is

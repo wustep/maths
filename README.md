@@ -41,11 +41,11 @@ matrix has a verified 28-block partition, so $\mathrm{QM}_2^2$
 propagates theorem-only to $\ell_2(40,2)\le 1671167$,
 $\ell_2(42,2)\le 3342335$, and $\ell_2(44,2)\le 6684671$
 (not enumerated). Same seed plus Golay gives
-$\ell_2(26,3)\le 817$ (paper 818). QM$_4^4$ with the
+$\ell_2(26,3)\le 817$ (paper 818). $\mathrm{QM}_4^4$ with the
 same 50-set gives $\ell_2(31,4)\le 689$ (paper 690),
 blockwise certificate for $2^{31}$. The $r=18$ and $r=20$
 lifts have verified partitions $p(H_{18})\le 17$ and
-$p(H_{20})\le 14$, so QM$_5^3$ gives theorem-only
+$p(H_{20})\le 14$, so $\mathrm{QM}_5^3$ gives theorem-only
 $\ell_2(38,3)\le 13102$ and $\ell_2(41,3)\le 26206$
 (paper 13118, 26238; not enumerated). Replay:
 `problems/covering/compute/run_qm3_checks.sh`,
@@ -69,7 +69,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(21,3)\le 303$; $\ell_2(26,2)\le 13070$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\ell_2(36,2)\le 418271$; $\ell_2(38,3)\le 13102$; $\ell_2(41,3)\le 26206$; $\mathrm{QM}$ $22/24/28$ and $p(H_{18})\le 17$, $p(H_{20})\le 14$, $p(H_{26})\le 19$, $p(H_{28})\le 28$. $n=49$ still 7 holes. |
+| [covering](problems/covering) | $\ell_2(10,2)\le 50$; $\ell_2(21,3)\le 303$; $\ell_2(26,2)\le 13070$; $\ell_2(26,3)\le 817$; $\ell_2(31,4)\le 689$; $\ell_2(36,2)\le 418271$; $\ell_2(38,3)\le 13102$; $\ell_2(41,3)\le 26206$; $\mathrm{QM}\ 22/24/28$ and $p(H_{18})\le 17$, $p(H_{20})\le 14$, $p(H_{26})\le 19$, $p(H_{28})\le 28$. $n=49$ still 7 holes. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |
@@ -81,7 +81,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
 | [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
 | [cosine-zeros](problems/cosine-zeros) | $Z(N)\ge\log\log N/(200\log\log\log N)$ when RHS $\ge 4$. Does not beat Bedert's exponent. |
-| [two-squares-gap](problems/two-squares-gap) | Jameson $a=3$ on $n\le 1.024\cdot 10^{15}$ except $\{3,6,21,91\}$ (m$\le$250 cert replayed). Green's $1/10$ open. |
+| [two-squares-gap](problems/two-squares-gap) | Jameson $a=3$ on $n\le 1.024\cdot 10^{15}$ except $\{3,6,21,91\}$ (m $\le 250$ cert replayed). Green's $1/10$ open. |
 | [ulam-sequence](problems/ulam-sequence) | L=22 word with $C_F<1.442$, beating CS 1.454. Density open. |
 | [long-gap-dilate](problems/long-gap-dilate) | SAT $G(p,\mathrm{round}\sqrt p)$ through $p=71$. No universal $C>2$. Record still Shakan 2. |
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
@@ -94,7 +94,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Residue. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=23$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
-| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | F$_4$ certificate $c=0.34645$, $5\cdot 10^{-5}$ below HKN $0.3465$. Did not replay DRAT. $n=18$ residue. Conjecture $1/3$ open. |
+| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | $F_4$ certificate $c=0.34645$, $5\cdot 10^{-5}$ below HKN $0.3465$. Did not replay DRAT. $n=18$ residue. Conjecture $1/3$ open. |
 | [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |

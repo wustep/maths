@@ -2,7 +2,7 @@
 
 ## 2026-08-17 — published record
 
-- [Parts, *Graph minimization…*, arXiv:2010.12665](https://arxiv.org/abs/2010.12665) — 509 vertices, 2442 edges, type M6A, \(G=L_{374}\cup\rho S_{136}\). Vertex lists promised on the Polymath site. Minimization by expansion/reduction with SAT hyperedges.
+- [Parts, *Graph minimization…*, arXiv:2010.12665](https://arxiv.org/abs/2010.12665) — 509 vertices, 2442 edges, type M6A, $G=L_{374}\cup\rho S_{136}$. Vertex lists promised on the Polymath site. Minimization by expansion/reduction with SAT hyperedges.
 - [Voronov–Neopryatnaya–Dergachev, *Constructing 5-chromatic unit distance graphs…*, Discrete Math. 2022 / arXiv:2106.11824](https://arxiv.org/abs/2106.11824) — cites 509 as the planar record after Heule’s 553 and 517.
 - [MathWorld, Parts Graphs](https://mathworld.wolfram.com/PartsGraphs.html) — table: 509 vertices, 2442 edges, prior to 2020-03-07. Implemented as `GraphData["PartsGraph509"]`.
 - [MathWorld, de Grey Graphs](https://mathworld.wolfram.com/deGreyGraphs.html) — as of August 2026, “the smallest of these remains the 509-vertex Parts graph (Parts 2020a, Haugland 2026)”.
@@ -21,12 +21,12 @@
 
 ## 2026-08-17 — independent checks (this folder)
 
-- Exact rebuild of Parts 509: 509 vertices, 2442 edges, 0 float-near-unit false pairs. Split 374 + 135 matches \(L_{374}\cup\rho S_{136}\) with shared origin.
+- Exact rebuild of Parts 509: 509 vertices, 2442 edges, 0 float-near-unit false pairs. Split 374 + 135 matches $L_{374}\cup\rho S_{136}$ with shared origin.
 - Exact rebuild of Heule 510: 510 vertices, 2504 edges.
 - 4-coloring of 509: UNSAT, DRAT verified by `drat-trim`.
-- Vertex-criticality of 509: 509/509 of \(G-v\) SAT. Six explicit colorings for the degree-4 vertices.
-- Lattice disk \(r\le 2.55\) covers all 509 published points. 677 unused points of unit-degree ≥ 4.
-- Vertex 310 \(=(0,\sqrt{3})\) is replaceable by 6 lattice extras; the 514-vertex graph is 5-chromatic and vertex-critical.
+- Vertex-criticality of 509: 509/509 of $G-v$ SAT. Six explicit colorings for the degree-4 vertices.
+- Lattice disk $r\le 2.55$ covers all 509 published points. 677 unused points of unit-degree ≥ 4.
+- Vertex 310 $=(0,\sqrt{3})$ is replaceable by 6 lattice extras; the 514-vertex graph is 5-chromatic and vertex-critical.
 - 10,155 one-extra / two-degree-4-vertex trials: 0 UNSAT. 2,925 trials restricted to extras of degree ≥ 6: 0 UNSAT. 68 trials of extras adjacent to two vertices of degree ≤ 5: 0 UNSAT.
 
 No smaller 5-chromatic exact-coordinate unit-distance graph was produced. The published record used here is still 509.
