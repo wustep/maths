@@ -13,3 +13,8 @@
 - Exhaustions (all zero witnesses): both order-7 dim-1-fixed classes; all 50 \(C_7\times C_7\) classes; 12 order-15, 10 order-21, 7 order-105 classes. Open: order-7 with fixed dim 4/7 (timeouts), order-9/-35/-45 (not reached before stop).
 - The 7-hole residue at n=49 reproduces across independent anneals; two inequivalent GL-classes of 7-hole optima found, both with hole sets of rank 5 containing exactly one zero-sum quadruple, both ≥5- resp. ≥4-swap-deep (exhaustive k-swap prover with exact defer/endgame logic).
 - WLOG frame reduction for SAT: a rank-10 covering can be assumed to contain the ten unit vectors (GL acts transitively on ordered bases); cuts the cardinality-49 CNF search substantially. Instance built (1.14M clauses); no verdict before the stop order.
+
+## 2026-08-20 (leftover paper constructions)
+
+- \(M_{OK}\) last hex word in arXiv:2511.02542 (6.10) is the invalid token `ICE`. Exhausting all 9-bit last columns against Theorem 7.1's \(P_{OK}\) leaves exactly one survivor: `1CE`.
+- QM\(_2^1\) on the certified \(p(H_{18})\le 17\) partition is the unused \(p\)-preserving lift: \(n=2^m(n_0+2)-2\) is usually worse than QM\(_2^2\), but here \(m=4\) is legal and yields a shorter \(r=26\) matrix than the already-certified QM\(_3^2\) length 13309.
