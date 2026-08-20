@@ -17,4 +17,4 @@
 ## 2026-08-20 (leftover paper constructions)
 
 - \(M_{OK}\) last hex word in arXiv:2511.02542 (6.10) is the invalid token `ICE`. Exhausting all 9-bit last columns against Theorem 7.1's \(P_{OK}\) leaves exactly one survivor: `1CE`.
-- QM\(_2^1\) on the certified \(p(H_{18})\le 17\) partition is the unused \(p\)-preserving lift: \(n=2^m(n_0+2)-2\) is usually worse than QM\(_2^2\), but here \(m=4\) is legal and yields a shorter \(r=26\) matrix than the already-certified QM\(_3^2\) length 13309.
+- QM\(_2^1\) on the certified \(p(H_{18})\le 17\) partition is the unused \(p\)-preserving lift: \(n=2^m(n_0+2)-2\) is usually worse than QM\(_2^2\), but here \(m=4\) is legal and yields \(\ell_2(26,2)\le 13070\), shorter than the already-certified QM\(_3^2\) length 13309. An explicit 19-block 2-partition of that matrix unlocks QM\(_2^2\) at \(m=5\): theorem-only \(\ell_2(36,2)\le 418271\).
