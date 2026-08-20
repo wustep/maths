@@ -16,7 +16,7 @@ Run from problems/covering/:
       --seed result/data/H_r18_n815.txt \
       --partition compute/partition_r18_n815_p17.txt \
       --output compute/H_r26_n13070.txt \
-      --labels compute/partition_r26_n13070_p17.txt \
+      --labels compute/partition_r26_n13070_p19.txt \
       --manifest compute/qm21_build_manifest.json
 
 All integer columns are LSB-first: bit i is matrix row i+1.
@@ -88,7 +88,7 @@ def allocate_indicators(labels: list[int]) -> list[int | None]:
 def build_qm21(
     seed_columns: list[int], labels: list[int]
 ) -> tuple[int, list[int], list[int | None], list[int]]:
-    """Return the QM_2^1 matrix, indicators, and a candidate 17-block lift."""
+    """Return the QM_2^1 matrix, indicators, and a 19-block lift-partition."""
     gf_selftest(M)
     indicators = allocate_indicators(labels)
     r0 = 18
@@ -97,20 +97,18 @@ def build_qm21(
     columns: list[int] = []
     out_labels: list[int] = []
 
-    # D_2(2) = [(0, W_m, 0) | (0, 0, W_m)].  Both Hamming blocks are placed
-    # in the unique star seed-block so the theorem's p(H_C) <= p(H_0)
-    # construction is explicit rather than an inequality.
-    star_block = next(
-        block for block, indicator in enumerate(
-            [STAR] + list(range(SIZE))
-        ) if indicator is STAR
-    )
+    # D_2(2) = [(0, W_m, 0) | (0, 0, W_m)].  Putting both Hamming blocks
+    # into the star seed-block misses syndromes.  Giving each Hamming
+    # copy its own block yields an explicit 19-block 2-partition, which
+    # is enough for QM_2^2 at m=5 (2^5=32 >= 19).
+    d1_block = SIZE + 1
+    d2_block = SIZE + 2
     for value in range(1, SIZE):
         columns.append(value << shift_xi)
-        out_labels.append(star_block)
+        out_labels.append(d1_block)
     for value in range(1, SIZE):
         columns.append(value << shift_beta_xi)
-        out_labels.append(star_block)
+        out_labels.append(d2_block)
 
     for column, indicator, label in zip(seed_columns, indicators, labels):
         for xi in range(SIZE):
@@ -138,13 +136,13 @@ def build_qm21(
 
 def write_labels(path: Path, labels: list[int], source: str) -> None:
     with path.open("w", encoding="utf-8") as handle:
-        handle.write("# Candidate QM_2^1 lift-partition of %s.\n" % source)
+        handle.write("# QM_2^1 lift-partition of %s.\n" % source)
         handle.write(
-            "# %d blocks: seed blocks copied through A(h,beta); D sits "
-            "in the star block.\n" % len(set(labels))
+            "# %d blocks: 17 seed blocks copied through A(h,beta), plus "
+            "one block for each D_2(2) Hamming copy.\n" % len(set(labels))
         )
         handle.write(
-            "# Discovery labels; certify with verify_radius2_matrix.c.\n")
+            "# Certify with compute/verify_radius2_matrix.c.\n")
         handle.write(" ".join(str(label) for label in labels) + "\n")
 
 
@@ -199,12 +197,13 @@ def main() -> None:
         "seed_partition_blocks": 17,
         "seed_partition_cross_block_covered": covered,
         "field_modulus_hex": "0x%X" % MODULUS[M],
-        "indicators": [
-            "star" if value is STAR else value for value in indicators
+        "block_indicators": [
+            "star" if value is STAR else value
+            for value in [STAR] + list(range(SIZE))
         ],
         "matrix": str(args.output),
-        "candidate_partition": str(args.labels),
-        "candidate_partition_blocks": len(set(out_labels)),
+        "partition": str(args.labels),
+        "partition_blocks": len(set(out_labels)),
         "redundancy": redundancy,
         "length": length,
         "rank": binary_rank(columns),
