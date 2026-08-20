@@ -66,6 +66,14 @@ Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3
 - $p(H_{20})\le 14$ on the certified $r=20$, $n=1631$ matrix — [`compute/partition_r20_n1631_p14.txt`](compute/partition_r20_n1631_p14.txt). Full $2^{20}$ cross-block sweep.
 - Theorem-only $\ell_2(38,3)\le 13102$ (paper 13118) and $\ell_2(41,3)\le 26206$ (paper 26238) via QM$_5^3$ / Theorem 7.3. Not enumerated.
 
+## Leftover paper constructions (quest q8, 2026-08-20)
+
+Unused constructions from [`compute/notes_from_authors_2026-08-19.md`](compute/notes_from_authors_2026-08-19.md):
+
+- $M_{OK}$ last word is independently `1CE` (paper OCR `ICE` is invalid hex). Unique among all 512 nine-bit last words making $P_{OK}$ a $(3,1)$-partition of the Östergård–Kaikkonen $[18,9]_2$ seed.
+- QM$_4^3$ from that seed: explicit [`compute/H_R3_r21_n303.txt`](compute/H_R3_r21_n303.txt). Matches the paper's $\ell_2(21,3)\le 303$ (older table 308). Replay [`compute/run_qm43_checks.sh`](compute/run_qm43_checks.sh).
+- QM$_2^1$ from the certified $p(H_{18})\le 17$ partition: explicit [`compute/H_r26_n13070.txt`](compute/H_r26_n13070.txt). Target $\ell_2(26,2)\le 13070$ (paper 13565; previous certified 13309), preserving $p$. Replay [`compute/run_qm21_checks.sh`](compute/run_qm21_checks.sh).
+
 
 ## What a solution looks like
 
