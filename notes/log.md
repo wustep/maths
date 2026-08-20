@@ -83,3 +83,4 @@ Public repo: https://github.com/wustep/maths
 - Codex q6b covering (20xx): independently replayed ℓ₂(26,3)≤817 (paper 818); p(H)≤64 on the r=28 matrix; theorem-only ℓ₂(40,2)≤1671167. Exact 3-sum on the 50-set. n=49 still 7 holes.
 - Codex q6c covering (20xx): independently replayed ℓ₂(31,4)≤689 (paper 690). Blockwise 2^31 certificate, not a flat sweep. n=49 still 7 holes.
 - Codex q7c covering (20xx): independently replayed p(H₁₈)≤17, p(H₂₀)≤14; theorem-only ℓ₂(38,3)≤13102 and ℓ₂(41,3)≤26206 (paper 13118, 26238). Not enumerated. n=49 still 7 holes.
+- Covering leftover QM (main Codex / PR #10): independently replayed ℓ₂(26,2)≤13070 (was 13309; paper 13565); p(H₂₆)≤19; theorem-only ℓ₂(36,2)≤418271 (paper 425983). ℓ₂(21,3)≤303 matches the paper (M_OK last word 1CE). n=49 still 7 holes.
