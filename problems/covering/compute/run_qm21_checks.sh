@@ -9,7 +9,7 @@ python3 compute/build_qm21.py \
   --seed result/data/H_r18_n815.txt \
   --partition compute/partition_r18_n815_p17.txt \
   --output compute/H_r26_n13070.txt \
-  --labels compute/partition_r26_n13070_p17.txt \
+  --labels compute/partition_r26_n13070_p19.txt \
   --manifest compute/qm21_build_manifest.json
 
 gcc -O3 -std=c11 -Wall -Wextra -Werror \
@@ -25,3 +25,10 @@ compute/verify_radius2_matrix result/data/H_r18_n815.txt 18 815 \
   compute/partition_r18_n815_p17.txt 17
 
 compute/verify_radius2_matrix compute/H_r26_n13070.txt 26 13070
+
+compute/verify_radius2_matrix compute/H_r26_n13070.txt 26 13070 \
+  compute/partition_r26_n13070_p19.txt 19
+
+N36=$((32 * (13070 + 1) - 1))
+test "$N36" -eq 418271
+echo "PASS QM_2^2 m=5 theorem continuation: r=36 n=$N36"
