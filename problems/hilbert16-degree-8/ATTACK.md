@@ -309,3 +309,62 @@ runbook; `compute/nest_tri.json` and `compute/nest_tri_certs.json` are
 Fable's scratch from the deep-nest-triangulation selection step and are
 not read by any script here. Rebuild the derived inputs with
 `python3 prep.py`; re-run everything with `sh run_all.sh`.
+
+## 2026-08-21 — the census triangulations, finished
+
+The zone sweeps above stopped at twist-rank 15 because Python could not
+reach the rest: the 118 remaining census triangulations carry
+\(2^{16}\)–\(2^{26}\) maximal sign distributions each, 229.5 million in
+total. `compute/zonec.c` moves the evaluator into C — the same rhombus
+complex, the same union–find, the same nesting logic as
+`fastcx.Complex.eval`, with the bracket rendering replaced by a 128-bit
+canonical hash so a sweep can deduplicate schemes without building
+strings. It runs at ~45,000 sign distributions per second per core,
+about 45× the Python path.
+
+**Cross-check before use.** `compute/validate_zonec.py` enumerates the
+whole subspace of one triangulation in Python and in C and compares.
+On the rank 6, 10, 12 and 13 census triangulations the two agree on
+every count that matters — valid schemes, 22-oval count, and the exact
+*set* of scheme strings. The C fingerprint is therefore exactly as fine
+as the real scheme, so the C sweep loses nothing. The scheme of record
+is still recomputed in Python from the emitted witness, and anything
+outside the census still goes to the exact `Fraction` verifier.
+
+**All 184 census triangulations are now swept exhaustively.**
+
+| | |
+| --- | --- |
+| census triangulations classified exhaustively | **184 of 184** (twist-rank 6–26) |
+| maximal sign distributions evaluated | **230,501,440** |
+| of those that were 22-oval M-curves | **230,501,440 — every one** |
+| distinct M-schemes realized | **38** |
+| the paper's 38 T-realized M-schemes | **all 38, exactly** |
+| M-schemes outside the paper's 38 | **0** |
+| hits among the six algebraically open | **0** |
+| most M-schemes on a single triangulation | 24 |
+
+Certificate: `compute/certs/census_span_classification.json` (per
+triangulation: rank, split count, evaluation count, scheme list).
+Reproduce with `cd compute && python3 zonec_drive.py <w> 3 6 runs4`.
+
+What this is. Because every maximal sign distribution on a fixed
+triangulation \(\mathcal{T}\) lies in \(\eta+\operatorname{span}\{\delta_S\}\)
+(Haas, paper Thm 13), a finished triangulation is an *exhaustive*
+classification of the M-curves it supports. So this is a complete
+answer to a question that was previously only sampled:
+
+> The 184 triangulations underlying the published degree-8 census
+> support exactly the paper's 38 M-schemes and no others. In
+> particular **no census triangulation supports any of the six
+> algebraically open M-schemes**, including
+> ⟨4 ⊔ 1⟨2 ⊔ 1⟨14⟩⟩⟩ and ⟨14 ⊔ 1⟨2 ⊔ 1⟨4⟩⟩⟩.
+
+What this is not. It is not an obstruction and not a bound. Degree-8
+has vastly more primitive regular triangulations than these 184; the
+statement is about a specific finite family. It does say the previous
+session's "30 of 38, 0 new" was the head of exactly this pattern, and
+that no amount of further work *on census triangulations* will move the
+M-scheme question. The 100% maximal rate is also the largest test Haas'
+criterion has been put to here: 230.5 million predicted M-curves,
+230.5 million confirmed.
