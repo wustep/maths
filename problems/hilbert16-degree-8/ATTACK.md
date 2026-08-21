@@ -515,3 +515,16 @@ Gudkov–Krakhnov–Kharlamov congruence.
 
 **The census lower bound is now ≥ 2,379.** 7 of the 38 M-certificate
 balls are finished; the other 31 are running.
+
+**And four more, from two further M-certificates.**
+⟨13 ⊔ 1⟨3 ⊔ 1⟨2⟩⟩⟩ (20) and ⟨4 ⊔ 1⟨2⟩ ⊔ 1⟨13⟩⟩ (21) from
+`(5v1(2)v1(13)).pcom`; ⟨3 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩ (20) and
+⟨4 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩ (21) from `(5v1(4)v1(11)).pcom`. Same pipeline,
+`verify_new.py` → **16/16**. **Bound ≥ 2,383**, with 12 of the 38
+M-certificate balls finished.
+
+The shape of the gap is now unmistakable. Every one of the sixteen sits
+within Hamming distance ≤ 6 of one of the paper's own 22-oval
+certificates, and every one is an (M−1)- or (M−2)-curve obtained by
+shrinking one oval of a *nest* in that M-curve. Their search records the
+M-curve and misses the schemes immediately below it.
