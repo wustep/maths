@@ -81,7 +81,7 @@
       flex: 1;
       overflow-y: scroll;
       overflow-x: hidden;
-      padding: 4px 4px 28px;
+      padding: 4px 4px 12px;
       scrollbar-width: thin;
       scrollbar-color: #2a2a2a #000000;
     }
@@ -166,6 +166,65 @@
       background: #2a2a2a; border-radius: 12px; padding: 8px 10px;
       color: var(--ink); text-decoration: none; font-size: 13px;
     }
+
+    #composer {
+      flex: 0 0 auto;
+      background: #000;
+      padding: 4px 12px 14px;
+    }
+    #composer .wrap { max-width: 720px; }
+    .composer-box {
+      display: flex;
+      align-items: flex-end;
+      gap: 8px;
+      background: #212121;
+      border: 1px solid #2c2c2c;
+      border-radius: 26px;
+      padding: 8px 8px 8px 6px;
+      min-height: 52px;
+    }
+    .composer-plus, .composer-send {
+      width: 34px; height: 34px;
+      border: 0; border-radius: 50%;
+      background: transparent;
+      color: #5a5a5a;
+      padding: 0;
+      display: flex; align-items: center; justify-content: center;
+      flex: 0 0 auto;
+      cursor: not-allowed;
+    }
+    .composer-send {
+      background: #2f2f2f;
+      color: #6a6a6a;
+    }
+    .composer-plus svg, .composer-send svg {
+      width: 18px; height: 18px; display: block;
+    }
+    .composer-body {
+      flex: 1;
+      min-width: 0;
+      padding: 6px 4px 7px;
+    }
+    .composer-line, .composer-note {
+      margin: 0;
+      font-weight: 400;
+    }
+    .composer-line {
+      color: var(--ink);
+      font-size: 15px;
+      line-height: 1.4;
+    }
+    .composer-note {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.4;
+      margin-top: 3px;
+    }
+    #composer a { color: #7cb3ff; }
+    #composer a code {
+      color: inherit;
+      font-size: 13.5px;
+    }
   </style>
 </head>
 <body>
@@ -183,10 +242,16 @@
   <div id="thread">
     <div class="wrap" id="log"></div>
   </div>
+  <footer id="composer" hidden aria-label="Transcript snapshot"></footer>
   <script type="application/json" id="transcript">
 {
   "title": "Math",
   "subtitle": "16 August 2026",
+  "through": {
+    "sha": "96faf40",
+    "url": "https://github.com/wustep/maths/tree/96faf401a92891926d9183202935e2ec9aebdcdf",
+    "note": "16 Aug 2026. Later commits only restyled this page."
+  },
   "extraction": {
     "method": "Visible chat, first occurrence only. User bubbles by [tNu]. Assistant SendMessages by text/type/attachments. Summary-replay duplicates dropped.",
     "source_lines": 1507,
@@ -1638,13 +1703,74 @@
       stepPlay();
     }
 
+    function renderComposer(through) {
+      const root = $("composer");
+      if (!root) return;
+      if (!through || !through.sha || !through.url) {
+        root.hidden = true;
+        root.innerHTML = "";
+        return;
+      }
+      const plus = document.createElement("button");
+      plus.type = "button";
+      plus.className = "composer-plus";
+      plus.disabled = true;
+      plus.setAttribute("aria-hidden", "true");
+      plus.innerHTML = '<svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M8 3.2v9.6M3.2 8h9.6"/></svg>';
+
+      const line = document.createElement("p");
+      line.className = "composer-line";
+      line.appendChild(document.createTextNode("This transcript goes through "));
+      const a = document.createElement("a");
+      a.href = through.url;
+      a.target = "_blank";
+      a.rel = "noopener noreferrer";
+      const code = document.createElement("code");
+      code.textContent = through.sha;
+      a.appendChild(code);
+      line.appendChild(a);
+      line.appendChild(document.createTextNode("."));
+
+      const body = document.createElement("div");
+      body.className = "composer-body";
+      body.appendChild(line);
+      if (through.note) {
+        const note = document.createElement("p");
+        note.className = "composer-note";
+        note.textContent = through.note;
+        body.appendChild(note);
+      }
+
+      const send = document.createElement("button");
+      send.type = "button";
+      send.className = "composer-send";
+      send.disabled = true;
+      send.setAttribute("aria-label", "Send");
+      send.innerHTML = '<svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 2.8 3.2 7.6l1.2 1.2 2.8-2.8V13h1.6V6l2.8 2.8 1.2-1.2z"/></svg>';
+
+      const box = document.createElement("div");
+      box.className = "composer-box";
+      box.setAttribute("aria-disabled", "true");
+      box.appendChild(plus);
+      box.appendChild(body);
+      box.appendChild(send);
+
+      const wrap = document.createElement("div");
+      wrap.className = "wrap";
+      wrap.appendChild(box);
+
+      root.innerHTML = "";
+      root.appendChild(wrap);
+      root.hidden = false;
+    }
+
     function loadData(obj) {
       data = obj;
       $("playBtn").onclick = function () {
         if (playing) stopPlay();
         else startPlay(playIndex && playIndex < data.messages.length ? playIndex : 0);
       };
-      const thread = $("thread");
+      renderComposer(data.through);
       const params = new URLSearchParams(location.search);
       if (params.get("until")) build(parseInt(params.get("until"), 10));
       else build(null);

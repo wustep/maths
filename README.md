@@ -190,6 +190,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
+| Grok Bot transcript page | `notes/chat` | Grok 4.6 | 2026-08-21 |
 
 ## Lean
 
