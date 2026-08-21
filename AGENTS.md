@@ -60,6 +60,11 @@ README “Which model ran what” table. For a dated campaign, add a
 folder under `notes/` like `notes/supergrok-2026-08-17/` (REPORT +
 prompts; JSONL logs stay local / gitignored).
 
+Anything sent outside the notebook is copied to
+`problems/<slug>/share/<YYYY-MM-DD>-<who>/` (the whole problem
+folder at that send) and then not edited. A git tag on the send
+is the pin. Later search does not go in `share/`.
+
 `problems/` is current. `notes/lists/` catalogs, `notes/picks/`
 ballots, `notes/chat/` the transcript. Those folders stay.
 

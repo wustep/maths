@@ -1,0 +1,16 @@
+columns_distinct	1
+columns_nonzero	1
+density_decimal	1.26924228668212890625
+density_den	1048576
+density_num	1330897
+forced_split	909090
+mult_hist	1:910337,2:111552,3:4960,4:11264,5:7168,6:1024,16:868,32:93,33:704,35:96,97:320,98:64,99:64,128:31,144:31
+n	1631
+name	H_r20_n1631
+pair_hist	1:909090,2:111424,3:4960,4:11264,5:7168,6:1024,16:837,32:93,33:702,35:96,97:160,98:32,99:32,128:31,144:31
+pair_needed	1046944
+r	20
+radius_exactly_2	1
+rank	20
+syndromes_covered	1048576
+syndromes_total	1048576
