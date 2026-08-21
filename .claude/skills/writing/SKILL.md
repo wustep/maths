@@ -13,6 +13,21 @@ and bodies. ATTACK.md stays chronological. Walkthroughs stay
 `refs/walkthrough-style.md`. The dent skill decides the status.
 Write that status once.
 
+## Method
+
+Write English, not a string of symbols. Informal remarks are welcome
+if labeled (remark, "roughly speaking").
+Own voice. Paraphrase the literature and cite it. Past self is a
+good audience.
+Punch line early. Technical details later. A toy or special case
+before the general statement is fine.
+Name a symbol the first time. Introduce one only if you reuse it
+about three times or it is central. Say "the matrix H", not just H.
+Stay compatible with the paper you cite.
+Do not over-compress. Cutting examples and English to look short
+makes the note harder. Do not be cleverer than the result.
+Credit, provenance, precedence.
+
 ## Math
 
 Construction, upper bound, replay, or residue. Define a symbol
