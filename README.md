@@ -99,6 +99,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Incomplete. Inclusion $r_{13}(1/14\mathbb Z)\subseteq r_{13}(1/p\mathbb Z)$ replayed; two p=191 witnesses. LRC(13) open. |
+| [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No dent. Smale 7 open. |
 
 Each problem folder:
 
@@ -151,6 +152,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok | 2026-08-17 (incomplete) |
+| elliptic Fekete $S^2$ | `problems/fekete-s2` | Cursor Grok | 2026-08-19 |
 
 ## Lean
 
