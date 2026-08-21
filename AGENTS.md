@@ -10,7 +10,7 @@ Stephen Wu is the human author. Models go in the README ledger.
 One folder per problem under `problems/<slug>/`.
 
 ```
-PROBLEM.md        statement and what would count as a dent
+PROBLEM.md        statement and what would count as a new bound
 ATTACK.md         chronological attempts
 WALKTHROUGH.md    discovery notes, not a cleaned proof
 RESEARCH.md       papers, OEIS, failed lookups
@@ -23,7 +23,7 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 `lean-toolchain` pins Lean 4.32.0. Lemmas live in the problem folder.
 
 Starting a problem: mint with `scripts/new-problem.sh <slug>`;
-recipes in `.claude/skills/` (`new-problem`, `literature`, `dent`,
+recipes in `.claude/skills/` (`new-problem`, `literature`,
 `markdown-latex`, `compute`, `writing`);
 fetch a paper with `python3 scripts/arxiv_fetch.py <id>` (optional
 `--research problems/<slug>/RESEARCH.md`); OEIS via
@@ -36,12 +36,11 @@ Read `PROBLEM.md` and the published record first. arXiv is the
 record; fetch and replay before trusting a number. Forum numbers
 (MSE, Reddit, MathOverflow, AlphaXiv) are leads, not citations.
 
-A dent is a verified finite improvement of a documented record.
-Do not invent a dent. A failed search with a verifier is the
-product. SAT UNKNOWN is not a bound. Search residue (holes,
-stuck repair, timeout) is not a lower bound. Independently verify
-every claimed number. Cite the record you beat, or say you did
-not beat it.
+A new bound is a verified finite improvement of a published
+record. An incomplete search is not a lower bound. Do not invent
+a status noun. Public pages and this runbook use the same words.
+Independently verify every claimed number. Cite the record you
+beat, or say you did not beat it.
 
 User-facing prose follows `.claude/skills/writing`.
 

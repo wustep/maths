@@ -15,8 +15,8 @@ record; fetch and replay before trusting a number.
 
 The exact finite question this folder attacks.
 
-## What would count as a dent
+## What would count as a new bound
 
 A verified finite improvement of a documented record, and the record it
 would beat. A failed search with a verifier is also a product; do not
-invent a dent.
+invent a new bound.
