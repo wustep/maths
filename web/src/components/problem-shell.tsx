@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { Crumbs } from "./chrome";
 import { DOC_FILES, DOC_LABELS, type Problem, type ProblemDoc } from "@/lib/problems";
-import { getDir, githubBlobUrl } from "@/lib/repo";
+import { getDir, hrefForFile } from "@/lib/repo";
 import { renderMarkdown } from "@/lib/markdown";
 import { readRepoFile } from "@/lib/repo";
 
@@ -17,7 +17,7 @@ export async function ProblemPage({ problem, doc }: { problem: Problem; doc: Pro
       .filter((f) => !docNames.has(f.name))
       .map((f) => ({
         label: f.name,
-        href: f.kind === "external" ? githubBlobUrl(f.path) : `/files/${f.path}/`,
+        href: hrefForFile(f),
       })),
   ];
 

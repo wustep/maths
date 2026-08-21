@@ -139,6 +139,29 @@ export function allFiles(): RepoFile[] {
   return [...index().files.values()];
 }
 
+// Next `output: "export"` + `trailingSlash` writes a directory page to
+// `out/<dir>/index.html`. Emitting a file route for `<dir>/index.html`
+// creates `out/<dir>/index.html/` instead, and the directory copy hits
+// EISDIR. A `foo.html` file next to a `foo/` directory clashes the same way.
+export function fileRouteCollides(file: RepoFile): boolean {
+  if (file.name.toLowerCase() === "index.html") return true;
+  const ext = path.posix.extname(file.name);
+  if (ext.toLowerCase() === ".html") {
+    return index().dirs.has(file.path.slice(0, -ext.length));
+  }
+  return false;
+}
+
+export function hrefForFile(file: RepoFile): string {
+  if (file.kind !== "external" && !fileRouteCollides(file)) {
+    return `/files/${file.path}/`;
+  }
+  if (file.kind === "html" || file.kind === "pdf" || file.kind === "image") {
+    return `/raw/${file.path}`;
+  }
+  return githubBlobUrl(file.path);
+}
+
 // "problems/<slug>" directories have a rendered problem page too.
 export function getProblemSlugForDir(rel: string): string | null {
   const m = rel.match(/^problems\/([^/]+)$/);
