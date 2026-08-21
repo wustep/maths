@@ -12,6 +12,9 @@ verify_qm21_identity
 verify_qm43_identity
 search_partition_merges
 verify_radius2_matrix
+search_odd_r
+repair_odd_r
+kswap_odd_r
 search_n49_guided
 search_n49_lifted
 q7a/verify_n49

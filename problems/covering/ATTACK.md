@@ -119,3 +119,13 @@ Baseline stochastic runs (q2 binaries, fresh deterministic seeds) re-hit the 7-h
 - Since $26111\ge2^5=32\ge28$, QM$_2^2$ is now directly legal from this $r=28$ matrix at $m=5$. It gives $r=38$ and $n=32(26111+1)-1=835583$, an alternative direct derivation of the already recorded $r=38$, radius-2 family value. The new dent here is the explicit $p(H_{28})\le28$ certificate, not a new numerical $r=38$ table bound.
 - Reproduction: run [`compute/run_p28_checks.sh`](compute/run_p28_checks.sh). It rebuilds the partition in a temporary directory, requires byte identity with the tracked certificate, runs the independent exhaustive verifier, and checks the QM$_2^2$ arithmetic. `result/` is untouched. No claim of optimality or $f(2)$ is made.
 
+## 2026-08-20 — odd-r Table 5.1 holes (wrap: residue only)
+
+Hard wrap. No shorter radius-2 matrix. Paper lengths still \(\ell_2(11,2)\le 79\) and \(\ell_2(13,2)\le 159\). No \(f(2)\) claim.
+
+- Rebuilt the GDT \(f(r)\) seed ([`compute/build_gabidulin.py`](compute/build_gabidulin.py)): \(m=6\) is an explicit 79-set covering \(2048/2048\); \(m=7\) is a 159-set covering \(8192/8192\). These reconstruct the table, they do not dent it.
+- Every 1-deletion of the 79-set leaves \(16,29,30,36,\) or \(64\) holes. The four 16-hole punctures are [`compute/odd_r11_n78_16hole_a.cols`](compute/odd_r11_n78_16hole_a.cols) and siblings. Exhaustive 1-swap on puncture \(a\) stays at 16 holes.
+- No 2-out-1-in replacement from that 79-set reaches 0 holes (best 2-deletion leftover: 34).
+- Compiled SA at \(n=78\) did not find a covering. Residues: 16 holes from a Gabidulin puncture; 37 holes from a 78-subset of a longer union-greedy set. See [`compute/odd_r_residue_2026-08-20.json`](compute/odd_r_residue_2026-08-20.json).
+- \(r=13\) 1-deletions of the 159-set leave 32–128 holes; no \(n=158\) run finished before wrap.
+
