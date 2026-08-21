@@ -31,7 +31,7 @@ recorded and moved on.
 would make $1/10\,X^{1/4}$ look generous for large $X$. House
 rule: do not claim the density. Average gaps are not a max-gap bound.
 
-**Richards / DEKKM as a dent.** $\limsup G/\log s_n\ge 0.868$ is
+**Richards / DEKKM as a new bound.** $\limsup G/\log s_n\ge 0.868$ is
 real and later than Richards’s $1/4$. The gaps live at
 $X=\exp(\Theta(k))$ and are logarithmic. They do not constrain the
 $X^{1/4}$ coefficient and they do not kill $1/10$ at that $X$.
@@ -55,7 +55,7 @@ equidistribution statement he left open. Not tonight.
 **Empty ladders as an infinite family.** Empty interiors of
 $(u^2+m^2,u^2+(m+1)^2)$ exist (the ratio champion $1493\to 1508$,
 $m=7$, $u=38$). Through $u=1500$ they only occur for $m\le 14$.
-Small-$m$ residue, not an infinite $X^{1/4}$ lower bound.
+Small-$m$ leftover, not an infinite $X^{1/4}$ lower bound.
 
 ## 2. The useful failure
 
@@ -114,7 +114,7 @@ are small and exact.
 
 The range $m\le 8000$ is $n\le 1.024\cdot 10^{15}$.
 
-## 5. Computer residue
+## 5. Computer search
 
 - `compute/exhaustive_a3_5e6.json` — exact exception set on
   $[1,5\cdot 10^6]$.

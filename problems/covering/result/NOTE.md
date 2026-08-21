@@ -256,7 +256,7 @@ $\mathbb F_2^{10}$ and preserves every claim here.
   needs $1 + n + \binom n2 \ge 1024$, and $n = 44$ gives 991. Whether
   $\ell_2(10,2)$ is 45, 46, 47, 48, 49 or 50 is open. §4 shows only that *this*
   50-set has no redundant column, which says nothing about a different 49-set.
-- **The $n = 49$ run leaving 7 uncovered syndromes is search residue, not a
+- **The $n = 49$ run leaving 7 uncovered syndromes is an incomplete search, not a
   lower bound.** It records where one annealing run stopped. It is not evidence
   that $\ell_2(10,2) > 49$.
 - **The $(8,25)$ and $(9,38)$ gaps remain open.** The overnight attempts at

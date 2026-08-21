@@ -55,7 +55,7 @@ progression, not merely two arbitrary selected points. The failed Boolean
 model supplied the same clue from another direction: its useful variables
 were precisely the endpoint pairs centered at selected residues.
 
-The residue of both failures was therefore the same. A selected center comes
+The leftover of both failures was therefore the same. A selected center comes
 with a nontrivial three-term progression. We should spend the affine symmetry
 on that whole progression.
 
@@ -155,7 +155,7 @@ $(3,3,3,3,4)$, so none is unique. Its four centers are supported by the
 pairs $(1,4),(3,4),(0,1),(0,3)$, respectively. The size-3 normalized model
 is UNSAT, giving $m(5)=4$.
 
-## 5. Figures, numeric checks, computer residue
+## 5. Figures, numeric checks, and computer search
 
 The exact table contains all 46 primes at most 200. The numbers of primes
 with minima $2,3,\ldots,10$ are

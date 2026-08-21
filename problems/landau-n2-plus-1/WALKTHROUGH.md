@@ -116,7 +116,7 @@ A construction tonight would have been a prime with $n$ beyond that
 range. We stayed at $N=10^6$ and matched Wolf through $10^{12}$
 instead.
 
-## 5. Computer residue
+## 5. Computer search
 
 Replay from the problem folder:
 

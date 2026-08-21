@@ -13,7 +13,7 @@ residue classes, or an explicit arithmetic construction depending on
 $n$ in a checkable way, that writes every large $n$ as
 $a+b$ with $P^+(ab)\le n^\varepsilon$ for some
 $\varepsilon<1/2$. Isolated prefixes — even a prefix on which
-$F(n)\le n^{2/5}$ has only sixteen exceptions — are residue unless
+$F(n)\le n^{2/5}$ has only sixteen exceptions — are an incomplete search unless
 the template continues.
 
 The analytic gap is the same object Balog named in 1989: positivity
@@ -27,7 +27,7 @@ replace that input.
 
 ## 1. Named false starts, with the specific obstruction
 
-**Square-plus-remainder as a dent.** Write
+**Square-plus-remainder as a new bound.** Write
 $n=m^2+r$ with $0\le r\le 2m$, or $(m-1)^2+(2m-1)$ when $n$
 is square. Then $F(n)<2\sqrt n+1$ for every $n\ge 2$. The
 verifier in `trivial_cover.py` confirms this on $[2,2\cdot 10^5]$
@@ -152,9 +152,9 @@ finite on the computed prefixes and stop at values of $G(y)$.
 In parallel the C bitset independently reproduced A062241 through
 $y=79$. The 73-smooth and 79-smooth counts through $M$ agreed
 with the Python generator to the integer. That is a finite
-certificate, not a dent.
+certificate, not a new bound.
 
-## 5. Computer residue
+## 5. Computer search
 
 Stored under `compute/certs/`.
 
