@@ -308,3 +308,20 @@ hyperplane minus zero, its own sums never leave the hyperplane, and fibre 0 is
 uncoverable no matter what $g$ does. Twenty-nine samples, thirteen distinct,
 all of them hyperplanes. That is a pattern, not a proof, and the honest name for
 $n=38$ is residue.
+
+## This session ends here
+
+Overnight 2026-08-21: three construction families, no 49. The record is
+still $\ell_2(10,2)\le 50$. Sphere covering still only $\ge 45$.
+
+The useful facts, in one place. The 51 and the 50 are not lifts of the
+$r=8$ record. A 49, if it exists, is not a single-block shrink of the 50,
+is not $C_7$-invariant, and is not in the fibered graph family that
+reproduces the odd-$r$ table values (that family cannot even reach 47 at
+$r=10$). Its automorphism group, if any, is a $\{2,3,5\}$-group; the
+known 50 and 51 are 2-group symmetric, which is the case nobody exhausted.
+
+The nearest unfinished hole in these families is $n=38$ at $r=9$, not 49
+at $r=10$: seventeen kernel-block classes, every one floors at the same
+14 missing incidences, none decided. That is residue, not a bound.
+
