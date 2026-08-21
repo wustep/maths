@@ -52,12 +52,16 @@ def main():
     tag = os.environ.get("BALL_TAG", "d")
     res = open(f"{outdir}/{tag}{w}.jsonl", "a")
     nov = open(f"{outdir}/{tag}{w}_novel.jsonl", "a")
+    # every worker skips seeds any worker has already finished
     done = set()
-    for l in open(f"{outdir}/{tag}{w}.jsonl"):
-        try:
-            done.add(json.loads(l)["seed_cert"])
-        except Exception:
-            pass
+    for fn in sorted(__import__("glob").glob(f"{outdir}/{tag}*.jsonl")):
+        if fn.endswith("_novel.jsonl"):
+            continue
+        for l in open(fn):
+            try:
+                done.add(json.loads(l)["seed_cert"])
+            except Exception:
+                pass
     for i, (k, cert) in enumerate(items):
         if i % nw != w or cert in done:
             continue
