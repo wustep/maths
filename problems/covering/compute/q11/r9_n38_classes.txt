@@ -1,0 +1,20 @@
+# r=9, n=38: the 17 GL(4,2)-classes of 1-saturating kernel blocks with |A|=7,
+# and the annealing floor reached on each (sa_graph.c -A <mask>, 3e6 iters x 60 tries).
+# cost = missing (point, colour) incidences out of 8*31 = 248.  None reached 0.
+00007648 NOSOLUTION F=4 M=5 k=8 bestcost=14
+00007660 NOSOLUTION F=4 M=5 k=8 bestcost=14
+00007c28 NOSOLUTION F=4 M=5 k=8 bestcost=14
+00007c60 NOSOLUTION F=4 M=5 k=8 bestcost=14
+00007ca0 NOSOLUTION F=4 M=5 k=8 bestcost=14
+00007e40 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000e648 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000e660 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f428 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f448 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f640 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f848 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f860 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000f888 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000fc20 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000fc40 NOSOLUTION F=4 M=5 k=8 bestcost=14
+0000fc80 NOSOLUTION F=4 M=5 k=8 bestcost=14

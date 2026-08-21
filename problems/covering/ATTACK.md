@@ -507,8 +507,16 @@ routinely. Every time, the eight colours common to all 31 points had no
 distinct) are affine hyperplanes of $\mathbb F_2^4$**
 ([`fullsets.py`](compute/q11/fullsets.py)) — for those,
 $A=H\setminus\{0\}$ and $A+A\subseteq H$, so fibre 0 can never be covered. That
-is an observation about a sample, not a theorem. The exhaustive DFS does not
-reach $|B|=8$ at $(F,M)=(4,5)$, so $n=38$ is **residue, not an exclusion**.
+is an observation about a sample, not a theorem.
+
+From the other side, $n=38$ reduces to a finite list: up to $GL(4,2)$ there are
+28 classes of 7-element kernel blocks, exactly **17** of them 1-saturating, and
+a 38 in this family must use one of those 17. All 17 were annealed at length
+and **every one floors at exactly cost 14**, i.e. 14 missing (point, colour)
+incidences out of 248 ([`r9_n38_classes.txt`](compute/q11/r9_n38_classes.txt)).
+The exact DFS decides none of them — $4\times10^{8}$ nodes on the first block,
+still capped. So $n=38$ is **residue, not an exclusion**, and $\ell_2(9,2)\le39$
+stands.
 
 ### What was tried at $r=10$ and did not work
 

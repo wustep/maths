@@ -148,9 +148,23 @@ hyperplanes of $\mathbb F_2^4$** — and for those
 $A = V\setminus(B\cup\{0\}) = H\setminus\{0\}$ for a hyperplane $H$, so
 $A+A\subseteq H$ and fibre 0 cannot be covered, whatever $g$ does.
 
-That is an observation about the sample, not a theorem: whether some $g$ makes
-eight common colours that are *not* an affine hyperplane is **open**.  This is
-search residue, not an exclusion, and $\ell_2(9,2)\le39$ stands.
+That is an observation about the sample, not a theorem.  Attacking $n=38$ from
+the other side reduces it to a *finite* list: up to $GL(4,2)$ there are 28
+classes of 7-element kernel blocks, exactly **17** of them 1-saturating, and
+none of those 17 has $B$ an affine hyperplane (it cannot: an affine hyperplane
+complement is $H\setminus\{0\}$).  So
+
+> $\ell_2(9,2)\le38$ via this family holds for *some* $g$ over *one of these 17
+> blocks*, or not at all.
+
+All 17 were annealed at length ($3\times10^6$ iterations, 60 restarts each,
+[`r9_n38_classes.txt`](r9_n38_classes.txt)) and **every one floors at exactly
+cost 14** — 14 missing (point, colour) incidences out of the 248 required.  The
+uniformity across 17 inequivalent blocks is suggestive and unexplained; it is
+not a proof of anything.  The exact DFS does not decide a single block either:
+$4\times10^{8}$ nodes on the first one, still `capped`.
+
+So $n=38$ is **residue, not an exclusion**, and $\ell_2(9,2)\le39$ stands.
 
 $r=11$ ($M=6$, 63 free values of $g$) was only probed with short annealing
 schedules and is the least explored row: the family reached $n=86$, and $n=83$
