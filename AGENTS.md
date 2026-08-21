@@ -36,7 +36,8 @@ Do not invent a dent. A failed search with a verifier is the
 product. SAT UNKNOWN is not a bound. Search residue (holes,
 stuck repair, timeout) is not a lower bound. Independently verify
 every claimed number. Cite the record you beat, or say you did
-not beat it.
+not beat it. Claude Code recipes for these steps live in
+`.claude/skills/` (literature, dent, new-problem).
 
 ## What to update
 
