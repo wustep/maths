@@ -2,6 +2,9 @@
 
 Inspiration and source texts. Not problem work.
 
+[problem-template](problem-template) is the scaffold for a new
+`problems/<slug>/` folder; copy it with `scripts/new-problem.sh <slug>`.
+
 ## OpenAI, August 2026
 
 - [Ten advances](https://openai.com/index/ten-advances-in-mathematics/)
