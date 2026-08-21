@@ -106,7 +106,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. |
+| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. q10 prescribes an automorphism instead of perturbing the 50: order 7 is settled at $r=10$ for every fixed-space dimension, and with orders 11, 17, 31, 73, 127 also excluded, any 49-set has a $\{2,3,5\}$-group of automorphisms. At $r=11$ no invariant set below the record 79 exists for orders 11, 17 or 23. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |
@@ -160,6 +160,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Problem | Folder | Models | When |
 | --- | --- | --- | --- |
 | covering / $\ell_2(10,2)$ | `problems/covering` | Sol 5.6, Opus 5, Fable 5, Grok 4.6 | 2026-08-16–21 |
+| covering / prescribed automorphisms ($r=10,11$) | `problems/covering/compute/q10` | Claude Opus 5 | 2026-08-21 |
 | Brocard–Ramanujan | `problems/brocard` | Sol 5.6 | 2026-08-16 |
 | unique-sum mod p | `problems/unique-sum` | Sol 5.6 | 2026-08-16 |
 | no-three-in-line n=71 | `problems/three-in-line` | Sol 5.6 | 2026-08-16 |
