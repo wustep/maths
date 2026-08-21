@@ -10,8 +10,7 @@ and throat-clearing, one claim per sentence.
 
 README, PROBLEM.md status, explainers, notes, and GitHub PR titles
 and bodies. ATTACK.md stays chronological. Walkthroughs stay
-`refs/walkthrough-style.md`. The dent skill decides the status.
-Write that status once.
+`refs/walkthrough-style.md`. Write the status once.
 
 ## Method
 
@@ -30,9 +29,10 @@ Credit, provenance, precedence.
 
 ## Math
 
-Construction, upper bound, replay, or residue. Define a symbol
-the first time it appears. Cite the record once.
-Residue is a failed search with a verifier.
+Construction, upper bound, replay, or incomplete search. Define a
+symbol the first time it appears. Cite the record once.
+A new bound is a verified finite improvement of a published record.
+An incomplete search is not a lower bound.
 Do not narrate the ten things it is not.
 
 ## Sentences

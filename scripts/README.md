@@ -1,7 +1,7 @@
 # Scripts
 
 Research half of the same loop as `scripts/new-problem.sh` and
-`.claude/skills/` (`new-problem`, `literature`, `dent`). Stdlib
+`.claude/skills/` (`new-problem`, `literature`). Stdlib
 Python 3 only; `arxiv_fetch.py` needs `pdftotext` for PDF fallback.
 
 ```

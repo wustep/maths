@@ -40,7 +40,7 @@ and diffs. Exit 0 is the replay a stranger runs.
 **Table.** JSON or CSV in `compute/` (often `certs/`). The note
 quotes the file.
 
-**Certificate.** Verifier plus witness in `compute/`. A dent gets
+**Certificate.** Verifier plus witness in `compute/`. A new bound gets
 a second implementation in another language and a different
 algorithm. Covering radius: exhaustive C, Python, or Rust check
 of a matrix. SAT: DIMACS plus DRAT (`kissat`, `drat-trim`).
