@@ -8,21 +8,21 @@
 
 ## 2026-08-17 — fetch published graph
 
-- Parts arXiv:2010.12665: 509 vertices, 2442 edges, type M6A, \(G = L_{374} \cup \rho S_{136}\). Coordinates live in \(\mathbb{Q}[\sqrt{3},\sqrt{11}]\) after embedding the hexagonal lattice, plus a rotation \(\rho = \exp(i\arccos(7/8))\) of the small subgraph. Vertex lists promised on the Polymath site.
+- Parts arXiv:2010.12665: 509 vertices, 2442 edges, type M6A, $G = L_{374} \cup \rho S_{136}$. Coordinates live in $\mathbb{Q}[\sqrt{3},\sqrt{11}]$ after embedding the hexagonal lattice, plus a rotation $\rho = \exp(i\arccos(7/8))$ of the small subgraph. Vertex lists promised on the Polymath site.
 - Lean formalization [vasnesterov/HadwigerNelson](https://github.com/vasnesterov/HadwigerNelson) stores `vtx/509_parts.vtx` sourced from the Polymath16 fifteenth thread, and `vtx/510_heule.vtx` from [marijnheule/CNP-SAT](https://github.com/marijnheule/CNP-SAT).
 - Downloading both into `compute/`.
 - `509_parts.vtx`: 509 unique Mathematica coordinate pairs, no trailing newline. Radicals used: `√3, √5, √11, √15, √33, √55, √165, √(11/3)`, plus two nested forms `√((5/2)(7±√33))`.
 - Those nested radicals denest in the same field:
   - `√((5/2)(7+√33)) = (√15+√55)/2`
   - `√((5/2)(7−√33)) = (√55−√15)/2`
-- Field: \(\mathbb{Q}(\sqrt{3},\sqrt{5},\sqrt{11})\), degree 8. Implemented as 8-integer coefficient vectors in `compute/udg.py`. No invented coordinates.
+- Field: $\mathbb{Q}(\sqrt{3},\sqrt{5},\sqrt{11})$, degree 8. Implemented as 8-integer coefficient vectors in `compute/udg.py`. No invented coordinates.
 - Heule `510.vtx` from CNP-SAT and the Lean-repo `510_heule.vtx` are the same 510-point set.
 
 ## 2026-08-17 — exact unit-distance rebuild
 
 - `verify_graph.py` parses the published `.vtx` and tests every pair for squared distance exactly 1.
 - Parts 509: **n=509, m=2442**. Matches arXiv:2010.12665 (509 vertices, 2442 edges). 0 float-near-unit pairs that fail the exact test.
-- Split: 374 vertices in \(\mathbb{Q}(\sqrt{3},\sqrt{11})\) (no √5) and 135 with a √5 factor. That is exactly \(L_{374}\cup\rho S_{136}\) with the origin shared: \(374+136-1=509\).
+- Split: 374 vertices in $\mathbb{Q}(\sqrt{3},\sqrt{11})$ (no √5) and 135 with a √5 factor. That is exactly $L_{374}\cup\rho S_{136}$ with the origin shared: $374+136-1=509$.
 - Heule 510: **n=510, m=2504**. Matches MathWorld `HeuleGraph510` (2504 edges, 2019-08-08). Split 375 + 135.
 - Degree range on 509: min 4, max 36 (the origin). Six degree-4 vertices.
 
@@ -54,7 +54,7 @@
 
 ## 2026-08-17 — 1-for-2 swaps against the reserve
 
-A strict dent needs \(509 - k + \ell < 509\). Cheapest: drop two originals, keep one extra.
+A strict dent needs $509 - k + \ell < 509$. Cheapest: drop two originals, keep one extra.
 
 - Degree ≥ 6 extras × all 15 degree-4 pairs: **2925 SAT, 0 hits** (`double_swap_noadj.jsonl`).
 - All 677 extras of degree ≥ 4 × those 15 pairs: **10155 SAT, 0 hits** (`double_swap_deg4.jsonl`).

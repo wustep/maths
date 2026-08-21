@@ -6,15 +6,15 @@
 - Area: Ramsey theory / additive combinatorics
 - Sources: Rowley, arXiv:2107.03560 (S(7)≥1696); Bengone et al., arXiv:2607.15034 (shifted S-templates)
 - Started: 2026-08-16
-- Tonight: finite-cex — a 7-coloring of [1697] with no monochromatic \(x+y=z\)
+- Tonight: finite-cex — a 7-coloring of [1697] with no monochromatic $x+y=z$
 
 ## In general
 
-The Schur number \(S(k)\) is the largest \(n\) such that \(\{1,\dots,n\}\) can be \(k\)-colored with no monochromatic \(x+y=z\) (including \(2x=z\)). Exact values are known only through \(S(5)\). Rowley (2021) gave \(S(7)\ge 1696\) via a fully symmetric 7-coloring of [1696]. A coloring of [1697] would raise the bound by one.
+The Schur number $S(k)$ is the largest $n$ such that $\{1,\dots,n\}$ can be $k$-colored with no monochromatic $x+y=z$ (including $2x=z$). Exact values are known only through $S(5)$. Rowley (2021) gave $S(7)\ge 1696$ via a fully symmetric 7-coloring of [1696]. A coloring of [1697] would raise the bound by one.
 
 ## Precise statement
 
-A \(k\)-coloring of \([n]\) is *sum-free* if there are no \(x,y\in[n]\) (not necessarily distinct) with \(x+y\le n\) monochromatic. **Tonight:** find a 7-coloring of [1697] that is sum-free, or record a precise SAT/search residue. Do not claim a new upper bound on \(S(7)\).
+A $k$-coloring of $[n]$ is *sum-free* if there are no $x,y\in[n]$ (not necessarily distinct) with $x+y\le n$ monochromatic. **Tonight:** find a 7-coloring of [1697] that is sum-free, or record a precise SAT/search residue. Do not claim a new upper bound on $S(7)$.
 
 ## What happened (recovered)
 

@@ -2,17 +2,17 @@
 
 | quantity | value | source |
 | --- | --- | --- |
-| conjectured out-degree threshold | \(1/3\) | Caccetta–Häggkvist 1978 |
-| published unrestricted threshold (refereed) | \(0.3465\) | Hladký–Král'–Norin, *Combinatorica* 37 (2017) |
-| claimed F₆ threshold | \(0.3388\) | de Joannis de Verclos–Sereni–Volec, Mar 2014, **personal communication** |
-| two-sided threshold | \(0.343545\) | Lichiardopol 2010 (both \(\delta^+\) and \(\delta^-\)) |
-| Shen elementary | \(3-\sqrt{7}\approx 0.354249\) | Shen, JCTB 74 (1998) |
-| HHK | \(0.3532\) | Hamburger–Haxell–Kostochka, *Electron. J. Combin.* 2007 |
-| tonight, same F₄ system | \(0.34645\) | `certs/f4_certificate.json`, worst \(F=-0.12343\) |
-| F₄ SDP saturation (this system) | \(\approx 0.346439\) | `certs/sdp_bound.json` |
+| conjectured out-degree threshold | $1/3$ | Caccetta–Häggkvist 1978 |
+| published unrestricted threshold (refereed) | $0.3465$ | Hladký–Král'–Norin, *Combinatorica* 37 (2017) |
+| claimed F₆ threshold | $0.3388$ | de Joannis de Verclos–Sereni–Volec, Mar 2014, **personal communication** |
+| two-sided threshold | $0.343545$ | Lichiardopol 2010 (both $\delta^+$ and $\delta^-$) |
+| Shen elementary | $3-\sqrt{7}\approx 0.354249$ | Shen, JCTB 74 (1998) |
+| HHK | $0.3532$ | Hamburger–Haxell–Kostochka, *Electron. J. Combin.* 2007 |
+| tonight, same F₄ system | $0.34645$ | `certs/f4_certificate.json`, worst $F=-0.12343$ |
+| F₄ SDP saturation (this system) | $\approx 0.346439$ | `certs/sdp_bound.json` |
 
-Cyclic construction: out-set \(\{1,\ldots,\lfloor(n-1)/3\rfloor\}\) on \(\mathbb{Z}/n\), C₃-free.
+Cyclic construction: out-set $\{1,\ldots,\lfloor(n-1)/3\rfloor\}$ on $\mathbb{Z}/n$, C₃-free.
 
-Exact finite statement: every \(n\)-vertex oriented graph with \(\delta^+\ge\lceil n/3\rceil\) has a directed triangle.
+Exact finite statement: every $n$-vertex oriented graph with $\delta^+\ge\lceil n/3\rceil$ has a directed triangle.
 
-First \(n\) not implied by Hoàng–Reed (\(r\le 5\)) plus HKN \(0.3465\): **\(n=18\), \(\delta^+=6\)**.
+First $n$ not implied by Hoàng–Reed ($r\le 5$) plus HKN $0.3465$: **$n=18$, $\delta^+=6$**.

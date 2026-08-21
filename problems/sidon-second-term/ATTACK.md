@@ -5,30 +5,30 @@
 Fetched:
 
 - Green, *100 Open Problems* (update Dec 2025), Problem 31: improve, for infinitely
-  many \(N\), the bounds \(N^{1/2}+O(1)\le F(N)\le N^{1/2}+N^{1/4}+O(1)\). Comments
-  record Balogh–Füredi–Roy \(0.998\) (2021) and Carter–Hunter–O’Bryant \(0.98183\)
+  many $N$, the bounds $N^{1/2}+O(1)\le F(N)\le N^{1/2}+N^{1/4}+O(1)$. Comments
+  record Balogh–Füredi–Roy $0.998$ (2021) and Carter–Hunter–O’Bryant $0.98183$
   (2023/2025).
 - Erdős Problems #30, accessed 2026-08-17 (page last edited 2026-04-06): still
-  **OPEN**. The page states the \( \$1000 \) form \(h(N)=N^{1/2}+O_\varepsilon(N^\varepsilon)\)
+  **OPEN**. The page states the $ \$1000 $ form $h(N)=N^{1/2}+O_\varepsilon(N^\varepsilon)$
   and records the published upper bound
-  \(h(N)\le N^{1/2}+0.98183\,N^{1/4}+O(1)\) of Carter–Hunter–O’Bryant,
+  $h(N)\le N^{1/2}+0.98183\,N^{1/4}+O(1)$ of Carter–Hunter–O’Bryant,
   Acta Math. Hungar. 175 (2025), 108–126 (arXiv:2310.20032). Singer gives the
   matching-order lower bound. Zero claimed proofs. Forum notes an unpublished
-  AlphaEvolve refinement \(0.97633\) (Tao, 17 Feb 2026) and a tentative further
+  AlphaEvolve refinement $0.97633$ (Tao, 17 Feb 2026) and a tentative further
   argument “subject to confirmation”.
-- Tao–Davis et al. optimization-constants page \(C_{5a}\): published upper bounds
-  stop at CHO25 \(0.98183\); \(0.97633\) is listed as unpublished.
+- Tao–Davis et al. optimization-constants page $C_{5a}$: published upper bounds
+  stop at CHO25 $0.98183$; $0.97633$ is listed as unpublished.
 - Hou–Zhao, arXiv:2607.01169v2 (5 Jul 2026), *Vector-valued smoothing for finite
   Sidon sets*: claim
-  \(F(N)\le N^{1/2}+0.9435\,N^{1/4}+O(1)\)
+  $F(N)\le N^{1/2}+0.9435\,N^{1/4}+O(1)$
   via an eight-kernel rational certificate. Ancillary code:
   https://github.com/HbZhao1/sidon-vector-smoothing.
   This is **later than** the Erdős #30 page edit and **later than** the
   PROBLEM.md “best general upper bound” line. It is the current arXiv record.
 
-Published record I must beat, after the fetch: **Hou–Zhao \(0.9435\)**, not
-CHO25 \(0.98183\). Reproducing anything in \((0.9435,0.98183]\) is verification
-of a weaker constant, not a dent. Isolated small-\(N\) Sidon tables are residue.
+Published record I must beat, after the fetch: **Hou–Zhao $0.9435$**, not
+CHO25 $0.98183$. Reproducing anything in $(0.9435,0.98183]$ is verification
+of a weaker constant, not a dent. Isolated small-$N$ Sidon tables are residue.
 
 Do not claim the Erdős–Turán conjecture.
 
@@ -38,15 +38,15 @@ Three live handles, in order of plausibility:
 
 1. Re-optimize the Hou–Zhao vector-smoothing program (more kernels, finer grid,
    longer boundary, or a lemma that drops kernel symmetry) and emit an
-   independent rational certificate with \(\sqrt{ab}<0.9435\).
+   independent rational certificate with $\sqrt{ab}<0.9435$.
 2. Independently verify Hou–Zhao’s eight-kernel certificate (so the residue is
    not “we trusted a PDF”).
-3. Lower bound: Singer / Bose–Chowla give \(F(N)\ge\sqrt{N}+O(1)\) infinitely
-  often (second term \(\to 1/2\) along Singer moduli). A growing second term
-  needs either \(\omega(1)\) extra integer points on an infinite family, or an
-  unwrap with a gap \(\omega(\sqrt{q})\). Green #32 only guarantees a gap
-  \(2\sqrt{p}\) (Shakan), which still produces only \(O(1)\) after unwrap.
-  Adding a bounded number of points to Singer is still \(O(1)\). This is the
+3. Lower bound: Singer / Bose–Chowla give $F(N)\ge\sqrt{N}+O(1)$ infinitely
+  often (second term $\to 1/2$ along Singer moduli). A growing second term
+  needs either $\omega(1)$ extra integer points on an infinite family, or an
+  unwrap with a gap $\omega(\sqrt{q})$. Green #32 only guarantees a gap
+  $2\sqrt{p}$ (Shakan), which still produces only $O(1)$ after unwrap.
+  Adding a bounded number of points to Singer is still $O(1)$. This is the
   historically hard side.
 
 Starting with (2) then (1).

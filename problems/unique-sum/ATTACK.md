@@ -2,7 +2,7 @@
 
 ## 2026-08-16
 
-- Environment created. Overnight quest. written: exact \(m(p)\) for primes \(p\le 200\), table + plots +
+- Environment created. Overnight quest. written: exact $m(p)$ for primes $p\le 200$, table + plots +
   extremal shape. No attack yet.
 
 ## 2026-08-16 — q1 residue (recovered)
