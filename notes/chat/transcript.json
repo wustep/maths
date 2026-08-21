@@ -1,6 +1,11 @@
 {
   "title": "Math",
   "subtitle": "16 August 2026",
+  "through": {
+    "sha": "96faf40",
+    "url": "https://github.com/wustep/maths/commit/96faf40",
+    "note": "16 Aug 2026. Later commits only restyled this page."
+  },
   "extraction": {
     "method": "Visible chat, first occurrence only. User bubbles by [tNu]. Assistant SendMessages by text/type/attachments. Summary-replay duplicates dropped.",
     "source_lines": 1507,
