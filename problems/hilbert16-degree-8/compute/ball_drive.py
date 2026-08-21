@@ -118,7 +118,8 @@ def main():
                "ncerts": len(certs), "radius": radius,
                "rank": len(basis), "evals": summ["evals"],
                "complete": bool(summ["complete"]),
-               "distinct_schemes": len(schemes), "novel": novel,
+               "distinct_schemes": len(schemes),
+               "schemes": sorted(schemes), "novel": novel,
                "seconds": round(time.time() - t0, 1)}
         res.write(json.dumps(rec) + "\n")
         res.flush()
