@@ -84,3 +84,12 @@ for rep in json.load(open("compute/q10/classes_r11-17-c3.json"))["orbit_class_re
 PY
 python3 compute/q10/prime_orders.py 11 78 69
 echo "q10 checks OK -- every search above returned EXHAUSTED, no 49 and no dent"
+
+echo "--- addendum: automorphism groups of the known optima ---"
+gcc -O2 -o "$TMP/aut" compute/q10/aut_group.c
+"$TMP/aut" --list compute/H_r10_n50.txt        > "$TMP/aut50.txt"
+"$TMP/aut" --list compute/q9/H_r10_n51_KR.txt  > "$TMP/aut51.txt"
+tail -1 "$TMP/aut50.txt"; tail -1 "$TMP/aut51.txt"
+python3 compute/q10/verify_aut.py "$TMP/aut50.txt" "$TMP/aut51.txt"
+(cd compute/q10 && python3 prescribe_group.py "$TMP/aut50.txt" 49 --cap 20000)
+echo "addendum OK"

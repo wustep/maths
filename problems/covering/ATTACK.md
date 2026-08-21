@@ -364,3 +364,48 @@ find a $C_{23}$-invariant 92-set.
 **None of this is a lower bound.** $\ell_2(10,2)=49$ and every value of
 $\ell_2(11,2)$ below 79 remain open. The sphere bound still gives only
 $n\ge45$ at $r=10$ and $n\ge64$ at $r=11$.
+
+### Addendum, same day — the known optima are 2-group symmetric
+
+The sweep above covers odd prime orders. It was worth asking where the symmetry
+of the *existing* coverings actually lives, and the answer changes the reading
+of the whole section. [`aut_group.c`](compute/q10/aut_group.c) computes
+$\mathrm{Aut}(S)=\{g\in GL(10,2):g(S)=S\}$ by invariant-refined backtracking:
+
+| set | $\mathrm{Aut}$ | orbit sizes on $\mathbb F_2^{10}\setminus\{0\}$ |
+| --- | --- | --- |
+| certified 50-set (q1) | **128** | $1^{15},2^{56},16^{32},64^{2},128^{2}$ |
+| Kaikkonen–Rosendahl 51-set | **512** | $1^{63},8^{40},64^{10}$ |
+
+Neither is rigid, and both groups are 2-groups — precisely the case the
+prescribed-automorphism sweep does *not* reach, since $p=2$ never gives a
+useful reduction on its own. Verified independently by
+[`verify_aut.py`](compute/q10/verify_aut.py), which rebuilds each element as a
+matrix and checks invertibility, $g(S)=S$, distinctness, and closure under
+composition and inverses.
+
+Prescribing those two groups directly at $n=49$ does not work, and the reason
+is structural: the 127 vectors lying in $\mathrm{Aut}(50)$-orbits of size
+$\le2$ form exactly a **7-dimensional subspace**, so any union of them is
+trapped there and leaves $\ge896$ holes. The only union with few orbits is
+$16+16+16+1$; all **74400** of those were tested exhaustively and the best
+leaves **499** holes. $\mathrm{Aut}(51)$ is coarser still.
+
+Subgroups refine the orbits. [`subgroup_sweep.py`](compute/q10/subgroup_sweep.py)
+sampled 94 distinct subgroups of $\mathrm{Aut}(50)$ and 68 of
+$\mathrm{Aut}(51)$, enumerating unions of orbits of total size 49 up to a cap of
+60000 per subgroup:
+
+| group | $|H|$ | orbits | unions tested | best holes |
+| --- | --- | --- | --- | --- |
+| $\mathrm{Aut}(50)$ | 8 | 183 | 60000 (capped) | 197 |
+| $\mathrm{Aut}(50)$ | 16 | 131 | 60000 (capped) | **83** |
+| $\mathrm{Aut}(50)$ | 32 | 133 | 60000 (capped) | 563 |
+| $\mathrm{Aut}(51)$ | 8 | 191 | 60000 (capped) | 232 |
+
+Every row is **capped, so unknown, not negative** — the union counts at these
+orders are far past 60000 and no subgroup was decided. 83 holes is search
+residue and nothing more; it is not close to a covering in any meaningful
+sense, and it is not a bound. What the addendum does establish is the honest
+next move: order-16 2-subgroups are where an invariant 49 would have to live,
+and deciding even one of them exhaustively is the open work.
