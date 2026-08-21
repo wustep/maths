@@ -1,0 +1,387 @@
+:root {
+  --text: #1d1d1f;
+  --muted: #6e6e73;
+  --faint: #8a8a8f;
+  --border: #e4e4e0;
+  --code-bg: #f5f5f2;
+  --link: #1a4f8b;
+  --max-width: 47rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--text);
+  background: #fff;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.site-header {
+  border-bottom: 1px solid var(--border);
+}
+
+.site-header nav {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0.8rem 1.25rem;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.wordmark {
+  font-weight: 650;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.1rem;
+}
+
+.nav-links a {
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.nav-links a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 4rem;
+}
+
+.site-footer {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 1rem 1.25rem 2.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--faint);
+  font-size: 0.8125rem;
+}
+
+.site-footer a {
+  color: var(--muted);
+}
+
+/* Breadcrumbs */
+
+.crumbs {
+  font-size: 0.875rem;
+  color: var(--faint);
+  margin: 0 0 1.25rem;
+  overflow-wrap: anywhere;
+}
+
+.crumbs a {
+  color: var(--muted);
+}
+
+/* Problem doc tabs */
+
+.doc-tabs {
+  display: flex;
+  gap: 1.25rem;
+  border-bottom: 1px solid var(--border);
+  margin: 0 0 1.5rem;
+  flex-wrap: wrap;
+}
+
+.doc-tabs a {
+  padding: 0.3rem 0 0.45rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+.doc-tabs a:hover {
+  color: var(--text);
+  text-decoration: none;
+}
+
+.doc-tabs a.active {
+  color: var(--text);
+  font-weight: 550;
+  border-bottom: 2px solid var(--text);
+  margin-bottom: -1px;
+}
+
+.folder-line {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: -0.75rem 0 1.5rem;
+}
+
+/* Markdown body */
+
+.md {
+  overflow-wrap: break-word;
+}
+
+.md h1 {
+  font-size: 1.45rem;
+  line-height: 1.3;
+  font-weight: 650;
+  margin: 0.5rem 0 1rem;
+}
+
+.md h2 {
+  font-size: 1.15rem;
+  font-weight: 625;
+  margin: 2rem 0 0.6rem;
+}
+
+.md h3 {
+  font-size: 1rem;
+  font-weight: 625;
+  margin: 1.5rem 0 0.5rem;
+}
+
+.md h4,
+.md h5,
+.md h6 {
+  font-size: 0.9375rem;
+  font-weight: 625;
+  margin: 1.25rem 0 0.4rem;
+}
+
+.md p,
+.md ul,
+.md ol {
+  margin: 0 0 0.9rem;
+}
+
+.md li {
+  margin: 0.25rem 0;
+}
+
+.md a {
+  text-decoration: underline;
+  text-decoration-color: #b9c6d8;
+  text-underline-offset: 2px;
+}
+
+.md a:hover {
+  text-decoration-color: var(--link);
+}
+
+.md code {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.855em;
+  background: var(--code-bg);
+  padding: 0.12em 0.32em;
+  border-radius: 4px;
+}
+
+.md pre {
+  background: var(--code-bg);
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.5;
+  margin: 0 0 1rem;
+}
+
+.md pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.8125rem;
+}
+
+.md blockquote {
+  margin: 0 0 0.9rem;
+  padding: 0 0 0 1rem;
+  border-left: 3px solid var(--border);
+  color: var(--muted);
+}
+
+.md table {
+  display: block;
+  overflow-x: auto;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+  margin: 0 0 1rem;
+}
+
+.md th,
+.md td {
+  text-align: left;
+  vertical-align: top;
+  padding: 0.45rem 1.25rem 0.45rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.md th {
+  font-weight: 600;
+}
+
+.md img {
+  max-width: 100%;
+  height: auto;
+}
+
+.md hr {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 0.2rem 0;
+}
+
+.katex {
+  font-size: 1.06em;
+}
+
+/* Page titles outside markdown */
+
+.page-title {
+  font-size: 1.45rem;
+  line-height: 1.3;
+  font-weight: 650;
+  margin: 0.5rem 0 0.35rem;
+}
+
+.page-sub {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin: 0 0 1.5rem;
+}
+
+/* Problem index */
+
+.problem-list {
+  list-style: none;
+  margin: 1.5rem 0 0;
+  padding: 0;
+}
+
+.problem-list li {
+  padding: 0.8rem 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.problem-list .slug {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+}
+
+.problem-list .title {
+  font-weight: 550;
+}
+
+.problem-list .status {
+  display: block;
+  margin-top: 0.15rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* File listings */
+
+.listing {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9375rem;
+}
+
+.listing td {
+  padding: 0.42rem 1rem 0.42rem 0;
+  border-bottom: 1px solid var(--border);
+  vertical-align: baseline;
+}
+
+.listing td.size {
+  color: var(--faint);
+  font-size: 0.8125rem;
+  text-align: right;
+  white-space: nowrap;
+  padding-right: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.listing .name {
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.875rem;
+}
+
+.listing .gh {
+  color: var(--faint);
+}
+
+.listing .gh::after {
+  content: " ↗";
+  font-size: 0.75em;
+}
+
+/* Plain text file view */
+
+.filetext {
+  background: var(--code-bg);
+  padding: 0.85rem 1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.file-meta {
+  font-size: 0.875rem;
+  color: var(--muted);
+  margin: 0 0 1rem;
+}
+
+.frame-pdf,
+.frame-html {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+
+.frame-pdf {
+  height: 82vh;
+}
+
+.frame-html {
+  height: 85vh;
+}
+
+@media (max-width: 640px) {
+  main,
+  .site-header nav,
+  .site-footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .frame-pdf {
+    height: 70vh;
+  }
+}
