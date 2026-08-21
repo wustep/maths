@@ -142,3 +142,106 @@ degree-8 real schemes. The search re-found 902 of the 2,367 and
 added none; the sign space alone is \(2^{45}\) per triangulation and
 the triangulation space is astronomically larger, so absence of a hit
 is not evidence of absence. Outcome: residue.
+
+---
+
+# Walkthrough, second session — the maximal stratum
+
+## 7. What was missing the first time
+
+The first session read arXiv:2602.06888 v3 for its *numbers* — 2,367,
+38, 12, 39, and Theorem 21 — and then went searching in
+\(\{\pm1\}^{45}\). Section 3 of the same paper says that search is the
+wrong space.
+
+Their Theorem 13 is Haas' theorem: a T-curve is **maximal** if and only
+if some collection 𝔖 of compatible Harnack splits is *valid* for it,
+meaning the triangulation refines the zone decomposition and the signs
+are Harnack on each zone with neighbouring zones differing. And §3.5:
+\(\mathcal{C}(\mathfrak{S})\) does not depend on which unimodular
+triangulation refines 𝔖.
+
+So the M-curves are indexed by a finite combinatorial gadget. All the
+annealer was ever doing was blindly hunting for members of a stratum
+that has an exact description.
+
+## 8. The click: twists commute, so the stratum is a linear subspace
+
+Their surgical twist (Lemma 14) is stated as
+\(\sigma \mapsto \epsilon + \sigma\circ s_{ij}\) on \(Z^+\), which reads
+like an involution you have to apply in some order. But the extension
+rule (4) gives \(\sigma(s_{ab}(x,y)) = \sigma(x,y) + ax + by\), so the
+twist of a split \(S\) is nothing but
+
+\[\sigma \;\longmapsto\; \sigma + \mathbb{1}_{Z^+_S}\cdot(\epsilon_S + i_Sx + j_Sy) \pmod 2 .\]
+
+Adding a *fixed vector* \(\delta_S \in \mathbb{F}_2^{45}\). Twists
+therefore commute, order is irrelevant, and a whole collection acts by
+\(\sum_{S\in\mathfrak{S}}\delta_S\). Combined with Haas' theorem: on a
+fixed triangulation \(\mathcal{T}\), **every** maximal sign
+distribution lies in
+
+\[\eta \;+\; \operatorname{span}_{\mathbb{F}_2}\{\delta_S : S\text{ a Harnack split all of whose edges are edges of }\mathcal{T}\}.\]
+
+Ranks for the 184 census triangulations are 6–26. A rank-18 subspace
+is 262,144 sign vectors — a few minutes. Sweeping it is an
+**exhaustive classification of the M-curves that triangulation
+supports**, which no amount of annealing can deliver.
+
+The measured payoff is blunt. Annealing: \(2.1\times10^6\) sign
+vectors, 22 ovals reached twice. Subspace sweep, first pilot: 20,480
+evaluations, **20,480 of them 22-oval M-curves**.
+
+## 9. Three checks before believing any of it
+
+1. \(\eta(x,y)=(x+1)(y+1)\) on a random unimodular refinement gives
+   ⟨18 ⊔ 1⟨3⟩⟩ — Proposition 10, and it does.
+2. Each of the **1,254** Harnack splits of \(T_8\), applied alone,
+   must give an M-curve. All 1,254 give 22 ovals; the six schemes
+   produced are ⟨18⊔1⟨3⟩⟩, ⟨17⊔1⟨1⟩⊔1⟨2⟩⟩, ⟨13⊔1⟨1⟩⊔1⟨6⟩⟩,
+   ⟨14⊔1⟨7⟩⟩, ⟨17⊔1⟨2⊔1⟨1⟩⟩⟩, ⟨10⊔1⟨11⟩⟩ — all bold in their Table 1.
+3. The real test: take the 38 published 22-oval `.pcom` certificates
+   and *solve* \(\eta+\sum\delta_S=\sigma\) over \(\mathbb{F}_2\) (up
+   to the eight equivalent sign functions). **All 38 decompose**, with
+   collections of size 3–15. Their data and this implementation of
+   Haas' theorem agree everywhere they can.
+
+## 10. Named false starts, second session
+
+- **Refine first, ask about regularity later.** The first refinement
+  routine took a maximal crossing-free set of primitive segments
+  containing the split edges — a perfectly good *unimodular*
+  triangulation, and Haas' theorem needs nothing more. Then twelve
+  attempts to find a lifting for one, via Agmon–Motzkin–Schoenberg
+  relaxation on the local-convexity system, returned nothing. The
+  relaxation was fine: run on the standard triangulation it recovers
+  \(h=i^2+ij+j^2\) with slack exactly 1. Random unimodular
+  triangulations of \(T_8\) are simply almost never regular, and only
+  regular ones are algebraic curves. Fix: stop refining and start from
+  triangulations that are *already* certified — the census's own 184,
+  and `gen_triang`'s certified random ones — and read the splits off
+  them. Every witness in `runs3/` is then regular by construction.
+- **Enumerating collections directly.** 1,254 splits, 381,957
+  compatible pairs, maximal compatible collections of size 15–24: the
+  clique space is hopeless and sampling it (mode `haas`) was the worst
+  performer in the session, ~6 distinct schemes per hour. The subspace
+  sweep on a fixed certified triangulation dominates it, because the
+  triangulation does the compatibility bookkeeping for free — two
+  edges of a triangulation never cross.
+
+## 11. Second-session residue
+
+- **A dent.** ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩, 21 ovals, one sign flip at
+  \((6,1)\) from their own `(5v1(5)v1(10)).pcom` — certified convex on
+  their integer `MIN_WEIGHTS`, scheme recomputed from scratch, and
+  absent both from our replayed census and from their archive's file
+  names. Their §5.3 lower bound 2,367 becomes ≥ 2,368.
+  (`compute/certs/new_schemes.json`, `compute/verify_new.py`.)
+- **No M-scheme dent.** Nothing outside their 38 has appeared, and
+  neither open \((19,3)\) deep nest. Not an obstruction: the sweeps
+  cover a prefix of the 184 census triangulations, and the census
+  triangulations are exactly the ones their own search already
+  favoured, so re-finding their 38 is the expected outcome. What is
+  new is that the answer per triangulation is now *exhaustive* rather
+  than sampled, and the tool to ask the question of any triangulation
+  now exists.

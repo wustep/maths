@@ -1,2 +1,7 @@
 runs/
+runs2/
+runs3/
 data/
+__pycache__/
+*.pkl
+span_tasks.json
