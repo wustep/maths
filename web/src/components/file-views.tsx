@@ -12,8 +12,15 @@ import {
 } from "@/lib/repo";
 import { renderMarkdown } from "@/lib/markdown";
 
-export function DirView({ dir }: { dir: RepoDir }) {
+export async function DirView({ dir }: { dir: RepoDir }) {
   const problemSlug = getProblemSlugForDir(dir.path);
+  // Render the folder's README under the listing, GitHub-style. Root is
+  // skipped because the home page already is the README.
+  const readme = dir.path === "" ? undefined : dir.files.find((f) => f.name === "README.md");
+  const readmeHtml =
+    readme && readme.kind === "markdown"
+      ? await renderMarkdown(readRepoFile(readme.path), readme.path)
+      : null;
   const parent = dir.path.includes("/")
     ? `/files/${path.posix.dirname(dir.path)}/`
     : dir.path === ""
@@ -65,6 +72,12 @@ export function DirView({ dir }: { dir: RepoDir }) {
       <p className="file-meta" style={{ marginTop: "1rem" }}>
         <a href={githubTreeUrl(dir.path)}>This folder on GitHub</a>
       </p>
+      {readmeHtml && (
+        <>
+          <hr className="dir-readme-rule" />
+          <article className="md" dangerouslySetInnerHTML={{ __html: readmeHtml }} />
+        </>
+      )}
     </>
   );
 }

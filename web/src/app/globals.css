@@ -340,6 +340,12 @@ main {
   font-size: 0.75em;
 }
 
+.dir-readme-rule {
+  border: 0;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0;
+}
+
 /* Plain text file view */
 
 .filetext {
