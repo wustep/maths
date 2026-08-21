@@ -50,7 +50,7 @@ finite maximum, written so that a second machine can check the integer.
 
 - **Conjugated / extremal norms.** A natural next tightening. SciPy was
   not in the environment; the exact Frobenius maximum already beat the
-  published number, so this was left as residue.
+  published number, so this was left as an incomplete search.
 
 ## 2. The useful failure
 
@@ -151,11 +151,11 @@ positive. The majorant is still exponential; the sequence still looks
 linear. The gulf CS complained about is smaller by $0.011$ and remains
 a gulf.
 
-## 5. Computer residue
+## 5. Computer search
 
 - OEIS A002858 b-file, 10 000 terms, last entry $132788$: matched.
 - Step census on 20 000 terms: Eggleton twice, Type I twice, then only
-  “other”. Residue, not a lemma.
+  “other”. Incomplete search, not a lemma.
 - Steinerberger cosine on 20 000 terms: four published exceptions, mean
   cosine $-0.7934$, packet $(c_\ell)_{\ell\le 8}$ as in his Table 1.
   Finite spectral fact; not a limiting measure.

@@ -8,7 +8,7 @@ The refereed unrestricted threshold is Hladký–Král'–Norin 0.3465 (*Combina
 
 Hoàng–Reed (r ≤ 5) plus HKN leave a first open order: **n=18, δ⁺=6**, because 0.3465·18 = 6.237 > 6. (The 0.3388 figure cited from 2014 is a personal communication, F₆, no public certificate; even that number still has 0.3388·18 > 6.)
 
-A dent tonight is either a checkable certificate with some c < 0.3465, or a DRAT-verified proof that no 6-outregular C₃-free oriented graph on 18 vertices exists. Isolated random-graph statistics are not a dent.
+A new bound tonight is either a checkable certificate with some c < 0.3465, or a DRAT-verified proof that no 6-outregular C₃-free oriented graph on 18 vertices exists. Isolated random-graph statistics are not a new bound.
 
 ## 1. Named false starts
 
@@ -66,7 +66,7 @@ The F₄ certificate is checked as follows. The 8×8 slices Mₖ of AC, the 14×
 
 is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eigenvalue. Hence no density vector r ≥ 0, ‖r‖₁=1 can lie in R(c), hence no homomorphism of the flag algebra of triangle-free oriented graphs has δα ≥ 0.34645.
 
-## 5. Computer residue
+## 5. Computer search
 
 - F₄ matrices and type census: `certs/flags4.json`.
 - F₄ certificate: `certs/f4_certificate.json`. Replay: `verify_certificate.py`.
@@ -74,7 +74,7 @@ is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eig
 - F₅ types (317) and lift: `certs/flags5.pkl`, `optimize_f5.json`. No better c.
 - Small-n SAT: `certs/small_n_census.json`.
 - DRAT-verified UNSAT: `certs/ch-{12-4,15-5,16-6,17-6}-sb.{cnf,drat}`.
-- n=18 d=6: `certs/ch-18-6-sb.cnf`, `certs/n18_residue.json`. Kissat 4.0.4 still UNKNOWN at 20 min / 10.3M conflicts / 302 remaining variables. Residue.
+- n=18 d=6: `certs/ch-18-6-sb.cnf`, `certs/n18_residue.json`. Kissat 4.0.4 still UNKNOWN at 20 min / 10.3M conflicts / 302 remaining variables. Incomplete search.
 - Circulant-plus-one hunt: `certs/hunt_plus_one.json`. No C₃-free (r+1)-regular example on n≤24.
 
 ## 6. What is proved vs still open
@@ -88,4 +88,4 @@ is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eig
 
 - The conjecture (c = 1/3).
 - Any improvement of the 0.3388 personal communication.
-- The exact statement at n=18, δ⁺=6 — the first order not implied by Hoàng–Reed or HKN — unless the running SAT instance finishes UNSAT. That is the residue.
+- The exact statement at n=18, δ⁺=6 — the first order not implied by Hoàng–Reed or HKN — unless the running SAT instance finishes UNSAT. That is the leftover.

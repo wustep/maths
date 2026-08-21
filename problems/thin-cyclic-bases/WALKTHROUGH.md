@@ -75,7 +75,7 @@ stop treating “small $n$ below $\sqrt{8/3}$” as progress and to
 name the published infinite-family constant correctly:
 Bevan–Erskine–Lewis, Corollary 18,
 $\liminf \mathrm{SS}(n,2)/\sqrt n\le\sqrt{8/3}$, not Jia–Shen’s
-$\sqrt3+\varepsilon$ (which is the *all-$n$* bound). A dent
+$\sqrt3+\varepsilon$ (which is the *all-$n$* bound). A new bound
 tonight is a family with a strictly smaller liminf, or a proof that
 the liminf is $\sqrt2$.
 
@@ -102,7 +102,7 @@ CRT writes $A$ as a subset of $\mathbb Z/n\mathbb Z$. Independently,
 `compute/verify.py` recomputes the cyclic sumset from the listed
 residues and checks $|A+A|=n$.
 
-## 5. Computer residue
+## 5. Computer search
 
 Replayable:
 

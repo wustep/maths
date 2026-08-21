@@ -28,4 +28,4 @@ a certified obstruction that 367 is maximum. Emit the set and a verifier
 that checks pairwise circular distance $>1$ in some coordinate.
 
 Do not claim a new $\Theta(C_7)$ unless the 5th-root actually beats
-$3.258805$. A 368-set in dimension 5 is already a finite dent.
+$3.258805$. A 368-set in dimension 5 is already a finite new bound.
