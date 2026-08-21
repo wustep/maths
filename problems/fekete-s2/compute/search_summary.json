@@ -1,0 +1,18 @@
+{
+  "_note": "Independent verifier energies after deterministic multi-start descent. Published = Ridgway–Cheviakov 2018 Table 3 first (global) entry. A last-digit undercut of an 8-decimal print is rounding, not a beat.",
+  "beat": false,
+  "convention": "E = sum_{i<j} log(1/|xi-xj|)",
+  "rows": [
+    {"N": 7, "E": -8.182477864444888, "published": -8.1824779, "delta": 3.56e-08, "best_seed": "known", "independent_recovery": true},
+    {"N": 8, "E": -10.42801778146046, "published": -10.4280178, "delta": 1.85e-08, "best_seed": "antiprism3", "independent_recovery": true},
+    {"N": 9, "E": -12.88775272575926, "published": -12.8877527, "delta": -2.58e-08, "best_seed": "rathbun", "independent_recovery": true, "rounding_only": true},
+    {"N": 10, "E": -15.56312338902202, "published": -15.5631234, "delta": 1.10e-08, "best_seed": "rathbun", "independent_recovery": true},
+    {"N": 14, "E": -28.40781300924246, "published": -28.407813, "delta": -9.24e-09, "best_seed": "rathbun", "independent_recovery": true, "rounding_only": true},
+    {"N": 19, "E": -49.19989156578652, "published": -49.1998916, "delta": 3.42e-08, "best_seed": "rathbun", "independent_recovery": "near (rng within 1e-7)"},
+    {"N": 24, "E": -75.21398478862852, "published": -75.2139848, "delta": 1.14e-08, "best_seed": "rathbun", "independent_recovery": true},
+    {"N": 32, "E": -127.37886761478025, "published": -127.3788676, "delta": -1.48e-08, "best_seed": "rathbun", "independent_recovery": true, "rounding_only": true},
+    {"N": 33, "E": -134.74782082433342, "published": -134.7478208, "delta": -2.43e-08, "best_seed": "rathbun", "independent_recovery": false, "note": "rng within ~1e-6; paper's hard case"},
+    {"N": 46, "E": -249.45584790085707, "published": -249.4558479, "delta": -8.57e-10, "best_seed": "rathbun", "independent_recovery": true, "note": "spiral and several rng recover the 2018 new global; many rng hit published local -249.454650"},
+    {"N": 48, "E": -270.11794995928267, "published": -270.11795, "delta": 4.07e-08, "best_seed": "rathbun", "independent_recovery": true}
+  ]
+}
