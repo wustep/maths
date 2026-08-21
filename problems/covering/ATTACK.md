@@ -129,3 +129,139 @@ Hard wrap. No shorter radius-2 matrix. Paper lengths still \(\ell_2(11,2)\le 79\
 - Compiled SA at \(n=78\) did not find a covering. Residues: 16 holes from a Gabidulin puncture; 37 holes from a 78-subset of a longer union-greedy set. See [`compute/odd_r_residue_2026-08-20.json`](compute/odd_r_residue_2026-08-20.json).
 - \(r=13\) 1-deletions of the 159-set leave 32–128 holes; no \(n=158\) run finished before wrap.
 
+
+## 2026-08-21 — q9 (Claude Opus 5, `fable/covering-n49-traj`): trajectory of the $r=10$ record, and exact quotient-block replacement
+
+**No 49-covering. No dent.** Everything below is a recovered artifact, a
+verified structural fact about the published solutions, or certified search
+residue. `result/` was read only; no q2/q4 search (SA, guided, lifted, k-swap,
+invariant orbit DFS) was rerun. New material is in [`compute/q9/`](compute/q9/).
+
+### History first
+
+- **The Kaikkonen–Rosendahl 51-set is recovered.** RESEARCH.md had recorded the
+  explicit 51-column listing as never obtained. It is reprinted as display
+  (4.9) of arXiv:2511.02542v1 (their Thm 4.3, citing Kaikkonen–Rosendahl,
+  *New covering codes from an ADS-like construction*, IEEE Trans. Inform.
+  Theory **49**(7) 1809–1812, 2003, p. 1812) as 41 hexadecimal columns with
+  $H_{KR}=[I_{10}\ M_{KR}]$. Transcribed in
+  [`compute/q9/build_kr51.py`](compute/q9/build_kr51.py), rebuilt as
+  [`compute/q9/H_r10_n51_KR.txt`](compute/q9/H_r10_n51_KR.txt): rank 10, 51
+  distinct nonzero columns, exhaustive pair-XOR **1024/1024**.
+- **The trajectory, re-derived rather than copied**
+  ([`compute/q9/trajectory.py`](compute/q9/trajectory.py)): 53 (1992,
+  $\phi(10)=27\cdot2^{t-4}-1$, Davydov–Drozhzhina-Labinskaya / CHLL
+  Thm 5.4.27(i)) → 51 (2003, Kaikkonen–Rosendahl, $-2$) → 51 (Nov 2025, still
+  the Table 5.1 entry of arXiv:2511.02542, and their lift seed) → 50 (q1,
+  2026-08-16, $-1$) → 49 open. Densities $179/128$, $1327/1024$, $319/256$,
+  $613/512$. Volume bound only gives $n\ge45$.
+- **53 is a lift; 51 and 50 are not.** $\phi$ doubles $n+1$ every two units of
+  $r$, so its $r=10$ entry is literally the $r=8$ entry carried up,
+  $2(26+1)-1=53$. Against that,
+  [`compute/q9/profiles.py`](compute/q9/profiles.py) sweeps all **174251**
+  two-dimensional quotients $q:\mathbb F_2^{10}\to\mathbb F_2^2$ of both the
+  51-set and the 50-set: **no** quotient of either has its kernel block
+  $S\cap\ker q$ covering $\ker q$. Both are quotient-flat — kernel-block size
+  stays in $3..27$ (51-set) and $3..26$ (50-set) around a mean of $n/4$.
+  So the "improve the $r=8$ seed and re-lift" reading of the table died in 2003
+  and the 49 is not going to come from it.
+
+### The construction family that follows from that
+
+Fix a quotient with kernel $V$ and coset representatives $t_{00}=0,t_{01},t_{10},
+t_{11}=t_{01}+t_{10}$ (this choice kills the twist). Pulling the four blocks
+$(A;B,C,D)$ back into $V$, covering radius $\le2$ is *equivalent* to
+
+$$
+\begin{aligned}
+(00)&\ \{0\}\cup A\cup\Delta(A)\cup\Delta(B)\cup\Delta(C)\cup\Delta(D)=V,\\
+(01)&\ (A\cup\{0\})+B\ \cup\ C+D=V,\qquad (10),(11)\ \text{the label-permuted twins},
+\end{aligned}
+$$
+
+with $\Delta(X)=\{x+x':x\ne x'\}$.
+[`compute/q9/verify_blocks.py`](compute/q9/verify_blocks.py) checks this
+equivalence in both directions against a direct syndrome sweep on the 51-set,
+the 50-set and both 7-hole residues, matching the exact hole *sets*, on 160
+quotient instances.
+
+Freeze $A,B,C$: every condition on $D$ becomes a hitting-set constraint
+($u\notin A^{+}+B\Rightarrow D\cap(u+C)\ne\emptyset$, and twins) plus one pair
+constraint ($h\in\Delta(D)$ for each syndrome the other three blocks miss). So
+*"is there **any** block of size $\le k$ finishing $A,B,C$?"* is exactly
+decidable. [`compute/q9/block_solve.c`](compute/q9/block_solve.c) decides it by
+constraint-directed DFS: sibling exclusion on the hitting branches, where the
+branches really are "$d\in D$" and partition the space; deliberately no
+exclusion on the pair branches, where they overlap and exclusion would be
+unsound; counting prunes on all four families.
+
+**This is not a $k$-swap.** A block carries up to 18 columns, all re-chosen at
+once and exactly. `--shrink` asks for a block one column shorter (turning the
+certified 50-set into a candidate 49); `--resolve` asks for one the same size
+(turning a 7-hole 49-residue into a candidate covering).
+
+### Controls
+
+- Encoding, positive: `--resolve` on the certified 50-set returns a valid 50 on
+  the first instance, re-verified 1024/1024 by an independent flat sweep.
+- Reduction, both directions: 160 quotient instances, exact hole sets agree.
+- **Planted, 7/7.** Erase an entire block of the certified 50-set, replace it
+  with uniformly random kernel elements, ask the solver to rebuild one. All
+  seven recovered, at block sizes 8, 8, 10, 11, 12, 13, 14, each re-verified
+  1024/1024. A needle at depth **14** is found; q4's exhaustive prover reached
+  depth 5.
+- Independent oracle: `--selftest k` cross-checks the DFS verdict against
+  brute-force enumeration of every candidate block of size $\le k$, scored only
+  by the flat covering test, sharing no code with the constraint encoding.
+
+### Sweeps (node cap 20000 per instance, `--maxblock 18`)
+
+Each sweep covers all 174251 quotients $\times$ 3 non-kernel blocks = 522753
+instances. `skipped` = block wider than `--maxblock`; `capped` = node cap hit,
+which is **unknown, not a negative**; `decided` = search tree exhausted, an
+exact exclusion.
+
+| sweep | instances | decided | capped (unknown) | skipped | result |
+| --- | --- | --- | --- | --- | --- |
+| `--shrink` on the certified 50-set (asks for 49) | 509468 | 220118 | 289350 | 13285 | no completion |
+| `--resolve` on `best_sa_config` (7 holes) | 514224 | 156264 | 357960 | 8529 | no completion |
+| `--resolve` on `best_lifted_config` (7 holes) | 514160 | 164382 | 349778 | 8593 | no completion |
+| `--shrink` on the KR 51-set (asks for 50) | 507792 | 159279 | 348513 | 14961 | no completion |
+
+A second, deeper pass restricted to narrow blocks (`--maxblock 12`, node cap
+200000) leaves almost nothing undecided:
+
+| sweep | instances | decided | capped (unknown) | skipped | result |
+| --- | --- | --- | --- | --- | --- |
+| `--shrink` on the certified 50-set, blocks $\le 12$ | 279034 | **271127 (97.2%)** | 7907 | 243719 | no completion |
+
+That row is the strongest single statement of the quest: for every one of the
+174251 quotients and every non-kernel block of at most 12 columns, replacing
+that whole block by any shorter block is decided — and 97.2% of the time the
+answer is exhaustively no. Not one instance produced a 49.
+
+**Calibration, and a limit of the move class.** `--shrink` on the 2003 51-set
+does *not* find a 50 either. The 51→50 step that q1 actually made by annealing
+is therefore not a single-quotient-block shrink (at least not among the 159279
+decided instances). The block move is far larger than a $k$-swap — planted
+needles at depth 14 are found — but it is not a superset of what annealing did,
+and that is worth knowing before anyone reads a negative here as evidence about
+49.
+
+So: **220118 exact decisions** say the certified 50-set cannot be shortened by
+replacing any one of those quotient blocks with a shorter block, and 320646
+exact decisions say neither 7-hole optimum can be repaired by replacing any one
+of those blocks. Between them that is over half a million simultaneous
+rearrangements of up to 18 columns, ruled out one at a time — and roughly 57%
+of the instances were left undecided by the node cap. **None of this is a lower
+bound.** $\ell_2(10,2)=49$ remains open.
+
+### Replay
+
+    cd problems/covering
+    python3 compute/q9/build_kr51.py compute/q9/H_r10_n51_KR.txt
+    python3 compute/q9/trajectory.py
+    python3 compute/q9/profiles.py compute/q9/H_r10_n51_KR.txt compute/H_r10_n50.txt
+    python3 compute/q9/verify_blocks.py compute/H_r10_n50.txt 40
+    gcc -O2 -o /tmp/bs compute/q9/block_solve.c
+    /tmp/bs --input compute/H_r10_n50.txt --shrink --maxblock 18 --nodes 20000 --shard 0/4

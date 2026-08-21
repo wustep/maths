@@ -113,7 +113,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 
 | Folder | Status |
 | --- | --- |
-| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. $n=49$ still 7 holes. |
+| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. |
 | [brocard](problems/brocard) | Lean lemmas for modular / prime-power split. Conjecture open. |
 | [unique-sum](problems/unique-sum) | Rematched OEIS A398173 through $p=47$. |
 | [three-in-line](problems/three-in-line) | $n=71$ SAT UNKNOWN. |

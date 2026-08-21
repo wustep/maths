@@ -110,7 +110,24 @@ Node cap per instance is reported as `capped`; a capped instance is *unknown*,
 not a negative.  Blocks larger than `--maxblock` are reported as `skipped`.
 Nothing is silently dropped.
 
-## 5. Replay
+## 5. Sweep results (2026-08-21)
+
+All numbers over all 174251 quotients x 3 non-kernel blocks = 522753 instances.
+`capped` = node cap hit, which is unknown and not a negative.
+
+| sweep | cap | maxblock | instances | decided | capped | skipped | result |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| `--shrink` certified 50-set | 20000 | 18 | 509468 | 220118 | 289350 | 13285 | no 49 |
+| `--resolve` best_sa (7 holes) | 20000 | 18 | 514224 | 156264 | 357960 | 8529 | no 49 |
+| `--resolve` best_lifted (7 holes) | 20000 | 18 | 514160 | 164382 | 349778 | 8593 | no 49 |
+| `--shrink` KR 51-set | 20000 | 18 | 507792 | 159279 | 348513 | 14961 | no 50 |
+| `--shrink` certified 50-set | 200000 | 12 | 279034 | 271127 | 7907 | 243719 | no 49 |
+
+The last row is the sharp one: narrow blocks are decided 97.2% of the time.
+The KR row is calibration -- the historical 51 -> 50 step is not a single-block
+shrink, so this move class does not contain what annealing did in q1.
+
+## 6. Replay
 
     gcc -O2 -o block_solve block_solve.c
     python3 build_kr51.py H_r10_n51_KR.txt
