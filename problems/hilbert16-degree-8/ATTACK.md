@@ -470,7 +470,7 @@ depth-3 nests among the 38 have exactly \(b\in\{2,6,10,14\}\). Both
 open schemes have \(b=2\), so the congruence permits them; it is not the
 obstruction.
 
-## 2026-08-21 — a ninth: ⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, bound ≥ 2,376
+## 2026-08-21 — radius-6 balls on the 38 M-certificates: bound ≥ 2,379
 
 Radius-6 balls around all 38 of the paper's 22-oval M-certificates
 (`compute/ball_deep.py`, 9,531,040 sign vectors per seed) turned up a
@@ -496,3 +496,22 @@ the census is thin around the 22-oval certificates whose scheme is a
 deep nest, and the thinness is in the (M−1)- and (M−2)-curves next to
 them, not in the M-curves. The remaining 35 M-certificates are still
 running.
+
+**Three more, from a second M-certificate.** The same sweep, on
+`deg8/o22-p11-n11/(8v1(1)v1(3)v1(7)).pcom`, produced a whole family:
+
+⟨5 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ (19 ovals),
+⟨6 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ (20 ovals),
+⟨7 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ (21 ovals).
+
+The census has the M-curve ⟨8 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ of this family and
+none of the three below it — the same shape of gap as the deep nests:
+the paper's search finds the M-curve and misses its immediate
+non-maximal neighbours.
+
+`cd compute && python3 verify_new.py` → **12/12**, and
+`python3 check_rokhlin.py` puts every (M−1)-curve among them inside the
+Gudkov–Krakhnov–Kharlamov congruence.
+
+**The census lower bound is now ≥ 2,379.** 7 of the 38 M-certificate
+balls are finished; the other 31 are running.
