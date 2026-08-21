@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: finite bound certified; asymptotic problem open
+- Status: $\ell_2(10,2)\le 50$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Table 5.1); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -92,6 +92,20 @@ quotient-block replacement solver rules out, exhaustively, 271127 of the 279034
 single-block shrinks of the 50-set with block width $\le 12$, and finds no 49
 in four full sweeps. Search residue, not a lower bound; $\ell_2(10,2)\le 49$
 remains open.
+
+
+## Certified residue (quest q10, 2026-08-21)
+
+No new dent. Records unchanged: $\ell_2(10,2)\le 50$, $\ell_2(11,2)\le 79$.
+Prescribed automorphisms: if a 49-set exists, its automorphism group in
+$GL(10,2)$ is a $\{2,3,5\}$-group. Order 7 is settled at $r=10$ for every
+fixed-space dimension (both module types); orders 11, 17, 31, 73, 127 are
+killed by the same arithmetic plus the touched-layer bound. At $r=11$ no
+invariant set below the record 79 exists for orders 11, 17 or 23. The
+certified 50-set and the Kaikkonen–Rosendahl 51-set both have 2-group
+automorphism groups ($|\mathrm{Aut}|=128$ and $512$), which is the case the
+odd-order sweep does not reach. Material in [`compute/q10/`](compute/q10/).
+None of this is a lower bound.
 
 ## Certified residue (quest q11, 2026-08-21)
 
