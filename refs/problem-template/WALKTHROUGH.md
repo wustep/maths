@@ -8,5 +8,5 @@ Empty beats mean the quest is not done.
 2. The useful failure —
 3. The click —
 4. The argument —
-5. Computer residue —
+5. Computer search —
 6. Proven vs still open —

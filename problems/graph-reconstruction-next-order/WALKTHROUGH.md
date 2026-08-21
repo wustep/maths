@@ -18,7 +18,7 @@ vertex of degree ≥6**.
 That window is not a one-quest enumeration. `geng -d4 -D6 14 0/100` was
 still running after eight minutes. The missing degree of freedom was not
 “run McKay’s parent-child loop on all of n=14”. It was a *recognisable
-subclass* of the residue whose membership is a full-deck invariant and
+subclass* of the leftover whose membership is a full-deck invariant and
 whose list fits on this machine.
 
 ## 1. Named false starts
@@ -119,10 +119,10 @@ same list. Unique decks on the list are reconstructibility.
 8. Same construction with support 4 (a complementary C4): 127,456,264
    labelled overlays from the connected 4-regulars, **41,538,279**
    unlabelled graphs, all of sequence [4]^10[6]^4. Hashing in
-   progress; uniqueness is residue until `certs/bireg46_s4_unique.txt`
+   progress; uniqueness is incomplete until `certs/bireg46_s4_unique.txt`
    exists.
 
-## 5. Computer residue
+## 5. Computer search
 
 - `certs/bireg46_s3.g6` — 8,571,676 graphs from connected 4-regular
   parents; `certs/bireg46_s3_unique.txt`; `certs/sample_bireg46_s3.txt`
@@ -133,12 +133,12 @@ same list. Unique decks on the list are reconstructibility.
 - `certs/bireg46_s3_degseq.txt`, `certs/bireg46_s3all_degseq.txt`.
 - `certs/bireg46_s4.g6` — 41,538,279 graphs, sequence 4^10 6^4, from
   connected 4-regular parents. Complete parents and uniqueness are the
-  next residue.
+  next leftover.
 - `certs/n10_unique.txt` — McKay n=10 replay.
 - `certs/split14_count.txt` — 67,997,750 split graphs on 14 vertices,
   not uniqueness-tested.
 - The (4,6) *interval* (degrees 4,5,6 all allowed) and all other n=14
-  residue pairs are untouched.
+  leftover pairs are untouched.
 
 ## 6. What is proved vs still open
 

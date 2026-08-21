@@ -4,7 +4,7 @@
 
 Tuza's conjecture is $\tau\le 2\nu$ for every graph. The published sparsity line stops at Puleo's $\mathrm{mad}<7$ (so $\Delta\le 6$) and Gupta's eleven-day-old preprint for $\Delta\le 7$. Gupta's last step is a pair reduction: in a 7-regular minimal counterexample every link is a connected non-WKE 7-vertex graph, hence every vertex is incident with an edge of triangle-codegree 4, 5 or 6, and those three local graphs are reducible. He asks whether $\mathrm{mad}<8$ is next (Question 12.1), and whether any 7-regular graph is tight (Question 12.3). Split graphs remain open except for threshold graphs and $\delta\ge 3n/5$.
 
-A dent tonight is a new Puleo exchange with certificates, a certified new tight example outside Tuza's $K_4/K_5$-block family, or a documented obstruction to the obvious next reduction. Isolated $(\nu,\tau)$ tables are residue.
+A new bound tonight is a new Puleo exchange with certificates, a certified new tight example outside Tuza's $K_4/K_5$-block family, or a documented obstruction to the obvious next reduction. Isolated $(\nu,\tau)$ tables are an incomplete search.
 
 ## 1. Named false starts
 
@@ -71,9 +71,9 @@ X = all 21 edges of C, plus uv.
 
 Every pair among the nine vertices lies in exactly one member of $S$. Certificate key `F~~~w` in `certs/c7_8reg_verified.json`.
 
-## 5. Computer residue
+## 5. Computer search
 
-- Labelled WKE n=7: `certs/wke_labelled_n7.json`. Replay of Gupta, not a dent.
+- Labelled WKE n=7: `certs/wke_labelled_n7.json`. Replay of Gupta, not a new bound.
 - Unlabelled WKE n=5..8: `certs/wke_unlabelled.json`. n=8 is new.
 - n=8 $\Delta=4$ list, two WKE checkers: `certs/n8_exceptions.json`.
 - Codegree-7 search log and verified certificates: `certs/reduce_c7_8reg.json`, `certs/c7_8reg_verified.json` (1,044 triples).

@@ -14,7 +14,7 @@ For the classical Ulam sequence beginning (1,2), it is unknown whether its natur
 
 ## Tonight
 
-A certified finite advance: a new exact prefix, a covering/automaton certificate, or a documented spectral fact with a verifier. A plot of the first N terms is residue. Fetch Green #7, OEIS A002858, and Steinerberger before searching. Do not claim the density exists unless you prove it.
+A certified finite advance: a new exact prefix, a covering/automaton certificate, or a documented spectral fact with a verifier. A plot of the first N terms is an incomplete search. Fetch Green #7, OEIS A002858, and Steinerberger before searching. Do not claim the density exists unless you prove it.
 
 ## Result (2026-08-17)
 
