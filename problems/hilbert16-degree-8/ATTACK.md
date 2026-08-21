@@ -442,9 +442,10 @@ census result above, the position is now:
 That is a much larger silence than before and it is still silence.
 None of it is an obstruction: the paper's own Theorem 21 rules out four
 of the six open (3,19) schemes as T-curves, and these two are precisely
-the ones it does not rule out. Total for this session: **704 million**
-sign distributions, every witness decoded on the exact Python complex,
-every claim re-checkable from the certificates in `compute/certs/`.
+the ones it does not rule out. Running total at this point in the
+session: **704 million** sign distributions, every witness decoded on
+the exact Python complex, every claim re-checkable from the
+certificates in `compute/certs/`.
 
 ### An independent check that does not look at the geometry
 
@@ -642,14 +643,20 @@ Certificate: `compute/certs/census_balls_r4.json`.
 
 ### Session total
 
+`compute/report.py` prints this live. Counting *evaluations performed*
+(the balls are nested — a radius-7 ball contains the radius-6 and
+radius-4 balls of the same seed — so this is not a count of distinct
+sign vectors):
+
 | family | units | sign distributions | outside the 2,367 |
 | --- | --- | --- | --- |
 | every census triangulation, whole maximal stratum | 184 | 230,501,440 | 0 |
-| regular triangulations outside the census, same | 4,809 | 655,237,120 | 0 |
+| regular triangulations outside the census, same | 4,871 | 708,918,336 | 0 |
 | radius-4 balls, all 2,367 certificates | 2,367 seeds | 388,711,107 | 16 |
 | radius-6 balls, all 38 M-certificates | 38 | 362,179,520 | 17 |
 | radius-7 balls, the 7 productive certificates | 7 | 384,374,620 | 17 |
-| **total** | | **≈ 1.78 billion** | **17 distinct** |
+| radius-6 balls, (M−1)-certificates (running) | 24 of 78 | 228,744,960 | 0 |
+| **total evaluations** | | **> 2.3 billion** | **17 distinct** |
 
 Every one of the seventeen is certified by `verify_new.py` on the exact
 `Fraction` pipeline, and every 22-oval scheme anywhere in the above
