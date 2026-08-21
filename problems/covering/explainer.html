@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Explainer for the [50,40]_2 radius-2 covering code. Written by Claude Opus and Fable 5, 2026-08-16. Methods expanded 2026-08-20. -->
+<!-- Explainer for the [50,40]_2 radius-2 covering code. Written by Claude Opus and Fable 5, 2026-08-16. Rewritten as a math note 2026-08-21. -->
 <html lang="en">
 <head>
 <meta charset="utf-8">
@@ -175,7 +175,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 <header>
   <div class="eyebrow">Covering codes · 10 rows · radius 2</div>
   <h1>50 columns<br>cover 1024<br>syndromes</h1>
-  <p class="lede">The best published answer is 51 columns. It has not moved since 2003. This page explains the problem from the start, shows the 50-column matrix, and shows why one column matters much more than it looks.</p>
+  <p class="lede">The best published length is 51 columns, unchanged since 2003. This page defines the problem, presents a 50-column matrix, and explains why the entry at redundancy 10 controls an infinite family.</p>
 </header>
 
 
@@ -192,7 +192,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     <p>The distance between two bit strings is the number of positions where they differ. For example, 10110 and 10011 differ in positions 3 and 4, so their distance is 2.</p>
   </div>
 
-  <p>Codes get designed for two opposite jobs.</p>
+  <p>A code is designed for one of two opposite jobs.</p>
 
   <p>The first job is <b>error correction</b>. Here you want the codewords far apart. If every pair of codewords has distance 5 or more, you can repair up to 2 flipped bits without any doubt. This is the packing problem. It asks you to pack many balls into the space without overlap.</p>
 
@@ -203,7 +203,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     <p>The covering radius of a code is the largest distance from any string to its nearest codeword. A covering radius of 2 means this: you can reach a codeword from any string in at most 2 bit flips.</p>
   </div>
 
-  <p>Covering codes are useful because they let you round. Take any string, move to the nearest codeword, and store the codeword instead. You lose at most 2 bits of accuracy. That idea shows up in data compression, in steganography, and in the football pool problem, which asks how few betting slips guarantee a near-win.</p>
+  <p>Covering codes are useful because they let you round. Take any string, move to the nearest codeword, and store the codeword instead. You lose at most 2 bits of accuracy. That idea appears in data compression, in steganography, and in the football pool problem, which asks how few betting slips guarantee a near-win.</p>
 
   <p>The interesting question is cost. Codewords are cheap to store when there are few of them, but few codewords leave big gaps. So we ask a minimum question. <b>How short can a code be and still have covering radius 2?</b></p>
 </section>
@@ -262,7 +262,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 
 <section>
   <div class="tag">Part 3 · The search</div>
-  <h2>Counting says 45. Reality says 51.</h2>
+  <h2>A counting bound gives 45. The published record is 51.</h2>
 
   <p>Start with a count. Take <code>n</code> columns. Then you get one empty sum, <code>n</code> single columns, and <code>n(n−1)/2</code> pairs. Together they give</p>
 
@@ -271,9 +271,9 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     <small>You need at least this many representations to have any chance of covering 1024 syndromes.</small>
   </div>
 
-  <p>Solve it and you get <code>n ≥ 45</code>. This is the sphere-covering bound. It is a lower bound, and nobody has ever found a code that reaches it here.</p>
+  <p>Solve it and you get <code>n ≥ 45</code>. This is the sphere-covering bound. No known code at <code>r = 10</code> reaches it.</p>
 
-  <p>The count is optimistic because it assumes no two pairs collide. Real column sets collide constantly. In the 50-column matrix on this page, the 1225 pairs produce only <b>986 distinct</b> results. That means 239 pairs land on a value another pair already reached. Every collision is wasted reach.</p>
+  <p>The count is optimistic because it assumes no two pairs collide. Real column sets collide constantly. In the 50-column matrix on this page, the 1225 pairs produce only <b>986 distinct</b> results. That means 239 pairs land on a value another pair already reached. Each collision wastes one representation.</p>
 
   <p>So the true answer sits above 45, and finding it is hard. Kaikkonen and Rosendahl published a 51-column matrix in 2003. That has stayed the shortest published answer for over twenty years. A search run in 2026 found a 50-column matrix. The map below is that matrix.</p>
 
@@ -305,44 +305,42 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
     </div>
   </div>
 
-  <p>The map is mostly dark, and that is the point. Of the 973 syndromes that need a pair, <b>821 have exactly one pair</b> that reaches them. The matrix has almost no spare capacity.</p>
+  <p>The map is mostly dark. Of the 973 syndromes that need a pair, <b>821 have exactly one pair</b> that reaches them. The matrix has almost no spare capacity.</p>
 
-  <p>You can test this directly. Remove any single column and the map breaks. The gentlest possible choice still leaves <b>9 syndromes with nothing reaching them</b>. Try the button and see.</p>
+  <p>You can test this directly. Remove any single column and the map breaks. The least damaging choice still leaves <b>9 syndromes with nothing reaching them</b>. Try the button and see.</p>
 
-  <div class="note">A set that breaks when you remove any one element is called <b>minimal</b>. In the geometric language of this field, these 50 columns form a minimal 1-saturating set in the projective space PG(9,2). Nobody can shorten this matrix by simply deleting something.</div>
+  <div class="note">A set that breaks when you remove any one element is called <b>minimal</b>. In the geometric language of this field, these 50 columns form a minimal 1-saturating set in the projective space PG(9,2). No deletion shortens this matrix.</div>
 
   <h3>How the search ran</h3>
 
-  <p>The starting point was the published 51-column matrix. Try each of its 51 single deletions in turn. The gentlest one, the column the searcher stores as the integer 419, leaves 11 of the 1024 syndromes unreached. That 50-column set, 11 holes open, was the seed.</p>
+  <p>The start was the published 51-column matrix. Among its 51 single deletions, removing the column stored as the integer 419 leaves 11 of the 1024 syndromes unreached, the fewest possible. That 50-column set was the seed.</p>
 
   <p>The search keeps exactly 50 distinct nonzero columns at all times and scores a position by counting the syndromes that nothing reaches. A table of 1024 counters makes the score cheap to maintain. Swapping one column only touches its own counter and the 49 pair sums that involve it, about 100 updates instead of recounting all 1276 sums.</p>
 
-  <p>Most moves aim at a hole. Pick an unreached syndrome <code>g</code>, then offer <code>g</code> itself as a new column, or <code>g</code> XOR <code>s</code> for a current column <code>s</code>, so the hole closes the moment the swap lands. One random column gets deleted in exchange. Simulated annealing decides acceptance. Improvements always pass. Backward steps pass with a probability that shrinks as the temperature falls from 3.5 to 0.05 across each cycle of 80,000 proposals, and at the end of a cycle the search reloads the best position seen so far.</p>
+  <p>Most moves aim at a hole. Pick an unreached syndrome <code>g</code>, then offer <code>g</code> itself as a new column, or <code>g</code> XOR <code>s</code> for a current column <code>s</code>, so the swap covers the hole at once. One uniformly chosen column is deleted in exchange. Simulated annealing decides acceptance. Improvements always pass. Uphill steps pass with a probability that shrinks as the temperature falls from 3.5 to 0.05 across each cycle of 80,000 proposals. At the end of a cycle the search resets to the best state seen so far.</p>
 
-  <p>The random numbers come from a fixed xorshift64 seed, so the whole run replays exactly. Run 0 hit zero holes at proposal 3,600,281, a few hundred proposals after its 45th reload. The final matrix keeps 35 of the 50 seed columns. The committed script <code>compute/search_radius2.py</code> replays the run.</p>
+  <p>The random numbers come from a fixed xorshift64 seed, so the whole run replays exactly. Run 0 reached zero holes at proposal 3,600,281, a few hundred proposals after its 45th reset. The final matrix keeps 35 of the 50 seed columns. The committed script <code>compute/search_radius2.py</code> replays the run.</p>
 
-  <p>The same machinery failed everywhere prettier. It missed 3 of 256 syndromes at redundancy 8, missed 8 of 512 at redundancy 9, and stalled at 7 of 1024 with 49 columns. Exact solvers returned no verdict either way. Those numbers describe where the search stopped, not what is impossible.</p>
+  <p>The same method failed on three nearby gaps. It missed 3 of 256 syndromes at redundancy 8. At redundancy 9, every single deletion from the published 39-column set left at least 8 of 512 unreached. With 49 columns at redundancy 10 it stalled at 7 of 1024. Exact solvers returned no verdict either way. Those numbers say where the search stopped, not what is impossible.</p>
 </section>
 
 
 <section>
   <div class="tag">Part 4 · The seed</div>
-  <h2>One column, multiplied</h2>
+  <h2>Why one column matters</h2>
 
-  <p>Going from 51 to 50 looks like a small win. It is not, and the reason lies in how the published tables get built.</p>
+  <p>The step from 51 to 50 looks small. Its effect is larger, because the published table is built by iteration.</p>
 
-  <p>Davydov, Marcugini and Pambianco published the current best bounds in November 2025. Their tables list a value for every redundancy <code>r</code> up to 64. They do not find each value separately. Instead they use a construction they call QM₂² that grows a short code into a long one.</p>
+  <p>Davydov, Marcugini and Pambianco published the current best bounds in November 2025. Their tables list a value for every redundancy <code>r</code> up to 64. They do not find each value separately. A construction they call QM₂² produces a long code from a short one.</p>
 
   <div class="math">
     n<sub>new</sub> = 2<sup>m</sup>(n<sub>old</sub> + 1) &minus; 1 &nbsp;&nbsp;&nbsp; r<sub>new</sub> = r<sub>old</sub> + 2m
     <small>Apply this repeatedly and one short code produces an infinite family of longer ones.</small>
   </div>
 
-  <p>Every entry in their radius-2 table grows from the same starting point. That starting point is the 51-column matrix at <code>r = 10</code>. Their own proof calls the structure of that matrix "very important for the next iterative process."</p>
+  <p>Their radius-2 family iterates from a single starting point, the 51-column matrix at <code>r = 10</code>. Their own proof calls the structure of that matrix "very important for the next iterative process."</p>
 
-  <p>So the value at <code>r = 10</code> is a multiplier, not just a table entry. Improve it by one column and you improve every entry that grows from it. You also improve the limit that the whole family approaches.</p>
-
-  <div class="note">The automated search that found this matrix wrote <b>"do not claim f(2)"</b> in its own notes and then stopped. The caution was correct for an unsupervised program. But it treated the table as a list of numbers to beat. It never asked what the table was made of.</div>
+  <p>So the entry at <code>r = 10</code> controls the family. Improve it by one column and every entry produced from it improves. The limit that the family approaches improves as well.</p>
 </section>
 
 
@@ -361,11 +359,11 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 
   <p>The published 51-column matrix needs 11 blocks. The 50-column matrix accepts <b>10</b>. That is both smaller and safely under the 16 that the first growth step requires.</p>
 
-  <p>Finding the split is a graph coloring problem wearing a disguise. The 821 syndromes with exactly one pair force those two columns into different blocks, which produces a graph with 821 edges. The other 152 syndromes are looser. Each one only needs at least one of its several pairs to be split.</p>
+  <p>Finding the split is a constrained graph coloring problem. The 821 syndromes with exactly one pair force those two columns into different blocks, which produces a graph with 821 edges. The other 152 syndromes are less constrained. Each one only needs one of its 2 to 6 pairs split across blocks.</p>
 
-  <p>The split was found by a follow-up session the same day, and the code that found it was not kept. What the repository keeps is the split as data plus two independent checkers, in two languages, that re-derive the columns from the matrix text and test all 1024 syndromes. The block labels are the only thing read from the data file. Nobody has shown that 10 blocks is the fewest possible.</p>
+  <p>A separate search on the same day found the split. That search code is not in the repository. The repository keeps the split itself as data, plus two independent verifiers, in two languages, that re-derive the columns from the matrix text and verify all 1024 syndromes. The block labels are the only thing read from the data file. Nobody has shown that 10 blocks is the fewest possible.</p>
 
-  <p>The matrix also has a third property that the later growth steps need. Three of its columns XOR to zero, and those three sit in three different blocks. The matrix has ten such triples.</p>
+  <p>The matrix also has a third property that later growth steps need. It has exactly ten triples of columns that XOR to zero. Exactly one of them has its three columns in three different blocks.</p>
 </section>
 
 
@@ -373,7 +371,7 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
   <div class="tag">Part 6 · Growth</div>
   <h2>What the new seed produces</h2>
 
-  <p>Apply the published construction to the 50-column matrix. Take <code>m = 4</code>, then <code>m = 5</code>. Then check the results by brute force across every syndrome, with no sampling.</p>
+  <p>Apply the published construction to the 50-column matrix. Take <code>m = 4</code>, then <code>m = 5</code>. Then verify the results by enumerating every syndrome, with no sampling.</p>
 
   <table>
     <thead><tr><th>redundancy</th><th>new length</th><th>published</th><th>reps per syndrome</th><th>checked</th></tr></thead>
@@ -408,28 +406,26 @@ footer{padding:44px 0 0; font-family:"IBM Plex Mono",monospace; font-size:11.5px
 
   <ul>
     <li><b>50 is not proven best.</b> The counting bound only says <code>&#8467;₂(10,2) ≥ 45</code>. Five columns of room remain unexplored.</li>
-    <li><b>The failed search at 49 proves nothing.</b> Every run stopped with 7 syndromes uncovered. Later work measured how stuck that is: no exchange of up to 5 columns repairs the best near-miss, checked exhaustively, and there are two genuinely different near-misses that no linear map carries onto each other. That describes the search landscape. It says nothing about whether 49 columns exist.</li>
-    <li><b>Nobody has confirmed priority yet.</b> The published table says "best as far as the authors know". Somebody must check the older workshop proceedings and the field bibliography before anyone claims a record.</li>
-    <li><b>The far end of the family is weaker.</b> The steps at <code>m = 4</code> and <code>m = 5</code> got checked exhaustively. Later steps rely on a bound from the paper instead of a directly computed block split. A referee will ask about this first.</li>
+    <li><b>The failed search at 49 proves nothing.</b> Every run stopped with 7 syndromes uncovered. Later work measured the depth of that residue. No exchange of up to 5 columns repairs the best near-miss, an exhaustive claim. Two genuinely different near-misses exist that no linear map carries onto each other. That describes the search landscape. It says nothing about whether 49 columns suffice.</li>
+    <li><b>Nobody has confirmed priority yet.</b> The published table says "best as far as the authors know". Somebody must search the older workshop proceedings and the field bibliography before anyone claims a record.</li>
+    <li><b>The far end of the family is weaker.</b> The steps at <code>m = 4</code> and <code>m = 5</code> were verified exhaustively. Later steps rely on a bound from the paper instead of a computed block split. A referee will ask about this step first.</li>
     <li><b>The big question stays open.</b> The limit of the best possible densities as redundancy grows has a name: Green's <code>f(2)</code>. Nobody knows its value. It might be as low as 1. This work moves an upper limit on it and nothing else.</li>
     <li><b>Nearby cases did not fall.</b> The same search failed at redundancy 8 and 9. It missed 3 and 8 syndromes there.</li>
   </ul>
 
-  <h3>The part worth keeping</h3>
+  <h3>Search and proof are separate</h3>
 
-  <p>Search and proof are separate jobs here, and that separation is what makes the result safe.</p>
+  <p>The search only had to succeed once. The proof does not use it. The claim is a finite statement about 500 committed bits.</p>
 
-  <p>A random search only had to succeed once. It did not have to explain itself. Everything after that point is a certificate: a table of 500 bits that anyone can check by hand or by machine in under a minute. The check does not trust the search, the searcher, or the story.</p>
-
-  <p>That is a good property to look for when you point an automated search at an open problem. Ask whether a success would be cheap to verify. Here it is.</p>
+  <p>Two independent programs verify that statement in about two seconds. They read the matrix from text and do not trust the search or its author.</p>
 
   <footer>
     Grok Bot (4.6), Claude Opus 5, Claude Fable 5, GPT Sol 5.6<br>
     <span style="font-size:9px;letter-spacing:.04em">with instructions from Stephen Wu</span><br>
     A simulated annealing search found the matrix during an unsupervised run on 16 August 2026. It started from the Kaikkonen&ndash;Rosendahl matrix.<br>
     One encoding note: this page and the repo write each column LSB-first, so bit i of the integer is row i+1. The paper's hex listing of the Kaikkonen&ndash;Rosendahl matrix is MSB-first, so rebuilding it from the paper means reversing the ten bits of every column.<br>
-    The block split, the growth steps and every figure on this page got derived and checked afterward. This page computes all of its numbers in your browser from the 50 columns.<br>
-    To re-check everything offline: <code>problems/covering/result/run_all.sh</code> runs 74 assertions in about two seconds, and <code>compute/search_radius2.py --search</code> replays the discovery run itself.<br>
+    The block split, the growth steps, and every figure on this page were derived and verified afterward. This page computes all of its numbers in your browser from the 50 columns.<br>
+    To verify everything offline: <code>problems/covering/result/run_all.sh</code> runs 74 assertions in about two seconds, and <code>compute/search_radius2.py --search</code> replays the discovery run itself.<br>
     Reference: Davydov, Marcugini and Pambianco, <em>New upper bounds for binary linear covering codes</em>, arXiv:2511.02542, Table 5.1.
   </footer>
 </section>
