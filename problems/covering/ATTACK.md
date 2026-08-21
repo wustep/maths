@@ -265,3 +265,102 @@ bound.** $\ell_2(10,2)=49$ remains open.
     python3 compute/q9/verify_blocks.py compute/H_r10_n50.txt 40
     gcc -O2 -o /tmp/bs compute/q9/block_solve.c
     /tmp/bs --input compute/H_r10_n50.txt --shrink --maxblock 18 --nodes 20000 --shard 0/4
+
+## 2026-08-21 — q10 (Claude Opus 5, `fable/covering-n49-traj`): prescribed automorphisms
+
+**No 49-covering. No dent. Records unchanged: $\ell_2(10,2)\le50$,
+$\ell_2(11,2)\le79$.** What is new is a construction family that does not
+start from a known covering, and the exhaustive exclusions it buys. Material
+in [`compute/q10/`](compute/q10/); replay with
+[`compute/q10/run_q10_checks.sh`](compute/q10/run_q10_checks.sh).
+
+### The family
+
+q9 replaced one quotient block of the certified 50-set at a time. That move,
+however large, is still anchored to the 50. This one is not anchored to
+anything: fix $\sigma\in GL(r,2)$ of odd prime order $p$ and search only
+$\sigma$-invariant sets. Such a set is $k$ full $\sigma$-orbits of size $p$
+plus $m$ of the $2^c-1$ nonzero fixed vectors ($c=\dim\ker(\sigma-1)$), so
+
+$$n = pk+m,\qquad 0\le m\le 2^c-1,$$
+
+and the search collapses from $\binom{2^r-1}{n}$ to
+$\binom{\#\mathrm{orbits}}{k}\binom{2^c-1}{m}$. Covering radius $\le2$ becomes
+a condition on orbit sums, decided exactly by
+[`orbit_search_g.c`](compute/q10/orbit_search_g.c) (fixed space of dimension
+$\le1$) and [`orbit_search_f.c`](compute/q10/orbit_search_f.c) (general).
+Conjugating by the centraliser of $\sigma$ sends solutions to solutions, so one
+representative per centraliser class suffices; a *subgroup* of the centraliser
+only refines the classes, so the reduction stays sound, and the classes are
+computed from the commutant algebra rather than assumed.
+
+### $r=10$, $n=49$: order 7 is completely settled
+
+$49=7\cdot7$, so with a 1-dimensional fixed space $S$ is exactly 7 of the 146
+orbits — the lone fixed vector $f$ cannot be used, since 7 does not divide 48.
+$f$ must then be covered by a sum, and $a+b=f$ forces $b=a+f$, so $S$ contains
+a **partner pair** $\{O,O+f\}$. The centraliser reduces the 73 partner pairs to
+**1** class for module type $M_1^3\oplus\mathbf 1$ and **3** classes for
+$M_1^2\oplus M_2\oplus\mathbf 1$ — the only two types up to conjugacy, since
+$\sigma\mapsto\sigma^3$ swaps the two 3-dimensional irreducibles and generates
+the same group. All four exhausted.
+
+$c=4$ (144 orbits, 15 fixed vectors) allows $(k,m)\in\{(7,0),(6,7),(5,14)\}$
+for both module types. $(7,0)$ and $(5,14)$ ran with one orbit forced per
+centraliser class; $(6,7)$ ran the other way round — `fixed_classes.py`
+collapses the $\binom{15}{7}=6435$ fixed subsets to **6** centraliser classes,
+and the orbit part was left completely free, $\binom{144}{6}=11{,}143{,}364{,}232$
+per class. All 12 exhausted.
+
+$c=7$ needs no search: the touched-layer bound $1+k+\binom k2+km\ge2^c$ fails
+for every $(k,m)$ with $7k+m=49$.
+
+So no 49-column radius-2 matrix of rank 10 has an automorphism of order 7. The
+same two bounds plus the arithmetic condition kill orders 11, 17, 31, 73 and
+127 outright ([`prime_orders.py`](compute/q10/prime_orders.py)), and the odd
+primes dividing $|GL(10,2)|$ are exactly $3,5,7,11,17,31,73,127$. Hence:
+
+> **If a 49-set exists, its automorphism group in $GL(10,2)$ is a
+> $\{2,3,5\}$-group.**
+
+Odd-order symmetry that survives: $p=3$ with $c\in\{2,4,6\}$ and $p=5$ with
+$c=6$, whose exhaustive costs are $\ge4.8\times10^{20}$ — out of reach here,
+and honestly unknown, not negative. $p=2$ (unipotent $\sigma$) was not
+attempted.
+
+### $r=11$: the second target, also negative
+
+$\ell_2(11,2)\le79$ has more slack than 49 does, so the same machinery was
+aimed below it.
+
+| $\sigma$ | $n$ | decomposition | verdict |
+| --- | --- | --- | --- |
+| order 11, $c=1$ | 78 | 7 orbits $+\ f$ | exhausted, $2\times\binom{185}{6}=102{,}603{,}129{,}720$ |
+| order 11, $c=1$ | 77, 67, 66 | 7 / 6+f / 6 orbits | exhausted |
+| order 23, $c=0$ | 69 | 3 orbits | exhausted, $\binom{88}{2}=3828$ |
+| order 17, $c=3$ | 68–75 | 4 orbits $+\ m\le7$ fixed | exhausted, all eight |
+| order 7 $c=8$, order 31 $c=6$ | 78, 69 | — | layer bound, no search |
+
+Order 23 is the prettiest case and the biggest disappointment: it acts freely
+with 89 orbits of size 23, so an invariant set has size a multiple of 23, and
+$69=23\cdot3$ sits ten below the record. It is not there. The same search does
+find a $C_{23}$-invariant 92-set.
+
+### Controls
+
+- **Encoding.** Orbit masks reproduce the flat syndrome sweep hole for hole on
+  hundreds of random selections, for every $\sigma$ used.
+- **Positive, four times.** The searches find $\sigma$-invariant coverings at
+  $n=63$ ($r=10$) and $n=92,100,111$ ($r=11$), each re-verified $1024/1024$ or
+  $2048/2048$ by an independent flat sweep. The negatives are not the family
+  being empty.
+- **Pruning.** $r=10$, $n=49$ rerun with `--noprune` visits all
+  $\binom{144}{5}=481{,}008{,}528$ subsets per class — full enumeration — and
+  returns the same verdict.
+- **Two implementations.** `orbit_search_g.c` and `orbit_search_f.c` share no
+  search code and agree on every case both can run; the $c=4$, $(5,14)$
+  exclusions are also proved by hand from the layer-fill bound.
+
+**None of this is a lower bound.** $\ell_2(10,2)=49$ and every value of
+$\ell_2(11,2)$ below 79 remain open. The sphere bound still gives only
+$n\ge45$ at $r=10$ and $n\ge64$ at $r=11$.
