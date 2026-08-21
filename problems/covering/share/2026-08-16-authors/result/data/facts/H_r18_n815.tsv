@@ -1,0 +1,16 @@
+columns_distinct	1
+columns_nonzero	1
+density_decimal	1.268466949462890625
+density_den	262144
+density_num	332521
+forced_split	232946
+mult_hist	1:233569,2:24705,3:960,4:768,5:768,8:135,16:45,17:624,18:30,19:16,24:15,34:1,49:304,50:96,51:48,64:45,72:15
+n	815
+name	H_r18_n815
+pair_hist	1:232946,2:24641,3:960,4:768,5:768,8:120,16:45,17:622,18:30,19:16,24:15,34:1,49:224,50:80,51:32,64:45,72:15
+pair_needed	261328
+r	18
+radius_exactly_2	1
+rank	18
+syndromes_covered	262144
+syndromes_total	262144
