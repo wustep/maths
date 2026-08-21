@@ -137,7 +137,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Incomplete. Inclusion $$r_{13}(1/14\mathbb Z)\subseteq r_{13}(1/p\mathbb Z)$$ replayed; two p=191 witnesses. LRC(13) open. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No dent. Smale 7 open. |
-| [hilbert16-degree-8](problems/hilbert16-degree-8) | Residue. Independent verifier replays all 2,367 degree-8 patchwork certificates of arXiv:2602.06888v3; Theorem 21 rules out four of the six open M-schemes as T-curves. Search: 902 distinct schemes, all already in the census. No new scheme. Hilbert 16(a) open. |
+| [hilbert16-degree-8](problems/hilbert16-degree-8) | **Dent.** A certified T-curve realizes $\langle 4\sqcup 1\langle 5\rangle\sqcup 1\langle 10\rangle\rangle$, which is missing from the 2,367 degree-8 real schemes of arXiv:2602.06888v3 (their $\S$5.3 lower bound), so $\ge 2{,}368$. All 2,367 published certificates replayed. Haas zone decompositions implemented and checked against all 38 published M-certificates; exhaustive sweeps of the maximal stratum re-find their 38 M-schemes and add none. Hilbert 16(a) degree 8 open. |
 
 Each problem folder:
 
@@ -191,7 +191,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
-| Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5 | 2026-08-21 |
+| Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21 |
 
 ## Lean
 

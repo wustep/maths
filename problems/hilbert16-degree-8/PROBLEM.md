@@ -2,10 +2,12 @@
 
 - Slug: `hilbert16-degree-8`
 - List: Hilbert 16 (first part), Smale 13 (1998)
-- Solver: Claude Fable (Claude Code)
+- Solver: Claude Fable, then Claude Opus 5 (Claude Code)
 - Status: open. Degree 8 is the first degree where the isotopy
   classification is unfinished. Six M-schemes are algebraically
-  undecided; the non-maximal census is a lower bound.
+  undecided; the non-maximal census is a lower bound, and we moved
+  that lower bound by one (dent C below). Hilbert 16(a) itself is
+  untouched.
 - Area: Real algebraic geometry / topology of real plane curves
 - Sources: Orevkov GAFA 12 (2002); Itenberg–Viro (1996); Viro
   arXiv:math/0611382; Geiselmann–Joswig–Kastner–Mundinger–Pokutta–
@@ -67,18 +69,39 @@ That is a verified finite improvement of a documented lower bound.
 Replaying known constructions is not a dent. Search residue is not an
 obstruction. SAT/annealing failure to find a scheme is not a bound.
 
+
 ## Outcome (2026-08-21)
 
-Census replay: all 2,367 certificates of arXiv:2602.06888 v3 pass an
+**Replay.** All 2,367 certificates of arXiv:2602.06888 v3 pass an
 exact from-scratch verifier (convexity certified in rational
 arithmetic, isotopy type recomputed via a double-cover argument), and
 the 22-oval subset reproduces exactly the 38 bold rows of their
 Table 1.
 
-Search: 8 workers, 595 certified triangulations, 2,112,073 sign
-evaluations, 902 distinct schemes, all 902 re-verified exactly and
-all 902 already in the census. No scheme outside the 2,367; neither
-open \((p,n)=(19,3)\) deep nest appeared. **Residue, no dent.**
-Counts in ATTACK.md and `compute/found_schemes.json`.
+**Dent (C).** ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ (21 ovals) is realizable as a
+T-curve and is **not** among their 2,367. The witness is one sign
+flip, at \((6,1)\), from their own certificate
+`deg8/o22-p07-n15/(5v1(5)v1(10)).pcom`, so it uses their triangulation
+and their integer `MIN_WEIGHTS`; those weights are re-certified
+exactly, and the scheme is recomputed from scratch. Their §5.3 states
+2,367 as a lower bound ("the search is not exhaustive"); it is now
+**≥ 2,368**. Certificate `compute/certs/new_schemes.json`, checked by
+`compute/verify_new.py`.
+
+**Haas zone decompositions (new machinery).** `compute/haas.py`
+implements Harnack splits, zones, compatibility and surgical twists
+for \(T_8\) — 1,254 splits, 381,957 compatible pairs. Because a twist
+adds a fixed \(\mathbb{F}_2\) vector, every maximal sign distribution
+on a fixed triangulation lies in an affine subspace of dimension
+\(\le 26\), which `compute/zone_search.py` sweeps exhaustively. Checks:
+each of the 1,254 splits alone gives a 22-oval curve, and all **38**
+published 22-oval certificates decompose into explicit split
+collections (`compute/certs/mcert_collections.json`, rebuilt by
+`compute/prep.py`).
+
+**No M-scheme dent.** The sweeps re-find the paper's 38 M-schemes and
+nothing outside them; neither open \((19,3)\) deep nest appeared.
+Exhaustive per triangulation, not exhaustive over triangulations — so
+this is residue, not an obstruction. Counts in ATTACK.md.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh`

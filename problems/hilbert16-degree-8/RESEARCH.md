@@ -114,3 +114,67 @@ downloads where noted). Forum posts were not used.
 - Orevkov's degree-8 papers are not on arXiv; author PDFs used.
 - Web searches for any 2003–2026 resolution of one of the six:
   nothing found.
+
+## Haas' theorem (second session, 2026-08-21)
+
+The whole of `compute/haas.py` and `compute/zone_search.py` rests on
+Section 3 of arXiv:2602.06888 v3, which was re-fetched and read in
+full for this session (raw HTML download,
+<https://arxiv.org/html/2602.06888v3>; the first session had only used
+the abstract-level claims and Theorem 21):
+
+- **Theorem 13 (their statement of Haas)**: a T-curve
+  \(\mathcal{C}(\mathcal{T},\sigma)\) is *maximal* if and only if some
+  collection \(\mathfrak{S}\) of compatible Harnack splits has a zone
+  decomposition valid for \((\mathcal{T},\sigma)\). No regularity of
+  \(\mathcal{T}\) is assumed.
+- **Section 3.2**: a Harnack split is a path of one or two primitive
+  edges joining exactly two boundary points of \(d\cdot\Delta_2\), with
+  vertex parities alternating between two distinct classes
+  \(\alpha,\beta\in\mathbb{F}_2^2\); simple = one edge, double = two
+  edges through an interior *apex*. \(Z^+\) is the zone containing
+  fewer corners of \(d\cdot\Delta_2\); \(Z^-\) is the root zone.
+  Compatible = no shared edge and simultaneously realizable in one
+  triangulation.
+- **Section 3.4, Lemma 14**: the *surgical twist* of a split replaces
+  \(\sigma\) by \(\epsilon+\sigma\circ s_{ij}\) on \(Z^+\), with
+  \(\epsilon=\alpha_1\beta_2+\alpha_2\beta_1\),
+  \(i=\alpha_2+\beta_2\), \(j=\alpha_1+\beta_1\). Since
+  \(\sigma(s_{ab}(x,y))=\sigma(x,y)+ax+by\), a twist just *adds* the
+  affine \(\mathbb{F}_2\) function \(\epsilon+ix+jy\) on \(Z^+\) —
+  so twists commute and a collection acts by a **sum of fixed
+  vectors**. That is the observation the search is built on.
+- **Section 3.5**: "The notation \(\mathcal{C}(\mathfrak{S})\) is
+  independent of \(\mathcal{T}\), as every unimodular triangulation
+  that refines \(\mathfrak{S}\) will do." So the real scheme of a
+  maximal T-curve is a function of the split collection alone.
+- **Theorem 17 (Haas)**: even splits do not change \((p,n)\).
+  **Lemma 18 / Remarks 19–20 / Theorem 21**: seven odd splits matter in
+  degree 8, each of effect 4 except one of effect 8; nested zones
+  cancel; hence \((p,n)\in\{(19,3),(15,7),(11,11),(7,15)\}\).
+- **Section 4**: families. Prop 25 onion curves (honeycomb + constant
+  signs, maximal nesting depth, maximal only for \(d\le3\));
+  **Prop 31 nested box curves** — the bow tie triangulation
+  \(\mathcal{B}_d\) is induced by the nested double
+  \(\{(0,0),(1,1)\}\)-splits with vertices
+  \(\{(i+1,d-i-1),(i,i),(d-i+1,i-1)\}\), and for \(d=8\) gives
+  \(\langle17\sqcup1\langle2\sqcup1\langle1\rangle\rangle\rangle\),
+  i.e. the \(a=17\) member of the deep-nest family; Prop 32 arrowhead
+  curves give \(\langle17\sqcup1\langle1\rangle\sqcup1\langle2\rangle\rangle\)
+  and the Wiman scheme \(\langle16\sqcup3\langle1\rangle\rangle\).
+- **Section 5.3 / Question 39**: the 39 undecided M-schemes are stated
+  as open; the authors do **not** run a zone-decomposition enumeration
+  in degree 8 — Theorem 21 is used only for the \((p,n)\) obstruction.
+  That gap is what this session attacks.
+
+Cited but **not opened** (no copy reachable): B. Haas, *Real algebraic
+curves and combinatorial constructions*, 1997 (their [18]) — every use
+of "Haas' theorem" here is via the statement in arXiv:2602.06888 v3
+Theorem 13, which is what we implement and test. Also not opened:
+B. Bertrand, E. Brugallé, A. Renaudineau, *Haas' theorem revisited*,
+Épijournal Géom. Algébrique 1 (2017) Art. 922,
+DOI 10.46298/epiga.2017.volume1.2030 (their [4], an independent
+formulation of the same theorem); I. Itenberg, *Counter-examples to
+Ragsdale conjecture and T-curves*, Contemp. Math. 182 (1995) 55–72
+(their [25], source of the Harnack sign distribution
+\(\eta(x,y)=(x+1)(y+1)\) used here).

@@ -138,3 +138,174 @@ replace, not the compute budget.
 Artifacts: `compute/found_schemes.json` (committed).
 `compute/runs/*.jsonl` (5,435 records) and `compute/data/` stay local
 per the runbook. Re-run: `sh compute/run_all.sh`.
+
+## 2026-08-21 (second session) — finishing the ball phase
+
+Fable's ball/beam/window tasks (`compute/nest_search.py`,
+`compute/make_tasks.py`) were left half-run. Resumed rather than
+redone: 24 task files, each an exhaustive Hamming-ball enumeration
+(radius 4 around eleven key deep-nest certificates, radius 3 around
+every other seed) on the census's *own* certified triangulations, with
+every distinct scheme diffed against the replayed 2,367.
+
+That is where the dent came from.
+
+## 2026-08-21 — dent (C): eight T-curves outside the published 2,367
+
+**Eight real schemes are realizable as T-curves and are not among the
+2,367 of arXiv:2602.06888 v3.**
+
+| scheme | ovals | flips from | seed scheme |
+| --- | --- | --- | --- |
+| ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ | 21 | 1 | ⟨5 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ |
+| ⟨5 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩ | 20 | 1 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨5 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ | 21 | 1 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨6 ⊔ 1⟨5 ⊔ 1⟨8⟩⟩⟩ | 21 | 1 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨6 ⊔ 1⟨6 ⊔ 1⟨6⟩⟩⟩ | 20 | 1 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨6 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩ | 21 | 1 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨6 ⊔ 1⟨8 ⊔ 1⟨4⟩⟩⟩ | 20 | 3 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+| ⟨6 ⊔ 1⟨9 ⊔ 1⟨4⟩⟩⟩ | 21 | 2 | ⟨6 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩ |
+
+Each witness is a handful of sign flips away from one of the paper's
+own 22-oval certificates — `deg8/o22-p07-n15/(5v1(5)v1(10)).pcom` and
+`deg8/o22-p15-n07/(6v1(6v1(8))).pcom` — so each inherits *their*
+triangulation and *their* integer `MIN_WEIGHTS`. Nothing about the
+geometry is ours to get wrong. For all eight:
+
+| check | result |
+| --- | --- |
+| triangulation primitive, all 45 points, edge-manifold | pass |
+| convexity of their `MIN_WEIGHTS`, exact `Fraction` arithmetic | pass |
+| real scheme recomputed from scratch (`tcurve.TCurve`) | matches the claim |
+| in `census_schemes.txt` (our replay of their 2,367) | **no**, all eight |
+| a matching `.pcom` file name in their `deg8.pcoms.txz` | **no**, all eight |
+
+Their §5.3 says 2,367 "as the search is not exhaustive, this is a
+lower bound". The bound is now **≥ 2,375**.
+
+Seven of the eight are depth-3 nests ⟨a ⊔ 1⟨b ⊔ 1⟨c⟩⟩⟩ neighbouring
+their (15,7) M-curve ⟨6⊔1⟨6⊔1⟨8⟩⟩⟩ — i.e. the census is thin exactly
+around the deep-nest M-certificates, which is where the two open
+schemes live. The eighth fills \(a=4\) in ⟨a ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩, a
+family their census has at \(a=1,2,5\) and not at \(a=3,4\).
+
+Certificates: `compute/certs/new_schemes.json`.
+Re-verify: `cd compute && python3 verify_new.py` (self-contained; the
+cross-check also runs against `data/deg8.pcoms.txz` when present).
+
+This is a dent in the census count only. It says nothing about the six
+algebraically open M-schemes.
+
+## 2026-08-21 — the real change: Haas zone decompositions
+
+Re-reading arXiv:2602.06888 v3 properly — Section 3, not just the
+Theorem 21 headline — changed the attack completely. Their Theorem 13
+(Haas): a T-curve is **maximal** iff some collection 𝔖 of compatible
+Harnack splits is valid for it; and §3.5: the real scheme
+\(\mathcal{C}(\mathfrak{S})\) depends only on 𝔖, not on which
+unimodular triangulation refines it.
+
+Two consequences the previous session did not have:
+
+1. Maximal degree-8 T-curves are a *finite combinatorial* object —
+   collections of Harnack splits — not a needle in \(2^{45}\) signs.
+2. A surgical twist adds the affine \(\mathbb{F}_2\) function
+   \(\epsilon+ix+jy\) on \(Z^+\) (Lemma 14 rewritten via
+   \(\sigma(s_{ab}(x,y))=\sigma(x,y)+ax+by\)). Twists therefore
+   **commute and add**, so on a fixed triangulation \(\mathcal{T}\)
+   every maximal sign distribution lies in the affine subspace
+   \[\eta \;+\; \operatorname{span}_{\mathbb{F}_2}\{\delta_S : S \text{ a Harnack split with edges in } \mathcal{T}\}.\]
+
+`compute/haas.py` implements splits, zones, compatibility, twists and
+refinement from scratch; `compute/zone_search.py` sweeps the subspace.
+
+**Validation, before any search.** Three independent checks, all pass:
+
+| check | result |
+| --- | --- |
+| Harnack signs \(\eta(x,y)=(x+1)(y+1)\) on a refinement | ⟨18 ⊔ 1⟨3⟩⟩ (Prop 10) |
+| all **1,254** Harnack splits of \(T_8\), one at a time | **1,254 / 1,254 give 22 ovals** |
+| the 38 published 22-oval certificates, solved for 𝔖 | **38 / 38 decompose** |
+
+The third is the one that matters: for every M-curve certificate the
+paper publishes, solving the \(\mathbb{F}_2\) system
+\(\eta+\sum_{S\in\mathfrak{S}}\delta_S=\sigma\) over the splits carried
+by that certificate's triangulation recovers an explicit collection
+(sizes 3–15). Their data and this implementation of Haas' theorem agree
+on all 38.
+
+Counts for \(T_8\): 1,254 Harnack splits (117 simple, 1,137 double;
+189 odd, 1,065 even), 381,957 compatible pairs, greedy maximal
+compatible collections of size 15–24. The 184 distinct triangulations
+of the census carry 6–40 splits each, of twist-rank 6–26.
+
+**Why this is a better search.** The previous session's annealer drew
+\(2.1\times10^6\) sign vectors and reached 22 ovals twice. In the
+first pilot sweep here, **20,480 of 20,480 evaluations were 22-oval
+M-curves** — a 100% maximal hit rate, because the subspace *is* the
+maximal stratum. Every evaluation lands somewhere in Orevkov's 89-row
+Table 1.
+
+## 2026-08-21 — sweeps and residue
+
+**Exhaustive maximal-stratum sweeps.** `compute/zone_search.py` mode
+`spanall` walked the census triangulations in order of twist-rank and
+swept the *entire* affine subspace \(\eta+\operatorname{span}\{\delta_S\}\)
+of each. A finished triangulation is an exhaustive classification of
+the M-curves it supports — the first time that question has been
+answered for degree 8 rather than sampled.
+
+| | |
+| --- | --- |
+| certified regular triangulations swept exhaustively | 66 of 184 (twist-rank 6–15) |
+| sign distributions evaluated in those sweeps | 666,688 |
+| fraction of evaluations that were 22-oval M-curves | 100% |
+| distinct M-schemes realized | 30 |
+| of the paper's 38 T-realized M-schemes | **30 / 38** |
+| M-schemes outside the paper's 38 | **0** |
+| hits among the six algebraically open | **0** |
+| schemes missing from the 2,367 | 0 |
+
+Plus a dedicated exhaustive sweep of the deep-nest triangulation
+carrying `(10v1(2v1(8)))` and `(17v1(2v1(1)))` (twist-rank 19): **15**
+distinct M-schemes, including both deep nests, all already in the 38.
+
+The sweeps stopped at rank 15 of the 6–26 range on the clock; the
+remaining 118 triangulations, and every triangulation outside the
+census, are untouched. **This is not an obstruction.** It is an
+exhaustive answer for 66 specific triangulations — and those 66 are
+precisely the ones the paper's own search already mined, so re-finding
+their M-schemes and nothing else is the expected outcome.
+
+**Ball phase (Fable's design, resumed).** Exhaustive Hamming balls
+(radius 4 around eleven key deep-nest certificates, radius 3 around
+every other seed) on the census's certified triangulations:
+11 of 24 task files finished, **3,558,520** sign evaluations, and the
+eight new schemes above. Every logged witness was re-verified on the
+exact `Fraction` pipeline; no witness was rejected, so the fast
+evaluator and the exact engine still agree everywhere.
+
+Where the deep-nest family stands. Writing the family as
+⟨a ⊔ 1⟨2 ⊔ 1⟨c⟩⟩⟩, the balls reached
+\((a,c) \in \{(1,15),(8,8),(9,7),(9,8),(10,6),(10,7),(10,8),(11,5),(12,4),(14,2),(15,1),(15,2),(16,0),(16,1),(17,0),(17,1),(18,0)\}\).
+The two open M-schemes are \((4,14)\) and \((14,4)\) with \(a+c=18\);
+the only \(a+c=18\) points reached are \((10,8)\) — the census's own —
+and none other. Silence, not a bound.
+
+**What is and is not claimed.**
+
+- Claimed, and certified: eight real schemes realizable as degree-8
+  T-curves that are absent from the published 2,367; a correct,
+  tested implementation of Haas' criterion that decomposes all 38
+  published M-certificates; exhaustive M-curve classification for 67
+  specific certified triangulations.
+- Not claimed: anything about the six algebraically open M-schemes;
+  any obstruction; any statement about triangulations not swept.
+  Hilbert 16(a) in degree 8 is exactly as open as it was.
+
+**Local artifacts.** `compute/runs2/` (ball phase),
+`compute/runs3/` (zone sweeps) and `compute/data/` stay local per the
+runbook; `compute/nest_tri.json` and `compute/nest_tri_certs.json` are
+Fable's scratch from the deep-nest-triangulation selection step and are
+not read by any script here. Rebuild the derived inputs with
+`python3 prep.py`; re-run everything with `sh run_all.sh`.

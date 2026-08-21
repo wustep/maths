@@ -203,9 +203,15 @@ def main():
                 continue
             tris, hfrac, _s, _c = parse_pcom(
                 tar.extractfile(d["cert"]).read().decode())
-            stats["tris"] += 1
+            before = stats["evals"]
             sweep(tris, {p: int(v) for p, v in hfrac.items()}, d["cert"],
                   splits, out, census, seen, 99, random.Random(i), stats)
+            stats["tris"] += 1
+            out.write(json.dumps(
+                {"kind": "tri_done", "cert": d["cert"], "rank": d["rank"],
+                 "nsplits": d["nsplits"],
+                 "evals": stats["evals"] - before}) + "\n")
+            out.flush()
     elif mode == "span":
         sub, shard, nshards = sys.argv[2], int(sys.argv[3]), int(sys.argv[4])
         out = open(sys.argv[5], "w")
