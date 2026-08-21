@@ -368,3 +368,80 @@ that no amount of further work *on census triangulations* will move the
 M-scheme question. The 100% maximal rate is also the largest test Haas'
 criterion has been put to here: 230.5 million predicted M-curves,
 230.5 million confirmed.
+
+## 2026-08-21 — outside the census: three families, no ninth scheme
+
+With the census triangulations finished, the three obvious ways out are
+(i) regular triangulations that are not in the census, (ii) the
+non-maximal sign vectors that carry most of the 2,367, and (iii) going
+deeper where the census is already known to be thin. All three were run
+in C. Nothing new was found, and two of them stop at a definite wall.
+
+**Deep Hamming balls, radius 7.** Seven of the eight schemes certified
+above came from Hamming distance ≤ 3 of a single certificate,
+`deg8/o22-p15-n07/(6v1(6v1(8))).pcom`, and the eighth from distance 1 of
+`deg8/o22-p07-n15/(5v1(5)v1(10)).pcom`. `compute/ballc.c` walks a whole
+Hamming ball on a certificate's own integer-certified triangulation —
+54,910,660 sign vectors at radius 7, against 164,220 at radius 4 — and
+emits one witness per distinct scheme fingerprint.
+
+| seed | sign vectors | distinct schemes | outside the 2,367 |
+| --- | --- | --- | --- |
+| `(6v1(6v1(8)))` | 54,910,660 | 1,365 | **7** |
+| `(5v1(5)v1(10))` | 54,910,660 | 885 | **1** |
+
+Both balls completed. The eight are exactly the eight already
+certified — not one more. So:
+
+> Within Hamming distance 7 of the two certificates that produced
+> them, the eight new schemes are **all** the schemes outside the
+> published 2,367. There is no ninth in that neighbourhood.
+
+The radius-4 pass over *every* census certificate (2,367 seeds, all 184
+triangulations, `compute/ball_drive.py`) is running the same way and has
+found nothing outside the census so far.
+
+Certificate: `compute/certs/deep_ball_r7.json`.
+
+**Regular triangulations outside the census.** Two samplers, both
+certified exactly before any sign vector is evaluated:
+
+* `gen_fast.py` — the vectorised twin of `gen_triang` (validated against
+  it triangulation-for-triangulation on a shared rng stream), random
+  positive-definite quadratic form plus noise;
+* `walk_drive.py` — scale a census lifting by \(10^6\), add integer
+  noise, take the lower hull. Regular by construction, re-certified with
+  `Fraction` arithmetic, and skipped when it reproduces a census
+  triangulation.
+
+The first sampler lands on near-Delaunay triangulations: short edges,
+few Harnack splits, twist-rank 6–16, and it **saturates at two
+M-schemes** over 3,750 triangulations. The walk reaches twist-rank 25
+and is the useful one.
+
+| | walk | random |
+| --- | --- | --- |
+| certified regular triangulations, none in the census | **325** | **3,750** |
+| swept exhaustively over \(\eta+\operatorname{span}\{\delta_S\}\) | all | all |
+| sign distributions | 162,571,648 | 7,728,448 |
+| twist-rank range | 6–25 | 6–16 |
+| distinct M-schemes | 35 | 2 |
+| M-schemes outside the paper's 38 | **0** | **0** |
+
+Certificate: `compute/certs/outside_census_sweeps.json`.
+
+**Where this leaves the two open schemes.** ⟨4 ⊔ 1⟨2 ⊔ 1⟨14⟩⟩⟩ and
+⟨14 ⊔ 1⟨2 ⊔ 1⟨4⟩⟩⟩ were not hit by any of it. Adding the exhaustive
+census result above, the position is now:
+
+* every triangulation of the census — exhaustive, they are not there;
+* 4,074 further certified regular triangulations — exhaustive on each,
+  not there either;
+* the deep-nest certificates to Hamming radius 7 — not there.
+
+That is a much larger silence than before and it is still silence.
+None of it is an obstruction: the paper's own Theorem 21 rules out four
+of the six open (3,19) schemes as T-curves, and these two are precisely
+the ones it does not rule out. Total for this session: **704 million**
+sign distributions, every witness decoded on the exact Python complex,
+every claim re-checkable from the certificates in `compute/certs/`.
