@@ -4,7 +4,7 @@
 
 The capacity number $\Theta(C_7)$ already moved in July 2026, but only through gadgets in the 10th and 200th strong powers. The fifth-power independence number is a different finite object: a subset of $(\mathbb Z/7\mathbb Z)^5$ in which every pair has circular distance $>1$ in some coordinate. The published maximum is still 367. The missing degree of freedom is one extra vertex, or a certificate that none exists.
 
-A 368-set is already a dent. Its fifth root is about 3.2596, which would also beat the Lean-verified 3.258805, but that comparison is not required to count the finite set.
+A 368-set is already a new bound. Its fifth root is about 3.2596, which would also beat the Lean-verified 3.258805, but that comparison is not required to count the finite set.
 
 ## 1. Named false starts
 
@@ -36,7 +36,7 @@ Seed first. The Itty ancillary `R367.txt` is the Polak–Schrijver appendix. A p
 
 Then the homomorphism search, the S' MIS, the swap census, the linear residuals, and the fold/shift reruns. None produced 368.
 
-## 5. Computer residue
+## 5. Computer search
 
 - `compute/R367.txt` — published 367-set, verifier OK
 - `compute/R_reconstructed.txt` — pipeline 367-set, verifier OK, differs in 2 vertices

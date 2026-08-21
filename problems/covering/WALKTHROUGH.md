@@ -24,7 +24,7 @@ $$
 $$
 zero-, one-, and two-column representations for 256 syndromes. Almost every collision matters. The 26-column algebraic seed was also highly regular: deleting any column destroyed many uniquely covered syndromes.
 
-The search needed more slack and a less rigid seed. The current table supplied both at redundancy 10. Its 51-column Kaikkonen--Rosendahl matrix has 1,327 representations for 1,024 syndromes and an explicit hexadecimal description. Deleting its least costly column left only 11 syndromes uncovered—worse as an absolute number than the $r=8$ residue, but with much more room to rearrange pair sums.
+The search needed more slack and a less rigid seed. The current table supplied both at redundancy 10. Its 51-column Kaikkonen--Rosendahl matrix has 1,327 representations for 1,024 syndromes and an explicit hexadecimal description. Deleting its least costly column left only 11 syndromes uncovered—worse as an absolute number than the $r=8$ leftover, but with much more room to rearrange pair sums.
 
 ## 3. The click
 
@@ -79,7 +79,7 @@ What is not proved matters just as much. The search did not show that 50 is opti
 
 The durable idea is the separation between discovery and proof. The heuristic only had to find the columns once. After that, a short syndrome argument and an exhaustive, independent certificate carried the mathematical claim.
 
-## 7. The 49 push (quest q4): certified residue, no dent
+## 7. The 49 push (quest q4): certified incomplete search, no improvement
 
 A later session attacked $\ell_2(10,2)\le 49$ directly and did not land it. What it left behind is negative knowledge with certificates, under [`compute/q4/`](compute/q4/):
 

@@ -14,4 +14,4 @@ It is unknown whether every sufficiently large X has a sum of two squares in [X 
 
 ## Tonight
 
-Beat the published explicit constant, or certify a larger C such that every large X has a sum of two squares in [X - C X^{1/4}, X], with an independent verifier. A table of gaps is residue unless it produces a new infinite-family bound or a documented counterexample to a stated constant. Do not claim the Landau–Ramanujan density.
+Beat the published explicit constant, or certify a larger C such that every large X has a sum of two squares in [X - C X^{1/4}, X], with an independent verifier. A table of gaps is an incomplete search unless it produces a new infinite-family bound or a documented counterexample to a stated constant. Do not claim the Landau–Ramanujan density.

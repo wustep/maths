@@ -14,7 +14,7 @@ For an n-element integer set A, the conjectured maximum number of affine copies 
 
 ## Tonight
 
-A certified small-n extremal table, a construction beating the published constant on infinitely many n, or an exact upper bound that moves the constant. Isolated small-n counts are residue unless they imply a new infinite-family bound. Fetch Green #24 before searching.
+A certified small-n extremal table, a construction beating the published constant on infinitely many n, or an exact upper bound that moves the constant. Isolated small-n counts are an incomplete search unless they imply a new infinite-family bound. Fetch Green #24 before searching.
 
 ## Result (2026-08-17)
 

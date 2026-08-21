@@ -1,4 +1,4 @@
-# Walkthrough — a Table 3 replay, not a dent
+# Walkthrough — a Table 3 replay, not a new bound
 
 - Problem: `problems/fekete-s2` (Smale 7)
 - Date: 2026-08-19
@@ -40,7 +40,7 @@ globals, modest \(N\) with nearby locals).
   sit \(10^{-8}\)–\(10^{-9}\) below the printed Table 3 digit. That is
   the extra digit of the same number Rathbun already printed to 77
   places. House rule: \(\Delta\gtrsim 10^{-7}\) and a different
-  configuration, or it is not a dent.
+  configuration, or it is not a new bound.
 
 - **Download Amore's 591 MB local-minima dump and call the lowest
   file a record.** The paper does not print \(E_{\min}(N)\). A Zenodo
@@ -64,7 +64,7 @@ basin did not appear.
 That is the degree of freedom the night actually had: the 2018 paper
 already isolated the slack (\(N=19,46\) versus 1994; \(N=33\) as a
 hard saddle). Replaying those lines, and failing to undercut them, is
-the residue.
+the leftover.
 
 ## 3. The replay
 
@@ -101,7 +101,7 @@ same globals at \(N=7,8,9,10,14,19,24,32,33,46,48\). For \(N=24,32,48\)
 every seed — Fibonacci, spiral, and 32 rng — lands on the published
 energy. The table is not an artefact of one coordinate file.
 
-## 4. What would have been a dent
+## 4. What would have been a new bound
 
 An explicit point set whose verifier energy is below the first Table 3
 entry for that \(N\) by more than rounding, with the points stored.

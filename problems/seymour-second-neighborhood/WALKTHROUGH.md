@@ -2,9 +2,9 @@
 
 ## 0. What was actually missing
 
-The 2026 computational paper (Halkiewicz, arXiv:2601.21563v3) enumerates *Pisa graphs* — strongly connected oriented graphs with $\Delta=\max_v(|N_2^+|-|N_1^+|)=0$ — through 7 vertices and stops. It conjectures that every Pisa graph is a directed cycle or an orientation of $K_n$ minus a matching. The next finite handle is the $n=8$ census. A dent is a complete type list at that order, or even one certified Pisa graph whose missing graph is neither a matching nor (as their $n=7$ table actually found) regular.
+The 2026 computational paper (Halkiewicz, arXiv:2601.21563v3) enumerates *Pisa graphs* — strongly connected oriented graphs with $\Delta=\max_v(|N_2^+|-|N_1^+|)=0$ — through 7 vertices and stops. It conjectures that every Pisa graph is a directed cycle or an orientation of $K_n$ minus a matching. The next finite handle is the $n=8$ census. A new bound is a complete type list at that order, or even one certified Pisa graph whose missing graph is neither a matching nor (as their $n=7$ table actually found) regular.
 
-The degree-threshold line (Kaneko–Locke $\delta^+\le 6$, Sadhukhan–Sandeep–Sen $\delta^+=7$, Brukhman $n\le 2\delta+2$) is a different problem. Isolated random-graph statistics are residue.
+The degree-threshold line (Kaneko–Locke $\delta^+\le 6$, Sadhukhan–Sandeep–Sen $\delta^+=7$, Brukhman $n\le 2\delta+2$) is a different problem. Isolated random-graph statistics are an incomplete search.
 
 ## 1. Named false starts
 
@@ -20,7 +20,7 @@ The degree-threshold line (Kaneko–Locke $\delta^+\le 6$, Sadhukhan–Sandeep�
 
 ## 2. The useful failure
 
-The Eulerian equality case is still the right picture, even if it is not a dent at small $\delta$. In a hypothetical Eulerian counterexample on $n=2\delta+3$,
+The Eulerian equality case is still the right picture, even if it is not a new bound at small $\delta$. In a hypothetical Eulerian counterexample on $n=2\delta+3$,
 
 - every trap has capacity exactly 3,
 - $U(v)$ is forced to be the two missing neighbours of $v$ plus one in-neighbour $\sigma(v)$,
@@ -72,7 +72,7 @@ The n=8 irregular witness is checked as follows. Vertices $\{0,\ldots,7\}$. Arcs
 
 Missing: the C_4 $0-4-1-7-0$ and the diamond $2-5-3-6-2$ with chord $2-3$. Every vertex has $|N_2^+|\le|N_1^+|$, the maximum margin is 0, and the digraph is strongly connected. Certificate: `compute/certs/n8_irregular_pisa.json`, ternary code `145923119419`.
 
-## 5. Computer residue
+## 5. Computer search
 
 - Labeled census: `certs/pisa_n{4,5,6,7}.json`. n=7 took 217s, $10^{10}$ graphs.
 - Geng types n=6,7: `certs/pisa_geng_n{6,7}.json`, types agree with the labeled census.
