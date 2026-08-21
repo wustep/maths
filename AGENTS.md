@@ -23,7 +23,8 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 `lean-toolchain` pins Lean 4.32.0. Lemmas live in the problem folder.
 
 Starting a problem: mint with `scripts/new-problem.sh <slug>`;
-recipes in `.claude/skills/` (`new-problem`, `literature`, `dent`);
+recipes in `.claude/skills/` (`new-problem`, `literature`, `dent`,
+`markdown-latex`);
 fetch a paper with `python3 scripts/arxiv_fetch.py <id>` (optional
 `--research problems/<slug>/RESEARCH.md`); OEIS via
 `scripts/oeis_lookup.py`. Then add a Problems-table row. Add a
@@ -60,3 +61,4 @@ ballots, `notes/chat/` the transcript. Those folders stay.
 `EXCLUDED_FILES` (`web/src/lib/repo.ts`). Show `AGENTS.md`.
 Production: https://maths.wustep.me,
 https://maths-wustep.vercel.app.
+README math on github.com: `.claude/skills/markdown-latex`.
