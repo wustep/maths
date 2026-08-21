@@ -5,58 +5,65 @@ description: Draft or edit user-facing markdown in this repo. Use when writing o
 
 # Writing
 
-Tao: say what you prove, define notation, skip "it is easy to see"
-and throat-clearing, one claim per sentence.
-
 README, PROBLEM.md status, explainers, notes, and GitHub PR titles
 and bodies. ATTACK.md stays chronological. Walkthroughs stay
-`refs/walkthrough-style.md`. Write the status once.
+`refs/walkthrough-style.md`.
 
-## Method
+Method from Terence Tao: On writing, Write professionally, Write in
+your own voice, Use good notation, Don't overoptimise, Organise the
+paper, Motivate the paper. Copy the method. Do not imitate the
+manner.
+
+## Result first
+
+State the result accurately first. Use the introduction to sell the
+key points without overclaiming.
+
+Punch line early. Technical details later. Factor into lemmas. A toy
+or special case before the general statement is fine.
+
+Theorem, then what it generalizes, then the obstruction, then the
+argument. A motivating near-example before the proof.
+If the precise statements are slightly technical, say so and do not
+reproduce them.
+
+Label heuristics (remark, footnote, "roughly speaking"). Keep the
+formal claim clean.
+Honest status: what is elementary, what needed a computer, what AI
+did.
+
+## English
 
 Write English, not a string of symbols. Informal remarks are welcome
-if labeled (remark, "roughly speaking").
-Own voice. Paraphrase the literature and cite it. Past self is a
-good audience.
-Punch line early. Technical details later. A toy or special case
-before the general statement is fine.
-Name a symbol the first time. Introduce one only if you reuse it
-about three times or it is central. Say "the matrix H", not just H.
-Stay compatible with the paper you cite.
-Do not over-compress. Cutting examples and English to look short
-makes the note harder. Do not be cleverer than the result.
-Credit, provenance, precedence.
+if labeled as such.
 
-## Math
+Own voice. Paraphrase the literature; cite it. Do not parrot another
+author's sentences. Past self is a good audience.
 
-Construction, upper bound, replay, or incomplete search. Define a
-symbol the first time it appears. Cite the record once.
+Do not over-optimise or over-compress. Brevity that strips examples,
+remarks, and English makes the note harder, not simpler.
+Do not be cleverer than the result. Strike out the sentence you are
+most proud of if it is just style.
+
+## Notation
+
+Define a symbol the first time it appears. Global notation early,
+local notation where used. Introduce a name only if it is used about
+three times or is central. Reinforce as "the vector space V", not
+just "V". Stay compatible with the paper you cite. No cute names.
+
+## Record
+
+Credit, provenance, precedence. Compare with the published record.
 A new bound is a verified finite improvement of a published record.
-An incomplete search is not a lower bound.
-Do not narrate the ten things it is not.
-
-## Sentences
-
-One idea per sentence. Active voice. Name the actor. Prefer the
-verb: verify, not "perform a verification." Cut "note that",
-"it is worth mentioning", "serves as", "not just X but Y".
-
-## Slop
-
-Cut puffery and AI vocabulary (delve, showcase, pivotal,
-landscape, robust, comprehensive). No em dashes. Pick one verb
-for the same act. No forced lists of three.
-
-## Hedges
-
-Keep a hedge only when the claim is actually open. Delete hedges
-that only deny a misreading. "Not shown optimal" sits next to
-the open gap, not after every length. Caveat once, in a status
-line.
+Write the inequality.
+An incomplete search (holes, SAT UNKNOWN, timeout) is not a lower
+bound. Write the leftover fact.
+Do not invent jargon. Use the language of the paper.
 
 ## Before / after
 
-README covering, same numbers.
+README covering paragraph, same numbers.
 
 Before: The November 2025 table (Davydov–Marcugini–Pambianco,
 arXiv:2511.02542, Table 5.1) had $\ell_2(10,2)\le 51$. This is a
