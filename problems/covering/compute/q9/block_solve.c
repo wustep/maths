@@ -88,7 +88,7 @@ static int pairs(int m) { return m * (m - 1) / 2; }
 /* returns 1 = solved, 0 = exhausted, -1 = node cap hit */
 static int dfs(void)
 {
-    int budget = Kbudget - nD, i, j, hit;
+    int budget = Kbudget - nD, i, j;
     if (++nodes > node_cap) return -1;
     if (rem1 == 0 && rem2 == 0 && rem3 == 0 && rem0 == 0) {
         memcpy(Dout, Dcur, nD * sizeof(int)); nDout = nD; return 1;
