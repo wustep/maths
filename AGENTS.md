@@ -22,7 +22,8 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 `refs/walkthrough-style.md`. Cite URLs you opened in `RESEARCH.md`.
 `lean-toolchain` pins Lean 4.32.0. Lemmas live in the problem folder.
 
-To add a problem, create that folder and those files, then add a
+To add a problem, run `scripts/new-problem.sh <slug>` (it copies
+`refs/problem-template/` and fills the slug), then add a
 Problems-table row. Add a model-ledger row when you run it.
 
 ## How to work
