@@ -80,6 +80,19 @@ Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](
 - $p(H_{28})\le 28$ on the certified $r=28$, $n=26111$ matrix — [`compute/partition_r28_n26111_p28.txt`](compute/partition_r28_n26111_p28.txt). Full $2^{28}$ cross-block sweep. Improves the previous $p\le 64$. No new $r=38$ table length.
 
 
+## Certified residue (quest q9, 2026-08-21)
+
+No new dent. The 2003 Kaikkonen-Rosendahl 51-set is recovered from the hex
+listing of arXiv:2511.02542 (4.9) and re-verified 1024/1024 —
+[`compute/q9/H_r10_n51_KR.txt`](compute/q9/H_r10_n51_KR.txt). Over all 174251
+two-dimensional quotients of $\mathbb F_2^{10}$, neither the 51-set nor the
+certified 50-set has a kernel block covering its own kernel, so neither is a
+lift of the $r=8$ record the way the 1992 value 53 was. An exact
+quotient-block replacement solver rules out, exhaustively, 271127 of the 279034
+single-block shrinks of the 50-set with block width $\le 12$, and finds no 49
+in four full sweeps. Search residue, not a lower bound; $\ell_2(10,2)\le 49$
+remains open.
+
 ## What a solution looks like
 
 - An explicit matrix under `compute/` and a verifier that checks F$_2$-rank $r$ and that every syndrome is a sum of at most 2 columns.
