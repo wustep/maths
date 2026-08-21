@@ -22,9 +22,12 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 `refs/walkthrough-style.md`. Cite URLs you opened in `RESEARCH.md`.
 `lean-toolchain` pins Lean 4.32.0. Lemmas live in the problem folder.
 
-To add a problem, run `scripts/new-problem.sh <slug>` (it copies
-`refs/problem-template/` and fills the slug), then add a
-Problems-table row. Add a model-ledger row when you run it.
+Starting a problem: mint with `scripts/new-problem.sh <slug>`;
+recipes in `.claude/skills/` (`new-problem`, `literature`, `dent`);
+fetch a paper with `python3 scripts/arxiv_fetch.py <id>` (optional
+`--research problems/<slug>/RESEARCH.md`); OEIS via
+`scripts/oeis_lookup.py`. Then add a Problems-table row. Add a
+model-ledger row when you run it.
 
 ## How to work
 
@@ -37,8 +40,7 @@ Do not invent a dent. A failed search with a verifier is the
 product. SAT UNKNOWN is not a bound. Search residue (holes,
 stuck repair, timeout) is not a lower bound. Independently verify
 every claimed number. Cite the record you beat, or say you did
-not beat it. Claude Code recipes for these steps live in
-`.claude/skills/` (literature, dent, new-problem).
+not beat it.
 
 ## What to update
 

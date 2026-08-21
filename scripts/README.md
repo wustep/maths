@@ -1,6 +1,8 @@
 # Scripts
 
-Research helpers. Stdlib Python 3 only; `arxiv_fetch.py` needs `pdftotext` for PDF fallback.
+Research half of the same loop as `scripts/new-problem.sh` and
+`.claude/skills/` (`new-problem`, `literature`, `dent`). Stdlib
+Python 3 only; `arxiv_fetch.py` needs `pdftotext` for PDF fallback.
 
 ```
 python3 scripts/arxiv_fetch.py 2211.09055                                      # title, abstract, bound-looking sentences
