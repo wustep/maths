@@ -14,7 +14,7 @@ It is unknown whether the Cohn–Elkies linear-programming scheme itself can att
 
 ## Tonight
 
-An exact admissible function (algebraic coefficients, independently checkable Fourier sign conditions) that meets or strictly improves a published Cohn–Elkies ratio, or a documented obstruction. Numerical LP output without exact certificates is residue. Fetch Green #42 and Cohn–Elkies before searching.
+An exact admissible function (algebraic coefficients, independently checkable Fourier sign conditions) that meets or strictly improves a published Cohn–Elkies ratio, or a documented obstruction. Numerical LP output without exact certificates is an incomplete search. Fetch Green #42 and Cohn–Elkies before searching.
 
 ## Outcome (2026-08-17)
 

@@ -14,6 +14,6 @@ Every oriented graph is conjectured to contain a vertex with at least as many se
 
 ## Tonight
 
-A certified new small-order census, a new reducible configuration with an independently checkable certificate, or a proof for another hereditary class. Isolated random-graph statistics are residue. Fetch the 2026 small-order status before searching.
+A certified new small-order census, a new reducible configuration with an independently checkable certificate, or a proof for another hereditary class. Isolated random-graph statistics are an incomplete search. Fetch the 2026 small-order status before searching.
 
 Tonight (2026-08-17): independently replayed Halkiewicz's labeled Pisa census through n=7, then classified every Pisa orientation of an 8-vertex graph up to undirected isomorphism. Exactly seven missing-degree types occur; three of them are irregular, which the n=7 pattern forbids. Certificates in `compute/certs/`. The conjecture itself is still open.

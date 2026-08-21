@@ -14,4 +14,4 @@ For $P_n(x)=1+a_1x+\cdots+a_{n-1}x^{n-1}+x^n$ with independent Bernoulli $a_i$, 
 
 ## Tonight
 
-A certified finite-degree census, an explicit remaining factor-degree regime, or a reusable exact lemma. Isolated factor counts are residue unless they beat a published bound or isolate a new obstruction. Fetch Green #93 before searching.
+A certified finite-degree census, an explicit remaining factor-degree regime, or a reusable exact lemma. Isolated factor counts are an incomplete search unless they beat a published bound or isolate a new obstruction. Fetch Green #93 before searching.

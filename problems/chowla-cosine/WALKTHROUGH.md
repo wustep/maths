@@ -35,13 +35,13 @@ convert back from the symmetric formulation to Chowla's `K(n)`.
   the algebra.
 - **Enumerating small sets.** `K(n)` is an infimum over all
   `n`-element subsets of `ℕ`. Translation and dilation do not bound
-  `max A`. A table of minima for a few structured families is residue.
+  `max A`. A table of minima for a few structured families is an incomplete search.
 - **A better auxiliary.** The isolation gap is a function of a 5-bit
   window and of two multipliers `1+α sin`, `1−β cos(θ+φ)`. A 2000-point
   float search (`compute/optimize_aux.py`) plus a local refinement left
   Bedert's `(α,β,φ)=(1,1,π/4)` as the minimiser of the implied `Cstar`
   on that family. The obstruction was not the search: the point is
-  already locally optimal, so the dent is not a new polynomial.
+  already locally optimal, so the new bound is not a new polynomial.
 - **SDP on the dual.** The house rule forbids claiming an SDP number
   without an exact certificate. We did not run one.
 
@@ -133,7 +133,7 @@ integers,
 min_x  ∑_{a ∈ A} cos(a x)   ≤   − n^{1/7} / 18.
 ```
 
-## 5. Computer residue
+## 5. Computer search
 
 Replay: `cd compute && ./run_all.sh` (exit 0).
 
@@ -157,7 +157,7 @@ is independently machine-checked. The Young/split constants `3` and
 `[0.99, 1.01]`.
 
 **What we did not beat.** Bedert v3's exponent `1/5−o(1)` is stronger
-than `1/7` for large `n`. The dent is the *constant*, against a
+than `1/7` for large `n`. The new bound is the *constant*, against a
 published record that has no numerical `c` in any polynomial bound.
 
 **Soft spot, stated plainly.** A referee can reject `C_Q1 = 3` or

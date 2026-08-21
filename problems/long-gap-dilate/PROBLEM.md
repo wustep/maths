@@ -26,12 +26,12 @@ this as the limit of the polynomial method.
 ## Tonight
 
 A certified improvement of the universal constant 2, or a documented
-residue with replayable compute. Small-prime extremizer tables are
-residue unless they imply a larger universal $C$.
+incomplete search with replayable compute. Small-prime extremizer tables are
+an incomplete search unless they imply a larger universal $C$.
 
 ## Outcome
 
-Residue. Shakan’s 2 is still the published leading constant. The
+Incomplete search. Shakan’s 2 is still the published leading constant. The
 homogeneous Rédei slice used to prove it cannot see $C>2$. Exact
 $G(p,\mathrm{round}\sqrt p)$ for $p\le 71$ and the failed lifts
 are in `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`, `compute/`.
