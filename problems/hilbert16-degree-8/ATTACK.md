@@ -528,3 +528,23 @@ within Hamming distance ≤ 6 of one of the paper's own 22-oval
 certificates, and every one is an (M−1)- or (M−2)-curve obtained by
 shrinking one oval of a *nest* in that M-curve. Their search records the
 M-curve and misses the schemes immediately below it.
+
+**All 38 M-certificate balls finished.** 362,179,520 sign vectors, every
+ball complete, and one last scheme: ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ (21 ovals) from
+`(5v1(3)v1(12)).pcom`. `verify_new.py` → **17/17**, so the census lower
+bound is **≥ 2,384**. Certificate:
+`compute/certs/mcert_balls_r6.json` (per seed: ball size, completion
+flag, distinct schemes, novelties).
+
+| | |
+| --- | --- |
+| M-certificates swept, radius 6 | **38 of 38**, all complete |
+| sign vectors | 362,179,520 |
+| schemes outside the published 2,367 | **17** |
+| M-certificates that produced one | 7 |
+
+Seven of the 38 M-certificates have a hole next to them; the other 31
+have none within radius 6. That is the exhaustive statement — the balls
+are complete, so those 31 M-curves have no missing neighbour at distance
+≤ 6, and the 17 are all the holes at distance ≤ 6 from any M-curve of
+the census.
