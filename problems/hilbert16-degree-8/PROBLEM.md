@@ -78,15 +78,21 @@ arithmetic, isotopy type recomputed via a double-cover argument), and
 the 22-oval subset reproduces exactly the 38 bold rows of their
 Table 1.
 
-**Dent (C).** ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ (21 ovals) is realizable as a
-T-curve and is **not** among their 2,367. The witness is one sign
-flip, at \((6,1)\), from their own certificate
-`deg8/o22-p07-n15/(5v1(5)v1(10)).pcom`, so it uses their triangulation
-and their integer `MIN_WEIGHTS`; those weights are re-certified
-exactly, and the scheme is recomputed from scratch. Their §5.3 states
-2,367 as a lower bound ("the search is not exhaustive"); it is now
-**≥ 2,368**. Certificate `compute/certs/new_schemes.json`, checked by
-`compute/verify_new.py`.
+**Dent (C).** **Nine** real schemes are realizable as degree-8
+T-curves and are **not** among their 2,367, so their §5.3 lower bound
+("the search is not exhaustive") becomes **≥ 2,376**:
+
+⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩,
+⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨5 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨6 ⊔ 1⟨6⟩⟩⟩,
+⟨6 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨6 ⊔ 1⟨8 ⊔ 1⟨4⟩⟩⟩, ⟨6 ⊔ 1⟨9 ⊔ 1⟨4⟩⟩⟩.
+
+Each witness sits on one of the paper's own triangulations with their
+integer `MIN_WEIGHTS`, so nothing about the geometry is ours to get
+wrong: the weights are re-certified exactly in rational arithmetic, the
+scheme is recomputed from scratch, and absence is checked both against
+our replay of the 2,367 and against the `.pcom` file names in their
+archive. Certificate `compute/certs/new_schemes.json`, checked by
+`compute/verify_new.py` (9/9).
 
 **Haas zone decompositions (new machinery).** `compute/haas.py`
 implements Harnack splits, zones, compatibility and surgical twists
@@ -99,9 +105,13 @@ published 22-oval certificates decompose into explicit split
 collections (`compute/certs/mcert_collections.json`, rebuilt by
 `compute/prep.py`).
 
-**No M-scheme dent.** The sweeps re-find the paper's 38 M-schemes and
-nothing outside them; neither open \((19,3)\) deep nest appeared.
-Exhaustive per triangulation, not exhaustive over triangulations — so
-this is residue, not an obstruction. Counts in ATTACK.md.
+**No M-scheme dent.** All 184 triangulations of the census are now
+swept exhaustively (230,501,440 maximal sign distributions, all of them
+22-oval M-curves): they realize exactly the paper's 38 M-schemes and
+nothing else, so no census triangulation carries either open deep nest.
+A further 4,074 certified regular triangulations outside the census,
+each also swept exhaustively, add no M-scheme either. Exhaustive per
+triangulation, not exhaustive over triangulations — residue, not an
+obstruction. Counts and certificates in ATTACK.md.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh`
