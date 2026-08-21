@@ -14,8 +14,8 @@ For every graph G, Tuza conjectured that the minimum number tau(G) of edges meet
 
 ## Tonight
 
-A certified extremal split or bounded-treewidth example, a new local exchange rule with an independently checkable certificate, or a documented obstruction. Isolated ILP tables are an incomplete search unless they imply a reusable lemma. Fetch the current published status before searching.
+A certified extremal split or bounded-treewidth example, a new local exchange rule with an independently checkable certificate, or a documented obstruction. Isolated ILP tables are residue unless they imply a reusable lemma. Fetch the current published status before searching.
 
-## Tonight's bound
+## Tonight's dent
 
 In every 8-regular graph, the two ends of an edge of triangle-codegree 7 form a Puleo reducible pair. Certificates for all 1044 unlabelled 7-vertex cores are in `compute/certs/c7_8reg_verified.json` and are independently checkable. This does not prove Tuza for $\Delta\le 8$. See `WALKTHROUGH.md`.

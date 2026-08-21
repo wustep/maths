@@ -9,6 +9,13 @@ stays in git is the attack log and, when the number is real, a
 verifier plus a certificate. Stephen Wu is the human author;
 models are named in the ledger below.
 
+This README and the explainers are written for human readers. The
+other files in a problem folder (ATTACK.md, WALKTHROUGH.md, the
+PROBLEM.md status line, the skills) are working notes and may use
+two agent terms. A dent is a verified finite improvement of a
+published record. A residue is an incomplete search, not a lower
+bound.
+
 ## Interesting results
 
 So far there is one.

@@ -14,7 +14,7 @@ The Kelly–Ulam reconstruction conjecture is verified for all graphs through 13
 
 ## Tonight
 
-A certified reconstruction result at n=14 (or a clean obstruction / reduction with an independently checkable certificate), or a documented incomplete search. Isolated unlabeled-graph enumerations without a verifier are not a new bound. Fetch McKay's current status before searching.
+A certified reconstruction result at n=14 (or a clean obstruction / reduction with an independently checkable certificate), or a documented residue. Isolated unlabeled-graph enumerations without a verifier are not a dent. Fetch McKay's current status before searching.
 
 ## Outcome (2026-08-17)
 

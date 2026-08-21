@@ -67,7 +67,7 @@ n=8 and n=9 minima are linear sums of $M_7$ with a chain. At n=10 the 187 labell
 
 ![Hasse diagram of $W_{10}$](figures/W10.png)
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/records.json`: independently double-counted $T$, $M_7$, Chen $P(5,5)$, rectangles, $Y(4,4,2)$, small boxes.
 - `compute/census.c` / `census`: C enumerator. Replay: `gcc -O3 -o census census.c && ./census 9`.

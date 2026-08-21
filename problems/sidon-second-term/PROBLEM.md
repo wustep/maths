@@ -14,12 +14,12 @@ A Sidon set has all pairwise sums distinct. F(N) is the size of a largest Sidon 
 
 ## Tonight
 
-A finite Sidon record that does not improve an infinite-family bound is not a new bound. Hunt one of:
+A finite Sidon record that does not improve an infinite-family bound is not a dent. Hunt one of:
 1. An explicit infinite-family construction with second term beating sqrt(N)+O(1) for infinitely many N, with a verifier.
 2. A certified improvement of the 0.98183 coefficient that holds for infinitely many N.
 3. A reusable exact lemma that strictly tightens one of those two sides.
 
-Do not claim the Erdos-Turan conjecture. Isolated F(N) tables are an incomplete search unless they feed (1)-(3).
+Do not claim the Erdos-Turan conjecture. Isolated F(N) tables are residue unless they feed (1)-(3).
 
 ## After the fetch (2026-08-17)
 

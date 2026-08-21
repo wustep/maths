@@ -2,7 +2,7 @@
 
 ## 0. What was actually missing
 
-The published lower bound $W(2,7)>3703$ is an explicit 2-coloring, not a SAT folklore number. Herwig–Heule–van Lambalgen–van Maaren and then Rabung–Lotts build it from the index-$2$ subgroup of $\mathbb Z/617\mathbb Z$: color by the Legendre symbol, repeat the cycle six times, and add one extra bit. A new bound is one more integer, a coloring of $[3704]$ with no monochromatic 7-AP. The missing degree of freedom is not a new prime in a table. It is a way to break the residue-class 7-APs that appear the moment the sixth period is crossed, without creating ordinary 7-APs of other differences.
+The published lower bound $W(2,7)>3703$ is an explicit 2-coloring, not a SAT folklore number. Herwig–Heule–van Lambalgen–van Maaren and then Rabung–Lotts build it from the index-$2$ subgroup of $\mathbb Z/617\mathbb Z$: color by the Legendre symbol, repeat the cycle six times, and add one extra bit. A dent is one more integer — a coloring of $[3704]$ with no monochromatic 7-AP. The missing degree of freedom is not a new prime in a table. It is a way to break the residue-class 7-APs that appear the moment the sixth period is crossed, without creating ordinary 7-APs of other differences.
 
 ## 1. Named false starts
 
@@ -44,7 +44,7 @@ There was no click that produced a longer coloring. The click that organized the
 6. Ask whether the classical zip doubles the cycle. Without the turn it does not double; with the turn it doubles the alphabet action and breaks 7-AP-freeness. CEGAR does not repair it.
 7. Stop. The verifier and the $3703$ coloring are the product. The exact value of $W(2,7)$ is not claimed.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/coloring_3703.txt` — verified 2-coloring of length $3703$, letters `a`/`b`.
 - `compute/cycle_617.txt` — the QR cycle.
@@ -59,4 +59,4 @@ There was no click that produced a longer coloring. The click that organized the
 
 Proved here: the $617$ quadratic-residue coloring unfolds to a 7-AP-free 2-coloring of $[3703]$; that coloring does not extend by one bit; it does not become a coloring of $[3704]$ after at most six bit-flips; its first five periods do not extend to length $3704$; no larger QR prime through $50000$ gives a cyclic 7-AP-free 2-coloring.
 
-Still open: $W(2,7)$ itself, and whether any 2-coloring of $[3704]$ exists. A coloring of length $\le 3703$ is not a new bound. This search did not find one of length $\ge 3704$.
+Still open: $W(2,7)$ itself, and whether any 2-coloring of $[3704]$ exists. A coloring of length $\le 3703$ is not a dent. This search did not find one of length $\ge 3704$.

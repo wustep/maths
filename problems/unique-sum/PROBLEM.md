@@ -35,8 +35,8 @@ Tonight is not that gap. Tonight is the finite table. OEIS A398173 records
 $m(p)$ only through the 14th odd prime ($p=47$):
 $3,4,5,7,7,8,9,10,11,11,12,13,13,13$. Extending the table to every prime
 $p\le 200$, plotting it against $\log p$ and $(\log p)^2$, and writing
-down the shape of the extremal sets is leftover work the next quest can use.
-A new bound here is a checked table plus a figure, not a new asymptotic.
+down the shape of the extremal sets is a residue the next quest can use.
+A dent is a checked table plus a figure, not a new asymptotic.
 
 ## Precise statement
 

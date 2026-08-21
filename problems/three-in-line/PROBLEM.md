@@ -31,7 +31,7 @@ except on the long diagonals; $D_4$ on the rest). Known odd
 solutions at $n=65,67,69$ are rct4.
 
 Tonight is only $n=71$. Find 142 points, or record a precise SAT
-leftover. Do not wander into the asymptotic $1.5n$ / Guy–Kelly
+residue. Do not wander into the asymptotic $1.5n$ / Guy–Kelly
 problem.
 
 ## Precise statement
@@ -47,7 +47,7 @@ no-three-in-line $P$ with $|P|=142$. Prefer an rct4-symmetric
 search (the symmetry class of every known odd $2n$ solution for
 $n\ge 33$ in the Flammenkamp/Heule database). If a configuration
 is found, save the point list and a grid PNG. If not, record the
-encoding, the solver, the timeout or unsat leftover, and which
+encoding, the solver, the timeout or unsat residue, and which
 symmetry was enforced.
 
 A SAT/CP encoding: one Boolean per cell (or per rct4 orbit);
@@ -65,7 +65,7 @@ carefully).
 - **Not found.** The CNF or CP model under `compute/`, the symmetry
   reduction, solver + version, wall-clock / timeout, and whether the
   result was timeout, unsat (on the restricted symmetry), or
-  inconclusive. Unsat on rct4 is an incomplete search, not a proof that
+  inconclusive. Unsat on rct4 is a residue, not a proof that
   $D(71)<142$.
 - Do not claim $D(71)=142$ without a checked point list. Do not
   claim $D(71)<142$ without a complete (not symmetry-restricted)

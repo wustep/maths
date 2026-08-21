@@ -14,8 +14,8 @@ Neither a projective plane of order 12 nor a proof of nonexistence is known. It 
 
 ## Tonight
 
-A certified new forbidden automorphism type, an explicit construction, or a documented incomplete search. Isolated SAT timeouts are not a new bound. Fetch the current catalogue status before searching.
+A certified new forbidden automorphism type, an explicit construction, or a documented residue. Isolated SAT timeouts are not a dent. Fetch the current catalogue status before searching.
 
 ## Outcome (2026-08-17)
 
-Moorhouse still has no order-12 plane. Published Aut restriction remains $\lvert G\rvert\in\{1,2,3\}$ (Akiyama–Suetake–Tanaka 2023). Order 2 is an involutory elation, equivalent to 11 MOLS with $L[r+6][c]=L[r][c]+6$. Two distinct involution 2-MOLS were constructed and independently verified; each has a drat-trim-verified proof that it admits no third involution-mate. The $t=3$ instance that would forbid the elation timed out (`UNKNOWN`, 45M conflicts / 2396s). Isolated SAT timeouts are not a new bound. Incomplete search, not a bound. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.
+Moorhouse still has no order-12 plane. Published Aut restriction remains $\lvert G\rvert\in\{1,2,3\}$ (Akiyama–Suetake–Tanaka 2023). Order 2 is an involutory elation, equivalent to 11 MOLS with $L[r+6][c]=L[r][c]+6$. Two distinct involution 2-MOLS were constructed and independently verified; each has a drat-trim-verified proof that it admits no third involution-mate. The $t=3$ instance that would forbid the elation timed out (`UNKNOWN`, 45M conflicts / 2396s). Isolated SAT timeouts are not a dent. Search residue, not a bound. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.

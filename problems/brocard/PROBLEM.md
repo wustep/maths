@@ -76,7 +76,7 @@ $n!+1=m^2$. The known pairs are $(4,5)$, $(5,11)$, $(7,71)$.
 - A note in `ATTACK.md` listing every *new* obstruction, with a
   proof sketch and a computational check on a prefix of $n$.
 - `compute/` scripts for the QR sieve, a table of survivors on the
-  re-run range, and a figure if the leftover is a covering diagram
+  re-run range, and a figure if the residue is a covering diagram
   or a survivor plot.
 - One Lean file under `lean/` whose main theorem is the chosen
   modular lemma and which builds (`lake` from `/maths`, add a

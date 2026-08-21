@@ -4,7 +4,7 @@
 - Quest: P31, SuperGrok 2026-08-17
 - Model: grok-4.6 `--reasoning-effort xhigh`
 - Date: 2026-08-17
-- Argument status: incomplete search. Two verified maximal involution 2-MOLS classes; the $t=3$ instance that would forbid $\lvert G\rvert=2$ was not decided.
+- Argument status: residue. Two verified maximal involution 2-MOLS classes; the $t=3$ instance that would forbid $\lvert G\rvert=2$ was not decided.
 - Problem status: open. Published Aut restriction remains $\lvert G\rvert\in\{1,2,3\}$.
 
 ## 0. What was actually missing
@@ -19,8 +19,8 @@ A plane would give eleven such squares. Already three pairwise orthogonal ones w
 
 ## 1. Named false starts, with the specific obstruction
 
-- **Bruck–Ryser as an exclusion.** $12\equiv0\pmod4$, so the sum-of-two-squares test is silent. The determinant identity $\lvert\det B\rvert=13\cdot12^{78}$ is an integer. Replaying it (`compute/replay_identities.py`) is a parameter check, not a new bound.
-- **Generic 11-MOLS SAT.** TheoremDB R592 already writes the 1,584-cell model. Isolated timeouts on that model are forbidden as a new bound, and they do not touch a new automorphism type.
+- **Bruck–Ryser as an exclusion.** $12\equiv0\pmod4$, so the sum-of-two-squares test is silent. The determinant identity $\lvert\det B\rvert=13\cdot12^{78}$ is an integer. Replaying it (`compute/replay_identities.py`) is a parameter check, not a dent.
+- **Generic 11-MOLS SAT.** TheoremDB R592 already writes the 1,584-cell model. Isolated timeouts on that model are forbidden as a dent, and they do not touch a new automorphism type.
 - **First-row identity on every square.** The usual OLS normalization $L_k[0][c]=c$ for all $k$ does not commute with $+6$. The first SAT run of the $t=2$ instance returned UNSAT in seconds. That UNSAT was false: the MacNeish product is an explicit involution 2-MOLS. The leftover symbol relabelling of square $k\ge1$ has to lie in the wreath product that commutes with $+6$, and that is not enough to force its first row to the identity after the columns have already been used to normalize square 0.
 - **Quotient to OLS of order 6.** MacNeish does split into Latin squares of order 6 on columns $0..5$. Those squares are not orthogonal, so Tarry's theorem does not fire. The SAT $t=2$ pair does not even split. The reduction “3 involution-MOLS $\Rightarrow$ OLS of order 6” is false.
 - **Mate-encoder orbit mix-up.** The first `encode_mate.py` attached both $A[r][c]$ and $A[r+6][c]$ to the same free cell. UNSAT from that encoder was discarded. The corrected encoder accepts a mate of a single square and is independently checked.
@@ -47,7 +47,7 @@ The click was the reduction, not a finished exclusion: $\lvert G\rvert=2$ is exa
 
 There is no finished proof that involutory elations are absent.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `certs/identities.json` — $v=157$, 12246 pairs, $\lvert\det B\rvert=13\cdot12^{78}$.
 - `certs/type_classification.json` — remaining types.
@@ -71,4 +71,4 @@ Not proved:
 - Anything new about order-3 planar or generalized-elation cases.
 - Existence or nonexistence of the plane.
 
-The published Aut restriction is still Akiyama–Suetake–Tanaka 2023. A failed search with a verifier is the product; incomplete search is not a bound.
+The published Aut restriction is still Akiyama–Suetake–Tanaka 2023. A failed search with a verifier is the product; search residue is not a bound.

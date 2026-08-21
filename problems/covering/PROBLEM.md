@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: finite bound certified; asymptotic problem open
+- Status: finite dent certified; asymptotic problem open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Table 5.1); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -30,16 +30,16 @@ $$
 $$
 **Tonight's finite subquestion.** Find an explicit $H$ whose length improves a documented table entry, preferably $\ell_2(10,2)\le 50$, and emit an independently re-runnable exhaustive certificate that every one of the $2^r$ syndromes is a sum of at most two columns. Do not claim $f(2)$.
 
-## Certified finite bound (quest q1, recovered)
+## Certified finite dent (quest q1, recovered)
 
 Quest q1 found a binary $[50,40]$ code of covering radius exactly 2. The explicit parity-check matrix is [`compute/H_r10_n50.txt`](compute/H_r10_n50.txt); the integer-column witness is [`compute/witness_r10_n50.json`](compute/witness_r10_n50.json). Independent exhaustive pair-XOR cover: $1024/1024$ syndromes. Finite density $319/256=1.24609375$. This proves
 $$
 \ell_2(10,2)\le 50
 $$
-and does **not** determine $f(2)$. An $n=49$ anneal left 7 uncovered syndromes — an incomplete search, not a lower bound.
+and does **not** determine $f(2)$. An $n=49$ anneal left 7 uncovered syndromes — a search residue, not a lower bound.
 
 
-## Certified finite bounds (quest q5, 2026-08-19)
+## Certified finite dents (quest q5, 2026-08-19)
 
 From the same 50-set, constructions $\mathrm{QM}_3^2$ and $\mathrm{QM}_5^2$ of arXiv:2511.02542 were implemented and independently replayed (official C verifier plus a second bitset checker; full $2^r$ sweeps):
 
@@ -48,25 +48,25 @@ From the same 50-set, constructions $\mathrm{QM}_3^2$ and $\mathrm{QM}_5^2$ of a
 - $\ell_2(26,2)\le 13309$ (paper 13565) — [`compute/H_r26_n13309.txt`](compute/H_r26_n13309.txt)
 - $\ell_2(28,2)\le 26111$ (paper 26623) — [`compute/H_r28_n26111.txt`](compute/H_r28_n26111.txt), $p(H)\le 64$
 
-Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3342335$, $\ell_2(44,2)\le 6684671$ (not enumerated). $n=49$ is still a 7-hole incomplete search, not a lower bound.
+Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3342335$, $\ell_2(44,2)\le 6684671$ (not enumerated). $n=49$ is still a 7-hole search residue, not a lower bound.
 
-## Certified finite bounds (quest q6b, 2026-08-19)
+## Certified finite dents (quest q6b, 2026-08-19)
 
 - Exact 3-sum: every vector of $\mathbb F_2^{10}$ is a sum of exactly three distinct columns of the 50-set (1024/1024).
 - $\ell_2(26,3)\le 817$ (paper 818) — [`compute/H_R3_r26_n817.txt`](compute/H_R3_r26_n817.txt). Full $2^{26}$ radius-3 sweep.
 - $p(H)\le 64$ on the $r=28$ matrix — [`compute/partition_r28_n26111_p64.txt`](compute/partition_r28_n26111_p64.txt). Unlocks theorem-only $\ell_2(40,2)\le 1671167$.
 
-## Certified finite bound (quest q6c, 2026-08-19)
+## Certified finite dent (quest q6c, 2026-08-19)
 
 - $\ell_2(31,4)\le 689$ (paper 690) — [`compute/H_R4_r31_n689.txt`](compute/H_R4_r31_n689.txt). QM$_4^4$ from OK2 plus the 50-set. Blockwise certificate for all $2^{31}$ syndromes; radius exactly 4. Independent C replay in `/tmp`, not a flat sweep.
 
-## Certified finite bounds (quest q7c, 2026-08-19)
+## Certified finite dents (quest q7c, 2026-08-19)
 
 - $p(H_{18})\le 17$ on the certified $r=18$, $n=815$ matrix — [`compute/partition_r18_n815_p17.txt`](compute/partition_r18_n815_p17.txt). Full $2^{18}$ cross-block sweep.
 - $p(H_{20})\le 14$ on the certified $r=20$, $n=1631$ matrix — [`compute/partition_r20_n1631_p14.txt`](compute/partition_r20_n1631_p14.txt). Full $2^{20}$ cross-block sweep.
 - Theorem-only $\ell_2(38,3)\le 13102$ (paper 13118) and $\ell_2(41,3)\le 26206$ (paper 26238) via QM$_5^3$ / Theorem 7.3. Not enumerated.
 
-## Certified finite bounds (quest q8, 2026-08-20)
+## Certified finite dents (quest q8, 2026-08-20)
 
 Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](compute/notes_from_authors_2026-08-19.md):
 
@@ -75,7 +75,7 @@ Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](
 - $\ell_2(26,2)\le 13070$ (paper 13565; previous certified 13309) — [`compute/H_r26_n13070.txt`](compute/H_r26_n13070.txt). QM$_2^1$ from $p(H_{18})\le 17$. Full $2^{26}$ sweep: $67108864/67108864$.
 - $p(H_{26})\le 19$ — [`compute/partition_r26_n13070_p19.txt`](compute/partition_r26_n13070_p19.txt). Unlocks theorem-only $\ell_2(36,2)\le 418271$ (paper 425983). Not enumerated.
 
-## Certified finite bound (quest q8c, 2026-08-19)
+## Certified finite dent (quest q8c, 2026-08-19)
 
 - $p(H_{28})\le 28$ on the certified $r=28$, $n=26111$ matrix — [`compute/partition_r28_n26111_p28.txt`](compute/partition_r28_n26111_p28.txt). Full $2^{28}$ cross-block sweep. Improves the previous $p\le 64$. No new $r=38$ table length.
 
