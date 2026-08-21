@@ -1,0 +1,9 @@
+# q11 fibered graph family, r=6 n=13
+# 6 rows, 13 columns; entries are separated by one space
+# row 1 is the least-significant bit of the integer column encoding
+1 0 1 0 1 0 0 0 0 0 0 0 1
+0 1 1 0 0 1 0 0 0 0 0 0 1
+0 0 0 1 1 1 0 0 0 0 0 0 1
+0 0 0 0 0 0 1 0 1 0 1 0 1
+0 0 0 0 0 0 0 1 1 0 0 1 1
+0 0 0 0 0 0 0 0 0 1 1 1 1

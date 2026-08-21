@@ -409,3 +409,123 @@ residue and nothing more; it is not close to a covering in any meaningful
 sense, and it is not a bound. What the addendum does establish is the honest
 next move: order-16 2-subgroups are where an invariant 49 would have to live,
 and deciding even one of them exhaustively is the open work.
+
+## 2026-08-21 — q11 (Claude Opus 5, `fable/covering-n49-traj`): the fibered graph family
+
+**No 49. No dent. Records unchanged: $\ell_2(10,2)\le50$, $\ell_2(9,2)\le39$,
+$\ell_2(11,2)\le79$.** What is new is a construction family that is anchored to
+a *fibration* rather than to a set, that contains the documented lengths at
+$r=4,7,8,9$, that is exactly decided at $r\le8$, and that carries two exact
+obstructions — one of which says outright that the family cannot produce any
+$n\le47$ at $r=10$. Material in [`compute/q11/`](compute/q11/); replay with
+[`compute/q11/run_q11_checks.sh`](compute/q11/run_q11_checks.sh).
+
+### The family
+
+Split $\mathbb F_2^r = V\oplus W$, $\dim V=F$, $\dim W=M$, and take
+
+$$S=\{(v,0):v\in A\}\ \cup\ \{(g(u),u):u\in W\setminus\{0\}\},\qquad n=|A|+2^M-1,$$
+
+one column over every nonzero point of the base and a kernel block $A$.
+Radius 2 splits cleanly into two conditions: $A$ is 1-saturating in $V$, and
+$B+g(u)\subseteq D_u$ for every $u\ne0$, where $B=V\setminus(A\cup\{0\})$ and
+$D_u=\{g(w)+g(w+u)\}$. Since $n=2^F-1-|B|+2^M-1$, the whole family is the
+single question *how large can $|B|$ be*.
+
+q9 moved one quotient block of a known 50; q10 prescribed a symmetry. This
+starts from neither — $g$ is a free function, and the known coverings are
+outputs, not seeds.
+
+### The line-colouring reformulation
+
+$\{w,w+u\}$ and $u$ span the same line of $\mathrm{PG}(M-1,2)$, and
+$g(w)+g(w+u)=\tau(\ell)+g(u)$ for the symmetric 2-cocycle
+$\tau(\{a,b,a+b\})=g(a)+g(b)+g(a+b)$. So $\tau$ colours the lines of
+$\mathrm{PG}(M-1,2)$ by $V$, and the condition is
+
+> every point of $\mathrm{PG}(M-1,2)$ sees every colour of $B$,
+
+i.e. each colour class is a **line cover** and the classes are disjoint.
+[`lines.py`](compute/q11/lines.py) checks this against the flat $2^r$ sweep on
+every solution below; they agree in every case.
+
+Two exact consequences:
+
+- **Lemma A.** If $M$ is odd and $g$ is quadratic then $B=\varnothing$. (For
+  nonzero $\lambda\in V^*$, $\lambda\circ T$ is an alternating form on an
+  odd-dimensional space, so it is degenerate; a radical vector $u_0$ forces
+  $B\subseteq\operatorname{Im}L_{u_0}\subseteq\ker\lambda$, for *every*
+  $\lambda$.) $r=10$ has $M=5$: the quadratic members are empty there.
+- **Lemma B.** $|B|\le\lfloor L(M)/c(M)\rfloor$ with $L$ the number of lines
+  and $c$ the least line cover. At $M=5$, $155/11$ gives $|B|\le14$, so
+  **the family cannot produce any $n\le47$ at $r=10$** — sharper than the
+  per-fibre floor $n\ge47$.
+
+### What the family gives
+
+| $r$ | $(F,M)$ | best $n$ | shorter lengths | documented |
+| --- | --- | --- | --- | --- |
+| 4 | (2,2) | 5 | — | $\ell_2(4,2)\le5$ |
+| 6 | (3,3) | 13 | $n=11,12$ exhausted | — |
+| 7 | (3,4) | 19 | $n=18$ impossible ($A$ cannot be 1-saturating) | GDT $f(7)=19$ |
+| 8 | (4,4) | 26 | $n=23,24,25$ exhausted | $\ell_2(8,2)\le26$ |
+| 9 | (4,5) | 39 | $n=38$ residue | GDT $f(9)=39$ |
+| 10 | (5,5) | 54 | $n\le47$ impossible; 48–53 undecided | $\ell_2(10,2)\le50$ |
+| 11 | (5,6) | 86 (short runs) | $n=79$ not reached | GDT $f(11)=79$ |
+
+Every listed length is an explicit matrix under `compute/q11/`, each replayed
+by [`verify_H.c`](compute/q11/verify_H.c), a flat $2^r$ sweep sharing no code
+with the search: 16/16, 64/64, 128/128, 256/256, 512/512, 1024/1024, 2048/2048.
+
+The $r\le8$ rows are exact. $n=23$ and $n=24$ at $r=8$ were exhausted over
+*all* 6435 and 5005 kernel blocks with no reduction at all; $n=25$ over the 24
+$GL(4,2)$-reduced blocks, with the reduction itself controlled by re-running
+$n=23$ on its 17 reduced blocks and getting the same verdict. So the family
+reproduces $\ell_2(8,2)\le26$ from a two-line definition and provably cannot
+beat it.
+
+### Why $r=10$ is the bad case, and it is not an accident
+
+At $r=2m+1$ the useful split is $(F,M)=(m,m+1)$: the base is one dimension
+larger than the fibre, each nonzero fibre gets $2^m-1$ pairs for $2^m$ targets,
+and there is slack — that is the shape of the classical odd-$r$ formula, and
+the family lands exactly on $f(7)=19$ and $f(9)=39$. At $r=2m$ the split must
+be $(m,m)$: each fibre gets only $2^{m-1}-1$ pairs for $2^m$ targets and the
+deficit is paid by the kernel block, whose own $\binom{|A|}{2}$ sums are then
+almost all wasted — at $r=10$, $|A|=18$ supplies 171 covers for 31 targets, 140
+of the 202 total slack burned in one fibre. On top of that $M=5$ is odd, so
+Lemma A deletes the quadratic members. **The $r=10$ record 50 is not in this
+family; the family's own best is 54.** That is a structural reason why $r=10$
+has no closed-form value while its odd neighbours do.
+
+### The $r=9$ residue, and where it is stuck
+
+$n=38$ at $r=9$ would be a dent. It needs $|B|=8$ with $|A|=7$, and the
+*colour* half of the condition is reachable — the annealer hits cost 0 at $k=8$
+routinely. Every time, the eight colours common to all 31 points had no
+1-saturating complement, and of the recorded blocking sets **29 of 29 (13
+distinct) are affine hyperplanes of $\mathbb F_2^4$**
+([`fullsets.py`](compute/q11/fullsets.py)) — for those,
+$A=H\setminus\{0\}$ and $A+A\subseteq H$, so fibre 0 can never be covered. That
+is an observation about a sample, not a theorem. The exhaustive DFS does not
+reach $|B|=8$ at $(F,M)=(4,5)$, so $n=38$ is **residue, not an exclusion**.
+
+### What was tried at $r=10$ and did not work
+
+The exhaustive DFS was aimed at $n=49$ directly: $|B|=13$, kernel block
+$|A|=18$, with the 15149 $GL(5,2)$-reduced $A$-masks generated by
+[`gen_asets.c`](compute/q11/gen_asets.c). At a 300000-node cap, **0 of the
+first 200 masks were decided**; a single mask did not finish in 10 minutes.
+No capped table is reported, because a sweep that decides nothing is not a
+result. The annealer, which is what settles the other rows, tops out at
+$|B|=8$ ($n=54$) at $(5,5)$ and reaches cost 55 at $|B|=12$ and cost 67 at
+$|B|=13$ — nowhere near.
+
+**None of this is a lower bound.** $\ell_2(10,2)=49$ remains open, the sphere
+bound still gives only $n\ge45$, and the exclusions above are exclusions inside
+one family.
+
+### Replay
+
+    cd problems/covering/compute/q11
+    sh run_q11_checks.sh

@@ -248,3 +248,63 @@ So the group is too coarse and the subgroups are too many. Sampled subgroups of
 order 16 get the residue down to 83 holes, which sounds close and is not: every
 one of those searches hit its cap, none was decided, and a hole count is not a
 bound. It is a signpost, and it points somewhere specific for once.
+
+## q11 — stop perturbing the set, prescribe the fibration
+
+The previous two quests both took a covering as the thing to be modified: q9
+swapped out one quotient block of the certified 50, q10 demanded that a group
+act on the answer. Both are moves *on a set*. The signpost at the end of q10
+says the objects are built rather than stumbled on, so this time the thing that
+gets prescribed is not the set and not its symmetry but its shape.
+
+Fix a splitting $\mathbb F_2^r = V\oplus W$ and demand that the column set have
+exactly one column over every nonzero point of $W$, with everything else in the
+kernel. Then $n = |A| + 2^{\dim W}-1$ is decided before any searching, and the
+covering condition falls apart into two clean halves: the kernel block $A$ must
+be a covering of $V$ by itself, and for each nonzero $u$ the pair sums
+$g(w)+g(w+u)$ must supply exactly the part of the fibre that $A$ cannot reach.
+The unknown is a *function*, not a set, and no known covering is anywhere in the
+input.
+
+The pretty part came from noticing that the pair $\{w,w+u\}$ and the point $u$
+span the same plane. So the quantity that matters, $g(w)+g(w+u)+g(u)$, is not a
+function of the pair at all — it is a function of the **line** of
+$\mathrm{PG}(\dim W-1,2)$ that the plane is. The whole condition then reads: a
+colouring of the lines by $V$ in which every point sees every colour of a fixed
+set $B$. The lengths run backwards through $|B|$, so the family is one question:
+how many colours can be made universal.
+
+Two things fall out immediately once it is a colouring. A colour class has to
+cover every point with lines, so it needs at least a third of the points' worth
+of lines, and the classes are disjoint — that is a counting bound, and at
+$r=10$ it says the family can never produce a 47 or shorter, which is strictly
+better than what the volume count knows. And if $g$ is quadratic the colour set
+sits inside the image of an alternating form; over an odd-dimensional space
+every alternating form is degenerate, and running that through every linear
+functional collapses $B$ to nothing. $r=10$ has $\dim W=5$. The quadratic
+members are simply not there.
+
+Then the family was run. It is exactly decidable at $r\le8$, and what it
+produces is startling in the wrong direction: 5, 13, 19, 26, 39 — the
+documented lengths at $r=4$, $6$, $7$, $8$, $9$, including both
+Gabidulin–Davydov–Tombak odd-$r$ values, out of a two-line definition, with
+$n=23$, $24$ and $25$ at $r=8$ exhausted so it provably cannot do better. One
+family, several records, no dent.
+
+And at $r=10$ it tops out at 54. That is the useful failure. At odd $r$ the base
+can be one dimension bigger than the fibre, every fibre gets $2^m-1$ pairs to
+cover $2^m$ targets, and the arithmetic is comfortable — which is exactly why
+odd $r$ has a closed formula. At even $r$ the two halves must be equal, each
+fibre is short by half, and the deficit is paid by the kernel block, which then
+wastes almost all of its own pair sums: at $n=49$ the block of 18 supplies 171
+covers for 31 targets and burns 140 of the 202 slack in a single fibre. The
+record 50 is not in the family, and it cannot be. The family says something
+about why 10 is the hard one — not about what a 49 looks like.
+
+The near miss is at $r=9$, not $r=10$. A 38 there would beat 39, it needs eight
+universal colours, and eight universal colours are easy to get. Every single
+time, they came out as an affine hyperplane — and then the kernel block is a
+hyperplane minus zero, its own sums never leave the hyperplane, and fibre 0 is
+uncoverable no matter what $g$ does. Twenty-nine samples, thirteen distinct,
+all of them hyperplanes. That is a pattern, not a proof, and the honest name for
+$n=38$ is residue.
