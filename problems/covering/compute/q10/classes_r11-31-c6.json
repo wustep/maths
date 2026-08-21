@@ -1,0 +1,20 @@
+{
+ "kind": "r11-31-c6",
+ "r": 11,
+ "order": 31,
+ "f": 0,
+ "n_fixed": 63,
+ "n_orbits": 64,
+ "commutant_dim": 41,
+ "n_gens": 40,
+ "orbit_class_sizes": [
+  1,
+  63
+ ],
+ "orbit_class_reps": [
+  1,
+  33
+ ],
+ "pair_class_sizes": [],
+ "pair_class_reps": []
+}

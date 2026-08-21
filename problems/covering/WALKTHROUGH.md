@@ -157,3 +157,72 @@ a fourteen-column simultaneous swap, where q4's exhaustive prover stopped at
 five.
 
 What the sweep found is recorded in `ATTACK.md`. It did not find a 49.
+
+---
+
+## Asking for symmetry instead of asking for a neighbour
+
+Every attack so far started from a covering somebody already had. Anneal the
+51 down to a 50; shrink a block of the 50; repair a 7-hole 49. All of them
+measure distance from a known object, and after q9 the honest reading is that
+the 49, if it exists, is not near the 50 in any of those metrics.
+
+So stop starting from the 50.
+
+Pick instead a $\sigma\in GL(10,2)$ of order 7 and ask only for sets that
+$\sigma$ maps to themselves. The point is not that symmetry is likely — it is
+that symmetry is *cheap*. A $\sigma$-invariant set is a union of $\sigma$-orbits,
+and if $\sigma$ has a 1-dimensional fixed space then every orbit has size 7 and
+there are 146 of them. Since $49=7\cdot7$, and the single fixed vector $f$
+cannot be used (7 does not divide 48), a $\sigma$-invariant 49-set is *exactly
+seven of those 146 orbits*. The search space has gone from
+$\binom{1023}{49}$ to $\binom{146}{7}$.
+
+Then the structure keeps giving. $f$ still has to be covered, and $f\notin S$,
+so $f=a+b$ with $a,b\in S$ — which forces $b=a+f$, so the orbit of $b$ is the
+orbit of $a$ shifted by $f$. Every solution therefore contains a **partner
+pair** $\{O,O+f\}$. There are 73 of them, and the centraliser of $\sigma$ — which
+carries solutions to solutions — fuses them into one class, or three, depending
+on which of the two module types $\sigma$ has. Four searches, each about
+$\binom{144}{5}$ wide. Half a billion each, seconds of machine time, and they
+all come back empty.
+
+The thing that makes this feel like mathematics rather than search is what
+happens next. $\sigma$ has odd order, so $V=M\oplus T$ splits canonically with
+$T$ the fixed space, and the projection onto $T$ is just
+$\pi_T(v)=\sum_{i<p}\sigma^i(v)$ — averaging, except that over $\mathbb F_2$
+dividing by $p$ is free. Call $\pi_T(v)$ the *layer*. Now look at where sums
+can go:
+
+$$
+\text{inside orbit } i \to 0,\quad
+\text{orbits } i,j \to t_i+t_j,\quad
+\text{orbit } i \text{ with fixed } g \to t_i+g .
+$$
+
+The layer of every sum is *forced*. So a solution can only ever touch the
+layers in $\{0\}\cup\{t_i\}\cup\{t_i+t_j\}\cup\{t_i+g\}$, at most
+$1+k+\binom k2+km$ of them, and there are $2^c$ layers that all need covering.
+Sometimes that inequality just fails, and a whole family dies with no search at
+all: order 7 with a 7-dimensional fixed space, order 31, order 3 with $c=8$,
+and at $r=11$ order 7 with $c=8$ and order 31 with $c=6$. A second version of
+the same idea counts how *full* a cross-free layer can get, and independently
+kills the $(k,m)=(5,14)$ cases that the machine had already exhausted — the
+proof and the search agreeing is worth more than either alone.
+
+What is left after all of it is a statement about an object nobody has seen. The
+odd primes dividing $|GL(10,2)|$ are $3,5,7,11,17,31,73,127$. Orders 11, 17, 31,
+73, 127 die on arithmetic or on layers. Order 7 dies on 16 exhaustive searches
+covering every fixed-space dimension and both module types. So **if a 49-set
+exists at all, its automorphism group is a $\{2,3,5\}$-group** — it is, in a
+precise sense, almost rigid. That is not a lower bound and it does not build
+anything. It does say the 49 will not be found by asking it to be pretty.
+
+The same machinery pointed at $r=11$, where the record 79 has far more slack,
+gave the one moment of real hope in the run: an element of order 23 acts on
+$\mathbb F_2^{11}$ with no fixed vectors at all and 89 orbits of size 23, so an
+invariant set has size a multiple of 23 — and $69=23\cdot3$ is ten below the
+record. Three orbits out of 89. Three thousand eight hundred and twenty-eight
+possibilities. All of them checked in under a second, and none of them is a
+covering. The same search happily produces a $C_{23}$-invariant 92-set, so the
+machinery works; 69 is simply not there.
