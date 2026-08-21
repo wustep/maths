@@ -16,9 +16,9 @@ Write that status once.
 ## Math
 
 Construction, upper bound, replay, or residue. Define a symbol
-the first time it appears. Cite the record once. Residue is a
-failed search with a verifier. Do not narrate the ten things it
-is not.
+the first time it appears. Cite the record once.
+Residue is a failed search with a verifier.
+Do not narrate the ten things it is not.
 
 ## Sentences
 
