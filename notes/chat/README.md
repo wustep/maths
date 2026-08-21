@@ -2,6 +2,10 @@
 
 The Grok Bot (Math) thread from 16 August 2026.
 
+The page ends with a disabled composer. It is built from `through`
+on the JSON (`sha`, `url`, `note`), so a later edit can bump the
+hash without hunting CSS.
+
 Open `transcript.html`, or from this folder:
 
 ```bash
