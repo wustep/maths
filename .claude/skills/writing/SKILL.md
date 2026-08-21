@@ -61,6 +61,10 @@ An incomplete search (holes, SAT UNKNOWN, timeout) is not a lower
 bound. Write the leftover fact.
 Do not invent jargon. Use the language of the paper.
 
+README and the explainers never say dent or residue; those are
+agent terms. ATTACK.md, WALKTHROUGH.md, PROBLEM.md status lines,
+and AGENTS.md may use them.
+
 ## Before / after
 
 README covering paragraph, same numbers.

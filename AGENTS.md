@@ -38,7 +38,15 @@ record; fetch and replay before trusting a number. Forum numbers
 
 A new bound is a verified finite improvement of a published
 record. An incomplete search is not a lower bound. Do not invent
-a status noun. Public pages and this runbook use the same words.
+a status noun beyond these two:
+
+- dent — verified finite improvement of a published record. Write
+  the inequality.
+- residue — incomplete search (holes, SAT UNKNOWN, timeout). Not a
+  lower bound.
+
+README and explainers use ordinary English; ATTACK, WALKTHROUGH,
+PROBLEM status lines, and skills may use dent and residue.
 Independently verify every claimed number. Cite the record you
 beat, or say you did not beat it.
 
