@@ -129,3 +129,411 @@ Hard wrap. No shorter radius-2 matrix. Paper lengths still \(\ell_2(11,2)\le 79\
 - Compiled SA at \(n=78\) did not find a covering. Residues: 16 holes from a Gabidulin puncture; 37 holes from a 78-subset of a longer union-greedy set. See [`compute/odd_r_residue_2026-08-20.json`](compute/odd_r_residue_2026-08-20.json).
 - \(r=13\) 1-deletions of the 159-set leave 32–128 holes; no \(n=158\) run finished before wrap.
 
+
+## 2026-08-21 — q9 (Claude Opus 5, `fable/covering-n49-traj`): trajectory of the $r=10$ record, and exact quotient-block replacement
+
+**No 49-covering. No dent.** Everything below is a recovered artifact, a
+verified structural fact about the published solutions, or certified search
+residue. `result/` was read only; no q2/q4 search (SA, guided, lifted, k-swap,
+invariant orbit DFS) was rerun. New material is in [`compute/q9/`](compute/q9/).
+
+### History first
+
+- **The Kaikkonen–Rosendahl 51-set is recovered.** RESEARCH.md had recorded the
+  explicit 51-column listing as never obtained. It is reprinted as display
+  (4.9) of arXiv:2511.02542v1 (their Thm 4.3, citing Kaikkonen–Rosendahl,
+  *New covering codes from an ADS-like construction*, IEEE Trans. Inform.
+  Theory **49**(7) 1809–1812, 2003, p. 1812) as 41 hexadecimal columns with
+  $H_{KR}=[I_{10}\ M_{KR}]$. Transcribed in
+  [`compute/q9/build_kr51.py`](compute/q9/build_kr51.py), rebuilt as
+  [`compute/q9/H_r10_n51_KR.txt`](compute/q9/H_r10_n51_KR.txt): rank 10, 51
+  distinct nonzero columns, exhaustive pair-XOR **1024/1024**.
+- **The trajectory, re-derived rather than copied**
+  ([`compute/q9/trajectory.py`](compute/q9/trajectory.py)): 53 (1992,
+  $\phi(10)=27\cdot2^{t-4}-1$, Davydov–Drozhzhina-Labinskaya / CHLL
+  Thm 5.4.27(i)) → 51 (2003, Kaikkonen–Rosendahl, $-2$) → 51 (Nov 2025, still
+  the Table 5.1 entry of arXiv:2511.02542, and their lift seed) → 50 (q1,
+  2026-08-16, $-1$) → 49 open. Densities $179/128$, $1327/1024$, $319/256$,
+  $613/512$. Volume bound only gives $n\ge45$.
+- **53 is a lift; 51 and 50 are not.** $\phi$ doubles $n+1$ every two units of
+  $r$, so its $r=10$ entry is literally the $r=8$ entry carried up,
+  $2(26+1)-1=53$. Against that,
+  [`compute/q9/profiles.py`](compute/q9/profiles.py) sweeps all **174251**
+  two-dimensional quotients $q:\mathbb F_2^{10}\to\mathbb F_2^2$ of both the
+  51-set and the 50-set: **no** quotient of either has its kernel block
+  $S\cap\ker q$ covering $\ker q$. Both are quotient-flat — kernel-block size
+  stays in $3..27$ (51-set) and $3..26$ (50-set) around a mean of $n/4$.
+  So the "improve the $r=8$ seed and re-lift" reading of the table died in 2003
+  and the 49 is not going to come from it.
+
+### The construction family that follows from that
+
+Fix a quotient with kernel $V$ and coset representatives $t_{00}=0,t_{01},t_{10},
+t_{11}=t_{01}+t_{10}$ (this choice kills the twist). Pulling the four blocks
+$(A;B,C,D)$ back into $V$, covering radius $\le2$ is *equivalent* to
+
+$$
+\begin{aligned}
+(00)&\ \{0\}\cup A\cup\Delta(A)\cup\Delta(B)\cup\Delta(C)\cup\Delta(D)=V,\\
+(01)&\ (A\cup\{0\})+B\ \cup\ C+D=V,\qquad (10),(11)\ \text{the label-permuted twins},
+\end{aligned}
+$$
+
+with $\Delta(X)=\{x+x':x\ne x'\}$.
+[`compute/q9/verify_blocks.py`](compute/q9/verify_blocks.py) checks this
+equivalence in both directions against a direct syndrome sweep on the 51-set,
+the 50-set and both 7-hole residues, matching the exact hole *sets*, on 160
+quotient instances.
+
+Freeze $A,B,C$: every condition on $D$ becomes a hitting-set constraint
+($u\notin A^{+}+B\Rightarrow D\cap(u+C)\ne\emptyset$, and twins) plus one pair
+constraint ($h\in\Delta(D)$ for each syndrome the other three blocks miss). So
+*"is there **any** block of size $\le k$ finishing $A,B,C$?"* is exactly
+decidable. [`compute/q9/block_solve.c`](compute/q9/block_solve.c) decides it by
+constraint-directed DFS: sibling exclusion on the hitting branches, where the
+branches really are "$d\in D$" and partition the space; deliberately no
+exclusion on the pair branches, where they overlap and exclusion would be
+unsound; counting prunes on all four families.
+
+**This is not a $k$-swap.** A block carries up to 18 columns, all re-chosen at
+once and exactly. `--shrink` asks for a block one column shorter (turning the
+certified 50-set into a candidate 49); `--resolve` asks for one the same size
+(turning a 7-hole 49-residue into a candidate covering).
+
+### Controls
+
+- Encoding, positive: `--resolve` on the certified 50-set returns a valid 50 on
+  the first instance, re-verified 1024/1024 by an independent flat sweep.
+- Reduction, both directions: 160 quotient instances, exact hole sets agree.
+- **Planted, 7/7.** Erase an entire block of the certified 50-set, replace it
+  with uniformly random kernel elements, ask the solver to rebuild one. All
+  seven recovered, at block sizes 8, 8, 10, 11, 12, 13, 14, each re-verified
+  1024/1024. A needle at depth **14** is found; q4's exhaustive prover reached
+  depth 5.
+- Independent oracle: `--selftest k` cross-checks the DFS verdict against
+  brute-force enumeration of every candidate block of size $\le k$, scored only
+  by the flat covering test, sharing no code with the constraint encoding.
+
+### Sweeps (node cap 20000 per instance, `--maxblock 18`)
+
+Each sweep covers all 174251 quotients $\times$ 3 non-kernel blocks = 522753
+instances. `skipped` = block wider than `--maxblock`; `capped` = node cap hit,
+which is **unknown, not a negative**; `decided` = search tree exhausted, an
+exact exclusion.
+
+| sweep | instances | decided | capped (unknown) | skipped | result |
+| --- | --- | --- | --- | --- | --- |
+| `--shrink` on the certified 50-set (asks for 49) | 509468 | 220118 | 289350 | 13285 | no completion |
+| `--resolve` on `best_sa_config` (7 holes) | 514224 | 156264 | 357960 | 8529 | no completion |
+| `--resolve` on `best_lifted_config` (7 holes) | 514160 | 164382 | 349778 | 8593 | no completion |
+| `--shrink` on the KR 51-set (asks for 50) | 507792 | 159279 | 348513 | 14961 | no completion |
+
+A second, deeper pass restricted to narrow blocks (`--maxblock 12`, node cap
+200000) leaves almost nothing undecided:
+
+| sweep | instances | decided | capped (unknown) | skipped | result |
+| --- | --- | --- | --- | --- | --- |
+| `--shrink` on the certified 50-set, blocks $\le 12$ | 279034 | **271127 (97.2%)** | 7907 | 243719 | no completion |
+
+That row is the strongest single statement of the quest: for every one of the
+174251 quotients and every non-kernel block of at most 12 columns, replacing
+that whole block by any shorter block is decided — and 97.2% of the time the
+answer is exhaustively no. Not one instance produced a 49.
+
+**Calibration, and a limit of the move class.** `--shrink` on the 2003 51-set
+does *not* find a 50 either. The 51→50 step that q1 actually made by annealing
+is therefore not a single-quotient-block shrink (at least not among the 159279
+decided instances). The block move is far larger than a $k$-swap — planted
+needles at depth 14 are found — but it is not a superset of what annealing did,
+and that is worth knowing before anyone reads a negative here as evidence about
+49.
+
+So: **220118 exact decisions** say the certified 50-set cannot be shortened by
+replacing any one of those quotient blocks with a shorter block, and 320646
+exact decisions say neither 7-hole optimum can be repaired by replacing any one
+of those blocks. Between them that is over half a million simultaneous
+rearrangements of up to 18 columns, ruled out one at a time — and roughly 57%
+of the instances were left undecided by the node cap. **None of this is a lower
+bound.** $\ell_2(10,2)=49$ remains open.
+
+### Replay
+
+    cd problems/covering
+    python3 compute/q9/build_kr51.py compute/q9/H_r10_n51_KR.txt
+    python3 compute/q9/trajectory.py
+    python3 compute/q9/profiles.py compute/q9/H_r10_n51_KR.txt compute/H_r10_n50.txt
+    python3 compute/q9/verify_blocks.py compute/H_r10_n50.txt 40
+    gcc -O2 -o /tmp/bs compute/q9/block_solve.c
+    /tmp/bs --input compute/H_r10_n50.txt --shrink --maxblock 18 --nodes 20000 --shard 0/4
+
+## 2026-08-21 — q10 (Claude Opus 5, `fable/covering-n49-traj`): prescribed automorphisms
+
+**No 49-covering. No dent. Records unchanged: $\ell_2(10,2)\le50$,
+$\ell_2(11,2)\le79$.** What is new is a construction family that does not
+start from a known covering, and the exhaustive exclusions it buys. Material
+in [`compute/q10/`](compute/q10/); replay with
+[`compute/q10/run_q10_checks.sh`](compute/q10/run_q10_checks.sh).
+
+### The family
+
+q9 replaced one quotient block of the certified 50-set at a time. That move,
+however large, is still anchored to the 50. This one is not anchored to
+anything: fix $\sigma\in GL(r,2)$ of odd prime order $p$ and search only
+$\sigma$-invariant sets. Such a set is $k$ full $\sigma$-orbits of size $p$
+plus $m$ of the $2^c-1$ nonzero fixed vectors ($c=\dim\ker(\sigma-1)$), so
+
+$$n = pk+m,\qquad 0\le m\le 2^c-1,$$
+
+and the search collapses from $\binom{2^r-1}{n}$ to
+$\binom{\#\mathrm{orbits}}{k}\binom{2^c-1}{m}$. Covering radius $\le2$ becomes
+a condition on orbit sums, decided exactly by
+[`orbit_search_g.c`](compute/q10/orbit_search_g.c) (fixed space of dimension
+$\le1$) and [`orbit_search_f.c`](compute/q10/orbit_search_f.c) (general).
+Conjugating by the centraliser of $\sigma$ sends solutions to solutions, so one
+representative per centraliser class suffices; a *subgroup* of the centraliser
+only refines the classes, so the reduction stays sound, and the classes are
+computed from the commutant algebra rather than assumed.
+
+### $r=10$, $n=49$: order 7 is completely settled
+
+$49=7\cdot7$, so with a 1-dimensional fixed space $S$ is exactly 7 of the 146
+orbits — the lone fixed vector $f$ cannot be used, since 7 does not divide 48.
+$f$ must then be covered by a sum, and $a+b=f$ forces $b=a+f$, so $S$ contains
+a **partner pair** $\{O,O+f\}$. The centraliser reduces the 73 partner pairs to
+**1** class for module type $M_1^3\oplus\mathbf 1$ and **3** classes for
+$M_1^2\oplus M_2\oplus\mathbf 1$ — the only two types up to conjugacy, since
+$\sigma\mapsto\sigma^3$ swaps the two 3-dimensional irreducibles and generates
+the same group. All four exhausted.
+
+$c=4$ (144 orbits, 15 fixed vectors) allows $(k,m)\in\{(7,0),(6,7),(5,14)\}$
+for both module types. $(7,0)$ and $(5,14)$ ran with one orbit forced per
+centraliser class; $(6,7)$ ran the other way round — `fixed_classes.py`
+collapses the $\binom{15}{7}=6435$ fixed subsets to **6** centraliser classes,
+and the orbit part was left completely free, $\binom{144}{6}=11{,}143{,}364{,}232$
+per class. All 12 exhausted.
+
+$c=7$ needs no search: the touched-layer bound $1+k+\binom k2+km\ge2^c$ fails
+for every $(k,m)$ with $7k+m=49$.
+
+So no 49-column radius-2 matrix of rank 10 has an automorphism of order 7. The
+same two bounds plus the arithmetic condition kill orders 11, 17, 31, 73 and
+127 outright ([`prime_orders.py`](compute/q10/prime_orders.py)), and the odd
+primes dividing $|GL(10,2)|$ are exactly $3,5,7,11,17,31,73,127$. Hence:
+
+> **If a 49-set exists, its automorphism group in $GL(10,2)$ is a
+> $\{2,3,5\}$-group.**
+
+Odd-order symmetry that survives: $p=3$ with $c\in\{2,4,6\}$ and $p=5$ with
+$c=6$, whose exhaustive costs are $\ge4.8\times10^{20}$ — out of reach here,
+and honestly unknown, not negative. $p=2$ (unipotent $\sigma$) was not
+attempted.
+
+### $r=11$: the second target, also negative
+
+$\ell_2(11,2)\le79$ has more slack than 49 does, so the same machinery was
+aimed below it.
+
+| $\sigma$ | $n$ | decomposition | verdict |
+| --- | --- | --- | --- |
+| order 11, $c=1$ | 78 | 7 orbits $+\ f$ | exhausted, $2\times\binom{185}{6}=102{,}603{,}129{,}720$ |
+| order 11, $c=1$ | 77, 67, 66 | 7 / 6+f / 6 orbits | exhausted |
+| order 23, $c=0$ | 69 | 3 orbits | exhausted, $\binom{88}{2}=3828$ |
+| order 17, $c=3$ | 68–75 | 4 orbits $+\ m\le7$ fixed | exhausted, all eight |
+| order 7 $c=8$, order 31 $c=6$ | 78, 69 | — | layer bound, no search |
+
+Order 23 is the prettiest case and the biggest disappointment: it acts freely
+with 89 orbits of size 23, so an invariant set has size a multiple of 23, and
+$69=23\cdot3$ sits ten below the record. It is not there. The same search does
+find a $C_{23}$-invariant 92-set.
+
+### Controls
+
+- **Encoding.** Orbit masks reproduce the flat syndrome sweep hole for hole on
+  hundreds of random selections, for every $\sigma$ used.
+- **Positive, four times.** The searches find $\sigma$-invariant coverings at
+  $n=63$ ($r=10$) and $n=92,100,111$ ($r=11$), each re-verified $1024/1024$ or
+  $2048/2048$ by an independent flat sweep. The negatives are not the family
+  being empty.
+- **Pruning.** $r=10$, $n=49$ rerun with `--noprune` visits all
+  $\binom{144}{5}=481{,}008{,}528$ subsets per class — full enumeration — and
+  returns the same verdict.
+- **Two implementations.** `orbit_search_g.c` and `orbit_search_f.c` share no
+  search code and agree on every case both can run; the $c=4$, $(5,14)$
+  exclusions are also proved by hand from the layer-fill bound.
+
+**None of this is a lower bound.** $\ell_2(10,2)=49$ and every value of
+$\ell_2(11,2)$ below 79 remain open. The sphere bound still gives only
+$n\ge45$ at $r=10$ and $n\ge64$ at $r=11$.
+
+### Addendum, same day — the known optima are 2-group symmetric
+
+The sweep above covers odd prime orders. It was worth asking where the symmetry
+of the *existing* coverings actually lives, and the answer changes the reading
+of the whole section. [`aut_group.c`](compute/q10/aut_group.c) computes
+$\mathrm{Aut}(S)=\{g\in GL(10,2):g(S)=S\}$ by invariant-refined backtracking:
+
+| set | $\mathrm{Aut}$ | orbit sizes on $\mathbb F_2^{10}\setminus\{0\}$ |
+| --- | --- | --- |
+| certified 50-set (q1) | **128** | $1^{15},2^{56},16^{32},64^{2},128^{2}$ |
+| Kaikkonen–Rosendahl 51-set | **512** | $1^{63},8^{40},64^{10}$ |
+
+Neither is rigid, and both groups are 2-groups — precisely the case the
+prescribed-automorphism sweep does *not* reach, since $p=2$ never gives a
+useful reduction on its own. Verified independently by
+[`verify_aut.py`](compute/q10/verify_aut.py), which rebuilds each element as a
+matrix and checks invertibility, $g(S)=S$, distinctness, and closure under
+composition and inverses.
+
+Prescribing those two groups directly at $n=49$ does not work, and the reason
+is structural: the 127 vectors lying in $\mathrm{Aut}(50)$-orbits of size
+$\le2$ form exactly a **7-dimensional subspace**, so any union of them is
+trapped there and leaves $\ge896$ holes. The only union with few orbits is
+$16+16+16+1$; all **74400** of those were tested exhaustively and the best
+leaves **499** holes. $\mathrm{Aut}(51)$ is coarser still.
+
+Subgroups refine the orbits. [`subgroup_sweep.py`](compute/q10/subgroup_sweep.py)
+sampled 94 distinct subgroups of $\mathrm{Aut}(50)$ and 68 of
+$\mathrm{Aut}(51)$, enumerating unions of orbits of total size 49 up to a cap of
+60000 per subgroup:
+
+| group | $|H|$ | orbits | unions tested | best holes |
+| --- | --- | --- | --- | --- |
+| $\mathrm{Aut}(50)$ | 8 | 183 | 60000 (capped) | 197 |
+| $\mathrm{Aut}(50)$ | 16 | 131 | 60000 (capped) | **83** |
+| $\mathrm{Aut}(50)$ | 32 | 133 | 60000 (capped) | 563 |
+| $\mathrm{Aut}(51)$ | 8 | 191 | 60000 (capped) | 232 |
+
+Every row is **capped, so unknown, not negative** — the union counts at these
+orders are far past 60000 and no subgroup was decided. 83 holes is search
+residue and nothing more; it is not close to a covering in any meaningful
+sense, and it is not a bound. What the addendum does establish is the honest
+next move: order-16 2-subgroups are where an invariant 49 would have to live,
+and deciding even one of them exhaustively is the open work.
+
+## 2026-08-21 — q11 (Claude Opus 5, `fable/covering-n49-traj`): the fibered graph family
+
+**No 49. No dent. Records unchanged: $\ell_2(10,2)\le50$, $\ell_2(9,2)\le39$,
+$\ell_2(11,2)\le79$.** What is new is a construction family that is anchored to
+a *fibration* rather than to a set, that contains the documented lengths at
+$r=4,7,8,9$, that is exactly decided at $r\le8$, and that carries two exact
+obstructions — one of which says outright that the family cannot produce any
+$n\le47$ at $r=10$. Material in [`compute/q11/`](compute/q11/); replay with
+[`compute/q11/run_q11_checks.sh`](compute/q11/run_q11_checks.sh).
+
+### The family
+
+Split $\mathbb F_2^r = V\oplus W$, $\dim V=F$, $\dim W=M$, and take
+
+$$S=\{(v,0):v\in A\}\ \cup\ \{(g(u),u):u\in W\setminus\{0\}\},\qquad n=|A|+2^M-1,$$
+
+one column over every nonzero point of the base and a kernel block $A$.
+Radius 2 splits cleanly into two conditions: $A$ is 1-saturating in $V$, and
+$B+g(u)\subseteq D_u$ for every $u\ne0$, where $B=V\setminus(A\cup\{0\})$ and
+$D_u=\{g(w)+g(w+u)\}$. Since $n=2^F-1-|B|+2^M-1$, the whole family is the
+single question *how large can $|B|$ be*.
+
+q9 moved one quotient block of a known 50; q10 prescribed a symmetry. This
+starts from neither — $g$ is a free function, and the known coverings are
+outputs, not seeds.
+
+### The line-colouring reformulation
+
+$\{w,w+u\}$ and $u$ span the same line of $\mathrm{PG}(M-1,2)$, and
+$g(w)+g(w+u)=\tau(\ell)+g(u)$ for the symmetric 2-cocycle
+$\tau(\{a,b,a+b\})=g(a)+g(b)+g(a+b)$. So $\tau$ colours the lines of
+$\mathrm{PG}(M-1,2)$ by $V$, and the condition is
+
+> every point of $\mathrm{PG}(M-1,2)$ sees every colour of $B$,
+
+i.e. each colour class is a **line cover** and the classes are disjoint.
+[`lines.py`](compute/q11/lines.py) checks this against the flat $2^r$ sweep on
+every solution below; they agree in every case.
+
+Two exact consequences:
+
+- **Lemma A.** If $M$ is odd and $g$ is quadratic then $B=\varnothing$. (For
+  nonzero $\lambda\in V^*$, $\lambda\circ T$ is an alternating form on an
+  odd-dimensional space, so it is degenerate; a radical vector $u_0$ forces
+  $B\subseteq\operatorname{Im}L_{u_0}\subseteq\ker\lambda$, for *every*
+  $\lambda$.) $r=10$ has $M=5$: the quadratic members are empty there.
+- **Lemma B.** $|B|\le\lfloor L(M)/c(M)\rfloor$ with $L$ the number of lines
+  and $c$ the least line cover. At $M=5$, $155/11$ gives $|B|\le14$, so
+  **the family cannot produce any $n\le47$ at $r=10$** — sharper than the
+  per-fibre floor $n\ge47$.
+
+### What the family gives
+
+| $r$ | $(F,M)$ | best $n$ | shorter lengths | documented |
+| --- | --- | --- | --- | --- |
+| 4 | (2,2) | 5 | — | $\ell_2(4,2)\le5$ |
+| 6 | (3,3) | 13 | $n=11,12$ exhausted | — |
+| 7 | (3,4) | 19 | $n=18$ impossible ($A$ cannot be 1-saturating) | GDT $f(7)=19$ |
+| 8 | (4,4) | 26 | $n=23,24,25$ exhausted | $\ell_2(8,2)\le26$ |
+| 9 | (4,5) | 39 | $n=38$ residue | GDT $f(9)=39$ |
+| 10 | (5,5) | 54 | $n\le47$ impossible; 48–53 undecided | $\ell_2(10,2)\le50$ |
+| 11 | (5,6) | 86 (short runs) | $n=79$ not reached | GDT $f(11)=79$ |
+
+Every listed length is an explicit matrix under `compute/q11/`, each replayed
+by [`verify_H.c`](compute/q11/verify_H.c), a flat $2^r$ sweep sharing no code
+with the search: 16/16, 64/64, 128/128, 256/256, 512/512, 1024/1024, 2048/2048.
+
+The $r\le8$ rows are exact. $n=23$ and $n=24$ at $r=8$ were exhausted over
+*all* 6435 and 5005 kernel blocks with no reduction at all; $n=25$ over the 24
+$GL(4,2)$-reduced blocks, with the reduction itself controlled by re-running
+$n=23$ on its 17 reduced blocks and getting the same verdict. So the family
+reproduces $\ell_2(8,2)\le26$ from a two-line definition and provably cannot
+beat it.
+
+### Why $r=10$ is the bad case, and it is not an accident
+
+At $r=2m+1$ the useful split is $(F,M)=(m,m+1)$: the base is one dimension
+larger than the fibre, each nonzero fibre gets $2^m-1$ pairs for $2^m$ targets,
+and there is slack — that is the shape of the classical odd-$r$ formula, and
+the family lands exactly on $f(7)=19$ and $f(9)=39$. At $r=2m$ the split must
+be $(m,m)$: each fibre gets only $2^{m-1}-1$ pairs for $2^m$ targets and the
+deficit is paid by the kernel block, whose own $\binom{|A|}{2}$ sums are then
+almost all wasted — at $r=10$, $|A|=18$ supplies 171 covers for 31 targets, 140
+of the 202 total slack burned in one fibre. On top of that $M=5$ is odd, so
+Lemma A deletes the quadratic members. **The $r=10$ record 50 is not in this
+family; the family's own best is 54.** That is a structural reason why $r=10$
+has no closed-form value while its odd neighbours do.
+
+### The $r=9$ residue, and where it is stuck
+
+$n=38$ at $r=9$ would be a dent. It needs $|B|=8$ with $|A|=7$, and the
+*colour* half of the condition is reachable — the annealer hits cost 0 at $k=8$
+routinely. Every time, the eight colours common to all 31 points had no
+1-saturating complement, and of the recorded blocking sets **29 of 29 (13
+distinct) are affine hyperplanes of $\mathbb F_2^4$**
+([`fullsets.py`](compute/q11/fullsets.py)) — for those,
+$A=H\setminus\{0\}$ and $A+A\subseteq H$, so fibre 0 can never be covered. That
+is an observation about a sample, not a theorem.
+
+From the other side, $n=38$ reduces to a finite list: up to $GL(4,2)$ there are
+28 classes of 7-element kernel blocks, exactly **17** of them 1-saturating, and
+a 38 in this family must use one of those 17. All 17 were annealed at length
+and **every one floors at exactly cost 14**, i.e. 14 missing (point, colour)
+incidences out of 248 ([`r9_n38_classes.txt`](compute/q11/r9_n38_classes.txt)).
+The exact DFS decides none of them — $4\times10^{8}$ nodes on the first block,
+still capped. So $n=38$ is **residue, not an exclusion**, and $\ell_2(9,2)\le39$
+stands.
+
+### What was tried at $r=10$ and did not work
+
+The exhaustive DFS was aimed at $n=49$ directly: $|B|=13$, kernel block
+$|A|=18$, with the 15149 $GL(5,2)$-reduced $A$-masks generated by
+[`gen_asets.c`](compute/q11/gen_asets.c). At a 300000-node cap, **0 of the
+first 200 masks were decided**; a single mask did not finish in 10 minutes.
+No capped table is reported, because a sweep that decides nothing is not a
+result. The annealer, which is what settles the other rows, tops out at
+$|B|=8$ ($n=54$) at $(5,5)$ and reaches cost 55 at $|B|=12$ and cost 67 at
+$|B|=13$ — nowhere near.
+
+**None of this is a lower bound.** $\ell_2(10,2)=49$ remains open, the sphere
+bound still gives only $n\ge45$, and the exclusions above are exclusions inside
+one family.
+
+### Replay
+
+    cd problems/covering/compute/q11
+    sh run_q11_checks.sh

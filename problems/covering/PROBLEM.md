@@ -80,6 +80,35 @@ Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](
 - $p(H_{28})\le 28$ on the certified $r=28$, $n=26111$ matrix — [`compute/partition_r28_n26111_p28.txt`](compute/partition_r28_n26111_p28.txt). Full $2^{28}$ cross-block sweep. Improves the previous $p\le 64$. No new $r=38$ table length.
 
 
+## Certified residue (quest q9, 2026-08-21)
+
+No new dent. The 2003 Kaikkonen-Rosendahl 51-set is recovered from the hex
+listing of arXiv:2511.02542 (4.9) and re-verified 1024/1024 —
+[`compute/q9/H_r10_n51_KR.txt`](compute/q9/H_r10_n51_KR.txt). Over all 174251
+two-dimensional quotients of $\mathbb F_2^{10}$, neither the 51-set nor the
+certified 50-set has a kernel block covering its own kernel, so neither is a
+lift of the $r=8$ record the way the 1992 value 53 was. An exact
+quotient-block replacement solver rules out, exhaustively, 271127 of the 279034
+single-block shrinks of the 50-set with block width $\le 12$, and finds no 49
+in four full sweeps. Search residue, not a lower bound; $\ell_2(10,2)\le 49$
+remains open.
+
+## Certified residue (quest q11, 2026-08-21)
+
+No new dent. A construction family anchored to a *fibration* rather than to a
+set: split $\mathbb F_2^r=V\oplus W$ and take one column over every nonzero
+point of the base plus a kernel block,
+$S=A\times\{0\}\cup\{(g(u),u)\}$, $n=|A|+2^{\dim W}-1$. Radius 2 becomes a
+line-colouring condition on $\mathrm{PG}(\dim W-1,2)$, which yields two exact
+obstructions (no quadratic $g$ when $\dim W$ is odd; a line-cover count that
+forbids every $n\le47$ at $r=10$). The family contains the documented lengths
+at $r=4,7,8,9$ — explicit matrices in [`compute/q11/`](compute/q11/), each
+replayed by an independent full $2^r$ sweep — and at $r\le8$ it is exactly
+decided: $n=23,24,25$ are exhausted at $r=8$, so the family reproduces
+$\ell_2(8,2)\le26$ and provably cannot beat it. At $r=10$ its own best is 54;
+the record 50 is not in the family. $n=38$ at $r=9$ is search residue.
+$\ell_2(10,2)\le49$ remains open.
+
 ## What a solution looks like
 
 - An explicit matrix under `compute/` and a verifier that checks F$_2$-rank $r$ and that every syndrome is a sum of at most 2 columns.
