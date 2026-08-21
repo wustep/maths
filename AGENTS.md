@@ -15,6 +15,7 @@ ATTACK.md         chronological attempts
 WALKTHROUGH.md    discovery notes, not a cleaned proof
 RESEARCH.md       papers, OEIS, failed lookups
 compute/          verifier plus certificate
+compute/q<n>/     one quest
 lean/             lemmas for this problem, if any
 ```
 
@@ -44,6 +45,10 @@ a status noun beyond these two:
   the inequality.
 - residue — incomplete search (holes, SAT UNKNOWN, timeout). Not a
   lower bound.
+
+A quest is a named campaign, not a result. Its code lives in
+`compute/q<n>/`. ATTACK.md may say q3. Do not write "quest" on
+README, explainers, PROBLEM, WALKTHROUGH, or other human pages.
 
 README and explainers use ordinary English; ATTACK, WALKTHROUGH,
 PROBLEM status lines, and skills may use dent and residue.
