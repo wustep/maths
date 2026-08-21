@@ -19,6 +19,9 @@ const EXCLUDED_DIRS = new Set([
   ".lake",
   "__pycache__",
 ]);
+// Keep in sync with web/src/lib/repo.ts. vercel.json is not a raw asset, but
+// the walk should skip the same deploy-only basenames as the file viewer.
+const EXCLUDED_FILES = new Set(["vercel.json"]);
 const RAW_EXT = new Set([".pdf", ".html", ".png", ".jpg", ".jpeg", ".gif", ".svg"]);
 
 fs.rmSync(outRoot, { recursive: true, force: true });
@@ -32,7 +35,9 @@ function walk(abs, rel) {
     if (e.isDirectory()) {
       if (EXCLUDED_DIRS.has(e.name)) continue;
       walk(childAbs, childRel);
-    } else if (e.isFile() && RAW_EXT.has(path.extname(e.name).toLowerCase())) {
+    } else if (e.isFile()) {
+      if (EXCLUDED_FILES.has(e.name)) continue;
+      if (!RAW_EXT.has(path.extname(e.name).toLowerCase())) continue;
       const dest = path.join(outRoot, childRel);
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(childAbs, dest);
