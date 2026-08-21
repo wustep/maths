@@ -16,4 +16,4 @@ For every n-element integer set A it is conjectured that some theta satisfies su
 
 Produce a certified explicit c that is new, or a reusable auxiliary trigonometric polynomial whose bound is independently checkable and implies a strictly better universal (or n>=n0) constant than the best published one you can cite.
 
-An SDP number with no exact certificate is not a new bound. A table of minima for a few sets is an incomplete search. Do not claim the full square-root conjecture unless you prove it.
+An SDP number with no exact certificate is not a dent. A table of minima for a few sets is residue. Do not claim the full square-root conjecture unless you prove it.

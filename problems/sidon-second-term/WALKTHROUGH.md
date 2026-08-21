@@ -47,7 +47,7 @@ not move b. The published kernels are already at the continuous limit
 of their shape class.
 
 **CHO two-window replay.** Their hand parameters give b_∞ ≤ 1.99058
-(C ≤ 0.99529). Real, weaker than 0.9435, not a new bound.
+(C ≤ 0.99529). Real, weaker than 0.9435, not a dent.
 
 **Claiming 0.98183 as the record.** PROBLEM.md and Erdős #30 (edited
 April 2026) still say 0.98183. Hou–Zhao is on arXiv 5 July 2026. After
@@ -72,7 +72,7 @@ their exact γ0 = 0.943492590713545. Round the new weights, add a common
 η so every covering inequality holds over Q, and the exact γ stays
 below γ0.
 
-That is the whole new bound: **same lemma, same kernels, longer boundary,
+That is the whole dent: **same lemma, same kernels, longer boundary,
 exact arithmetic.**
 
 ## 4. The argument, in the order it was found
@@ -105,7 +105,7 @@ and if b>0 then F(N) ≤ √N + √(ab) N^{1/4} + O(1). The O(1) may depend
 on the finite certificate (hence on L) but not on N. For L=6 one needs
 N ≥ 12H with H ≍ N^{3/4}, which holds for large N.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `figures/published_C.png` — published C against year.
 - `figures/table1_replay.png` — independent QP vs R.
@@ -144,4 +144,4 @@ or a new method. The $1000 form h(N)=N^{1/2}+O_ε(N^ε).
 The L=6 lift is a strict numerical improvement of a published
 certificate. It is not a new proof idea. If a later reader wants only
 improvements that change the four-decimal statement 0.9435, this is
-an incomplete search, not a new bound.
+residue, not a dent.

@@ -8,7 +8,7 @@ The missing degree of freedom was not a new inequality. It was the protocol Liu 
 
 ## 1. Named false starts
 
-**Treat Wikipedia 0.38271 as a theorem.** Lu–Raz (May 2024) and the Wikipedia page fetched tonight both say “the best constant is 0.38271, proven by Liu”. Liu's own Theorem 13 is explicitly under a PSD hypothesis and a global-min hypothesis. Beating a conditional number with another un-checked float is not a new bound. The first job was to recompute every published number.
+**Treat Wikipedia 0.38271 as a theorem.** Lu–Raz (May 2024) and the Wikipedia page fetched tonight both say “the best constant is 0.38271, proven by Liu”. Liu's own Theorem 13 is explicitly under a PSD hypothesis and a global-min hypothesis. Beating a conditional number with another un-checked float is not a dent. The first job was to recompute every published number.
 
 **Push `n=13` or `|F|=51`.** Those are the first open finite cases (Vučković–Živković 2017; Roberts–Simpson plus `q≥13`). A generic SAT encoding of 51 subsets of `[13]` is not a one-night certificate. Abandoned as the main quest.
 
@@ -51,11 +51,11 @@ The claimed number `0.38285` sits strictly below the Example-4 crossing. Every m
 
 This is the same hypothesis class as Liu Theorem 13: the bound is the Gilmer constant for the optimizer family he and Yu–Cambie reduce to. It is not a new reduction, and it is not `1/2`.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/verify.json`: published constants to 24 decimals; both first-crossings; min ratio on the claimed box.
 - `compute/first_crossing.json`: `c(β)` for both protocols, `β ∈ [0,0.40]`.
-- `compute/hunt_mixtures.json`: 9.3k 3-atomic samples, 11.8k 2-mixtures of 2-atomic laws, 25k third-atom perturbations of the ray optimizer, all at `(β,c)=(0.20, 0.38285)`. Worst ratios `1.005`, `1.007`, `1.00008`. Zero hits below 1. Incomplete search, not a proof that 2-mixtures are safe.
+- `compute/hunt_mixtures.json`: 9.3k 3-atomic samples, 11.8k 2-mixtures of 2-atomic laws, 25k third-atom perturbations of the ray optimizer, all at `(β,c)=(0.20, 0.38285)`. Worst ratios `1.005`, `1.007`, `1.00008`. Zero hits below 1. Residue, not a proof that 2-mixtures are safe.
 - `compute/enum_small.json`: 4541 full-universe union-closed families on `n=4`, min abundance `1/2`. Known.
 - `figures/ray_crossing.png`: the `c(β)` figure above.
 

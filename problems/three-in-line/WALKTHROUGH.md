@@ -125,7 +125,7 @@ model for 301.1 seconds on four workers. Kissat ran the fixed diagonal slices
 process imposed a hard 120-second wall limit on each SAT run. Every run ended
 `UNKNOWN`, and none emitted a model.
 
-## 5. Figures, checks, and computer search
+## 5. Figures, checks, and computer residue
 
 ![The exact rct4 reduction and bounded UNKNOWN runs](figures/n71-rct4-residue.png)
 
@@ -154,7 +154,7 @@ coordinate file. No such file exists from this quest.
 ## 6. Proven, still open, and the scope check
 
 What is established is a reproducible canonical-rct4 encoding and a precise
-timeout, incomplete. The line enumeration is exhaustive, the symmetry quotient
+timeout residue. The line enumeration is exhaustive, the symmetry quotient
 matches the published odd-order convention, the DIMACS structure re-parses,
 and the independent checker works on a known smaller case.
 

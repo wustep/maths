@@ -14,7 +14,7 @@ The kissing number $\tau_5$ is between 40 and 44 and is widely expected to equal
 
 ## Tonight
 
-An exact dual certificate excluding some $k\in\{41,42,43,44\}$, or a new exact spherical code of size $>40$ in $S^4$. A restricted numerical SDP that does not become an exact positivity certificate is an incomplete search. Fetch the current published bounds before searching.
+An exact dual certificate excluding some $k\in\{41,42,43,44\}$, or a new exact spherical code of size $>40$ in $S^4$. A restricted numerical SDP that does not become an exact positivity certificate is residue. Fetch the current published bounds before searching.
 
 ## Outcome (2026-08-17)
 

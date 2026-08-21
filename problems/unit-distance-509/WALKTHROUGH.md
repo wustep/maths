@@ -2,7 +2,7 @@
 
 ## 0. What was actually missing
 
-The published record is a concrete point set, not a proof that 509 is minimal. A new bound is any strictly smaller exact-coordinate unit-distance graph that is still not 4-colorable, or else a 4-coloring of the published 509-set (which would refute it). The missing degree of freedom was a vertex subset, or a swap against Parts’ own lattice, that preserved the 4-coloring obstruction.
+The published record is a concrete point set, not a proof that 509 is minimal. A dent is any strictly smaller exact-coordinate unit-distance graph that is still not 4-colorable, or else a 4-coloring of the published 509-set (which would refute it). The missing degree of freedom was a vertex subset, or a swap against Parts’ own lattice, that preserved the 4-coloring obstruction.
 
 Coordinates were not to be invented. The work starts only after the published `.vtx` file is in hand.
 
@@ -22,13 +22,13 @@ Coordinates were not to be invented. The work starts only after the published `.
 
 Every single-vertex deletion of the published graph is 4-colorable. The SAT times are small (median 0.33s, max 6.7s). So $G$ is vertex-critical: deletion alone cannot produce a smaller 5-chromatic subgraph.
 
-That failure names the only remaining move. A smaller graph has to *swap*. Drop $k$ originals, keep $\ell$ extras from the published lattice, and finish with $509-k+\ell<509$. The cheapest improvement is $k=2$, $\ell=1$.
+That failure names the only remaining move. A smaller graph has to *swap*. Drop $k$ originals, keep $\ell$ extras from the published lattice, and finish with $509-k+\ell<509$. The cheapest dent is $k=2$, $\ell=1$.
 
 A second failure made the cost of a swap visible. Vertex 310, which is the lattice point $(0,\sqrt{3})$ and has degree 4, *can* be replaced, but only by several extras at once. Binary-chunk reduction of the 677-point reserve cut the extra set to 6 points. The resulting 514-vertex graph is itself vertex-critical. One original out, six extras in, is a different 5-chromatic unit-distance graph, not a smaller one.
 
 ## 3. The click
 
-Two clicks, neither of them a new bound.
+Two clicks, neither of them a dent.
 
 The first was algebraic, not combinatorial. The published 509 file contains four nested radicals $\sqrt{(5/2)(7\pm\sqrt{33})}$. They denest in $\mathbb{Q}(\sqrt{3},\sqrt{5},\sqrt{11})$:
 
@@ -61,7 +61,7 @@ Test swaps, in this order:
 
 No trial produced a 5-chromatic graph on fewer than 509 vertices.
 
-## 5. Computer search
+## 5. Computer residue
 
 | object | where | what it shows |
 | --- | --- | --- |
@@ -76,7 +76,7 @@ No trial produced a 5-chromatic graph on fewer than 509 vertices.
 | `compute/shrink_514.jsonl` | 514 SAT calls | that swap graph is also critical |
 | `compute/double_swap_deg4.jsonl` | 10,155 SAT calls | no 1-for-2 swap on degree-4 pairs |
 | `compute/double_swap_d5adj.jsonl` | 68 SAT calls | no 1-for-2 swap of adjacent deg-≤5 pairs |
-| `compute/search_summary.json` | totals | no improvement |
+| `compute/search_summary.json` | totals | no dent |
 
 Replay the certificate with `compute/run_verify.sh`.
 

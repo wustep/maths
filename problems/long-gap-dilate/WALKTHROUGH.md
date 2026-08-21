@@ -6,7 +6,7 @@ Discovery notes, not a paper. Empty sections would mean not done.
 - Quest: Green 100 #32, improve Shakan’s universal 2
 - Model: SuperGrok CLI `grok-4.6`
 - Date: 2026-08-17
-- Argument status: no certified $C>2$. Leftover is a verified SAT table,
+- Argument status: no certified $C>2$. Residue is a verified SAT table,
   a degree-wall for the published method, and failed lifts
 - Problem status: open
 
@@ -49,7 +49,7 @@ the $d^p-d$ half of Alon does not drop.
 **Dirichlet clustering.** Any fixed-size $n$-set has a dilate of
 diameter $O(p^{1-1/(n-1)})$, so $G(p,n)/(p/n)\to n$. This is
 Green’s Bohr-set remark. At $n\sim\sqrt p$ the box principle needs
-more than $p$ boxes. No improvement.
+more than $p$ boxes. No dent.
 
 **Energy / Freiman.** $|A-A|\le 3n$ makes some dilate an interval
 and the gap is $p-O(n)$, enormous. Random / Sidon / small
@@ -67,7 +67,7 @@ $\mathbb Z/(q^2+q+1)$ matches the SAT value of $G$. At $q=17$,
 $p=307$, $n=18$ it has gap 90 against Shakan 32 (ratio $5.28$).
 Not a near-extremal family.
 
-**Calling the SAT table a new bound.** For $17\le p\le 71$ one has
+**Calling the SAT table a dent.** For $17\le p\le 71$ one has
 $G(p,\mathrm{round}\sqrt p)/\sqrt p\in[2.18,3.09]$. House rule:
 isolated small-$p$ tables are not a universal $C>2$. Extra above
 Shakan is order $n$ on this range; that could be a hidden $+n$
@@ -95,7 +95,7 @@ Two translations, then a stop.
 First: $\max_d g(dA)$ is the length of the longest arithmetic
 progression in the complement. Green #32 is the hitting-set statement
 “every $\sqrt p$-set misses some $100\sqrt p$-AP”. Shakan is
-$H(p,T)>2p/(T+2)$. A new bound is $H(p,C\sqrt p)>\sqrt p$ for some
+$H(p,T)>2p/(T+2)$. A dent is $H(p,C\sqrt p)>\sqrt p$ for some
 fixed $C>2$.
 
 Second: the only published proof of the 2 uses a homogeneous slice
@@ -124,7 +124,7 @@ There is no third click that produces a $C>2$ proof.
    $n\sim\sqrt p$. Local-search upper bounds live at ratio $3$–$3.5$.
 6. Stop before calling the finite table a universal constant.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/certs/sat_G.jsonl` — exact $G$, witnesses, Glucose logs
   of the binary search.

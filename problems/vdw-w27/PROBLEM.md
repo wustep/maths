@@ -17,6 +17,6 @@ is $W(2,7)>3703$. Exact determination is open.
 
 Find an explicit 2-coloring of $[3704]$ or longer with no monochromatic
 7-AP, and a verifier that checks every 7-AP. That would raise the lower
-bound. A coloring of length $\le 3703$ is not a new bound.
+bound. A coloring of length $\le 3703$ is not a dent.
 
 Do not claim the exact value of $W(2,7)$.

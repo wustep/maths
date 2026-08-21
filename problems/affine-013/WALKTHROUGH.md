@@ -73,7 +73,7 @@ every family:
 
 So the lower-bound constant did not move, and the finite-n
 maximisers (including the sporadic 7-set {0,3,6,8,9,12,18} with
-T=18) are an incomplete search. That forced the work onto an upper bound that
+T=18) are residue. That forced the work onto an upper bound that
 uses the order of ℤ, which constructions never see.
 
 ## 3. The click
@@ -142,7 +142,7 @@ Green–Sisask’s 3AP-extremisers E(k,m), F(k,m) do not beat 1/3
 for this equation either (they are almost-intervals of even
 difference, or they lose the factor-of-two spacing).
 
-## 5. Computer search
+## 5. Computer residue
 
 - Interval closed form, brute-forced through n=79:
   `compute/verify_interval.py`.

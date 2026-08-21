@@ -20,7 +20,7 @@ $n$, but it also reveals exactly what remains uncontrolled.
 
 - **Extending q1 with more primes.** It would enlarge a certified finite
   interval and nothing else. Every fixed row eventually becomes the square
-  residue 1. The leftover worth keeping was the need for a modulus depending on
+  residue 1. The residue worth keeping was the need for a modulus depending on
   $n$.
 - **Using $(m-1)(m+1)=n!$ before removing the common two.** The factors have
   gcd 2, so saying “prime factors cannot split” is literally false for the
@@ -121,7 +121,7 @@ factorization, and records coprimality. Its main theorem,
 divisibility to the coprime neighbors, and returns the divisibility of $m-1$
 or $m+1$. It contains no bounded case split and no \`sorry\`.
 
-## 5. Figures, numeric checks, and computer search
+## 5. Figures, numeric checks, computer residue
 
 ![Exact unitary-divisor gaps and sign-vector growth](figures/q2-unitary-factorization.png)
 

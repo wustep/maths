@@ -14,7 +14,7 @@ The Schur number $S(k)$ is the largest $n$ such that $\{1,\dots,n\}$ can be $k$-
 
 ## Precise statement
 
-A $k$-coloring of $[n]$ is *sum-free* if there are no $x,y\in[n]$ (not necessarily distinct) with $x+y\le n$ monochromatic. **Tonight:** find a 7-coloring of [1697] that is sum-free, or record a precise incomplete SAT/search. Do not claim a new upper bound on $S(7)$.
+A $k$-coloring of $[n]$ is *sum-free* if there are no $x,y\in[n]$ (not necessarily distinct) with $x+y\le n$ monochromatic. **Tonight:** find a 7-coloring of [1697] that is sum-free, or record a precise SAT/search residue. Do not claim a new upper bound on $S(7)$.
 
 ## What happened (recovered)
 

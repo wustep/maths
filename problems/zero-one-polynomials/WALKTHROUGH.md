@@ -29,7 +29,7 @@ has no carry — is named, classical, and finite. That is the handle.
 - **Beat Konyagin’s $1/\log n$.** Green’s pre-2023 sentence still
   lists it. BSKK Theorem 1(b) already gives a positive $\delta$ for
   $\Upsilon_{\{0,1\}}(n)$, which *is* $P_n$. Beating Konyagin is
-  not a new bound.
+  not a dent.
 
 - **Special degrees, Littlewood-style.** Bary-Soroker–Hokken–Kozma–Poonen
   get $\limsup p_n=1$ for $\pm 1$ coefficients along $n=p^r-1$,
@@ -44,12 +44,12 @@ has no carry — is named, classical, and finite. That is the handle.
   k/210)|^s < \sqrt{210}$. The first legal $s$ is 134, matching
   $2P/\pi\approx 133.7$. Any larger 4-prime product needs a larger
   $s$ and gives a *smaller* $\theta$. We scanned 177 products. None
-  won. Incomplete search.
+  won. Residue.
 
 - **Hensel-lift a full irreducibility census past Borst’s degree 20 as
-  the new bound.** A factor-count table is not a new bound unless it
+  the dent.** House rule: a factor-count table is not a dent unless it
   beats a published bound or isolates an obstruction. A longer table of
-  $p_n$ alone would have been an incomplete search.
+  $p_n$ alone would have been residue.
 
 - **Prove Filaseta Conjecture 1 in full.** That is “almost every 0/1
   polynomial has irreducible non-reciprocal part”. It reduces to
@@ -65,7 +65,7 @@ optimum of their method: smallest 4-prime modulus, first feasible
 moment $s$, $\gamma$ sitting $5\cdot 10^{-4}$ above $1/2$.
 Their printed $\gamma=0.50057$ even overshoots — $\alpha=1.000025$
 — so the strictly legal $\theta$ is $0.00373556$, not $0.003736$.
-A four-digit rounding is not a new bound. What it taught is that the
+A four-digit rounding is not a dent. What it taught is that the
 remaining factor-degree window $[\theta n,n/2]$ will not move
 without a new equidistribution theorem.
 
@@ -128,10 +128,10 @@ geometric sum, exponential decay against $2^{n-1}$.
 6. Split $R_n$ into 0/1-factorisations versus the rest. The 0/1
    factorisations through $n=16$ are $0,0,\ldots,4,12,20,32,52,96$.
    Prove they are $O(\rho^n)$ by the Fibonacci argument above.
-   The complementary half — factors with a $-1$ — is the remaining
-   half inside Filaseta Conjecture 1.
+   The complementary half — factors with a $-1$ — is the residue
+   inside Filaseta Conjecture 1.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/fourier_theta.json` — 4-prime search. Winner $P=210$,
   $s=134$. Verifier `verify_fourier.py`.

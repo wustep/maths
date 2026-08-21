@@ -2,7 +2,7 @@
 
 - Problem: `problems/ramsey-r55`
 - Date: 2026-08-17
-- Argument status: documented incomplete search; published record $43\le R(5,5)\le 46$ not beaten
+- Argument status: documented residue; published record $43\le R(5,5)\le 46$ not beaten
 - Problem status: open
 
 ## 0. What was actually missing
@@ -16,7 +16,7 @@ The degree of freedom that is actually finite tonight is **symmetry**. Order 43 
 
 ## 1. False starts (named obstacles)
 
-- **Unrestricted SAT on 43 vertices.** 903 edge variables, $\binom{43}{5}\cdot 2$ width-10 clauses. This is the instance the literature has been staring at for thirty years. An isolated timeout is not a new bound, and we did not treat it as one.
+- **Unrestricted SAT on 43 vertices.** 903 edge variables, $\binom{43}{5}\cdot 2$ width-10 clauses. This is the instance the literature has been staring at for thirty years. An isolated timeout is not a dent, and we did not treat it as one.
 - **Hoping a circulant of order 43 exists.** Paley is unavailable: $43\equiv 3\pmod 4$. The full $2^{21}$ connection-set tree, pruned to degrees $[18,24]$, is one million leaves and finishes in under a second. It is empty. Harborth–Krause already said a cyclic improvement of the Table Ia lower bound needs 102 vertices; the census is a check, not a discovery.
 - **Adding one vertex to a circulant 41-graph.** There *are* 20 circulant $(5,5,41)$-graphs (Paley-41 itself has $\omega=\alpha=5$ and is not among them). None extends. Because a non-extendable $n$-vertex $(5,5)$-graph cannot appear as an induced subgraph of any larger $(5,5)$-graph, this path cannot reach 42 or 43.
 - **Replaying Angeltveit–McKay at 45.** Their own conclusion is that the 46-proof already used the dense end of $\mathcal R(4,5,n)$ and that 45 wants new theory. We did not start an 80-year gluing job.
@@ -48,11 +48,11 @@ A second, smaller click: the involution-symmetric 43-vertex encoding is a 462-va
 5. Try to grow the 20+24 circulants on 41 and 40 by one vertex. Empty. Conclude they cannot sit inside a larger $(5,5)$-graph.
 6. Walk the 1-flip neighbourhood of the 656 and the Seidel 1- and 2-switch neighbourhoods. Flips stay in the published 1-WL types; Seidel dies immediately.
 7. Write down the six groups of order 42, check the tables, and exhaust inverse-closed Cayley graphs in the legal degree window. All six empty.
-8. Encode involution-symmetric 43-vertex graphs. Validate the encoder at $n=17$. Run kissat for 15–20 minutes on both the fat and slim 43-instances. Both return `UNKNOWN`. A timeout is not a new bound.
+8. Encode involution-symmetric 43-vertex graphs. Validate the encoder at $n=17$. Run kissat for 15–20 minutes on both the fat and slim 43-instances. Both return `UNKNOWN`. A timeout is not a dent.
 
 No step moves an endpoint of the published interval.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/refs/radziszowski-ds1-rev18.pdf`, `compute/refs/angeltveit-mckay-r55-le46.pdf`, `compute/refs/r55_42some.g6`
 - `compute/certs/mckay42_verify.json` — 656 graphs, degrees, hash

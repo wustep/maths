@@ -27,13 +27,13 @@ The degree of freedom was to *name the numbers*, including the algebraic-lift co
 
 ## 1. False starts (named obstacles)
 
-- **A better prefix than Bernoulli(`1/2`).** Juškevičius–Sahasrabudhe analyse `f = D_n − g` with `deg g = m`. Zeros live in `E(g) = {|g−1/2| < 1/(2 sin(x/2))}`, and random `g` has `𝔼|E| = Θ(log m / √m)`. A special `g` with `|E| = o(log m/√m)` would give `O(n^{2/3})` or better. FFT estimates for interval, evens, low-half, Thue–Morse, Sturmian, quadratic residues, biased Bernoulli, and a bit-flip local search all stayed `Θ(log m/√m)` (local search ~`1.2×` the random benchmark). The obstruction is structural: independent inclusions maximise `Var(g(x))` at `p=1/2`, and every highly structured `g` we tried was *more* often inside the envelope, not less. Finite-`m` tables are an incomplete search.
+- **A better prefix than Bernoulli(`1/2`).** Juškevičius–Sahasrabudhe analyse `f = D_n − g` with `deg g = m`. Zeros live in `E(g) = {|g−1/2| < 1/(2 sin(x/2))}`, and random `g` has `𝔼|E| = Θ(log m / √m)`. A special `g` with `|E| = o(log m/√m)` would give `O(n^{2/3})` or better. FFT estimates for interval, evens, low-half, Thue–Morse, Sturmian, quadratic residues, biased Bernoulli, and a bit-flip local search all stayed `Θ(log m/√m)` (local search ~`1.2×` the random benchmark). The obstruction is structural: independent inclusions maximise `Var(g(x))` at `p=1/2`, and every highly structured `g` we tried was *more* often inside the envelope, not less. Finite-`m` tables are residue.
 
 - **Hankel instead of Hadamard.** The `d log d` in `log F` comes from `(2d+1)^{d}` in Erdélyi 3.8, which is Hadamard on a window matrix. Consecutive windows are Hankel. Exhaustive max-`|det|` for `{0,1}`-Hankel of size `n≤7` reproduces the unrestricted `{0,1}` sequence `1,1,2,3,5,9,32`. The restriction does not remove the `n^{n/2}`. No `c log log N`.
 
 - **Chasing `1/5` style improvements of `P`.** The period is already `exp(O(d log log d))` via `lcm[1..m]` and Euler's totient; that term is milder than Hadamard for the inversion. Tightening `16 t log log t` to `8 t log log t` with a better `φ` bound changes `C`, not the form.
 
-- **Isolated exact zero counts.** Exact `Z(A)` for a handful of sets is the thing the house forbids as a new bound.
+- **Isolated exact zero counts.** Exact `Z(A)` for a handful of sets is the thing the house forbids as a dent.
 
 ## 2. The useful failure
 
@@ -90,7 +90,7 @@ Z(N) ≥ d ≥ log log N / (200 log log log N)
 
 whenever the right-hand side is at least `4`.
 
-## 5. Computer search
+## 5. Computer residue
 
 - `compute/prefix_search.json` — `|E|` table. Best finite-`m` ratio is local search, still `Θ(log m/√m)`.
 - `compute/hankel_det.py` stdout — Hankel max-dets.

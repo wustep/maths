@@ -14,7 +14,7 @@ It is unknown whether infinitely many q admit A ⊆ Z/qZ with A+A = Z/qZ and |A|
 
 ## Tonight
 
-An infinite parametric family, or a certified finite construction beating the published density for some q, with an independent verifier. Isolated small-q tables are an incomplete search unless they imply an infinite family. Fetch Green #33 before searching.
+An infinite parametric family, or a certified finite construction beating the published density for some q, with an independent verifier. Isolated small-q tables are residue unless they imply an infinite family. Fetch Green #33 before searching.
 
 ## Record after 2026-08-17
 
