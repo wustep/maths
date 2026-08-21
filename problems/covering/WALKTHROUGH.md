@@ -226,3 +226,25 @@ record. Three orbits out of 89. Three thousand eight hundred and twenty-eight
 possibilities. All of them checked in under a second, and none of them is a
 covering. The same search happily produces a $C_{23}$-invariant 92-set, so the
 machinery works; 69 is simply not there.
+
+There is a sting in the tail. Having spent the run asking which symmetries a
+49-set *could* have, the obvious question is which symmetries the coverings we
+already have *do* have — and the answer is a lot. The certified 50-set has an
+automorphism group of order 128; the 2003 Kaikkonen–Rosendahl 51-set has one of
+order 512. Both are 2-groups. Both, that is, sit in exactly the one case the
+odd-prime sweep cannot reach, because a single involution never cuts the search
+enough to be worth prescribing.
+
+That is not a contradiction, but it is a rebuke. The right reading is that these
+objects are built, not stumbled on, and what builds them is 2-group structure.
+Prescribing those particular groups at 49 fails for a reason you can see
+immediately once you look: the 127 vectors sitting in small $\mathrm{Aut}(50)$
+orbits form a 7-dimensional subspace, so any invariant set assembled from them
+never leaves that subspace and misses 896 syndromes outright. The orbits that do
+reach are size 16, and $16+16+16+1$ is the only economical way to make 49 — all
+74400 of those, and the best leaves 499 holes.
+
+So the group is too coarse and the subgroups are too many. Sampled subgroups of
+order 16 get the residue down to 83 holes, which sounds close and is not: every
+one of those searches hit its cap, none was decided, and a hole count is not a
+bound. It is a signpost, and it points somewhere specific for once.
