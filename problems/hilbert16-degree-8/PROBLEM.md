@@ -78,11 +78,11 @@ arithmetic, isotopy type recomputed via a double-cover argument), and
 the 22-oval subset reproduces exactly the 38 bold rows of their
 Table 1.
 
-**Dent (C).** **Sixteen** real schemes are realizable as degree-8
+**Dent (C).** **Seventeen** real schemes are realizable as degree-8
 T-curves and are **not** among their 2,367, so their §5.3 lower bound
-("the search is not exhaustive") becomes **≥ 2,383**:
+("the search is not exhaustive") becomes **≥ 2,384**:
 
-⟨13 ⊔ 1⟨3 ⊔ 1⟨2⟩⟩⟩, ⟨3 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩, ⟨4 ⊔ 1⟨2⟩ ⊔ 1⟨13⟩⟩, ⟨4 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩, ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩, ⟨5 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩, ⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨5 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨6 ⊔ 1⟨6⟩⟩⟩, ⟨6 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨6 ⊔ 1⟨8 ⊔ 1⟨4⟩⟩⟩, ⟨6 ⊔ 1⟨9 ⊔ 1⟨4⟩⟩⟩, ⟨7 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩.
+⟨13 ⊔ 1⟨3 ⊔ 1⟨2⟩⟩⟩, ⟨3 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩, ⟨4 ⊔ 1⟨2⟩ ⊔ 1⟨13⟩⟩, ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, ⟨4 ⊔ 1⟨4⟩ ⊔ 1⟨11⟩⟩, ⟨4 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩, ⟨5 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨5 ⊔ 1⟨6 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩, ⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨5 ⊔ 1⟨8⟩⟩⟩, ⟨6 ⊔ 1⟨6 ⊔ 1⟨6⟩⟩⟩, ⟨6 ⊔ 1⟨6 ⊔ 1⟨7⟩⟩⟩, ⟨6 ⊔ 1⟨8 ⊔ 1⟨4⟩⟩⟩, ⟨6 ⊔ 1⟨9 ⊔ 1⟨4⟩⟩⟩, ⟨7 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩.
 
 Each witness sits on one of the paper's own triangulations with their
 integer `MIN_WEIGHTS`, so nothing about the geometry is ours to get
@@ -90,7 +90,7 @@ wrong: the weights are re-certified exactly in rational arithmetic, the
 scheme is recomputed from scratch, and absence is checked both against
 our replay of the 2,367 and against the `.pcom` file names in their
 archive. Certificate `compute/certs/new_schemes.json`, checked by
-`compute/verify_new.py` (16/16).
+`compute/verify_new.py` (17/17).
 
 **Haas zone decompositions (new machinery).** `compute/haas.py`
 implements Harnack splits, zones, compatibility and surgical twists
