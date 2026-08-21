@@ -41,9 +41,9 @@ done
 echo "Created problems/$slug/"
 echo
 echo "Next (from AGENTS.md):"
-echo "  1. Fill problems/$slug/PROBLEM.md — statement, published record, what would count as a dent."
+echo "  1. Fill problems/$slug/PROBLEM.md — statement, published record, what would count as a new bound."
 echo "  2. Follow the literature skill (.claude/skills/literature/SKILL.md):"
 echo "     python3 scripts/arxiv_fetch.py <id> [--research problems/$slug/RESEARCH.md]"
 echo "  3. Add a row to the README Problems table."
 echo "  4. When you run a model on it, add a row to the README \"Which model ran what\" table."
-echo "  5. Before claiming a bound, follow the dent skill (.claude/skills/dent/SKILL.md)."
+echo "  5. Before claiming a bound, follow AGENTS.md How to work."

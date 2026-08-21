@@ -10,9 +10,9 @@ description: Mint a new problems/<slug>/ folder with the standard files and READ
    `refs/problem-template/` and fills the slug and date.
 
 2. Fill `PROBLEM.md`: header (slug, list ref, solver, status, area,
-   sources, started date), the statement, and an explicit dent
-   criterion, including what does not count (see
-   `problems/chowla-cosine/PROBLEM.md` and the dent skill).
+   sources, started date), the statement, and what would count as a
+   new bound, and what does not count (see
+   `problems/chowla-cosine/PROBLEM.md` and the writing skill).
 
 3. Add a README Problems-table row (folder link, honest status).
    Add a "Which model ran what" ledger row when you actually run.
@@ -32,4 +32,4 @@ Then, in the minted folder:
 - Lean lemmas live in the problem folder; `lean-toolchain` pins
   4.32.0. Add `lean/` only if there is a lemma.
 
-Before claiming a bound, follow the dent skill.
+Before claiming a bound, follow AGENTS.md How to work.
