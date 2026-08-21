@@ -24,7 +24,7 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 
 Starting a problem: mint with `scripts/new-problem.sh <slug>`;
 recipes in `.claude/skills/` (`new-problem`, `literature`, `dent`,
-`markdown-latex`);
+`markdown-latex`, `compute`);
 fetch a paper with `python3 scripts/arxiv_fetch.py <id>` (optional
 `--research problems/<slug>/RESEARCH.md`); OEIS via
 `scripts/oeis_lookup.py`. Then add a Problems-table row. Add a
