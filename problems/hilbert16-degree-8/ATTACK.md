@@ -615,3 +615,45 @@ triangulations**, and they realize **exactly the paper's 38 M-schemes**
 — all 38, none beyond. An independent set of triangulations reproduces
 their list precisely. Certificate:
 `compute/certs/outside_census_sweeps.json`.
+
+## 2026-08-21 — radius 4 around all 2,367, and the session total
+
+The systematic pass finished as well: an exhaustive Hamming ball of
+radius 4 (164,221 sign vectors) around **every one of the 2,367
+certificates**, each on its own integer-certified triangulation.
+
+| | |
+| --- | --- |
+| certificates used as ball centres | **2,367 of 2,367** |
+| sign vectors | **388,711,107** |
+| balls that completed | all 219 chunks |
+| distinct schemes found | **2,383** |
+| of the published 2,367, re-found | **2,367 — all of them** |
+| schemes outside the 2,367 | **16** |
+
+So the census is closed under this move up to distance 4: within Hamming
+distance 4 of *any* of their certificates there are exactly 2,383 real
+schemes, their 2,367 and sixteen of ours. The seventeenth,
+⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, lies at distance 5 or 6 from every census
+certificate — which is why it took the radius-6 pass to see it, and why
+"radius 3 or 4" was the wrong stopping point.
+
+Certificate: `compute/certs/census_balls_r4.json`.
+
+### Session total
+
+| family | units | sign distributions | outside the 2,367 |
+| --- | --- | --- | --- |
+| every census triangulation, whole maximal stratum | 184 | 230,501,440 | 0 |
+| regular triangulations outside the census, same | 4,809 | 655,237,120 | 0 |
+| radius-4 balls, all 2,367 certificates | 2,367 seeds | 388,711,107 | 16 |
+| radius-6 balls, all 38 M-certificates | 38 | 362,179,520 | 17 |
+| radius-7 balls, the 7 productive certificates | 7 | 384,374,620 | 17 |
+| **total** | | **≈ 1.78 billion** | **17 distinct** |
+
+Every one of the seventeen is certified by `verify_new.py` on the exact
+`Fraction` pipeline, and every 22-oval scheme anywhere in the above
+satisfies Rokhlin's congruence. **The census lower bound is ≥ 2,384.**
+Hilbert 16(a) in degree 8 is exactly as open as it was: the two
+algebraically open deep nests were not reached, and nothing here is an
+obstruction.
