@@ -664,3 +664,41 @@ satisfies Rokhlin's congruence. **The census lower bound is ≥ 2,384.**
 Hilbert 16(a) in degree 8 is exactly as open as it was: the two
 algebraically open deep nests were not reached, and nothing here is an
 obstruction.
+
+## 2026-08-21 — the (M−1)-certificates have no holes
+
+The next ring out: an exhaustive radius-6 ball around **every one of the
+78 twenty-one-oval certificates** of the census, 9,531,040 sign vectors
+each, **743,421,120** in total, all complete.
+
+**Zero schemes outside the 2,367.**
+
+Set against the M-certificates — where 7 of 38 have a hole beside them —
+this says something sharper than any of the individual finds. The
+census's thinness is not spread through the neighbourhood of its
+certificates; it is concentrated at the *top* of the oval count. Their
+search reaches the M-curves and then does not descend from all of them,
+but once it is at 21 ovals its neighbourhood is closed under this move
+out to distance 6.
+
+Certificate: `compute/certs/m1cert_balls_r6.json`.
+
+## 2026-08-21 — thickening the whole maximal stratum
+
+Every ball so far was centred on the *one* sign vector the paper
+published per scheme. But a triangulation of twist rank \(r\) carries
+\(2^r\) maximal sign distributions, and the seventeen holes are all
+non-maximal curves a short distance from a maximal one. The right object
+is therefore the whole maximal stratum thickened, not one point of it
+thickened.
+
+`compute/thickc.c` walks the entire span \(\eta+\operatorname{span}\{\delta_S\}\)
+and, at every point of it, also evaluates all 45 single-coordinate flips
+— so it covers every sign vector within Hamming distance 1 of the
+*complete* maximal stratum. On a rank-16 triangulation that is 3,014,656
+evaluations and it turns up **111–147 distinct schemes** where the pure
+span sweep sees 4.
+
+`compute/thick_drive.py` runs it over the census triangulations, those
+carrying a 22-oval certificate first, then by increasing rank (the cost
+is \(46\cdot 2^r\)). Running.
