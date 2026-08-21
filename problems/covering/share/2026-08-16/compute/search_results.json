@@ -1,0 +1,42 @@
+{
+  "date": "2026-08-16",
+  "interpretation": "uncovered=0 is a covering code; positive values are search residues, not lower bounds",
+  "runs": [
+    {
+      "redundancy": 8,
+      "length": 25,
+      "documented_length": 26,
+      "best_uncovered": 3,
+      "status": "no witness found"
+    },
+    {
+      "redundancy": 9,
+      "length": 38,
+      "documented_length": 39,
+      "best_uncovered": 8,
+      "status": "no witness found"
+    },
+    {
+      "redundancy": 10,
+      "length": 50,
+      "documented_length": 51,
+      "best_uncovered": 0,
+      "status": "certified witness"
+    },
+    {
+      "redundancy": 10,
+      "length": 49,
+      "documented_length": 51,
+      "best_uncovered": 7,
+      "status": "no witness found"
+    }
+  ],
+  "solver_status": {
+    "cp_sat_r8_n25_seconds": 240,
+    "cp_sat_r8_n25_result": "UNKNOWN",
+    "cp_sat_r9_n38_seconds": 300,
+    "cp_sat_r9_n38_result": "UNKNOWN",
+    "z3_r8_n25_seconds": 180,
+    "z3_r8_n25_result": "UNKNOWN"
+  }
+}
