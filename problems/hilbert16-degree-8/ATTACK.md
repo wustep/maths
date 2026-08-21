@@ -581,3 +581,37 @@ reachable. What can be said is that ⟨5 ⊔ 1⟨6⟩ ⊔ 1⟨9⟩⟩ is not rea
 by any of the 184 census triangulations (exhaustively) nor by any of
 the 4,074 others swept here, and that its \((p,n)=(7,15)\) class is the
 one where the paper T-realizes 8 M-schemes.
+
+## 2026-08-21 — the radius-7 wall on every productive certificate
+
+Each of the seven M-certificates that has a hole beside it was then
+swept to Hamming radius 7 — 54,910,660 sign vectors each, **384,374,620**
+in total, every ball complete:
+
+| seed | distinct schemes | outside the 2,367 |
+| --- | --- | --- |
+| `(6v1(6v1(8)))` | 1,365 | 7 |
+| `(6v1(10v1(4)))` | 1,302 | 4 |
+| `(8v1(1)v1(3)v1(7))` | 1,217 | 3 |
+| `(5v1(2)v1(13))` | 898 | 2 |
+| `(5v1(5)v1(10))` | 885 | 1 |
+| `(5v1(3)v1(12))` | 833 | 1 |
+| `(5v1(4)v1(11))` | 637 | 3 |
+
+Radius 7 adds 45.4 million sign vectors per seed over radius 6 and finds
+**nothing new**. So the statement closes:
+
+> The seventeen certified schemes are **exactly** the schemes outside
+> the published 2,367 within Hamming distance 7 of any M-certificate
+> of the census — the seven that have one, and the thirty-one that
+> provably do not.
+
+Certificate: `compute/certs/productive_certs_r7.json`.
+
+**The walk finished too.** 859 certified regular triangulations outside
+the census, each swept exhaustively over its whole maximal stratum,
+together with 3,750 from the uniform sampler: **4,609 non-census
+triangulations**, and they realize **exactly the paper's 38 M-schemes**
+— all 38, none beyond. An independent set of triangulations reproduces
+their list precisely. Certificate:
+`compute/certs/outside_census_sweeps.json`.

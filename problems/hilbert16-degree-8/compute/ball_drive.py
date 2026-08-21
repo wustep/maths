@@ -68,12 +68,16 @@ def main():
             keys.append(ch)
     res = open(f"{outdir}/bw{w}.jsonl", "a")
     nov = open(f"{outdir}/bw{w}_novel.jsonl", "a")
+    # every worker skips chunks any worker has already finished
     done = set()
-    for l in open(f"{outdir}/bw{w}.jsonl"):
-        try:
-            done.add(json.loads(l)["group"])
-        except Exception:
-            pass
+    for fn in sorted(__import__("glob").glob(f"{outdir}/bw*.jsonl")):
+        if fn.endswith("_novel.jsonl"):
+            continue
+        for l in open(fn):
+            try:
+                done.add(json.loads(l)["group"])
+            except Exception:
+                pass
     for (k, off, certs) in keys:
         tag = f"{k}:{off}"
         if tag in done:
