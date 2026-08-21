@@ -41,10 +41,10 @@ not beat it.
 ## What to update
 
 Update the problem-folder files. If status changed, update the
-README Problems row. When you ran something, add a row to
-"Which model ran what". For a dated campaign, add a folder under
-`notes/` like `notes/supergrok-2026-08-17/` (REPORT + prompts;
-JSONL logs stay local / gitignored).
+README Problems row. When you run something, add a row to the
+README “Which model ran what” table. For a dated campaign, add a
+folder under `notes/` like `notes/supergrok-2026-08-17/` (REPORT +
+prompts; JSONL logs stay local / gitignored).
 
 `problems/` is current. `notes/lists/` catalogs, `notes/picks/`
 ballots, `notes/chat/` the transcript. Those folders stay.
