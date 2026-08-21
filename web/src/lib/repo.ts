@@ -18,6 +18,10 @@ const EXCLUDED_DIRS = new Set([
   "__pycache__",
 ]);
 
+// Deploy/tooling files that are not maths content. Matched by basename so a
+// nested copy stays hidden too. Do not put research or problem files here.
+const EXCLUDED_FILES = new Set(["vercel.json"]);
+
 // Files rendered as readable pages.
 const MARKDOWN_EXT = new Set([".md"]);
 const TEXT_EXT = new Set([
@@ -85,6 +89,7 @@ function scanDir(abs: string, rel: string): RepoDir {
       if (EXCLUDED_DIRS.has(e.name)) continue;
       dirs.push(scanDir(path.join(abs, e.name), childRel));
     } else if (e.isFile()) {
+      if (EXCLUDED_FILES.has(e.name)) continue;
       const size = fs.statSync(path.join(abs, e.name)).size;
       files.push({
         path: childRel,
