@@ -18,4 +18,4 @@ A certified census of a new finite order, a new structural class with a replayab
 
 ## Result (2026-08-17)
 
-Width-3 \(\delta\) through 9 elements independently recovered as \(\ge 14/39\). At 10 elements there is a unique unlabelled width-3 poset \(W_{10}\) with \(\delta=6/17<14/39\), \(e=187\). Replay `compute/verify_W10.py`. The unrestricted conjecture is still open. See ATTACK.md / WALKTHROUGH.md.
+Width-3 $\delta$ through 9 elements independently recovered as $\ge 14/39$. At 10 elements there is a unique unlabelled width-3 poset $W_{10}$ with $\delta=6/17<14/39$, $e=187$. Replay `compute/verify_W10.py`. The unrestricted conjecture is still open. See ATTACK.md / WALKTHROUGH.md.

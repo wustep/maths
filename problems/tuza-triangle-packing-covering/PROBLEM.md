@@ -18,4 +18,4 @@ A certified extremal split or bounded-treewidth example, a new local exchange ru
 
 ## Tonight's dent
 
-In every 8-regular graph, the two ends of an edge of triangle-codegree 7 form a Puleo reducible pair. Certificates for all 1044 unlabelled 7-vertex cores are in `compute/certs/c7_8reg_verified.json` and are independently checkable. This does not prove Tuza for \(\Delta\le 8\). See `WALKTHROUGH.md`.
+In every 8-regular graph, the two ends of an edge of triangle-codegree 7 form a Puleo reducible pair. Certificates for all 1044 unlabelled 7-vertex cores are in `compute/certs/c7_8reg_verified.json` and are independently checkable. This does not prove Tuza for $\Delta\le 8$. See `WALKTHROUGH.md`.

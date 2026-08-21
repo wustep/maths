@@ -2,7 +2,7 @@
 
 ## 2026-08-16
 
-- Environment created. Overnight quest. written: SAT-search 142 points on the \(71\times 71\) grid, prefer
+- Environment created. Overnight quest. written: SAT-search 142 points on the $71\times 71$ grid, prefer
   rct4. No attack yet.
 
 ## 2026-08-16 — q1

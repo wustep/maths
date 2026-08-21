@@ -23,7 +23,7 @@ python3 ind_fork.py        # rebuild IndT, IndV, Fork
 ./drat-trim certs/ch-17-6-sb.cnf certs/ch-17-6-sb.drat
 ```
 
-`encode_ch.py` writes a DIMACS instance: oriented, no C₃, out-regular of degree `d`, \(N^+(0)=\{1,\ldots,d\}\), lex order on out-neighbourhoods (disable with `--no-sb`).
+`encode_ch.py` writes a DIMACS instance: oriented, no C₃, out-regular of degree `d`, $N^+(0)=\{1,\ldots,d\}$, lex order on out-neighbourhoods (disable with `--no-sb`).
 
 ## Small-n census
 

@@ -9,14 +9,14 @@
 
 ## Statement
 
-\(W(2,7)\) is the least \(N\) such that every 2-coloring of \([N]\) contains
+$W(2,7)$ is the least $N$ such that every 2-coloring of $[N]$ contains
 a monochromatic 7-term arithmetic progression. The published lower bound
-is \(W(2,7)>3703\). Exact determination is open.
+is $W(2,7)>3703$. Exact determination is open.
 
 ## Tonight
 
-Find an explicit 2-coloring of \([3704]\) or longer with no monochromatic
+Find an explicit 2-coloring of $[3704]$ or longer with no monochromatic
 7-AP, and a verifier that checks every 7-AP. That would raise the lower
-bound. A coloring of length \(\le 3703\) is not a dent.
+bound. A coloring of length $\le 3703$ is not a dent.
 
-Do not claim the exact value of \(W(2,7)\).
+Do not claim the exact value of $W(2,7)$.

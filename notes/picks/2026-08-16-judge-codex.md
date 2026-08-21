@@ -38,7 +38,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: needs-new-theory — discovering the missing global Cauchy–Schwarz/SOS certificate is the open problem
 - tonight_quest: none
 
-### P05. Extremal affine copies of \(\{0,1,3\}\)
+### P05. Extremal affine copies of $\{0,1,3\}$
 - slug: affine-013-copies
 - dentable_tonight: 3
 - literature_is_real: yes
@@ -56,7 +56,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject:
 - tonight_quest: Determine the exact minimum size for the first unclassified small primes by symmetry-broken SAT, emitting each extremal set or an independently checkable UNSAT certificate.
 
-### P07. The second term for Sidon subsets of \([N]\)
+### P07. The second term for Sidon subsets of $[N]$
 - slug: sidon-second-term
 - dentable_tonight: 3
 - literature_is_real: yes
@@ -110,7 +110,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: too-big — finite residue templates do not establish the asymptotic statement
 - tonight_quest: none
 
-### P13. Positive density of the Hofstadter \(ab-1\) closure
+### P13. Positive density of the Hofstadter $ab-1$ closure
 - slug: hofstadter-ab-minus-one-density
 - dentable_tonight: 4
 - literature_is_real: yes
@@ -146,7 +146,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: no-finite-handle — root isolation in selected families does not increment the universal asymptotic lower bound
 - tonight_quest: none
 
-### P17. Irreducibility of random \(0/1\) polynomials
+### P17. Irreducibility of random $0/1$ polynomials
 - slug: random-zero-one-polynomial-irreducibility
 - dentable_tonight: 1
 - literature_is_real: yes
@@ -164,7 +164,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: too-big — changing either exponent is a major research program
 - tonight_quest: none
 
-### P19. Full asymptotics for the \(n\)-queens count
+### P19. Full asymptotics for the $n$-queens count
 - slug: n-queens-full-asymptotic
 - dentable_tonight: 1
 - literature_is_real: yes
@@ -189,7 +189,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - attack_shape: bound-search
 - codex_cost: M
 - reject:
-- tonight_quest: Search one previously unexhausted power of \(C_7\) for an independent set beating the published product lower bound and emit the vertex words plus an exact pairwise nonconfusability checker.
+- tonight_quest: Search one previously unexhausted power of $C_7$ for an independent set beating the published product lower bound and emit the vertex words plus an exact pairwise nonconfusability checker.
 
 ### P22. Density loss for linear radius-two covering codes
 - slug: linear-covering-code-radius-two
@@ -207,7 +207,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - attack_shape: finite-cex
 - codex_cost: M
 - reject:
-- tonight_quest: At the first unresolved grid order, search for a \(2N\)-point set and emit exact coordinates, or a proof-log-backed CP/SAT obstruction.
+- tonight_quest: At the first unresolved grid order, search for a $2N$-point set and emit exact coordinates, or a proof-log-backed CP/SAT obstruction.
 
 ### P24. Cubic stability for large finite-field arcs
 - slug: finite-field-arc-cubic-stability
@@ -299,7 +299,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: too-big — unspecified near-extremal ILP classification is a campaign
 - tonight_quest: none
 
-### P34. The \(1/3\)–\(2/3\) conjecture for posets
+### P34. The $1/3$–$2/3$ conjecture for posets
 - slug: one-third-two-thirds-posets
 - dentable_tonight: 3
 - literature_is_real: yes
@@ -359,10 +359,10 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - literature_is_real: yes
 - attack_shape: research-program
 - codex_cost: L
-- reject: too-big — extending the recent \(P_5\) theorem needs a new structural theory and a fresh status audit
+- reject: too-big — extending the recent $P_5$ theorem needs a new structural theory and a fresh status audit
 - tonight_quest: none
 
-### P41. Determine \(R(5,5)\)
+### P41. Determine $R(5,5)$
 - slug: ramsey-r55
 - dentable_tonight: 1
 - literature_is_real: yes
@@ -371,14 +371,14 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: cost-L — the remaining SAT instances are frontier-scale computations
 - tonight_quest: none
 
-### P42. Determine the van der Waerden number \(W(2,7)\)
+### P42. Determine the van der Waerden number $W(2,7)$
 - slug: van-der-waerden-w27
 - dentable_tonight: 4
 - literature_is_real: yes
 - attack_shape: finite-cex
 - codex_cost: M
 - reject:
-- tonight_quest: Use symmetry-aware incremental SAT and cyclic-zipper seeds to find a 2-coloring of \([3704]\) with no monochromatic 7-AP, then emit and independently verify the coloring certificate.
+- tonight_quest: Use symmetry-aware incremental SAT and cyclic-zipper seeds to find a 2-coloring of $[3704]$ with no monochromatic 7-AP, then emit and independently verify the coloring certificate.
 
 ### P43. Improve the lower bound for the seventh Schur number
 - slug: schur-number-seven-bound
@@ -387,7 +387,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - attack_shape: finite-cex
 - codex_cost: M
 - reject:
-- tonight_quest: Encode a shifted-template-seeded seven-color sum-free partition of \([1697]\) in incremental SAT and, if found, emit the coloring with an exhaustive exact verifier.
+- tonight_quest: Encode a shifted-template-seeded seven-color sum-free partition of $[1697]$ in incremental SAT and, if found, emit the coloring with an exhaustive exact verifier.
 
 ### P44. Lonely runner for 14 runners
 - slug: lonely-runner-fourteen
@@ -414,7 +414,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - attack_shape: atp-smt
 - codex_cost: S
 - reject:
-- tonight_quest: Mine a new modulus covering additional residue classes of \(n\), then certify by exact modular arithmetic that \(n!+1\) is a nonsquare in every covered class beyond the modulus threshold.
+- tonight_quest: Mine a new modulus covering additional residue classes of $n$, then certify by exact modular arithmetic that $n!+1$ is a nonsquare in every covered class beyond the modulus threshold.
 
 ### P47. Uniqueness of Markov numbers
 - slug: markov-number-unicity
@@ -425,7 +425,7 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 - reject: needs-new-theory — finite Markov-tree checks do not advance the general uniqueness conjecture
 - tonight_quest: none
 
-### P48. Amenability of Thompson's group \(F\)
+### P48. Amenability of Thompson's group $F$
 - slug: thompson-f-amenability
 - dentable_tonight: 1
 - literature_is_real: yes
@@ -467,8 +467,8 @@ I score the proposed *first quest*, not the fame of the parent problem. A finite
 
 ## Recommended 5
 
-1. **P43 — `schur-number-seven-bound` (M):** Encode a shifted-template-seeded seven-color sum-free partition of \([1697]\) in incremental SAT and, if found, emit the coloring with an exhaustive exact verifier.
+1. **P43 — `schur-number-seven-bound` (M):** Encode a shifted-template-seeded seven-color sum-free partition of $[1697]$ in incremental SAT and, if found, emit the coloring with an exhaustive exact verifier.
 2. **P06 — `no-unique-sum-mod-p` (S):** Determine the exact minimum size for the first unclassified small primes by symmetry-broken SAT, emitting each extremal set or an independently checkable UNSAT certificate.
 3. **P13 — `hofstadter-ab-minus-one-density` (S):** Generate the closure with parent pointers and certify a new maximal covered prefix or finite interval-density record, outputting a replayable derivation DAG for every claimed member.
-4. **P46 — `brocard-ramanujan-factorial-square` (S):** Mine a new modulus covering additional residue classes of \(n\), then certify by exact modular arithmetic that \(n!+1\) is a nonsquare in every covered class beyond the modulus threshold.
-5. **P42 — `van-der-waerden-w27` (M):** Use symmetry-aware incremental SAT and cyclic-zipper seeds to find a 2-coloring of \([3704]\) with no monochromatic 7-AP, then emit and independently verify the coloring certificate.
+4. **P46 — `brocard-ramanujan-factorial-square` (S):** Mine a new modulus covering additional residue classes of $n$, then certify by exact modular arithmetic that $n!+1$ is a nonsquare in every covered class beyond the modulus threshold.
+5. **P42 — `van-der-waerden-w27` (M):** Use symmetry-aware incremental SAT and cyclic-zipper seeds to find a 2-coloring of $[3704]$ with no monochromatic 7-AP, then emit and independently verify the coloring certificate.

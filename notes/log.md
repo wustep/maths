@@ -15,14 +15,14 @@ Public repo: https://github.com/wustep/maths
   (already settled, arXiv:2608.07910).
 - Overnight solvers: Codex `gpt-5.6-sol` Max on covering, Brocard,
   unique-sum, three-in-line (n=71), Schur S(7). The one finite record is
-  the covering matrix: \(\ell_2(10,2)\le 50\), binary \([50,40]_2\)
-  radius-2, \(p(H)=10\). Not shown optimal.
-- Afternoon: Cursor Grok 4.6 on van der Waerden \(W(2,7)\) (P42) and
-  Shannon \(C_7\) fifth power (P21). Both failed to beat the known
+  the covering matrix: $\ell_2(10,2)\le 50$, binary $[50,40]_2$
+  radius-2, $p(H)=10$. Not shown optimal.
+- Afternoon: Cursor Grok 4.6 on van der Waerden $W(2,7)$ (P42) and
+  Shannon $C_7$ fifth power (P21). Both failed to beat the known
   constructions (3703 residue coloring; Polak–Schrijver 367-set). Few-flip
   SAT: no 368-set within Hamming distance 9 of 367.
 - Covering packaged as PR #3 (`0f79fcc`): `result/` with QM₂²
-  propagation, alternate \(r=18/20\) matrices, no `_reference/` scaffold.
+  propagation, alternate $r=18/20$ matrices, no `_reference/` scaffold.
   Explainers: HTML (Claude Opus 5 and Fable 5) and a LaTeX/PDF with
   verified numbers. Byline: Grok Bot (4.6), Claude Opus 5, Claude Fable 5,
   GPT Sol 5.6, plus a small Stephen Wu instruction line. How to re-run
@@ -36,9 +36,9 @@ Public repo: https://github.com/wustep/maths
 - Added Hilbert 23, Smale 18, and Landau 4 lists
   (`notes/lists/{hilbert,smale,landau}.md`). Dated the 50-list and the pick files; dropped the one-line path stubs.
   Ideation pick: Landau 4
-  (infinitude of primes \(n^2+1\)).
+  (infinitude of primes $n^2+1$).
 - Started `problems/landau-n2-plus-1`. Certified prefix: exactly 12391
-  primes \(n^2+1\) for \(n\le 200000\) (includes \(2=1^2+1\)). First
+  primes $n^2+1$ for $n\le 200000$ (includes $2=1^2+1$). First
   values match OEIS A002496. Not infinitude.
 - Notes sorted into `lists/`, `picks/`, `process/`.
 - README: dropped the Overnight 2026-08-16 section; Interesting results now leads with covering.
@@ -67,7 +67,7 @@ Public repo: https://github.com/wustep/maths
 
 - SuperGrok P05/P17 finished. Verified: affine-013 T <= ceil(n^2/2), beats Aaronson 3/4 (1/3 still open); 0/1 polynomials BSKK theta 0.00373556, census n<=20 consistent, p_n->1 open. Started P37 and P12. P34 still running.
 
-- SuperGrok P34/P37 finished. Verified: width-3 \(W_{10}\) has \(\delta=6/17<14/39\), e=187, still \(>1/3\) (10! LE count; uniqueness not independently replayed); n=8 Pisa graphs with irregular missing degrees \(3^2 2^6\), \(3^4 2^4\), \(3^6 2^2\) (seven stored witnesses replayed; 2.5B geng census not replayed). Started P38 Tuza. P12 still running.
+- SuperGrok P34/P37 finished. Verified: width-3 $W_{10}$ has $\delta=6/17<14/39$, e=187, still $>1/3$ (10! LE count; uniqueness not independently replayed); n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$ (seven stored witnesses replayed; 2.5B geng census not replayed). Started P38 Tuza. P12 still running.
 
 - SuperGrok P12 finished. Residue: F(131486759)=83, not a 79-smooth sum; G(y) through y=23 replayed; no exponent below Balog. Started P36 Caccetta–Häggkvist. P38 still running.
 

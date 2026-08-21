@@ -12,81 +12,81 @@ Fetched Green 100 #93 (December 2025 / Jan 2026 PDF).
 ### Green 100 #93
 
 Is a random polynomial with coefficients in {0,1} and nonzero constant
-term almost surely irreducible? Precisely, writing \(p_n\) for the
-probability that \(1+a_1x+\cdots+a_{n-1}x^{n-1}+x^n\) is irreducible,
-with \(a_i\) i.i.d. Bernoulli, does \(p_n\to 1\)?
+term almost surely irreducible? Precisely, writing $p_n$ for the
+probability that $1+a_1x+\cdots+a_{n-1}x^{n-1}+x^n$ is irreducible,
+with $a_i$ i.i.d. Bernoulli, does $p_n\to 1$?
 
-Unconditional record in the comments: \(p_n\gg 1/\log n\) (Konyagin
+Unconditional record in the comments: $p_n\gg 1/\log n$ (Konyagin
 1999). Breuillard–Varjú: yes, assuming GRH for the Dedekind zetas of
-fields \(\mathbb Q(a)\) with \(a\) a 0/1-polynomial root.
+fields $\mathbb Q(a)$ with $a$ a 0/1-polynomial root.
 
 Bary-Soroker–Kozma: the analogous statement with coefficients uniform
-in \(\{1,\ldots,210\}\). Update 2023: Bary-Soroker–Koukoulopoulos–Kozma
-do \(\{0,1,\ldots,M\}\) for \(M\ge 34\) (so \(M=211\)), and a positive
-lower bound \(\delta\) for \(1\le M\le 33\). Also: Littlewood \(\pm 1\)
-polynomials have irreducibility probability \(\to 1\) along a
+in $\{1,\ldots,210\}$. Update 2023: Bary-Soroker–Koukoulopoulos–Kozma
+do $\{0,1,\ldots,M\}$ for $M\ge 34$ (so $M=211$), and a positive
+lower bound $\delta$ for $1\le M\le 33$. Also: Littlewood $\pm 1$
+polynomials have irreducibility probability $\to 1$ along a
 subsequence of degrees (Bary-Soroker–Hokken–Kozma–Poonen).
 
 Green’s pre-2023 sentence still lists Konyagin as the best bound for
-this exact ensemble. The 2023 update records BSKK’s \(\delta\) for
-alphabets \(\{0,1,\ldots,M\}\).
+this exact ensemble. The 2023 update records BSKK’s $\delta$ for
+alphabets $\{0,1,\ldots,M\}$.
 
-### What BSKK actually prove for \(\{0,1\}\)
+### What BSKK actually prove for $\{0,1\}$
 
 Read arXiv:2007.14567v3 / Invent. Math. 233 (2023).
 
-- \(\Upsilon_N(n)\): monic degree \(n\), coefficients in a set \(N\) of
+- $\Upsilon_N(n)$: monic degree $n$, coefficients in a set $N$ of
   consecutive integers, constant term nonzero.
-- \(N=\{0,1\}\) is two consecutive integers. Conditioning on \(a_0\neq 0\)
-  forces \(a_0=1\). This *is* Green’s ensemble.
-- Theorem 1(b): for \(2\le N\le 34\), irreducibility probability
-  \(\ge\delta>0\).
+- $N=\{0,1\}$ is two consecutive integers. Conditioning on $a_0\neq 0$
+  forces $a_0=1$. This *is* Green’s ensemble.
+- Theorem 1(b): for $2\le N\le 34$, irreducibility probability
+  $\ge\delta>0$.
 - The mechanism (their §3.2, Table on p. 19): Fourier decay of uniform
-  measure on \(N\) consecutive integers, modulo \(P=210=2\cdot 3\cdot 5\cdot 7\),
-  gives \(\theta=\gamma/s>0\) such that with probability \(1-n^{-c}\) every
-  irreducible factor has degree \(\ge\theta n\). Then Lemma 3.2 (a
-  count of \(D\cdot I\) factorisations in \(\mathbb F_p[T]\)) produces
-  \[
+  measure on $N$ consecutive integers, modulo $P=210=2\cdot 3\cdot 5\cdot 7$,
+  gives $\theta=\gamma/s>0$ such that with probability $1-n^{-c}$ every
+  irreducible factor has degree $\ge\theta n$. Then Lemma 3.2 (a
+  count of $D\cdot I$ factorisations in $\mathbb F_p[T]$) produces
+  $$
     \frac{\#\{A:\text{no divisor of degree in }[\theta n,n/2]\}}{\#\Upsilon_N(n)}
     \ge -\log(1-\theta)+O(1/n).
-  \]
-- Published table, \(N=2\): \(s=134\), \(\gamma=0.50057\),
-  \(\theta=\gamma/s=0.003736\).
+  $$
+- Published table, $N=2$: $s=134$, $\gamma=0.50057$,
+  $\theta=\gamma/s=0.003736$.
 - So the published remaining factor-degree window is
-  \([\theta n,n/2]\) with \(\theta=0.003736\), and the published
-  \(\delta\) is at least \(-\log(1-\theta)\approx 0.003743\) up to
-  \(O(n^{-c})+O(1/n)\).
+  $[\theta n,n/2]$ with $\theta=0.003736$, and the published
+  $\delta$ is at least $-\log(1-\theta)\approx 0.003743$ up to
+  $O(n^{-c})+O(1/n)$.
 
-Konyagin’s \(1/\log n\) is superseded for this ensemble by BSKK, even
+Konyagin’s $1/\log n$ is superseded for this ensemble by BSKK, even
 if Green’s comment sentence was not rewritten. Beating Konyagin is
-not a dent. Beating \(\theta=0.003736\) or isolating a new obstruction
-inside \([\theta n,n/2]\) is.
+not a dent. Beating $\theta=0.003736$ or isolating a new obstruction
+inside $[\theta n,n/2]$ is.
 
 ### Other sources (fetched)
 
-- Konyagin, Acta Arith. 88 (1999): \(\ge c\,2^d/\log d\) irreducibles
-  in \(P_d\); at most \(C 2^d/\sqrt{d}\) members of \(P_d\) have an
-  integral factor of degree \(\le cd/\log d\). Method: Cohn
-  (\(f(2)\) prime \(\Rightarrow\) irreducible) upgraded to
-  \(f(2)=\gamma p\) with \(\gamma<1.12^{m_1}\), plus Odlyzko–Poonen
-  root region \(\mathrm{Re}\,z<1.14\), \(|z|<2\).
+- Konyagin, Acta Arith. 88 (1999): $\ge c\,2^d/\log d$ irreducibles
+  in $P_d$; at most $C 2^d/\sqrt{d}$ members of $P_d$ have an
+  integral factor of degree $\le cd/\log d$. Method: Cohn
+  ($f(2)$ prime $\Rightarrow$ irreducible) upgraded to
+  $f(2)=\gamma p$ with $\gamma<1.12^{m_1}$, plus Odlyzko–Poonen
+  root region $\mathrm{Re}\,z<1.14$, $|z|<2$.
 - Breuillard–Varjú, Acta Math. 223 (2019), arXiv:1810.13360: GRH
-  \(\Rightarrow p_n\to 1\), and in fact the non-cyclotomic part is
-  irreducible with probability \(1-\exp(-c\sqrt{d}/\log d)\).
-- Bary-Soroker–Kozma, Duke 169 (2020): alphabet \(\{1,\ldots,210\}\).
-- Bary-Soroker–Hokken–Kozma–Poonen, IMRN 2025: Littlewood, \(n=p^r-1\)
-  with \(2\) generating \((\mathbb Z/p^2\mathbb Z)^\times\) gives
-  \(P(\mathrm{irred})\ge 1-n^{-c}\). Uses \(f(X+1)\equiv X^n\pmod{2}\)
+  $\Rightarrow p_n\to 1$, and in fact the non-cyclotomic part is
+  irreducible with probability $1-\exp(-c\sqrt{d}/\log d)$.
+- Bary-Soroker–Kozma, Duke 169 (2020): alphabet $\{1,\ldots,210\}$.
+- Bary-Soroker–Hokken–Kozma–Poonen, IMRN 2025: Littlewood, $n=p^r-1$
+  with $2$ generating $(\mathbb Z/p^2\mathbb Z)^\times$ gives
+  $P(\mathrm{irred})\ge 1-n^{-c}$. Uses $f(X+1)\equiv X^n\pmod{2}$
   plus a 2-adic Newton polygon. Does *not* transfer to 0/1: the Pascal
-  matrix mod 2 is invertible, so \(f(X+1)\) is just another random 0/1
+  matrix mod 2 is invertible, so $f(X+1)$ is just another random 0/1
   polynomial and the Newton polygon is typically flat.
 - Borst–Boyd–Brekken–Solberg–Wood–Wood: exact reducibility through
-  degree 20; then \(10^6\) and \(10^4\) Monte Carlo. Data support
+  degree 20; then $10^6$ and $10^4$ Monte Carlo. Data support
   Konyagin’s conjecture that almost every reducible 0/1 polynomial is
-  divisible by \(x+1\).
+  divisible by $x+1$.
 - Filaseta–Kalogirou, arXiv:2508.12242: lacunary 0/1; Conjecture 1
-  (difference-multiset map on subsets of \(\{0,\ldots,n\}\) has
-  \(2^{n-1}+o(2^n)\) images) would imply almost every 0/1 polynomial
+  (difference-multiset map on subsets of $\{0,\ldots,n\}$ has
+  $2^{n-1}+o(2^n)$ images) would imply almost every 0/1 polynomial
   has irreducible non-reciprocal part. That conjecture is implied by
   Odlyzko–Poonen and by GRH, and is open unconditionally.
 - Odlyzko–Poonen, Enseign. Math. 39 (1993): zeros of 0/1 polynomials;
@@ -94,13 +94,13 @@ inside \([\theta n,n/2]\) is.
 
 ### Tonight’s attacks
 
-1. Independently recompute BSKK’s Fourier quantity \(\alpha(s,\gamma;P)\)
-   for \(N=2\), and search other 4-prime products / other \(s\) for a
-   larger admissible \(\theta=\gamma/s\). Their table is one feasible
-   pair, not claimed optimal. A larger \(\theta\) shrinks the remaining
-   factor-degree window and raises the explicit \(\delta\ge-\log(1-\theta)\).
-2. Certified exact census of \(P_n\) past Borst’s degree 20, with a
-   factor-degree table (to test whether anything other than \(x+1\)
+1. Independently recompute BSKK’s Fourier quantity $\alpha(s,\gamma;P)$
+   for $N=2$, and search other 4-prime products / other $s$ for a
+   larger admissible $\theta=\gamma/s$. Their table is one feasible
+   pair, not claimed optimal. A larger $\theta$ shrinks the remaining
+   factor-degree window and raises the explicit $\delta\ge-\log(1-\theta)$.
+2. Certified exact census of $P_n$ past Borst’s degree 20, with a
+   factor-degree table (to test whether anything other than $x+1$
    and cyclotomics is visible).
 3. Quantitative census of Filaseta’s difference-multiset map
    (homometric 0/1 exponent sets). A proof, a disproof, or a
