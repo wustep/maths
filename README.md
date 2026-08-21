@@ -3,8 +3,8 @@
 Notebook for a few open problems.
 
 This is a public notebook of agent-run attacks on open problems.
-Agents (Codex, Claude, Grok, and the like) get a finite handle: a
-table bound, a constant, a small case, and try to move it. What
+Agents (Codex, Claude, Grok, and the like) get a finite handle (a
+table bound, a constant, a small case) and try to move it. What
 stays in git is the attack log and, when the number is real, a
 verifier plus a certificate. Stephen Wu is the human author;
 models are named in the ledger below.
