@@ -99,23 +99,33 @@ static int dfs(void)
     if (rem3 > (long)budget * nAp) return 0;
     if (rem0 > pairs(Kbudget) - pairs(nD)) return 0;
 
-    /* branch on the unsatisfied constraint with the fewest live candidates */
-    int best = -1, bestcnt = 1 << 30, bestfam = 0;
-    for (i = 0; i < nU1; i++) {
+    /* Branch on an unsatisfied constraint with few live candidates.  Scanning
+     * every constraint at every node costs more than it saves, so we look at
+     * the first SCAN unsatisfied constraints of each family and take the best
+     * of those; correctness does not depend on which constraint is chosen,
+     * only on the branches being exhaustive. */
+    enum { SCAN = 12 };
+    int best = -1, bestcnt = 1 << 30, bestfam = 0, seen = 0;
+    for (i = 0; i < nU1 && seen < SCAN; i++) {
         int u = U1[i]; if (c1[u]) continue;
+        seen++;
         int cnt = 0; for (j = 0; j < nC; j++) if (!excl[u ^ Cv[j]]) cnt++;
         if (cnt < bestcnt) { bestcnt = cnt; best = u; bestfam = 1; if (!cnt) break; }
     }
-    if (bestcnt) for (i = 0; i < nU2; i++) {
-        int u = U2[i]; if (c2[u]) continue;
-        int cnt = 0; for (j = 0; j < nB; j++) if (!excl[u ^ Bv[j]]) cnt++;
-        if (cnt < bestcnt) { bestcnt = cnt; best = u; bestfam = 2; if (!cnt) break; }
-    }
-    if (bestcnt && best < 0) for (i = 0; i < nU3; i++) {
-        int u = U3[i]; if (c3[u]) continue;
-        int cnt = 0; for (j = 0; j < nAp; j++) if (!excl[u ^ Ap[j]]) cnt++;
-        if (cnt < bestcnt) { bestcnt = cnt; best = u; bestfam = 3; if (!cnt) break; }
-    }
+    if (bestcnt) { seen = 0;
+        for (i = 0; i < nU2 && seen < SCAN; i++) {
+            int u = U2[i]; if (c2[u]) continue;
+            seen++;
+            int cnt = 0; for (j = 0; j < nB; j++) if (!excl[u ^ Bv[j]]) cnt++;
+            if (cnt < bestcnt) { bestcnt = cnt; best = u; bestfam = 2; if (!cnt) break; }
+        } }
+    if (bestcnt && best < 0) { seen = 0;
+        for (i = 0; i < nU3 && seen < SCAN; i++) {
+            int u = U3[i]; if (c3[u]) continue;
+            seen++;
+            int cnt = 0; for (j = 0; j < nAp; j++) if (!excl[u ^ Ap[j]]) cnt++;
+            if (cnt < bestcnt) { bestcnt = cnt; best = u; bestfam = 3; if (!cnt) break; }
+        } }
     if (best >= 0) {
         if (bestcnt == 0) return 0;
         int cand[64], nc2 = 0;
@@ -249,7 +259,7 @@ int main(int argc, char **argv)
     load(in);
     fprintf(stderr, "loaded n=%d covered=%d/%d\n", ncols, covered_count(cols, ncols), FULL);
 
-    long qtot = 0, inst = 0, skipped = 0, capped = 0;
+    long qtot = 0, inst = 0, skipped = 0, capped = 0, lastrep = 0;
     for (int f = 1; f < FULL; f++) {
         for (int g = f + 1; g < FULL; g++) {
             int h = f ^ g;
@@ -372,9 +382,11 @@ int main(int argc, char **argv)
                 }
             }
         }
-        if ((f & 63) == 0)
-            fprintf(stderr, "f=%d instances=%d skipped=%ld capped=%ld\n",
-                    f, (int)inst, skipped, capped);
+        if (inst - lastrep >= 1000) {
+            lastrep = inst;
+            fprintf(stderr, "f=%d quotients=%ld instances=%ld skipped=%ld capped=%ld\n",
+                    f, qtot, inst, skipped, capped);
+        }
     }
     printf("DONE shard %d/%d quotients=%ld instances=%ld skipped=%ld capped=%ld"
            " selftest_agree=%ld selftest_mismatch=%ld hits=%ld\n",
