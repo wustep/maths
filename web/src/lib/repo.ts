@@ -18,9 +18,10 @@ const EXCLUDED_DIRS = new Set([
   "__pycache__",
 ]);
 
-// Deploy/tooling files that are not maths content. Matched by basename so a
+// Basenames that are not maths content for visitors. Matched by basename so a
 // nested copy stays hidden too. Do not put research or problem files here.
-const EXCLUDED_FILES = new Set(["vercel.json"]);
+// CLAUDE.md is a symlink to AGENTS.md; show AGENTS.md only.
+const EXCLUDED_FILES = new Set(["vercel.json", "CLAUDE.md"]);
 
 // Files rendered as readable pages.
 const MARKDOWN_EXT = new Set([".md"]);
@@ -84,12 +85,12 @@ function scanDir(abs: string, rel: string): RepoDir {
   const files: RepoFile[] = [];
   for (const e of entries) {
     if (e.name.startsWith(".")) continue;
+    if (EXCLUDED_FILES.has(e.name)) continue;
     const childRel = rel === "" ? e.name : `${rel}/${e.name}`;
     if (e.isDirectory()) {
       if (EXCLUDED_DIRS.has(e.name)) continue;
       dirs.push(scanDir(path.join(abs, e.name), childRel));
     } else if (e.isFile()) {
-      if (EXCLUDED_FILES.has(e.name)) continue;
       const size = fs.statSync(path.join(abs, e.name)).size;
       files.push({
         path: childRel,

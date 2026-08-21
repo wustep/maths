@@ -19,9 +19,9 @@ const EXCLUDED_DIRS = new Set([
   ".lake",
   "__pycache__",
 ]);
-// Keep in sync with web/src/lib/repo.ts. vercel.json is not a raw asset, but
-// the walk should skip the same deploy-only basenames as the file viewer.
-const EXCLUDED_FILES = new Set(["vercel.json"]);
+// Keep in sync with web/src/lib/repo.ts. These basenames are not raw assets,
+// but the walk should skip the same hide-list as the file viewer.
+const EXCLUDED_FILES = new Set(["vercel.json", "CLAUDE.md"]);
 const RAW_EXT = new Set([".pdf", ".html", ".png", ".jpg", ".jpeg", ".gif", ".svg"]);
 
 fs.rmSync(outRoot, { recursive: true, force: true });
