@@ -39,3 +39,30 @@ cd result && ./run_all.sh
 
 Standalone writeup: [`result/`](result). Explainers:
 [HTML](explainer.html), [PDF](explainer.pdf).
+
+## What was tried for 49
+
+Still open. Sphere covering only gives $\ge 45$. Overnight work on
+2026-08-21 did not produce a 49, and it did not produce a lower bound.
+
+Three construction families, none of them a neighbour-search on the
+50-set:
+
+1. Recover the 2003 Kaikkonen–Rosendahl 51-set and ask whether 51 or 50
+   is a lift of the $r=8$ record. They are not. Replacing one quotient
+   block of the 50-set by a shorter block does not yield a 49 in any
+   instance that was decided.
+2. Prescribe an automorphism of odd prime order. No 49-set is invariant
+   under an element of order 7. Combined with a short arithmetic
+   argument, any 49-set has automorphism group a $\{2,3,5\}$-group.
+   The known 50-set and 51-set are both 2-group symmetric.
+3. A fibered construction (one column over every nonzero point of a
+   quotient, plus a kernel block). It reproduces the documented lengths
+   at $r=4,7,8,9$ and is completely decided for $r\le 8$. At $r=10$ it
+   cannot produce any length $\le 47$; its own best is 54. The nearest
+   unfinished case in the family is length 38 at $r=9$, which would
+   beat $\ell_2(9,2)\le 39$ and was not decided.
+
+Code: [`compute/q9/`](compute/q9/), [`compute/q10/`](compute/q10/),
+[`compute/q11/`](compute/q11/).
+

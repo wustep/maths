@@ -537,3 +537,29 @@ one family.
 
     cd problems/covering/compute/q11
     sh run_q11_checks.sh
+
+## 2026-08-21 — wrap (session stopped)
+
+Stephen asked to wrap covering and leave Hilbert running. No 49. No dent.
+Records unchanged: $\ell_2(10,2)\le 50$, $\ell_2(9,2)\le 39$,
+$\ell_2(11,2)\le 79$. Sphere covering still only $\ge 45$ at $r=10$.
+
+Three families, all recorded above:
+
+- q9. Trajectory of the $r=10$ record; KR 51-set recovered; exact
+  single-quotient-block replacement. Not a lift of the $r=8$ record.
+- q10. Prescribed odd-order automorphisms. A 49-set, if it exists, has a
+  $\{2,3,5\}$-group of automorphisms. The known 50 and 51 are 2-group
+  symmetric.
+- q11. Fibered graph family. Exactly decided for $r\le 8$. Cannot produce
+  any $n\le 47$ at $r=10$; its own best there is 54. $n=38$ at $r=9$ is
+  residue (17 kernel-block classes, all floor at cost 14).
+
+Next move if anyone reopens this: decide one order-16 subgroup of
+$\mathrm{Aut}(50)$ at $n=49$, or finish the 17 classes at $r=9$, $n=38$.
+Do not rerun SA / k-swap-5 / C7×C7 / single-block shrink.
+
+Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
+`python3 compute/verify_certificate.py compute/H_r10_n50.txt` → PASS,
+1024/1024, rank 10, radius exactly 2.
+
