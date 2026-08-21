@@ -469,3 +469,30 @@ nest as ⟨a ⊔ 1⟨b ⊔ 1⟨c⟩⟩⟩ with \(a+b+c=20\), we get \(p-n = a+c-
 depth-3 nests among the 38 have exactly \(b\in\{2,6,10,14\}\). Both
 open schemes have \(b=2\), so the congruence permits them; it is not the
 obstruction.
+
+## 2026-08-21 — a ninth: ⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩, bound ≥ 2,376
+
+Radius-6 balls around all 38 of the paper's 22-oval M-certificates
+(`compute/ball_deep.py`, 9,531,040 sign vectors per seed) turned up a
+real scheme on the third seed:
+
+**⟨6 ⊔ 1⟨4 ⊔ 1⟨8⟩⟩⟩**, 20 ovals, from
+`deg8/o22-p11-n11/(6v1(10v1(4))).pcom`.
+
+It went through the same exact pipeline as the other eight — the
+paper's own triangulation and integer `MIN_WEIGHTS`, convexity certified
+in `Fraction` arithmetic, the scheme recomputed from scratch by
+`tcurve.TCurve` — and it is absent both from our replay of the 2,367 and
+from the `.pcom` file names in `deg8.pcoms.txz`.
+
+`cd compute && python3 verify_new.py` → **9/9**.
+The census lower bound is now **≥ 2,376**.
+
+Note where it came from: not the ⟨6⊔1⟨6⊔1⟨8⟩⟩⟩ certificate that gave
+seven of the first eight — that neighbourhood is exhausted to radius 7 —
+but a *different* M-certificate, ⟨6 ⊔ 1⟨10 ⊔ 1⟨4⟩⟩⟩, at a radius the
+previous session never reached. The pattern from the first eight holds:
+the census is thin around the 22-oval certificates whose scheme is a
+deep nest, and the thinness is in the (M−1)- and (M−2)-curves next to
+them, not in the M-curves. The remaining 35 M-certificates are still
+running.
