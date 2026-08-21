@@ -6,7 +6,7 @@ The published range is still $40\le\tau_5\le 44$. The missing object is
 not a better floating 3-point SDP — Mittelmann–Vallentin already have
 $s_{14}(5)=44.99899685\ldots$, which is how 45 died, and the house
 rule is that a restricted numerical SDP without an exact positivity
-certificate is residue.
+certificate is an incomplete search.
 
 What *would* move the needle is either
 
@@ -141,7 +141,7 @@ $\{-1,-1/2,0,1/2\}$-code, hence (scaling by $\sqrt{2}$) forty roots
 of an even lattice of rank $\le 5$, hence a copy of $D_5$, which
 cannot be extended.
 
-## 5. Computer residue
+## 5. Computer search
 
 - `compute/certs/restricted_delsarte.json` — the two exact duals.
 - `compute/integer_d5.json` — the integer slice, including the empty

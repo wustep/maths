@@ -14,7 +14,7 @@ Computer-assisted work in 2025–26 established the lonely-runner conjecture thr
 
 ## Tonight
 
-A certified finite-reduction or modular-sieve certificate for 14 runners, a new excluded speed configuration with an independently checkable witness, or a documented residue. Isolated floating-point scans are not a dent. Fetch the 13-runner papers before searching.
+A certified finite-reduction or modular-sieve certificate for 14 runners, a new excluded speed configuration with an independently checkable witness, or a documented incomplete search. Isolated floating-point scans are not a new bound. Fetch the 13-runner papers before searching.
 
 ## Outcome (2026-08-17)
 

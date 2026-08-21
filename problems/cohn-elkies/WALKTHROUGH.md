@@ -125,7 +125,7 @@ Cohn–Elkies Theorem 3.2 therefore gives
 Hexagonal center density is `√3/6 = 0.2886751345948129…`. The ratio is
 `1.0000000748515987…`.
 
-## 5. Computer residue
+## 5. Computer search
 
 - `compute/certs/ce_d2_m5.json` — exact `a_odd`, `b_even`, monomial
   coefficients of `G,H,F,hatF`, isolating interval, and the sign report.
