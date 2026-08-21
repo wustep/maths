@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { allDirs, allFiles, getDir, getFile } from "@/lib/repo";
+import { allDirs, allFiles, fileRouteCollides, getDir, getFile } from "@/lib/repo";
 import { DirView, FileView } from "@/components/file-views";
 
 export function generateStaticParams() {
@@ -8,7 +8,7 @@ export function generateStaticParams() {
     .filter((d) => d.path !== "")
     .map((d) => ({ path: d.path.split("/") }));
   const files = allFiles()
-    .filter((f) => f.kind !== "external")
+    .filter((f) => f.kind !== "external" && !fileRouteCollides(f))
     .map((f) => ({ path: f.path.split("/") }));
   return [...dirs, ...files];
 }

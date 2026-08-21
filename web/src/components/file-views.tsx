@@ -6,6 +6,7 @@ import {
   getProblemSlugForDir,
   githubBlobUrl,
   githubTreeUrl,
+  hrefForFile,
   readRepoFile,
   type RepoDir,
   type RepoFile,
@@ -46,20 +47,24 @@ export function DirView({ dir }: { dir: RepoDir }) {
               <td className="size" />
             </tr>
           ))}
-          {dir.files.map((f) => (
-            <tr key={f.path}>
-              <td className="name">
-                {f.kind === "external" ? (
-                  <a className="gh" href={githubBlobUrl(f.path)} title="On GitHub (too large or binary to render here)">
-                    {f.name}
-                  </a>
-                ) : (
-                  <Link href={`/files/${f.path}/`}>{f.name}</Link>
-                )}
-              </td>
-              <td className="size">{formatSize(f.size)}</td>
-            </tr>
-          ))}
+          {dir.files.map((f) => {
+            const href = hrefForFile(f);
+            const internal = href.startsWith("/");
+            return (
+              <tr key={f.path}>
+                <td className="name">
+                  {internal ? (
+                    <Link href={href}>{f.name}</Link>
+                  ) : (
+                    <a className="gh" href={href} title="On GitHub (too large or binary to render here)">
+                      {f.name}
+                    </a>
+                  )}
+                </td>
+                <td className="size">{formatSize(f.size)}</td>
+              </tr>
+            );
+          })}
         </tbody>
       </table>
       <p className="file-meta" style={{ marginTop: "1rem" }}>
