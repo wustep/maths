@@ -445,3 +445,27 @@ of the six open (3,19) schemes as T-curves, and these two are precisely
 the ones it does not rule out. Total for this session: **704 million**
 sign distributions, every witness decoded on the exact Python complex,
 every claim re-checkable from the certificates in `compute/certs/`.
+
+### An independent check that does not look at the geometry
+
+`compute/check_rokhlin.py` takes the bracket strings this search reports
+and applies the classical congruences for degree \(2k=8\), \(k^2=16\),
+with \(p\) the even-depth ovals and \(n\) the odd-depth ovals:
+
+* Rokhlin, for M-curves: \(p-n \equiv k^2 \pmod 8\);
+* Gudkov–Krakhnov–Kharlamov, for (M−1)-curves: \(p-n\equiv k^2\pm1\).
+
+All **38** M-schemes of the exhaustive census classification have 22
+ovals and satisfy Rokhlin. Every 22-oval scheme thrown up anywhere in
+this session's searches satisfies it too, and the five (M−1)-curves
+among the eight certified new schemes satisfy Gudkov–Krakhnov–Kharlamov.
+Nothing in that check touches a triangulation or a sign vector, so a
+scheme that no real degree-8 curve can carry would show up as a failure.
+There are none.
+
+It also explains the one pattern visible in the 38. Writing a depth-3
+nest as ⟨a ⊔ 1⟨b ⊔ 1⟨c⟩⟩⟩ with \(a+b+c=20\), we get \(p-n = a+c-b =
+20-2b\), so Rokhlin forces \(b\equiv 2 \pmod 4\) — and the twelve
+depth-3 nests among the 38 have exactly \(b\in\{2,6,10,14\}\). Both
+open schemes have \(b=2\), so the congruence permits them; it is not the
+obstruction.
