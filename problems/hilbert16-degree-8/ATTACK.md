@@ -548,3 +548,36 @@ have none within radius 6. That is the exhaustive statement — the balls
 are complete, so those 31 M-curves have no missing neighbour at distance
 ≤ 6, and the 17 are all the holes at distance ≤ 6 from any M-curve of
 the census.
+
+### The hole map
+
+`compute/hole_map.py` lays the two-nest family ⟨a ⊔ 1⟨b⟩ ⊔ 1⟨c⟩⟩ out as
+a grid — `.` in the published 2,367, `N` certified here, `-` in
+neither — and the shape of what this session found becomes visible. The
+21-oval row \(a=4\) reads
+
+```
+  b =   1  2  3  4  5  6  7
+        .  N  N  N  N  -  .
+```
+
+— the census had the two ends and none of the middle; four of the five
+gaps are now filled. The same happens at 20 ovals, \(a=3\).
+
+Four holes have *both* their neighbours in \(b\) realized, which makes
+them the sharpest targets left:
+
+| scheme | ovals | \((p,n)\) |
+| --- | --- | --- |
+| ⟨5 ⊔ 1⟨6⟩ ⊔ 1⟨9⟩⟩ | 22 | (7,15) |
+| ⟨4 ⊔ 1⟨6⟩ ⊔ 1⟨9⟩⟩ | 21 | — |
+| ⟨1⟨2⟩ ⊔ 1⟨16⟩⟩ | 20 | — |
+| ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ | 20 | — |
+
+A `-` is a target, not a claim: nothing here says any of them is
+unrealizable, and the first is an M-scheme, so whether it is even in
+Orevkov's 89 is not something this session checked — Table 1 was not
+reachable. What can be said is that ⟨5 ⊔ 1⟨6⟩ ⊔ 1⟨9⟩⟩ is not realized
+by any of the 184 census triangulations (exhaustively) nor by any of
+the 4,074 others swept here, and that its \((p,n)=(7,15)\) class is the
+one where the paper T-realizes 8 M-schemes.
