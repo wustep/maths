@@ -3,7 +3,7 @@
 - Slug: `lonely-runner-fourteen`
 - List: P44
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
-- Status: open (LRC(13)); one dent — the tight tuple is excluded at p=191
+- Status: open (LRC(13)); one dent — the tight tuple is excluded at ten primes, 191–239
 - Area: Diophantine approximation / computational combinatorics
 - Sources: Sungkawichai and Trakulthongchai, Eleven, twelve, and thirteen lonely runners (arXiv:2604.23906); Trakulthongchai, Nine and Ten Lonely Runners
 - Started: 2026-08-17
@@ -37,7 +37,9 @@ With the branch restored, and checked exhaustively in 240 s:
 
 > Every $(u_1,\dots,u_{13})\in\mathbb Z^{13}_{>0}$ with
 > $\gcd(u_1,\dots,u_{13})=1$ and $u_i\equiv i \pmod{191}$ has the lonely
-> runner property. Equivalently $(1,2,\dots,13)\notin J(13,191)$.
+> runner property. Equivalently $(1,2,\dots,13)\notin J(13,191)$. The same
+> holds at 193, 197, 199, 211, 223, 227, 229, 233 and 239, and fails at every
+> prime up to 41.
 
 ST26 Proposition 1.4 proves the analogue only when $k+1$ and $p$ are both
 odd primes, so $k=13$ is outside it; their Section 5.2 reports
