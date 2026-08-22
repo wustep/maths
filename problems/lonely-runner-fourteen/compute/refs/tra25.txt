@@ -1,0 +1,382 @@
+                                                             NINE AND TEN LONELY RUNNERS
+
+                                                                       TANUPAT TRAKULTHONGCHAI
+
+
+                                                   Abstract. The Lonely Runner Conjecture of Wills and Cusick states that
+                                                   if k + 1 runners start running at distinct constant speeds around a unit-
+                                                   length circular track, then for each runner there is a time when he/she is
+arXiv:2511.22427v2 [math.CO] 18 Apr 2026
+
+
+
+
+                                                   at least 1/(k + 1) away from all other runners. Rosenfeld recently obtained
+                                                   a computer-assisted proof of the conjecture for 8 runners. By refining his
+                                                   approach with a sieve, we obtain proofs (also computer-assisted) for 9 and 10
+                                                   runners.
+
+
+
+
+                                                                              1. Introduction
+                                              Wills [15] first posed the Lonely Runner Conjecture in the 1960s while study-
+                                           ing Diophantine approximation. The conjecture has since become a well-studied
+                                           problem in combinatorics, with interpretations in terms of geometric view ob-
+                                           struction [5] and colourings of distance graphs [17]. The following formulation,
+                                           which gives the conjecture its name, comes from [3]:
+                                              Consider k + 1 runners with distinct constant speeds. Suppose they simulta-
+                                           neously begin running around a circular track with unit circumference, starting
+                                           from the same location, and continue indefinitely. We say that a runner is lonely
+                                                                                   1
+                                           if he/she is at a distance of at least k+1 away from all other runners. The Lonely
+                                           Runner Conjecture predicts that regardless of the runners’ speeds, each runner
+                                           will become lonely at some time.
+                                              To prove the conjecture, it suffices to consider the case where one runner’s
+                                           speed is zero and show that this stationary runner is guaranteed to become
+                                           lonely. A non-trivial result of [4] shows that it suffices to consider the case where
+                                           all nonzero speeds are positive integers, though this is also implicit from [16] and
+                                           [2]. Consequently, the Lonely Runner Conjecture for k + 1 runners is equivalent
+                                           to the following statement, where ∥x∥ denotes the distance from a real number
+                                           x to Z.
+                                           Conjecture 1 (Lonely Runner Conjecture for k + 1 runners). Let v1 , . . . , vk be
+                                           positive integers. There exists t ∈ R such that for every i ∈ {1, . . . , k},
+                                                                                       1
+                                                                             ∥tvi ∥ ≥      .
+                                                                                      k+1
+                                              At present, Conjecture 1 is known to be true for k ≤ 7 (i.e., for a total of at
+                                           most 8 runners, including the stationary runner). The first two cases k ∈ {1, 2}
+                                           are easy, and k = 3 was resolved by Betke and Wills [2]. The case k = 4 was
+                                           solved first by Cusick and Pomerance [6] with computer assistance, and a proof
+                                           without computer assistance was given by Bienia, Goddyn, Gvozdjak, Sebő and
+                                           Tarsi [3]. The proof of k = 5 was due to Bohman, Holzman, and Kleitman
+                                             Date: April 21, 2026.
+                                             2020 Mathematics Subject Classification. 11K60.
+                                                                                        1
+2                              TANUPAT TRAKULTHONGCHAI
+
+[4]. Renault [9] later produced a simpler proof for k ≤ 5. The case k = 6 was
+settled by Barajas and Serra [1] in 2008. In 2025, Rosenfeld [11] proved the
+Lonely Runner Conjecture for k = 7 using a new computational approach. In
+this paper, we prove the Lonely Runner Conjecture for k ∈ {8, 9} by refining
+Rosenfeld’s approach in [11].
+Theorem 2. The Lonely Runner Conjecture holds for 9 and 10 runners.
+  Note that a day after this paper was published as a preprint, Rosenfeld [12]
+himself also independently announced a proof for k = 8, using a different refine-
+ment of [11].
+
+                    2. Rosenfeld’s computational approach
+   In this preliminary section we give some context for Rosenfeld’s approach in
+[11] and indicate the source of our improvement.
+   It has been known for a number of years that for each k, deciding the Lonely
+Runner Conjecture for up to k + 1 runners is a finite calculation. The first result
+in this direction is due to Tao [13], who showed that there is an explicitly com-
+putable constant C > 0 such that the following holds: Suppose that the Lonely
+Runner Conjecture holds for k runners; then the Lonely Runner Conjecture for
+k + 1 runners holds unless there is a counterexample with all (positive integer)
+                     2
+speeds at most k Ck . This means that to prove or disprove the Lonely Runner
+                                                                                 2
+Conjecture for k + 1 runners, it suffices to check all sets of speeds up to k Ck .
+Unfortunately, the constant C is enormous, so this result is not practical for
+obtaining any new instances of the Lonely Runner Conjecture.
+   This finite-checking result was improved by Giri and Kravitz [7] and by Ma-
+likiosis, Santos and Schymura [8]. The latter authors showed that, assuming
+that the Lonely Runner Conjecture holds for k runners, the Lonely Runner Con-
+jecture for k + 1 runners can be proven by checking that there are no positive
+integer counterexamples v1 , v2 , . . . , vk with1
+                                                        #k
+                                                k+1 k−1
+                                              "    
+                                                   2
+                                v1 v2 · · · vk <               .
+                                                       k
+This quantity is much more reasonable, but even for k = 7 it is large enough
+that a naive case exhaustion is not feasible.
+   Rosenfeld’s breakthrough idea was showing that in any putative counterex-
+ample v1 , v2 , . . . , vk to the Lonely Runner Conjecture for k + 1 runners, there
+must be many primes dividing the product v1 v2 · · · vk . If one can exhibit suf-
+ficiently many primes that must divide v1 v2 · · · vk in any counterexample, then
+one can conclude that any counterexample has v1 v2 · · · vk above the threshold
+of Malikiosis, Santos, and Schymura. This would imply that in fact the Lonely
+Runner Conjecture holds for k + 1 runners.
+   Rosenfeld introduced a clever criterion for showing that a given prime p must
+divide v1 v2 · · · vk in any counterexample. He achieved this by combining the “pre-
+jump” idea of [3] with the ansatz of checking rational times with denominator
+(k + 1)p. This computation turned out to be barely manageable for k = 7 with
+    1Indeed, the bound given in [8] is in terms of a sum, but this can be easily transformed to
+a product via the AM-GM inequality (see Corollary 3 of [11]).
+                             NINE AND TEN LONELY RUNNERS                                         3
+
+a computer; the last few primes each took tens of hours to be checked. The
+approach is too slow to handle larger k.
+  Our main innovation is introducing a “sieve lemma” that makes checking for
+a dividing prime p more efficient. This improvement allows us to carry out
+Rosenfeld’s general strategy for k ∈ {8, 9}.
+
+                  3. Reduction of possible counterexamples
+   For positive integers2 ℓ, p, we define the set
+                   B(ℓ, p) = {0, 1, . . . , ℓp − 1} \ {0, p, . . . , (ℓ − 1)p}.
+We call a k-tuple v = (v1 , . . . , vk ) ∈ Nk a speed tuple. A speed tuple v is said to
+have the LR property if it satisfies the Lonely Runner Conjecture.
+  We begin by tracing the steps of [11], but in greater generality.
+Definition 3. Let k ≥ 2. A speed tuple v ∈ B(ℓ, p)k is said to be (k, ℓ, p)-proper
+if one of the following holds:
+      • there exists i ∈ {1, . . . , k} such that
+                          gcd(v1 , . . . , vi−1 , vi+1 , . . . , vk , ℓp) > 1,
+        or
+      • there exists t ∈ {0, 1, . . . , ℓp − 1} such that, for all i ∈ {1, . . . , k},
+                                           tvi    1
+                                               ≥     .
+                                           ℓp    k+1
+If v ∈ B(ℓ, p)k is not (k, ℓ, p)-proper, then we say it is (k, ℓ, p)-improper. Define
+I(k, ℓ, p) to be the set of all (k, ℓ, p)-improper speed tuples.
+   The following is a fact noted in [3] and [11], which we state without proof.
+Lemma 4 (Lemma 5 of [11]). Suppose that the Lonely Runner Conjecture holds
+for k − 1, where k ≥ 3. If v is a speed tuple with gcd(v1 , . . . , vk ) = 1, and there
+is i such that gcd(v1 , . . . , vi−1 , vi+1 , . . . , vk ) > 1, then v has the LR property.
+  We easily generalize Lemma 6 of [11], which is the special case ℓ = k + 1 of
+the following lemma.
+Lemma 5. Let k ≥ 3, and assume that the Lonely Runner Conjecture holds for
+k − 1 runners. Let p be a prime. If there is some ℓ such that I(k, ℓ, p) is empty,
+then any counterexample u = (u1 , . . . , uk ) to the Lonely Runner Conjecture with
+k runners must have the property that p divides u1 u2 · · · uk .
+Proof. Assume that I(k, ℓ, p) is empty. Suppose that u is a speed tuple such that
+p ∤ u1 · · · uk . We may assume that gcd(u1 , . . . , uk ) = 1, because the LR property
+is invariant under rescaling and p divides the original u1 u2 · · · uk if p divides the
+rescaled u1 u2 · · · uk .
+   Let vi be the residue of ui modulo ℓp. It follows that v ∈ B(ℓ, p)k because
+otherwise p | vi for some i and hence p | ui . Thus v must be (k, ℓ, p)-proper.
+   If there is i such that gcd(v1 , . . . , vi−1 , vi+1 , . . . , vk , ℓp) = d > 1, then as d | ℓp,
+we have
+                          d | gcd(u1 , . . . , ui−1 , ui+1 , . . . , uk ).
+   2In particular, p does not need to be a prime, although it will be in our applications.
+4                               TANUPAT TRAKULTHONGCHAI
+
+By Lemma 4, u has the LR property.
+  Alternatively, v is proper in the second sense, i.e., there exists t ∈ {0, 1, . . . , ℓp−
+1} such that, for all i ∈ {1, . . . , k}, ∥ tv      1                     tui      1
+                                            ℓp ∥ ≥ k+1 . Then for all i, ∥ ℓp ∥ ≥ k+1 , so
+                                               i
+
+u also has the LR property. Therefore, u is not a counterexample to the Lonely
+Runner Conjecture.                                                                        □
+
+   In theory, nothing prevents us from picking any ℓ to check if I(k, ℓ, p) is empty.
+The significance of ℓ = k + 1 is that there is no hope of having I(k, ℓ, p) = ∅ for
+smaller ℓ, when p is prime. In fact, for p > k + 1, I(k, ℓ, p) = ∅ only if pℓ is a
+multiple of k + 1. To see this, note that the speed tuple u = (1, 2, . . . , k) achieves
+its maximum loneliness
+                                                    1
+                            max min ∥tui ∥ =
+                             t∈R i∈{1,...,k}      k+1
+                           a
+exactly at the times t = k+1   for a coprime to k + 1.
+   Even if it may be impossible to exclude everything from I(k, ℓ, p) for small
+ℓ, we can still obtain valuable information regarding I(k, m, p) from I(k, ℓ, p),
+provided that m = cℓ for some integer c. The following sieve lemma tells us that
+if we have already checked that (v1 , . . . , vk ) is (k, ℓ, p)-proper, we can discard
+from I(k, m, p) all v of the form
+                                  (v1 + a1 ℓp, . . . , vk + ak ℓp)
+where a1 , . . . , ak ∈ Zc . This observation will later make it easier to show com-
+putationally that I(k, k + 1, p) is empty.
+Definition 6. Let m = cℓ for some positive integer c. The fiber of I(k, ℓ, p) at
+level m, denoted δm I(k, ℓ, p), is defined as
+       
+         (v1 + a1 ℓp, . . . , vk + ak ℓp) : v ∈ I(k, ℓ, p), ai ∈ {0, 1, . . . , c − 1} ,
+
+i.e., all v ∈ B(m, p)k whose images modulo ℓp are in I(k, ℓ, p).
+Lemma 7. For any p, if ℓ divides m, then
+                                   I(k, m, p) ⊆ δm I(k, ℓ, p).
+Proof. Let m = cℓ. We must show that
+                     B(m, p)k \ δm I(k, ℓ, p) ⊆ B(m, p)k \ I(k, m, p).
+Let u ∈ B(m, p)k \ δm I(k, ℓ, p). Then, we can write ui = vi + ai ℓp for some
+ai ∈ {0, 1, . . . , c − 1} and (k, ℓ, p)-proper speed tuple v.
+    If there is i ∈ {1, . . . , k} such that gcd(v1 , . . . , vi−1 , vi+1 , . . . , vk , ℓp) = d > 1,
+then d | vj for all j ̸= i and d | ℓp, so in particular d | uj for all j ̸= i and d | mp.
+Hence d | gcd(u1 , . . . , ui−1 , ui+1 , . . . , uk , mp) and so u is (k, m, p)-proper.
+    Otherwise, there exists t ∈ {0, 1, . . . , ℓp − 1} such that, for all i ∈ {1, . . . , k},
+∥ tv       1
+  ℓp ∥ ≥ k+1 . Let s = ct ∈ {0, 1, . . . , mp − 1}. Then, for all i,
+     i
+
+
+
+         sui   ct(vi + ai ℓp)   ctvi          ctvi   tvi    1
+             =                =      + ai t =      =     ≥     .
+         mp         mp          mp            mp     ℓp    k+1
+Therefore, u is (k, m, p)-proper. In both cases, u ∈ B(m, p)k \ I(k, m, p).                       □
+                            NINE AND TEN LONELY RUNNERS                                     5
+
+   A consequence of Lemma 7 is that the proportion of improper speed tuples
+decreases as we make the ansatz finer. More precisely, if k, p are fixed and ℓ | m,
+then the proportion of improper speed tuples at level m is at most the proportion
+of improper speed tuples at level ℓ. Therefore, if we have a sequence (ℓn ) where
+ℓn | ℓn+1 , then this proportion at level ℓn is non-increasing.
+
+                        4. Verification of dividing primes
+    From Lemma 5, if we can show that I(k, k + 1, p) is empty, then we have that
+p | v1 v2 . . . vk whenever v does not have the LR property. Following [11], we
+wish to find many primes p for which I(k, k + 1, p) is empty. Consider a fixed
+prime p.
+    However, unlike [11], instead of directly checking all possible (p − 1)k (k + 1)k
+speed tuples in B(k+1, p)k , we first use Lemma 7 to “sieve out” most candidates.
+More precisely, we compute I(k, ℓ, p) for some smaller ℓ | (k + 1) first, and the
+compute I(k, k + 1, p) inside the fiber of I(k, ℓ, p). Furthermore, we can choose
+ℓ1 , . . . , ℓn such that ℓ1 = 1, ℓn = k + 1 and ℓr+1 = cr ℓr for some cr ∈ N for
+r ∈ {1, . . . , n − 1}. At the end, we have to check only
+                                                                                  
+                     (p − 1)k ℓk1 + s1 ℓk2 + s1 s2 ℓk3 + · · · + s1 · · · sn−1 ℓkn
+tuples, where 0 ≤ sr ≤ 1 is the proportion of tuples that survive the sieve at
+level ℓr . This number can be made even smaller if we use two distinct sequences
+ℓ1 , . . . , ℓn and ℓ′1 , . . . , ℓ′n′ that merge (by intersection) at the end, as illustrated
+by the case k + 1 = 10.
+    In the worst case where s1 = · · · = sn−1 = 1, this number is actually slightly
+larger than (k + 1)k (p − 1)k (because we wasted time checking prior to the last
+step). In practice, however, sr tends to be very small and so this improves on
+the direct method.
+    The method we described applies to any value of k, but it is most effective
+when k + 1 is highly composite. For the sake of illustration and completeness,
+we explicitly state the algorithms for the cases k = 8, 9, which are relevant to
+proving the Lonely Runner Conjecture for 9 and 10 runners.
+
+4.1. Case k = 8.
+    (1) Compute I(8, 1, p). Then find its fiber δ3 I(8, 1, p).
+    (2) Compute I(8, 3, p) within δ3 I(8, 1, p). Again, find the fiber δ9 I(8, 3, p).
+    (3) Compute I(8, 9, p) within δ9 I(8, 3, p).
+
+4.2. Case k = 9.
+    (1) Compute I(9, 1, p). Then find its fibers δ2 I(9, 1, p) and δ5 I(9, 1, p).
+    (2) (a) Compute I(9, 2, p) within δ2 I(9, 1, p), and find δ10 I(9, 2, p).
+        (b) Compute I(9, 5, p) within δ5 I(9, 1, p), and find δ10 I(9, 5, p).
+    (3) Compute I(9, 10, p) within δ10 I(9, 2, p) ∩ δ10 I(9, 5, p).
+
+                               5. Proof of Theorem 2
+                k+1 k−1 k
+                ( 2 )
+  Let Ck =          k         be the quantity derived from the result of Malikiosis,
+Santos and Schymura [8]. Notice that C8 < 1080 and C9 < 10111 .
+6                              TANUPAT TRAKULTHONGCHAI
+
+    Let
+            S8 = {47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97, 101, 103, 107, 109,
+                  113, 127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179,
+                   181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239, 241}
+and
+            S9 = {137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191, 193,
+                  197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263,
+                  269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337,
+                    347, 349, 353, 359, 367, 373, 379, 383, 389, 397, 401}.
+Using the algorithms presented in Section 4, we found that I(k, k + 1, p) is the
+empty set, for every p ∈ Sk and k ∈ {8, 9}.
+  As the products satisfy         Y
+                                     p > 1082
+                                         p∈S8
+and                                     Y
+                                               p > 10112 ,
+                                        p∈S9
+it follows that the Lonely Runner Conjecture holds for k = 8 and (then) k = 9.
+
+                              6. Implementation details
+   We carry out the verification algorithms in C++. Our code is developed based
+on that of Rosenfeld [10], but we optimize for parallelization across cores. We
+employed OpenAI GPT-5 to assist with code generation, especially in low-level
+optimization. The code used, along with the result receipts, is uploaded to the
+author’s GitHub [14]. The computations were performed on a 14-core Apple M3
+Max processor. On this machine, the verification for k = 8 takes 15 minutes,
+and for k = 9 takes under 23 hours.
+   We remark that we work with sets instead of k-tuples (to save a factor of k!).
+   For k = 8, we tested every prime from3 11 to 241. For all 11 ≤ p ≤ 43, the
+set I(8, 9, p) was non-empty. On the other hand, for k = 9, we only checked
+primes from 137 to 401. It should not be inferred from our prior discussion that
+I(9, 10, p) is non-empty for 11 ≤ p ≤ 131.
+   There are two reasons why we start p from a large value. One is that larger
+p contributes more to the product. But more importantly, here it is actually
+faster to verify large p (in the range of low hundreds). The running time forms
+a U-shaped curve with run time of 1-2 hours from the start4, going as low as 5
+minutes for 227 ≤ p ≤ 277, and going up again to 40 minutes for the last p.
+   The surprising behavior of running time reflects the trade-off between the size
+of B(1, p)9 and the size of I(9, 1, p) in the first step. When p is small, there are
+not many v ∈ B(1, p)9 to check, but it is much more likely (because the ansatz
+    3For p ≤ k + 1, in Lemma 5, t = 1 serves as a witness time for every v ∈ B(k + 1, p)k , so
+trivially there is no (k, k + 1, p)-improper speed tuple. Had we exploited this fact in Section
+5, we would have got a factor of lcm(1, 2, . . . , k) for free, and needed to check a couple fewer
+primes.
+   4p = 151 is a far outlier here, taking 7.5 hours to verify.
+                            NINE AND TEN LONELY RUNNERS                                     7
+
+in Lemma 5 allows fewer witness times) that v belongs in I(9, 1, p), so we need
+more time in steps 2 and 3 to check δm I(9, 1, p). The opposite is true for p large.
+In the middle, there exists a “Goldilocks zone” of primes such that both I(9, 1, p)
+and B(1, p)9 are not too large, and in this case it happens to be around 250.
+
+                                   7. Further work
+   Since 11 is prime, our sieve algorithm in the case k = 10 has only two steps:
+find I(10, 1, p) first, then I(10, 11, p). In contrast to when k + 1 is composite,
+we do not have an intermediate sieve. Each v ∈ I(10, 1, p) corresponds to 1110
+speed tuples in δ11 I(10, 1, p), so this quickly becomes the bottleneck that makes
+verifying p impossible in a reasonable time.
+   However, since we only want to conclude that I(10, ℓ, p) is empty, we can
+also insert an additional filter, say 2, and then compute I(10, 22, p) within
+δ11 I(10, 2, p). This additional filter may sufficiently reduce I(10, 2, p) to a man-
+ageable number of cases. Still, within this framework we cannot avoid extending
+from ℓ to 11ℓ at some point because, as we previously discussed, for I(10, ℓ, p)
+to be empty, we must have 11 | ℓ.
+   Proving the case k = 11 assuming the case k = 10 seems more approachable.
+By our estimate, proving this using our refinement alone will take on the order
+of weeks. Moreover, Rosenfeld’s [12] refinement on the gcd condition can be
+combined with ours to further reduce the number of candidate speed tuples.
+   Ultimately, our algorithm, like the original proposed by Rosenfeld, still needs
+to perform Θ(pk ) checks to verify that I(k, ℓ, p) is empty. Our reduction makes
+the constant of the scaling much smaller, but we see no easy way to escape this
+scaling law.
+
+                                 Acknowledgements
+  I am very grateful to my adviser, Noah Kravitz, for his thoughtful guidance,
+constant encouragement and meticulous feedback that has vastly improved the
+paper. I thank the referees for their valuable comments. I am supported by the
+King’s Scholarship (Thailand).
+
+                                       References
+ [1] Javier Barajas and Oriol Serra. The lonely runner with seven runners. Electronic Journal
+     of Combinatorics, 15:R48, 2008.
+ [2] Ulrich Betke and Jörg M. Wills. Untere schranken für zwei diophantische approximations-
+     funktionen. Monatshefte für Mathematik, 76(3):214–217, 1972.
+ [3] Wojciech Bienia, Luis Goddyn, Pavol Gvozdjak, András Sebő, and Michael Tarsi. Flows,
+     view obstructions, and the lonely runner. Journal of Combinatorial Theory, Series B,
+     72(1):1–9, 1998.
+ [4] Tom Bohman, Ron Holzman, and Dan Kleitman. Six lonely runners. Electronic Journal
+     of Combinatorics, 8:R3, 2001.
+ [5] Thomas W. Cusick. View-obstruction problems. Aequationes mathematicae, 8:197–198,
+     1972.
+ [6] Thomas W. Cusick and Carl Pomerance. View-obstruction problems, III. Journal of Num-
+     ber Theory, 19(2):131–139, 1984.
+ [7] Vikram Giri and Noah Kravitz. The structure of lonely runner spectra. Mathematical
+     Proceedings of the Cambridge Philosophical Society, 180(2):343–361, 2026.
+8                              TANUPAT TRAKULTHONGCHAI
+
+ [8] Romanos Diogenes Malikiosis, Francisco Santos, and Matthias Schymura. Linearly expo-
+     nential checking is enough for the lonely runner conjecture and some of its variants. Forum
+     of Mathematics, Sigma, 13:e164, 2025.
+ [9] Jérôme Renault. View-obstruction: a shorter proof for 6 lonely runners. Discrete Mathe-
+     matics, 287(1-3):93–101, 2004.
+[10] Matthieu Rosenfeld. The lonely runner conjecture. https://gite.lirmm.fr/mrosenfeld/
+     the-lonely-runner-conjecture, 2025. Accessed 2025-11-15.
+[11] Matthieu Rosenfeld. The lonely runner conjecture holds for eight runners. arXiv preprint
+     arXiv:2509.14111, 2025.
+[12] Matthieu Rosenfeld. The lonely runner conjecture holds for nine runners. arXiv preprint
+     arXiv:2512.01912, 2025.
+[13] Terence Tao. Some remarks on the lonely runner conjecture. Contributions to Discrete
+     Mathematics, 13(2), 2018.
+[14] Tanupat Trakulthongchai. Nine and ten lonely runners code. https://github.com/
+     t-tanupat/nine-and-ten-lonely-runners, 2025.
+[15] Jörg M. Wills. Zwei Sätze über inhomogene diophantische Approximation von Irra-
+     tionalzehlen. Monatshefte für Mathematik, 71(3):263–269, 1967.
+[16] Jörg M Wills. Zur simultanen homogenen diophantischen approximation, I. Monatshefte
+     für Mathematik, 72(3):254–263, 1968.
+[17] Xuding Zhu. Circular chromatic number of distance graphs with distance sets of cardinality
+     3. Journal of Graph Theory, 41(3):195–207, 2002.
+
+    St John’s College, University of Oxford, Oxford OX1 3JP, United Kingdom
+    Email address: tanupat.trakulthongchai@sjc.ox.ac.uk
+
