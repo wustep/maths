@@ -1,0 +1,671 @@
+                                                       ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS
+
+                                                               TOUCH SUNGKAWICHAI AND TANUPAT TRAKULTHONGCHAI
+
+
+                                                   Abstract. Wills conjectured that, for any non-zero integers u1 , . . . , uk , there is a real number
+                                                   t such that, for all i = 1, . . . , k,
+                                                                                                           1
+                                                                                                ∥tui ∥ ≥     ,
+                                                                                                         k+1
+                                                   where ∥x∥ is the distance from x to the closest integer. This statement is known as the Lonely
+                                                   Runner Conjecture. A computational method developed by Rosenfeld and the second author
+                                                   verified the conjecture for k ≤ 9. We further refine this method with new sieving techniques and
+arXiv:2604.23906v1 [math.CO] 26 Apr 2026
+
+
+
+
+                                                   employ a polynomial method argument to show that any (u1 , . . . , uk ) ≡ (1, 2, . . . , k) (mod p)
+                                                   with gcd(u1 , . . . , uk ) = 1 satisfies the conjecture when k + 1 and p > k2 + k are both odd
+                                                   primes. Ultimately, we provide a computer-assisted proof of the Lonely Runner Conjecture for
+                                                   k ∈ {10, 11, 12}.
+
+
+
+
+                                                                                         1. Introduction
+                                              The Lonely Runner Conjecture arose in the study of Diophantine approximation [16], though
+                                           it has been reinterpreted in the context of view obstruction and billiard trajectories [5], covering
+                                           radii of zonotopes [8], and the chromatic number of a unit-distance graph [17]. It was conjectured
+                                           independently by Wills [16] in 1967 and Cusick [5] in 1984. Writing ∥x∥ for the distance from
+                                           x to the closest integer, namely ∥x∥ = min(x − ⌊x⌋, ⌈x⌉ − x), the conjecture can be stated as
+                                           follows:
+                                           Conjecture 1.1. Let u1 , . . . , uk+1 be distinct real numbers. For each i ∈ {1, . . . , k + 1}, there
+                                           is a real number t such that
+                                                                                               1
+                                                                             ∥tui − tuj ∥ ≥           for all j ̸= i.
+                                                                                              k+1
+                                              Conjecture 1.1 has a popular interpretation that gives its name: if k + 1 runners run with
+                                           distinct, constant speeds around a unit-length track, each of them will be lonely at some time.
+                                                                                     1
+                                           Being lonely means being at least k+1        away from other runners. However, most advances work
+                                           with one fewer runner and only positive integer speeds, possible due to [4] and [8] that showed
+                                           a reduction from Conjecture 1.1 to a simpler Conjecture 1.2:
+                                              We say that a tuple (u1 , . . . , uk ) has the LR property if there is a real number t such that
+                                                                                          1
+                                                                             ∥tui ∥ ≥          for all i = 1, . . . , k.
+                                                                                        k+1
+                                           Such a time t where the inequalities hold is called a witness of the LR property of (u1 , . . . , uk ).
+                                           Conjecture 1.2. Every (u1 , . . . , uk ) ∈ Zk>0 has the LR property.
+                                             We denote this statement by LRC(k) or, as customary, the Lonely Runner Conjecture for
+                                           k + 1 runners.
+                                                                                     1                    1       1
+                                              Conjecture 1.2 is known to hold if k+1    is replaced with 2k + k5/3+o(1) [2]. More closely
+                                           related to our approach, it is known for the cases of k ≤ 9 (that is, for at most 10 runners).
+                                           The two smallest values of k are trivial. Betke and Wills [3] first proved the case k = 3,
+                                           Cusick and Pomerance [5] proved k = 4, and Bohman, Holzman, and Kleitman [4] proved
+                                           k = 5. Barajas and Serra [1] settled the case k = 6 in 2008.
+                                              This had remained the largest verified case prior to September 2025, when Rosenfeld [11]
+                                           introduced a new framework to handle k = 7 (and later k = 8 [12]). He demonstrated that,
+                                             Date: April 28, 2026.
+                                             2020 Mathematics Subject Classification. 11K60.
+                                                                                                    1
+2                                T. SUNGKAWICHAI AND T. TRAKULTHONGCHAI
+
+with computer assistance, the conjecture can be verified with a tractable finite calculation. In
+doing so, he relied on the finite-checking result of Malikiosis, Santos, and Schymura [9], which
+is similar to a result of Giri and Kravitz [6]. The second author [15] then, in November 2025,
+presented a sieving scheme that substantially reduces the work for verification, thereby proving
+the conjecture for k ∈ {8, 9}.
+   The main objective of this paper is to prove LRC(k) for k ∈ {10, 11, 12}.
+Theorem 1.3. LRC(k) holds for k ≤ 12.
+   In order to carry out the proof, we improve upon the framework of [11] and [15] both mathe-
+matically and computationally. We refine the sieving scheme by adding intermediate sieves and
+exploit a modulo p symmetry during implementation to reduce the verification necessary. These
+were enough to prove k = 11. Furthermore, we employ the polynomial method to establish the
+following proposition that aids the proof for k ∈ {10, 12}.
+Proposition 1.4. Let k + 1 and p > k 2 + k be odd primes and (u1 , . . . , uk ) ∈ Zk>0 . If
+gcd(u1 , · · · , uk ) = 1 and
+                                    ui ≡ i     (mod p)      for all i = 1, . . . , k,
+then (u1 , . . . , uk ) has the LR property.
+   Our proof strategy is outlined in the next section. Section 3 discusses the intermediate sieves
+technique and Section 4 is devoted to proving Proposition 1.4. We describe the verification
+algorithms and their implementation in Section 5, the results of which establish Theorem 1.3
+in Section 6. Lastly, we discuss in Section 7 how this method may be further extended.
+   We adopt the following notation. We write aS = {as : s ∈ S} for a ∈ R and S ⊆ R. The
+additive group modulo n is denoted Zn , the multiplicative group modulo n is Z×    n , and
+                                                  Zp,l := Zpl \ pZl .
+Let πm→n : Zm → Zn denote the natural projection map when n | m and πn : Z → Zn denote
+the projection modulo n of integers. The fractional part of x ∈ R is denoted by {x}.
+   We use boldface letters for vectors, subscripts to indicate coordinates of a vector, and b· to
+indicate the omission of a certain coordinate in a vector. For example, ui is the ith coordinate
+of the vector u. We refer to a vector u or v as a speed tuple to match the conjecture’s settings.
+The application of a scalar function to vectors is coordinate-wise.
+
+                                               2. Proof strategy
+   Rosenfeld’s [11] key insight is that if u ≡ v (mod lp), then ∥tvi ∥ = ∥tui ∥ for every i whenever
+t is a rational with denominator lp. In particular, if we know that v ∈ Zklp has a witness time
+                    1                        −1
+of the form t ∈ lp    Z, then every u ∈ πlp     (v) has the same witness time and thus the LR
+                          k                                     1
+property. If every v ∈ Zp,l has a witness time of the form t ∈ lp Z, then one of the speeds in any
+counterexample to LRC(k) must be divisible by p. The set of speed tuples Zkp,l together with
+                  1
+the set of times lp Z is what we informally call an ansatz. The following definition and lemma
+summarize what must be verified.
+Definition 2.1 (Definition 31, [15]). Let p be prime, and k ≥ 2 and l be positive integers. A
+speed tuple v ∈ Zkp,l is (k, p, l)-proper if one of the following conditions holds:
+       • there exists i such that gcd(l, v1 , . . . , vbi , . . . , vk ) > 1
+                           1                               1
+       • there exists t ∈ lp Z such that ∥tvi ∥ ≥ k+1            for all i.
+If v is not proper, it is improper. Moreover, let I(k, p, l) denote the set of all improper speed
+tuples.
+Lemma 2.2 (Lemma 5, [15]). For k ≥ 3 and prime p, if LRC(k − 1) is true and I(k, p, l) is
+empty for some l, then any counterexample u to LRC(k) satisfies p | u1 · · · uk .
+    1We change lp in the gcd condition of [15] to l, but this changes nothing when p is prime.
+                           ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS                                             3
+
+  Lemma 2.2 translates proving Conjecture 1.2 to the computer verification task of showing
+that, for many primes p, I(k, p, lp ) = ∅ for some lp . Since the choice of l is irrelevant to the final
+conclusion, we introduce a new terminology to simplify our discussion and implementation.
+Definition 2.3. Let k ≥ 2 be an integer and p be a prime. A speed tuple v ∈ Zkp,1 is said to
+be eventually (k, p)-proper if there is l such that
+                                               v∈
+                                                / πlp→p I(k, p, l).
+Let J(k, p) denote the set of all v ∈ Zkp,1 that are not eventually (k, p)-proper.
+   Eventual properness might appear to be a local property of each speed tuple v, but having
+this local property for every v implies the global conclusion that I(k, p, l) = ∅ for some l.
+Lemma 2.4. For fixed integer k ≥ 2 and prime p, J(k, p) = ∅ if and only if I(k, p, l) = ∅ for
+some integer l.
+Proof. The backward direction is immediate from the definition. To prove the forward direction,
+note that J(k, p) = ∅ implies that, for each v ∈ Zkp,1 , there is lv for which v ∈
+                                                                                 / πlv p→p I(k, p, lv ).
+Then pick
+                                     l = lcm{lv : v ∈ Zkp,1 }.
+   Fix u ∈ Zkp,l . Let v = πlp→p u and v′ = πlp→lv p u, so we can write
+                                      u = (a1 lv p + v1′ , . . . , ak lv p + vk′ )
+for some integers a1 , . . . , ak .
+   Notice that πlv p→p v′ = v. By definition of lv , v′ is (k, p, lv )-proper. If v′ satisfies the gcd
+condition, then there is i such that d := gcd(lv , v1′ , . . . , vbi′ , . . . , vk′ ) > 1. It follows that d | l and
+d | uj for all j ̸= i, hence u also satisfies the gcd condition.
+   Otherwise, there is t ∈ lv1p Z such that ∥tvi′ ∥ ≥ k+11
+                                                               for all i. Then observe that lv1p Z ⊆ lp          1
+                                                                                                                   Z,
+        1                            1
+so t ∈ lp Z, and ∥tui ∥ = ∥tvi ∥ ≥ k+1   for all i.
+   In both cases, we have shown u to be (k, p, l)-proper. Therefore, I(k, p, l) = ∅.                               □
+  As a consequence, the emptiness of J(k, p) and I(k, p, l) at some l may be discussed inter-
+changeably. We may also restate Lemma 2.2 in a more usable form for the proof of our main
+Theorem 1.3.
+Corollary 2.5. Let k ≥ 3 and p be prime. If LRC(k) is true and J(k, p) is empty, then any
+counterexample u to LRC(k) has the property that p | u1 · · · uk .
+   Finally, we require an upper bound on the runners’ speeds beyond which the LR property
+is guaranteed. The best such bound at present was obtained by Malikiosis, Santos, and Schy-
+mura [9]:
+Lemma 2.6 (Corollary 3, [11]). For k ≥ 3, if LRC(k − 1) holds, then any counterexample u
+to LRC(k) must have
+                                                              !k
+                                                     k+1 k−1
+                                                         
+                                                                            2
+                              u1 · · · uk < Bk    where       Bk :=                  .
+                                                                                k
+  Therefore, if we satisfy the precondition of Corollary 2.5 for a large number of primes, we
+can obtain a lower bound on the product of the speeds in any counterexamples. Together with
+the stated upper bound, we can conclude the absence of a counterexample.
+  For convenience, we consolidate the verification task into the following proposition, which
+will be used to conclude the main theorem.
+Proposition 2.7. Let k ≥ 3 and P be a set of primes such that J(k, p) = ∅ for all p ∈ P . If
+LRC(k − 1) holds and                  Y
+                                          p ≥ Bk ,
+                                                    p∈P
+then LRC(k) is true.
+4                             T. SUNGKAWICHAI AND T. TRAKULTHONGCHAI
+                                                                                                         Q
+Proof. Assume that there exists a counterexample u to LRC(k). By Corollary 2.5,                              p∈P p
+divides u1 · · · uk and so
+                                          Y
+                            u1 · · · uk ≥   p ≥ Bk > u1 · · · uk ,
+                                                  p∈P
+where the last inequality comes from Lemma 2.6. This is a contradiction.                                        □
+
+                                          3. Sieving techniques
+   In order to carry out our proof strategy, we need to verify that J(k, p) = ∅. The first approach
+is to check all tuples in Zkpl to verify that I(k, p, l) = ∅, but this entails checking approximately
+(pl)k tuples. Moreover, for reasons to be given in Remark 3.2, we need l ≥ k + 1, so this
+approach becomes very laborious even for k = 8 [12].
+   Before we motivate them, let us at once formalize and validate the two techniques that allows
+for efficient verification in the following proposition.
+Proposition 3.1. Fix an integer k ≥ 2 and prime p. Let S ⊆ Zkp,l be such that J(k, p) ⊆ πp S.
+We also have J(k, p) ⊆ πp S ′ if S ′ is constructed in one of the following ways:
+                                     −1
+      • (lifting with c) S ′ = {v ∈ πclp→lp S : v is (k, p, cl)-improper}
+                       ′
+      • (projecting) S = πp S.
+Proof. The second case is obvious. In the first case, note that
+                                                                
+                                            −1
+                              πp S ′ = πp πclp→lp S ∩ I(k, p, cl)
+                                                 −1
+                                           = πp πclp→lp S ∩ πp I(k, p, cl)
+                                           = πp S ∩ πp I(k, p, cl).
+As J(k, p) is a subset of πp S by assumption and a subset of πp I(k, p, cl) by definition, it is also
+a subset of πp S ′ .2                                                                              □
+   The two actions are lifting, which we generalize from [15], and backward projection, a new
+technique. Proposition 3.1 ensures that both actions preserve the inclusion of J(k, p) (under
+projection), which means that we cannot lose a non-eventually proper speed tuple in the process.
+Now, we will motivate each of them by their applications.
+
+3.1. Lifting. Lifting is the main innovation of [15]. The process is described in the first con-
+struction of S ′ in Proposition 3.1: suppose we have a tuple in Zkp,l , we can lift it to the fiber in
+Zkp,cl , and then discard all proper speed tuples.
+                                                                            s
+Remark 3.2. The speed tuple (1, 2, . . . , k) is lonely precisely when t = k+1 with gcd(s, k+1) = 1.
+                                                                       1
+Therefore, if p > k + 1 and k + 1 ∤ l, then there is no such time in pl Z, so (1, 2, . . . , k) ∈ I(k, p, l).
+In other words, if p > k + 1, then I(k, p, l) = ∅ only if k + 1 | l. As a consequence, if k + 1 is
+prime and we start with tuples in Zkp we need to lift with k + 1 (or a multiple of k + 1, but this
+would be suboptimal) at least once because we can eliminate (1, 2, . . . , k) only once we get to
+Zkp(k+1) .
+
+  Even though it is impossible that I(k, p, 1) = ∅, in view of applying Proposition 3.1, we
+may still compute I(k, p, 1) first. This is because I(k, p, 1) is a non-trivial upper bound, a
+superset under projection, of J(k, p) that is very easy to compute as it requires checking only
+approximately pk speed tuples. After obtaining that, we can lift with a divisor of k + 1 to obtain
+a better upper bound.
+
+   2This proof looks deceptively simple, and perhaps curiously, does not utilize the lifting lemma (Lemma 7,
+[15]) anywhere. This is because the real work (and the very same work as the lifting lemma) has been done in
+Lemma 2.4 to show that J(k, p) = ∅ is indeed the same as I(k, p, l) = ∅ for some l. Without this fact, there is no
+divisibility result in Corollary 2.5 and hence determining J(k, p) is pointless.
+                            ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS                                        5
+
+   Observe that lifting a set S of tuples with a multiplier c requires checking at most
+                                                −1
+                                               πclp→lp S = ck · |S|
+
+speed tuples. As S is empirically found to be smaller as we lift3, we should take c to be small
+at first. Furthermore, as k gets larger, the value of c has greater effect on the computational
+time, and the c = 2 lift becomes comparatively more efficient.
+   The key improvement from [15] is noting that, in fact, we can take this idea to the extreme.
+Since the c = 2 lift is much easier to compute, we can apply a c = 2 lift first (and successively)
+whether or not 2 is a prime factor of k. This is done to trim down the number of speed tuples in
+S before we apply the necessary lifts with larger multiplier c > 2. Even better, doing this will
+never increase the number of speed tuples at the end because we can always project backward,
+as we will explain next.
+3.2. Backward projection. Backward projection is just the application of πp to pull back the
+speed tuples to Zkp . Just as lifting can reduce the size of the search space, projection achieves
+a similar effect. This is due to the fact that for any set S,
+                                                   |πp S| ≤ |S| .
+The only time projecting becomes counterproductive is if we lift afterwards with the same
+constant c that was previously used, because then we are intersecting with the same improper
+set and hence no speed tuples can be further eliminated.
+   Therefore, in general, we can lift with c = 2 successively, then project back, then lift with
+c = 3 successively and project back, and so on. This is the strategy that we use in our verification
+algorithms in Subsection 5.2.
+
+                               4. Eventual properness of (1, 2, . . . , k)
+    According to Remark 3.2, when k + 1 is prime, we have to lift with the multiplier c = k + 1.
+This lift is extremely computationally intensive: for k = 12, the c = k + 1 lift requires checking
+(13/2)12 ≈ 5 · 109 times more tuples than the c = 2 lift (for fixed p and input set). If we
+are to verify the conjecture for k ∈ {10, 12} in a reasonable time, we need to avoid doing this
+lift computationally. For many primes p, after lifting I(10, p, 1) with c = 2 several times and
+projecting back, the only tuples that cannot be shown eventually proper is, up to symmetry,
+(1, 2, . . . , 10). The analogous observation holds when k = 12.
+    Therefore, the aim of this section is to determine the eventual properness of (1, 2, . . . , k). We
+emphasize that our method still requires lifting with c = k + 1. In fact, we merely are finding
+                                     −1
+a solution for speed tuples in π(k+1)p→p      (1, 2, . . . , k) in the (k, p, k + 1)-ansatz, but we do so
+analytically instead of computationally.
+    First, we prove the following Proposition 4.1 which is the main ingredient used in this section.
+This proposition is combinatorially interesting in its own right. For convenience, we write
+                          n                                                                o
+                    Nk := v ∈ Zkk+1 : v ̸= 0 and v has at least one zero coordinate
+
+Proposition 4.1. Let k + 1 be an odd prime. For all vectors v ∈ Nk , there are s and r in Z×
+                                                                                           k+1
+such that
+                            sv + r(1, 2, . . . , k) ∈ {1, . . . , k − 1}k .
+Proof. In this proof, we work in the field Zk+1 . Define
+                                       Vm = {vi + mi : i ∈ {1, . . . , k}}
+for m ∈ Z×                    ×
+          k+1 . We say m ∈ Zk+1 is good if 0 ∈/ Vm and bad otherwise. Let G be the set of good
+m’s.
+   Now, as v contains at least one zero coordinate, it contains at most k−1 non-zero coordinates.
+For each non-zero coordinate vi , there is exactly one choice of m ∈ Z× k+1 such that vi + mi = 0,
+
+   3Even though lifting increases the number of speed tuples to be checked, it seems that the increased precision
+of the allowed time in the lifted ansatz has a greater effect [15].
+6                            T. SUNGKAWICHAI AND T. TRAKULTHONGCHAI
+
+whereas for each zero coordinate, there cannot be such m. Thus, there are at most k − 1 bad
+units. This implies that |G| ≥ 1.
+  We continue the proof by contrapositive. Assume that for all r and s,
+                                                        / {1, . . . , k − 1}k ,
+                                sv + r(1, 2, . . . , k) ∈
+then we will show that v = 0.
+  Let m be good and s ∈ Z×                       ×
+                           k+1 . Then r := sm ∈ Zk+1 and so, by assumption,
+
+                                sv + r(1, 2, . . . , k) ̸∈ {1, . . . , k − 1}k .
+Thus, there is an index i such that s(vi +mi) ∈ {0, −1}. As m is good and s ̸= 0, it is impossible
+for the product to be 0, and so it must be −1. Hence,
+                                             vi + mi = −s−1 .
+As s was chosen arbitrarily, Vm = Z×k+1 .
+  From Vm = Z× k+1 when   m  is good, we have that
+                       k
+                       Y             k
+                                     Y    k
+                                          Y                k
+                                                           Y
+                  k! =   (vi + mi) =   i·        −1
+                                            (vi i + m) = k! (vi i−1 + m),
+                       i=1                i=1     i=1                       i=1
+
+which gives
+                                           k
+                                           Y
+                                             (vi i−1 + m) = 1.
+                                           i=1
+On the other hand, when m is bad, there is an index i such that vi + mi = 0, hence
+                               k
+                               Y                k
+                                                Y
+                                 (vi i−1 + m) =   (vi + mi)i−1 = 0.
+                               i=1                      i=1
+
+Therefore, the polynomial
+                                                    k
+                                                    Y
+                                        P (X) :=      (vi i−1 + X)
+                                                    i=1
+
+is the indicator function of G on Z×
+                                   k+1 .          Note also that since v contains at least one zero
+coordinate, P (0) = 0.
+  As k + 1 is prime, Fermat’s Little Theorem gives another indicator function of G, which is
+                                         X
+                                Q(X) :=     (1 − (X − m)k ),
+                                                 m∈G
+
+where the sum is not empty as |G| ≥ 1. It also follows that Q is a polynomial of degree k.
+   As P (0) = 0 = Q(0), P and Q are polynomials of degree at most k that agree on k + 1
+points, hence P = Q. In particular, their leading coefficients must be equal, that is 1 ≡ − |G|
+(mod k + 1). Since |G| ≤ k as integers, we must have that |G| = k. Therefore, there is no bad
+m. Specifically, for any i ∈ {1, . . . , k}, vi + mi ̸= 0 for all m ∈ Z×
+                                                                       p . However, this implies vi = 0
+for all i, that is, v = 0.                                                                           □
+
+   The strategy we will later use to prove Proposition 4.4 is decoupling and limiting dependency
+                                                                   a
+on the prime p. Instead of considering times of the form t = (k+1)p    , we decompose them into
+                             s     r
+the partial fractions t = k+1 + p . The former term has no dependence of p. To capture the
+effect of p of the latter term, we define
+                    rk (t) := (⌊(k + 1){t}⌋, ⌊(k + 1){2t}⌋, . . . , ⌊(k + 1){kt}⌋)
+                                                                                           h               
+                                                                                                x    x+1
+for t ∈ R. Intuitively, ⌊(k +1){it}⌋ = x means that the runner with speed i is the arc         k+1 , k+1
+of the unit circle at time t. With this discretization, we state Lemma 4.2.
+                          ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS                                       7
+
+Lemma 4.2. Let k + 1 be an odd prime. For every v ∈ Nk , there are s ∈ Zk+1 and r ∈ Z for
+which
+                                         r
+                              sv + rk ( k+1 ) ∈ {1, . . . , k − 1}k
+when considered modulo k + 1.
+Proof. Let v be any speed tuple in Nk . By Proposition 4.1, there exist s, r ∈ Z×         k+1 ⊆ Zk+1 such
+that
+                            sv + r(1, 2, . . . , k) ∈ {1, . . . , k − 1}k .
+By definition,
+                    j          n     ok j           n         ok          j       n    ok
+                 r                  r                      2r                          kr
+             rk k+1   = (k + 1) k+1        , (k + 1) k+1            , . . . , (k + 1) k+1
+                         = (r, 2r, . . . , kr)
+                         = r(1, 2, . . . , k)
+modulo k + 1. Therefore,                                  
+                                    sv + rk           r
+                                                     k+1       ∈ {1, . . . , k − 1}k ,
+modulo k + 1.                                                                                              □
+  A corollary of Lemma 4.2 is that (1, 2, . . . , k) is eventually (k, k +1)-proper, but this is trivial.
+Indeed, for p = k + 1, we only need that
+                                     sv + r(1, 2, . . . , k) ∈ {1, . . . , k}k
+to show eventual (k, p)-properness of (1, 2, . . . , k). However, proving the stronger statement
+that
+                              sv + r(1, 2, . . . , k) ∈ {1, . . . , k − 1}k
+in Proposition 4.1 allows us to extend the result to larger primes via the next lemma.
+Lemma 4.3. Let k + 1 and p > k(k + 1) be odd primes. For every v ∈ Nk , there are s ∈ Zk+1
+and r ∈ Z for which
+                              sv + rk (r/p) ∈ {1, . . . , k − 1}k .
+when considered modulo k + 1.
+Proof. From Lemma 4.2, we have that there is s ∈ Zk+1 and r ∈ Z for which
+                                  sv + rk (r/(k + 1)) ∈ {1, . . . , k − 1}k .
+                                     1
+Thus, it suffices to show that rk ( k+1 Z) ⊆ rk ( p1 Z) for all p > k(k + 1).
+  Fix p to be a prime greater than k(k + 1). Notice that rk is a piecewise constant function.
+Moreover, x is a discontinuity of rk if and only if it is a discontinuity of ⌊(k + 1){ix}⌋ for some i.
+                                                                       a
+Those points of discontinuity are precisely points of the form i(k+1)      for integer a and 1 ≤ i ≤ k.
+                                             n
+  Choose an integer n and denote x := k+1 . Observe that x is a discontinuity of rk and let y
+be the smallest number greater than x that is also a discontinuity of rk . We know that y can
+                  a
+be written as i(k+1)  for some integer a and 1 ≤ i ≤ k, so it follows that
+                                  a      n      a − ni        1         1
+                    y−x=              −      =          ≥          ≥          .
+                              i(k + 1) k + 1   i(k + 1)   i(k + 1)   k(k + 1)
+  As y was chosen to be the smallest such discontinuity, rk is constant on the interval [x, y).
+                                          1
+Since the interval’s width is at least k(k+1) > p1 , there must be an integer m such that mp ∈ [x, y).
+                        n           m
+For such value m, rk ( k+1 ) = rk ( p ). As n is arbitrary, the desired inclusion follows.          □
+   With this lemma, we finally obtain the headline result that assures eventual properness of
+(1, 2, . . . , k) for p > k(k + 1).
+Proposition 4.4. Suppose that k + 1 and p > k(k + 1) are odd primes. Then, every speed
+           −1
+tuple in π(k+1)p→p (1, 2, . . . , k) is (k, p, k + 1)-proper, so in particular (1, 2, . . . , k) is eventually
+(k, p)-proper.
+8                                T. SUNGKAWICHAI AND T. TRAKULTHONGCHAI
+
+                                               −1
+Proof. We will show that every u ∈ πp(k+1)→p             (1, 2, . . . , k) is (k, p, k + 1)-proper, and hence
+(1, 2, . . . , k) is eventually (k, p)-proper. Let ui = ai p + i for some ai ∈ Zk+1 for i = 1, . . . , k. By
+                                             s
+considering a time of the form t = k+1         + pr for s ∈ Z and r ∈ Z, note that the fractional part
+of tui is given by
+                                                                            su′i
+                                                                                   
+                                           s     r                                   ri
+                            {tui } =           +     (ai p + i) =                 +
+                                         k+1 p                             k+1        p
+             ′
+where u := πp(k+1)→k+1 u.
+   If u′ = 0, then it follows that k + 1 | gcd(u), thus
+                                                k + 1 | gcd(k + 1, u)
+hence u is (k, p, k + 1)-proper because it satisfies the gcd condition.
+  If u′ contains no zero coordinate, then pick r = 0 and s = 1 and we have
+                                                  ′ 
+                                                      ui
+                                       {tui } =            .
+                                                    k+1
+Since u′i ̸= 0, ∥tui ∥ ≥ k+1
+                          1
+                             for all i.
+                  ′
+  Otherwise, u ∈ Nk , so by Lemma 4.3 there is a choice of r and s such that
+                                         su′ + rk (r/p) ∈ {1, . . . , k − 1}k
+when considered modulo k + 1. This  h means that
+                                                  for each coordinate i, there are Ai and Bi
+            svi      Ai      ri       Bi Bi +1
+such that { k+1 } = k+1 and { p } ∈ k+1 , k+1 where Ci := Ai + Bi is in {1, . . . , k − 1} when
+considered modulo k + 1. Therefore,
+                                                               
+                                      sui    ri        Ci Ci + 1
+                          {tui } =        +      ∈        ,
+                                     k+1     p       k+1 k+1
+                                                                               1        k
+and in particular the set on the right-hand side does not intersect with [0, k+1 ) ∪ ( k+1 , 1). Since
+this holds for every i, u has the LR property.
+                                        s
+   As there exists a witness time t = k+1 + pr ∈ p(k+1)
+                                                    1
+                                                        Z, u is (k, p, k + 1)-proper.               □
+   Proposition 4.4 implies Proposition 1.4: suppose that gcd(v) = 1 and πp (v) = (1, 2, . . . , k),
+then we have shown in Proposition 4.4 that π(k+1)p (v) is (k, p, k + 1)-proper. If it is proper due
+to the gcd condition, then as gcd(v) = 1, by the pre-jump technique (see e.g. Lemma 5, [11]),
+                                                          1                            1
+v has the LR property. Otherwise, there is a time t ∈ (k+1)p  Z such that ∥tvi ∥ ≥ k+1    for all i.
+
+                                                5. Implementation
+5.1. Equivalence of speed tuples. It is clear that some speed tuples in an ansatz are essen-
+tially the same, so we only need to verify properness for one of them. We say that two speed
+tuples u and v in Zkp,1 are equivalent if v can be obtained from u by performing a finite number
+of the following actions:
+      • Permuting the coordinates of u
+      • Flipping the sign of a coordinate ui to −ui
+      • Multiplying u by some a ∈ Z×   p.
+   The first two actions are used in both [11] and [15]. For completeness, we show that this
+equivalence indeed preserves eventual properness.
+Proposition 5.1. Let p be prime and u, v ∈ Zkp,1 be equivalent. If u is eventually (k, p)-proper,
+then so is v.
+Proof. We only need to show that each of the aforementioned actions preserves eventual proper-
+ness. This is trivial for permuting. Suppose u is eventually proper and l is the integer for which
+every element in π −1 (u) is proper, where π := πlp→p . Now let v′ ∈ π −1 (v).
+   If v = (u1 , . . . , −ui , . . . , uk ), then v′ = (a1 p + u1 , . . . , ai p − ui , . . . , ak p + uk ) for some integers
+a1 , . . . , ak . In this case, pick
+                       u′ := (a1 p + u1 , . . . , (l − ai )p + ui , . . . , ak p + uk ) ∈ π −1 (u).
+                          ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS                                         9
+
+  If v = au for some a ∈ Z×
+                          p , then by Chinese Remainder Theorem there is b ∈ Zlp such that
+b ≡ a (mod p) and b ≡ 1 (mod l). In particular, b ∈ Z×
+     −1
+                                                     lp and
+
+                                              u′ := bv′ ∈ π −1 (u)
+because π(bv′ ) = π(b)π(v′ ) = a−1 (au) = u. We need b to be a unit because if a time t is a
+witness for u, then the time b−1 t is a witness for v.
+   Then, whichever way u′ satisfies properness, it can be checked that v′ also satisfies properness
+in the same way. Therefore every speed tuple in π(v) is proper, and thus v is eventually
+proper.                                                                                          □
+   Therefore, we may only verify the eventual properness for a single element in each equivalence
+class. We implement this by fixing by ordering the speeds ascendingly, limiting the speeds to
+be in the first half of residues modulo p, and fixing v1 to be 1. In other words, we check all
+tuples of integers (v1 , . . . , vk ) with
+                                                                  p−1
+                                       1 = v1 ≤ v2 ≤ · · · ≤ vk ≤       .
+                                                                      2
+   We should stress that this reduction is essential to obtaining our results. There are approxi-
+mately pk tuples in the (k, p, 1)-ansatz, but with this reduction we only need to check a much
+smaller number of approximately
+                                                             pk
+                                                 
+                                              p/2
+                                                    ≈ k             .
+                                             k−1         2 (k − 1)!
+Compared to the implementation of [11] and [15], we reduce the number of tuples to check by
+a factor of approximately p/k.
+5.2. Verification algorithms. Fix k ∈ {10, 11, 12} and a prime p. Our goal is to verify that
+J(k, p) = ∅ in order to apply Corollary 2.5. To do this, we use a verification algorithm that
+consists of two phases: computing I(k, p, 1) and repeated lifting.
+   The first phase is done by choosing representative speed tuples as described in the previous
+subsection. We use lifting diagram to explain the second phase. In a lifting diagram, the first
+set S1 is always the precomputed I(k, p, 1). Two kinds of arrows correspond to two actions from
+Section 3:
+             ×c
+       • Sn −→ Sn+1 indicates lifting from Sn to Sn+1 with constant c.
+             ÷d
+       • Sn −−→ Sn+1 indicates projecting with πdp→p .
+Since we only perform these two actions, Proposition 3.1 inductively asserts that J(k, p) ⊆ πp Sn
+for every n.
+   For k = 11, since k + 1 = 12 only has small prime factors, namely 2 and 3, it is convenient
+to lift through its prime factors (and some extra sieves). Hence, the lifting diagram is
+                                ×2       ×2       ×2      ×2         ×3    ×3
+                            S1 −−→ S2 −−→ S3 −−→ S4 −−→ S5 −−→ S6 −−→ S7 .
+If S7 is empty, we conclude that J(k, p) ⊆ πp S7 is empty.
+   For k ∈ {10, 12}, k + 1 is prime. In order to avoid the lift with c = k + 1, we lower the goal
+of the lifting phase from showing that the final set is empty to showing that it only consists of
+equivalents of (1, 2, . . . , k). Therefore, the lifting diagram for k = 10 and k = 12 is
+                                         ×2       ×2      ×2         ÷8
+                                     S1 −−→ S2 −−→ S3 −−→ S4 −−→ S5
+which in particular does not contain a c = 11 or c = 13 lift.
+                                                                     / J(k, p) if p > k 2 + k. This is why
+   As k + 1 is prime, Proposition 4.4 asserts that (1, 2, . . . , k) ∈
+                       2                     4
+we only use p > k + k for k ∈ {10, 12}. Therefore, if there are only speed tuples equivalent to
+(1, 2, . . . , k) remaining in S5 , we can verify the emptiness of J(k, p).
+  4In fact, we can use some primes p < k 2 + k if r (1            1
+                                                  k k+1 Z) ⊆ rk ( p Z) by imitating the proof of Lemma 4.3. This
+inclusion holds for p ∈ {103, 107, 109} when k = 10, and p ∈ {149, 151} when k = 12, and we have checked that
+for these k, p, J(k, p) = ∅.
+10                         T. SUNGKAWICHAI AND T. TRAKULTHONGCHAI
+
+5.3. Further particulars. We implement the algorithms of Subsection 5.2 in C++. Compared
+to the original implementations of [10] and [14], we improve practical performance by refac-
+toring to support parallel execution and by using more memory-efficient data structures. The
+development of our code was assisted by AI-based tools, but the process was closely supervised
+and the code was manually verified. We also tested our implementation against that of [14] on
+a number of smaller cases.
+   In computing S1 , we modified the depth-first-search technique developed by [10] to account
+for the equivalence relation mentioned in Subsection 5.1.
+   These refinements dramatically improve runtime. We verified the case of k = 8 in 2 seconds
+(15 minutes using [14]), k = 9 in 41 seconds (23 hours using [14]), and k = 10 in 45 minutes on
+a 10-core Apple M4 processor (excluding compilation time). The proofs of k = 11 and k = 12
+were run in multiple batches, with multiple versions, and on multiple machines, making the
+exact time taken incomparable to other cases.
+   A heuristic estimate from the smaller cases is that the time required to verify the emptiness
+                                   (k+1)/2
+of J(k, p) grows in proportion to p k2k . Interpolating this suggests that completing the proof
+of k = 11 will take approximately 40 hours, and k = 12 approximately 40 days, on the same
+10-core machine.
+   The source of the computation, along with the log files and detailed descriptions, can be
+found in the first author’s GitHub repository [13].
+
+                                  6. Proof of Theorem 1.3
+  Computer verification shows that, for each k ∈ {10, 11, 12}, the set Q
+                                                                       Pk in Table 1 satisfies
+J(k, p) = ∅ for every p ∈ Pk . Moreover, for each k, we have that p∈Pk p ≥ Bk . Since
+LRC(9) holds [15], we may apply Proposition 2.7 thrice and conclude that LRC(k) holds for
+k ∈ {10, 11, 12}.
+                                                                               Y             ln Bk
+     k                               Pk                                   ln          p
+                                                                                          (Lemma 2.6)
+                                                                               p∈Pk
+    127, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191,
+    193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263,
+ 10 269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347,       > 342             < 338
+    349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421,
+    431, 433, 439, 443, 449, 457, 461, 463, 467
+    23, 131, 137, 139, 149, 151, 157, 163, 167, 173, 179, 181, 191,
+    193, 197, 199, 211, 223, 227, 229, 233, 239, 241, 251, 257, 263,
+    269, 271, 277, 281, 283, 293, 307, 311, 313, 317, 331, 337, 347,
+ 11                                                                        > 435             < 435
+    349, 353, 359, 367, 373, 379, 383, 389, 397, 401, 409, 419, 421,
+    431, 433, 439, 443, 449, 457, 461, 463, 467, 479, 487, 491, 499,
+    503, 509, 521, 523, 541, 547, 557, 563, 569, 571, 577
+    167, 179, 181, 191, 193, 197, 199, 211, 223, 227, 229, 233, 239,
+    241, 251, 257, 263, 269, 271, 277, 281, 283, 293, 307, 311, 313,
+    317, 331, 337, 347, 349, 353, 359, 367, 373, 379, 383, 389, 397,
+ 12 401, 409, 419, 421, 431, 433, 439, 443, 449, 457, 461, 463, 467,       > 547             < 546
+    479, 487, 491, 499, 503, 509, 521, 523, 541, 547, 557, 563, 569,
+    571, 577, 587, 593, 599, 601, 607, 613, 617, 619, 631, 641, 643,
+    647, 653, 659, 661, 673, 677, 683, 691, 701, 709, 719, 727, 733
+         Table 1. Sets of primes used in the verification of LRC(k) for k ∈ {10, 11, 12}.
+
+
+
+                                   7. Concluding remarks
+  In Section 4, we mentioned that, surprisingly, we only need to perform c = 2 lifts (more than
+once) to eliminate all speed tuples apart from those whose projection modulo p is (1, 2, . . . , k),
+                          ELEVEN, TWELVE, AND THIRTEEN LONELY RUNNERS                                        11
+
+which is a tight speed tuple. From Goddyn and Wong [7], a speed tuple v ∈ Zk>0 is said to be
+tight if the strict inequalities cannot simultaneously hold in the statement of Conjecture 1.2.
+   An easy continuity argument shows that if v is not tight, then there is T and ϵ > 0 such
+that every t ∈ (T, T + ϵ) is a witness time for v. Therefore, for any non-tight speed tuple v,
+                                                                 1
+there is L such that for any l ≥ L there is a witness time in lp   Z. Our observation suggests a
+far stronger statement, that there is a universal L for every non-tight, coprime v.
+Conjecture 7.1. Let k + 1 be a positive integer. There exists a constant D such that, for any
+integer d ≥ D, every non-tight speed tuple v ∈ Zk>0 with gcd(v) = 1 has a witness time in d1 Z.
+  On a different note, the algebraic method in Proposition 4.1 may be extensible to verify
+Conjecture 1.2 for other classes of speed tuples.
+  Looking ahead, the primary bottleneck in extending our results to k = 13 is the efficient
+computation of I(k, p, 1). Progress here likely requires a better understanding of speed tuples
+that do not have a witness time in an ansatz, which in turn could yield stronger pruning
+conditions and make the initial sieve more tractable.
+
+                                          Acknowledgements
+  The authors are most thankful to Noah Kravitz for his insightful feedback and suggestions,
+especially on the exposition of the paper. The second author acknowledges the support from
+the King’s Scholarship (Thailand).
+
+                                                References
+ 1. Javier Barajas and Oriol Serra, The Lonely Runner with Seven Runners, Electronic Journal of Combinatorics
+    15 (2008), no. 1, R48.
+ 2. Benjamin Bedert, Riesz products and the lonely runner conjecture: A wider gap of loneliness, arXiv preprint
+    arXiv:2511.16636 (2025).
+ 3. Ulrich Betke and Jörg M. Wills, Untere schranken fur zwei diophantische approximations-funktionen, Monat-
+    shefte fur Mathematik 76 (1972), no. 3, 214–217.
+ 4. Tom Bohman, Ron Holzman, and Dan Kleitman, Six lonely runners, Electronic Journal of Combinatorics 8
+    (2001), no. 2, R3.
+ 5. Thomas W. Cusick and Carl Pomerance, View-obstruction problems, III, Journal of Number Theory 19
+    (1984), no. 2, 131–139.
+ 6. Vikram Giri and Noah Kravitz, The structure of Lonely Runner spectra, Mathematical Proceedings of the
+    Cambridge Philosophical Society 180 (2026), no. 2, 343–361.
+ 7. Luis Goddyn and Erick B. Wong, Tight instances of the lonely runner, Integers 6 (2006), no. 14, A38.
+ 8. Matthias Henze and Romanos-Diogenes Malikiosis, On the covering radius of lattice zonotopes and its relation
+    to view-obstructions and the lonely runner conjecture, Aequationes mathematicae 91 (2017), no. 2, 331–352.
+ 9. Romanos Diogenes Malikiosis, Francisco Santos, and Matthias Schymura, Linearly exponential checking is
+    enough for the lonely runner conjecture and some of its variants, Forum of Mathematics, Sigma 13 (2025).
+10. Matthieu      Rosenfeld,      The    lonely  runner     conjecture,   https://gite.lirmm.fr/mrosenfeld/
+    the-lonely-runner-conjecture, 2025, Accessed 2026-03-14.
+11.         , The lonely runner conjecture holds for eight runners, arXiv preprint arXiv:2509.14111 (2025).
+12.         , The lonely runner conjecture holds for nine runners, arXiv preprint arXiv:2512.01912 (2025).
+13. Touch Sungkawichai, LRC holds for 11, 12, 13 runners, https://github.com/vzsky/13-lonely-runners,
+    2026, Accessed 2026-04-14.
+14. Tanupat Trakulthongchai, Nine and ten lonely runners code, https://github.com/t-tanupat/
+    nine-and-ten-lonely-runners, 2025, Accessed 2026-03-14.
+15.         , Nine and ten lonely runners, Electronic Journal of Combinatorics, to appear (2026).
+16. Jörg M. Wills, Zwei Sätze über inhomogene diophantische Approximation von I rrationalzehlen, Monatshefte
+    für Mathematik 71 (1967), no. 3, 263–269 (de).
+17. Xuding Zhu, Circular chromatic number of distance graphs with distance sets of cardinality 3, Journal of
+    Graph Theory 41 (2002), no. 3, 195–207.
+
+  London, UK
+  Email address: touchsungkawichai@gmail.com
+
+  St John’s College, University of Oxford, Oxford, UK
+  Email address: tanupat.trakulthongchai@sjc.ox.ac.uk
+
