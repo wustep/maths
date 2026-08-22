@@ -1,0 +1,44 @@
+{
+ "search": "radius-1 thickening of the WHOLE Haas maximal stratum eta + span{delta_S} of a census triangulation: every point of the span and all 45 single-coordinate flips at each, 46 * 2^rank evaluations per triangulation",
+ "driver": "thick_drive.py <w> 4 20 thick_out",
+ "engine": "thickc.c (tcore.h), gcc -O3 -march=native",
+ "scope": {
+  "census_triangulations_total": 184,
+  "maxrank": 20,
+  "in_scope": 164,
+  "m22_in_scope": 23
+ },
+ "triangulations_swept": 4,
+ "triangulations_complete": 4,
+ "triangulations_truncated": 0,
+ "m22_triangulations_swept": 4,
+ "ranks_completed": {
+  "16": 4
+ },
+ "ranks_outstanding": {
+  "6": 1,
+  "10": 5,
+  "11": 7,
+  "12": 12,
+  "13": 23,
+  "14": 19,
+  "15": 11,
+  "16": 25,
+  "17": 13,
+  "18": 16,
+  "19": 13,
+  "20": 15
+ },
+ "total_evaluations": 12058624,
+ "distinct_schemes_seen_per_tri_max": 147,
+ "distinct_schemes_seen_per_tri_min": 29,
+ "distinct_outside_census": 1,
+ "outside_census_already_certified": 1,
+ "outside_census_already_certified_list": [
+  "<4 u 1<3> u 1<12>>"
+ ],
+ "NEW_candidates": [],
+ "NEW_candidates_ovals": {},
+ "candidate_cert_file": null,
+ "duplicate_tri_records": 0
+}
