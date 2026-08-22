@@ -143,7 +143,12 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Incomplete. Inclusion $$r_{13}(1/14\mathbb Z)\subseteq r_{13}(1/p\mathbb Z)$$ replayed; two p=191 witnesses. LRC(13) open. |
+<<<<<<< HEAD
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
+=======
+| [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No dent. Smale 7 open. |
+| [hilbert16-degree-8](problems/hilbert16-degree-8) | **Dent.** Seventeen real schemes are realized by certified T-curves and are missing from the 2,367 degree-8 schemes of arXiv:2602.06888v3 (their $\S$5.3 lower bound), so $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions implemented and checked against all 38 published M-certificates. Every triangulation of the census is now swept exhaustively — 230.5 million sign distributions — and realizes exactly their 38 M-schemes and no others; 4,074 further certified triangulations outside the census add none. Hilbert 16(a) degree 8 open. |
+>>>>>>> origin/fable/hilbert-16-q2
 
 Each problem folder:
 
@@ -197,7 +202,11 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
+<<<<<<< HEAD
 | Grok Bot transcript page | `notes/chat` | Grok 4.6 | 2026-08-21 |
+=======
+| Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21 |
+>>>>>>> origin/fable/hilbert-16-q2
 
 ## Lean
 

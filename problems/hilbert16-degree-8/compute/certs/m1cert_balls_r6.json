@@ -1,0 +1,557 @@
+{
+ "what": "Exhaustive Hamming balls of radius 6 around every one of the 78 21-oval ((M-1)-curve) certificates of the census.",
+ "ball_size_per_seed": 9531040,
+ "seeds": 78,
+ "all_complete": true,
+ "sign_vectors": 743421120,
+ "distinct_schemes_total": 2217,
+ "schemes_outside_the_published_2367": [],
+ "per_seed": [
+  {
+   "seed_cert": "deg8/o21-p10-n11/(6v1(10v1(3))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 749,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(7v1(9v1(3))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 759,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(11v1(5v1(3))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 753,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(7v2(1)v1(9)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 660,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(4)v1(10)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 631,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v2(3)v1(4)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1046,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p06-n15/(4v1(7)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 919,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(3)v1(11)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1266,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v2(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1601,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(3)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1201,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v1(3)v1(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1166,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(12v1(3)v1(4)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1182,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(10v1(5v1(4))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1168,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(13v2(3)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1141,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(16v1(2v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1115,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p19-n02/(10v1(1v1(8))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1152,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(4v1(2)v1(5)v1(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1628,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v1(1)v1(3)v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1537,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(5)v1(9)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 971,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(15v3(1)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 709,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(2)v1(9)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 944,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(4v1(3)v1(5)v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1528,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(17v1(3)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 160,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p06-n15/(5v1(15)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 861,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(6v1(14)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 796,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(5v1(10v1(4))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 853,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(5v1(9v1(5))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 858,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(8v1(6v1(5))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 926,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(9v1(5v1(5))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 874,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(1)v1(10)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1155,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(9v1(11)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1173,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v1(1)v1(4)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1215,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v2(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1177,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(12v1(1)v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1100,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(13v1(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1052,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(13v1(1)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1066,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(14v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1006,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p19-n02/(18v1(2)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1113,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(11v1(1)v2(3)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 911,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(7v1(10v1(2))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 727,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(11v1(6v1(2))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 736,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p03-n18/(2v1(18)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 480,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v2(1)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 631,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v1(2)v1(3)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1080,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p06-n15/(4v1(1)v1(14)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 816,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(1)v1(13)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 830,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(4v1(1)v1(5)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1682,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(8v1(1)v1(2)v1(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1580,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v1(2)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1199,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(10v1(6v1(3))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1174,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(12v1(6v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1058,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(13v1(5v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 988,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(10v1(2v1(7))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1153,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(9v1(2v1(8))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1239,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p19-n02/(17v1(1v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1003,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(2)v1(12)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1578,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(6)v1(8)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1456,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v1(4)v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 836,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p19-n02/(17v2(1)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 745,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(15v1(2v1(2))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 976,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(4)v1(7)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 522,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p06-n15/(4v1(14v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 907,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p07-n14/(5v1(13v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 855,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(4v1(10v1(5))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 834,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(10v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 893,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v1(9v1(1))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 838,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(9v1(6v1(4))).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 927,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(7v1(1)v2(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1169,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(8v1(5)v1(6)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1222,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(10v1(10)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1166,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p11-n10/(9v1(1)v1(9)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1212,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(11v2(1)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1065,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p14-n07/(12v1(2)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1211,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(12v2(1)v1(4)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1068,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(13v1(2)v1(4)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1147,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p18-n03/(16v1(1)v1(2)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 1155,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p10-n11/(7v2(3)v1(5)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 985,
+   "novel": []
+  },
+  {
+   "seed_cert": "deg8/o21-p15-n06/(12v1(1)v1(2)v1(3)).pcom",
+   "evals": 9531040,
+   "complete": true,
+   "distinct_schemes": 888,
+   "novel": []
+  }
+ ]
+}
