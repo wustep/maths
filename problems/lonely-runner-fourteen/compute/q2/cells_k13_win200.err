@@ -3,3 +3,10 @@
   [part 0/1] nodes=50331648 bound_cuts=41368670
   [part 0/1] nodes=67108864 bound_cuts=54861530
   [part 0/1] nodes=83886080 bound_cuts=68607192
+  [part 0/1] nodes=100663296 bound_cuts=82417047
+  [part 0/1] nodes=117440512 bound_cuts=96123810
+  [part 0/1] nodes=134217728 bound_cuts=109650874
+  [part 0/1] nodes=150994944 bound_cuts=123449198
+  [part 0/1] nodes=167772160 bound_cuts=137269475
+  [part 0/1] nodes=184549376 bound_cuts=150851950
+  [part 0/1] nodes=201326592 bound_cuts=164479740

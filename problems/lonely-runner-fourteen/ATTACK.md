@@ -541,3 +541,17 @@ empty at every prime from 97 to 181, all firing correctly on the positive
 controls at 71, 73, 89, 90, 95, 99, 105, 116 — the evidence that `T2(13,p)`
 already holds well below 191 is now fairly wide. None of it is a proof. An
 alphabet-restricted `NONE` is a residue, not a bound.
+
+## 2026-08-22 — q2: `q = 200` is SAT, so the certificate needs a larger q
+
+`cells --k 13 --q 200` returned SAT in 216,477,912 nodes / 2749 s:
+
+    v = (2,4,6,1,10,5,0,2,4,6,8,10,12)
+
+That is a statement about the *relaxation*, not about `T2`. Checked against
+`q1/check_unsaved.py`, this `v` is **saved** at 191, 193, 197, 199, 211, 223,
+239, 257, 293, 401 and 601 — every prime tried. The window construction is
+one-sided by design: SAT means the constraints kept at `q = 200` are too few
+to rule `v` out, not that any `p` fails. So the certificate holds at some
+`q > 200`; `q = 300` and `q = 500` are running.
+
