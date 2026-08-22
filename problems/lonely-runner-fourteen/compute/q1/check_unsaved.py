@@ -109,3 +109,24 @@ def main() -> None:
 
 if __name__ == "__main__":
     main()
+
+
+def exhaustive(k: int, p: int, verbose: bool = True):
+    """Brute force ALL v in Z_m^k: count those that need a Lemma 4.3 witness
+    (a zero coordinate, not gcd-proper) and have none.  Only for small k."""
+    from itertools import product
+    m = k + 1
+    qs = prime_factors(m)
+    bad = []
+    n_need = 0
+    for v in product(range(m), repeat=k):
+        if 0 not in v:
+            continue                                  # saved by s=1, r=0
+        if any(sum(1 for x in v if x % q) <= 1 for q in qs):
+            continue                                  # gcd branch of Def 2.1
+        n_need += 1
+        if find_witness(list(v), p) is None:
+            bad.append(v)
+            if len(bad) > 4 and not verbose:
+                break
+    return n_need, bad
