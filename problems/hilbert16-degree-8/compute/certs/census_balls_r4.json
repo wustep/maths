@@ -1,0 +1,28 @@
+{
+ "what": "Exhaustive Hamming balls of radius 4 around EVERY one of the 2,367 certificates of the arXiv:2602.06888 v3 degree-8 census, on each certificate's own integer-certified triangulation.",
+ "ball_size_per_seed": 164221,
+ "seeds": 2367,
+ "chunks": 219,
+ "all_complete": true,
+ "sign_vectors": 388711107,
+ "distinct_schemes": 2383,
+ "census_schemes_refound": 2367,
+ "schemes_outside_the_published_2367": [
+  "<13 u 1<3 u 1<2>>>",
+  "<3 u 1<4> u 1<11>>",
+  "<4 u 1<2> u 1<13>>",
+  "<4 u 1<3> u 1<12>>",
+  "<4 u 1<4> u 1<11>>",
+  "<4 u 1<5> u 1<10>>",
+  "<5 u 1<1> u 1<3> u 1<7>>",
+  "<5 u 1<6 u 1<7>>>",
+  "<5 u 1<6 u 1<8>>>",
+  "<6 u 1<1> u 1<3> u 1<7>>",
+  "<6 u 1<5 u 1<8>>>",
+  "<6 u 1<6 u 1<6>>>",
+  "<6 u 1<6 u 1<7>>>",
+  "<6 u 1<8 u 1<4>>>",
+  "<6 u 1<9 u 1<4>>>",
+  "<7 u 1<1> u 1<3> u 1<7>>"
+ ]
+}
