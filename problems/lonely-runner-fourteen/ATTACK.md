@@ -259,3 +259,70 @@ part of the 2026-08-17 record is now on a correct witness.
 **Status.** `cover --k 13 --p 191` under T2 is running; the cheap SAT
 answer is gone, which is the outcome one wants. Not yet decided, so:
 residue, and no bound is claimed.
+
+## 2026-08-22 — q1: dent. T2(13,191) holds
+
+`./cover --k 13 --p 191` returns UNSAT in 102,905,279 nodes / 240.7 s.
+Certificate and the full verification chain: `compute/q1/certs/T2_p191.txt`.
+
+> **Theorem.** Every `(u_1,…,u_13) ∈ Z^13_{>0}` with `gcd(u_1,…,u_13) = 1`
+> and `u_i ≡ i (mod 191)` has the lonely runner property: there is `t`
+> with `‖t u_i‖ ≥ 1/14` for all `i`.
+>
+> Equivalently `(1,2,…,13) ∉ J(13,191)` — the tight tuple that ST26 §5.2
+> report as the sole survivor of the `×2` lifting ladder is eliminated at
+> p=191 with no `×7` and no `×14` lift.
+
+ST26 Proposition 1.4 proves the analogue only when `k+1` *and* `p` are
+both odd primes. At k=13, `k+1 = 14` is composite, so their statement
+does not apply and this one is not in the published record. Write the
+comparison honestly: this is not a bound on `k`. LRC(13) is still open,
+and the thing that keeps it open — computing `I(13,p,1)`, about `1.1e17`
+tuples at p=191 under their §5.1 reduction — is untouched here.
+
+Chain from T2(191) to the theorem, following Prop 4.4 with the case split
+repaired for composite `k+1`. Let `u_i = a_i p + i`, `a_i ∈ Z_14`, and
+`u' = u mod 14`, which ranges over all of `Z_14^13`.
+
+1. `u'` gcd-proper — some `q ∈ {2,7}` divides all but at most one
+   coordinate. Then `gcd(14, u_1,…,û_i,…,u_13) ≥ q > 1`, so `u` is
+   `(13,p,14)`-proper by Definition 2.1's gcd condition. *(For prime
+   `k+1` this branch is just `u' = 0`; at 14 it is wide, and it is the
+   branch the folder had been dropping.)*
+2. `u'` with no zero coordinate — take `t = 1/14`; then
+   `{t u_i} = u'_i/14` with `u'_i ≠ 0`, so `‖t u_i‖ ≥ 1/14`.
+3. otherwise — `u'` has a zero coordinate and is not gcd-proper, which is
+   exactly T2's hypothesis. Take its `s, j` and `t = s/14 + j/191`; then
+   `{t u_i} ∈ [C_i/14, (C_i+1)/14)` with `C_i ∈ {1,…,12}`, so again
+   `‖t u_i‖ ≥ 1/14`. And `t ∈ (1/(14·191))Z`.
+
+Then Prop 1.4's own last step: if the fiber element is proper by the gcd
+condition, `gcd(u) = 1` plus the pre-jump technique gives the LR property;
+otherwise the witness time is already there.
+
+**Verification.** Four independent legs, and one that failed — recorded
+because it did fail:
+
+- the *reformulation* is checked against brute force at composite `m`.
+  `check_unsaved.py` enumerates all of `Z_m^k` from the paper's
+  definitions: k=5 (m=6) has 64 p-independent obstructions and **0** at
+  p=31; k=7 (m=8) has 2596 and **0** at p=59. `cover` matches all four.
+  Its `--selftest` also re-proves ST26 Prop 4.1 outright at k=4 and k=6.
+- split and unsplit runs agree; unsplit is bit-reproducible at 102,905,279
+  nodes.
+- `spotcheck.c`, sharing no code with either search, finds **0**
+  unsaved-and-needed vectors at p=191 across 23.2 million tuples needing a
+  witness (sparse, arithmetic-progression plus 2-coordinate perturbations,
+  Hamming balls about two known obstructions, and 20 M random). Positive
+  control: the same sweep finds 24,300 obstructions at the p-independent
+  grid, so it is not blind.
+- **failed leg:** `cover_bdd.c`, the forward-sweep second decision
+  procedure, agrees on all five small composite cases but state-explodes
+  (>40 M states at depth 7) before reaching k=13. It does *not*
+  independently confirm p=191. Adding subset dominance is the fix and it
+  is not done. So the p=191 verdict rests on one exact search plus the
+  three legs above, not on two exact searches.
+
+**Sweep.** `T2(13,p)` fails at p=17,19 and holds at 191, so p is doing
+real work and there is a threshold to locate. Sweeps over
+p ∈ [17,181] and p ∈ [193,293] are running; results as they land.

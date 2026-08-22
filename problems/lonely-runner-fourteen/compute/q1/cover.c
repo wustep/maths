@@ -39,6 +39,10 @@ static uint8_t  optcnt[MAXCON][MAXK];          /* #values of coord i hitting c *
 static uint64_t FULL[NW];
 
 static int val[MAXK];                          /* -1 = unassigned              */
+static int optsum[MAXCON];                     /* live (i,a) options per c     */
+static int split_n = 1, split_i = 0, split_depth = 0;
+static long long task_ctr;
+static long long progress_every = 1LL << 24;
 static long long nodes, bound_cuts, dead_cuts;
 static long long node_cap;
 static int solution[MAXK], have_sol;
@@ -173,9 +177,12 @@ static int feasible_Nk(void)
 
 /* ------------------------------------------------------------------ DFS ---- */
 
-static int rec(uint64_t *cov)
+static int rec(uint64_t *cov, int depth)
 {
   if (++nodes > node_cap) return -1;
+  if ((nodes & (progress_every - 1)) == 0)
+    fprintf(stderr, "  [part %d/%d] nodes=%lld bound_cuts=%lld\n",
+            split_i, split_n, nodes, bound_cuts), fflush(stderr);
 
   uint64_t unc[NW];
   int rem = 0;
@@ -186,23 +193,21 @@ static int rec(uint64_t *cov)
     return 0;
   }
 
-  /* MRV: uncovered constraint with fewest live (i,a) options */
+  /* MRV over uncovered constraints, using the incrementally kept optsum */
   int bestc = -1, bestn = 1 << 30;
   for (int w = 0; w < NWORD && bestn > 1; w++) {
     uint64_t x = unc[w];
     while (x) {
       int c = (w << 6) + __builtin_ctzll(x);
       x &= x - 1;
-      int n = 0;
-      for (int i = 0; i < K; i++) if (val[i] < 0) n += optcnt[c][i];
-      if (n < bestn) { bestn = n; bestc = c; if (n <= 1) break; }
+      if (optsum[c] < bestn) { bestn = optsum[c]; bestc = c; if (bestn <= 1) break; }
     }
   }
   if (bestn == 0) { dead_cuts++; return 0; }
 
-  /* counting bound: free coordinates cannot cover enough of what is left */
+  /* counting bound: the free coordinates cannot cover what is left */
   int cap = 0;
-  for (int i = 0; i < K; i++) {
+  for (int i = 0; i < K && cap < rem; i++) {
     if (val[i] >= 0) continue;
     int mx = 0;
     for (int a = 0; a < M; a++) {
@@ -211,9 +216,12 @@ static int rec(uint64_t *cov)
       if (t > mx) mx = t;
     }
     cap += mx;
-    if (cap >= rem) break;
   }
   if (cap < rem) { bound_cuts++; return 0; }
+
+  /* work split: partition the subtrees rooted at split_depth across parts */
+  if (depth == split_depth && split_n > 1)
+    if ((task_ctr++ % split_n) != split_i) return 0;
 
   for (int i = 0; i < K; i++) {
     if (val[i] >= 0) continue;
@@ -222,7 +230,9 @@ static int rec(uint64_t *cov)
       uint64_t ncov[NW];
       for (int w = 0; w < NWORD; w++) ncov[w] = cov[w] | hitmask[i][a][w];
       val[i] = a;
-      int r = rec(ncov);
+      for (int c = 0; c < NCON; c++) optsum[c] -= optcnt[c][i];
+      int r = rec(ncov, depth + 1);
+      for (int c = 0; c < NCON; c++) optsum[c] += optcnt[c][i];
       val[i] = -1;
       if (r != 0) return r;
     }
@@ -237,6 +247,9 @@ int main(int argc, char **argv)
     if (!strcmp(argv[i], "--k")) K = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--p")) P = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--nodecap")) node_cap = atoll(argv[++i]);
+    else if (!strcmp(argv[i], "--split")) split_n = atoi(argv[++i]);
+    else if (!strcmp(argv[i], "--part")) split_i = atoi(argv[++i]);
+    else if (!strcmp(argv[i], "--splitdepth")) split_depth = atoi(argv[++i]);
   }
   M = K + 1;
   if (!P) P = M;
@@ -251,10 +264,14 @@ int main(int argc, char **argv)
   fflush(stdout);
 
   for (int i = 0; i < K; i++) val[i] = -1;
+  for (int c = 0; c < NCON; c++) {
+    optsum[c] = 0;
+    for (int i = 0; i < K; i++) optsum[c] += optcnt[c][i];
+  }
   uint64_t cov[NW]; memset(cov, 0, sizeof(cov));
   struct timespec t0, t1;
   clock_gettime(CLOCK_MONOTONIC, &t0);
-  int r = rec(cov);
+  int r = rec(cov, 0);
   clock_gettime(CLOCK_MONOTONIC, &t1);
   double el = (t1.tv_sec - t0.tv_sec) + 1e-9 * (t1.tv_nsec - t0.tv_nsec);
 
@@ -266,7 +283,7 @@ int main(int argc, char **argv)
   } else if (r == -1) {
     printf("RESULT UNKNOWN (node cap %lld reached)\n", node_cap);
   } else {
-    printf("RESULT UNSAT (every non-gcd-proper v with a zero coord is saved; T2(%d,%d) HOLDS)\n", K, K, P);
+    printf("RESULT UNSAT (every non-gcd-proper v with a zero coord is saved; T2(%d,%d) HOLDS)\n", K, P);
   }
   printf("nodes=%lld bound_cuts=%lld dead_cuts=%lld seconds=%.2f\n",
          nodes, bound_cuts, dead_cuts, el);
