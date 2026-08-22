@@ -13,6 +13,9 @@ Written from the definitions, sharing no code with the C.  Four checks:
           content of the reduction: it is why an unsaved v must satisfy the
           window constraint.
 
+  schema  schema.py's interval arithmetic for the family v = e_a + e_b agrees,
+          pair by pair and p by p, with exhausting all (s,j) directly.
+
   brute   T2(k,p) decided by enumerating all of Z_m^k directly from ST26's
           definitions -- no covering, no search -- for small k.
 
@@ -177,6 +180,25 @@ def main():
         n, bad = check_window(k, q, pl)
         print("   k=%-3d q=%-4d cells=%-5d p tested=%-3d violations=%d %s"
               % (k, q, n, len(pl), bad, "ok" if not bad else "FAIL"))
+
+    print("[schema] the e_a+e_b family: interval arithmetic vs all (s,j)")
+    import schema
+    from itertools import combinations
+    for k in (5, 13):
+        pl = [p for p in range(6, 130)]
+        mism = n = 0
+        for T in combinations(range(1, k + 1), 2):
+            Z = [i for i in range(1, k + 1) if i not in T]
+            D, good = schema.good_set(k, Z)
+            v = tuple(1 if i in T else 0 for i in range(1, k + 1))
+            if not eligible(k, v):
+                continue
+            for p in pl:
+                n += 1
+                if (not schema.has_grid_point(D, good, p)) != (not saved(k, p, v)):
+                    mism += 1
+        print("   k=%-3d pairs x p checked=%-6d mismatches=%d %s"
+              % (k, n, mism, "ok" if not mism else "FAIL"))
 
     print("[brute] T2(5,p) by direct enumeration of all of Z_6^5")
     fails = [p for p in range(6, 121) if brute(5, p)]

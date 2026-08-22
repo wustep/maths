@@ -52,7 +52,9 @@ programs can be compared on the same question.
 
 `check_cells.py --selftest` checks, independently of the C: that `B` is
 constant on every half-open cell (sampled); that every window really does meet
-`(1/p)Z` inside its own cell set, for `k = 5, 7, 13` and 43 values of `p`; and
+`(1/p)Z` inside its own cell set, for `k = 5, 7, 13` and 43 values of `p`; that
+`schema.py`'s interval arithmetic agrees with exhausting all `(s,j)` directly,
+over 1240 pair-by-`p` checks at `k=5` and 9672 at `k=13`, with no mismatch; and
 that brute force over all of `Z_6^5` agrees with the certified threshold at
 `k=5`. Grid mode reproduces `q1/cover.c` on all five gate cases, witnesses
 included.
