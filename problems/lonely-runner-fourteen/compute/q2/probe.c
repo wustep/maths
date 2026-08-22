@@ -9,6 +9,9 @@
 
    The answer is one-sided and says so:
      FOUND    an explicit v, replayable in q1/check_unsaved.py -> T2(k,p) FAILS.
+   --fam Q L gives coordinate i the alphabet { x in Z_m : x = L*i mod Q }, i.e.
+   fixes v mod Q and enumerates every lift.  With Q = m/2 that is the family the
+   last failing p at k = 5, 7 and 9 all belong to.
      NONE     no unsaved v with all coordinates in A.  Says nothing about
               other alphabets, so it is NOT a proof that T2(k,p) holds.
 
@@ -30,6 +33,8 @@
 
 static int K, M, P, NCON, NW;
 static int alpha[MAXK + 1], na;
+static int coalpha[MAXK][MAXK + 1], cona[MAXK];   /* per-coordinate alphabet */
+static int fam_q = 0, fam_l = 0;
 static uint64_t hit[MAXK][MAXK + 1][MAXW];   /* per (i, value) */
 static uint64_t reach[MAXK + 1][MAXW];       /* suffix union over i >= d      */
 static uint64_t FULL[MAXW];
@@ -86,12 +91,25 @@ static void build(void)
   }
   memset(FULL, 0, sizeof(FULL));
   for (int c = 0; c < NCON; c++) bset(FULL, c);
-  /* reach[d] = what coordinates d..K-1 could still cover, over A */
+  /* per-coordinate alphabet: the flat one, or the residue family below */
+  for (int i = 0; i < K; i++) {
+    if (fam_q) {
+      /* v_i = l*(i+1) mod q, lifted to Z_m in every possible way.  The last
+         failing p at k=5,7,9 all have v_i = l*i (mod m/2) for some l, so this
+         is the family that the flat alphabets miss. */
+      int r = (fam_l * (i + 1)) % fam_q;
+      cona[i] = 0;
+      for (int x = r; x < M; x += fam_q) coalpha[i][cona[i]++] = x;
+    } else {
+      cona[i] = na;
+      for (int t = 0; t < na; t++) coalpha[i][t] = alpha[t];
+    }
+  }
   memset(reach, 0, sizeof(reach));
   for (int d = K - 1; d >= 0; d--)
     for (int w = 0; w < NW; w++) {
       uint64_t u = reach[d + 1][w];
-      for (int t = 0; t < na; t++) u |= hit[d][alpha[t]][w];
+      for (int t = 0; t < cona[d]; t++) u |= hit[d][coalpha[d][t]][w];
       reach[d][w] = u;
     }
 }
@@ -109,10 +127,10 @@ static void rec(int d, uint64_t *cov)
     }
     return;
   }
-  for (int t = 0; t < na && !found; t++) {
+  for (int t = 0; t < cona[d] && !found; t++) {
     uint64_t nc[MAXW];
-    for (int w = 0; w < NW; w++) nc[w] = cov[w] | hit[d][alpha[t]][w];
-    val[d] = alpha[t];
+    for (int w = 0; w < NW; w++) nc[w] = cov[w] | hit[d][coalpha[d][t]][w];
+    val[d] = coalpha[d][t];
     rec(d + 1, nc);
   }
 }
@@ -125,6 +143,7 @@ int main(int argc, char **argv)
     if (!strcmp(argv[i], "--k")) K = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--p")) P = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--alpha")) as = argv[++i];
+    else if (!strcmp(argv[i], "--fam")) { fam_q = atoi(argv[++i]); fam_l = atoi(argv[++i]); }
   }
   M = K + 1;
   if (!P) P = M;
@@ -143,7 +162,8 @@ int main(int argc, char **argv)
   clock_gettime(CLOCK_MONOTONIC, &t1);
   double el = (t1.tv_sec - t0.tv_sec) + 1e-9 * (t1.tv_nsec - t0.tv_nsec);
 
-  printf("k=%d p=%d alphabet {%s} pairs=%d  ", K, P, as, NCON);
+  if (fam_q) printf("k=%d p=%d family v_i = %d*i mod %d pairs=%d  ", K, P, fam_l, fam_q, NCON);
+  else       printf("k=%d p=%d alphabet {%s} pairs=%d  ", K, P, as, NCON);
   if (found) {
     printf("FOUND unsaved v =");
     for (int i = 0; i < K; i++) printf(" %d", val[i]);

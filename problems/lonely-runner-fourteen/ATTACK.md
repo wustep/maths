@@ -497,3 +497,47 @@ returns. No bound is claimed from q2 yet.
 output past the header. Unchanged from the close-of-session note: bounded and
 unbounded agree everywhere both finish, and p=191 is only in the bounded
 column.
+
+## 2026-08-22 — q2: calibration, and the residue family is empty at k=13
+
+**Calibration.** Run both ends at every composite `m` small enough to decide
+outright, `cells --k K --q q` upward for the certificate and `cover --k K --p p`
+across `p ∈ [6,400]` for the truth:
+
+| k | m | certified `T2(k,p)` for all `p ≥` | largest `p ≤ 400` that actually fails | loss |
+|---|---|---|---|---|
+| 5 | 6 | 90 | 57 | 1.58× |
+| 7 | 8 | 84 | 44 | 1.91× |
+| 9 | 10 | 180 | 125 | 1.44× |
+| 13 | 14 | *running* | ≥ 116 (schema) | — |
+
+So the certificate is sound and roughly `1.5×` loose everywhere it can be
+checked. Note `k=9` fails as far as `p=125`, past the `k=13` schema bound of
+116 — a warning that 116 is unlikely to be the end at `k=13` either.
+
+**What the last failures look like.** Take the obstruction `cover` returns at
+the largest failing `p` for each `k`:
+
+    k=5  p=57   v = (5,1,0,5,1)             v_i = -i mod 3
+    k=7  p=44   v = (3,2,5,0,3,2,5)         v_i = -i mod 4
+    k=9  p=125  v = (2,4,1,3,0,7,4,1,8)     v_i = 2i mod 5
+
+One family, and it is `v_i ≡ λ i (mod m/2)` with the lift to `Z_m` free — not
+`v_i ≡ λ i (mod m)`, which is the thing ST26's `×2` ladder already handles.
+`probe --fam Q L` was added for it: coordinate `i` gets the alphabet
+`{x ∈ Z_m : x ≡ L·i mod Q}`, so `2^k` lifts per `λ`, instant. It recovers all
+three obstructions above from scratch.
+
+**At k=13 that family is empty.** All six `λ`, all `2^13` lifts, at
+`p = 43, 89, 97, …, 293` — 30 values of `p`, nothing unsaved anywhere,
+including at primes where `T2(13,p)` is *known* to fail. So the vector that
+carries failure furthest at `k = 5, 7, 9` has no `k = 13` counterpart. (The
+balanced lift of `i mod 7`, tested earlier, is the `λ=1` member of this family
+and is one of the 8192 lifts it just swept.)
+
+Combined with the flat-alphabet sweeps — `{0,1,7}`, `{0,1,13}` and the
+eight-letter `{0,1,2,3,7,11,12,13}`, all exhaustive in their alphabet, all
+empty at every prime from 97 to 181, all firing correctly on the positive
+controls at 71, 73, 89, 90, 95, 99, 105, 116 — the evidence that `T2(13,p)`
+already holds well below 191 is now fairly wide. None of it is a proof. An
+alphabet-restricted `NONE` is a residue, not a bound.
