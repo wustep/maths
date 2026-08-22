@@ -178,3 +178,77 @@ formulation of the same theorem); I. Itenberg, *Counter-examples to
 Ragsdale conjecture and T-curves*, Contemp. Math. 182 (1995) 55–72
 (their [25], source of the Harnack sign distribution
 \(\eta(x,y)=(x+1)(y+1)\) used here).
+
+## 2026-08-22 — freshness check
+
+Re-checked the record. **Nothing about degree 8 changed.**
+arXiv:2602.06888 is still at **v3 (27 Jul 2026)** — `.../abs/2602.06888v4`
+returns 404, and the abs page lists exactly v1 (6 Feb 2026), v2 (23 Feb
+2026), v3 (27 Jul 2026), still with no journal-ref. arXiv:2604.09221 is
+still **v1 only** (10 Apr 2026). The **2,367** degree-8 T-curve count
+stands: `dmg-lab/CombinatorialPatchworking` has had no push since
+**2026-07-21** (HEAD `e85b809`, merge of PR #1 "data: add degree-eight
+patchwork certificates"), one closed PR, zero issues, zero releases, two
+branches (`main`, `feat/degree8-data`, same tree), and the README still
+says 2,367. Orevkov's page (last update **11 Aug 2026**) lists nothing on
+degree 8 since 2002. **All six M-schemes are still open**: no paper,
+preprint, or author page found claiming to realize or exclude any of
+them. Sweeps run: arXiv API on `T-curve`/`patchworking`/`M-curve`/`real
+plane curve`, on `Hilbert's 16th`/`octic`/`22 ovals`, and on
+`cat:math.AG AND (T-curves OR patchworking)`; math.AG 2026-08 listing;
+Orevkov's page; the dmg-lab org repo list. Three items are new to this
+log — none of them touches the degree-8 census.
+
+- S. Yu. Orevkov, *On arrangements of plane real quartics with respect
+  to three lines*, arXiv:2607.19457 (v1 21 Jul 2026, **v2 4 Aug 2026**),
+  <https://arxiv.org/abs/2607.19457>; author PDF linked from
+  <https://www.math.univ-toulouse.fr/~orevkov/>. Degree 4, not 8, so it
+  does not move the census — but it is a live caution for dent (A).
+  Verbatim from the abstract: "There is one arrangement which is
+  realizable pseudoholomorphically but not algebraically. It can be
+  constructed in different ways, in particular, by a combinatorial
+  patchworking on an irregular triangulation. This is the first example
+  of a combinatorial patchworking which produces a PL curve in RP^2
+  whose arrangement relative to the coordinate axes is algebraically
+  unrealizable." I.e. patchworking on a **non-regular** triangulation
+  can output a PL curve with no algebraic model. Our verifier already
+  certifies convexity (regularity) in exact rational arithmetic on every
+  witness, which is exactly the hypothesis Viro's theorem needs and
+  exactly what Orevkov's example lacks. Nothing to fix; the requirement
+  is now backed by a published counterexample rather than by
+  Itenberg's survey remark alone.
+- K. Ferry, M. Joswig, J. Rambau, *Counting symmetric unimodular
+  triangulations*, arXiv:2605.14150 (13 May 2026), abs + full HTML
+  opened: <https://arxiv.org/abs/2605.14150>,
+  <https://arxiv.org/html/2605.14150v1>. Explicitly "motivated by work
+  on T-curves (Geiselmann et al., 2026)". Counts unimodular
+  triangulations of \(d\cdot\Delta_2\) that are invariant under a fixed
+  symmetry axis \(\mathfrak{H}\), up to \(\mathfrak{H}\)-feasible
+  symmetries; their Table 1 gives \(\widetilde{F}(8) =
+  1{,}211{,}875{,}888\) (and \(\widetilde{F}(9) =
+  422{,}664{,}577{,}207\)). Sizes the residue in ATTACK.md: we swept 184
+  census triangulations plus 4,074 more, and the **symmetric** unimodular
+  triangulations of \(8\cdot\Delta_2\) alone already number 1.2 billion —
+  the unrestricted count is not enumerated anywhere. "Exhaustive per
+  triangulation, not exhaustive over triangulations" is not close to
+  exhaustive. No degree-8 scheme counts in the paper; it does not
+  mention 2,367.
+- G. Maletto, *Hilbert's 16th problem for arrangements of curves on a
+  surface*, arXiv:2606.21449 (19 Jun 2026),
+  <https://arxiv.org/abs/2606.21449>. The preprint Orevkov's quartic
+  paper completes. Arrangements of three lines with a cubic (complete)
+  and with a quartic (partial) on compact real surfaces; Bézout
+  obstructions, Viro patchworking, a Julia library `NWT`. Not degree 8.
+
+Checked and **not** relevant to degree 8, recorded so the next check can
+skip them: E. Pasquereau, *On the topology of T-manifolds of higher
+codimension*, arXiv:2602.14988 (16 Feb 2026),
+<https://arxiv.org/abs/2602.14988> — new component bounds, but for high
+codimension and \(\mathbb{RP}^3\), nothing on ovals in
+\(\mathbb{RP}^2\). Also scanned and off-topic: Akyar–Shkolnikov
+arXiv:2603.08094 (non-Abelian patchworking), Demory arXiv:2601.07751
+(T-polynomials, dilated triangulations), Ichikawa arXiv:2601.18093
+(dimers, M-curves of a Riemann surface, not plane schemes),
+Janasz–Pokora arXiv:2512.24707 (M-arrangements of conics and lines),
+Frühbis-Krüger–Joswig–Kastner arXiv:2603.12985 (drawing real plane
+curves in OSCAR). No forum sources were used.
