@@ -364,3 +364,39 @@ the trusted base at the headline case as well; result when it lands.
 **Replay checked from a clean clone.** `git clone`, three `gcc` lines
 with no `-march=native`, `check_unsaved.py --selftest`, and the four
 gate runs all pass. `compute/q1/README.md` lists them.
+
+## 2026-08-22 — q1 close of session
+
+**Sweep, final state.** `T2(13,p)` holds at
+
+    191, 193, 197, 199, 211, 223, 227, 229, 233, 239
+
+and fails at 17, 19, 23, 29, 31, 37, 41. Ten consecutive primes from 191
+up, none failing. Each is an independent instance of the theorem: for each
+such `p`, every coprime `(u_1,…,u_13)` with `u_i ≡ i (mod p)` has the LR
+property. The sweep is still running past 239.
+
+**`--nobound` at p=191: unresolved.** Left running ~35 minutes without
+terminating and was not waited out. Expected — 80 M of the 103 M nodes in
+the bounded run were bound cuts, and each cut node's subtree comes back.
+So the counting bound is *not* removed from the trusted base at p=191; it
+is removed at k=5 p=31 and k=7 p=59, where brute force independently
+confirms the same answers. Write it as it is: bounded and unbounded search
+agree everywhere both finish, and p=191 is only in the bounded column.
+
+**Where q1 stands against the Phase 0 tree.**
+
+- A (p-uniform replacement for Prop 4.1 at composite `k+1`) — not proved,
+  but its first check came back positive and then some: the statement is
+  true at every large prime tried, at k=13 and at composite `m = 6, 8`.
+  A proof for all `p > p_0` is the open end. Locating the threshold in
+  (41, 191) is the next cheap step, then look for a schema.
+- B (enough primes to clear `B_13`) — dead, on ST26 §7, not on arithmetic.
+- C (finish the p=191 salvage) — done, but only after correcting what it
+  was aimed at. The original target was false.
+- D (new excluded family) — delivered; it is A/C restricted to one prime,
+  ten times over.
+- E (SAT on the missing `I(13,p,1)`) — dead at `1.1e17` representatives.
+- F (outside ST26) — dropped, no certificate named.
+
+**Not claimed.** LRC(13). The bottleneck ST26 name is untouched.
