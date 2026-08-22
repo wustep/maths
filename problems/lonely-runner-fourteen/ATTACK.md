@@ -193,3 +193,69 @@ The UNSAT direction (k=10 and k=12 p-independent, both *theorems* by
 Prop 4.1) did not close in Python at 3e6 nodes. Those two are the
 correctness gate for the C solver: a search that cannot re-prove Prop
 4.1 at k=10 and k=12 is not trusted at k=13.
+
+## 2026-08-22 — q1 Phase 1: the gcd branch was missing; T1(191) is false
+
+Built `compute/q1/cover.c` (the set-cover decision from Phase 0) and
+`compute/q1/check_unsaved.py` (independent single-vector replay, written
+from the paper, not from the C). Gate first, then results.
+
+**Correctness gate.** `check_unsaved.py --selftest` brute-forces *all* of
+`N_k` and re-proves ST26 Proposition 4.1 at k=4 and k=6, and reproduces
+the k=8 (m=9 composite) failure. `cover` agrees on all three and on k=13
+p-independent. A search that cannot re-prove Prop 4.1 is not trusted.
+
+**Dent-shaped finding — the recorded target statement is false.** Run
+`cover --k 13 --p 191` against `N_13` and it returns SAT in 27 s:
+
+    v = (2,4,6,8,10,12,0,2,4,6,8,10,12) = 2·(1,…,13) mod 14
+
+`v ∈ N_13` (nonzero, `v_7 = 0`), and exhausting all 2674 pairs `(s,j)`
+finds no witness. Independently confirmed:
+
+    python3 check_unsaved.py --k 13 --p 191 \
+        --v 2,4,6,8,10,12,0,2,4,6,8,10,12     ->  SAVED : False
+
+So **T1(191) as stated in Phase 0 is false**, and the 2026-08-17 campaign
+— which was searching for exactly that, and had reported "0 unsaved" over
+the part of the space it had finished — could not have succeeded. The
+vector sits in the `remain ≥ 5` range that was still running. This is a
+residue turned into a decision, not a completed search.
+
+**Why it does not matter, and what the correct statement is.** Re-reading
+Prop 4.4's case split: ST26 dispose of `u' = 0` through the *gcd
+condition* of Definition 2.1, `gcd(l, u_1,…,û_i,…,u_k) > 1` with
+`l = k+1`. When `k+1` is prime that branch means "at most one nonzero
+coordinate" and is nearly empty, so it is easy to read past. When
+`k+1 = 14` it is a wide branch: some prime `q ∈ {2,7}` divides all but at
+most one coordinate. And `2·(1,…,13)` is entirely even. It is unsaved and
+*harmless*. The folder had been transcribing ST26 to composite `k+1`
+with this term dropped. Restored, the statement to prove is
+
+> **T2(p).** For every `v ∈ Z_14^13` with (i) at least one zero
+> coordinate, (ii) at least two odd coordinates, (iii) at least two
+> coordinates not divisible by 7, there are `s ∈ Z_14`, `j ∈ Z` with
+> `s v + r_13(j/p) ∈ {1,…,12}^13 (mod 14)`.
+>
+> (ii)+(iii) is exactly "not gcd-proper": for prime `q | m`,
+> "some `i` has `q | v_j` for all `j ≠ i`" ⟺ `#{j : q ∤ v_j} ≤ 1`.
+> T2(p) ⇒ every `u ∈ Z^13_{>0}` with `gcd(u) = 1` and `u_i ≡ i (mod p)`
+> has the LR property — the k=13 analogue of ST26 Proposition 1.4.
+
+**Second correction: the 2026-08-17 obstruction was harmless.** The
+vector cited that day to declare the p-independent statement false,
+`v = (0,…,0,1,0)`, is gcd-proper (`2` divides all but one coordinate), as
+is the k=8 example `(0,0,0,0,0,1,0,0)`. Neither is an obstruction to
+Prop 4.4. The conclusion survives, but on the strength of the *mixed*
+example `v = (1,0,0,12,6,10,0,1,0,4,0,10,0)`, which is confirmed not
+gcd-proper and genuinely unsaved. `cover --k 13` (p-independent, gcd
+branch on) returns SAT in 29 nodes with another genuine one,
+
+    v = (1,1,1,0,1,1,1,5,1,6,1,2,1)      single zero coordinate, 10 odd
+
+so **T2(13,14) is false** and p-dependence is genuinely required. That
+part of the 2026-08-17 record is now on a correct witness.
+
+**Status.** `cover --k 13 --p 191` under T2 is running; the cheap SAT
+answer is gone, which is the outcome one wants. Not yet decided, so:
+residue, and no bound is claimed.
