@@ -88,3 +88,240 @@ A later session attacked $\ell_2(10,2)\le 49$ directly and did not land it. What
 - **There are at least two basins.** The two 7-hole optima have identical GL-invariants — same multiplicity histogram, same hole-set structure (rank 5, one zero-sum quadruple) — yet an exhaustive color-guided search proves no linear map carries one onto the other.
 
 None of this is a lower bound. $\ell_2(10,2)=49$ remains possible; what is excluded is every highly symmetric 49-covering in the classes listed, and every small perturbation of the best-known near-misses.
+
+## 8. Zooming out: what the trajectory says about 49 (quest q9)
+
+Before pushing on 49 again it is worth asking what the previous four answers at
+$r=10$ actually were.
+
+$$
+53\ (1992)\ \longrightarrow\ 51\ (2003)\ \longrightarrow\ 51\ (2025)\
+\longrightarrow\ 50\ (2026)\ \longrightarrow\ 49\ ?
+$$
+
+**53 is a lift.** The even-$r$ family $\phi(2t)=27\cdot 2^{t-4}-1$ doubles $n+1$
+every two units of redundancy. Its $r=10$ entry is nothing but the $r=8$ entry
+carried up one step: $2(26+1)-1=53$. If the pattern of the table were "improve
+the seed and re-lift", then $\ell_2(10,2)\le 49$ would want an $r=8$ length of
+$25$ — which is exactly the gap the q1 session failed to close, missing three
+of 256 syndromes.
+
+**51 and 50 are not lifts.** This is checkable, and it was checked. Every
+subset of $\mathbb F_2^{10}$ decomposes, along each of the 174251
+two-dimensional quotients $q:\mathbb F_2^{10}\to\mathbb F_2^2$, into four
+blocks $(A;B,C,D)$ with $A=S\cap\ker q$. A lift would be a quotient whose
+kernel block already covers $\ker q\cong\mathbb F_2^8$, with the other three
+blocks patching the cosets. Sweeping all 174251 quotients of the
+Kaikkonen–Rosendahl 51-set and of the certified 50-set: **not one** kernel
+block covers its own kernel. The 2003 decrease of 2 and the 2026 decrease of 1
+both left the lift family behind and never came back.
+
+What they are instead is *flat*. Across all 174251 quotients the kernel block
+size stays inside $3..27$ for the 51-set and $3..26$ for the 50-set, around a
+mean of $n/4\approx 12.5$. No quotient sees a lopsided object.
+
+Put that next to what q4 established at $n=49$: no covering invariant under any
+of 79 exhausted subgroup classes of $GL(10,2)$, including every $C_7\times C_7$
+class, so the "$49=7\times 7$" resonance is dead; and the 7-hole optima are not
+reachable by any swap of five columns or fewer. So the object that would be a
+49 is not a lift, not a symmetry orbit, and not a small perturbation of the
+known near-misses. Three of the four obvious move classes are closed.
+
+**The fourth is a large exact rearrangement along a quotient.** Fix the quotient
+and choose the coset representatives so that $t_{01}+t_{10}=t_{11}$; the twist
+vanishes and covering radius $\le 2$ becomes four conditions inside $\ker q$:
+
+$$
+\begin{aligned}
+(00)&\quad \{0\}\cup A\cup\Delta(A)\cup\Delta(B)\cup\Delta(C)\cup\Delta(D)=\ker q,\\
+(01)&\quad (A\cup\{0\})+B\ \cup\ C+D=\ker q,
+\end{aligned}
+$$
+
+with $(10)$ and $(11)$ the two label-permuted twins and
+$\Delta(X)=\{x+x':x\ne x'\}$. Now freeze $A,B,C$ and ask for $D$. Every
+condition that mentions $D$ collapses into a hitting-set constraint —
+$u\notin (A^{+}+B)$ forces $D\cap(u+C)\ne\emptyset$, and so on — plus one pair
+constraint, $h\in\Delta(D)$ for each syndrome the other three blocks miss. That
+makes *"is there **any** block of size $\le k$ that finishes this?"* a finite
+exact question, decided by constraint-directed depth-first search.
+
+The point is the size of the move. A block carries up to eighteen columns and
+they are all re-chosen at once, exactly. Asking for a block one column *shorter*
+than the one it replaces turns the certified 50-set directly into a candidate
+49; asking for one the same size turns a 7-hole 49-residue into a candidate
+covering. Planted controls confirm the reach: erase an entire block of the
+certified 50-set, replace it by uniformly random elements of the kernel, and the
+solver reconstructs a valid block — 7 out of 7, at block sizes up to 14. That is
+a fourteen-column simultaneous swap, where q4's exhaustive prover stopped at
+five.
+
+What the sweep found is recorded in `ATTACK.md`. It did not find a 49.
+
+---
+
+## Asking for symmetry instead of asking for a neighbour
+
+Every attack so far started from a covering somebody already had. Anneal the
+51 down to a 50; shrink a block of the 50; repair a 7-hole 49. All of them
+measure distance from a known object, and after q9 the honest reading is that
+the 49, if it exists, is not near the 50 in any of those metrics.
+
+So stop starting from the 50.
+
+Pick instead a $\sigma\in GL(10,2)$ of order 7 and ask only for sets that
+$\sigma$ maps to themselves. The point is not that symmetry is likely — it is
+that symmetry is *cheap*. A $\sigma$-invariant set is a union of $\sigma$-orbits,
+and if $\sigma$ has a 1-dimensional fixed space then every orbit has size 7 and
+there are 146 of them. Since $49=7\cdot7$, and the single fixed vector $f$
+cannot be used (7 does not divide 48), a $\sigma$-invariant 49-set is *exactly
+seven of those 146 orbits*. The search space has gone from
+$\binom{1023}{49}$ to $\binom{146}{7}$.
+
+Then the structure keeps giving. $f$ still has to be covered, and $f\notin S$,
+so $f=a+b$ with $a,b\in S$ — which forces $b=a+f$, so the orbit of $b$ is the
+orbit of $a$ shifted by $f$. Every solution therefore contains a **partner
+pair** $\{O,O+f\}$. There are 73 of them, and the centraliser of $\sigma$ — which
+carries solutions to solutions — fuses them into one class, or three, depending
+on which of the two module types $\sigma$ has. Four searches, each about
+$\binom{144}{5}$ wide. Half a billion each, seconds of machine time, and they
+all come back empty.
+
+The thing that makes this feel like mathematics rather than search is what
+happens next. $\sigma$ has odd order, so $V=M\oplus T$ splits canonically with
+$T$ the fixed space, and the projection onto $T$ is just
+$\pi_T(v)=\sum_{i<p}\sigma^i(v)$ — averaging, except that over $\mathbb F_2$
+dividing by $p$ is free. Call $\pi_T(v)$ the *layer*. Now look at where sums
+can go:
+
+$$
+\text{inside orbit } i \to 0,\quad
+\text{orbits } i,j \to t_i+t_j,\quad
+\text{orbit } i \text{ with fixed } g \to t_i+g .
+$$
+
+The layer of every sum is *forced*. So a solution can only ever touch the
+layers in $\{0\}\cup\{t_i\}\cup\{t_i+t_j\}\cup\{t_i+g\}$, at most
+$1+k+\binom k2+km$ of them, and there are $2^c$ layers that all need covering.
+Sometimes that inequality just fails, and a whole family dies with no search at
+all: order 7 with a 7-dimensional fixed space, order 31, order 3 with $c=8$,
+and at $r=11$ order 7 with $c=8$ and order 31 with $c=6$. A second version of
+the same idea counts how *full* a cross-free layer can get, and independently
+kills the $(k,m)=(5,14)$ cases that the machine had already exhausted — the
+proof and the search agreeing is worth more than either alone.
+
+What is left after all of it is a statement about an object nobody has seen. The
+odd primes dividing $|GL(10,2)|$ are $3,5,7,11,17,31,73,127$. Orders 11, 17, 31,
+73, 127 die on arithmetic or on layers. Order 7 dies on 16 exhaustive searches
+covering every fixed-space dimension and both module types. So **if a 49-set
+exists at all, its automorphism group is a $\{2,3,5\}$-group** — it is, in a
+precise sense, almost rigid. That is not a lower bound and it does not build
+anything. It does say the 49 will not be found by asking it to be pretty.
+
+The same machinery pointed at $r=11$, where the record 79 has far more slack,
+gave the one moment of real hope in the run: an element of order 23 acts on
+$\mathbb F_2^{11}$ with no fixed vectors at all and 89 orbits of size 23, so an
+invariant set has size a multiple of 23 — and $69=23\cdot3$ is ten below the
+record. Three orbits out of 89. Three thousand eight hundred and twenty-eight
+possibilities. All of them checked in under a second, and none of them is a
+covering. The same search happily produces a $C_{23}$-invariant 92-set, so the
+machinery works; 69 is simply not there.
+
+There is a sting in the tail. Having spent the run asking which symmetries a
+49-set *could* have, the obvious question is which symmetries the coverings we
+already have *do* have — and the answer is a lot. The certified 50-set has an
+automorphism group of order 128; the 2003 Kaikkonen–Rosendahl 51-set has one of
+order 512. Both are 2-groups. Both, that is, sit in exactly the one case the
+odd-prime sweep cannot reach, because a single involution never cuts the search
+enough to be worth prescribing.
+
+That is not a contradiction, but it is a rebuke. The right reading is that these
+objects are built, not stumbled on, and what builds them is 2-group structure.
+Prescribing those particular groups at 49 fails for a reason you can see
+immediately once you look: the 127 vectors sitting in small $\mathrm{Aut}(50)$
+orbits form a 7-dimensional subspace, so any invariant set assembled from them
+never leaves that subspace and misses 896 syndromes outright. The orbits that do
+reach are size 16, and $16+16+16+1$ is the only economical way to make 49 — all
+74400 of those, and the best leaves 499 holes.
+
+So the group is too coarse and the subgroups are too many. Sampled subgroups of
+order 16 get the residue down to 83 holes, which sounds close and is not: every
+one of those searches hit its cap, none was decided, and a hole count is not a
+bound. It is a signpost, and it points somewhere specific for once.
+
+## q11 — stop perturbing the set, prescribe the fibration
+
+The previous two quests both took a covering as the thing to be modified: q9
+swapped out one quotient block of the certified 50, q10 demanded that a group
+act on the answer. Both are moves *on a set*. The signpost at the end of q10
+says the objects are built rather than stumbled on, so this time the thing that
+gets prescribed is not the set and not its symmetry but its shape.
+
+Fix a splitting $\mathbb F_2^r = V\oplus W$ and demand that the column set have
+exactly one column over every nonzero point of $W$, with everything else in the
+kernel. Then $n = |A| + 2^{\dim W}-1$ is decided before any searching, and the
+covering condition falls apart into two clean halves: the kernel block $A$ must
+be a covering of $V$ by itself, and for each nonzero $u$ the pair sums
+$g(w)+g(w+u)$ must supply exactly the part of the fibre that $A$ cannot reach.
+The unknown is a *function*, not a set, and no known covering is anywhere in the
+input.
+
+The pretty part came from noticing that the pair $\{w,w+u\}$ and the point $u$
+span the same plane. So the quantity that matters, $g(w)+g(w+u)+g(u)$, is not a
+function of the pair at all — it is a function of the **line** of
+$\mathrm{PG}(\dim W-1,2)$ that the plane is. The whole condition then reads: a
+colouring of the lines by $V$ in which every point sees every colour of a fixed
+set $B$. The lengths run backwards through $|B|$, so the family is one question:
+how many colours can be made universal.
+
+Two things fall out immediately once it is a colouring. A colour class has to
+cover every point with lines, so it needs at least a third of the points' worth
+of lines, and the classes are disjoint — that is a counting bound, and at
+$r=10$ it says the family can never produce a 47 or shorter, which is strictly
+better than what the volume count knows. And if $g$ is quadratic the colour set
+sits inside the image of an alternating form; over an odd-dimensional space
+every alternating form is degenerate, and running that through every linear
+functional collapses $B$ to nothing. $r=10$ has $\dim W=5$. The quadratic
+members are simply not there.
+
+Then the family was run. It is exactly decidable at $r\le8$, and what it
+produces is startling in the wrong direction: 5, 13, 19, 26, 39 — the
+documented lengths at $r=4$, $6$, $7$, $8$, $9$, including both
+Gabidulin–Davydov–Tombak odd-$r$ values, out of a two-line definition, with
+$n=23$, $24$ and $25$ at $r=8$ exhausted so it provably cannot do better. One
+family, several records, no dent.
+
+And at $r=10$ it tops out at 54. That is the useful failure. At odd $r$ the base
+can be one dimension bigger than the fibre, every fibre gets $2^m-1$ pairs to
+cover $2^m$ targets, and the arithmetic is comfortable — which is exactly why
+odd $r$ has a closed formula. At even $r$ the two halves must be equal, each
+fibre is short by half, and the deficit is paid by the kernel block, which then
+wastes almost all of its own pair sums: at $n=49$ the block of 18 supplies 171
+covers for 31 targets and burns 140 of the 202 slack in a single fibre. The
+record 50 is not in the family, and it cannot be. The family says something
+about why 10 is the hard one — not about what a 49 looks like.
+
+The near miss is at $r=9$, not $r=10$. A 38 there would beat 39, it needs eight
+universal colours, and eight universal colours are easy to get. Every single
+time, they came out as an affine hyperplane — and then the kernel block is a
+hyperplane minus zero, its own sums never leave the hyperplane, and fibre 0 is
+uncoverable no matter what $g$ does. Twenty-nine samples, thirteen distinct,
+all of them hyperplanes. That is a pattern, not a proof, and the honest name for
+$n=38$ is residue.
+
+## This session ends here
+
+Overnight 2026-08-21: three construction families, no 49. The record is
+still $\ell_2(10,2)\le 50$. Sphere covering still only $\ge 45$.
+
+The useful facts, in one place. The 51 and the 50 are not lifts of the
+$r=8$ record. A 49, if it exists, is not a single-block shrink of the 50,
+is not $C_7$-invariant, and is not in the fibered graph family that
+reproduces the odd-$r$ table values (that family cannot even reach 47 at
+$r=10$). Its automorphism group, if any, is a $\{2,3,5\}$-group; the
+known 50 and 51 are 2-group symmetric, which is the case nobody exhausted.
+
+The nearest unfinished hole in these families is $n=38$ at $r=9$, not 49
+at $r=10$: seventeen kernel-block classes, every one floors at the same
+14 missing incidences, none decided. That is residue, not a bound.
+

@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: finite bound certified; asymptotic problem open
+- Status: $\ell_2(10,2)\le 50$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Table 5.1); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -79,6 +79,49 @@ Leftover unused constructions from [`compute/notes_from_authors_2026-08-19.md`](
 
 - $p(H_{28})\le 28$ on the certified $r=28$, $n=26111$ matrix — [`compute/partition_r28_n26111_p28.txt`](compute/partition_r28_n26111_p28.txt). Full $2^{28}$ cross-block sweep. Improves the previous $p\le 64$. No new $r=38$ table length.
 
+
+## Certified residue (quest q9, 2026-08-21)
+
+No new dent. The 2003 Kaikkonen-Rosendahl 51-set is recovered from the hex
+listing of arXiv:2511.02542 (4.9) and re-verified 1024/1024 —
+[`compute/q9/H_r10_n51_KR.txt`](compute/q9/H_r10_n51_KR.txt). Over all 174251
+two-dimensional quotients of $\mathbb F_2^{10}$, neither the 51-set nor the
+certified 50-set has a kernel block covering its own kernel, so neither is a
+lift of the $r=8$ record the way the 1992 value 53 was. An exact
+quotient-block replacement solver rules out, exhaustively, 271127 of the 279034
+single-block shrinks of the 50-set with block width $\le 12$, and finds no 49
+in four full sweeps. Search residue, not a lower bound; $\ell_2(10,2)\le 49$
+remains open.
+
+
+## Certified residue (quest q10, 2026-08-21)
+
+No new dent. Records unchanged: $\ell_2(10,2)\le 50$, $\ell_2(11,2)\le 79$.
+Prescribed automorphisms: if a 49-set exists, its automorphism group in
+$GL(10,2)$ is a $\{2,3,5\}$-group. Order 7 is settled at $r=10$ for every
+fixed-space dimension (both module types); orders 11, 17, 31, 73, 127 are
+killed by the same arithmetic plus the touched-layer bound. At $r=11$ no
+invariant set below the record 79 exists for orders 11, 17 or 23. The
+certified 50-set and the Kaikkonen–Rosendahl 51-set both have 2-group
+automorphism groups ($|\mathrm{Aut}|=128$ and $512$), which is the case the
+odd-order sweep does not reach. Material in [`compute/q10/`](compute/q10/).
+None of this is a lower bound.
+
+## Certified residue (quest q11, 2026-08-21)
+
+No new dent. A construction family anchored to a *fibration* rather than to a
+set: split $\mathbb F_2^r=V\oplus W$ and take one column over every nonzero
+point of the base plus a kernel block,
+$S=A\times\{0\}\cup\{(g(u),u)\}$, $n=|A|+2^{\dim W}-1$. Radius 2 becomes a
+line-colouring condition on $\mathrm{PG}(\dim W-1,2)$, which yields two exact
+obstructions (no quadratic $g$ when $\dim W$ is odd; a line-cover count that
+forbids every $n\le47$ at $r=10$). The family contains the documented lengths
+at $r=4,7,8,9$ — explicit matrices in [`compute/q11/`](compute/q11/), each
+replayed by an independent full $2^r$ sweep — and at $r\le8$ it is exactly
+decided: $n=23,24,25$ are exhausted at $r=8$, so the family reproduces
+$\ell_2(8,2)\le26$ and provably cannot beat it. At $r=10$ its own best is 54;
+the record 50 is not in the family. $n=38$ at $r=9$ is search residue.
+$\ell_2(10,2)\le49$ remains open.
 
 ## What a solution looks like
 
