@@ -43,6 +43,7 @@ static int optsum[MAXCON];                     /* live (i,a) options per c     *
 static int split_n = 1, split_i = 0, split_depth = 0;
 static long long task_ctr;
 static long long progress_every = 1LL << 24;
+static int use_bound = 1;
 static long long nodes, bound_cuts, dead_cuts;
 static long long node_cap;
 static int solution[MAXK], have_sol;
@@ -207,6 +208,7 @@ static int rec(uint64_t *cov, int depth)
 
   /* counting bound: the free coordinates cannot cover what is left */
   int cap = 0;
+  if (use_bound)
   for (int i = 0; i < K && cap < rem; i++) {
     if (val[i] >= 0) continue;
     int mx = 0;
@@ -217,7 +219,7 @@ static int rec(uint64_t *cov, int depth)
     }
     cap += mx;
   }
-  if (cap < rem) { bound_cuts++; return 0; }
+  if (use_bound && cap < rem) { bound_cuts++; return 0; }
 
   /* work split: partition the subtrees rooted at split_depth across parts */
   if (depth == split_depth && split_n > 1)
@@ -247,6 +249,7 @@ int main(int argc, char **argv)
     if (!strcmp(argv[i], "--k")) K = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--p")) P = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--nodecap")) node_cap = atoll(argv[++i]);
+    else if (!strcmp(argv[i], "--nobound")) use_bound = 0;
     else if (!strcmp(argv[i], "--split")) split_n = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--part")) split_i = atoi(argv[++i]);
     else if (!strcmp(argv[i], "--splitdepth")) split_depth = atoi(argv[++i]);

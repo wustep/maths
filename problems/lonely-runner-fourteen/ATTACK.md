@@ -326,3 +326,41 @@ because it did fail:
 **Sweep.** `T2(13,p)` fails at p=17,19 and holds at 191, so p is doing
 real work and there is a threshold to locate. Sweeps over
 p ∈ [17,181] and p ∈ [193,293] are running; results as they land.
+
+## 2026-08-22 — q1: sweep, and shrinking the trusted base
+
+**Sweep.** `T2(13,p)` decided for one prime is a fact about 191; decided
+for a run of primes it starts to look like the composite-`k+1` analogue
+of Prop 4.1 that shape A asked for.
+
+| p | T2(13,p) |
+|---|---|
+| 17, 19, 23, 29, 31, 37, 41 | fails |
+| 191, 193, 197, 199, 211, 223 | **holds** |
+
+So `p` is doing real work — the statement is false for small `p` and true
+for every large `p` tried so far. The threshold is somewhere in (41, 191);
+p=43 did not resolve inside 40 minutes and was stopped, which is itself a
+hint that it is near the boundary. Note this needs no `p > k(k+1) = 182`
+hypothesis: `T2` is checked directly on the `j/p` grid, so ST26's Lemma
+4.3 route through `r_13(1/14 Z) ⊆ r_13(1/p Z)` is bypassed, not used.
+The obstructions at the failing primes are heavily zero-supported, e.g.
+p=31 gives `(0,0,0,1,1,1,0,0,1,0,0,0,0)`, but no clean schema yet.
+
+**Trusted base.** The only non-obvious step in `cover.c` is the counting
+bound: with `X` the uncovered set, each free coordinate `i` contributes at
+most `max_a |hit(i,a) ∩ X|`, so if the sum over free coordinates is below
+`|X|` no completion can cover. Sound by inspection, but it is the one
+place a wrong answer could hide, so it now has a `--nobound` switch.
+Bound on and bound off agree on every decided case, including the two
+composite-`m` UNSAT cases that brute force independently confirms:
+
+    k=5 p=31  UNSAT / UNSAT      k=7 p=59  UNSAT / UNSAT
+    k=5 p=6   SAT   / SAT        k=7 p=8   SAT   / SAT      k=13 p=14 SAT / SAT
+
+`./cover --k 13 --p 191 --nobound` is running to remove the bound from
+the trusted base at the headline case as well; result when it lands.
+
+**Replay checked from a clean clone.** `git clone`, three `gcc` lines
+with no `-march=native`, `check_unsaved.py --selftest`, and the four
+gate runs all pass. `compute/q1/README.md` lists them.
