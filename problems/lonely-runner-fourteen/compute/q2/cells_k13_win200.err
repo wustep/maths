@@ -1,2 +1,4 @@
   [part 0/1] nodes=16777216 bound_cuts=13734934
   [part 0/1] nodes=33554432 bound_cuts=27543954
+  [part 0/1] nodes=50331648 bound_cuts=41368670
+  [part 0/1] nodes=67108864 bound_cuts=54861530
