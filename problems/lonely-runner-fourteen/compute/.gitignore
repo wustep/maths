@@ -1,0 +1,6 @@
+# fetched papers and their text extracts stay local (see RESEARCH.md to refetch)
+refs/
+# compiled verifiers
+q1/cover
+q1/cover_bdd
+q1/spotcheck
