@@ -1,0 +1,12 @@
+runs/
+runs2/
+runs3/
+data/
+__pycache__/
+*.pkl
+span_tasks.json
+runs4/
+runs5/
+zonec
+ballc
+ball_groups.json

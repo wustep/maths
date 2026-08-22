@@ -1,0 +1,36 @@
+{
+ "what": "Exhaustive Hamming balls of radius 7 around the two census certificates that produced every known scheme outside the 2,367.",
+ "method": "compute/ballc.c walks all sign vectors within Hamming distance 7 of the seed on that certificate's own (integer-certified) triangulation and emits one witness per distinct scheme fingerprint; each witness is decoded to its scheme string on the exact Python complex and diffed against the census.",
+ "ball_size_per_seed": 54910660,
+ "seeds": [
+  {
+   "seed_cert": "deg8/o22-p07-n15/(5v1(5)v1(10)).pcom",
+   "radius": 7,
+   "evals": 54910660,
+   "complete": true,
+   "distinct_schemes": 885,
+   "novel": [
+    "<4 u 1<5> u 1<10>>"
+   ],
+   "seconds": 1469.7
+  },
+  {
+   "seed_cert": "deg8/o22-p15-n07/(6v1(6v1(8))).pcom",
+   "radius": 7,
+   "evals": 54910660,
+   "complete": true,
+   "distinct_schemes": 1365,
+   "novel": [
+    "<5 u 1<6 u 1<7>>>",
+    "<5 u 1<6 u 1<8>>>",
+    "<6 u 1<5 u 1<8>>>",
+    "<6 u 1<6 u 1<6>>>",
+    "<6 u 1<6 u 1<7>>>",
+    "<6 u 1<8 u 1<4>>>",
+    "<6 u 1<9 u 1<4>>>"
+   ],
+   "seconds": 1313.1
+  }
+ ],
+ "conclusion": "Within Hamming distance 7 of these two certificates the eight schemes certified in the previous session are exactly the schemes outside the published 2,367 -- there is no ninth."
+}
