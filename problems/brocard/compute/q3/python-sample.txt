@@ -1,0 +1,7 @@
+Wilson-offset Brocard certificate sample
+prime_bound=10000
+offset=2,prime_mod_8=3,index_mod_8=1,count=311,first=3,last=9931
+offset=2,prime_mod_8=5,index_mod_8=3,count=314,first=5,last=9973
+offset=3,prime_mod_8=3,index_mod_8=0,count=310,first=11,last=9931
+offset=3,prime_mod_8=5,index_mod_8=2,count=314,first=5,last=9973
+verification=PASS
