@@ -175,6 +175,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | unique-sum published-prefix replay / p=59 boundary | `problems/unique-sum/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | no-three-in-line n=71 | `problems/three-in-line` | Sol 5.6 | 2026-08-16 |
 | no-three-in-line n=71 certificate replay | `problems/three-in-line/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
+| no-three-in-line n=75 search | `problems/three-in-line/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
 | Schur S(7) | `problems/schur` | Sol 5.6 | 2026-08-16 |
 | van der Waerden W(2,7) | `problems/vdw-w27` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |

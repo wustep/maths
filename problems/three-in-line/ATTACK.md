@@ -86,3 +86,48 @@
   $n=73$, so the first current hole is $n=75$. Shapes 4–7 were not run after
   the certificate passed the verifier gate; honest `rot4` remains killed by
   the orbit-cardinality check.
+
+## 2026-08-23 — q4: n=75 certificate shapes, ranked
+
+The finished object in every surviving shape is a plain 150-point file on
+$\{0,\ldots,74\}^2$ that passes two exact, algorithmically independent
+verifiers. Working backwards from that object gives this order of attack:
+
+1. **Current database certificate — checked and killed as a source.** A raw
+   Flammenkamp code plus the existing decoder would be the cheapest route to
+   a certificate. Both an unrestricted lookup and an rct4 lookup for size 75
+   returned “no configurations are known” at the database cut of 19 August
+   2026. This establishes only that this source has no witness, not that none
+   exists.
+2. **Canonical rct4 SAT.** The certificate has the anti-diagonal empty, one
+   selected diagonal half-turn pair, and 37 selected four-orbits. The existing
+   geometry generator, exact row and column equations, and weighted line
+   constraints already express this shape. First replay the model and
+   verifier at 71, then audit the generated $n=75$ instance and run several
+   named Kissat seeds. SAT followed by the verifier gate settles $D(75)=150$;
+   UNKNOWN or rct4 UNSAT does not.
+3. **rct4 SAT phased from the checked n=73 configuration.** Embed the 146
+   source points into a 75-grid in symmetry-preserving ways, translate the
+   surviving orbit choices into initial SAT phases, and let the complete rct4
+   instance repair them. The cheapest check counts violated maximal lines and
+   retained source orbits for each embedding; only the best phases deserve
+   solver time.
+4. **Named rot2 SAT.** A 150-set can be exactly 75 half-turn pairs, so rot2
+   has no orbit-cardinality obstruction and is weaker than rct4. The finished
+   object is a half-turn-invariant point file decoded from an audited orbit
+   model. The cheap gate is a control replay on a checked odd witness and a
+   clause/memory count at 75.
+5. **Boundary lift and bounded repair from n=73.** Place the checked 146-set
+   into the 75-grid, add two new row pairs and two new column pairs, and expose
+   only conflicted source points plus boundary candidates to SAT. A small
+   repair support would yield a 150-set without imposing more symmetry than
+   the source; a large initial conflict core kills this version of the shape.
+6. **Two-per-row/column permutation SAT without board symmetry.** Represent
+   the certificate as two permutations of the 75 columns, seed them from the
+   checked 74- and 76-grid records, and use lazy line cuts or local search
+   before a final exact SAT completion. This is the broadest credible shape,
+   but it is ranked late because its model is much larger and a timeout leaves
+   a less informative residue.
+7. **Honest rot4 — killed by orbit cardinality.** On an odd grid a
+   quarter-turn-invariant set has size $0$ or $1$ modulo 4 depending on the
+   centre, never $150\equiv2\pmod4$. No solver run is warranted.
