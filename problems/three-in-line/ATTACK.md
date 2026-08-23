@@ -65,3 +65,24 @@
    best lifted 69/70/72 image and measure the exact number of violated maximal
    lines after one minute; abandon it if it does not beat the unperturbed
    lift.
+
+## 2026-08-23 — q3 result
+
+- Shape 1 ended the campaign. Flammenkamp's dated notes report that Marijn
+  Heule found an rct4 solution for $n=71$ on 17 August 2026. A POST lookup of
+  symmetry `c`, size 71, index 1 against the database cut of 19 August returned
+  one 143-character code: one symmetry character and two columns in each of
+  71 rows.
+- `compute/q3/decode_database.py` decoded the pinned raw entry to
+  `compute/n71-142.txt`. Re-encoding was not trusted as a geometry check.
+- The previously committed `verify_n71.py` checked all 467,180 point triples
+  by exact integer determinant. The independent Rust checker normalized the
+  line through each of the 10,011 point pairs and found no duplicate line.
+  Both checked 142 distinct points in the grid and exactly two in every row
+  and column. Witness SHA-256:
+  `690b7d94092a728dd0e6a2b3907ed0736e05d88c8c5a120e9735d8f9dca7b176`.
+- Therefore $D(71)=142$. This is a replay of Heule's published database
+  record, not a dent by this campaign. The same dated record now includes
+  $n=73$, so the first current hole is $n=75$. Shapes 4–7 were not run after
+  the certificate passed the verifier gate; honest `rot4` remains killed by
+  the orbit-cardinality check.

@@ -9,6 +9,7 @@ from pathlib import Path
 
 
 ALPHABET = "0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz#$%&@?!()[]<>{}=*+|-/~^_:;,."
+assert len(ALPHABET) == 90
 SYMMETRY = {
     ".": "iden",
     ":": "rot2",
