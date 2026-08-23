@@ -400,3 +400,228 @@ agree everywhere both finish, and p=191 is only in the bounded column.
 - F (outside ST26) — dropped, no certificate named.
 
 **Not claimed.** LRC(13). The bottleneck ST26 name is untouched.
+
+## 2026-08-22 — q2: the failing end has an exact schema
+
+Two ends of the gap `(41, 191)`, attacked with tools that do not decide one
+prime at a time. Code in `compute/q2/`.
+
+**Housekeeping first.** `compute/q1/t2_sweep.log` as committed runs past where
+the close-of-session note stopped reading it. `T2(13,p)` also holds at
+
+    241, 251, 257, 263, 269, 271, 277, 281, 283, 293
+
+so the sweep is twenty consecutive primes from 191 to 293, not ten. Same
+binary, same certificate chain; nothing new was run for those, they were
+already in the log.
+
+**The failing end: a family that needs no search.** Every witness the alphabet
+prober returns has one shape — two coordinates equal to 1, the rest 0. That
+shape has a closed form. Take `v = e_a + e_b`, `Z = {1,…,13} \ {a,b}`. At a
+given `j`, a coordinate in `Z` (value 0) hits `(s,j)` iff `B^{(j)}_i ∈ {0,13}`,
+which does not depend on `s` at all; a coordinate in `T = {a,b}` (value 1) hits
+only the two values `s = -B_i` and `-B_i-1`. So if some `j` has no `i ∈ Z` with
+`B^{(j)}_i ∈ {0,13}`, then at that `j` the two coordinates of `T` reach at most
+4 of the 13 nonzero `s`, and `v` is saved. Hence
+
+> **Lemma.** For `k ≥ 5`, `v = e_a + e_b` is unsaved at `p` ⟺ no `j ∈ Z_p` has
+> `‖i j/p‖ ≥ 1/14` for every `i ∈ Z`. So `T2(13,p)` FAILS whenever some pair of
+> speeds can be deleted and still leave the remaining eleven with no witness
+> time *on the grid* `(1/p)Z`.
+
+Two deletions make the tight tuple slack, so `G(Z) = {t : ‖i t‖ ≥ 1/14 ∀ i∈Z}`
+has positive length — it is a union of closed intervals with endpoints over
+`D = 14·lcm(1..13) = 5045040`. `schema.py` computes it exactly and decides the
+whole family for every `p` at once, no search:
+
+| | |
+|---|---|
+| `T2(13,p)` fails at | 2..52, 55..62, 64,65,66, 70..76, 78, 82, 85,86,87, 89,90, 95, 99, 105, **116** |
+| primes among these | …, 41, **43, 47, 59, 61, 71, 73, 89** |
+| shortest longest-interval | pair `{6,10}`, `31680/5045040 = 1/159.25` |
+
+so this family produces no failure at any `p ≥ 160`. The last failing prime in
+the record moves from 41 to **89**, and the last failing integer to **116**.
+
+Independently confirmed. `compute/q2/probe.c` exhausts `A^13` for
+`A = {0,1,7}` and finds the same witnesses at 43, 47, 59, 61, 71, 73, 89 and
+nothing at 53, 67, 79, 83 — exactly the schema's pattern — and
+`q1/check_unsaved.py`, written from the paper and sharing no code with either,
+returns `genuine obstruction` for the p=43, p=61 and p=89 witnesses. The prober
+also returns nothing at every prime from 97 to 181, but that is one-sided and
+proves nothing: `NONE in this alphabet` is not `T2 holds`.
+
+**The family is not the whole story, and k=5 says so.** Brute force over all of
+`Z_6^5` gives the exact failure set for `k=5`: `p = 6..14, 19, 21, 22, 24, 26,
+27, 39, 42, 57`. The pair family accounts only for `p ≤ 13`. Everything above
+comes from a single richer obstruction, `v = (1,5,0,1,5) = (1,-1,0,1,-1)`, the
+balanced lift of `i mod 3` with `3 = m/2`. Its `m=14` analogue,
+`v_i = ` balanced lift of `i mod 7`, is **saved at every prime tried from 17 to
+293**, so it does not transfer — but the lesson does. 89 and 116 are lower
+bounds on where `T2(13,·)` stops failing, not the threshold.
+
+Also worth recording: the pass/fail set is not an interval. At `k=5` the prime
+19 fails while 17 holds. So "the first `p` that holds" is not a well-posed
+quantity, and the sweep column should not be read as a threshold.
+
+**The holding end: one search for every large `p`.** `compute/q2/cells.c`.
+`B_i(t) = ⌊14·frac(i t)⌋` jumps only on `(1/(14 i))Z`, so the 812 breakpoints
+`⋃_i (1/(14 i))Z` cut the circle into half-open cells on which the entire
+hitting structure is constant. Every half-open interval of length `1/p`
+contains a point of `(1/p)Z`. So for `p ≥ q`, an unsaved `v` must hit, for
+every `s` and every cell start `c_r`, at least one of the cells meeting
+`[c_r, c_r + 1/q)`. That is a set-cover feasibility question again — same DFS,
+same counting bound, same gcd branch, only the constraints change — and
+
+> no eligible `v` covers all of it ⟹ `T2(13,p)` holds for **every** integer
+> `p ≥ q`.
+
+The constraints strengthen as `q` grows, so one run certifies an infinite tail,
+and the lemma above forces `q ≥ 117`. Calibration at small `k`, where brute
+force decides everything: `k=5` certifies `p ≥ 90` against a true last failure
+of 57; `k=7` certifies `p ≥ 84`. The first version of the reduction, keeping
+only cells longer than `1/q` and no window union, gave 91 and 121 — the window
+union is what makes it sharp, and it is kept as `--strictcell` for comparison.
+
+Gates. `cells --p P` reproduces `q1/cover.c` on all five gate cases with
+identical witnesses. `check_cells.py --selftest` checks the reduction itself
+from the definitions: `B` constant on every half-open cell at `k=5,7,13`; every
+window meets `(1/p)Z` inside its own cell set, over 43 values of `p` at each of
+`q = 90, 84, 200, 300`; and brute force over `Z_6^5` for `p ∈ 6..399` never
+contradicts the certified `k=5` threshold.
+
+`cells --k 13 --q 200` and `--q 300` are running. Status: **residue** until one
+returns. No bound is claimed from q2 yet.
+
+**`--nobound` at p=191.** Still running, 11 h 45 m at the time of writing, no
+output past the header. Unchanged from the close-of-session note: bounded and
+unbounded agree everywhere both finish, and p=191 is only in the bounded
+column.
+
+## 2026-08-22 — q2: calibration, and the residue family is empty at k=13
+
+**Calibration.** Run both ends at every composite `m` small enough to decide
+outright, `cells --k K --q q` upward for the certificate and `cover --k K --p p`
+across `p ∈ [6,400]` for the truth:
+
+| k | m | certified `T2(k,p)` for all `p ≥` | largest `p ≤ 400` that actually fails | loss |
+|---|---|---|---|---|
+| 5 | 6 | 90 | 57 | 1.58× |
+| 7 | 8 | 84 | 44 | 1.91× |
+| 9 | 10 | 180 | 125 | 1.44× |
+| 13 | 14 | *running* | ≥ 116 (schema) | — |
+
+So the certificate is sound and roughly `1.5×` loose everywhere it can be
+checked. Note `k=9` fails as far as `p=125`, past the `k=13` schema bound of
+116 — a warning that 116 is unlikely to be the end at `k=13` either.
+
+**What the last failures look like.** Take the obstruction `cover` returns at
+the largest failing `p` for each `k`:
+
+    k=5  p=57   v = (5,1,0,5,1)             v_i = -i mod 3
+    k=7  p=44   v = (3,2,5,0,3,2,5)         v_i = -i mod 4
+    k=9  p=125  v = (2,4,1,3,0,7,4,1,8)     v_i = 2i mod 5
+
+One family, and it is `v_i ≡ λ i (mod m/2)` with the lift to `Z_m` free — not
+`v_i ≡ λ i (mod m)`, which is the thing ST26's `×2` ladder already handles.
+`probe --fam Q L` was added for it: coordinate `i` gets the alphabet
+`{x ∈ Z_m : x ≡ L·i mod Q}`, so `2^k` lifts per `λ`, instant. It recovers all
+three obstructions above from scratch.
+
+**At k=13 that family is empty.** All six `λ`, all `2^13` lifts, at
+`p = 43, 89, 97, …, 293` — 30 values of `p`, nothing unsaved anywhere,
+including at primes where `T2(13,p)` is *known* to fail. So the vector that
+carries failure furthest at `k = 5, 7, 9` has no `k = 13` counterpart. (The
+balanced lift of `i mod 7`, tested earlier, is the `λ=1` member of this family
+and is one of the 8192 lifts it just swept.)
+
+Combined with the flat-alphabet sweeps — `{0,1,7}`, `{0,1,13}` and the
+eight-letter `{0,1,2,3,7,11,12,13}`, all exhaustive in their alphabet, all
+empty at every prime from 97 to 181, all firing correctly on the positive
+controls at 71, 73, 89, 90, 95, 99, 105, 116 — the evidence that `T2(13,p)`
+already holds well below 191 is now fairly wide. None of it is a proof. An
+alphabet-restricted `NONE` is a residue, not a bound.
+
+## 2026-08-22 — q2: `q = 200` is SAT, so the certificate needs a larger q
+
+`cells --k 13 --q 200` returned SAT in 216,477,912 nodes / 2749 s:
+
+    v = (2,4,6,1,10,5,0,2,4,6,8,10,12)
+
+That is a statement about the *relaxation*, not about `T2`. Checked against
+`q1/check_unsaved.py`, this `v` is **saved** at 191, 193, 197, 199, 211, 223,
+239, 257, 293, 401 and 601 — every prime tried. The window construction is
+one-sided by design: SAT means the constraints kept at `q = 200` are too few
+to rule `v` out, not that any `p` fails. So the certificate holds at some
+`q > 200`; `q = 300` and `q = 500` are running.
+
+
+## 2026-08-23 — close: a cold replay, and what the restart took
+
+The machine restarted. Nothing from the previous session's runs survived —
+no binaries, no run directories, no process state. That makes this a good
+place to stop and check the record from scratch, so everything below is a
+fresh `gcc -O3 -std=c11` of the committed sources (no `-march=native`) on a
+machine where none of the earlier runs exist.
+
+**Three jobs died with the restart.** `cells --k 13 --q 300` and
+`--q 500`, both mid-search, and `cover --k 13 --p 191 --nobound` at
+11 h 45 m. The unbounded cover is not restarted. It was already understood:
+80 M of the 103 M nodes in the bounded p=191 run are bound cuts, and taking
+the bound away hands every one of those subtrees back, so the run has no
+predictable end. Nothing in the record rests on it. The trusted base keeps
+the counting bound at p=191 and loses it only at k=5 p=31 and k=7 p=59,
+where brute force independently confirms the same answers — unchanged from
+the q1 close.
+
+### What replays
+
+Every number q2 claims came back. In order:
+
+| claim | replay |
+|---|---|
+| `check_unsaved.py --selftest` | OK — Prop 4.1 empty at k=4, 6; the k=8 obstruction still has no witness |
+| five gate cases | `cover` and `cells --p P` agree on all five, **witnesses identical**, e.g. k=13 p=14 gives `(1,1,1,0,1,1,1,5,1,6,1,2,1)` from both |
+| `check_cells.py --selftest` | OK in all four sections — `B` constant on all 812 cells, 43 primes × 4 values of `q` with no window violation, 9672 schema-vs-exhaustion checks at k=13 with no mismatch, and brute force over `Z_6^5` for `p ∈ [6,399]` consistent with the certified k=5 threshold |
+| pair schema, tightest pair | `{6,10}`, `31680/5045040 = 1/159.25` |
+| pair schema, failing set | the same 80 integers, largest 116, achieved by pair `{4,6}` |
+| pair schema, failing primes | 2 … 47, then 59, 61, 71, 73, **89** |
+| prober vs schema | `--alpha 0,1,7` finds an unsaved `v` at exactly 43, 47, 59, 61, 71, 73, 89 and `NONE` at 53, 67, 79, 83; every witness it returns is `e_a + e_b` |
+| the witnesses are real | `check_unsaved.py`, which shares no code with either, calls the p=43, 61 and 89 vectors genuine obstructions |
+| calibration, k=5 | `cells --q 90` UNSAT, `--q 89` SAT; `cover` over `p ∈ [6,400]` fails at 6..14, 19, 21, 22, 24, 26, 27, 39, 42, 57 — the committed list exactly |
+| calibration, k=7 | `--q 84` UNSAT, `--q 83` SAT; last failure 44 |
+| calibration, k=9 | `--q 180` UNSAT, `--q 179` SAT; last failure 125, witness `(2,4,1,3,0,7,4,1,8)` |
+| `v_i ≡ λi (mod m/2)` at k=13 | empty, and wider than claimed: all six `λ`, all `2^13` lifts, at **36** primes from 43 to 293 — 216 sweeps, nothing unsaved. The k=5, 7, 9 controls all recover their published obstruction from scratch |
+| the q=200 witness is not a counterexample | `v = (2,4,6,1,10,5,0,2,4,6,8,10,12)` is **saved** at 191, 193, 197, 199, 211, 223, 239, 257, 293, 401, 601 |
+
+Nothing was un-claimed. Each certified `q` is also *minimal*, which the
+committed table did not say: at k=5, 7 and 9 the value one below returns SAT.
+
+### One correction the record now forces
+
+The q1 sweep line "fails at every prime up to 41" was true of what q1 had
+run and is no longer the state of knowledge. The schema decides more, and it
+decides some primes the other way:
+
+> `T2(13,p)` **fails** at every prime up to 47, and at 59, 61, 71, 73, 89.
+> It **holds** at twenty primes from 191 to 293. At 53, 67, 79, 83 and at
+> every prime from 97 to 181 it is **undecided** — the prober returns
+> `NONE` in its alphabets there, which is one-sided and proves nothing.
+
+So the last known failing prime moves 41 → 89, and the sentence "the check
+fails for primes up to 41" has to leave `PROBLEM.md` and the README row: it
+reads as though 43 upward were settled, and 43 is now known to fail.
+
+### A trap in the tooling, found while restarting the window runs
+
+`cells --split N --part i` with the default `--splitdepth 0` puts the
+partition test at the root, so `task_ctr` increments once: part 0 does the
+whole search and parts 1 and 2 return
+
+    RESULT UNSAT ... nodes=1
+
+having searched nothing. An UNSAT that looked like a certificate for every
+`p ≥ 300`, in under a second. Nothing in the record came from a split run —
+every committed log reads `[part 0/1]` — so no claim is affected, but the
+default is a loaded gun and any future split run needs `--splitdepth ≥ 1`.
+The restarted runs below use `--splitdepth 2`.

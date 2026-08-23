@@ -1,0 +1,12 @@
+  [part 0/1] nodes=16777216 bound_cuts=13398489
+  [part 0/1] nodes=33554432 bound_cuts=26640975
+  [part 0/1] nodes=50331648 bound_cuts=39989320
+  [part 0/1] nodes=67108864 bound_cuts=53308544
+  [part 0/1] nodes=83886080 bound_cuts=66504301
+  [part 0/1] nodes=100663296 bound_cuts=79959175
+  [part 0/1] nodes=117440512 bound_cuts=93195236
+  [part 0/1] nodes=134217728 bound_cuts=106465783
+  [part 0/1] nodes=150994944 bound_cuts=119826585
+  [part 0/1] nodes=167772160 bound_cuts=133058785
+  [part 0/1] nodes=184549376 bound_cuts=146442044
+  [part 0/1] nodes=201326592 bound_cuts=159708034

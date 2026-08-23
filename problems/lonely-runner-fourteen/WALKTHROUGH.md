@@ -158,3 +158,124 @@ holds for *every* prime $p > 182$ — the statement that would actually
 replace Proposition 4.1 for composite $k+1$ — is open; it fails at
 $p = 17, 19$, so there is a threshold, and locating it is a sweep, not a
 proof.
+
+---
+
+# Walkthrough II — where the modulus stops being enough
+
+The first walkthrough ends with an admission: $T2(13,p)$ holds at $p = 191$ and
+fails at $p = 17, 19$, so there is a threshold somewhere, and finding it "is a
+sweep, not a proof". The sweep is the wrong instrument. Here is what replaced
+it.
+
+## 7. The witnesses were trying to tell us something
+
+$p = 43$ would not resolve in forty minutes, in either direction. So stop
+asking for a decision and ask only for a *witness* — restrict every coordinate
+to a small alphabet and exhaust. The alphabet came from looking at what
+$q1$ had already printed: at $p = 31$ the witness was
+$(0,0,0,1,1,1,0,0,1,0,0,0,0)$, at $p = 37$ it used only $\{0,1,7\}$.
+
+With $A = \{0,1,7\}$, $p = 43$ answers in milliseconds:
+$$v = (0,0,0,0,0,0,0,0,0,0,0,1,1).$$
+Two coordinates equal to $1$, everything else $0$. And the same shape comes
+back at $47, 59, 61, 71, 73, 89$.
+
+## 8. Why that shape works, exactly
+
+Write $T$ for the two nonzero positions and $Z$ for the eleven zeros. Fix $j$.
+
+A coordinate in $Z$ has value $0$, so it hits $(s,j)$ iff $B^{(j)}_i \in
+\{0,13\}$ — a condition with **no $s$ in it**. Either it hits every $s$ at this
+$j$, or none.
+
+A coordinate in $T$ has value $1$, so it hits $(s,j)$ iff $s \equiv -B_i$ or
+$-B_i - 1$: exactly two values of $s$.
+
+So at a given $j$ there are only two outcomes. Either some zero coordinate
+fires and all fourteen $s$ are covered at once; or no zero coordinate fires,
+and the two coordinates of $T$ between them reach at most $4$ of the $13$
+nonzero $s$ — and $4 < 13$, so $v$ is saved. The whole question collapses:
+
+> $v = e_a + e_b$ is unsaved at $p$ $\iff$ every $j \in \mathbb{Z}_p$ has some
+> $i \notin \{a,b\}$ with $\|i j/p\| < 1/14$.
+
+Read the right-hand side out loud and it is a lonely-runner statement about
+*eleven* speeds: delete two runners from the tight configuration, and ask
+whether the survivors have a witness time **on the grid** $(1/p)\mathbb{Z}$.
+They always have one on the circle — deleting two speeds makes $1/14$ slack, so
+the good set $G(Z) = \{t : \|it\| \ge 1/14 \ \forall i \in Z\}$ contains
+intervals, not just the six points $j/14$. The only question is whether the
+grid is fine enough to land in one.
+
+That is computable once and for all. $G(Z)$ is a union of closed intervals with
+endpoints over $D = 14 \cdot \mathrm{lcm}(1,\dots,13) = 5045040$; for each of
+the $78$ pairs, list them, and for each $p$ ask whether any interval contains a
+multiple of $1/p$. No search over $v$, no search over $p$.
+
+The answer: $T2(13,p)$ fails at $p = 43, 47, 59, 61, 71, 73, 89$ and at no
+larger prime *from this family*, the largest failing integer being $116$. The
+tightest pair is $\{6,10\}$, whose longest good interval is
+$31680/5045040 = 1/159.25$; past $p = 159$ every pair has room.
+
+The last known failure moves from $41$ to $89$. Two programs that share no code
+agree on the list, including the composite cases $90, 95, 99, 105, 116$, and
+$q1$'s own checker — written from the paper — calls the $p = 43$, $61$ and $89$
+vectors genuine obstructions.
+
+## 9. The correction this forces
+
+It is tempting to now say "so the threshold is 89". It is not, and $k=5$ is the
+proof. There, brute force over all $7776$ vectors decides every $p$ outright:
+$T2(5,p)$ fails at $6..14, 19, 21, 22, 24, 26, 27, 39, 42, 57$. The pair family
+accounts for $p \le 13$ and nothing else. Everything from $19$ to $57$ comes
+from one richer vector, $v = (1,5,0,1,5) = (1,-1,0,1,-1)$ — the balanced lift
+of $i \bmod 3$, and $3 = m/2$.
+
+So the pair family is a lower bound on where failure stops, not the threshold.
+(The obvious $m=14$ analogue, the balanced lift of $i \bmod 7$, is saved at
+every prime from $17$ to $293$. The construction does not transfer; the caution
+does.)
+
+That same $k=5$ table kills a second habit. $19$ fails and $17$ holds. The
+pass/fail set is **not an interval**, so "the first $p$ that holds" is not a
+well-posed quantity, and a sweep column must not be read as a threshold.
+
+## 10. Deciding every large $p$ with one search
+
+Which leaves the other direction: not "which $p$ fails" but "is there a $q$
+past which nothing can". For that, get rid of $p$.
+
+Everything in the problem depends on $j$ only through the real number
+$t = j/p$, via $B_i(t) = \lfloor 14\,\{i t\}\rfloor$. That function is
+right-continuous and jumps only where $14 i t$ crosses an integer — on
+$(1/(14i))\mathbb{Z}$. Take all of those together, $i = 1,\dots,13$: $812$
+breakpoints, cutting the circle into $812$ half-open cells on which the entire
+hitting structure is *constant*. Every real $t$ is in exactly one. No boundary
+cases.
+
+Now the only fact needed about the grid: **every half-open interval of length
+$1/p$ contains a point of $(1/p)\mathbb{Z}$.** So fix $q$, and for each cell
+start $c_r$ look at the window $[c_r, c_r + 1/q)$. If $p \ge q$, that window
+contains a grid point, and that grid point lies in one of the cells the window
+meets. An unsaved $v$ must hit at least one of them. Union those cells' hitting
+sets and it is a set-cover constraint again — the same DFS, the same counting
+bound, the same gcd branch as $q1$, with only the constraints rebuilt:
+
+> no eligible $v$ covers all of it $\implies$ $T2(13,p)$ holds for **every**
+> integer $p \ge q$.
+
+One run, an infinite tail. And monotone in $q$, so the smallest $q$ that
+returns UNSAT is the statement to report.
+
+The first version of this used only cells *longer* than $1/q$, throwing away
+every short cell. It works, but loosely: at $k=7$ it certifies $p \ge 121$
+where the window version certifies $p \ge 84$. The union over a window is what
+recovers the short cells, and it is kept side by side (`--strictcell`) so the
+difference is visible.
+
+Calibration, where brute force can check everything: $k=5$ certifies $p \ge 90$
+against a true last failure of $57$; brute force over $\mathbb{Z}_6^5$ for all
+$p \in [90, 399]$ finds no contradiction. So the certificate is sound and about
+$1.6\times$ loose. At $k = 13$ the lemma of §8 forces any such $q$ to be at
+least $117$.
