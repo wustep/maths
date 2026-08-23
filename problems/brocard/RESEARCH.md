@@ -67,3 +67,48 @@ linked paper itself, the checked computation, or the Lean proof.
   nonstandard-host “solution” manuscripts. They were not used: their advertised
   conclusions conflict with the peer-reviewed sources' explicit open status,
   and q2 makes no novelty or solution claim.
+
+## 2026-08-23 — q3
+
+### Sources opened
+
+- OEIS [A085692](https://oeis.org/A085692), fetched with
+  `scripts/oeis_lookup.py`.  It lists the square values $25,121,5041$ arising
+  from the three known positive indices.  This matches the folder statement;
+  it does not assert that the list is complete.
+- Crossref's record for Berndt–Galway,
+  [DOI 10.1023/A:1009873805276](https://api.crossref.org/works/10.1023/A:1009873805276),
+  was opened.  It confirms the authors, title, journal, year, volume, and pages
+  41–42, but exposes no theorem text or abstract.
+- The [Springer article page](https://link.springer.com/article/10.1023/A:1009873805276/fulltext.html)
+  and [Springer PDF endpoint](https://link.springer.com/content/pdf/10.1023/A:1009873805276.pdf)
+  were opened but returned a browser challenge rather than the paper.
+
+### Failed lookup and scope consequence
+
+- The Berndt [author-PDF URL](https://faculty.math.illinois.edu/~berndt/articles/galway.pdf)
+  failed repeatedly with a TLS end-of-file error.  Unpaywall and Semantic
+  Scholar both report the article as closed and provide no repository copy.
+  Therefore q3 does not treat the often-quoted $10^9$ as a replayed baseline
+  or use it in any new claim.  The attack below relies only on Wilson's theorem
+  and exact arithmetic that is reproduced locally.
+- The exact metadata checks were the
+  [Unpaywall DOI response](https://api.unpaywall.org/v2/10.1023%2FA%3A1009873805276?email=wujstephen%40gmail.com)
+  and the [Semantic Scholar DOI response](https://api.semanticscholar.org/graph/v1/paper/DOI:10.1023/A:1009873805276?fields=title,authors,year,abstract,openAccessPdf,externalIds,citationCount).
+  A [CORE title/DOI search](https://api.core.ac.uk/v3/search/works?q=doi%3A10.1023%2FA%3A1009873805276&limit=10)
+  returned no copy, while the
+  [equivalent OpenAlex query](https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1023%2FA%3A1009873805276?mailto=wujstephen%40gmail.com)
+  was rate-limited.
+- Further recovery attempts through the
+  [Internet Archive catalog](https://archive.org/advancedsearch.php?q=%22Brocard-Ramanujan+Diophantine%22&fl%5B%5D=identifier,title&rows=50&page=1&output=json),
+  its [capture index](https://web.archive.org/cdx/search/cdx?url=faculty.math.illinois.edu/~berndt/articles/galway.pdf&output=json&filter=statuscode:200),
+  the old [UIUC author host](http://www.math.uiuc.edu/~berndt/articles/galway.pdf),
+  two alternate Illinois hosts
+  ([one](https://www.math.illinois.edu/~berndt/articles/galway.pdf),
+  [two](https://math.illinois.edu/~berndt/articles/galway.pdf)), and an
+  [exact-title DuckDuckGo lookup](https://html.duckduckgo.com/html/?q=%22On+the+Brocard-Ramanujan+Diophantine+equation%22+pdf)
+  produced no paper.  A
+  [text-proxy attempt](https://r.jina.ai/https://faculty.math.illinois.edu/~berndt/articles/galway.pdf)
+  failed too.  Encoded variants of the Springer PDF URL returned the same
+  client-challenge HTML.  These failures are recorded to distinguish a
+  metadata check from a read of the theorem text.

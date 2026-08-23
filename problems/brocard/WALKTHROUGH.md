@@ -1,181 +1,116 @@
-# Walkthrough — The modulus had to move with the factorial
+# Walkthrough — Move the prime just beyond the factorial
 
 - Problem: `problems/brocard`
-- Quest: \`q2-second-pass\`
-- Model: gpt-5.6-sol max
-- Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: lean-certified structural lemma
+- Run: `q3-prime-offsets`
+- Model: GPT-5.6 Sol
+- Date: 2026-08-23 (America/Los_Angeles)
+- Argument status: exact certificate and one Lean theorem
 - Problem status: open
 
 ## 0. What was actually missing
 
-The missing object was not a better residue class. q1 had already exposed why
-that setting is finite: a fixed modulus $q$ sees $n!+1\equiv1\pmod q$ as
-soon as $n\ge q$. What survives as $n$ grows is the allocation of the
-*entire prime-power blocks* of the factorial between the two neighbors of the
-square root. That allocation produces moduli $p^{\nu_p(n!)}$ which move with
-$n$, but it also reveals exactly what remains uncontrolled.
+A fixed prime cannot exclude an infinite set of large factorial indices.  Once
+$n\ge p$, one has $n!+1\equiv1\pmod p$, which is already a square residue.
+The missing degree of freedom was a prime modulus that moves with $n$ while
+leaving only a constant-size tail between $n$ and the Wilson factorial
+$(p-1)!$.
 
-## 1. False starts (named obstacles)
+## 1. Named false starts
 
-- **Extending q1 with more primes.** It would enlarge a certified finite
-  interval and nothing else. Every fixed row eventually becomes the square
-  residue 1. The leftover worth keeping was the need for a modulus depending on
-  $n$.
-- **Using $(m-1)(m+1)=n!$ before removing the common two.** The factors have
-  gcd 2, so saying “prime factors cannot split” is literally false for the
-  2-part and awkward for every later statement. The useful normalization was
-  to exploit parity first and divide both neighbors by two.
-- **Treating the normalized split as an automatic algorithmic win.** Once the
-  factors are coprime, each prime power becomes a binary choice. There are
-  fewer choices than ordinary divisors, but still $2^{\pi(n)-1}$ up to
-  swapping. The factorization changes the language of the obstruction; by
-  itself it does not make the conjecture finite.
+- **More fixed primes.**  They can extend the finite q1 interval but every row
+  eventually becomes the residue 1.
+- **The central prime $p=2n+1$.**  Wilson gives
+  $(n!)^2\equiv(-1)^{n+1}\pmod p$, but the resulting quartic in the putative
+  square root has both passing and failing primes in the small congruence
+  classes checked.  No progression certificate emerged.
+- **Prime-power sign vectors.**  The q2 factorization supplies growing moduli,
+  but it also leaves an exponential choice of which neighbor receives each
+  prime-power block.
 
 ## 2. The useful failure
 
-We made the binary choices exact on a range small enough to inspect. For every
-$4\le n\le100$, we formed the complete prime-power blocks of $n!/4$ and
-looked for the subset product closest to its square root. The consecutive
-splits were exactly
+Writing the modulus as a fixed number was the common defect.  Writing it as
+$p=n+c$ makes it grow, and Wilson's theorem evaluates the missing tail:
 
 $$
-6=2\cdot3,\qquad 30=5\cdot6,\qquad 1260=35\cdot36,
+n!\equiv\frac{(-1)^c}{(c-1)!}\pmod p.
 $$
 
-which recover $n=4,5,7$. But at $n=100$, 25 blocks already leave
-$2^{24}=16{,}777{,}216$ complementary assignments. The computation did not
-suggest an induction; it diagnosed the missing theorem as control of
-prime-power subset products near $\sqrt{n!/4}$.
+This is useful only when the resulting constant is provably a nonresidue on a
+whole prime congruence class.
 
 ## 3. The click
 
-For $n\ge2$, the factorial is even, so a hypothetical square root is odd.
-Writing $m=2a+1$ turns the two even neighbors into the consecutive integers
-$a$ and $a+1$:
+The smallest offset is already enough.  If $p=n+2$, then Wilson gives
+$n!\equiv1\pmod p$, so a Brown equation would force
 
 $$
-n!=m^2-1=4a(a+1),\qquad \gcd(a,a+1)=1.
+m^2\equiv2\pmod p.
 $$
 
-Now an odd prime power in $n!$ cannot partly enter each neighbor. It has to
-choose a side in full. This is simultaneously the variable-modulus lemma and
-the exact unitary-divisor reformulation.
+The supplementary law says that 2 is a quadratic nonresidue when
+$p\equiv3$ or $5\pmod8$.  Those two prime classes are infinite, and shifting
+them by 2 produces two infinite families of excluded indices.  Offset 3 gives
+two more families with the same character.
 
-## 4. The argument, in the order it became inevitable
+## 4. The argument
 
-### Parity exposes the right factors
-
-Assume $n\ge2$ and $n!+1=m^2$. Since $2\mid n!$, the left side is odd;
-therefore $m$ is odd and $m=2a+1$ for some $a$. Expanding the square and
-cancelling 1 gives
+For $p=n+2$, Wilson's congruence is
 
 $$
-n!=4a(a+1).
+-1\equiv(p-1)!=(p-2)!(p-1)\equiv-n!\pmod p.
 $$
 
-The identity $\gcd(a,a+1)=1$ is what the unhalved factorization was hiding.
+Thus $n!+1\equiv2\pmod p$.  This cannot equal a square when
+$p\equiv3,5\pmod8$.
 
-### A full prime power chooses one neighbor
-
-Let $p\ne2$ be prime and suppose $p^k\mid n!$. Because $p\nmid4$, the
-factorization implies $p^k\mid a(a+1)$. If $p\mid a$, coprimality gives
-$p\nmid a+1$, so the whole $p^k$ divides $a$; the other case is symmetric.
-Multiplying back by two yields
+For $p=n+3>3$, the two omitted factors give
 
 $$
-p^k\mid m-1\quad\text{or}\quad p^k\mid m+1.
+-1\equiv(p-1)!=n!(p-2)(p-1)\equiv2n!\pmod p.
 $$
 
-We may choose $k=\nu_p(n!)$. Thus every odd $p\le n$ supplies the growing
-modulus
+Hence $n!+1\equiv1/2\pmod p$.  If $m^2\equiv1/2$, then
+$(2m)^2\equiv2$, again impossible in the same two prime classes.
+
+Dirichlet's theorem supplies infinitely many primes in each of the reduced
+classes 3 and 5 modulo 8.  The result therefore excludes the four infinite
+prime-offset families
 
 $$
-m\equiv\pm1\pmod {p^{\nu_p(n!)}}.
+n=p-2\quad\text{and}\quad n=p-3,qquad p\equiv3,5\pmod8.
 $$
 
-This keeps more information than the familiar condition modulo $p$ for a
-prime in $(n/2,n]$. It is sharp as an exponent: at the known solution
-$(7,71)$, the full 3-part is $3^2$, and $3^2\mid72$ while
-$3^3\nmid72$.
+The condition that the shifted number is prime remains essential.
 
-### Combining the moduli is a unitary-divisor problem
+## 5. Computer search and formal check
 
-Put $N=n!/4$. Since $a$ and $a+1$ are coprime, every block
-$p^{\nu_p(N)}$ lies wholly in one factor. Equivalently, $a$ is a unitary
-divisor of $N$, and a Brown pair occurs exactly when a unitary divisor and its
-complement differ by one.
+The certificate file `compute/q3/offset-certificate.json` records the offset,
+prime class, index class, rational target, and sample count for every row.
+The Python generator recomputes factorials modulo each prime through 10,000.
+The independent C verifier uses separate primality, modular exponentiation,
+and factorial loops.  Their complete reports agree: 1,249 row instances pass.
 
-For the finite experiment, we split the blocks into two halves, enumerated all
-subset products in each half, and used binary search to find the largest product
-not exceeding $\sqrt N$. This product minimizes $N/a-a$ exactly. The
-algorithm uses the structure, but the number of underlying sign vectors remains
-exponential.
+`lean/WilsonOffset.lean` formalizes the offset-2 proof.  It derives the
+factorial congruence from mathlib's Wilson theorem and closes the nonresidue
+step with mathlib's characterization of when 2 is a square modulo a prime.
+The theorem has no bounded enumeration and no `sorry`.
 
-### What Lean certifies
+Replay all three checks with:
 
-[FactorialPrimePower.lean](lean/FactorialPrimePower.lean) follows the same
-argument. Its first exported theorem constructs $a$, proves the exact
-factorization, and records coprimality. Its main theorem,
-\`odd_prime_power_dvd_neighbor\`, cancels the factor 4, applies prime-power
-divisibility to the coprime neighbors, and returns the divisibility of $m-1$
-or $m+1$. It contains no bounded case split and no \`sorry\`.
+```text
+problems/brocard/compute/q3/run_all.sh
+```
 
-## 5. Figures, numeric checks, and computer search
+## 6. Proved versus still open
 
-![Exact unitary-divisor gaps and sign-vector growth](figures/q2-unitary-factorization.png)
-
-The upper panel plots the exact smallest gap between complementary unitary
-divisors of $n!/4$. The red stars are the three gap-one cases on
-$4\le n\le100$; the upward trend is data, not an extrapolated theorem. The
-lower panel records the binary assignments remaining after complementary splits
-are identified.
-
-The primary computation is
-[unitary_factorization.py](compute/unitary_factorization.py), with exact output
-in [q2-results.json](compute/q2-results.json) and a compact run log in
-[q2-run.txt](compute/q2-run.txt). The separately written
-[verify_q2.py](compute/verify_q2.py) checked every emitted factorization,
-brute-forced every subset through $n=50$, reran direct integer-square tests
-through $n=100$, and checked each recorded prime-power sign. Its result is
-[q2-verification.txt](compute/q2-verification.txt).
-
-## 6. Proven vs still open
-
-- **Lean-certified.** A Brown equation with $n\ge2$ has the consecutive
-  coprime factorization above, and every odd prime power dividing $n!$ divides
-  one neighboring factor in full. The required local \`lake build\` succeeds.
-- **Exactly computed.** The unitary-divisor and direct-square tests agree on
-  $4\le n\le100$, with only the already known $n=4,5,7$. The minimum-gap
-  calculation was independently brute-checked only through $n=50$; every
-  reported factor certificate was checked through 100.
-- **Not claimed.** The $100$-range is not a new search record, the
-  factorization is not claimed as a literature novelty, and the plotted growth
-  is not a lower bound for all $n$. q1's separate modular sieve already went
-  much farther finitely.
-- **Still open.** Nothing here excludes all sign assignments for large $n$,
-  kills an infinite progression, or proves that $4,5,7$ are the only Brown
-  indices. The Brocard–Ramanujan conjecture remains open.
-
-## 7. Digestion notes
-
-Run the structural experiment and its independent verifier from the problem
-directory:
-
-\`\`\`text
-python3 compute/unitary_factorization.py --max-n 100
-python3 compute/verify_q2.py
-python3 compute/plot_unitary_factorization.py
-\`\`\`
-
-Build both the untouched q1 certificate and the q2 theorem with:
-
-\`\`\`text
-cd lean
-lake build
-\`\`\`
-
-The next genuinely different move would be an analytic or combinatorial theorem
-forcing every prime-power partition of $n!/4$ away from two consecutive
-factors. Raising the finite enumeration bound or adding fixed primes would
-repeat an obstruction whose limitation is now explicit.
+- **Proved.**  No Brown index belongs to any of the four stated prime-offset
+  families.  Each family is infinite.
+- **Exactly replayed.**  Independent Python and C implementations agree for
+  every applicable prime through 10,000; the offset-2 theorem builds in Lean
+  4.32.0.
+- **Not claimed.**  The result does not exclude an entire residue class of
+  integers modulo 8, does not improve the published finite search range, and
+  is not claimed as a literature novelty.
+- **Still open.**  Indices for which the useful offsets are composite remain,
+  and nothing here proves that $4,5,7$ are the only solutions.

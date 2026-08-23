@@ -1,0 +1,49 @@
+{
+  "claim": "For each row, no Brown index n=p-c exists when p is prime in the stated class modulo 8. Each family is infinite by Dirichlet.",
+  "nonresidue_fact": "2 is a non-square modulo primes p = 3 or 5 (mod 8).",
+  "proof_identity": "If p=n+c is prime, Wilson gives n! = (-1)^c / (c-1)! (mod p).",
+  "rows": [
+    {
+      "first_sample_prime": 3,
+      "index_residue_mod_8": 1,
+      "last_sample_prime": 9931,
+      "offset": 2,
+      "prime_residue_mod_8": 3,
+      "sample_prime_count": 311,
+      "target_denominator": 1,
+      "target_numerator": 2
+    },
+    {
+      "first_sample_prime": 5,
+      "index_residue_mod_8": 3,
+      "last_sample_prime": 9973,
+      "offset": 2,
+      "prime_residue_mod_8": 5,
+      "sample_prime_count": 314,
+      "target_denominator": 1,
+      "target_numerator": 2
+    },
+    {
+      "first_sample_prime": 11,
+      "index_residue_mod_8": 0,
+      "last_sample_prime": 9931,
+      "offset": 3,
+      "prime_residue_mod_8": 3,
+      "sample_prime_count": 310,
+      "target_denominator": 2,
+      "target_numerator": 1
+    },
+    {
+      "first_sample_prime": 5,
+      "index_residue_mod_8": 2,
+      "last_sample_prime": 9973,
+      "offset": 3,
+      "prime_residue_mod_8": 5,
+      "sample_prime_count": 314,
+      "target_denominator": 2,
+      "target_numerator": 1
+    }
+  ],
+  "sample_prime_bound": 10000,
+  "schema_version": 1
+}
