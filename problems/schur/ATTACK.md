@@ -81,3 +81,24 @@ bound used to break ties:
 Shapes 1--4 and 7 survive as construction routes. Shape 5 is already a named
 symmetry wall, and shape 6 is already an arithmetic wall for the published
 off-the-shelf constructions.
+
+## 2026-08-23 — q3 source recovery and first checks
+
+- The q1 two-violation bytes are not recoverable from this repository. The
+  tracked file and the sole unreachable commit containing the old Schur
+  campaign both point to the empty blob. No unreachable blob is a 1,697-token
+  vector over `0..6`. Shape 1 therefore survives only as reconstruction, not
+  recovery.
+- Rowley's ancillary workbook was recovered from the official arXiv source
+  archive. `compute/q3/rowley_1696.txt` is its exact zero-based color column
+  (SHA-256 `feef1da7...c40896`). The independent verifier accepts all 719,104
+  pairs, with class sizes `204,176,318,152,148,200,498`.
+- The specimen has no mismatches under reflection about 1697. Giving 1697
+  colors 0 through 6 creates respectively `102,88,159,76,74,100,249`
+  boundary conflicts. For each color these are vertex-disjoint complement
+  pairs, so a repair that keeps the appended color must recolor at least that
+  many old entries. This kills a direct or very-small-edit lift of this
+  specimen, but not a larger ejection chain or an unrestricted coloring.
+- The full-reflection obstruction source had mojibake in place of Lean
+  symbols. It was rewritten with ASCII syntax and now compiles under the
+  pinned Lean 4.32.0 using `lean lean/Schur1697SymmetryObstruction.lean`.
