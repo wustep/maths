@@ -144,7 +144,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Incomplete. Inclusion $$r_{13}(1/14\mathbb Z)\subseteq r_{13}(1/p\mathbb Z)$$ replayed; two p=191 witnesses. LRC(13) open. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
-| [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,074 further triangulations add none. Hilbert 16(a) degree 8 open. |
+| [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
 
 Each problem folder:
 
@@ -199,7 +199,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
 | Grok Bot transcript page | `notes/chat` | Grok 4.6 | 2026-08-21 |
-| Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21 |
+| Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
 
 ## Lean
 

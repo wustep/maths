@@ -107,9 +107,40 @@ collections (`compute/certs/mcert_collections.json`, rebuilt by
 swept exhaustively (230,501,440 maximal sign distributions, all of them
 22-oval M-curves): they realize exactly the paper's 38 M-schemes and
 nothing else, so no census triangulation carries either open deep nest.
-A further 4,074 certified regular triangulations outside the census,
-each also swept exhaustively, add no M-scheme either. Exhaustive per
+A further 4,609 certified regular triangulations outside the census,
+each also swept exhaustively, add no M-scheme either
+(`compute/certs/outside_census_sweeps.json`). Exhaustive per
 triangulation, not exhaustive over triangulations — residue, not an
 obstruction. Counts and certificates in ATTACK.md.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh`
+
+## Close (2026-08-23)
+
+The bound is unchanged. `compute/verify_new.py` replays 17/17, so the
+census lower bound stays **≥ 2,384**, and `compute/check_rokhlin.py`
+replays with it.
+
+Two searches were in flight when the machine restarted and neither
+finished. Thickening the whole Haas maximal stratum
+(`compute/thickc.c`) completed 4 of the 164 census triangulations in
+scope, 12,058,624 sign distributions, and found one scheme outside the
+census — ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already one of the seventeen. No new
+candidate, so nothing to certify: residue
+(`compute/certs/thick_summary.json`). The search in Haas collection
+space for the two open deep nests (`compute/dn_sweep.py`) lost its run
+directory in the restart and left no data at all; none is claimed.
+
+What committed data still yielded: all 38 published 22-oval
+certificates re-verify through the collection pipeline rather than the
+sign-vector one (`compute/dn_charac.py`), and laminar zone depth turns
+out not to bound nesting depth usefully — zone depth 2 reaches a triple
+nest, zone depth 8 does not — which is why that searcher had no
+traction. For a depth-3 M-scheme ⟨a ⊔ 1⟨b ⊔ 1⟨c⟩⟩⟩ Rokhlin forces
+\(b\equiv 2 \pmod 4\); the published 38 realize \(b\in\{2,6,10,14\}\)
+and the missing \(b=18\) is exactly the \((p,n)=(3,19)\) class their
+Theorem 21 excludes from T-curves. Both open nests have \(b=2\), a row
+that already contains two published T-curves, so the target is a move
+along an occupied row rather than a new class. Details in ATTACK.md.
+
+Hilbert 16(a) in degree 8 remains open.
