@@ -134,3 +134,17 @@ off-the-shelf constructions.
 Terminal q3 status: recorded wall and draft PR, with no 1,697 coloring.
 Rowley's published $S(7)\geq1696$ remains the bound verified here. Nothing in
 q3 is an upper bound for $S(7)$.
+
+## 2026-08-23 — q4 bounded local repair
+
+- Starting from q3's exact two-violation vector, an exact fixed-outside SAT
+  encoding first allowed only $\{537,640,1074,1177\}$ to change. It then
+  admitted the first 16, 32, 64, and 128 vertices ranked by frequency in the
+  immediate alternative-color blockers of those four vertices.
+- Glucose 4.2 returned UNSAT for all five explicit neighborhoods, containing
+  4, 20, 36, 68, and 132 mutable vertices. The largest encoding used 60,659
+  clauses for 182,996 Schur edges touching its neighborhood. The precise
+  vertex sets and results are in `compute/q4/local_repair.json`.
+- These are local walls only: vertices outside each named set were fixed to
+  the recovered q3 vector. They do not rule out a larger repair or an
+  unrestricted coloring. No dent is claimed.
