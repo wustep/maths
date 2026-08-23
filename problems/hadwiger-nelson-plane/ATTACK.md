@@ -94,3 +94,28 @@ backwards from what a stranger would replay.
   exhaustive deduplication in one lemma and reports SAT outcomes without a
   proof artifact, so those steps must be independently exactified before any
   number is trusted.
+
+### q1: exact Parts spawns — residue
+
+- Rebuilt the Parts graph from 509 exact coordinates and recovered all 2,442
+  unit edges. The first spawn is $G\cup\rho G$ for Parts' rotation
+  $\rho=(7+i\sqrt{15})/8$. Deduplication gives 933 vertices and exact
+  all-pairs rebuilding gives 4,651 unit edges.
+- CaDiCaL found a proper 5-coloring of the 933-vertex spawn in 0.015 seconds.
+  The committed color classes have sizes 211, 203, 203, 165, 151.
+- The second spawn adds all 677 exact points retained by the earlier
+  radius-2.55 lattice/reserve enumeration. This process did not rerun the
+  larger universe enumeration: that attempt exceeded the shared process
+  memory after emitting the first spawn. It instead copies the finite source
+  table, reconstructs every coordinate exactly, and independently checks that
+  each added point lies in the disk and has at least four exact unit neighbors
+  in $G$.
+- The reserve union has 1,186 vertices and 7,440 exact unit edges. CaDiCaL
+  found a proper 5-coloring in 2.89 seconds, with class sizes 259, 251, 225,
+  220, 231. Exact Python rebuilding and a separate C edge/color checker both
+  replay the two stored colorings.
+- This is residue, not a lower bound: the coloring of the full reserve
+  union restricts to a coloring of $G\cup S$ for every subset $S$ of the 677
+  added vertices. Thus none of those $2^{677}$ add-only spawns is
+  6-chromatic. Searches that delete base vertices or introduce coordinates
+  outside this reserve remain open.

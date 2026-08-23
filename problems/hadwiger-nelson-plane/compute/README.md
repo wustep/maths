@@ -1,5 +1,11 @@
-# compute — hadwiger-nelson-plane
+# Compute
 
-Verifier plus certificate. Every claimed number needs an independent
-check that runs from the files in this folder. SAT UNKNOWN is not a
-bound; search residue is not a lower bound.
+Replay every completed campaign from this directory:
+
+```bash
+./run_all.sh
+```
+
+The replay uses exact Python arithmetic for coordinates and a separate C
+checker for stored colorings. Search code and its optional dependency stay
+inside each numbered campaign.

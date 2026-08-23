@@ -19,7 +19,24 @@ Empty beats mean the campaign is not done.
    independently parseable here. Applying the published rotation to the
    entire graph is the cheapest nontrivial test of whether another exact layer
    supplies the missing color pressure.
-4. The argument —
+4. The argument — Rotate every exact point of the Parts graph by
+   $\rho=(7+i\sqrt{15})/8$, merge coincidences, and include every unit edge
+   found by exact all-pairs comparison. Then try the denser finite reserve
+   already enumerated in the same algebraic lattice. A five-coloring of the
+   whole reserve union automatically colors every add-only subset, turning
+   one SAT model into an exclusion of $2^{677}$ candidate graphs.
 5. Computer search —
-6. Proven vs still open — The literature and exact 509-graph counts are
-   established. No six-chromatic finite unit-distance graph is proved.
+
+   | graph | vertices | unit edges | 5-color SAT | independent replay |
+   | --- | ---: | ---: | --- | --- |
+   | $G\cup\rho G$ | 933 | 4,651 | SAT | exact Python + C coloring check |
+   | $G$ plus 677 reserve points | 1,186 | 7,440 | SAT | exact Python + C coloring check |
+
+   The attempt to regenerate the full lattice-disk universe exceeded the
+   shared process memory. The finite 677-record source table was therefore
+   copied into this folder and each retained exact coordinate was checked;
+   the larger enumeration was not claimed as rerun.
+6. Proven vs still open — The two committed finite graphs and every add-only
+   reserve subset are five-colorable. No six-chromatic finite unit-distance
+   graph is proved. Deletions from the base, other coordinates, and the
+   heptagonal/Golomb-derived families remain outside this finite exclusion.

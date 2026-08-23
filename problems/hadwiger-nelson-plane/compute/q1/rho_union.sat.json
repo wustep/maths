@@ -1,0 +1,24 @@
+{
+  "edge": "rho_union.edge",
+  "n": 933,
+  "m": 4651,
+  "colors": 5,
+  "nvars": 4665,
+  "clauses": 24191,
+  "triangle": [
+    0,
+    149,
+    152
+  ],
+  "solver": "PySAT Cadical195",
+  "status": "SAT",
+  "seconds": 0.014618125002016313,
+  "model_checked": true,
+  "color_counts": [
+    211,
+    203,
+    203,
+    165,
+    151
+  ]
+}
