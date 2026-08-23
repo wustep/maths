@@ -1,0 +1,13 @@
+{
+  "added_vertices": 1501,
+  "base_vertices": 509,
+  "exact_cross_edges": 50,
+  "m": 11766,
+  "n": 2010,
+  "pieces": [
+    "q1/reserve_union",
+    "q2/rho3_union"
+  ],
+  "reserve_only_vertices": 653,
+  "rotation_new_vertices": 824
+}

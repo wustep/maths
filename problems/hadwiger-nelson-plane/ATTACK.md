@@ -132,3 +132,22 @@ backwards from what a stranger would replay.
   by $\rho G\cup\rho^2G$, excluding all $2^{848}$ subsets as 6-chromatic
   witnesses. It does not cover combinations with q1's 677-point reserve,
   deletions from $G$, or a fourth rotation layer.
+
+### q3: combine both exact Parts spawns — residue
+
+- Merged the full 677-point reserve with
+  $G\cup\rho G\cup\rho^2G$. Twenty-four reserve points already occur in a
+  rotated layer, leaving 1,501 distinct non-base vertices and 2,010 vertices
+  in the combined graph.
+- The two previously replayed induced graphs supply their internal edges.
+  An exact check of all $653\times824$ pairs between the disjoint added parts
+  finds 50 further unit edges, for 11,766 edges total. The verifier repeats
+  this decomposition after q1 and q2 independently rebuild the pieces.
+- CaDiCaL found a proper 5-coloring in 0.18 seconds, with class sizes 405,
+  386, 407, 403, 409. Exact Python verification and the independent C
+  edge/color checker both accept it.
+- This model subsumes the earlier add-only exclusions: every graph formed by
+  adjoining any subset of these 1,501 exact points to Parts 509 is
+  5-colorable. None of the $2^{1501}$ graphs is a 6-chromatic witness. The
+  residue leaves base-vertex deletion, a fourth rotation, points beyond the
+  retained reserve, and other algebraic families open.

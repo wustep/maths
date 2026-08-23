@@ -32,14 +32,15 @@ Empty beats mean the campaign is not done.
    | $G\cup\rho G$ | 933 | 4,651 | SAT | exact Python + C coloring check |
    | $G$ plus 677 reserve points | 1,186 | 7,440 | SAT | exact Python + C coloring check |
    | $G\cup\rho G\cup\rho^2G$ | 1,357 | 6,860 | SAT | exact Python + C coloring check |
+   | combined reserve and rotation family | 2,010 | 11,766 | SAT | exact decomposition + C coloring check |
 
    The attempt to regenerate the full lattice-disk universe exceeded the
    shared process memory. The finite 677-record source table was therefore
    copied into this folder and each retained exact coordinate was checked;
    the larger enumeration was not claimed as rerun.
-6. Proven vs still open — The three committed finite graphs are five-colorable.
-   The stored models cover every add-only subset of either the 677-point
-   reserve or the 848 points in two rotated copies. No six-chromatic finite
-   unit-distance graph is proved. Combining the two added sets, deleting from
-   the base, other coordinates, and the heptagonal/Golomb-derived families
-   remain outside these finite exclusions.
+6. Proven vs still open — All four committed finite graphs are five-colorable.
+   The largest stored model covers every add-only subset of 1,501 distinct
+   points from the combined reserve and rotation family. No six-chromatic
+   finite unit-distance graph is proved. Deleting from the base, a fourth
+   rotation layer, other coordinates, and the heptagonal/Golomb-derived
+   families remain outside this finite exclusion.
