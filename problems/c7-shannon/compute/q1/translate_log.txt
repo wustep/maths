@@ -1,0 +1,10 @@
+best alpha=367 v=1 I=0 nu=367/367
+progress v=2000 disjoint=1271 inter=729 best_alpha=367 imperfect=0
+progress v=4000 disjoint=2375 inter=1625 best_alpha=367 imperfect=0
+progress v=6000 disjoint=3352 inter=2648 best_alpha=367 imperfect=0
+progress v=8000 disjoint=4297 inter=3703 best_alpha=367 imperfect=0
+progress v=10000 disjoint=5210 inter=4790 best_alpha=367 imperfect=0
+progress v=12000 disjoint=6075 inter=5925 best_alpha=367 imperfect=0
+progress v=14000 disjoint=6994 inter=7006 best_alpha=367 imperfect=0
+progress v=16000 disjoint=8015 inter=7985 best_alpha=367 imperfect=0
+DONE disjoint=8422 intersecting=8384 best_alpha=367 best_v=1 I=0 nu=367 imperfect=0 found368=0

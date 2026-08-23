@@ -22,6 +22,24 @@ The published 367-set meets every letter in every coordinate, with fiber sizes 5
 
 6. **A 367-set on the private-pair / translate plateau, plus one vertex.** Few-flip SAT only killed odd Hamming distance $\le 9$ around one seed. The even 1-out-1-in moves are the eight private-pair swaps; 108 of the 256 subsets remain independent 367-sets, including the reconstructed list. None of those 108 has a 1-out-2-in with newly-free set of size $\le 16$. Separately, the union $A\cup(A+v)$ is bipartite aside from the intersection. Among all 16806 nonzero translations, 8422 are disjoint from $A$; none has an isolated vertex in the bipartite conflict graph, so there is no cheap "$A$ plus one point of $A+v$". An imperfect maximum matching would still give 368; that is a C check, not the old 3-out SAT.
 
+## 2026-08-23 — q1 results, no 368
+
+Worked the six shapes backwards. No independent set of size 368. Timeouts and samples are residue, not a lower bound. The 3-support obstruction and the two-translate matching census are complete for those shapes.
+
+1. **3-support.** Impossible: $3\cdot 115=345<368$. Recorded.
+
+2. **4-support.** `search_4support.py`: every 4-subset of letters, slice the 367-set and grow. Best grown size 309 on $\{0,2,4,5\}$. Greedy fibers of $\{3,5\}$ plus a $\{0,1\}$-slice: $81+81+81=243$. Not a 368-set. Residue: not an exact $\alpha$ on the 9604-vertex induced subgraphs.
+
+3. **Punctured isolate core.** `search_core_puncture.py`. $k=0$ recovers $327+40=367$. All 327 single punctures: residual 72 or 73, $\alpha=41$, total 367. Deleting one isolate frees exactly one extra leftover vertex. $k=2$ was stopped after 19 trials (residue). Log: `compute/q1/core_puncture_log.txt`.
+
+4. **Eight cosets.** First C quotient encoding was wrong (claimed 13 cosets, $13\cdot 49=637>401$, impossible). Replaced by neighbourhood-true coset ids. C enumeration of RREF generators: $\ge 25000$ good codes, greedy $\le 7$ (total 343). Verified Python sample of 120 random good 2-dimensional codes: best 7, leftover of every 7-pack empty, so those packs are maximal in the quotient. Not a proof that no 8-coset pack exists. Residue. Log: `compute/q1/coset_sample_log.txt`.
+
+5. **Higher-power fibers.** Replayed. Itty 1120-set in dimension 6 is independent; max 5-fiber 165. Itty/Gao 10th-power gadget from R367: max 5-fiber 367. Those two certificates do not contain a 368-set as a fiber. `compute/q1/profile_log.txt`.
+
+6. **Plateau / translates / ejection.** `search_translates.c`: all 16806 nonzero $v$, $8422$ disjoint and $8384$ intersecting, maximum matching always perfect, $\alpha(A\cup(A+v))=367$ for every $v$. No 368-set of this shape. `search_plateau.c`: 108 private-pair 367-sets, $7253388$ two-out packs, `best_gain=0`. `search_ejection.c`: 6 restarts, 250000 one-out steps each, 7500 sampled four-outs, `global_best=367`, `four_out_best_gain=0`. The translate census is complete for that shape; ejection is a sample (residue).
+
+No $\Theta(C_7)$ claim. $367^{1/5}\approx 3.25787<3.258805$. A 368-set is still the finite bound that would move $\alpha(C_7^{\boxtimes 5})$.
+
 ## 2026-08-16
 
 - Folder created. Grok 4.6 cloud agent launched.

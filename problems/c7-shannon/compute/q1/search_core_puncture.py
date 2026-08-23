@@ -16,15 +16,53 @@ HERE = Path(__file__).resolve().parent
 ROOT = HERE.parent
 sys.path.insert(0, str(ROOT))
 
-from c7_common import format_word, residual_of
+from c7_common import adjacent, format_word, greedy_mis_fast, residual_of
 from reconstruct_polak import (
     fold_words,
     geometric_orbit,
     induced_edges,
     isolated_vertices,
-    max_independent_set,
 )
 from verify_set import first_conflict
+
+
+def mis_capped(verts: list[int], node_cap: int = 2_000_000) -> list[int]:
+    """Exact MIS with a node cap; greedy fallback. Sparse leftovers stay exact."""
+    n = len(verts)
+    if n == 0:
+        return []
+    if n > 90:
+        return greedy_mis_fast(verts)
+    idx = {v: i for i, v in enumerate(verts)}
+    neigh = [0] * n
+    for i, u in enumerate(verts):
+        for v in verts[i + 1 :]:
+            if adjacent(u, v):
+                neigh[i] |= 1 << idx[v]
+                neigh[idx[v]] |= 1 << i
+    best: list[int] = greedy_mis_fast(verts)
+    nodes = 0
+
+    def rec(cand: int, cur: int) -> None:
+        nonlocal best, nodes
+        nodes += 1
+        if nodes > node_cap:
+            return
+        if cand.bit_count() + cur.bit_count() <= len(best):
+            return
+        if cand == 0:
+            if cur.bit_count() > len(best):
+                best = [verts[i] for i in range(n) if (cur >> i) & 1]
+            return
+        v = max(
+            (i for i in range(n) if (cand >> i) & 1),
+            key=lambda i: (neigh[i] & cand).bit_count(),
+        )
+        rec(cand & ~neigh[v] & ~(1 << v), cur | (1 << v))
+        rec(cand & ~(1 << v), cur)
+
+    rec((1 << n) - 1, 0)
+    return best
 
 def main() -> None:
     t0 = time.time()
@@ -32,7 +70,7 @@ def main() -> None:
     M = isolated_vertices(folded)
     print(f"|M|={len(M)}", flush=True)
     residual0 = residual_of(M)
-    I0 = max_independent_set(residual0)
+    I0 = mis_capped(residual0)
     print(
         f"k=0 residual={len(residual0)} edges={len(induced_edges(residual0))} "
         f"alpha={len(I0)} total={len(M)+len(I0)}",
@@ -49,12 +87,8 @@ def main() -> None:
     for i, m in enumerate(M):
         base = M[:i] + M[i + 1 :]
         residual = residual_of(base)
-        if len(residual) > 95:
-            I = []
-            skipped = True
-        else:
-            skipped = False
-            I = max_independent_set(residual)
+        skipped = False
+        I = mis_capped(residual)
         total = len(base) + len(I)
         if total > best or (not skipped and i < 3):
             if total > best:
@@ -84,9 +118,7 @@ def main() -> None:
                     continue
                 base = [M[t] for t in range(len(M)) if t != i and t != j]
                 residual = residual_of(base)
-                if len(residual) > 95:
-                    continue
-                I = max_independent_set(residual)
+                I = mis_capped(residual)
                 total = len(base) + len(I)
                 trials += 1
                 if total > best:

@@ -1,0 +1,10 @@
+(0, 1, 2, 3) sliced=212 grown=214
+(0, 1, 2, 4) sliced=215 grown=267
+(0, 1, 3, 5) sliced=209 grown=304
+(0, 2, 4, 5) sliced=213 grown=309
+fiber 3 81
+fiber 5 81
+01 extra 81 total 243
+best 309
+seconds 4.0
+no 368

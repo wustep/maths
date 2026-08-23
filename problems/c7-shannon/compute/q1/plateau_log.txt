@@ -1,0 +1,12 @@
+best_gain=0 nf=2 mask=0 trial=0
+sets 10/108 trials=671610 best_gain=0
+sets 20/108 trials=1343220 best_gain=0
+sets 30/108 trials=2014830 best_gain=0
+sets 40/108 trials=2686440 best_gain=0
+sets 50/108 trials=3358050 best_gain=0
+sets 60/108 trials=4029660 best_gain=0
+sets 70/108 trials=4701270 best_gain=0
+sets 80/108 trials=5372880 best_gain=0
+sets 90/108 trials=6044490 best_gain=0
+sets 100/108 trials=6716100 best_gain=0
+DONE n_ok=108 trials=7253388 best_gain=0 hit=0

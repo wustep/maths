@@ -8,7 +8,9 @@ gcc -O3 -o q1/search_plateau q1/search_plateau.c
 gcc -O3 -o q1/search_cosets q1/search_cosets.c
 ./q1/search_translates R367.txt | tee q1/translate_log.txt
 ./q1/search_plateau R367.txt | tee q1/plateau_log.txt
-./q1/search_cosets | tee q1/coset_log.txt
+python3 q1/search_cosets_sample.py
+gcc -O3 -o q1/search_ejection q1/search_ejection.c
+./q1/search_ejection R367.txt | tee q1/ejection_log.txt
 python3 q1/search_core_puncture.py
 python3 q1/search_4support.py
 python3 verify_set.py R367.txt --min-size 367

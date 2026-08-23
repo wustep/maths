@@ -20,9 +20,15 @@ A 368-set is already a new bound. Its fifth root is about 3.2596, which would al
 
 **Product template.** $10\times 33=330$ is already a maximal independent set. CEGAR cannot grow it. A template can be leftover-free and still 38 short.
 
+**Three mutually non-adjacent slices.** Baumert et al. give $\alpha(C_7^{\boxtimes 4})\le 115$, so three non-interacting fibers are at most 345. A 368-set cannot live on a 3-letter support.
+
+**Two translates of the 367-set.** For every nonzero $v\in(\mathbb Z/7\mathbb Z)^5$, the bipartite matching on $A\setminus(A+v)$ versus $(A+v)\setminus A$ is perfect, so $\alpha(A\cup(A+v))=367$. That shape is closed.
+
+**A 5-fiber of the published 6th- or 10th-power sets.** Itty's 1120-set in dimension 6 has max 5-fiber 165. The 10th-power gadget built from the 367-set has max 5-fiber 367.
+
 ## 2. The useful failure
 
-The isolate/residual split is a real tradeoff, not a sloppy deletion. The 327 isolates leave a 71-vertex, 85-edge residual whose independence number is 40. Eating the conflict vertices first spends that leftover. Any attempt to beat 367 has to change the 327-core, not just re-pack the 71.
+The isolate/residual split is a real tradeoff, not a sloppy deletion. The 327 isolates leave a 71-vertex, 85-edge residual whose independence number is 40. Eating the conflict vertices first spends that leftover. Any attempt to beat 367 has to change the 327-core, not just re-pack the 71. Puncturing one isolate and re-solving the residual always returned $\alpha=41$, total 367: the extra leftover vertex exactly replaces the one that was deleted.
 
 Orbit ratios also taught a negative: among geometric progressions, $n=382$, $q=7$ is still the closest approach to $7/2$ in the range that could matter. Folding the nearer-ratio $n=317$ orbit into seven symbols explodes the residual and yields totals around 250.
 
@@ -43,7 +49,8 @@ Then the homomorphism search, the S' MIS, the swap census, the linear residuals,
 - `compute/R361_sprime.txt` — S' MIS construction, size 361, verifier OK
 - `compute/verify_set.py` — pairwise checker
 - logs: `orbit_search_wide.txt`, `three_out_log.txt`, `fold_near.txt`, `linear_probe.txt`, `local_search_log.txt`, `fewflip_sat_log.txt`, `minconflicts_cage.txt`, `cegar_product_log.txt`
+- `compute/q1/` — six-shape search: translate matching (complete, $\alpha=367$ for every $v$), private-pair 2-out plateau (`best_gain=0` on 108 seeds), isolate-core $k=1$ census (327/327 at total 367), 4-support local best 309, verified 120 good 2-dimensional codes with at most 7 cosets, higher-power fiber replay (165 and 367)
 
 ## 6. What is proved vs still open
 
-The 367-set is independent. $\alpha(C_7^{\boxtimes 5})\ge 367$ is old. This search did not find 368 and did not prove 367 is maximum. Lovász still gives $\alpha\le 401$. $\Theta(C_7)$ is not claimed from this folder.
+The 367-set is independent. $\alpha(C_7^{\boxtimes 5})\ge 367$ is old. This search did not find 368 and did not prove 367 is maximum. Three-letter support is impossible. The union of the published set with any translate has independence number 367. Lovász still gives $\alpha\le 401$. $\Theta(C_7)$ is not claimed from this folder.
