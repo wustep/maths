@@ -1,0 +1,13 @@
+|M|=327
+k=0 residual=71 edges=85 alpha=40 total=367
+k=1 i=0 drop=00063 res=72 I=41 total=367 skip=False
+  k=1 0/327 best=367 t=4.1s
+k=1 i=1 drop=00155 res=73 I=41 total=367 skip=False
+k=1 i=2 drop=00250 res=72 I=41 total=367 skip=False
+  k=1 50/327 best=367 t=145.2s
+  k=1 100/327 best=367 t=278.4s
+  k=1 150/327 best=367 t=408.6s
+  k=1 200/327 best=367 t=533.3s
+  k=1 250/327 best=367 t=670.0s
+  k=1 300/327 best=367 t=836.3s
+  k=2 i=0 trials=19 best=367 t=979.3s

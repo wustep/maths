@@ -1,0 +1,7 @@
+restart 0 done size=367 best=367
+restart 1 done size=367 best=367
+restart 2 done size=367 best=367
+restart 3 done size=367 best=367
+restart 4 done size=367 best=367
+restart 5 done size=367 best=367
+DONE global_best=367 four_out_best_gain=0 four_trials=7500

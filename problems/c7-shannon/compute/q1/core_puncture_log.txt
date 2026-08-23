@@ -1,0 +1,7 @@
+M 327
+k=0 res=71 edges=85 I=40 total=367
+k=1 complete 327/327: every puncture had residual 72-73 and alpha 41, total 367
+k=2 started (19 trials at 979s) then stopped; not a census
+best 367
+no 368
+source core_puncture_stdout.txt

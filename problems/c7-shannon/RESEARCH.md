@@ -32,6 +32,18 @@ URLs actually opened this session.
 - FunSearch `cyclic_graphs/` has no public C7 file (C11 754-set only).
 - Gao `inputs/R367.txt` is the same seed; not re-downloaded after Itty's copy verified.
 
+## 2026-08-23 (this session)
+
+Opened again, and used:
+
+- [arXiv:1808.07438](https://arxiv.org/abs/1808.07438) / [ar5iv](https://ar5iv.labs.arxiv.org/html/1808.07438) — Table 1: $\alpha(C_7)=3$, $\alpha(C_7^{\boxtimes 2})=10$, $\alpha(C_7^{\boxtimes 3})=33$, $\alpha(C_7^{\boxtimes 4})\in[108,115]$, $\alpha(C_7^{\boxtimes 5})\in[367,401]$. Lemma $\alpha(C_n^d)\le \alpha(C_n^{d-1})n/2$ is the 115. No 368 in their shift/divisor/3-out search.
+- [arXiv:2607.21517](https://arxiv.org/abs/2607.21517) / [HTML v1](https://arxiv.org/html/2607.21517v1) — still treats 367 as the fifth-power record. Appendix B: $\alpha(C_7^{\boxtimes 6})\ge 1120$. Eight private pairs $(r_j,q_j)$ on the 367-set. 10th-power size 134753 is a gadget around $B\times B$, not a larger 5-set.
+- [Itty repo](https://github.com/nathanielitty/lower-bounds-for-shannon-capacity), [`CC_6_7_1120.txt`](https://raw.githubusercontent.com/nathanielitty/lower-bounds-for-shannon-capacity/main/CC_6_7_1120.txt), [`c7/construct_cc_10_7_134753.py`](https://raw.githubusercontent.com/nathanielitty/lower-bounds-for-shannon-capacity/main/c7/construct_cc_10_7_134753.py). 1120 unique 6-tuples, independent; max 5-fiber 165. Reconstructing the 10th-power gadget from R367, max 5-fiber 367.
+- [arXiv:2607.27869](https://arxiv.org/abs/2607.27869) / [HTML](https://arxiv.org/html/2607.27869v1) — “367 remains the largest currently known” in the fifth power. Base gadget parameters $(a,t,s,o,h,v)=(367,8,367,321,26,20)$. Capacity bound lives in dimension 200.
+- [arXiv:2607.29681](https://arxiv.org/abs/2607.29681) / [HTML](https://arxiv.org/html/2607.29681v1) — Lean-verified $\Theta(C_7)\ge 3.258805\ldots$ from profile $(367,8,367,322)$ on $C_7^{\boxtimes 5}$. Not a new 5th-power set.
+
+Did not reopen CWI/Tilburg PDFs, FunSearch, or Green P38 this session.
+
 ## W(2,7) steal (no new URL)
 
 Methods came from the sibling agent's finish note, not from a new page: `CardEnc.atmost` instead of a homemade sequential counter; few-flip SAT around a published seed; one-violation min-conflicts as a cage; CEGAR on a cyclic/product template with a leftover plateau stop. PySAT `Cadical195` was used locally. No new $\Theta(C_7)$ paper was opened.

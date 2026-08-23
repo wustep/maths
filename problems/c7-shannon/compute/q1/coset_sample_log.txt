@@ -1,0 +1,4 @@
+(6, 3, 6, 3, 0) (2, 4, 3, 3, 6) cosets=6 leftover=0
+(1, 2, 0, 5, 6) (4, 6, 6, 1, 6) cosets=7 leftover=0
+good 120 tried 172 best_cosets 7 leftover_hits 0
+seconds 61.5

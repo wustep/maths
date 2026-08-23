@@ -180,6 +180,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Schur S(7) | `problems/schur` | Sol 5.6 | 2026-08-16 |
 | van der Waerden W(2,7) | `problems/vdw-w27` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
+| Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |

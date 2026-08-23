@@ -1,7 +1,7 @@
 # Shannon capacity of $C_7$, fifth strong power
 
 - Slug: `c7-shannon`
-- Solver: Cursor Grok 4.6
+- Solver: Grok 4.6
 - Status: open
 - Area: Zero-error information theory
 - Sources: Polak–Schrijver 367-set; Itty–Rosin–Carstensen–Reichman 2026;
