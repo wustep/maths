@@ -128,6 +128,16 @@ class CnfBuilder:
         self.top_id = encoding.nv
         self.sink.add_encoding(encoding)
 
+    def add_at_least(self, literals: list[int], bound: int) -> None:
+        encoding = CardEnc.atleast(
+            lits=literals,
+            bound=bound,
+            top_id=self.top_id,
+            encoding=EncType.seqcounter,
+        )
+        self.top_id = encoding.nv
+        self.sink.add_encoding(encoding)
+
     def add_weighted_at_most_two(self, signature: tuple[tuple[int, int], ...]) -> None:
         singles: list[int] = []
         doubles: list[int] = []
@@ -216,6 +226,11 @@ def parse_args() -> argparse.Namespace:
         type=Path,
         help="phase every orbit wholly present in this partial point set true",
     )
+    parser.add_argument(
+        "--min-phase-orbits",
+        type=int,
+        help="require at least this many complete orbits from --phase-witness",
+    )
     return parser.parse_args()
 
 
@@ -243,19 +258,41 @@ def phased_orbits(geometry: Rct4Geometry, path: Path) -> set[int]:
 
 def main() -> int:
     args = parse_args()
+    if args.min_phase_orbits is not None and args.phase_witness is None:
+        raise ValueError("--min-phase-orbits requires --phase-witness")
+    if args.min_phase_orbits is not None and args.write_cnf is not None:
+        raise ValueError("near-seed constraints cannot be appended to --write-cnf")
     started = utc_now()
     process_start = time.monotonic()
 
     with Solver(name=args.solver, use_timer=True) as solver:
         solver.configure({"seed": args.seed})
         sink, builder, geometry, metadata = build_cnf(args.n, solver, args.write_cnf)
-        build_seconds = time.monotonic() - process_start
-
         positive_phases = (
             phased_orbits(geometry, args.phase_witness)
             if args.phase_witness is not None
             else set()
         )
+        if args.min_phase_orbits is not None:
+            if not 0 <= args.min_phase_orbits <= len(positive_phases):
+                raise ValueError(
+                    f"minimum {args.min_phase_orbits} is outside 0..{len(positive_phases)}"
+                )
+            builder.add_at_least(
+                [orbit_id + 1 for orbit_id in sorted(positive_phases)],
+                args.min_phase_orbits,
+            )
+            metadata.update(
+                {
+                    "auxiliary_variables": builder.top_id - len(geometry.orbits),
+                    "cnf_variables": builder.top_id,
+                    "cnf_clauses": sink.clauses,
+                    "cnf_literals": sink.literals,
+                    "clause_length_histogram": dict(sorted(sink.lengths.items())),
+                    "minimum_phase_orbits": args.min_phase_orbits,
+                }
+            )
+        build_seconds = time.monotonic() - process_start
         if args.random_phases or positive_phases:
             rng = random.Random(args.seed)
             phases = [
