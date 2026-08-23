@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "claim": "m(59) <= 15; this is not an exact value",
+  "p": 59,
+  "cardinality": 15,
+  "witness": [0, 1, 25, 28, 32, 36, 43, 46, 47, 49, 52, 53, 55, 57, 58],
+  "sumset_size": 49,
+  "max_ordered_multiplicity": 8,
+  "producer": {
+    "program": "../search_green_m_p.py",
+    "solver": "cadical195",
+    "solve_seconds": 48.765713,
+    "conflicts": 1050249,
+    "decisions": 1201100,
+    "propagations": 160614059
+  },
+  "boundary_status": "size at most 14 unresolved"
+}

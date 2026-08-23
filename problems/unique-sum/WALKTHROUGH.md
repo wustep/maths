@@ -3,11 +3,11 @@
 # Walkthrough — From unique sums to a normalized midpoint search
 
 - Problem: `problems/unique-sum`
-- Quest: `q1-overnight`
+- Run: recovered `q1-overnight` history
 - Model: gpt-5.6-sol max
 - Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: solver-certified finite computation, independently replayed
-- Problem status: open; the finite $p\le 200$ quest is complete
+- Argument status: invalidated historical computation; current continuation in section 8
+- Problem status: open; the exact table is independently replayed through $p=53$
 
 ## 0. What was actually missing
 
@@ -95,8 +95,10 @@ $$
 
 Thus $A$ is unique-sum-free exactly when every $a\in A$ is the center of
 a nontrivial three-term progression in $A$. Sizes 1 and 2 are immediately
-impossible for odd $p$. The prime 2 is handled directly: $\{0,1\}$ has
-both sums represented twice, so $m(2)=2$.
+impossible for odd $p$. The invalid run then claimed $m(2)=2$ from ordered
+multiplicity two. Under the unordered definition, however, $0+1$ has the
+single representation $\{0,1\}$, so no admissible set exists and $m(2)$ is
+undefined.
 
 ### The affine normal form is exhaustive
 
@@ -157,45 +159,43 @@ is UNSAT, giving $m(5)=4$.
 
 ## 5. Figures, numeric checks, and computer search
 
-The exact table contains all 46 primes at most 200. The numbers of primes
-with minima $2,3,\ldots,10$ are
+The invalidated first run reported a table for all 46 primes at most 200. Its
+claimed distribution of minima $2,3,\ldots,10$ was
 
 $$
 1,1,1,2,3,5,8,15,10.
 $$
 
-The first value 10 occurs at $p=157$; every listed prime from 157 onward has
-value 10. At the smaller exceptional reversal, $p=43$ admits a 7-element
-set even though $p=41$ needs 8.
+Those numbers use the weaker balanced-set predicate and are not values of
+$m(p)$.
 
-The recorded witnesses are structurally simple only at the beginning. The
-sets for $p=2,3$ are the whole group, and those for $p=5,7$ are cyclic
-arithmetic progressions. The saved witnesses at $p=11,19,43$ are non-AP
-but have a nontrivial affine stabilizer. The other 39 saved witnesses are
-non-AP and have trivial affine stabilizer. This describes one solver witness
-per prime, not the complete orbit set of all extremizers.
+The associated shape counts are invalid for the same reason. The current CSV
+records one genuine no-unique-sum witness per odd prime through $p=53$; it
+does not classify all affine orbits of extremizers.
 
-![Recovered m(p) against log p and log-squared p through p=47, matching OEIS A398173](figures/m_p.png)
+![m(p) against log p and log-squared p through p=53, matching OEIS A398173](figures/m_p.png)
 
-The recovered table is the 14 primes through $p=47$ in `compute/green_m_p.csv`,
+The current table is the 15 primes through $p=53$ in `compute/green_m_p.csv`,
 not the invalidated $p\le200$ claim above. On that range the linear fit
-against $\log p$ has $R^2\approx0.978$; the fit against $(\log p)^2$
-has $R^2\approx0.994$. Those numbers are descriptive diagnostics, not
+against $\log p$ has $R^2\approx0.979$; the fit against $(\log p)^2$
+has $R^2\approx0.995$. Those numbers are descriptive diagnostics, not
 evidence for a new asymptotic theorem.
 
 ## 6. Proven vs still open
 
-- **Now established.** For each of the 46 primes $p\le200$, the value in
-  `compute/m_p.csv` has a directly checked witness and every smaller size has
-  been ruled out by two completed exact CP-SAT formulations.
+- **Now established.** The values for the 15 odd primes through $p=53$ in
+  `compute/green_m_p.csv` have directly checked witnesses. A separate
+  progression-driven Rust search excludes all smaller sizes; at $p=53$ its
+  boundary run visited 333,555,078 nodes and returned `UNSAT`.
 - **Not claimed.** We do not classify all extremal sets, extract an infinite
   construction, improve either known asymptotic bound, or infer growth from
-  the two least-squares lines. The overall problem remains open.
+  the two least-squares lines. At $p=59$ we only know a checked 15-set here;
+  the size-at-most-14 search is incomplete. The overall problem remains open.
 - **Certificate scope.** There is no Lean or DRAT proof object. The finite
-  certificate is computational and replayable: exact integer models plus an
-  independent arithmetic and optimality verifier.
+  certificate is computational and replayable: a SAT-produced witness table,
+  direct arithmetic checks, and an independent exact branching algorithm.
 - **Scope check.** The normalization uses both that 2 is invertible and that
-  every nonzero $d$ is a unit. It handles $p=2$ separately and does not
+  every nonzero $d$ is a unit. The computation restricts to odd primes and does not
   transfer unchanged to odd composite moduli, where a midpoint difference can
   be a nonunit and cannot necessarily be scaled to 1.
 
@@ -203,21 +203,70 @@ evidence for a new asymptotic theorem.
 
 The main artifacts are:
 
-- `compute/search_m_p.py` — the affine-normalized exact search;
-- `compute/m_p.csv` — all values and one extremal witness per prime;
-- `compute/m_p_certificates.json` — ordered counts, midpoint supports, and
-  every cardinality result from the primary run;
-- `compute/verify_m_p.py` — direct witness checking and an independently
-  written optimality replay;
+- `compute/search_green_m_p.py` — the cardinality-SAT search;
+- `compute/green_m_p.csv` — all published values through $p=53$ and one
+  extremal witness per prime;
+- `compute/q3/verify_exact.rs` — the independent progression-driven lower
+  search;
+- `compute/verify_green_m_p.py` — direct witness checks, small full
+  enumerations, and the Rust replay driver;
+- `compute/q3/p59_upper.json` and `compute/q3/verify_upper.py` — the checked
+  15-element upper-bound witness at the unresolved next prime;
 - `compute/plot_m_p.py` and `figures/m_p.png` — the finite comparison plot;
+- `compute/run_all.sh` — the full replay.
 
 From the repository root, the decisive replay command is:
 
 ```bash
-python problems/unique-sum/compute/verify_green_m_p.py
+bash problems/unique-sum/compute/run_all.sh
 ```
 
-On the recorded run it reported 46 primes, 3,159 ordered pairs, 235 lower
-instances, and `VALID`. No Lean file was needed because this quest claims a
-finite, independently rerun computation rather than a formal theorem about
-all primes.
+No Lean file is needed because the claim is a finite, independently rerun
+computation rather than a formal theorem about all primes.
+
+## 8. The 2026-08-23 continuation
+
+### What was actually missing
+
+The first missing object was not another witness. It was an independent lower
+check that did not trust statuses saved by the same SAT program. There was also
+a moving literature boundary: OEIS had acquired $m(53)=14$, making $p=59$
+the first unpublished prime.
+
+### False starts and the useful failure
+
+The recovered Python verifier only checked that a JSON log *said* `UNSAT`.
+That is bookkeeping, not independent verification. At $p=59$, four SAT
+engines also failed to decide exact size 14 in their initial runs. Local search
+repeatedly stopped at one unique sum, and an exhaustive radius-four
+neighborhood of 49,168,350 normalized 14-sets contained no solution. The
+near miss was useful as a boundary diagnostic, but neither it nor a timeout
+excludes any cardinality.
+
+### The click and the exact argument
+
+Start with any partial selected set $S$. If a sum $s$ has exactly one active
+unordered representation in $S$, every admissible completion must contain the
+two endpoints of some other unordered representation of $s$. Branch over all
+those pairs, add their missing endpoints, and repeat. A branch either exceeds
+the size limit, reaches a set with no unique sum, or exhausts every forced
+choice. The same affine normalization as before starts the search from
+$\{-1,0,1\}$.
+
+The Rust implementation additionally canonicalizes a partial set using every
+nontrivial three-term progression it already contains. This only identifies
+affine-equivalent states; it does not delete a possible completion. Memoizing
+those canonical masks turns the branching rule into an exact lower search
+whose code shares neither the SAT formula nor a solver library with the
+primary computation.
+
+### Computer search and the remaining wall
+
+At $p=53$, the independent search excluded size at most 13 after 333,555,078
+nodes in 1,428.475 seconds. The saved 14-set passes a direct ordered-sum count,
+so this replays $m(53)=14$, already published in A398173.
+
+At $p=59$, the saved 15-set proves only $m(59)\le15$. A node-limited run at
+size at most 14 stopped `UNKNOWN` after 100,000,000 nodes and 72,327,605
+memoized states in 523.030 seconds. The exact value at 59 therefore remains open in this notebook;
+the incomplete run is not a lower bound.
