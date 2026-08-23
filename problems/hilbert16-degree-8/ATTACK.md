@@ -702,3 +702,151 @@ span sweep sees 4.
 `compute/thick_drive.py` runs it over the census triangulations, those
 carrying a 22-oval certificate first, then by increasing rank (the cost
 is \(46\cdot 2^r\)). Running.
+
+## 2026-08-23 — the wrap: what survived the restart
+
+The machine restarted mid-run. `thick_drive.py`, its `thickc` workers
+and the `dn_sweep.py` deep-nest searchers all died, and the local run
+directories (`thick_out`, `dn_runs`) went with them. Nothing was
+restarted. This section says what is left, and what is left is only
+what is in git.
+
+### The bound is unchanged
+
+`python3 verify_new.py` replays clean: **17/17** certificates verify as
+T-curves outside the published 2,367, each on its own integer-certified
+triangulation, convexity re-checked in exact rational arithmetic and the
+scheme recomputed from scratch. The census union is 2,367 + 17 = 2,384
+with no overlap, checked directly against `census_schemes.txt`.
+
+> The §5.3 lower bound of arXiv:2602.06888 v3 stands at **≥ 2,384**.
+> Nothing in this session moved it.
+
+`check_rokhlin.py` also replays: all 38 published M-schemes satisfy
+Rokhlin's congruence, and every one of our seventeen is consistent with
+the congruences that apply to it.
+
+### The thicken, as far as it got
+
+`certs/thick_summary.json` is the whole harvest — a partial run, and the
+only file the sweep left behind.
+
+| | |
+| --- | --- |
+| census triangulations in scope (rank ≤ 20) | 164 of 184 |
+| swept, complete | **4** |
+| outstanding | 160 |
+| ranks completed | 16 only |
+| sign distributions evaluated | 12,058,624 |
+| distinct schemes per triangulation | 29–147 |
+| schemes outside the census | **1** |
+| of those, already certified | **1** — ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ |
+| genuinely new | **0** |
+
+The evaluation count is exactly \(4\cdot 46\cdot 2^{16}\), so the four
+triangulations really were swept whole. `NEW_candidates` is empty and
+`candidate_cert_file` is null: the sweep produced no candidate for
+`verify_new.py` to check, so there is nothing to certify. The one
+outsider it found is the seventeenth scheme rediscovered from a new
+direction, which is a consistency check and not a bound.
+
+Four of 164 is 2.4% of the intended scope, and the four that finished
+are all rank 16 — chosen first because they carry 22-oval certificates,
+not because they are representative. **Residue.** It says nothing about
+the 160 that did not run.
+
+### The deep-nest search left no data at all
+
+`dn_sweep.py` searched Haas *collection* space rather than sign space,
+aiming at the two algebraically open deep nests
+
+\[\langle 4\sqcup 1\langle 2\sqcup 1\langle 14\rangle\rangle\rangle
+\quad\text{and}\quad
+\langle 14\sqcup 1\langle 2\sqcup 1\langle 4\rangle\rangle\rangle .\]
+
+It wrote its hits to JSONL under `dn_runs`, which is gitignored and is
+gone. No certificate, no summary, no log survived. There is no partial
+result to report and none is claimed: **no data**.
+
+What is committed is the machinery — `deepnest.py` (collection space,
+`fast_refine`, laminar zone forests), `dn_charac.py`, `dn_sweep.py`,
+`hole_balls.py`, `thick_collect.py`. It runs, and the next session can
+start from it rather than from nothing.
+
+### What committed data still had to give
+
+`dn_charac.py` needs no run directory, so it was re-run today against
+`certs/mcert_collections.json`. Two things came out of it.
+
+**The 38 re-verify through the other pipeline.** Every one of the 38
+published 22-oval certificates, evaluated *from its recorded split
+collection* — refine to a unimodular triangulation, build the complex,
+read the scheme — returns 22 components and exactly its claimed scheme.
+That is an independent confirmation of `mcert_collections.json`: the
+earlier check solved \(\eta+\sum\delta_S=\sigma\) in \(\mathbb{F}_2\),
+this one throws the sign vector away and rebuilds the curve from the
+collection. Collection sizes run 3–15.
+
+**Laminar zone depth does not control nesting depth.** The design idea
+behind `deepnest.py` was that the \(Z^+\) zones of a compatible
+collection form a laminar family whose depth bounds the nesting depth,
+so growing the forest should grow the nest. Measured on the 38, the
+bound is far from tight and not even monotone:
+
+| | zone depth | nest depth |
+| --- | --- | --- |
+| ⟨6 ⊔ 1⟨10 ⊔ 1⟨4⟩⟩⟩, \(\lvert S\rvert=4\) | 2 | **3** |
+| ⟨12 ⊔ 2⟨1⟩ ⊔ 1⟨5⟩⟩, \(\lvert S\rvert=15\) | 8 | **2** |
+
+Zone depth spans 1–9 across the 38; nest depth is 2 or 3 and never
+more. A collection with zone depth 2 reaches a triple nest and one with
+zone depth 8 does not. So the heuristic the beam and annealing modes
+were steering by — push the laminar forest deeper — has no purchase on
+the quantity that matters. That is the honest explanation for the
+searcher's lack of traction, and it is a reason to redesign the score
+rather than to buy more compute.
+
+### Where the two open nests actually sit
+
+For a depth-3 M-scheme ⟨\(a\) ⊔ 1⟨\(b\) ⊔ 1⟨\(c\)⟩⟩⟩ of degree 8 the
+oval count forces \(a+b+c=20\), and counting by depth gives
+\(p=a+c+1\), \(n=b+1\). Rokhlin's congruence \(p-n\equiv k^2 \equiv 0
+\pmod 8\) for \(k=4\) then reads \(20-2b\equiv 0\), i.e.
+
+\[b \equiv 2 \pmod 4, \qquad b\in\{2,6,10,14,18\}.\]
+
+The 12 depth-3 schemes among the published 38 have \(b\in\{2,6,10,14\}\)
+and nothing else — so the observed pattern is exactly the congruence,
+with no residual structure on top of it. The missing value \(b=18\) is
+\((p,n)=(3,19)\), which is precisely the class their Theorem 21 proves
+is not T-realizable. The depth-3 row is therefore complete in \(b\):
+every value a T-curve can have, a published T-curve has.
+
+Both open nests have \(b=2\), \((p,n)=(19,3)\), and that row *is*
+T-realizable — the census contains two of its members:
+
+| \(a\) | \(c\) | scheme | status |
+| --- | --- | --- | --- |
+| 4 | 14 | ⟨4 ⊔ 1⟨2 ⊔ 1⟨14⟩⟩⟩ | **algebraically open** |
+| 10 | 8 | ⟨10 ⊔ 1⟨2 ⊔ 1⟨8⟩⟩⟩ | published T-curve |
+| 14 | 4 | ⟨14 ⊔ 1⟨2 ⊔ 1⟨4⟩⟩⟩ | **algebraically open** |
+| 17 | 1 | ⟨17 ⊔ 1⟨2 ⊔ 1⟨1⟩⟩⟩ | published T-curve |
+
+So the target is not a new \((p,n)\) class and not a new nesting depth.
+It is a move *along* an occupied row: same \(b\), different split of the
+remaining 18 ovals between outside and centre. No congruence, no Bezout
+count and nothing in this folder's data separates \(a=4\) or \(a=14\)
+from \(a=10\) or \(a=17\). That is the sharpest form of the target this
+attack reached, and it is a statement about where to look, not a claim
+that either is realizable.
+
+### Status
+
+Hilbert 16(a) in degree 8 is exactly as open as it was on 2026-08-21.
+The dent is the seventeen schemes and the bound ≥ 2,384; both replay.
+The whole-stratum thicken is 4 of 164 and is **residue**; the deep-nest
+search is **no data**. Neither is an obstruction and neither is a lower
+bound.
+
+Replay: `cd problems/hilbert16-degree-8/compute && python3 verify_new.py`
+then `python3 check_rokhlin.py` and `python3 dn_charac.py`.

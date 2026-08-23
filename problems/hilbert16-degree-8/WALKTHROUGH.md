@@ -245,3 +245,54 @@ evaluations, **20,480 of them 22-oval M-curves**.
   new is that the answer per triangulation is now *exhaustive* rather
   than sampled, and the tool to ask the question of any triangulation
   now exists.
+
+## 12. Named false start, third session: laminar depth is not nesting depth
+
+The deep-nest search changed the search space, and that part was right.
+Every earlier pass swept sign vectors on a *fixed* triangulation; Haas'
+theorem (their §3.5) says the scheme of a maximal T-curve depends only
+on the compatible collection \(\mathfrak{S}\) of Harnack splits, not on
+which unimodular refinement you pick. So the triangulation stops being
+an input and becomes a by-product, and the search runs over collections
+— which is the level at which nesting is supposed to be visible.
+
+The structural hook: pairwise non-crossing chords have nested-or-disjoint
+zones, so the \(Z^+\) zones of a compatible collection form a laminar
+family. Its depth bounds the nesting depth of \(C(\mathfrak{S})\). The
+plan followed immediately — to build a triple nest, drive the laminar
+forest deeper — and both `beam` and `anneal` in `dn_sweep.py` scored on
+exactly that.
+
+Then the bound was actually measured, on the 38 published 22-oval
+certificates whose collections are already recorded:
+
+| zone depth | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| nest depth 2 | 6 | 5 | 3 | 7 | 3 | 1 | — | 1 | — |
+| nest depth 3 | — | 1 | 3 | 2 | 3 | — | 1 | 1 | 1 |
+
+Zone depth runs 1 to 9. Nesting depth is 2 or 3 and never more. The two
+rows overlap almost everywhere: ⟨6 ⊔ 1⟨10 ⊔ 1⟨4⟩⟩⟩ gets a triple nest
+out of four splits at zone depth 2, while ⟨12 ⊔ 2⟨1⟩ ⊔ 1⟨5⟩⟩ spends
+fifteen splits reaching zone depth 8 and stays at depth 2. The bound is
+true and it is useless — it is not monotone in any direction the search
+can push, so a score built on it is close to a random walk. That is the
+whole explanation for the searcher's lack of traction; more compute
+would not have fixed it.
+
+What the same afternoon's arithmetic gave instead was a much sharper
+picture of the target. Write a depth-3 M-scheme as ⟨\(a\) ⊔ 1⟨\(b\) ⊔
+1⟨\(c\)⟩⟩⟩. Then \(a+b+c=20\), and counting ovals by depth gives
+\(p=a+c+1\), \(n=b+1\), so Rokhlin's \(p-n\equiv k^2\equiv 0 \pmod 8\)
+at \(k=4\) collapses to \(20-2b\equiv 0\), that is \(b\equiv 2 \pmod 4\).
+The published 38 realize \(b=2,6,10,14\) — every admissible value except
+\(b=18\), and \(b=18\) is \((p,n)=(3,19)\), the class their Theorem 21
+proves is not T-realizable at all. So the depth-3 family is *saturated*:
+the census already has every \(b\) a T-curve can have.
+
+Which means the two open nests, both at \(b=2\), are not asking for a
+new congruence class or a deeper nest. They are asking to move \(a\)
+from 10 or 17 (published) to 4 or 14 (open) inside a row that is already
+occupied. Nothing here decides that — but it is a far better-posed
+question than "find a deeper nest", and it is the one the next attempt
+should score against.
