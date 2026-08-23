@@ -64,3 +64,33 @@ backwards from what a stranger would replay.
    6-chromatic certificate.  Rotated or translated layers are essential; a
    larger one-layer search would only spend compute on an elementary
    obstruction.
+
+### Published-record screen
+
+- De Grey's final arXiv version is v3, not v1: the graph in Section 5 has
+  1,581 vertices and chromatic number five. Parts' v2 Section 6, Table 1 gives
+  the later 509-vertex, 2,442-edge graph. The latter counts were independently
+  rebuilt from the published coordinates with exact field arithmetic.
+  Haugland's 17 August 2026 paper still calls 509 the current order record.
+  None of these is 6-chromatic.
+- The interval remains $5\leq\chi(\mathbb R^2)\leq7$. A 2023 peer-reviewed
+  introduction states both bounds, and the 2025 Sokolov–Voronov paper states
+  the same interval before treating map-type colorings.
+- Shape 3 is killed for polygonal tilings. Sokolov–Voronov Theorem 2 proves
+  that there is no proper polygonal six-coloring of the plane. Parts'
+  Pritikin–Pegg and honeycomb mosaics are therefore not six-color targets. No
+  paper-backed named finite toroidal mosaic benchmark was found. A finite
+  patch with no documented comparison would not move a record.
+- Shape 2 has a concrete exact family: Voronov–Neopryatnaya–Dergachev build
+  64,513-vertex, five-chromatic, Moser-spindle-free graphs from a rigid
+  algebraic generator set. A larger-depth spawn would require exact
+  coordinates, a complete unit-edge rebuild, 5-coloring UNSAT proof, and an
+  explicit 6-coloring; their published five-chromatic cases are only seeds.
+- Shape 5 has a genuinely different seed in Haugland's 21-vertex,
+  seven-fold-symmetric heptagon/heptagram graph. The paper builds a
+  2,131-vertex five-chromatic graph from path-lattice arcs. A retained
+  campaign must output an exact cyclotomic coordinate expansion, complete
+  edge list, 5-coloring proof, and 6-coloring. The paper uses double-precision
+  exhaustive deduplication in one lemma and reports SAT outcomes without a
+  proof artifact, so those steps must be independently exactified before any
+  number is trusted.
