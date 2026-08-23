@@ -163,3 +163,22 @@ q3 is an upper bound for $S(7)$.
 - `compute/q4/template_scan.json` records both finite scans. Each incremental
   minimum was reconstructed and checked by enumerating all 719,952 Schur
   pairs. No dent is claimed outside these named transform families.
+
+## 2026-08-23 — q4 named-symmetry wall
+
+- The 537-step color-twisted translation
+  $c(x+537)=c(x)+1\pmod 7$ makes both residue sums impossible by construction:
+  $c(1074)\ne c(537)$ and $c(1177)\ne c(640)$.
+- An exact SAT encoding used 537 base-color representatives and expanded each
+  assignment deterministically to all 1,697 entries. Of the edge/color
+  cases, 19,607 are forced safe by inconsistent layer requirements; the
+  remaining constraints and one-hot clauses give 5,031,871 clauses.
+- Glucose 4.2 returned UNSAT rather than timing out. The encoding and replay
+  are `compute/q4/search_shift537.py`, `shift537_glucose42.json`, and
+  `run_all.sh`. This is an obstruction only to the named symmetry, not to a
+  general coloring.
+
+Terminal q4 status: exact local walls through 132 mutable vertices, complete
+finite swap/template scans, and an exact UNSAT result for the 537-step
+color-twisted symmetry. No 1,697 coloring was found, so Rowley's published
+$S(7)\geq1696$ remains the bound. Nothing in q4 is an upper bound for $S(7)$.

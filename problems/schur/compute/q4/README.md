@@ -44,3 +44,16 @@ enumeration of all 719,952 Schur pairs. `template_scan.json` preserves the
 transforms and exact violation lists. These two scans are also only walls for
 their named families. The bound remains
 $S(7)\geq1696$.
+
+Finally, `search_shift537.py` tests the named color-twisted translation
+
+$$c(x+537)=c(x)+1\pmod 7.$$
+
+It makes both defects impossible before search:
+$c(1074)=c(537)+1$ and $c(1177)=c(640)+1$. Every coloring in the family is
+determined by 537 base colors. The exact encoding has 5,031,871 clauses;
+19,607 edge/color combinations are automatically safe from the twist.
+Glucose 4.2 returns UNSAT, recorded in `shift537_glucose42.json`. Re-running
+`run_all.sh` rebuilds the encoding and requires the same UNSAT result. This
+rules out only the 537-step color-twisted family and is not an upper bound for
+$S(7)$.

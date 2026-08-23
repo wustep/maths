@@ -1,0 +1,18 @@
+{
+  "family": "c(x + 537) = c(x) + 1 mod 7",
+  "representatives": 537,
+  "expanded_length": 1697,
+  "solver": "glucose42",
+  "seconds_limit": 30.0,
+  "clauses": 5031871,
+  "encoded_edge_colors": 5020057,
+  "forced_safe_edge_colors": 19607,
+  "encoding_seconds": 8.273736,
+  "solver_and_encoding_seconds": 10.520475,
+  "target_separation": {
+    "c(1074)-c(537) mod 7": 1,
+    "c(1177)-c(640) mod 7": 1
+  },
+  "result": "unsat",
+  "warning": "UNSAT or timeout concerns only this named symmetry family."
+}
