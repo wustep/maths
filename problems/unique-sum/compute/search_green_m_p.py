@@ -63,7 +63,10 @@ OEIS_PREFIX: dict[int, int] = {
     41: 13,
     43: 13,
     47: 13,
+    53: 14,
 }
+
+OEIS_BOUND = max(OEIS_PREFIX)
 
 
 def primes_up_to(bound: int) -> list[int]:
@@ -290,7 +293,7 @@ def write_csv(path: Path, rows: list[dict[str, Any]]) -> None:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--bound", type=int, default=47)
+    parser.add_argument("--bound", type=int, default=OEIS_BOUND)
     parser.add_argument("--prime", type=int, help="solve just one odd prime")
     parser.add_argument("--start-cardinality", type=int, default=3)
     parser.add_argument("--stop-cardinality", type=int)
@@ -300,7 +303,9 @@ def main() -> int:
     parser.add_argument(
         "--skip-oeis-gate",
         action="store_true",
-        help="allow a bound above 47 without checking the published prefix in this run",
+        help=(
+            f"allow a bound above {OEIS_BOUND} without first running the published prefix"
+        ),
     )
     args = parser.parse_args()
 
@@ -310,8 +315,10 @@ def main() -> int:
         primes = primes_up_to(args.bound)
     if not primes or any(p < 3 or p % 2 == 0 for p in primes):
         parser.error("all requested moduli must be odd primes at least 3")
-    if args.bound > 47 and args.prime is None and not args.skip_oeis_gate:
-        parser.error("run and save the complete p <= 47 OEIS gate before extending")
+    if args.bound > OEIS_BOUND and args.prime is None and not args.skip_oeis_gate:
+        parser.error(
+            f"run and save the complete p <= {OEIS_BOUND} OEIS gate before extending"
+        )
 
     started = monotonic()
     rows: list[dict[str, Any]] = []
@@ -326,11 +333,19 @@ def main() -> int:
         rows.append(row)
         certificates.append(certificate)
 
-    if args.prime is None and args.bound >= 47:
-        observed = {int(row["p"]): int(row["m"]) for row in rows if int(row["p"]) <= 47}
+    if args.prime is None and args.bound >= OEIS_BOUND:
+        observed = {
+            int(row["p"]): int(row["m"])
+            for row in rows
+            if int(row["p"]) <= OEIS_BOUND
+        }
         if observed != OEIS_PREFIX:
             raise AssertionError(f"A398173 gate failed: expected {OEIS_PREFIX}, got {observed}")
-        print("A398173_GATE_MATCHED: 14/14 terms through p=47", flush=True)
+        print(
+            f"A398173_GATE_MATCHED: {len(OEIS_PREFIX)}/{len(OEIS_PREFIX)} "
+            f"terms through p={OEIS_BOUND}",
+            flush=True,
+        )
 
     write_csv(args.csv, rows)
     payload = {
@@ -341,8 +356,8 @@ def main() -> int:
         "solver": args.solver,
         "elapsed_seconds": round(monotonic() - started, 6),
         "oeis_a398173_gate": (
-            "matched 14/14 through p=47"
-            if args.prime is None and args.bound >= 47
+            f"matched {len(OEIS_PREFIX)}/{len(OEIS_PREFIX)} through p={OEIS_BOUND}"
+            if args.prime is None and args.bound >= OEIS_BOUND
             else "not run in this partial invocation"
         ),
         "records": certificates,

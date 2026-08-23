@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Plot recovered m(p) against log p and (log p)^2 through p=47."""
+"""Plot the A398173 values of m(p) through p=53."""
 
 from __future__ import annotations
 
@@ -58,7 +58,7 @@ def main() -> None:
     ax1.set_title(rf"log-squared fit $R^2={r2_log2:.3f}$")
     ax1.grid(True, alpha=0.25)
 
-    fig.suptitle("Recovered $m(p)$ through $p=47$ (OEIS A398173)", fontsize=11)
+    fig.suptitle("$m(p)$ through $p=53$ (OEIS A398173)", fontsize=11)
     fig.tight_layout()
     OUT.parent.mkdir(parents=True, exist_ok=True)
     fig.savefig(OUT, dpi=160)

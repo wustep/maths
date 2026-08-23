@@ -1,12 +1,12 @@
 # Sets with no unique sum mod p
 
 - Slug: `unique-sum`
-- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 and 2026-08-23). Grok watched only.
 - Status: open
 - Area: Additive combinatorics
-- Sources: Green 100 #27; Bedert, Combinatorica 2024 (arXiv:2303.15134); Cao–Yuan, arXiv:2608.06728 (Aug 2026); OEIS A398173
+- Sources: Green 100 #27; Bedert, Combinatorica 2024 (arXiv:2303.15134v2); Cao–Yuan, arXiv:2608.06728v1 (Aug 2026); OEIS A398173
 - Started: 2026-08-16
-- Tonight: finite-cex, cost S — exact $m(p)$ for all primes $p\le 200$
+- Finite campaign: exact $m(p)$ for all primes $p\le 200$; table updated through $p=53$
 
 ## In general
 
@@ -31,12 +31,15 @@ $$
 and checked the headline inequalities in Lean. The gap between
 $\log p\log\log p$ and $(\log p)^2$ is still the open problem.
 
-Tonight is not that gap. Tonight is the finite table. OEIS A398173 records
-$m(p)$ only through the 14th odd prime ($p=47$):
-$3,4,5,7,7,8,9,10,11,11,12,13,13,13$. Extending the table to every prime
-$p\le 200$, plotting it against $\log p$ and $(\log p)^2$, and writing
-down the shape of the extremal sets is leftover work the next quest can use.
-A new bound here is a checked table plus a figure, not a new asymptotic.
+The finite campaign is separate from that asymptotic gap. OEIS A398173 now
+records $m(p)$ through the 15th odd prime ($p=53$):
+$3,4,5,7,7,8,9,10,11,11,12,13,13,13,14$. The witnesses in `compute/` match
+all 15 terms, and a second, progression-driven implementation independently
+excludes every smaller size through $p=53$. At the next prime, a checked 15-element set
+shows $m(59)\le15$, but the size-at-most-14 search is incomplete. Extending
+the exact table to every prime $p\le 200$, plotting it against $\log p$ and
+$(\log p)^2$, and describing the extremal sets remains useful finite work.
+A new bound here is a checked table extension, not a new asymptotic.
 
 ## Precise statement
 
@@ -57,7 +60,7 @@ The minimum is defined: $A=\mathbb{Z}/p\mathbb{Z}$ works. For $p=2$ the
 only two-element set is $\{0,1\}$, and $0+1$ has ordered multiplicity
 $2$, so $m(2)$ is undefined; restrict to odd primes.
 
-**Tonight's finite subquestion.** Compute the exact integer $m(p)$ for
+**Finite subquestion.** Compute the exact integer $m(p)$ for
 every prime $3\le p\le 200$. For each such $p$, exhibit at least one
 extremal set. Record, for the extremal examples, whether they look like
 intervals, like Nedev/Bedert balanced sets, like Cao–Yuan symmetric
@@ -67,7 +70,7 @@ and against $(\log p)^2$.
 
 ## What a solution looks like
 
-- A CSV `compute/m_p.csv` with columns `p,m,witness` (witness a sorted
+- A CSV `compute/green_m_p.csv` with columns including `p,m,witness` (witness a sorted
   list of residues), independently re-runnable.
 - A check that each witness has no unique sum, and that no smaller set
   exists (exhaustive for small $p$; SAT / Z3 / cardinality SAT for the
@@ -84,12 +87,12 @@ and against $(\log p)^2$.
 - [Ben Green, *100 Open Problems*, Problem 27](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf)
 - [Bedert, *On unique sums in Abelian groups*, arXiv:2303.15134](https://arxiv.org/abs/2303.15134) ([Combinatorica 44 (2024)](https://doi.org/10.1007/s00493-023-00069-w))
 - [Cao–Yuan, *A second-logarithm lower bound for sets with no unique sums*, arXiv:2608.06728](https://arxiv.org/abs/2608.06728)
-- [OEIS A398173](https://oeis.org/A398173) (14 terms, through $p=47$)
+- [OEIS A398173](https://oeis.org/A398173) (15 terms, through $p=53$)
 - Nedev, *An algorithm for finding a nearly minimal balanced set in $\mathbb{F}_p$*, Math. Comp. 78 (2009)
 
-## Quests so far
+## Computations
 
 
 ## Figures
 
-Recovered table through $p=47$: [`figures/m_p.png`](figures/m_p.png).
+Table through $p=53$: [`figures/m_p.png`](figures/m_p.png).

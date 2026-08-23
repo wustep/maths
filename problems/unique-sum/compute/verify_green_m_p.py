@@ -1,11 +1,11 @@
 #!/usr/bin/env python3
-"""Independent arithmetic verification of the Green m(p) table.
+"""Independent verification of the Green m(p) table.
 
 This verifier intentionally imports nothing from ``search_green_m_p.py``.
 It recomputes ordered representation counts with plain Python loops, rematches
 the published OEIS A398173 prefix, fully enumerates all subsets for p <= 13,
-and checks that the certificate log contains an UNSAT cardinality-SAT result
-for every size below each claimed minimum.
+and compiles a Rust progression-branching search to exclude every smaller size.
+The Rust algorithm does not read or rebuild the cardinality-SAT encoding.
 """
 
 from __future__ import annotations
@@ -16,14 +16,15 @@ from itertools import combinations
 import json
 import math
 from pathlib import Path
+import subprocess
+import tempfile
 from time import monotonic
-from typing import Any
 
 
 HERE = Path(__file__).resolve().parent
 DEFAULT_CSV = HERE / "green_m_p.csv"
-DEFAULT_CERTIFICATES = HERE / "green_m_p_certificates.json"
 DEFAULT_REPORT = HERE / "green_m_p_verification.txt"
+DEFAULT_RUST_SOURCE = HERE / "q3" / "verify_exact.rs"
 
 PUBLISHED_A398173 = {
     3: 3,
@@ -40,7 +41,9 @@ PUBLISHED_A398173 = {
     41: 13,
     43: 13,
     47: 13,
+    53: 14,
 }
+PUBLISHED_BOUND = max(PUBLISHED_A398173)
 
 
 def primes_up_to(bound: int) -> list[int]:
@@ -61,6 +64,36 @@ def ordered_counts(p: int, values: list[int] | tuple[int, ...]) -> list[int]:
 
 def independently_admissible(p: int, values: list[int] | tuple[int, ...]) -> bool:
     return all(count not in (1, 2) for count in ordered_counts(p, values))
+
+
+def cyclic_arithmetic_progression(p: int, values: list[int]) -> bool:
+    target = set(values)
+    return any(
+        {(start + index * step) % p for index in range(len(values))} == target
+        for start in range(p)
+        for step in range(1, p)
+    )
+
+
+def affine_stabilizer_size(p: int, values: list[int]) -> int:
+    """Brute-force every invertible affine map, unlike the producer."""
+
+    target = set(values)
+    return sum(
+        {(multiplier * value + translation) % p for value in values} == target
+        for multiplier in range(1, p)
+        for translation in range(p)
+    )
+
+
+def shape_label(p: int, values: list[int], stabilizer_size: int) -> str:
+    if len(values) == p:
+        return "whole group"
+    if cyclic_arithmetic_progression(p, values):
+        return "cyclic arithmetic progression"
+    if stabilizer_size > 1:
+        return "non-AP, affine-symmetric"
+    return "non-AP, trivial affine stabilizer"
 
 
 def exhaustive_minimum(p: int) -> tuple[int, list[int]]:
@@ -91,42 +124,50 @@ def read_rows(path: Path) -> list[dict[str, str]]:
     return rows
 
 
-def check_certificate_log(
-    payload: dict[str, Any],
+def run_progression_branch_checks(
+    rust_source: Path,
     rows_by_prime: dict[int, dict[str, str]],
-) -> int:
-    if payload.get("predicate") != "all ordered representation counts avoid 1 and 2":
-        raise AssertionError("certificate predicate does not name the Green condition")
-    records = payload.get("records")
-    if not isinstance(records, list):
-        raise AssertionError("certificate records are missing")
-    records_by_prime = {int(record["p"]): record for record in records}
-    if set(records_by_prime) != set(rows_by_prime):
-        raise AssertionError("certificate and CSV prime sets differ")
+) -> list[str]:
+    """Compile and run the independent Rust lower-bound search."""
 
-    unsat_checks = 0
-    for p, row in rows_by_prime.items():
-        m_value = int(row["m"])
-        record = records_by_prime[p]
-        if int(record["m"]) != m_value or record["witness"] != json.loads(row["witness"]):
-            raise AssertionError(f"certificate/CSV mismatch at p={p}")
-        checks = {int(check["cardinality"]): check for check in record["cardinality_checks"]}
-        for cardinality in range(3, m_value):
-            check = checks.get(cardinality)
-            if check is None or check.get("status") != "UNSAT":
+    if not rust_source.is_file():
+        raise AssertionError(f"Rust verifier source is missing: {rust_source}")
+    results: list[str] = []
+    with tempfile.TemporaryDirectory(prefix="unique-sum-verify-") as temp_dir:
+        executable = Path(temp_dir) / "verify_exact"
+        subprocess.run(
+            ["rustc", "-D", "warnings", "-O", str(rust_source), "-o", str(executable)],
+            check=True,
+        )
+        for p, row in rows_by_prime.items():
+            lower_limit = int(row["m"]) - 1
+            completed = subprocess.run(
+                [str(executable), str(p), str(lower_limit)],
+                check=True,
+                capture_output=True,
+                text=True,
+            )
+            summary = completed.stdout.strip().splitlines()
+            if len(summary) != 1 or "status=UNSAT" not in summary[0]:
                 raise AssertionError(
-                    f"missing exhaustive UNSAT result for p={p}, k={cardinality}"
+                    f"independent lower check failed at p={p}: {completed.stdout!r}"
                 )
-            unsat_checks += 1
-    return unsat_checks
+            print(summary[0], flush=True)
+            results.append(f"EXACT_LOWER_OK {summary[0]}")
+    return results
 
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--csv", type=Path, default=DEFAULT_CSV)
-    parser.add_argument("--certificates", type=Path, default=DEFAULT_CERTIFICATES)
     parser.add_argument("--report", type=Path, default=DEFAULT_REPORT)
+    parser.add_argument("--rust-source", type=Path, default=DEFAULT_RUST_SOURCE)
     parser.add_argument("--bruteforce-through", type=int, default=13)
+    parser.add_argument(
+        "--witnesses-only",
+        action="store_true",
+        help="skip the long independent lower-bound replay",
+    )
     args = parser.parse_args()
 
     started = monotonic()
@@ -160,17 +201,27 @@ def main() -> int:
             raise AssertionError(f"sumset-size annotation mismatch at p={p}")
         if max(counts) != int(row["max_ordered_multiplicity"]):
             raise AssertionError(f"maximum-multiplicity annotation mismatch at p={p}")
+        stabilizer_size = affine_stabilizer_size(p, values)
+        if stabilizer_size != int(row["affine_stabilizer"]):
+            raise AssertionError(f"affine-stabilizer annotation mismatch at p={p}")
+        if shape_label(p, values, stabilizer_size) != row["shape"]:
+            raise AssertionError(f"shape annotation mismatch at p={p}")
         ordered_pairs_checked += m_value * m_value
         lines.append(f"WITNESS_OK p={p} m={m_value}")
 
-    if largest_prime < 47:
-        raise AssertionError("table ends before the required A398173 gate at p=47")
+    if largest_prime < PUBLISHED_BOUND:
+        raise AssertionError(
+            f"table ends before the required A398173 gate at p={PUBLISHED_BOUND}"
+        )
     observed_prefix = {p: int(rows_by_prime[p]["m"]) for p in PUBLISHED_A398173}
     if observed_prefix != PUBLISHED_A398173:
         raise AssertionError(
             f"A398173 mismatch: expected {PUBLISHED_A398173}, got {observed_prefix}"
         )
-    lines.append("A398173_MATCH 14/14 terms through p=47")
+    lines.append(
+        f"A398173_MATCH {len(PUBLISHED_A398173)}/{len(PUBLISHED_A398173)} "
+        f"terms through p={PUBLISHED_BOUND}"
+    )
 
     brute_force_primes = [p for p in expected_primes if p <= args.bruteforce_through]
     for p in brute_force_primes:
@@ -182,9 +233,12 @@ def main() -> int:
             )
         lines.append(f"FULL_ENUMERATION_OK p={p} m={exact} example={example}")
 
-    with args.certificates.open(encoding="utf-8") as handle:
-        certificate_payload = json.load(handle)
-    unsat_checks = check_certificate_log(certificate_payload, rows_by_prime)
+    exact_lines = (
+        []
+        if args.witnesses_only
+        else run_progression_branch_checks(args.rust_source, rows_by_prime)
+    )
+    lines.extend(exact_lines)
     lines.extend(
         [
             "VALID",
@@ -192,8 +246,9 @@ def main() -> int:
             f"primes={len(rows)} largest_prime={largest_prime}",
             f"ordered_pairs_checked={ordered_pairs_checked}",
             f"full_enumerations={len(brute_force_primes)}",
-            f"cardinality_sat_unsat_checks={unsat_checks}",
-            "oeis_a398173=matched_14_of_14",
+            f"progression_branch_lower_checks={len(exact_lines)}",
+            f"oeis_a398173=matched_{len(PUBLISHED_A398173)}_of_"
+            f"{len(PUBLISHED_A398173)}",
             f"elapsed_seconds={monotonic() - started:.6f}",
         ]
     )

@@ -6,9 +6,64 @@
 //! completion must contain the endpoints of some other representation of
 //! that sum, so branching over all such pairs is exhaustive.
 
-use std::collections::HashSet;
 use std::env;
 use std::time::Instant;
+
+struct MaskSet {
+    slots: Vec<u64>,
+    len: usize,
+}
+
+impl MaskSet {
+    fn new() -> Self {
+        Self {
+            slots: vec![0; 1024],
+            len: 0,
+        }
+    }
+
+    fn hash(mut value: u64) -> usize {
+        value ^= value >> 30;
+        value = value.wrapping_mul(0xbf58_476d_1ce4_e5b9);
+        value ^= value >> 27;
+        value = value.wrapping_mul(0x94d0_49bb_1331_11eb);
+        (value ^ (value >> 31)) as usize
+    }
+
+    fn insert_without_growing(&mut self, value: u64) -> bool {
+        debug_assert_ne!(value, 0);
+        let mut index = Self::hash(value) & (self.slots.len() - 1);
+        loop {
+            match self.slots[index] {
+                0 => {
+                    self.slots[index] = value;
+                    self.len += 1;
+                    return true;
+                }
+                present if present == value => return false,
+                _ => index = (index + 1) & (self.slots.len() - 1),
+            }
+        }
+    }
+
+    fn insert(&mut self, value: u64) -> bool {
+        if (self.len + 1) * 10 >= self.slots.len() * 7 {
+            let new_capacity = self.slots.len() * 2;
+            let old_slots = std::mem::replace(&mut self.slots, vec![0; new_capacity]);
+            self.len = 0;
+            for old in old_slots {
+                if old != 0 {
+                    self.insert_without_growing(old);
+                }
+            }
+        }
+        self.insert_without_growing(value)
+    }
+
+    fn len(&self) -> usize {
+        self.len
+    }
+}
 
 #[derive(Default)]
 struct Stats {
@@ -22,12 +77,14 @@ struct Search {
     limit: u32,
     pairs_by_sum: Vec<Vec<u64>>,
     inverses: Vec<u32>,
-    memo: HashSet<u64>,
+    memo: MaskSet,
     stats: Stats,
+    node_limit: Option<u64>,
+    stopped_early: bool,
 }
 
 impl Search {
-    fn new(p: u32, limit: u32) -> Self {
+    fn new(p: u32, limit: u32, node_limit: Option<u64>) -> Self {
         assert!(p >= 3 && p < 64 && p % 2 == 1);
         let mut pairs_by_sum = vec![Vec::new(); p as usize];
         for a in 0..p {
@@ -49,8 +106,10 @@ impl Search {
             limit,
             pairs_by_sum,
             inverses,
-            memo: HashSet::new(),
+            memo: MaskSet::new(),
             stats: Stats::default(),
+            node_limit,
+            stopped_early: false,
         }
     }
 
@@ -91,6 +150,16 @@ impl Search {
     }
 
     fn dfs(&mut self, raw_mask: u64) -> Option<u64> {
+        if self.stopped_early {
+            return None;
+        }
+        if self
+            .node_limit
+            .is_some_and(|limit| self.stats.nodes >= limit)
+        {
+            self.stopped_early = true;
+            return None;
+        }
         self.stats.nodes += 1;
         if raw_mask.count_ones() > self.limit {
             return None;
@@ -141,6 +210,9 @@ impl Search {
             if let Some(witness) = self.dfs(next) {
                 return Some(witness);
             }
+            if self.stopped_early {
+                return None;
+            }
         }
         None
     }
@@ -160,18 +232,33 @@ fn values(mask: u64, p: u32) -> Vec<u32> {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if args.len() != 3 {
-        eprintln!("usage: {} PRIME LIMIT", args[0]);
+    if !(3..=4).contains(&args.len()) {
+        eprintln!("usage: {} PRIME LIMIT [NODE_LIMIT]", args[0]);
         std::process::exit(2);
     }
     let p: u32 = args[1].parse().expect("PRIME must be an integer");
     let limit: u32 = args[2].parse().expect("LIMIT must be an integer");
+    let node_limit: Option<u64> = args.get(3).map(|raw| {
+        raw.parse()
+            .expect("NODE_LIMIT must be a positive integer")
+    });
+    if node_limit == Some(0) {
+        eprintln!("NODE_LIMIT must be positive");
+        std::process::exit(2);
+    }
     let started = Instant::now();
-    let mut search = Search::new(p, limit);
+    let mut search = Search::new(p, limit, node_limit);
     let result = search.run();
+    let status = if result.is_some() {
+        "SAT"
+    } else if search.stopped_early {
+        "UNKNOWN"
+    } else {
+        "UNSAT"
+    };
     println!(
         "p={p} limit={limit} status={} nodes={} memo_hits={} memo={} seconds={:.6}",
-        if result.is_some() { "SAT" } else { "UNSAT" },
+        status,
         search.stats.nodes,
         search.stats.memo_hits,
         search.stats.max_memo,
@@ -179,5 +266,8 @@ fn main() {
     );
     if let Some(mask) = result {
         println!("witness={:?}", values(mask, p));
+    }
+    if search.stopped_early {
+        std::process::exit(3);
     }
 }
