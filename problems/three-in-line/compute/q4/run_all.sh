@@ -17,6 +17,7 @@ python3 "$compute/q3/decode_database.py" --n 73 \
     "$here/n73-rct4.code" "$scratch/n73.txt"
 python3 "$compute/verify_n71.py" --n 73 "$scratch/n73.txt"
 python3 "$here/prepare_n73_phase.py"
+python3 "$here/search_small_repair.py"
 python3 "$compute/audit_dimacs.py" "$here/n75-rct4.cnf"
 
 if [[ -f "$here/n75-150.txt" ]]; then

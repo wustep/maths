@@ -7,7 +7,9 @@ anti-diagonal empty and selects one diagonal two-orbit and 37 four-orbits.
 The audited formula has 996,434 variables and 2,398,895 clauses. The
 `n73-best-embedding.txt` phase seed is a checked 146-point rct4 set translated
 into the interior of the 75-grid; it has no bad lines but cannot be completed
-without moving points.
+without moving points. `search_small_repair.py` exactly exhausts candidates
+that change at most two of its selected orbits while preserving every row and
+column count.
 
 Run metadata and the structural DIMACS audit are recorded here. Replay the
 source witness, phase audit, formula audit, and any certificate with:

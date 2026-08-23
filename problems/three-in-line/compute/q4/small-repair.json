@@ -1,0 +1,9 @@
+{
+  "geometry_candidates_checked": 23680,
+  "incidence_feasible_one_orbit_repairs": 144,
+  "incidence_feasible_two_orbit_repairs": 23536,
+  "n": 75,
+  "seed_orbits": 37,
+  "status": "EXHAUSTED_NO_WITNESS",
+  "symmetry": "canonical-rct4"
+}

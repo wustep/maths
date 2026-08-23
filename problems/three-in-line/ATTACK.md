@@ -131,3 +131,19 @@ verifiers. Working backwards from that object gives this order of attack:
 7. **Honest rot4 — killed by orbit cardinality.** On an odd grid a
    quarter-turn-invariant set has size $0$ or $1$ modulo 4 depending on the
    centre, never $150\equiv2\pmod4$. No solver run is warranted.
+
+## 2026-08-23 — q4 partial result: smallest n=73 repairs exhausted
+
+- Heule's database-native rct4 code at $n=73$ decoded to 146 points and passed
+  all 508,080 exact determinant checks. Of the 37 symmetry-preserving ways to
+  insert two empty coordinates, translation into rows and columns 1 through
+  73 is uniquely cheapest: it retains 37 complete rct4 orbits and has no
+  collinear triple.
+- A direct addition is impossible because two points must be added to each
+  empty boundary row and column, forcing the four corners, two of which lie on
+  the fixed-empty anti-diagonal.
+- `compute/q4/search_small_repair.py` then exhausted every row-and-column
+  feasible repair that changes one or two selected seed orbits. It rejected
+  all 144 one-orbit and all 23,536 two-orbit candidates by exact normalized
+  lines. This is a finite residue around one seed, not a bound on rct4 and not
+  evidence that $D(75)<150$.
