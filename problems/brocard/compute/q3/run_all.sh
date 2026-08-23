@@ -10,3 +10,8 @@ gcc -O3 -std=c11 -Wall -Wextra -Werror verify_offset.c -o "$tmp_dir/verify_offse
 "$tmp_dir/verify_offset" 10000 > c-sample.txt
 diff -u python-sample.txt c-sample.txt
 echo "independent Python/C outputs agree"
+
+(
+  cd ../../lean
+  lake build WilsonOffset
+)

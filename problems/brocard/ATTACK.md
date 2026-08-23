@@ -56,3 +56,39 @@ search.
    $(p-1)!$ into $k$ blocks.  A certificate must reduce the block product to a
    polynomial condition on $n!$ and show it rootless in a prime congruence
    class.  Without that symbolic reduction, a numerical scan is only a lead.
+
+## 2026-08-23 — q3 result
+
+**Dent.**  The Wilson-offset shape gives four infinite excluded families:
+
+$$
+\begin{aligned}
+n&=p-2, &p&\equiv3,5\pmod 8,\\
+n&=p-3, &p&\equiv3,5\pmod 8, p>3,
+\end{aligned}
+$$
+
+where $p$ is prime.  Dirichlet's theorem makes each prime class infinite.
+The conclusion is conditional on $n+2$ or $n+3$ being prime; it does **not**
+exclude every integer in any of the four resulting index classes modulo 8.
+
+For $p=n+2$, Wilson's theorem gives $n!\equiv1\pmod p$.  A Brown equation
+would therefore give $m^2\equiv2\pmod p$, impossible because 2 is a quadratic
+nonresidue for primes congruent to 3 or 5 modulo 8.
+
+For $p=n+3$, Wilson instead gives $2n!\equiv-1\pmod p$, hence
+$n!+1\equiv1/2\pmod p$.  If $1/2$ were a square, multiplying its square root
+by 2 would make 2 a square, the same contradiction.
+
+The machine-readable certificate is `compute/q3/offset-certificate.json`.
+`compute/q3/run_all.sh` recomputes the four rows independently in Python and C,
+diffs their reports, and builds the Lean theorem.  Through $p\le10000$ it
+checks 1,249 row instances exactly.  This finite sample is a replay check; the
+proof and infinitude do not depend on the cutoff.
+
+`lean/WilsonOffset.lean` formalizes the complete $p=n+2$ obstruction under
+Lean 4.32.0 and contains no `sorry`.  Its default `lake build` succeeds.  A
+broader attempted rebuild found that the inherited `FactorialPrimePower.lean`
+does not elaborate at this pin (renamed or removed APIs including
+`odd_pow_iff` and `pow_dvd_of_dvd_mul_left`); that pre-existing file was not
+used in the dent.

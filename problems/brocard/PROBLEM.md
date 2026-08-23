@@ -2,7 +2,7 @@
 
 - Slug: `brocard`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: open
+- Status: open; dent — four infinite prime-offset families are excluded below
 - Area: Diophantine equations
 - Sources: DeepMind formal-conjectures #1417; Berndt–Galway 2000; OEIS A085692; Erdős #398
 - Started: 2026-08-16
@@ -45,7 +45,7 @@ and is not required.
 A *Brown pair* is a pair of integers $(n,m)$ with $n\ge 1$ and
 $n!+1=m^2$. The known pairs are $(4,5)$, $(5,11)$, $(7,71)$.
 
-**Tonight's finite subquestion.**
+**Tonight's finite targets.**
 
 1. *Modular hunt.* Search for congruential obstructions to
    $n!+1=m^2$ that are not the three textbook facts
@@ -59,7 +59,7 @@ $n!+1=m^2$. The known pairs are $(4,5)$, $(5,11)$, $(7,71)$.
    quadratic-residue sieve and run it at least through $n\le 10^4$
    exactly, matching the three known solutions and no others.
    If time remains, push the same sieve as far as it goes in this
-   quest and record the bound. Do not quote $10^9$ or $10^{15}$
+   run and record the bound. Do not quote $10^9$ or $10^{15}$
    as *your* bound unless you actually ran it.
 3. *One Lean lemma.* Formalize **one** sharp modular statement
    already believed true, with the informal skeleton written first.
@@ -94,7 +94,28 @@ $n!+1=m^2$. The known pairs are $(4,5)$, $(5,11)$, $(7,71)$.
 - [OEIS A085692](https://oeis.org/A085692) (the squares $25,121,5041$); [A146968](https://oeis.org/A146968) (the $n$'s $4,5,7$)
 - [Wikipedia, Brocard's problem](https://en.wikipedia.org/wiki/Brocard%27s_problem)
 
-## Quests so far
+## Verified prime-offset families
+
+Let $p$ be prime.  There is no Brown index of either form
+
+$$
+n=p-2\quad\text{or}\quad n=p-3
+$$
+
+when $p\equiv3$ or $5\pmod 8$; in the second form take $p>3$.  Each of the
+four prime congruence classes supplies infinitely many excluded indices by
+Dirichlet's theorem.  The primality condition is essential: this does not
+exclude whole residue classes of integers modulo 8, and it does not claim that
+the three known solutions are the only ones.
+
+The proof is Wilson's theorem plus the supplementary law for the quadratic
+character of 2.  Replay the independent Python/C checks and the Lean theorem:
+
+```text
+problems/brocard/compute/q3/run_all.sh
+```
+
+## Runs so far
 
 
 ## Figures
