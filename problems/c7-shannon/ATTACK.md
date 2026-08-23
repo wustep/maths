@@ -1,5 +1,9 @@
 # Attack log — C7 fifth power
 
+## 2026-08-23 — replay
+
+- Checkout `grok/c7-shannon`. Replayed `python3 compute/verify_set.py compute/R367.txt --min-size 367` → `size=367 unique=367`, `OK: independent in C7^{box5}`. Same verifier on `R_reconstructed.txt` (367) and `R361_sprime.txt` (361) also OK. This is the Polak–Schrijver record, not a dent.
+
 ## 2026-08-16
 
 - Folder created. Grok 4.6 cloud agent launched.
