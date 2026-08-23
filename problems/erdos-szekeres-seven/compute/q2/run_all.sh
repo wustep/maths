@@ -2,6 +2,7 @@
 set -euo pipefail
 
 here="$(cd "$(dirname "$0")" && pwd)"
+python3 "$here/audit_geometry.py"
 python3 "$here/audit_encoding.py"
 python3 "$here/encode.py" --n 33 --k 7 --count-only
 

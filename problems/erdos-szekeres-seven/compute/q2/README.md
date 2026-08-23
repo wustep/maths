@@ -10,7 +10,9 @@ without a convex 7-set would prove `ES(7) = 33`.
 four-set. For a realizable four-set, odd parity means that one point is inside
 the triangle of the other three. Every seven-set is required to contain such
 a non-convex four-set. The full instance has 46,376 variables and 5,254,128
-clauses; 4,272,048 of those are the 35-literal seven-set clauses.
+clauses; 4,272,048 of those are the 35-literal seven-set clauses. The two
+audit scripts exhaust the Boolean clauses and test their geometric meaning on
+2,222 exact, x-ordered coordinate quadruples.
 
 The intended finished object is the generated DIMACS file, an UNSAT DRAT
 proof, and successful replay by `drat-trim`. A SAT assignment is only a
@@ -25,4 +27,5 @@ python3 encode.py --n 33 --k 7 --out es_33_7_signotope.cnf
 
 The small regression in `run_all.sh` checks the clause generator and the known
 `ES(5)` boundary when `kissat` is available in `PATH` or named by the
-`KISSAT` environment variable.
+`KISSAT` environment variable. `RESULT.md` records the checked toy proof and
+the measured walls at the next and full sizes.
