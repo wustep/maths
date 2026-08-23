@@ -1,5 +1,10 @@
 # How the n=71 rct4 search came together
 
+> **Update, 23 August 2026.** The search history below is retained because it
+> explains the exact rct4 model and its bounded failures. After that search,
+> Heule found an $n=71$ certificate on 17 August. Section 7 records its
+> recovery from the current database and independent replay.
+
 ## 0. What was actually missing
 
 The missing object was not another statement of the no-three-in-line problem.
@@ -129,10 +134,10 @@ process imposed a hard 120-second wall limit on each SAT run. Every run ended
 
 ![The exact rct4 reduction and bounded UNKNOWN runs](figures/n71-rct4-residue.png)
 
-The complete artifacts are the CP-SAT model
-[`compute/n71-rct4.pbtxt`](compute/n71-rct4.pbtxt), the DIMACS instance
-[`compute/n71-rct4.cnf`](compute/n71-rct4.cnf), and their generators in
-[`compute/`](compute/). The solver outcomes were:
+The generators remain in [`compute/`](compute/), but the generated CP-SAT and
+DIMACS files were not preserved in the current checkout. The old hashes and
+bounded solver outcomes therefore document the run but do not by themselves
+form a replay from this checkout:
 
 | engine | diagonal pair | measured solve time | result |
 | --- | ---: | ---: | --- |
@@ -147,23 +152,54 @@ The unrestricted CNF has SHA-256
 the exported CP-SAT model has SHA-256
 `e298d549ff035678b0aa6847d3b7b6672f873f2f90490517da95d19567223bda`.
 The checker
-[`compute/verify_n71.py`](compute/verify_n71.py) is ready to test all
-$\binom{142}{3}=467{,}180$ determinants if a later solver produces the plain
-coordinate file. No such file exists from this quest.
+[`compute/verify_n71.py`](compute/verify_n71.py) was ready to test all
+$\binom{142}{3}=467{,}180$ determinants if a later solver produced the plain
+coordinate file. No such file existed at the end of that campaign.
 
 ## 6. Proven, still open, and the scope check
 
-What is established is a reproducible canonical-rct4 encoding and a precise
-timeout, incomplete. The line enumeration is exhaustive, the symmetry quotient
-matches the published odd-order convention, the DIMACS structure re-parses,
-and the independent checker works on a known smaller case.
+At the end of the 16 August run, what had been established was the
+canonical-rct4 generator and a precise timeout, incomplete. The line
+enumeration was exhaustive, the symmetry quotient matched the published
+odd-order convention, and the independent checker worked on a known smaller
+case. The generated DIMACS structure had been audited during that run, but the
+file itself did not survive in this checkout.
 
-What is not established is the existence of 142 no-three-in-line points at
-$n=71$. We did not find a witness. Nor did we establish nonexistence: CP-SAT,
-Kissat, and CaDiCaL all timed out, so even the restricted canonical-rct4
-instance remains undecided. The three fixed diagonal runs are not UNSAT
-certificates for their slices, much less for the other 32 diagonal positions.
-An rct4 UNSAT result would still not prove $D(71)<142$, because an asymmetric
-configuration could exist. Nothing in this computation addresses the
-asymptotic Guy–Kelly question. The scope of the result is exactly the saved
-finite instance and its bounded `UNKNOWN` runs.
+At that point, the existence of 142 no-three-in-line points at $n=71$ had not
+been established. We had not found a witness or established nonexistence:
+CP-SAT, Kissat, and CaDiCaL all timed out, so even the restricted
+canonical-rct4 instance was undecided. The three fixed diagonal runs were not
+UNSAT certificates for their slices, much less for the other 32 diagonal
+positions.
+An rct4 UNSAT result would still not have proved $D(71)<142$, because an
+asymmetric configuration could exist. Nothing in this computation addressed
+the asymptotic Guy–Kelly question. That was the exact status on 16 August; it
+was superseded by the certificate replay below.
+
+## 7. The certificate that arrived after the search
+
+The missing object on 23 August was no longer a SAT model. Flammenkamp's
+current dated notes said that Marijn Heule had found the first $n=71$ solution
+on 17 August, in the same rct4 class. The database lookup for symmetry `c`,
+size 71, index 1 returned one compact code. Its first character records rct4;
+the remaining 142 characters record two selected columns in each of 71 rows.
+
+We pinned that untouched line in `compute/q3/n71-rct4.code` and wrote a small
+decoder directly from the database's published 90-character alphabet. The
+decoder checks the code length, column range, and distinctness within every
+row, then writes the ordinary coordinate file `compute/n71-142.txt`. This is
+only a format check, not a geometric one.
+
+The geometry was checked twice. The already committed Python verifier tested
+all 467,180 determinants of point triples. A new Rust verifier used a different
+algorithm: it reduced the integer equation of the line through each of the
+10,011 point pairs to a primitive signed normal form and rejected any repeated
+line. Both implementations also found 142 distinct in-grid points and exactly
+two points in every row and column. The one-command replay is
+`compute/q3/run_all.sh`; the coordinate file has SHA-256
+`690b7d94092a728dd0e6a2b3907ed0736e05d88c8c5a120e9735d8f9dca7b176`.
+
+Thus $D(71)=142$: the certificate supplies the lower bound and rows supply the
+upper bound. This is an independent replay of Heule's published database
+record, not a new bound from this campaign. The dated database also records
+$n=73$, making $n=75$ the first current hole.
