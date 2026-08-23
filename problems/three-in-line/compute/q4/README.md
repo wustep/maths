@@ -23,7 +23,7 @@ is `UNKNOWN` residue, not a bound on $D(75)$.
 
 As an encoder control, forcing all 36 orbit variables from the checked n=71
 witness returned the identical coordinate file and SHA-256. At n=75,
-CaDiCaL 1.9.5 reported UNSAT when at least 30 of the 37 phase-seed orbits were
-required, after 97.97 seconds and 79,660 conflicts. This subsumes the recorded
-minimums 31 through 34. No proof trace was emitted, so these JSON files are
-precise solver residue rather than certified exclusions.
+CaDiCaL 1.9.5 reported UNSAT when at least 29 of the 37 phase-seed orbits were
+required, after 206.69 seconds and 205,584 conflicts. This subsumes the
+recorded minimums 30 through 34. No proof trace was emitted, so these JSON
+files are precise solver residue rather than certified exclusions.

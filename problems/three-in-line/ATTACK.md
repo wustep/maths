@@ -153,10 +153,10 @@ verifiers. Working backwards from that object gives this order of attack:
   `690b7d94092a728dd0e6a2b3907ed0736e05d88c8c5a120e9735d8f9dca7b176`.
   This catches the inherited centre-row multiplicity bug that had previously
   prevented the wrapper from building an odd-order instance.
-- At $n=75$, CaDiCaL 1.9.5 reported UNSAT in 97.97 seconds when the complete
-  formula was restricted to retain at least 30 of the 37 seed orbits; the
-  augmented formula had 996,644 variables and 2,399,338 clauses. This
-  subsumes separate reported-UNSAT runs at minimums 31 through 34 and rules
-  out repairs changing at most seven seed orbits only if the unlogged solver
+- At $n=75$, CaDiCaL 1.9.5 reported UNSAT in 206.69 seconds when the complete
+  formula was restricted to retain at least 29 of the 37 seed orbits; the
+  augmented formula had 996,666 variables and 2,399,380 clauses. This
+  subsumes separate reported-UNSAT runs at minimums 30 through 34 and rules
+  out repairs changing at most eight seed orbits only if the unlogged solver
   result is trusted. No proof trace was produced, so the committed JSON is
   residue, not a certified exclusion and not a lower bound.
