@@ -1,7 +1,7 @@
 # Improve the lower bound for the seventh Schur number
 
 - Slug: `schur`
-- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight; q3 on 2026-08-23). Grok watched only.
 - Status: open — no 1697 coloring found
 - Area: Ramsey theory / additive combinatorics
 - Sources: Rowley, arXiv:2107.03560 (S(7)≥1696); Bengone et al., arXiv:2607.15034 (shifted S-templates)
@@ -20,6 +20,7 @@ A $k$-coloring of $[n]$ is *sum-free* if there are no $x,y\in[n]$ (not necessari
 
 q1: no 1697 coloring. Near-miss with 2 violations (file `compute/near_1697_two_violations.txt` recovered empty). Search log in `compute/q1-search-log.json`. Memory: commit `61e0369`.
 q2: m=144 seed, still no 1697 coloring; still 2 violations. Alternate-template / CEGAR / exact SAT scripts recovered under compute/.
+q3: recovered and verified Rowley's published 1696 specimen, then reconstructed and preserved a new 1697 near-coloring with exactly two violations. Unrestricted repair, lazy/full SAT repair, and color-twisted reflection all timed out. This is residue, not a lower bound.
 
 ## Related
 

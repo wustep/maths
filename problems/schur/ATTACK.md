@@ -102,3 +102,35 @@ off-the-shelf constructions.
 - The full-reflection obstruction source had mojibake in place of Lean
   symbols. It was rewritten with ASCII syntax and now compiles under the
   pinned Lean 4.32.0 using `lean lean/Schur1697SymmetryObstruction.lean`.
+
+## 2026-08-23 — q3 construction search and wall
+
+- A new unrestricted C search represented all 719,952 Schur edges and used
+  Rowley's coloring only as an initial phase. It imposed no reflection or
+  template. Seed 22 reached a preserved two-violation vector after 1,737,670
+  moves (170.41 seconds); the 180.30-second terminal log used 1,829,375 moves.
+  The exact residue has SHA-256 `539c5240...044db1` and violations
+  `(537,537,1074,6)` and `(537,640,1177,6)`. This reconstructs shape 1's
+  promised object, but it is not a coloring.
+- Four further unrestricted runs began directly at that residue (seeds 101,
+  202, 303, 404; 180 seconds each). Every run ended with the same two
+  violations and no improvement.
+- Core-guided CEGAR repair with Glucose 4.2 ran for 60.02 seconds, learned
+  216,924 exact Schur edges, and released 1,051 of 1,697 phase pins. Its best
+  remained two violations. The full exact encoding had 5,076,998 clauses;
+  in 120.03 solver seconds it released 1,498 pins in 16 UNSAT-core steps,
+  left 199 pinned, and timed out on step 17. These are residues, not UNSAT
+  results.
+- For shape 3, color-twisted reflection used
+  $c(1698-x)=\pi(c(x))$ with
+  $\pi=(0\ 1)(2\ 3)(4\ 5)(6)$. Unlike ordinary reflection it does not force
+  566 and 1132 to have the same color. The exact encoding had 848
+  representatives and 5,045,600 clauses; Glucose 4.2 timed out after 120.18
+  solver seconds. The named family remains undecided.
+- The published shifted template and standard product routes stayed below
+  1697 by the arithmetic recorded above. No separate cyclic certificate was
+  found or claimed.
+
+Terminal q3 status: recorded wall and draft PR, with no 1,697 coloring.
+Rowley's published $S(7)\geq1696$ remains the bound verified here. Nothing in
+q3 is an upper bound for $S(7)$.
