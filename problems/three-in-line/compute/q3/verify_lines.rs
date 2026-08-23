@@ -43,8 +43,16 @@ fn fail(message: &str) -> ! {
 
 fn main() {
     let arguments: Vec<String> = env::args().collect();
-    if arguments.len() != 2 {
-        fail("usage: verify_lines WITNESS");
+    if arguments.len() < 2 || arguments.len() > 3 {
+        fail("usage: verify_lines WITNESS [N]");
+    }
+    let n = if arguments.len() == 3 {
+        arguments[2].parse::<usize>().unwrap_or_else(|_| fail("N is not a positive integer"))
+    } else {
+        71
+    };
+    if n == 0 {
+        fail("N is not a positive integer");
     }
     let text = fs::read_to_string(&arguments[1]).unwrap_or_else(|error| {
         fail(&format!("cannot read {}: {error}", arguments[1]));
@@ -69,15 +77,14 @@ fn main() {
         points.push((x, y));
     }
 
-    const N: usize = 71;
-    if points.len() != 2 * N {
-        fail(&format!("point count is {}, expected {}", points.len(), 2 * N));
+    if points.len() != 2 * n {
+        fail(&format!("point count is {}, expected {}", points.len(), 2 * n));
     }
     let mut distinct: HashSet<Point> = HashSet::new();
-    let mut rows = [0_u8; N];
-    let mut columns = [0_u8; N];
+    let mut rows = vec![0_u8; n];
+    let mut columns = vec![0_u8; n];
     for &point in &points {
-        if point.0 < 0 || point.0 >= N as i64 || point.1 < 0 || point.1 >= N as i64 {
+        if point.0 < 0 || point.0 >= n as i64 || point.1 < 0 || point.1 >= n as i64 {
             fail(&format!("point {:?} is outside the grid", point));
         }
         if !distinct.insert(point) {
@@ -110,7 +117,7 @@ fn main() {
     }
 
     println!("VALID");
-    println!("n={N} points={}", points.len());
+    println!("n={n} points={}", points.len());
     println!("pair_lines_checked={pairs_checked}");
     println!("rows=2-each columns=2-each");
 }

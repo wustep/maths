@@ -1,12 +1,12 @@
-# No-three-in-line at n=71
+# No-three-in-line at n=75
 
 - Slug: `three-in-line`
-- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 search; 2026-08-23 replay). Grok watched only.
-- Status: $D(71)=142$ (Heule 2026; independently replayed)
+- Solver: Codex `gpt-5.6-sol` Max (2026-08-16 search; 2026-08-23 replay and $n=75$ campaign). Grok watched only.
+- Status: residue — $n=75$ remains open; audited rct4 SAT returned no 150-set
 - Area: Discrete geometry
 - Sources: Green 100 #72; Dudeney 1900 / Guy–Kelly 1968; Prellberg, arXiv:2602.07751; Heule 2026 (Flammenkamp database); MathWorld
 - Started: 2026-08-16
-- Campaign: recover and independently replay a 142-point certificate on the $71\times 71$ grid
+- Campaign: find and independently replay a 150-point certificate on the $75\times 75$ grid
 
 ## In general
 
@@ -28,43 +28,44 @@ configuration at $n=71$, followed by $n=73$ on 19 August. Thus $2n$ is
 now known for every $n\le74$ and for $n=76$; the first current hole is
 $n=75$.
 
-This folder remains scoped to $n=71$. The external database code has been
-decoded to 142 coordinates and checked by two exact implementations. Odd
-order cannot use clean $C_4$ (`rot4`) orbits—the rotation centre is a lattice
-point—so the relevant symmetry is Flammenkamp's **rct4**, with four-orbits
-off the diagonal and half-turn pairs on it.
+The previous campaign recovered Heule's $n=71$ database code, decoded it to
+142 coordinates, and checked it with two exact implementations. The present
+campaign is scoped to the first remaining hole, $n=75$. Odd order cannot use
+clean $C_4$ (`rot4`) orbits—the rotation centre is a lattice point—so the
+first search uses Flammenkamp's **rct4**, with four-orbits off the diagonal
+and half-turn pairs on it.
 
 ## Precise statement
 
-A set $P\subseteq\{0,1,\dots,70\}^2$ is *no-three-in-line* if no
+A set $P\subseteq\{0,1,\dots,74\}^2$ is *no-three-in-line* if no
 three distinct points of $P$ are collinear in $\mathbb{R}^2$:
 equivalently, for all distinct $a,b,c\in P$,
 $$
 (b_x-a_x)(c_y-a_y)-(c_x-a_x)(b_y-a_y)\ne 0.
 $$
-**Finite result.** The certificate in `compute/n71-142.txt` has
-$|P|=142$ and no collinear triple. The original database entry is rct4.
-Together with the row bound, this gives $D(71)=142$.
+**Finite target.** A checked set with $|P|=150$ would meet the row bound and
+prove $D(75)=150$. No such certificate is currently known in the database cut
+of 19 August 2026. An incomplete or symmetry-restricted SAT run is residue,
+not evidence that $D(75)<150$.
 
-A SAT/CP encoding: one Boolean per cell (or per rct4 orbit);
+A SAT/CP encoding has one Boolean per cell (or per rct4 orbit);
 for every line that meets the grid in $k\ge 3$ points, at most
-two of those points are selected. Cardinality: exactly 142 points
-(or exactly $142/|G|$ orbits, with diagonal orbits handled
-carefully).
+two of those points are selected. Cardinality is exactly 150 points.
+In canonical rct4 this means one selected diagonal half-turn pair and
+37 selected four-orbits, with the anti-diagonal fixed empty.
 
 ## What a solution looks like
 
-- **Found and replayed.** `compute/n71-142.txt` stores one `x y` pair per
-  line. `compute/q3/run_all.sh` checks the pinned database code and runs both
-  the Python determinant verifier and the independent Rust normalized-line
-  verifier. `figures/n71-142.png` displays the certificate.
+- **Found and replayed.** A plain `compute/n75-150.txt` stores one `x y` pair
+  per line. Two independent exact verifiers must check 150 distinct in-grid
+  points, exactly two in every row and column, and no collinear triple.
 - **Not found.** The CNF or CP model under `compute/`, the symmetry
   reduction, solver + version, wall-clock / timeout, and whether the
   result was timeout, unsat (on the restricted symmetry), or
   inconclusive. Unsat on rct4 is an incomplete search, not a proof that
-  $D(71)<142$.
-- Do not claim $D(71)=142$ without a checked point list. Do not
-  claim $D(71)<142$ without a complete (not symmetry-restricted)
+  $D(75)<150$.
+- Do not claim $D(75)=150$ without a checked point list. Do not
+  claim $D(75)<150$ without a complete (not symmetry-restricted)
   unsat proof. Do not start an asymptotic campaign from this folder.
 
 ## Related
@@ -82,6 +83,10 @@ carefully).
   was not preserved in this checkout.
 - On 23 August the current database certificate decoded and passed both exact
   verifiers, proving $D(71)=142$.
+- On 23 August the live database notes and both unrestricted and rct4 lookups
+  were refreshed. They contain no $n=75$ configuration at the 19 August cut;
+  the $n=75$ search then left an audited rct4 formula and three full-search
+  `UNKNOWN` runs. No 150-point certificate was found.
 
 ## Figures
 

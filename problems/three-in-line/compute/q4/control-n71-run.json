@@ -1,0 +1,51 @@
+{
+  "auxiliary_variables": 810530,
+  "build_seconds": 10.239421161997598,
+  "clause_length_histogram": {
+    "1": 36,
+    "2": 1316410,
+    "3": 634743,
+    "35": 1
+  },
+  "cnf_clauses": 1951190,
+  "cnf_literals": 4537120,
+  "cnf_variables": 811790,
+  "dimacs": null,
+  "finished_utc": "2026-08-23T20:28:04.628375+00:00",
+  "fixed_empty": "anti-diagonal",
+  "line_statistics": {
+    "duplicate_signatures": 761141,
+    "maximal_lines": 1074372,
+    "nonhorizontal_nonvertical_lines": 1074230,
+    "primitive_directions": 1536,
+    "retained_max_arity": 69,
+    "retained_signatures": 281834,
+    "retained_weighted_terms": 1088597,
+    "tautologies_after_reduction": 31255
+  },
+  "minimum_phase_orbits": 36,
+  "n": 71,
+  "original_variables": 1260,
+  "phase_witness": "../n71-142.txt",
+  "positive_phase_orbits": 36,
+  "pysat": "1.8.dev24",
+  "python": "3.13.5",
+  "random_phases": false,
+  "seed": 71,
+  "selected_orbits": 36,
+  "solve_seconds": 0.09725103499658871,
+  "solver": "cadical195 via PySAT",
+  "solver_stats": {
+    "conflicts": 0,
+    "decisions": 619519,
+    "propagations": 811790,
+    "restarts": 0
+  },
+  "started_utc": "2026-08-23T20:27:54.288891+00:00",
+  "status": "SAT",
+  "symmetry": "canonical-rct4",
+  "target_points": 142,
+  "time_limit_seconds": 120.0,
+  "witness": "control-n71-witness.txt",
+  "witness_sha256": "690b7d94092a728dd0e6a2b3907ed0736e05d88c8c5a120e9735d8f9dca7b176"
+}

@@ -30,3 +30,12 @@
   467,180 determinants and 10,011 independently normalized pair-lines checked;
   no collinear triple. This verifies $D(71)=142$ but does not improve the
   published record.
+- Refreshed the live [Flammenkamp database notes](https://wwwhomes.uni-bielefeld.de/achim/no3in/readme.html)
+  before starting $n=75$. The page remains dated 19 August 2026 and records
+  Heule's rct4 solutions at 71 and 73, but no solution at 75. Both an
+  unrestricted POST and an rct4 POST to the documented
+  [lookup endpoint](https://wwwhomes.uni-bielefeld.de/cgi-bin/cgiwrap/achim/script_lookup?para=FIXED)
+  with `size=75`, `index=0` returned “no configurations are known” and the
+  same database cut date. Thus 75 remains the first current hole as of this
+  check; the database response is a search-status source, not an impossibility
+  result.

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Kissat CNF search for the canonical rct4 n=71 instance.
+"""PySAT CNF search for a canonical odd-order rct4 instance.
 
 The original 1-indexed SAT variables are the rct4 orbit variables from
 ``rct4_model.py``.  Auxiliary variables are introduced only by sequential
@@ -128,6 +128,16 @@ class CnfBuilder:
         self.top_id = encoding.nv
         self.sink.add_encoding(encoding)
 
+    def add_at_least(self, literals: list[int], bound: int) -> None:
+        encoding = CardEnc.atleast(
+            lits=literals,
+            bound=bound,
+            top_id=self.top_id,
+            encoding=EncType.seqcounter,
+        )
+        self.top_id = encoding.nv
+        self.sink.add_encoding(encoding)
+
     def add_weighted_at_most_two(self, signature: tuple[tuple[int, int], ...]) -> None:
         singles: list[int] = []
         doubles: list[int] = []
@@ -150,12 +160,14 @@ class CnfBuilder:
 
 
 def literals_from_signature(signature: tuple[tuple[int, int], ...]) -> list[int]:
-    literals: list[int] = []
-    for orbit_id, coefficient in signature:
-        if coefficient != 1:
-            raise AssertionError("row/column signatures should have unit coefficients")
-        literals.append(orbit_id + 1)
-    return literals
+    # Cardinality encoders operate on literal occurrences. Repeating a
+    # literal exactly preserves an orbit's incidence multiplicity; this is
+    # needed for centre rows/columns, which can meet one rct4 orbit twice.
+    return [
+        orbit_id + 1
+        for orbit_id, coefficient in signature
+        for _ in range(coefficient)
+    ]
 
 
 def build_cnf(
@@ -204,27 +216,89 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--n", type=int, default=71)
     parser.add_argument("--seconds", type=float, default=300.0)
     parser.add_argument("--seed", type=int, default=1)
+    parser.add_argument("--solver", default="kissat404")
     parser.add_argument("--output", type=Path, default=Path("n71-142.txt"))
     parser.add_argument("--run-json", type=Path, default=Path("kissat-run.json"))
     parser.add_argument("--write-cnf", type=Path)
     parser.add_argument("--random-phases", action="store_true")
+    parser.add_argument(
+        "--phase-witness",
+        type=Path,
+        help="phase every orbit wholly present in this partial point set true",
+    )
+    parser.add_argument(
+        "--min-phase-orbits",
+        type=int,
+        help="require at least this many complete orbits from --phase-witness",
+    )
     return parser.parse_args()
+
+
+def phased_orbits(geometry: Rct4Geometry, path: Path) -> set[int]:
+    points: set[tuple[int, int]] = set()
+    for line_number, raw_line in enumerate(path.read_text(encoding="ascii").splitlines(), 1):
+        fields = raw_line.split()
+        if not fields:
+            continue
+        if len(fields) != 2:
+            raise ValueError(f"{path}:{line_number}: expected two coordinates")
+        points.add((int(fields[0]), int(fields[1])))
+
+    selected: set[int] = set()
+    for orbit_id, orbit in enumerate(geometry.orbits):
+        incidence = sum(point in points for point in orbit)
+        if incidence == len(orbit):
+            selected.add(orbit_id)
+        elif incidence:
+            raise ValueError(f"{path}: partial incidence with rct4 orbit {orbit_id}")
+    if sum(len(geometry.orbits[orbit_id]) for orbit_id in selected) != len(points):
+        raise ValueError(f"{path}: contains fixed-empty or out-of-grid points")
+    return selected
 
 
 def main() -> int:
     args = parse_args()
+    if args.min_phase_orbits is not None and args.phase_witness is None:
+        raise ValueError("--min-phase-orbits requires --phase-witness")
+    if args.min_phase_orbits is not None and args.write_cnf is not None:
+        raise ValueError("near-seed constraints cannot be appended to --write-cnf")
     started = utc_now()
     process_start = time.monotonic()
 
-    with Solver(name="kissat404", use_timer=True) as solver:
+    with Solver(name=args.solver, use_timer=True) as solver:
         solver.configure({"seed": args.seed})
         sink, builder, geometry, metadata = build_cnf(args.n, solver, args.write_cnf)
+        positive_phases = (
+            phased_orbits(geometry, args.phase_witness)
+            if args.phase_witness is not None
+            else set()
+        )
+        if args.min_phase_orbits is not None:
+            if not 0 <= args.min_phase_orbits <= len(positive_phases):
+                raise ValueError(
+                    f"minimum {args.min_phase_orbits} is outside 0..{len(positive_phases)}"
+                )
+            builder.add_at_least(
+                [orbit_id + 1 for orbit_id in sorted(positive_phases)],
+                args.min_phase_orbits,
+            )
+            metadata.update(
+                {
+                    "auxiliary_variables": builder.top_id - len(geometry.orbits),
+                    "cnf_variables": builder.top_id,
+                    "cnf_clauses": sink.clauses,
+                    "cnf_literals": sink.literals,
+                    "clause_length_histogram": dict(sorted(sink.lengths.items())),
+                    "minimum_phase_orbits": args.min_phase_orbits,
+                }
+            )
         build_seconds = time.monotonic() - process_start
-
-        if args.random_phases:
+        if args.random_phases or positive_phases:
             rng = random.Random(args.seed)
             phases = [
-                orbit_id + 1 if rng.getrandbits(1) else -(orbit_id + 1)
+                orbit_id + 1
+                if orbit_id in positive_phases or (args.random_phases and rng.getrandbits(1))
+                else -(orbit_id + 1)
                 for orbit_id in range(len(geometry.orbits))
             ]
             solver.set_phases(phases)
@@ -254,9 +328,11 @@ def main() -> int:
             "finished_utc": utc_now(),
             "python": platform.python_version(),
             "pysat": pysat.__version__,
-            "solver": "Kissat 4.0.4 via PySAT",
+            "solver": f"{args.solver} via PySAT",
             "seed": args.seed,
             "random_phases": args.random_phases,
+            "phase_witness": str(args.phase_witness) if args.phase_witness is not None else None,
+            "positive_phase_orbits": len(positive_phases),
             "time_limit_seconds": args.seconds,
             "build_seconds": build_seconds,
             "solve_seconds": solve_seconds,
