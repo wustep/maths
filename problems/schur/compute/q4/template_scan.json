@@ -1,0 +1,260 @@
+{
+  "input": "near_1697_two_violations.txt",
+  "initial_violations": [
+    [
+      537,
+      537,
+      1074,
+      6
+    ],
+    [
+      537,
+      640,
+      1177,
+      6
+    ]
+  ],
+  "core_swap": {
+    "family": "swap one defect vertex with one differently-colored vertex",
+    "tested": 4804,
+    "minimum_violations": 11,
+    "best_swap": {
+      "vertices": [
+        1074,
+        591
+      ],
+      "old_colors": [
+        6,
+        1
+      ]
+    },
+    "best_violations": [
+      [
+        473,
+        601,
+        1074,
+        1
+      ],
+      [
+        493,
+        581,
+        1074,
+        1
+      ],
+      [
+        499,
+        575,
+        1074,
+        1
+      ],
+      [
+        509,
+        565,
+        1074,
+        1
+      ],
+      [
+        514,
+        560,
+        1074,
+        1
+      ],
+      [
+        519,
+        555,
+        1074,
+        1
+      ],
+      [
+        520,
+        554,
+        1074,
+        1
+      ],
+      [
+        524,
+        550,
+        1074,
+        1
+      ],
+      [
+        534,
+        540,
+        1074,
+        1
+      ],
+      [
+        537,
+        640,
+        1177,
+        6
+      ],
+      [
+        591,
+        620,
+        1211,
+        6
+      ]
+    ],
+    "result": "no-coloring"
+  },
+  "suffix_color_swap": {
+    "family": "swap two color labels on one proper suffix x > cut",
+    "tested": 35616,
+    "minimum_violations": 2,
+    "best_transform": {
+      "colors": [
+        0,
+        1
+      ],
+      "cut": 2,
+      "violations": [
+        [
+          537,
+          537,
+          1074,
+          6
+        ],
+        [
+          537,
+          640,
+          1177,
+          6
+        ]
+      ]
+    },
+    "minimum_defect_separating_violations": 4361,
+    "best_defect_separating_transform": {
+      "colors": [
+        3,
+        6
+      ],
+      "cut": 1176,
+      "first_violations": [
+        [
+          4,
+          1173,
+          1177,
+          3
+        ],
+        [
+          10,
+          1167,
+          1177,
+          3
+        ],
+        [
+          21,
+          1156,
+          1177,
+          3
+        ],
+        [
+          33,
+          1178,
+          1211,
+          3
+        ],
+        [
+          537,
+          537,
+          1074,
+          6
+        ],
+        [
+          537,
+          644,
+          1181,
+          6
+        ],
+        [
+          537,
+          647,
+          1184,
+          6
+        ],
+        [
+          537,
+          650,
+          1187,
+          6
+        ],
+        [
+          537,
+          661,
+          1198,
+          6
+        ],
+        [
+          537,
+          667,
+          1204,
+          6
+        ],
+        [
+          537,
+          670,
+          1207,
+          6
+        ],
+        [
+          537,
+          673,
+          1210,
+          6
+        ],
+        [
+          537,
+          684,
+          1221,
+          6
+        ],
+        [
+          537,
+          685,
+          1222,
+          6
+        ],
+        [
+          537,
+          687,
+          1224,
+          6
+        ],
+        [
+          537,
+          749,
+          1286,
+          6
+        ],
+        [
+          537,
+          750,
+          1287,
+          6
+        ],
+        [
+          537,
+          766,
+          1303,
+          6
+        ],
+        [
+          537,
+          767,
+          1304,
+          6
+        ],
+        [
+          537,
+          778,
+          1315,
+          6
+        ]
+      ]
+    },
+    "result": "no-coloring"
+  },
+  "result": "no-coloring",
+  "warning": "The negative result applies only to the two finite transform families."
+}

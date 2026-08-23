@@ -27,5 +27,20 @@ Replay after installing `python-sat`:
 
 The preserved `local_repair.json` records the explicit vertex set, clause
 count, relevant-edge count, and solver result for every neighborhood. No
-1,697 coloring was found in this step, so the bound remains
+1,697 coloring was found in this step.
+
+`scan_templates.py` then checks two finite transforms without SAT:
+
+- all 4,804 swaps between one of the four defect vertices and a vertex of a
+  different color; the minimum is 11 violations, attained by swapping 1074
+  and 591;
+- all 35,616 choices of two color labels and one proper suffix cut, swapping
+  those labels for $x$ above the cut. The minimum remains two violations. If
+  color 6 is swapped across a cut that separates at least two defect
+  vertices, the minimum is 4,361 violations.
+
+The incremental counts for each family's best member are replayed by a fresh
+enumeration of all 719,952 Schur pairs. `template_scan.json` preserves the
+transforms and exact violation lists. These two scans are also only walls for
+their named families. The bound remains
 $S(7)\geq1696$.

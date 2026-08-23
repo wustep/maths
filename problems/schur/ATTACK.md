@@ -148,3 +148,18 @@ q3 is an upper bound for $S(7)$.
 - These are local walls only: vertices outside each named set were fixed to
   the recovered q3 vector. They do not rule out a larger repair or an
   unrestricted coloring. No dent is claimed.
+
+## 2026-08-23 — q4 swap and one-cut templates
+
+- An exact delta scan tested all 4,804 swaps between one of the four defect
+  vertices and a differently colored vertex. None is a coloring. The best,
+  swapping 1074 (color 6) and 591 (color 1), has 11 violations.
+- A second exact scan tested all 35,616 proper suffix templates obtained by
+  choosing two color labels and swapping them only for $x$ above one cut.
+  The minimum is still two violations, attained by a transform that leaves
+  the two original color-6 violations untouched. Among transforms swapping
+  color 6 across a cut that separates defect vertices, the minimum is 4,361
+  violations.
+- `compute/q4/template_scan.json` records both finite scans. Each incremental
+  minimum was reconstructed and checked by enumerating all 719,952 Schur
+  pairs. No dent is claimed outside these named transform families.
