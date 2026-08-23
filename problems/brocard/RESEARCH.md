@@ -92,3 +92,23 @@ linked paper itself, the checked computation, or the Lean proof.
   Therefore q3 does not treat the often-quoted $10^9$ as a replayed baseline
   or use it in any new claim.  The attack below relies only on Wilson's theorem
   and exact arithmetic that is reproduced locally.
+- The exact metadata checks were the
+  [Unpaywall DOI response](https://api.unpaywall.org/v2/10.1023%2FA%3A1009873805276?email=wujstephen%40gmail.com)
+  and the [Semantic Scholar DOI response](https://api.semanticscholar.org/graph/v1/paper/DOI:10.1023/A:1009873805276?fields=title,authors,year,abstract,openAccessPdf,externalIds,citationCount).
+  A [CORE title/DOI search](https://api.core.ac.uk/v3/search/works?q=doi%3A10.1023%2FA%3A1009873805276&limit=10)
+  returned no copy, while the
+  [equivalent OpenAlex query](https://api.openalex.org/works/https%3A%2F%2Fdoi.org%2F10.1023%2FA%3A1009873805276?mailto=wujstephen%40gmail.com)
+  was rate-limited.
+- Further recovery attempts through the
+  [Internet Archive catalog](https://archive.org/advancedsearch.php?q=%22Brocard-Ramanujan+Diophantine%22&fl%5B%5D=identifier,title&rows=50&page=1&output=json),
+  its [capture index](https://web.archive.org/cdx/search/cdx?url=faculty.math.illinois.edu/~berndt/articles/galway.pdf&output=json&filter=statuscode:200),
+  the old [UIUC author host](http://www.math.uiuc.edu/~berndt/articles/galway.pdf),
+  two alternate Illinois hosts
+  ([one](https://www.math.illinois.edu/~berndt/articles/galway.pdf),
+  [two](https://math.illinois.edu/~berndt/articles/galway.pdf)), and an
+  [exact-title DuckDuckGo lookup](https://html.duckduckgo.com/html/?q=%22On+the+Brocard-Ramanujan+Diophantine+equation%22+pdf)
+  produced no paper.  A
+  [text-proxy attempt](https://r.jina.ai/https://faculty.math.illinois.edu/~berndt/articles/galway.pdf)
+  failed too.  Encoded variants of the Springer PDF URL returned the same
+  client-challenge HTML.  These failures are recorded to distinguish a
+  metadata check from a read of the theorem text.
