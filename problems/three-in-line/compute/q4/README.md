@@ -23,7 +23,13 @@ is `UNKNOWN` residue, not a bound on $D(75)$.
 
 As an encoder control, forcing all 36 orbit variables from the checked n=71
 witness returned the identical coordinate file and SHA-256. At n=75,
-CaDiCaL 1.9.5 reported UNSAT when at least 29 of the 37 phase-seed orbits were
-required, after 206.69 seconds and 205,584 conflicts. This subsumes the
-recorded minimums 30 through 34. No proof trace was emitted, so these JSON
+CaDiCaL 1.9.5 reported UNSAT when at least 28 of the 37 phase-seed orbits were
+required, after 499.31 seconds and 703,844 conflicts. This subsumes the
+recorded minimums 29 through 34. No proof trace was emitted, so these JSON
 files are precise solver residue rather than certified exclusions.
+
+The unrestricted rct4 portfolio produced no certificate. Glucose 4.2 returned
+`UNKNOWN` after 1,350.15 seconds, 1,011,446 conflicts, and 11.43 billion
+propagations. Two CaDiCaL seeds failed to return from PySAT's requested
+1,500-second interrupt and were stopped at the process boundary after 1,653
+and 1,621 seconds; `hard-wall.json` records the observation and exit codes.

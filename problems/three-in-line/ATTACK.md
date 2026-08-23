@@ -157,6 +157,25 @@ verifiers. Working backwards from that object gives this order of attack:
   formula was restricted to retain at least 29 of the 37 seed orbits; the
   augmented formula had 996,666 variables and 2,399,380 clauses. This
   subsumes separate reported-UNSAT runs at minimums 30 through 34 and rules
-  out repairs changing at most eight seed orbits only if the unlogged solver
+  out repairs changing at most eight seed orbits only if the unproved solver
   result is trusted. No proof trace was produced, so the committed JSON is
   residue, not a certified exclusion and not a lower bound.
+
+## 2026-08-23 — q4 result: precise rct4 wall
+
+- The audited canonical-rct4 DIMACS has 996,434 variables, 2,398,895 clauses,
+  5,577,130 literals, and SHA-256
+  `1709cdf478920fd9ed0160bc5f00e049b10f0f6b28a1955560cd4aaa88205317`.
+- The broadest near-seed slice required at least 28 of the 37 translated
+  $n=73$ orbits. CaDiCaL 1.9.5 reported UNSAT after 499.31 seconds, 703,844
+  conflicts, and 2,067,436,821 propagations. This subsumes the recorded
+  minimums 29 through 34, but no proof trace was produced; it is solver
+  residue, not a certified exclusion.
+- The full phased Glucose 4.2 run returned `UNKNOWN` after 1,350.15 seconds,
+  1,011,446 conflicts, and 11,425,221,379 propagations. The two full CaDiCaL
+  seeds did not return from PySAT's requested 1,500-second interrupt. They
+  were stopped externally at 13:41:04 PDT after measured process elapsed
+  times of 1,653 and 1,621 seconds; both exited 143 without a model or final
+  solver statistics. `compute/q4/hard-wall.json` records those observations.
+- No 150-point certificate was found. This campaign therefore leaves residue:
+  it does not prove rct4 impossible, and it gives no inequality for $D(75)$.

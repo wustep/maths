@@ -2,7 +2,7 @@
 
 - Slug: `three-in-line`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 search; 2026-08-23 replay and $n=75$ campaign). Grok watched only.
-- Status: $n=75$ is the first current hole; target $D(75)=150$
+- Status: residue — $n=75$ remains open; audited rct4 SAT returned no 150-set
 - Area: Discrete geometry
 - Sources: Green 100 #72; Dudeney 1900 / Guy–Kelly 1968; Prellberg, arXiv:2602.07751; Heule 2026 (Flammenkamp database); MathWorld
 - Started: 2026-08-16
@@ -85,7 +85,8 @@ In canonical rct4 this means one selected diagonal half-turn pair and
   verifiers, proving $D(71)=142$.
 - On 23 August the live database notes and both unrestricted and rct4 lookups
   were refreshed. They contain no $n=75$ configuration at the 19 August cut;
-  the $n=75$ search is in progress.
+  the $n=75$ search then left an audited rct4 formula and three full-search
+  `UNKNOWN` runs. No 150-point certificate was found.
 
 ## Figures
 

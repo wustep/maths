@@ -1,0 +1,33 @@
+{
+  "n": 75,
+  "symmetry": "canonical-rct4",
+  "cnf": "n75-rct4.cnf",
+  "cnf_sha256": "1709cdf478920fd9ed0160bc5f00e049b10f0f6b28a1955560cd4aaa88205317",
+  "solver": "cadical195 via PySAT 1.8.dev24",
+  "hard_kill_utc": "2026-08-23T20:41:04Z",
+  "hard_kill_local": "2026-08-23 13:41:04 PDT",
+  "reason": "PySAT's requested interrupt had not returned from the native CaDiCaL call; the parent processes were terminated with SIGTERM",
+  "engines": [
+    {
+      "seed": 1,
+      "random_phases": true,
+      "requested_solve_limit_seconds": 1500,
+      "process_elapsed_seconds_at_kill": 1653,
+      "cpu_time_seconds_at_kill": 1637,
+      "rss_kb_at_kill": 781052,
+      "exit_code": 143,
+      "status": "UNKNOWN"
+    },
+    {
+      "seed": 271828,
+      "random_phases": true,
+      "requested_solve_limit_seconds": 1500,
+      "process_elapsed_seconds_at_kill": 1621,
+      "cpu_time_seconds_at_kill": 1606,
+      "rss_kb_at_kill": 733468,
+      "exit_code": 143,
+      "status": "UNKNOWN"
+    }
+  ],
+  "note": "Neither engine emitted a model or final solver statistics. UNKNOWN is residue, not an exclusion of rct4 and not a bound on D(75)."
+}

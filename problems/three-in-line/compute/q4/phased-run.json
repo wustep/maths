@@ -1,0 +1,46 @@
+{
+  "auxiliary_variables": 995028,
+  "build_seconds": 12.431434726997395,
+  "clause_length_histogram": {
+    "2": 1619589,
+    "3": 779305,
+    "37": 1
+  },
+  "cnf_clauses": 2398895,
+  "cnf_literals": 5577130,
+  "cnf_variables": 996434,
+  "dimacs": null,
+  "finished_utc": "2026-08-23T20:39:07.561531+00:00",
+  "fixed_empty": "anti-diagonal",
+  "line_statistics": {
+    "duplicate_signatures": 949969,
+    "maximal_lines": 1336828,
+    "nonhorizontal_nonvertical_lines": 1336678,
+    "primitive_directions": 1728,
+    "retained_max_arity": 73,
+    "retained_signatures": 349870,
+    "retained_weighted_terms": 1350804,
+    "tautologies_after_reduction": 36839
+  },
+  "n": 75,
+  "original_variables": 1406,
+  "phase_witness": "n73-best-embedding.txt",
+  "positive_phase_orbits": 37,
+  "pysat": "1.8.dev24",
+  "python": "3.13.5",
+  "random_phases": true,
+  "seed": 314159,
+  "solve_seconds": 1350.1530558649974,
+  "solver": "glucose42 via PySAT",
+  "solver_stats": {
+    "conflicts": 1011446,
+    "decisions": 1712760,
+    "propagations": 11425221379,
+    "restarts": 2415
+  },
+  "started_utc": "2026-08-23T20:16:24.974578+00:00",
+  "status": "UNKNOWN",
+  "symmetry": "canonical-rct4",
+  "target_points": 150,
+  "time_limit_seconds": 1350.0
+}
