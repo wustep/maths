@@ -1,0 +1,24 @@
+{
+  "edge": "rho4_combined.edge",
+  "n": 2434,
+  "m": 13975,
+  "colors": 5,
+  "nvars": 12170,
+  "clauses": 72312,
+  "triangle": [
+    0,
+    148,
+    630
+  ],
+  "solver": "PySAT Cadical195",
+  "status": "SAT",
+  "seconds": 1.1250454300025012,
+  "model_checked": true,
+  "color_counts": [
+    553,
+    430,
+    449,
+    522,
+    480
+  ]
+}
