@@ -1,0 +1,24 @@
+{
+  "edge": "reserve_union.edge",
+  "n": 1186,
+  "m": 7440,
+  "colors": 5,
+  "nvars": 5930,
+  "clauses": 38389,
+  "triangle": [
+    0,
+    148,
+    630
+  ],
+  "solver": "PySAT Cadical195",
+  "status": "SAT",
+  "seconds": 2.889165950997267,
+  "model_checked": true,
+  "color_counts": [
+    259,
+    251,
+    225,
+    220,
+    231
+  ]
+}

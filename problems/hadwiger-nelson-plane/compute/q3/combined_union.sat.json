@@ -1,0 +1,24 @@
+{
+  "edge": "combined_union.edge",
+  "n": 2010,
+  "m": 11766,
+  "colors": 5,
+  "nvars": 10050,
+  "clauses": 60843,
+  "triangle": [
+    0,
+    148,
+    630
+  ],
+  "solver": "PySAT Cadical195",
+  "status": "SAT",
+  "seconds": 0.18013653201342095,
+  "model_checked": true,
+  "color_counts": [
+    405,
+    386,
+    407,
+    403,
+    409
+  ]
+}

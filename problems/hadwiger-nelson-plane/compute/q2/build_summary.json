@@ -1,0 +1,12 @@
+{
+  "layers": 3,
+  "m": 6860,
+  "n": 1357,
+  "new_vertices_per_layer": [
+    509,
+    424,
+    424
+  ],
+  "rho": "(7 + i*sqrt(15))/8",
+  "source": "Parts arXiv:2010.12665v2"
+}

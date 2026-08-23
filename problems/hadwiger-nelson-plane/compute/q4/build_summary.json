@@ -1,0 +1,17 @@
+{
+  "base_vertices": 509,
+  "fourth_layer_overlap": 85,
+  "fourth_layer_source_vertices": 509,
+  "m": 13975,
+  "n": 2434,
+  "new_incident_edges": 2209,
+  "new_vertices": 424,
+  "old_combined_vertices": 2010,
+  "rho": "(7 + i*sqrt(15))/8",
+  "rotation_exponents": [
+    0,
+    1,
+    2,
+    3
+  ]
+}

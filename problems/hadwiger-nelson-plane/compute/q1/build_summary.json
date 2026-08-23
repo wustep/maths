@@ -1,0 +1,24 @@
+{
+  "base": {
+    "m": 2442,
+    "n": 509
+  },
+  "reserve_parameters": {
+    "kept": 677,
+    "minimum_exact_unit_degree_into_base": 4,
+    "radius": 2.55,
+    "source_table": "reserve_source.json"
+  },
+  "reserve_union": {
+    "m": 7440,
+    "n": 1186,
+    "name": "reserve_union"
+  },
+  "rho": "(7 + i*sqrt(15))/8",
+  "rho_union": {
+    "m": 4651,
+    "n": 933,
+    "name": "rho_union"
+  },
+  "source": "Parts arXiv:2010.12665v2"
+}
