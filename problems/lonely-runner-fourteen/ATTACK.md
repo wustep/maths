@@ -555,3 +555,73 @@ one-sided by design: SAT means the constraints kept at `q = 200` are too few
 to rule `v` out, not that any `p` fails. So the certificate holds at some
 `q > 200`; `q = 300` and `q = 500` are running.
 
+
+## 2026-08-23 — close: a cold replay, and what the restart took
+
+The machine restarted. Nothing from the previous session's runs survived —
+no binaries, no run directories, no process state. That makes this a good
+place to stop and check the record from scratch, so everything below is a
+fresh `gcc -O3 -std=c11` of the committed sources (no `-march=native`) on a
+machine where none of the earlier runs exist.
+
+**Three jobs died with the restart.** `cells --k 13 --q 300` and
+`--q 500`, both mid-search, and `cover --k 13 --p 191 --nobound` at
+11 h 45 m. The unbounded cover is not restarted. It was already understood:
+80 M of the 103 M nodes in the bounded p=191 run are bound cuts, and taking
+the bound away hands every one of those subtrees back, so the run has no
+predictable end. Nothing in the record rests on it. The trusted base keeps
+the counting bound at p=191 and loses it only at k=5 p=31 and k=7 p=59,
+where brute force independently confirms the same answers — unchanged from
+the q1 close.
+
+### What replays
+
+Every number q2 claims came back. In order:
+
+| claim | replay |
+|---|---|
+| `check_unsaved.py --selftest` | OK — Prop 4.1 empty at k=4, 6; the k=8 obstruction still has no witness |
+| five gate cases | `cover` and `cells --p P` agree on all five, **witnesses identical**, e.g. k=13 p=14 gives `(1,1,1,0,1,1,1,5,1,6,1,2,1)` from both |
+| `check_cells.py --selftest` | OK in all four sections — `B` constant on all 812 cells, 43 primes × 4 values of `q` with no window violation, 9672 schema-vs-exhaustion checks at k=13 with no mismatch, and brute force over `Z_6^5` for `p ∈ [6,399]` consistent with the certified k=5 threshold |
+| pair schema, tightest pair | `{6,10}`, `31680/5045040 = 1/159.25` |
+| pair schema, failing set | the same 80 integers, largest 116, achieved by pair `{4,6}` |
+| pair schema, failing primes | 2 … 47, then 59, 61, 71, 73, **89** |
+| prober vs schema | `--alpha 0,1,7` finds an unsaved `v` at exactly 43, 47, 59, 61, 71, 73, 89 and `NONE` at 53, 67, 79, 83; every witness it returns is `e_a + e_b` |
+| the witnesses are real | `check_unsaved.py`, which shares no code with either, calls the p=43, 61 and 89 vectors genuine obstructions |
+| calibration, k=5 | `cells --q 90` UNSAT, `--q 89` SAT; `cover` over `p ∈ [6,400]` fails at 6..14, 19, 21, 22, 24, 26, 27, 39, 42, 57 — the committed list exactly |
+| calibration, k=7 | `--q 84` UNSAT, `--q 83` SAT; last failure 44 |
+| calibration, k=9 | `--q 180` UNSAT, `--q 179` SAT; last failure 125, witness `(2,4,1,3,0,7,4,1,8)` |
+| `v_i ≡ λi (mod m/2)` at k=13 | empty, and wider than claimed: all six `λ`, all `2^13` lifts, at **36** primes from 43 to 293 — 216 sweeps, nothing unsaved. The k=5, 7, 9 controls all recover their published obstruction from scratch |
+| the q=200 witness is not a counterexample | `v = (2,4,6,1,10,5,0,2,4,6,8,10,12)` is **saved** at 191, 193, 197, 199, 211, 223, 239, 257, 293, 401, 601 |
+
+Nothing was un-claimed. Each certified `q` is also *minimal*, which the
+committed table did not say: at k=5, 7 and 9 the value one below returns SAT.
+
+### One correction the record now forces
+
+The q1 sweep line "fails at every prime up to 41" was true of what q1 had
+run and is no longer the state of knowledge. The schema decides more, and it
+decides some primes the other way:
+
+> `T2(13,p)` **fails** at every prime up to 47, and at 59, 61, 71, 73, 89.
+> It **holds** at twenty primes from 191 to 293. At 53, 67, 79, 83 and at
+> every prime from 97 to 181 it is **undecided** — the prober returns
+> `NONE` in its alphabets there, which is one-sided and proves nothing.
+
+So the last known failing prime moves 41 → 89, and the sentence "the check
+fails for primes up to 41" has to leave `PROBLEM.md` and the README row: it
+reads as though 43 upward were settled, and 43 is now known to fail.
+
+### A trap in the tooling, found while restarting the window runs
+
+`cells --split N --part i` with the default `--splitdepth 0` puts the
+partition test at the root, so `task_ctr` increments once: part 0 does the
+whole search and parts 1 and 2 return
+
+    RESULT UNSAT ... nodes=1
+
+having searched nothing. An UNSAT that looked like a certificate for every
+`p ≥ 300`, in under a second. Nothing in the record came from a split run —
+every committed log reads `[part 0/1]` — so no claim is affected, but the
+default is a loaded gun and any future split run needs `--splitdepth ≥ 1`.
+The restarted runs below use `--splitdepth 2`.
