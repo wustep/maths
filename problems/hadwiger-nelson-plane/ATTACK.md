@@ -151,3 +151,24 @@ backwards from what a stranger would replay.
   5-colorable. None of the $2^{1501}$ graphs is a 6-chromatic witness. The
   residue leaves base-vertex deletion, a fourth rotation, points beyond the
   retained reserve, and other algebraic families open.
+
+### q4: fourth exact Parts rotation layer — residue
+
+- Adjoined $\rho^3G$ to q3's combined reserve and three-layer graph. Of the
+  509 rotated source vertices, 85 already occur in q3 and 424 are new. The
+  resulting exact graph has 2,434 vertices.
+- Retained q3's independently replayed induced edge set and compared every
+  new vertex with every earlier vertex in exact field arithmetic. This finds
+  2,209 edges incident to the extension and 13,975 unit edges in total.
+- CaDiCaL found a proper 5-coloring in 1.13 seconds, with class sizes 553,
+  430, 449, 522, 480. The parent replay verifies q1–q3, a separate q4 Python
+  program reconstructs the exact extension, and the C edge/color checker
+  accepts the stored model.
+- The same model closes base-vertex deletion for this fixed family. Deleting
+  any subset of the 509 Parts vertices while retaining any subset of the
+  1,925 reserve/rotation vertices produces a subgraph of the verified q4
+  graph and is therefore 5-colorable. A deletion-and-replacement construction
+  using coordinates outside this union is not covered.
+- This is residue, not a lower bound. The record remains
+  $5\leq\chi(\mathbb R^2)\leq7$; fifth and later rotation layers, a larger
+  exact reserve, and different algebraic families remain open.

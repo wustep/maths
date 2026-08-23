@@ -36,8 +36,8 @@ a proper five-coloring in 1.13 seconds, with color-class sizes 553, 430, 449,
 522, and 480. The committed model passes the exact Python extension rebuild
 and the separate C edge/color checker.
 
-This is residue, not a lower bound. The model restricts to every graph made
-by adding any subset of the 1,925 non-base vertices in this combined family
-to Parts 509. It excludes all such add-only candidates, but not points beyond
-this reserve, deletion-and-replacement constructions, or another algebraic
-family.
+This is residue, not a lower bound. The model restricts to every subgraph, so
+it covers arbitrary deletion of the 509 base vertices together with any
+subset of the 1,925 non-base vertices. It does not cover points beyond this
+reserve, deletion-and-replacement constructions using new coordinates, or
+another algebraic family.
