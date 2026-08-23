@@ -119,3 +119,16 @@ backwards from what a stranger would replay.
   added vertices. Thus none of those $2^{677}$ add-only spawns is
   6-chromatic. Searches that delete base vertices or introduce coordinates
   outside this reserve remain open.
+
+### q2: a third exact rotation layer — residue
+
+- Built $G\cup\rho G\cup\rho^2G$ with the same exact field arithmetic. The
+  three layers contribute 509, 424, and 424 new vertices after deduplication,
+  for 1,357 vertices total. Exact all-pairs rebuilding finds 6,860 unit edges.
+- CaDiCaL found a proper 5-coloring in 0.025 seconds. Its class sizes are 298,
+  296, 278, 254, 231. A second exact rebuild and the C edge/color checker both
+  accept the committed model.
+- The model restricts to every add-only subgraph of the 848 points supplied
+  by $\rho G\cup\rho^2G$, excluding all $2^{848}$ subsets as 6-chromatic
+  witnesses. It does not cover combinations with q1's 677-point reserve,
+  deletions from $G$, or a fourth rotation layer.
