@@ -178,6 +178,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | no-three-in-line n=71 | `problems/three-in-line` | Sol 5.6 | 2026-08-16 |
 | no-three-in-line n=71 certificate replay | `problems/three-in-line/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | Schur S(7) | `problems/schur` | Sol 5.6 | 2026-08-16 |
+| Schur S(7), q3 source recovery / 1697 search | `problems/schur/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
+| Schur S(7), q4 bounded repair | `problems/schur/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
 | van der Waerden W(2,7) | `problems/vdw-w27` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |

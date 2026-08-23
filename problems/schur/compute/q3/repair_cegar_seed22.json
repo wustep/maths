@@ -1,0 +1,215 @@
+[
+  {
+    "event": "encoding",
+    "initial_violations": 2,
+    "one_hot_clauses": 37334,
+    "initial_active_edges": 2,
+    "solver": "glucose42"
+  },
+  {
+    "event": "release",
+    "iteration": 1,
+    "core_size": 2,
+    "pinned": 1695,
+    "released_events": 2,
+    "active_edges": 2,
+    "elapsed_seconds": 0.025424
+  },
+  {
+    "event": "refine",
+    "iteration": 2,
+    "candidate_violations": 77,
+    "new_edges": 77,
+    "active_edges": 79,
+    "pinned": 1695,
+    "elapsed_seconds": 0.069276
+  },
+  {
+    "event": "refine",
+    "iteration": 3,
+    "candidate_violations": 151,
+    "new_edges": 151,
+    "active_edges": 230,
+    "pinned": 1695,
+    "elapsed_seconds": 0.13842
+  },
+  {
+    "event": "refine",
+    "iteration": 4,
+    "candidate_violations": 164,
+    "new_edges": 164,
+    "active_edges": 394,
+    "pinned": 1695,
+    "elapsed_seconds": 0.212203
+  },
+  {
+    "event": "refine",
+    "iteration": 5,
+    "candidate_violations": 63,
+    "new_edges": 63,
+    "active_edges": 457,
+    "pinned": 1695,
+    "elapsed_seconds": 0.283731
+  },
+  {
+    "event": "refine",
+    "iteration": 6,
+    "candidate_violations": 99,
+    "new_edges": 99,
+    "active_edges": 556,
+    "pinned": 1695,
+    "elapsed_seconds": 0.350717
+  },
+  {
+    "event": "refine",
+    "iteration": 7,
+    "candidate_violations": 83,
+    "new_edges": 83,
+    "active_edges": 639,
+    "pinned": 1695,
+    "elapsed_seconds": 0.419425
+  },
+  {
+    "event": "release",
+    "iteration": 8,
+    "core_size": 24,
+    "pinned": 1671,
+    "released_events": 26,
+    "active_edges": 639,
+    "elapsed_seconds": 0.422979
+  },
+  {
+    "event": "release",
+    "iteration": 9,
+    "core_size": 24,
+    "pinned": 1647,
+    "released_events": 50,
+    "active_edges": 639,
+    "elapsed_seconds": 0.423828
+  },
+  {
+    "event": "release",
+    "iteration": 10,
+    "core_size": 24,
+    "pinned": 1623,
+    "released_events": 74,
+    "active_edges": 639,
+    "elapsed_seconds": 0.426741
+  },
+  {
+    "event": "release",
+    "iteration": 11,
+    "core_size": 24,
+    "pinned": 1599,
+    "released_events": 98,
+    "active_edges": 639,
+    "elapsed_seconds": 0.427566
+  },
+  {
+    "event": "release",
+    "iteration": 12,
+    "core_size": 24,
+    "pinned": 1575,
+    "released_events": 122,
+    "active_edges": 639,
+    "elapsed_seconds": 0.430793
+  },
+  {
+    "event": "release",
+    "iteration": 13,
+    "core_size": 24,
+    "pinned": 1551,
+    "released_events": 146,
+    "active_edges": 639,
+    "elapsed_seconds": 0.431318
+  },
+  {
+    "event": "release",
+    "iteration": 14,
+    "core_size": 24,
+    "pinned": 1527,
+    "released_events": 170,
+    "active_edges": 639,
+    "elapsed_seconds": 0.434678
+  },
+  {
+    "event": "release",
+    "iteration": 15,
+    "core_size": 24,
+    "pinned": 1503,
+    "released_events": 194,
+    "active_edges": 639,
+    "elapsed_seconds": 0.435139
+  },
+  {
+    "event": "release",
+    "iteration": 16,
+    "core_size": 24,
+    "pinned": 1479,
+    "released_events": 218,
+    "active_edges": 639,
+    "elapsed_seconds": 0.435638
+  },
+  {
+    "event": "release",
+    "iteration": 17,
+    "core_size": 14,
+    "pinned": 1465,
+    "released_events": 232,
+    "active_edges": 639,
+    "elapsed_seconds": 0.436893
+  },
+  {
+    "event": "release",
+    "iteration": 18,
+    "core_size": 24,
+    "pinned": 1441,
+    "released_events": 256,
+    "active_edges": 639,
+    "elapsed_seconds": 0.437948
+  },
+  {
+    "event": "refine",
+    "iteration": 19,
+    "candidate_violations": 253,
+    "new_edges": 253,
+    "active_edges": 892,
+    "pinned": 1441,
+    "elapsed_seconds": 0.509019
+  },
+  {
+    "event": "refine",
+    "iteration": 20,
+    "candidate_violations": 457,
+    "new_edges": 457,
+    "active_edges": 1349,
+    "pinned": 1441,
+    "elapsed_seconds": 0.57704
+  },
+  {
+    "event": "result",
+    "result": "timeout",
+    "iterations": 60,
+    "initial_violations": 2,
+    "best_violations": 2,
+    "active_edges": 216924,
+    "pinned": 646,
+    "released_events": 1051,
+    "clauses": 1555802,
+    "elapsed_seconds": 60.01867,
+    "first_best_violations": [
+      [
+        537,
+        537,
+        1074,
+        6
+      ],
+      [
+        537,
+        640,
+        1177,
+        6
+      ]
+    ]
+  }
+]

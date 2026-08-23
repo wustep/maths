@@ -1,0 +1,65 @@
+{
+  "campaign": "q3",
+  "date": "2026-08-23",
+  "result": "residue-no-1697-witness",
+  "published_base": {
+    "file": "rowley_1696.txt",
+    "sha256": "feef1da7e70d328e2b0771a4b0f8b91329f2f832482a6103c72cb12524c40896",
+    "length": 1696,
+    "valid": true,
+    "pairs_checked": 719104
+  },
+  "unrestricted_search": {
+    "implementation": "search_unrestricted.c",
+    "source": "rowley_1696.txt",
+    "random_seed": 22,
+    "restarts": 5,
+    "moves": 1829375,
+    "elapsed_seconds": 180.295199,
+    "best_violations": 2,
+    "near_coloring": "near_1697_two_violations.txt",
+    "near_sha256": "539c5240eacc3c33fbc0543fb0767d8f4f8a5ca163941a695b21a53b09044db1",
+    "violations": [
+      [537, 537, 1074, 6],
+      [537, 640, 1177, 6]
+    ]
+  },
+  "restart_from_two_violation_residue": {
+    "random_seeds": [101, 202, 303, 404],
+    "seconds_each": 180,
+    "best_violations_each": [2, 2, 2, 2],
+    "result": "timeouts-no-improvement"
+  },
+  "lazy_core_guided_repair": {
+    "log": "repair_cegar_seed22.json",
+    "solver": "glucose42",
+    "seconds": 60.01867,
+    "active_edges": 216924,
+    "pins_released": 1051,
+    "best_violations": 2,
+    "result": "timeout"
+  },
+  "full_core_guided_repair": {
+    "log": "repair_full_sat_seed22.json",
+    "solver": "glucose42",
+    "schur_edges": 719952,
+    "clauses": 5076998,
+    "encoding_seconds": 6.242937,
+    "solve_seconds": 120.028082,
+    "iterations": 17,
+    "pins_released": 1498,
+    "pins_remaining": 199,
+    "result": "timeout"
+  },
+  "color_twisted_reflection": {
+    "log": "twisted_reflection_glucose42.json",
+    "symmetry": "c(1698-x)=pi(c(x))",
+    "permutation": [1, 0, 3, 2, 5, 4, 6],
+    "representatives": 848,
+    "clauses": 5045600,
+    "solver": "glucose42",
+    "solve_seconds": 120.181519,
+    "result": "timeout"
+  },
+  "warning": "Timeouts and a two-violation near-coloring are residue, not a lower bound or an upper bound for S(7)."
+}

@@ -1,0 +1,34 @@
+[
+  {
+    "event": "encoding",
+    "symmetry": "c(1698-x)=pi(c(x))",
+    "permutation": [
+      1,
+      0,
+      3,
+      2,
+      5,
+      4,
+      6
+    ],
+    "fixed_middle": [
+      849,
+      6
+    ],
+    "representatives": 848,
+    "boolean_variables": 5936,
+    "clauses": 5045600,
+    "schur_clauses": 5026944,
+    "skipped_fixed_false": 7632,
+    "skipped_incompatible_same_representative": 5088,
+    "solver": "glucose42",
+    "encoding_seconds": 10.39993
+  },
+  {
+    "event": "result",
+    "result": "timeout",
+    "solve_seconds": 120.181519,
+    "output": null,
+    "warning": "UNSAT is only for the named color-twisted symmetry."
+  }
+]

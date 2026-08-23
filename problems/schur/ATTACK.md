@@ -11,3 +11,174 @@
 
 - m=144 seed; still 2 violations. Scripts: `q2_alternate_template_search.py`, `q2_exact_sat.py`, `q2_seed_cegar.py`, `audit_q2_residue.py`.
 - RESEARCH.md recovered: Rowley ancillary XLS could not be ingested; no 1696 specimen copied.
+
+## 2026-08-23 — q3 shapes before search
+
+The target object is always an explicit list of 1,697 colors in `0..6`
+accepted by `compute/verify_coloring.py --expect-length 1697`. Such a list
+would prove the dent $S(7)\geq1697$. An obstruction certificate only rules
+out its named ansatz; it is not an upper bound for $S(7)$.
+
+Ranked by the cost of the first decisive check, with the chance of a real
+bound used to break ties:
+
+1. **Recover or reconstruct the q1 two-violation coloring, then repair it.**
+   The replayable finish is the recovered 1,697-vector, its two exact bad
+   triples, a bounded repair script, and a verified repaired vector. First
+   search git objects and surviving logs for the missing bytes; if that
+   fails, reconstruct the precise almost-reflection family and ask only for
+   a two-defect specimen before running a local ejection-chain/MaxSAT repair.
+   Do not rerun q1's unrestricted SAT, generic orbit min-conflicts, seed
+   multiplier sweep, or the same guessed q2 split sets.
+2. **Extend Rowley's published 1,696 coloring by a sparse ejection chain.**
+   This shape was not available in the folder before q3. Its certificate is
+   Rowley's extracted base vector, a short edit list including 1697, the
+   resulting exact vector, and the independent verifier report. The cheapest
+   check is to verify the workbook vector, append each of seven colors, and
+   enumerate the resulting boundary conflicts; bounded-Hamming SAT then tests
+   whether a small edit set can clear them. Do not replace the base by the
+   Fredricksen--Sweet seed or search all colorings from scratch.
+3. **Use a different symmetry: reflection about 1698 with a sparse, chosen
+   exception set.** A model expands to a 1,697-vector and therefore gives the
+   required dent. The first check computes which reflection pairs of the
+   verified Rowley coloring already disagree and ranks additional splits by
+   the conflicts they unlock; SAT is run only after this structural scan.
+   Do not impose q1's fully symmetric ansatz or repeat q2's split pairs chosen
+   from the lost near-coloring.
+4. **Lift a base coloring with a shifted/template construction.** The finish
+   is a finite Bengone-style template table, a generator from a verified base
+   coloring, and the generated 1,697-vector plus verifier. The cheap check is
+   the size/color arithmetic followed by the finite template admissibility
+   test. The published width-10 shifted template gives
+   $10S(5)+2=1602$, so it does not itself reach 1697; only a genuinely new
+   seven-color parameter set survives. Do not rerun the old script merely
+   called `search_shifted_sat.py`, which encodes reflection rather than
+   Bengone's shifted-label definition.
+5. **Prove a finite obstruction under a named symmetry.** For full reflection
+   $c(x)=c(1698-x)$, a satisfying model would expand to the desired coloring;
+   an UNSAT certificate only excludes that family. The one-page check kills
+   it immediately: reflection equates 566 and 1132, while
+   $566+566=1132$. The existing Lean lemma is the intended replay artifact
+   once its source encoding and build are audited. Do not send this ansatz to
+   SAT again.
+6. **Build from a smaller Schur coloring by an exact product/blowup.** The
+   certificate would be the smaller coloring, finite template, deterministic
+   generator, and verified 1,697-vector. Size arithmetic kills the standard
+   available choices: Schur from $S(6)\geq536$ gives 1609, Abbott--Hanson from
+   $S(5)=160$ gives 1444, Bengone's shifted template gives 1602, and Rowley's
+   five-color template applied to $S(2)=4$ gives 1664. None reaches 1697, so
+   this shape is dropped unless a new template with an explicit finite
+   certificate is found. No generic product search will be run.
+7. **Search a cyclic modular coloring, a shape not present in q1/q2.** The
+   certificate is a seven-coloring of the nonzero residues modulo 1698 with
+   no monochromatic modular equation, plus a modular verifier; restricting it
+   to representatives 1 through 1697 would be the desired interval coloring.
+   The first check is a small modular encoding calibration and its forced
+   orbit/unit constraints. This stronger object is lower-ranked because it may
+   fail even when an interval coloring exists. Do not treat modular UNSAT or a
+   timeout as evidence about unrestricted $S(7)$.
+
+Shapes 1--4 and 7 survive as construction routes. Shape 5 is already a named
+symmetry wall, and shape 6 is already an arithmetic wall for the published
+off-the-shelf constructions.
+
+## 2026-08-23 — q3 source recovery and first checks
+
+- The q1 two-violation bytes are not recoverable from this repository. The
+  tracked file and the sole unreachable commit containing the old Schur
+  campaign both point to the empty blob. No unreachable blob is a 1,697-token
+  vector over `0..6`. Shape 1 therefore survives only as reconstruction, not
+  recovery.
+- Rowley's ancillary workbook was recovered from the official arXiv source
+  archive. `compute/q3/rowley_1696.txt` is its exact zero-based color column
+  (SHA-256 `feef1da7...c40896`). The independent verifier accepts all 719,104
+  pairs, with class sizes `204,176,318,152,148,200,498`.
+- The specimen has no mismatches under reflection about 1697. Giving 1697
+  colors 0 through 6 creates respectively `102,88,159,76,74,100,249`
+  boundary conflicts. For each color these are vertex-disjoint complement
+  pairs, so a repair that keeps the appended color must recolor at least that
+  many old entries. This kills a direct or very-small-edit lift of this
+  specimen, but not a larger ejection chain or an unrestricted coloring.
+- The full-reflection obstruction source had mojibake in place of Lean
+  symbols. It was rewritten with ASCII syntax and now compiles under the
+  pinned Lean 4.32.0 using `lean lean/Schur1697SymmetryObstruction.lean`.
+
+## 2026-08-23 — q3 construction search and wall
+
+- A new unrestricted C search represented all 719,952 Schur edges and used
+  Rowley's coloring only as an initial phase. It imposed no reflection or
+  template. Seed 22 reached a preserved two-violation vector after 1,737,670
+  moves (170.41 seconds); the 180.30-second terminal log used 1,829,375 moves.
+  The exact residue has SHA-256 `539c5240...044db1` and violations
+  `(537,537,1074,6)` and `(537,640,1177,6)`. This reconstructs shape 1's
+  promised object, but it is not a coloring.
+- Four further unrestricted runs began directly at that residue (seeds 101,
+  202, 303, 404; 180 seconds each). Every run ended with the same two
+  violations and no improvement.
+- Core-guided CEGAR repair with Glucose 4.2 ran for 60.02 seconds, learned
+  216,924 exact Schur edges, and released 1,051 of 1,697 phase pins. Its best
+  remained two violations. The full exact encoding had 5,076,998 clauses;
+  in 120.03 solver seconds it released 1,498 pins in 16 UNSAT-core steps,
+  left 199 pinned, and timed out on step 17. These are residues, not UNSAT
+  results.
+- For shape 3, color-twisted reflection used
+  $c(1698-x)=\pi(c(x))$ with
+  $\pi=(0\ 1)(2\ 3)(4\ 5)(6)$. Unlike ordinary reflection it does not force
+  566 and 1132 to have the same color. The exact encoding had 848
+  representatives and 5,045,600 clauses; Glucose 4.2 timed out after 120.18
+  solver seconds. The named family remains undecided.
+- The published shifted template and standard product routes stayed below
+  1697 by the arithmetic recorded above. No separate cyclic certificate was
+  found or claimed.
+
+Terminal q3 status: recorded wall and draft PR, with no 1,697 coloring.
+Rowley's published $S(7)\geq1696$ remains the bound verified here. Nothing in
+q3 is an upper bound for $S(7)$.
+
+## 2026-08-23 — q4 bounded local repair
+
+- Starting from q3's exact two-violation vector, an exact fixed-outside SAT
+  encoding first allowed only $\{537,640,1074,1177\}$ to change. It then
+  admitted the first 16, 32, 64, and 128 vertices ranked by frequency in the
+  immediate alternative-color blockers of those four vertices.
+- Glucose 4.2 returned UNSAT for all five explicit neighborhoods, containing
+  4, 20, 36, 68, and 132 mutable vertices. The largest encoding used 60,659
+  clauses for 182,996 Schur edges touching its neighborhood. The precise
+  vertex sets and results are in `compute/q4/local_repair.json`.
+- These are local walls only: vertices outside each named set were fixed to
+  the recovered q3 vector. They do not rule out a larger repair or an
+  unrestricted coloring. No dent is claimed.
+
+## 2026-08-23 — q4 swap and one-cut templates
+
+- An exact delta scan tested all 4,804 swaps between one of the four defect
+  vertices and a differently colored vertex. None is a coloring. The best,
+  swapping 1074 (color 6) and 591 (color 1), has 11 violations.
+- A second exact scan tested all 35,616 proper suffix templates obtained by
+  choosing two color labels and swapping them only for $x$ above one cut.
+  The minimum is still two violations, attained by a transform that leaves
+  the two original color-6 violations untouched. Among transforms swapping
+  color 6 across a cut that separates defect vertices, the minimum is 4,361
+  violations.
+- `compute/q4/template_scan.json` records both finite scans. Each incremental
+  minimum was reconstructed and checked by enumerating all 719,952 Schur
+  pairs. No dent is claimed outside these named transform families.
+
+## 2026-08-23 — q4 named-symmetry wall
+
+- The 537-step color-twisted translation
+  $c(x+537)=c(x)+1\pmod 7$ makes both residue sums impossible by construction:
+  $c(1074)\ne c(537)$ and $c(1177)\ne c(640)$.
+- An exact SAT encoding used 537 base-color representatives and expanded each
+  assignment deterministically to all 1,697 entries. Of the edge/color
+  cases, 19,607 are forced safe by inconsistent layer requirements; the
+  remaining constraints and one-hot clauses give 5,031,871 clauses.
+- Glucose 4.2 returned UNSAT rather than timing out. The encoding and replay
+  are `compute/q4/search_shift537.py`, `shift537_glucose42.json`, and
+  `run_all.sh`. This is an obstruction only to the named symmetry, not to a
+  general coloring.
+
+Terminal q4 status: exact local walls through 132 mutable vertices, complete
+finite swap/template scans, and an exact UNSAT result for the 537-step
+color-twisted symmetry. No 1,697 coloring was found, so Rowley's published
+$S(7)\geq1696$ remains the bound. Nothing in q4 is an upper bound for $S(7)$.
