@@ -263,7 +263,7 @@ primary computation.
 ### Computer search and the remaining wall
 
 At $p=53$, the independent search excluded size at most 13 after 333,555,078
-nodes in 1,701.630 seconds. The saved 14-set passes a direct ordered-sum count,
+nodes in 1,428.475 seconds. The saved 14-set passes a direct ordered-sum count,
 so this replays $m(53)=14$, already published in A398173.
 
 At $p=59$, the saved 15-set proves only $m(59)\le15$. A node-limited run at

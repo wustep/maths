@@ -1,0 +1,44 @@
+WITNESS_OK p=3 m=3
+WITNESS_OK p=5 m=4
+WITNESS_OK p=7 m=5
+WITNESS_OK p=11 m=7
+WITNESS_OK p=13 m=7
+WITNESS_OK p=17 m=8
+WITNESS_OK p=19 m=9
+WITNESS_OK p=23 m=10
+WITNESS_OK p=29 m=11
+WITNESS_OK p=31 m=11
+WITNESS_OK p=37 m=12
+WITNESS_OK p=41 m=13
+WITNESS_OK p=43 m=13
+WITNESS_OK p=47 m=13
+WITNESS_OK p=53 m=14
+A398173_MATCH 15/15 terms through p=53
+FULL_ENUMERATION_OK p=3 m=3 example=[0, 1, 2]
+FULL_ENUMERATION_OK p=5 m=4 example=[0, 1, 2, 3]
+FULL_ENUMERATION_OK p=7 m=5 example=[0, 1, 2, 3, 4]
+FULL_ENUMERATION_OK p=11 m=7 example=[0, 1, 2, 3, 4, 5, 6]
+FULL_ENUMERATION_OK p=13 m=7 example=[0, 1, 2, 3, 6, 8, 10]
+EXACT_LOWER_OK p=3 limit=2 status=UNSAT nodes=0 memo_hits=0 memo=0 seconds=0.000005
+EXACT_LOWER_OK p=5 limit=3 status=UNSAT nodes=1 memo_hits=0 memo=1 seconds=0.000006
+EXACT_LOWER_OK p=7 limit=4 status=UNSAT nodes=3 memo_hits=0 memo=3 seconds=0.000010
+EXACT_LOWER_OK p=11 limit=6 status=UNSAT nodes=36 memo_hits=22 memo=14 seconds=0.000040
+EXACT_LOWER_OK p=13 limit=6 status=UNSAT nodes=47 memo_hits=26 memo=21 seconds=0.000053
+EXACT_LOWER_OK p=17 limit=7 status=UNSAT nodes=217 memo_hits=123 memo=94 seconds=0.000239
+EXACT_LOWER_OK p=19 limit=8 status=UNSAT nodes=958 memo_hits=613 memo=345 seconds=0.001423
+EXACT_LOWER_OK p=23 limit=9 status=UNSAT nodes=6771 memo_hits=4473 memo=2298 seconds=0.012601
+EXACT_LOWER_OK p=29 limit=10 status=UNSAT nodes=74753 memo_hits=46871 memo=27882 seconds=0.174190
+EXACT_LOWER_OK p=31 limit=10 status=UNSAT nodes=100735 memo_hits=57076 memo=43659 seconds=0.230668
+EXACT_LOWER_OK p=37 limit=11 status=UNSAT nodes=1189378 memo_hits=668658 memo=520720 seconds=3.433162
+EXACT_LOWER_OK p=41 limit=12 status=UNSAT nodes=11687341 memo_hits=7277026 memo=4410315 seconds=41.164963
+EXACT_LOWER_OK p=43 limit=12 status=UNSAT nodes=15546145 memo_hits=8980332 memo=6565813 seconds=54.969965
+EXACT_LOWER_OK p=47 limit=12 status=UNSAT nodes=24287203 memo_hits=11753311 memo=12533892 seconds=88.929115
+EXACT_LOWER_OK p=53 limit=13 status=UNSAT nodes=333555078 memo_hits=171302429 memo=162252649 seconds=1428.475083
+VALID
+predicate=ordered representation multiplicity avoids {1,2}
+primes=15 largest_prime=53
+ordered_pairs_checked=1482
+full_enumerations=5
+progression_branch_lower_checks=15
+oeis_a398173=matched_15_of_15
+elapsed_seconds=1618.254517
