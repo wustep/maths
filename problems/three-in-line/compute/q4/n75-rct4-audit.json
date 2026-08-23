@@ -1,0 +1,11 @@
+{
+  "actual_clauses": 2398895,
+  "actual_literals": 5577130,
+  "bytes": 41383554,
+  "declared_clauses": 2398895,
+  "declared_variables": 996434,
+  "maximum_variable_seen": 996434,
+  "path": "problems/three-in-line/compute/q4/n75-rct4.cnf",
+  "sha256": "1709cdf478920fd9ed0160bc5f00e049b10f0f6b28a1955560cd4aaa88205317",
+  "status": "VALID_DIMACS"
+}
