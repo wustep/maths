@@ -4,6 +4,24 @@
 
 - Checkout `grok/c7-shannon`. Replayed `python3 compute/verify_set.py compute/R367.txt --min-size 367` → `size=367 unique=367`, `OK: independent in C7^{box5}`. Same verifier on `R_reconstructed.txt` (367) and `R361_sprime.txt` (361) also OK. This is the Polak–Schrijver record, not a dent.
 
+## 2026-08-23 — six shapes for a 368-set (q1)
+
+Work backwards from the shape, not from another 3-out census of the same seed. Baumert–McEliece–Rodemich–Rumsey–Stanley–Taylor give $\alpha(C_7^{\boxtimes 4})\le 115$ (their lemma $\alpha(C_n^d)\le \alpha(C_n^{d-1})n/2$). Polak–Schrijver Table 1 already records that 108–115 interval.
+
+The published 367-set meets every letter in every coordinate, with fiber sizes 50–55. It differs from the reconstructed pipeline set in two vertices (`34035`,`64340` versus `24635`,`64246`), which are two of Gao's eight private pairs. The eight single-blocker vertices of the 367-set are exactly the eight private neighbours $q_j$.
+
+1. **Three mutually non-adjacent slices.** Support in one coordinate on a 3-set of circular distance $\ge 2$ (e.g. $\{0,2,4\}$). The three fibers do not interact, so the size is at most $3\alpha(C_7^{\boxtimes 4})\le 345<368$. This shape is impossible. Every 368-set uses at least four letters in every coordinate.
+
+2. **Four-letter support.** Average fiber 92, each $\le 115$. A 4-subset of $C_7$ always contains an edge; the split $\{0,1,3,5\}$ has a single adjacent pair and two free fibers.
+
+3. **Punctured isolate core.** Polak–Schrijver keep $|M|=327$ isolates of the folded 382-orbit and add $\alpha=40$ from a 71-vertex residual. Deleting $k$ isolates and re-solving the *whole* residual (not a 3-out of the finished 367-set) aims at $327-k+\alpha(\text{new residual})\ge 368$. The S' MIS extreme ($357+4=361$) already showed that eating conflict vertices spends the leftover; this shape is the intermediate punctures.
+
+4. **Eight cosets of a good 2-dimensional $\mathbb F_7$-code.** A 2-dimensional $V$ with $V\cap\{-1,0,1\}^5=\{0\}$ has 49-point cosets. Eight independent points of the 343-vertex quotient give 392 vertices. Seven cosets are only 343.
+
+5. **A 5-dimensional fiber of a published higher-power set.** Itty–Rosin–Carstensen–Reichman $\alpha(C_7^{\boxtimes 6})\ge 1120$: after dropping one coordinate, the largest 5-fiber has size 165 (replayed from their `CC_6_7_1120.txt`, 1120 unique, independent). Their 10th-power gadget $I=(B\times B)\cup A_H\cup A_V$ of size 134753 has largest 5-fiber 367 (left or right), never 368. Those two certificates do not hide a 368-set in a fiber.
+
+6. **A 367-set on the private-pair / translate plateau, plus one vertex.** Few-flip SAT only killed odd Hamming distance $\le 9$ around one seed. The even 1-out-1-in moves are the eight private-pair swaps; 108 of the 256 subsets remain independent 367-sets, including the reconstructed list. None of those 108 has a 1-out-2-in with newly-free set of size $\le 16$. Separately, the union $A\cup(A+v)$ is bipartite aside from the intersection. Among all 16806 nonzero translations, 8422 are disjoint from $A$; none has an isolated vertex in the bipartite conflict graph, so there is no cheap "$A$ plus one point of $A+v$". An imperfect maximum matching would still give 368; that is a C check, not the old 3-out SAT.
+
 ## 2026-08-16
 
 - Folder created. Grok 4.6 cloud agent launched.
