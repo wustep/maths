@@ -106,3 +106,36 @@ or look up a sequence with `python3 scripts/oeis_lookup.py`.
   `scripts/arxiv_fetch.py` hit HTTP 429 at the arXiv API. Their arXiv abstract,
   HTML/PDF, version histories, and journal/code links above were opened
   directly instead.
+
+### Additional files and archives opened
+
+- De Grey version check: [v1 PDF](https://arxiv.org/pdf/1804.02385v1),
+  [v2 PDF](https://arxiv.org/pdf/1804.02385v2),
+  [v3 PDF](https://arxiv.org/pdf/1804.02385v3), and the
+  [Geombinatorics volume XXVIII page](https://geombina.uccs.edu/past-issues/volume-xxviii).
+  These establish that 1,567 is confined to v1 and 1,581 is the corrected
+  final count.
+- Heule certificate trail: [CNP-SAT repository](https://github.com/marijnheule/CNP-SAT),
+  [553 coordinates](https://raw.githubusercontent.com/marijnheule/CNP-SAT/master/vtx/553.vtx),
+  [edge list](https://raw.githubusercontent.com/marijnheule/CNP-SAT/master/edge/553.edge),
+  [four-color CNF](https://raw.githubusercontent.com/marijnheule/CNP-SAT/master/cnf/553-4-sbp.cnf),
+  [DRAT proof](https://raw.githubusercontent.com/marijnheule/CNP-SAT/master/proof/553-4-sbp.drat),
+  [checking scripts](https://github.com/marijnheule/CNP-SAT/tree/master/check),
+  and the [exact-distance service](https://fmv.jku.at/dist1sqrtgb/). The
+  particular stored 553 graph has 2,722 edges; Heule's paper calls about
+  2,720 the average over several graphs.
+- Parts data trail: the [Polymath data page](https://michaelnielsen.org/polymath/index.php?title=Hadwiger-Nelson_problem)
+  and its [shared data archive](https://www.dropbox.com/scl/fo/s85qrr0iiqiw0bpk9wlni/AN4AoLF7h5loi2Wwkk61i3w?rlkey=6oldx9amg1i3276nyyhe8gq0e&dl=0).
+  The official archive labels `JP/Large/v509e2442.vtx`; no adjacent DRAT
+  proof was found.
+- Further Parts screens: the human-verifiable proof's
+  [HTML](https://arxiv.org/html/2010.12661) and
+  [PDF](https://arxiv.org/pdf/2010.12661v1); the restricted forbidden-interval
+  paper [arXiv:2206.12633](https://arxiv.org/abs/2206.12633); and the
+  de Grey–Parts tiling paper [arXiv:2206.12635](https://arxiv.org/abs/2206.12635).
+  The latter's six-color hexagon separation is below one, so it is not a
+  six-coloring for the ordinary unit-distance problem.
+- Current survey copy: Frankl–Hubai–Pálvölgyi's
+  [institutional final PDF](https://oro.open.ac.uk/92261/7/92261final.pdf),
+  journal p. 754, states the present lower five and upper seven. The journal
+  page above remains the citation.

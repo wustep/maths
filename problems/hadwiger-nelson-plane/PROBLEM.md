@@ -1,6 +1,7 @@
 # Chromatic number of the plane
 
 - Slug: `hadwiger-nelson-plane`
+- List: user-specified new problem
 - Solver: GPT-5.6 Sol
 - Status: residue — no lower-bound improvement
 - Area: Discrete geometry; graph coloring; SAT
