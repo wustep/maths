@@ -31,10 +31,9 @@ $(2,0)$-partition into ten blocks, so Construction~$\mathrm{QM}_2^2$
 propagates it to exhaustively verified codes of lengths $815$ and $1631$
 at $r=18$ and $r=20$, and to the family
 $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
-This note explains the problem, how the matrix was found, what was proved,
-and how to re-check every number from the files in the public repository.
-The matrices, verifiers, and \LaTeX\ source live at
-\url{https://github.com/wustep/maths}.
+The matrices, verifiers, and \LaTeX\ source are at
+\url{https://github.com/wustep/maths}. Every number can be re-checked
+from the files in that public repository.
 \end{abstract}
 
 \begingroup
@@ -64,9 +63,8 @@ of $\HH$. Write $\ellr(r,R)$ for the least length of a binary linear
 code with codimension $r$ and covering radius $R$.
 
 A binary linear code of length $n$ and dimension $k=n-r$ is an
-$[n,k]_2$ code. When the covering radius is asserted, it is appended
-to the parameters: an $[n,k]_2\,R$ code. For $R=2$ the covering
-condition on the column set is
+$[n,k]_2$ code. An $[n,k]_2$ code of covering radius $R$ is written
+$[n,k]_2\,R$. For $R=2$ the covering condition on the column set is
 \begin{equation}
 \label{eq:cover}
 \{0\}\cup S\cup(S+S)=\FF_2^r,
@@ -121,7 +119,8 @@ $p(\HH_{KR})=11$ for the length-$51$ matrix.
 
 A length-$50$ matrix at $r=10$ therefore improves one table entry, and
 if it also admits a small $(2,0)$-partition, it re-seeds the whole
-family. This note gives such a matrix and such a partition.
+family. The matrix of Theorem~\ref{thm:main} and the partition of
+Table~\ref{tab:part} are of that form.
 
 \section{Results}
 
@@ -192,8 +191,8 @@ $1024$ syndromes uncovered. The minimum, $9$, is attained by exactly three colum
 $479$, and $927$. In geometric language, the column set of $\HH$ is a
 minimal $1$-saturating set in $PG(9,2)$. The covering-code literature
 calls such a code locally optimal.
-Minimality concerns this particular $50$-set. It says nothing about
-the existence of a covering $49$-set.
+Minimality applies only to this particular $50$-set; it does not decide
+whether a covering $49$-set exists.
 
 \subsection{A $(2,0)$-partition into ten blocks}
 
@@ -228,8 +227,8 @@ columns lie in distinct blocks. Over those $973$ syndromes the pair
 multiplicities are $\{1{:}821,\ 2{:}123,\ 4{:}19,\ 5{:}8,\ 6{:}2\}$. In
 particular, $821$ syndromes have a unique pair, and each unique pair
 forces its two columns into distinct blocks. The computer search
-of~\cite{DMP2025} gives $p(\HH_{KR})=11$ for the length-$51$ code. We
-do not claim that $10$ blocks is minimal for $\HH$.
+of~\cite{DMP2025} gives $p(\HH_{KR})=11$ for the length-$51$ code.
+Minimality of the $10$-block partition is not claimed.
 
 \subsection{Dependent triples}
 
@@ -255,8 +254,8 @@ $\boldsymbol{D}=\boldsymbol{D}_1(2)$. The output is a code with
 n=2^m(n_0+1)-1,\qquad r=r_0+2m,\qquad p(\HH_C)\le 2^{m+1}+1 .
 \end{equation}
 With $n_0=50$ and $p(\HH_0)=10$ the hypothesis permits exactly $m=4$
-and $m=5$, since $2^6=64>50$. We built both outputs from equations
-(4.2) and (4.4) of~\cite{DMP2025} and verified them by enumeration of
+and $m=5$, since $2^6=64>50$. Both outputs come from equations
+(4.2) and (4.4) of~\cite{DMP2025} and were verified by enumeration of
 every syndrome:
 
 \begin{center}
@@ -317,7 +316,7 @@ the family, and Section~\ref{sec:notclaimed} records it.
 \label{sec:search}
 
 The matrix $\HH$ is the output of a simulated-annealing local search.
-The search is not part of the proof. The argument is a finite statement
+The search is not part of the proof: the argument is a finite statement
 about committed matrices.
 
 \subsection{Annealing from the 2003 code}
@@ -394,9 +393,9 @@ so every claim in this note is preserved.
 
 \subsection{Scope of independence}
 
-Both verifiers were written by the same person in one session. The
-programs share no code and differ in language, algorithm, and parser,
-but they are not the work of two people. A third program, kept outside
+Both verifiers were written by the same person in one session, so they
+are not the work of two people. The programs share no code and differ
+in language, algorithm, and parser. A third program, kept outside
 the repository, ran once after the two verifiers agreed, and it
 confirmed every value.
 
