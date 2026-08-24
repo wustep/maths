@@ -394,7 +394,7 @@ $n_0\ge 2^m\ge p(\HH_0)$ holds for both $m=4$ and $m=5$.
 The discovery programs that certified the $50$-set, reconstructed the
 Kaikkonen--Rosendahl seed, searched for the partition, and enumerated
 the $m=4,5$ outputs sit in
-\path{problems/covering/compute/}.
+\path{problems/covering/share/2026-08-24/compute/}.
 They are not the two independent verifiers of
 Section~\ref{sec:verif}.
 
@@ -499,7 +499,12 @@ Everything named below is in the public repository
 \texttt{problems/covering/share/2026-08-24/} at commit
 \texttt{5fcabe876753682f96629b4b412c675ea0e9e993}.
 
+The discovery programs are
+\path{problems/covering/share/2026-08-24/compute/}
+and the six scripts named below.
+
 \begin{center}
+\small
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}ll@{}}
 \toprule
@@ -509,8 +514,13 @@ path & contents \\
 \path{result/run_all.sh} & the replay script \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
 \path{result/data/partition_p10.json} & the $10$-block partition \\
-\path{compute/} & the annealing replay \\
-\texttt{problems/covering/compute/} & discovery programs (live tree) \\
+\path{compute/} & 16 August compute plus the discovery programs \\
+\path{compute/verify\_H\_r10\_n50\_independent.py} & independent check of $\HH$ \\
+\path{compute/reconstruct\_KR\_r10\_n51.py} & Kaikkonen--Rosendahl reconstruction \\
+\path{compute/search\_partition\_p10.py} & partition search \\
+\path{compute/verify\_partition\_p10.py} & partition check \\
+\path{compute/propagate\_qm\_m4.py} & $\mathrm{QM}_2^2$ at $m=4$ \\
+\path{compute/propagate\_qm\_m5.py} & $\mathrm{QM}_2^2$ at $m=5$ \\
 \bottomrule
 \end{tabular}
 \end{center}

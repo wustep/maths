@@ -1,6 +1,6 @@
 # Covering 1024 syndromes with 50 columns
 
 24 August 2026 pin for the arXiv note. This folder has the tex, the pdf,
-and the `result/` and `compute/` files used to check the claims.
-The discovery programs live in `problems/covering/compute/` on the live
-tree, not in this pin. The note cites commit `5fcabe876753682f96629b4b412c675ea0e9e993`.
+`compute/` (a snapshot of the 16 August compute plus the discovery
+programs from the 16 August session), and `result/` (still the 16 August
+symlink). The note cites commit `5fcabe876753682f96629b4b412c675ea0e9e993`.
