@@ -171,6 +171,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | --- | --- | --- | --- |
 | Erdős–Szekeres ES(7) | `problems/erdos-szekeres-seven` | GPT-5.6 Sol | 2026-08-23 |
 | covering / $\ell_2(10,2)$ | `problems/covering` | Sol 5.6, Opus 5, Fable 5, Grok 4.6 | 2026-08-16–21 |
+| covering / 24 August search section | `problems/covering/compute` | Grok 4.6 | 2026-08-24 |
 | covering / prescribed automorphisms ($r=10,11$) | `problems/covering/compute/q10` | Claude Opus 5 | 2026-08-21 |
 | covering / fibered graph family ($r=4\text{–}11$) | `problems/covering/compute/q11` | Claude Opus 5 | 2026-08-21 |
 | Brocard–Ramanujan | `problems/brocard` | Sol 5.6 | 2026-08-16 |

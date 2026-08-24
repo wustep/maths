@@ -34,7 +34,7 @@ family $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 The matrices, verifiers, and \LaTeX\ source are at
 \url{https://github.com/wustep/maths}. The pin is
 \texttt{problems/covering/share/2026-08-24/} at commit
-\texttt{9a3d372b6f5385507e73d51246677e492746ed10}. Every number is re-checked from the files in that pin.
+\texttt{COMMIT}. Every number is re-checked from the files in that pin.
 \end{abstract}
 
 \begingroup
@@ -321,58 +321,108 @@ of~\cite{DMP2025}, not computed partitions.
 
 The $50$-column matrix $\HH$ was found by simulated annealing on
 column sets in $\FF_2^{10}$. A state is a set of exactly $50$ distinct
-nonzero columns. An array stores, for every syndrome, how many times it
-appears as $0$, a singleton, or a pair-sum. Replacing one column
-changes only that singleton and the $49$ pair-sums that use it. Most
-proposals target an uncovered syndrome $g$: the search offers $g$
+nonzero columns. An array of $1024$ counters records, for each
+syndrome, its number of representations among the
+$1+50+\binom{50}{2}=1276$ sums of at most two columns. The energy of a
+state is its number of zero counters. Replacing one column changes
+only that singleton and the $49$ pair-sums that use it, so a swap
+costs about $100$ counter updates instead of a $1276$-term recount.
+Most proposals target an uncovered syndrome $g$: the search offers $g$
 itself, or $g+s$ for a current column $s$.
 
-The run starts from the best single deletion of the
-Kaikkonen--Rosendahl $51$-set: deleting column $419$
-($\mathtt{0x1A3}$) leaves $11$ syndromes uncovered. Energy is the
-number of uncovered syndromes. Moves that do not raise energy always
-pass; moves that raise it by $\Delta$ pass with probability
-$e^{-\Delta/T}$ (Metropolis). With a fixed xorshift64 state, the first
-run of the script reached covering radius $2$ at proposal
-$3{,}600{,}281$.
+The published $r=10$ seed is the Kaikkonen--Rosendahl length-$51$
+matrix. Before any partition work it was reconstructed from the
+hexadecimal listing in Theorem~4.3 of~\cite{DMP2025}. That listing is
+MSB-first; the repository stores columns LSB-first
+(Section~\ref{sec:encoding}). The reconstructed matrix has $51$
+distinct columns and covers $1024/1024$ syndromes, so it is the
+published table entry. The one-column improvement below is an
+improvement of that seed, not a different problem.
 
-The same method failed at three nearby parameters. At $(r,n)=(8,25)$ the
-best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
-$8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
-searches, not lower bounds.
+The anneal starts from the best single deletion of this $51$-set:
+deleting column $419$ ($\mathtt{0x1A3}$) leaves $11$ syndromes
+uncovered. Energy is the number of uncovered syndromes. Moves that do
+not raise energy always pass; moves that raise it by $\Delta$ pass
+with probability $e^{-\Delta/T}$ (Metropolis). With a fixed xorshift64
+state, the first run of the script reached a covering $50$-set at
+proposal $3{,}600{,}281$. The search stopped there. It did not compute
+a $(2,0)$-partition and it did not run Construction
+$\mathrm{QM}_2^2$.
+
+An independent check of the resulting matrix, from the committed
+column text, gives a $10\times 50$ matrix of $\FF_2$-rank $10$ with
+$50$ distinct nonzero columns, coverage $1024/1024$, and at least one
+syndrome that is neither $0$ nor a column. That finite check is the
+one-column improvement of Table~5.1 of~\cite{DMP2025}.
+
+The same method failed at three nearby parameters. At $(r,n)=(8,25)$
+the best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it
+left $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are
+incomplete searches, not lower bounds.
 
 \subsection{The partition}
 
-The anneal produced only the column set. A separate search produced the
-$10$-block $(2,0)$-partition of Table~\ref{tab:part}. That search code
-is not in the repository; the artifact is
-\path{result/data/partition_p10.json}. The $821$ syndromes with a unique
-pair force their two columns into distinct blocks, so most of a
-partition is constrained before search. Checking a candidate is one
-pass over the $1276$ sums of at most two columns. Ten blocks is small
-enough for Construction $\mathrm{QM}_2^2$ at both $m=4$ and $m=5$.
+The published $r=10$ row is the seed of the whole
+$\mathrm{QM}_2^2$ family (Theorem~5.7 of~\cite{DMP2025}). A covering
+$50$-set is enough for $\ellr(10,2)\le 50$. The family bound needs a
+$(2,0)$-partition with few enough blocks. That was a second
+computation.
+
+Of the $1024$ syndromes, $973$ need a pair. Their pair-multiplicities
+are
+\[
+\{1{:}821,\ 2{:}123,\ 4{:}19,\ 5{:}8,\ 6{:}2\}.
+\]
+Each of the $821$ unique-pair syndromes forces its two columns into
+distinct blocks. These constraints form a graph with $821$ edges on
+the $50$ columns; the maximum degree is $42$. A valid
+$(2,0)$-partition is a proper colouring of this graph that, for each
+of the remaining $152$ syndromes, also splits at least one of its $2$
+to $6$ pairs. Checking a candidate is one pass over the $1276$ sums of
+at most two columns.
+
+A colouring with $10$ blocks exists and verifies; it is the artifact
+\path{result/data/partition_p10.json}. The paper takes $p(\HH)=10$
+from that file, not from a later rerun of the search. The same search
+found colourings with $16$, $12$, and $11$ blocks on the way down, and
+did not find a $9$-block or $8$-block colouring in that run. Not
+finding nine blocks is an incomplete search, not a lower bound on
+$p(\HH)$. Ten blocks is smaller than the computer-searched
+$p(\HH_{KR})=11$ of~\cite{DMP2025}, and small enough that
+$n_0\ge 2^m\ge p(\HH_0)$ holds for both $m=4$ and $m=5$.
+
+The discovery programs that certified the $50$-set, reconstructed the
+Kaikkonen--Rosendahl seed, searched for the partition, and enumerated
+the $m=4,5$ outputs sit in
+\path{problems/covering/compute/}.
+They are not the two independent verifiers of
+Section~\ref{sec:verif}.
 
 \subsection{The check}
 
 Construction $\mathrm{QM}_2^2$ was implemented from (4.2) and (4.4)
-of~\cite{DMP2025}. The $m=4$ and $m=5$ outputs were enumerated. The two
-opposite verifiers of Section~\ref{sec:verif} re-derive the columns from
-the matrix text and use the partition file for block labels only. After
-they agreed, a third program outside the repository was run once. The
-covering radius of $\HH$ is that finite check, not a property of the
-annealing path.
+of~\cite{DMP2025}. The $m=4$ and $m=5$ outputs were enumerated over
+their full syndrome spaces: length $815$ at $r=18$ covers
+$262144/262144$ syndromes, density $\mu=1.26847$, against the
+published length $831$; length $1631$ at $r=20$ covers its full space,
+against the published length $1663$. The two opposite verifiers of
+Section~\ref{sec:verif} re-derive the columns from the matrix text and
+use the partition file for block labels only. After they agreed, a
+third program outside the repository was run once. The covering
+radius of $\HH$ is that finite check, not a property of the annealing
+path.
 
 \section{Verification}
 \label{sec:verif}
 
 \subsection{Replay}
 
-Clone the public repository, check out commit \texttt{9a3d372b6f5385507e73d51246677e492746ed10}, and run
+Clone the public repository, check out commit \texttt{COMMIT}, and run
 the pipeline from this pin:
 \begin{verbatim}
 git clone https://github.com/wustep/maths.git
 cd maths
-git checkout 9a3d372b6f5385507e73d51246677e492746ed10
+git checkout COMMIT
 cd problems/covering/share/2026-08-24/result
 ./run_all.sh
 \end{verbatim}
@@ -381,9 +431,9 @@ the checkout it uses no network, no packages, and no randomness. It
 executes $74$ named assertions, exits with status $0$, and prints
 byte-identical output across runs. A run takes about two seconds.
 Direct links at that commit:
-\url{https://github.com/wustep/maths/tree/9a3d372b6f5385507e73d51246677e492746ed10/problems/covering/share/2026-08-24/result}
+\url{https://github.com/wustep/maths/tree/COMMIT/problems/covering/share/2026-08-24/result}
 and
-\href{https://github.com/wustep/maths/blob/9a3d372b6f5385507e73d51246677e492746ed10/problems/covering/share/2026-08-24/result/run_all.sh}{\texttt{result/run\_all.sh}}.
+\href{https://github.com/wustep/maths/blob/COMMIT/problems/covering/share/2026-08-24/result/run_all.sh}{\texttt{result/run\_all.sh}}.
 
 \subsection{Two verifiers with opposite algorithms}
 
@@ -447,7 +497,7 @@ proceedings.
 Everything named below is in the public repository
 \url{https://github.com/wustep/maths}, under
 \texttt{problems/covering/share/2026-08-24/} at commit
-\texttt{9a3d372b6f5385507e73d51246677e492746ed10}.
+\texttt{COMMIT}.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
@@ -459,7 +509,8 @@ path & contents \\
 \path{result/run_all.sh} & the replay script \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
 \path{result/data/partition_p10.json} & the $10$-block partition \\
-\path{compute/} & the search, deterministic replay \\
+\path{compute/} & the annealing replay \\
+\texttt{problems/covering/compute/} & discovery programs (live tree) \\
 \bottomrule
 \end{tabular}
 \end{center}
