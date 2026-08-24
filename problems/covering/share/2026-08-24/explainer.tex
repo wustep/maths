@@ -22,29 +22,28 @@
 \begin{document}
 \maketitle
 
-\paragraph{Computation.}
-Grok Bot (Maths) orchestrated the campaign; GPT-5.6 Sol found the
-50-column matrix by simulated annealing; Claude Opus 5 found the
-10-block $(2,0)$-partition, implemented $\mathrm{QM}_2^2$, and wrote
-the two verifiers; Claude Fable 5 drafted visitor prose. Stephen Wu
-set the target and the verification rule.
-
 \begin{abstract}
-We give a parity-check matrix $\HH$ of a binary $[50,40]_2$ code with
-covering radius $2$, so $\ellr(10,2)\le 50$. The best previous length
-was $51$, published by Kaikkonen and Rosendahl in 2003. That length-$51$
-code still seeds the radius-$2$ family of Davydov, Marcugini, and
-Pambianco (arXiv:2511.02542). The columns of $\HH$ admit a
-$(2,0)$-partition into $p(\HH)=10$ blocks, one block fewer than the
-partition known for the length-$51$ code. Construction
-$\mathrm{QM}_2^2$ therefore applies to $\HH$. It gives codes of lengths
-$815$ and $1631$ at redundancies $18$ and $20$, both verified by
-exhaustive syndrome enumeration, and an infinite family with covering
-density $2601/2048\approx 1.27002$, against the previous family density
-$2704/2048\approx 1.32031$. Every claim reduces to a finite statement
-about committed matrices. The matrices, the verifiers, and this source
-are at \url{https://github.com/wustep/maths}.
+A binary linear $[50,40]_2$ code of covering radius~$2$ certifies
+$\ellr(10,2)\le 50$, one column below the Kaikkonen--Rosendahl length~$51$
+that has stood since 2003 and that still seeds the $R=2$ family of
+Davydov--Marcugini--Pambianco (arXiv:2511.02542). The new matrix admits a
+$(2,0)$-partition with $p(\HH)=10$, so Construction~$\mathrm{QM}_2^2$
+propagates it to exhaustively verified codes of lengths $815$ and $1631$
+at $r=18$ and $r=20$, and to the family
+$n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
+This note explains the problem, how the matrix was found, what was proved,
+and how to re-check every number from the committed text.
+The matrices, verifiers, and \LaTeX\ source live at
+\url{https://github.com/wustep/maths}.
 \end{abstract}
+
+\subsection*{Computation}
+\begin{itemize}\setlength{\itemsep}{0.15ex}\setlength{\parsep}{0pt}
+\item Grok Bot orchestrated the campaign.
+\item GPT-5.6 Sol found the 50-column matrix by simulated annealing.
+\item Claude Opus 5 found the 10-block $(2,0)$-partition, implemented
+$\mathrm{QM}_2^2$, and wrote the two verifiers.
+\end{itemize}
 
 \section{Definitions and background}
 
