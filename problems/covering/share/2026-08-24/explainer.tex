@@ -32,8 +32,9 @@ propagates it to exhaustively verified codes of lengths $815$ and $1631$
 at $r=18$ and $r=20$, and to the family
 $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 The matrices, verifiers, and \LaTeX\ source are at
-\url{https://github.com/wustep/maths}. Every number can be re-checked
-from the files in that public repository.
+\url{https://github.com/wustep/maths}. The pin is
+\texttt{problems/covering/share/2026-08-24/} at commit
+\texttt{COMMIT}. Every number is re-checked from the files in that pin.
 \end{abstract}
 
 \begingroup
@@ -309,8 +310,7 @@ this seed & $2601/2048\approx 1.27002$ & seeded by $n_0=50$ \\
 \end{center}
 
 The family rows past $m=5$ use the bound $p(\HH_C)\le 2^{m+1}+1$
-of~\cite{DMP2025}, not computed partitions. That is the weakest step in
-the family, and Section~\ref{sec:notclaimed} records it.
+of~\cite{DMP2025}, not computed partitions.
 
 \section{The search}
 \label{sec:search}
@@ -322,6 +322,13 @@ appears as $0$, a singleton, or a pair-sum. Replacing one column
 changes only that singleton and the $49$ pair-sums that use it. Most
 proposals target an uncovered syndrome $g$: the search offers $g$
 itself, or $g+s$ for a current column $s$.
+
+The run starts from the best single deletion of the
+Kaikkonen--Rosendahl $51$-set: deleting column $419$
+($\mathtt{0x1A3}$) leaves $11$ syndromes uncovered. Energy is the
+number of uncovered syndromes. Moves that do not raise energy always
+pass; moves that raise it by $\Delta$ pass with probability
+$e^{-\Delta/T}$ (Metropolis).
 
 \subsection{Annealing from the 2003 code}
 
@@ -339,16 +346,11 @@ best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
 $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
 searches, not lower bounds.
 
-\subsection{From the matrix}
-
-The first search produced only the matrix. A later session treated that
-matrix as a claim to check. It reconstructed the Kaikkonen--Rosendahl
-baseline from Theorem~4.3 of~\cite{DMP2025}, found the $10$-block
-$(2,0)$-partition, implemented Construction $\mathrm{QM}_2^2$, and
-wrote the two verifiers of Section~\ref{sec:verif}. The covering radius
-of $\HH$ is then a finite check on those committed files. The
-partition search code is not in the repository. The committed artifact
-is \path{result/data/partition_p10.json}.
+The first search produced only the matrix. The $10$-block partition,
+Construction $\mathrm{QM}_2^2$, and the two verifiers came after, and
+the covering radius of $\HH$ is a finite check of those committed
+files. The partition search code is not in the repository. The
+artifact is \path{result/data/partition_p10.json}.
 
 \section{Verification}
 \label{sec:verif}
@@ -445,13 +447,10 @@ Everything named below is in the public repository
 path & contents \\
 \midrule
 \path{result/} & the verification pipeline and matrices \\
+\path{result/run_all.sh} & the replay script \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
 \path{result/data/partition_p10.json} & the $10$-block partition \\
 \path{compute/} & the search, deterministic replay \\
-\path{ATTACK.md} & chronological log \\
-\path{PROBLEM.md} & the problem statement \\
-\path{RESEARCH.md} & literature log \\
-\path{WALKTHROUGH.md} & discovery notes \\
 \bottomrule
 \end{tabular}
 \end{center}
