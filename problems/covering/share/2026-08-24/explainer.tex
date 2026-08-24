@@ -37,13 +37,19 @@ The matrices, verifiers, and \LaTeX\ source live at
 \url{https://github.com/wustep/maths}.
 \end{abstract}
 
-\subsection*{Computation}
-\begin{itemize}\setlength{\itemsep}{0.15ex}\setlength{\parsep}{0pt}
-\item Grok Bot orchestrated the campaign.
-\item GPT-5.6 Sol found the 50-column matrix by simulated annealing.
-\item Claude Opus 5 found the 10-block $(2,0)$-partition, implemented
-$\mathrm{QM}_2^2$, and wrote the two verifiers.
-\end{itemize}
+\begingroup
+\renewcommand{\abstractname}{Computation}
+\begin{abstract}
+Grok Bot orchestrated the campaign. GPT-5.6 Sol found the $50$-column
+matrix by simulated annealing on column sets in $\FF_2^{10}$, starting
+from the Kaikkonen--Rosendahl seed of length~$51$. Claude Opus~5 found
+the $10$-block $(2,0)$-partition of that matrix, implemented
+Construction $\mathrm{QM}_2^2$, and wrote two independent verifiers
+with opposite algorithms (Python and Rust) that replay the covering
+condition and the partition from the committed text. The author is
+responsible for every claim.
+\end{abstract}
+\endgroup
 
 \section{Definitions and background}
 
