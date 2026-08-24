@@ -35,9 +35,20 @@ function walk(abs, rel) {
     if (e.isDirectory()) {
       if (EXCLUDED_DIRS.has(e.name)) continue;
       walk(childAbs, childRel);
-    } else if (e.isFile()) {
+    } else if (e.isFile() || e.isSymbolicLink()) {
       if (EXCLUDED_FILES.has(e.name)) continue;
       if (!RAW_EXT.has(path.extname(e.name).toLowerCase())) continue;
+      // Follow file symlinks (explainer.pdf); skip broken links and
+      // directory targets. Keep in sync with web/src/lib/repo.ts scanDir.
+      if (e.isSymbolicLink()) {
+        let st;
+        try {
+          st = fs.statSync(childAbs);
+        } catch {
+          continue;
+        }
+        if (!st.isFile()) continue;
+      }
       const dest = path.join(outRoot, childRel);
       fs.mkdirSync(path.dirname(dest), { recursive: true });
       fs.copyFileSync(childAbs, dest);
