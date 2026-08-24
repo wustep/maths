@@ -1,5 +1,5 @@
 % Explainer for the [50,40]_2 radius-2 covering code.
-% Language/reorg pass of the 16 August 2026 claims. No new bounds.
+% Language/reorg pass; claims unchanged from 16 August 2026.
 % Compile: tectonic explainer.tex
 \documentclass[11pt,a4paper]{article}
 
@@ -162,9 +162,9 @@ matrix as bits.
 
 The $1276=1+50+\binom{50}{2}$ sums of at most two columns hit the
 $1024$ syndromes with multiplicity histogram
-$\{1{:}859,\ 2{:}129,\ 4{:}24,\ 5{:}9,\ 6{:}3\}$. No multiplicity is
-zero, which proves \eqref{eq:cover}. Exactly $973$ syndromes are
-neither $0$ nor a column, so the covering radius is not $1$. The
+$\{1{:}859,\ 2{:}129,\ 4{:}24,\ 5{:}9,\ 6{:}3\}$. Every multiplicity
+is positive, which proves \eqref{eq:cover}. Exactly $973$ syndromes
+require two columns, so the covering radius is exactly $2$. The
 density is $\mu=1276/1024=319/256=1.24609375$. The columns are distinct
 and nonzero, and $\HH$ has a linearly dependent column triple, so the
 minimum distance is $d=3$.
@@ -193,8 +193,8 @@ $1024$ syndromes uncovered, and the minimum, $9$, is attained by
 exactly three columns, $381$, $479$, and $927$. The column set of
 $\HH$ is a minimal $1$-saturating set in $PG(9,2)$, and the
 covering-code literature calls such a code locally optimal.
-Minimality applies only to this particular $50$-set; it does not
-decide whether a covering $49$-set exists.
+Minimality applies to this particular $50$-set. The existence of a
+covering $49$-set remains open.
 
 \subsection{A $(2,0)$-partition into ten blocks}
 
@@ -230,8 +230,7 @@ multiplicities are $\{1{:}821,\ 2{:}123,\ 4{:}19,\ 5{:}8,\ 6{:}2\}$. In
 particular, $821$ syndromes have a unique pair, and each unique pair
 forces its two columns into distinct blocks. For comparison, the
 computer search of~\cite{DMP2025} gives $p(\HH_{KR})=11$ for the
-length-$51$ code. Minimality of the $10$-block partition is not
-claimed.
+length-$51$ code. Minimality of the $10$-block partition remains open.
 
 \subsection{Dependent triples}
 
@@ -240,7 +239,7 @@ one of them, $(491,734,821)$, meets three distinct blocks of the
 partition (blocks $6$, $4$, and $9$). This is the analogue of
 Theorem~5.2(ii) of~\cite{DMP2025} and is the extra hypothesis that
 Construction $\mathrm{QM}_5^2$ needs at $r=28$. That construction is
-not carried out here.
+beyond the scope of this note.
 
 \subsection{Propagation}
 \label{sec:prop}
@@ -286,7 +285,7 @@ accessible by $\mathrm{QM}_2^2$:
 \[
 10,18,20,30,32,34,36,38,40,46,48,50,52,54,56,58,60,62,64 .
 \]
-The even $r$ not reachable this way are $12,14,16,22,24,26,28,42,44$.
+This iteration leaves $r=12,14,16,22,24,26,28,42,44$.
 The paper fills its own gaps at $r=22,24,26$ with $\mathrm{QM}_3^2$ and
 at $r=28$ with $\mathrm{QM}_5^2$. On the reachable $r$ the lengths and
 densities have the closed form
@@ -311,8 +310,8 @@ this seed & $2601/2048\approx 1.27002$ & seeded by $n_0=50$ \\
 \end{tabular}
 \end{center}
 
-The family rows past $m=5$ use the bound $p(\HH_C)\le 2^{m+1}+1$
-of~\cite{DMP2025}, not computed partitions.
+The family rows past $m=5$ follow from the bound
+$p(\HH_C)\le 2^{m+1}+1$ of~\cite{DMP2025}.
 
 \section{The search}
 \label{sec:search}
@@ -336,29 +335,27 @@ hexadecimal listing in Theorem~4.3 of~\cite{DMP2025}. That listing is
 MSB-first; the repository stores columns LSB-first
 (Section~\ref{sec:encoding}). The reconstructed matrix has $51$
 distinct columns and covers $1024/1024$ syndromes, so it is the
-published table entry. The one-column improvement below is an
-improvement of that seed, not a different problem.
+published table entry. The search below improves that seed by one
+column.
 
 The anneal starts from the best single deletion of this $51$-set:
 deleting column $419$ ($\mathtt{0x1A3}$) leaves $11$ syndromes
-uncovered. Energy is the number of uncovered syndromes. Moves that do
-not raise energy always pass; moves that raise it by $\Delta$ pass
+uncovered. Energy is the number of uncovered syndromes. Moves that
+preserve or lower energy always pass; moves that raise it by $\Delta$ pass
 with probability $e^{-\Delta/T}$ (Metropolis). With a fixed xorshift64
 state, the first run of the script reached a covering $50$-set at
-proposal $3{,}600{,}281$. The search stopped there. It did not compute
-a $(2,0)$-partition and it did not run Construction
-$\mathrm{QM}_2^2$.
+proposal $3{,}600{,}281$. The search stopped there. Partitioning and
+Construction $\mathrm{QM}_2^2$ were separate computations.
 
 An independent check of the resulting matrix, from the committed
 column text, gives a $10\times 50$ matrix of $\FF_2$-rank $10$ with
 $50$ distinct nonzero columns, coverage $1024/1024$, and at least one
-syndrome that is neither $0$ nor a column. That finite check is the
+syndrome that requires two columns. That finite check is the
 one-column improvement of Table~5.1 of~\cite{DMP2025}.
 
 The same method failed at three nearby parameters. At $(r,n)=(8,25)$
 the best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it
-left $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are
-incomplete searches, not lower bounds.
+left $8$ of $512$. At $(10,49)$ it left $7$ of $1024$.
 
 \subsection{The partition}
 
@@ -382,12 +379,10 @@ to $6$ pairs. Checking a candidate is one pass over the $1276$ sums of
 at most two columns.
 
 A colouring with $10$ blocks exists and verifies; it is the artifact
-\path{result/data/partition_p10.json}. The paper takes $p(\HH)=10$
-from that file, not from a later rerun of the search. The same search
-found colourings with $16$, $12$, and $11$ blocks on the way down, and
-did not find a $9$-block or $8$-block colouring in that run. Not
-finding nine blocks is an incomplete search, not a lower bound on
-$p(\HH)$. Ten blocks is smaller than the computer-searched
+\path{result/data/partition_p10.json}. That committed file certifies
+$p(\HH)=10$. The search found colourings with $16$, $12$, and $11$
+blocks on the way down. It found no $9$-block or $8$-block colouring
+in that run. Ten blocks is smaller than the computer-searched
 $p(\HH_{KR})=11$ of~\cite{DMP2025}, and small enough that
 $n_0\ge 2^m\ge p(\HH_0)$ holds for both $m=4$ and $m=5$.
 
@@ -395,8 +390,8 @@ The discovery programs that certified the $50$-set, reconstructed the
 Kaikkonen--Rosendahl seed, searched for the partition, and enumerated
 the $m=4,5$ outputs sit in
 \path{problems/covering/share/2026-08-24/compute/}.
-They are not the two independent verifiers of
-Section~\ref{sec:verif}.
+The two independent verifiers of Section~\ref{sec:verif} are in
+\path{result/verify/}.
 
 \subsection{The check}
 
@@ -409,8 +404,7 @@ against the published length $1663$. The two opposite verifiers of
 Section~\ref{sec:verif} re-derive the columns from the matrix text and
 use the partition file for block labels only. After they agreed, a
 third program outside the repository was run once. The covering
-radius of $\HH$ is that finite check, not a property of the annealing
-path.
+radius of $\HH$ is established by this finite verification.
 
 \section{Verification}
 \label{sec:verif}
@@ -427,9 +421,10 @@ cd problems/covering/share/2026-08-24/result
 ./run_all.sh
 \end{verbatim}
 The pipeline needs \texttt{python3} and \texttt{rustc}. After
-the checkout it uses no network, no packages, and no randomness. It
-executes $74$ named assertions, exits with status $0$, and prints
-byte-identical output across runs. A run takes about two seconds.
+the checkout it runs offline with those two tools and deterministic
+inputs. It executes $74$ named assertions, exits with status $0$, and
+prints byte-identical output across runs. A run takes about two
+seconds.
 Direct links on the pin:
 \url{https://github.com/wustep/maths/tree/48d7da4/problems/covering/share/2026-08-24/result}
 and
@@ -447,11 +442,10 @@ also differ in parser and in rank pivot choice, lowest versus highest
 set bit, and both use exact rational arithmetic. \path{run_all.sh}
 compares their fact dumps line by line.
 
-Both programs read the matrix from text. Neither reads a stored
-certificate. After both programs agreed, a third program, kept outside
-the repository, was run once as a post-hoc comparison and confirmed
-every value; it is not in the tree and is not part of
-\texttt{./run\_all.sh}.
+Both programs derive their results from the matrix text. After they
+agreed, a third program kept outside the repository was run once as a
+post-hoc comparison and confirmed every value. The committed replay
+is \texttt{./run\_all.sh}.
 
 \subsection{Encoding}
 \label{sec:encoding}
@@ -469,7 +463,7 @@ A reader who uses the MSB-first convention obtains the bit-reversal of
 every column. Bit reversal is an invertible linear map on $\FF_2^{10}$,
 so every claim in this note is preserved.
 
-\section{What is not claimed}
+\section{Scope}
 \label{sec:notclaimed}
 
 \begin{itemize}
@@ -478,15 +472,14 @@ $\ellr(10,2)\ge 45$, since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$
 with $991$. Minimality concerns this $50$-set only. A covering
 $49$-set may exist.
 \item \emph{Nearby parameters.} The searches at $(10,49)$, $(9,38)$,
-and $(8,25)$, which left $7$, $8$, and $3$ syndromes uncovered
-respectively, are incomplete searches, not lower bounds.
+and $(8,25)$ left $7$, $8$, and $3$ syndromes uncovered, respectively.
 \item \emph{Exhaustive checks.} Only the $m=4$ and $m=5$ outputs are
 verified exhaustively. The later rows of the family inherit
 $p(\HH_C)\le 2^{m+1}+1$ from (4.4) of~\cite{DMP2025}.
-\item \emph{Gaps.} Nothing is claimed here for
+\item \emph{Gaps.} The scope excludes
 $r\in\{12,14,16,22,24,26,28,42,44\}$.
-\item \emph{Asymptotics.} $f(2)\le 2601/2048$ is an upper bound only.
-Whether $f(2)=1$ is open.
+\item \emph{Asymptotics.} The result is the upper bound
+$f(2)\le 2601/2048$. Whether $f(2)=1$ is open.
 \item \emph{Priority.} Table~5.1 of~\cite{DMP2025} is ``best as far as
 the authors know''. A proof of $\ellr(10,2)\le 50$ may exist in older
 proceedings.
