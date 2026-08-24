@@ -3,4 +3,4 @@
 24 August 2026 pin for the arXiv note. This folder has the tex, the pdf,
 `compute/` (a snapshot of the 16 August compute plus the discovery
 programs from the 16 August session), and `result/` (still the 16 August
-symlink). The note cites commit `5fcabe876753682f96629b4b412c675ea0e9e993`.
+symlink). The note cites commit `fafc8db201a54da71c2e48df4057fa035c91e72b`.
