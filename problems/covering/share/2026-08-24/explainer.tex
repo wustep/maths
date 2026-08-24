@@ -45,8 +45,8 @@ matrix by simulated annealing on column sets in $\FF_2^{10}$, starting
 from the Kaikkonen--Rosendahl seed of length~$51$. Claude Opus~5 found
 the $10$-block $(2,0)$-partition of that matrix, implemented
 Construction $\mathrm{QM}_2^2$, and wrote two independent verifiers
-with opposite algorithms (Python and Rust) that replay the covering
-condition and the partition from the committed text.
+with opposite algorithms (Python and Rust) that recheck the covering
+condition and the partition from the committed matrix files.
 \end{abstract}
 \endgroup
 
@@ -188,10 +188,10 @@ KR baseline & $51$ columns, $1024/1024$, density $1327/1024$ \\
 
 Every matrix obtained from $\HH$ by deleting one column violates
 \eqref{eq:cover}. Each single deletion leaves at least $9$ of the
-$1024$ syndromes uncovered. The minimum $9$ is attained exactly by the
-columns $381$, $479$, and $927$. In geometric language, the column set
-of $\HH$ is a minimal $1$-saturating set in $PG(9,2)$. The
-covering-code literature calls such a code locally optimal (LO).
+$1024$ syndromes uncovered. The minimum, $9$, is attained by exactly three columns: $381$,
+$479$, and $927$. In geometric language, the column set of $\HH$ is a
+minimal $1$-saturating set in $PG(9,2)$. The covering-code literature
+calls such a code locally optimal.
 Minimality concerns this particular $50$-set. It says nothing about
 the existence of a covering $49$-set.
 
@@ -393,10 +393,11 @@ so every claim in this note is preserved.
 
 \subsection{Scope of independence}
 
-One author wrote both verifiers in one session. The programs share no
-code and differ in language, algorithm, and parser, but they are not
-the work of two people. A third program, kept outside the repository,
-ran once after both verifiers agreed and confirmed every value.
+Both verifiers were written by the same person in one session. The
+programs share no code and differ in language, algorithm, and parser,
+but they are not the work of two people. A third program, kept outside
+the repository, ran once after the two verifiers agreed, and it
+confirmed every value.
 
 \section{What is not claimed}
 \label{sec:notclaimed}
@@ -431,7 +432,7 @@ Everything named below is in the public repository
 \renewcommand{\arraystretch}{1.15}
 \begin{tabular}{@{}ll@{}}
 \toprule
-in the repo & what \\
+path & contents \\
 \midrule
 \path{result/NOTE.md} & repo companion \\
 \path{result/note.tex} & earlier draft of the same claims \\
