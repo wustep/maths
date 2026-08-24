@@ -23,14 +23,14 @@
 \maketitle
 
 \begin{abstract}
-A binary linear $[50,40]_2$ code of covering radius~$2$ certifies
-$\ellr(10,2)\le 50$, one column below the Kaikkonen--Rosendahl length~$51$
-that has stood since 2003 and that still seeds the $R=2$ family of
-Davydov--Marcugini--Pambianco (arXiv:2511.02542). The new matrix admits a
-$(2,0)$-partition into ten blocks, so Construction~$\mathrm{QM}_2^2$
-propagates it to exhaustively verified codes of lengths $815$ and $1631$
-at $r=18$ and $r=20$, and to the family
-$n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
+We exhibit a binary linear $[50,40]_2$ code of covering radius~$2$, so
+$\ellr(10,2)\le 50$, one column below the Kaikkonen--Rosendahl
+length~$51$ that has stood since 2003 and that still seeds the $R=2$
+family of Davydov--Marcugini--Pambianco (arXiv:2511.02542). The new
+matrix admits a $(2,0)$-partition into ten blocks, so
+Construction~$\mathrm{QM}_2^2$ propagates it to exhaustively verified
+codes of lengths $815$ and $1631$ at $r=18$ and $r=20$, and to the
+family $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 The matrices, verifiers, and \LaTeX\ source are at
 \url{https://github.com/wustep/maths}. The pin is
 \texttt{problems/covering/share/2026-08-24/} at commit
@@ -40,13 +40,14 @@ The matrices, verifiers, and \LaTeX\ source are at
 \begingroup
 \renewcommand{\abstractname}{Computation}
 \begin{abstract}
-The author orchestrated large-language-model agents through Grok Bot. GPT-5.6 Sol found the $50$-column
-matrix by simulated annealing on column sets in $\FF_2^{10}$, starting
-from the Kaikkonen--Rosendahl $51$-column set of 2003. Claude Opus~5 found
-the $10$-block $(2,0)$-partition of that matrix, implemented
-Construction $\mathrm{QM}_2^2$, and wrote two independent verifiers
-with opposite algorithms (Python and Rust) that recheck the covering
-condition and the partition from the committed matrix files.
+The author orchestrated large-language-model agents through Grok Bot.
+GPT-5.6 Sol found the $50$-column matrix by simulated annealing on
+column sets in $\FF_2^{10}$, starting from the Kaikkonen--Rosendahl
+$51$-column set of 2003. Claude Opus~5 found the $10$-block
+$(2,0)$-partition of that matrix, implemented Construction
+$\mathrm{QM}_2^2$, and wrote two independent verifiers with opposite
+algorithms (Python and Rust) that recheck the covering condition and
+the partition from the committed matrix files.
 \end{abstract}
 \endgroup
 
@@ -56,12 +57,12 @@ condition and the partition from the committed matrix files.
 
 Let $C\le\FF_2^n$ be a binary linear code of codimension $r$, so
 $\lvert C\rvert=2^{n-r}$. The \emph{covering radius} of $C$ is the least
-$R$ such that every vector of $\FF_2^n$ has Hamming distance at most
-$R$ to some codeword. Let $\HH$ be an $r\times n$ parity-check matrix
-of $C$ with column set $S\subset\FF_2^r$. Then the covering radius is
-the least $R$ such that every syndrome is a sum of at most $R$ columns
-of $\HH$. Write $\ellr(r,R)$ for the least length of a binary linear
-code with codimension $r$ and covering radius $R$.
+$R$ such that every vector of $\FF_2^n$ lies within Hamming distance
+$R$ of some codeword. Equivalently, if $\HH$ is an $r\times n$
+parity-check matrix of $C$ with column set $S\subset\FF_2^r$, the
+covering radius is the least $R$ such that every syndrome is a sum of
+at most $R$ columns of $\HH$. Write $\ellr(r,R)$ for the least length
+of a binary linear code with codimension $r$ and covering radius $R$.
 
 A binary linear code of length $n$ and dimension $k=n-r$ is an
 $[n,k]_2$ code. An $[n,k]_2$ code of covering radius $R$ is written
@@ -78,7 +79,7 @@ syndrome, including $0$, is a sum of at most two columns from
 \emph{distinct} blocks. Write $p(\HH)$ for the number of blocks of such
 a partition.
 
-\subsection{Density and Green's problem 40}
+\subsection{Green's Problem 40}
 
 The covering density of an $[n,n-r]_2\,2$ code is the exact rational
 \[
@@ -112,16 +113,16 @@ $1327/1024\approx 1.29590$. The infinite family of~\cite{DMP2025}
 \[
 n(r)=26\cdot 2^{r/2-4}-1=2^{m}(51+1)-1,\qquad m=r/2-5 .
 \]
-The $51$ in this formula is the length-$51$ code. The whole family is
-$\mathrm{QM}_2^2$ iterated from that single table entry. Theorem~5.7(i)
-of~\cite{DMP2025} calls the $2$-partitions of the seed ``very important
-for the next iterative process''. Their computer search gives
-$p(\HH_{KR})=11$ for the length-$51$ matrix.
+The $51$ in this formula is the length-$51$ code; the whole family is
+$\mathrm{QM}_2^2$ iterated from that single table entry.
+Theorem~5.7(i) of~\cite{DMP2025} calls the $2$-partitions of the seed
+``very important for the next iterative process''. Their computer
+search gives $p(\HH_{KR})=11$ for the length-$51$ matrix.
 
 A length-$50$ matrix at $r=10$ therefore improves one table entry, and
 if it also admits a small $(2,0)$-partition, it re-seeds the whole
 family. The matrix of Theorem~\ref{thm:main} and the partition of
-Table~\ref{tab:part} are of that form.
+Table~\ref{tab:part} do both.
 
 \section{Results}
 
@@ -187,18 +188,18 @@ KR baseline & $51$ columns, $1024/1024$, density $1327/1024$ \\
 \subsection{Minimality}
 
 Every matrix obtained from $\HH$ by deleting one column violates
-\eqref{eq:cover}. Each single deletion leaves at least $9$ of the
-$1024$ syndromes uncovered. The minimum, $9$, is attained by exactly three columns: $381$,
-$479$, and $927$. In geometric language, the column set of $\HH$ is a
-minimal $1$-saturating set in $PG(9,2)$. The covering-code literature
-calls such a code locally optimal.
-Minimality applies only to this particular $50$-set; it does not decide
-whether a covering $49$-set exists.
+\eqref{eq:cover}: each single deletion leaves at least $9$ of the
+$1024$ syndromes uncovered, and the minimum, $9$, is attained by
+exactly three columns, $381$, $479$, and $927$. The column set of
+$\HH$ is a minimal $1$-saturating set in $PG(9,2)$, and the
+covering-code literature calls such a code locally optimal.
+Minimality applies only to this particular $50$-set; it does not
+decide whether a covering $49$-set exists.
 
 \subsection{A $(2,0)$-partition into ten blocks}
 
-The partition of Table~\ref{tab:part} is a $(2,0)$-partition of the
-columns of $\HH$ into $10$ blocks.
+The columns of $\HH$ admit a $(2,0)$-partition with $p(\HH)=10$, shown
+in Table~\ref{tab:part}.
 
 \begin{table}[ht]
 \centering
@@ -227,9 +228,10 @@ Each of the $973$ syndromes that need a pair has a pair whose two
 columns lie in distinct blocks. Over those $973$ syndromes the pair
 multiplicities are $\{1{:}821,\ 2{:}123,\ 4{:}19,\ 5{:}8,\ 6{:}2\}$. In
 particular, $821$ syndromes have a unique pair, and each unique pair
-forces its two columns into distinct blocks. The computer search
-of~\cite{DMP2025} gives $p(\HH_{KR})=11$ for the length-$51$ code.
-Minimality of the $10$-block partition is not claimed.
+forces its two columns into distinct blocks. For comparison, the
+computer search of~\cite{DMP2025} gives $p(\HH_{KR})=11$ for the
+length-$51$ code. Minimality of the $10$-block partition is not
+claimed.
 
 \subsection{Dependent triples}
 
@@ -328,29 +330,17 @@ Kaikkonen--Rosendahl $51$-set: deleting column $419$
 ($\mathtt{0x1A3}$) leaves $11$ syndromes uncovered. Energy is the
 number of uncovered syndromes. Moves that do not raise energy always
 pass; moves that raise it by $\Delta$ pass with probability
-$e^{-\Delta/T}$ (Metropolis).
-
-\subsection{Annealing from the 2003 code}
-
-The search started from the Kaikkonen--Rosendahl $51$-column set: the
-ten unit vectors and the $41$ columns printed in hexadecimal in
-Theorem~4.3 of~\cite{DMP2025}. The script reads the hex words
-LSB-first, while the paper prints them MSB-first. The two readings
-differ by row reversal, an invertible linear map on $\FF_2^{10}$, so
-no claim depends on the orientation (Section~\ref{sec:encoding}). With
-a fixed xorshift64 state, the first run of the script reached covering
-radius $2$ at proposal $3{,}600{,}281$.
+$e^{-\Delta/T}$ (Metropolis). With a fixed xorshift64 state, the first
+run of the script reached covering radius $2$ at proposal
+$3{,}600{,}281$.
 
 The same method failed at three nearby parameters. At $(r,n)=(8,25)$ the
 best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
 $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
 searches, not lower bounds.
 
-The first search produced only the matrix. The $10$-block partition,
-Construction $\mathrm{QM}_2^2$, and the two verifiers came after, and
-the covering radius of $\HH$ is a finite check of those committed
-files. The partition search code is not in the repository. The
-artifact is \path{result/data/partition_p10.json}.
+The first search produced only the matrix; the $10$-block partition,
+Construction $\mathrm{QM}_2^2$, and the two verifiers came after.
 
 \section{Verification}
 \label{sec:verif}
@@ -378,10 +368,10 @@ and
 
 \subsection{Two verifiers with opposite algorithms}
 
-\path{verify/verify.py} is pair-driven. It enumerates all
+\path{verify/verify.py} is pair-driven: it enumerates all
 $\binom{n}{2}$ pairs, marks the syndromes they reach, then sweeps all
 $2^r$ values for unmarked ones. \path{verify/verify.rs} is
-syndrome-driven. For each of the $2^r$ syndromes $s$ it scans the
+syndrome-driven: for each of the $2^r$ syndromes $s$ it scans the
 columns $h$ and tests membership of $s\oplus h$. It then runs its own
 pair loop and reports only if its two verdicts agree. The two programs
 also differ in parser and in rank pivot choice, lowest versus highest
@@ -389,11 +379,10 @@ set bit, and both use exact rational arithmetic. \path{run_all.sh}
 compares their fact dumps line by line.
 
 Both programs read the matrix from text. Neither reads a stored
-certificate.
-
-After both programs agreed, a third program, kept outside the
-repository, was run once as a post-hoc comparison and confirmed every
-value. It is not in the tree and is not part of \texttt{./run\_all.sh}.
+certificate. After both programs agreed, a third program, kept outside
+the repository, was run once as a post-hoc comparison and confirmed
+every value; it is not in the tree and is not part of
+\texttt{./run\_all.sh}.
 
 \subsection{Encoding}
 \label{sec:encoding}
@@ -415,22 +404,23 @@ so every claim in this note is preserved.
 \label{sec:notclaimed}
 
 \begin{itemize}
-\item Optimality. The sphere-covering bound gives $\ellr(10,2)\ge 45$,
-since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$ with $991$.
-Minimality concerns this $50$-set only. A covering $49$-set may exist.
-\item The searches at $(10,49)$, $(9,38)$, and $(8,25)$, which left
-$7$, $8$, and $3$ syndromes uncovered respectively, are incomplete
-searches, not lower bounds.
-\item Only the $m=4$ and $m=5$ outputs are verified exhaustively. The
-later rows of the family inherit $p(\HH_C)\le 2^{m+1}+1$ from (4.4)
-of~\cite{DMP2025}.
-\item Nothing is claimed here for
+\item \emph{Optimality.} The sphere-covering bound gives
+$\ellr(10,2)\ge 45$, since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$
+with $991$. Minimality concerns this $50$-set only. A covering
+$49$-set may exist.
+\item \emph{Nearby parameters.} The searches at $(10,49)$, $(9,38)$,
+and $(8,25)$, which left $7$, $8$, and $3$ syndromes uncovered
+respectively, are incomplete searches, not lower bounds.
+\item \emph{Exhaustive checks.} Only the $m=4$ and $m=5$ outputs are
+verified exhaustively. The later rows of the family inherit
+$p(\HH_C)\le 2^{m+1}+1$ from (4.4) of~\cite{DMP2025}.
+\item \emph{Gaps.} Nothing is claimed here for
 $r\in\{12,14,16,22,24,26,28,42,44\}$.
-\item $f(2)\le 2601/2048$ is an upper bound only. Whether $f(2)=1$ is
-open.
-\item Priority is unresolved. Table~5.1 of~\cite{DMP2025} is ``best as
-far as the authors know''. A proof of $\ellr(10,2)\le 50$ may exist in
-older proceedings.
+\item \emph{Asymptotics.} $f(2)\le 2601/2048$ is an upper bound only.
+Whether $f(2)=1$ is open.
+\item \emph{Priority.} Table~5.1 of~\cite{DMP2025} is ``best as far as
+the authors know''. A proof of $\ellr(10,2)\le 50$ may exist in older
+proceedings.
 \end{itemize}
 
 \section{Files}
