@@ -315,9 +315,13 @@ the family, and Section~\ref{sec:notclaimed} records it.
 \section{The search}
 \label{sec:search}
 
-The matrix $\HH$ is the output of a simulated-annealing local search.
-The search is not part of the proof: the argument is a finite statement
-about committed matrices.
+The $50$-column matrix $\HH$ was found by simulated annealing on
+column sets in $\FF_2^{10}$. A state is a set of exactly $50$ distinct
+nonzero columns. An array stores, for every syndrome, how many times it
+appears as $0$, a singleton, or a pair-sum. Replacing one column
+changes only that singleton and the $49$ pair-sums that use it. Most
+proposals target an uncovered syndrome $g$: the search offers $g$
+itself, or $g+s$ for a current column $s$.
 
 \subsection{Annealing from the 2003 code}
 
@@ -335,30 +339,40 @@ best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
 $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
 searches, not lower bounds.
 
-The $10$-block partition was found the same day in a separate search.
-That search code is not in the repository. The committed artifact is
-\path{result/data/partition_p10.json}. The two independent verifiers
-of Section~\ref{sec:verif} re-derive the columns from the matrix text
-and use the partition file for block labels only.
+\subsection{From the matrix}
+
+The first search produced only the matrix. A later session treated that
+matrix as a claim to check. It reconstructed the Kaikkonen--Rosendahl
+baseline from Theorem~4.3 of~\cite{DMP2025}, found the $10$-block
+$(2,0)$-partition, implemented Construction $\mathrm{QM}_2^2$, and
+wrote the two verifiers of Section~\ref{sec:verif}. The covering radius
+of $\HH$ is then a finite check on those committed files. The
+partition search code is not in the repository. The committed artifact
+is \path{result/data/partition_p10.json}.
 
 \section{Verification}
 \label{sec:verif}
 
 \subsection{Replay}
 
-Clone the public repository and run the pipeline:
+Clone the public repository, check out commit \texttt{COMMIT}, and run
+the pipeline from this pin:
 \begin{verbatim}
 git clone https://github.com/wustep/maths.git
-cd maths/problems/covering/result
+cd maths
+git checkout COMMIT
+cd problems/covering/share/2026-08-24/result
 ./run_all.sh
 \end{verbatim}
-The pipeline needs \texttt{python3} and \texttt{rustc}. After the clone
-it uses no network, no packages, and no randomness. It executes $74$
-named assertions, exits with status $0$, and prints byte-identical
-output across runs. A run takes about two seconds. Direct links:
-\url{https://github.com/wustep/maths/tree/main/problems/covering/result}
+\texttt{COMMIT} is a placeholder for the hash of this note after it is
+merged. The pipeline needs \texttt{python3} and \texttt{rustc}. After
+the checkout it uses no network, no packages, and no randomness. It
+executes $74$ named assertions, exits with status $0$, and prints
+byte-identical output across runs. A run takes about two seconds.
+Direct links at that commit:
+\url{https://github.com/wustep/maths/tree/COMMIT/problems/covering/share/2026-08-24/result}
 and
-\href{https://github.com/wustep/maths/blob/main/problems/covering/result/run_all.sh}{\texttt{result/run\_all.sh}}.
+\href{https://github.com/wustep/maths/blob/COMMIT/problems/covering/share/2026-08-24/result/run_all.sh}{\texttt{result/run\_all.sh}}.
 
 \subsection{Two verifiers with opposite algorithms}
 
@@ -375,6 +389,10 @@ compares their fact dumps line by line.
 Both programs read the matrix from text. Neither reads a stored
 certificate.
 
+After both programs agreed, a third program, kept outside the
+repository, was run once as a post-hoc comparison and confirmed every
+value. It is not in the tree and is not part of \texttt{./run\_all.sh}.
+
 \subsection{Encoding}
 \label{sec:encoding}
 
@@ -390,14 +408,6 @@ $h_5+h_{27}+h_{29}=0$ of Theorem~5.2(ii) of~\cite{DMP2025} as a guard.
 A reader who uses the MSB-first convention obtains the bit-reversal of
 every column. Bit reversal is an invertible linear map on $\FF_2^{10}$,
 so every claim in this note is preserved.
-
-\subsection{Scope of independence}
-
-Both verifiers were written by the same person in one session, so they
-are not the work of two people. The programs share no code and differ
-in language, algorithm, and parser. A third program, kept outside
-the repository, ran once after the two verifiers agreed, and it
-confirmed every value.
 
 \section{What is not claimed}
 \label{sec:notclaimed}
@@ -425,7 +435,8 @@ older proceedings.
 
 Everything named below is in the public repository
 \url{https://github.com/wustep/maths}, under
-\texttt{problems/covering/} on \texttt{main}.
+\texttt{problems/covering/share/2026-08-24/} at commit
+\texttt{COMMIT}.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
@@ -433,14 +444,14 @@ Everything named below is in the public repository
 \toprule
 path & contents \\
 \midrule
-\path{result/NOTE.md} & repo companion \\
-\path{result/note.tex} & earlier draft of the same claims \\
-\path{result/run_all.sh} & the verification pipeline \\
+\path{result/} & the verification pipeline and matrices \\
 \path{result/data/H_r10_n50.txt} & the matrix \\
 \path{result/data/partition_p10.json} & the $10$-block partition \\
-\path{compute/search_radius2.py} & the search, deterministic replay \\
-\texttt{explainer.html} & older interactive companion \\
-\texttt{ATTACK.md} & chronological log \\
+\path{compute/} & the search, deterministic replay \\
+\path{ATTACK.md} & chronological log \\
+\path{PROBLEM.md} & the problem statement \\
+\path{RESEARCH.md} & literature log \\
+\path{WALKTHROUGH.md} & discovery notes \\
 \bottomrule
 \end{tabular}
 \end{center}
