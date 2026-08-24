@@ -34,7 +34,7 @@ family $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 The matrices, verifiers, and \LaTeX\ source are at
 \url{https://github.com/wustep/maths}. The pin is
 \texttt{problems/covering/share/2026-08-24/} at commit
-\texttt{20dde8c2dcb2f005fa6dba21b509ff955436f4a8}. Every number is re-checked from the files in that pin.
+\texttt{COMMIT}. Every number is re-checked from the files in that pin.
 \end{abstract}
 
 \begingroup
@@ -317,6 +317,8 @@ of~\cite{DMP2025}, not computed partitions.
 \section{The search}
 \label{sec:search}
 
+\subsection{The matrix}
+
 The $50$-column matrix $\HH$ was found by simulated annealing on
 column sets in $\FF_2^{10}$. A state is a set of exactly $50$ distinct
 nonzero columns. An array stores, for every syndrome, how many times it
@@ -339,20 +341,38 @@ best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
 $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
 searches, not lower bounds.
 
-The first search produced only the matrix; the $10$-block partition,
-Construction $\mathrm{QM}_2^2$, and the two verifiers came after.
+\subsection{The partition}
+
+The anneal produced only the column set. A separate search produced the
+$10$-block $(2,0)$-partition of Table~\ref{tab:part}. That search code
+is not in the repository; the artifact is
+\path{result/data/partition_p10.json}. The $821$ syndromes with a unique
+pair force their two columns into distinct blocks, so most of a
+partition is constrained before search. Checking a candidate is one
+pass over the $1276$ sums of at most two columns. Ten blocks is small
+enough for Construction $\mathrm{QM}_2^2$ at both $m=4$ and $m=5$.
+
+\subsection{The check}
+
+Construction $\mathrm{QM}_2^2$ was implemented from (4.2) and (4.4)
+of~\cite{DMP2025}. The $m=4$ and $m=5$ outputs were enumerated. The two
+opposite verifiers of Section~\ref{sec:verif} re-derive the columns from
+the matrix text and use the partition file for block labels only. After
+they agreed, a third program outside the repository was run once. The
+covering radius of $\HH$ is that finite check, not a property of the
+annealing path.
 
 \section{Verification}
 \label{sec:verif}
 
 \subsection{Replay}
 
-Clone the public repository, check out commit \texttt{20dde8c2dcb2f005fa6dba21b509ff955436f4a8}, and run
+Clone the public repository, check out commit \texttt{COMMIT}, and run
 the pipeline from this pin:
 \begin{verbatim}
 git clone https://github.com/wustep/maths.git
 cd maths
-git checkout 20dde8c2dcb2f005fa6dba21b509ff955436f4a8
+git checkout COMMIT
 cd problems/covering/share/2026-08-24/result
 ./run_all.sh
 \end{verbatim}
@@ -361,9 +381,9 @@ the checkout it uses no network, no packages, and no randomness. It
 executes $74$ named assertions, exits with status $0$, and prints
 byte-identical output across runs. A run takes about two seconds.
 Direct links at that commit:
-\url{https://github.com/wustep/maths/tree/20dde8c2dcb2f005fa6dba21b509ff955436f4a8/problems/covering/share/2026-08-24/result}
+\url{https://github.com/wustep/maths/tree/COMMIT/problems/covering/share/2026-08-24/result}
 and
-\href{https://github.com/wustep/maths/blob/20dde8c2dcb2f005fa6dba21b509ff955436f4a8/problems/covering/share/2026-08-24/result/run_all.sh}{\texttt{result/run\_all.sh}}.
+\href{https://github.com/wustep/maths/blob/COMMIT/problems/covering/share/2026-08-24/result/run_all.sh}{\texttt{result/run\_all.sh}}.
 
 \subsection{Two verifiers with opposite algorithms}
 
@@ -427,7 +447,7 @@ proceedings.
 Everything named below is in the public repository
 \url{https://github.com/wustep/maths}, under
 \texttt{problems/covering/share/2026-08-24/} at commit
-\texttt{20dde8c2dcb2f005fa6dba21b509ff955436f4a8}.
+\texttt{COMMIT}.
 
 \begin{center}
 \renewcommand{\arraystretch}{1.15}
