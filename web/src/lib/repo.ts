@@ -98,6 +98,24 @@ function scanDir(abs: string, rel: string): RepoDir {
         size,
         kind: classify(e.name, size),
       });
+    } else if (e.isSymbolicLink()) {
+      // Dirent.isFile() is false for a symlink even when the target is a
+      // regular file (explainer.tex / explainer.pdf under problems/covering).
+      // Follow with statSync; skip broken links. CLAUDE.md stays hidden by
+      // basename above. No test file covers repo.ts; keep this comment.
+      let st;
+      try {
+        st = fs.statSync(path.join(abs, e.name));
+      } catch {
+        continue;
+      }
+      if (!st.isFile()) continue;
+      files.push({
+        path: childRel,
+        name: e.name,
+        size: st.size,
+        kind: classify(e.name, st.size),
+      });
     }
   }
   dirs.sort((a, b) => a.name.localeCompare(b.name));
