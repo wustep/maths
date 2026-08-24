@@ -27,12 +27,12 @@ A binary linear $[50,40]_2$ code of covering radius~$2$ certifies
 $\ellr(10,2)\le 50$, one column below the Kaikkonen--Rosendahl length~$51$
 that has stood since 2003 and that still seeds the $R=2$ family of
 Davydov--Marcugini--Pambianco (arXiv:2511.02542). The new matrix admits a
-$(2,0)$-partition with $p(\HH)=10$, so Construction~$\mathrm{QM}_2^2$
+$(2,0)$-partition into ten blocks, so Construction~$\mathrm{QM}_2^2$
 propagates it to exhaustively verified codes of lengths $815$ and $1631$
 at $r=18$ and $r=20$, and to the family
 $n=51\cdot 2^{r/2-5}-1$ of asymptotic density $2601/2048$.
 This note explains the problem, how the matrix was found, what was proved,
-and how to re-check every number from the committed text.
+and how to re-check every number from the files in the public repository.
 The matrices, verifiers, and \LaTeX\ source live at
 \url{https://github.com/wustep/maths}.
 \end{abstract}
@@ -42,7 +42,7 @@ The matrices, verifiers, and \LaTeX\ source live at
 \begin{abstract}
 The author orchestrated large-language-model agents through Grok Bot. GPT-5.6 Sol found the $50$-column
 matrix by simulated annealing on column sets in $\FF_2^{10}$, starting
-from the Kaikkonen--Rosendahl seed of length~$51$. Claude Opus~5 found
+from the Kaikkonen--Rosendahl $51$-column set of 2003. Claude Opus~5 found
 the $10$-block $(2,0)$-partition of that matrix, implemented
 Construction $\mathrm{QM}_2^2$, and wrote two independent verifiers
 with opposite algorithms (Python and Rust) that recheck the covering
@@ -64,8 +64,9 @@ of $\HH$. Write $\ellr(r,R)$ for the least length of a binary linear
 code with codimension $r$ and covering radius $R$.
 
 A binary linear code of length $n$ and dimension $k=n-r$ is an
-$[n,k]_2$ code. When we assert the covering radius we append it, as in
-$[n,k]_2\,R$. For $R=2$ the covering condition on the column set is
+$[n,k]_2$ code. When the covering radius is asserted, it is appended
+to the parameters: an $[n,k]_2\,R$ code. For $R=2$ the covering
+condition on the column set is
 \begin{equation}
 \label{eq:cover}
 \{0\}\cup S\cup(S+S)=\FF_2^r,
@@ -118,10 +119,9 @@ of~\cite{DMP2025} calls the $2$-partitions of the seed ``very important
 for the next iterative process''. Their computer search gives
 $p(\HH_{KR})=11$ for the length-$51$ matrix.
 
-A length-$50$ matrix at $r=10$ therefore has two effects. It improves
-one table entry. If it also admits a small $(2,0)$-partition, it
-re-seeds the whole family. This note gives such a matrix and such a
-partition.
+A length-$50$ matrix at $r=10$ therefore improves one table entry, and
+if it also admits a small $(2,0)$-partition, it re-seeds the whole
+family. This note gives such a matrix and such a partition.
 
 \section{Results}
 
@@ -246,7 +246,8 @@ not carried out here.
 Construction $\mathrm{QM}_2^2$ (Theorem~4.1 of~\cite{DMP2025}) takes an
 $[n_0,n_0-r_0]_2\,2$ code whose parity-check matrix $\HH_0$ has a
 $(2,0)$-partition into $p(\HH_0)$ blocks, together with an integer $m$
-such that $n_0\ge 2^m\ge p(\HH_0)$. Its indicator set is
+such that $n_0\ge 2^m\ge p(\HH_0)$. In the notation of~\cite{DMP2025},
+its indicator set is
 $\mathscr{B}=\FF_{2^m}$ and its tail block is
 $\boldsymbol{D}=\boldsymbol{D}_1(2)$. The output is a code with
 \begin{equation}
@@ -277,9 +278,9 @@ second assignment gives a second pair of matrices, committed under
 
 \subsection{The family}
 
-Iterate \eqref{eq:qm} from $(r,p)=(10,10)$, always with the partition
-bound $p(\HH_C)\le 2^{m+1}+1$. The even $r\le 64$ reachable by
-$\mathrm{QM}_2^2$ are
+Iterating \eqref{eq:qm} from $(r,p)=(10,10)$, using the partition
+bound $p(\HH_C)\le 2^{m+1}+1$ at every step, reaches the even $r\le 64$
+accessible by $\mathrm{QM}_2^2$:
 \[
 10,18,20,30,32,34,36,38,40,46,48,50,52,54,56,58,60,62,64 .
 \]
@@ -319,7 +320,7 @@ The matrix $\HH$ is the output of a simulated-annealing local search.
 The search is not part of the proof. The argument is a finite statement
 about committed matrices.
 
-\subsection{From the Kaikkonen--Rosendahl seed}
+\subsection{Annealing from the 2003 code}
 
 The search started from the Kaikkonen--Rosendahl $51$-column set: the
 ten unit vectors and the $41$ columns printed in hexadecimal in
@@ -327,10 +328,10 @@ Theorem~4.3 of~\cite{DMP2025}. The script reads the hex words
 LSB-first, while the paper prints them MSB-first. The two readings
 differ by row reversal, an invertible linear map on $\FF_2^{10}$, so
 no claim depends on the orientation (Section~\ref{sec:encoding}). With
-a fixed xorshift64 seed, run~$0$ reached covering radius $2$ at
-proposal $3{,}600{,}281$.
+a fixed xorshift64 state, the first run of the script reached covering
+radius $2$ at proposal $3{,}600{,}281$.
 
-The same method failed on three nearby gaps. At $(r,n)=(8,25)$ the
+The same method failed at three nearby parameters. At $(r,n)=(8,25)$ the
 best anneal left $3$ of $256$ syndromes uncovered. At $(9,38)$ it left
 $8$ of $512$. At $(10,49)$ it left $7$ of $1024$. Those are incomplete
 searches, not lower bounds.
@@ -406,10 +407,9 @@ confirmed every value.
 \item Optimality. The sphere-covering bound gives $\ellr(10,2)\ge 45$,
 since $1+n+\binom{n}{2}\ge 1024$ fails at $n=44$ with $991$.
 Minimality concerns this $50$-set only. A covering $49$-set may exist.
-\item The $(10,49)$ runs that leave $7$ syndromes uncovered are an
-incomplete search, not a lower bound.
-\item The gap $(8,25)$ is an incomplete search, not a lower bound.
-\item The gap $(9,38)$ is an incomplete search, not a lower bound.
+\item The searches at $(10,49)$, $(9,38)$, and $(8,25)$, which left
+$7$, $8$, and $3$ syndromes uncovered respectively, are incomplete
+searches, not lower bounds.
 \item Only the $m=4$ and $m=5$ outputs are verified exhaustively. The
 later rows of the family inherit $p(\HH_C)\le 2^{m+1}+1$ from (4.4)
 of~\cite{DMP2025}.
@@ -445,11 +445,6 @@ path & contents \\
 \bottomrule
 \end{tabular}
 \end{center}
-
-The HTML companion is
-\href{https://github.com/wustep/maths/blob/main/problems/covering/explainer.html}{\path{explainer.html}}.
-The matrix is
-\href{https://github.com/wustep/maths/blob/main/problems/covering/result/data/H_r10_n50.txt}{\path{H_r10_n50.txt}}.
 
 \appendix
 \section{The matrix as bits}
