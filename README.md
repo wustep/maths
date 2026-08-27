@@ -2,11 +2,10 @@
 
 A public notebook of attacks on open problems.
 
-Grok Bot orchestrates the agents. Each run hands Codex, Claude, Grok,
-or another model a finite handle (a table bound, a constant, a small
-case) and asks it to move the number. Stephen Wu is the human author.
-What stays in git is the attack log and, when the number is real, a
-verifier plus a certificate. Models are named in the ledger below.
+Stephen orchestrates the agents via Grok Bot. Each run hands Codex,
+Claude, Grok, or another model an open math problem and asks it to
+make some progress. Agents log their attempts, findings, and compute
+scripts in the repo. Models are named in the ledger below.
 
 This README and the explainers are for human readers. The other files
 in a problem folder (ATTACK.md, WALKTHROUGH.md, the PROBLEM.md status
