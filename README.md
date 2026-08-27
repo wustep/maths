@@ -126,7 +126,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [cosine-zeros](problems/cosine-zeros) | $Z(N)\ge\log\log N/(200\log\log\log N)$ when RHS $\ge 4$. Does not beat Bedert's exponent. |
 | [two-squares-gap](problems/two-squares-gap) | Jameson $a=3$ on $n\le 1.024\cdot 10^{15}$ except $\{3,6,21,91\}$ (m $\le 250$ cert replayed). Green's $1/10$ open. |
 | [ulam-sequence](problems/ulam-sequence) | L=22 word with $C_F<1.442$, beating CS 1.454. Density open. |
-| [long-gap-dilate](problems/long-gap-dilate) | SAT $G(p,\mathrm{round}\sqrt p)$ through $p=71$. No universal $C>2$. Record still Shakan 2. |
+| [long-gap-dilate](problems/long-gap-dilate) | SAT $G(p,\mathrm{round}\sqrt p)$ through $p=73$. No universal $C>2$. Record still Shakan 2. |
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
 | [union-closed](problems/union-closed) | Certified frequency $0.38304$ on the two-point family {b,1} under Liu Example 4. Analytic first-crossing $0.383051$; mesh min ratio $1.000022$. Recovers Liu $0.382709$. Not one half. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
@@ -195,6 +195,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | cosine zeros | `problems/cosine-zeros` | SuperGrok 4.6 | 2026-08-17 |
 | Ulam sequence | `problems/ulam-sequence` | SuperGrok 4.6 | 2026-08-17 |
 | long-gap dilate | `problems/long-gap-dilate` | SuperGrok 4.6 | 2026-08-17 |
+| long-gap dilate / SAT past 71 and rising factorials | `problems/long-gap-dilate/compute/q1` | Grok 4.6 | 2026-08-27 |
 | thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed | `problems/union-closed` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed / Example 4 on {b,1} | `problems/union-closed/compute/q1` | Grok 4.6 | 2026-08-27 |

@@ -150,3 +150,25 @@ T/n² > 1/3. Conjecture 1/3 still open.
 
 Replay: `cd problems/affine-013/compute/q1 && ./run_all.sh`.
 Cert: `problems/affine-013/compute/q1/certs/q1.json`.
+
+## long-gap-dilate / q1
+
+Continuation of the 2026-08-17 SuperGrok start on Green #32.
+Search lives in `problems/long-gap-dilate/compute/q1/`.
+
+Fetched Green #32 and Shakan arXiv:2004.14828 before searching.
+The list id arXiv:2205.14038 is the Weyl-equation paper, not Shakan.
+Parent `compute/run_all.sh` still replays.
+
+Did not beat Shakan’s universal 2. Rising-factorial Alon degrees
+equal the worst-case $k$ on $p=11,13$. Exact $G(73,9)=24$ (Cadical
+unsat at $T=24$). SAT upper bounds $G(79,9)\le 26$,
+$G(83,9)\le 27$, $G(89,9)\le 30$. No $C\to 2$ family through
+$p=199$.
+
+Replay:
+
+```
+cd problems/long-gap-dilate && sh compute/run_all.sh
+cd compute/q1 && ./run_all.sh
+```
