@@ -982,3 +982,21 @@ finished and added nothing. Ranks 22–26 remain.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q2/run_all.sh && python3 q2/collect.py`.
+
+## 2026-08-27 — q3: leftover ranks 22–26 and the open nests
+
+Grok 4.6, new branch from `origin/main` `db98cb1` (q2 wrap merged).
+Record re-fetched: arXiv:2602.06888 still **v3, 27 Jul 2026**;
+§5.3 still 2,367 nonempty T-schemes. Bound still ≥ 2,384.
+
+Code in `compute/q3/`. Replay: `sh q3/run_all.sh`.
+
+The leftover named in the q2 wrap is the fifteen census triangulations
+of twist-rank 22–26 (expected 8,682,209,280 radius-1 evaluations,
+exactly \(46\cdot 2^r\) on each) and the two open (19,3) nests.
+The only leftover (19,3) certificate is the rank-23 Harnack
+`deg8/o22-p19-n03/(18v1(3)).pcom`.
+
+An incomplete prefix is residue, not a lower bound. No new scheme
+is claimed until `verify_new.py` accepts a certificate outside the
+2,367 and the seventeen.
