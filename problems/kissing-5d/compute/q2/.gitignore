@@ -1,0 +1,6 @@
+clique41
+sphere_clique
+__pycache__/
+*.o
+points_*.txt
+adj_*.txt
