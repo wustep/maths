@@ -1,0 +1,27 @@
+{
+  "n_pools": 210,
+  "pairs": [
+    {
+      "k": 26,
+      "n_seeds": 79,
+      "n_pools": 80,
+      "promising": true
+    },
+    {
+      "k": 27,
+      "n_seeds": 72,
+      "n_pools": 120,
+      "promising": true
+    },
+    {
+      "k": 28,
+      "n_seeds": 64,
+      "n_pools": 10,
+      "promising": true
+    }
+  ],
+  "n_promising_by_part_count": 210,
+  "max_seeds_in_a_pool": 79,
+  "found_41": false,
+  "comment": "Census only.  3-star extras are empty of a leftover 41-set.  A 4-star union can contain enough seeds to be promising by part-count; that is not a 41-code.  Did not claim tau5=40."
+}

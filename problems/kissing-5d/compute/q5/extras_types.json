@@ -1,0 +1,42 @@
+{
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "n_four_seeds": 160,
+  "n_six_seeds": 80,
+  "type_hist": {
+    "(1, 1, 1, 2, 5)": 640,
+    "(1, 2, 3, 3, 3)": 640,
+    "(2, 2, 2, 2, 4)": 160
+  },
+  "four_seed_group_size": 5,
+  "six_seed_group_size": 8,
+  "four_seed_type_split_unique": [
+    "{\"(1, 1, 1, 2, 5)\": 4, \"(2, 2, 2, 2, 4)\": 1}"
+  ],
+  "six_seed_type_split_unique": [
+    "{\"(1, 2, 3, 3, 3)\": 8}"
+  ],
+  "type_A_clique": {
+    "n": 160,
+    "edges": 11120,
+    "best": 20,
+    "found_41": false,
+    "nodes": 20000001,
+    "complete": false
+  },
+  "type_B_degrees": {
+    "n": 640,
+    "min_deg": 550,
+    "max_deg": 550,
+    "mean_deg": 550.0
+  },
+  "type_C_degrees": {
+    "n": 640,
+    "min_deg": 554,
+    "max_deg": 554,
+    "mean_deg": 554.0
+  },
+  "comment": "Each four-seed is 1 type-A plus 4 type-B extras.  Each six-seed is 8 type-C extras.  Same-missed extras are edgeless.  A 41-set needs |E| >= |U|+1."
+}

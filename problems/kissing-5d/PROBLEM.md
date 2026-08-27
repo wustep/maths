@@ -39,3 +39,11 @@ Still $40\le\tau_5\le 44$. Exact Bachoc–Vallentin $S_k^5$ matrices over $\math
 ## Outcome (2026-08-27, q4 leftover)
 
 Still $40\le\tau_5\le 44$. No unrestricted dual below 44 and no 41-point code. On the leftover 1480-point $(1/4)\mathbb Z^5$ graph the ten special octads are the $D_5$ coordinate-stars; there is no 41-set that uses 22 or more $D_5$-type points (`compute/q4/n1_dfs_k18.json`, `n1_dfs_k16.json`, `n1_complete_k12.json`). The $n_1\le 21$ slice of that graph remains residue. The 355-point $T^5$ remainder has no 35-colouring and no SAT 36-clique without a stored DRAT; share 24 through 30 with each published 35 are empty. Residue, not a dent. Replay: `sh compute/q4/run_all.sh`.
+
+## Outcome (2026-08-27, q5)
+
+Still $40\le\tau_5\le 44$. The 355-point $T^5$ remainder has no 36-clique: native CaDiCaL 3.0.1 is UNSAT and Heule `drat-trim` reports `s VERIFIED` on the binary DRAT (`compute/q5/t5_36_proof.json`). Share 23 with each published 35 is empty. On the 1480-point $(1/4)\mathbb Z^5$ graph there is no leftover 41-set whose missed-root union sits in three $D_5$ coordinate-stars. The $n_1\le 21$ slice with star-cover at least 4 remains residue. No unrestricted dual below 44 and no 41-point code. Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q5/run_all.sh`.
+
+## Outcome (2026-08-27, q6)
+
+Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^5$ graph whose missed-root union sits in four $D_5$ coordinate-stars (`compute/q6/four_star_extras.json`, replayed in `replay_four_star.json`). The $n_1\le 21$ slice with star-cover at least 5 remains residue. No unrestricted dual below 44 and no 41-point code. Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q6/run_all.sh`.

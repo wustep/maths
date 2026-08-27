@@ -439,3 +439,124 @@ classical Levenshtein number 48 before claiming any comparison.
   41-code.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — continue (q5)
+
+- Start from the q4 branch (`cursor/kissing-5d-q4-cd01`, PR #91 not on
+  main). Folder `compute/q5/`. House rules unchanged: do not claim
+  $\tau_5=40$; a numerical SDP without an exact positivity certificate
+  is residue; do not regress the restricted certificates already in
+  `compute/certs/`, `compute/q1/`–`q4/`. Covering stays frozen.
+- Hunt: finish the two leftovers (a 41-set in the 1480-graph with
+  $n_1\le 21$, or a $T^5$ 36-clique sharing $\le 23$ with every
+  published 35), or produce an exact 41-point code, or an exact
+  unrestricted dual below 44. Residue if the interval does not move.
+
+## 2026-08-27 — q5 leftovers (interval unchanged so far)
+
+- Re-fetched Tao $C_{29}$, Cohn, Mittelmann–Vallentin
+  $s_{14}(5)=44.99899685\ldots$, Cohn–Rajagopal arXiv:2412.00937v3:
+  still $40\le\tau_5\le 44$. Did not claim $\tau_5=40$.
+- Extra types on the 1480-graph: 160 four-seeds (1 type A
+  $(4,2,2,2,2)$ + 4 type B $(5,2,1,1,1)$) and 80 six-seeds (8 type C
+  $(3,3,3,2,1)$). A type-A 20-clique exists with $|U|=34$, total 26,
+  not a 41-set (`type_a_clique.json`). Type-A leftover hunt
+  (`type_a_small_U.json`) is complete: no type-A clique $C$ with
+  $|C|\ge 20$ and $|U|\le|C|-1$ (196{,}750 nodes).
+- Seed compatibility graph is 240-vertex 231-regular
+  (`seed_graph.json`). The 80 six-seeds form an 80-clique of union 40.
+  Every 3-star union is leftover-tight: 80 pools $(22,21)$ and 40
+  pools $(23,22)$. A seed-clique is a pool, not a 41-code.
+- Extras B&B on all 120 three-star pools is complete and empty of a
+  leftover 41-set (`triple_star_extras.json`): extras $\omega\le 18$
+  on the 80 unions of size 21, $\omega\le 19$ on the 40 unions of
+  size 22. With q4's $|U|\le 18$ empty, no 41-set has $U$ contained
+  in three coordinate-stars. The leftover $n_1\le 21$ slice, if
+  nonempty, has star-cover at least 4.
+- Part-count MILP on $|U|\in\{19,20,21\}$ hits cutoff with verified
+  incumbents $42,47,50$ contained seeds (`n1_partcount.json`). The
+  leftover is not empty by part-count. Cutoff is not a proof of the
+  maximum.
+- $n_1$ leftover SAT $k=19$ (30{,}678 vars) is running; no model yet.
+  Extras B&B 200M nodes: no 41-set, incomplete (`extras_clique.json`).
+- $T^5$ remainder: PySAT Cadical195 returns UNSAT for a 36-clique
+  (`t5_36_proof.json`, 16{,}548{,}926 proof lines). Heule `drat-trim`
+  on that ASCII file ended `s NOT VERIFIED` (no conflict). Native
+  CaDiCaL 3.0.1 on the same CNF is UNSAT in 573s (9{,}921{,}324
+  conflicts) and writes a 671{,}198{,}215-byte binary DRAT.
+  `drat-trim` on that file: `s VERIFIED` (756s; 4{,}787{,}602 of
+  10{,}804{,}713 lemmas in core; 0 RAT). There is no 36-clique in
+  the 355-point remainder, so the Szöllősi $T^5$ pool has no 41-point
+  kissing code. Share 23 is empty as well (`t5_share23.json`):
+  $C(35,12)$ neighbourhoods of each published remainder 35 have
+  extras $\omega\le 12$ (need 13). Restricted finite-graph facts.
+  Not an unrestricted bound.
+- No unrestricted dual below 44 (`dual_more.json`: 1-point Delsarte
+  still $\approx 46.337$; best certified ansatz $64715/1243\approx 52.06$).
+  No 41-code in the finished construction pools (`construct_more.json`).
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — continue (q6)
+
+- Start from the leftover branch after q5 (`cursor/kissing-5d-q4-cd01`,
+  PR #97 merged there). Folder `compute/q6/`. House rules unchanged:
+  do not claim $\tau_5=40$; a numerical SDP without an exact positivity
+  certificate is residue; covering stays frozen.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100, refs [9] and [17]; later-dimension news does not touch
+  dim 5),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  HTML <https://ar5iv.labs.arxiv.org/html/0902.1105v3> Table 1,
+  Bachoc–Vallentin arXiv:math/0608426v4,
+  Cohn–Rajagopal arXiv:2412.00937v3 (“appears to be 40… best upper
+  bound that has been proved is 44”).
+- Hunt: empty the leftover $n_1\le 21$ slice of the 1480-point
+  $(1/4)\mathbb Z^5$ graph (star-cover $\ge 4$), or produce an explicit
+  41-set; in parallel an exact unrestricted dual below 44. Residue if
+  the interval does not move.
+- First measurement: greedy colouring of extras in every 4-star pool
+  (`four_star_color.json`) uses 20 to 32 colours. So the 3-star
+  colouring bound $\omega\le 19$ does not lift. Pools are 320 extras
+  ($k=28$, two full axes), 384 ($k=27$), or 434 ($k=26$).
+- C leftover-tight B&B on all 210 four-star pools is complete and
+  empty (`four_star_extras.json`, 26{,}857{,}470 nodes, `best=19`
+  is the start value). Independent Python leftover-tight replay of
+  38 pools (every $k=28$ two-axis pool and a stride of the rest)
+  matches: 38/38 complete empty, no 41-set (`replay_four_star.json`).
+  Restricted: no leftover 41-set has $U$ contained in four
+  $D_5$ coordinate-stars. Not extras $\omega$, not an unrestricted
+  bound. The leftover $n_1\le 21$ slice, if nonempty, has star-cover
+  at least 5.
+- Minimum $|U|$ with star-cover $\ge 5$ is 5 (`star_cover_min.json`,
+  Cadical hitting-set of the 210 four-star complements; witness
+  $\{12,15,19,21,28\}$ independently checked). So $|U|=19$ is not
+  empty by combinatorics.
+- Five-star colouring uses 28 to 39 colours; none $\le 19$
+  (`five_star_color.json`). Four $k=32$ five-star C pools hit a 20M
+  node cutoff incomplete (`five_star_sample.json`).
+- No unrestricted dual below 44 (`dual_more.json`): 1-point Delsarte
+  still $\approx 46.33687$; rationalizations fail Sturm; 51 certified
+  $(t-1/2)q^2$ ansätze, best $221991/3733\approx 59.47$. Did not beat
+  Mittelmann–Vallentin. Did not claim $\tau_5=40$.
+- Two-axis leftover SAT: all ten $k=28$ pools are SAT-unsat
+  (`two_axis_extras.json`). Nine of ten Python B&Bs were already
+  complete empty. SAT-unsat without a stored DRAT is residue for
+  those CNFs; the C / leftover-tight Python emptiness is the
+  certificate.
+- Global leftover-tight extras B&B with the 4-star grow-prune
+  (`leftover_global.json`, `n_four_star=210`) ran 200M nodes, no
+  41-set, incomplete. Same leftover as q5 extras B&B, plus the prune.
+- Leftover-tight SAT on the four $k=32$ five-star pools that hit the
+  C 20M cutoff is SAT-unsat (`five_star_sat.json` snapshot). Two
+  more pools in that sample were still running. SAT-unsat without
+  DRAT is residue.
+- Global leftover SAT $k=19$ with star-cover $\ge 5$ (30{,}678 vars,
+  Cadical195 and Kissat404 in parallel) had no model after half an
+  hour (`leftover_sat_status.json`). Incomplete. Residue, not a
+  lower bound.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code. Did not
+  claim $\tau_5=40$. Residue.

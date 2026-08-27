@@ -403,3 +403,105 @@ $D_5,L_5,Q_5$ and $R_5$.
 - A 41-set in the 1480-graph with $n_1\le 21$, and a 36-clique in
   the $T^5$ remainder that shares at most 23 with every published 35.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 12. 27 August, later: the $T^5$ remainder has no 36-clique
+
+The leftover that actually had a handle was the 355-graph, not the
+continuum dual. q4 already knew $\omega\ge 35$ and $\chi\ge 36$, and
+two SAT solvers returned no 36-clique. That is not a certificate.
+Share 24 through 30 being empty only says that a 36-clique, if one
+exists, is far from every published 35.
+
+PySAT Cadical195 produced a 16.5-million-line ASCII DRAT. Heule
+`drat-trim` read it and died with `s NOT VERIFIED` / no conflict.
+The solver said unsat; the proof object was junk. Residue.
+
+The useful failure on the other leftover was the seed graph. Two
+seeds are compatible if *some* extras kiss. The 80 six-seeds form
+an 80-clique of union 40. Every three coordinate-stars give a
+leftover-tight seed pool — $(22,21)$ or $(23,22)$. Those pools are
+not 41-codes. Extras B&B on all 120 of them is complete: extras
+clique number at most 19 on the size-22 unions and at most 18 on
+the size-21 unions. With q4's $|U|\le 18$ empty, no 41-set has its
+missed-root union inside three stars. The $n_1\le 21$ leftover, if
+it is nonempty, has star-cover at least 4.
+
+The click on $T^5$ was to stop asking PySAT for a proof and run
+native CaDiCaL 3.0.1 on the same DIMACS. It writes a binary DRAT.
+`drat-trim` then says `s VERIFIED`: 671{,}198{,}215 bytes, 4.79
+million of 10.8 million lemmas in the core, 303 million resolution
+steps, no RAT. So there is no 36-clique in the 355-graph. The five
+universal basis vectors of the Szöllősi pool do not extend to 41.
+
+Share 23 finished the same afternoon, independently: each published
+remainder 35 has $C(35,12)$ candidate 23-cores, and every common
+neighbourhood has extras clique number at most 12 (need 13). That
+is now redundant for emptiness of 36, but it is the reason we
+believed the SAT.
+
+The $n_1\le 21$ SAT on the 1480-graph is still running. Part-count
+does not empty those slices. No 41-code and no unrestricted dual
+below 44. The published interval did not move.
+
+**Proved on 27 August, later still (restricted).**
+
+- No 36-clique in the 355-point $T^5$ remainder (native CaDiCaL
+  DRAT, `drat-trim` verified).
+- No 41-point kissing code in the Szöllősi $T^5$ pool.
+- No leftover 41-set in the 1480-graph whose missed-root union sits
+  in three $D_5$ coordinate-stars.
+- No leftover-tight type-A extras clique ($|C|\ge 20$ and
+  $|U|\le|C|-1$).
+- Share 23 with each published 35 is empty.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 41-set in the 1480-graph with $n_1\le 21$ and star-cover at
+  least 4.
+- An exact SOS certificate that $s_d(5)<44$.
+
+## 13. 27 August, later: four stars are not enough
+
+The leftover after three stars was a union that needs at least four
+coordinate-stars. Colouring does not kill it. Every 4-star extras
+graph uses 20 to 32 colours, so the 3-star bound $\omega\le 19$
+does not lift.
+
+The useful failure was the colouring, and also the part-count: all
+210 four-star unions are leftover-tight by seed count (64, 72, or
+79 seeds). A seed pool is not a 41-code.
+
+The click was to stop asking for extras $\omega$ and run the
+leftover-tight cut. A 20-clique of extras with large missed-union
+is not a 41-set. C branch-and-bound on each of the 210 pools, with
+that cut, finishes: 26.8 million nodes, no leftover 41-set.
+Python leftover-tight search on a covering sample of 38 pools
+(every two-axis $k=28$ pool and a stride of the rest) matches, 38
+of 38. Two algorithms, same emptiness. Restricted to the 1480-graph.
+
+So a remaining 41-set in that graph has star-cover at least 5. That
+is not empty by combinatorics: the smallest $D_5$-root set that
+hits every 4-star complement has size 5. Five-star extras graphs
+are larger (528 to 625 vertices, 28 to 39 colours). Four of them
+ate 20 million nodes and did not finish. Leftover-tight SAT on
+those four $k=32$ pools came back unsat, without a stored DRAT.
+Global leftover SAT on $|U|=19$ with the 4-star forbid, and a
+200-million-node extras B&B with that prune, did not finish.
+
+No unrestricted dual below 44. 1-point Delsarte is still the
+Odlyzko–Sloane number. The $(t-1/2)q^2$ grid that certified sat
+near 59, worse than the previous ansatz 52. Did not claim
+$\tau_5=40$.
+
+**Proved on 27 August, later still (restricted).**
+
+- No leftover 41-set in the 1480-graph whose missed-root union sits
+  in four $D_5$ coordinate-stars.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 41-set in the 1480-graph with $n_1\le 21$ and star-cover at
+  least 5.
+- An exact SOS certificate that $s_d(5)<44$.
