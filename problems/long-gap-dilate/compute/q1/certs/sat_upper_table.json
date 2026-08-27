@@ -1,0 +1,260 @@
+[
+  {
+    "p": 73,
+    "n": 9,
+    "G_upper": 24,
+    "sat_T": 25,
+    "exact": false,
+    "unknown": true,
+    "witness": [
+      0,
+      1,
+      2,
+      7,
+      13,
+      24,
+      40,
+      57,
+      60
+    ],
+    "witness_g": 24,
+    "witness_d": 2,
+    "shakan": 14.222222222222221,
+    "ratio_mean_upper": 2.958904109589041,
+    "log": [
+      {
+        "T": 25,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.1946,
+        "witness_g": 24,
+        "witness_d": 2,
+        "nA": 9
+      },
+      {
+        "T": 24,
+        "sat": null,
+        "timeout": true,
+        "sec": 90.0926
+      }
+    ],
+    "solver": "glucose4",
+    "timeout": 90.0
+  },
+  {
+    "p": 79,
+    "n": 9,
+    "G_upper": 26,
+    "sat_T": 27,
+    "exact": false,
+    "unknown": true,
+    "witness": [
+      0,
+      1,
+      28,
+      31,
+      48,
+      61,
+      65,
+      69,
+      74
+    ],
+    "witness_g": 26,
+    "witness_d": 1,
+    "shakan": 15.555555555555557,
+    "ratio_mean_upper": 2.962025316455696,
+    "log": [
+      {
+        "T": 32,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0558,
+        "witness_g": 30,
+        "witness_d": 24,
+        "nA": 9
+      },
+      {
+        "T": 31,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0276,
+        "witness_g": 30,
+        "witness_d": 24,
+        "nA": 9
+      },
+      {
+        "T": 30,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0269,
+        "witness_g": 29,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 29,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0356,
+        "witness_g": 28,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 28,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0436,
+        "witness_g": 27,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 27,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.2394,
+        "witness_g": 26,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 26,
+        "sat": null,
+        "timeout": true,
+        "sec": 60.0652
+      }
+    ],
+    "solver": "glucose4",
+    "timeout": 60.0
+  },
+  {
+    "p": 83,
+    "n": 9,
+    "G_upper": 27,
+    "sat_T": 28,
+    "exact": false,
+    "unknown": true,
+    "witness": [
+      0,
+      1,
+      29,
+      54,
+      65,
+      74,
+      78,
+      81,
+      82
+    ],
+    "witness_g": 27,
+    "witness_d": 1,
+    "shakan": 16.444444444444443,
+    "ratio_mean_upper": 2.927710843373494,
+    "log": [
+      {
+        "T": 32,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0404,
+        "witness_g": 31,
+        "witness_d": 10,
+        "nA": 9
+      },
+      {
+        "T": 31,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0509,
+        "witness_g": 30,
+        "witness_d": 5,
+        "nA": 9
+      },
+      {
+        "T": 30,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.1076,
+        "witness_g": 29,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 29,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0618,
+        "witness_g": 28,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 28,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0373,
+        "witness_g": 27,
+        "witness_d": 1,
+        "nA": 9
+      },
+      {
+        "T": 27,
+        "sat": null,
+        "timeout": true,
+        "sec": 60.0185
+      }
+    ],
+    "solver": "glucose4",
+    "timeout": 60.0
+  },
+  {
+    "p": 89,
+    "n": 9,
+    "G_upper": 30,
+    "sat_T": 31,
+    "exact": false,
+    "unknown": true,
+    "witness": [
+      0,
+      1,
+      31,
+      58,
+      71,
+      80,
+      82,
+      85,
+      88
+    ],
+    "witness_g": 30,
+    "witness_d": 3,
+    "shakan": 17.77777777777778,
+    "ratio_mean_upper": 3.033707865168539,
+    "log": [
+      {
+        "T": 32,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0576,
+        "witness_g": 31,
+        "witness_d": 18,
+        "nA": 9
+      },
+      {
+        "T": 31,
+        "sat": true,
+        "timeout": false,
+        "sec": 0.0582,
+        "witness_g": 30,
+        "witness_d": 3,
+        "nA": 9
+      },
+      {
+        "T": 30,
+        "sat": null,
+        "timeout": true,
+        "sec": 60.0448
+      }
+    ],
+    "solver": "glucose4",
+    "timeout": 60.0
+  }
+]

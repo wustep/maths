@@ -1,0 +1,4 @@
+{"solver": "glucose42", "T": 24, "sat": null, "timeout": true, "sec": 90.12}
+{"solver": "glucose42", "T": 23, "sat": null, "timeout": true, "sec": 90.075}
+{"solver": "cadical", "T": 24, "sat": null, "timeout": true, "sec": 90.098}
+{"solver": "cadical", "T": 23, "sat": false, "timeout": false, "sec": 53.818}

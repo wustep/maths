@@ -6,8 +6,9 @@ Discovery notes, not a paper. Empty sections would mean not done.
 - Quest: Green 100 #32, improve Shakan’s universal 2
 - Model: SuperGrok CLI `grok-4.6`
 - Date: 2026-08-17
-- Argument status: no certified $C>2$. Leftover is a verified SAT table,
-  a degree-wall for the published method, and failed lifts
+- Argument status: no certified $C>2$. Leftover is a verified SAT table
+  through $p=71$, a degree-wall (homogeneous and rising-factorial), a
+  SAT upper bounds past $p=71$ without floors, and failed lifts
 - Problem status: open
 
 ## 0. What was actually missing
@@ -169,3 +170,23 @@ smaller-gap exists. This is a finite list.
 universal $C=2.01$, such that every $A$ of size $\sim\sqrt p$
 has a dilate missing $C\sqrt p$? No such $C>2$ is proved here.
 No construction shows that $2$ is sharp either.
+
+## 7. 2026-08-27 continuation
+
+The unused handle was named: keep the interval in
+$w(d,t)=d\prod_a(t+da+1)_m$. Expanding it does not help. On the
+stored witnesses the Alon degrees of the rising $w$ equal the
+worst-case $k=nm-p+1$, and at the actual $G$ one already has
+$k\ge p$. The extra Stirling slice is the derivative of the top
+slice. There is nothing left in that polynomial to contradict at
+$C>2$.
+
+SAT past $p=71$ is cheap on the SAT side and unpaid on the UNSAT
+side. $G(73,9)\le 24$, $G(79,9)\le 26$, $G(83,9)\le 27$,
+$G(89,9)\le 30$ are witnesses, not a census. Cadical rules out
+$T=23$ at $p=73$, so that value is $23$ or $24$, still not exact.
+Constructions through $p=199$ drift up to ratio $4$–$5$, not down
+to $2$. The new SAT upper ratios stay near $3$, same as $p=71$.
+
+Replay: `sh problems/long-gap-dilate/compute/run_all.sh` and
+`cd problems/long-gap-dilate/compute/q1 && ./run_all.sh`.

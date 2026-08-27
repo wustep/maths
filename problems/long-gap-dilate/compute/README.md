@@ -3,6 +3,10 @@
 Stdlib + `compute/.venv` (`python-sat`, `numpy`). System Python has
 matplotlib for the figure.
 
+`q1/` is a later search (rising-factorial degrees, SAT past 71,
+more families). Replay `q1/run_all.sh`. It does not change the
+published constant 2.
+
 Independent checks (do not claim a dent):
 
 ```bash

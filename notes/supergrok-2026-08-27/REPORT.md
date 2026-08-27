@@ -61,3 +61,25 @@ Certified in `problems/kissing-5d/compute/q1/`:
 Replay: `sh problems/kissing-5d/compute/q1/run_all.sh`.
 
 Does not claim $\tau_5=40$.
+
+## long-gap-dilate / q1
+
+Continuation of the 2026-08-17 SuperGrok start on Green #32.
+Search lives in `problems/long-gap-dilate/compute/q1/`.
+
+Fetched Green #32 and Shakan arXiv:2004.14828 before searching.
+The list id arXiv:2205.14038 is the Weyl-equation paper, not Shakan.
+Parent `compute/run_all.sh` still replays.
+
+Did not beat Shakan’s universal 2. Rising-factorial Alon degrees
+equal the worst-case $k$ on $p=11,13$. SAT upper bounds
+$G(73,9)\le 24$, $G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$;
+Cadical gives $G(73,9)\ge 23$. No exact row past $p=71$. No
+$C\to 2$ family through $p=199$.
+
+Replay:
+
+```
+cd problems/long-gap-dilate && sh compute/run_all.sh
+cd compute/q1 && ./run_all.sh
+```

@@ -31,7 +31,10 @@ an incomplete search unless they imply a larger universal $C$.
 
 ## Outcome
 
-Incomplete search. Shakan’s 2 is still the published leading constant. The
-homogeneous Rédei slice used to prove it cannot see $C>2$. Exact
-$G(p,\mathrm{round}\sqrt p)$ for $p\le 71$ and the failed lifts
-are in `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`, `compute/`.
+Incomplete search. Shakan’s 2 is still the published leading constant.
+Exact $G(p,\mathrm{round}\sqrt p)$ still ends at $p=71$. The search in
+`compute/q1/` saturates the rising-factorial Alon degrees, gives a
+SAT upper bounds $G(73,9)\le 24$, $G(79,9)\le 26$,
+$G(83,9)\le 27$, $G(89,9)\le 30$ without certified floors (Cadical
+gives $G(73,9)\ge 23$), and finds no $C\to 2$ family through
+$p=199$. Residue, not a dent.
