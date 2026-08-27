@@ -1,0 +1,65 @@
+{
+  "status": "ok",
+  "R_split": 12,
+  "Q_cut": "12/13",
+  "Q_cut_value": "0.9230769230769230769230769230769230769231",
+  "Q_cut_inv": "1.083333333333333333333333333333333333333",
+  "compact_gamma_R12": "0.8995260524666926617922278920310721986121",
+  "compact_inv_R12": "1.111696539814256966877569616043574522930",
+  "cut_exceeds_compact_gamma": true,
+  "algebra": "Mass-stationarity at inf=1 and sup=R gives M_{-1}=Q+(Q-1)D>0 and M_3=(Q-1)R^3+Q D R>0, hence R<Q/(1-Q) and Q>R/(R+1).",
+  "nonempty_D_interval_at_Q_0.93_R_12": true,
+  "empty_D_interval_for_Q_le_12_13_at_R_12": true,
+  "samples_Q_0.895_to_0.999": [
+    {
+      "Q": "0.895000000000",
+      "D_lo_at_R12": "16.8938547486",
+      "D_hi": "8.52380952381",
+      "interval_empty": true,
+      "R_star": "8.52380952381"
+    },
+    {
+      "Q": "0.915000000000",
+      "D_lo_at_R12": "13.3770491803",
+      "D_hi": "10.7647058824",
+      "interval_empty": true,
+      "R_star": "10.7647058824"
+    },
+    {
+      "Q": "0.935000000000",
+      "D_lo_at_R12": "10.0106951872",
+      "D_hi": "14.3846153846",
+      "interval_empty": false,
+      "R_star": "14.3846153846"
+    },
+    {
+      "Q": "0.955000000000",
+      "D_lo_at_R12": "6.78534031414",
+      "D_hi": "21.2222222222",
+      "interval_empty": false,
+      "R_star": "21.2222222222"
+    },
+    {
+      "Q": "0.975000000000",
+      "D_lo_at_R12": "3.69230769231",
+      "D_hi": "39.0000000000",
+      "interval_empty": false,
+      "R_star": "39.0000000000"
+    },
+    {
+      "Q": "0.995000000000",
+      "D_lo_at_R12": "0.723618090452",
+      "D_hi": "199.000000000",
+      "interval_empty": false,
+      "R_star": "199.000000000"
+    }
+  ],
+  "leading_from_compact_gamma": "1.111696539814256966877569616043574522930",
+  "beats_1.1185_if_lifted": true,
+  "faces_row": {
+    "copositive": 1,
+    "singular_or_illconditioned": 5,
+    "min_mMm_safe": 0.004479592204425791,
+    "certified_phi": 0.9055
+  }
+}
