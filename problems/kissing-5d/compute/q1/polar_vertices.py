@@ -253,9 +253,11 @@ def run_c(exe: Path, pts, name: str):
 
 
 def main() -> int:
-    names = sys.argv[1:] or list(CONFIGS.keys())
+    args = [a for a in sys.argv[1:] if not a.startswith("-")]
+    force_python = "--python" in sys.argv[1:]
+    names = args or list(CONFIGS.keys())
     out_dir = Path(__file__).resolve().parent
-    exe = compile_c(out_dir)
+    exe = None if force_python else compile_c(out_dir)
     reports = {}
     ok = True
     for name in names:
@@ -276,7 +278,7 @@ def main() -> int:
             flush=True,
         )
         if name == "D5":
-            if rec["max_norm2"] not in ("5/4", "5/4") or not rec["maximal_as_spherical_code"]:
+            if rec["max_norm2"] != "5/4" or not rec["maximal_as_spherical_code"]:
                 print("  FAIL: D5 sanity (expected max 5/4, maximal)")
                 ok = False
         (out_dir / f"polar_{name}.json").write_text(json.dumps(rec, indent=2) + "\n")

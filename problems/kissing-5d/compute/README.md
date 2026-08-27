@@ -23,5 +23,9 @@ compute/.venv/bin/python compute/verify_certificates.py
 | `verify_certificates.py` | replays those duals from the recurrence, no other imports |
 | `integer_d5.py` | integer distance distributions for $T_{D_5}$: 42, 43, 44 empty; 41 only with 20 antipodes |
 | `exact_duals.py` | interpolation that *found* the duals |
+| `q1/polar_vertices.py` | polars of $D_5,L_5,Q_5,R_5$ have $\max\|x\|^2=5/4<2$ |
+| `q1/integer_q5_44.c` | integer $T_{Q_5}$ slice empty at $N=44$ |
 
 The unrestricted range remains $40\le\tau_5\le 44$.
+
+Later search: `sh compute/q1/run_all.sh`.

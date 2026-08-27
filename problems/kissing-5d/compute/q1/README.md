@@ -1,4 +1,4 @@
-# q1 — restricted certificates beyond the 17 August duals
+# q1 — polar maximality and the Q5 integer slice
 
 Replay:
 
@@ -6,17 +6,15 @@ Replay:
 sh compute/q1/run_all.sh
 ```
 
-Independent of the 17 August scripts. This folder looks for an exact dual
-that excludes some $k\in\{41,42,43,44\}$ on a finite inner-product set, an
-exact maximality certificate for $Q_5$ or $R_5$, or an exact spherical
-code of size $>40$. A floating SDP without a positivity certificate is
-an incomplete search.
-
-| Script | Role |
+| Script | What it certifies |
 | --- | --- |
-| `polar_vertices.py` | vertices of the polar $\{x:\langle x,p\rangle\le 1\}$ for each 40-point code |
-| `a4_containing.py` | extras over a fixed $A_4$ equator |
-| `integer_restricted.py` | integer Delsarte boxes for $T_{L_5}$ and $T_{Q_5}$ |
-| `restricted_duals.py` | more interpolating Gegenbauer duals |
-| `szollosi_candidates.py` | discrete compatible-vector graph on known angles |
-| `verify.py` | replay of any exact certificate written under `certs/` |
+| `polar_vertices.py` / `polar.c` | polars of $D_5,L_5,Q_5,R_5$ have $\max\|x\|^2=5/4<2$ |
+| `replay_max_vertex.py` | Fraction GE rebuild of each recorded vertex |
+| `integer_q5_44.c` | integer $T_{Q_5}$ distributions at $N=44$ are empty |
+| `dump_q5_tables.py` | C tables match Gegenbauer; $Q_5$ histogram passes |
+| `check_q5_44_empty.py` | header / witness / empty-scan replay |
+| `a4_containing.py` | height $\|s\|\ge 2$; discrete extras cap at 20 |
+| `integer_restricted.py` | $T_{L_5}$ still has integer hits at 41, 42, 43 |
+| `restricted_duals.py` | no new interpolating dual below 44 on $T_{Q_5}$ |
+
+The unrestricted range remains $40\le\tau_5\le 44$.

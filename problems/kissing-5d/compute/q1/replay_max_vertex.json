@@ -1,0 +1,74 @@
+{
+  "D5": {
+    "name": "D5",
+    "x": [
+      "-1/2",
+      "-1/2",
+      "-1/2",
+      "-1/2",
+      "-1/2"
+    ],
+    "norm2": "5/4",
+    "claimed_norm2": "5/4",
+    "norm2_match": true,
+    "all_ip_le_1": true,
+    "n_tight": 10,
+    "max_ip": "1",
+    "norm2_lt_2": true,
+    "ok": true
+  },
+  "L5": {
+    "name": "L5",
+    "x": [
+      "-1",
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "norm2": "5/4",
+    "claimed_norm2": "5/4",
+    "norm2_match": true,
+    "all_ip_le_1": true,
+    "n_tight": 10,
+    "max_ip": "1",
+    "norm2_lt_2": true,
+    "ok": true
+  },
+  "Q5": {
+    "name": "Q5",
+    "x": [
+      "-1/2",
+      "-1/2",
+      "-1/2",
+      "-1/2",
+      "-1/2"
+    ],
+    "norm2": "5/4",
+    "claimed_norm2": "5/4",
+    "norm2_match": true,
+    "all_ip_le_1": true,
+    "n_tight": 10,
+    "max_ip": "1",
+    "norm2_lt_2": true,
+    "ok": true
+  },
+  "R5": {
+    "name": "R5",
+    "x": [
+      "-1",
+      "0",
+      "0",
+      "0",
+      "1/2"
+    ],
+    "norm2": "5/4",
+    "claimed_norm2": "5/4",
+    "norm2_match": true,
+    "all_ip_le_1": true,
+    "n_tight": 9,
+    "max_ip": "1",
+    "norm2_lt_2": true,
+    "ok": true
+  }
+}

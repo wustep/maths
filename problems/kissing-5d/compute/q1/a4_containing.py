@@ -173,8 +173,9 @@ def main() -> int:
     print(json.dumps(report, indent=2))
     assert max_n2 == F(6, 5)
     assert n_north == 10 and n_south == 10
-    assert n_q5 == 10 and n_d5 == 10
-    print("PASS: A4 height |s|≥2; discrete vertex extras cap at 20.")
+    assert n_q5 == 20 and n_d5 == 20
+    assert n_both == 20
+    print("PASS: A4 height |s|≥2; same-hemisphere vertex extras cap at 10; both hemispheres at 20.")
     return 0
 
 

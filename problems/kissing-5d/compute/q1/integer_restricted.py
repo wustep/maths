@@ -110,7 +110,14 @@ def delsarte_ok(N, ns, tables):
     return True
 
 
-def enumerate_box(T, N, box, deg=14, pad=1):
+def box_volume(ranges):
+    v = 1
+    for r in ranges:
+        v *= max(1, len(r) if not isinstance(r, range) else (r.stop - r.start))
+    return v
+
+
+def enumerate_box(T, N, box, deg=14, pad=1, max_scan=2_000_000):
     """Integer points in the real box (padded), last n fixed by pair-count."""
     tables = integer_tables(T, deg)
     pairs = comb(N, 2)
@@ -122,36 +129,62 @@ def enumerate_box(T, N, box, deg=14, pad=1):
             lo = max(lo, int(np.floor(box[j]["min"])) - pad)
             hi = min(hi, int(np.ceil(box[j]["max"])) + pad)
         ranges.append(range(max(0, lo), hi + 1))
+    last_lo, last_hi = ranges[-1].start, ranges[-1].stop - 1
+    # After choosing n_0..n_{m-2}, n_{last} = pairs - used must lie in
+    # [last_lo, last_hi], so used must lie in [pairs-last_hi, pairs-last_lo].
+    used_lo = pairs - last_hi
+    used_hi = pairs - last_lo
     hits = []
     scanned = 0
-    # Recurse on the first m-1 coordinates.
     m = len(T)
+    stopped = False
 
     def rec(j, acc, used):
-        nonlocal scanned
+        nonlocal scanned, stopped
+        if stopped:
+            return
         if j == m - 1:
             last = pairs - used
-            if last < 0 or last not in ranges[j]:
+            if last < last_lo or last > last_hi:
                 return
             ns = acc + [last]
             scanned += 1
             if delsarte_ok(N, ns, tables):
                 hits.append({str(T[i]): ns[i] for i in range(m)})
+                if len(hits) >= 3:
+                    stopped = True
             return
+        # remaining after this coordinate: at least the later mins
+        later_min = sum(ranges[k].start for k in range(j + 1, m - 1))
+        later_max = sum(ranges[k].stop - 1 for k in range(j + 1, m - 1))
         for v in ranges[j]:
-            if used + v > pairs:
+            nu = used + v
+            # used_so_far + later + last = pairs, last in [last_lo, last_hi]
+            if nu + later_min > used_hi:
                 continue
-            rec(j + 1, acc + [v], used + v)
-            if len(hits) >= 3:
+            if nu + later_max < used_lo:
+                continue
+            rec(j + 1, acc + [v], nu)
+            if stopped:
                 return
 
     rec(0, [], 0)
-    return {"scanned": scanned, "n_hits": len(hits), "hits": hits[:3]}
+    return {
+        "scanned": scanned,
+        "n_hits": len(hits),
+        "hits": hits[:3],
+        "skipped": False,
+        "used_window": [used_lo, used_hi],
+    }
 
 
 def main() -> int:
+    only = [a for a in sys.argv[1:] if not a.startswith("-")]
     families = {"T_L5": T_L5, "T_Q5": T_Q5}
+    if only:
+        families = {k: v for k, v in families.items() if k in only}
     report = {}
+    out = Path(__file__).resolve().parent / "integer_restricted.json"
     for name, T in families.items():
         entry = {"T": [str(t) for t in T], "N": {}}
         for N in (41, 42, 43, 44):
@@ -170,14 +203,23 @@ def main() -> int:
                     },
                 }
                 continue
-            print(f"  enumerating integer box ...", flush=True)
-            irec = enumerate_box(T, N, boxrec["box"])
-            print(f"  scanned={irec['scanned']} hits={irec['n_hits']}",
-                  flush=True)
+            if name == "T_Q5" and N < 44:
+                irec = {
+                    "scanned": 0,
+                    "n_hits": 0,
+                    "hits": [],
+                    "skipped": True,
+                    "note": "box too large; not an emptiness proof. N=44 is searched in integer_q5_44.c",
+                }
+                print("  skipped (use integer_q5_44.c for N=44)", flush=True)
+            else:
+                print(f"  enumerating integer box ...", flush=True)
+                irec = enumerate_box(T, N, boxrec["box"])
+                print(f"  scanned={irec['scanned']} hits={irec['n_hits']} "
+                      f"hits={irec.get('hits')}", flush=True)
             entry["N"][str(N)] = {**boxrec, "integer": irec}
-        report[name] = entry
-    out = Path(__file__).resolve().parent / "integer_restricted.json"
-    out.write_text(json.dumps(report, indent=2) + "\n")
+            report[name] = entry
+            out.write_text(json.dumps(report, indent=2) + "\n")
     print("wrote", out)
     return 0
 

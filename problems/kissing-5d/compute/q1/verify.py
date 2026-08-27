@@ -61,7 +61,8 @@ def verify_duals():
         if "gegenbauer_coeffs" in data:
             items = [(path.stem, data)]
         else:
-            items = [(k, v) for k, v in data.items() if "gegenbauer_coeffs" in v]
+            items = [(k, v) for k, v in data.items()
+                     if isinstance(v, dict) and "gegenbauer_coeffs" in v]
         for name, C in items:
             c = [F(x) for x in C["gegenbauer_coeffs"]]
             T = [F(t) for t in C["T"]]
@@ -91,6 +92,41 @@ def verify_duals():
             if not certified:
                 ok_all = False
     return {"present": True, "ok": ok_all, "duals": report}
+
+
+def verify_l5_hits():
+    path = HERE / "integer_restricted.json"
+    if not path.exists():
+        return {"present": False}
+    from math import comb
+    from delsarte import eval_poly, gegenbauer_dim5
+    data = json.loads(path.read_text())
+    T = [F(t) for t in data["T_L5"]["T"]]
+    polys = gegenbauer_dim5(14)
+    ok = True
+    report = {}
+    for Ns in ("41", "42", "43"):
+        N = int(Ns)
+        hits = data["T_L5"]["N"][Ns]["integer"]["hits"]
+        good = []
+        for h in hits:
+            if sum(h[str(t)] for t in T) != comb(N, 2):
+                ok = False
+                good.append(False)
+                continue
+            A = {t: F(2 * h[str(t)], N) for t in T}
+            row_ok = True
+            for pk in polys:
+                s = eval_poly(pk, F(1))
+                for t, at in A.items():
+                    s += at * eval_poly(pk, t)
+                if s < 0:
+                    row_ok = False
+            good.append(row_ok)
+            if not row_ok:
+                ok = False
+        report[Ns] = {"n_hits": len(hits), "all_ok": all(good)}
+    return {"present": True, "ok": ok, "N": report}
 
 
 def verify_polar_vertex(name, rec):
@@ -130,6 +166,12 @@ def main() -> int:
     report = {"duals": verify_duals()}
     polar_path = HERE / "polar_vertices.json"
     ok = report["duals"].get("ok", True)
+    cert_polar = HERE / "certs" / "polar_maximal.json"
+    if cert_polar.exists():
+        C = json.loads(cert_polar.read_text())
+        if C.get("max_norm2") != "5/4" or not C.get("maximal"):
+            ok = False
+        report["polar_cert"] = {"ok": C.get("maximal") is True}
     if polar_path.exists():
         polar = json.loads(polar_path.read_text())
         preplay = {}
@@ -139,6 +181,9 @@ def main() -> int:
             if rec.get("maximal_as_spherical_code") and not preplay[name].get("ok"):
                 ok = False
         report["polar"] = preplay
+    report["l5_hits"] = verify_l5_hits()
+    if report["l5_hits"].get("present") and not report["l5_hits"].get("ok"):
+        ok = False
     out = HERE / "verify.json"
     out.write_text(json.dumps(report, indent=2) + "\n")
     return 0 if ok else 1
