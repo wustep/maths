@@ -1,6 +1,6 @@
 # Independently recomputed constants
 
-All logs base 2.  Replay: `python solve_published.py`, `python verify.py`, and `q1/run_all.sh`.
+All logs base 2.  Replay: `python solve_published.py`, `python verify.py`, `q1/run_all.sh`, and `q2/run_all.sh`.
 
 | symbol | value | source |
 | --- | ---: | --- |
@@ -15,5 +15,7 @@ All logs base 2.  Replay: `python solve_published.py`, `python verify.py`, and `
 | claimed c (2026-08-17) | 0.38285 | below the β=1/5 mesh crossing, min ratio 1.000077 on 5.1M cells |
 | c₄^{ray}(β=1) | 0.38305135658682558 | 2026-08-27: unique critical point of 1−(1−b)h(b); h(b)=(1−b)log₂((1−b)/b) |
 | claimed c | **0.38304** | 2026-08-27: below the analytic crossing, min ratio 1.000021687 on 5.1M cells (Python and C) |
+| 2-sample ceiling on {b,1} | 0.38305135658682558 | q2: any bit protocol, product coupling; `h(Π_{b,b})≤1` |
+| 2-mixture witness ratio | 0.9091371378730101 | q2: `{b*,1}` at mean 0.45 mixed with `δ_{0.01}`; not a ray dent |
 
-Deltas versus the published quotes are < 10⁻¹⁴ (Liu, Cambie).
+Deltas versus the published quotes are < 10⁻¹⁴ (Liu, Cambie). The claimed constant did not move in q2.

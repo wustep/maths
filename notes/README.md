@@ -11,5 +11,6 @@
 | [cursor-grok-2026-08-27-caccetta-q2/](cursor-grok-2026-08-27-caccetta-q2/) | Caccetta exact orders through n=36 |
 | [grok-sidon-2026-08-27/](grok-sidon-2026-08-27/) | Sidon second term, q2 |
 | [grok-c7-shannon-2026-08-27-q3/](grok-c7-shannon-2026-08-27-q3/) | Grok 4.6 continuation of the C7 fifth-power folder |
+| [cursor-grok-2026-08-27-union-closed-q2/](cursor-grok-2026-08-27-union-closed-q2/) | Union-closed q2: 2-sample ceiling, constant unchanged |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).

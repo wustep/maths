@@ -199,6 +199,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed | `problems/union-closed` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed / Example 4 on {b,1} | `problems/union-closed/compute/q1` | Grok 4.6 | 2026-08-27 |
+| union-closed / 2-sample ceiling on {b,1} | `problems/union-closed/compute/q2` | Grok 4.6 | 2026-08-27 |
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok 4.6 | 2026-08-17 |
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |

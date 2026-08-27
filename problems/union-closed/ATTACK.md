@@ -142,3 +142,43 @@ This is a dent of the repo ray-record 0.38285 and of Liu's published 0.382709, i
 Claim: on `{b,1}`, pure Example 4 has Gilmer ratio ≥ 1 whenever the mean is at most 0.38304. The exact first-crossing of the ray is the analytic number 0.3830513565868….
 
 Do not claim: the 1/2 conjecture; every measure on [0,1]; a new `n` or `|F|` classification; Tian's height-4 theorem (already published); Liu's PSD hypothesis.
+
+## 2026-08-27 — q2: past 0.38304 toward 1/2
+
+Parent `compute/q1/run_all.sh` still exits 0: claimed 0.38304, analytic crossing 0.3830513565868…, mesh min ratio 1.000021687. Fetched Gilmer 2211.09055v2 (constant 0.01; §5 Conjecture 1 would have given 1/2) and Liu 2306.08824v1 (Theorem 13 still 0.382709 under PSD + global-min). Wikipedia still quotes 0.38271. arXiv API, 25 newest `union-closed`+`conjecture` hits: no paper after Liu moves the frequency constant. Ellis 2211.12401 and Sawin already refute Gilmer Conjecture 1.
+
+This was not a small-dent pass. The leftover handles were a new β, Example-5 mixes, 3-point support, and a new protocol.
+
+### Ceiling
+
+On `{b,1}` with a product coupling of `(S,T)`, OR-entropy lives only on the `(b,b)` cell. Any 2-sample bit protocol has `h(Π_{b,b}) ≤ 1`, so the first-crossing is at most `f(b) = 1 − (1-b)h(b)`. Example 4 saturates `h=1` on `(1−1/√2, 1/2]`, so the class maximum is the q1 critical point 0.383051356…. Independent C grid + golden-section recovers the same min. `f(1/2)=1/2` is the wrong point of `f`.
+
+### Mix and protocol scans
+
+`hunt_mixes.py` / `hunt_protocols.py` on the ray:
+
+| class | best first-crossing |
+| --- | ---: |
+| iid + Example 4, `β ∈ [0,1]` | 0.383051356 at `β=1` |
+| iid + Example 5 | 0.382709088 (Liu) |
+| Example 4 + Example 5 | 0.383051356 (pure 4) |
+| iid + Example 4 + maxent | 0.383051356 (pure 4) |
+| Example 5 scale `ℓ` | 0.383049767 |
+| half-target Fréchet | 0.383051356 |
+| scaled `a(t)`, `α ∈ [0,1.4]` | 0.383051356 at `α=1` |
+
+No mix or named protocol beats the ceiling. Half-target agrees with Example 4 on the diagonal at `b*` (`Π=1/2`).
+
+### 3-atomic residue
+
+Product 3-atomic samples at mean `≤ 0.38304`: 12532 uniform + 12367 near-ray + 6132 half-target + 4622 Example-4/5 mix, **0 hits** below 1. Incomplete search, not a Krein–Milman certificate. The deterministic `{b,1}` point at mean 0.39 has ratio 0.9887, as the ceiling requires.
+
+### 2-mixture witness (residue, not a dent)
+
+Pure Example 4 does not extend off the ray. Mix the `{b*,1}` law at mean 0.45 with `δ_{0.01}` so the mixture mean is 0.38304. The CIID (2-mixture-of-products) Example-4 ratio is **0.909137**. Independent C replay agrees. The product `μ⊗μ` iid ratio on the same law is 1.0466; Liu `β=0.10` Example 5 + iid is 1.0325. A positive iid weight saves the witness and drops the `{b,1}` crossing below 0.38304. Random 2-mixtures at `c=0.38304` found 9 further hits (worst 0.825). Not a lower bound, and not a move of the ray number.
+
+### What we claim / do not claim
+
+Claim: the 2-sample bit-protocol class on `{b,1}` cannot certify a frequency above 0.383051356…. The repo constant is still 0.38304.
+
+Do not claim: a dent of 0.38304; the 1/2 conjecture; every measure; that the 2-mixture witness kills the ray claim; Gilmer Conjecture 1.

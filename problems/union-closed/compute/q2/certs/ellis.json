@@ -1,0 +1,29 @@
+{
+  "source": "https://arxiv.org/abs/2211.12401",
+  "x": 0.3,
+  "closed_form": -0.04679700005769244,
+  "direct": -0.046797000057692606,
+  "means_unperturbed": [
+    0.5,
+    0.5
+  ],
+  "q_unperturbed": [
+    0.09,
+    0.16,
+    0.16,
+    0.59
+  ],
+  "matches_ellis_below_-0.04": true,
+  "closed_minus_direct": 1.6653345369377348e-16,
+  "perturbed": {
+    "eps": 0.001,
+    "functional": -0.04342167440191891,
+    "means": [
+      0.499,
+      0.499
+    ],
+    "means_below_half": true,
+    "still_negative": true
+  },
+  "note": "Gilmer Conjecture 1 fails.  The KL+entropy 2-sample strengthening does not give Frankl 1/2."
+}
