@@ -561,9 +561,12 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
     (c1, sqrt_a, mu_u, a_up)
 }
 
-fn replay_stored(root: &J) -> f64 {
+fn replay_stored(root: &J) -> Option<f64> {
+    let contrib = match root.obj().get("panel_contrib_upper") {
+        Some(v) => v.arr_f64(),
+        None => return None,
+    };
     let b = root.get("bounds");
-    let contrib = root.get("panel_contrib_upper").arr_f64();
     let mut panels = 0.0;
     for x in &contrib {
         panels += *x;
@@ -574,7 +577,7 @@ fn replay_stored(root: &J) -> f64 {
     let sqrt_a = b.get("sqrt_a_upper").f64v();
     let i_u = up(near + panels + tail);
     let ag = up(0.5 * i_u);
-    up(sqrt_a * ag)
+    Some(up(sqrt_a * ag))
 }
 
 fn main() {
@@ -598,13 +601,16 @@ fn main() {
         _ => args[1].clone(),
     };
 
-    let stored = replay_stored(&root);
     let claimed = root.get("bounds").get("C_1_upper").f64v();
-    println!(
-        "rust_stored_replay: name={name} C_1_replay={stored:.12} claimed={claimed:.12}"
-    );
-    if stored > claimed * (1.0 + 1e-11) + 1e-13 {
-        fatal("stored panel replay exceeds claimed C_1_upper");
+    if let Some(stored) = replay_stored(&root) {
+        println!(
+            "rust_stored_replay: name={name} C_1_replay={stored:.12} claimed={claimed:.12}"
+        );
+        if stored > claimed * (1.0 + 1e-11) + 1e-13 {
+            fatal("stored panel replay exceeds claimed C_1_upper");
+        }
+    } else {
+        println!("rust_stored_replay: name={name} (slim cert; panels recomputed)");
     }
 
     let (c1, sqrt_a, mu_u, a_up) = certify_independent(alpha, beta, gamma, delta, eps, kappa, support);

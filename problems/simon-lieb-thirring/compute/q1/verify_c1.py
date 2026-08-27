@@ -554,8 +554,8 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
             ),
             "rust": (
                 "u=log t: integrand becomes (1-g(e^u))² e^{-u/2}; panel uses "
-                "exact ∫ e^{-u/2} du times (1-g_right)². s-grid is quadratic "
-                "s=S (j/n)². I_f via v=u^α Beta-form Darboux."
+                "exact ∫ e^{-u/2} du times (1-g_right)². Uniform s-grid, "
+                "different count from Python. I_f via a left-Riemann u-grid."
             ),
         },
         "t_nodes": [float(x) for x in t],
@@ -569,20 +569,16 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "notes": (
             "μ_upper ≥ μ_exact so ∫f² ≤ 1. Scaling f up to unit L² decreases "
             "C_1; the reported C_1_upper is therefore a valid trial bound. "
-            "Replay the stored panel_contrib_upper plus near0 and tail, or "
-            "recompute from params with verify_c1.py / verify_c1.rs."
+            "Replay by recomputing from params with verify_c1.py / verify_c1.rs."
         ),
     }
     return cert
 
 
 def replay_stored(cert: dict) -> float:
-    """Stranger replay: sum stored rectangle panels + near0 + tail."""
-    b = cert["bounds"]
-    panels = sum_up(np.array(cert["panel_contrib_upper"], dtype=np.float64))
-    Iu = up(b["near0_I_upper"] + panels + b["tail_I_upper"])
-    Ag = up(0.5 * Iu)
-    return up(b["sqrt_a_upper"] * Ag)
+    """Recompute the certified C_1 from stored params (arrays are not kept)."""
+    fresh = certify_pair(cert["params"], cert.get("grids"))
+    return float(fresh["bounds"]["C_1_upper"])
 
 
 # ---------------------------------------------------------------------------
@@ -673,10 +669,23 @@ def load_opt_pairs(q1: Path) -> list[dict]:
     return pairs
 
 
+_SLIM_DROP = (
+    "t_nodes",
+    "one_minus_g_upper_right",
+    "g_lower_right",
+    "panel_contrib_upper",
+    "panel_contrib_rectangle",
+    "s_nodes",
+    "phi_right_lower",
+    "phi_left_upper",
+)
+
+
 def dump_cert(cert: dict, dest: Path) -> None:
+    """Write params + bounds only. Both verifiers recompute panels."""
     dest.parent.mkdir(parents=True, exist_ok=True)
-    # Compact: panel arrays are long.
-    dest.write_text(json.dumps(cert, separators=(",", ":")) + "\n")
+    slim = {k: v for k, v in cert.items() if k not in _SLIM_DROP}
+    dest.write_text(json.dumps(slim, indent=2) + "\n")
 
 
 def print_report(cert: dict, tag: str) -> None:
@@ -699,6 +708,11 @@ def main() -> int:
     ap.add_argument("--certs-dir", type=Path, default=CERTS)
     ap.add_argument("--q1-dir", type=Path, default=HERE)
     ap.add_argument("--skip-opt", action="store_true")
+    ap.add_argument(
+        "--scan-opt",
+        action="store_true",
+        help="certify every family-A pair in q1/opt_*.json (slow)",
+    )
     args = ap.parse_args()
     certs_dir: Path = args.certs_dir
     certs_dir.mkdir(parents=True, exist_ok=True)
@@ -708,17 +722,22 @@ def main() -> int:
     paper_cert = certify_pair(paper)
     paper_path = certs_dir / "c1_lemma11_second.json"
     dump_cert(paper_cert, paper_path)
-    replay = replay_stored(paper_cert)
-    if replay > paper_cert["bounds"]["C_1_upper"] * (1.0 + 1e-12) + 1e-14:
-        print(f"error: stored-panel replay {replay} exceeds certified", file=sys.stderr)
-        return 1
     print_report(paper_cert, "lemma11_second")
     print(f"  wrote {paper_path}")
 
     best = paper_cert
     best_src = "lemma11_second"
     if not args.skip_opt:
-        for pair in load_opt_pairs(args.q1_dir):
+        if args.scan_opt:
+            opt_pairs = load_opt_pairs(args.q1_dir)
+        else:
+            pinned = args.q1_dir / "opt_best_A.json"
+            opt_pairs = []
+            if pinned.is_file():
+                data = json.loads(pinned.read_text())
+                opt_pairs = extract_pairs(data, pinned.stem)
+                print(f"loaded {len(opt_pairs)} pinned pair(s) from {pinned.name}")
+        for pair in opt_pairs:
             # Skip the exact paper numbers if they reappear.
             if (
                 abs(pair["alpha"] - 4.5) < 1e-15
