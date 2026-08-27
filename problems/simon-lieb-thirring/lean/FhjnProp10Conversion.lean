@@ -40,7 +40,6 @@ theorem inv_sqrt_K_lower_eq {C : ℝ} (hC : 0 < C) :
   rw [Real.sqrt_div (by positivity), Real.sqrt_mul (by norm_num), Real.sqrt_sq hC.le,
     sqrt_16, sqrt_243]
   field_simp
-  ring
 
 /-- From the Proposition 10 lower bound on `K / Kcl` and the `d = 1`
 duality identity, the converted `L / Lcl` bound follows. -/
@@ -58,14 +57,13 @@ theorem L_over_Lcl_le_of_K_bound
 
 /-- Comparing the converted bound with the published `1.456` is
 equivalent to a bound on `C`. -/
-theorem converted_bound_lt_1456_div_1000_iff {C : ℝ} (_hC : 0 < C) :
+theorem converted_bound_lt_1456_div_1000_iff {C : ℝ} :
     (9 * √3 / 4) * C < (1456 : ℝ) / 1000 ↔
       C < ((1456 : ℝ) / 1000) * 4 / (9 * √3) := by
   have hfac : 0 < 9 * √3 / 4 := by positivity
   have heq : ((1456 : ℝ) / 1000) / (9 * √3 / 4) =
       ((1456 : ℝ) / 1000) * 4 / (9 * √3) := by
     field_simp
-    ring
   rw [mul_comm, ← heq]
   exact (lt_div_iff₀ hfac).symm
 
@@ -75,7 +73,7 @@ and large enough to cover the trial value `𝒞₁ ≤ 0.373556` quoted after
 Frank–Hundertmark–Jex–Nam Lemma 11. The coarser cutoff `3734 / 10000`
 is also sufficient, but this one is tighter. -/
 theorem converted_bound_of_C_le_467_div_1250
-    {C : ℝ} (hC : 0 ≤ C) (h : C ≤ (467 : ℝ) / 1250) :
+    {C : ℝ} (h : C ≤ (467 : ℝ) / 1250) :
     (9 * √3 / 4) * C < (1456 : ℝ) / 1000 := by
   have hfac : 0 ≤ 9 * √3 / 4 := by positivity
   refine lt_of_le_of_lt (mul_le_mul_of_nonneg_left h hfac) ?_
