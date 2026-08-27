@@ -127,3 +127,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=33$ faces at target $0.9112$ ($8{,}589{,}934{,}591$, copositive, $2455$ skips, $\min m^\top Mm>7\cdot 10^{-5}$, $\min\varphi=0.911221$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1021$ moves to $1.1020$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. $n=34$ at the same split is still a predicted $1.1017$ if faces certify.
+
+## Later the same day — past $n=33$ to $n=34$
+
+0. What was actually missing — after q8 the compact $\gamma$ at $R=10$, $n=33$ sat $0.00158$ below the cut $10/11$. The leftover was still the $P_{\max}$ tax. Unused $\varphi$ at $n=33$ is spent (target $0.9112$, SLSQP $0.911221$). $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1020$: the cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; a Chebyshev $D\cdot M_{-1}\ge 1$ sharpening of that cut (the $R\le 9$ slab still dies below $0.90744$); $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.8$ with the cut binding prints $1.10204$, which is $1.1021$. Chebyshev does not reopen $R\le 9$. The jump is more bins at the proven split.
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=34$ is $0.911452$. Target $0.9113$ minus the $P$ error $0.00358$ gives $\gamma=0.907716$, and $10/11>\gamma$. Then $1/\gamma=1.101667<1.1017<1.1020$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $34$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=34$ faces at target $0.9113$ ($17{,}179{,}869{,}183$, copositive, $4618$ skips, $\min m^\top Mm>5\cdot 10^{-4}$, $\min\varphi=0.911456$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1020$ moves to $1.1017$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. $n=35$ at the same split is still a predicted $1.1013$ if faces certify. Target $0.9114$ on this matrix is still a predicted $1.1016$.
