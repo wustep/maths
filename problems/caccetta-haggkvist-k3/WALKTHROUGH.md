@@ -98,3 +98,11 @@ k=1 through k=11 came back UNSAT. k=1 took 587s and a 1.2 GB DRAT that `drat-tri
 
 The k=0 / t=6 search is leftover bookkeeping. It is not needed. A 6-outregular graph on 18 vertices has 108 arcs, so some vertex has in-degree at least 6. Put that vertex at 0. The cubes k=6..11 all have stored DRATs. That is the exact statement at n=18.
 
+## 8. 27 August, next holes
+
+The same counting works at every later hole. A d-outregular oriented graph has n d arcs, so some in-degree is at least d. The leftover exact orders are those with ⌈n/3⌉ < 0.3465 n, i.e. 21, 24, 26, 27, and so on.
+
+The fear was that n=21 k=7 would be the n=18 k=1 situation (ten minutes, a gigabyte). It was the n=18 k=6 situation: 37 milliseconds, a 59 kB DRAT. Every needed cube through n=36 died the same way. The encoder is not empty: n=21 d=6 and n=24 d=7 still SAT, with checked C₃-free models.
+
+So the finite statement is now checked at n=21, 24, 26, 27, 29, 30, 32, 33, 35, 36. The stored proofs are the DRATs in `compute/q2/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The F₄ number did not move. The first hole not run is n=38.
+
