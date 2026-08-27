@@ -203,7 +203,7 @@ fn v(vars: &[String], name: &str) -> Poly {
     Poly::var(vars, name)
 }
 
-fn c(vars: &[String], value: i128) -> Poly {
+fn constant(vars: &[String], value: i128) -> Poly {
     Poly::constant(vars, value)
 }
 
@@ -230,6 +230,7 @@ impl JsonAtom {
 }
 
 #[derive(Clone, Debug)]
+#[allow(dead_code)]
 enum Json {
     Null,
     Bool(bool),
@@ -542,7 +543,7 @@ fn check_all() -> Counts {
     polar_box_zero(&angular_diff);
     check_origin_box(&p, &q);
 
-    let p_bad = p.add(&c(&polar_vars, 1));
+    let p_bad = p.add(&constant(&polar_vars, 1));
     let radial_bad = x.mul(&p_bad).add(&y.mul(&q));
     if radial_bad.equals(&radial_right) {
         panic!("perturbed field satisfied the radial identity");
@@ -629,10 +630,10 @@ fn lv_weighted(vars: &[String]) -> (Poly, Poly) {
     let p = x.mul(&growth_p);
     let q = y.mul(&growth_q);
     let weighted = alpha
-        .sub(&c(vars, 1))
+        .sub(&constant(vars, 1))
         .mul(&growth_p)
         .add(&p.dvar("x"))
-        .add(&beta.sub(&c(vars, 1)).mul(&growth_q))
+        .add(&beta.sub(&constant(vars, 1)).mul(&growth_q))
         .add(&q.dvar("y"));
     let claimed = alpha
         .mul(&a)
