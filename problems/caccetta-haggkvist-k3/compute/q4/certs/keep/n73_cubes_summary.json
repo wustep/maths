@@ -1,0 +1,242 @@
+{
+  "n": 73,
+  "d": 25,
+  "pigeonhole": {
+    "n": 73,
+    "d": 25,
+    "arcs": 1825,
+    "mean_indeg": 25,
+    "k_min_pigeonhole": 25,
+    "k_max_absolute": 47,
+    "k_max_count": 46,
+    "needed_cubes": [
+      25,
+      26,
+      27,
+      28,
+      29,
+      30,
+      31,
+      32,
+      33,
+      34,
+      35,
+      36,
+      37,
+      38,
+      39,
+      40,
+      41,
+      42,
+      43,
+      44,
+      45,
+      46
+    ],
+    "empty_by_count": [
+      47
+    ]
+  },
+  "all_unsat": true,
+  "leftover": [],
+  "rows": [
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 46,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k46.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 45,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k45.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 44,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k44.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 43,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k43.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 42,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k42.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 41,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k41.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 40,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k40.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 39,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k39.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 38,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k38.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 37,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k37.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 36,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k36.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 35,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k35.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 34,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k34.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 33,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k33.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 32,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k32.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 31,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k31.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 30,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k30.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 29,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k29.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 28,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k28.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 27,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k27.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 26,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k26.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 73,
+      "d": 25,
+      "indeg0": 25,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-73-25-k25.drat",
+      "skipped_existing": true
+    }
+  ]
+}

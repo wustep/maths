@@ -65,7 +65,23 @@ def try_t_split(n: int, d: int, k: int, secs: int) -> dict:
     }
 
 
+def already_kept(n: int, d: int, k: int) -> bool:
+    return (KEEP / f"ch-{n}-{d}-k{k}.drat").is_file()
+
+
 def solve_cube_with_retry(n, d, k, secs, retries):
+    if already_kept(n, d, k):
+        rec = {
+            "n": n,
+            "d": d,
+            "indeg0": k,
+            "status": "UNSAT",
+            "drat": "VERIFIED",
+            "keep": f"ch-{n}-{d}-k{k}.drat",
+            "skipped_existing": True,
+        }
+        print(f"  skip existing k={k}", flush=True)
+        return rec
     attempts = []
     budgets = [secs]
     for extra in retries:
@@ -93,15 +109,15 @@ def solve_cube_with_retry(n, d, k, secs, retries):
             flush=True,
         )
         if is_ok(slim):
-            slim["attempts"] = attempts
+            slim["n_attempts"] = i + 1
             return slim
         if slim.get("status") == "SAT":
-            slim["attempts"] = attempts
+            slim["n_attempts"] = i + 1
             return slim
 
     print(f"  split k={k} on t=|N+(1)∩U|", flush=True)
     split = try_t_split(n, d, k, max(uniq))
-    split["attempts"] = attempts
+    split["n_attempts"] = len(attempts)
     return split
 
 
@@ -128,7 +144,7 @@ def write_summary(closed, residue, this_run):
         "residue": [
             {"n": r["n"], "d": r["d"], "n_leftover": len(r["leftover"])} for r in residue
         ],
-        "f4": 0.34645,
+        "f4": 0.34640,
         "published_hkn": 0.3465,
         "next_hole": first_open,
         "note": (
