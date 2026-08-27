@@ -19,3 +19,9 @@ lower bound.
 ```bash
 ./run_all.sh
 ```
+
+Second-language check of the HPS leading constants: `verify_b3.c`
+(closed form, long double) and `verify_b3.rs` (max of the ratio in
+(2.7) by ternary search and a grid). The piecewise published envelope
+for integer $Z=1,\ldots,200$ is `certs/bound_table.csv` and
+`certs/best_published.json`. That table is not a new bound.

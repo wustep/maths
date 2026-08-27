@@ -13,4 +13,4 @@ Chronological attempts, newest last. A failed attack belongs here too.
 ## 2026-08-27 — second-language $b(s)$ and published envelope table
 
 - `compute/q1/verify_b3.c` (long double closed form) and `verify_b3.rs` (ternary/grid max of $(1+t^{s-1})/(1+t^s)$). Same interval assertions as HPS: $1.1184<b(3)<1.1185$ and $1.2071<b(2)<1.2072$. Replay via `./run_all.sh`.
-- `compare_bounds.py` writes the piecewise published envelope for integer $Z=1..200$. Not a dent: table only. Crossover integers (HPS $s=3$ Prop. 2.5 RHS vs the other printed lines) are recorded in `certs/best_published.json`.
+- `compare_bounds.py` writes the piecewise published envelope for integer $Z=1..200$. Not a dent: table only. C and Rust agree on $b(3)$ to $10^{-12}$. Smallest integer $Z$ where the Prop. 2.5 RHS is below Nam is $28$; below Lieb $\lfloor 2Z\rfloor$ is $10$; below HPS $s=2$ is $36$ (paper Remark 2.6 had $35.8$). See `certs/best_published.json`.
