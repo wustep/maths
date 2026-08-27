@@ -30,3 +30,8 @@ Output: `certs/half_bound.json`.
 
 - `certs/n7_triples.json` — the 18 solutions in {0,3,6,8,9,12,18}
 - `plot_constants.py` → `../figures/constants.png`
+
+## q1 (2026-08-27)
+
+Endpoint recurrence and family search. Does not move 1/2.
+Replay: `q1/run_all.sh`. Cert: `q1/certs/q1.json`.

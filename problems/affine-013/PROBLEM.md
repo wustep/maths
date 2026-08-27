@@ -25,3 +25,11 @@ is strictly below the published Hardy–Littlewood / Aaronson 3/4.
 Constructions tonight do not beat the interval’s 1/3 (the almost-interval
 {0,…,n−2,n} for n=3m has T = n²/3+1; a sporadic 7-set has T=18).
 The conjecture γ=1/3 remains open. Verifier: `compute/verify_half.py`.
+
+## Result (2026-08-27)
+
+Residue. Endpoint induction and a second family search in `compute/q1/`
+do not move 1/2. The 2/3 end-budget that would give γ=1/3 already fails
+at n=5; both ends can score 9/10 of n−1 without beating the interval.
+No certified family has limsup T/n² > 1/3. Replay: `compute/q1/run_all.sh`.
+Cert: `compute/q1/certs/q1.json`.
