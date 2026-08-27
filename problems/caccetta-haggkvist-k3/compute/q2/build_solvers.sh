@@ -1,7 +1,7 @@
 #!/bin/sh
 # Local kissat 4.0.4 + drat-trim.  Binaries stay in bin/ (gitignored).
 set -eu
-here=$(dirname "$0")
+here=$(cd "$(dirname "$0")" && pwd)
 mkdir -p "$here/bin" /tmp/solvers
 if [ ! -x /tmp/solvers/kissat/build/kissat ]; then
   cd /tmp/solvers
