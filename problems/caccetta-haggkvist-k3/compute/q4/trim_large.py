@@ -12,6 +12,7 @@ from trim_keep import KEEP, parse_stem, trim_keep_file
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--min-mb", type=float, default=8.0)
+    ap.add_argument("--n-min", type=int, default=0)
     ap.add_argument("--n-max", type=int, default=10**9)
     args = ap.parse_args()
     min_bytes = int(args.min_mb * 1024 * 1024)
@@ -21,7 +22,7 @@ def main():
         if parsed is None:
             continue
         n, d, k = parsed
-        if n > args.n_max or path.stat().st_size < min_bytes:
+        if n < args.n_min or n > args.n_max or path.stat().st_size < min_bytes:
             continue
         print(f"TRIM n={n} d={d} k={k} raw={path.stat().st_size}", flush=True)
         rec = trim_keep_file(n, d, k, min_bytes=min_bytes)
