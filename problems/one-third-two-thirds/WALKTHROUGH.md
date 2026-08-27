@@ -89,3 +89,50 @@ n=8 and n=9 minima are linear sums of $M_7$ with a chain. At n=10 the 187 labell
 - Every product of three chains on at most 24 elements (bitmask), and every box in the plane-partition table (including $C_2\times C_6\times C_3$, $C_2\times C_7\times C_3$, $C_2\times C_3\times C_{10}$), has $\delta\ge 1/3$. For the computed range, the atoms of the two largest factors are already a $1/3$-balanced pair whenever both factors are at least 3.
 
 **Still open.** The unrestricted conjecture. Gold Partition past 14. Width-3 past 10. Monotonicity of the box atom-pair in the third dimension, which would finish Olson–Sagan Question 3.9 for three factors. Dimension 2. Interval orders that are not semiorders. 7-thin. Whether any poset other than Aigner's linear sums of $T$ has $\delta$ exactly $1/3$.
+
+# 2026-08-27
+
+## 0. What was actually missing
+
+The 17 August note treated Gupta as Gold Partition only. Version 2, posted 30 July, is a full $\delta$-census through 14. The missing handle after that census is not another 14-element poset. It is a named class past the published ladder table, or a width-3 example at $n\ge 15$ with $\delta<6/17$. Gupta's tail already says the second does not exist at $n\le 14$: the $6/17$ width-3 row is 29 ordinal sums, and every smaller tail value is width 2.
+
+## 1. Named false starts
+
+**Search for a width-3 poset with $\delta<6/17$ at $n\le 14$.** Incompatible with the published tail. One-point extensions of $W_{10}$ were still run, as a check: 101 width-$\le 3$ extensions, none below $6/17$.
+
+**Grow $W_{10}$ while keeping $\delta\le 6/17$ and staying a non-sum.** The only $n=11$ extensions that keep $6/17$ are the two ordinal sums. The frontier is empty. That is the useful negative: $W_{10}$ does not start a width-3 family that stays at $6/17$ without padding.
+
+**A three-rail analogue at $n=15$, exhaustive.** $2^{21}$ optional $+4$ and $+5$ rungs is a residue budget. The complete pass stops at $n=12$. A greedy $n=15$ walk stays above $6/17$.
+
+**Interval orders through $n=10$.** Naturally labelled generation at $n=8$ is already $4.9\times 10^5$ posets. $n=10$ was killed as too slow for the same enumerator.
+
+## 2. The useful failure
+
+The $W_{10}$ extensions fail in the direction that confirms Gupta, not in the direction that produces a smaller width-3 $\delta$. Once that is checked, the unused published table is Peczarski's ladders, not another 10-element Hasse diagram.
+
+## 3. The click
+
+Peczarski's definition is two rails and a list of deleted rungs. Gupta recomputed the class through 14 to prove it matches the global non-sum minimum. The same enumerator, with this notebook's counters, continues past 14. That is a complete search of a named class, not a random sample.
+
+## 4. The argument, in the order it was found
+
+Replay Gupta's encodings first: $L_{14,1,9}$ is $254/725$, $e=725$; the $37/106$ witness is $e=318$; the width-3 $6/17$ encoding is an ordinal sum, $e=561$. Then the definition: rails $x_i<x_{i+2}$, rungs $x_i<x_{i+3}$. Every subset of the $n-3$ rungs, skip ordinal sums, take min $\delta$.
+
+Through 14 the minima are Gupta's table. At 15 and 17 they are Peczarski's named broken sets, now with exact fractions $166/475$ and $1304/3737$. At 16, 18, 19, 20, 21 the minima are $665/1898$, $387/1108$, $458/1311$, $6059/17366$, $5402/15485$. The $n=21$ value is $\approx 0.348854$, just above the printed gap edge $0.348843$.
+
+## 5. Computer search
+
+- `compute/q1/verify_gupta.py` / `gupta_verify.json`
+- `compute/q1/ladders.py` and `ladder_census.c`
+- `compute/q1/ladder_census.json`: the table
+- `figures/ladder_minima.png`
+- `compute/q1/extend_w10.json`: 101 extensions, 0 below $6/17$
+- `compute/q1/three_rail.json`, `interval_orders.json`
+
+Replay: `cd compute/q1 && ./run_all.sh`.
+
+## 6. What is proved vs still open
+
+**Certified tonight.** Gupta v2 named witnesses. The broken-rung non-sum minimum at every order $7$ through $21$. No width-3 one-point extension of $W_{10}$ below $6/17$. No naturally labelled interval order on $\le 8$ elements below $1/3$.
+
+**Still open.** The unrestricted conjecture. Width-3 $\delta<6/17$ at $n\ge 15$. Three-chain products. Dimension 2. Interval orders as a class. Gold Partition past 14. The $n=22$ ladder row.

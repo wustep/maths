@@ -1,0 +1,18 @@
+restart 0 done size=367 best=367
+restart 1 done size=367 best=367
+restart 2 done size=367 best=367
+restart 3 done size=367 best=367
+restart 4 done size=367 best=367
+restart 5 done size=367 best=367
+restart 6 done size=367 best=367
+restart 7 done size=367 best=367
+restart 8 done size=367 best=367
+restart 9 done size=366 best=367
+restart 10 done size=367 best=367
+restart 11 done size=367 best=367
+5-out hit size=367 gain=1
+restart 12 done size=367 best=367
+restart 13 done size=367 best=367
+restart 14 done size=367 best=367
+restart 15 done size=367 best=367
+DONE global_best=367 four_out_best_gain=0 four_trials=16672 five_out_best_gain=1 five_trials=8336

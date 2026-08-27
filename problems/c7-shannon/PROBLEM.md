@@ -29,3 +29,7 @@ that checks pairwise circular distance $>1$ in some coordinate.
 
 Do not claim a new $\Theta(C_7)$ unless the 5th-root actually beats
 $3.258805$. A 368-set in dimension 5 is already a finite new bound.
+
+A set that misses a letter in any coordinate has size at most $345$.
+Hamming distance $11$ from the published $367$-set contains no $368$-set.
+That is not a certificate that $367$ is maximum.

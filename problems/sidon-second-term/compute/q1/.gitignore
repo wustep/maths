@@ -1,0 +1,5 @@
+verify_q1
+*.o
+search.log
+refine.log
+certs/*.txt

@@ -1,0 +1,16 @@
+{
+  "n": 9,
+  "d": 3,
+  "indeg0": null,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 619 1534",
+  "status": "UNSAT",
+  "time_s": 0.022,
+  "timeout_s": 15,
+  "returncode": 20,
+  "cnf": "ch-9-3.cnf",
+  "out": "ch-9-3.out",
+  "drat": "VERIFIED",
+  "drat_bytes": 5914
+}

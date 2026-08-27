@@ -21,3 +21,7 @@ compute/.venv/bin/python compute/plot_gamma.py
 `refs/` is a snapshot of Hou–Zhao’s GitHub (8-kernel hash matches
 arXiv:2607.01169v2 Claim 4.1). `certs/hz_kernels_L6.json` is our L=6
 certificate: same a, smaller b.
+
+q1 (2026-08-27) re-optimizes the eight kernels as free histograms.
+`q1/certs/joint_r8_L6.json` has √(ab) = 0.94324253097 < 0.94325.
+Replay: `cd compute/q1 && ./run_all.sh`.

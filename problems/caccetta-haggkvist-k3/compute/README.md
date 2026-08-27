@@ -28,3 +28,5 @@ python3 ind_fork.py        # rebuild IndT, IndV, Fork
 ## Small-n census
 
 `certs/small_n_census.json` (n≤12, no lex SB). With lex SB, n=12,15,16 are UNSAT with DRAT.
+
+The n=18 in-degree cubes live in `q1/`. Replay: `cd q1 && ./run_all.sh`.
