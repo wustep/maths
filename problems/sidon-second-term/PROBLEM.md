@@ -3,7 +3,7 @@
 - Slug: `sidon-second-term`
 - List: P07
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort max`
-- Status: open (Erdős–Turán not claimed). Hou–Zhao arXiv:2607.01169v2 already has C<0.9435. This folder certifies C<0.94349251 by an L=6 lift of their kernels (8.22e-8 below their γ0).
+- Status: dent of Hou–Zhao 0.9435. Independent 8-kernel certificate (free histograms, L=6) has √(ab)=0.94324253097, so C<0.94325. Erdős–Turán not claimed.
 - Area: Additive combinatorics
 - Sources: Erdos Problem #30; Green 100 #31
 - Started: 2026-08-17
@@ -32,3 +32,18 @@ This folder independently verifies Hou–Zhao, then certifies an L=6 lift of
 their kernels: F(N) ≤ √N + 0.94349251 N^{1/4} + O(1), which is 8.22×10^{-8}
 below their exact γ0. No growing lower-bound second term. Erdős–Turán not
 claimed. Replay in `compute/README.md`.
+
+## After 2026-08-27
+
+Hou–Zhao is still the published record to beat: 0.9435, with exact
+γ0 = 0.943492590713545. The L=6 lift does not change the four-decimal
+statement. A later search re-optimizes the eight kernels as free
+symmetric histograms at L=6 (the published R≥4 shapes were six-mode
+profiles).
+The rational certificate `compute/q1/certs/joint_r8_L6.json` has
+
+    F(N) ≤ √N + 0.94325 N^{1/4} + O(1)
+
+with exact √(ab) = 0.9432425309706136. That is a dent of the published
+0.9435, not only of γ0. Replay in `compute/q1/README.md`. Erdős–Turán
+not claimed. No growing lower-bound second term.

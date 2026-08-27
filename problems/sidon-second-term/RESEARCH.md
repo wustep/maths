@@ -90,6 +90,15 @@ python3 compute/verify_beat_hz.py
 This is a microscopic tightening of the published certificate, not a new
 argument and not an improvement of the four-decimal statement 0.9435.
 
+## 2026-08-27 — q1 certificate
+
+`compute/q1/certs/joint_r8_L6.json`, SHA-256
+`edcc2c973809c4bb8a3f25233ffc80e6b5ce432a70c4d01697a3ba8ead8beda5`.
+Eight free symmetric histograms, m=32, L=6. Exact √(ab) =
+0.9432425309706136 < 0.94325. Parent nested-loop verifier, q1
+convolution verifier, and a GMP C nested-sum verifier all PASS.
+Published record beaten: Hou–Zhao 0.9435.
+
 ## OEIS / tables (residue only)
 
 - [A003022](https://oeis.org/A003022), [A143824](https://oeis.org/A143824),
