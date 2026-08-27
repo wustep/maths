@@ -1,0 +1,11 @@
+{
+  "n": 42,
+  "nclauses_card": 1725498,
+  "nclauses_slim": 1701336,
+  "nvars_card": 6273,
+  "nvars_slim": 123,
+  "status": "UNKNOWN",
+  "note": "Cadical195 timeout 180s (card) and 300s (slim). Isolated SAT timeout is not a bound. Encoder self-test on n=7 agrees; n=14 is SAT and (5,5).",
+  "time_limit_sec": [180, 300],
+  "use_card": [true, false]
+}

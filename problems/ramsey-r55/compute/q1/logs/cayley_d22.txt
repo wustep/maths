@@ -1,0 +1,1 @@
+DONE group=d22 n=44 scanned=469925806 hits=0 pruned=349496800 sec=406.695

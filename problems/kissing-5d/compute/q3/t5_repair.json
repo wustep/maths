@@ -1,0 +1,66 @@
+{
+  "n_remainder": 355,
+  "repairs": [
+    {
+      "from": "D5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "D5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "L5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "L5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "Q5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "Q5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "R5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "R5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    }
+  ],
+  "found_36": false,
+  "found_41": false,
+  "complete": true,
+  "clique36": null,
+  "comment": "Exact repairs of the four published 35-cliques.  A hit would lift through the five universal basis vectors to a 41-code. Empty repairs are not an emptiness proof of the 36-clique."
+}

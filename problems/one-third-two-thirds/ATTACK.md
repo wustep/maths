@@ -184,3 +184,33 @@ Width-3: every one-point width-$\le 3$ extension of $W_{10}$ (101 of them) has $
 Replay: `cd compute/q1 && ./run_all.sh`.
 
 No width-3 poset with $\delta<6/17$ was certified. The unrestricted conjecture is still open.
+
+## 2026-08-27 — q2 finishes the leftover class tables
+
+Published record re-fetched before the search. Gupta arXiv:2607.23926v2 is still the order-14 $\delta$-census (abs and HTML v2). Chan–Pak arXiv:2311.02743v2 still list Conjecture 13.1 as open. Olson–Sagan arXiv:1706.04985v2 still ask Question 3.9. Aires–Kahn 2509.11549 and 2510.26134 are Kahn–Saks progress, not a $1/3$ proof. Wikipedia (raw, 27 Aug 2026) still calls the conjecture unsolved and cites Gupta 2026 for order 14; it lists semiorders, not interval orders.
+
+q1 left three handles: the $n=22$ ladder row (residue, not a minimum), three-rail past $n=12$, interval orders past $n=8$. The q1 C enumerator zeroed $2^n$ words per subset; that is why 22 did not finish. q2 stamps ideals instead.
+
+Broken-rung non-sum minima, C over every $2^{n-3}$ subset, winning ladder replayed in Python. Through 21 this independently matches q1. The new row:
+
+| n | min $\delta$ | ladder | $e$ | non-sum |
+| ---: | ---: | --- | ---: | ---: |
+| 22 | $1065/3049$ | $L_{22,1,5,6,9,12,13,17}$ | 54882 | 524288 |
+
+$1065/3049\approx 0.349295>1/3$. It is larger than the $n=21$ minimum $5402/15485\approx 0.348854$, and still outside Peczarski's printed gap. Zero ladders below $1/3$. This is a complete class census, not a counterexample.
+
+Three-rail (rails $x_i<x_{i+3}$, optional $+4$ and $+5$), exhaustive through $n=15$ ($2^{21}$ subsets at 15). Width 3 on every winner. Matches q1 through 12. New rows:
+
+| n | min $\delta$ | $e$ | non-sum | $<6/17$ |
+| ---: | ---: | ---: | ---: | ---: |
+| 13 | $3854/9973$ | 19946 | 131072 | 0 |
+| 14 | $17581/44872$ | 44872 | 524288 | 0 |
+| 15 | $30572/78185$ | 156370 | 2097152 | 0 |
+
+$30572/78185\approx 0.391021>6/17$. The first unused width-3 order has no three-rail example below the Gupta tail. That is a class statement, not a width-3 census.
+
+Naturally labelled interval orders through $n=10$. Counts $7,37,272,2637,32469,493602,9062503,197409097$ match OEIS A367494 exactly. Every non-chain has $\delta\ge 1/3$. The overall minimum is $1/3$ (Aigner family). Among those that contain $3+1$ (not semiorders) the minimum is $8/21$ at $n=7,8,9$ and $47/130$ at $n=10$.
+
+No dent of the conjecture: no certified $\delta<1/3$. No certified width-3 example below $6/17$.
+
+Replay: `cd compute/q2 && ./run_all.sh`.
