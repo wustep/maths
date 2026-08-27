@@ -1,0 +1,189 @@
+{
+  "det": "9(u^2+v^2)^2",
+  "identity_linear": true,
+  "identity_quad": true,
+  "identity_radial": true,
+  "deg_linear": 5,
+  "deg_quad": 8,
+  "deg_radial": 11,
+  "n_terms_radial_Yu": 12,
+  "n_terms_radial_Yv": 12,
+  "preimages_half_0": 3,
+  "preimages_quarter_quarter": 3,
+  "preimages_chebyshev_T3": 9,
+  "beats_T3": false,
+  "weaker_than_T3": true,
+  "attains_bezout": false,
+  "growth_complex": "linear",
+  "Yu_monomials": [
+    {
+      "u": 0,
+      "v": 5,
+      "num": 3,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "num": 3,
+      "den": 4
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "num": 6,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 2,
+      "num": 3,
+      "den": 2
+    },
+    {
+      "u": 4,
+      "v": 1,
+      "num": 3,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 0,
+      "num": 3,
+      "den": 4
+    },
+    {
+      "u": 1,
+      "v": 10,
+      "num": -3,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 8,
+      "num": -15,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 6,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 7,
+      "v": 4,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 9,
+      "v": 2,
+      "num": -15,
+      "den": 1
+    },
+    {
+      "u": 11,
+      "v": 0,
+      "num": -3,
+      "den": 1
+    }
+  ],
+  "Yv_monomials": [
+    {
+      "u": 0,
+      "v": 5,
+      "num": 3,
+      "den": 4
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "num": -3,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "num": 3,
+      "den": 2
+    },
+    {
+      "u": 3,
+      "v": 2,
+      "num": -6,
+      "den": 1
+    },
+    {
+      "u": 4,
+      "v": 1,
+      "num": 3,
+      "den": 4
+    },
+    {
+      "u": 5,
+      "v": 0,
+      "num": -3,
+      "den": 1
+    },
+    {
+      "u": 0,
+      "v": 11,
+      "num": -3,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 9,
+      "num": -15,
+      "den": 1
+    },
+    {
+      "u": 4,
+      "v": 7,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 6,
+      "v": 5,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 8,
+      "v": 3,
+      "num": -15,
+      "den": 1
+    },
+    {
+      "u": 10,
+      "v": 1,
+      "num": -3,
+      "den": 1
+    }
+  ],
+  "rows": [
+    {
+      "n": 1,
+      "N": 5,
+      "sheets": 3,
+      "bezout": 9,
+      "T3": 9
+    },
+    {
+      "n": 2,
+      "N": 8,
+      "sheets": 3,
+      "bezout": 9,
+      "T3": 9
+    },
+    {
+      "n": 3,
+      "N": 11,
+      "sheets": 3,
+      "bezout": 9,
+      "T3": 9
+    }
+  ]
+}

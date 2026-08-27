@@ -1,0 +1,165 @@
+{
+  "paper": "arXiv:2604.12883v1 Remark 4 / Theorem 2 / \u00a76",
+  "Phi": "u^2-v^2, 2uv",
+  "det": "4(u^2+v^2)",
+  "cauchy_riemann": true,
+  "identity": "DPhi \u00b7 Y = (det DPhi) (X o Phi)",
+  "radial": {
+    "rho2": [
+      1,
+      4
+    ],
+    "identity_ok": true,
+    "deg_Y": 7,
+    "bound": 7,
+    "exact": true,
+    "Yu_monomials": [
+      {
+        "u": 0,
+        "v": 3,
+        "num": 2,
+        "den": 1
+      },
+      {
+        "u": 1,
+        "v": 2,
+        "num": 1,
+        "den": 2
+      },
+      {
+        "u": 2,
+        "v": 1,
+        "num": 2,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 0,
+        "num": 1,
+        "den": 2
+      },
+      {
+        "u": 1,
+        "v": 6,
+        "num": -2,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 4,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 2,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 7,
+        "v": 0,
+        "num": -2,
+        "den": 1
+      }
+    ],
+    "Yv_monomials": [
+      {
+        "u": 0,
+        "v": 3,
+        "num": 1,
+        "den": 2
+      },
+      {
+        "u": 1,
+        "v": 2,
+        "num": -2,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 1,
+        "num": 1,
+        "den": 2
+      },
+      {
+        "u": 3,
+        "v": 0,
+        "num": -2,
+        "den": 1
+      },
+      {
+        "u": 0,
+        "v": 7,
+        "num": -2,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 5,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 4,
+        "v": 3,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 6,
+        "v": 1,
+        "num": -2,
+        "den": 1
+      }
+    ]
+  },
+  "linear": {
+    "P": "y",
+    "Q": "-x",
+    "identity_ok": true,
+    "deg_Y": 3,
+    "bound": 3,
+    "Yu_closed": "2v(u^2+v^2)",
+    "Yv_closed": "-2u(u^2+v^2)",
+    "Yu_monomials": [
+      {
+        "u": 0,
+        "v": 3,
+        "num": 2,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 1,
+        "num": 2,
+        "den": 1
+      }
+    ],
+    "Yv_monomials": [
+      {
+        "u": 1,
+        "v": 2,
+        "num": -2,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 0,
+        "num": -2,
+        "den": 1
+      }
+    ]
+  },
+  "two_step_radial": {
+    "deg_Y": 15,
+    "bound": 15,
+    "identity_ok": true,
+    "N_formula": "(n+1) 2^k - 1"
+  },
+  "chebyshev_T2_one_step": {
+    "deg_Y": 7,
+    "bound": 7,
+    "identity_ok": true
+  }
+}

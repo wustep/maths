@@ -118,6 +118,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
+| [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22525$, tightening the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
@@ -144,8 +145,9 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Every 13-tuple of coprime speeds with $$u_i \equiv i \pmod{p}$$ has the lonely runner property, for each of the ten primes 191 through 239, checked exhaustively in about four minutes apiece. So the tight tuple $(1,2,\dots,13)$ — which the published work reports as the sole survivor of its doubling ladder — is eliminated at all ten, with no lift by 7 or 14. The check fails for primes up to 41, so the modulus is doing real work. Sungkawichai–Trakulthongchai (arXiv:2604.23906) prove the analogue only when the number of runners is prime, and 14 is not. Cross-checked against brute force at 6 and 8 runners. Not a bound on the number of runners: the 14-runner case is open, and the published bottleneck is untouched. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
-| [simon-lieb-thirring](problems/simon-lieb-thirring) | Simon 2000 #15. Published record $$L_{1,d}\le 1.456\,L^{\mathrm{cl}}_{1,d}$$ (Frank–Hundertmark–Jex–Nam, JEMS 2021). The one-dimensional conjecture for exponents between 1/2 and 3/2 is open. |
-| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz $1.1185$. Same HPS chain, using Lieb's ratio on $Z\ge 4$, tightens the printed remainders $2.96$, $3.90$, and $4$ to $2.953$, $3.892$, and $3.9781$. Leading coefficient unchanged. Hydrogen N0(1)=2 replayed. Bounded excess open. |
+| [hilbert16-limit-cycles](problems/hilbert16-limit-cycles) | Hilbert 16(b): the Hilbert number H(n), maximum isolated periodic orbits of a planar polynomial vector field of degree n. Published lower bounds still stand: H(2) at least 4 (Shi; Chen–Wang), H(3) at least 13 (Li–Liu–Yang), H(4) at least 28 (Prohens–Torregrosa), and the Han–Li / Chebyshev lifts. A quadratic with 5 cycles, a cubic with 14, a homogeneous nest, a Liénard beat of B(n), iterated squaring past the quadratic ceiling, a Harnack-recurrence table beat, a 29th cycle on the Prohens–Torregrosa quartic, a two-well 14, a four-zero quasi-homogeneous Melnikov, a 9-sheet holomorphic cube, a beat of Z(2,n), a constructive +1 with two cycles, a cubic with an invariant line and three cycles, five Abelian zeros, a four-fold or T2 beat of H(7) at least 74, a cubic Kolmogorov with 7 cycles, an L2 extra nest, and a degree-5 radial product with two cycles were not constructed. Replayed: Shi’s order-3 jet, van der Pol uniqueness, the Chebyshev pullback identity and its 2026 table arithmetic, uniqueness for one radial cubic, the first Lyapunov quantity of a quadratic focus, homogeneous scaling, the odd-cubic Liénard energy identity, iterated-squaring sheet counts, the Harnack-recurrence arithmetic, the explicit degree-4 Darboux seed with three centers, the two-well energy and figure-eight integral, vanishing of L1 at those three centers, first-order cyclicity at most 1 for one cubic perturbation of the quasi-homogeneous center, the holomorphic-cube sheet count, the radial family attaining Z(2,n), a degree-4 line product with one circle, a named cubic with an invariant line and no cycles, an explicit Christopher–Lloyd degree-7 four-oval field, an explicit T2 degree-7 four-oval field, a cubic Kolmogorov Dulac in the first quadrant, the second Poincaré quantity at the two-well, and the degree-5 radial product with one circle. No published H(n) moved. Different problem from the degree-8 folder above. |
+| [simon-lieb-thirring](problems/simon-lieb-thirring) | Frank–Hundertmark–Jex–Nam published $$L_{1,d}/L_{1,d}^{\mathrm{cl}}\le 1.456.$$ A certified trial pair gives $$\mathcal{C}_1\le 0.373548,\qquad L_{1,1}/L_{1,1}^{\mathrm{cl}}\le 1.45576.$$ Same one-dimensional lift as the paper, all dimensions. Conjecture open. |
+| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz $1.1185$. Same HPS chain, using Lieb's ratio on $Z\ge 4$, tightens the printed remainders $2.96$, $3.90$, and $4$ to $2.953$, $3.892$, and $3.9781$. A later search did not move the leading coefficient: $s>3$ radialization fails, Lieb still wins at $Z=2,3,4,5$, and a compact-aspect bound does not replace Theorem 2.2. Hydrogen N0(1)=2 replayed. Bounded excess open. |
 
 Each problem folder:
 
@@ -189,6 +191,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
+| Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre/compute/q1` | Codex 5.6 Sol | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
@@ -233,11 +236,17 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
 | Grok Bot transcript page | `notes/chat` | Grok 4.6 | 2026-08-21 |
 | Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
+| Hilbert 16(b) Hilbert number H(n) | `problems/hilbert16-limit-cycles` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) five-line campaign | `problems/hilbert16-limit-cycles/compute/q1` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) twenty-five ideas, five lines | `problems/hilbert16-limit-cycles/compute/q2` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) ten ideas, leftover menu, extras | `problems/hilbert16-limit-cycles/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Hadwiger–Nelson plane | `problems/hadwiger-nelson-plane` | GPT-5.6 Sol | 2026-08-23 |
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
-| Simon Lieb–Thirring constants | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
+| Lieb–Thirring (Simon 2000 #15) | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
+| Lieb–Thirring $\mathcal{C}_1$ trial pair | `problems/simon-lieb-thirring/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Simon ionization excess | `problems/simon-ionization-excess` | Grok 4.6 | 2026-08-27 |
 | Simon ionization excess / HPS remainder | `problems/simon-ionization-excess/compute/q1` | Grok 4.6 | 2026-08-27 |
+| Simon ionization excess / leading coefficient | `problems/simon-ionization-excess/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
 
 ## Lean
 

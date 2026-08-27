@@ -54,3 +54,84 @@ $$
 - `lean/B3NatWitness.lean` checks with core Lean, no mathlib.
 
 Replay: `problems/simon-ionization-excess/compute/q1/run_all.sh`.
+
+## 2026-08-27 — q2 record replay (later papers)
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). Semantic Scholar
+  citationCount 0; OpenAlex W4416381655 cited_by_count 0.
+- Nam 1009.2367v3 and the 2206.15393 write-up of Lieb replayed
+  again. Nam’s β interval cannot beat 1.1185
+  (1/0.8705 ≈ 1.149).
+- Benguria–González-Brantes 2511.07582v1 (10 Nov 2025), HTML
+  Theorem 1.1 / (2): $N<1.4811Z+3.1516Z^{1/3}$ for $Z\ge12$,
+  statistics-independent / bosonic. Improves Lieb for bosons at
+  those $Z$. Does not beat 1.1185 for fermions. Replacement for
+  2207.08328v2, whose abs comment says that version has errors
+  (PDF/HTML 404).
+- Corso–Ried 2403.04347v2 is an LT/CLR variational bound
+  (1.44655 vs FHJN 1.456). It sits in the HPS remainder, not in
+  $b(s)$. Not used.
+- Lewin CR Physique (accepted 31 Mar 2025, PDF opened): even a
+  huge $C$ for $N_{\max}\le Z+C$ is still unknown.
+
+No later fermionic leading coefficient below 1.1185. No paper
+proves a $Z$-independent bound on the excess. No unique $N_0(Z)$
+for $Z>1$.
+
+## 2026-08-27 — q2 false start: $s>3$
+
+$b(4)\approx1.083$ would be a real jump if Lemma 4.3 extended.
+Two-shell opposite dipoles make $I_s(\nu)$ negative for every
+tested $s>3$. At $s=4$ the quadratic is the exact rational
+$-1025/2048$. At $s=3$ the dipole form stays nonnegative (Hardy
+threshold). Remark 2.3 stays a conjecture. Residue:
+`compute/q2/certs/s_gt_3.json`.
+
+## 2026-08-27 — q2 false start: finite $Z$
+
+Published envelopes at $Z=2,3,4,5$: Lieb $N_c<2Z+1$ still
+excludes the most integers. Nam and both HPS forms sit above
+$2Z+1$ there. Regular tetrahedron: $\alpha_{4,2}\le\sqrt6/4$, so
+$\alpha_{4,2}\cdot3<2$ because $54<64$. Pair geometry with the
+kinetic term dropped cannot exclude $N=4$ at $Z=2$. Lieb-style
+weights, Nam’s $\alpha_N$ remainder, and Temple/intermediate
+Hamiltonians also failed. Unsettled $N$ at $Z=2$ is $\{2,3,4\}$.
+Hydrogen uniqueness not claimed. Residue: `compute/q2/certs/smallz.json`.
+
+## 2026-08-27 — q2 useful failure: withdrawn $1.1168$
+
+A tail polynomial $h(D_L,D_R)$ was used to lift a middle-window
+Rayleigh to every Borel probability, claiming
+$\beta_3\ge0.895396$ and $\beta_3^{-1}\le1.11682<1.1185$. False:
+$h(0,1)\approx0.991$ exceeds the HPS power-law $I/D\approx0.921$
+on a measure supported in that tail. Also $I_{CC}\ge\beta D_C$
+is false. `certs/beta3_rad.json` is withdrawn.
+
+## 2026-08-27 — q2 compact class, no lift
+
+The mid-radius face enumeration *is* correct on a compact
+aspect. After the $P_{\max}=(q-1)/(q+1)$ reweighting error,
+
+$$
+Q\ge0.901924\qquad\text{on $D$-aspect }\le4,
+$$
+
+so $1/Q\le1.108741$ in that class (`certs/beta3_compact.json`,
+C faces at $n=18$, $0$ singular; Rust $n=16$ rebuild). The
+numerical power-law minimizer has aspect $\sim3.50$, so it sits
+in the class. HPS $\beta_3$ is an inf over *all* radial
+probabilities, so this does not replace $1.1185$ in Theorem 2.2.
+
+Two-window lift with cross terms at $\min f$ has
+$p_{12}\approx0.995$ and collapses to $\min f$. Geometric
+$t_0$-chains stay at $Q\ge0.9379$ in a scan
+(`certs/aspect_try.json`); that is not a lower bound. No
+certificate that every minimizer has bounded aspect.
+
+## 2026-08-27 — q2 status
+
+Residue. Leading coefficient still $1.1185$
+(Hundertmark–Pattakos–Schulz arXiv:2504.18487v1). Remainder
+dent from q1 unchanged. $N_0(Z)-Z$ bounded still open.
+
+Replay: `problems/simon-ionization-excess/compute/q2/run_all.sh`.

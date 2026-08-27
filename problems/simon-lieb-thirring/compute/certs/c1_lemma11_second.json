@@ -1,0 +1,63 @@
+{
+  "schema": "fhjn-c1-panel-v1",
+  "name": "lemma11_second",
+  "params": {
+    "alpha": 4.5,
+    "beta": 0.25,
+    "gamma": 0.36,
+    "delta": 2.1,
+    "eps": 1.0,
+    "kappa": 1.0,
+    "support": 1.0
+  },
+  "grids": {
+    "t_min": 0.02,
+    "t_steep_lo": 0.25,
+    "t_steep_hi": 20.0,
+    "t_drop_hi": 400.0,
+    "T": 1000000000000.0,
+    "n_small": 1500,
+    "n_steep": 36000,
+    "n_drop": 12000,
+    "n_tail": 6000,
+    "n_s": 80000,
+    "n_phi": 400000,
+    "n_lin_mu": 200000,
+    "n_log_mu": 200000,
+    "U_mu": 10000000.0
+  },
+  "bounds": {
+    "I_f_upper": 1.6702687009654775,
+    "mu_upper": 10.058623287966883,
+    "I_phi_lower": 0.08920161660022714,
+    "I_phi_upper": 0.08920411700025528,
+    "a_raw_upper": 0.026904617177703406,
+    "a_upper": 3.3812817976174308,
+    "sqrt_a_upper": 1.8388262010362943,
+    "near0_I_upper": 4.437292617850167e-15,
+    "panels_rectangle_I_upper": 0.40673798312616405,
+    "panels_exactweight_I_upper": 0.40642779779273014,
+    "tail_I_upper": 2.0000000010000803e-06,
+    "I_upper_rectangle": 0.40673998312617865,
+    "I_upper_exactweight": 0.40642979779274474,
+    "Ag_upper": 0.20321489889637745,
+    "C_1_upper": 0.3736768805316089,
+    "C_1_upper_rectangle": 0.3739620689907567,
+    "C_1_upper_exactweight": 0.3736768805316089,
+    "K_over_Kcl_lower": 0.4715429449442988,
+    "L_over_Lcl_upper": 1.4562615210628624,
+    "sqrt3_upper": 1.7320508075688772,
+    "published_L_record": 1.456,
+    "beats_1456": false,
+    "n_t_panels": 55500,
+    "n_s_panels": 80000,
+    "n_phi_panels": 400000,
+    "one_minus_g_first": 4.287656250254923e-10,
+    "one_minus_g_last": 1.0
+  },
+  "method": {
+    "python": "t-panels: (1-g)\u00b2 increasing so integrand \u2264 (1-g_upper(t_right))\u00b2 t^{-3/2}; certified contribution uses exact \u222b t^{-3/2} dt. Rectangle height/t_left^{3/2}*length is also stored. 1-g = \u222b \u03c6_raw(1-f)/I_\u03c6 \u2264 \u03a3 \u03c6_left_upper (1-f_lower(s_right t)) \u0394s / I_\u03c6_lower. Tail 2 T^{-1/2}. Near 0: (1-g)\u00b2 \u2264 (\u03b2 \u03bc S^\u03b1)\u00b2 t^{2\u03b1}.",
+    "rust": "u=log t: integrand becomes (1-g(e^u))\u00b2 e^{-u/2}; panel uses exact \u222b e^{-u/2} du times (1-g_right)\u00b2. Uniform s-grid, different count from Python. I_f via a left-Riemann u-grid."
+  },
+  "notes": "\u03bc_upper \u2265 \u03bc_exact so \u222bf\u00b2 \u2264 1. Scaling f up to unit L\u00b2 decreases C_1; the reported C_1_upper is therefore a valid trial bound. Replay by recomputing from params with verify_c1.py / verify_c1.rs."
+}

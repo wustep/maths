@@ -1,0 +1,346 @@
+{
+  "not_a_certificate": true,
+  "is_new_bound": false,
+  "beta_used": "0.821800000000000000000000",
+  "alpha_prop1": [
+    {
+      "N": 3,
+      "prop1_lower": "0.117541396139900033247765",
+      "prop1_beats_half": false,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": 0.5773502691896257
+    },
+    {
+      "N": 4,
+      "prop1_lower": "0.277472759794454954669178",
+      "prop1_beats_half": false,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": 0.6123724356957944
+    },
+    {
+      "N": 5,
+      "prop1_lower": "0.366166638080920686823128",
+      "prop1_beats_half": false,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": 0.6474226764154579
+    },
+    {
+      "N": 6,
+      "prop1_lower": "0.424155280410112756636395",
+      "prop1_beats_half": false,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": null
+    },
+    {
+      "N": 8,
+      "prop1_lower": "0.497366976756849406495601",
+      "prop1_beats_half": false,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": null
+    },
+    {
+      "N": 12,
+      "prop1_lower": "0.574653828931107032961862",
+      "prop1_beats_half": true,
+      "sqrt5_over_4": "0.559016994374947424102293",
+      "search_s2_upper_on_inf": null
+    }
+  ],
+  "nam_lemma1": [
+    {
+      "Z": 2,
+      "N": 3,
+      "lhs_published_lower": "1.11803398874989484820459",
+      "rhs_lemma1": "2.65381980520602513331914",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.1547005383792515,
+      "search_upper_minus_rhs": -1.4991192668267739
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "lhs_published_lower": "1.67705098312484227230688",
+      "rhs_lemma1": "2.53971635766918782141558",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.8371173070873832,
+      "search_upper_minus_rhs": -0.7025990505818047
+    },
+    {
+      "Z": 2,
+      "N": 5,
+      "lhs_published_lower": "2.23606797749978969640917",
+      "rhs_lemma1": "2.46511345749606158110405",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 2.5896907056618317,
+      "search_upper_minus_rhs": 0.1245772481657701
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "lhs_published_lower": "1.67705098312484227230688",
+      "rhs_lemma1": "2.53971635766918782141558",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.8371173070873832,
+      "search_upper_minus_rhs": -0.7025990505818047
+    },
+    {
+      "Z": 2,
+      "N": 5,
+      "lhs_published_lower": "2.23606797749978969640917",
+      "rhs_lemma1": "2.46511345749606158110405",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 2.5896907056618317,
+      "search_upper_minus_rhs": 0.1245772481657701
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "lhs_published_lower": "1.11803398874989484820459",
+      "rhs_lemma1": "3.98072970780903769997871",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.1547005383792515,
+      "search_upper_minus_rhs": -2.8260291694297863
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "lhs_published_lower": "1.67705098312484227230688",
+      "rhs_lemma1": "3.80957453650378173212337",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.8371173070873832,
+      "search_upper_minus_rhs": -1.9724572294163987
+    },
+    {
+      "Z": 3,
+      "N": 5,
+      "lhs_published_lower": "2.23606797749978969640917",
+      "rhs_lemma1": "3.69767018624409237165607",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 2.5896907056618317,
+      "search_upper_minus_rhs": -1.1079794805822605
+    },
+    {
+      "Z": 3,
+      "N": 6,
+      "lhs_published_lower": "2.79508497187473712051147",
+      "rhs_lemma1": "3.61782100156292748402301",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    },
+    {
+      "Z": 3,
+      "N": 7,
+      "lhs_published_lower": "3.35410196624968454461376",
+      "rhs_lemma1": "3.55748280183652482377803",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "lhs_published_lower": "1.11803398874989484820459",
+      "rhs_lemma1": "5.30763961041205026663829",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.1547005383792515,
+      "search_upper_minus_rhs": -4.152939072032799
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "lhs_published_lower": "1.67705098312484227230688",
+      "rhs_lemma1": "5.07943271533837564283116",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.8371173070873832,
+      "search_upper_minus_rhs": -3.2423154082509926
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "lhs_published_lower": "2.23606797749978969640917",
+      "rhs_lemma1": "4.93022691499212316220809",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 2.5896907056618317,
+      "search_upper_minus_rhs": -2.3405362093302915
+    },
+    {
+      "Z": 4,
+      "N": 8,
+      "lhs_published_lower": "3.91311896062463196871605",
+      "rhs_lemma1": "4.68000000000000000000000",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    },
+    {
+      "Z": 4,
+      "N": 9,
+      "lhs_published_lower": "4.47213595499957939281835",
+      "rhs_lemma1": "4.62864755541124213239131",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    },
+    {
+      "Z": 5,
+      "N": 3,
+      "lhs_published_lower": "1.11803398874989484820459",
+      "rhs_lemma1": "6.63454951301506283329786",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.1547005383792515,
+      "search_upper_minus_rhs": -5.479848974635812
+    },
+    {
+      "Z": 5,
+      "N": 4,
+      "lhs_published_lower": "1.67705098312484227230688",
+      "rhs_lemma1": "6.34929089417296955353895",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 1.8371173070873832,
+      "search_upper_minus_rhs": -4.512173587085586
+    },
+    {
+      "Z": 5,
+      "N": 5,
+      "lhs_published_lower": "2.23606797749978969640917",
+      "rhs_lemma1": "6.16278364374015395276011",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": 2.5896907056618317,
+      "search_upper_minus_rhs": -3.573092938078322
+    },
+    {
+      "Z": 5,
+      "N": 10,
+      "lhs_published_lower": "5.03115294937452681692064",
+      "rhs_lemma1": "5.73250779461084046539816",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    },
+    {
+      "Z": 5,
+      "N": 11,
+      "lhs_published_lower": "5.60060253532914208647577",
+      "rhs_lemma1": "5.68741202799415207017839",
+      "contradiction_from_published_alpha_lower": false,
+      "lhs_from_search_upper": null,
+      "search_upper_minus_rhs": null
+    }
+  ],
+  "hps_710": [
+    {
+      "Z": 2,
+      "N": 3,
+      "N_beta2": "2.48528137423857029281013",
+      "rhs": "4.84050279392921887465594",
+      "contradiction": false
+    },
+    {
+      "Z": 2,
+      "N": 4,
+      "N_beta2": "3.31370849898476039041351",
+      "rhs": "4.96012405510259936856161",
+      "contradiction": false
+    },
+    {
+      "Z": 2,
+      "N": 5,
+      "N_beta2": "4.14213562373095048801689",
+      "rhs": "5.08124208706628204146261",
+      "contradiction": false
+    },
+    {
+      "Z": 2,
+      "N": 6,
+      "N_beta2": "4.97056274847714058562026",
+      "rhs": "5.19818306884471648049158",
+      "contradiction": false
+    },
+    {
+      "Z": 3,
+      "N": 3,
+      "N_beta2": "2.48528137423857029281013",
+      "rhs": "6.14260600392294401713958",
+      "contradiction": false
+    },
+    {
+      "Z": 3,
+      "N": 4,
+      "N_beta2": "3.31370849898476039041351",
+      "rhs": "6.20950476036680350604510",
+      "contradiction": false
+    },
+    {
+      "Z": 3,
+      "N": 5,
+      "N_beta2": "4.14213562373095048801689",
+      "rhs": "6.29615186404460931908450",
+      "contradiction": false
+    },
+    {
+      "Z": 3,
+      "N": 6,
+      "N_beta2": "4.97056274847714058562026",
+      "rhs": "6.38849616560066924076612",
+      "contradiction": false
+    },
+    {
+      "Z": 4,
+      "N": 3,
+      "N_beta2": "2.48528137423857029281013",
+      "rhs": "7.44470921391666915962322",
+      "contradiction": false
+    },
+    {
+      "Z": 4,
+      "N": 4,
+      "N_beta2": "3.31370849898476039041351",
+      "rhs": "7.45888546563100764352860",
+      "contradiction": false
+    },
+    {
+      "Z": 4,
+      "N": 5,
+      "N_beta2": "4.14213562373095048801689",
+      "rhs": "7.51106164102293659670640",
+      "contradiction": false
+    },
+    {
+      "Z": 4,
+      "N": 6,
+      "N_beta2": "4.97056274847714058562026",
+      "rhs": "7.57880926235662200104066",
+      "contradiction": false
+    },
+    {
+      "Z": 5,
+      "N": 3,
+      "N_beta2": "2.48528137423857029281013",
+      "rhs": "8.74681242391039430210686",
+      "contradiction": false
+    },
+    {
+      "Z": 5,
+      "N": 4,
+      "N_beta2": "3.31370849898476039041351",
+      "rhs": "8.70826617089521178101209",
+      "contradiction": false
+    },
+    {
+      "Z": 5,
+      "N": 5,
+      "N_beta2": "4.14213562373095048801689",
+      "rhs": "8.72597141800126387432830",
+      "contradiction": false
+    },
+    {
+      "Z": 5,
+      "N": 6,
+      "N_beta2": "4.97056274847714058562026",
+      "rhs": "8.76912235911257476131520",
+      "contradiction": false
+    }
+  ],
+  "note": "No (N,Z) in this table yields a contradiction from published lower bounds on alpha_N. At Z=2, N=4 the Prop. 1 remainder is larger than \u03b2, so that lower bound is useless. The search upper on alpha_4*(3) is still below the Lemma-1 RHS once the kinetic 0.68 N^{-2/3} is kept. HPS (7.10) likewise does not exclude N=4 at Z=2: the N^{1/3} remainder is ~2.5."
+}

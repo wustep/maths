@@ -1,0 +1,55 @@
+{
+  "N_formula": "3n+2",
+  "rows": [
+    {
+      "n": 1,
+      "N": 5,
+      "sheet_ceiling_bezout": 9,
+      "actual_complex": 3,
+      "chebyshev_m": 3,
+      "chebyshev_sheets": 9,
+      "ratio": [
+        3,
+        1
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "n": 2,
+      "N": 8,
+      "sheet_ceiling_bezout": 9,
+      "actual_complex": 3,
+      "chebyshev_m": 3,
+      "chebyshev_sheets": 9,
+      "ratio": [
+        3,
+        1
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "n": 3,
+      "N": 11,
+      "sheet_ceiling_bezout": 9,
+      "actual_complex": 3,
+      "chebyshev_m": 3,
+      "chebyshev_sheets": 9,
+      "ratio": [
+        3,
+        1
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    }
+  ],
+  "conclusion": {
+    "beats_T3": false,
+    "weaker_than_T3": true,
+    "attains_bezout": false,
+    "actual_complex_growth": "linear",
+    "complex_sheets_formula": "(N+1)/(n+1)",
+    "bezout_ceiling_growth": "quadratic",
+    "answers_remark4": "negative_for_holomorphic_cube",
+    "do_not_claim_9_sheets": true,
+    "do_not_claim_252_1080_1380_2012": true
+  }
+}

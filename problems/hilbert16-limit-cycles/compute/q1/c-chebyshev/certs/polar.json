@@ -1,0 +1,15 @@
+{
+  "rho2": [
+    1,
+    4
+  ],
+  "xP_plus_yQ": "-(x^2+y^2)((x^2+y^2)-rho2)",
+  "xQ_minus_yP": "-(x^2+y^2)",
+  "rdot": "r(rho2-r^2)",
+  "thetadot": -1,
+  "fprime_at_rho": [
+    -1,
+    2
+  ],
+  "hyperbolic": true
+}

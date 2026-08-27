@@ -1,0 +1,97 @@
+{
+  "cl_circle_point": {
+    "target": [
+      5,
+      2,
+      2,
+      1
+    ],
+    "real_regular": 4,
+    "bezout_m2": 4,
+    "attains_m2": true,
+    "note": "four sign combinations of (\u00b1sqrt(5/2), \u00b1sqrt(2))"
+  },
+  "cl_half_half": {
+    "target": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "real_regular": 4,
+    "bezout_m2": 4,
+    "attains_m2": true
+  },
+  "chebyshev_T2_half_half": {
+    "target": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "real_regular": 4,
+    "attains_m2": true,
+    "t2_equation": "2t^2-3/2=0",
+    "disc": 12
+  },
+  "holomorphic_half_0": {
+    "target": [
+      1,
+      2,
+      0,
+      1
+    ],
+    "real_regular": 2,
+    "attains_m2": false
+  },
+  "polar_z_to_z2": [
+    {
+      "target": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "count": 2
+    },
+    {
+      "target": [
+        1,
+        2,
+        1,
+        2
+      ],
+      "count": 2
+    },
+    {
+      "target": [
+        5,
+        2,
+        2,
+        1
+      ],
+      "count": 2
+    }
+  ],
+  "oval": {
+    "equation": "(u^2-2)^2+(v^2-2)^2=1/4",
+    "u2_min": [
+      3,
+      2
+    ],
+    "u2_max": [
+      5,
+      2
+    ],
+    "components": 4,
+    "uv_nonzero": true,
+    "jac_nonzero": true
+  },
+  "untranslated_hits_axes": true,
+  "translated_first_quadrant": true,
+  "honesty": {
+    "separable_square_is_4_to_1_off_axes": true,
+    "holomorphic_square_is_2_to_1": true,
+    "four_sign_combinations": true
+  }
+}
