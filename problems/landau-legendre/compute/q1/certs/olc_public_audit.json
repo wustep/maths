@@ -1,0 +1,71 @@
+{
+  "bucket_invariant_failures": 0,
+  "commit": "5cdaa95f0a4b1428a05480cc1c69d556a8f9517a",
+  "conflicting_start_count": 0,
+  "coverage_components": [
+    [
+      10000000000,
+      29983700000048
+    ],
+    [
+      29983800000000,
+      31868300000352
+    ],
+    [
+      31868400000000,
+      31871500000352
+    ],
+    [
+      31871600000000,
+      31893900000352
+    ],
+    [
+      31894000000000,
+      31894400000352
+    ]
+  ],
+  "coverage_holes": [
+    [
+      29983700000048,
+      29983800000000
+    ],
+    [
+      31868300000352,
+      31868400000000
+    ],
+    [
+      31871500000352,
+      31871600000000
+    ],
+    [
+      31893900000352,
+      31894000000000
+    ]
+  ],
+  "covered_n_count": 31884000001456,
+  "delta_invariant_failures": 0,
+  "duplicate_interval_rows": 3233,
+  "file_count": 2560,
+  "ignored_nonrecord_lines": 0,
+  "max_end_exclusive": 31894400000352,
+  "min_begin": 10000000000,
+  "program_file_counts": {
+    "bigdawg": 768,
+    "phi": 1792
+  },
+  "program_row_counts": {
+    "bigdawg": 148633,
+    "phi": 173440
+  },
+  "projection_sha256": "4c97fdd097cf685ff3bfa8b8a896ac659178fdf8b306a8c48fa7ef6d5b765f8d",
+  "public_projection_reaches_published_N": false,
+  "published_N": 70500000000000,
+  "repository": "https://github.com/sorenson64/olc",
+  "row_count": 322073,
+  "schema": "landau-legendre.olc-public-audit.v1",
+  "selector": "^(bigdawg|phi)/data[^/]*/[^/]+\\.out$",
+  "source_blob_bytes": 39740318,
+  "source_manifest_sha256": "e310f60f78970c3373b659533f24f7493c88720eb51eabfdb771f21b222b60ac",
+  "unique_interval_count": 318840,
+  "unique_start_count": 318840
+}
