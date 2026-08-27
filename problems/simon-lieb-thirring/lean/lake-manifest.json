@@ -91,6 +91,6 @@
    "inputRev": "v4.32.0",
    "inherited": true,
    "configFile": "lakefile.toml"}],
- "name": "simon-lieb-thirring",
+ "name": "simonLiebThirring",
  "lakeDir": ".lake",
  "fixedToolchain": false}

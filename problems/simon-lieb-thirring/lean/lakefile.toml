@@ -1,4 +1,4 @@
-name = "simon-lieb-thirring"
+name = "simonLiebThirring"
 version = "0.1.0"
 defaultTargets = ["FhjnProp10Conversion"]
 packagesDir = "../../../.lake/packages"
