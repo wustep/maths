@@ -15,8 +15,8 @@ unrestricted dual below 44.
 C leftover-tight branch-and-bound empties every 4-star host
 (`four_star_extras.json`). A covering Python leftover-tight sample
 matches (`replay_four_star.json`). A remaining 41-set in that graph
-has star-cover at least 5. That slice is unfinished. No
-unrestricted dual below 44.
+has star-cover at least 5. Global leftover SAT on that slice did
+not finish. No unrestricted dual below 44.
 
 | Script | What it does |
 | --- | --- |

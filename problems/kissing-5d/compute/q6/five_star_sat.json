@@ -1,0 +1,14 @@
+{
+  "n_pools": 4,
+  "n_expected_sample": 6,
+  "found_41": false,
+  "n_sat_unsat": 4,
+  "complete": false,
+  "pools": [
+    {"stars": [0, 1, 2, 3, 4], "k": 32, "n_extras": 528, "sat": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 5], "k": 32, "n_extras": 528, "sat": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 6], "k": 32, "n_extras": 528, "sat": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 7], "k": 32, "n_extras": 528, "sat": false, "found_41": false}
+  ],
+  "comment": "Leftover-tight SAT snapshot: first four k=32 5-star pools (the C 20M cutoff sample) are SAT-unsat. Two more pools and the writer were still running. UNSAT without DRAT is residue. Did not claim tau5=40."
+}

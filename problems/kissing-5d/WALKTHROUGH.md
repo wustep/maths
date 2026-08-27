@@ -484,8 +484,10 @@ So a remaining 41-set in that graph has star-cover at least 5. That
 is not empty by combinatorics: the smallest $D_5$-root set that
 hits every 4-star complement has size 5. Five-star extras graphs
 are larger (528 to 625 vertices, 28 to 39 colours). Four of them
-ate 20 million nodes and did not finish. Global leftover SAT on
-$|U|=19$ with the 4-star forbid is the handle that is left.
+ate 20 million nodes and did not finish. Leftover-tight SAT on
+those four $k=32$ pools came back unsat, without a stored DRAT.
+Global leftover SAT on $|U|=19$ with the 4-star forbid, and a
+200-million-node extras B&B with that prune, did not finish.
 
 No unrestricted dual below 44. 1-point Delsarte is still the
 Odlyzko–Sloane number. The $(t-1/2)q^2$ grid that certified sat

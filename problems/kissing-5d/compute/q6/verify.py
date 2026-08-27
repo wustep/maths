@@ -131,6 +131,7 @@ def main() -> int:
         "leftover_global.json",
         "leftover_sat.json",
         "leftover_sat_k19.json",
+        "leftover_sat_status.json",
     ):
         rec = check_search(name)
         report[name] = rec

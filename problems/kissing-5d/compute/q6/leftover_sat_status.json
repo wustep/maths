@@ -1,0 +1,11 @@
+{
+  "k": 19,
+  "n1": 21,
+  "min_star_cover": 5,
+  "cnf_vars": 30678,
+  "cnf_clauses": 219606,
+  "found_41": false,
+  "complete": false,
+  "solvers_running": ["cadical195", "kissat404"],
+  "comment": "Global leftover SAT k=19 star-cover>=5. No model at the time of writing. Incomplete; UNSAT without a stored DRAT would still be residue. Did not claim tau5=40."
+}

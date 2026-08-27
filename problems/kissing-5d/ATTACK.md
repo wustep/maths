@@ -549,7 +549,14 @@ classical Levenshtein number 48 before claiming any comparison.
 - Global leftover-tight extras B&B with the 4-star grow-prune
   (`leftover_global.json`, `n_four_star=210`) ran 200M nodes, no
   41-set, incomplete. Same leftover as q5 extras B&B, plus the prune.
-- Global leftover SAT $k=19$ with star-cover $\ge 5$ (30{,}678 vars)
-  and leftover-tight SAT on a sample of 5-star $k=32$ pools are
-  running. Residue unless a later verifier-plus-certificate pair
-  moves the interval. Unrestricted range still $40\le\tau_5\le 44$.
+- Leftover-tight SAT on the four $k=32$ five-star pools that hit the
+  C 20M cutoff is SAT-unsat (`five_star_sat.json` snapshot). Two
+  more pools in that sample were still running. SAT-unsat without
+  DRAT is residue.
+- Global leftover SAT $k=19$ with star-cover $\ge 5$ (30{,}678 vars,
+  Cadical195 and Kissat404 in parallel) had no model after half an
+  hour (`leftover_sat_status.json`). Incomplete. Residue, not a
+  lower bound.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code. Did not
+  claim $\tau_5=40$. Residue.

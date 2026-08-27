@@ -11,6 +11,8 @@ leftover_sat_k*.json
 two_axis_extras.log
 four_star_extras.log
 leftover_sat.log
+leftover_sat_kissat.log
+five_star_sat.log
 dual_more.log
 replay_four_star.log
 five_star_s*.err
