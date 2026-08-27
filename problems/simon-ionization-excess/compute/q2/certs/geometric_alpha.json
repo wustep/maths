@@ -1,0 +1,45 @@
+{
+  "not_a_certificate": true,
+  "is_new_bound": false,
+  "lieb_s1": {
+    "alpha_N_1_ge": 0.5,
+    "gives": "N < 2Z+1",
+    "at_Z2": "N < 5, so Nc(2) <= 4"
+  },
+  "nam_s2_N2": {
+    "alpha_2_2": 0.5
+  },
+  "nam_sqrt5_over_4": {
+    "value": 0.5590169943749475,
+    "exact": "sqrt(5)/4",
+    "applies": "Nam text: alpha_N >= sqrt(5)/4 when N>=3 (s=2)",
+    "invoked_not_reproved": true,
+    "N4_times_3": 1.6770509831248424,
+    "below_Z2": true
+  },
+  "threshold_N4_Z2_kinetic_dropped": {
+    "need_alpha_4": 0.6666666666666666,
+    "sqrt5_over_4_minus_need": -0.10764967229171918
+  },
+  "equilateral_centred_s2": {
+    "alpha": 0.5773502691896257,
+    "exact": "sqrt(3)/3",
+    "N3_times_2": 1.1547005383792515,
+    "below_Z2": true,
+    "note": "configuration, hence an upper bound on inf alpha_3"
+  },
+  "tetrahedron_centred_s2": {
+    "alpha": 0.6123724356957945,
+    "exact": "sqrt(6)/4",
+    "N4_times_3": 1.8371173070873834,
+    "below_Z2": true,
+    "integer_form": "3*sqrt(6) < 8  <=>  54 < 64",
+    "note": "Regular tetrahedron centred at the origin. Evaluates alpha_4,2 exactly. So alpha_4,2 <= sqrt(6)/4 < 2/3, and alpha_4,2 * 3 <= 3*sqrt(6)/4 < 2. The s=2 pair geometry cannot exclude N=4 at Z=2 even if the kinetic remainder is dropped. Independent integer check: 9*6 = 54 < 64."
+  },
+  "one_at_origin_opposite_s2": {
+    "alpha": 0.75,
+    "exact": "3/4",
+    "note": "configuration; not the infimum"
+  },
+  "note": "Published elementary lowers on alpha_4 stop at 1/2 or at sqrt(5)/4. The tetrahedron gives a certified *upper* on alpha_4,2 below the 2/3 threshold. No geometric dent for Nc(2)<4 from the |x|^s pair ratio."
+}

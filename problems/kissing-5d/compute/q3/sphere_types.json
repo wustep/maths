@@ -1,0 +1,398 @@
+{
+  "2": {
+    "d": 2,
+    "n": 200,
+    "n_d5": 40,
+    "n_extras": 160,
+    "thresh": 4,
+    "type_stats": {
+      "(1, 1, 1, 1, 2)": {
+        "n": 160,
+        "min_d5_deg": 36,
+        "max_d5_deg": 36,
+        "d5_deg_hist": {
+          "36": 160
+        }
+      }
+    },
+    "max_d5_deg_of_extra": 36,
+    "n1_max": 36,
+    "min_extras_for_41": 5,
+    "n_missed_groups": 160,
+    "group_size_hist": {
+      "1": 160
+    },
+    "same_missed_groups": {
+      "n": 160,
+      "complete": true,
+      "any_hit": false,
+      "max_best": 1,
+      "sample": [
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 4,
+          "n1": 36,
+          "n_extras": 1,
+          "target": 5,
+          "best": 1,
+          "found": false,
+          "complete": true
+        }
+      ]
+    },
+    "cross_n1_35": {
+      "n_four_sets": 160,
+      "tried": 0,
+      "found": false,
+      "complete": true,
+      "best_total": 0
+    },
+    "mixed_n1_34": {
+      "tried": 0,
+      "found": false,
+      "complete": true,
+      "best_total": 0
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "n1_36_empty": true,
+    "comment": "Every extra kisses at most 36 of the 40 D5 roots. A 41-set therefore uses at least 5 extras.  Same-missed-set groups settle the n1 = 40-|M| slices (in particular n1=36).  Lower-n1 mixed missed-sets are a separate search."
+  },
+  "3": {
+    "d": 3,
+    "n": 1240,
+    "n_d5": 40,
+    "n_extras": 1200,
+    "thresh": 9,
+    "type_stats": {
+      "(0, 0, 1, 1, 4)": {
+        "n": 240,
+        "min_d5_deg": 34,
+        "max_d5_deg": 34,
+        "d5_deg_hist": {
+          "34": 240
+        }
+      },
+      "(0, 1, 2, 2, 3)": {
+        "n": 960,
+        "min_d5_deg": 36,
+        "max_d5_deg": 36,
+        "d5_deg_hist": {
+          "36": 960
+        }
+      }
+    },
+    "max_d5_deg_of_extra": 36,
+    "n1_max": 36,
+    "min_extras_for_41": 5,
+    "n_missed_groups": 1200,
+    "group_size_hist": {
+      "1": 1200
+    },
+    "same_missed_groups": {
+      "n": 1200,
+      "complete": true,
+      "any_hit": false,
+      "max_best": 1,
+      "sample": [
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 1,
+          "target": 7,
+          "best": 1,
+          "found": false,
+          "complete": true
+        }
+      ]
+    },
+    "cross_n1_35": {
+      "n_four_sets": 960,
+      "tried": 0,
+      "found": false,
+      "complete": true,
+      "best_total": 0
+    },
+    "mixed_n1_34": {
+      "tried": 240,
+      "found": false,
+      "complete": true,
+      "best_total": 0
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "n1_36_empty": true,
+    "comment": "Every extra kisses at most 36 of the 40 D5 roots. A 41-set therefore uses at least 5 extras.  Same-missed-set groups settle the n1 = 40-|M| slices (in particular n1=36).  Lower-n1 mixed missed-sets are a separate search."
+  },
+  "4": {
+    "d": 4,
+    "n": 1480,
+    "n_d5": 40,
+    "n_extras": 1440,
+    "thresh": 16,
+    "type_stats": {
+      "(1, 1, 1, 2, 5)": {
+        "n": 640,
+        "min_d5_deg": 36,
+        "max_d5_deg": 36,
+        "d5_deg_hist": {
+          "36": 640
+        }
+      },
+      "(1, 2, 3, 3, 3)": {
+        "n": 640,
+        "min_d5_deg": 34,
+        "max_d5_deg": 34,
+        "d5_deg_hist": {
+          "34": 640
+        }
+      },
+      "(2, 2, 2, 2, 4)": {
+        "n": 160,
+        "min_d5_deg": 36,
+        "max_d5_deg": 36,
+        "d5_deg_hist": {
+          "36": 160
+        }
+      }
+    },
+    "max_d5_deg_of_extra": 36,
+    "n1_max": 36,
+    "min_extras_for_41": 5,
+    "n_missed_groups": 240,
+    "group_size_hist": {
+      "5": 160,
+      "8": 80
+    },
+    "same_missed_groups": {
+      "n": 240,
+      "complete": true,
+      "any_hit": false,
+      "max_best": 1,
+      "sample": [
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        },
+        {
+          "missed": 6,
+          "n1": 34,
+          "n_extras": 8,
+          "target": 7,
+          "best": 1,
+          "nodes": 2,
+          "found": false,
+          "complete": true
+        }
+      ]
+    },
+    "cross_n1_35": {
+      "n_four_sets": 160,
+      "tried": 320,
+      "found": false,
+      "complete": true,
+      "best_total": 36
+    },
+    "mixed_n1_34": {
+      "tried": 80,
+      "found": false,
+      "complete": true,
+      "best_total": 35
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "n1_36_empty": true,
+    "comment": "Every extra kisses at most 36 of the 40 D5 roots. A 41-set therefore uses at least 5 extras.  Same-missed-set groups settle the n1 = 40-|M| slices (in particular n1=36).  Lower-n1 mixed missed-sets are a separate search."
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "date": "2026-08-27",
+  "platform": "Apple Silicon macOS",
+  "toolchain": {
+    "python": "3.14.6",
+    "rustc": "1.97.1",
+    "gmpy2": "2.3.1",
+    "numpy": "2.5.2",
+    "python_flint": "0.9.0",
+    "sympy": "1.14.0"
+  },
+  "archive_sha256": "232204bdb598cc2ea0368e154c8573e18bbfdc69fa631c8878de4b884b38bb18",
+  "bridge": {
+    "implementations": ["Python 3", "Rust 1.97.1"],
+    "case_1_lattice_points": [61, 125],
+    "case_2_lattice_points": [25, 47],
+    "coefficient_identities": 5,
+    "normalization_determinant": 14,
+    "cross_implementation": "PASS"
+  },
+  "exact_replay": {
+    "serialized_certificates": "PASS",
+    "coefficient_field_products": 13410,
+    "scalar_products": 335250,
+    "gmpy2_independent_path": "PASS",
+    "branch_symmetry": "PASS",
+    "branch_1_identity": "PASS",
+    "branch_2_identity": "PASS",
+    "terminal_marker": "Q1_DEGREE_125_CERTIFICATE_PASS"
+  }
+}

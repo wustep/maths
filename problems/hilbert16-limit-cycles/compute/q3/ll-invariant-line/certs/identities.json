@@ -1,0 +1,240 @@
+{
+  "degeneration": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      }
+    ],
+    "P_axis": [],
+    "Q": [
+      {
+        "coeff": "1",
+        "mu": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "mu": 1,
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "Q_axis": [],
+    "variables": [
+      "x",
+      "y",
+      "mu"
+    ]
+  },
+  "family": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "1",
+        "mu": 1,
+        "x": 3
+      }
+    ],
+    "P_axis": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "1",
+        "mu": 1,
+        "x": 3
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "x": 1,
+        "y": 1
+      }
+    ],
+    "axis_factor": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "1",
+        "mu": 1,
+        "x": 2
+      }
+    ],
+    "cofactor_diff": [],
+    "div": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "3",
+        "mu": 1,
+        "x": 2
+      }
+    ],
+    "dulac_diff": [],
+    "dulac_num": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "3",
+        "mu": 1,
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "mu"
+    ]
+  },
+  "named": {
+    "P": [
+      {
+        "coeff": "16",
+        "y": 1
+      },
+      {
+        "coeff": "16",
+        "x": 1
+      },
+      {
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "P_axis": [
+      {
+        "coeff": "16",
+        "x": 1
+      },
+      {
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "P_x0": [
+      {
+        "coeff": "16",
+        "y": 1
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "16",
+        "x": 1,
+        "y": 1
+      }
+    ],
+    "axis_diff": [],
+    "axis_factor": [
+      {
+        "coeff": "16"
+      },
+      {
+        "coeff": "1",
+        "x": 2
+      }
+    ],
+    "cofactor_diff": [],
+    "dP_dx": [
+      {
+        "coeff": "16"
+      },
+      {
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "dP_dy": [
+      {
+        "coeff": "16"
+      }
+    ],
+    "dQ_dx": [
+      {
+        "coeff": "16",
+        "y": 1
+      }
+    ],
+    "dQ_dy": [
+      {
+        "coeff": "16",
+        "x": 1
+      }
+    ],
+    "det": [
+      {
+        "coeff": "-256",
+        "y": 1
+      },
+      {
+        "coeff": "256",
+        "x": 1
+      },
+      {
+        "coeff": "48",
+        "x": 3
+      }
+    ],
+    "div": [
+      {
+        "coeff": "16"
+      },
+      {
+        "coeff": "16",
+        "x": 1
+      },
+      {
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "dulac_cleared": [
+      {
+        "coeff": "16",
+        "y": 1
+      },
+      {
+        "coeff": "3",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "dulac_diff": [],
+    "dulac_num": [
+      {
+        "coeff": "16"
+      },
+      {
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "schema": "hilbert16-ll-invariant-line-identities/v1"
+}

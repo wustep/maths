@@ -1,0 +1,9 @@
+{
+  "template": [
+    "p(w)+gamma*p'(w)",
+    "q(w)+gamma*q'(w)"
+  ],
+  "claimed_identity": "det dS/d(w,gamma) = gamma*(p''*q' - p'*q'')",
+  "symbolic_degrees_checked": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12],
+  "conclusion": "a raw polynomial tangent-line sweep in C^2 cannot have nonzero constant Jacobian"
+}

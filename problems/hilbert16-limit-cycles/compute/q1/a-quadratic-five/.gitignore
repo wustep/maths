@@ -1,0 +1,5 @@
+__pycache__/
+verify_c
+_proto_*.py
+_dump_*.py
+*.o

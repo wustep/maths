@@ -1,0 +1,133 @@
+{
+  "deg_Y": 7,
+  "deg_Yu": 7,
+  "deg_Yv": 7,
+  "deg_X": 3,
+  "conjugacy": true,
+  "H7_from_this_field": 4,
+  "beats_PT_74": false,
+  "four_ovals": true,
+  "n_terms_Yu": 8,
+  "n_terms_Yv": 8,
+  "T2_at_1": [
+    1,
+    1
+  ],
+  "T2_at_-1": [
+    1,
+    1
+  ],
+  "T2_at_0": [
+    -1,
+    1
+  ],
+  "Y_u_monomials": [
+    {
+      "u": 0,
+      "v": 1,
+      "num": 3,
+      "den": 1
+    },
+    {
+      "u": 0,
+      "v": 3,
+      "num": -8,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 1,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 0,
+      "v": 5,
+      "num": 16,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "num": 32,
+      "den": 1
+    },
+    {
+      "u": 4,
+      "v": 1,
+      "num": 48,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 5,
+      "num": -32,
+      "den": 1
+    },
+    {
+      "u": 6,
+      "v": 1,
+      "num": -32,
+      "den": 1
+    }
+  ],
+  "Y_v_monomials": [
+    {
+      "u": 1,
+      "v": 0,
+      "num": 11,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "num": -30,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 0,
+      "num": -24,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "num": 48,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 2,
+      "num": 32,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 0,
+      "num": 16,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 6,
+      "num": -32,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 2,
+      "num": -32,
+      "den": 1
+    }
+  ],
+  "same_4_sheets_as_CL_at_N7": true,
+  "beats_CL": false,
+  "CL_beats_this": false,
+  "do_not_claim_252_1080_1380_2012": true,
+  "T2_coeffs": [
+    -1,
+    0,
+    2
+  ]
+}

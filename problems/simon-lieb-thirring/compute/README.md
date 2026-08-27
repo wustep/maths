@@ -1,17 +1,39 @@
 # compute — simon-lieb-thirring
 
-Replay of published comparison constants. This folder does not claim
-a new Lieb–Thirring bound.
+Replay the later record first:
 
 ```bash
-sh run_all.sh
+cd problems/simon-lieb-thirring/compute/q2
+./run_all.sh
 ```
 
-`lt_constants.py` rebuilds the classical constant from the Gamma
-formula, checks Lcl(1,1) = 2/(3π) and Lcl(3/2,1) = 3/16 against
-those closed forms, records the Frank–Hundertmark–Jex–Nam ratio
-1.456 and the conjectured one-bound-state ratio 2/√3, and evaluates
-Pöschl–Teller sech² witnesses. Those witnesses are lower bounds on
-L(γ,1). They sit below 1.456. That is required, not a beat.
+That replays the three-lines integral (float, not a bound) and a
+Clausen-series envelope of Carvalho Corso–Ried \(M_3\). Independent
+Python and Rust both give
 
-Output: `record.json`.
+$$
+M_3\le 0.371185695,\qquad
+\frac{L_{1,1,1}}{L_{1,1,1}^{\mathrm{cl}}}\le 1.4465531.
+$$
+
+That matches arXiv:2403.04347v2 Corollary 1.7 (\(1.44655\)) and does
+not go below it. Certificate: `q2/certs/m3_ccr.json`.
+
+The q1 family-A pair is a separate, weaker handle:
+
+```bash
+cd problems/simon-lieb-thirring/compute/q1
+./run_all.sh
+```
+
+That recertifies the paper's Lemma 11 second pair and the family-A pair
+in `q1/opt_best_A.json`, writes slim JSON under `certs/c1_*.json`, and
+runs an independent `rustc` verifier on each. Claimed number there:
+
+$$
+\mathcal{C}_1\le 0.373548,\qquad
+\frac{L_{1,1}}{L_{1,1}^{\mathrm{cl}}}\le 1.45576.
+$$
+
+A trapezoid float (`q1/float_c1.py`) is not a bound. Lean conversion
+only: `../lean/FhjnProp10Conversion.lean`.

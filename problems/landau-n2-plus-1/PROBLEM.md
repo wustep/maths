@@ -12,6 +12,9 @@
 
 Are there infinitely many primes of the form n^2+1?
 
+Related but different: [Landau 3, primes between consecutive
+squares](../landau-legendre/PROBLEM.md).
+
 ## Tonight
 
 Do not claim infinitude. A new bound is a replayable finite record:

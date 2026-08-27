@@ -1,0 +1,72 @@
+{
+  "record": {
+    "source": "https://arxiv.org/abs/2204.14178v1",
+    "theorem": "Theorem 2.1",
+    "threshold": 125,
+    "exceptional_degree_pairs": [
+      [72, 108],
+      [108, 72]
+    ]
+  },
+  "proposition_4_3": {
+    "bracket": "x^2",
+    "case_1": {
+      "P_vertices": [[0, 0], [1, 0], [8, 14], [8, 16], [0, 8]],
+      "Q_vertices": [[0, 0], [2, 1], [12, 21], [12, 24], [0, 12]],
+      "lattice_points": [61, 125],
+      "band_ranges": [[-8, 2], [-12, 3]]
+    },
+    "case_2": {
+      "P_vertices": [[0, 0], [1, 0], [8, 14], [8, 16]],
+      "Q_vertices": [[0, 0], [2, 1], [12, 21], [12, 24]],
+      "lattice_points": [25, 47],
+      "band_ranges": [[0, 2], [0, 3]]
+    }
+  },
+  "laurent_change": {
+    "t": "x*y^2",
+    "z": "y^-1",
+    "coordinate_jacobian": -1,
+    "x_squared": "t^2*z^4",
+    "coefficient_identities": [
+      "2*A*D' - 3*A'*D = t^2",
+      "2*(A*E' - A'*E) + B*D' - 3*B'*D = 0",
+      "2*A*F' - A'*F + B*E' - 2*B'*E - 3*C'*D = 0",
+      "2*A*G' + B*F' - B'*F - 2*C'*E = 0",
+      "B*G' - C'*F = 0"
+    ]
+  },
+  "normalization": {
+    "vertices": [[1, 0], [8, 14], [8, 16]],
+    "exponent_matrix_determinant": 14,
+    "preserved_rhs_scale": "rho*sigma*lambda^3*mu"
+  },
+  "external_exact_certificate": {
+    "repository": "https://github.com/bilLkarkariy/jc2-72-108-exact-certificates",
+    "doi": "https://doi.org/10.5281/zenodo.21479814",
+    "commit": "c530fe44e5f53b17840110931803e7c7c5a24cde",
+    "archive": "jc2_72_108_exact_replay_v1.0.1.zip",
+    "url": "https://raw.githubusercontent.com/bilLkarkariy/jc2-72-108-exact-certificates/c530fe44e5f53b17840110931803e7c7c5a24cde/release_bundle/jc2_72_108_exact_replay_v1.0.1.zip",
+    "sha256": "232204bdb598cc2ea0368e154c8573e18bbfdc69fa631c8878de4b884b38bb18",
+    "internal_sha256": {
+      "exact_replay/hard/h_certificate_exact.txt": "0e48ffab32469ef8405a6945b16cf1521ddeb3c592ae4e5051968110a4dc656a",
+      "exact_replay/case2_exact_certificate.pkl": "cfbc3c39d7a28013671144f43ef76f0498542eaf6d562dd624bba3311194e4aa",
+      "exact_replay/h0_branch1_exact_certificate.pkl": "664de005e99bc6a0e61ba479ba64ed57ddbfa9c5399b955cbb12237ac70f8186",
+      "exact_replay/h0_exact_certificate.pkl": "d7844c2f8edea62be4e3a7fe8a160dc4b7b70efd1262993ec6d2ed7e78722a1a",
+      "exact_replay/verify_serialized_certificates.py": "acdcb4822cd0ea8b95683faa114c0f42e1905b5f9e20f024f1e6d54f5d4562ab",
+      "exact_replay/hard/verify_certificate_gmpy2.py": "6c951b8b5505ee08671cfd335facd1039ff03936708c03be47ec5d6701625e86",
+      "exact_replay/verify_hne0_branch_symmetry.py": "57448efcf5a5216918cd14d1f434da5947eb04ed4785edc5ffc0c49680cc0691",
+      "exact_replay/verify_all.sh": "f40bacfa84d915b375b4158109d5120b2d964a8d8012be770750d310abfb5837"
+    },
+    "expected_markers": [
+      "ALL_SERIALIZED_EXACT_CERTIFICATES_PASS",
+      "COEFFICIENT_FIELD_PRODUCTS=13410",
+      "SCALAR_PRODUCTS=335250",
+      "GMPY2_EXACT_PASS",
+      "SYSTEM_SYMMETRY_PASS",
+      "BRANCH1_EXACT_IDENTITY_PASS",
+      "BRANCH2_EXACT_IDENTITY_PASS",
+      "JC2_72_108_EXACT_REPLAY_PASS"
+    ]
+  }
+}

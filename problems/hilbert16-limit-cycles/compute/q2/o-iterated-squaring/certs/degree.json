@@ -1,0 +1,13 @@
+{
+  "one_step_formula": "deg Y <= n m + (m-1) = (n+1)m - 1",
+  "n": 3,
+  "m": 2,
+  "radial_deg": 7,
+  "radial_bound": 7,
+  "linear_deg": 3,
+  "linear_bound": 3,
+  "two_step_deg": 15,
+  "two_step_bound": 15,
+  "chebyshev_T2_deg": 7,
+  "k_step_bound": "(n+1) 2^k - 1"
+}

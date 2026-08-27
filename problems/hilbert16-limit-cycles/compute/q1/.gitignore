@@ -1,0 +1,5 @@
+__pycache__/
+verify_c
+verify_rs
+replay
+*.o

@@ -1,0 +1,203 @@
+{
+  "4": {
+    "d": 4,
+    "n_extras": 1440,
+    "n_missed_sets": 240,
+    "umax": 8,
+    "n_unions": 24890,
+    "slices": {
+      "4": {
+        "n_U": 160,
+        "n1": 36,
+        "target_extras": 5,
+        "tried": 160,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 1,
+        "best_total": 37
+      },
+      "5": {
+        "n_U": 320,
+        "n1": 35,
+        "target_extras": 6,
+        "tried": 320,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 1,
+        "best_total": 36
+      },
+      "6": {
+        "n_U": 320,
+        "n1": 34,
+        "target_extras": 7,
+        "tried": 320,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 2,
+        "best_total": 36
+      },
+      "7": {
+        "n_U": 3280,
+        "n1": 33,
+        "target_extras": 8,
+        "tried": 3280,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 4,
+        "best_total": 37
+      },
+      "8": {
+        "n_U": 20810,
+        "n1": 32,
+        "target_extras": 9,
+        "tried": 20810,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 8,
+        "best_total": 40
+      }
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "complete_through_U": 8
+  },
+  "3": {
+    "d": 3,
+    "n_extras": 1200,
+    "n_missed_sets": 1200,
+    "umax": 8,
+    "n_unions": 632410,
+    "slices": {
+      "4": {
+        "n_U": 960,
+        "n1": 36,
+        "target_extras": 5,
+        "tried": 0,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 0,
+        "best_total": 0
+      },
+      "5": {
+        "n_U": 4800,
+        "n1": 35,
+        "target_extras": 6,
+        "tried": 0,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 0,
+        "best_total": 0
+      },
+      "6": {
+        "n_U": 18080,
+        "n1": 34,
+        "target_extras": 7,
+        "tried": 80,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 1,
+        "best_total": 35
+      },
+      "7": {
+        "n_U": 80960,
+        "n1": 33,
+        "target_extras": 8,
+        "tried": 7200,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 2,
+        "best_total": 35
+      },
+      "8": {
+        "n_U": 527610,
+        "n1": 32,
+        "target_extras": 9,
+        "tried": 88170,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 2,
+        "best_total": 34
+      }
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "complete_through_U": 8
+  },
+  "2": {
+    "d": 2,
+    "n_extras": 160,
+    "n_missed_sets": 160,
+    "umax": 8,
+    "n_unions": 20010,
+    "slices": {
+      "4": {
+        "n_U": 160,
+        "n1": 36,
+        "target_extras": 5,
+        "tried": 0,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 0,
+        "best_total": 0
+      },
+      "5": {
+        "n_U": 320,
+        "n1": 35,
+        "target_extras": 6,
+        "tried": 0,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 0,
+        "best_total": 0
+      },
+      "6": {
+        "n_U": 240,
+        "n1": 34,
+        "target_extras": 7,
+        "tried": 0,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 0,
+        "best_total": 0
+      },
+      "7": {
+        "n_U": 2640,
+        "n1": 33,
+        "target_extras": 8,
+        "tried": 80,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 4,
+        "best_total": 37
+      },
+      "8": {
+        "n_U": 16650,
+        "n1": 32,
+        "target_extras": 9,
+        "tried": 10,
+        "skipped_large": 0,
+        "found": false,
+        "complete": true,
+        "best_extras": 8,
+        "best_total": 40
+      }
+    },
+    "constructed_ge41": [],
+    "found_41": false,
+    "complete_through_U": 8
+  }
+}

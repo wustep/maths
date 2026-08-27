@@ -1,0 +1,31 @@
+{
+  "n_normals": 906,
+  "n_swaps_tried": 22480,
+  "best_kissing_size": 40,
+  "best": {
+    "source": "Q5",
+    "normal": [
+      "-2",
+      "0",
+      "0",
+      "0",
+      "2"
+    ],
+    "c": "2",
+    "size": 40
+  },
+  "n_size_41": 0,
+  "kissing_sizes": [
+    31,
+    33,
+    34,
+    36,
+    37,
+    38,
+    39,
+    40
+  ],
+  "found_41": false,
+  "complete": true,
+  "comment": "Layer-swaps of Q5 and R5, and compositions of two swaps. A kissing 41-set would be written to certs/code41.json."
+}

@@ -1,0 +1,20 @@
+{
+  "d": 4,
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_extra_edges": 884720,
+  "list_size_hist": {
+    "4": 800,
+    "6": 640
+  },
+  "greedy": false,
+  "sat": {
+    "solver": "glucose4",
+    "sat": false
+  },
+  "colored": false,
+  "omega_le": null,
+  "no_41": false,
+  "comment": "No 40-colouring found.  That does not produce a 41-clique. The n1<=32 slice remains a separate search."
+}

@@ -1,0 +1,2 @@
+good_pairs=8282
+clauses=3066989 vars=70027 t=2.8s

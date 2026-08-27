@@ -1,0 +1,237 @@
+{
+  "bv_self_tests": [
+    {
+      "name": "gegenbauer_n5_matches_delsarte",
+      "ok": true
+    },
+    {
+      "name": "P_k_n_at_1",
+      "ok": true
+    },
+    {
+      "name": "P2_n4",
+      "ok": true
+    },
+    {
+      "name": "Q0",
+      "ok": true
+    },
+    {
+      "name": "Q1",
+      "ok": true
+    },
+    {
+      "name": "Q_k(u,u,1)=(1-u^2)^k",
+      "ok": true
+    },
+    {
+      "name": "S0(1,1,1)=J",
+      "ok": true
+    },
+    {
+      "name": "Sk(1,1,1)=0 for k>=1",
+      "ok": true
+    },
+    {
+      "name": "S0_d1_entries",
+      "ok": true
+    },
+    {
+      "name": "p4_half",
+      "ok": true
+    },
+    {
+      "name": "psd_J",
+      "ok": true
+    },
+    {
+      "name": "psd_off",
+      "ok": true
+    },
+    {
+      "name": "psd_diag",
+      "ok": true
+    }
+  ],
+  "delsarte_1point": {
+    "numerical_deg12": 46.336869215638316,
+    "rational_den1000_certified": false,
+    "rational_bound": 46.337,
+    "comment": "Odlyzko\u2013Sloane continuum number \u224846.34.  A 1-point dual cannot go below that, hence cannot exclude 41\u201344."
+  },
+  "levenshtein_as_bv": {
+    "name": "Levenshtein_L5_as_BV",
+    "bound": "48",
+    "float_bound": 48.0,
+    "certified": true,
+    "unrestricted": true,
+    "F_k": "zero",
+    "comment": "F_k=0 reduces BV to Delsarte; L_5(5,1/2)=48",
+    "excludes": []
+  },
+  "diagonal_grid": {
+    "1": {
+      "success": false,
+      "grid_bound": null,
+      "note": "diagonal F_k on a finite grid; residue until lifted"
+    },
+    "2": {
+      "success": false,
+      "grid_bound": null,
+      "note": "diagonal F_k on a finite grid; residue until lifted"
+    },
+    "3": {
+      "success": false,
+      "grid_bound": null,
+      "note": "diagonal F_k on a finite grid; residue until lifted"
+    },
+    "4": {
+      "success": true,
+      "grid_bound": 85.55555555555556,
+      "note": "diagonal F_k on a finite grid; residue until lifted"
+    }
+  },
+  "slsqp_grid": {
+    "2": {
+      "success": false,
+      "grid_bound": 23.356708617777265,
+      "message": "Iteration limit reached",
+      "note": "Cholesky F_k on a subsampled grid; residue"
+    }
+  },
+  "constant_putinar": {
+    "1": {
+      "success": false,
+      "numerical_bound": null,
+      "certified": null
+    },
+    "2": {
+      "success": false,
+      "numerical_bound": null,
+      "certified": null
+    },
+    "3": {
+      "success": false,
+      "numerical_bound": null,
+      "certified": null
+    },
+    "4": {
+      "success": false,
+      "numerical_bound": null,
+      "certified": null
+    }
+  },
+  "sos_dictionary": {
+    "5": {
+      "success": false,
+      "numerical_bound": null,
+      "certified": null,
+      "n_g_blocks": 122
+    },
+    "6": {
+      "success": true,
+      "numerical_bound": 40.38461538461541,
+      "certified": null,
+      "n_g_blocks": 130
+    }
+  },
+  "p4_span": {
+    "3": {
+      "system_ok": null,
+      "reason": "all 34 nonnegative kernel vectors have h not \u2264 0 on I",
+      "float_bound": null,
+      "certified": null
+    },
+    "4": {
+      "system_ok": null,
+      "reason": "all 81 nonnegative kernel vectors have h not \u2264 0 on I",
+      "float_bound": null,
+      "certified": null
+    },
+    "5": {
+      "system_ok": null,
+      "reason": "all 148 nonnegative kernel vectors have h not \u2264 0 on I",
+      "float_bound": null,
+      "certified": null
+    }
+  },
+  "putinar_sdp": {
+    "error": "No module named 'cvxpy'"
+  },
+  "rank1_ansatz": {
+    "tried": 6,
+    "hits": [
+      {
+        "alpha": "0",
+        "sample_max_g": "0",
+        "sample_max_g_float": 0.0,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      },
+      {
+        "alpha": "1/100",
+        "sample_max_g": "49/1600",
+        "sample_max_g_float": 0.030625,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      },
+      {
+        "alpha": "1/10",
+        "sample_max_g": "49/160",
+        "sample_max_g_float": 0.30625,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      },
+      {
+        "alpha": "1/4",
+        "sample_max_g": "49/64",
+        "sample_max_g_float": 0.765625,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      },
+      {
+        "alpha": "1/2",
+        "sample_max_g": "49/32",
+        "sample_max_g_float": 1.53125,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      },
+      {
+        "alpha": "1",
+        "sample_max_g": "49/16",
+        "sample_max_g_float": 3.0625,
+        "certified": false,
+        "note": "rank-1 all-ones F0; sample of D' only, not a theorem"
+      }
+    ]
+  },
+  "lift_attempts": {
+    "1": {
+      "certified": false,
+      "hit": null
+    },
+    "2": {
+      "certified": false,
+      "hit": null
+    },
+    "3": {
+      "certified": false,
+      "hit": null
+    },
+    "4": {
+      "certified": false,
+      "hit": null
+    }
+  },
+  "best_certified_unrestricted": {
+    "source": "Levenshtein_L5_as_BV",
+    "bound": "48",
+    "float_bound": 48.0,
+    "certified": true,
+    "unrestricted": true,
+    "excludes": []
+  },
+  "excludes_any_k": [],
+  "certified_below_44": false,
+  "comment": "Exact S_k^5 matrices over Q, replayed by q4/bv.py self-tests.  1-point Delsarte is the Odlyzko\u2013Sloane number \u224846.34 and cannot exclude 41\u201344.  Tried: constant-multiplier Putinar at d=1..4; diagonal and Cholesky grid duals; exact p4-span kernel at d=3,4,5 (nonnegative kernel vectors exist, none make h\u22640 on I); square dictionary LP at d=5,6 (d=6 numerical 40.38 did not snap to an identity over Q); floating Putinar SDP at d=5 (solver hit the dummy cut 40, grid_ok false).  Nothing certified below 44.  Mittelmann\u2013Vallentin s_14(5)=44.998\u2026 is the published upper bound and the numerical floor of this hierarchy at degree 14, so a dual <44 would need d>14 or a different hierarchy, and would still need an exact SOS/Putinar certificate."
+}

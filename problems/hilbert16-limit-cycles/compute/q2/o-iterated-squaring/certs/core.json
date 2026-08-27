@@ -1,0 +1,159 @@
+{
+  "det": "4(u^2+v^2)",
+  "identity_radial": true,
+  "identity_linear": true,
+  "deg_radial": 7,
+  "deg_linear": 3,
+  "deg_two_step_radial": 15,
+  "preimages_half_0": 2,
+  "preimages_quarter_quarter": 2,
+  "preimages_phi2_half_0": 4,
+  "preimages_chebyshev_T2": 4,
+  "beats_theorem2": false,
+  "attains_m2_per_step": false,
+  "growth_complex": "linear",
+  "Yu_monomials": [
+    {
+      "u": 0,
+      "v": 3,
+      "num": 2,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "num": 1,
+      "den": 2
+    },
+    {
+      "u": 2,
+      "v": 1,
+      "num": 2,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 0,
+      "num": 1,
+      "den": 2
+    },
+    {
+      "u": 1,
+      "v": 6,
+      "num": -2,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 4,
+      "num": -6,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 2,
+      "num": -6,
+      "den": 1
+    },
+    {
+      "u": 7,
+      "v": 0,
+      "num": -2,
+      "den": 1
+    }
+  ],
+  "Yv_monomials": [
+    {
+      "u": 0,
+      "v": 3,
+      "num": 1,
+      "den": 2
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "num": -2,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 1,
+      "num": 1,
+      "den": 2
+    },
+    {
+      "u": 3,
+      "v": 0,
+      "num": -2,
+      "den": 1
+    },
+    {
+      "u": 0,
+      "v": 7,
+      "num": -2,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 5,
+      "num": -6,
+      "den": 1
+    },
+    {
+      "u": 4,
+      "v": 3,
+      "num": -6,
+      "den": 1
+    },
+    {
+      "u": 6,
+      "v": 1,
+      "num": -2,
+      "den": 1
+    }
+  ],
+  "rows": [
+    {
+      "k": 1,
+      "N": 7,
+      "bezout": 4,
+      "complex": 2,
+      "chebyshev": 4
+    },
+    {
+      "k": 2,
+      "N": 15,
+      "bezout": 16,
+      "complex": 4,
+      "chebyshev": 16
+    },
+    {
+      "k": 3,
+      "N": 31,
+      "bezout": 64,
+      "complex": 8,
+      "chebyshev": 64
+    },
+    {
+      "k": 4,
+      "N": 63,
+      "bezout": 256,
+      "complex": 16,
+      "chebyshev": 256
+    },
+    {
+      "k": 5,
+      "N": 127,
+      "bezout": 1024,
+      "complex": 32,
+      "chebyshev": 1024
+    },
+    {
+      "k": 6,
+      "N": 255,
+      "bezout": 4096,
+      "complex": 64,
+      "chebyshev": 4096
+    }
+  ]
+}

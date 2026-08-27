@@ -1,0 +1,18 @@
+{
+  "one_step_formula": "deg Y = n*3 + 2 = 3n+2",
+  "n_linear": 1,
+  "n_quad": 2,
+  "n_radial": 3,
+  "m": 3,
+  "linear_deg": 5,
+  "linear_bound": 5,
+  "quad_deg": 8,
+  "quad_bound": 8,
+  "radial_deg": 11,
+  "radial_bound": 11,
+  "radial_n_terms_Yu": 12,
+  "radial_n_terms_Yv": 12,
+  "chebyshev_T3_linear": 5,
+  "chebyshev_T3_quad": 8,
+  "chebyshev_T3_radial": 11
+}

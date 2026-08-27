@@ -1,0 +1,214 @@
+{
+  "not_a_lower_bound": true,
+  "gamma4": 0.901924285641075,
+  "cut4": 0.8,
+  "best_power": {
+    "alpha": -2.0,
+    "aspect": 3.5,
+    "Q": 0.920665391536305,
+    "inv": 1.0861709467880727,
+    "below_gamma4": false
+  },
+  "power_rows": [
+    {
+      "alpha": -2.2,
+      "aspect": 3.5,
+      "Q": 0.9207230223264543,
+      "inv": 1.0861029601206573,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.2,
+      "aspect": 4.0,
+      "Q": 0.9211646720536268,
+      "inv": 1.0855822312102126,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.2,
+      "aspect": 6.0,
+      "Q": 0.9266622113416348,
+      "inv": 1.0791418790588057,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.2,
+      "aspect": 8.0,
+      "Q": 0.9328557119826303,
+      "inv": 1.0719771419683604,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.2,
+      "aspect": 12.0,
+      "Q": 0.9428436585862097,
+      "inv": 1.060621229080011,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.2,
+      "aspect": 20.0,
+      "Q": 0.9553852689935203,
+      "inv": 1.0466981567064357,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 3.5,
+      "Q": 0.920665391536305,
+      "inv": 1.0861709467880727,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 4.0,
+      "Q": 0.9211120366571997,
+      "inv": 1.0856442649789835,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 6.0,
+      "Q": 0.9266668515748365,
+      "inv": 1.079136475315305,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 8.0,
+      "Q": 0.9329395908160076,
+      "inv": 1.0718807625318345,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 12.0,
+      "Q": 0.943080370133174,
+      "inv": 1.0603550149801,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -2.0,
+      "aspect": 20.0,
+      "Q": 0.9558416122492062,
+      "inv": 1.0461984362104555,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 3.5,
+      "Q": 0.9207230223264543,
+      "inv": 1.0861029601206573,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 4.0,
+      "Q": 0.9211646720536268,
+      "inv": 1.0855822312102126,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 6.0,
+      "Q": 0.9266622113416348,
+      "inv": 1.0791418790588057,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 8.0,
+      "Q": 0.9328557119826301,
+      "inv": 1.0719771419683606,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 12.0,
+      "Q": 0.9428436585862094,
+      "inv": 1.0606212290800112,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.8,
+      "aspect": 20.0,
+      "Q": 0.9553852689935206,
+      "inv": 1.0466981567064355,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 3.5,
+      "Q": 0.9210238411758317,
+      "inv": 1.0857482241972616,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 4.0,
+      "Q": 0.9214401146197488,
+      "inv": 1.0852577222695265,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 6.0,
+      "Q": 0.9266473779136692,
+      "inv": 1.079159153562257,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 8.0,
+      "Q": 0.9324418902918554,
+      "inv": 1.072452889999396,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 12.0,
+      "Q": 0.9416637020148458,
+      "inv": 1.0619502459958199,
+      "below_gamma4": false
+    },
+    {
+      "alpha": -1.5,
+      "aspect": 20.0,
+      "Q": 0.9531007722373684,
+      "inv": 1.0492069979678407,
+      "below_gamma4": false
+    }
+  ],
+  "forced_endpoint": [
+    {
+      "R": 4.0,
+      "k": 8,
+      "Q": 0.9226411079180559,
+      "below_gamma4": false,
+      "cut": 0.8
+    },
+    {
+      "R": 6.0,
+      "k": 8,
+      "Q": 0.9239575316806363,
+      "below_gamma4": false,
+      "cut": 0.8571428571428571
+    },
+    {
+      "R": 8.0,
+      "k": 8,
+      "Q": 0.9250612323012103,
+      "below_gamma4": false,
+      "cut": 0.8888888888888888
+    },
+    {
+      "R": 12.0,
+      "k": 8,
+      "Q": 0.9270440647777736,
+      "below_gamma4": false,
+      "cut": 0.9230769230769231
+    }
+  ],
+  "any_power_below_gamma4": false,
+  "note": "Numerical only. A trial below \u03b34 with aspect>4 would kill an R=4 lift; none is expected near the known minimizer (aspect~3.5)."
+}

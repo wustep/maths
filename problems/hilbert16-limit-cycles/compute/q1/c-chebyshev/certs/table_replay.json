@@ -1,0 +1,876 @@
+{
+  "paper": "arXiv:2604.12883v1 Table 1 / Appendix A",
+  "seeds_appendix_A": {
+    "4": 28,
+    "5": 37,
+    "6": 53,
+    "7": 74,
+    "8": 96,
+    "9": 120,
+    "10": 142,
+    "11": 153,
+    "12": 157,
+    "13": 212,
+    "14": 194,
+    "15": 345,
+    "16": 351,
+    "17": 384,
+    "18": 372,
+    "19": 503,
+    "20": 509,
+    "21": 568,
+    "31": 1184,
+    "35": 1536,
+    "39": 1920,
+    "43": 2272
+  },
+  "seed_citations": {
+    "Prohens\u2013Torregrosa 2019 Thm 1": {
+      "4": 28,
+      "5": 37,
+      "6": 53,
+      "7": 74,
+      "8": 96,
+      "9": 120,
+      "10": 142
+    },
+    "Han\u2013Li 2012 Thm 1.2(i) as quoted in 2604.12883v1 App A": {
+      "11": 153,
+      "12": 157,
+      "14": 194,
+      "15": 345,
+      "16": 351,
+      "18": 372,
+      "19": 503,
+      "20": 509
+    },
+    "Prohens\u2013Torregrosa 2019 Cor 2(a)": {
+      "13": 212,
+      "17": 384,
+      "21": 568,
+      "31": 1184,
+      "35": 1536,
+      "39": 1920,
+      "43": 2272
+    }
+  },
+  "N_max": 50,
+  "table1": [
+    {
+      "N": 11,
+      "L_pub": 153,
+      "L_Ch": 148,
+      "paper_L_Ch": 148,
+      "seed_nm": {
+        "n": 5,
+        "m": 2
+      },
+      "delta": -5,
+      "paper_delta": -5,
+      "match": true
+    },
+    {
+      "N": 13,
+      "L_pub": 212,
+      "L_Ch": 212,
+      "paper_L_Ch": 212,
+      "seed_nm": {
+        "n": 6,
+        "m": 2
+      },
+      "delta": 0,
+      "paper_delta": 0,
+      "match": true
+    },
+    {
+      "N": 14,
+      "L_pub": 194,
+      "L_Ch": 252,
+      "paper_L_Ch": 252,
+      "seed_nm": {
+        "n": 4,
+        "m": 3
+      },
+      "delta": 58,
+      "paper_delta": 58,
+      "match": true
+    },
+    {
+      "N": 15,
+      "L_pub": 345,
+      "L_Ch": 296,
+      "paper_L_Ch": 296,
+      "seed_nm": {
+        "n": 7,
+        "m": 2
+      },
+      "delta": -49,
+      "paper_delta": -49,
+      "match": true
+    },
+    {
+      "N": 17,
+      "L_pub": 384,
+      "L_Ch": 384,
+      "paper_L_Ch": 384,
+      "seed_nm": {
+        "n": 8,
+        "m": 2
+      },
+      "delta": 0,
+      "paper_delta": 0,
+      "match": true
+    },
+    {
+      "N": 19,
+      "L_pub": 503,
+      "L_Ch": 480,
+      "paper_L_Ch": 480,
+      "seed_nm": {
+        "n": 9,
+        "m": 2
+      },
+      "delta": -23,
+      "paper_delta": -23,
+      "match": true
+    },
+    {
+      "N": 20,
+      "L_pub": 509,
+      "L_Ch": 477,
+      "paper_L_Ch": 477,
+      "seed_nm": {
+        "n": 6,
+        "m": 3
+      },
+      "delta": -32,
+      "paper_delta": -32,
+      "match": true
+    },
+    {
+      "N": 21,
+      "L_pub": 568,
+      "L_Ch": 568,
+      "paper_L_Ch": 568,
+      "seed_nm": {
+        "n": 10,
+        "m": 2
+      },
+      "delta": 0,
+      "paper_delta": 0,
+      "match": true
+    },
+    {
+      "N": 23,
+      "L_pub": 833,
+      "L_Ch": 666,
+      "paper_L_Ch": 666,
+      "seed_nm": {
+        "n": 7,
+        "m": 3
+      },
+      "delta": -167,
+      "paper_delta": -167,
+      "match": true
+    },
+    {
+      "N": 24,
+      "L_pub": 843,
+      "L_Ch": 700,
+      "paper_L_Ch": 700,
+      "seed_nm": {
+        "n": 4,
+        "m": 5
+      },
+      "delta": -143,
+      "paper_delta": -143,
+      "match": true
+    },
+    {
+      "N": 25,
+      "L_pub": 870,
+      "L_Ch": 628,
+      "paper_L_Ch": 628,
+      "seed_nm": {
+        "n": 12,
+        "m": 2
+      },
+      "delta": -242,
+      "paper_delta": -242,
+      "match": true
+    },
+    {
+      "N": 26,
+      "L_pub": 880,
+      "L_Ch": 864,
+      "paper_L_Ch": 864,
+      "seed_nm": {
+        "n": 8,
+        "m": 3
+      },
+      "delta": -16,
+      "paper_delta": -16,
+      "match": true
+    },
+    {
+      "N": 27,
+      "L_pub": 1023,
+      "L_Ch": 848,
+      "paper_L_Ch": 848,
+      "seed_nm": {
+        "n": 13,
+        "m": 2
+      },
+      "delta": -175,
+      "paper_delta": -175,
+      "match": true
+    },
+    {
+      "N": 29,
+      "L_pub": 1060,
+      "L_Ch": 1080,
+      "paper_L_Ch": 1080,
+      "seed_nm": {
+        "n": 9,
+        "m": 3
+      },
+      "delta": 20,
+      "paper_delta": 20,
+      "match": true
+    },
+    {
+      "N": 31,
+      "L_pub": 1184,
+      "L_Ch": 1380,
+      "paper_L_Ch": 1380,
+      "seed_nm": {
+        "n": 15,
+        "m": 2
+      },
+      "delta": 196,
+      "paper_delta": 196,
+      "match": true
+    },
+    {
+      "N": 35,
+      "L_pub": 1536,
+      "L_Ch": 1536,
+      "paper_L_Ch": 1536,
+      "seed_nm": {
+        "n": 17,
+        "m": 2
+      },
+      "delta": 0,
+      "paper_delta": 0,
+      "match": true
+    },
+    {
+      "N": 39,
+      "L_pub": 1920,
+      "L_Ch": 2012,
+      "paper_L_Ch": 2012,
+      "seed_nm": {
+        "n": 19,
+        "m": 2
+      },
+      "delta": 92,
+      "paper_delta": 92,
+      "match": true
+    },
+    {
+      "N": 43,
+      "L_pub": 2272,
+      "L_Ch": 2272,
+      "paper_L_Ch": 2272,
+      "seed_nm": {
+        "n": 21,
+        "m": 2
+      },
+      "delta": 0,
+      "paper_delta": 0,
+      "match": true
+    }
+  ],
+  "table2": [
+    {
+      "N": 11,
+      "n": 5,
+      "m": 2,
+      "L_pub_n": 37,
+      "lift": 148,
+      "matches_paper": true
+    },
+    {
+      "N": 13,
+      "n": 6,
+      "m": 2,
+      "L_pub_n": 53,
+      "lift": 212,
+      "matches_paper": true
+    },
+    {
+      "N": 14,
+      "n": 4,
+      "m": 3,
+      "L_pub_n": 28,
+      "lift": 252,
+      "matches_paper": true
+    },
+    {
+      "N": 15,
+      "n": 7,
+      "m": 2,
+      "L_pub_n": 74,
+      "lift": 296,
+      "matches_paper": true
+    },
+    {
+      "N": 17,
+      "n": 8,
+      "m": 2,
+      "L_pub_n": 96,
+      "lift": 384,
+      "matches_paper": true
+    },
+    {
+      "N": 19,
+      "n": 9,
+      "m": 2,
+      "L_pub_n": 120,
+      "lift": 480,
+      "matches_paper": true
+    },
+    {
+      "N": 20,
+      "n": 6,
+      "m": 3,
+      "L_pub_n": 53,
+      "lift": 477,
+      "matches_paper": true
+    },
+    {
+      "N": 21,
+      "n": 10,
+      "m": 2,
+      "L_pub_n": 142,
+      "lift": 568,
+      "matches_paper": true
+    },
+    {
+      "N": 23,
+      "n": 7,
+      "m": 3,
+      "L_pub_n": 74,
+      "lift": 666,
+      "matches_paper": true
+    },
+    {
+      "N": 24,
+      "n": 4,
+      "m": 5,
+      "L_pub_n": 28,
+      "lift": 700,
+      "matches_paper": true
+    },
+    {
+      "N": 25,
+      "n": 12,
+      "m": 2,
+      "L_pub_n": 157,
+      "lift": 628,
+      "matches_paper": true
+    },
+    {
+      "N": 26,
+      "n": 8,
+      "m": 3,
+      "L_pub_n": 96,
+      "lift": 864,
+      "matches_paper": true
+    },
+    {
+      "N": 27,
+      "n": 13,
+      "m": 2,
+      "L_pub_n": 212,
+      "lift": 848,
+      "matches_paper": true
+    },
+    {
+      "N": 29,
+      "n": 9,
+      "m": 3,
+      "L_pub_n": 120,
+      "lift": 1080,
+      "matches_paper": true
+    },
+    {
+      "N": 31,
+      "n": 15,
+      "m": 2,
+      "L_pub_n": 345,
+      "lift": 1380,
+      "matches_paper": true
+    },
+    {
+      "N": 35,
+      "n": 17,
+      "m": 2,
+      "L_pub_n": 384,
+      "lift": 1536,
+      "matches_paper": true
+    },
+    {
+      "N": 39,
+      "n": 19,
+      "m": 2,
+      "L_pub_n": 503,
+      "lift": 2012,
+      "matches_paper": true
+    },
+    {
+      "N": 43,
+      "n": 21,
+      "m": 2,
+      "L_pub_n": 568,
+      "lift": 2272,
+      "matches_paper": true
+    }
+  ],
+  "L_Ch": {
+    "11": 148,
+    "13": 212,
+    "14": 252,
+    "15": 296,
+    "17": 384,
+    "19": 480,
+    "20": 477,
+    "21": 568,
+    "23": 666,
+    "24": 700,
+    "25": 628,
+    "26": 864,
+    "27": 848,
+    "29": 1080,
+    "31": 1380,
+    "35": 1536,
+    "39": 2012,
+    "43": 2272
+  },
+  "all_N_le_50_with_L_Ch": {
+    "9": 112,
+    "11": 148,
+    "13": 212,
+    "14": 252,
+    "15": 296,
+    "17": 384,
+    "19": 480,
+    "20": 477,
+    "21": 568,
+    "23": 666,
+    "24": 700,
+    "25": 628,
+    "26": 864,
+    "27": 848,
+    "29": 1080,
+    "31": 1380,
+    "32": 1278,
+    "33": 1404,
+    "34": 1372,
+    "35": 1536,
+    "37": 1488,
+    "38": 1413,
+    "39": 2012,
+    "41": 2036,
+    "43": 2272,
+    "44": 2400,
+    "47": 3105,
+    "48": 2597,
+    "49": 3000,
+    "50": 3159
+  },
+  "factorizations_of_four": {
+    "14": {
+      "paper": 252,
+      "ours": 252,
+      "argmax": [
+        {
+          "n": 4,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 252
+        }
+      ],
+      "all_known_lifts": [
+        {
+          "n": 4,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 252
+        }
+      ],
+      "beats_paper": false
+    },
+    "29": {
+      "paper": 1080,
+      "ours": 1080,
+      "argmax": [
+        {
+          "n": 9,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 120,
+          "lift": 1080
+        }
+      ],
+      "all_known_lifts": [
+        {
+          "n": 14,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 194,
+          "lift": 776
+        },
+        {
+          "n": 9,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 120,
+          "lift": 1080
+        },
+        {
+          "n": 5,
+          "m": 5,
+          "seed_known": true,
+          "L_pub_n": 37,
+          "lift": 925
+        },
+        {
+          "n": 4,
+          "m": 6,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 1008
+        }
+      ],
+      "beats_paper": false
+    },
+    "31": {
+      "paper": 1380,
+      "ours": 1380,
+      "argmax": [
+        {
+          "n": 15,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 345,
+          "lift": 1380
+        }
+      ],
+      "all_known_lifts": [
+        {
+          "n": 15,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 345,
+          "lift": 1380
+        },
+        {
+          "n": 7,
+          "m": 4,
+          "seed_known": true,
+          "L_pub_n": 74,
+          "lift": 1184
+        }
+      ],
+      "beats_paper": false
+    },
+    "39": {
+      "paper": 2012,
+      "ours": 2012,
+      "argmax": [
+        {
+          "n": 19,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 503,
+          "lift": 2012
+        }
+      ],
+      "all_known_lifts": [
+        {
+          "n": 19,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 503,
+          "lift": 2012
+        },
+        {
+          "n": 9,
+          "m": 4,
+          "seed_known": true,
+          "L_pub_n": 120,
+          "lift": 1920
+        },
+        {
+          "n": 7,
+          "m": 5,
+          "seed_known": true,
+          "L_pub_n": 74,
+          "lift": 1850
+        },
+        {
+          "n": 4,
+          "m": 8,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 1792
+        }
+      ],
+      "beats_paper": false
+    }
+  },
+  "missed_factorization_beats_252_1080_1380_2012": false,
+  "beats_four": [],
+  "table2_seeds_are_maximizers": true,
+  "table1_L_Ch_match": true,
+  "extra_N_le_50_not_in_table1": [
+    {
+      "N": 9,
+      "L_Ch": 112,
+      "argmax": [
+        {
+          "n": 4,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 112
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 32,
+      "L_Ch": 1278,
+      "argmax": [
+        {
+          "n": 10,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 142,
+          "lift": 1278
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 33,
+      "L_Ch": 1404,
+      "argmax": [
+        {
+          "n": 16,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 351,
+          "lift": 1404
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 34,
+      "L_Ch": 1372,
+      "argmax": [
+        {
+          "n": 4,
+          "m": 7,
+          "seed_known": true,
+          "L_pub_n": 28,
+          "lift": 1372
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 37,
+      "L_Ch": 1488,
+      "argmax": [
+        {
+          "n": 18,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 372,
+          "lift": 1488
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 38,
+      "L_Ch": 1413,
+      "argmax": [
+        {
+          "n": 12,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 157,
+          "lift": 1413
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 41,
+      "L_Ch": 2036,
+      "argmax": [
+        {
+          "n": 20,
+          "m": 2,
+          "seed_known": true,
+          "L_pub_n": 509,
+          "lift": 2036
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 44,
+      "L_Ch": 2400,
+      "argmax": [
+        {
+          "n": 8,
+          "m": 5,
+          "seed_known": true,
+          "L_pub_n": 96,
+          "lift": 2400
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 47,
+      "L_Ch": 3105,
+      "argmax": [
+        {
+          "n": 15,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 345,
+          "lift": 3105
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 48,
+      "L_Ch": 2597,
+      "argmax": [
+        {
+          "n": 6,
+          "m": 7,
+          "seed_known": true,
+          "L_pub_n": 53,
+          "lift": 2597
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 49,
+      "L_Ch": 3000,
+      "argmax": [
+        {
+          "n": 9,
+          "m": 5,
+          "seed_known": true,
+          "L_pub_n": 120,
+          "lift": 3000
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    },
+    {
+      "N": 50,
+      "L_Ch": 3159,
+      "argmax": [
+        {
+          "n": 16,
+          "m": 3,
+          "seed_known": true,
+          "L_pub_n": 351,
+          "lift": 3159
+        }
+      ],
+      "note": "one-step lift from Appendix A seeds; not in Table 1; not claimed as a new H(N) (no published L_pub replayed here)"
+    }
+  ],
+  "sensitivity_with_H2_H3_and_table1_HanLi": {
+    "four": {
+      "14": {
+        "paper": 252,
+        "ours": 252,
+        "argmax": [
+          {
+            "n": 4,
+            "m": 3,
+            "seed_known": true,
+            "L_pub_n": 28,
+            "lift": 252
+          }
+        ],
+        "beats_paper": false
+      },
+      "29": {
+        "paper": 1080,
+        "ours": 1080,
+        "argmax": [
+          {
+            "n": 9,
+            "m": 3,
+            "seed_known": true,
+            "L_pub_n": 120,
+            "lift": 1080
+          }
+        ],
+        "beats_paper": false
+      },
+      "31": {
+        "paper": 1380,
+        "ours": 1380,
+        "argmax": [
+          {
+            "n": 15,
+            "m": 2,
+            "seed_known": true,
+            "L_pub_n": 345,
+            "lift": 1380
+          }
+        ],
+        "beats_paper": false
+      },
+      "39": {
+        "paper": 2012,
+        "ours": 2012,
+        "argmax": [
+          {
+            "n": 19,
+            "m": 2,
+            "seed_known": true,
+            "L_pub_n": 503,
+            "lift": 2012
+          }
+        ],
+        "beats_paper": false
+      }
+    },
+    "beats_four": [],
+    "L_Ch_11_includes_9_H3": 117,
+    "L_Ch_11_best": 148
+  },
+  "H11_section6_field": 9,
+  "H11_best_one_step": 148,
+  "H11_HanLi": 153,
+  "do_not_claim_H14_ge_252_as_ours": true
+}
