@@ -1,0 +1,14 @@
+{
+  "closed": [118],
+  "n_cubes": 37,
+  "residue": [],
+  "f4": 0.34640,
+  "published_hkn": 0.3465,
+  "prior_stored_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "next_hole": {"n": 119, "d": 40},
+  "replay": {
+    "n118": {"checked": 37, "failures": 0, "log": "replay_118.json"}
+  },
+  "note": "closed = every needed cube UNSAT with stored DRAT. F4 is unchanged at the q4 CKLS-fork certificate 0.34640. Did not beat 0.3388."
+}
