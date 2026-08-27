@@ -145,3 +145,42 @@ Published record, after v2:
 The width-3 6/17 row in Gupta's tail is 29 ordinal sums, width 3. That is W_{10} (or a dual) padded by singletons. Every strictly smaller tail value is width 2. So there is no width-3 poset on ≤ 14 elements with δ < 6/17. The first unused width-3 order is 15.
 
 q1 independently replays the named witnesses and the broken-rung table, then searches n≥15 width-3 extensions and the three-rail analogue. Isolated random posets stay residue. The unrestricted conjecture is not claimed.
+
+## 2026-08-27 — certified ladder table through 21; no width-3 dent
+
+Independently constructed every broken-rung ladder from Peczarski's §1 formula (rails $x_i<x_{i+2}$, rungs $x_i<x_{i+3}$) and counted $\delta$ with this notebook's pair counters.
+
+Gupta Table 1, exact match, every non-sum ladder at that order:
+
+| n | min $\delta$ | ladder |
+| ---: | ---: | --- |
+| 7 | $9/25$ | $L_{7,1,2}$ |
+| 8 | $17/46$ | $L_{8,1,2,3}$ |
+| 9 | $6/17$ | $L_{9,1,2,3,4}$ |
+| 10 | $37/106$ | $L_{10,1,5}$ |
+| 11 | $20/57$ | $L_{11,1,6}$ |
+| 12 | $97/277$ | $L_{12,1,7}$ |
+| 13 | $157/448$ | $L_{13,1,8}$ |
+| 14 | $254/725$ | $L_{14,1,9}$ |
+
+Past Gupta's table, still a complete subset search of the class (Python through 18; C through 21, with the winning ladder replayed in Python):
+
+| n | min $\delta$ | ladder | note |
+| ---: | ---: | --- | --- |
+| 15 | $166/475$ | $L_{15,1,5,6,10}$ | Peczarski named the broken set; fraction not in Gupta |
+| 16 | $665/1898$ | $L_{16,1,11}$ | not quoted by Gupta |
+| 17 | $1304/3737$ | $L_{17,1,5,8,12}$ | Peczarski named the broken set |
+| 18 | $387/1108$ | $L_{18,1,5,6,9,13}$ | first order past Peczarski's quoted names |
+| 19 | $458/1311$ | $L_{19,1,5,6,9,10,14}$ | |
+| 20 | $6059/17366$ | $L_{20,1,5,8,11,15}$ | |
+| 21 | $5402/15485$ | $L_{21,1,5,8,9,12,16}$ | $\approx 0.348854$, just above Peczarski's printed $\beta$ |
+
+All of these have $\delta>1/3$. Width 2. They do not beat the conjecture, and they do not beat Chen's infinite-family limit as a theorem. They do move the finite per-order table of this named class.
+
+n=22 was left running; that row is residue, not a minimum.
+
+Width-3: every one-point width-$\le 3$ extension of $W_{10}$ (101 of them) has $\delta\ge 6/17$. The two ordinal-sum extensions keep $6/17$; the 99 non-sums are at best $94/253\approx 0.372$. Three-rail posets (rails $x_i<x_{i+3}$, optional $+4$ and $+5$ rungs) are exhaustive through $n=12$ with min $\delta=3466/8587$ at $n=12$, none below $6/17$. A greedy $n=15$ three-rail search has $\delta=4855/11607>6/17$ and is residue. Naturally labelled interval orders through $n=8$ all have $\delta\ge 1/3$ (min $1/3$, the Aigner family); that is a finite class census, not a proof of the class.
+
+Replay: `cd compute/q1 && ./run_all.sh`.
+
+No width-3 poset with $\delta<6/17$ was certified. The unrestricted conjecture is still open.
