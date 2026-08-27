@@ -230,3 +230,50 @@ still has hits at 41, 42 and 43.
   which is not one of the four published 40-point codes plus a point
   (those four are now maximal).
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 8. 27 August, later: the $T^5$ pool is 360, not 355
+
+q1 left a 355-vertex compatibility graph unsearched. Rebuilding it
+showed the missing five points were the basis itself: a basis vector
+fails $\langle v,v\rangle\le 1$. After that check is “other points of
+the basis”, the pool has 360 equal-norm rational vectors and contains
+all four published 40-point codes as cliques.
+
+Those five basis vectors are adjacent to every other pool point. So
+
+$$
+\omega(G_{360})=\omega(G_{355})+5.
+$$
+
+A 41-clique in the pool is exactly a 36-clique in the remainder. The
+41-search on the 355-graph finishes (607171 nodes, empty). The 36-search,
+which is the one that would actually produce a 41-point code, did not
+finish. That is residue, not a construction and not an exclusion.
+
+The same night, the half-integer sphere
+$(1/2)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$ is a 200-point graph
+containing $D_5$ and $L_5$, and it has no 41-clique. Layer-swaps of
+$D_5$ and $L_5$ across every short integer normal recover size 40
+(including $Q_5$ / $R_5$) and nothing larger. The $Q_5$-cap orbit of
+320 signed permutations has no 41-clique.
+
+On the dual side the continuum Delsarte number is still
+$46.3368\ldots$. Exact polynomials of the form $(t-1/2)q(t)^2$ with
+nonnegative Gegenbauer coefficients exist — the best in a small
+search is $53235/1109\approx 48.003$ — but nothing goes below 44 on
+the whole interval $[-1,1/2]$. Odlyzko–Sloane already said that LP
+cannot.
+
+**Proved on 27 August, later (restricted / finite graphs).**
+
+- No 41-point code in the 355-point $T^5$ remainder, in the
+  200-point half-integer sphere, or in the 320-point $Q_5$-cap orbit.
+- No certified unrestricted Delsarte dual below 44 at the degrees
+  searched.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 36-clique in the 355-point $T^5$ remainder (that plus the five
+  basis vectors would be a 41-point code).
+- An exact SOS certificate that $s_d(5)<44$.

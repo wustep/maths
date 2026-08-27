@@ -1,0 +1,4 @@
+unique_dump=9584
+rref_replay subspaces=140050 good=97240
+sample 159 sat8 0
+seconds 153.6

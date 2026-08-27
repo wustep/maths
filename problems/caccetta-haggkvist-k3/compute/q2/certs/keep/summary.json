@@ -1,0 +1,11 @@
+{
+  "published_hkn": 0.3465,
+  "repo_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "exact_orders": [21, 24, 26, 27, 29, 30, 32, 33, 35, 36],
+  "method": "Sinz sequential counters, N+(0)={1..d}, cubes on k=|N-(0)| with N-(0)={d+1..d+k}. Pigeonhole: n*d arcs so some in-degree is at least d. Each needed cube has a stored DRAT.",
+  "soundness": "n=21 d=6 k=6 SAT with a checked C3-free model; n=24 d=7 k=7 SAT with a checked C3-free model. The encoder is not vacuously UNSAT.",
+  "f4": "unchanged at 0.34645",
+  "next_holes": [38, 39, 41, 42, 44, 45],
+  "replay": "./run_all.sh from compute/q2 after ./build_solvers.sh"
+}
