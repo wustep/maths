@@ -1,0 +1,67 @@
+{
+  "n": 355,
+  "by_code": {
+    "D5": {
+      "n_heavy": 320,
+      "degC_hist": {
+        "30": 96,
+        "31": 64,
+        "32": 160
+      },
+      "found": false,
+      "best_outsiders": 6,
+      "complete": true,
+      "nodes": 6,
+      "n_common": 18
+    },
+    "L5": {
+      "n_heavy": 288,
+      "degC_hist": {
+        "28": 20,
+        "29": 12,
+        "30": 60,
+        "31": 116,
+        "32": 112
+      },
+      "found": false,
+      "best_outsiders": 6,
+      "complete": true,
+      "nodes": 6,
+      "n_common": 18
+    },
+    "Q5": {
+      "n_heavy": 277,
+      "degC_hist": {
+        "28": 21,
+        "29": 22,
+        "30": 79,
+        "31": 98,
+        "32": 100
+      },
+      "found": false,
+      "best_outsiders": 6,
+      "complete": true,
+      "nodes": 6,
+      "n_common": 21
+    },
+    "R5": {
+      "n_heavy": 269,
+      "degC_hist": {
+        "26": 2,
+        "27": 1,
+        "28": 22,
+        "29": 26,
+        "30": 57,
+        "31": 141,
+        "32": 71
+      },
+      "found": false,
+      "best_outsiders": 6,
+      "complete": true,
+      "nodes": 6,
+      "n_common": 20
+    }
+  },
+  "found_36": false,
+  "complete_share30": true
+}

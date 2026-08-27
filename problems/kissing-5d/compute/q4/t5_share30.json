@@ -1,0 +1,31 @@
+{
+  "n": 355,
+  "by_code": {
+    "D5": {
+      "tried": 216,
+      "best_outside_pool": 8,
+      "found": false,
+      "complete": true
+    },
+    "L5": {
+      "tried": 145,
+      "best_outside_pool": 8,
+      "found": false,
+      "complete": true
+    },
+    "Q5": {
+      "tried": 63,
+      "best_outside_pool": 8,
+      "found": false,
+      "complete": true
+    },
+    "R5": {
+      "tried": 30,
+      "best_outside_pool": 7,
+      "found": false,
+      "complete": true
+    }
+  },
+  "found_36": false,
+  "complete": true
+}

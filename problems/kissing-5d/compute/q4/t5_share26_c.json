@@ -1,0 +1,17 @@
+{
+  "n": 355,
+  "share": 26,
+  "leave": 9, "need": 10,
+  "by_code": {
+    "0": {"tried": 70607460, "empty": 70607460, "incomplete": 0, "found": 0, "best_extra": 9, "complete": true},
+    "1": {"tried": 70607460, "empty": 70607460, "incomplete": 0, "found": 0, "best_extra": 9, "complete": true},
+    "2": {"tried": 70607460, "empty": 70607460, "incomplete": 0, "found": 0, "best_extra": 9, "complete": true},
+    "3": {"tried": 70607460, "empty": 70607460, "incomplete": 0, "found": 0, "best_extra": 9, "complete": true}
+  },
+  "tried": 282429840,
+  "empty": 282429840,
+  "incomplete": 0,
+  "found_36": false,
+  "best_extra": 9,
+  "complete": true
+}
