@@ -208,6 +208,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d / polar maximality and Q5 integer 44 | `problems/kissing-5d/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover (1/4)Z^5 and T^5 36-clique | `problems/kissing-5d/compute/q3` | Grok 4.6 | 2026-08-27 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |

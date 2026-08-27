@@ -28,7 +28,8 @@ compute/.venv/bin/python compute/verify_certificates.py
 
 The unrestricted range remains $40\le\tau_5\le 44$.
 
-27 August continuation lives in `q1/` (polar maximality, $T_{Q_5}$ integer 44)
-and `q2/` (unrestricted dual hunt and exact 41-point searches).
+27 August continuation lives in `q1/` (polar maximality, $T_{Q_5}$ integer 44),
+`q2/` (unrestricted dual hunt and exact 41-point searches), and `q3/`
+(leftover $(1/4)\mathbb Z^5$ / $T^5$ 36-clique handles, larger exact pools).
 
-Later search: `sh compute/q1/run_all.sh`.
+Later search: `sh compute/q3/run_all.sh`.
