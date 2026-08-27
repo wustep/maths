@@ -131,12 +131,26 @@ def main() -> int:
     report["code41"] = verify_code41(HERE / "certs" / "code41.json")
     if report["code41"].get("present") and not report["code41"].get("ok"):
         ok = False
+    t5p = HERE / "t5_36_proof.json"
+    if t5p.exists():
+        data = json.loads(t5p.read_text())
+        rec = {
+            "present": True,
+            "ok": (
+                data.get("drat_trim", {}).get("status") == "VERIFIED"
+                and not data.get("found_36")
+                and not data.get("found_41")
+            ),
+        }
+        report["t5_36_proof.json"] = rec
+        if not rec["ok"]:
+            ok = False
+
     for name in (
         "extras_types.json",
         "seed_graph.json",
         "n1_leftover_sat_k19.json",
         "n1_partcount.json",
-        "t5_36_proof.json",
         "triple_star_extras.json",
         "t5_share_pruned.json",
         "dual_more.json",

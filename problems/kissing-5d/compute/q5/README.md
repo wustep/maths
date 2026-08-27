@@ -6,10 +6,11 @@ Replay:
 sh compute/q5/run_all.sh
 ```
 
-The published range is still $40\le\tau_5\le 44$. This folder records the
-two leftover finite-graph slices from q4 and a parallel hunt for an
-exact unrestricted dual below 44 or an explicit 41-point code. Neither
-endpoint moves unless a verifier-plus-certificate pair here says so.
+The published range is still $40\le\tau_5\le 44$. The 355-point $T^5$
+remainder has no 36-clique: native CaDiCaL plus `drat-trim` `s VERIFIED`
+(`t5_36_proof.json`). Share 23 is empty. The 1480-graph leftover
+$n_1\le 21$ with star-cover at least 4 is unfinished. No unrestricted
+dual below 44 and no 41-point code.
 
 | Script | What it does |
 | --- | --- |
