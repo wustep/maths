@@ -1,0 +1,12 @@
+{
+  "k": 19,
+  "n1": 21,
+  "min_star_cover": 5,
+  "cnf_vars": 30678,
+  "cnf_clauses": 219606,
+  "found_41": false,
+  "sat": null,
+  "complete": false,
+  "drat_trim": null,
+  "comment": "Global leftover SAT k=19 star-cover>=5. Incomplete when wrapped. Did not claim tau5=40."
+}

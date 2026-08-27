@@ -505,3 +505,63 @@ $\tau_5=40$.
 - A 41-set in the 1480-graph with $n_1\le 21$ and star-cover at
   least 5.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 14. 27 August, later: five stars and the $|U|=19$ SAT
+
+The leftover after four stars was a union that needs at least five
+coordinate-stars. Colouring does not kill it: every 5-star extras
+graph uses 28 to 39 colours.
+
+The useful failure was the 20-million-node C cutoff on four $k=32$
+pools, and leftover-tight SAT on those four coming back unsat
+without a stored DRAT. Same lesson as the $T^5$ 36-clique: PySAT
+unsat is a lead; native CaDiCaL plus `drat-trim` is the
+certificate.
+
+The click on the 252 five-star hosts is the signed-permutation
+group of the coordinates. It has order $3840$ and acts
+transitively on each axis type: 60 pools of type $(2,1)$ ($k=32$),
+160 of type $(1,3)$ ($k=31$), 32 of type $(0,5)$ ($k=30$). One
+leftover-tight CNF per type, if unsat with a stored DRAT, empties
+the orbit.
+
+The other leftover is the global $|U|=19$ SAT with the 4-star
+forbid. Minimum $|U|$ with star-cover at least 5 is still 5, so
+combinatorics does not empty that slice. The q6 grow prune that
+only fired at $|P|\le 160$ is the B&B hole: the remaining
+missed-union is cheap to compute at every node.
+
+The dual line is the same 1-point Delsarte floor. Another
+$(t-1/2)^p q^2$ grid certified at best $221991/3733\approx 59.47$.
+Drop it.
+
+The $k=32$ leftover-tight CNF (528 extras) is the cheap one:
+native CaDiCaL is unsat in three minutes, and `drat-trim` verifies
+the 212 MB binary DRAT. Combined with the signed-permutation
+orbit that empties all 60 type-$(2,1)$ hosts. The four q6 cutoff
+pools in that type each get their own verified DRAT. The $k=31$
+representative is the same encoding on 596 extras: forty million
+conflicts, a 3.9 GB proof, seventy-five minutes of `drat-trim`,
+then `s VERIFIED`. That empties the 160 type-$(1,3)$ hosts.
+
+The $k=30$ representative (625 extras) and the global $|U|=19$
+CNF were still writing proofs when this note was wrapped. The
+always-on grow prune in leftover extras B&B is cheap — four
+hundred million nodes in a minute and a half, twenty billion in
+an hour — and still incomplete. A 20-clique of extras with a
+large missed-union is not a leftover 41-set; the search did not
+finish.
+
+**Proved on 27 August, later still (restricted).**
+
+- No leftover 41-set in the 1480-graph whose missed-root union
+  sits in a type-$(2,1)$ or type-$(1,3)$ five-star of $D_5$
+  coordinate-stars.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A leftover 41-set hosted by a type-$(0,5)$ five-star, or with
+  star-cover at least 6.
+- The global $|U|=19$ leftover SAT.
+- An exact SOS certificate that $s_d(5)<44$.

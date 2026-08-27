@@ -1,0 +1,73 @@
+{
+  "n_four_star_unions": 210,
+  "four_star_union_sizes": [
+    26,
+    27,
+    28
+  ],
+  "n_five_star_unions": 252,
+  "five_star_union_sizes": [
+    30,
+    31,
+    32
+  ],
+  "min_star_cover_5": 5,
+  "witness_cover_5": [
+    12,
+    15,
+    19,
+    21,
+    28
+  ],
+  "bounds_cover_5": [
+    {
+      "bound": 6,
+      "sat": true
+    },
+    {
+      "bound": 3,
+      "sat": false
+    },
+    {
+      "bound": 4,
+      "sat": false
+    },
+    {
+      "bound": 5,
+      "sat": true
+    }
+  ],
+  "min_star_cover_6": 8,
+  "witness_cover_6": [
+    13,
+    14,
+    16,
+    19,
+    21,
+    22,
+    29,
+    30
+  ],
+  "bounds_cover_6": [
+    {
+      "bound": 6,
+      "sat": false
+    },
+    {
+      "bound": 9,
+      "sat": true
+    },
+    {
+      "bound": 7,
+      "sat": false
+    },
+    {
+      "bound": 8,
+      "sat": true
+    }
+  ],
+  "k19_empty_by_cover_5": false,
+  "k19_empty_by_cover_6": false,
+  "found_41": false,
+  "comment": "min |U| with star-cover >= 5 (resp. 6) is the min hitting set of 4-star (resp. 5-star) complements.  Neither empties |U|=19 by combinatorics."
+}

@@ -1,0 +1,216 @@
+{
+  "n_pools": 5,
+  "n_expected": 6,
+  "found_41": false,
+  "n_sat_unsat": 5,
+  "n_drat_verified": 5,
+  "complete": false,
+  "pools": [
+    {
+      "name": "k32_n2_1",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "40c830c09163029f0cd61c26bb47c94b8340599eb434ffa56005bc9d133f5f85",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 1857657,
+        "seconds": 176.05,
+        "exit": 20,
+        "wall": 176.33378291130066,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_k32_n2_1.native.drat",
+      "drat_bytes": 211850438,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 515917,
+        "lemmas_total": 3070124,
+        "resolution_steps": 51649053,
+        "exit": 0,
+        "wall": 71.69192457199097,
+        "bytes": 211850438
+      }
+    },
+    {
+      "name": "k31_n1_3",
+      "stars": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "type": [
+        1,
+        3
+      ],
+      "k": 31,
+      "n_extras": 596,
+      "n_roots": 31,
+      "cnf_vars": 31415,
+      "cnf_clauses": 105309,
+      "cnf_sha256": "4420eb4d99723b33e2a8fc2e9e895006ed7247987e9d9f19dfca358eb6ebfcdc",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 40611860,
+        "seconds": 3887.58,
+        "exit": 20,
+        "wall": 4401.458164930344,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_k31_n1_3.native.drat",
+      "drat_bytes": 4134873401,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 15253402,
+        "lemmas_total": 46128907,
+        "resolution_steps": 1635820812,
+        "exit": 0,
+        "wall": 4503.50901222229,
+        "bytes": 4134873401
+      }
+    },
+    {
+      "name": "q6_01235",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        5
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "9c99687fc7ad0a029e4a57e23c041cb1803e110724913f58f8e19aaf30774221",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 3325416,
+        "seconds": 278.28,
+        "exit": 20,
+        "wall": 278.5284471511841,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_q6_01235.native.drat",
+      "drat_bytes": 345553964,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 1229734,
+        "lemmas_total": 5096774,
+        "resolution_steps": 134320214,
+        "exit": 0,
+        "wall": 171.89970874786377,
+        "bytes": 345553964
+      }
+    },
+    {
+      "name": "q6_01236",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "193faafc4cf23cc654f5de2dab22b809a8b8464a6c27304ce0d0353ca1adb78b",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 2424042,
+        "seconds": 195.97,
+        "exit": 20,
+        "wall": 196.25121450424194,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_q6_01236.native.drat",
+      "drat_bytes": 281441877,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 701537,
+        "lemmas_total": 3718758,
+        "resolution_steps": 57306623,
+        "exit": 0,
+        "wall": 80.2661817073822,
+        "bytes": 281441877
+      }
+    },
+    {
+      "name": "q6_01237",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "6272e8caff4b0911f43ea34407397e03bfecca22eac52dd7903051685abb4427",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 1933340,
+        "seconds": 169.31,
+        "exit": 20,
+        "wall": 169.3999581336975,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_q6_01237.native.drat",
+      "drat_bytes": 209165540,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 749740,
+        "lemmas_total": 3112724,
+        "resolution_steps": 76359303,
+        "exit": 0,
+        "wall": 108.39210081100464,
+        "bytes": 209165540
+      }
+    }
+  ],
+  "comment": "Leftover-tight SAT on 5-star hosts.  Native CaDiCaL 3.0.1 binary DRAT; Heule drat-trim.  Three Aut(D5) orbit representatives plus the four q6 k=32 cutoff pools (the orbit rep is one of those four).  UNSAT without a stored verified DRAT is residue.  Did not claim tau5=40."
+}

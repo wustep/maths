@@ -1,0 +1,13 @@
+{
+  "k": 19,
+  "n1": 21,
+  "need_extras": 20,
+  "min_star_cover": 5,
+  "cnf_vars": 30678,
+  "cnf_clauses": 219606,
+  "cnf_sha256": "e3cdf455510e3aba3749c40f75032f6868ad6c6977fd091ad25dbb48a61b3de9",
+  "sat": null,
+  "found_41": false,
+  "complete": false,
+  "comment": "Global leftover SAT k=19 star-cover>=5. Native CaDiCaL was still running when this snapshot was written (DRAT past 8GB; the k=30 five-star DRAT past 11GB). Incomplete. A model is a 41-set. UNSAT without a stored verified DRAT is residue. Did not claim tau5=40."
+}

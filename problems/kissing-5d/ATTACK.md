@@ -560,3 +560,80 @@ classical Levenshtein number 48 before claiming any comparison.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code. Did not
   claim $\tau_5=40$. Residue.
+
+## 2026-08-27 — continue (q7)
+
+- Start from main after PR #101 (`809cdad`). Folder `compute/q7/`.
+  House rules unchanged: do not claim $\tau_5=40$; a numerical SDP
+  without an exact positivity certificate is residue; covering and
+  `share/2026-08-16` stay frozen.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>
+  (range $40\le\tau_5\le 44$, conjectural value 40; upper bound
+  Mittelmann–Vallentin),
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin; dim 6 is 72 / 77; later-dimension news does
+  not touch dim 5),
+  Mittelmann–Vallentin arXiv:0902.1105v3
+  ($s_{14}(5)=44.99899685\ldots$), HTML
+  <https://ar5iv.labs.arxiv.org/html/0902.1105v3> Table 1,
+  Bachoc–Vallentin arXiv:math/0608426v4,
+  Cohn–Rajagopal arXiv:2412.00937v3 (“the kissing number in five
+  dimensions appears to be 40, although the best upper bound that
+  has been proved is 44”). Survey arXiv:1507.03631.
+- Hunt: empty leftover $|U|=19$ with star-cover at least 5, or empty
+  the 5-star leftover hosts (252 pools, three Aut($D_5$) orbits),
+  with stored native CaDiCaL DRAT; leftover-tight extras B&B past
+  the q6 200M-node cutoff by dropping the $|P|\le 160$ grow cap;
+  exact unrestricted dual below 44. Residue if the interval does
+  not move.
+- Plan: (1) classify 5-star hosts by signed-permutation orbits and
+  SAT leftover-tight CNFs on one representative of each type plus
+  the four q6 $k=32$ cutoff pools; (2) global leftover SAT $k=19$
+  star-cover $\ge 5$ with native CaDiCaL / Kissat; (3) always-on
+  grow prune in `leftover_global.c`; (4) one more $(t-1/2)^p q^2$
+  dual grid, then drop that line if it stays above 44.
+- Signed permutations act transitively on each 5-star type
+  (`orbits.json`: 60 of type $(2,1)$ $k=32$, 160 of type $(1,3)$
+  $k=31$, 32 of type $(0,5)$ $k=30$; Aut order $3840$).
+- Minimum $|U|$ with star-cover $\ge 5$ is 5; with star-cover
+  $\ge 6$ is 8 (`star_cover_min.json`). Neither empties $|U|=19$.
+- Dual line dropped (`dual_more.json`): 1-point Delsarte still
+  $\approx 46.33687$; exact $(t-1/2)^p q^2$ duals that certify sit
+  at best $221991/3733\approx 59.47$. Did not beat
+  Mittelmann–Vallentin.
+- Native leftover-tight SAT on the $k=32$ orbit representative
+  (stars $(0,1,2,3,4)$) is UNSAT: CaDiCaL 3.0.1, $1{,}857{,}657$
+  conflicts, binary DRAT $211{,}850{,}438$ bytes, Heule
+  `drat-trim` `s VERIFIED` (`five_star_sat.json`). Combined with
+  Aut transitivity this empties all 60 type-$(2,1)$ five-star
+  leftover hosts. The q6 cutoff pool $(0,1,2,3,5)$ is likewise
+  UNSAT with a verified DRAT ($3{,}325{,}416$ conflicts).
+- All four q6 $k=32$ cutoff pools are UNSAT with verified native
+  DRATs (`five_q6_01235`, `five_q6_01236`, `five_q6_01237`, and
+  the orbit representative). Combined with Aut transitivity the
+  type-$(2,1)$ leftover hosts are empty.
+- Leftover-tight extras B&B with always-on grow prune ran 400M
+  nodes in about 90 seconds, no 41-set, incomplete
+  (`leftover_global_400m.json`). The $|P|\le 160$ cap was the
+  cost; remaining missed-union is cheap. With the type-$(2,1)$
+  5-star prune (`five_mode=2`) the same search ran $20{,}000{,}000{,}001$
+  nodes in $3594$ seconds, no 41-set, incomplete
+  (`leftover_global.json`). five_mode $3$ (types $(2,1)$ and
+  $(1,3)$, $220$ unions) ran another $20$G nodes in $4272$
+  seconds, no 41-set, incomplete (`leftover_global_mode3.json`).
+  Past the q6 200M cutoff; still residue.
+- $k=31$ leftover-tight SAT is UNSAT with a verified native DRAT
+  (`five_k31_n1_3`: $40{,}611{,}860$ conflicts, DRAT
+  $4{,}134{,}873{,}401$ bytes, `drat-trim` $15{,}253{,}402$ of
+  $46{,}128{,}907$ lemmas, $1{,}635{,}820{,}812$ resolution
+  steps). Combined with Aut transitivity this empties all 160
+  type-$(1,3)$ five-star leftover hosts. Remaining 5-star leftover
+  hosts are the 32 type-$(0,5)$ pools.
+- $k=30$ leftover-tight SAT and global leftover SAT $k=19$ were
+  still writing native DRATs when this pass wrapped (past $9$ GB
+  and $7$ GB). Incomplete. Residue, not a lower bound.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
+  beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
+  not claim $\tau_5=40$. Residue.

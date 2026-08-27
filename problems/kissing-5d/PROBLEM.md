@@ -47,3 +47,7 @@ Still $40\le\tau_5\le 44$. The 355-point $T^5$ remainder has no 36-clique: nativ
 ## Outcome (2026-08-27, q6)
 
 Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^5$ graph whose missed-root union sits in four $D_5$ coordinate-stars (`compute/q6/four_star_extras.json`, replayed in `replay_four_star.json`). The $n_1\le 21$ slice with star-cover at least 5 remains residue. No unrestricted dual below 44 and no 41-point code. Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q6/run_all.sh`.
+
+## Outcome (2026-08-27, q7)
+
+Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^5$ graph whose missed-root union sits in a type-$(2,1)$ or type-$(1,3)$ five-star of $D_5$ coordinate-stars (`compute/q7/five_star_sat.json`, Aut orbits in `orbits.json`, native CaDiCaL DRAT verified). The 32 type-$(0,5)$ five-star hosts and the global $|U|=19$ leftover SAT remain residue. Leftover-tight extras B&B ran $20$G nodes with the type-$(2,1)$ prune and did not finish (`leftover_global.json`). No unrestricted dual below 44 (best certified $(t-1/2)q^2$ still $221991/3733\approx 59.47$). Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q7/run_all.sh`.

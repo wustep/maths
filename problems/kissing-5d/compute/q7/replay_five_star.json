@@ -1,0 +1,64 @@
+{
+  "n_reps": 3,
+  "ok": true,
+  "found_41": false,
+  "reps": [
+    {
+      "name": "k32_n2_1",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        4
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "40c830c09163029f0cd61c26bb47c94b8340599eb434ffa56005bc9d133f5f85",
+      "sha_match": true,
+      "stored_sat": false,
+      "bb_smoke_best": 19,
+      "bb_smoke_nodes": 2001,
+      "bb_smoke_complete": false,
+      "bb_smoke_hit": false
+    },
+    {
+      "name": "k31_n1_3",
+      "stars": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "k": 31,
+      "n_extras": 596,
+      "n_roots": 31,
+      "cnf_vars": 31415,
+      "cnf_clauses": 105309,
+      "cnf_sha256": "4420eb4d99723b33e2a8fc2e9e895006ed7247987e9d9f19dfca358eb6ebfcdc",
+      "sha_match": true,
+      "stored_sat": false
+    },
+    {
+      "name": "k30_n0_5",
+      "stars": [
+        0,
+        2,
+        4,
+        6,
+        8
+      ],
+      "k": 30,
+      "n_extras": 625,
+      "n_roots": 30,
+      "cnf_vars": 32308,
+      "cnf_clauses": 111856,
+      "cnf_sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c"
+    }
+  ],
+  "comment": "CNF rebuild of the three Aut(D5) 5-star representatives.  sha256 match against five_star_sat.json when present.  Tiny leftover_bb smoke on the k=32 rep is not a certificate."
+}

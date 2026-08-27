@@ -441,3 +441,33 @@ Opened tonight:
   bounds in dims 10, 16, 17, 25, 26. Does not give an exact dual below
   44 in dim 5.
 
+## 2026-08-27 — record still $40\le\tau_5\le 44$ (q7)
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+  Upper bound cited is Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Dim 6 is 72 / 77. Later-dimension news
+  (Cohn–Li, Ho 2603.10425, Ma et al. 2511.13391, Takhanov et al.
+  2606.18984, Sun–Wang 2607.20359, Bianchi et al. 2606.10402) does
+  not touch dim 5.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Still the published upper bound. HTML
+  https://ar5iv.labs.arxiv.org/html/0902.1105v3 Table 1: range of
+  possible values limited from $\{40,\ldots,45\}$ to $\{40,\ldots,44\}$.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026), title
+  “Variations on five-dimensional sphere packings”: “the kissing
+  number in five dimensions appears to be 40, although the best upper
+  bound that has been proved is 44”. Four 40-point geometries. No
+  size 41.
+- https://arxiv.org/abs/math/0608426 — Bachoc–Vallentin, $\tau_5\le 45$
+  before Mittelmann–Vallentin.
+- https://arxiv.org/abs/1507.03631 — survey story $48\to 46.345\to 45\to 44.998$.
+
+`python3 scripts/arxiv_fetch.py` on 0902.1105v3, 2412.00937v3,
+math/0608426v4, 1507.03631: metadata matches; RESEARCH already had
+stubs for the first three.
+

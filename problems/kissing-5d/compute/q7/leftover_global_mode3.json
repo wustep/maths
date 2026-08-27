@@ -1,0 +1,21 @@
+{
+  "d": 4,
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "n_extra_edges": 884720,
+  "target": 20,
+  "nodes": 20000000001,
+  "node_limit": 20000000000,
+  "best_extras": 19,
+  "found_41": false,
+  "complete": false,
+  "n_four_star": 210,
+  "n_five_used": 220,
+  "n_five_star": 252,
+  "five_mode": 3,
+  "five_star_prune": true,
+  "wall_seconds": 4272,
+  "comment": "leftover-tight extras B&B; always-on grow prune; 4-star hosted cut"
+}
