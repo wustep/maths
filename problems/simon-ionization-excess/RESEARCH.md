@@ -1,70 +1,32 @@
 # Research log — simon-ionization-excess
 
-Papers, OEIS, failed lookups. Only URLs opened this session.
+Papers, OEIS, failed lookups. Cite every URL opened this session. Forum
+numbers are leads, not citations.
 
-## 2026-08-27
+## 2026-08-27 — record
 
-- [Simon, *Schrödinger operators in the twenty-first century*](http://www.math.caltech.edu/papers/bsimon/r40.pdf).
-  OCR of all seven pages. Problem 9: prove N0(Z) − Z bounded as
-  Z → ∞. Reprint cites Ruskai, Sigal, Lieb (N0 < 2Z),
-  Lieb–Sigal–Simon–Thirring (N/Z → 1), Zhislin (N0 ≥ Z). Guess:
-  N0 is always Z or Z+1.
+- [Wikipedia, *Simon problems*](https://en.wikipedia.org/wiki/Simon_problems) and the [mobile page](https://en.m.wikipedia.org/wiki/Simon_problems). Map only. 2000 #9: prove $N_0(Z)-Z$ bounded as $Z\to\infty$. 1984 10(a): $\Delta E(N-1,Z)\ge\Delta E(N,Z)$. Definitions of $H(N,Z)$, $E(N,Z)$, $N_0(Z)$.
+- [MathWorld, *Simon's Problems*](https://mathworld.wolfram.com/SimonsProblems.html). Map. Points to Simon 2000, mp_arc 00-78.
+- [HandWiki, *Simon problems*](https://handwiki.org/wiki/Simon_problems). Same map.
+- [Simon, *Fifteen problems in mathematical physics* (1984 PDF)](http://www.math.caltech.edu/SimonPapers/R27.pdf). Fetch timed out this session.
+- [Nam, *New bounds on the maximum ionization of atoms*, arXiv:1009.2367v3](https://arxiv.org/abs/1009.2367) (26 Nov 2011). $N_c<1.22Z+3Z^{1/3}$ for fermions; $\beta\in[0.8218,0.8705)$; Lemma 1 and Proposition 1. Beats Lieb for $Z\ge6$. Replay in `compute/q1/replay_nam_beta.py`.
+- [Nam, *On the number of electrons that a nucleus can bind*, arXiv:1209.3642v2](https://arxiv.org/abs/1209.3642) (7 Dec 2012). Survey. Ionization conjecture $N_c\le Z+1$ or $Z+2$. Zhislin: binding for $N<Z+1$. Bosons: $N_c/Z\to t_c\approx1.21$.
+- [Nam, *The ionization problem in quantum mechanics*, arXiv:2206.15393v1](https://arxiv.org/abs/2206.15393) (30 Jun 2022). Lieb settles hydrogen. Convexity of $E_N$ and “binding of $N$ implies binding of $N-1$” still open. Lenzmann–Lewin: no eigenvalue if $N\ge4Z+1$.
+- [Hundertmark–Pattakos–Schulz, *On the Excess Charge Problem of Atoms*, arXiv:2504.18487v1](https://arxiv.org/abs/2504.18487) (25 Apr 2025). Opened abs and [HTML](https://arxiv.org/html/2504.18487v1). Theorem 2.2: $N_c<b(s)Z+c(s)Z^{1/3}$ for $s\in(1,3]$, $b(s)=\max_{t\in[0,1]}(1+t^{s-1})/(1+t^s)$. Prop. 2.4 ($Z\ge2$): $N_c<\frac12(\sqrt2+1)Z+2.96Z^{1/3}$. Prop. 2.5 ($Z\ge4$): $N<b(3)Z+3.90Z^{1/3}+0.0134+0.184Z^{-1/3}+0.0196Z^{-2/3}$ with $1.1184<b(3)<1.1185$. Simplified $N_c<1.1185Z+4Z^{1/3}$ for $Z\ge4$. This is the published non-asymptotic record to beat. Independently replayed in `compute/q1/`.
+- [Solovej, *The Ionization Conjecture in Hartree-Fock Theory*, arXiv:math-ph/0012026v3](https://arxiv.org/abs/math-ph/0012026) (22 Apr 2004). HF excess and ionization energy stay bounded as $Z\to\infty$. Does not apply to the many-body Schrödinger operator.
+- [Lewin, *Some open mathematical problems concerning charged quantum particles*](https://doi.org/10.5802/crphys.249), [PDF](https://comptes-rendus.academie-sciences.fr/physique/item/10.5802/crphys.249.pdf). Open Problem 1: $N_{\max}\le Z+CM$. Notes that even a huge $C$ is unknown for the Schrödinger operator. Cites Lieb $N_{\max}<2Z+M$ as the then-best explicit bound (pre-HPS).
+- [Nam, *The Ionization Problem*, EMS Newsletter](https://ems.press/content/serial-article-files/12081). Same conjectures; LSST compactness; Fefferman–Seco / SSS $Z+O(Z^{5/7})$.
+- [Frank–Hundertmark–Jex–Nam, *The Lieb–Thirring inequality revisited*, arXiv:1808.09017v1](https://arxiv.org/abs/1808.09017) (27 Aug 2018). $L_{1,d}/L_{1,d}^{\mathrm{cl}}\le1.456$. This is the factor HPS uses in $\kappa$. Not replaced.
+- [Frank, *The Lieb–Thirring inequalities: Recent results and open problems*, arXiv:2007.09326v1](https://arxiv.org/abs/2007.09326) (18 Jul 2020). Survey; 1.456 still the cited bound for $1\le\gamma<3/2$.
+- [Benguria–González-Brantes–Tubino, *New bounds on the excess charge for atomic systems*, arXiv:2207.08328v2](https://arxiv.org/abs/2207.08328) (updated 3 Nov 2025). Comment on the abs page: “This version is not definite and has errors.” Not used as a record. HTML 404 this session; PDF 404.
+- [Lieb, Phys. Rev. A 29, 3018 (1984)](https://inspirehep.net/literature/14268). Abstract: $N_c<2Z+1$; hydrogen $N_c=2$. APS HTML blocked by Cloudflare this session.
 
-- [Simon, *Fifteen problems in mathematical physics*](http://www.math.caltech.edu/SimonPapers/R27.pdf)
-  (1984 Oberwolfach volume, pp. 423–454). Opened the PDF. Image
-  scan; used together with Lewin and Coley for the 10(a)/10(c)
-  pointer, not as a source of a numerical bound.
+## 2026-08-27 — small-Z replay sources
 
-- [Wikipedia, Simon problems](https://en.wikipedia.org/wiki/Simon_problems)
-  and [MathWorld, Simon's Problems](https://mathworld.wolfram.com/SimonsProblems.html).
-  Map only.
+- [Høgaasen–Richard–Sorba, arXiv:0907.2614](https://arxiv.org/abs/0907.2614) ([HTML](https://ar5iv.labs.arxiv.org/html/0907.2614)). Chandrasekhar closed forms. Comparison for the H$^-$ open-shell trial.
+- [Nakashima–Nakatsuji, J. Chem. Phys. 127, 224104 (2007)](https://doi.org/10.1063/1.2801981). Published NR benchmarks for He and H$^-$. Comparison only; not replayed. No arXiv id found (`0707.2101` is unrelated).
+- Failed: Simon 2000 Imperial College chapter was not fetched (book, not arXiv). Wikipedia is the map to its statement.
 
-- [Lewin, *Some open mathematical problems concerning charged quantum particles*](https://doi.org/10.5802/crphys.249)
-  (*C. R. Physique* 26 (2025), 369–380;
-  [PDF](https://comptes-rendus.academie-sciences.fr/physique/item/10.5802/crphys.249.pdf)).
-  Open Problem 1: Nc ≤ Z + C M, still open even for huge C.
-  Quotes Lieb Nc < 2Z+M and Nam Nc < 1.22 Z + 3 Z^{1/3}.
-  Identifies the ask with Simon 1984 10(c). Open Problem 2 is
-  convexity / 1984 10(a), still open for integer nuclear charge
-  (a Coulomb counterexample exists only for tiny non-integer
-  charges on six distant nuclei).
+## What the record does not say
 
-- [Nam, arXiv:1009.2367](https://arxiv.org/abs/1009.2367)
-  ([HTML](https://ar5iv.labs.arxiv.org/html/1009.2367), v3).
-  Theorem 1: if E(N,Z) is an eigenvalue then N = 1 or
-  N < 1.22 Z + 3 Z^{1/3}. Beats Lieb for Z ≥ 6. Also
-  limsup Nc/Z ≤ 1.22 in magnetic / pseudo-relativistic variants.
-  Does not prove a Z-independent excess.
-
-- [Nam, arXiv:2206.15393](https://arxiv.org/abs/2206.15393)
-  (*The ionization problem in quantum mechanics*, Lieb 90th-birthday
-  chapter). Restates the conjecture Nc ≤ Z + C. Quotes Nam 2012
-  as Theorem 5. Does not claim a later linear coefficient.
-
-- [Nam, *The ionization problem* (LMU chapter PDF)](https://www.math.lmu.de/~nam/Ionization-Lieb-Collection.pdf).
-  Same survey text; opened for the printed 1.22 Z + 3 Z^{1/3} and
-  the β ≥ 0.82 remark (1/β ≈ 1.22).
-
-- [Hundertmark–Pattakos–Schulz, arXiv:2504.18487](https://arxiv.org/abs/2504.18487)
-  ([HTML](https://arxiv.org/html/2504.18487v1)).
-  Abstract: Nc(Z) < 1.1185 Z + O(Z^{1/3}) with an explicit
-  remainder. Proposition 2.4 (s=2, Z ≥ 2):
-  Nc < ((√2+1)/2) Z + 2.96 Z^{1/3}, and
-  1.2071 < (√2+1)/2 < 1.2072.
-  Proposition 2.5 (s=3, Z ≥ 4): the b(3) expansion displayed in
-  PROBLEM.md, with 1.1184 < b(3) < 1.1185 and the closed form
-  (2/3) (1+√2)^{1/3} / ((1+√2)^{2/3}−1).
-  Coarser: N < 1.12 Z + 4 Z^{1/3} for Z ≥ 4, and
-  Nc < 1.1185 Z + 4 Z^{1/3}.
-  They remark that (2.9) beats (2.8) for Z ≥ 35.8, and that
-  Prop. 2.4 already beats Nam for all Z ≥ 2.
-  Fermion/boson distinction: bosonic lim Nc/Z = tc ≈ 1.21.
-
-- [Coley, arXiv:1710.02105](https://arxiv.org/abs/1710.02105).
-  Reprints 1984 problems as examples; not a bound on Nc.
-
-- Failed: no OEIS sequence for Nc(Z). Did not obtain a free PDF of
-  Lieb, *Phys. Rev. A* 29 (1984), 3018–3028; the statement
-  Nc < 2Z+1 is taken from Nam, Hundertmark–Pattakos–Schulz, and
-  Lewin, each of whom quote that display. Simon's reprint writes
-  the slightly weaker N0 < 2Z.
+No published paper opened this session proves $N_c\le Z+C$ for a $Z$-independent $C$ in the many-body Schrödinger theory. HPS 1.1185 is a leading coefficient, not a bounded excess. Nam’s $\beta\ge0.8218$ is a lower bound on a classical variational constant, not a new ionization coefficient beyond 1.22.

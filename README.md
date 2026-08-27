@@ -145,7 +145,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
 | [simon-lieb-thirring](problems/simon-lieb-thirring) | Simon 2000 #15. Published record $$L_{1,d}\le 1.456\,L^{\mathrm{cl}}_{1,d}$$ (Frank–Hundertmark–Jex–Nam, JEMS 2021). The one-dimensional conjecture for exponents between 1/2 and 3/2 is open. |
-| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Published record $$N_c(Z)<1.1185Z+4Z^{1/3}$$ for Z at least 4 (Hundertmark–Pattakos–Schulz). Bounded excess and 1984 ionization-energy monotonicity remain open. |
+| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz $1.1185$. Same HPS chain, using Lieb's ratio on $Z\ge 4$, tightens the printed remainders $2.96$, $3.90$, and $4$ to $2.953$, $3.892$, and $3.9781$. Leading coefficient unchanged. Hydrogen N0(1)=2 replayed. Bounded excess open. |
 
 Each problem folder:
 
@@ -231,6 +231,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
 | Simon Lieb–Thirring constants | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
 | Simon ionization excess | `problems/simon-ionization-excess` | Grok 4.6 | 2026-08-27 |
+| Simon ionization excess / HPS remainder | `problems/simon-ionization-excess/compute/q1` | Grok 4.6 | 2026-08-27 |
 
 ## Lean
 
