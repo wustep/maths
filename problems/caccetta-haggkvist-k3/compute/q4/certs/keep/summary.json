@@ -1,40 +1,15 @@
 {
-  "closed": [
-    73,
-    74,
-    75,
-    76,
-    77,
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85
-  ],
-  "this_run": [
-    73,
-    74,
-    75,
-    76,
-    77,
-    78,
-    79,
-    80,
-    81,
-    82,
-    83,
-    84,
-    85
-  ],
+  "closed": [73, 74, 75, 76, 77, 78, 79, 80, 81, 82, 83, 84, 85, 86, 87, 88, 89, 90, 91, 92, 93, 94, 95, 96, 97, 98, 99, 100, 101, 102, 103, 104, 105, 106, 107, 108],
+  "n_cubes": 1026,
   "residue": [],
-  "f4": 0.34645,
+  "f4": 0.34640,
   "published_hkn": 0.3465,
-  "next_hole": {
-    "n": 86,
-    "d": 29
+  "prior_stored_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "next_hole": {"n": 109, "d": 37},
+  "replay": {
+    "n73_n92": {"checked": 516, "failures": 0, "log": "replay_73_92.json"},
+    "n93_n100": {"checked": 244, "failures": 0, "log": "replay_93_100.json"}
   },
-  "note": "closed = every needed cube UNSAT with stored DRAT. A leftover is residue, not a bound. F4 unchanged unless a new certificate says otherwise."
+  "note": "closed = every needed cube UNSAT with stored DRAT. F4 is the CKLS-fork certificate at 0.34640. Did not beat 0.3388."
 }

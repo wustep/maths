@@ -251,3 +251,25 @@ The survivors (n=73: k=25..33) are not a linear obstruction: the [0,1] relaxatio
 
 Recomputed the 32 F-coordinates of `certs/keep/f4_or_new_certificate.json` without importing `verify_q4_certificate.py`. AC slices from `hkn_replay.ac_slices`; 4Ψ(κ) rebuilt from `flags4.enumerate_labeled` and matched HKN (4.7); fork penalty `12(3c−1)²/0.8616`. Script: `dump_f_coords.py`. Output: `certs/keep/f_coords_0.3464.json`. min eig(Q) = 6.192452827718651e-10; worst F = −0.4190333660408214 at r₃₀; all 32 coordinates < −0.05. Did not start SAT. Did not beat the stored 0.3464 certificate; this is a replay of that file.
 
+### 2026-08-27 — cubes through n=108
+
+q3 leftover through n=72 still stands. Same encoder as q1/q2/q3. High-k cubes first, kissat 4.0.4, DRAT checked against a CNF regenerated from `encode.py`. Raw kissat proofs at n≈84+ grow past GitHub’s 100 MB cap; those files were replaced by `drat-trim` core lemmas that still replay.
+
+Soundness: n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free 6-outregular model. The n=73 circulant (d=24) is C₃-free and 24-outregular; after placing N⁺(0) and N⁻(0), every arc-variable clause of the cube is satisfied (`certs/keep/soundness_n73_d24.json`). The encoder is not vacuously UNSAT at these orders.
+
+Every needed cube k≥d at the remaining leftover holes through n=108 is UNSAT. 1026 stored DRATs. Independent replay so far: n=73–92 (516 cubes, 0 failures) and n=93–100 (244 cubes, 0 failures). The slowest stored cube is about 27s (n=108).
+
+| n | d | cubes | worst time | DRAT |
+| ---: | ---: | --- | ---: | --- |
+| 73 | 25 | k=25..46 | 1.08s | VERIFIED, stored |
+| 74–107 | ⌈n/3⌉ | every k≥d not empty by count | ≤25.7s | VERIFIED, stored |
+| 108 | 36 | k=36..70 | 27.1s | VERIFIED, stored |
+
+So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directed triangle. This is a dent against those finite holes. After n=72 every leftover n is consecutive (the n≡1 (mod 3) window implied by HKN 0.3465 ended near n=50).
+
+### 2026-08-27 — F₄ with the CKLS fork
+
+The stored parent certificate at c=0.34645 still replays (worst F=−0.12343). A new Farkas ray on the same 32 types, with the published CKLS 2015 constant β<0.8616γ in place of CSS β≤γ, certifies **c=0.34640**. Replay: `python3 verify_q4_certificate.py certs/keep/f4_or_new_certificate.json --margin 0.05` (worst F=−0.4190333660 at r₃₀, min eig(Q)=6.19·10⁻¹⁰). Hunt log: t at 0.34645 is −38.5; at 0.34640 is −0.419; at 0.346 / 0.340 / 0.3388 the best t stays positive. Did not beat 0.3388. HKN already said tightening Lemma 3.5 only gives a tiny decrease; this is that fifth-decimal move, now with a public certificate.
+
+The first remaining hole is n=109, δ⁺=37. The conjecture 1/3 is open. Did not treat 0.3388 as published.
+

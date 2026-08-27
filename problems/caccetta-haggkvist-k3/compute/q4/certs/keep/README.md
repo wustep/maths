@@ -1,5 +1,5 @@
-DRAT proofs for exact Caccetta–Häggkvist triangle orders from n=73
-onward.
+DRAT proofs for exact Caccetta–Häggkvist triangle leftover orders
+n=73 through n=108 (1026 cubes). First remaining hole n=109.
 
 A d-outregular oriented graph has n d arcs, so some in-degree is
 at least d. Relabel that vertex as 0. The exact statement reduces
