@@ -55,12 +55,12 @@ Finished, with certificates under `certs/`:
   published M-collection.
 
 The leftover whole-stratum thicken (radius 1, rank at most 20) is
-the long job. Ranks 6–19 are finished (149 triangulations,
-714,994,560 evaluations); every scheme outside the published
-2,367 is already among the seventeen. Rank 20 is complete only
-when every remaining triangulation has a `complete` record.
+finished: all 164 leftover triangulations, 1,438,512,000
+evaluations. Every scheme outside the published 2,367 is already
+among the seventeen. The two open (19,3) nests were not on that
+neighbourhood.
 
 Also finished: radius-6 balls around the eleven of our seventeen
 certificates whose ball leaves the old swept region (0 novel);
 the two-split ladder around all twelve published depth-3
-M-collections (0 new).
+M-collections (0 new). Hilbert 16(a) degree 8 is still open.

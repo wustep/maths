@@ -21,9 +21,9 @@ Did not move. No new T-curve scheme.
   38 schemes only.
 - Nested odd pairs on the five published (19,3) collections. The
   a=10 nest admits no compatible nested odd pair.
-- Radius-1 thicken of every census triangulation of twist-rank at
-  most 19 (149/149, 714,994,560 evaluations). Only rediscovery of
-  schemes already among the seventeen.
+- Radius-1 thicken of every leftover census triangulation of
+  twist-rank at most 20 (164/164, 1,438,512,000 evaluations).
+  Only rediscovery of schemes already among the seventeen.
 - One-split neighbourhood of all 38 published M-collections, and
   the two-split ladder around all 12 depth-3 M-collections.
 - Radius-6 balls around the eleven of our seventeen certificates
@@ -38,5 +38,7 @@ sh q1/run_all.sh
 python3 q1/collect.py
 ```
 
-Hilbert 16(a) in degree 8 remains open. The leftover thicken on
-rank 20 and the two open deep nests are unfinished.
+Hilbert 16(a) in degree 8 remains open. The leftover thicken of
+all 164 rank-at-most-20 census triangulations is finished and
+added nothing. The two open deep nests are unfinished. The twenty
+census triangulations of rank 21–26 were never in that leftover.

@@ -1,8 +1,8 @@
 {
  "search": "q1: leftover whole-stratum thicken (radius 1, rank <= 20), even-split walk on the (19,3) row, perturbations of the two published deep-nest triangulations, radius-4 balls around every 20-oval certificate, and targeted balls at the four hole-map targets",
  "thicken": {
-  "triangulations_logged": 150,
-  "triangulations_complete": 150,
+  "triangulations_logged": 164,
+  "triangulations_complete": 164,
   "ranks_completed": {
    "6": 1,
    "10": 5,
@@ -15,9 +15,9 @@
    "17": 13,
    "18": 16,
    "19": 13,
-   "20": 1
+   "20": 15
   },
-  "total_evaluations": 763229056,
+  "total_evaluations": 1438512000,
   "novel_on_thicken": []
  },
  "even_walk": {

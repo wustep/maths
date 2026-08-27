@@ -345,11 +345,23 @@ add/drop/swap neighbourhood of *all 38* published M-collections is
 exactly those 38 schemes (28,861 evaluations). Collection-distance
 from the published M-set to either open nest is at least 2.
 
-## 15. What the leftover thicken actually said through rank 16
+## 15. What the leftover thicken actually said through rank 20
 
 The 23 August leftover was four rank-16 triangulations. Cheap first,
-then the next ranks: every census triangulation of twist-rank at most
-19, radius 1 around the whole Haas maximal stratum, 149 of 149,
-714,994,560 sign distributions. Every scheme outside the published
-2,367 is already among the seventeen. Rank 20 of that leftover
-is the expensive tail and is a separate question.
+then the rest of the intended leftover: every census triangulation
+of twist-rank at most 20, radius 1 around the whole Haas maximal
+stratum. That is 164 of 164, 1,438,512,000 sign distributions,
+exactly \(46\cdot 2^r\) on each. Every scheme outside the published
+2,367 is already among the seventeen. Rank 20 is fifteen
+triangulations, including the two published (19,3) liftings
+`(17v1(1)v1(2)).pcom` and `(17v1(2v1(1))).pcom`. Both of those
+finished; neither open nest is on that neighbourhood of either
+lifting. One other rank-20 certificate,
+`(6v1(6v1(8))).pcom`, rediscovered seven of the seventeen and
+nothing new.
+
+That is a neighbourhood statement, not an obstruction. The open
+nests may sit at Hamming distance greater than 1 from the maximal
+Haas stratum, or on a triangulation that is not among the 184
+census ones. Ranks 21–26 (twenty triangulations) were never in
+the leftover.

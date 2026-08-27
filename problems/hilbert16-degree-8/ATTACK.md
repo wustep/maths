@@ -877,7 +877,7 @@ open nest appeared, even as a PL curve.
 | one-split add/drop/swap around all 38 M-collections | 28,861 | exactly those 38, 0 new, 0 hits |
 | two-split ladder around all 12 depth-3 M-collections | 204,948 | 29 schemes, 0 new, 0 hits (**complete**) |
 | nested odd pairs on the five (19,3) collections | 122 | 0 hits; the a=10 nest admits **no** compatible nested odd pair |
-| radius-1 thicken, every census triangulation of rank ≤ 19 | 714,994,560 | 149/149 complete; novel vs census ⊆ the seventeen |
+| radius-1 thicken, every census triangulation of rank ≤ 20 | 1,438,512,000 | **164/164 complete**; evals = \(46\cdot 2^r\) on each; novel vs census ⊆ the seventeen |
 | radius-6 balls on the 11 of our 17 whose ball leaves the old region | 104,841,440 | 11/11 complete, 0 novel |
 
 Certificates: `compute/q1/certs/m2_balls_r4.json`,
@@ -885,13 +885,12 @@ Certificates: `compute/q1/certs/m2_balls_r4.json`,
 `dn_nbhd.json`, `dn_ladder.json`, `odd_cancel.json`,
 `hole_balls_r6.json`, `thick_r1_rank_le16.json`,
 `thick_r1_rank_le17.json`, `thick_r1_rank_le18.json`,
-`thick_r1_rank_le19.json`.
+`thick_r1_rank_le19.json`, `thick_r1_rank_le20.json`.
 
-The 4-of-164 leftover from 2026-08-23 is no longer the state of
-ranks ≤ 19. Those 149 triangulations are a **finished prefix**.
-Rank 20 (15 triangulations of the original 164) was still running
-at write-up; until every one has a `complete` record that part is
-**residue**.
+The 4-of-164 leftover from 2026-08-23 is finished. All 164
+census triangulations of rank ≤ 20 have a complete radius-1
+thicken record. No new scheme; neither open nest. That is a
+finished sweep of the intended leftover, not a lower bound.
 
 ### What the (19,3) row actually does
 
@@ -919,8 +918,9 @@ non-regular patchwork can be algebraically unrealisable).
 
 Hilbert 16(a) in degree 8 remains open. The dent is still the
 seventeen schemes and the bound ≥ 2,384; both replay. No new
-scheme, no deep-nest decision. The leftover thicken is a finished
-prefix through rank 19 and residue on rank 20.
+scheme, no deep-nest decision. The leftover thicken of all 164
+rank-≤20 census triangulations is finished and added nothing.
+Ranks 21–26 (20 census triangulations) were never in that leftover.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q1/run_all.sh && python3 q1/collect.py`.
