@@ -241,3 +241,9 @@ After n=72, the first remaining exact order is n=73, δ⁺=25 (0.3465·73 = 25.2
 
 A DRAT/UNSAT on every needed cube at n=73 (and as many later holes as finish), or a verified C₃-free 25-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound. A new F₄/F₆ certificate with some c < 0.34645 would be a numerical dent.
 
+### 2026-08-27 — why leftover cubes are easy
+
+The k≥d cubes are easy for two different reasons. High k is a count. Each a∈N⁺(0) omits exactly σ=n−2−d−k vertices of (N⁺(0)\\{a}) ∪ U. Avoiding 2-cycles in N⁺(0) needs at least C(d,2) A-omissions, so σ≥(d−1)/2. Equality (d odd) forces a C₃-free tournament on A, hence a transitive tournament, whose out-degrees cannot all meet s_a≥d−|U|. Replay: `python3 compute/q4/count_obstruction.py --self-test`. On n=73 that empties k=34..46. The same count on n=73..120 empties 792 of 1464 needed cubes and leaves at least nine survivors at every order (`certs/keep/covering_73_120.json`).
+
+The survivors (n=73: k=25..33) are not a linear obstruction: the [0,1] relaxation with exact degree, 2-cycle, and triangle inequalities is feasible on A∪U, and combinatorial unit propagation does not close. They are SAT-easy because of lex SB. With SB, n=73 k=25 is UNSAT in 1.08s / 5244 conflicts (`p cnf 379710 901442`). Without SB the same cube is UNKNOWN at 20s / 138k conflicts. Preprocess alone (`--decisions=0`) does not finish the k=d cube. So a short written proof of every leftover n≥73 cube is still missing; the covering count is only the high-k half. Did not write `certs/keep/ch-*.drat`. Did not treat 0.3388 as published. This note does not move the numerical threshold.
+

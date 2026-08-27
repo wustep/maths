@@ -11,6 +11,9 @@ parent=$(dirname "$here")
 echo "== parent F4 certificate at 0.34645 =="
 python3 "$parent/verify_certificate.py" "$parent/certs/f4_certificate.json" --margin 0.05 --c 0.34645
 
+echo "== leftover-cube covering count =="
+python3 count_obstruction.py --self-test
+
 echo "== sequential-counter encoding vs known small n and n=21 d=6 =="
 python3 regression.py
 

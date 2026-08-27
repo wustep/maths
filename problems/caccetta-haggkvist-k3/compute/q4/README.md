@@ -19,3 +19,8 @@ A timeout on a later cube is an incomplete search, not a bound.
 The encoder is not empty: n=21 d=6 is SAT with a checked C₃-free
 model, and the n=73 circulant (degree 24) satisfies the cube
 clauses after placing the neighbourhoods of 0.
+
+High-k cubes empty by a 2-cycle covering count on N⁺(0)
+(`count_obstruction.py`, notes in `certs/keep/combinatorial_notes.json`).
+That count does not kill k near d. Those cubes are SAT-easy with
+lex SB (n=73 k=25: 5244 conflicts, 1.08s) and hard without it.
