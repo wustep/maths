@@ -1,0 +1,571 @@
+{
+  "Levenshtein_L5": {
+    "name": "Levenshtein_L5",
+    "bound": "48",
+    "float_bound": 48.0,
+    "certified": true,
+    "comment": "L_5(5,1/2)=48 from the BDM odd-bound formula; replay levenshtein.py",
+    "excludes": []
+  },
+  "ansatz": [
+    {
+      "q": [
+        "1",
+        "0"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "2"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "2",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "3",
+        "2"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "-1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "2",
+        "-1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "0",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "2",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "2",
+        "0",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "1",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "3",
+        "0",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "4",
+        "4"
+      ],
+      "certified": true,
+      "bound": "2835/53",
+      "float_bound": 53.490566037735846,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "0",
+        "2"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1/3",
+        "17/6",
+        "10/3"
+      ],
+      "certified": true,
+      "bound": "53235/1109",
+      "float_bound": 48.00270513976555,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "0",
+        "0",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "2",
+        "0",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    },
+    {
+      "q": [
+        "1",
+        "0",
+        "2",
+        "1"
+      ],
+      "certified": false,
+      "bound": null,
+      "float_bound": null,
+      "excludes": []
+    }
+  ],
+  "degrees": {
+    "6": {
+      "numerical": {
+        "success": true,
+        "deg": 6,
+        "ngrid": 241,
+        "bound": 47.998777257614584,
+        "c": [
+          1.0,
+          4.9023667143786005,
+          10.297211847392566,
+          14.142482394080593,
+          11.579419971715435,
+          6.077296330047397,
+          0.0
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "48",
+          "float_bound": 48.0,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "48",
+          "float_bound": 48.0,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "47997/1000",
+          "float_bound": 47.997,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "119997/2500",
+          "float_bound": 47.9988,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    },
+    "8": {
+      "numerical": {
+        "success": true,
+        "deg": 8,
+        "ngrid": 241,
+        "bound": 47.998777257614584,
+        "c": [
+          1.0,
+          4.9023667143786005,
+          10.297211847392566,
+          14.142482394080593,
+          11.579419971715435,
+          6.077296330047397,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "48",
+          "float_bound": 48.0,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "48",
+          "float_bound": 48.0,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "47997/1000",
+          "float_bound": 47.997,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "119997/2500",
+          "float_bound": 47.9988,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    },
+    "10": {
+      "numerical": {
+        "success": true,
+        "deg": 10,
+        "ngrid": 241,
+        "bound": 46.336869215638316,
+        "c": [
+          1.0,
+          4.546359249124393,
+          9.44582114704796,
+          13.088551236368184,
+          10.6828883367176,
+          5.908036952944083,
+          0.0,
+          0.0,
+          0.0,
+          1.5160626290752408,
+          0.14914966436085458
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "231/5",
+          "float_bound": 46.2,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "927/20",
+          "float_bound": 46.35,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "46337/1000",
+          "float_bound": 46.337,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "463369/10000",
+          "float_bound": 46.3369,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    },
+    "12": {
+      "numerical": {
+        "success": true,
+        "deg": 12,
+        "ngrid": 241,
+        "bound": 46.336869215638316,
+        "c": [
+          1.0,
+          4.546359249124393,
+          9.44582114704796,
+          13.088551236368184,
+          10.6828883367176,
+          5.908036952944083,
+          0.0,
+          0.0,
+          0.0,
+          1.5160626290752408,
+          0.14914966436085458,
+          0.0,
+          0.0
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "231/5",
+          "float_bound": 46.2,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "927/20",
+          "float_bound": 46.35,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "46337/1000",
+          "float_bound": 46.337,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "463369/10000",
+          "float_bound": 46.3369,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    },
+    "14": {
+      "numerical": {
+        "success": true,
+        "deg": 14,
+        "ngrid": 241,
+        "bound": 46.336869215638316,
+        "c": [
+          1.0,
+          4.546359249124393,
+          9.44582114704796,
+          13.088551236368184,
+          10.6828883367176,
+          5.908036952944083,
+          0.0,
+          0.0,
+          0.0,
+          1.5160626290752408,
+          0.14914966436085458,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "231/5",
+          "float_bound": 46.2,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "927/20",
+          "float_bound": 46.35,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "46337/1000",
+          "float_bound": 46.337,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "463369/10000",
+          "float_bound": 46.3369,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    },
+    "16": {
+      "numerical": {
+        "success": true,
+        "deg": 16,
+        "ngrid": 241,
+        "bound": 46.336869215638316,
+        "c": [
+          1.0,
+          4.546359249124393,
+          9.44582114704796,
+          13.088551236368184,
+          10.6828883367176,
+          5.908036952944083,
+          0.0,
+          0.0,
+          0.0,
+          1.5160626290752408,
+          0.14914966436085458,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "rational_attempts": [
+        {
+          "den": 10,
+          "certified": false,
+          "bound": "231/5",
+          "float_bound": 46.2,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 100,
+          "certified": false,
+          "bound": "927/20",
+          "float_bound": 46.35,
+          "excludes": [],
+          "positive_sample": true
+        },
+        {
+          "den": 1000,
+          "certified": false,
+          "bound": "46337/1000",
+          "float_bound": 46.337,
+          "excludes": [],
+          "positive_sample": false
+        },
+        {
+          "den": 10000,
+          "certified": false,
+          "bound": "463369/10000",
+          "float_bound": 46.3369,
+          "excludes": [],
+          "positive_sample": true
+        }
+      ]
+    }
+  },
+  "best_certified": {
+    "deg": 5,
+    "source": "ansatz (t-1/2)q(t)^2",
+    "c": [
+      "1109/2520",
+      "233/108",
+      "407/90",
+      "617/99",
+      "320/63",
+      "800/297"
+    ],
+    "bound": "53235/1109",
+    "float_bound": 48.00270513976555,
+    "excludes": [],
+    "gegenbauer_coeffs": [
+      "1109/2520",
+      "233/108",
+      "407/90",
+      "617/99",
+      "320/63",
+      "800/297"
+    ],
+    "T": "unrestricted [-1,1/2]",
+    "unrestricted": true
+  },
+  "excludes_any_k": [],
+  "comment": "Unrestricted Delsarte cannot beat the Odlyzko\u2013Sloane number \u224846.345. No dual found here has bound < 44, so no k in {41,42,43} is excluded without a restricted angle set."
+}

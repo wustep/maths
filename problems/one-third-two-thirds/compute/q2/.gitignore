@@ -1,0 +1,5 @@
+ladder_census
+three_rail_census
+interval_census
+*.o
+*.out
