@@ -2,8 +2,10 @@
 
 `q1/` replays the published record and the remainder tightening.
 `q2/` is the compact-aspect search (residue without the lift).
-`q3/` lifts the aspect-12 compact bound to every radial
-probability and replaces the printed leading $1.1185$.
+`q3/` lifts the aspect-12 compact bound and replaces printed $1.1185$
+by $1.1118$.
+`q4/` tightens the compact mid-radius bound at aspect $10$ and
+replaces $1.1118$ by $1.1057$.
 
 ```bash
 ./run_all.sh

@@ -1,0 +1,147 @@
+{
+  "not_a_lower_bound": true,
+  "method": "Endpoint identities M_{-1}=Q+(Q-1)D, M_3=(Q-1)R^3+QDR; support [1,R] linear ineqs; 2/3-atom moment reconstruction.",
+  "regions": [
+    {
+      "R": 4,
+      "gamma": 0.901924285641075,
+      "cut": 0.8,
+      "cut_beats_gamma": false,
+      "positivity_only_nonempty_below_gamma": true,
+      "support_only_nonempty_below_gamma": true,
+      "full_moment_nonempty_below_gamma": false,
+      "positivity_below_gamma_count": 95840,
+      "support_below_gamma_count": 1466,
+      "measure_below_gamma_count": 0,
+      "best_positivity_only": {
+        "Q": 0.8000010000000001,
+        "D": 3.999975156281541
+      },
+      "best_with_support": {
+        "Q": 0.8942672775378222,
+        "D": 2.691982118274256,
+        "M_minus1": 0.6096366793531849,
+        "M_3": 2.862511842779096
+      },
+      "best_with_measure": null
+    },
+    {
+      "R": 8,
+      "gamma": 0.9005000199382865,
+      "cut": 0.8888888888888888,
+      "cut_beats_gamma": false,
+      "positivity_only_nonempty_below_gamma": true,
+      "support_only_nonempty_below_gamma": false,
+      "full_moment_nonempty_below_gamma": false,
+      "positivity_below_gamma_count": 95840,
+      "support_below_gamma_count": 0,
+      "measure_below_gamma_count": 0,
+      "best_positivity_only": {
+        "Q": 0.8888898888888889,
+        "D": 7.99991950634312
+      },
+      "best_with_support": null,
+      "best_with_measure": null
+    },
+    {
+      "R": 9,
+      "gamma": 0.900256528070388,
+      "cut": 0.9,
+      "cut_beats_gamma": false,
+      "positivity_only_nonempty_below_gamma": true,
+      "support_only_nonempty_below_gamma": false,
+      "full_moment_nonempty_below_gamma": false,
+      "positivity_below_gamma_count": 95840,
+      "support_below_gamma_count": 0,
+      "measure_below_gamma_count": 0,
+      "best_positivity_only": {
+        "Q": 0.900001,
+        "D": 8.999900625113884
+      },
+      "best_with_support": null,
+      "best_with_measure": null
+    }
+  ],
+  "interior_stationarity_scan": [
+    {
+      "R": 4,
+      "gamma": 0.901924285641075,
+      "moment_feasible_below_gamma_with_3_stationarity": false,
+      "count": 0,
+      "sample": []
+    },
+    {
+      "R": 8,
+      "gamma": 0.9005000199382865,
+      "moment_feasible_below_gamma_with_3_stationarity": false,
+      "count": 0,
+      "sample": []
+    },
+    {
+      "R": 9,
+      "gamma": 0.900256528070388,
+      "moment_feasible_below_gamma_with_3_stationarity": false,
+      "count": 0,
+      "sample": []
+    }
+  ],
+  "positivity_only_witnesses": [
+    {
+      "R": 4.0,
+      "Q": 0.801,
+      "D": 4.0,
+      "M_minus1": 0.0050000000000002265,
+      "M_3": 0.08000000000000362,
+      "positivity_interval": [
+        3.975031210986266,
+        4.025125628140705
+      ],
+      "D_in_positivity_interval": true,
+      "support_ok": false,
+      "three_atom_ok": false
+    },
+    {
+      "R": 4.0,
+      "Q": 0.8942672775378222,
+      "D": 2.691982118274256,
+      "M_minus1": 0.6096366793531849,
+      "M_3": 2.862511842779096,
+      "positivity_interval": [
+        1.8917426611567982,
+        8.457810001607735
+      ],
+      "D_in_positivity_interval": true,
+      "support_ok": true,
+      "three_atom_ok": false
+    }
+  ],
+  "summary": {
+    "4": {
+      "gamma": 0.901924285641075,
+      "cut": 0.8,
+      "cut_beats_gamma": false,
+      "positivity_only_below_gamma": true,
+      "support_only_below_gamma": true,
+      "full_moment_below_gamma": false,
+      "rigorous_R_lift_from_moments_alone": false
+    },
+    "8": {
+      "gamma": 0.9005000199382865,
+      "cut": 0.8888888888888888,
+      "cut_beats_gamma": false,
+      "positivity_only_below_gamma": true,
+      "support_only_below_gamma": false,
+      "full_moment_below_gamma": false,
+      "rigorous_R_lift_from_moments_alone": false
+    },
+    "9": {
+      "gamma": 0.900256528070388,
+      "cut": 0.9,
+      "cut_beats_gamma": false,
+      "positivity_only_below_gamma": true,
+      "support_only_below_gamma": false,
+      "full_moment_below_gamma": false,
+      "rigorous_R_lift_from_moments_alone": false
+    }
+  }
+}

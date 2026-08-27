@@ -58,3 +58,14 @@ Failed / unchanged: APS PRA 29 full text still not obtained this pass; 2207.0832
 - Semantic Scholar `ARXIV:2504.18487` returned HTTP 429 this pass. Not used.
 
 Failed / unchanged: APS PRA 29 full text still not obtained; 2207.08328v2 body still not a record.
+
+## 2026-08-27 — q4, same-day record check (URLs opened this pass)
+
+- [HPS abs, arXiv:2504.18487](https://arxiv.org/abs/2504.18487). Still **v1 only** (25 Apr 2025). STATES $N_c(Z)<1.1185Z+O(Z^{1/3})$. Does NOT list a v2.
+- [HPS HTML, 2504.18487v1](https://arxiv.org/html/2504.18487v1). Re-read Theorem 2.2 / Prop. 2.5 / (4.1). STATES the printed leading $1.1185$. Does NOT prove a coefficient below $1.1185$.
+- [Nam abs, 1009.2367](https://arxiv.org/abs/1009.2367). Latest v3. STATES $N_c<1.22Z+3Z^{1/3}$. Does NOT beat $1.1185$.
+- [Benguria–González-Brantes abs, 2511.07582](https://arxiv.org/abs/2511.07582). Still v1 (10 Nov 2025). STATES a statistics-independent bound for $Z\ge 12$. Does NOT beat $1.1185$ for fermions.
+- [OpenAlex doi:10.48550/arXiv.2504.18487](https://api.openalex.org/works?filter=doi:10.48550/arXiv.2504.18487). STATES `cited_by_count: 0`, id W4416381655.
+- [arXiv API, excess-charge / ionization query](https://export.arxiv.org/api/query?search_query=all:%22excess+charge%22+AND+all:atoms+AND+all:ionization&start=0&max_results=20). Five hits, none a later fermionic leading coefficient. Oldest Hartree–Fock / relativistic / DFT papers only.
+
+Failed / unchanged: APS PRA 29 full text still not obtained; 2207.08328v2 body still not a record. No paper opened this pass proves $N_c\le Z+C$.

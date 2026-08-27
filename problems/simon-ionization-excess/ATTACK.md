@@ -202,3 +202,63 @@ mass-opt scan with no counterexample, stored $R=12$ faces
 $3.9781$ unchanged. $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q3/run_all.sh`.
+
+## 2026-08-27 — q4 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0.
+- Nam 1009.2367v3 and Benguria–González-Brantes 2511.07582v1
+  unchanged: no later fermionic leading coefficient.
+- q1, q2, and q3 replayed (`compute/run_all.sh` through q3),
+  exit 0.
+
+## 2026-08-27 — q4 leftovers: finite $Z$, moments, $P_{\max}$
+
+Lieb still gives the best integers at $Z=2,\ldots,6$. The q3
+simplified $1.1118Z+3.966Z^{1/3}$ sits below printed HPS as a
+real and still above $2Z+1$. Nam Lemma 1 at the Lieb edge and a
+separated four-electron Hylleraas trial do not exclude a new
+integer. $N_0(Z)-Z$ cannot move from a leading coefficient $>1$.
+
+Endpoint identities plus Hölder/Chebyshev leave a nonempty
+abstract $(Q,D)$ region below $\gamma_4$; a representing measure
+on $[1,4]$ was not found in the scan, and no pen-and-paper $R=4$
+lift was obtained. The TV amplitude $1-f_{\min}$ is sharp at
+vertices ($F_{ii}=1$). A spread lemma is numerical only.
+Residue: `compute/q4/work/smallz.md`, `moment_notes.md`,
+`pmax_notes.md`. $1.1168$ stays withdrawn.
+
+## 2026-08-27 — q4 the click: raise $\varphi$ and $n$, split at $R=10$
+
+The q3 bottleneck was the compact $\gamma$ at $R=12$, not the
+cut $12/13$. Certified $\varphi=0.9055$ sat $0.0014$ below SLSQP.
+Larger $n$ shrinks $P=(q-1)/(q+1)$. The split
+$\min(\gamma_R,R/(R+1))$ beats $1.1118$ as soon as $\gamma_R$
+moves up and $R/(R+1)$ still exceeds it. $R=10$ is the first
+row where a certified $\gamma$ and $10/11$ both sit above
+$1/1.1118$.
+
+## 2026-08-27 — q4 dent
+
+Same HPS §7 chain with $\beta_3\ge 0.904414$ (aspect $10$,
+$n=26$ faces, $\varphi=0.9091$):
+
+$$
+N<1.1057Z+3.860\,Z^{1/3}+0.0132+0.1830\,Z^{-1/3}+0.01952\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1057Z+3.946\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
+$10/11$ algebra, mass-opt scan with no counterexample, stored
+$R=10$ $n=26$ faces (C dump and independent Rust Cramer re-enum,
+both copositive, $23$ residual skips). The unrestricted leading
+sits below the aspect-$\le 4$ class-only $1.1087$. $1.1168$ stays
+withdrawn. q1 remainders unchanged. $N_0(Z)-Z$ bounded still
+open.
+
+Replay: `problems/simon-ionization-excess/compute/q4/run_all.sh`.
