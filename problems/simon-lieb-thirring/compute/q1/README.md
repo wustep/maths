@@ -9,9 +9,11 @@ $$
 \frac{L_{1,1}}{L_{1,1}^{\mathrm{cl}}}\le\frac{9\sqrt{3}}{4}\,\mathcal{C}_1.
 $$
 
-The published theorem is $L_{1,d}/L_{1,d}^{\mathrm{cl}}\le 1.456$.
+The 2018 FHJN theorem is $L_{1,d}/L_{1,d}^{\mathrm{cl}}\le 1.456$.
 That conversion drops below $1.456$ precisely when
 $\mathcal{C}_1<1.456\cdot 4/(9\sqrt{3})\approx 0.373610$.
+The later published record is Carvalho Corso–Ried $1.44655$; a pair
+below $1.456$ is not a beat of that number.
 
 ## Certified pair
 
