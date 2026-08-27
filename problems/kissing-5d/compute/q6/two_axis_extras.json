@@ -1,0 +1,250 @@
+{
+  "n_pools": 10,
+  "n_expected": 10,
+  "found_41": false,
+  "n_sat_unsat": 10,
+  "n_bb_complete_empty": 9,
+  "pools": [
+    {
+      "axes": [
+        0,
+        1
+      ],
+      "stars": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 17,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        0,
+        2
+      ],
+      "stars": [
+        0,
+        1,
+        4,
+        5
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 17,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        0,
+        3
+      ],
+      "stars": [
+        0,
+        1,
+        6,
+        7
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 17,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        0,
+        4
+      ],
+      "stars": [
+        0,
+        1,
+        8,
+        9
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 400001,
+      "bb_complete": false,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        1,
+        2
+      ],
+      "stars": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 89,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        1,
+        3
+      ],
+      "stars": [
+        2,
+        3,
+        6,
+        7
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 81,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        1,
+        4
+      ],
+      "stars": [
+        2,
+        3,
+        8,
+        9
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 1707,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        2,
+        3
+      ],
+      "stars": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 917,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        2,
+        4
+      ],
+      "stars": [
+        4,
+        5,
+        8,
+        9
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 1703,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    },
+    {
+      "axes": [
+        3,
+        4
+      ],
+      "stars": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "k": 28,
+      "n_extras": 320,
+      "n_type_A": 64,
+      "n_seeds": 64,
+      "bb_best": 19,
+      "bb_nodes": 2603,
+      "bb_complete": true,
+      "bb_hit": false,
+      "found_41": false,
+      "sat": false,
+      "cnf_vars": 15770,
+      "cnf_clauses": 45288
+    }
+  ],
+  "comment": "Two-axis 4-star leftover.  Pure four-seeds.  SAT-unsat without DRAT is residue.  Did not claim tau5=40."
+}

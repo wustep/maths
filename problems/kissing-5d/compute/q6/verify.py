@@ -127,6 +127,8 @@ def main() -> int:
         "star_cover_min.json",
         "five_star_color.json",
         "five_star_sample.json",
+        "five_star_sat.json",
+        "leftover_global.json",
         "leftover_sat.json",
         "leftover_sat_k19.json",
     ):

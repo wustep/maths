@@ -541,7 +541,15 @@ classical Levenshtein number 48 before claiming any comparison.
   still $\approx 46.33687$; rationalizations fail Sturm; 51 certified
   $(t-1/2)q^2$ ansätze, best $221991/3733\approx 59.47$. Did not beat
   Mittelmann–Vallentin. Did not claim $\tau_5=40$.
+- Two-axis leftover SAT: all ten $k=28$ pools are SAT-unsat
+  (`two_axis_extras.json`). Nine of ten Python B&Bs were already
+  complete empty. SAT-unsat without a stored DRAT is residue for
+  those CNFs; the C / leftover-tight Python emptiness is the
+  certificate.
+- Global leftover-tight extras B&B with the 4-star grow-prune
+  (`leftover_global.json`, `n_four_star=210`) ran 200M nodes, no
+  41-set, incomplete. Same leftover as q5 extras B&B, plus the prune.
 - Global leftover SAT $k=19$ with star-cover $\ge 5$ (30{,}678 vars)
-  and leftover-tight extras B&B with a 4-star grow-prune are running.
-  Residue unless a later verifier-plus-certificate pair moves the
-  interval. Unrestricted range still $40\le\tau_5\le 44$.
+  and leftover-tight SAT on a sample of 5-star $k=32$ pools are
+  running. Residue unless a later verifier-plus-certificate pair
+  moves the interval. Unrestricted range still $40\le\tau_5\le 44$.
