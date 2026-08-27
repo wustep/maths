@@ -170,7 +170,7 @@ Replay: `sh compute/run_all.sh`, or just
   $\{-1,-1/2,0,1/2\}$ has 41, 42, 43 or 44 points.
 - $Q_5$ has no additional equatorial point.
 
-**Still open.**
+**Still open (as of 17 August).**
 
 - The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
 - Existence of a 41–44 point code whose angle set is not contained in
@@ -181,3 +181,52 @@ Replay: `sh compute/run_all.sh`, or just
   is high-accuracy numerical, not a rational Gram matrix.
 - Maximality of $Q_5$ and $R_5$ as spherical codes (numerical slack
   is negative, not a proof).
+
+## 7. 27 August: the polar is the same $5/4$ for every published code
+
+The missing object on 17 August, for $Q_5$ and $R_5$, was a positivity
+certificate that no 41st equal-norm point exists. Powell on the sphere
+sat on a $2/\sqrt5$ hole with slack $\approx-0.2649$. That is the same
+deep-hole inner product that kills $D_5$, but $Q_5$ does not contain
+enough $D_5$ roots for the pair-sum argument.
+
+The polar $P(C)=\{x:\langle x,p\rangle\le 1\ \forall p\in C\}$ is the
+exact feasible set for a new point of any length. It is a 5-dimensional
+polytope with rational vertices. $|x|^2$ is convex, so its maximum is
+at a vertex. Enumerating the $C(40,5)$ tight 5-planes — once in C,
+once in Python, same independent-set and vertex counts — gives
+
+$$
+\max_{x\in P(C)}|x|^2=\frac54<2
+$$
+
+for each of $D_5,L_5,Q_5,R_5$. The recorded maximizer of $Q_5$ is
+$-\frac12(1,1,1,1,1)$, which saturates ten reflected-cap inequalities
+at inner product 1 and has squared norm $5/4$. So the 17 August
+numerical hole *was* the polar vertex, scaled up to the sphere; it
+never reaches squared norm 2.
+
+That closes maximality of $Q_5$ and $R_5$. It does not close $\tau_5$.
+
+The other click the same night was integrality on $T_{Q_5}$. The real
+dual sits at $44.67$ and cannot exclude 44. Clearing denominators in
+the Gegenbauer rows and scanning the integer box
+($14.7$ billion points, pad 15 around the real AABB, $n_{-1}$ unrestricted)
+finds no feasible $(n_t)$ at $N=44$. The published $Q_5$ histogram at
+$N=40$ passes the same tables. So 44 is impossible among codes whose
+distinct inner products lie in the $Q_5$ angle set. Integer $T_{L_5}$
+still has hits at 41, 42 and 43.
+
+**Proved on 27 August (restricted).**
+
+- $D_5,L_5,Q_5,R_5$ are all maximal as spherical codes.
+- No spherical code in $S^4$ with inner products in
+  $\{-1,-4/5,-1/2,-3/10,0,1/5,1/2\}$ has 44 points.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 41–43 point code whose angles are not contained in $T_{D_5}$ and
+  which is not one of the four published 40-point codes plus a point
+  (those four are now maximal).
+- An exact SOS certificate that $s_d(5)<44$.

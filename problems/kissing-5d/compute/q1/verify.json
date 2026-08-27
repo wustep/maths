@@ -1,0 +1,54 @@
+{
+  "duals": {
+    "present": true,
+    "ok": true,
+    "duals": {}
+  },
+  "polar_cert": {
+    "ok": true
+  },
+  "polar": {
+    "D5": {
+      "checked": true,
+      "ok": true,
+      "norm2": "5/4",
+      "lt_2": true
+    },
+    "L5": {
+      "checked": true,
+      "ok": true,
+      "norm2": "5/4",
+      "lt_2": true
+    },
+    "Q5": {
+      "checked": true,
+      "ok": true,
+      "norm2": "5/4",
+      "lt_2": true
+    },
+    "R5": {
+      "checked": true,
+      "ok": true,
+      "norm2": "5/4",
+      "lt_2": true
+    }
+  },
+  "l5_hits": {
+    "present": true,
+    "ok": true,
+    "N": {
+      "41": {
+        "n_hits": 3,
+        "all_ok": true
+      },
+      "42": {
+        "n_hits": 3,
+        "all_ok": true
+      },
+      "43": {
+        "n_hits": 3,
+        "all_ok": true
+      }
+    }
+  }
+}

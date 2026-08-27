@@ -1,0 +1,126 @@
+{
+  "D5": {
+    "n_points": 40,
+    "scale": 10,
+    "n_5subsets": 658008,
+    "n_independent": 246784,
+    "n_vertices": 5504,
+    "bounded": true,
+    "max_norm2": "5/4",
+    "max_norm2_lt_2": true,
+    "maximal_as_spherical_code": true,
+    "max_vertex": {
+      "support": [
+        0,
+        4,
+        8,
+        12,
+        16
+      ],
+      "z": [
+        -100000,
+        -100000,
+        -100000,
+        -100000,
+        -100000
+      ],
+      "d": 200000,
+      "norm2": "5/4"
+    },
+    "name": "D5",
+    "engine": "polar.c"
+  },
+  "L5": {
+    "n_points": 40,
+    "scale": 10,
+    "n_5subsets": 658008,
+    "n_independent": 338800,
+    "n_vertices": 5440,
+    "bounded": true,
+    "max_norm2": "5/4",
+    "max_norm2_lt_2": true,
+    "maximal_as_spherical_code": true,
+    "max_vertex": {
+      "support": [
+        0,
+        1,
+        4,
+        8,
+        32
+      ],
+      "z": [
+        200000,
+        0,
+        0,
+        0,
+        -100000
+      ],
+      "d": -200000,
+      "norm2": "5/4"
+    },
+    "name": "L5",
+    "engine": "polar.c"
+  },
+  "Q5": {
+    "n_points": 40,
+    "scale": 10,
+    "n_5subsets": 658008,
+    "n_independent": 404664,
+    "n_vertices": 4024,
+    "bounded": true,
+    "max_norm2": "5/4",
+    "max_norm2_lt_2": true,
+    "maximal_as_spherical_code": true,
+    "max_vertex": {
+      "support": [
+        0,
+        3,
+        6,
+        9,
+        12
+      ],
+      "z": [
+        -100000,
+        -100000,
+        -100000,
+        -100000,
+        -100000
+      ],
+      "d": 200000,
+      "norm2": "5/4"
+    },
+    "name": "Q5",
+    "engine": "polar.c"
+  },
+  "R5": {
+    "n_points": 40,
+    "scale": 10,
+    "n_5subsets": 658008,
+    "n_independent": 454692,
+    "n_vertices": 3960,
+    "bounded": true,
+    "max_norm2": "5/4",
+    "max_norm2_lt_2": true,
+    "maximal_as_spherical_code": true,
+    "max_vertex": {
+      "support": [
+        0,
+        1,
+        3,
+        6,
+        26
+      ],
+      "z": [
+        200000,
+        0,
+        0,
+        0,
+        -100000
+      ],
+      "d": -200000,
+      "norm2": "5/4"
+    },
+    "name": "R5",
+    "engine": "polar.c"
+  }
+}

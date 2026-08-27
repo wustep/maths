@@ -133,7 +133,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
 | [union-closed](problems/union-closed) | $0.38285$ on $\{b,1\}$ with iid+Example-4 at $\beta=1/5$ (mesh min ratio $1.000077$). Recovers Liu $0.382709$. Not $1/2$. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
-| [kissing-5d](problems/kissing-5d) | Restricted Delsarte: $$T_{D_5}$$ bound 42, $$T_{L_5}$$ bound $239925/5456<44$. Unrestricted $40\le\tau_5\le 44$ unchanged. |
+| [kissing-5d](problems/kissing-5d) | All four 40-point codes are maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44 in that class. Unrestricted range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
 | [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 21. Conjecture open. |
@@ -202,6 +202,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok 4.6 | 2026-08-17 |
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
+| kissing number 5d / polar maximality and Q5 integer 44 | `problems/kissing-5d/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |

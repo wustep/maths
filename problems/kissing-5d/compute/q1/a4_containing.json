@@ -1,0 +1,29 @@
+{
+  "A4_polytope_max_norm2": "6/5",
+  "norm2_by_k": {
+    "1": "4/5",
+    "2": "6/5",
+    "3": "6/5",
+    "4": "4/5"
+  },
+  "height": {
+    "min_s^2": "4",
+    "min_|s|": "2",
+    "from": "2 - 6/5 = 4/5 = s^2/5"
+  },
+  "poles": {
+    "min_<pole,extra>^2": "8/5",
+    "threshold^2": "1",
+    "pole_conflicts_same_hemisphere": true
+  },
+  "discrete_vertex_extras": {
+    "north_independence": 10,
+    "south_independence": 10,
+    "both_independence": 20,
+    "Q5_layer_pair_size": 20,
+    "D5_layer_pair_size": 20,
+    "all_kiss_A4": true,
+    "A4_plus_max_vertex_extras": 40
+  },
+  "comment": "Vertex extras in one hemisphere have independence number 10 (either the D5 layer or the Q5 reflection layer). Both hemispheres together still max out at 20 extras, hence 40 with A4. Continuous extras with |s|>2 are not in this graph."
+}

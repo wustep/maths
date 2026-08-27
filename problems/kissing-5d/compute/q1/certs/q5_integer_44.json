@@ -1,0 +1,9 @@
+{
+  "comment": "Integer distance distributions for T_Q5 = {-1,-4/5,-1/2,-3/10,0,1/5,1/2} at N=44. Real Delsarte allows ≈44.67; the integer slice is empty on a box that contains the HiGHS axis-aligned range by 15 in each coordinate (n_{-1} searched in full 0..22). Replay: dump_q5_tables.py (Q5 N=40 witness) then integer_q5_44.c. This excludes size 44 in the T_Q5 class. It does not exclude 41, 42 or 43, and it is not an unrestricted dual.",
+  "T": ["-1", "-4/5", "-1/2", "-3/10", "0", "1/5", "1/2"],
+  "N": 44,
+  "empty": true,
+  "excludes": [44],
+  "bound_kind": "integer Delsarte slice",
+  "real_delsarte": "44.672727..."
+}

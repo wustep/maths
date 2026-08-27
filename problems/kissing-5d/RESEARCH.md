@@ -140,3 +140,55 @@ compute/.venv/bin/python compute/verify_certificates.py
 
 Expected last lines: `D5_inner_products: certified=True bound=42 … excludes=[43, 44]`
 and `L5_inner_products: certified=True bound=239925/5456 … excludes=[44]`.
+
+## 2026-08-27 — record still $40\le\tau_5\le 44$
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $40\le\tau_5\le 44$, conjectural value 40. Upper bound cited is
+  Mittelmann–Vallentin.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Later-dimension news (Cohn–Li, de Laat–
+  Leijenhorst, Ma et al. 2511.13391, …) does not touch dim 5.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026): “appears to be 40…
+  best upper bound that has been proved is 44”. Four 40-point geometries.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.998\ldots$, hence
+  $\tau_5\le 44$. Still the published upper bound.
+- https://arxiv.org/abs/1507.03631 — survey story $48\to 46.345\to 45\to 44.998$.
+- https://arxiv.org/abs/2301.08272 — Szöllősi $Q_5$, third 40-point code.
+- https://doi.org/10.5281/zenodo.18449600 — unaffiliated note claiming a
+  degree-36 Cohn–Kumar number $44.0297$. Not a paper; not an exact dual;
+  unrestricted Delsarte is already $\approx 46.345$. Lead only.
+
+## 2026-08-27 — what we certified this run
+
+Still **no** change to the unrestricted range $40\le\tau_5\le 44$.
+
+### 5. Polar maximality of the four 40-point codes
+
+`compute/q1/polar_vertices.json`, replayed by `replay_max_vertex.py`
+(Fraction GE, not the Cramer path in `polar.c`). For each of
+$D_5,L_5,Q_5,R_5$ the polar is bounded and $\max|x|^2=5/4<2$.
+Python and C enumerations agree on the vertex counts. Consequently
+none of these four codes admits a 41st kissing point. This is a
+statement about those four codes, not about $\tau_5$.
+
+### 6. Integer Delsarte on $T_{Q_5}$ excludes 44
+
+`compute/q1/integer_q5_44.json`: $14\,753\,818\,985$ integer points in
+a box containing the real AABB by 15, zero Delsarte-feasible. Tables
+match `delsarte.py`; $Q_5$'s own $N=40$ histogram passes. So $k=44$
+is impossible for inner products in
+$T_{Q_5}=\{-1,-4/5,-1/2,-3/10,0,1/5,1/2\}$. Real Delsarte is still
+$\approx 44.67$; this is integrality, not a dual below 44.
+
+$T_{L_5}$ still has integer hits at $N=41,42,43$
+(`compute/q1/integer_restricted.json`).
+
+Replay:
+
+```bash
+sh problems/kissing-5d/compute/q1/run_all.sh
+```

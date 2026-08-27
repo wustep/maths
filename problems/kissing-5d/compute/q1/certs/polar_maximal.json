@@ -1,0 +1,8 @@
+{
+  "comment": "Each of D5, L5, Q5, R5 has polar {x : <x,p> ≤ 1 for all code points p} with max |x|^2 = 5/4 < 2. Therefore none of the four published 40-point codes admits a 41st kissing point. Replay: polar_vertices.py (C) and --python (Q5, R5); replay_max_vertex.py solves the recorded tight planes over Q.",
+  "max_norm2": "5/4",
+  "target_norm2": "2",
+  "codes": ["D5", "L5", "Q5", "R5"],
+  "maximal": true,
+  "excludes_on_these_codes": [41, 42, 43, 44]
+}

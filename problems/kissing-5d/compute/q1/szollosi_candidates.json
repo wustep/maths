@@ -1,0 +1,38 @@
+{
+  "D5": {
+    "name": "D5",
+    "basis_size": 5,
+    "n_T5_on_sphere": 355,
+    "pool": 355,
+    "max_clique": null,
+    "beats_40": false,
+    "note": "pool 355 too large for exact clique; no 41 claimed"
+  },
+  "L5": {
+    "name": "L5",
+    "basis_size": 5,
+    "n_T5_on_sphere": 355,
+    "pool": 355,
+    "max_clique": null,
+    "beats_40": false,
+    "note": "pool 355 too large for exact clique; no 41 claimed"
+  },
+  "Q5": {
+    "name": "Q5",
+    "basis_size": 5,
+    "n_T5_on_sphere": 355,
+    "pool": 355,
+    "max_clique": null,
+    "beats_40": false,
+    "note": "pool 355 too large for exact clique; no 41 claimed"
+  },
+  "R5": {
+    "name": "R5",
+    "basis_size": 5,
+    "n_T5_on_sphere": 355,
+    "pool": 355,
+    "max_clique": null,
+    "beats_40": false,
+    "note": "pool 355 too large for exact clique; no 41 claimed"
+  }
+}
