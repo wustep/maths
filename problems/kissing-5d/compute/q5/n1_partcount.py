@@ -364,6 +364,25 @@ def main() -> int:
         for k in extra:
             run_k(k, milp_solve=False)
 
+    report["by_k"] = {}
+    for key, sl in report["slices"].items():
+        row = {}
+        for name in ("unrestricted", "star_free"):
+            rec = sl[name]
+            row[name] = {
+                "max_ns": rec.get("max_ns"),
+                "incumbent": rec.get("incumbent"),
+                "status": rec.get("status"),
+                "empty_by_part_count": rec.get("empty_by_part_count"),
+            }
+            ctor = sl.get(f"{name}_construction")
+            if ctor:
+                row[name]["construction_ns"] = ctor.get("verified_ns")
+                row[name]["promising_witness"] = bool(
+                    rec.get("promising_witness") or ctor.get("promising_witness")
+                )
+        report["by_k"][key] = row
+
     path = HERE / "n1_partcount.json"
     path.write_text(json.dumps(report, indent=2) + "\n")
     print("wrote", path)
