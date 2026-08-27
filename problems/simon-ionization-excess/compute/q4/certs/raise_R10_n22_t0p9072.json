@@ -1,0 +1,28 @@
+{
+  "source": "assemble_mid R=10.0 n=22",
+  "R": 10.0,
+  "n": 22,
+  "target": 0.9072,
+  "faces": {
+    "n": 22,
+    "gamma_target": 0.9072,
+    "n_faces": 4194303,
+    "interior_critical": 31980,
+    "singular_or_illconditioned": 0,
+    "min_mMm": 0.001583217314109407,
+    "min_mMm_safe": 0.001583217214109407,
+    "min_phi": 0.9076920065299535,
+    "min_phi_safe": 0.9076920064299535,
+    "copositive": 1
+  },
+  "certified": true,
+  "err_P_hi": 0.005536460334878492,
+  "P_max_hi": 0.05228376027923394,
+  "compact_gamma": 0.9016635396651215,
+  "compact_inv": 1.1090611475444607,
+  "cut": 0.9090909090909091,
+  "split_gamma": 0.9016635396651215,
+  "split_inv": 1.1090611475444607,
+  "matrix": "certs/beta3_mid_R10_n22_t0p9072.txt",
+  "faces_path": "certs/beta3_mid_faces_R10_n22_t0p9072.txt"
+}

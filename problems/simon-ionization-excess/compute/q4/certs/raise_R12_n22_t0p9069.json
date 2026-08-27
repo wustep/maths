@@ -1,0 +1,28 @@
+{
+  "source": "q2 stored R=12 n=22 matrix (A,c reused; only \u03b3 changes)",
+  "R": 12.0,
+  "n": 22,
+  "target": 0.90685,
+  "faces": {
+    "n": 22,
+    "gamma_target": 0.90685,
+    "n_faces": 4194303,
+    "interior_critical": 22052,
+    "singular_or_illconditioned": 0,
+    "min_mMm": 0.00025709048232144284,
+    "min_mMm_safe": 0.00025709038232144286,
+    "min_phi": 0.9069249720804466,
+    "min_phi_safe": 0.9069249719804466,
+    "copositive": 1
+  },
+  "certified": true,
+  "err_P_hi": 0.00597394753330731,
+  "P_max_hi": 0.05641518621283777,
+  "compact_gamma": 0.9008760524666928,
+  "compact_inv": 1.1100306166002476,
+  "cut": 0.9230769230769231,
+  "split_gamma": 0.9008760524666928,
+  "split_inv": 1.1100306166002476,
+  "matrix": "certs/beta3_mid_R12_n22_t0p9069.txt",
+  "faces_path": "certs/beta3_mid_faces_R12_n22_t0p9069.txt"
+}

@@ -96,7 +96,8 @@ def main() -> None:
     write_matrix(A, c, args.target, mat)
 
     cbin = HERE / "verify_beta3"
-    subprocess.check_call(["gcc", "-O3", "-o", str(cbin), str(C_SRC), "-lm"])
+    if not cbin.exists():
+        subprocess.check_call(["gcc", "-O3", "-o", str(cbin), str(C_SRC), "-lm"])
     print(f"enumerating {n} bins, {(1<<n)-1} faces, target={args.target}")
     subprocess.check_call([str(cbin), str(mat), str(fac)], cwd=str(HERE))
     faces = parse_faces(fac)

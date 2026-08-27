@@ -1,7 +1,10 @@
 verify_beta3
 verify_lift
 verify_aspect
+verify_aspect_rs
+verify_faces_rs
 *_rs
 __pycache__/
 work/__pycache__/
+work/*.log
 *.pyc

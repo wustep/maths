@@ -47,3 +47,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=12$, $n=22$ faces (copositive, $5$ skips); stdlib reconstruction of $\gamma=\phi-P_{\max}(1-f_{\min})$; C and Rust on the $12/13$ grid and the $V(1)$, $V(R)$ identities; mass-opt scan, min $Q=0.923274>12/13$; $64$-atom trial $Q<12/13$ (upper bound on $\beta_3$ only); interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1185$ moves to $1.1118$. Remainders $2.953$, $3.892$, $3.9781$ stay. Aspect-$\le 4$ $1.1087$ is not unrestricted. $1.1168$ stays withdrawn. $s>3$ closed along Lemma 4.3. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later the same day — raise the compact $\gamma$
+
+0. What was actually missing — after the mass-opt lift, the leading coefficient is $1/\gamma_R$ for the smallest compact class whose cut $R/(R+1)$ still exceeds $\gamma_R$. At $R=12$ that $\gamma$ was $0.899526$ because the face target sat at $0.9055$ and the $P_{\max}$ tax was $0.006$. The degree of freedom was the target and the number of bins, not a new tail polynomial.
+
+1. Named false starts — quoting $1.1087$ unrestricted (the $R=4$ cut is $4/5$); a moment-only $R=4$ lift (Hölder leaves a nonempty abstract $(Q,D)$ hole); replacing $P(1-f_{\min})$ by a spread (vertices have $\lambda=1$); $s>3$ and finite-$Z$ integers (still residue); recycling the withdrawn $1.1168$.
+
+2. The useful failure — two-atomic mass-critical $Q(R)$ sits far above $R/(R+1)$ (at $R=4$, $Q\approx 0.970$), so the positivity cut is loose on $2$-atoms and still the only closed large-aspect bound. Forced-endpoint $k$-atomic mass-opt stays above $0.92$. That teaches that the jump is in the compact certificate, not in a sharper cut.
+
+3. The click — SLSQP $\varphi$ at $R=12$, $n=22$ is $0.90692$, already above the certified $0.9055$. Raising the target is a re-run of the same faces. Dropping the split from $12$ to $10$ and taking $n=26$ shrinks $P$ enough that $\gamma=0.904414$ and $10/11> \gamma$. Then $1/\gamma=1.105688<1.1057<1.1118$, and the unrestricted number sits below the old class-only $1.1087$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=26$ faces ($67{,}108{,}863$, copositive, $23$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`. Intermediate certified rows ($R=12$ $n=22$ at $0.90685$, $R=10$ $n=24$ at $0.9084$) sit between $1.1118$ and $1.1057$.
+
+6. Proven vs still open — printed leading $1.1118$ moves to $1.1057$. Remainders $2.953$, $3.892$, $3.9781$ stay. Aspect-$\le 4$ $1.1087$ is no longer the best unrestricted figure and is still not used as a class-only quote. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
