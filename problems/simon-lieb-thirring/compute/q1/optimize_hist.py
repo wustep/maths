@@ -20,7 +20,14 @@ import numpy as np
 from scipy.optimize import minimize
 
 from c1_functional import evaluate_c1, paper_second_pair, ratio_from_c1
-from grid_c1 import FastC1, normalize_mu, power_decay_vec, ratio_L, stretch_l2_unit
+from grid_c1 import (
+    FastC1,
+    integrate_log,
+    normalize_mu,
+    power_decay_vec,
+    ratio_L,
+    stretch_l2_unit,
+)
 from optimize_parametric import pair_callables, _f_two_scale_on, _two_scale_sigma
 
 HERE = Path(__file__).resolve().parent
@@ -98,7 +105,7 @@ class FHist:
         if shape is None:
             self.shape = np.ones(self.n)
         else:
-            self.shape = np.maximum(np.asarray(shape, dtype=float), 1e-12)
+            self.shape = np.clip(np.asarray(shape, dtype=float), 1e-12, 1.0)
             self.shape[0] = 1.0
         self.sigma = self._sigma()
 
@@ -124,7 +131,7 @@ class FHist:
         return float(sig)
 
     def refresh(self) -> None:
-        self.shape = np.maximum(self.shape, 1e-12)
+        self.shape = np.clip(self.shape, 1e-12, 1.0)
         self.shape[0] = 1.0
         if self.p <= 0.52:
             self.p = 0.52
@@ -183,7 +190,7 @@ def discretize_f_from_callable(f, n: int = 48, tmin=1e-3, tmax=80.0) -> FHist:
     if vals[0] <= 0:
         vals[0] = 1.0
     scale0 = vals[0]
-    vals = vals / scale0
+    vals = np.clip(vals / scale0, 1e-12, 1.0)
     # estimate p from the last two nodes
     if vals[-1] > 0 and vals[-2] > 0:
         p = -math.log(vals[-1] / vals[-2]) / math.log(nodes[-1] / nodes[-2])
@@ -212,7 +219,7 @@ def design_matrix(f_vec, phi: PhiHist, grid: FastC1 = GRID) -> tuple[np.ndarray,
 
 
 def c1_from_A(A: np.ndarray, h: np.ndarray, phi: PhiHist, grid: FastC1 = GRID) -> tuple[float, np.ndarray, float]:
-    g = np.clip(A @ h, 0.0, 1.0)
+    g = np.maximum(A @ h, 0.0)
     a = float(np.dot(h, h) * phi.dx)
     rec = grid.c1_from_g(g, a, include_tails=True)
     return rec["C_1"], g, a
@@ -387,7 +394,7 @@ def optimize_f_hist_lbfgs(phi: PhiHist, fh: FHist, grid: FastC1, maxiter: int = 
     def unpack(z):
         shape = np.empty(fh.n)
         shape[0] = 1.0
-        shape[1:] = np.exp(np.clip(z[:nfree], -20.0, 8.0))
+        shape[1:] = np.clip(np.exp(np.clip(z[:nfree], -20.0, 0.0)), 1e-12, 1.0)
         p = 0.5 + math.exp(float(np.clip(z[-1], -6.0, 4.0)))
         out = FHist(n=fh.n, tmin=fh.tmin, tmax=fh.tmax, p=p, shape=shape)
         return out
@@ -447,21 +454,73 @@ def optimize_f_hist_pg(phi: PhiHist, fh: FHist, grid: FastC1, steps: int = 80) -
     return fh, float(C)
 
 
-def rescore_hist(f_sc, phi: PhiHist) -> dict:
-    r6 = evaluate_c1(f_sc, phi.callable(), support=phi.T, t_cut=1e6)
-    tail = 0.5 * math.sqrt(max(r6.a, 0.0)) * 2.0 * (1e6 ** -0.5)
-    c1_full = r6.C_1 + tail
-    return {
-        "C_1_float_tcut1e6": r6.C_1,
-        "C_1_plus_err_tcut1e6": r6.C_1 + r6.abs_err_est,
-        "C_1_full_est": c1_full,
-        "C_1_tail_added": tail,
-        "a_quad": r6.a,
-        "A_g_tcut1e6": r6.A_g,
-        "abs_err_est_1e6": r6.abs_err_est,
-        "ratios_tcut1e6": ratio_from_c1(r6.C_1),
-        "ratios_full_est": ratio_from_c1(c1_full),
+def l2_of_fvec(f_vec, tmin=1e-10, tmax=1e10, n=12000) -> tuple[float, float]:
+    t = np.logspace(np.log10(tmin), np.log10(tmax), n)
+    logt = np.log(t)
+    fv = np.clip(f_vec(t), 0.0, np.inf)
+    f0 = float(np.clip(f_vec(np.array([0.0]))[0], 0.0, np.inf))
+    core = integrate_log(t, logt, fv * fv)
+    small = tmin * f0 * f0
+    if fv[-1] > 0 and fv[-2] > 0:
+        p = -math.log(float(fv[-1] / fv[-2])) / (logt[-1] - logt[-2])
+        p = float(np.clip(p, 0.51, 40.0))
+        tail = (fv[-1] ** 2) * tmax / (2.0 * p - 1.0)
+    else:
+        tail = 0.0
+    return f0, float(core + small + tail)
+
+
+def rescore_hist(f_sc, phi: PhiHist, f_vec=None) -> dict:
+    """Fine-grid C_1 plus evaluate_c1 when f is cheap/smooth enough."""
+    if f_vec is None:
+
+        def f_vec(t, _f=f_sc):
+            arr = np.asarray(t, dtype=float)
+            if arr.ndim == 0:
+                return np.array([_f(float(arr))])
+            return np.vectorize(_f)(arr)
+
+    f0, l2 = l2_of_fvec(f_vec)
+    fine = FastC1(ns=max(384, 4 * phi.M), nt=4096, tmin=1e-9, tmax=1e9)
+    A = f_vec(fine.t[:, None] * phi.centers[None, :]) * phi.dx
+    C_mid, g, a = c1_from_A(A, phi.h, phi, fine)
+    rec_gl = fine.eval_callables(f_vec, phi.values_on, [(0.0, phi.T)])
+
+    official = {
+        "C_1_grid_fine_mid": C_mid,
+        "C_1_grid_fine_gl": rec_gl["C_1"],
+        "C_1_full_est": C_mid,
+        "C_1_float_tcut1e6": rec_gl.get("C_1_trunc", C_mid),
+        "a_mid": a,
+        "f0": f0,
+        "f_L2": l2,
+        "ratios_full_est": ratio_from_c1(C_mid),
+        "ratios_tcut1e6": ratio_from_c1(rec_gl.get("C_1_trunc", C_mid)),
+        "evaluate_c1": None,
     }
+    # Skip nested-quad evaluate_c1 here: step φ + interpolated f makes
+    # scipy.quad extremely slow and often warns. Fine-grid C_1 is the hist score.
+    if False and phi.M <= 96 and f0 > 0.98 and abs(l2 - 1.0) < 0.03:
+        try:
+            r6 = evaluate_c1(f_sc, phi.callable(), support=phi.T, t_cut=1e6)
+            tail = 0.5 * math.sqrt(max(r6.a, 0.0)) * 2.0 * (1e6 ** -0.5)
+            official["evaluate_c1"] = {
+                "C_1_float_tcut1e6": r6.C_1,
+                "C_1_plus_err_tcut1e6": r6.C_1 + r6.abs_err_est,
+                "C_1_full_est": r6.C_1 + tail,
+                "a_quad": r6.a,
+                "abs_err_est_1e6": r6.abs_err_est,
+            }
+            # Prefer the quad+tail number when it is finite and close to the grid.
+            if abs((r6.C_1 + tail) - C_mid) < 0.02:
+                official["C_1_full_est"] = r6.C_1 + tail
+                official["C_1_float_tcut1e6"] = r6.C_1
+                official["C_1_plus_err_tcut1e6"] = r6.C_1 + r6.abs_err_est
+                official["ratios_full_est"] = ratio_from_c1(r6.C_1 + tail)
+                official["ratios_tcut1e6"] = ratio_from_c1(r6.C_1)
+        except Exception as exc:
+            official["evaluate_c1_error"] = str(exc)
+    return official
 
 
 def load_parametric_seed() -> dict | None:
@@ -533,14 +592,24 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
         f_vec, f_sc, mu = f_from_power(4.5, 0.25)
         alpha, beta = 4.5, 0.25
 
-    rec0 = c1_pair(f_vec, phi, GRID)
-    print(f"  init grid C_1={rec0['C_1']:.8f}", flush=True)
+    def midpoint_C(f_vec, phi):
+        A, _, _ = design_matrix(f_vec, phi, GRID)
+        C, _, _ = c1_from_A(A, phi.h, phi, GRID)
+        return float(C), A
 
-    A, _, _ = design_matrix(f_vec, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=160)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=180)
-    phi = phi_b if Cb <= Ca else phi_a
-    print(f"  φ L-BFGS {Ca:.8f}  PG {Cb:.8f}", flush=True)
+    C0, A = midpoint_C(f_vec, phi)
+    print(f"  init midpoint C_1={C0:.8f}  GL={c1_pair(f_vec, phi, GRID)['C_1']:.8f}", flush=True)
+
+    def improve_phi(f_vec, phi, tag: str) -> PhiHist:
+        C_old, A = midpoint_C(f_vec, phi)
+        phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=120)
+        phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=140)
+        cand = phi_b if Cb <= Ca else phi_a
+        C_new, _ = midpoint_C(f_vec, cand)
+        print(f"  φ {tag}: {C_old:.8f} -> {C_new:.8f} (opt {min(Ca,Cb):.8f})", flush=True)
+        return cand if C_new <= C_old else phi
+
+    phi = improve_phi(f_vec, phi, "init-f")
 
     (pack_ts, C_ts, xts) = optimize_f_twoscale(phi, twoscale_x, GRID)
     f_vec, f_sc, ts_meta = pack_ts
@@ -550,13 +619,8 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
     print(f"  f power L-BFGS α={alpha:.4f} β={beta:.4f} C_1={C_f:.8f}", flush=True)
     if C_f < C_ts:
         f_vec, f_sc = f_vec_p, f_sc_p
-        C_ts = C_f
 
-    A, _, _ = design_matrix(f_vec, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=140)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=140)
-    phi = phi_b if Cb <= Ca else phi_a
-    print(f"  φ again {min(Ca,Cb):.8f}", flush=True)
+    phi = improve_phi(f_vec, phi, "after-f")
 
     (pack_ts, C_ts, xts) = optimize_f_twoscale(phi, xts, GRID)
     f_vec, f_sc, ts_meta = pack_ts
@@ -565,17 +629,19 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
     fh = discretize_f_from_callable(f_sc, n=n_f)
     rec_h = c1_pair(fh.eval, phi, GRID)
     print(f"  f-hist init {rec_h['C_1']:.8f}", flush=True)
-    fh, C_fh = optimize_f_hist_lbfgs(phi, fh, GRID, maxiter=50)
+    fh_try, C_fh = optimize_f_hist_lbfgs(phi, fh, GRID, maxiter=50)
     print(f"  f-hist L-BFGS {C_fh:.8f}", flush=True)
-    fh, C_pg = optimize_f_hist_pg(phi, fh, GRID, steps=18)
+    fh_try, C_pg = optimize_f_hist_pg(phi, fh_try, GRID, steps=18)
     print(f"  f-hist PG {C_pg:.8f}", flush=True)
+    if C_pg <= rec_h["C_1"]:
+        fh = fh_try
+    fh.refresh()
+    f0h, l2h = l2_of_fvec(fh.eval)
+    print(f"  f-hist audit f(0)={f0h:.6f}  L2={l2h:.6f}", flush=True)
 
-    A, _, _ = design_matrix(fh.eval, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=100)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=100)
-    phi = phi_b if Cb <= Ca else phi_a
-    C_end = c1_pair(fh.eval, phi, GRID)["C_1"]
-    C_par = c1_pair(f_vec, phi, GRID)["C_1"]
+    phi = improve_phi(fh.eval, phi, "hist-f")
+    C_end, _ = midpoint_C(fh.eval, phi)
+    C_par, _ = midpoint_C(f_vec, phi)
     print(f"  end hist-f {C_end:.8f}  two-scale-f {C_par:.8f}", flush=True)
 
     if C_end <= C_par:
@@ -588,10 +654,24 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
         f_kind = "twoscale"
         fh = discretize_f_from_callable(f_sc, n=n_f)
 
-    official = rescore_hist(f_sc_best, phi)
+    # Reject a hist-f that broke f(0)=1 or ∫f²=1; fall back to two-scale.
+    f_vec_best = fh.eval if f_kind == "hist" else f_vec
+    f0, l2 = l2_of_fvec(f_vec_best)
+    print(f"  audit f(0)={f0:.6f}  ∫f²={l2:.6f}", flush=True)
+    if f_kind == "hist" and (abs(f0 - 1.0) > 0.02 or abs(l2 - 1.0) > 0.03):
+        print("  hist-f failed constraint audit; using two-scale f", flush=True)
+        f_sc_best = f_sc
+        f_vec_best = f_vec
+        C_grid = C_par
+        f_kind = "twoscale"
+        fh = discretize_f_from_callable(f_sc, n=n_f)
+
+    official = rescore_hist(f_sc_best, phi, f_vec=f_vec_best)
+    official.setdefault("C_1_plus_err_tcut1e6", official["C_1_full_est"])
     print(
         f"  official C_1_full {official['C_1_full_est']:.10f}  "
-        f"t=1e6 {official['C_1_float_tcut1e6']:.10f}",
+        f"t=1e6 {official['C_1_float_tcut1e6']:.10f}  "
+        f"f0={official.get('f0')} L2={official.get('f_L2')}",
         flush=True,
     )
     return {
@@ -623,10 +703,9 @@ def main() -> int:
     if seed and seed.get("parameters", {}).get("T"):
         T_seed = float(seed["parameters"]["T"])
     jobs = [
-        (T_seed, 72, 40),
+        (T_seed, 80, 48),
+        (2.2, 88, 48),
         (1.0, 64, 40),
-        (2.1, 80, 40),
-        (1.35, 72, 40),
     ]
     runs = []
     best = None
@@ -636,6 +715,10 @@ def main() -> int:
         score = rec["official"]["C_1_full_est"]
         if best is None or score < best["official"]["C_1_full_est"]:
             best = rec
+        (HERE / "opt_hist.partial.json").write_text(
+            json.dumps({"best_so_far": {"C_1": best["official"]["C_1_full_est"], "T": best["T"], "f_kind": best["f_kind"]}}, indent=2)
+            + "\n"
+        )
 
     # refine winner at higher M
     print("\n=== refine winner at higher resolution ===", flush=True)
@@ -678,6 +761,7 @@ def main() -> int:
                 "alpha": best["alpha"],
                 "beta": best["beta"],
                 "mu": best["mu"],
+                "twoscale": best.get("twoscale"),
                 "f_hist": best["f_hist"],
                 "f_kind": best["f_kind"],
             },

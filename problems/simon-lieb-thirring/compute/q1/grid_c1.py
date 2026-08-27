@@ -193,7 +193,7 @@ class FastC1:
         phi_n = phi / mass
         a = float(np.dot(w, phi_n * phi_n))
         g = f_st @ (w * phi_n)
-        g = np.clip(g, 0.0, 1.0)
+        g = np.maximum(g, 0.0)
         return self.c1_from_g(g, a, include_tails=include_tails)
 
     def eval_callables(self, f_vec, phi_vec, pieces: list[tuple[float, float]]) -> dict[str, float]:
