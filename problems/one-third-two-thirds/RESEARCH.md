@@ -41,3 +41,4 @@ Fetched and read tonight, in the order used.
 
 - No paper claiming a general proof of $1/3$–$2/3$ was treated as a resolution. Chan–Pak and Aires–Kahn still call it open.
 - Aires–Kahn is real progress on Kahn–Saks, not on the $1/3$ constant.
+- [Aires–Kahn, *Variance vs. range for linear extensions, and balancing extensions in posets of bounded width*, arXiv:2510.26134v1](https://arxiv.org/abs/2510.26134) (30 Oct 2025). TODO: claimed result; verified how?

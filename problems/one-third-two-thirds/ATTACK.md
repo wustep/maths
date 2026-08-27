@@ -128,3 +128,20 @@ This beats the published width-3 record (Saks $14/39$, TGF/Olson–Sagan through
 - $W_{10}$ is a certified new finite-order width-3 example. Replay: `python3 compute/verify_W10.py`.
 - Three-chain products: every computed box has $\delta\ge 1/3$; the two-largest-factors pair works whenever both are $\ge 3$. Monotonicity of thickening is observed, not proved. Question 3.9 is not closed.
 - The unrestricted conjecture and Gupta's order-14 GPC frontier are untouched.
+
+## 2026-08-27 — Gupta v2 is a δ-census; q1 starts there
+
+The 17 August note cited Gupta arXiv:2607.23926 as Gold Partition through 14, not a δ-census. That is v1 (27 Jul). Version 2 (30 Jul 2026, title *Balance Constants, Majority Cycles, and the Gold Partition Conjecture through Fourteen Elements*) computes exact balance constants for every one of the 1,338,193,159,771 unlabelled 14-element posets. Opened tonight: abs, HTML v2, and `data/census-n14.txt` on github.com/agupta/gold-partition-conjecture.
+
+Published record, after v2:
+
+- least δ above 1/3 at order 14 is 37/106 (Chen / L_{10,1,5}, padded)
+- least among posets that are not nontrivial ordinal sums is 254/725 = L_{14,1,9}
+- no value in Peczarski's printed gap (1/3, 0.348843)
+- 128 equality classes, all Aigner sums of T and singletons
+- longest majority cycle has length 8 (30 classes)
+- GPC still holds through 14 (unchanged from v1)
+
+The width-3 6/17 row in Gupta's tail is 29 ordinal sums, width 3. That is W_{10} (or a dual) padded by singletons. Every strictly smaller tail value is width 2. So there is no width-3 poset on ≤ 14 elements with δ < 6/17. The first unused width-3 order is 15.
+
+q1 independently replays the named witnesses and the broken-rung table, then searches n≥15 width-3 extensions and the three-rail analogue. Isolated random posets stay residue. The unrestricted conjecture is not claimed.
