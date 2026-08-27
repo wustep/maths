@@ -232,3 +232,125 @@ classical Levenshtein number 48 before claiming any comparison.
   $|s|>2$ are not in that graph.
 - Szöllősi $T^5$ pool: 355 equal-norm vectors. Exact clique on 355
   vertices was not run. Residue, not a 41-point code.
+
+## 2026-08-27 — continue (q2)
+
+- Start from current main (after q1). Folder `compute/q2/`. House rules
+  unchanged: do not claim $\tau_5=40$; a numerical SDP without an exact
+  positivity certificate is residue; do not regress the restricted
+  certificates already in `compute/certs/` and `compute/q1/certs/`.
+- Replayed first, all still pass:
+  `compute/verify_certificates.py` (T_{D_5} bound 42; T_{L_5} bound
+  $239925/5456<44$);
+  `compute/q1/verify.py` / `replay_max_vertex.py` (polar $\max|x|^2=5/4$);
+  `compute/q1/check_q5_44_empty.py` ($T_{Q_5}$ integer slice empty at 44).
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  refs [9] and [17]),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  Cohn–Rajagopal arXiv:2412.00937v3 (4 Mar 2026). The unaffiliated
+  Zenodo note that claimed a Cohn–Kumar number $44.0297$ is now
+  retracted (doi:10.5281/zenodo.18449600, removed 5 Feb 2026). Lead
+  only; not a citation.
+- Hunt: an exact dual that is nonpositive on the whole interval
+  $[-1,1/2]$ and excludes some $k\in\{41,42,43\}$, or a new exact
+  41-point code in $S^4$. Plan: (1) exact clique on the leftover $T^5$
+  pool of 355; (2) exact kissing graph on
+  $(1/2)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$ (200 points; contains
+  $D_5$ and $L_5$); (3) other hyperplane layer-swaps; (4) low-degree
+  unrestricted Delsarte with Sturm / real-root certification.
+
+## 2026-08-27 — q2 results (no unrestricted move)
+
+- Unrestricted numerical Delsarte at degree $\ge 10$ is $46.3368\ldots$,
+  matching Odlyzko–Sloane. Grid-rationalised polynomials fail the exact
+  Sturm test (they change sign on $[-1,1/2]$). An exact ansatz
+  $f(t)=(t-1/2)q(t)^2$ with $q=P_0+(17/6)P_1+(8/3)P_2$ gives bound
+  $53235/1109\approx 48.003$, just above Levenshtein 48. No certified
+  unrestricted dual has bound $<44$. No $k\in\{41,42,43\}$ is excluded
+  without a restricted angle set.
+- $T^5$ pool, after including the basis: 360 rational vectors, all four
+  published 40-point codes are cliques. Five basis vectors are adjacent
+  to every other pool point, so a 41-clique exists iff the remaining
+  355-point graph has a 36-clique. The 41-search on those 355 vertices
+  is empty (`t5_clique.json`, 607171 nodes). The 36-search was started
+  and stopped without a hit or an emptiness proof (`t5_36_residue.json`).
+- Half-integer sphere $(1/2)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$: 200
+  points, no 41-clique (`sphere_d2.json`). This class contains $D_5$
+  and $L_5$.
+- $(1/4)\mathbb Z^5$ sphere: 1480 points. 41-search incomplete
+  (`sphere_d4.json`). Residue.
+- Layer-swaps of $D_5$ and $L_5$ across 546 short integer normals:
+  3148 swaps, kissing sizes $\{34,36,37,39,40\}$, none 41.
+- Signed-permutation orbit of a $Q_5$ cap vector: 320 points, no
+  41-clique (`q5cap_clique.json`, 7 nodes).
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — continue (q3)
+
+- Start from current main (after q2). Folder `compute/q3/`. House rules
+  unchanged: do not claim $\tau_5=40$; a numerical SDP without an exact
+  positivity certificate is residue; do not regress the restricted
+  certificates already in `compute/certs/`, `compute/q1/`, `compute/q2/`.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>
+  (range $40\le\tau_5\le 44$, conjectural value 40; upper bound
+  Mittelmann–Vallentin),
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  Cohn–Rajagopal arXiv:2412.00937v3 (4 Mar 2026; title “Variations on
+  five-dimensional sphere packings”: “appears to be 40… best upper bound
+  that has been proved is 44”). The unaffiliated Zenodo $44.0297$ note
+  remains retracted. Later-dimension news on Cohn’s table (Cohn–Li,
+  Ho 2603.10425, Ma et al. 2511.13391, Takhanov et al. 2606.18984,
+  Sun–Wang 2607.20359) does not touch dim 5.
+- Hunt: an exact dual that is nonpositive on the whole interval
+  $[-1,1/2]$ and excludes some $k\in\{41,42,43,44\}$, or a new exact
+  41-point code. Leftover handles from q2, to verify independently:
+  the 36-clique in the 355-point $T^5$ remainder, and the 1480-point
+  $(1/4)\mathbb Z^5$ graph. Own route if better: type analysis of
+  $(1/d)\mathbb Z^5$, a $T^5$ pool on a larger exact angle set, a
+  $\mathbb Q(\sqrt5)$ orbit, continuous $A_4$ extras at $|s|>2$, and
+  gapped duals that would need a geometric lemma to become unrestricted.
+
+## 2026-08-27 — q3 results (no unrestricted move)
+
+- Re-fetched Tao $C_{29}$, Cohn, Mittelmann–Vallentin, Cohn–Rajagopal:
+  still $40\le\tau_5\le 44$. Pfender's kernel (arXiv:math/0501493) does
+  not give an exact dual below 44 in dim 5. The Zenodo $44.0297$ note
+  remains retracted.
+- Unrestricted numerical Delsarte is still $46.3368\ldots$. Exact
+  rationalizations fail the Sturm test. Gapped duals with
+  $f\le 0$ only on $[-2/3,1/2]$ have a *numerical* value $\approx 37.46$,
+  but there is no geometric lemma forbidding $t\in[-1,-2/3)$ (every
+  published 40-point code has such an angle) and the rational
+  polynomials did not certify. Not an unrestricted dual. No
+  $k\in\{41,42,43,44\}$ is excluded on the whole interval $[-1,1/2]$.
+- $(1/d)\mathbb Z^5$ type analysis (`sphere_types.py`,
+  `complete_slices.py`): every extra vector kisses at most 36 of the
+  40 $D_5$ roots, so a 41-set has $n_1\le 36$ and at least 5 extras.
+  Complete enumeration of every $k$-superset of an actual missed-root
+  set, $k\in\{4,5,6,7\}$, finds no extras-clique of size $k+1$.
+  Therefore the 1480-point $d=4$ graph has no 41-clique that uses 33
+  or more $D_5$-type points. Replay: `complete_slices.json`,
+  `n1_ge_33_empty=true`. The $n_1\le 32$ slice (at least 9 extras) was
+  not emptied. Residue for the whole 1480-graph, not a 41-code.
+- $T^5$ remainder: exact repairs of the four published 35-cliques
+  (remove 1 add 2; remove 2 add 3, candidate cap 28) are empty
+  (`t5_repair.json`). Coloured B&B to 40 million nodes found no
+  36-clique (`t5_36_c.json`). Incomplete, not an exclusion.
+- Larger $T^5$ (published angles plus $\{\pm 1/3,\pm 2/5,\pm 3/5\}$):
+  552-point pool, no 41-clique in 5 million nodes. Residue.
+- $D_5$ plus the signed-permutation orbit of
+  $(\varphi,1,1/\varphi,0,0)/\sqrt{2}$ and the half-spinor layers
+  (552 points over $\mathbb Q(\sqrt2,\sqrt5)$): no 41-clique in 3
+  million nodes. Residue.
+- Continuous $A_4$ extras at exact rational heights, mesh
+  denominators 2, 3, 4: 40 northern extras at den 4, independence 4,
+  not 11. No 41-code.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.

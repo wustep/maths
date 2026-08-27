@@ -1,0 +1,84 @@
+{
+  "classical": {
+    "formula": "2^{-d} pi^{-d/2} Gamma(gamma+1)/Gamma(gamma+1+d/2)",
+    "Lcl_1_1": 0.21220659078919374,
+    "Lcl_1_1_closed": "2/(3pi)",
+    "Lcl_1_1_closed_value": 0.2122065907891938,
+    "Lcl_3_2_1": 0.18750000000000003,
+    "Lcl_3_2_1_closed": "3/16",
+    "Lcl_3_2_1_closed_value": 0.1875,
+    "Lcl_1_3": 0.0067547455761558526
+  },
+  "published": {
+    "fhjn_theorem_1_ratio": 1.456,
+    "fhjn_finer_ratio": 1.455786,
+    "one_bound_state_over_classical_1d_gamma1": 1.1547005383792517,
+    "citation": "Frank\u2013Hundertmark\u2013Jex\u2013Nam, arXiv:1808.09017 / JEMS 23 (2021)"
+  },
+  "sech2_witnesses": [
+    {
+      "nu": 1,
+      "gamma": 1.0,
+      "n_bound": 1,
+      "moment": 1.0,
+      "integral": 4.442882938158366,
+      "ratio": 0.22507907903927651,
+      "ratio_over_classical": 1.0606601717798214
+    },
+    {
+      "nu": 2,
+      "gamma": 1.0,
+      "n_bound": 2,
+      "moment": 5.0,
+      "integral": 23.085896942913553,
+      "ratio": 0.21658244478713226,
+      "ratio_over_classical": 1.0206207261596578
+    },
+    {
+      "nu": 3,
+      "gamma": 1.0,
+      "n_bound": 3,
+      "moment": 14.0,
+      "integral": 65.29677711243184,
+      "ratio": 0.21440568155291914,
+      "ratio_over_classical": 1.0103629710818454
+    },
+    {
+      "nu": 4,
+      "gamma": 1.0,
+      "n_bound": 4,
+      "moment": 30.0,
+      "integral": 140.49629462081452,
+      "ratio": 0.2135287630251531,
+      "ratio_over_classical": 1.0062305898749055
+    },
+    {
+      "nu": 1,
+      "gamma": 1.25,
+      "n_bound": 1,
+      "moment": 1.0,
+      "integral": 4.836056776129937,
+      "ratio": 0.20678003718563695,
+      "ratio_over_classical": 1.0405562256273813
+    },
+    {
+      "nu": 2,
+      "gamma": 1.25,
+      "n_bound": 2,
+      "moment": 6.656854249492381,
+      "integral": 33.0714766470665,
+      "ratio": 0.2012868769221666,
+      "ratio_over_classical": 1.01291360505182
+    },
+    {
+      "nu": 3,
+      "gamma": 1.25,
+      "n_bound": 3,
+      "moment": 22.245311517612276,
+      "integral": 111.23874463866059,
+      "ratio": 0.1999780884787242,
+      "ratio_over_classical": 1.0063275342618696
+    }
+  ],
+  "note": "Witness ratios are lower bounds on L(gamma,1), not upper bounds. They do not improve 1.456."
+}

@@ -139,3 +139,52 @@ Verified: the sum identity through n=399; the fibre injection on every
 n-subset of {0..dmax} for (n,dmax)∈{(3,12),(4,12),(5,12),(6,12),(7,14)}
 and on 2360 random sets, n≤60; every construction above sits under the
 bound (`compute/verify_half.py`, `certs/half_bound.json`).
+
+## 2026-08-27 — literature (Green #24 and Aaronson again)
+
+Refetched Green, *100 Open Problems* (Dec 2025 update). Problem 24 is
+unchanged. SHA-256 still
+`e06971245914947f152550dee59bbb29fe0e798f0c51b2bc2557f824c2f9a44a`.
+Aaronson arXiv:1801.07135v4 is still the paper; the list id `1805.01980`
+is still the wrong paper. No later paper found tonight moves
+γ_{1,2,−3}. The DeepMind formal-conjectures file for Green #24 still
+records the published upper bound as Hardy–Littlewood 3/4.
+
+Parent replay `compute/run_all.sh` exited 0.
+
+## 2026-08-27 — q1, endpoint induction (residue)
+
+Green–Sisask remark that the 3AP bound also follows by induction:
+an endpoint cannot sit in too many 3APs. For x+2y=3z the triples
+that use min(S) as x or y are
+
+    N2 = #{d>0: min+d, min+3d ∈ S},
+    N1 = #{d>0: min+2d, min+3d ∈ S}.
+
+If min(N1+N2 at left, N1+N2 at right) ≤ 2(n−1)/3 always, then
+T(n) ≤ T(n−1)+1+2(n−1)/3 and γ ≤ 1/3. The interval meets 2/3 with
+equality. The budget already fails:
+
+    {0,2,3,4,6}           n=5, ends 3,3 > 8/3, T=9 = T_I
+    {0,2,3,6,7,9}         n=6, ends 4,4 > 10/3, T=12 < T_I+1
+    {0,3,4,6,8,9,12}      n=7, ends 5,5 > 4,    T=17 = T_I
+    {0,2,3,4,6,8,9,10,12} n=9, ends 7,7 > 16/3, T=27 = T_I
+
+Those sets do not beat the interval. Both-end scores can be larger:
+the 11-set {0,18,27,36,48,54,60,72,81,90,108} has ends 9,9, ratio
+9/10, and T=39 < T_I=41. Periodizing the n=9 seed (difference 12)
+keeps the end-score ratio near 5/6 and drops T/n² toward 0.30.
+A uniform α<1 for the endpoint recurrence is not certified, so this
+handle does not move 1/2.
+
+A second count T = n + ∑_a (N1(a)+N2(a)) (hooks from every point,
+not fibres at z) agrees with `count.t_count` on the named witnesses
+and still sits under ⌈n²/2⌉. Almost-interval for n=3m: residue
+sizes (m+1,m,m−1), A₀²+A₁²+A₂² = 3m²+2, unique hole pair
+(x,y)=(n−3,n), hence T = n²/3+1, checked through m=40.
+
+Families tonight (Green–Sisask E/F, two intervals, interval+3-tail,
+double GP, Beatty, 3-scale IFS of the n=5 seed) stay at or below
+1/3 + O(1/n). No construction dent.
+
+`compute/q1/certs/q1.json`. Replay `compute/q1/run_all.sh`.

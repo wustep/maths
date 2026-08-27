@@ -1,0 +1,19 @@
+#!/bin/sh
+# Replay q2: F4 certificate still holds, encoder matches known small-n
+# SAT/UNSAT including the n=18 k=11 cube, the cyclic constructions at
+# n=21 and n=24 still SAT, and every stored pigeonhole DRAT checks
+# against a freshly encoded CNF.
+set -e
+here=$(cd "$(dirname "$0")" && pwd)
+cd "$here"
+parent=$(dirname "$here")
+
+echo "== parent F4 certificate at 0.34645 =="
+python3 "$parent/verify_certificate.py" "$parent/certs/f4_certificate.json" --margin 0.05 --c 0.34645
+
+echo "== sequential-counter encoding vs known small n and n=18 k=11 =="
+python3 regression.py
+
+echo "== stored pigeonhole DRATs against regenerated CNFs =="
+python3 verify_keep.py
+echo "q2 replay finished"

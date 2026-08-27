@@ -1,0 +1,3 @@
+cands_le3=1767
+clauses=153967 vars=16831
+UNSAT or unknown sat=False t=548.21s

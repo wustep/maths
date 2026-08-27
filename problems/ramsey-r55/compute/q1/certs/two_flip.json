@@ -1,0 +1,10 @@
+{
+  "n_graphs": 656,
+  "n_known_types": 2,
+  "n_radius1": 4080,
+  "n_radius2": 22000,
+  "n_radius2_new_type": 0,
+  "new_sample": [],
+  "note": "Radius-2 walks of legal 1-flips. The 1-WL key is the colour-class-size histogram: Aut=1 (42 singletons) vs Aut=2 (21 pairs). Not an isomorphism test. 1-flip graphs do not extend (extend_flips.c).",
+  "seconds": 19.539
+}

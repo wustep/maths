@@ -81,3 +81,74 @@ Replay: `compute/README.md` and `compute/replay.sh`.
 - Whether $\mathcal R(5,5,45)$ is empty.
 
 Do not cite this folder as a bound.
+
+---
+
+# 2026-08-27
+
+- Argument status: documented incomplete search; published record $43\le R(5,5)\le 46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+The 17 August census closed every group of order 42 and every circulant through 45. What it did not close was a 43-vertex graph that is *not* an extension of the published 656 in their given labellings — a 1-flip of one of those graphs, or a graph whose automorphism group is $C_7$ rather than an involution — and it did not close Cayley graphs of order 44 or 45, which would have moved the lower bound by two or three.
+
+Order 44 has four groups, order 45 two. Both lists are finite. The 1-flip ball of the 656 is finite (564816 edges). Those were the degrees of freedom that were actually left.
+
+## 1. False starts (named obstacles)
+
+- **Replaying Angeltveit–McKay at 45.** Still the wrong object. Their own v2 says 45 wants new theory. We did not start an 80-year gluing job.
+- **Treating Tamburini 2508.16699 as a bound.** The newest arXiv hit after 2409.15709 is a random-projector heuristic that “identifies $R(5,5)$ at $n=45$”. It is not a colouring and not a nonexistence log.
+- **Reading the 1-WL histogram as an isomorphism test.** Stable colour-class sizes on the 656 are only two shapes — 42 singletons (the 424 asymmetric graphs) and 21 pairs (the 232 involutive ones). Radius-2 flips stayed in those two shapes. That does not mean the flipped graphs are isomorphic to the 656. The extension SAT is what actually speaks.
+
+## 2. The useful failure
+
+The useful failure was the 4080 one-flip $(5,5,42)$-graphs refusing to take a 43rd vertex, in 183 seconds. Combined with the original non-extension of the 656, a 43-vertex example is not a 1-flip neighbour of a published graph plus a vertex. Whatever it is, it is at least two edits away from the known list, or it is not an extension of a 42-vertex $(5,5)$-graph at all.
+
+The Cayley side failed the same way, one group at a time, except $D_{22}$ which needed the incremental $K_4$ test (470 million leaves, 407 seconds) after the naive rebuild enumerator sat for fifteen minutes without finishing.
+
+## 3. The click
+
+Count the groups again, but at 44 and 45. Four plus two, not six. Circulant is one of them at each order and was already empty. The other four have multiplication tables of size $44\times 44$ or $45\times 45$. Inverse-closed connection sets in the legal degree window are a few hundred thousand leaves except $D_{22}$.
+
+A second, smaller click: none of the 656 has a 7-cycle. So a $C_7$-symmetric $(5,5,42)$-graph would be new. The encoder is not vacuous — it finds a $(5,5,14)$-graph in 44 milliseconds — but Cadical on the 42- and 43-vertex slim instances returns `UNKNOWN` at five minutes. A timeout is not a new bound.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Radziszowski revision 18 and Angeltveit–McKay v2 again. Confirm the live window is still $43\le R(5,5)\le 46$. Note Tamburini 2508.16699 as a heuristic, not a citation.
+2. Replay `compute/replay.sh` and `verify_mckay.py`. 328+328 still $(5,5,42)$, none extend, circulant 42/43 still empty.
+3. Write down the four groups of order 44 and the two of order 45. Check the tables. Exhaust inverse-closed Cayley graphs. All six empty (circulant replayed; three small groups in C and Python; $D_{22}$ incremental).
+4. Enumerate integral SRG parameters on 43 vertices in degrees $[18,24]$. Empty list; $43\not\equiv 1\pmod 4$. No SRG in the window.
+5. Compute $|\mathrm{Aut}|$ of the 656 by colour refinement plus backtrack. 424 trivial, 232 order 2, no 7-cycle.
+6. Flip every edge of every one of the 656, keep the 4080 that stay $(5,5)$, and run the 42-variable extension SAT on each. Zero models.
+7. Encode $C_7$-symmetric graphs. Validate at $n=7$ and $n=14$. Run Cadical for five minutes at 42 and 43. Both `UNKNOWN`.
+
+No step moves an endpoint of the published interval.
+
+## 5. Computer search
+
+- `compute/q1/certs/q1_summary.json` — collected DONE lines
+- `compute/q1/certs/group_laws.json`, `py_c11c4.json`, `py_c3c15.json`
+- `compute/q1/logs/cayley_{c2c22,c11c4,c3c15,d22}.txt`, `circ{44,45}.txt`
+- `compute/q1/logs/extend_flips.txt` — 4080 flips, 0 extensions
+- `compute/q1/certs/aut_mckay.json`, `srg43_params.json`, `two_flip.json`
+- `compute/q1/certs/c7_selftest.json`, `c7_n14.json`, `c7_n{42,43}.json`
+
+Replay: `cd problems/ramsey-r55/compute && ./replay.sh && cd q1 && ./run_all.sh`.
+
+## 6. What is proved vs still open
+
+**Checked, not new as a bound.**
+
+- None of the 4080 one-flip $(5,5)$ neighbours of the 656 extend.
+- There is no legal-degree undirected Cayley $(5,5)$-graph of order 44 or 45.
+- There is no strongly regular graph on 43 vertices with degree in $[18,24]$.
+
+**Still open.**
+
+- $R(5,5)$ is still one of 43, 44, 45, 46.
+- Whether the 656 graphs are all of $\mathcal R(5,5,42)$.
+- Whether a 43-vertex example exists with trivial automorphism group, or with a $C_7$ (Cadical `UNKNOWN` at five minutes).
+- Whether $\mathcal R(5,5,45)$ is empty.
+
+Do not cite this folder as a bound.

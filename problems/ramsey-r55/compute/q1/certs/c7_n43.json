@@ -1,0 +1,9 @@
+{
+  "n": 43,
+  "nclauses_slim": 1925196,
+  "nvars_slim": 129,
+  "status": "UNKNOWN",
+  "note": "Cadical195 timeout 300s on the slim C7 encoding (one fixed vertex, six 7-orbits). Isolated SAT timeout is not a bound.",
+  "time_limit_sec": 300,
+  "use_card": false
+}

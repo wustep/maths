@@ -205,3 +205,98 @@ Still open, and not touched:
 
 We did not beat the published record. A failed search with a
 verifier is the product.
+
+## 2026-08-27 continuation
+
+### 0. What was actually missing
+
+The 17 August search killed finite shift lists. A dent still needed a
+*formula* $a(n)$ that writes every large $n$ as two $n^\varepsilon$-smooth
+summands for some $\varepsilon<1/2$, or a two-factor shape that could
+be proved to work for all large $n$. Isolated prefixes were already
+known not to count.
+
+### 1. Named false starts
+
+**Floor-divisor as a new covering.** Set $u=\lfloor n^\varepsilon\rfloor$
+and $a=n-(n\bmod u)$. The remainder is $n^\varepsilon$-smooth by size.
+At $\varepsilon=1/2$ this is the square covering in different clothes.
+Below $1/2$, $\lfloor n/u\rfloor$ has size $n^{1-\varepsilon}>n^\varepsilon$
+and is $n^\varepsilon$-rough for a positive-density set of $n$. First
+hole at $n=3$ on every tested exponent; thousands of holes through
+$20000$.
+
+**Largest power of two, triangular numbers, cubes.** Each is a closed
+form. Each has a first hole at $n=3$ and holes still appearing at
+$n=20000$. Cubes are worse than squares: the remainder window has
+exponent $2/3$.
+
+**Two-factor with $u\le n^{1/5}$ as an effective $2/5$.** On
+$[2,20000]$ the holes are exactly the sixteen $F$-exceptions, last
+$479$, and at $1/3$ exactly the seventy-six exceptions, last $18191$.
+The factor restriction is not losing splittings. It is also not $N_0$.
+
+### 2. The useful failure
+
+The floor-divisor rewrite taught that every “take a small remainder
+so it is automatically smooth” template *is* the short-interval
+template. The only closed-form construction that always puts a smooth
+number in $(n-n^{1/2},n]$ is a nearby square. Polynomials of degree
+$d\ge 2$ cannot do better by size: the gap is $\asymp n^{1-1/d}\ge n^{1/2}$.
+
+### 3. The click
+
+For a prime $P$ and $u\sim P^{\varepsilon/(1-\varepsilon)}$, the
+integer $n=Pu+1$ makes floor-divisor choose a multiple of $u$ whose
+other factor is $P$. The comparison $P>n^\varepsilon$ is the same
+inequality as $\varepsilon<1/2$. That is an infinite failure family,
+not a prefix. The power-of-two formula has the same shape:
+$n=2^k+q$ with $q$ the next prime after $2^{k-1}$ fails even
+$n^{1/2}$.
+
+So the cover we wanted is not hiding in a cleverer closed form of
+the same kind. A formula whose remainder is small cannot beat $1/2$.
+A formula whose first summand is a sparse smooth set (powers of two,
+$S$-units for a fixed $S$, high powers) fails infinitely often.
+Making Balog–Sárközy effective still needs an analytic input we do
+not have.
+
+### 4. The argument, in the order it was found
+
+Green #59 and the Wayback copy of Erdős #334 were fetched first.
+Hildebrand–Tenenbaum pp. 468–469, the three arXiv neighbours, and
+Ki–Maier–Sankaranarayanan 2016 still name Balog $0.2695$ as the
+all-integers binary record. Then the parent verifier was started.
+Then the closed-form census, then the infinite families, then the
+polynomial size check, then two-factor. Two-factor matching $F$
+exactly was a surprise and a disappointment: it looks like a
+theorem on a long prefix and is not one.
+
+### 5. Computer search
+
+Stored under `compute/q1/certs/`.
+
+- `poly_obstruction.json` — six polynomials, remainder exponent
+  $1-1/d$.
+- `infinite_family.json` — 129/129 floor-divisor hits at three
+  exponents; power-of-two hits for $k=4,\ldots,16$.
+- `q1_search.json` — hole counts and last holes on $[2,20000]$;
+  two-factor equal to the known $F$ prefixes.
+
+Replay: `cd problems/two-smooth-summands/compute/q1 && ./run_all.sh`.
+
+### 6. What is proved vs still open
+
+Proved this session, all checkable:
+
+- The listed closed-form templates fail on $[2,20000]$ at every
+  tested $\varepsilon<1/2$, with holes persisting to the endpoint.
+- Floor-divisor and largest-power-of-two have explicit infinite
+  failure families.
+- A fixed polynomial of degree $d\ge 2$ cannot beat the square
+  covering by size of remainder.
+- Two-factor $u\le n^{1/5}$ reproduces the $F$ exception prefixes
+  on $[2,20000]$.
+
+Still open, and not touched: the same four items as on 17 August.
+We did not beat the published record.

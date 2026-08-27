@@ -1,0 +1,29 @@
+{
+  "claimed_c": 0.38304,
+  "beta": 1.0,
+  "uniform_2atomic": {
+    "accepted": 13556,
+    "worst": {
+      "x": 0.000370857876980768,
+      "y": 0.5051500256789019,
+      "p": 0.32769321494613357,
+      "mean": 0.33973731734405654,
+      "ratio": 1.001954150804716
+    },
+    "n_hits_below_1": 0,
+    "hits": []
+  },
+  "near_ray": {
+    "accepted": 10077,
+    "worst": {
+      "x": 0.2901915270564965,
+      "y": 0.9997739281628724,
+      "p": 0.8700525312578297,
+      "mean": 0.38239996394426146,
+      "ratio": 1.001420383845257
+    },
+    "n_hits_below_1": 0,
+    "hits": []
+  },
+  "note": "incomplete search, not a lower bound for every 2-atomic law"
+}
