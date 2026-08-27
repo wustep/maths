@@ -15,4 +15,6 @@ Cyclic construction: out-set $\{1,\ldots,\lfloor(n-1)/3\rfloor\}$ on $\mathbb{Z}
 
 Exact finite statement: every $n$-vertex oriented graph with $\delta^+\ge\lceil n/3\rceil$ has a directed triangle.
 
-First $n$ not implied by Hoàng–Reed ($r\le 5$) plus HKN $0.3465$: **$n=18$, $\delta^+=6$**.
+First $n$ not implied by Hoàng–Reed ($r\le 5$) plus HKN $0.3465$ was $n=18$. That order, and the later holes $n=21,24,26,27,29,30,32,33,35,36$, now have stored in-degree-cube DRATs.
+
+First remaining hole: **$n=38$, $\delta^+=13$**.

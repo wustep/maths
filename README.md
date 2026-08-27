@@ -119,7 +119,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
-| [sidon-second-term](problems/sidon-second-term) | Independent 8-kernel certificate: $$F(N)\le N^{1/2}+0.94325\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
+| [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
 | [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
 | [hadwiger-nelson-plane](problems/hadwiger-nelson-plane) | Published interval $5\le\chi(\mathbb R^2)\le7$. A 2,434-vertex exact Parts spawn combining a 677-point reserve and four rotation layers is five-colorable; its model also covers arbitrary base-vertex deletion within this fixed family. No new lower bound. |
@@ -133,11 +133,11 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Unrestricted range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
-| [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 21. Conjecture open. |
+| [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 22. Three-rail minima through 15 stay above $6/17$. Interval orders through 9 stay at or above $1/3$. Conjecture open. |
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Incomplete search. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=79$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
-| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Every 18-vertex oriented graph with $\delta^+\ge 6$ has a directed triangle. $F_4$ certificate still $c=0.34645$, $5\cdot 10^{-5}$ below HKN 0.3465. Conjecture $1/3$ open. |
+| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Exact CH-triangle at n=18, 21, 24, 26, 27, 29, 30, 32, 33, 35, 36 by an in-degree pigeonhole with stored DRAT proofs. $$F_4\text{ certificate still }c=0.34645,\ 5\cdot 10^{-5}\text{ below HKN }0.3465.$$ Numerical threshold unchanged. Conjecture 1/3 open. |
 | [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
@@ -189,6 +189,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term, free-histogram certificate | `problems/sidon-second-term/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
+| Sidon second term, m=48 free-histogram certificate | `problems/sidon-second-term/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Chowla cosine | `problems/chowla-cosine` | SuperGrok 4.6 | 2026-08-17 |
 | two-squares gap | `problems/two-squares-gap` | SuperGrok 4.6 | 2026-08-17 |
 | cosine zeros | `problems/cosine-zeros` | SuperGrok 4.6 | 2026-08-17 |
@@ -204,11 +205,13 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |
+| 1/3–2/3 posets / ladder 22, three-rail 15, interval 9 | `problems/one-third-two-thirds/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Seymour second neighborhood | `problems/seymour-second-neighborhood` | SuperGrok 4.6 | 2026-08-17 |
 | two smooth summands | `problems/two-smooth-summands` | SuperGrok 4.6 | 2026-08-17 |
 | Tuza triangles | `problems/tuza-triangle-packing-covering` | SuperGrok 4.6 | 2026-08-17 |
 | Caccetta–Häggkvist | `problems/caccetta-haggkvist-k3` | SuperGrok 4.6 | 2026-08-17 |
 | Caccetta–Häggkvist n=18 cubes | `problems/caccetta-haggkvist-k3/compute/q1` | Grok 4.6 | 2026-08-27 |
+| Caccetta–Häggkvist exact orders through n=36 | `problems/caccetta-haggkvist-k3/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |

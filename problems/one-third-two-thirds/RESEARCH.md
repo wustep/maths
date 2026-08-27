@@ -57,3 +57,17 @@ Opened tonight, in the order used.
 - Zenodo 18985094 / 18985093 (Silva Alvarado, Mar 2026) claim a general proof. Not arXiv; Lean is conditional on an extra axiom; unaffiliated. Treated as a lead, not a record. Chan–Pak and Gupta v2 still call the conjecture open.
 
 Failed or unused: no later arXiv paper closing Olson–Sagan Question 3.9, interval orders, or dimension 2. No width-3 $\delta<6/17$ in Gupta's published tail.
+
+## 2026-08-27, q2
+
+Opened tonight, in the order used.
+
+- [Gupta arXiv:2607.23926v2](https://arxiv.org/abs/2607.23926) re-opened (abs and HTML). Still the order-14 $\delta$-census. Least $\delta>1/3$ is $37/106$; least non-sum is $254/725$. No later version.
+- [Chan–Pak arXiv:2311.02743v2](https://arxiv.org/abs/2311.02743) re-opened. Conjecture 13.1 still stated. Does not cite Gupta v2.
+- [Olson–Sagan arXiv:1706.04985v2 HTML](https://arxiv.org/html/1706.04985) re-opened. Question 3.9 still asks whether a product of $k\ge 3$ chains is $1/3$-balanced.
+- [Aires–Kahn arXiv:2509.11549v1](https://arxiv.org/abs/2509.11549) and [arXiv:2510.26134v1](https://arxiv.org/abs/2510.26134) re-opened. Kahn–Saks progress, not a $1/3$ proof.
+- [Wikipedia, *1/3–2/3 conjecture*](https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture), raw wikitext fetched 2026-08-27 (`last-modified` 26 Aug 2026). Still an unsolved problem; cites Gupta 2026 for order 14. Lists semiorders, not interval orders. Width-3 example still given as Saks $14/39$.
+- [agupta/gold-partition-conjecture](https://github.com/agupta/gold-partition-conjecture) README re-opened. Order-14 GPC and balance census; no $n=22$ ladder table.
+- [OEIS A367494](https://oeis.org/A367494) via `scripts/oeis_lookup.py` (API). Number of $(2+2)$-free naturally labelled posets on $[n]$: $1,1,2,7,37,272,2637,32469,493602,9062503,197409097,\ldots$. Exact match for the interval-order census through $n=9$.
+
+Failed or unused: no arXiv paper since Gupta v2 closing the conjecture, Question 3.9, interval orders, or dimension 2. No published $n=22$ broken-rung minimum to compare against. The Wikipedia width-3 $14/39$ line is the 1992 record, not Gupta's $6/17$ tail.

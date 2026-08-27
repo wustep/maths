@@ -30,3 +30,6 @@ python3 ind_fork.py        # rebuild IndT, IndV, Fork
 `certs/small_n_census.json` (n≤12, no lex SB). With lex SB, n=12,15,16 are UNSAT with DRAT.
 
 The n=18 in-degree cubes live in `q1/`. Replay: `cd q1 && ./run_all.sh`.
+
+The next exact holes after n=18 live in `q2/`. Stored DRATs cover
+n=21, 24, 26, 27, 29, 30, 32, 33, 35, 36. Replay: `cd q2 && ./run_all.sh`.
