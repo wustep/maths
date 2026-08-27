@@ -20,6 +20,13 @@ echo "== hunt mixes (β, Example 5, maxent) =="
 echo "== hunt protocols (half-target, scaled a(t)) =="
 "$PY" hunt_protocols.py
 
+echo "== constructed 2-mixture witness =="
+"$PY" witness_mixture.py
+
+echo "== verify_witness.c (independent 2-mixture replay) =="
+gcc -O3 -std=c11 -o verify_witness verify_witness.c -lm
+./verify_witness
+
 echo "== hunt 3-atomic / 2-mixture residue =="
 "$PY" hunt_three.py
 

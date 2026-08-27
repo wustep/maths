@@ -15,8 +15,10 @@
     "Example-5 scale ℓ",
     "half-target Fréchet protocol",
     "scaled a(t)",
-    "3-atomic and 2-mixture samples"
+    "3-atomic and 2-mixture samples",
+    "constructed 2-mixture witness at mean 0.38304"
   ],
+  "mixture_witness": "certs/mixture_witness.json",
   "not_claimed": [
     "1/2 conjecture",
     "every measure on [0,1]",

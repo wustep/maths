@@ -128,7 +128,9 @@ def sample_mixtures(n, c, fn_ciid, fn_iid):
         accepted += 1
         rec = {
             "v0": [float(v) for v in v0],
+            "w0": [float(w) for w in w0],
             "v1": [float(v) for v in v1],
+            "w1": [float(w) for w in w1],
             "q": q,
             "mean": float(mean),
             "ratio": float(r),
@@ -199,6 +201,8 @@ def main():
         "ex4_ex5_3atomic_claimed": summarize(a5, w5, h5),
         "ex4_3atomic_probe_0_40": summarize(a6, w6, h6),
         "ray_at_mean_0_39": ray_rec,
+        "hits_at_claimed_atomic": len(h1) + len(h2) + len(h4) + len(h5),
+        "hits_at_claimed_2mix": len(h3),
         "hits_at_claimed": len(h1) + len(h2) + len(h3) + len(h4) + len(h5),
         "hits_at_probe": len(h6) + (1 if ray_rec is not None and ray_rec["ratio"] < 1.0 else 0),
         "note": (

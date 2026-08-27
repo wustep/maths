@@ -26,4 +26,6 @@ hunt summaries).  Certificate: `certs/verify.json`.
 
 The constant is still 0.38304.  This is not 1/2.  Isolated
 3-atomic samples live in `certs/hunt_three.json` and are not a
-lower bound.
+lower bound.  A constructed 2-mixture at mean 0.38304 has CIID
+Example-4 ratio 0.909137 (`certs/mixture_witness.json`); that
+blocks extending the ray claim, not the ray claim itself.

@@ -149,6 +149,7 @@ def main():
     three = load_json("hunt_three.json")
     ellis = load_json("ellis.json")
     ceil_file = load_json("ceiling.json")
+    witness = load_json("mixture_witness.json")
 
     def best_mean(blob, *keys):
         if blob is None:
@@ -192,9 +193,15 @@ def main():
         "ellis_perturbation_negative": ellis is not None
         and ellis.get("perturbed", {}).get("still_negative") is True,
         "three_present": three is not None,
-        "three_no_hits_at_claimed": three is None or three.get("hits_at_claimed") == 0,
+        "three_atomic_no_hits": three is None
+        or three.get("hits_at_claimed_atomic") == 0,
         "ceiling_file_ok": ceil_file is not None
         and ceil_file.get("claimed_below_ceiling") is True,
+        "mixture_witness_fails_pure_ex4": witness is not None
+        and witness.get("fails_pure_ex4") is True
+        and witness.get("mean_matches_claimed") is True,
+        "mixture_witness_iid_saves": witness is not None
+        and witness.get("iid_weight_saves") is True,
         "no_new_claimed_constant": True,
     }
     report = {
@@ -210,8 +217,16 @@ def main():
             "ex4_ex5": best_mean(mixes, "ex4_ex5_best"),
             "three_way": best_mean(mixes, "three_way_best"),
         },
-        "three_hits_at_claimed": None if three is None else three.get("hits_at_claimed"),
+        "three_hits_at_claimed_atomic": None if three is None else three.get("hits_at_claimed_atomic"),
+        "three_hits_at_claimed_2mix": None if three is None else three.get("hits_at_claimed_2mix"),
         "three_hits_at_0_40": None if three is None else three.get("hits_at_probe"),
+        "mixture_witness": None
+        if witness is None
+        else {
+            "mean": witness.get("mixture_mean"),
+            "ciid_example4_ratio": witness.get("ciid_example4_ratio"),
+            "liu_beta_0_10_ex5_ratio": witness.get("liu_beta_0_10_ex5_ratio"),
+        },
         "checks": checks,
         "all_ok": all(checks.values()),
         "constant_moved": False,

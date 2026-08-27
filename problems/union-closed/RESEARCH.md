@@ -62,3 +62,26 @@ Fetched and read tonight, in the order used. No paper after Liu moves the freque
 - Best *quoted* published constant: still Liu 0.382709087918741 (conditional). Independently recomputed: 0.382709087918735.
 - Repo ray-record from 2026-08-17: 0.38285 at `β = 1/5`, mesh min ratio 1.000077. Replayed; `compute/run_all.sh` exit 0.
 - Tonight: analytic first-crossing of pure Example 4 on `{b,1}` is 0.38305135658682558…; certified 0.38304 with mesh min ratio 1.000021687. Beats both. Same hypothesis class. Not `1/2`.
+
+## 2026-08-27 (q2)
+
+Fetched and read tonight, in the order used. No paper after Liu moves the frequency constant. The 2-sample `{b,1}` class cannot pass 0.383051.
+
+### Primary (re-opened)
+
+- [Gilmer, *A constant lower bound for the union-closed sets conjecture*, arXiv:2211.09055v2](https://arxiv.org/abs/2211.09055) (28 Nov 2022). Re-fetched abs + HTML. Theorem: some element in a 0.01 fraction. §5 Conjecture 1 (`H(A∪B)+D(A∪B||A)>H(A)` whenever every frequency is `<1/2`) would imply Frankl 1/2. v2 note: Sawin and Ellis refute Conjecture 1; without extra assumptions the KL term cannot improve the bound. Local PDF: `compute/refs/gilmer-2211.09055.pdf`.
+- [Liu, *Improving the lower bound… via conditionally IID coupling*, arXiv:2306.08824v1](https://arxiv.org/abs/2306.08824) (15 Jun 2023). Re-fetched abs + HTML. Theorem 6: some unspecified `c>c*` via Example 4. Theorem 13: `c′≈0.382709087918741` under PSD + global-min, Example 5, `β*≈0.10005`. Example 4 is (22)–(23). No later version. Local: `compute/refs/liu-2306.08824.pdf`.
+- [Ellis, *Note: a counterexample to a conjecture of Gilmer…*, arXiv:2211.12401](https://arxiv.org/abs/2211.12401) (22 Nov 2022). Opened abs + HTML. n=2 law `p(∅)=p({1,2})=0.3`, `p({1})=p({2})=0.2`; functional `< −0.04`; a small perturbation has frequencies `<1/2` and stays negative. Independently replayed: `−0.046797` unperturbed, `−0.043422` at `ε=10^{-3}`.
+- [Wikipedia, *Union-closed sets conjecture*](https://en.wikipedia.org/wiki/Union-closed_sets_conjecture), fetched 2026-08-27. Still quotes 0.38271 and cites Liu + Lu–Raz. Finite cases still 50 sets / 12 elements.
+
+### Later papers that do not move the frequency constant
+
+- arXiv API query `all:"union-closed" AND all:conjecture`, submitted-date desc, 25 hits (2026-08-27). Newest frequency-adjacent items are Tian 2608.25147 (height 4), DeFranco 2606.26191 (Boolean encoding), Das–Wu 2412.03862 / 2412.03863 (k-th frequency). No hit after Liu claims a first-frequency constant above 0.38271.
+- [Tian, arXiv:2608.25147](https://arxiv.org/abs/2608.25147). Height ≤ 4. Not a frequency constant.
+- [“The union-closed set conjecture is true”, arXiv:2405.03731](https://arxiv.org/abs/2405.03731). Title-only full-proof claim; later literature and Wikipedia still treat the conjecture as open. Not used.
+
+### What we compare against tonight
+
+- Best *quoted* published constant: still Liu 0.382709087918741 (conditional). Independently recomputed: 0.382709087918735.
+- Repo ray-record from q1: 0.38304, analytic crossing 0.38305135658682558…. Replayed; `compute/q1/run_all.sh` exit 0.
+- Tonight: that crossing is a ceiling for every 2-sample bit protocol on `{b,1}`. Mixes and a half-target protocol do not beat it. A constructed 2-mixture has pure-Example-4 CIID ratio 0.909137 at mean 0.38304. Constant unchanged. Not `1/2`.
