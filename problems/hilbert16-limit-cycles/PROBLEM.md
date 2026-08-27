@@ -3,17 +3,21 @@
 - Slug: `hilbert16-limit-cycles`
 - List: Hilbert 16 (second part); Smale 13 (1998)
 - Solver: Grok 4.6
-- Status: open. No published H(n) moved. Five imagined
-  end-states were attacked backwards (ATTACK.md). Two lower-bound
-  fictions were dropped (H(2)≥5, H(3)≥14). Reusable exact lemmas
-  live in `compute/q1/`. Hilbert 16(b) itself is untouched.
+- Status: open. No published H(n) moved. First campaign dropped
+  H(2)≥5 and H(3)≥14. Second campaign wrote 25 new fictions and
+  dropped the five that scored highest (homogeneous n cycles;
+  Liénard B(n); iterated squaring; Harnack recurrence; PT+1).
+  Reusable exact lemmas live in `compute/q1/` and `compute/q2/`.
+  Hilbert 16(b) itself is untouched.
 - Area: Qualitative theory of planar polynomial ODEs
 - Sources: Shi, Sci. Sinica 23 (1980); Chen–Wang 1979; Bautin
   1952/54; Li–Liu–Yang, JDE 246 (2009); Christopher–Lloyd,
   Proc. R. Soc. A 450 (1995); Han–Li, JDE 252 (2012);
   Prohens–Torregrosa, Nonlinearity 32 (2019); Gasull–Santana,
   arXiv:2407.13465; Eshkobilov–Kadyrov–Mamayusupov,
-  arXiv:2604.12883
+  arXiv:2604.12883; Coppel, JDE 2 (1966); Llibre–Schlomiuk,
+  Canad. J. Math. 56 (2004); Chen–Dai–Kaloshin–Li,
+  arXiv:2608.17773; Gasull–Santana, arXiv:2510.11705
 - Started: 2026-08-27
 
 This folder is Hilbert 16(b): isolated periodic orbits of planar

@@ -5,7 +5,8 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 - Problem: `problems/hilbert16-limit-cycles`
 - Model: Grok 4.6
 - Date: 2026-08-27
-- Problem status: open. No published H(n) moved.
+- Problem status: open. No published H(n) moved. The second
+  campaign did not move a table entry either.
 
 ## 0. What was actually missing
 
@@ -115,3 +116,71 @@ Not proved, and not claimed:
   not reconstructed).
 - That the 2026 lifts H(14) ≥ 252 etc. are independent of
   those unreplayed seeds.
+
+## Second campaign (same day)
+
+Twenty-five new fictions (compute/q2/ideas.md). Five scored
+and attacked. All five imagined dents died; five forks lived.
+
+### 0. What was actually missing
+
+A handle that is not Chebyshev one-step and not Shi/van der Pol
+again: either a new seed, a new lift that beats m², or a
+certified upper the literature treats as open. The degree of
+freedom is still an explicit field or a polynomial identity.
+
+### 1. Named false starts
+
+- Homogeneous n-cycles: scaling produces a continuum.
+- Liénard beat of B(n): no field; full H(3,1)=1 needs oddness.
+- Iterated z↦z² past the quadratic ceiling: two sheets, not four.
+- Harnack recurrence: 1225 pairs, no table beat.
+- PT+1: their order-5 budget is already 28.
+
+Discarded without a worker, same deaths as A/B: Ye class I two
+cycles, invariant-line two, (2,2), Liénard two, two hemicycles,
+Shi equator as a planar cycle, QW3 fifth, figure-eight 14,
+Yu–Han 12+2.
+
+### 2. The useful failure
+
+Complex squaring is the model non-separable covering, and it is
+worse than Chebyshev, not better. Remark 4’s remaining half
+(iteration) does not get you past m² by changing the map to
+z↦z². The PT seed, once written as a primitive degree-4 field,
+is a concrete Darboux center a later line can perturb.
+
+### 3. The click
+
+Two. First: z↦z² is 2-to-1 on the plane because Cauchy–Riemann
+ties the components; Bézout’s 4 is a ceiling, not a count this
+map attains. Second: −B+4xA in the PT first integral cancels
+from degree 5 to degree 3, so the Darboux field is genuinely
+degree 4 and has three linear centers.
+
+### 4. The argument
+
+- Homogeneous: P(λx,λy)=λ^n P; compact orbits scale.
+- Odd-cubic Liénard: dE/dt=−αx²−βx⁴; Liénard list when α<0<β.
+- Φ=(u²−v²,2uv): adj identity, deg 7 for the radial cubic,
+  two regular preimages, 2^k=(N+1)/(n+1).
+- Har(m) table vs the q1 seeds.
+- PT primitive field; Coppel: quadratics restrict to degree ≤2
+  on a line.
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc identities and
+integer tables. Replay: `compute/run_all.sh` (q1 then q2).
+
+### 6. What is proved vs still open
+
+Proved here, extra to q1: homogeneous / unperturbed
+quasi-homogeneous fields have no isolated cycles; B(n)
+thresholds; the odd-cubic Liénard energy identity; iterated
+squaring sheet counts; Harnack arithmetic; the explicit PT
+H_{4,5} Darboux field and the quadratic contact identities.
+
+Not proved: any movement of a published H(n). Finiteness of
+H(n). The 28-cycle perturbation of that Darboux field.
+Li–Liu–Yang’s 13 (still paywalled).
