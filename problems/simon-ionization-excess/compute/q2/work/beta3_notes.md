@@ -1,15 +1,18 @@
-# β_3^{rad} leading coefficient
+# β_3^{rad} — residue, not a dent of 1.1185
 
 Hundertmark–Pattakos–Schulz, arXiv:2504.18487v1, Proposition 4.5:
 β_3 ≥ min_t f(t) = 1/b(3) ≈ 0.894107, with f(t)=(1+t^3)/(1+t^2) and
 b(3)<1.1185. Figure 2 says this is not sharp: power-law trials sit
-about 3% below b(3). A certified γ > 1/b(3) is a new leading
-coefficient in the same §5–§7 chain.
+about 3% below b(3). A certified γ > 1/b(3) that holds for every
+radial probability in (4.1) would be a new leading coefficient in
+the same §5–§7 chain.
+
+Status: residue. The printed leading coefficient 1.1185 is unchanged.
 
 ## Numerical target (upper bounds on β_3)
 
-Replay: `explore_beta3.py`. These are the wrong direction for an
-ionization *upper* bound.
+Replay: `explore_beta3.py`. Wrong direction for an ionization *upper*
+bound.
 
 - Power law m(dr) ∝ r^α dr on [1,n], HPS 3D density A|x|^{-p} with
   α=2-p. Best at α≈−2, n≈3.50, p≈4: I/D ≈ 0.920655, so
@@ -18,62 +21,57 @@ ionization *upper* bound.
   k=1…6, decreasing toward the power law.
 - Piecewise-constant log-grid: I/D ≈ 0.921.
 
-Apparent inf of β_3^{-1} ≈ 1.086. Apparent inf of β_3 ≈ 0.921.
+Apparent inf of β_3 ≈ 0.921. Apparent inf of β_3^{-1} ≈ 1.086.
 
-b(s) for s>3 (what a theorem for s>3 would be worth):
+## Withdrawn 1.1168
 
-- s=3.1: b≈1.11358
-- s=3.5: b≈1.09761
-- s=4:   b≈1.08302
-- s=5:   b≈1.06393
+An earlier certificate claimed β_3 ≥ 0.895396, hence
+β_3^{-1} ≤ 1.11682 < 1.1185, by lifting a middle-window bound with
+the tail polynomial h(D_L, D_R). That lift is false:
 
-s>3 is worth about 0.5–5% on the leading coefficient if radialization
-survives. The two-shell dipole in `s_gt_3.py` makes I_s negative for
-every s>3, so that path is closed.
+- h(0,1) ≈ 0.991, but the HPS power-law trial has I/D ≈ 0.921 when
+  placed entirely in that “tail”.
+- I_CC ≥ β D_C is false; the correct sub-measure bound is
+  I_CC ≥ β D_C M_C.
 
-## Certified lower bound
+`certs/beta3_rad.json` is marked withdrawn. Do not cite 1.1168.
 
-Scale so D=∫ r^2 dm = 1. Split (0,∞) at α=R^{-1/2} and 1/α, R=12.
-The middle window scales to [1,12].
+## Compact class (correct, not a Theorem 2.2 dent)
 
-On a geometric n=26 grid, replace f by its minimum on each bin-pair
-(unimodal: decreasing on [0,t_0], increasing on [t_0,1]). The
-mid-radius Rayleigh φ(m)=(m^T A m)/(c·m) with
-A_{ij}=F_{ij}(r_i^{*2}+r_j^{*2})/2, c_i=r_i^{*2} then differs from
-the true F-average by at most [θ/(1-θ)](1-min f), θ=R^{1/n}−1,
-because the D-weights ρ_i/r_i^{*2} lie in [1/q,q].
+On D-measures of aspect ≤ R, after scaling inf(supp z)=1 so
+supp z ⊆ [1,R], the mid-radius Rayleigh with F_ij = min f on each
+bin-pair, minus the reweighting error P_max(1−fmin) with
+P_max = (q−1)/(q+1), q=R^{1/n}, is a valid lower bound.
 
-φ ≥ γ_target is equivalent to m^T M m ≥ 0 on the simplex,
-M=A−γ_target(c 1^T+1 c^T)/2. Exhaustive face enumeration
-(`verify_beta3.c`) finds every interior critical point (including
-all-negative Lagrange vectors) and every vertex.
+Face enumeration (`verify_beta3.c`) at R=4, n=18, φ_target=0.906,
+0 singular faces, gives
 
-The tail polynomial h(D_L,D_R) lower-bounds I for D=1 after dropping
-only nonnegative remainders. For a=1/12 and β≤0.896 the interval
-minimum of h on the triangle is at the origin and equals β, so the
-middle bound lifts to every Borel probability with finite D.
+    Q ≥ 0.901924    on aspect ≤ 4,
+    1/Q ≤ 1.108741.
 
-C face enumeration at γ_target=0.9072 (n=26, 2^{26}−1 faces):
-min mᵀMm = 4.219×10^{-3}>0, so φ_mid≥0.9072. Interval error
-err≤0.0118036978898114. Therefore
+That would beat 1.1185 if it held for every radial probability.
+It does not: HPS β_3 is an inf over all μ in D_s. Replay:
+`certs/beta3_compact.json`. Independent n=16 rebuild:
+`verify_beta3.rs`.
 
-  γ ≥ 0.9072 − err ≥ 0.895396302110
+A two-window mixture Q ≥ γ_R − p12(γ_R−fmin) with cross terms at
+fmin (`lift_global.py`) has grid max p12 ≈ 0.995, so the lift
+collapses to fmin. Adjacent-window pairs *are* the t≈t0 pairs.
 
-and γ^{-1} ≤ 1.11682391099 < 1.1185, also strictly below the
-exact b(3)∈(1.1184,1.1185). The tail polynomial’s minimum on
-the (D_L,D_R) triangle sits at the origin and equals this γ,
-so the middle bound lifts to every Borel probability with
-finite D. Replay: `certs/beta3_rad.json`.
+## Aspect / first variation (search, not a bound)
 
-Independent second path: `verify_beta3.rs` rebuilds F and the
-16-bin [1,4] Rayleigh from scratch (Gauss–Jordan plus Cramer
-on 3-faces, residual rejected). That compact-support window
-already beats 1/b(3) after the same mid-radius error, which is
-a method check, not the production global bound.
+`aspect_try.py`: geometric t0-chains stay at Q ≥ 0.9379; 200 random
+atomic trials stayed above 0.930; the power-law n=3.5 trial is
+Q ≈ 0.9207. No explicit measure in that scan dips below the compact
+γ. Truncation of those trials to aspect 4 did not increase Q. That
+is evidence, not a proof that every measure has aspect ≤ 4, and not
+a lift.
 
-## What is not claimed
+The leftover handle is a proof that a minimizer has bounded aspect,
+or any other global lower bound strictly above min f.
 
-The numerical 1.086 is not a lower bound on β_3^{-1}. The certified
-γ is a lower bound on β_3, hence an *upper* bound on the ionization
-coefficient. Remainder constants in HPS §7 are not recomputed here.
-s>3 remains open.
+## s>3
+
+`b(4)≈1.083` would be a real jump if Lemma 4.3 extended. Two-shell
+dipoles make I_s(ν) negative for every tested s>3. Closed form at
+s=4: Q=−1025/2048. See `work/s_gt_3_notes.md`.

@@ -201,43 +201,48 @@ fn face_min_mmm(n: usize, mmat: &[Vec<f64>]) -> (f64, u64) {
 }
 
 fn main() {
-    let txt = fs::read_to_string("certs/beta3_matrix.txt").unwrap_or_else(|_| {
-        fail("missing certs/beta3_matrix.txt");
-    });
-    let mut toks = txt.split_whitespace();
-    let n: usize = toks.next().unwrap().parse().unwrap();
-    let gamma_t: f64 = toks.next().unwrap().parse().unwrap();
-    if n > 32 {
-        fail("n too large");
-    }
-    let mut c = vec![0.0; n];
-    for i in 0..n {
-        c[i] = toks.next().unwrap().parse().unwrap();
-    }
-    let mut a = vec![vec![0.0; n]; n];
-    for i in 0..n {
-        for j in 0..n {
-            a[i][j] = toks.next().unwrap().parse().unwrap();
+    // Optional: re-check a C matrix if present. The withdrawn global
+    // certs/beta3_matrix.txt is not required. The production check is
+    // the independent n=16 R=4 rebuild below (compact class only).
+    let ok = if let Ok(txt) = fs::read_to_string("certs/beta3_mid_R4_n18.txt") {
+        let mut toks = txt.split_whitespace();
+        let n: usize = toks.next().unwrap().parse().unwrap();
+        let gamma_t: f64 = toks.next().unwrap().parse().unwrap();
+        if n > 32 {
+            fail("n too large");
         }
-    }
-    let mut mmat = vec![vec![0.0; n]; n];
-    for i in 0..n {
-        for j in 0..n {
-            mmat[i][j] = a[i][j] - 0.5 * gamma_t * (c[i] + c[j]);
+        let mut c = vec![0.0; n];
+        for i in 0..n {
+            c[i] = toks.next().unwrap().parse().unwrap();
         }
-    }
-    let ok = if n <= 18 {
-        let (min_val, interior) = face_min_mmm(n, &mmat);
-        let pass = min_val - 1e-10 >= 0.0;
-        println!(
-            "rust matrix n={n} gamma_t={gamma_t:.10} min m^T M m={min_val:.8e} interior={interior} ok={pass}"
-        );
-        if !pass {
-            fail("M not copositive on the simplex");
+        let mut a = vec![vec![0.0; n]; n];
+        for i in 0..n {
+            for j in 0..n {
+                a[i][j] = toks.next().unwrap().parse().unwrap();
+            }
         }
-        pass
+        let mut mmat = vec![vec![0.0; n]; n];
+        for i in 0..n {
+            for j in 0..n {
+                mmat[i][j] = a[i][j] - 0.5 * gamma_t * (c[i] + c[j]);
+            }
+        }
+        if n <= 18 {
+            let (min_val, interior) = face_min_mmm(n, &mmat);
+            let pass = min_val - 1e-10 >= 0.0;
+            println!(
+                "rust matrix n={n} gamma_t={gamma_t:.10} min m^T M m={min_val:.8e} interior={interior} ok={pass}"
+            );
+            if !pass {
+                fail("M not copositive on the simplex");
+            }
+            pass
+        } else {
+            println!("rust matrix n={n} skipped full enum; n=16 rebuild follows");
+            true
+        }
     } else {
-        println!("rust matrix n={n} skipped full enum (C path); n=16 rebuild follows");
+        println!("no compact C matrix on disk; n=16 rebuild only");
         true
     };
 
@@ -321,11 +326,11 @@ fn main() {
         "rust n=16 R=4  phi_target={gt2} err={err:.6} gamma≤{gamma16:.6} minM={min2:.4e} beats={beats}"
     );
     let blob = format!(
-        "{{\n  \"n_matrix\": {n},\n  \"matrix_copositive\": {ok},\n  \"n16_R4_gamma\": {gamma16:.12},\n  \"n16_R4_beats_fmin\": {beats}\n}}\n"
+        "{{\n  \"matrix_copositive\": {ok},\n  \"n16_R4_gamma\": {gamma16:.12},\n  \"n16_R4_beats_fmin\": {beats},\n  \"is_new_bound\": false,\n  \"note\": \"compact aspect<=4 method check, not a Theorem 2.2 dent\"\n}}\n"
     );
     fs::write("certs/beta3_rs.json", blob).unwrap();
     if !beats {
-        fail("n=16 R=4 independent rebuild did not beat 1/b(3)");
+        fail("n=16 R=4 independent rebuild did not beat 1/b(3) on the compact class");
     }
-    println!("verify_beta3.rs PASS");
+    println!("verify_beta3.rs PASS (compact method check; not a Thm 2.2 dent)");
 }

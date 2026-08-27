@@ -155,7 +155,7 @@ def assemble_mid(R: float, n: int):
 
 
 def tail_h(x, y, a, beta, fmin):
-    """Lower bound of I (D=1) in the tail lemma. x=D_L, y=D_R."""
+    """Withdrawn tail polynomial. Not a lower bound of I. x=D_L, y=D_R."""
     Dc = 1 - x - y
     if Dc < 0:
         return mpf("1e9")
