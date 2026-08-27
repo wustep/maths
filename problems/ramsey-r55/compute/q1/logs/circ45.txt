@@ -1,0 +1,1 @@
+DONE n=45 ndist=22 deg=[20,24] scanned=1704794 legal_deg=1704794 hits=0 sec=0.946

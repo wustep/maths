@@ -73,3 +73,18 @@ python3 verify_mckay.py
 python3 py_circulant.py 43
 python3 check_groups.py
 ```
+
+## 2026-08-27 — urls opened
+
+- `https://www.cs.rit.edu/~spr/ElJC/eline.html` — revision list still ends at #18, 24 April 2026, 149pp / 1066 refs. No #19.
+- `https://www.cs.rit.edu/~spr/ElJC/ejcram18.pdf` — 585821-byte PDF, version 1.4, 149 pages. Title page “revision #18: April 24, 2026”. Table Ia: $R(5,5)$ is $43$–$46$. Item 2.1(e): conjecture $R(5,5)=43$ with exactly 656 critical graphs on 42 vertices; upper bound 46 via [AnM3]. [AnM4] in the reference list is the 2026 Journal of Graph Theory print.
+- `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` — living DS1, `citation_firstpage` “DS1: Apr 24”, `DC.Date.modified` 2026-04-23. No later survey.
+- `https://arxiv.org/abs/2409.15709` — Angeltveit–McKay v2, 1 September 2025. “The lower bound of 43 … is still the best.” 45 would need new theory.
+- `https://arxiv.org/html/2409.15709v2` — same paper, HTML text used by `scripts/arxiv_fetch.py`.
+- `https://export.arxiv.org/api/query?search_query=all:"R(5,5)"…&sortBy=submittedDate&sortOrder=descending` — 6 hits. Newest after 2409.15709 is 2508.16699v2.
+- `https://arxiv.org/abs/2508.16699` — Tamburini, random-projector heuristic for $R(5,5)=45$. Abstract: diagnostics “identify $R(5,5)$ at $n=45$”; not a colouring and not a nonexistence log. Lead, not a bound.
+- `https://users.cecs.anu.edu.au/~bdm/data/ramsey.html` — “The largest known Ramsey(5,5)-graphs”: Exoo then McKay–Radziszowski 656; “there could be more with 42 vertices and even some with 43-47 vertices.” File `r55_42some.g6` still offered.
+
+Failed / unused: `https://www.cs.rit.edu/~spr/PUBLIC/index.html` returned 404 (the survey lives under `ElJC/`).
+
+Independent parent replay this session: `compute/replay.sh` and `python3 verify_mckay.py`. 328+328 ok, 0 extensions, circulant 42/43 empty.

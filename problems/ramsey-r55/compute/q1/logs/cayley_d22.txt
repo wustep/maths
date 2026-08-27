@@ -1,0 +1,1 @@
+c group=d22 n=44 npairs=10 ninv=23 deg=[19,24]
