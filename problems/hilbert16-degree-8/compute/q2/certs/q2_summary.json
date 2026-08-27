@@ -1,0 +1,52 @@
+{
+ "search": "q2: radius-1 thicken of census triangulations of twist-rank 21-26, three-split ladder on the (19,3) row, odd skeletons of size 4, and a longer pinned even-split BFS",
+ "thicken": {
+  "triangulations_logged": 5,
+  "triangulations_complete": 5,
+  "ranks_completed": {
+   "21": 5
+  },
+  "total_evaluations": 482344960,
+  "novel_on_thicken": []
+ },
+ "even_walk": {
+  "summaries": [
+   {
+    "kind": "summary",
+    "evals": 400000,
+    "distinct": 5,
+    "new": 0,
+    "hits": 0,
+    "best_score": 6.0,
+    "best_scheme": "<17 u 1<2 u 1<1>>>",
+    "mode": "bfs",
+    "pin_odd": true,
+    "collections": 400000,
+    "queue_left": 393239,
+    "limit": 400000
+   }
+  ],
+  "hits": []
+ },
+ "dn_sweep": {
+  "summaries": [
+   {
+    "kind": "summary",
+    "evals": 2719977,
+    "distinct": 30,
+    "new": 0,
+    "hits": 0,
+    "best_score": 6.0,
+    "best_scheme": "<17 u 1<2 u 1<1>>>",
+    "mode": "ladder3",
+    "which": "193",
+    "complete": false,
+    "seconds": 11165.2
+   }
+  ],
+  "new_or_hit": []
+ },
+ "NEW_candidates": [],
+ "NEW_candidates_ovals": {},
+ "candidate_cert_file": null
+}

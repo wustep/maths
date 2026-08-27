@@ -1,0 +1,61 @@
+{
+  "what": "Radius-1 thicken of leftover census triangulations of twist-rank 21. Complete only when every task has evals == 46 * 2^rank.",
+  "kind": "leftover_thicken_r1",
+  "radius": 1,
+  "min_rank": 21,
+  "max_rank": 21,
+  "n_tasks": 5,
+  "n_complete": 4,
+  "n_incomplete": 0,
+  "n_missing": 1,
+  "complete": false,
+  "expected_evals": 482344960,
+  "evals": 385875968,
+  "novel": [],
+  "missing": [
+    "deg8/o22-p11-n11/(8v1(1)v2(5)).pcom"
+  ],
+  "incomplete": [],
+  "tasks": [
+    {
+      "cert": "deg8/o14-p11-n03/(3v1(2v1(7))).pcom",
+      "rank": 21,
+      "evals": 96468992,
+      "expected": 96468992,
+      "distinct_schemes": 19,
+      "complete": true,
+      "novel": [],
+      "seconds": 2885.4
+    },
+    {
+      "cert": "deg8/o18-p13-n05/(1(4v1(12))).pcom",
+      "rank": 21,
+      "evals": 96468992,
+      "expected": 96468992,
+      "distinct_schemes": 103,
+      "complete": true,
+      "novel": [],
+      "seconds": 2851.4
+    },
+    {
+      "cert": "deg8/o21-p03-n18/(2v1(18)).pcom",
+      "rank": 21,
+      "evals": 96468992,
+      "expected": 96468992,
+      "distinct_schemes": 28,
+      "complete": true,
+      "novel": [],
+      "seconds": 4727.8
+    },
+    {
+      "cert": "deg8/o22-p11-n11/(5v1(10v1(5))).pcom",
+      "rank": 21,
+      "evals": 96468992,
+      "expected": 96468992,
+      "distinct_schemes": 178,
+      "complete": true,
+      "novel": [],
+      "seconds": 4714.6
+    }
+  ]
+}

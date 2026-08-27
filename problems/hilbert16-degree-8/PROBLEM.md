@@ -174,3 +174,31 @@ Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q1/run_all.sh && python3 q1/collect.py`
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-27, leftover rank 21)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. No q2 candidate for a new
+scheme.
+
+Radius 1 around the maximal Haas stratum finished every leftover
+census triangulation of twist-rank 21 (5/5, 482,344,960 sign
+distributions, exactly \(46\cdot 2^{21}\) on each,
+`compute/q2/certs/thick_r1_rank_21.json`). Every scheme found is
+already in the published 2,367. Neither open nest appeared. That is
+a finished sweep of this rank, not a lower bound. Fifteen leftover
+triangulations of ranks 22–26 are still open (**residue**).
+
+Collection space: a 400,000-step even-split BFS stays on the five
+published (19,3) M-schemes (`compute/q2/certs/even_pinned.json`).
+Three-split moves around those five collections produced 30 known
+schemes and neither nest; the time cap stopped the last seed
+(`compute/q2/certs/ladder3.json`). Odd collections of size 4, as
+far as the snapshot ran, stay on the same twelve M-schemes as size
+≤ 3 (`compute/q2/certs/odd_skel4.json`). Neither open nest is
+decided.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q2/run_all.sh && python3 q2/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.

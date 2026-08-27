@@ -365,3 +365,32 @@ nests may sit at Hamming distance greater than 1 from the maximal
 Haas stratum, or on a triangulation that is not among the 184
 census ones. Ranks 21–26 (twenty triangulations) were never in
 the leftover.
+
+## 16. Rank 21 of that leftover, then the next collection moves
+
+The five leftover triangulations of twist-rank 21 are now finished
+the same way: radius 1 around the whole Haas maximal stratum,
+\(46\cdot 2^{21}\) sign distributions on each, 482,344,960 in all.
+Novel versus the published census is empty. None of the seventeen
+reappears either — those five certificates simply do not see the
+schemes that sit off the census. The two published (19,3) liftings
+were already rank 20. The only (19,3) certificate in ranks 21–26
+is the Harnack triangulation at rank 23, still untouched.
+
+So the leftover thicken is no longer "ranks 21–26 were never
+tried." It is "rank 21 is a finished neighbourhood and added
+nothing; ranks 22–26 are still open." That is still not an
+obstruction. Hamming distance greater than 1, or a triangulation
+outside the 184, remains possible.
+
+Collection space was pushed one step past q1 and stayed quiet.
+Four hundred thousand even twists still produce exactly the five
+published (19,3) M-schemes. Dropping at most one split and adding
+three, from those same five collections, produces thirty known
+M-schemes and neither open nest — and the last seed was cut by a
+time cap, so even that is only a prefix. Odd collections of size 4
+had not left the twelve schemes of size ≤ 3 when the snapshot was
+taken (40 of 189 outer indices). The published \(a=10\) nest still
+has seven odd splits; size 4 can see a larger odd part than size 3,
+but it has not seen a new M-scheme yet, and silence there is still
+not evidence about \(a=4\) or \(a=14\).

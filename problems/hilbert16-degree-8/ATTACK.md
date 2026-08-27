@@ -924,3 +924,61 @@ Ranks 21–26 (20 census triangulations) were never in that leftover.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q1/run_all.sh && python3 q1/collect.py`.
+
+## 2026-08-27 — q2: leftover ranks 21–26 and the next (19,3) moves
+
+Grok 4.6, new branch from `origin/main` `6ae8676` (q1 wrap merged).
+Record re-fetched: arXiv:2602.06888 still **v3, 27 Jul 2026**;
+§5.3 still 2,367 nonempty T-schemes. Parent 17/17 and `sh q1/run_all.sh`
+this session: still green. Bound still ≥ 2,384.
+
+Code in `compute/q2/`. Replay: `sh q2/run_all.sh`.
+
+The leftover named in the q1 wrap is the twenty census triangulations
+of twist-rank 21–26 (expected 9,164,554,240 radius-1 evaluations,
+exactly \(46\cdot 2^r\) on each) and the two open (19,3) nests.
+Collection-space next steps: three-split moves around the published
+(19,3) collections, odd collections of size 4, and a longer pinned
+even-split BFS.
+
+An incomplete prefix is residue, not a lower bound. No new scheme
+is claimed until `verify_new.py` accepts a certificate outside the
+2,367 and the seventeen.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| radius-1 thicken, every leftover census triangulation of rank 21 | 482,344,960 | **5/5 complete**; evals = \(46\cdot 2^{21}\) on each; novel vs census empty |
+| pinned even-split BFS, 400,000 collections | 400,000 | the five published (19,3) M-schemes only; queue left 393,239 (**residue**) |
+| three-split ladder around the five published (19,3) collections | 2,719,977 | 30 known schemes, 0 new, 0 hits; time cap during the last seed (**residue**) |
+| odd collections, size 4 snapshot | 3,740,056 | size 3 matches q1 (368,936, 12 schemes); size 4 at 40/189 still those 12, 0 hits (**residue**) |
+
+Certificates: `compute/q2/certs/thick_r1_rank_21.json`,
+`even_pinned.json`, `ladder3.json`, `odd_skel4.json`.
+Prefix: `thick_r1_rank_21_21_prefix.json`.
+
+Ranks 22–26 (15 census triangulations) were not finished. Expected
+remaining radius-1 evaluations: \(8{,}682{,}209{,}280\). That leftover
+is residue, not a lower bound.
+
+### What the (19,3) row did this time
+
+A longer even walk (400k vs q1's 200k) stays on the same five
+published (19,3) M-schemes. Three-split moves around those five
+collections reach 30 known M-schemes and neither open nest; the
+last seed was cut by the time cap, so that is a distance statement
+only for the finished seeds. Size-4 odd collections, as far as the
+snapshot ran, stay on the same twelve M-schemes as size ≤ 3.
+
+None of that decides ⟨4⊔1⟨2⊔1⟨14⟩⟩⟩ or ⟨14⊔1⟨2⊔1⟨4⟩⟩⟩.
+
+### Status
+
+Hilbert 16(a) in degree 8 remains open. The dent is still the
+seventeen schemes and the bound ≥ 2,384; both replay. No new
+scheme, no deep-nest decision. Rank 21 of the leftover thicken is
+finished and added nothing. Ranks 22–26 remain.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q2/run_all.sh && python3 q2/collect.py`.
