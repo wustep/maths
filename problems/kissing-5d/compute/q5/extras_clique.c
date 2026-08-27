@@ -178,10 +178,13 @@ static void expand(u64 *P, int rsz, int *stack, u64 U)
     int psz = popc(P);
     int uk = __builtin_popcountll(U);
     /* even taking every remaining extra, |E| = rsz+psz, need |E| >= |U|+1
-     * and |U| can only grow */
+     * and |U| can only grow.  q4 emptied |U|<=18, so a leftover 41-set
+     * also needs |U| >= 19. */
     if (rsz + psz <= uk)
         return;
     if (rsz + psz < target)
+        return;
+    if (rsz + psz < 20)
         return;
     if (psz == 0) {
         if (rsz > best)

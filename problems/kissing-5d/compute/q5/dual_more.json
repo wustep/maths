@@ -1,0 +1,50 @@
+{
+  "delsarte_deg12": {
+    "numerical": 46.336869215638316,
+    "trials": [
+      {
+        "den": 100,
+        "certified": false,
+        "bound": "927/20",
+        "float_bound": 46.35,
+        "error": null
+      },
+      {
+        "den": 1000,
+        "certified": false,
+        "bound": "46337/1000",
+        "float_bound": 46.337,
+        "error": null
+      },
+      {
+        "den": 10000,
+        "certified": false,
+        "bound": "463369/10000",
+        "float_bound": 46.3369,
+        "error": null
+      }
+    ]
+  },
+  "delsarte_deg16": {
+    "numerical": 46.336869215638316,
+    "trials": [
+      {
+        "den": 1000,
+        "certified": false,
+        "bound": "46337/1000",
+        "float_bound": 46.337,
+        "error": null
+      },
+      {
+        "den": 10000,
+        "certified": false,
+        "bound": "463369/10000",
+        "float_bound": 46.3369,
+        "error": null
+      }
+    ]
+  },
+  "comment": "1-point continuum Delsarte cannot go below Odlyzko\u2013Sloane ~46.34.  No certified unrestricted dual below 44.",
+  "best_certified": null,
+  "below_44": false
+}

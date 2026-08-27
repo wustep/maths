@@ -1,0 +1,402 @@
+{
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "n_extra_edges": 884720,
+  "n_intra_group_edges": 0,
+  "groups_edgeless": true,
+  "type_split": {
+    "n_four_seeds": 160,
+    "n_six_seeds": 80,
+    "four_seed_group_size": 5,
+    "six_seed_group_size": 8,
+    "type_A": {
+      "abs": [
+        4,
+        2,
+        2,
+        2,
+        2
+      ],
+      "n": 160
+    },
+    "type_B": {
+      "abs": [
+        5,
+        2,
+        1,
+        1,
+        1
+      ],
+      "n": 640
+    },
+    "type_C": {
+      "abs": [
+        3,
+        3,
+        3,
+        2,
+        1
+      ],
+      "n": 640
+    },
+    "four_seed_type_split_unique": [
+      "{\"(1, 1, 1, 2, 5)\": 4, \"(2, 2, 2, 2, 4)\": 1}"
+    ],
+    "six_seed_type_split_unique": [
+      "{\"(1, 2, 3, 3, 3)\": 8}"
+    ],
+    "four_seeds_inside_a_six_seed": 0,
+    "comment": "Each four-seed is 1 type-A (4,2,2,2,2) plus 4 type-B (5,2,1,1,1).  Each six-seed is 8 type-C (3,3,3,2,1)."
+  },
+  "proved": false,
+  "argument": "A missed-root colouring of extras does not prove omega(pool(U)) <= |U|.  Two extras that miss the same D5 root can still kiss: 236960 kissing pairs share at least one root (287360 root-edge incidences).  An explicit pair is recorded under coloring.example_pair (inner product 14 <= 16).  Same-missed extras \u2014 those with the same full seed \u2014 are edgeless, but sharing a single root is weaker and is not a stable set.  A principal-root colouring (the unique missed root of largest inner product, when it exists) does not cover the graph: only 640 extras have a unique principal root (the 640 type-B points); the 800 type-A and type-C extras have a tie, and 0 kissing pairs among the type-B points share a principal root. A tight star 8-clique on e0- has missed-set rank 5 over Q and 4 over GF(2), so the characteristic vectors are dependent and do not force |E| <= |U|.  Hall matching of a clique into U is equivalent to the inequality itself, not a separate reason.  The tests below found no U with omega > |U|, but that is a finite sample (plus the ten stars and every single seed), not a proof for every U.  Leftover |U| >= 19 of the 1480-graph remains open.  This does not claim tau_5 = 40.",
+  "counterexample": null,
+  "n_leads": 0,
+  "leads": [],
+  "coloring": {
+    "same_missed_edgeless": true,
+    "shared_root_kissing_pairs": 236960,
+    "shared_root_incidences": 287360,
+    "shared_root_is_stable": false,
+    "example_pair": {
+      "extra_i": [
+        -5,
+        -2,
+        -1,
+        -1,
+        1
+      ],
+      "extra_j": [
+        -4,
+        2,
+        -2,
+        2,
+        -2
+      ],
+      "inner": 14,
+      "thresh": 16,
+      "missed_i": 4,
+      "missed_j": 4,
+      "n_shared_roots": 1,
+      "shared_root_indices": [
+        4
+      ]
+    },
+    "per_root_edge_min": 7184,
+    "per_root_edge_max": 7184,
+    "n_unique_principal": 640,
+    "principal_conflicts": 0,
+    "principal_example": null
+  },
+  "linear_algebra": {
+    "checked": true,
+    "star": "e0-",
+    "clique_size": 8,
+    "rank_Q": 5,
+    "rank_GF2": 4,
+    "nodes": 8,
+    "complete": true,
+    "best": 8
+  },
+  "tests": {
+    "node_limit": 200000,
+    "rng_seed": 20260827,
+    "stars": {
+      "n": 10,
+      "omega_eq_U": 10,
+      "omega_lt_U": 0,
+      "omega_gt_U": 0,
+      "incomplete": 0,
+      "all_complete": true,
+      "rows": [
+        {
+          "name": "e0-",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 10,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e0+",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e1-",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e1+",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e2-",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e2+",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e3-",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e3+",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e4-",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        },
+        {
+          "name": "e4+",
+          "n_pool": 80,
+          "k": 8,
+          "best": 8,
+          "nodes": 9,
+          "complete": true,
+          "n_seeds_in_U": 16,
+          "cmp": "eq"
+        }
+      ]
+    },
+    "single_seeds": {
+      "n": 240,
+      "omega_eq_U": 0,
+      "omega_lt_U": 240,
+      "omega_gt_U": 0,
+      "incomplete": 0,
+      "all_complete": true,
+      "four_seed_best_unique": [
+        1
+      ],
+      "six_seed_best_unique": [
+        1
+      ],
+      "four_seed_n_pool_unique": [
+        5
+      ],
+      "six_seed_n_pool_unique": [
+        8
+      ]
+    },
+    "random_unions": {
+      "n": 200,
+      "omega_eq_U": 0,
+      "omega_lt_U": 200,
+      "omega_gt_U": 0,
+      "incomplete": 0,
+      "all_complete": true,
+      "n_chosen_hist": {
+        "3": 47,
+        "4": 47,
+        "5": 55,
+        "6": 51
+      },
+      "k_hist": {
+        "9": 5,
+        "10": 4,
+        "11": 6,
+        "12": 18,
+        "13": 6,
+        "14": 20,
+        "15": 14,
+        "16": 15,
+        "17": 15,
+        "18": 25,
+        "19": 14,
+        "20": 11,
+        "21": 15,
+        "22": 10,
+        "23": 11,
+        "24": 6,
+        "25": 4,
+        "26": 1
+      },
+      "best_minus_k_hist": {
+        "-14": 6,
+        "-13": 19,
+        "-12": 27,
+        "-11": 36,
+        "-10": 33,
+        "-9": 36,
+        "-8": 22,
+        "-7": 13,
+        "-6": 7,
+        "-5": 1
+      },
+      "sample": [
+        {
+          "n_pool": 30,
+          "k": 16,
+          "best": 4,
+          "complete": true,
+          "n_seeds_chosen": 4,
+          "n_seeds_in_U": 6,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 20,
+          "k": 11,
+          "best": 3,
+          "complete": true,
+          "n_seeds_chosen": 3,
+          "n_seeds_in_U": 4,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 20,
+          "k": 12,
+          "best": 3,
+          "complete": true,
+          "n_seeds_chosen": 3,
+          "n_seeds_in_U": 4,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 79,
+          "k": 17,
+          "best": 6,
+          "complete": true,
+          "n_seeds_chosen": 5,
+          "n_seeds_in_U": 14,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 66,
+          "k": 14,
+          "best": 5,
+          "complete": true,
+          "n_seeds_chosen": 4,
+          "n_seeds_in_U": 12,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 46,
+          "k": 14,
+          "best": 5,
+          "complete": true,
+          "n_seeds_chosen": 4,
+          "n_seeds_in_U": 8,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 109,
+          "k": 18,
+          "best": 7,
+          "complete": true,
+          "n_seeds_chosen": 6,
+          "n_seeds_in_U": 20,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 15,
+          "k": 11,
+          "best": 3,
+          "complete": true,
+          "n_seeds_chosen": 3,
+          "n_seeds_in_U": 3,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 204,
+          "k": 25,
+          "best": 14,
+          "complete": true,
+          "n_seeds_chosen": 6,
+          "n_seeds_in_U": 36,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 102,
+          "k": 18,
+          "best": 8,
+          "complete": true,
+          "n_seeds_chosen": 4,
+          "n_seeds_in_U": 18,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 81,
+          "k": 15,
+          "best": 6,
+          "complete": true,
+          "n_seeds_chosen": 4,
+          "n_seeds_in_U": 15,
+          "cmp": "lt"
+        },
+        {
+          "n_pool": 28,
+          "k": 10,
+          "best": 3,
+          "complete": true,
+          "n_seeds_chosen": 3,
+          "n_seeds_in_U": 5,
+          "cmp": "lt"
+        }
+      ]
+    }
+  },
+  "stats": {
+    "n": 450,
+    "omega_eq_U": 10,
+    "omega_lt_U": 440,
+    "omega_gt_U": 0,
+    "incomplete": 0,
+    "all_complete": true
+  },
+  "comment": "q4 emptied every seed-union with |U| <= 18; leftover is |U| >= 19.  A 41-set needs |E| >= |U| + 1.  This file asks whether omega(pool(U)) <= |U| always.  A yes with a proof would empty the 1480-graph.  A single U with omega > |U| is a 41-lead.  Tests used cliqueutil.clique_search with node_limit=200000.  No claim that tau_5 = 40."
+}
