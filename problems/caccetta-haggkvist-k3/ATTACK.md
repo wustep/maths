@@ -163,3 +163,11 @@ Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s fo
 Those six cubes are UNSAT with stored, replayed DRATs (`certs/keep/ch-18-6-k{6..11}.{cnf,drat}`). So every 18-vertex oriented graph with δ⁺ ≥ 6 has a directed triangle.
 
 This is a dent against the finite hole, not against HKN 0.3465 (that number already misses n=18). Did not beat 0.34645. Did not treat 0.3388 as published. The k=0 search is leftover bookkeeping, not a bound.
+
+## 2026-08-27 — q2, next exact holes
+
+Continue from the n=18 pigeonhole. Code is `compute/q2/`. Published unrestricted threshold is still HKN Combinatorica 0.3465: fetched arXiv:0908.2791v4 tonight (abstract and Theorem 1.2 still 0.3465n; no later version). Grzesik–Volec arXiv:2102.12830v2 still does not replace the unrestricted triangle number. Cheng–Keevash arXiv:2402.16776v4 (21 Aug 2024) quotes HKN 0.3465 as the triangle-case input and proves a path-length statement, not a new c. No arXiv hit after 2024 states a published unrestricted c < 0.3465 with a public certificate. Do not treat 0.3388 as published. The stored F₄ certificate at 0.34645 is not to be moved unless a new inequality appears.
+
+After n=18, the first remaining exact order is n=21, δ⁺=7 (0.3465·21 = 7.2765 > 7; even 0.3388·21 = 7.1148 > 7). Then n=24, and a few near-threshold orders such as n=26 (0.3465·26 = 9.009 > 9). A 7-outregular oriented graph on 21 vertices has 147 arcs, so some in-degree is at least 7. Same encoder as q1: cubes k=|N⁻(0)|. Counting on N⁺(0) empties k=13. The statement reduces to k=7..12.
+
+A DRAT/UNSAT on every needed cube, or a verified C₃-free 7-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound.
