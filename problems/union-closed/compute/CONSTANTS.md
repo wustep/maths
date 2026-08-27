@@ -17,5 +17,7 @@ All logs base 2.  Replay: `python solve_published.py`, `python verify.py`, `q1/r
 | claimed c | **0.38304** | 2026-08-27: below the analytic crossing, min ratio 1.000021687 on 5.1M cells (Python and C) |
 | 2-sample ceiling on {b,1} | 0.38305135658682558 | q2: any bit protocol, product coupling; `h(Π_{b,b})≤1` |
 | 2-mixture witness ratio | 0.9091371378730101 | q2: `{b*,1}` at mean 0.45 mixed with `δ_{0.01}`; not a ray dent |
+| q3 claimed c | **0.38305** | 2026-08-27: 9,000×7,000 mesh; min ratio 1.0000049143029008 on 20,440,358 retained cells; Python and C agree |
 
-Deltas versus the published quotes are < 10⁻¹⁴ (Liu, Cambie). The claimed constant did not move in q2.
+Deltas versus the published quotes are < 10⁻¹⁴ (Liu, Cambie). q2 left
+the printed constant unchanged; q3 moves it from 0.38304 to 0.38305.

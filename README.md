@@ -129,7 +129,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [ulam-sequence](problems/ulam-sequence) | L=22 word with $C_F<1.442$, beating CS 1.454. Density open. |
 | [long-gap-dilate](problems/long-gap-dilate) | SAT $G(p,\mathrm{round}\sqrt p)$ through $p=73$. No universal $C>2$. Record still Shakan 2. |
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
-| [union-closed](problems/union-closed) | Certified frequency $0.38304$ on the two-point family {b,1} under Liu Example 4. Analytic first-crossing $0.383051$; mesh min ratio $1.000022$. Recovers Liu $0.382709$. Not one half. |
+| [union-closed](problems/union-closed) | Certified frequency $0.38305$ on the two-point family {b,1} under Liu Example 4. Analytic first-crossing $0.3830513565\ldots$; a 9,000 by 7,000 Python/C mesh has minimum ratio $1.0000049143$. This improves the prior printed $0.38304$ and Liu's $0.382709$. Frankl's one-half target remains open. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
 | [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Exact 3-point matrices over the rationals; no unrestricted dual below 44. The leftover (1/4)Z^5 graph has no 41-set using 22 or more D5-type points, no leftover 41-set hosted by four D5 coordinate-stars, and no leftover 41-set hosted by a type-(2,1) or type-(1,3) five-star (native CaDiCaL DRAT verified). The 355-point T^5 remainder has no 36-clique (native CaDiCaL DRAT verified). Range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
@@ -208,6 +208,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | union-closed | `problems/union-closed` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed / Example 4 on {b,1} | `problems/union-closed/compute/q1` | Grok 4.6 | 2026-08-27 |
 | union-closed / 2-sample ceiling on {b,1} | `problems/union-closed/compute/q2` | Grok 4.6 | 2026-08-27 |
+| union-closed / fifth-decimal ray certificate | `problems/union-closed/compute/q3` | Codex (GPT-5) | 2026-08-27 |
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok 4.6 | 2026-08-17 |
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
