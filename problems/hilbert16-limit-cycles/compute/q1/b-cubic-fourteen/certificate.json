@@ -1,0 +1,97 @@
+{
+  "abelian_integral": {
+    "I_h": "pi*mu*h*(2 - h)",
+    "I_over_pi_mu_coeffs_h_high_to_low": [
+      "-1",
+      "2",
+      "0"
+    ],
+    "I_prime_at_2": "-2*pi*mu",
+    "methods_agree": [
+      "trig_parametrization",
+      "green_disk_flux"
+    ],
+    "note": "A simple zero of the first-order Abelian integral gives a unique hyperbolic cycle near the circle of radius 2 for sufficiently small \u03bc>0 (Poincar\u00e9\u2013Pontryagin). Uniqueness for every \u03bc>0 is the Li\u00e9nard theorem, not this integral.",
+    "perturbation_P1": "0",
+    "perturbation_Q1": "-(x**2 - 1)*y",
+    "positive_zeros": [
+      "2"
+    ],
+    "simple_at_h2": true,
+    "unperturbed_H": "(x**2 + y**2)/2"
+  },
+  "energy": {
+    "cartesian_dE_dt": "-mu*(x**2 - 1)*y**2",
+    "closed_orbit_must_meet_both_strips": true,
+    "lienard_dW_dt": "-x*F(x)",
+    "lienard_dW_dt_expanded": "-mu*x**2*(x**2/3 - 1)"
+  },
+  "equilibrium": {
+    "charpoly_lambda": "lambda**2 - mu*lambda + 1",
+    "det_at_0": "1",
+    "jacobian_at_0": [
+      [
+        "0",
+        "1"
+      ],
+      [
+        "-1",
+        "mu"
+      ]
+    ],
+    "origin_is_source": true,
+    "trace_at_0": "mu",
+    "unique_equilibrium": [
+      0,
+      0
+    ]
+  },
+  "exact_statement": "For every real mu>0 the cubic van der Pol field dx/dt=y, dy/dt=-x-mu*(x**2-1)*y satisfies the hypotheses of Lienard's uniqueness theorem, hence has exactly one periodic orbit, and that orbit is asymptotically stable. Separately, its first-order Abelian integral on the ovals of H=(x**2+y**2)/2 is I(h)=pi*mu*h*(2-h), with exactly one positive simple zero, at h=2.",
+  "field": {
+    "P": "y",
+    "Q": "-x - mu*(x**2 - 1)*y",
+    "deg_P": 1,
+    "deg_Q": 3,
+    "degree": 3
+  },
+  "h3_lower_bound_claimed": false,
+  "hn_moved": false,
+  "imagined_claim": "An explicit real cubic planar field with 14 isolated periodic orbits, beating Li\u2013Liu\u2013Yang H(3)>=13.",
+  "isolated_periodic_orbits": 1,
+  "lienard_hypotheses": {
+    "F": "mu*(x**3/3 - x)",
+    "F_factored": "(mu/3)*x*(x**2 - 3)",
+    "F_negative_on": "(0, sqrt(3))",
+    "F_odd": true,
+    "F_positive_on": "(sqrt(3), oo)",
+    "F_prime_at_0": "-mu",
+    "F_prime_at_sqrt3": "2*mu",
+    "F_prime_positive_on_tail": true,
+    "F_tends_to_plus_infinity": true,
+    "G": "x**2/2",
+    "G_tends_to_plus_infinity": true,
+    "f": "mu*(x**2 - 1)",
+    "g": "x",
+    "g_odd": true,
+    "positive_zero_of_F": "sqrt(3)",
+    "theorem": "Li\u00e9nard uniqueness for \u1e8b=y-F(x), \u1e8f=-x with F odd, one positive zero a, F<0 on (0,a), F>0 and F'>0 on [a,\u221e), F\u2192\u221e. Conclusion: exactly one periodic orbit, asymptotically stable.",
+    "xg_positive_off_zero": true
+  },
+  "line": "B",
+  "not_the_radial_family": {
+    "distinct_from_radial_family": true,
+    "radial_P": "y - x*(x**2 + y**2 - rho**2)",
+    "radial_Q": "-x - y*(x**2 + y**2 - rho**2)",
+    "this_P": "y",
+    "this_Q": "-x - mu*(x**2 - 1)*y"
+  },
+  "parameter": "mu>0",
+  "published_record": "H(3)>=13, Li\u2013Liu\u2013Yang, J. Differ. Equations 246 (2009). Not replayed (paywalled). Not beaten.",
+  "status": "fork",
+  "what_this_is_not": [
+    "not a dent of H(3)",
+    "not a claim that H(3)>=14",
+    "not a replay of Li\u2013Liu\u2013Yang's 13 cycles",
+    "not a lower bound from numerics"
+  ]
+}

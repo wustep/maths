@@ -1,0 +1,631 @@
+{
+  "arxiv": "2504.18487v1",
+  "urls_opened": [
+    "https://arxiv.org/abs/2504.18487",
+    "https://arxiv.org/html/2504.18487v1"
+  ],
+  "dps": 80,
+  "definition": "I_s(\u03bd) = \u222c (|x|^s+|y|^s)/(2|x-y|) d\u03bd(x) d\u03bd(y), \u03bd orthogonal to radial functions",
+  "verdict": {
+    "I_s_goes_negative_for_s_gt_3": true,
+    "on_which_examples": [
+      "dipole_two_shell_s31",
+      "dipole_two_shell_s35",
+      "dipole_two_shell_s4"
+    ],
+    "I_3_stays_nonnegative_on_all_examples": true,
+    "certified_path_to_s_gt_3": false,
+    "reason": "Lemma 4.3 needs I_s(\u03bd)\u22650 for every \u03bd \u22a5 radial. Two-shell \u2113=1 measures give I_s<0 for every s>3 (interval enclosure of the closed quadratic form; s=4 is the exact rational \u22121025/2048). Hardy is applied to u=|x|^{s/2} V, not to V. Q_H(V) stays near 4.5 and does not control the sign of I_s. For the s=3.1 dipole, Q_H(u) < (3.1)\u00b2/4 already, so there is no uniform gap past 9/4. Lemma 5.9 (\u03b1_N vs \u03b2, 2\u2264s\u22644) does not replace radialization. A 3D search is only an upper bound on \u03b2_s.",
+    "b4": "1.083024917507624435206881756796524210931",
+    "b4_interval": [
+      "1.083024917507624435206881756796524210931",
+      "1.083024917507624435206881756796524210931"
+    ],
+    "b4_lt_1.1185": true,
+    "cannot_use_b4_in_Theorem_2_2": true
+  },
+  "b_s": {
+    "3.00000": {
+      "s": "3.000000000000000000000000000000000000000",
+      "t0": "0.5960716379833215231128054143996818281133",
+      "b": "1.118433799202706636641762578621416983973",
+      "b_inv": "0.8941074569749822846692081215995227421700",
+      "interval_b": [
+        "1.118433799202706636641762578621416983973",
+        "1.118433799202706636641762578621416983973"
+      ],
+      "closed_form": "(s-1)/(s t0) with t0^s + s t0 + 1 - s = 0"
+    },
+    "3.10000": {
+      "s": "3.100000000000000000000000000000000000000",
+      "t0": "0.6083230819154380588217237554522006962168",
+      "b": "1.113584828485723269305085172419647046252",
+      "b_inv": "0.8980007399704085630225445913818200753677",
+      "interval_b": [
+        "1.113584828485723269305085172419647046252",
+        "1.113584828485723269305085172419647046252"
+      ],
+      "closed_form": "(s-1)/(s t0) with t0^s + s t0 + 1 - s = 0"
+    },
+    "3.50000": {
+      "s": "3.500000000000000000000000000000000000000",
+      "t0": "0.6507648650218449293031083758351068797090",
+      "b": "1.097609524850019497044479594554830684084",
+      "b_inv": "0.9110708110305829010243517261691496315925",
+      "interval_b": [
+        "1.097609524850019497044479594554830684084",
+        "1.097609524850019497044479594554830684084"
+      ],
+      "closed_form": "(s-1)/(s t0) with t0^s + s t0 + 1 - s = 0"
+    },
+    "4.00000": {
+      "s": "4.000000000000000000000000000000000000000",
+      "t0": "0.6925048425718423433201934034003832859846",
+      "b": "1.083024917507624435206881756796524210931",
+      "b_inv": "0.9233397900957897910935912045338443813128",
+      "interval_b": [
+        "1.083024917507624435206881756796524210931",
+        "1.083024917507624435206881756796524210931"
+      ],
+      "closed_form": "(s-1)/(s t0) with t0^s + s t0 + 1 - s = 0"
+    }
+  },
+  "s3_dipole_discriminant": {
+    "identity": "(t^4+t)^2 - 4 t^2 = t^2 (t^3-1)(t^3+3)",
+    "sign_on_(0,1)": "<= 0, =0 only at endpoints of the closed interval",
+    "conclusion": "Q_s=3,\u2113=1 (\u03b1,\u03b2) \u2265 0 for all t\u2208(0,1] and all real \u03b1,\u03b2"
+  },
+  "exact_negative_Q": {
+    "s4_t_1/8_alpha_16_beta_-1": {
+      "Q": "-1025/2048",
+      "Q_value": "-0.5004882812500000000000000000000000000000",
+      "sign": "negative"
+    },
+    "s7/2_t_1/32_alpha_64_beta_-1": {
+      "Q": "1/sqrt(2) - 1 - 1/(65536 sqrt(2))",
+      "Q_value": "-0.2929040084066712644712931019509692109752",
+      "upper_by_1/sqrt(2)-1": "-0.2928932188134524755991556378951509607152",
+      "sign": "negative"
+    }
+  },
+  "b4_grid_max_check": {
+    "grid_max": "1.083024917487819830944477542338061778701",
+    "at_t": "0.6925000000000000000000000000000000000000",
+    "closed_b4": "1.083024917507624435206881756796524210931",
+    "agree_to_1e-8": true
+  },
+  "two_shell_certified": [
+    {
+      "name": "dipole_two_shell_s3_balanced",
+      "s": "3",
+      "ell": 1,
+      "t": "1/2",
+      "alpha": "1",
+      "beta": "-1",
+      "Q": "0.6875000000000000000000000000000000000000",
+      "Q_interval": [
+        "0.6875000000000000000000000000000000000000",
+        "0.6875000000000000000000000000000000000000"
+      ],
+      "I_s": "2.879793265790643801924089768006210977181",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_two_shell_s3_inner_heavy",
+      "s": "3",
+      "ell": 1,
+      "t": "1/10",
+      "alpha": "20",
+      "beta": "-1",
+      "Q": "2.998000000000000000000000000000000000000",
+      "Q_interval": [
+        "2.998000000000000000000000000000000000000",
+        "2.998000000000000000000000000000000000000"
+      ],
+      "I_s": "12.55799303394960017188133981742926619576",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_two_shell_s31",
+      "s": "3.1",
+      "ell": 1,
+      "t": "1e-7",
+      "alpha": "3e7",
+      "beta": "-1",
+      "Q": "-0.2042639165280083587833887216289086616928",
+      "Q_interval": [
+        "-0.2042639165280083587833887216289086616928",
+        "-0.2042639165280083587833887216289086616928"
+      ],
+      "I_s": "-0.8556186927438264073421321911397359651881",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "negative",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_two_shell_s35",
+      "s": "3.5",
+      "ell": 1,
+      "t": "1/32",
+      "alpha": "64",
+      "beta": "-1",
+      "Q": "-0.2929040084066712644712931019509692109752",
+      "Q_interval": [
+        "-0.2929040084066712644712931019509692109752",
+        "-0.2929040084066712644712931019509692109752"
+      ],
+      "I_s": "-1.226913441356535312434792407730951339709",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "negative",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_two_shell_s4",
+      "s": "4",
+      "ell": 1,
+      "t": "1/8",
+      "alpha": "16",
+      "beta": "-1",
+      "Q": "-0.5004882812500000000000000000000000000000",
+      "Q_interval": [
+        "-0.5004882812500000000000000000000000000000",
+        "-0.5004882812500000000000000000000000000000"
+      ],
+      "I_s": "-2.096440410110376347281386372305657849155",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "negative",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "quad_two_shell_s4_opposite",
+      "s": "4",
+      "ell": 2,
+      "t": "1/8",
+      "alpha": "16",
+      "beta": "-1",
+      "Q": "1.249938964843750000000000000000000000000",
+      "Q_interval": [
+        "1.249938964843750000000000000000000000000",
+        "1.249938964843750000000000000000000000000"
+      ],
+      "I_s": "3.141439255511004674339671574520553689720",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "quad_two_shell_s35_opposite",
+      "s": "3.5",
+      "ell": 2,
+      "t": "1/8",
+      "alpha": "16",
+      "beta": "-1",
+      "Q": "2.164040928881594426847489299316606074410",
+      "Q_interval": [
+        "2.164040928881594426847489299316606074410",
+        "2.164040928881594426847489299316606074410"
+      ],
+      "I_s": "5.438828067393639412736480677388321074791",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "quad_two_shell_s3_opposite",
+      "s": "3",
+      "ell": 2,
+      "t": "1/8",
+      "alpha": "16",
+      "beta": "-1",
+      "Q": "4.749511718750000000000000000000000000000",
+      "Q_interval": [
+        "4.749511718750000000000000000000000000000",
+        "4.749511718750000000000000000000000000000"
+      ],
+      "I_s": "11.93682489901090579317427038639051740414",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_one_shell_s4",
+      "s": "4",
+      "ell": 1,
+      "t": "1",
+      "alpha": "1",
+      "beta": "0",
+      "Q": "1.000000000000000000000000000000000000000",
+      "Q_interval": [
+        "1.000000000000000000000000000000000000000",
+        "1.000000000000000000000000000000000000000"
+      ],
+      "I_s": "4.188790204786390984616857844372670512263",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "quad_one_shell_s4",
+      "s": "4",
+      "ell": 2,
+      "t": "1",
+      "alpha": "1",
+      "beta": "0",
+      "Q": "1.000000000000000000000000000000000000000",
+      "Q_interval": [
+        "1.000000000000000000000000000000000000000",
+        "1.000000000000000000000000000000000000000"
+      ],
+      "I_s": "2.513274122871834590770114706623602307358",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    },
+    {
+      "name": "dipole_two_shell_s4_same_sign",
+      "s": "4",
+      "ell": 1,
+      "t": "1/8",
+      "alpha": "1",
+      "beta": "1",
+      "Q": "1.126983642578125000000000000000000000000",
+      "Q_interval": [
+        "1.126983642578125000000000000000000000000",
+        "1.126983642578125000000000000000000000000"
+      ],
+      "I_s": "4.720698042985737081021604716029002360454",
+      "I_s_prefactor": "4\u03c0/(2\u2113+1)",
+      "sign": "positive",
+      "orthogonal_to_radial": true
+    }
+  ],
+  "det_sweep": {
+    "3.00000": {
+      "ell=1": {
+        "exists_t_with_negative_eigenvalue": false,
+        "sample_t": [],
+        "hardy_threshold_2ell_plus_1": 3,
+        "s_gt_threshold": false
+      },
+      "ell=2": {
+        "exists_t_with_negative_eigenvalue": false,
+        "sample_t": [],
+        "hardy_threshold_2ell_plus_1": 5,
+        "s_gt_threshold": false
+      }
+    },
+    "3.10000": {
+      "ell=1": {
+        "exists_t_with_negative_eigenvalue": true,
+        "sample_t": [
+          "1.00000000000e-7",
+          "1.00000000000e-8",
+          "1.00000000000e-9",
+          "1.00000000000e-10",
+          "1.00000000000e-11"
+        ],
+        "hardy_threshold_2ell_plus_1": 3,
+        "s_gt_threshold": true
+      },
+      "ell=2": {
+        "exists_t_with_negative_eigenvalue": false,
+        "sample_t": [],
+        "hardy_threshold_2ell_plus_1": 5,
+        "s_gt_threshold": false
+      }
+    },
+    "3.50000": {
+      "ell=1": {
+        "exists_t_with_negative_eigenvalue": true,
+        "sample_t": [
+          "0.0100000000000",
+          "0.00100000000000",
+          "0.000100000000000",
+          "1.00000000000e-5",
+          "1.00000000000e-6",
+          "1.00000000000e-7"
+        ],
+        "hardy_threshold_2ell_plus_1": 3,
+        "s_gt_threshold": true
+      },
+      "ell=2": {
+        "exists_t_with_negative_eigenvalue": false,
+        "sample_t": [],
+        "hardy_threshold_2ell_plus_1": 5,
+        "s_gt_threshold": false
+      }
+    },
+    "4.00000": {
+      "ell=1": {
+        "exists_t_with_negative_eigenvalue": true,
+        "sample_t": [
+          "0.100000000000",
+          "0.0100000000000",
+          "0.00100000000000",
+          "0.000100000000000",
+          "1.00000000000e-5",
+          "1.00000000000e-6"
+        ],
+        "hardy_threshold_2ell_plus_1": 3,
+        "s_gt_threshold": true
+      },
+      "ell=2": {
+        "exists_t_with_negative_eigenvalue": false,
+        "sample_t": [],
+        "hardy_threshold_2ell_plus_1": 5,
+        "s_gt_threshold": false
+      }
+    }
+  },
+  "volume_multipole_I_s": [
+    {
+      "name": "pure_dipole_2p",
+      "ell": 1,
+      "3.000": 1618.956849514933,
+      "3.100": 1916.694867877342,
+      "3.500": 3819.865856037253,
+      "4.000": 9331.900096469966
+    },
+    {
+      "name": "pure_quadrupole_3d",
+      "ell": 2,
+      "3.000": 17265.883635560334,
+      "3.100": 20731.594227618265,
+      "3.500": 43579.25578900214,
+      "4.000": 113053.93586336455
+    },
+    {
+      "name": "sign_changing_dipole_two_exponentials",
+      "ell": 1,
+      "3.000": 945611016.7415493,
+      "3.100": 1312846141.5813453,
+      "3.500": 4921003439.443449,
+      "4.000": 26128873708.364376
+    },
+    {
+      "name": "sign_changing_dipole_linear",
+      "ell": 1,
+      "3.000": 1277711.1169841746,
+      "3.100": 1625212.8635419137,
+      "3.500": 4312699.506503438,
+      "4.000": 15048972.349760039
+    }
+  ],
+  "smeared_two_shell_volume": [
+    {
+      "s": 4.0,
+      "t": 0.125,
+      "alpha": 16.0,
+      "beta": -1.0,
+      "width": 0.02,
+      "I_s_smeared": -2.5671276763303656,
+      "sign": "negative"
+    },
+    {
+      "s": 3.5,
+      "t": 0.03125,
+      "alpha": 64.0,
+      "beta": -1.0,
+      "width": 0.008,
+      "I_s_smeared": -1.97724351024384,
+      "sign": "negative"
+    },
+    {
+      "s": 3.0,
+      "t": 0.125,
+      "alpha": 16.0,
+      "beta": -1.0,
+      "width": 0.02,
+      "I_s_smeared": 10.899349683271701,
+      "sign": "positive"
+    }
+  ],
+  "two_opposite_gaussians": [
+    {
+      "mu": 1.0,
+      "sigma": 0.25,
+      "note": "\u03bd = \u03b3_\u03bc \u2212 \u03b3_{\u2212\u03bc}, same |center|",
+      "3.0": 4.334937214667269,
+      "3.5": 4.688095840192534,
+      "4.0": 5.111066190497546
+    },
+    {
+      "mu": 1.0,
+      "sigma": 0.5,
+      "note": "\u03bd = \u03b3_\u03bc \u2212 \u03b3_{\u2212\u03bc}, same |center|",
+      "3.0": 3.121290767475394,
+      "3.5": 3.884143369841297,
+      "4.0": 4.9067321573546625
+    },
+    {
+      "mu": 2.0,
+      "sigma": 0.3,
+      "note": "\u03bd = \u03b3_\u03bc \u2212 \u03b3_{\u2212\u03bc}, same |center|",
+      "3.0": 23.23551654192987,
+      "3.5": 33.8769248594282,
+      "4.0": 49.58272767701084
+    }
+  ],
+  "hardy_quotients_of_V_not_IMS": [
+    {
+      "name": "single_shell_dipole",
+      "ell": 1,
+      "t": "1.000000000000000000000000000000000000000",
+      "alpha": "1.000000000000000000000000000000000000000",
+      "beta": "0.0",
+      "Q_H": "4.500000000000000000000000000000000000000",
+      "Q_H_minus_9/4": "2.250000000000000000000000000000000000000",
+      "s_max_if_Hardy_sharp_for_this_V": "4.242640687119285146405066172629094235709",
+      "Q0": "1.000000000000000000000000000000000000000",
+      "int_u2": "0.6666666666666666666666666666666666666667"
+    },
+    {
+      "name": "single_shell_quad",
+      "ell": 2,
+      "t": "1.000000000000000000000000000000000000000",
+      "alpha": "1.000000000000000000000000000000000000000",
+      "beta": "0.0",
+      "Q_H": "12.50000000000000000000000000000000000000",
+      "Q_H_minus_9/4": "10.25000000000000000000000000000000000000",
+      "s_max_if_Hardy_sharp_for_this_V": "7.071067811865475244008443621048490392848",
+      "Q0": "1.000000000000000000000000000000000000000",
+      "int_u2": "0.4000000000000000000000000000000000000000"
+    },
+    {
+      "name": "dipole_s4_counterexample_weights",
+      "ell": 1,
+      "t": "0.1250000000000000000000000000000000000000",
+      "alpha": "16.00000000000000000000000000000000000000",
+      "beta": "-1.000000000000000000000000000000000000000",
+      "Q_H": "4.527623260320547022247016985602183727358",
+      "Q_H_minus_9/4": "2.277623260320547022247016985602183727358",
+      "s_max_if_Hardy_sharp_for_this_V": "4.255642494533838081924073959194792339789",
+      "Q0": "2045.000000000000000000000000000000000000",
+      "int_u2": "1355.015567166613989620326547875835214516"
+    },
+    {
+      "name": "dipole_s35_counterexample_weights",
+      "ell": 1,
+      "t": "0.03125000000000000000000000000000000000000",
+      "alpha": "64.00000000000000000000000000000000000000",
+      "beta": "-1.000000000000000000000000000000000000000",
+      "Q_H": "4.500714049223018136233535724926611624668",
+      "Q_H_minus_9/4": "2.250714049223018136233535724926611624668",
+      "s_max_if_Hardy_sharp_for_this_V": "4.242977279799182773952281844581188302694",
+      "Q0": "131069.0000000000000000000000000000000000",
+      "int_u2": "87365.47038972213442714498869090416980197"
+    },
+    {
+      "name": "dipole_s31_counterexample_weights",
+      "ell": 1,
+      "t": "0.0000001000000000000000000000000000000000000000",
+      "alpha": "30000000.00000000000000000000000000000000",
+      "beta": "-1.000000000000000000000000000000000000000",
+      "Q_H": "4.500000000000000000072531430429312439048",
+      "Q_H_minus_9/4": "2.250000000000000000072531430429312439048",
+      "s_max_if_Hardy_sharp_for_this_V": "4.242640687119285146439257816832912319446",
+      "Q0": "8999999999999999999995.000000000000000000",
+      "int_u2": "5999999999999999999899.958092760916747938"
+    },
+    {
+      "name": "dipole_tiny_t_1e-4",
+      "ell": 1,
+      "t": "0.0001000000000000000000000000000000000000000",
+      "alpha": "20000.00000000000000000000000000000000000",
+      "beta": "-1.000000000000000000000000000000000000000",
+      "Q_H": "4.500000000062169797511744768310529588757",
+      "Q_H_minus_9/4": "2.250000000062169797511744768310529588757",
+      "s_max_if_Hardy_sharp_for_this_V": "4.242640687148592270008664465831512272693",
+      "Q0": "3999999999997.000000000000000000000000000",
+      "int_u2": "2666666666627.825305178761935722378803392"
+    },
+    {
+      "name": "dipole_tiny_t_1e-6",
+      "ell": 1,
+      "t": "0.000001000000000000000000000000000000000000000",
+      "alpha": "2000000.000000000000000000000000000000000",
+      "beta": "-1.000000000000000000000000000000000000000",
+      "Q_H": "4.500000000000000093254696266258852205212",
+      "Q_H_minus_9/4": "2.250000000000000093254696266258852205212",
+      "s_max_if_Hardy_sharp_for_this_V": "4.242640687119285190365751577538059756494",
+      "Q0": "3999999999999999997.000000000000000000000",
+      "int_u2": "2666666666666666609.404624434809570250235"
+    }
+  ],
+  "hardy_quotients_of_r_s2_V": [
+    {
+      "name": "s4_counterexample",
+      "s": "4.000000000000000000000000000000000000000",
+      "Q_H_of_r^{s/2}V": "diverges (dipole tail, s>=3)",
+      "s2_over_4": "4.000000000000000000000000000000000000000",
+      "int_u2_rs_diverges": true,
+      "Q_s": "-0.5004882812500000000000000000000000000000",
+      "note": "Unregularized \u222b |x|^{s-2} V\u00b2 d\u00b3x diverges for a dipole tail when s\u22653. I_s itself stays finite (compact support). HPS regularize the weight; the informal IMS+Hardy bound is not available without that cutoff."
+    },
+    {
+      "name": "s35_counterexample",
+      "s": "3.500000000000000000000000000000000000000",
+      "Q_H_of_r^{s/2}V": "diverges (dipole tail, s>=3)",
+      "s2_over_4": "3.062500000000000000000000000000000000000",
+      "int_u2_rs_diverges": true,
+      "Q_s": "-0.2929040084066712644712931019509692109752",
+      "note": "Unregularized \u222b |x|^{s-2} V\u00b2 d\u00b3x diverges for a dipole tail when s\u22653. I_s itself stays finite (compact support). HPS regularize the weight; the informal IMS+Hardy bound is not available without that cutoff."
+    },
+    {
+      "name": "s31_counterexample",
+      "s": "3.100000000000000000000000000000000000000",
+      "Q_H_of_r^{s/2}V": "diverges (dipole tail, s>=3)",
+      "s2_over_4": "2.402500000000000000000000000000000000000",
+      "int_u2_rs_diverges": true,
+      "Q_s": "-0.2042639165280083587833887216289086616928",
+      "note": "Unregularized \u222b |x|^{s-2} V\u00b2 d\u00b3x diverges for a dipole tail when s\u22653. I_s itself stays finite (compact support). HPS regularize the weight; the informal IMS+Hardy bound is not available without that cutoff."
+    },
+    {
+      "name": "s3_same_weights_as_s4",
+      "s": "3.000000000000000000000000000000000000000",
+      "Q_H_of_r^{s/2}V": "diverges (dipole tail, s>=3)",
+      "s2_over_4": "2.250000000000000000000000000000000000000",
+      "int_u2_rs_diverges": true,
+      "Q_s": "2.996093750000000000000000000000000000000",
+      "note": "Unregularized \u222b |x|^{s-2} V\u00b2 d\u00b3x diverges for a dipole tail when s\u22653. I_s itself stays finite (compact support). HPS regularize the weight; the informal IMS+Hardy bound is not available without that cutoff."
+    }
+  ],
+  "beta_upper_trials_not_lower_bounds": {
+    "3.500": {
+      "b_inv": "0.9110708110305829010243517261691496315925",
+      "two_shell_modulated_best_ratio": "0.9689527024128212848690239471339964728957",
+      "at_t_w": [
+        "0.6333333333333333333333333333333333333333",
+        "0.6333333333333333333333333333333333333333"
+      ],
+      "beats_b_inv": false,
+      "radial_nam_like_best": "0.9371790359414159391942856788344968186152",
+      "radial_nam_like_at_p_nhi": [
+        "2.200000000000000000000000000000000000000",
+        "4.000000000000000000000000000000000000000"
+      ],
+      "pointwise_minorant_half_b_inv": "0.4555354055152914505121758630845748157963",
+      "note": "two_shell_modulated and nam-like are upper bounds on \u03b2_s. They are not lower bounds. The pointwise minorant is a genuine lower bound but only (1/2) b(s)^{-1}."
+    },
+    "4.000": {
+      "b_inv": "0.9233397900957897910935912045338443813128",
+      "two_shell_modulated_best_ratio": "0.9721168836640964058483967471453250747904",
+      "at_t_w": [
+        "0.6666666666666666666666666666666666666667",
+        "0.6500000000000000000000000000000000000000"
+      ],
+      "beats_b_inv": false,
+      "radial_nam_like_best": "0.9497680167605484937783067962186920530397",
+      "radial_nam_like_at_p_nhi": [
+        "1.200000000000000000000000000000000000000",
+        "4.000000000000000000000000000000000000000"
+      ],
+      "pointwise_minorant_half_b_inv": "0.4616698950478948955467956022669221906564",
+      "note": "two_shell_modulated and nam-like are upper bounds on \u03b2_s. They are not lower bounds. The pointwise minorant is a genuine lower bound but only (1/2) b(s)^{-1}."
+    }
+  },
+  "pairwise_check_s4_dipole": {
+    "s": 4,
+    "t": "1/8",
+    "alpha": 16,
+    "beta": -1,
+    "n_fibonacci": 180,
+    "pairwise_I_s": -0.09638642199793518,
+    "closed_Q": "-0.5004882812500000000000000000000000000000",
+    "same_sign": true,
+    "note": "Fibonacci-sphere pairwise sum omits the same-shell diagonal. The missing self-energy is positive, so a negative pairwise sum is even stronger evidence that I_s < 0."
+  },
+  "pairwise_one_shell_s4": 0.08228344966815743,
+  "improved_Hardy": {
+    "citation": "Ekholm\u2013Frank, Comm. Math. Phys. 264 (2006), Lemma 2.4; HPS (4.15)",
+    "c_H_radial": "1/4 = ((d-2)/2)^2",
+    "c_H_ell_ge_1": "9/4 = d^2/4",
+    "c_H_pure_ell": "\u2113(\u2113+1)+1/4, so s \u2264 2\u2113+1 is the IMS+Hardy range",
+    "dipole_ell_1_threshold": 3,
+    "quadrupole_ell_2_threshold": 5
+  }
+}

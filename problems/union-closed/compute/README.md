@@ -15,5 +15,6 @@ Requires numpy, scipy, mpmath, matplotlib (`/tmp/ucvenv` if present).
 | `hunt_mixtures.py` | 3-atomic / 2-mixture residue at (β,c)=(0.20, 0.38285) |
 | `enum_small.py` | union-closed families on n≤4 (min abundance = 1/2) |
 | `q1/` | pure Example 4 on {b,1}; claimed 0.38304; `q1/run_all.sh` |
+| `q2/` | 2-sample ceiling on {b,1}; mixes / 3-atomic / new protocols; constant unchanged; `q2/run_all.sh` |
 
-Papers used tonight live in `refs/`. The 2026-08-27 replay of the new constant is `q1/run_all.sh`.
+Papers used tonight live in `refs/`. The 2026-08-27 replay of the new constant is `q1/run_all.sh`. The later 2-sample-class check is `q2/run_all.sh`.

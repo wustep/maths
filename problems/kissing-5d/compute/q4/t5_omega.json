@@ -1,0 +1,24 @@
+{
+  "n_remainder": 355,
+  "published": {
+    "D5": 35,
+    "L5": 35,
+    "Q5": 35,
+    "R5": 35
+  },
+  "colored": false,
+  "found_36": false,
+  "found_41": false,
+  "complete": false,
+  "clique_sat": {
+    "solver": "cadical195",
+    "sat": false,
+    "n_clauses": 56352
+  },
+  "clique_sat_glucose": {
+    "solver": "glucose4",
+    "sat": false,
+    "n_clauses": 56352
+  },
+  "comment": "No 35-colouring and SAT 36-clique returned no model. UNSAT without a DRAT file is residue, not an exclusion."
+}

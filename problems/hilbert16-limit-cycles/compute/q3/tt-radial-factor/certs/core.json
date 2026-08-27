@@ -1,0 +1,18 @@
+{
+  "claim": "Y=(x^2+y^2)X on the radial cubic is degree 5 with unique positive periodic orbit r=rho. That is H(5)>=1, not a +1.",
+  "degree_X": 3,
+  "degree_Y": 5,
+  "degree_line_multiplication": 4,
+  "dent_of_h5_37": false,
+  "h5_at_least_1": true,
+  "h5_at_least_2": false,
+  "hn_moved": false,
+  "paper": "Gasull-Santana arXiv:2407.13465v2 section 4 remark",
+  "plus_one_certified": false,
+  "record": "Prohens-Torregrosa Nonlinearity 32 (2019) H(5)>=37",
+  "rho2": "1/4",
+  "schema": "hilbert16-tt-radial-factor/v1",
+  "specialized_unique_orbit": "r=1/2",
+  "two_cycles": false,
+  "unique_positive_orbit": "r=rho"
+}

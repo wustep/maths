@@ -1,0 +1,257 @@
+{
+  "rho2": [
+    1,
+    4
+  ],
+  "T3_prime_factorization": "3*(2*t - 1)*(2*t + 1)",
+  "T3_prime_equals_3_(2t-1)(2t+1)": true,
+  "evaluations": {
+    "T3(1)": [
+      1,
+      1
+    ],
+    "T3(-1)": [
+      -1,
+      1
+    ],
+    "T3(1/2)": [
+      -1,
+      1
+    ],
+    "T3(-1/2)": [
+      1,
+      1
+    ],
+    "T3(0)": [
+      0,
+      1
+    ],
+    "T3'(1/2)": [
+      0,
+      1
+    ],
+    "T3'(-1/2)": [
+      0,
+      1
+    ],
+    "T3'(0)": [
+      -3,
+      1
+    ],
+    "T3'(3/4)": [
+      15,
+      4
+    ],
+    "T3'(1/4)": [
+      -9,
+      4
+    ],
+    "T3'(-3/4)": [
+      15,
+      4
+    ]
+  },
+  "intervals": [
+    {
+      "name": "I1",
+      "left": [
+        1,
+        2
+      ],
+      "right": [
+        1,
+        1
+      ],
+      "T3_left": [
+        -1,
+        1
+      ],
+      "T3_right": [
+        1,
+        1
+      ],
+      "T3_prime_sign": 1,
+      "T3_prime_roots_in_open": 0,
+      "T3_pm_half_sign_changes": true,
+      "preimage_of_[-1/2,1/2]_strictly_inside": true,
+      "diffeo_onto_(-1,1)": true
+    },
+    {
+      "name": "I2",
+      "left": [
+        -1,
+        2
+      ],
+      "right": [
+        1,
+        2
+      ],
+      "T3_left": [
+        1,
+        1
+      ],
+      "T3_right": [
+        -1,
+        1
+      ],
+      "T3_prime_sign": -1,
+      "T3_prime_roots_in_open": 0,
+      "T3_pm_half_sign_changes": true,
+      "preimage_of_[-1/2,1/2]_strictly_inside": true,
+      "diffeo_onto_(-1,1)": true
+    },
+    {
+      "name": "I3",
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        -1,
+        2
+      ],
+      "T3_left": [
+        -1,
+        1
+      ],
+      "T3_right": [
+        1,
+        1
+      ],
+      "T3_prime_sign": 1,
+      "T3_prime_roots_in_open": 0,
+      "T3_pm_half_sign_changes": true,
+      "preimage_of_[-1/2,1/2]_strictly_inside": true,
+      "diffeo_onto_(-1,1)": true
+    }
+  ],
+  "level_curve": {
+    "equation": "T3(u)^2 + T3(v)^2 - 1/4 = 0",
+    "cleared": "4 T3(u)^2 + 4 T3(v)^2 - 1",
+    "total_degree": 6,
+    "factor_over_Q": "64*u**6 - 96*u**4 + 36*u**2 + 64*v**6 - 96*v**4 + 36*v**2 - 1",
+    "n_Q_factors": 1,
+    "nine_oval_factors_over_Q": false
+  },
+  "rectangles": [
+    {
+      "i": 1,
+      "j": 1,
+      "Iu": "I1",
+      "Iv": "I1",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "Iu": "I1",
+      "Iv": "I2",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 1,
+      "j": 3,
+      "Iu": "I1",
+      "Iv": "I3",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 2,
+      "j": 1,
+      "Iu": "I2",
+      "Iv": "I1",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "Iu": "I2",
+      "Iv": "I2",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 2,
+      "j": 3,
+      "Iu": "I2",
+      "Iv": "I3",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 3,
+      "j": 1,
+      "Iu": "I3",
+      "Iv": "I1",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 3,
+      "j": 2,
+      "Iu": "I3",
+      "Iv": "I2",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 3,
+      "j": 3,
+      "Iu": "I3",
+      "Iv": "I3",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T3'(u) T3'(v)",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    }
+  ],
+  "nine_ovals": true,
+  "proof": "T3'=3(2t-1)(2t+1) has no zero in any open I_k; T3(I_k)=(-1,1) by endpoint values \u00b11 and strict monotonicity; \u03a6 is a product diffeomorphism on each I_i\u00d7I_j; the circle of radius 1/2 is compactly in (-1,1)^2; each preimage is therefore one compact oval strictly inside its rectangle. The degree-6 curve does not split into nine factors over Q; the ovals are real components."
+}

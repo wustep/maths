@@ -1,0 +1,437 @@
+{
+  "line": "a-quadratic-five",
+  "imagined_claim": "An explicit quadratic, a perturbation of Shi Songling 1980 with an extra \u03bc y\u00b2 term, has five isolated periodic orbits, hence H(2) \u2265 5.",
+  "status": "dropped",
+  "fork": "Unperturbed Shi (\u03bb = \u03b5 = \u03b4 = \u03bc = 0) has a weak focus of order 3 at the origin, V1 = V2 = 0, V3 = 35625/8, and a strong unstable focus at (0, 1) with charpoly t^2 - 5 t + 24.",
+  "published_Hn_moved": false,
+  "dropped_claim": "H(2) >= 5",
+  "proved": {
+    "system": {
+      "P": "-y - 10 x^2 + 5 x y + y^2",
+      "Q": "x + x^2 - 25 x y",
+      "parameters": {
+        "lambda": 0,
+        "epsilon": 0,
+        "delta": 0,
+        "mu": 0
+      }
+    },
+    "normalization": {
+      "F2": "(x^2 + y^2)/2",
+      "identity": "dF/dt = V1 r^4 + V2 r^6 + V3 r^8 + O(9)",
+      "gauge": "y^n coefficient of even F_n is 0"
+    },
+    "V1": {
+      "num": 0,
+      "den": 1,
+      "str": "0"
+    },
+    "V2": {
+      "num": 0,
+      "den": 1,
+      "str": "0"
+    },
+    "V3": {
+      "num": 35625,
+      "den": 8,
+      "str": "35625/8"
+    },
+    "weak_focus_order": 3,
+    "li_chengzhi_crosscheck": {
+      "L1": 0,
+      "L2": 0,
+      "L3": 57000,
+      "L3_over_V3": "64/5",
+      "source": "Li Chengzhi, as quoted by Llibre\u2013Schlomiuk, Canad. J. Math. 56 (2004), after Proposition 2."
+    },
+    "origin": {
+      "point": [
+        0,
+        0
+      ],
+      "jacobian": [
+        [
+          0,
+          -1
+        ],
+        [
+          1,
+          0
+        ]
+      ],
+      "trace": 0,
+      "det": 1,
+      "disc": -4,
+      "charpoly": "t^2 + 1",
+      "type": "linear_center"
+    },
+    "second_focus": {
+      "point": [
+        0,
+        1
+      ],
+      "jacobian": [
+        [
+          5,
+          1
+        ],
+        [
+          -24,
+          0
+        ]
+      ],
+      "trace": 5,
+      "det": 24,
+      "disc": -71,
+      "charpoly": "t^2 - 5 t + 24",
+      "eigenvalues": "5/2 \u00b1 i sqrt(71)/2",
+      "type": "strong_unstable_focus",
+      "note": "Trace 5 > 0, det 24 > 0, disc \u221271 < 0. Not a weak focus: no Hopf unfolding at (0, 1) inside a small Shi perturbation."
+    },
+    "equilibria": {
+      "real_count": 2,
+      "complex_count": 2,
+      "bezout_max": 4,
+      "y_axis_branch": [
+        "(0, 0)",
+        "(0, 1)"
+      ],
+      "second_branch_quadratic": "6124 x^2 - 102 x + 24",
+      "second_branch_discriminant": -577500,
+      "real": [
+        {
+          "x": "0",
+          "y": "0"
+        },
+        {
+          "x": "0",
+          "y": "1"
+        }
+      ],
+      "complex": [
+        {
+          "x": "51/6124 - 25*sqrt(231)*I/6124",
+          "y": "247/6124 - sqrt(231)*I/6124"
+        },
+        {
+          "x": "51/6124 + 25*sqrt(231)*I/6124",
+          "y": "247/6124 + sqrt(231)*I/6124"
+        }
+      ]
+    },
+    "F": {
+      "2": [
+        {
+          "i": 0,
+          "j": 2,
+          "num": 1,
+          "den": 2
+        },
+        {
+          "i": 1,
+          "j": 1,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 0,
+          "num": 1,
+          "den": 2
+        }
+      ],
+      "3": [
+        {
+          "i": 0,
+          "j": 3,
+          "num": 44,
+          "den": 3
+        },
+        {
+          "i": 1,
+          "j": 2,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 1,
+          "num": 10,
+          "den": 1
+        },
+        {
+          "i": 3,
+          "j": 0,
+          "num": 2,
+          "den": 1
+        }
+      ],
+      "4": [
+        {
+          "i": 0,
+          "j": 4,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 1,
+          "j": 3,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 2,
+          "num": -540,
+          "den": 1
+        },
+        {
+          "i": 3,
+          "j": 1,
+          "num": 50,
+          "den": 1
+        },
+        {
+          "i": 4,
+          "j": 0,
+          "num": -375,
+          "den": 1
+        }
+      ],
+      "5": [
+        {
+          "i": 0,
+          "j": 5,
+          "num": -38252,
+          "den": 3
+        },
+        {
+          "i": 1,
+          "j": 4,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 3,
+          "num": -97250,
+          "den": 3
+        },
+        {
+          "i": 3,
+          "j": 2,
+          "num": -1750,
+          "den": 1
+        },
+        {
+          "i": 4,
+          "j": 1,
+          "num": -15050,
+          "den": 1
+        },
+        {
+          "i": 5,
+          "j": 0,
+          "num": -2966,
+          "den": 1
+        }
+      ],
+      "6": [
+        {
+          "i": 0,
+          "j": 6,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 1,
+          "j": 5,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 4,
+          "num": 764500,
+          "den": 1
+        },
+        {
+          "i": 3,
+          "j": 3,
+          "num": -393170,
+          "den": 3
+        },
+        {
+          "i": 4,
+          "j": 2,
+          "num": 4538350,
+          "den": 3
+        },
+        {
+          "i": 5,
+          "j": 1,
+          "num": -133250,
+          "den": 1
+        },
+        {
+          "i": 6,
+          "j": 0,
+          "num": 5889250,
+          "den": 9
+        }
+      ],
+      "7": [
+        {
+          "i": 0,
+          "j": 7,
+          "num": 2088923596,
+          "den": 63
+        },
+        {
+          "i": 1,
+          "j": 6,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 2,
+          "j": 5,
+          "num": 1051342298,
+          "den": 9
+        },
+        {
+          "i": 3,
+          "j": 4,
+          "num": 7251830,
+          "den": 3
+        },
+        {
+          "i": 4,
+          "j": 3,
+          "num": 1116954760,
+          "den": 9
+        },
+        {
+          "i": 5,
+          "j": 2,
+          "num": 33646484,
+          "den": 3
+        },
+        {
+          "i": 6,
+          "j": 1,
+          "num": 118184750,
+          "den": 3
+        },
+        {
+          "i": 7,
+          "j": 0,
+          "num": 165243418,
+          "den": 21
+        }
+      ],
+      "8": [
+        {
+          "i": 0,
+          "j": 8,
+          "num": 0,
+          "den": 1
+        },
+        {
+          "i": 1,
+          "j": 7,
+          "num": -35625,
+          "den": 8
+        },
+        {
+          "i": 2,
+          "j": 6,
+          "num": -8353400884,
+          "den": 3
+        },
+        {
+          "i": 3,
+          "j": 5,
+          "num": 33779125831,
+          "den": 72
+        },
+        {
+          "i": 4,
+          "j": 4,
+          "num": -74502924433,
+          "den": 9
+        },
+        {
+          "i": 5,
+          "j": 3,
+          "num": 74214405481,
+          "den": 72
+        },
+        {
+          "i": 6,
+          "j": 2,
+          "num": -210861830686,
+          "den": 27
+        },
+        {
+          "i": 7,
+          "j": 1,
+          "num": 12274102315,
+          "den": 24
+        },
+        {
+          "i": 8,
+          "j": 0,
+          "num": -63011675575,
+          "den": 27
+        }
+      ]
+    }
+  },
+  "five_cycle": {
+    "mu_moves_second_equilibrium": {
+      "Q_at_0_1": "mu",
+      "L1_primitive_at_origin": "27 mu",
+      "V1_at_origin": "27 mu / 8",
+      "order_3_requires": "mu = 0"
+    },
+    "trace_at_0_1": {
+      "formula": "lambda + 5 + delta",
+      "det_formula_mu_0": "24 - 8 epsilon + 9 delta"
+    },
+    "delta_minus_5_lambda_eps_0": {
+      "origin_Li": [
+        0,
+        0,
+        0
+      ],
+      "origin_type": "center",
+      "second_point": "(0, 1)",
+      "second_trace": 0,
+      "second_det": -21,
+      "second_type": "saddle"
+    },
+    "both_weak_in_family": {
+      "conditions": "lambda = 0, delta = -5, mu = 0, epsilon < -21/8",
+      "origin_Li_L1": "-8 epsilon != 0",
+      "origin_order": 1,
+      "bautin_budget": "1 + 3 = 4, not 5"
+    },
+    "circles_about_0_1_linear": {
+      "V": "x^2 + (y-1)^2",
+      "Vdot_r2": "5 + 5 cos(2 theta) - 23 sin(2 theta)",
+      "amplitude_squared": 554,
+      "mean_squared": 25,
+      "sign_change": true,
+      "note": "Concentric Euclidean circles about (0, 1) already fail at linear order. Axis-aligned ellipses sampled later also change sign (residue, not a trapping pair)."
+    },
+    "coppel_unique_singularity": "A quadratic limit cycle surrounds a unique singular point, and that point is a focus (Coppel 1966, as stated in Llibre\u2013Schlomiuk, Canad. J. Math. 56 (2004), \u00a77.1(iv)). A fifth cycle surrounding both foci is excluded for any quadratic, not only this family.",
+    "bautin": "A quadratic focus has cyclicity at most 3 (Bautin). Four small cycles at the origin are impossible.",
+    "galias_this_system": "Galias\u2013Tucker\u2013Wilczak (AMC 2022) prove the Songling field with \u03bc = 0 and the classical tiny (\u03b4, \u03b5, \u03bb) has exactly four cycles. That is one system, not H(2) = 4, and it is not a fifth cycle."
+  },
+  "annulus": {
+    "status": "residue",
+    "tried": "Euclidean circles and axis-aligned ellipses about (0, 1); linear-order circles already change sign (amp^2 = 554 > 25).",
+    "certificate": null
+  }
+}

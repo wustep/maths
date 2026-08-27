@@ -85,6 +85,19 @@ Replay: `sh problems/kissing-5d/compute/q2/run_all.sh`.
 
 Does not claim $\tau_5=40$. The unrestricted interval did not move.
 
+## kissing-5d / q4 dual
+
+Exact Bachoc–Vallentin $S_k^5$ over $\mathbb Q$ in
+`problems/kissing-5d/compute/q4/bv.py`. 1-point Delsarte is still
+$46.3368\ldots$. Low-degree Putinar / $p_4$-span / square-dictionary
+/ floating SDP produced no exact dual below 44. Best certified
+unrestricted dual remains Levenshtein 48. Wrote
+`compute/q4/dual_exact.json`. No `certs/bv_dual.json`.
+
+Replay: `python3 problems/kissing-5d/compute/q4/dual_exact.py`.
+
+Does not claim $\tau_5=40$. The unrestricted interval did not move.
+
 ## union-closed / q1
 
 Continuation of the 2026-08-17 SuperGrok campaign on
@@ -172,3 +185,26 @@ Replay:
 cd problems/long-gap-dilate && sh compute/run_all.sh
 cd compute/q1 && ./run_all.sh
 ```
+
+## R(5,5) / q1
+
+Continuation of the 2026-08-17 SuperGrok campaign on
+`problems/ramsey-r55`. Search lives in `compute/q1/`.
+
+Published record still $43\le R(5,5)\le 46$ (Radziszowski rev. 18,
+24 April 2026; Angeltveit–McKay arXiv:2409.15709v2). Tamburini
+2508.16699 is a heuristic, not a bound.
+
+Parent replay `compute/replay.sh` and `python3 verify_mckay.py`:
+328+328 ok, none extend, circulant 42/43 empty.
+
+Certified in `compute/q1/`:
+
+- No legal-degree Cayley $(5,5)$-graph on any group of order 44 or 45.
+- None of the 4080 one-flip neighbours of the 656 extend.
+- No strongly regular graph on 43 vertices in degrees $[18,24]$.
+- $C_7$ SAT at 42 and 43 timed out (not a bound).
+
+Replay: `cd problems/ramsey-r55/compute && ./replay.sh && cd q1 && ./run_all.sh`.
+
+Does not claim a movement of either endpoint.

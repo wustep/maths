@@ -1,0 +1,905 @@
+{
+  "papers": {
+    "harnack": "arXiv:2510.11705v2 Corollary 2",
+    "increment": "arXiv:2407.13465v2",
+    "chebyshev_table": "arXiv:2604.12883v1 Table 1 / Appendix A"
+  },
+  "seed_citations": {
+    "small_n H(1)=0, H(2)>=4, H(3)>=13": {
+      "1": 0,
+      "2": 4,
+      "3": 13
+    },
+    "Prohens\u2013Torregrosa 2019 Thm 1": {
+      "4": 28,
+      "5": 37,
+      "6": 53,
+      "7": 74,
+      "8": 96,
+      "9": 120,
+      "10": 142
+    },
+    "Han\u2013Li 2012 Thm 1.2(i) as quoted in 2604.12883v1 App A": {
+      "11": 153,
+      "12": 157,
+      "14": 194,
+      "15": 345,
+      "16": 351,
+      "18": 372,
+      "19": 503,
+      "20": 509
+    },
+    "Prohens\u2013Torregrosa 2019 Cor 2(a)": {
+      "13": 212,
+      "17": 384,
+      "21": 568,
+      "31": 1184,
+      "35": 1536,
+      "39": 1920,
+      "43": 2272
+    },
+    "Han\u2013Li Table 1 rows not in App A seeds": {
+      "23": 833,
+      "24": 843,
+      "25": 870,
+      "26": 880,
+      "27": 1023,
+      "29": 1060
+    },
+    "Chebyshev L_Ch already on 2604.12883v1": {
+      "11": 148,
+      "13": 212,
+      "14": 252,
+      "15": 296,
+      "17": 384,
+      "19": 480,
+      "20": 477,
+      "21": 568,
+      "23": 666,
+      "24": 700,
+      "25": 628,
+      "26": 864,
+      "27": 848,
+      "29": 1080,
+      "31": 1380,
+      "35": 1536,
+      "39": 2012,
+      "43": 2272
+    }
+  },
+  "PAPER_L_CH_included_as_published": true,
+  "N_max": 50,
+  "n_pairs": 1225,
+  "Har_1_to_6": [
+    0,
+    1,
+    1,
+    4,
+    6,
+    11
+  ],
+  "Har": {
+    "1": 0,
+    "2": 1,
+    "3": 1,
+    "4": 4,
+    "5": 6,
+    "6": 11,
+    "7": 15,
+    "8": 22,
+    "9": 28,
+    "10": 37,
+    "11": 45,
+    "12": 56,
+    "13": 66,
+    "14": 79,
+    "15": 91,
+    "16": 106,
+    "17": 120,
+    "18": 137,
+    "19": 153,
+    "20": 172,
+    "21": 190,
+    "22": 211,
+    "23": 231,
+    "24": 254,
+    "25": 276,
+    "26": 301,
+    "27": 325,
+    "28": 352,
+    "29": 378,
+    "30": 407,
+    "31": 435,
+    "32": 466,
+    "33": 496,
+    "34": 529,
+    "35": 561,
+    "36": 596,
+    "37": 630,
+    "38": 667,
+    "39": 703,
+    "40": 742,
+    "41": 780,
+    "42": 821,
+    "43": 861,
+    "44": 904,
+    "45": 946,
+    "46": 991,
+    "47": 1035,
+    "48": 1082,
+    "49": 1128,
+    "50": 1177
+  },
+  "L_pub": {
+    "1": 0,
+    "2": 4,
+    "3": 13,
+    "4": 28,
+    "5": 37,
+    "6": 53,
+    "7": 74,
+    "8": 96,
+    "9": 120,
+    "10": 142,
+    "11": 153,
+    "12": 157,
+    "13": 212,
+    "14": 252,
+    "15": 345,
+    "16": 351,
+    "17": 384,
+    "18": 372,
+    "19": 503,
+    "20": 509,
+    "21": 568,
+    "23": 833,
+    "24": 843,
+    "25": 870,
+    "26": 880,
+    "27": 1023,
+    "29": 1080,
+    "31": 1380,
+    "35": 1536,
+    "39": 2012,
+    "43": 2272
+  },
+  "recorded_N": [
+    {
+      "N": 2,
+      "L_pub": 4,
+      "L_closed": 4,
+      "L_Ch": null,
+      "harnack_best": 0,
+      "argmax": {
+        "n": 1,
+        "m": 1,
+        "L_pub_n": 0,
+        "Har_m": 0
+      },
+      "slack_quoted": 4,
+      "slack_closed": 4
+    },
+    {
+      "N": 3,
+      "L_pub": 13,
+      "L_closed": 13,
+      "L_Ch": null,
+      "harnack_best": 4,
+      "argmax": {
+        "n": 2,
+        "m": 1,
+        "L_pub_n": 4,
+        "Har_m": 0
+      },
+      "slack_quoted": 9,
+      "slack_closed": 9
+    },
+    {
+      "N": 4,
+      "L_pub": 28,
+      "L_closed": 28,
+      "L_Ch": null,
+      "harnack_best": 13,
+      "argmax": {
+        "n": 3,
+        "m": 1,
+        "L_pub_n": 13,
+        "Har_m": 0
+      },
+      "slack_quoted": 15,
+      "slack_closed": 15
+    },
+    {
+      "N": 5,
+      "L_pub": 37,
+      "L_closed": 37,
+      "L_Ch": null,
+      "harnack_best": 28,
+      "argmax": {
+        "n": 4,
+        "m": 1,
+        "L_pub_n": 28,
+        "Har_m": 0
+      },
+      "slack_quoted": 9,
+      "slack_closed": 9
+    },
+    {
+      "N": 6,
+      "L_pub": 53,
+      "L_closed": 53,
+      "L_Ch": null,
+      "harnack_best": 37,
+      "argmax": {
+        "n": 5,
+        "m": 1,
+        "L_pub_n": 37,
+        "Har_m": 0
+      },
+      "slack_quoted": 16,
+      "slack_closed": 16
+    },
+    {
+      "N": 7,
+      "L_pub": 74,
+      "L_closed": 74,
+      "L_Ch": null,
+      "harnack_best": 53,
+      "argmax": {
+        "n": 6,
+        "m": 1,
+        "L_pub_n": 53,
+        "Har_m": 0
+      },
+      "slack_quoted": 21,
+      "slack_closed": 21
+    },
+    {
+      "N": 8,
+      "L_pub": 96,
+      "L_closed": 96,
+      "L_Ch": null,
+      "harnack_best": 74,
+      "argmax": {
+        "n": 7,
+        "m": 1,
+        "L_pub_n": 74,
+        "Har_m": 0
+      },
+      "slack_quoted": 22,
+      "slack_closed": 22
+    },
+    {
+      "N": 9,
+      "L_pub": 120,
+      "L_closed": 120,
+      "L_Ch": 112,
+      "harnack_best": 96,
+      "argmax": {
+        "n": 8,
+        "m": 1,
+        "L_pub_n": 96,
+        "Har_m": 0
+      },
+      "slack_quoted": 24,
+      "slack_closed": 24
+    },
+    {
+      "N": 10,
+      "L_pub": 142,
+      "L_closed": 142,
+      "L_Ch": null,
+      "harnack_best": 120,
+      "argmax": {
+        "n": 9,
+        "m": 1,
+        "L_pub_n": 120,
+        "Har_m": 0
+      },
+      "slack_quoted": 22,
+      "slack_closed": 22
+    },
+    {
+      "N": 11,
+      "L_pub": 153,
+      "L_closed": 153,
+      "L_Ch": 148,
+      "harnack_best": 142,
+      "argmax": {
+        "n": 10,
+        "m": 1,
+        "L_pub_n": 142,
+        "Har_m": 0
+      },
+      "slack_quoted": 11,
+      "slack_closed": 11
+    },
+    {
+      "N": 12,
+      "L_pub": 157,
+      "L_closed": 157,
+      "L_Ch": null,
+      "harnack_best": 153,
+      "argmax": {
+        "n": 11,
+        "m": 1,
+        "L_pub_n": 153,
+        "Har_m": 0
+      },
+      "slack_quoted": 4,
+      "slack_closed": 4
+    },
+    {
+      "N": 13,
+      "L_pub": 212,
+      "L_closed": 212,
+      "L_Ch": 212,
+      "harnack_best": 157,
+      "argmax": {
+        "n": 12,
+        "m": 1,
+        "L_pub_n": 157,
+        "Har_m": 0
+      },
+      "slack_quoted": 55,
+      "slack_closed": 55
+    },
+    {
+      "N": 14,
+      "L_pub": 252,
+      "L_closed": 252,
+      "L_Ch": 252,
+      "harnack_best": 212,
+      "argmax": {
+        "n": 13,
+        "m": 1,
+        "L_pub_n": 212,
+        "Har_m": 0
+      },
+      "slack_quoted": 40,
+      "slack_closed": 40
+    },
+    {
+      "N": 15,
+      "L_pub": 345,
+      "L_closed": 345,
+      "L_Ch": 296,
+      "harnack_best": 252,
+      "argmax": {
+        "n": 14,
+        "m": 1,
+        "L_pub_n": 252,
+        "Har_m": 0
+      },
+      "slack_quoted": 93,
+      "slack_closed": 93
+    },
+    {
+      "N": 16,
+      "L_pub": 351,
+      "L_closed": 351,
+      "L_Ch": null,
+      "harnack_best": 345,
+      "argmax": {
+        "n": 15,
+        "m": 1,
+        "L_pub_n": 345,
+        "Har_m": 0
+      },
+      "slack_quoted": 6,
+      "slack_closed": 6
+    },
+    {
+      "N": 17,
+      "L_pub": 384,
+      "L_closed": 384,
+      "L_Ch": 384,
+      "harnack_best": 351,
+      "argmax": {
+        "n": 16,
+        "m": 1,
+        "L_pub_n": 351,
+        "Har_m": 0
+      },
+      "slack_quoted": 33,
+      "slack_closed": 33
+    },
+    {
+      "N": 18,
+      "L_pub": 372,
+      "L_closed": 385,
+      "L_Ch": null,
+      "harnack_best": 384,
+      "argmax": {
+        "n": 17,
+        "m": 1,
+        "L_pub_n": 384,
+        "Har_m": 0
+      },
+      "slack_quoted": -12,
+      "slack_closed": 1
+    },
+    {
+      "N": 19,
+      "L_pub": 503,
+      "L_closed": 503,
+      "L_Ch": 480,
+      "harnack_best": 385,
+      "argmax": {
+        "n": 17,
+        "m": 2,
+        "L_pub_n": 384,
+        "Har_m": 1
+      },
+      "slack_quoted": 118,
+      "slack_closed": 118
+    },
+    {
+      "N": 20,
+      "L_pub": 509,
+      "L_closed": 509,
+      "L_Ch": 477,
+      "harnack_best": 503,
+      "argmax": {
+        "n": 19,
+        "m": 1,
+        "L_pub_n": 503,
+        "Har_m": 0
+      },
+      "slack_quoted": 6,
+      "slack_closed": 6
+    },
+    {
+      "N": 21,
+      "L_pub": 568,
+      "L_closed": 568,
+      "L_Ch": 568,
+      "harnack_best": 509,
+      "argmax": {
+        "n": 20,
+        "m": 1,
+        "L_pub_n": 509,
+        "Har_m": 0
+      },
+      "slack_quoted": 59,
+      "slack_closed": 59
+    },
+    {
+      "N": 23,
+      "L_pub": 833,
+      "L_closed": 833,
+      "L_Ch": 666,
+      "harnack_best": 569,
+      "argmax": {
+        "n": 21,
+        "m": 2,
+        "L_pub_n": 568,
+        "Har_m": 1
+      },
+      "slack_quoted": 264,
+      "slack_closed": 264
+    },
+    {
+      "N": 24,
+      "L_pub": 843,
+      "L_closed": 843,
+      "L_Ch": 700,
+      "harnack_best": 833,
+      "argmax": {
+        "n": 23,
+        "m": 1,
+        "L_pub_n": 833,
+        "Har_m": 0
+      },
+      "slack_quoted": 10,
+      "slack_closed": 10
+    },
+    {
+      "N": 25,
+      "L_pub": 870,
+      "L_closed": 870,
+      "L_Ch": 628,
+      "harnack_best": 843,
+      "argmax": {
+        "n": 24,
+        "m": 1,
+        "L_pub_n": 843,
+        "Har_m": 0
+      },
+      "slack_quoted": 27,
+      "slack_closed": 27
+    },
+    {
+      "N": 26,
+      "L_pub": 880,
+      "L_closed": 880,
+      "L_Ch": 864,
+      "harnack_best": 870,
+      "argmax": {
+        "n": 25,
+        "m": 1,
+        "L_pub_n": 870,
+        "Har_m": 0
+      },
+      "slack_quoted": 10,
+      "slack_closed": 10
+    },
+    {
+      "N": 27,
+      "L_pub": 1023,
+      "L_closed": 1023,
+      "L_Ch": 848,
+      "harnack_best": 880,
+      "argmax": {
+        "n": 26,
+        "m": 1,
+        "L_pub_n": 880,
+        "Har_m": 0
+      },
+      "slack_quoted": 143,
+      "slack_closed": 143
+    },
+    {
+      "N": 29,
+      "L_pub": 1080,
+      "L_closed": 1080,
+      "L_Ch": 1080,
+      "harnack_best": 1024,
+      "argmax": {
+        "n": 27,
+        "m": 2,
+        "L_pub_n": 1023,
+        "Har_m": 1
+      },
+      "slack_quoted": 56,
+      "slack_closed": 56
+    },
+    {
+      "N": 31,
+      "L_pub": 1380,
+      "L_closed": 1380,
+      "L_Ch": 1380,
+      "harnack_best": 1081,
+      "argmax": {
+        "n": 29,
+        "m": 2,
+        "L_pub_n": 1080,
+        "Har_m": 1
+      },
+      "slack_quoted": 299,
+      "slack_closed": 299
+    },
+    {
+      "N": 35,
+      "L_pub": 1536,
+      "L_closed": 1536,
+      "L_Ch": 1536,
+      "harnack_best": 1384,
+      "argmax": {
+        "n": 31,
+        "m": 4,
+        "L_pub_n": 1380,
+        "Har_m": 4
+      },
+      "slack_quoted": 152,
+      "slack_closed": 152
+    },
+    {
+      "N": 39,
+      "L_pub": 2012,
+      "L_closed": 2012,
+      "L_Ch": 2012,
+      "harnack_best": 1540,
+      "argmax": {
+        "n": 35,
+        "m": 4,
+        "L_pub_n": 1536,
+        "Har_m": 4
+      },
+      "slack_quoted": 472,
+      "slack_closed": 472
+    },
+    {
+      "N": 43,
+      "L_pub": 2272,
+      "L_closed": 2272,
+      "L_Ch": 2272,
+      "harnack_best": 2016,
+      "argmax": {
+        "n": 39,
+        "m": 4,
+        "L_pub_n": 2012,
+        "Har_m": 4
+      },
+      "slack_quoted": 256,
+      "slack_closed": 256
+    }
+  ],
+  "unrecorded_N_le_50": [
+    {
+      "N": 22,
+      "harnack_best": 568,
+      "argmax": {
+        "n": 21,
+        "m": 1,
+        "L_pub_n": 568,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 28,
+      "harnack_best": 1023,
+      "argmax": {
+        "n": 27,
+        "m": 1,
+        "L_pub_n": 1023,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 30,
+      "harnack_best": 1080,
+      "argmax": {
+        "n": 29,
+        "m": 1,
+        "L_pub_n": 1080,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 32,
+      "harnack_best": 1380,
+      "argmax": {
+        "n": 31,
+        "m": 1,
+        "L_pub_n": 1380,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 33,
+      "harnack_best": 1381,
+      "argmax": {
+        "n": 31,
+        "m": 2,
+        "L_pub_n": 1380,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 34,
+      "harnack_best": 1381,
+      "argmax": {
+        "n": 31,
+        "m": 3,
+        "L_pub_n": 1380,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 36,
+      "harnack_best": 1536,
+      "argmax": {
+        "n": 35,
+        "m": 1,
+        "L_pub_n": 1536,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 37,
+      "harnack_best": 1537,
+      "argmax": {
+        "n": 35,
+        "m": 2,
+        "L_pub_n": 1536,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 38,
+      "harnack_best": 1537,
+      "argmax": {
+        "n": 35,
+        "m": 3,
+        "L_pub_n": 1536,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 40,
+      "harnack_best": 2012,
+      "argmax": {
+        "n": 39,
+        "m": 1,
+        "L_pub_n": 2012,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 41,
+      "harnack_best": 2013,
+      "argmax": {
+        "n": 39,
+        "m": 2,
+        "L_pub_n": 2012,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 42,
+      "harnack_best": 2013,
+      "argmax": {
+        "n": 39,
+        "m": 3,
+        "L_pub_n": 2012,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 44,
+      "harnack_best": 2272,
+      "argmax": {
+        "n": 43,
+        "m": 1,
+        "L_pub_n": 2272,
+        "Har_m": 0
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 45,
+      "harnack_best": 2273,
+      "argmax": {
+        "n": 43,
+        "m": 2,
+        "L_pub_n": 2272,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 46,
+      "harnack_best": 2273,
+      "argmax": {
+        "n": 43,
+        "m": 3,
+        "L_pub_n": 2272,
+        "Har_m": 1
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 47,
+      "harnack_best": 2276,
+      "argmax": {
+        "n": 43,
+        "m": 4,
+        "L_pub_n": 2272,
+        "Har_m": 4
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 48,
+      "harnack_best": 2278,
+      "argmax": {
+        "n": 43,
+        "m": 5,
+        "L_pub_n": 2272,
+        "Har_m": 6
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 49,
+      "harnack_best": 2283,
+      "argmax": {
+        "n": 43,
+        "m": 6,
+        "L_pub_n": 2272,
+        "Har_m": 11
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    },
+    {
+      "N": 50,
+      "harnack_best": 2287,
+      "argmax": {
+        "n": 43,
+        "m": 7,
+        "L_pub_n": 2272,
+        "Har_m": 15
+      },
+      "note": "no recorded L_pub at this N in the six seed tables; lift is Cor. 2 arithmetic, not a new H(N)"
+    }
+  ],
+  "m1_quoted_exceedances": [
+    {
+      "n": 17,
+      "m": 1,
+      "N": 18,
+      "lift": 384,
+      "L_pub_N": 372,
+      "L_pub_n": 384,
+      "Har_m": 0,
+      "increment_would_give": 385,
+      "is_dent": false
+    }
+  ],
+  "n_beats_quoted_m_ge_2": 0,
+  "n_beats_closed_recorded": 0,
+  "n_beats_claimed": 0,
+  "four_chebyshev": {
+    "14": 252,
+    "29": 1080,
+    "31": 1380,
+    "39": 2012
+  },
+  "harnack_vs_four": {
+    "14": {
+      "chebyshev_already_on_2604_12883": 252,
+      "harnack_best": 212,
+      "argmax": {
+        "n": 13,
+        "m": 1
+      },
+      "beats_chebyshev": false
+    },
+    "29": {
+      "chebyshev_already_on_2604_12883": 1080,
+      "harnack_best": 1024,
+      "argmax": {
+        "n": 27,
+        "m": 2
+      },
+      "beats_chebyshev": false
+    },
+    "31": {
+      "chebyshev_already_on_2604_12883": 1380,
+      "harnack_best": 1081,
+      "argmax": {
+        "n": 29,
+        "m": 2
+      },
+      "beats_chebyshev": false
+    },
+    "39": {
+      "chebyshev_already_on_2604_12883": 2012,
+      "harnack_best": 1540,
+      "argmax": {
+        "n": 35,
+        "m": 4
+      },
+      "beats_chebyshev": false
+    }
+  },
+  "H_K_5": 28,
+  "L_pub_4": 28,
+  "L_pub_5": 37,
+  "H_K_5_equals_L_pub_4": true,
+  "H_K_5_equals_9": false,
+  "H_K_5_beats_H_5": false,
+  "Har_1": 0,
+  "weaker_than_increment": true,
+  "do_not_claim_252_1080_1380_2012_as_ours": true,
+  "do_not_claim_HK5_28_as_ours": true,
+  "example_H6_from_H2": {
+    "n": 2,
+    "m": 4,
+    "lift": 8,
+    "L_pub_6": 53
+  }
+}

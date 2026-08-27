@@ -1,0 +1,70 @@
+{
+  "n": 355,
+  "repairs": [
+    {
+      "hits": 0,
+      "tried": 24,
+      "clique": null,
+      "from": "D5",
+      "remove": 3,
+      "add": 4
+    },
+    {
+      "hits": 0,
+      "tried": 0,
+      "clique": null,
+      "from": "D5",
+      "remove": 4,
+      "add": 5
+    },
+    {
+      "hits": 0,
+      "tried": 12,
+      "clique": null,
+      "from": "L5",
+      "remove": 3,
+      "add": 4
+    },
+    {
+      "hits": 0,
+      "tried": 0,
+      "clique": null,
+      "from": "L5",
+      "remove": 4,
+      "add": 5
+    },
+    {
+      "hits": 0,
+      "tried": 0,
+      "clique": null,
+      "from": "Q5",
+      "remove": 3,
+      "add": 4
+    },
+    {
+      "hits": 0,
+      "tried": 10,
+      "clique": null,
+      "from": "Q5",
+      "remove": 4,
+      "add": 5
+    },
+    {
+      "hits": 0,
+      "tried": 0,
+      "clique": null,
+      "from": "R5",
+      "remove": 3,
+      "add": 4
+    },
+    {
+      "hits": 0,
+      "tried": 5,
+      "clique": null,
+      "from": "R5",
+      "remove": 4,
+      "add": 5
+    }
+  ],
+  "found_36": false
+}

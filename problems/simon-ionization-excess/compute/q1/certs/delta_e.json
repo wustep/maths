@@ -1,0 +1,1994 @@
+{
+  "label": "HEURISTIC",
+  "status": "residue",
+  "disclaimer": "HEURISTIC. \u0394E is built from the HF table, not from the true Schr\u00f6dinger energies. Checking 1984 10(a) on this range does not prove monotonicity. Nothing here is a bound on N0.",
+  "inequality": "\u0394E(N-1,Z) >= \u0394E(N,Z)  (Simon 1984 10(a))",
+  "definition": "\u0394E(N,Z) = E(N-1,Z) - E(N,Z)",
+  "source": "certs/hf_table.json",
+  "blocks": {
+    "helium_like_slater": {
+      "label": "HEURISTIC",
+      "method": "1-parameter 1s Slater; E(1)=-Z^2/2, E(2)=-(Z-5/16)^2",
+      "summary": {
+        "label": "HEURISTIC",
+        "method": "1-parameter 1s Slater; E(1)=-Z^2/2, E(2)=-(Z-5/16)^2",
+        "n_delta_values": 20,
+        "n_ten_a_pairs": 10,
+        "n_ten_a_holds": 10,
+        "n_ten_a_fails": 0,
+        "monotone_on_computed_range": true,
+        "ten_a_failures": [],
+        "heuristic_binding_pairs": [
+          {
+            "Z": 1,
+            "N": 1,
+            "delta_E": 0.5
+          },
+          {
+            "Z": 2,
+            "N": 1,
+            "delta_E": 2.0
+          },
+          {
+            "Z": 2,
+            "N": 2,
+            "delta_E": 0.84765625
+          },
+          {
+            "Z": 3,
+            "N": 1,
+            "delta_E": 4.5
+          },
+          {
+            "Z": 3,
+            "N": 2,
+            "delta_E": 2.72265625
+          },
+          {
+            "Z": 4,
+            "N": 1,
+            "delta_E": 8.0
+          },
+          {
+            "Z": 4,
+            "N": 2,
+            "delta_E": 5.59765625
+          },
+          {
+            "Z": 5,
+            "N": 1,
+            "delta_E": 12.5
+          },
+          {
+            "Z": 5,
+            "N": 2,
+            "delta_E": 9.47265625
+          },
+          {
+            "Z": 6,
+            "N": 1,
+            "delta_E": 18.0
+          },
+          {
+            "Z": 6,
+            "N": 2,
+            "delta_E": 14.34765625
+          },
+          {
+            "Z": 7,
+            "N": 1,
+            "delta_E": 24.5
+          },
+          {
+            "Z": 7,
+            "N": 2,
+            "delta_E": 20.22265625
+          },
+          {
+            "Z": 8,
+            "N": 1,
+            "delta_E": 32.0
+          },
+          {
+            "Z": 8,
+            "N": 2,
+            "delta_E": 27.09765625
+          },
+          {
+            "Z": 9,
+            "N": 1,
+            "delta_E": 40.5
+          },
+          {
+            "Z": 9,
+            "N": 2,
+            "delta_E": 34.97265625
+          },
+          {
+            "Z": 10,
+            "N": 1,
+            "delta_E": 50.0
+          },
+          {
+            "Z": 10,
+            "N": 2,
+            "delta_E": 43.84765625
+          }
+        ],
+        "disclaimer": "HEURISTIC. A clean table is not a proof of monotonicity. A failed pair is not a counterexample to 10(a): the energies are approximate HF numbers, not E(N,Z)."
+      },
+      "rows": [
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 1,
+          "E_N": -0.5,
+          "E_N-1": 0.0,
+          "delta_E": 0.5,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 2,
+          "E_N": -0.47265625,
+          "E_N-1": -0.5,
+          "delta_E": -0.02734375,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 0.5,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 1,
+          "E_N": -2.0,
+          "E_N-1": 0.0,
+          "delta_E": 2.0,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 2,
+          "E_N": -2.84765625,
+          "E_N-1": -2.0,
+          "delta_E": 0.84765625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 2.0,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 1,
+          "E_N": -4.5,
+          "E_N-1": 0.0,
+          "delta_E": 4.5,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 2,
+          "E_N": -7.22265625,
+          "E_N-1": -4.5,
+          "delta_E": 2.72265625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 4.5,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 1,
+          "E_N": -8.0,
+          "E_N-1": 0.0,
+          "delta_E": 8.0,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 2,
+          "E_N": -13.59765625,
+          "E_N-1": -8.0,
+          "delta_E": 5.59765625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 8.0,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 1,
+          "E_N": -12.5,
+          "E_N-1": 0.0,
+          "delta_E": 12.5,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 2,
+          "E_N": -21.97265625,
+          "E_N-1": -12.5,
+          "delta_E": 9.47265625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 12.5,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 1,
+          "E_N": -18.0,
+          "E_N-1": 0.0,
+          "delta_E": 18.0,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 2,
+          "E_N": -32.34765625,
+          "E_N-1": -18.0,
+          "delta_E": 14.34765625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 18.0,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 1,
+          "E_N": -24.5,
+          "E_N-1": 0.0,
+          "delta_E": 24.5,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 2,
+          "E_N": -44.72265625,
+          "E_N-1": -24.5,
+          "delta_E": 20.22265625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 24.5,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 1,
+          "E_N": -32.0,
+          "E_N-1": 0.0,
+          "delta_E": 32.0,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 2,
+          "E_N": -59.09765625,
+          "E_N-1": -32.0,
+          "delta_E": 27.09765625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 32.0,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 1,
+          "E_N": -40.5,
+          "E_N-1": 0.0,
+          "delta_E": 40.5,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 2,
+          "E_N": -75.47265625,
+          "E_N-1": -40.5,
+          "delta_E": 34.97265625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 40.5,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 1,
+          "E_N": -50.0,
+          "E_N-1": 0.0,
+          "delta_E": 50.0,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 2,
+          "E_N": -93.84765625,
+          "E_N-1": -50.0,
+          "delta_E": 43.84765625,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 50.0,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        }
+      ]
+    },
+    "uhf_sp": {
+      "label": "HEURISTIC",
+      "method": "UHF, even-tempered same-centre Gaussians with 1s/2s/2p scales, analytic s and Cartesian p integrals",
+      "summary": {
+        "label": "HEURISTIC",
+        "method": "UHF, even-tempered same-centre Gaussians with 1s/2s/2p scales, analytic s and Cartesian p integrals",
+        "n_delta_values": 73,
+        "n_ten_a_pairs": 63,
+        "n_ten_a_holds": 63,
+        "n_ten_a_fails": 0,
+        "monotone_on_computed_range": true,
+        "ten_a_failures": [],
+        "heuristic_binding_pairs": [
+          {
+            "Z": 1,
+            "N": 1,
+            "delta_E": 0.49976897174005447
+          },
+          {
+            "Z": 2,
+            "N": 1,
+            "delta_E": 1.99906612590859
+          },
+          {
+            "Z": 2,
+            "N": 2,
+            "delta_E": 0.8612461235599229
+          },
+          {
+            "Z": 3,
+            "N": 1,
+            "delta_E": 4.4978792912973935
+          },
+          {
+            "Z": 3,
+            "N": 2,
+            "delta_E": 2.7350456494020596
+          },
+          {
+            "Z": 3,
+            "N": 3,
+            "delta_E": 0.1956820575010525
+          },
+          {
+            "Z": 4,
+            "N": 1,
+            "delta_E": 7.996217257306082
+          },
+          {
+            "Z": 4,
+            "N": 2,
+            "delta_E": 5.608549181605596
+          },
+          {
+            "Z": 4,
+            "N": 3,
+            "delta_E": 0.6501454854212092
+          },
+          {
+            "Z": 4,
+            "N": 4,
+            "delta_E": 0.2891864603111003
+          },
+          {
+            "Z": 5,
+            "N": 1,
+            "delta_E": 12.494080780282072
+          },
+          {
+            "Z": 5,
+            "N": 2,
+            "delta_E": 9.481609144756025
+          },
+          {
+            "Z": 5,
+            "N": 3,
+            "delta_E": 1.3605706205489767
+          },
+          {
+            "Z": 5,
+            "N": 4,
+            "delta_E": 0.8095378692755766
+          },
+          {
+            "Z": 5,
+            "N": 5,
+            "delta_E": 0.27784228784508613
+          },
+          {
+            "Z": 6,
+            "N": 1,
+            "delta_E": 17.99147001201404
+          },
+          {
+            "Z": 6,
+            "N": 2,
+            "delta_E": 14.354215532036456
+          },
+          {
+            "Z": 6,
+            "N": 3,
+            "delta_E": 2.3304785873434
+          },
+          {
+            "Z": 6,
+            "N": 4,
+            "delta_E": 1.601899249204756
+          },
+          {
+            "Z": 6,
+            "N": 5,
+            "delta_E": 0.8380716475268741
+          },
+          {
+            "Z": 6,
+            "N": 6,
+            "delta_E": 0.35297901272167564
+          },
+          {
+            "Z": 7,
+            "N": 1,
+            "delta_E": 24.48838496692747
+          },
+          {
+            "Z": 7,
+            "N": 2,
+            "delta_E": 20.22636040137283
+          },
+          {
+            "Z": 7,
+            "N": 3,
+            "delta_E": 3.5544098704931457
+          },
+          {
+            "Z": 7,
+            "N": 4,
+            "delta_E": 2.665482408857798
+          },
+          {
+            "Z": 7,
+            "N": 5,
+            "delta_E": 1.670194957207869
+          },
+          {
+            "Z": 7,
+            "N": 6,
+            "delta_E": 0.9969517914701811
+          },
+          {
+            "Z": 7,
+            "N": 7,
+            "delta_E": 0.43218997897186284
+          },
+          {
+            "Z": 8,
+            "N": 1,
+            "delta_E": 31.98482562462701
+          },
+          {
+            "Z": 8,
+            "N": 2,
+            "delta_E": 27.098039455200475
+          },
+          {
+            "Z": 8,
+            "N": 3,
+            "delta_E": 5.029771287170604
+          },
+          {
+            "Z": 8,
+            "N": 4,
+            "delta_E": 3.987639111255163
+          },
+          {
+            "Z": 8,
+            "N": 5,
+            "delta_E": 2.7676159000064615
+          },
+          {
+            "Z": 8,
+            "N": 6,
+            "delta_E": 1.9198561345045846
+          },
+          {
+            "Z": 8,
+            "N": 7,
+            "delta_E": 1.1616795835544451
+          },
+          {
+            "Z": 8,
+            "N": 8,
+            "delta_E": 0.25475170367259636
+          },
+          {
+            "Z": 9,
+            "N": 1,
+            "delta_E": 40.4807919584852
+          },
+          {
+            "Z": 9,
+            "N": 2,
+            "delta_E": 34.96924877760047
+          },
+          {
+            "Z": 9,
+            "N": 3,
+            "delta_E": 6.755583048395124
+          },
+          {
+            "Z": 9,
+            "N": 4,
+            "delta_E": 5.562826950771864
+          },
+          {
+            "Z": 9,
+            "N": 5,
+            "delta_E": 4.121671075290848
+          },
+          {
+            "Z": 9,
+            "N": 6,
+            "delta_E": 3.1054493434578347
+          },
+          {
+            "Z": 9,
+            "N": 7,
+            "delta_E": 2.176593646319901
+          },
+          {
+            "Z": 9,
+            "N": 8,
+            "delta_E": 1.0451316838770026
+          },
+          {
+            "Z": 9,
+            "N": 9,
+            "delta_E": 0.3091375886487526
+          },
+          {
+            "Z": 10,
+            "N": 1,
+            "delta_E": 49.97628394392693
+          },
+          {
+            "Z": 10,
+            "N": 2,
+            "delta_E": 43.839897307055125
+          },
+          {
+            "Z": 10,
+            "N": 3,
+            "delta_E": 8.731551883709159
+          },
+          {
+            "Z": 10,
+            "N": 4,
+            "delta_E": 7.389008442416824
+          },
+          {
+            "Z": 10,
+            "N": 5,
+            "delta_E": 5.728722456126704
+          },
+          {
+            "Z": 10,
+            "N": 6,
+            "delta_E": 4.545794125238245
+          },
+          {
+            "Z": 10,
+            "N": 7,
+            "delta_E": 3.4517679087726094
+          },
+          {
+            "Z": 10,
+            "N": 8,
+            "delta_E": 2.110571272233088
+          },
+          {
+            "Z": 10,
+            "N": 9,
+            "delta_E": 1.2016680796805304
+          },
+          {
+            "Z": 10,
+            "N": 10,
+            "delta_E": 0.37215570281442467
+          }
+        ],
+        "disclaimer": "HEURISTIC. A clean table is not a proof of monotonicity. A failed pair is not a counterexample to 10(a): the energies are approximate HF numbers, not E(N,Z)."
+      },
+      "rows": [
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 1,
+          "E_N": -0.49976897174005447,
+          "E_N-1": 0.0,
+          "delta_E": 0.49976897174005447,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 2,
+          "E_N": -0.4929897651257781,
+          "E_N-1": -0.49976897174005447,
+          "delta_E": -0.00677920661427639,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 0.49976897174005447,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 3,
+          "E_N": -0.3778956123021445,
+          "E_N-1": -0.4929897651257781,
+          "delta_E": -0.11509415282363356,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": -0.00677920661427639,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 1,
+          "E_N": -1.99906612590859,
+          "E_N-1": 0.0,
+          "delta_E": 1.99906612590859,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 2,
+          "E_N": -2.860312249468513,
+          "E_N-1": -1.99906612590859,
+          "delta_E": 0.8612461235599229,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 1.99906612590859,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 3,
+          "E_N": -2.842836755657369,
+          "E_N-1": -2.860312249468513,
+          "delta_E": -0.017475493811144105,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 0.8612461235599229,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 4,
+          "E_N": -2.7325278980159213,
+          "E_N-1": -2.842836755657369,
+          "delta_E": -0.11030885764144749,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": -0.017475493811144105,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 1,
+          "E_N": -4.4978792912973935,
+          "E_N-1": 0.0,
+          "delta_E": 4.4978792912973935,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 2,
+          "E_N": -7.232924940699453,
+          "E_N-1": -4.4978792912973935,
+          "delta_E": 2.7350456494020596,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 4.4978792912973935,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 3,
+          "E_N": -7.428606998200506,
+          "E_N-1": -7.232924940699453,
+          "delta_E": 0.1956820575010525,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 2.7350456494020596,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 1,
+          "E_N": -7.996217257306082,
+          "E_N-1": 0.0,
+          "delta_E": 7.996217257306082,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 2,
+          "E_N": -13.604766438911678,
+          "E_N-1": -7.996217257306082,
+          "delta_E": 5.608549181605596,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 7.996217257306082,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 3,
+          "E_N": -14.254911924332887,
+          "E_N-1": -13.604766438911678,
+          "delta_E": 0.6501454854212092,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 5.608549181605596,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 4,
+          "E_N": -14.544098384643988,
+          "E_N-1": -14.254911924332887,
+          "delta_E": 0.2891864603111003,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 0.6501454854212092,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 5,
+          "E_N": -14.524556394019793,
+          "E_N-1": -14.544098384643988,
+          "delta_E": -0.019541990624194483,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 0.2891864603111003,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 6,
+          "E_N": -14.40927653781311,
+          "E_N-1": -14.524556394019793,
+          "delta_E": -0.11527985620668346,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": -0.019541990624194483,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 1,
+          "E_N": -12.494080780282072,
+          "E_N-1": 0.0,
+          "delta_E": 12.494080780282072,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 2,
+          "E_N": -21.975689925038097,
+          "E_N-1": -12.494080780282072,
+          "delta_E": 9.481609144756025,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 12.494080780282072,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 3,
+          "E_N": -23.336260545587074,
+          "E_N-1": -21.975689925038097,
+          "delta_E": 1.3605706205489767,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 9.481609144756025,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 4,
+          "E_N": -24.14579841486265,
+          "E_N-1": -23.336260545587074,
+          "delta_E": 0.8095378692755766,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 1.3605706205489767,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 5,
+          "E_N": -24.423640702707736,
+          "E_N-1": -24.14579841486265,
+          "delta_E": 0.27784228784508613,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 0.8095378692755766,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 6,
+          "E_N": -24.404063390294443,
+          "E_N-1": -24.423640702707736,
+          "delta_E": -0.019577312413293413,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 0.27784228784508613,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 7,
+          "E_N": -24.299388968632137,
+          "E_N-1": -24.404063390294443,
+          "delta_E": -0.10467442166230612,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": -0.019577312413293413,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 1,
+          "E_N": -17.99147001201404,
+          "E_N-1": 0.0,
+          "delta_E": 17.99147001201404,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 2,
+          "E_N": -32.3456855440505,
+          "E_N-1": -17.99147001201404,
+          "delta_E": 14.354215532036456,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 17.99147001201404,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 3,
+          "E_N": -34.6761641313939,
+          "E_N-1": -32.3456855440505,
+          "delta_E": 2.3304785873434,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 14.354215532036456,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 4,
+          "E_N": -36.27806338059865,
+          "E_N-1": -34.6761641313939,
+          "delta_E": 1.601899249204756,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 2.3304785873434,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 5,
+          "E_N": -37.11613502812553,
+          "E_N-1": -36.27806338059865,
+          "delta_E": 0.8380716475268741,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 1.601899249204756,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 6,
+          "E_N": -37.4691140408472,
+          "E_N-1": -37.11613502812553,
+          "delta_E": 0.35297901272167564,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 0.8380716475268741,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 7,
+          "E_N": -37.45136462330113,
+          "E_N-1": -37.4691140408472,
+          "delta_E": -0.017749417546070845,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": 0.35297901272167564,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 8,
+          "E_N": -37.334782583066044,
+          "E_N-1": -37.45136462330113,
+          "delta_E": -0.11658204023508745,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 7,
+          "delta_E_N-1": -0.017749417546070845,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 1,
+          "E_N": -24.48838496692747,
+          "E_N-1": 0.0,
+          "delta_E": 24.48838496692747,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 2,
+          "E_N": -44.7147453683003,
+          "E_N-1": -24.48838496692747,
+          "delta_E": 20.22636040137283,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 24.48838496692747,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 3,
+          "E_N": -48.269155238793445,
+          "E_N-1": -44.7147453683003,
+          "delta_E": 3.5544098704931457,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 20.22636040137283,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 4,
+          "E_N": -50.93463764765124,
+          "E_N-1": -48.269155238793445,
+          "delta_E": 2.665482408857798,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 3.5544098704931457,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 5,
+          "E_N": -52.60483260485911,
+          "E_N-1": -50.93463764765124,
+          "delta_E": 1.670194957207869,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 2.665482408857798,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 6,
+          "E_N": -53.60178439632929,
+          "E_N-1": -52.60483260485911,
+          "delta_E": 0.9969517914701811,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 1.670194957207869,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 7,
+          "E_N": -54.033974375301156,
+          "E_N-1": -53.60178439632929,
+          "delta_E": 0.43218997897186284,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": 0.9969517914701811,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 8,
+          "E_N": -54.015035976707544,
+          "E_N-1": -54.033974375301156,
+          "delta_E": -0.018938398593611794,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 7,
+          "delta_E_N-1": 0.43218997897186284,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 9,
+          "E_N": -53.895008283822676,
+          "E_N-1": -54.015035976707544,
+          "delta_E": -0.12002769288486803,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 8,
+          "delta_E_N-1": -0.018938398593611794,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 1,
+          "E_N": -31.98482562462701,
+          "E_N-1": 0.0,
+          "delta_E": 31.98482562462701,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 2,
+          "E_N": -59.082865079827485,
+          "E_N-1": -31.98482562462701,
+          "delta_E": 27.098039455200475,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 31.98482562462701,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 3,
+          "E_N": -64.11263636699809,
+          "E_N-1": -59.082865079827485,
+          "delta_E": 5.029771287170604,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 27.098039455200475,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 4,
+          "E_N": -68.10027547825325,
+          "E_N-1": -64.11263636699809,
+          "delta_E": 3.987639111255163,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 5.029771287170604,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 5,
+          "E_N": -70.86789137825971,
+          "E_N-1": -68.10027547825325,
+          "delta_E": 2.7676159000064615,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 3.987639111255163,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 6,
+          "E_N": -72.7877475127643,
+          "E_N-1": -70.86789137825971,
+          "delta_E": 1.9198561345045846,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 2.7676159000064615,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 7,
+          "E_N": -73.94942709631874,
+          "E_N-1": -72.7877475127643,
+          "delta_E": 1.1616795835544451,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": 1.9198561345045846,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 8,
+          "E_N": -74.20417879999134,
+          "E_N-1": -73.94942709631874,
+          "delta_E": 0.25475170367259636,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 7,
+          "delta_E_N-1": 1.1616795835544451,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 9,
+          "E_N": -74.18749776895359,
+          "E_N-1": -74.20417879999134,
+          "delta_E": -0.01668103103774854,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 8,
+          "delta_E_N-1": 0.25475170367259636,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 10,
+          "E_N": -74.06674655715341,
+          "E_N-1": -74.18749776895359,
+          "delta_E": -0.120751211800183,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 9,
+          "delta_E_N-1": -0.01668103103774854,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 1,
+          "E_N": -40.4807919584852,
+          "E_N-1": 0.0,
+          "delta_E": 40.4807919584852,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 2,
+          "E_N": -75.45004073608567,
+          "E_N-1": -40.4807919584852,
+          "delta_E": 34.96924877760047,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 40.4807919584852,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 3,
+          "E_N": -82.20562378448079,
+          "E_N-1": -75.45004073608567,
+          "delta_E": 6.755583048395124,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 34.96924877760047,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 4,
+          "E_N": -87.76845073525266,
+          "E_N-1": -82.20562378448079,
+          "delta_E": 5.562826950771864,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 6.755583048395124,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 5,
+          "E_N": -91.8901218105435,
+          "E_N-1": -87.76845073525266,
+          "delta_E": 4.121671075290848,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 5.562826950771864,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 6,
+          "E_N": -94.99557115400134,
+          "E_N-1": -91.8901218105435,
+          "delta_E": 3.1054493434578347,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 4.121671075290848,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 7,
+          "E_N": -97.17216480032124,
+          "E_N-1": -94.99557115400134,
+          "delta_E": 2.176593646319901,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": 3.1054493434578347,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 8,
+          "E_N": -98.21729648419824,
+          "E_N-1": -97.17216480032124,
+          "delta_E": 1.0451316838770026,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 7,
+          "delta_E_N-1": 2.176593646319901,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 9,
+          "E_N": -98.526434072847,
+          "E_N-1": -98.21729648419824,
+          "delta_E": 0.3091375886487526,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 8,
+          "delta_E_N-1": 1.0451316838770026,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 10,
+          "E_N": -98.51017996447082,
+          "E_N-1": -98.526434072847,
+          "delta_E": -0.016254108376173804,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 9,
+          "delta_E_N-1": 0.3091375886487526,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 11,
+          "E_N": -98.39499823683059,
+          "E_N-1": -98.51017996447082,
+          "delta_E": -0.11518172764023404,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 10,
+          "delta_E_N-1": -0.016254108376173804,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 1,
+          "E_N": -49.97628394392693,
+          "E_N-1": 0.0,
+          "delta_E": 49.97628394392693,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 2,
+          "E_N": -93.81618125098205,
+          "E_N-1": -49.97628394392693,
+          "delta_E": 43.839897307055125,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 49.97628394392693,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 3,
+          "E_N": -102.54773313469121,
+          "E_N-1": -93.81618125098205,
+          "delta_E": 8.731551883709159,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 2,
+          "delta_E_N-1": 43.839897307055125,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 4,
+          "E_N": -109.93674157710804,
+          "E_N-1": -102.54773313469121,
+          "delta_E": 7.389008442416824,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 3,
+          "delta_E_N-1": 8.731551883709159,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 5,
+          "E_N": -115.66546403323474,
+          "E_N-1": -109.93674157710804,
+          "delta_E": 5.728722456126704,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 4,
+          "delta_E_N-1": 7.389008442416824,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 6,
+          "E_N": -120.21125815847299,
+          "E_N-1": -115.66546403323474,
+          "delta_E": 4.545794125238245,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 5,
+          "delta_E_N-1": 5.728722456126704,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 7,
+          "E_N": -123.6630260672456,
+          "E_N-1": -120.21125815847299,
+          "delta_E": 3.4517679087726094,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 6,
+          "delta_E_N-1": 4.545794125238245,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 8,
+          "E_N": -125.77359733947868,
+          "E_N-1": -123.6630260672456,
+          "delta_E": 2.110571272233088,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 7,
+          "delta_E_N-1": 3.4517679087726094,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 9,
+          "E_N": -126.97526541915921,
+          "E_N-1": -125.77359733947868,
+          "delta_E": 1.2016680796805304,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 8,
+          "delta_E_N-1": 2.110571272233088,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 10,
+          "E_N": -127.34742112197364,
+          "E_N-1": -126.97526541915921,
+          "delta_E": 0.37215570281442467,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 9,
+          "delta_E_N-1": 1.2016680796805304,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 11,
+          "E_N": -127.33121249098511,
+          "E_N-1": -127.34742112197364,
+          "delta_E": -0.01620863098852965,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 10,
+          "delta_E_N-1": 0.37215570281442467,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 12,
+          "E_N": -127.21566747486054,
+          "E_N-1": -127.33121249098511,
+          "delta_E": -0.11554501612457102,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 11,
+          "delta_E_N-1": -0.01620863098852965,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        }
+      ]
+    },
+    "uhf_s_n12": {
+      "label": "HEURISTIC",
+      "method": "UHF, even-tempered s-Gaussians only, N=0,1,2",
+      "summary": {
+        "label": "HEURISTIC",
+        "method": "UHF, even-tempered s-Gaussians only, N=0,1,2",
+        "n_delta_values": 20,
+        "n_ten_a_pairs": 10,
+        "n_ten_a_holds": 10,
+        "n_ten_a_fails": 0,
+        "monotone_on_computed_range": true,
+        "ten_a_failures": [],
+        "heuristic_binding_pairs": [
+          {
+            "Z": 1,
+            "N": 1,
+            "delta_E": 0.49958157070431414
+          },
+          {
+            "Z": 2,
+            "N": 1,
+            "delta_E": 1.9983249283364415
+          },
+          {
+            "Z": 2,
+            "N": 2,
+            "delta_E": 0.8609705194333868
+          },
+          {
+            "Z": 3,
+            "N": 1,
+            "delta_E": 4.496230754401052
+          },
+          {
+            "Z": 3,
+            "N": 2,
+            "delta_E": 2.7341717894849307
+          },
+          {
+            "Z": 4,
+            "N": 1,
+            "delta_E": 7.993298937441699
+          },
+          {
+            "Z": 4,
+            "N": 2,
+            "delta_E": 5.6066916225473395
+          },
+          {
+            "Z": 5,
+            "N": 1,
+            "delta_E": 12.489529472868856
+          },
+          {
+            "Z": 5,
+            "N": 2,
+            "delta_E": 9.47842291307424
+          },
+          {
+            "Z": 6,
+            "N": 1,
+            "delta_E": 17.98492235976823
+          },
+          {
+            "Z": 6,
+            "N": 2,
+            "delta_E": 14.349338720750698
+          },
+          {
+            "Z": 7,
+            "N": 1,
+            "delta_E": 24.47947759707263
+          },
+          {
+            "Z": 7,
+            "N": 2,
+            "delta_E": 20.219428901728335
+          },
+          {
+            "Z": 8,
+            "N": 1,
+            "delta_E": 31.973195183841387
+          },
+          {
+            "Z": 8,
+            "N": 2,
+            "delta_E": 27.08868871084263
+          },
+          {
+            "Z": 9,
+            "N": 1,
+            "delta_E": 40.46607511935154
+          },
+          {
+            "Z": 9,
+            "N": 2,
+            "delta_E": 34.957115615914624
+          },
+          {
+            "Z": 10,
+            "N": 1,
+            "delta_E": 49.9581174030705
+          },
+          {
+            "Z": 10,
+            "N": 2,
+            "delta_E": 43.824708138673955
+          }
+        ],
+        "disclaimer": "HEURISTIC. A clean table is not a proof of monotonicity. A failed pair is not a counterexample to 10(a): the energies are approximate HF numbers, not E(N,Z)."
+      },
+      "rows": [
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 1,
+          "E_N": -0.49958157070431414,
+          "E_N-1": 0.0,
+          "delta_E": 0.49958157070431414,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 1,
+          "N": 2,
+          "E_N": -0.487521032973462,
+          "E_N-1": -0.49958157070431414,
+          "delta_E": -0.012060537730852139,
+          "heuristic_binds": false,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 0.49958157070431414,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 1,
+          "E_N": -1.9983249283364415,
+          "E_N-1": 0.0,
+          "delta_E": 1.9983249283364415,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 2,
+          "N": 2,
+          "E_N": -2.8592954477698282,
+          "E_N-1": -1.9983249283364415,
+          "delta_E": 0.8609705194333868,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 1.9983249283364415,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 1,
+          "E_N": -4.496230754401052,
+          "E_N-1": 0.0,
+          "delta_E": 4.496230754401052,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 3,
+          "N": 2,
+          "E_N": -7.230402543885982,
+          "E_N-1": -4.496230754401052,
+          "delta_E": 2.7341717894849307,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 4.496230754401052,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 1,
+          "E_N": -7.993298937441699,
+          "E_N-1": 0.0,
+          "delta_E": 7.993298937441699,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 4,
+          "N": 2,
+          "E_N": -13.599990559989038,
+          "E_N-1": -7.993298937441699,
+          "delta_E": 5.6066916225473395,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 7.993298937441699,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 1,
+          "E_N": -12.489529472868856,
+          "E_N-1": 0.0,
+          "delta_E": 12.489529472868856,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 5,
+          "N": 2,
+          "E_N": -21.967952385943097,
+          "E_N-1": -12.489529472868856,
+          "delta_E": 9.47842291307424,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 12.489529472868856,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 1,
+          "E_N": -17.98492235976823,
+          "E_N-1": 0.0,
+          "delta_E": 17.98492235976823,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 6,
+          "N": 2,
+          "E_N": -32.33426108051893,
+          "E_N-1": -17.98492235976823,
+          "delta_E": 14.349338720750698,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 17.98492235976823,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 1,
+          "E_N": -24.47947759707263,
+          "E_N-1": 0.0,
+          "delta_E": 24.47947759707263,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 7,
+          "N": 2,
+          "E_N": -44.698906498800966,
+          "E_N-1": -24.47947759707263,
+          "delta_E": 20.219428901728335,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 24.47947759707263,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 1,
+          "E_N": -31.973195183841387,
+          "E_N-1": 0.0,
+          "delta_E": 31.973195183841387,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 8,
+          "N": 2,
+          "E_N": -59.061883894684016,
+          "E_N-1": -31.973195183841387,
+          "delta_E": 27.08868871084263,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 31.973195183841387,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 1,
+          "E_N": -40.46607511935154,
+          "E_N-1": 0.0,
+          "delta_E": 40.46607511935154,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 9,
+          "N": 2,
+          "E_N": -75.42319073526616,
+          "E_N-1": -40.46607511935154,
+          "delta_E": 34.957115615914624,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 40.46607511935154,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 1,
+          "E_N": -49.9581174030705,
+          "E_N-1": 0.0,
+          "delta_E": 49.9581174030705,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added."
+        },
+        {
+          "label": "HEURISTIC",
+          "Z": 10,
+          "N": 2,
+          "E_N": -93.78282554174446,
+          "E_N-1": -49.9581174030705,
+          "delta_E": 43.824708138673955,
+          "heuristic_binds": true,
+          "note": "\u0394E(N,Z)=E(N-1,Z)-E(N,Z). HEURISTIC. Positive means the table energy dropped when the N-th electron was added.",
+          "ten_a_compared_to": 1,
+          "delta_E_N-1": 49.9581174030705,
+          "ten_a_holds_on_table": true,
+          "ten_a_note": "HEURISTIC check of \u0394E(N-1,Z) >= \u0394E(N,Z) on this pair. Does not prove 1984 10(a)."
+        }
+      ]
+    }
+  }
+}

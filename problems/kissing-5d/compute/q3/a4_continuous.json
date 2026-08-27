@@ -1,0 +1,22 @@
+{
+  "meshes": {
+    "2": {
+      "n_pi": 212,
+      "n_exact_height": 0
+    },
+    "3": {
+      "n_pi": 793,
+      "n_exact_height": 0
+    },
+    "4": {
+      "n_pi": 2154,
+      "n_exact_height": 80,
+      "north": 40,
+      "north_best": 4
+    }
+  },
+  "n_constructions": 0,
+  "found_41": false,
+  "constructions": [],
+  "comment": "Rational mesh of the A4 polar at denominators 2,3,4.  Only heights whose s^2 is a square in Q are lifted (exact points). An 11-point northern set plus A4 plus a 10-point southern vertex layer would be a 41-point code.  A miss is residue."
+}

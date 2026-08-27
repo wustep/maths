@@ -1,0 +1,55 @@
+{
+  "d": 4,
+  "n": 1480,
+  "n_extras": 1440,
+  "slices": {
+    "4": {
+      "k": 4,
+      "n1": 36,
+      "target_extras": 5,
+      "n_U": 160,
+      "tried": 160,
+      "found": false,
+      "complete": true,
+      "best_extras": 1,
+      "best_total": 37
+    },
+    "5": {
+      "k": 5,
+      "n1": 35,
+      "target_extras": 6,
+      "n_U": 5440,
+      "tried": 320,
+      "found": false,
+      "complete": true,
+      "best_extras": 1,
+      "best_total": 36
+    },
+    "6": {
+      "k": 6,
+      "n1": 34,
+      "target_extras": 7,
+      "n_U": 89920,
+      "tried": 10560,
+      "found": false,
+      "complete": true,
+      "best_extras": 2,
+      "best_total": 36
+    },
+    "7": {
+      "k": 7,
+      "n1": 33,
+      "target_extras": 8,
+      "n_U": 959600,
+      "tried": 171760,
+      "found": false,
+      "complete": true,
+      "best_extras": 4,
+      "best_total": 37
+    }
+  },
+  "constructed_ge41": [],
+  "found_41": false,
+  "n1_ge_33_empty": true,
+  "comment": "Complete generation: every U of size k that can arise contains an actual missed set.  Empty at k=4,5,6,7 means no 41-point code in (1/4)Z^5 uses 33 or more D5-type points.  n1<=32 is a leftover slice, not an emptiness proof of the whole graph."
+}

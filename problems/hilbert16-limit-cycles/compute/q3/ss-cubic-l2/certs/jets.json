@@ -1,0 +1,100 @@
+{
+  "L1_formula": {
+    "cubic": [
+      {
+        "coeff": 1,
+        "term": "a12"
+      },
+      {
+        "coeff": 3,
+        "term": "a30"
+      },
+      {
+        "coeff": 3,
+        "term": "b03"
+      },
+      {
+        "coeff": 1,
+        "term": "b21"
+      }
+    ],
+    "quad": [
+      {
+        "coeff": 1,
+        "term": "a02*a11"
+      },
+      {
+        "coeff": 2,
+        "term": "a02*b02"
+      },
+      {
+        "coeff": 1,
+        "term": "a11*a20"
+      },
+      {
+        "coeff": -2,
+        "term": "a20*b20"
+      },
+      {
+        "coeff": -1,
+        "term": "b02*b11"
+      },
+      {
+        "coeff": -1,
+        "term": "b11*b20"
+      }
+    ]
+  },
+  "V2": {
+    "gauge": "y^n coefficient of even F_n vanishes",
+    "minus": "-sqrt(2)*mu*(23*mu^2+18)/96",
+    "plus": "-sqrt(2)*mu*(23*mu^2+18)/96"
+  },
+  "minus": {
+    "L1_E": "3*sqrt(2)*mu/2",
+    "L1_cubic": "-sqrt(2)*mu/2",
+    "L1_full": "sqrt(2)*mu",
+    "jet": {
+      "a02": "0",
+      "a03": "0",
+      "a11": "0",
+      "a12": "0",
+      "a20": "0",
+      "a21": "0",
+      "a30": "0",
+      "b02": "0",
+      "b03": "0",
+      "b11": "sqrt(2)*mu",
+      "b12": "0",
+      "b20": "-3/2",
+      "b21": "-sqrt(2)*mu/2",
+      "b30": "1/2"
+    }
+  },
+  "mu0_hamiltonian": {
+    "H4_minus": "4*v^2+4*u^2-4*u^3+u^4",
+    "H4_plus": "4*v^2+4*u^2+4*u^3+u^4"
+  },
+  "plus": {
+    "L1_E": "3*sqrt(2)*mu/2",
+    "L1_cubic": "-sqrt(2)*mu/2",
+    "L1_full": "sqrt(2)*mu",
+    "jet": {
+      "a02": "0",
+      "a03": "0",
+      "a11": "0",
+      "a12": "0",
+      "a20": "0",
+      "a21": "0",
+      "a30": "0",
+      "b02": "0",
+      "b03": "0",
+      "b11": "-sqrt(2)*mu",
+      "b12": "0",
+      "b20": "3/2",
+      "b21": "-sqrt(2)*mu/2",
+      "b30": "1/2"
+    }
+  },
+  "schema": "hilbert16-ss-cubic-l2-jets/v1"
+}

@@ -1,0 +1,83 @@
+{
+  "n_pool": 360,
+  "n_universal": 5,
+  "n_remainder": 355,
+  "published": {
+    "D5": 35,
+    "L5": 35,
+    "Q5": 35,
+    "R5": 35
+  },
+  "repairs": [
+    {
+      "from": "D5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "D5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "L5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "L5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "Q5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "Q5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "R5",
+      "remove": 1,
+      "add": 2,
+      "hits": 0,
+      "clique": null
+    },
+    {
+      "from": "R5",
+      "remove": 2,
+      "add": 3,
+      "hits": 0,
+      "clique": null
+    }
+  ],
+  "c_bb": {
+    "n": 355,
+    "target": 36,
+    "nodes": 40000001,
+    "node_limit": 40000000,
+    "best": 35,
+    "found": false,
+    "complete": false,
+    "clique": []
+  },
+  "found_36": false,
+  "found_41": false,
+  "complete": false,
+  "comment": "A 36-clique in the remainder plus the five universal basis vectors is a 41-point exact kissing code.  Incomplete B&B is residue, not a lower bound and not an exclusion.  The published-35 repairs are exact and empty."
+}

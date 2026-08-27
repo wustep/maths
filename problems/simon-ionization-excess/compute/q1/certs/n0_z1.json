@@ -1,0 +1,26 @@
+{
+  "statement": "N0(1) = 2",
+  "is_new_bound": false,
+  "note": "Replay of Lieb 1984 plus the classical H- variational bound. Not a new bound.",
+  "legs": {
+    "variational_binding": {
+      "proves": "N0(1) >= 2",
+      "reason": "A normalized trial on H(2,1) has energy strictly below E(1,1) = -1/2, so E(2,1) < E(1,1).",
+      "certificate": "hminus.json",
+      "threshold": "-1/2",
+      "energy": "-815/1602",
+      "gap_below_threshold": "7/801",
+      "strict": true,
+      "script_sha256": "167c3ce632825368f61d2236d597e4962b2cd409024f249c657dbfe1cd05c983"
+    },
+    "lieb_triangle": {
+      "proves": "Nc(1) <= 2",
+      "theorem": "Lieb, Phys. Rev. A 29, 3018 (1984): Nc < 2Z+1",
+      "invoked_not_reproved": true,
+      "for_Z_1": "Nc < 3, hence Nc <= 2 (N integer)",
+      "comment": "The triangle |x|+|y| >= |x-y| is used in Lieb's proof. We invoke the published theorem; we do not re-prove the functional analysis."
+    }
+  },
+  "combined": "N0(1) = 2",
+  "published_precedence": "Lieb 1984 already concludes Nc = 2 for hydrogen (H-- is not stable). Nam, arXiv:2206.15393, restates that Lieb settles the ionization conjecture for the hydrogen atom."
+}

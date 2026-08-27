@@ -118,6 +118,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
+| [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22525$, tightening the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
@@ -130,21 +131,23 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
 | [union-closed](problems/union-closed) | Certified frequency $0.38304$ on the two-point family {b,1} under Liu Example 4. Analytic first-crossing $0.383051$; mesh min ratio $1.000022$. Recovers Liu $0.382709$. Not one half. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
-| [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Unrestricted range still $$40\le\tau_5\le 44$$. |
+| [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Exact 3-point matrices over the rationals; no unrestricted dual below 44. The leftover $(1/4)\mathbb Z^5$ graph has no 41-set using 22 or more D5-type points; the $T^5$ remainder has no SAT 36-clique without a stored proof. Range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
 | [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 22. Three-rail minima through 15 stay above $6/17$. Interval orders through 10 stay at or above $1/3$. Conjecture open. |
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Incomplete search. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=79$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
-| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Exact CH-triangle at n=18, 21, 24, 26, 27, 29, 30, 32, 33, 35, 36 by an in-degree pigeonhole with stored DRAT proofs. $$F_4\text{ certificate still }c=0.34645,\ 5\cdot 10^{-5}\text{ below HKN }0.3465.$$ Numerical threshold unchanged. Conjecture 1/3 open. |
+| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Exact CH-triangle at n=18, 21, 24, 26, 27, 29, 30, 32, 33, 35, 36 and every leftover order through n=72 (534 stored DRATs). First remaining hole n=73. $$F_4\text{ certificate still }c=0.34645,\ 5\cdot 10^{-5}\text{ below HKN }0.3465.$$ Numerical threshold unchanged. Conjecture 1/3 open. |
 | [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Every 13-tuple of coprime speeds with $$u_i \equiv i \pmod{p}$$ has the lonely runner property, for each of the ten primes 191 through 239, checked exhaustively in about four minutes apiece. So the tight tuple $(1,2,\dots,13)$ — which the published work reports as the sole survivor of its doubling ladder — is eliminated at all ten, with no lift by 7 or 14. The check fails for primes up to 41, so the modulus is doing real work. Sungkawichai–Trakulthongchai (arXiv:2604.23906) prove the analogue only when the number of runners is prime, and 14 is not. Cross-checked against brute force at 6 and 8 runners. Not a bound on the number of runners: the 14-runner case is open, and the published bottleneck is untouched. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
+| [hilbert16-limit-cycles](problems/hilbert16-limit-cycles) | Hilbert 16(b): the Hilbert number H(n), maximum isolated periodic orbits of a planar polynomial vector field of degree n. Published lower bounds still stand: H(2) at least 4 (Shi; Chen–Wang), H(3) at least 13 (Li–Liu–Yang), H(4) at least 28 (Prohens–Torregrosa), and the Han–Li / Chebyshev lifts. A quadratic with 5 cycles, a cubic with 14, a homogeneous nest, a Liénard beat of B(n), iterated squaring past the quadratic ceiling, a Harnack-recurrence table beat, a 29th cycle on the Prohens–Torregrosa quartic, a two-well 14, a four-zero quasi-homogeneous Melnikov, a 9-sheet holomorphic cube, a beat of Z(2,n), a constructive +1 with two cycles, a cubic with an invariant line and three cycles, five Abelian zeros, a four-fold or T2 beat of H(7) at least 74, a cubic Kolmogorov with 7 cycles, an L2 extra nest, and a degree-5 radial product with two cycles were not constructed. Replayed: Shi’s order-3 jet, van der Pol uniqueness, the Chebyshev pullback identity and its 2026 table arithmetic, uniqueness for one radial cubic, the first Lyapunov quantity of a quadratic focus, homogeneous scaling, the odd-cubic Liénard energy identity, iterated-squaring sheet counts, the Harnack-recurrence arithmetic, the explicit degree-4 Darboux seed with three centers, the two-well energy and figure-eight integral, vanishing of L1 at those three centers, first-order cyclicity at most 1 for one cubic perturbation of the quasi-homogeneous center, the holomorphic-cube sheet count, the radial family attaining Z(2,n), a degree-4 line product with one circle, a named cubic with an invariant line and no cycles, an explicit Christopher–Lloyd degree-7 four-oval field, an explicit T2 degree-7 four-oval field, a cubic Kolmogorov Dulac in the first quadrant, the second Poincaré quantity at the two-well, and the degree-5 radial product with one circle. No published H(n) moved. Different problem from the degree-8 folder above. |
 | [simon-lieb-thirring](problems/simon-lieb-thirring) | Later record is Carvalho Corso–Ried (arXiv:2403.04347v2) $$L_{1,1,1}/L_{1,1,1}^{\mathrm{cl}}\le 1.44655\quad(M_3=0.371185695).$$ Independently the Clausen form of that value is at most 1.4465531. Did not beat 1.44655. The 2018 FHJN trial pair was 1.456; a certified pair on this notebook still gives 1.45576 and does not beat CCR. Conjecture open. |
+| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz. Remainders $2.953$, $3.892$, $3.9781$ from the $Z\ge 4$ ratio. Leading coefficient moved from printed $1.1185$ to $1.1118$ by lifting the aspect-12 compact bound through mass-stationarity. Hydrogen N0(1)=2 replayed. Bounded excess open. |
 
 Each problem folder:
 
@@ -186,6 +189,9 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |
 | Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
+| Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
+| Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
+| Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre/compute/q1` | Codex 5.6 Sol | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
@@ -200,10 +206,17 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed | `problems/union-closed` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed / Example 4 on {b,1} | `problems/union-closed/compute/q1` | Grok 4.6 | 2026-08-27 |
+| union-closed / 2-sample ceiling on {b,1} | `problems/union-closed/compute/q2` | Grok 4.6 | 2026-08-27 |
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok 4.6 | 2026-08-17 |
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d / polar maximality and Q5 integer 44 | `problems/kissing-5d/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover graphs and unrestricted dual | `problems/kissing-5d/compute/q2` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover (1/4)Z^5 and T^5 36-clique | `problems/kissing-5d/compute/q3` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / exact unrestricted 3-point dual | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / D5 stars and T5 share 28 | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover n1>=24 and T5 share 27 | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover n1>=22 and T5 share 24 | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |
@@ -214,6 +227,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist | `problems/caccetta-haggkvist-k3` | SuperGrok 4.6 | 2026-08-17 |
 | Caccetta–Häggkvist n=18 cubes | `problems/caccetta-haggkvist-k3/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Caccetta–Häggkvist exact orders through n=36 | `problems/caccetta-haggkvist-k3/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
+| Caccetta–Häggkvist leftover holes through n=72 | `problems/caccetta-haggkvist-k3/compute/q3` | Cursor Grok 4.6 | 2026-08-27 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
@@ -222,11 +236,19 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | elliptic Fekete $S^2$ | `problems/fekete-s2` | Grok 4.6 | 2026-08-19 |
 | Grok Bot transcript page | `notes/chat` | Grok 4.6 | 2026-08-21 |
 | Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
+| Hilbert 16(b) Hilbert number H(n) | `problems/hilbert16-limit-cycles` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) five-line campaign | `problems/hilbert16-limit-cycles/compute/q1` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) twenty-five ideas, five lines | `problems/hilbert16-limit-cycles/compute/q2` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(b) ten ideas, leftover menu, extras | `problems/hilbert16-limit-cycles/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Hadwiger–Nelson plane | `problems/hadwiger-nelson-plane` | GPT-5.6 Sol | 2026-08-23 |
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
 | Lieb–Thirring (Simon 2000 #15) | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
 | Lieb–Thirring $\mathcal{C}_1$ trial pair | `problems/simon-lieb-thirring/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Lieb–Thirring CCR $M_3$ / Clausen envelope | `problems/simon-lieb-thirring/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
+| Simon ionization excess | `problems/simon-ionization-excess` | Grok 4.6 | 2026-08-27 |
+| Simon ionization excess / HPS remainder | `problems/simon-ionization-excess/compute/q1` | Grok 4.6 | 2026-08-27 |
+| Simon ionization excess / leading coefficient | `problems/simon-ionization-excess/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
+| Simon ionization excess / leading lift | `problems/simon-ionization-excess/compute/q3` | Cursor Grok 4.6 | 2026-08-27 |
 
 ## Lean
 

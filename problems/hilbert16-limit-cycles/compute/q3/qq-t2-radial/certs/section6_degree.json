@@ -1,0 +1,137 @@
+{
+  "paper": "arXiv:2604.12883v1 \u00a76, m=2",
+  "rho2": [
+    1,
+    4
+  ],
+  "T2": "2*t**2 - 1",
+  "T2_prime": "4*t",
+  "X": {
+    "P": "-x*(x**2 + y**2 - 1/4) + y",
+    "Q": "-x - y*(x**2 + y**2 - 1/4)",
+    "deg": 3
+  },
+  "Y": {
+    "u_dot": "T2'(v) * P(T2(u), T2(v))",
+    "v_dot": "T2'(u) * Q(T2(u), T2(v))",
+    "deg_u": 7,
+    "deg_v": 7,
+    "deg": 7,
+    "n_terms_u": 8,
+    "n_terms_v": 8,
+    "monomials_u": [
+      {
+        "u": 0,
+        "v": 1,
+        "num": 3,
+        "den": 1
+      },
+      {
+        "u": 0,
+        "v": 3,
+        "num": -8,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 1,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 0,
+        "v": 5,
+        "num": 16,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 3,
+        "num": 32,
+        "den": 1
+      },
+      {
+        "u": 4,
+        "v": 1,
+        "num": 48,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 5,
+        "num": -32,
+        "den": 1
+      },
+      {
+        "u": 6,
+        "v": 1,
+        "num": -32,
+        "den": 1
+      }
+    ],
+    "monomials_v": [
+      {
+        "u": 1,
+        "v": 0,
+        "num": 11,
+        "den": 1
+      },
+      {
+        "u": 1,
+        "v": 2,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 0,
+        "num": -24,
+        "den": 1
+      },
+      {
+        "u": 1,
+        "v": 4,
+        "num": 48,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 2,
+        "num": 32,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 0,
+        "num": 16,
+        "den": 1
+      },
+      {
+        "u": 1,
+        "v": 6,
+        "num": -32,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 2,
+        "num": -32,
+        "den": 1
+      }
+    ],
+    "leading_u": "-32 u^2 v (u^4 + v^4)",
+    "leading_v": "-32 u v^2 (u^4 + v^4)"
+  },
+  "integer_time_rescale_4X": {
+    "P": "-4*x**3 - 4*x*y**2 + x + 4*y",
+    "Q": "-4*x**2*y - 4*x - 4*y**3 + y",
+    "deg_Y": 7
+  },
+  "conjugacy": true,
+  "expected_deg": 7,
+  "H7_from_this_field": 4,
+  "beats_PT_74": false,
+  "same_4_sheets_as_CL_at_N7": true,
+  "beats_CL": false,
+  "CL_beats_this": false
+}

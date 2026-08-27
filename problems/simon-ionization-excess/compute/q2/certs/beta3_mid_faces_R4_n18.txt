@@ -1,0 +1,10 @@
+n 18
+gamma_target 9.0600000000000003e-01
+n_faces 262143
+interior_critical 56937
+singular_or_illconditioned 0
+min_mMm 1.2809354931388050e-02
+min_mMm_safe 1.2809354831388051e-02
+min_phi 9.1097390004646961e-01
+min_phi_safe 9.1097389994646960e-01
+copositive 1

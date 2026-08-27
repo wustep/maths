@@ -1,0 +1,32 @@
+{
+  "Pt00": "-15/2",
+  "Qt00": "-2",
+  "a": "2",
+  "b": "-15/2",
+  "circle_line_disc": "-54000",
+  "claim": "Translate the radial cubic at p=(2,0), multiply by the line 4x-15y, and prove that line misses the translated circle. The translated circle remains a periodic orbit of the degree-4 product. Not two hyperbolic cycles and not a bound on H(n).",
+  "cycles_proved": 1,
+  "degree": 4,
+  "hn_moved": false,
+  "hopf_cycles_written": false,
+  "imagined_two_cycles": false,
+  "jac_det": "0",
+  "jac_trace": "0",
+  "line": "4x-15y",
+  "line_misses_circle": true,
+  "miss_cleared": "4*8^2-241=15",
+  "miss_inequality": "8/sqrt(241) > 1/2",
+  "n_plus_2_degree": 5,
+  "rho2": "1/4",
+  "schema": "hilbert16-kk-plus-one-core/v1",
+  "translate_p": [
+    2,
+    0
+  ],
+  "what_this_is_not": [
+    "not a dent of H(n)",
+    "not two hyperbolic cycles",
+    "not an explicit Hopf perturbation",
+    "not H(4) >= 2 as a published improvement"
+  ]
+}

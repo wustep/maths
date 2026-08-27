@@ -1,0 +1,9 @@
+{
+  "status": "withdrawn",
+  "is_new_bound": false,
+  "beats_1.1185": false,
+  "reason": "h(0,1)=1-(1/12)(1-fmin)\u22480.991 exceeds the HPS power-law I/D\u22480.921 on a measure supported in a fixed-window tail. The face enum on the middle window is not a global bound. See certs/beta3_compact.json (aspect-restricted, residue).",
+  "withdrawn_gamma_inv": "1.116823910980300911670485397084439427267",
+  "arxiv": "2504.18487v1",
+  "replay": "problems/simon-ionization-excess/compute/q2/run_beta3.sh"
+}

@@ -1,0 +1,735 @@
+{
+  "lemma": "A real polynomial map \u03a6=(p,q) of degree \u2264 m has at most m^2 regular real preimages of any point (B\u00e9zout + regularity).",
+  "remark": "Answers arXiv:2604.12883v1 Remark 4 at the one-step sheet count: non-separable maps cannot beat m^2 regular sheets.",
+  "seed": 1,
+  "violations": 0,
+  "max_regular_by_m": {
+    "2": 4,
+    "3": 9,
+    "4": 16
+  },
+  "n_samples": 44,
+  "n_shared_component": 0,
+  "samples": [
+    {
+      "kind": "chebyshev",
+      "m": 2,
+      "target": [
+        0.5,
+        0.3
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true
+    },
+    {
+      "kind": "chebyshev",
+      "m": 3,
+      "target": [
+        0.4,
+        -0.2
+      ],
+      "status": "ok",
+      "count": 9,
+      "ceiling": 9,
+      "ok": true
+    },
+    {
+      "kind": "chebyshev",
+      "m": 4,
+      "target": [
+        0.2,
+        0.6
+      ],
+      "status": "ok",
+      "count": 16,
+      "ceiling": 16,
+      "ok": true
+    },
+    {
+      "kind": "two_quadrics",
+      "m": 2,
+      "target": [
+        2,
+        0
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "exact_count": 4
+    },
+    {
+      "kind": "complex_square",
+      "m": 2,
+      "target": [
+        1,
+        0
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "exact_count": 2
+    },
+    {
+      "kind": "nonseparable_cubic",
+      "m": 3,
+      "target": [
+        1,
+        -2
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -1,
+        2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 0,
+      "p": "-2*u**2 - 3*u*v + 3*u + 2*v**2",
+      "q": "-u**2 + 3*u*v - u - 2*v**2 + 3*v + 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 1,
+      "p": "-3*u**2 - 3*u*v + v**2 - v - 2",
+      "q": "-u**2 + 2*u*v + 2*v**2 + 2*v + 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -2,
+        1
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 2,
+      "p": "-3*u**2 + 3*u*v - 3*v**2 - v - 3",
+      "q": "-2*u**2 - 2*u + 3*v**2 - v - 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        2,
+        -1
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 3,
+      "p": "3*u**2 - 3*u*v - 2*v - 3",
+      "q": "-u*v + 2*u - 3*v**2 + 3*v + 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -1,
+        1
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 4,
+      "p": "-u*v + 3*u - v**2 - 2*v + 2",
+      "q": "2*u**2 + u - v**2 - 3*v - 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        1,
+        2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 5,
+      "p": "2*u*v - 3*u - v**2 + 3*v + 2",
+      "q": "u**2 - 3*u - v**2 + 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -2,
+        -2
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 6,
+      "p": "2*u**2 - u*v - 2*u + 2*v**2 + v - 2",
+      "q": "2*u**2 + 3*u*v + v**2 + 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        -2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 7,
+      "p": "2*u**2 + 2*u*v + u - 3*v**2 + 2*v",
+      "q": "-2*u**2 - u*v + 2*u - 2*v + 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        2,
+        1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 8,
+      "p": "3*u**2 + 2*u*v + 3*u + v**2 + 2*v - 2",
+      "q": "-3*u**2 + 3*u*v - 2*u + v**2 - 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        2,
+        2
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 9,
+      "p": "-2*u**2 + 3*u*v + 2*u - v**2 + 2*v - 2",
+      "q": "2*u**2 + 2*u*v + u + v**2 - 2*v",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 10,
+      "p": "3*u**2 - u*v - 3*v**2 - 2*v + 3",
+      "q": "-3*u**2 + 3*u*v + u + v**2 - v + 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        2,
+        -1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 11,
+      "p": "3*u**2 + 2*u + 3*v**2 + 3*v",
+      "q": "2*u**2 + u*v - 2*u - 2*v**2 + v - 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -2,
+        1
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 12,
+      "p": "2*u**2 + 2*u*v - 3*u - v**2 + 2*v + 3",
+      "q": "-u**2 + 2*u*v - u - 2*v**2 - 2*v",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -1,
+        1
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 4,
+      "ok": true,
+      "index": 13,
+      "p": "-3*u**2 - u - 2*v + 2",
+      "q": "-3*u**2 + u*v - u - 2*v + 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -2,
+        2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 14,
+      "p": "u**2 + 2*u - 3*v**2 - v + 2",
+      "q": "u**2 - u*v + 3*u + 3*v**2 - 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -1,
+        -2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 4,
+      "ok": true,
+      "index": 15,
+      "p": "-2*u**2 + 3*u*v + 3*v**2 - v - 2",
+      "q": "-2*u**2 - 2*u*v - 2*u - 3*v**2 + 3*v + 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        1
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 16,
+      "p": "u**2 - 2*u*v + 2*u + 3*v**2 - 2*v + 3",
+      "q": "-u**2 - 3*u*v - u - 3*v**2 - 3*v + 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        -1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 17,
+      "p": "2*u**2 + u - 2*v**2 + 1",
+      "q": "-2*u*v - u + v**2 + 2*v + 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -2,
+        2
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 18,
+      "p": "-2*u**2 - u*v - 2*u - 3*v**2 - 3*v - 2",
+      "q": "u**2 + 3*u*v - u + 2*v**2 - v - 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        -1,
+        0
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 19,
+      "p": "2*u**2 + u*v + 2*u - 2*v**2 + 2*v + 3",
+      "q": "u**2 + 3*u*v + 3*u - v**2 + v + 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        2,
+        -1
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 20,
+      "p": "-2*u**2 - 3*v**2 - 3*v",
+      "q": "2*u**2 - 2*u*v + 3*v**2 - 3*v - 2",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        1,
+        2
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 4,
+      "ok": true,
+      "index": 21,
+      "p": "-2*u**2 + 3*u*v + 2*v**2 + 2*v + 3",
+      "q": "-u**2 + 2*u*v - u + 3*v - 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        0,
+        -1
+      ],
+      "status": "ok",
+      "count": 0,
+      "ceiling": 4,
+      "ok": true,
+      "index": 22,
+      "p": "-2*u**2 + u*v + 2*u + 3*v**2 - 3*v + 2",
+      "q": "2*u**2 - 3*u*v - 2*u + 3*v**2 - v + 3",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 2,
+      "target": [
+        1,
+        2
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 4,
+      "ok": true,
+      "index": 23,
+      "p": "u**2 + 2*u*v + u - 3*v**2 + 3*v + 3",
+      "q": "-u**2 - 2*u*v - u + 1",
+      "deg_p": 2,
+      "deg_q": 2
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        0,
+        2
+      ],
+      "status": "ok",
+      "count": 3,
+      "ceiling": 9,
+      "ok": true,
+      "index": 0,
+      "p": "u**3 + 3*u**2*v - u**2 + 2*u*v**2 + 2*u*v + u + 3*v**3 - 3*v**2 - 2*v + 3",
+      "q": "-2*u**2*v - 3*u**2 - 3*u*v**2 + u - v**3 - v**2 - v + 1",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -1,
+        1
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true,
+      "index": 1,
+      "p": "3*u**3 - 2*u**2 + 2*u*v**2 + 3*u + 2*v**3 - 2*v + 2",
+      "q": "2*u**3 - 2*u**2*v - 2*u**2 - u*v**2 + 3*u*v - v**3 + 2*v**2 - 3*v - 1",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -2,
+        0
+      ],
+      "status": "ok",
+      "count": 3,
+      "ceiling": 9,
+      "ok": true,
+      "index": 2,
+      "p": "-3*u**3 - u**2*v + 2*u**2 + 3*u*v**2 - u*v - u + v**3 + 2*v**2 + 2*v - 2",
+      "q": "-2*u**3 - u**2*v - 3*u**2 + 2*u*v**2 + 3*u - v**3 - 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        2,
+        2
+      ],
+      "status": "ok",
+      "count": 3,
+      "ceiling": 9,
+      "ok": true,
+      "index": 3,
+      "p": "2*u**3 - 2*u**2*v + 3*u**2 - u*v**2 + u*v + 2*v**3 + v**2 - v - 3",
+      "q": "-3*u**3 - 2*u**2 + 2*u*v**2 + 2*u*v - u - v**3 - 2*v**2 + v - 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        2,
+        -2
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true,
+      "index": 4,
+      "p": "-3*u**3 + u**2 + 2*u*v**2 - 3*u + 2*v**3 - 1",
+      "q": "3*u**3 - 3*u**2*v - 2*u**2 + u*v**2 + v**3 - v**2 - 2*v + 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        2,
+        2
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true,
+      "index": 5,
+      "p": "-3*u**3 - 2*u**2 + 3*u*v**2 + 2*u*v + u - 2*v**3 + 2*v**2 + 1",
+      "q": "-u**2*v + u*v**2 - 2*u*v + 2*u - 2*v**3 - 3*v - 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -2,
+        -1
+      ],
+      "status": "ok",
+      "count": 3,
+      "ceiling": 9,
+      "ok": true,
+      "index": 6,
+      "p": "3*u**3 - u**2*v + 2*u**2 + u*v**2 + u*v - u + 2*v**3 - 2*v**2 + 3*v - 2",
+      "q": "u**3 + 3*u**2*v - 3*u**2 - 2*u*v**2 - u*v + u - 3*v**3 - 3*v**2 - 3*v + 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -1,
+        -1
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true,
+      "index": 7,
+      "p": "u**3 + 2*u**2 + 2*u*v**2 - 3*u*v + u - v**3 + 2*v**2 - 2*v + 1",
+      "q": "-2*u**3 - 2*u**2*v + u**2 + 2*u*v**2 - 3*u - 3*v**3 + v - 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -1,
+        -2
+      ],
+      "status": "ok",
+      "count": 1,
+      "ceiling": 9,
+      "ok": true,
+      "index": 8,
+      "p": "-3*u**2*v - u**2 - u*v**2 - 2*u*v - 2*u - 3*v**3 - v**2 - 3*v - 3",
+      "q": "-3*u**3 + 2*u**2*v + 2*u**2 + u*v**2 - 3*u*v + u - v**3 - 3*v**2 + 3*v + 3",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 3,
+      "target": [
+        -2,
+        1
+      ],
+      "status": "ok",
+      "count": 3,
+      "ceiling": 9,
+      "ok": true,
+      "index": 9,
+      "p": "-u**3 - 3*u**2*v - 3*u**2 + 3*u*v**2 - u*v + 2*u + 2*v**3 + 2*v**2 + 3*v",
+      "q": "3*u**3 + 3*u**2*v - 3*u**2 + u*v**2 - u*v + 3*v**3 - v",
+      "deg_p": 3,
+      "deg_q": 3
+    },
+    {
+      "kind": "random",
+      "m": 4,
+      "target": [
+        -1,
+        2
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 16,
+      "ok": true,
+      "index": 0,
+      "p": "u**4 - 3*u**3*v - 3*u**3 + u**2*v**2 + u**2 + u*v**3 - 3*u*v**2 + 3*u*v + 3*v**4 - 3*v**3 - 2*v**2 - 3*v + 3",
+      "q": "-3*u**4 - 3*u**3 + 2*u**2*v**2 - 2*u**2*v + 3*u**2 + u*v**3 + u*v - 3*u + 3*v**4 + 2*v**2 + 3*v + 2",
+      "deg_p": 4,
+      "deg_q": 4
+    },
+    {
+      "kind": "random",
+      "m": 4,
+      "target": [
+        0,
+        -2
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 16,
+      "ok": true,
+      "index": 1,
+      "p": "-2*u**3*v + 3*u**3 - 2*u**2*v**2 + u**2*v - 3*u**2 - u*v**3 + 2*u*v**2 + 3*u*v - u - 3*v**4 + 3*v**3 + 3*v**2 + v - 1",
+      "q": "2*u**4 + 3*u**3*v - 2*u**2*v**2 + 3*u**2*v + u*v**3 + 2*u*v**2 - u*v - u + 2*v**3",
+      "deg_p": 4,
+      "deg_q": 4
+    },
+    {
+      "kind": "random",
+      "m": 4,
+      "target": [
+        0,
+        -2
+      ],
+      "status": "ok",
+      "count": 4,
+      "ceiling": 16,
+      "ok": true,
+      "index": 2,
+      "p": "-2*u**4 + u**3*v + 3*u**2*v**2 + 2*u**2*v - u**2 - 2*u*v**2 - u*v + u + v**4 + 3*v**2 - v",
+      "q": "-u**4 - 2*u**3*v - 3*u**3 - 3*u**2*v**2 + 3*u**2*v + u**2 - 3*u*v**3 + 3*u*v**2 - 2*u*v + 3*u - 3*v**4 - 2*v**3 - 3*v**2 - 2*v + 1",
+      "deg_p": 4,
+      "deg_q": 4
+    },
+    {
+      "kind": "random",
+      "m": 4,
+      "target": [
+        -2,
+        1
+      ],
+      "status": "ok",
+      "count": 2,
+      "ceiling": 16,
+      "ok": true,
+      "index": 3,
+      "p": "-2*u**4 + 2*u**3*v - u**3 + u**2*v**2 + 2*u**2*v - 2*u**2 - 3*u*v**2 - 2*u*v - 3*u - v**4 - 3*v**3 - 3*v**2 + v - 3",
+      "q": "-2*u**4 + 2*u**3*v + 2*u**3 - u**2*v**2 + 2*u**2*v + 2*u**2 - 3*u*v**3 + 2*u*v**2 + 2*u*v - u + 2*v**4 - v**3 - 2*v**2 - 3*v - 2",
+      "deg_p": 4,
+      "deg_q": 4
+    }
+  ]
+}
