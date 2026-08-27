@@ -439,3 +439,15 @@ classical Levenshtein number 48 before claiming any comparison.
   41-code.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — continue (q5)
+
+- Start from the q4 branch (`cursor/kissing-5d-q4-cd01`, PR #91 not on
+  main). Folder `compute/q5/`. House rules unchanged: do not claim
+  $\tau_5=40$; a numerical SDP without an exact positivity certificate
+  is residue; do not regress the restricted certificates already in
+  `compute/certs/`, `compute/q1/`–`q4/`. Covering stays frozen.
+- Hunt: finish the two leftovers (a 41-set in the 1480-graph with
+  $n_1\le 21$, or a $T^5$ 36-clique sharing $\le 23$ with every
+  published 35), or produce an exact 41-point code, or an exact
+  unrestricted dual below 44. Residue if the interval does not move.

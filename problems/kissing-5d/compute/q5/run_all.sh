@@ -1,0 +1,23 @@
+#!/bin/sh
+# Replay the finished q5 checks.  Does not re-run the long SAT / B&B hunts.
+set -eu
+HERE=$(CDPATH= cd -- "$(dirname "$0")" && pwd)
+cd "$HERE"
+ROOT=$(dirname "$HERE")
+if [ ! -x "$ROOT/.venv/bin/python" ]; then
+  python3 -m venv "$ROOT/.venv"
+  "$ROOT/.venv/bin/pip" install sympy scipy matplotlib numpy
+fi
+PY="$ROOT/.venv/bin/python"
+if ! "$PY" -c "import pysat" 2>/dev/null; then
+  "$PY" -m pip install python-sat || true
+fi
+
+"$PY" extras_types.py
+"$PY" t5_share_pruned.py
+"$PY" dual_more.py
+gcc -O3 -std=c11 extras_clique.c -o extras_clique -lm
+# short smoke: tiny node budget, just compile+boot
+./extras_clique 20 2000 > extras_clique_smoke.json || true
+"$PY" verify.py
+echo "Q5_ALL_OK"

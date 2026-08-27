@@ -37,3 +37,4 @@ The unrestricted dual hunt is `q4/dual_exact.py`; nothing certified
 below 44.
 
 Later search: `sh compute/q4/run_all.sh`.
+q5 leftover slices: `sh compute/q5/run_all.sh`.
