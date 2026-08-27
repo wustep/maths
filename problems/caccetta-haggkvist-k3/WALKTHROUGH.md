@@ -84,7 +84,7 @@ is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eig
 - Every n-vertex oriented graph with δ⁺ ≥ 0.34645 n has a directed triangle. This is the HKN F₄ method with an independent matrix rebuild and a stored PSD certificate. It is 5·10⁻⁵ below the published 0.3465. It is not below 0.3388.
 - Exact CH-triangle at n=12 (d=4), n=15 (d=5), n=16 (d=6), n=17 (d=6), with DRAT proofs. n=12 and n=15 recover Hoàng–Reed; n=16 and n=17 are implied by HKN.
 
-**Still open.**
+**Still open (17 August).**
 
 - The conjecture (c = 1/3).
 - Any improvement of the 0.3388 personal communication.
@@ -96,5 +96,5 @@ The binomial CNF at n=18 was mostly cardinality. Sequential counters drop it fro
 
 k=1 through k=11 came back UNSAT. k=1 took 587s and a 1.2 GB DRAT that `drat-trim` accepted. k=6..11 have tiny stored proofs. k=2..5 were verified and the large proofs dropped.
 
-k=0 (a source) is the leftover. A second split t=|N⁺(1) ∩ U| kills t=1..5 at once. t=6 — the out-neighbour of the source that sends all six arcs into the 11 non-neighbours — is still UNKNOWN at 900s. That slice is the hole, not a bound.
+The k=0 / t=6 search is leftover bookkeeping. It is not needed. A 6-outregular graph on 18 vertices has 108 arcs, so some vertex has in-degree at least 6. Put that vertex at 0. The cubes k=6..11 all have stored DRATs. That is the exact statement at n=18.
 

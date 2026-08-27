@@ -156,6 +156,10 @@ Second split t=|N⁺(1) ∩ U|:
 - k=1, t=1..5: UNSAT, DRAT stored and replayed
 - k=1, t=6: implied by the whole-k=1 DRAT
 
-Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s for s=0,1,2,3. Leftover is only the source cube k=0 with t=6.
+Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s for s=0,1,2,3. That leftover is unused.
 
-**Certified tonight (DRAT).** Cubes k=1 and k=6..11; slices (k,t)=(0,1..5) and (1,1..5). Cubes k=2..5 UNSAT with verified-then-dropped large DRATs, regenerable. **Residue:** k=0, t=6. Not a bound. Did not beat 0.34645. Did not treat 0.3388 as published.
+**Pigeonhole.** A 6-outregular oriented graph on 18 vertices has 108 arcs, so some vertex has in-degree ≥ 6. Relabel that vertex as 0, its out-neighbours as 1..6, its in-neighbours as 7..6+k, and sort each block to meet the lex cut. The exact statement at n=18 therefore reduces to cubes k=6..11.
+
+Those six cubes are UNSAT with stored, replayed DRATs (`certs/keep/ch-18-6-k{6..11}.{cnf,drat}`). So every 18-vertex oriented graph with δ⁺ ≥ 6 has a directed triangle.
+
+This is a dent against the finite hole, not against HKN 0.3465 (that number already misses n=18). Did not beat 0.34645. Did not treat 0.3388 as published. The k=0 search is leftover bookkeeping, not a bound.

@@ -26,8 +26,7 @@ python3 run_cubes.py --n 18 --d 6 --time 300 --proof
 
 A timeout on a cube is an incomplete search, not a bound.
 
-Stored proofs live in `certs/keep/`: cubes k=6..11 and the
-k=0, k=1 slices t=1..5. Cubes k=2..5 are unsatisfiable by kissat;
-their proofs are large and are rebuilt by
-`python3 solve.py --n 18 --d 6 --indeg0 k --proof`. The leftover
-slice is k=0 with `|N⁺(1) ∩ U| = 6`.
+A 6-outregular graph on 18 vertices has 108 arcs, so some vertex has
+in-degree at least 6. The cubes k=6..11 are therefore the whole
+statement. Their DRATs are in `certs/keep/` and `./run_all.sh`
+replays them.

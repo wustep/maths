@@ -20,6 +20,7 @@
     "k1": "UNSAT 587s, DRAT VERIFIED 1207902119 bytes, sha256 73441d6e484a246f31c22e3a636ab764aef2624a52aa7dbe94f3d3d04bdcbf73, not stored",
     "k0": "UNKNOWN at 600s; t=1..5 UNSAT DRAT stored; t=6 UNKNOWN at 900s stable"
   },
-  "leftover": "k=0 and t=|N+(1) ∩ U|=6, i.e. a source whose six out-neighbours in N+(0) send all six of their own out-arcs into the 11 vertices nonadjacent to the source",
-  "note": "incomplete SAT is not a bound"
+  "pigeonhole": "6-outregular on 18 vertices has 108 arcs, so some in-degree is at least 6. Exact CH at n=18 reduces to cubes k=6..11.",
+  "exact_n18": "UNSAT for k=6..11 with stored DRAT. Every 18-vertex oriented graph with min out-degree 6 has a directed triangle.",
+  "unused_search": "k=0 t=6 still UNKNOWN; not needed once the pigeonhole is used"
 }

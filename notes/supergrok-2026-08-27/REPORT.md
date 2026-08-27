@@ -6,11 +6,14 @@ Published unrestricted threshold is still HKN 0.3465. The stored F4
 certificate at c=0.34645 still replays. Did not beat 0.34645. Did not
 treat 0.3388 as published.
 
-Exact statement at n=18, δ⁺=6: sequential-counter encoding, split on
-k=|N⁻(0)|. Cubes k=1 and k=6..11 are DRAT-unsatisfiable (k=1 is a
-1.2 GB proof, hashed, not stored). Cubes k=2..5 unsatisfiable with
-verified-then-dropped large proofs. Leftover: k=0 with
-t=|N⁺(1) ∩ U|=6. Incomplete SAT is not a bound.
+Exact statement at n=18, δ⁺=6: a 6-outregular oriented graph has 108
+arcs, so some vertex has in-degree at least 6. The SAT cubes for
+k=|N⁻(0)| in {6,7,8,9,10,11} are each DRAT-unsatisfiable. Those six
+proofs are stored in `compute/q1/certs/keep/`. So every 18-vertex
+oriented graph of minimum out-degree 6 has a directed triangle.
+
+Did not improve the numerical threshold 0.34645. Conjecture 1/3 still
+open. The leftover k=0 search is unused.
 
 Replay:
 
