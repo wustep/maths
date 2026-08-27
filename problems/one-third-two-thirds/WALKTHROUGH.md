@@ -149,7 +149,7 @@ q1 named the leftover handles and then stopped. The $n=22$ ladder row was left r
 
 **Look for a three-rail $\delta<6/17$ at $n\le 14$.** Gupta's tail already forbids a width-3 value there. The $n=13$ and $n=14$ passes were still run, as a check, and stayed above $6/17$.
 
-**Treat $n=10$ interval orders as tonight's finite order before $n=9$ is certified.** A367494 says $197{,}409{,}097$ naturally labelled interval orders at $n=10$. $n=9$ is $9{,}062{,}503$ and is the first unpublished order of the class.
+**Treat $n=10$ interval orders as tonight's finite order before $n=9$ is certified.** A367494 says $197{,}409{,}097$ naturally labelled interval orders at $n=10$. $n=9$ is $9{,}062{,}503$ and was certified first; $n=10$ then finished and matched the OEIS count.
 
 ## 2. The useful failure
 
@@ -169,7 +169,7 @@ $L_{22,1,5,6,9,12,13,17}$ has $e=54882$ and $\delta=1065/3049$. Python pair coun
 
 Three-rail through $15$: $2{,}097{,}152$ non-sums at $n=15$, minimum $30572/78185$, width $3$, above $6/17$. Winners replayed.
 
-Interval orders through $9$: $9{,}062{,}503$ naturally labelled, matching A367494. Minimum $1/3$. Non-semiorder minimum $8/21$. The $n=9$ witnesses replay.
+Interval orders through $10$: $9{,}062{,}503$ at $n=9$ and $197{,}409{,}097$ at $n=10$, matching A367494. Minimum $1/3$. Non-semiorder minimum $8/21$ through $9$ and $47/130$ at $10$. Witnesses replay.
 
 ## 5. Computer search
 
@@ -182,6 +182,6 @@ Replay: `cd compute/q2 && ./run_all.sh`.
 
 ## 6. What is proved vs still open
 
-**Certified tonight.** The broken-rung non-sum minimum at $n=22$. Every three-rail poset on $\le 15$ elements has $\delta>6/17$. Every naturally labelled interval order on $\le 9$ elements has $\delta\ge 1/3$.
+**Certified tonight.** The broken-rung non-sum minimum at $n=22$. Every three-rail poset on $\le 15$ elements has $\delta>6/17$. Every naturally labelled interval order on $\le 10$ elements has $\delta\ge 1/3$.
 
-**Still open.** The unrestricted conjecture. Width-3 $\delta<6/17$ outside the three-rail class at $n\ge 15$. Three-chain products. Dimension 2. Interval orders as a class past $n=9$. Gold Partition past 14. No $\delta<1/3$.
+**Still open.** The unrestricted conjecture. Width-3 $\delta<6/17$ outside the three-rail class at $n\ge 15$. Three-chain products. Dimension 2. Interval orders as a class past $n=10$. Gold Partition past 14. No $\delta<1/3$.

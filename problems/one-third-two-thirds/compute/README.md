@@ -50,7 +50,7 @@ Re-enumerating orders 19 through 21 from scratch is
 ## q2 (2026-08-27)
 
 Leftover class tables: ladders through 22, three-rail through 15,
-naturally labelled interval orders through 9.
+naturally labelled interval orders through 10.
 
 ```
 cd q2
@@ -62,5 +62,5 @@ The $n=22$ ladder is $1065/3049$. Re-enumerating from scratch:
 ```
 gcc -O3 -o ladder_census ladder_census.c && ./ladder_census 22 22
 gcc -O3 -o three_rail_census three_rail_census.c && ./three_rail_census 8 15
-gcc -O3 -o interval_census interval_census.c && ./interval_census 3 9
+gcc -O3 -o interval_census interval_census.c && ./interval_census 3 10
 ```

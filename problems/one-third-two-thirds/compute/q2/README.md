@@ -12,8 +12,9 @@ Certified:
   independently matches q1.
 - Three-rail exhaustive through n=15. Minimum at 15 is 30572/78185,
   width 3. None below 6/17.
-- Naturally labelled interval orders through n=9: 9,062,503 posets,
-  matching OEIS A367494. Minimum δ=1/3. Non-semiorder minimum 8/21.
+- Naturally labelled interval orders through n=10: 197,409,097 at
+  n=10, matching OEIS A367494. Minimum δ=1/3. Non-semiorder minimum
+  8/21 through n=9 and 47/130 at n=10.
 
 No certified δ < 1/3. No certified width-3 example below 6/17.
 
@@ -33,5 +34,5 @@ gcc -O3 -o three_rail_census three_rail_census.c
 ./three_rail_census 8 15
 
 gcc -O3 -o interval_census interval_census.c
-./interval_census 3 9
+./interval_census 3 10
 ```

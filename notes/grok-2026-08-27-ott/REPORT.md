@@ -30,8 +30,9 @@ Certified:
   ladders, none below 1/3. The n=22 value is larger than n=21.
 - Three-rail exhaustive through n=15. At 15: 30572/78185, width 3,
   2097152 non-sums, none below 6/17.
-- Naturally labelled interval orders through n=9: 9062503 posets,
-  matching OEIS A367494. Minimum 1/3. Non-semiorder minimum 8/21.
+- Naturally labelled interval orders through n=10: 197409097 at n=10,
+  matching OEIS A367494. Minimum 1/3. Non-semiorder minimum 8/21
+  through 9 and 47/130 at 10.
 
 No δ < 1/3. No width-3 example below 6/17. Conjecture still open.
 

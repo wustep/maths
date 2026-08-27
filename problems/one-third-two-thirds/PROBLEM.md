@@ -26,4 +26,4 @@ Gupta arXiv:2607.23926v2 is a full order-14 $\delta$-census; the 17 August note 
 
 ## Result (2026-08-27, continued)
 
-The leftover class tables are now complete: ladders through 22, three-rail through 15, naturally labelled interval orders through 9. At 22 the ladder minimum is $1065/3049\approx 0.349295$, above $1/3$. Every three-rail poset through 15 has $\delta\ge 30572/78185>6/17$. Every naturally labelled interval order through 9 has $\delta\ge 1/3$ (counts match OEIS A367494). No $\delta<1/3$. No width-3 example below $6/17$. Conjecture still open. Replay `cd compute/q2 && ./run_all.sh`.
+The leftover class tables are now complete: ladders through 22, three-rail through 15, naturally labelled interval orders through 10. At 22 the ladder minimum is $1065/3049\approx 0.349295$, above $1/3$. Every three-rail poset through 15 has $\delta\ge 30572/78185>6/17$. Every naturally labelled interval order through 10 has $\delta\ge 1/3$ (counts match OEIS A367494). No $\delta<1/3$. No width-3 example below $6/17$. Conjecture still open. Replay `cd compute/q2 && ./run_all.sh`.

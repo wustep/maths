@@ -32,6 +32,6 @@ Broken-rung non-sum minima $7\le n\le 21$ are in `q1/ladder_census.json`. No wid
 | --- | --- |
 | $L_{22,1,5,6,9,12,13,17}$ | $\delta=1065/3049$, $e=54882$ |
 | three-rail $n=15$ min | $30572/78185$, width 3, $2{,}097{,}152$ non-sums |
-| interval orders $n\le 9$ | min $\delta=1/3$; non-semiorder min $8/21$; A367494 match |
+| interval orders $n\le 10$ | min $\delta=1/3$; non-semiorder min $8/21$ then $47/130$; A367494 match |
 
 No $\delta<1/3$. No width-3 three-rail example below $6/17$. Tables in `q2/`.
