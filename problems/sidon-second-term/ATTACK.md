@@ -154,3 +154,24 @@ python3 compute/verify_houzhao.py
 python3 compute/verify_certificate.py compute/certs/hz_kernels_L6.json --beat 0.94349259
 python3 compute/verify_beat_hz.py
 ```
+
+## 2026-08-27 — q1, continue the vector-smoothing search
+
+Published record is still Hou–Zhao arXiv:2607.01169v2: $F(N)\le N^{1/2}+0.9435\,N^{1/4}+O(1)$.
+Fetched the abs page and the HTML. Still v2 (5 Jul 2026); no v3. Green #31
+(Dec 2025 PDF) still cites CHO $0.98183$. Tao $C_{5a}$ still stops at CHO /
+unpublished $0.97633$ and does not list Hou–Zhao. Erdős #30 was behind
+Cloudflare this session.
+
+The 2026-08-17 L=6 lift already has $\sqrt{ab}=0.9434925085<\gamma_0$, but
+it does not change the four-decimal statement $0.9435$. Hou–Zhao §5 asks
+for a systematic outer search and more kernels. q1 takes the leftover
+handles with L-BFGS instead of Powell:
+
+1. joint free-histogram re-opt of all eight published kernels at $L=6$
+2. continuation $R=9,10,12$ with 12 cosine modes at $L=6$
+3. drop kernel symmetry (independent left/right weights)
+4. resample to $m=48$ and re-shape (not a bin-split)
+5. two-width L-BFGS
+
+A floating $\gamma$ is not a dent. Code: `compute/q1/`.
