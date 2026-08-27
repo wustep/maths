@@ -8,6 +8,7 @@
 | [supergrok-2026-08-27/](supergrok-2026-08-27/) | Sidon q1, Caccetta n=18, kissing-5d q1/q2, union-closed q1, two-smooth q1, R(5,5) q1, affine-013 q1, and long-gap-dilate q1 |
 | [chat/](chat/) | Grok Bot transcript recreation |
 | [grok-2026-08-27-ott/](grok-2026-08-27-ott/) | Grok 4.6 continuation of the 1/3–2/3 folder (q1 ladder table; q2 leftover class censuses) |
+| [grok-hilbert16-limit-cycles-2026-08-27/](grok-hilbert16-limit-cycles-2026-08-27/) | Grok 4.6 Hilbert 16(b) / H(n) campaign |
 | [cursor-grok-2026-08-27-caccetta-q2/](cursor-grok-2026-08-27-caccetta-q2/) | Caccetta exact orders through n=36 |
 | [cursor-grok-2026-08-27-kissing-5d-q3/](cursor-grok-2026-08-27-kissing-5d-q3/) | kissing-5d leftover (1/4)Z^5 slices and T^5 36-clique |
 | [cursor-grok-2026-08-27-caccetta-q3/](cursor-grok-2026-08-27-caccetta-q3/) | Caccetta leftover holes from n=38 |
