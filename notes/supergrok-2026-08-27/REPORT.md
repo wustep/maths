@@ -85,6 +85,19 @@ Replay: `sh problems/kissing-5d/compute/q2/run_all.sh`.
 
 Does not claim $\tau_5=40$. The unrestricted interval did not move.
 
+## kissing-5d / q4 dual
+
+Exact Bachoc–Vallentin $S_k^5$ over $\mathbb Q$ in
+`problems/kissing-5d/compute/q4/bv.py`. 1-point Delsarte is still
+$46.3368\ldots$. Low-degree Putinar / $p_4$-span / square-dictionary
+/ floating SDP produced no exact dual below 44. Best certified
+unrestricted dual remains Levenshtein 48. Wrote
+`compute/q4/dual_exact.json`. No `certs/bv_dual.json`.
+
+Replay: `python3 problems/kissing-5d/compute/q4/dual_exact.py`.
+
+Does not claim $\tau_5=40$. The unrestricted interval did not move.
+
 ## union-closed / q1
 
 Continuation of the 2026-08-17 SuperGrok campaign on

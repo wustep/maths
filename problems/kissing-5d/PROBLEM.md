@@ -31,3 +31,7 @@ Still $40\le\tau_5\le 44$. `compute/q2/` replayed the existing duals and q1 cert
 ## Outcome (2026-08-27, q3)
 
 Still $40\le\tau_5\le 44$. No unrestricted dual below 44 and no 41-point code. On the leftover 1480-point $(1/4)\mathbb Z^5$ graph, every extra kisses at most 36 of the 40 $D_5$ roots, and a complete $U$-superset scan empties every 41-set that uses 33 or more $D_5$-type points (`compute/q3/complete_slices.json`). The $n_1\le 32$ slice of that graph, and the 36-clique in the 355-point $T^5$ remainder, remain residue.
+
+## Outcome (2026-08-27, q4 dual)
+
+Still $40\le\tau_5\le 44$. Exact Bachoc–Vallentin $S_k^5$ matrices over $\mathbb Q$ are in `compute/q4/bv.py`. No unrestricted dual below 44: 1-point Delsarte remains $\approx 46.34$, and every exact 3-point Putinar / p4-span / square-dictionary attempt failed to certify a value $<44$. Residue, not a dent. Replay: `python3 compute/q4/dual_exact.py`.

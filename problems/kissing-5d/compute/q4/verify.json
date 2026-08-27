@@ -1,0 +1,58 @@
+{
+  "bv_lib": {
+    "present": true,
+    "ok": true,
+    "failed": []
+  },
+  "d4_color": {
+    "present": false,
+    "ok": true
+  },
+  "t5_color": {
+    "present": false,
+    "ok": true
+  },
+  "duals": {
+    "present": true,
+    "ok": true,
+    "duals": {}
+  },
+  "dual_exact": {
+    "present": true,
+    "ok": true,
+    "certified_below_44": false,
+    "best_float": 48.0
+  },
+  "code41": {
+    "present": false,
+    "ok": true
+  },
+  "color_d4.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_omega.json": {
+    "present": false,
+    "ok": true
+  },
+  "n1_le32.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "seed_cover.json": {
+    "present": false,
+    "ok": true
+  },
+  "dual_exact.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "construct41.json": {
+    "present": false,
+    "ok": true
+  },
+  "ok": true
+}

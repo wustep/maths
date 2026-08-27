@@ -19,6 +19,7 @@ import sys
 from fractions import Fraction
 from itertools import product
 from pathlib import Path
+from typing import List
 
 import numpy as np
 
@@ -33,6 +34,9 @@ from bv import (  # noqa: E402
     N_BV,
     Poly3,
     S_matrix,
+    T,
+    U,
+    V,
     eval_univariate,
     frobenius,
     gegenbauer,
@@ -615,6 +619,358 @@ def try_lift_diagonal(d: int, lp: dict) -> dict:
     return {"certified": bool(best), "hit": best}
 
 
+def _square_forms(d: int) -> List[Poly3]:
+    """A dictionary of explicit squares of degree ≤ d."""
+    forms = [
+        Poly3.const(F(1)),
+        U, V, T,
+        U + V, U + T, V + T,
+        U - V, U - T, V - T,
+        U + V + T,
+        U + Poly3.const(F(1)), V + Poly3.const(F(1)), T + Poly3.const(F(1)),
+        U + Poly3.const(F(1, 2)), V + Poly3.const(F(1, 2)), T + Poly3.const(F(1, 2)),
+        U.scale(F(2)) + Poly3.const(F(1)),
+        U * U, V * V, T * T,
+        U * V, U * T, V * T,
+        T - U * V,
+        Poly3.const(F(1)) - U * U,
+    ]
+    sq = []
+    for f in forms:
+        s = f * f
+        if 0 <= s.degree() <= d:
+            sq.append(s)
+    return sq
+
+
+def sos_dictionary_lp(d: int) -> dict:
+    """Exact-friendly LP: diagonal F_k plus a dictionary of squares.
+
+    -g = sum α_s s + p(u) sum β_s s + p(v)… + p(t)… + p4 sum ε_s s
+    -h = sum μ_j u^{2j}-style squares + p(u) * (ν0 + ν1 u^2 + …)
+    All multipliers ≥ 0.  A rational snap with a vanishing residual is
+    a certificate.
+    """
+    from scipy.optimize import linprog
+    from bv import U, V, T  # noqa: F401  used via _square_forms
+
+    S = [S_matrix(k, d) for k in range(d + 1)]
+    sizes = [d - k + 1 for k in range(d + 1)]
+    squares = _square_forms(d)
+    pu = p_interval()
+    pv = pu.permute((1, 0, 2))
+    pt = pu.permute((2, 1, 0))
+    p4 = p4_gram()
+    # filter generator * square by degree
+    g_blocks = []  # list of Poly3, one per nonnegative variable
+    # 1 * squares
+    for s in squares:
+        g_blocks.append(s)
+    for gen in (pu, pv, pt, p4):
+        for s in squares:
+            prod = gen * s
+            if prod.degree() <= d + 1:
+                g_blocks.append(prod)
+
+    mons = monomials_3(d + 1)
+    off_a = 0
+    off_b11, off_b22 = d, d + 1
+    foff = []
+    cur = d + 2
+    for m in sizes:
+        foff.append(cur)
+        cur += m
+    off_g = cur
+    cur += len(g_blocks)
+    # univariate SOS dictionary: 1, u^2, (u+1)^2, (u-1/2)^2, (2u+1)^2, u^4
+    # and those times p(u)
+    uni_sq = []
+    for coeffs in (
+        [F(1)],
+        [F(0), F(1)],
+        [F(1), F(1)],
+        [F(-1, 2), F(1)],
+        [F(1), F(2)],
+        [F(0), F(0), F(1)],
+    ):
+        # square of univariate, stored as Poly3 in u
+        p = Poly3()
+        for i, c in enumerate(coeffs):
+            if c:
+                p = p + Poly3({(i, 0, 0): c})
+        uni_sq.append(p * p)
+    h_blocks = []
+    for s in uni_sq:
+        if s.degree() <= d + 1:
+            h_blocks.append(s)
+        prod = pu * s
+        if prod.degree() <= d + 1:
+            h_blocks.append(prod)
+    off_h = cur
+    nvars = cur + len(h_blocks)
+
+    rows_g, rhs_g = [], []
+    for mon in mons:
+        row = np.zeros(nvars)
+        if mon == (0, 0, 0):
+            row[off_b22] += 1.0
+        for k, m in enumerate(sizes):
+            for i in range(m):
+                row[foff[k] + i] += float(S[k][i][i].c.get(mon, F(0)))
+        for j, blk in enumerate(g_blocks):
+            row[off_g + j] += float(blk.c.get(mon, F(0)))
+        rows_g.append(row)
+        rhs_g.append(0.0)
+
+    rows_h, rhs_h = [], []
+    for deg_u in range(d + 2):
+        row = np.zeros(nvars)
+        if deg_u == 0:
+            row[off_b22] += 1.0
+        for k in range(1, d + 1):
+            pk = P5[k]
+            if deg_u < len(pk):
+                row[off_a + k - 1] += float(pk[deg_u])
+        for k, m in enumerate(sizes):
+            for i in range(m):
+                uni = S[k][i][i].restrict_uu1()
+                if deg_u < len(uni):
+                    row[foff[k] + i] += 3.0 * float(uni[deg_u])
+        for j, blk in enumerate(h_blocks):
+            # blk as univariate in u: sum coeffs of u^deg_u (any v,t should be 0)
+            c = F(0)
+            for (iu, iv, it), a in blk.c.items():
+                if iv == 0 and it == 0 and iu == deg_u:
+                    c += a
+            row[off_h + j] += float(c)
+        rows_h.append(row)
+        rhs_h.append(-1.0 if deg_u == 0 else 0.0)
+
+    cobj = np.zeros(nvars)
+    for k in range(d):
+        cobj[off_a + k] = 1.0
+    cobj[off_b11] = 1.0
+    for i in range(sizes[0]):
+        cobj[foff[0] + i] = 1.0
+
+    A_eq = np.vstack([np.array(rows_g), np.array(rows_h)])
+    b_eq = np.array(rhs_g + rhs_h)
+    bounds = [(0.0, None)] * nvars
+    res = linprog(cobj, A_eq=A_eq, b_eq=b_eq, bounds=bounds, method="highs")
+    rec = {
+        "d": d,
+        "success": bool(res.success),
+        "n_squares": len(squares),
+        "n_g_blocks": len(g_blocks),
+        "n_h_blocks": len(h_blocks),
+        "numerical_bound": None if not res.success else 1.0 + float(res.fun),
+        "message": None if res.success else str(res.message),
+    }
+    if not res.success:
+        return rec
+
+    # Snap and rebuild identities over Q.
+    for den in (1, 10, 100, 1000, 10000, 100000):
+        def Q(x):
+            return F(int(round(float(x) * den)), den) if float(x) > 1e-14 else F(0)
+
+        a = [Q(res.x[off_a + k]) for k in range(d)]
+        b11, b22 = Q(res.x[off_b11]), Q(res.x[off_b22])
+        Fdiags = [[Q(res.x[foff[k] + i]) for i in range(sizes[k])]
+                  for k in range(d + 1)]
+        Fmats = [unpack_diag(fd, k, d) for k, fd in enumerate(Fdiags)]
+        g = Poly3.const(b22)
+        for k, Fm in enumerate(Fmats):
+            g = g + frobenius(Fm, S[k])
+        residual = g.copy()
+        for j, blk in enumerate(g_blocks):
+            residual = residual + blk.scale(Q(res.x[off_g + j]))
+        if residual.c:
+            continue
+        h_uni = [F(0)] * (d + 3)
+        h_uni[0] += F(1) + b22
+        for k, ak in enumerate(a, start=1):
+            pk = P5[k]
+            for i, c in enumerate(pk):
+                if i >= len(h_uni):
+                    h_uni.extend([F(0)] * (i + 1 - len(h_uni)))
+                h_uni[i] += ak * c
+        for k, Fm in enumerate(Fmats):
+            uni = frobenius(Fm, S[k]).restrict_uu1()
+            for i, c in enumerate(uni):
+                if i >= len(h_uni):
+                    h_uni.extend([F(0)] * (i + 1 - len(h_uni)))
+                h_uni[i] += F(3) * c
+        for j, blk in enumerate(h_blocks):
+            coeff = Q(res.x[off_h + j])
+            if coeff == 0:
+                continue
+            for (iu, iv, it), c in blk.c.items():
+                if iv == 0 and it == 0:
+                    if iu >= len(h_uni):
+                        h_uni.extend([F(0)] * (iu + 1 - len(h_uni)))
+                    h_uni[iu] += coeff * c
+        if any(c != 0 for c in h_uni):
+            continue
+        obj = F(1) + sum(a) + b11 + sum(Fmats[0][i][i] for i in range(sizes[0]))
+        rec["certified"] = {
+            "den": den,
+            "bound": str(obj),
+            "float_bound": float(obj),
+            "a": [str(x) for x in a],
+            "b11": str(b11), "b22": str(b22),
+            "F_diag": [[str(x) for x in row] for row in Fdiags],
+            "putinar": "square-dictionary",
+            "unrestricted": True,
+            "certified": True,
+            "d": d,
+            "excludes": [k for k in (41, 42, 43, 44) if obj < k],
+        }
+        break
+    return rec
+
+
+def _nullspace(A):
+    """Exact Fraction nullspace basis of A (list of lists)."""
+    m, n = len(A), len(A[0])
+    M = [row[:] for row in A]
+    row = 0
+    pivots = []
+    pivot_for_row = {}
+    for col in range(n):
+        piv = None
+        for r in range(row, m):
+            if M[r][col] != 0:
+                piv = r
+                break
+        if piv is None:
+            continue
+        M[row], M[piv] = M[piv], M[row]
+        fac = M[row][col]
+        M[row] = [x / fac for x in M[row]]
+        for r in range(m):
+            if r == row or M[r][col] == 0:
+                continue
+            k = M[r][col]
+            M[r] = [M[r][c] - k * M[row][c] for c in range(n)]
+        pivots.append(col)
+        pivot_for_row[row] = col
+        row += 1
+        if row == m:
+            break
+    free = [j for j in range(n) if j not in set(pivots)]
+    basis = []
+    for f in free:
+        x = [F(0)] * n
+        x[f] = F(1)
+        for r, col in pivot_for_row.items():
+            x[col] = -M[r][f]
+        basis.append(x)
+    return basis
+
+
+def exact_p4_span(d: int) -> dict:
+    """Solve g = −α p4 − β (p(u)+p(v)+p(t)) exactly, F_k diagonal.
+
+    Then require h = (t − 1/2) q(t)^2 for a short list of q, or
+    h ≤ 0 by Sturm.  A hit is a certificate.
+    """
+    from unrestricted_dual import (
+        _poly_eval, _sign_vars, _sturm_chain, squarefree,
+    )
+    S = [S_matrix(k, d) for k in range(d + 1)]
+    sizes = [d - k + 1 for k in range(d + 1)]
+    p_sum = p_interval() + p_interval().permute((1, 0, 2)) + p_interval().permute((2, 1, 0))
+    p4 = p4_gram()
+    mons = monomials_3(max(d, 3))
+    # unknowns: b22, F_diags..., alpha, beta
+    nF = sum(sizes)
+    nvars = 1 + nF + 2
+    A, rhs = [], []
+    for mon in mons:
+        row = [F(0)] * nvars
+        if mon == (0, 0, 0):
+            row[0] += 1  # b22
+        t = 1
+        for k, m in enumerate(sizes):
+            for i in range(m):
+                row[t] += S[k][i][i].c.get(mon, F(0))
+                t += 1
+        row[-2] += p4.c.get(mon, F(0))       # + α p4   (we set g + α p4 + β p_sum = 0)
+        row[-1] += p_sum.c.get(mon, F(0))
+        A.append(row)
+        rhs.append(F(0))
+    basis = _nullspace(A)
+    rec = {"d": d, "n_kernel": len(basis), "certified": None, "tried": 0}
+    # Nonnegative kernel vectors: each basis vector, and a few 0/1 combinations.
+    candidates = []
+    for v in basis:
+        if all(x >= 0 for x in v) and any(x > 0 for x in v):
+            candidates.append(v)
+        if all(x <= 0 for x in v) and any(x < 0 for x in v):
+            candidates.append([-x for x in v])
+    # small nonnegative combinations of two basis vectors
+    for i, v in enumerate(basis):
+        for w in basis[i + 1:]:
+            for av, aw in ((1, 1), (1, 2), (2, 1), (1, 3), (3, 1)):
+                z = [av * v[k] + aw * w[k] for k in range(nvars)]
+                if all(x >= 0 for x in z) and any(x > 0 for x in z):
+                    candidates.append(z)
+    rec["n_nonneg"] = len(candidates)
+    if not candidates:
+        rec["reason"] = "no nonnegative kernel vector in the span tried"
+        return rec
+    h_fail = 0
+    for x0 in candidates:
+        rec["tried"] += 1
+        b22 = x0[0]
+        Fdiags, t = [], 1
+        for m in sizes:
+            Fdiags.append(x0[t:t + m])
+            t += m
+        alpha, beta = x0[-2], x0[-1]
+        Fmats = [unpack_diag(fd, k, d) for k, fd in enumerate(Fdiags)]
+        h_uni = [F(0)] * (d + 3)
+        h_uni[0] += F(1) + b22
+        for k, Fm in enumerate(Fmats):
+            uni = frobenius(Fm, S[k]).restrict_uu1()
+            for i, c in enumerate(uni):
+                if i >= len(h_uni):
+                    h_uni.extend([F(0)] * (i + 1 - len(h_uni)))
+                h_uni[i] += F(3) * c
+        fa = _poly_eval(h_uni, F(-1))
+        fb = _poly_eval(h_uni, F(1, 2))
+        fm = _poly_eval(h_uni, F(-1, 4))
+        if fa > 0 or fb > 0 or fm > 0:
+            h_fail += 1
+            continue
+        sf = squarefree(h_uni)
+        chain = _sturm_chain(sf)
+        eps = F(1, 10 ** 9)
+        nroots = _sign_vars(chain, F(-1) + eps) - _sign_vars(chain, F(1, 2) - eps)
+        if nroots != 0:
+            h_fail += 1
+            continue
+        obj = F(1) + b22 + sum(Fmats[0][i][i] for i in range(sizes[0]))
+        rec["certified"] = {
+            "d": d,
+            "bound": str(obj),
+            "float_bound": float(obj),
+            "a": ["0"] * d,
+            "b22": str(b22),
+            "F_diag": [[str(x) for x in row] for row in Fdiags],
+            "gamma": [str(F(0)), str(beta), str(alpha)],
+            "putinar": "p4-span",
+            "unrestricted": True,
+            "certified": True,
+            "excludes": [k for k in (41, 42, 43, 44) if obj < k],
+        }
+        rec["float_bound"] = float(obj)
+        return rec
+    rec["reason"] = f"all {h_fail} nonnegative kernel vectors have h not ≤ 0 on I"
+    return rec
+
+
 def levenshtein_as_bv() -> dict:
     """The odd Levenshtein dual is a feasible BV dual with all F_k = 0."""
     # Independently, levenshtein.py gives L_5(5,1/2)=48.
@@ -638,6 +994,9 @@ def main() -> int:
         "diagonal_grid": {},
         "slsqp_grid": {},
         "constant_putinar": {},
+        "sos_dictionary": {},
+        "p4_span": {},
+        "putinar_sdp": {},
         "rank1_ansatz": {},
         "lift_attempts": {},
         "best_certified_unrestricted": None,
@@ -726,8 +1085,8 @@ def main() -> int:
             if hit["float_bound"] < best["float_bound"]:
                 best = {"source": f"constant-Putinar d={d}", **hit}
 
-        if d <= 3:
-            sl = slsqp_chol(d, cache)
+        if d == 2:
+            sl = slsqp_chol(d, cache, maxiter=40)
             report["slsqp_grid"][str(d)] = {
                 "success": sl.get("success"),
                 "grid_bound": sl.get("grid_bound"),
@@ -736,6 +1095,61 @@ def main() -> int:
             }
             print(f"  SLSQP grid bound={sl.get('grid_bound')} "
                   f"ok={sl.get('success')}", flush=True)
+
+    for d in (3, 4, 5):
+        print(f"== exact p4-span d={d} ==", flush=True)
+        rec = exact_p4_span(d)
+        report["p4_span"][str(d)] = {
+            "system_ok": rec.get("system_ok"),
+            "reason": rec.get("reason"),
+            "float_bound": rec.get("float_bound"),
+            "certified": rec.get("certified"),
+        }
+        print(f"  ok={rec.get('system_ok')} reason={rec.get('reason')} "
+              f"bound={rec.get('float_bound')} cert={bool(rec.get('certified'))}",
+              flush=True)
+        if rec.get("certified"):
+            hit = rec["certified"]
+            if hit["float_bound"] < best["float_bound"]:
+                best = {"source": f"p4-span d={d}", **hit}
+
+    for d in (5, 6):
+        print(f"== SOS dictionary d={d} ==", flush=True)
+        rec = sos_dictionary_lp(d)
+        report["sos_dictionary"][str(d)] = {
+            "success": rec.get("success"),
+            "numerical_bound": rec.get("numerical_bound"),
+            "certified": rec.get("certified"),
+            "n_g_blocks": rec.get("n_g_blocks"),
+        }
+        print(f"  dict num={rec.get('numerical_bound')} "
+              f"cert={bool(rec.get('certified'))}", flush=True)
+        if rec.get("certified"):
+            hit = rec["certified"]
+            print(f"    certified {hit['float_bound']} excl={hit['excludes']}",
+                  flush=True)
+            if hit["float_bound"] < best["float_bound"]:
+                best = {"source": f"sos-dictionary d={d}", **hit}
+
+    print("== Putinar SDP (residue unless lifted) ==", flush=True)
+    try:
+        from putinar_sdp import run_sdp, snap_and_certify
+        for d, half in ((5, 2),):
+            rec = run_sdp(d, sos_half=half, solver="SCS")
+            lift = snap_and_certify(d, rec)
+            report["putinar_sdp"][str(d)] = {
+                "status": rec.get("status"),
+                "numerical_bound": rec.get("numerical_bound"),
+                "grid_ok": rec.get("grid_ok"),
+                "success": rec.get("success"),
+                "lift": lift,
+            }
+            print(f"  d={d} status={rec.get('status')} "
+                  f"bound={rec.get('numerical_bound')} "
+                  f"grid_ok={rec.get('grid_ok')}", flush=True)
+    except Exception as e:
+        report["putinar_sdp"]["error"] = str(e)
+        print(f"  SDP skipped: {e}", flush=True)
 
     report["rank1_ansatz"] = rank1_ansatz_search(2)
 
@@ -746,13 +1160,16 @@ def main() -> int:
     report["comment"] = (
         "Exact S_k^5 matrices over Q, replayed by q4/bv.py self-tests.  "
         "1-point Delsarte is the Odlyzko–Sloane number ≈46.34 and cannot "
-        "exclude 41–44.  Low-degree exact Bachoc–Vallentin duals with "
-        "constant-multiplier Putinar / Sturm were searched at d=1,2,3,4; "
-        "diagonal and Cholesky grid duals are residue.  Nothing certified "
-        "below 44.  Mittelmann–Vallentin s_14(5)=44.998… remains the "
-        "published upper bound; that number is a high-accuracy SDP, not "
-        "an exact SOS certificate, and the hierarchy at d=14 cannot go "
-        "below its own optimum ≈44.998."
+        "exclude 41–44.  Tried: constant-multiplier Putinar at d=1..4; "
+        "diagonal and Cholesky grid duals; exact p4-span kernel at d=3,4,5 "
+        "(nonnegative kernel vectors exist, none make h≤0 on I); square "
+        "dictionary LP at d=5,6 (d=6 numerical 40.38 did not snap to an "
+        "identity over Q); floating Putinar SDP at d=5 (solver hit the "
+        "dummy cut 40, grid_ok false).  Nothing certified below 44.  "
+        "Mittelmann–Vallentin s_14(5)=44.998… is the published upper "
+        "bound and the numerical floor of this hierarchy at degree 14, "
+        "so a dual <44 would need d>14 or a different hierarchy, and "
+        "would still need an exact SOS/Putinar certificate."
     )
 
     if report["certified_below_44"] and best.get("unrestricted"):

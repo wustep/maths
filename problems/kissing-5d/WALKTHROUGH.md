@@ -325,3 +325,33 @@ Sturm besides.
 - The $n_1\le 32$ slice of the 1480-point graph, and a 36-clique in
   the 355-point $T^5$ remainder.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 10. 27 August, later: exact $S_k^5$ over $\mathbb Q$, no dual below 44
+
+The missing object is still an exact 3-point certificate with value
+strictly less than 44. Mittelmann–Vallentin already have a
+high-accuracy number $s_{14}(5)=44.99899685\ldots$; that is how 45
+died, and it is not a rational Gram matrix.
+
+`compute/q4/bv.py` builds the matrices. $Q_k^{4}$ is the polynomial
+identity that clears the square roots in
+$P_k^{4}((t-uv)/\sqrt{(1-u^2)(1-v^2)})$. $S_k^5$ is the average of
+$u^i v^j Q_k$ over the six permutations of $(u,v,t)$ (Bachoc–Vallentin
+Remark 3.4). The self-tests check $Q_0=1$, $Q_1=t-uv$,
+$Q_k(u,u,1)=(1-u^2)^k$, $S_0(1,1,1)=J$, and $S_k(1,1,1)=0$ for
+$k\ge 1$.
+
+1-point Delsarte on the whole interval is still $46.3368\ldots$. A
+polynomial with nonnegative Gegenbauer coefficients cannot go below
+that, so the rest of the night was 3-point. Constant-multiplier
+Putinar, the exact $p_4$-span of $g$, a dictionary of squares, and a
+floating Putinar SDP at $d\le 6$ all failed to produce a rational
+identity with value $<44$. The $d=6$ dictionary number $40.38$ did
+not snap; the SDP values near 40 failed a grid sign check. Residue.
+
+The hierarchy itself explains the miss. Bachoc–Vallentin needed
+$d=10$ to reach 45. Mittelmann–Vallentin needed $d=14$ to reach
+$44.998$. Any feasible dual at $d=14$ has value at least that
+optimum, so it cannot exclude 44. A dent would need $d>14$ or a
+different hierarchy, and then an exact SOS certificate of a number
+strictly less than 44.

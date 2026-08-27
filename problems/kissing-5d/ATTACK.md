@@ -354,3 +354,43 @@ classical Levenshtein number 48 before claiming any comparison.
   not 11. No 41-code.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — q4 unrestricted dual hunt
+
+- Folder `compute/q4/`. House rules unchanged: do not claim $\tau_5=40$;
+  a numerical SDP without an exact positivity certificate is residue.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  refs [9] and [17]),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  Bachoc–Vallentin arXiv:math/0608426v4 (3-point SDP, $\tau_5\le 45$
+  before MV; exact $Y_k^n$ / $S_k^n$ formulas, Remark 3.4 monomial
+  form),
+  Cohn–Rajagopal arXiv:2412.00937v3. The unaffiliated Zenodo $44.0297$
+  note remains retracted.
+- Implemented exact $S_k^5$ over $\mathbb Q$ (`bv.py`). Self-tests:
+  $Q_0=1$, $Q_1=t-uv$, $Q_k(u,u,1)=(1-u^2)^k$, $S_0(1,1,1)=J$,
+  $S_k(1,1,1)=0$ for $k\ge 1$, $P_k^5$ matches `delsarte.py`.
+- 1-point continuum Delsarte at degree 12 is $46.3368\ldots$. One
+  rationalization (`den=1000`) gives $46.337$ and fails Sturm. Did not
+  spend the session re-rationalizing Gegenbauer polynomials.
+- Exact 3-point search, all residue or $\ge 48$:
+  - constant-multiplier Putinar $d=1..4$: HiGHS infeasible;
+  - diagonal grid LP: infeasible at $d\le 3$, grid value $85.56$ at
+    $d=4$ (matches 1-point Delsarte $\approx 90$ at degree 4);
+  - exact $p_4$-span kernel at $d=3,4,5$: 34 / 81 / 148 nonnegative
+    kernel vectors, none make $h\le 0$ on $[-1,1/2]$;
+  - square-dictionary LP: infeasible at $d=5$; numerical $40.38$ at
+    $d=6$ does not snap to an identity over $\mathbb Q$;
+  - floating Putinar SDP at $d=5$ (Clarabel / SCS): solver values
+    below 40 or on the dummy cut $40$, `grid_ok=false`. Discarded.
+- Best certified unrestricted dual remains Levenshtein
+  $L_5(5,1/2)=48$ (the $F_k=0$ case of BV). No $k\in\{41,42,43,44\}$
+  is excluded on the whole interval. Mittelmann–Vallentin
+  $s_{14}(5)=44.998\ldots$ is still the published upper bound; that
+  hierarchy cannot go below its own optimum at $d=14$, so a dual
+  $<44$ would need $d>14$ or a different hierarchy *and* an exact
+  SOS certificate.
+- Wrote `compute/q4/dual_exact.json`. No `certs/unrestricted_delsarte.json`
+  or `certs/bv_dual.json`.

@@ -304,3 +304,47 @@ Replay:
 sh problems/kissing-5d/compute/q3/run_all.sh
 ```
 
+## 2026-08-27 — record still $40\le\tau_5\le 44$ (q4 dual)
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+  Upper bound cited is Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Dim 6 is now 72 / 77 (de Laat–Leijenhorst–
+  de Muinck Keizer); dim 5 is untouched.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Still the published upper bound. HTML
+  https://ar5iv.labs.arxiv.org/html/0902.1105v3 for the $S_k^n$
+  formula and Table 1.
+- https://arxiv.org/abs/math/0608426 — Bachoc–Vallentin, $\tau_5\le 45$.
+  HTML https://ar5iv.labs.arxiv.org/html/math/0608426v4 : Theorem 3.2
+  for $Y_k^n$, Remark 3.4 monomial form $u^i v^j Q_k^{n-1}$,
+  Corollary 3.5 for $S_k^n$, Theorem 4.2 for the dual, §5 Putinar
+  with $p(u)=-(u+1/4)^2+9/16=-(u+1)(u-1/2)$.
+- https://arxiv.org/abs/2412.00937 — v3 still “appears to be 40…
+  best upper bound that has been proved is 44”.
+- https://doi.org/10.5281/zenodo.18449600 — unaffiliated note claiming
+  a Cohn–Kumar number $44.0297$. Retracted. Unrestricted Delsarte is
+  already $\approx 46.345$. Lead only, not a citation.
+
+## 2026-08-27 — what we certified this run (q4 dual)
+
+Still **no** change to the unrestricted range $40\le\tau_5\le 44$.
+
+Exact $S_k^5$ over $\mathbb Q$ (`compute/q4/bv.py`) replay the paper
+identities. No exact Putinar / SOS dual with value $<44$. The
+dictionary LP number $40.38$ at $d=6$ and the floating SDP values
+near 40 are residue. Best certified unrestricted dual is still
+Levenshtein 48.
+
+Replay:
+
+```bash
+python3 problems/kissing-5d/compute/q4/bv.py
+python3 problems/kissing-5d/compute/q4/dual_exact.py
+python3 problems/kissing-5d/compute/q4/verify.py
+```
+

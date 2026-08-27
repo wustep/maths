@@ -1,0 +1,16 @@
+{
+  "certified_below_44": false,
+  "comment": "Floating Putinar SDP for the 3-point dual. Clarabel/SCS at d=2..5 did not produce a grid-valid dual, and no rational Gram rebuilt the identities. Residue. See dual_exact.json putinar_sdp.",
+  "runs": [
+    {
+      "d": 5,
+      "sos_half": 2,
+      "solver": "SCS",
+      "status": "optimal_inaccurate",
+      "numerical_bound": 40.000791530586056,
+      "grid_ok": false,
+      "success": false,
+      "note": "solver sat on the dummy cut 40; g/h fail a rational grid. Not a bound."
+    }
+  ]
+}

@@ -31,7 +31,9 @@ The unrestricted range remains $40\le\tau_5\le 44$.
 27 August continuation lives in `q1/` (polar maximality, $T_{Q_5}$ integer 44),
 `q2/` (unrestricted dual hunt and exact 41-point searches), `q3/`
 (leftover $(1/4)\mathbb Z^5$ / $T^5$ 36-clique handles, larger exact pools),
-and `q4/` (the $n_1\le 32$ slice, the $T^5$ 36-clique, and a parallel dual
-/ 41-code hunt).
+and `q4/` (leftover finite graphs, exact Bachoc–Vallentin
+matrices over the rationals, and a parallel dual / 41-code hunt).
+The unrestricted dual hunt is `q4/dual_exact.py`; nothing certified
+below 44.
 
 Later search: `sh compute/q4/run_all.sh`.

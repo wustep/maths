@@ -16,7 +16,9 @@ code.
 | `color_d4.py` | 40-colour the 1480-point $(1/4)\mathbb Z^5$ graph |
 | `n1_le32.c` | complete $n_1\le 32$ slices by $k$-supersets of missed sets |
 | `t5_omega.py` | 35-colour the 355-point $T^5$ remainder, or SAT a 36-clique |
+| `bv.py` | exact Bachoc–Vallentin $S_k^5$ over $\mathbb Q$ |
 | `dual_exact.py` | unrestricted / 3-point dual hunt with Sturm or SOS |
+| `putinar_sdp.py` | floating Putinar SDP (residue unless a rational Gram lifts) |
 | `construct41.py` | algebraic 41-point ansätze outside the leftover graphs |
 | `verify.py` | replay colourings, any claimed 41-set, and dual JSON |
 
