@@ -76,3 +76,75 @@ check that would make the route unfit for a bound.
   their still-conjectural steps. Deferred 10 until the external exact identity
   has a practical formal representation.
 
+## 2026-08-27 — q1: exceptional pair, executed backwards
+
+- Imagined certificate: two exact unit-ideal identities; an exhaustive split
+  for Case 1; a hash-bound artifact; and a small verifier connecting its
+  variables to Proposition 4.3 and Theorem 2.1.
+- First contradiction check: compared the source polygons rather than the
+  archive's prose. They agree vertex for vertex. Independent lattice
+  enumeration gives \((61,125)\) points in Case 1 and \((25,47)\) in Case 2.
+- Checked the coordinate change \(t=xy^2\), \(z=y^{-1}\). Python and Rust both
+  derive \([t,z]=-1\), \(x^2=t^2z^4\), and the same five coefficient
+  identities. They also give determinant 14 for the three-vertex
+  normalization matrix, so no forbidden division by a variable coefficient is
+  hidden there.
+- Bound the large certificate to commit
+  `c530fe44e5f53b17840110931803e7c7c5a24cde` and archive SHA-256
+  `232204bdb598cc2ea0368e154c8573e18bbfdc69fa631c8878de4b884b38bb18`.
+  Eight central internal hashes also matched.
+- Ran the entire archive in a fresh Python 3.14 environment. All serialized
+  certificates passed. The separate `gmpy2` evaluation checked 13,410
+  number-field products, equivalent to 335,250 scalar products. Both hard
+  branch identities and the branch involution passed.
+- Result: dent. The exact computation makes both Proposition 4.3 systems
+  inconsistent. Combined with Theorem 2.1, every hypothetical plane
+  counterexample satisfies
+
+  $$
+  \max\{\deg P,\deg Q\}\ge125.
+  $$
+
+  This is a finite degree improvement, not a proof of the plane Jacobian
+  conjecture. As with any computer-assisted result built on a published
+  reduction, specialist review of that reduction remains welcome.
+
+## 2026-08-27 — q2: homogeneous perturbations
+
+- Started with the inverse certificate. For a linear form \(l=ax+by\), the
+  maps
+
+  $$
+  F=(x+cb l^d,\ y-ca l^d),
+  \qquad
+  F^{-1}=(x-cb l^d,\ y+ca l^d)
+  $$
+
+  preserve \(l\), which makes both compositions and the determinant immediate.
+- Worked backwards from a general homogeneous perturbation \(I+H_d\).
+  Homogeneous degree separation forces both the divergence and \(\det JH_d\)
+  to vanish. The first makes \(H_d\) Hamiltonian; the second gives a binary
+  form with zero Hessian. The binary Hessian lemma makes that form a power of
+  one linear form, recovering exactly the displayed family.
+- The exact sparse verifier passed at degrees 2, 3, 7, and 125. The last case
+  is a useful high-degree sign and overflow check, but the classification is
+  classical and gives no finite-record improvement. Dropped as a bound route.
+
+## 2026-08-27 — q3: raw tangent sweeps
+
+- Imagined obstruction: the determinant of every raw tangent sweep in the
+  plane has a visible parameter factor.
+- For \(S(w,\gamma)=K(w)+\gamma K'(w)\), its Jacobian columns are
+  \(K'+\gamma K''\) and \(K'\). Exact expansion gives
+
+  $$
+  \det JS=\gamma\det(K'',K').
+  $$
+
+- A formal-coefficient implementation verified the identity for generic
+  polynomial curves of every degree from 1 through 12. The formula itself is
+  degree-free. Thus a raw two-dimensional tangent sweep has zero or
+  nonconstant determinant and cannot be Keller.
+- This is a checkable obstruction to one template, not to all possible plane
+  constructions. Extra twists and parameters are outside its scope. No bound
+  changed; the broader search is residue.

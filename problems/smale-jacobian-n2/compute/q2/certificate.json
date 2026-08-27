@@ -1,0 +1,21 @@
+{
+  "family": {
+    "linear_form": "l=a*x+b*y",
+    "map": ["x+c*b*l^d", "y-c*a*l^d"],
+    "inverse": ["x-c*b*l^d", "y+c*a*l^d"],
+    "degree_condition": "d>=2"
+  },
+  "exact_cases": [
+    {"degree": 2, "a": 1, "b": 1, "c": 1},
+    {"degree": 3, "a": 2, "b": -1, "c": 3},
+    {"degree": 7, "a": -2, "b": 3, "c": -1},
+    {"degree": 125, "a": 1, "b": 2, "c": 1}
+  ],
+  "classification_steps": [
+    "homogeneous determinant degrees force div(H)=0 and det(JH)=0",
+    "H=(h_y,-h_x) for a binary homogeneous form h",
+    "det(Hess(h))=0",
+    "the binary Hessian lemma gives h as a power of one linear form"
+  ]
+}
+
