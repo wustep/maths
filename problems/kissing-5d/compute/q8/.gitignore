@@ -8,7 +8,13 @@ certs/*.cnf
 certs/*.drat
 certs/*.log
 certs/*.sat.json
+certs/hunt_status.json
+certs/watch_hunts.log
+certs/*.watch.out
+certs/*.decoded
+certs/leftover_k30_bb.started
 leftover_k30_smoke.json
+leftover_k30_progress.json
 leftover_global_smoke.json
 leftover_global_progress.json
 verify.json

@@ -8,7 +8,7 @@
  * 4-star, prune (those hosts are empty).  Optional 5-star prune
  * after leftover-tight SAT empties 5-star hosts:
  *
- *   ./leftover_global [target] [node_limit] [five_mode]
+ *   ./leftover_k30 [target] [node_limit] [five_mode]
  * five_mode: 0 = 4-star prune only (default)
  *            1 = every 5-star union (valid after all three types empty)
  *            2 = type-(2,1) k=32 five-stars only (valid after that orbit SAT)
@@ -172,7 +172,7 @@ static void write_code41(int rsz, const int *stack, u64 U)
     if (!f)
         return;
     fprintf(f, "{\n  \"n\": %d,\n", rsz + (40 - __builtin_popcountll(U)));
-    fprintf(f, "  \"source\": \"q7 leftover_global.c\",\n");
+    fprintf(f, "  \"source\": \"q8 leftover_k30.c\",\n");
     fprintf(f, "  \"n_extras\": %d,\n  \"n1\": %d,\n  \"points\": [\n",
             rsz, 40 - __builtin_popcountll(U));
     int first = 1;
@@ -204,7 +204,7 @@ static void expand(u64 *P, int rsz, int *stack, u64 U)
     if (found || nodes > node_limit)
         return;
     if ((nodes % 2000000L) == 0) {
-        FILE *pf = fopen("leftover_global_progress.json", "w");
+        FILE *pf = fopen("leftover_k30_progress.json", "w");
         if (pf) {
             fprintf(pf,
                     "{\"nodes\": %ld, \"best_extras\": %d, \"found_41\": %s}\n",

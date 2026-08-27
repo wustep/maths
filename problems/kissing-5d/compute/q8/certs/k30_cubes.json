@@ -1,0 +1,150 @@
+{
+  "n_cubes": 12,
+  "cubes": [
+    {
+      "name": "k30_u19",
+      "u": 19,
+      "need_extras": 20,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u19.cnf",
+      "vars": 32726,
+      "clauses": 112692,
+      "sha256": "7db5e07a6b6638bdb14f2956297ba934fe9f41f26120a086971db2b1a799d7b9",
+      "bytes": 1617522
+    },
+    {
+      "name": "k30_u20",
+      "u": 20,
+      "need_extras": 21,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u20.cnf",
+      "vars": 32708,
+      "clauses": 112656,
+      "sha256": "fe210c950c090a4c7afe6714cfbb28940024d5727f3144569248cfc5d1832472",
+      "bytes": 1616900
+    },
+    {
+      "name": "k30_u21",
+      "u": 21,
+      "need_extras": 22,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u21.cnf",
+      "vars": 32686,
+      "clauses": 112612,
+      "sha256": "ea323da765c0dd6ecffedb32d1630d6c64390dde05ea09116647d45731e3692e",
+      "bytes": 1616140
+    },
+    {
+      "name": "k30_u22",
+      "u": 22,
+      "need_extras": 23,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u22.cnf",
+      "vars": 32660,
+      "clauses": 112560,
+      "sha256": "82f851b0db294125778e40878d00a8ab6d769627820b4c3010838a7681a0e241",
+      "bytes": 1615242
+    },
+    {
+      "name": "k30_u23",
+      "u": 23,
+      "need_extras": 24,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u23.cnf",
+      "vars": 32630,
+      "clauses": 112500,
+      "sha256": "2b353b092e4323ab7074591344f57074d4687175853c1f850e3e50cca9594d60",
+      "bytes": 1614206
+    },
+    {
+      "name": "k30_u24",
+      "u": 24,
+      "need_extras": 25,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u24.cnf",
+      "vars": 32596,
+      "clauses": 112432,
+      "sha256": "c36390b006e0e656730981848a40a3e0c958451ca96405119d7db7ab68112f3c",
+      "bytes": 1613032
+    },
+    {
+      "name": "k30_u25",
+      "u": 25,
+      "need_extras": 26,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u25.cnf",
+      "vars": 32558,
+      "clauses": 112356,
+      "sha256": "97a4a17de99a3fa4a79e0cfebe7e0e6c0d24f192581c3b09dabcd6b36b0d95c3",
+      "bytes": 1611720
+    },
+    {
+      "name": "k30_u26",
+      "u": 26,
+      "need_extras": 27,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u26.cnf",
+      "vars": 32516,
+      "clauses": 112272,
+      "sha256": "bef8fd82ad56ad7fccf4431401303acf24c4fe9bccd6294655cc59ff0a8f1b91",
+      "bytes": 1610270
+    },
+    {
+      "name": "k30_u27",
+      "u": 27,
+      "need_extras": 28,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u27.cnf",
+      "vars": 32470,
+      "clauses": 112180,
+      "sha256": "9f815104947811d8e33c8eb50e819f53129b2d5946f22ddaccaad193bd5c0acd",
+      "bytes": 1608682
+    },
+    {
+      "name": "k30_u28",
+      "u": 28,
+      "need_extras": 29,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u28.cnf",
+      "vars": 32420,
+      "clauses": 112080,
+      "sha256": "d681ab60fbd9d62c5aeaa5a62f4d2ed2d3dd0788b76fa15ce70873255f089258",
+      "bytes": 1606956
+    },
+    {
+      "name": "k30_u29",
+      "u": 29,
+      "need_extras": 30,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u29.cnf",
+      "vars": 32337,
+      "clauses": 111943,
+      "sha256": "6cf17e5077d1bc7e60ab414638019a83deda2dc4500a61a3315e5a046feb736a",
+      "bytes": 1604657
+    },
+    {
+      "name": "k30_u30",
+      "u": 30,
+      "need_extras": 31,
+      "n_extras": 625,
+      "n_roots": 30,
+      "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u30.cnf",
+      "vars": 32308,
+      "clauses": 111886,
+      "sha256": "9162984d4401a93ac086f26011fea8e8e71d544a346f88cf2d4da6778fcbdd7c",
+      "bytes": 1603540
+    }
+  ],
+  "comment": "Type-(0,5) leftover-tight split by |U|=u.  All cubes unsat with verified DRAT empties the representative.  One SAT cube is a leftover 41-set."
+}

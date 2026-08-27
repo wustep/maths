@@ -20,6 +20,7 @@ five-star types.
 | `five_star_sat.py` | native CaDiCaL / Kissat on the type-$(0,5)$ host |
 | `leftover_sat.py` | global leftover SAT with type-$(2,1)$/$(1,3)$ forbids |
 | `leftover_k30.c` | leftover-tight B&B on the 625 extras in that host |
+| `cube_k30.py` | leftover-tight split by $\|U\|=u$ for $u=19,\ldots,30$ |
 | `replay_k30.py` | independent CNF rebuild of the type-$(0,5)$ rep |
 | `verify.py` | replay any claimed 41-set and search JSON |
 

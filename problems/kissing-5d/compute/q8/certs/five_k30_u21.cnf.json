@@ -1,0 +1,12 @@
+{
+  "name": "k30_u21",
+  "u": 21,
+  "need_extras": 22,
+  "n_extras": 625,
+  "n_roots": 30,
+  "path": "/workspace/problems/kissing-5d/compute/q8/certs/five_k30_u21.cnf",
+  "vars": 32686,
+  "clauses": 112612,
+  "sha256": "ea323da765c0dd6ecffedb32d1630d6c64390dde05ea09116647d45731e3692e",
+  "bytes": 1616140
+}
