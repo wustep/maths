@@ -25,7 +25,7 @@ def expected_evals(rank: int) -> int:
 
 def collect_rows():
     rows = []
-    for path in sorted(OUT_DIR.glob("h*.jsonl")):
+    for path in sorted(OUT_DIR.glob("*.jsonl")):
         if path.name.endswith("_novel.jsonl"):
             continue
         for line in path.read_text().splitlines():
