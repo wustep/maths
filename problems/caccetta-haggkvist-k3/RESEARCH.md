@@ -79,3 +79,15 @@ Opened tonight, in order.
 Failed lookup: no arXiv hit after 2024 that states a published unrestricted c < 0.3465 with a public certificate. The 0.3388 figure remains a personal communication.
 
 Replay tonight: the stored F₄ certificate at c=0.34645 still has min eig(Q)=9.53e-9 and worst F=−0.12343. The same ray is negative at 0.34644447 and positive at 0.34644, so this system does not give a clean step below 0.34645.
+
+## 2026-08-27 — q2 literature
+
+Opened tonight, in order, before the n=21 SAT.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract and Theorem 1.2 still: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. No v5.
+- https://export.arxiv.org/api/query?id_list=0908.2791 — same record via the API.
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3. Does not publish a new unrestricted triangle c.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash v4, 21 Aug 2024. Path lengths under a girth hypothesis. Theorem 9 quotes HKN 0.3465 as the triangle-case input. No new unrestricted c.
+- https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending — newest unrestricted-looking hits are Cheng–Keevash 2402.16776v4 and Raz 2405.17797 (second-neighbourhood / anti-transitive, not a triangle-threshold paper). No post-2017 paper in that list states a published unrestricted c < 0.3465.
+
+Failed lookup: no later Combinatorica / IMRN replacement of HKN 0.3465 with a public certificate. The 0.3388 figure remains a personal communication.
