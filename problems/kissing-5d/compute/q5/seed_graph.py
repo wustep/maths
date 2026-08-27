@@ -171,17 +171,22 @@ def triple_star_leftover(adj, seeds, D):
             clique = [idxs[t] for t in hit]
             Uh = union_of(seeds, clique).bit_count()
             assert verify_clique(adj, clique)
-            if witness is None and Uh <= len(clique) - 1:
-                witness = {
-                    "seed_clique": clique,
-                    "size": len(clique),
-                    "union": Uh,
-                    "star_union": k,
-                    "n_seeds_in_pool": len(idxs),
-                }
+            rec = {
+                "seed_clique": clique,
+                "size": len(clique),
+                "union": Uh,
+                "star_union": k,
+                "n_seeds_in_pool": len(idxs),
+            }
+            # keep the leftover-tightest witness (smallest union, then slack)
+            if Uh <= len(clique) - 1:
+                if witness is None or (Uh, rec["size"] - 1 - Uh) < (
+                    witness["union"], witness["size"] - 1 - witness["union"]
+                ):
+                    witness = rec
         key = (best, Uh, k, len(idxs), complete)
-        rec = hist.setdefault(key, 0)
-        hist[key] = rec + 1
+        recn = hist.setdefault(key, 0)
+        hist[key] = recn + 1
 
     pairs = []
     for (best, Uh, k, nseeds, complete), count in sorted(hist.items()):
@@ -277,23 +282,14 @@ def main() -> int:
         "union": 40,
         "source": "all 80 six-seeds",
     })
-    if stars["witness"]:
-        promising.append({
-            "size": stars["witness"]["size"],
-            "union": stars["witness"]["union"],
-            "source": "3-star leftover",
-        })
     for rec in stars["pairs"]:
         if rec["promising"]:
-            pair = (rec["best"], rec["union"])
-            if not any(p.get("size") == pair[0] and p.get("union") == pair[1]
-                       for p in promising):
-                promising.append({
-                    "size": pair[0],
-                    "union": pair[1],
-                    "source": "3-star leftover",
-                    "n_pools": rec["n_pools"],
-                })
+            promising.append({
+                "size": rec["best"],
+                "union": rec["union"],
+                "source": "3-star leftover",
+                "n_pools": rec["n_pools"],
+            })
 
     report = {
         "n": n,
