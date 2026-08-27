@@ -14,3 +14,8 @@ python3 nam_smallz.py
 python3 temple_try.py
 python3 assemble_cert.py
 echo "q2 run_all.sh PASS (residue; no certified finite-Z dent)"
+
+if [ -f run_beta3.sh ]; then
+  echo "==> run_beta3.sh"
+  bash run_beta3.sh
+fi

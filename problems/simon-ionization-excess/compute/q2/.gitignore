@@ -1,3 +1,4 @@
-# Local compile of verify_tetra.c; the replay writes /tmp/verify_tetra_q2.
-verify_tetra
-*.o
+verify_beta3
+verify_beta3_rs
+__pycache__/
+*.pyc
