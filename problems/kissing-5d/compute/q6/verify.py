@@ -121,6 +121,8 @@ def main() -> int:
         "five_star_census.json",
         "two_axis_extras.json",
         "four_star_extras.json",
+        "five_star_extras.json",
+        "replay_four_star.json",
         "dual_more.json",
         "leftover_sat_k19.json",
     ):

@@ -1,0 +1,27 @@
+{
+  "n_pools": 252,
+  "pairs": [
+    {
+      "k": 30,
+      "n_seeds": 110,
+      "n_pools": 32,
+      "promising": true
+    },
+    {
+      "k": 31,
+      "n_seeds": 106,
+      "n_pools": 160,
+      "promising": true
+    },
+    {
+      "k": 32,
+      "n_seeds": 96,
+      "n_pools": 60,
+      "promising": true
+    }
+  ],
+  "n_promising_by_part_count": 252,
+  "max_seeds_in_a_pool": 110,
+  "found_41": false,
+  "comment": "Census only.  A 5-star union can contain enough seeds to be promising by part-count; that is not a 41-code."
+}

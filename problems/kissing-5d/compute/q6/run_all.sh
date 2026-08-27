@@ -17,7 +17,11 @@ fi
 "$PY" five_star_census.py
 "$PY" dual_more.py
 gcc -O3 -std=c11 four_star_extras.c -o four_star_extras -lm
+gcc -O3 -std=c11 five_star_extras.c -o five_star_extras -lm
 # short smoke: one shard, tiny node budget
 ./four_star_extras 20 2000 0 210 > four_star_extras_smoke.json || true
+if [ -f four_star_extras_s0.json ] && [ -f four_star_extras_s1.json ]; then
+  "$PY" merge_four_star.py
+fi
 "$PY" verify.py
 echo "Q6_ALL_OK"
