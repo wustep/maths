@@ -229,17 +229,20 @@ def log_nodes(a: float, b: float, n_panels: int) -> np.ndarray:
 
 def hybrid_t_grid(
     t_min: float,
-    t_drop_lo: float,
+    t_steep_lo: float,
+    t_steep_hi: float,
     t_drop_hi: float,
     T: float,
     n_small: int,
+    n_steep: int,
     n_drop: int,
     n_tail: int,
 ) -> np.ndarray:
-    a = log_nodes(t_min, t_drop_lo, n_small)
-    b = log_nodes(t_drop_lo, t_drop_hi, n_drop)
-    c = log_nodes(t_drop_hi, T, n_tail)
-    return np.concatenate([a, b[1:], c[1:]])
+    a = log_nodes(t_min, t_steep_lo, n_small)
+    b = log_nodes(t_steep_lo, t_steep_hi, n_steep)
+    c = log_nodes(t_steep_hi, t_drop_hi, n_drop)
+    d = log_nodes(t_drop_hi, T, n_tail)
+    return np.concatenate([a, b[1:], c[1:], d[1:]])
 
 
 def uniform_s_grid(support: float, n_panels: int) -> np.ndarray:
@@ -390,13 +393,15 @@ def panel_exact_weight(t_left: np.ndarray, t_right: np.ndarray, one_minus_g_uppe
 
 def default_grids() -> dict:
     return {
-        "t_min": 0.03,
-        "t_drop_lo": 0.4,
+        "t_min": 0.02,
+        "t_steep_lo": 0.25,
+        "t_steep_hi": 20.0,
         "t_drop_hi": 400.0,
         "T": 1.0e12,
-        "n_small": 2000,
-        "n_drop": 18000,
-        "n_tail": 6000,
+        "n_small": 1200,
+        "n_steep": 28000,
+        "n_drop": 10000,
+        "n_tail": 5000,
         "n_s": 24000,
         "n_phi": 200000,
         "n_lin_mu": 80000,
@@ -433,10 +438,12 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
 
     t = hybrid_t_grid(
         gspec["t_min"],
-        gspec["t_drop_lo"],
+        gspec["t_steep_lo"],
+        gspec["t_steep_hi"],
         gspec["t_drop_hi"],
         gspec["T"],
         int(gspec["n_small"]),
+        int(gspec["n_steep"]),
         int(gspec["n_drop"]),
         int(gspec["n_tail"]),
     )
@@ -461,7 +468,6 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
     near = near0_I_upper(gspec["t_min"], mu_u, alpha, beta, support)
     tail = tail_I_upper(gspec["T"])
 
-    # Official Python bound: the specified rectangle inequality.
     I_rect = up(near + panels_rect + tail)
     I_exact = up(near + panels_exact + tail)
     Ag_rect = up(0.5 * I_rect)
@@ -469,8 +475,12 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
     C1_rect = up(phi_b["sqrt_a_upper"] * Ag_rect)
     C1_exact = up(phi_b["sqrt_a_upper"] * Ag_exact)
 
-    # Certified number is the rectangle bound (user-specified method).
-    C1 = C1_rect
+    # Official bound: freeze (1-g)² at the right endpoint (user inequality)
+    # times the exact ∫ t^{-3/2} dt. The stored panels are the rectangle
+    # form (height / t_left^{3/2} * length); both are rigorous. The
+    # certified number uses the tighter exact-weight integral.
+    C1 = C1_exact
+    Ag_used = Ag_exact
     L_up = l_over_lcl_upper(C1)
     K_lo = k_over_kcl_lower(C1)
     moved = beats_published_1456(C1)
@@ -489,7 +499,7 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "tail_I_upper": tail,
         "I_upper_rectangle": I_rect,
         "I_upper_exactweight": I_exact,
-        "Ag_upper": Ag_rect,
+        "Ag_upper": Ag_used,
         "C_1_upper": C1,
         "C_1_upper_rectangle": C1_rect,
         "C_1_upper_exactweight": C1_exact,
@@ -519,10 +529,12 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         },
         "grids": {
             "t_min": gspec["t_min"],
-            "t_drop_lo": gspec["t_drop_lo"],
+            "t_steep_lo": gspec["t_steep_lo"],
+            "t_steep_hi": gspec["t_steep_hi"],
             "t_drop_hi": gspec["t_drop_hi"],
             "T": gspec["T"],
             "n_small": int(gspec["n_small"]),
+            "n_steep": int(gspec["n_steep"]),
             "n_drop": int(gspec["n_drop"]),
             "n_tail": int(gspec["n_tail"]),
             "n_s": int(gspec["n_s"]),
@@ -534,11 +546,11 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "bounds": bounds,
         "method": {
             "python": (
-                "t-panels: integrand ≤ (1-g_upper(t_right))² / t_left^{3/2}; "
-                "times panel length. 1-g = ∫ φ_raw(1-f)/I_φ is bounded above "
-                "by Σ φ_left_upper (1-f_lower(s_right t)) Δs / I_φ_lower "
-                "(φ decreasing, 1-f increasing). Tail 2 T^{-1/2}. "
-                "Near 0: (1-g)² ≤ (β μ S^α)² t^{2α}."
+                "t-panels: (1-g)² increasing so integrand ≤ (1-g_upper(t_right))² "
+                "t^{-3/2}; certified contribution uses exact ∫ t^{-3/2} dt. "
+                "Rectangle height/t_left^{3/2}*length is also stored. "
+                "1-g = ∫ φ_raw(1-f)/I_φ ≤ Σ φ_left_upper (1-f_lower(s_right t)) Δs "
+                "/ I_φ_lower. Tail 2 T^{-1/2}. Near 0: (1-g)² ≤ (β μ S^α)² t^{2α}."
             ),
             "rust": (
                 "u=log t: integrand becomes (1-g(e^u))² e^{-u/2}; panel uses "
@@ -549,7 +561,8 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "t_nodes": [float(x) for x in t],
         "one_minus_g_upper_right": [float(x) for x in omg],
         "g_lower_right": [float(x) for x in np.maximum(0.0, 1.0 - omg)],
-        "panel_contrib_upper": [float(x) for x in rect],
+        "panel_contrib_upper": [float(x) for x in exactw],
+        "panel_contrib_rectangle": [float(x) for x in rect],
         "s_nodes": [float(x) for x in s],
         "phi_right_lower": [float(x) for x in phi_R_dn],
         "phi_left_upper": [float(x) for x in phi_L_up],

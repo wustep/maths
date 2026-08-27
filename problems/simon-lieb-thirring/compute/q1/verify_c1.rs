@@ -449,6 +449,19 @@ fn log_t_grid(t_min: f64, t_max: f64, n: usize) -> Vec<f64> {
     t
 }
 
+fn hybrid_t_grid() -> Vec<f64> {
+    // Uniform in u=log t on each piece. Denser on the steep rise of 1-g.
+    let a = log_t_grid(0.02, 0.25, 1000);
+    let b = log_t_grid(0.25, 20.0, 24000);
+    let c = log_t_grid(20.0, 400.0, 8000);
+    let d = log_t_grid(400.0, 1.0e12, 4000);
+    let mut t = a;
+    t.extend_from_slice(&b[1..]);
+    t.extend_from_slice(&c[1..]);
+    t.extend_from_slice(&d[1..]);
+    t
+}
+
 fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, kappa: f64, support: f64) -> (f64, f64, f64, f64) {
     let (_i_f, mu_u) = bound_I_f_subst(alpha, beta);
 
@@ -492,10 +505,10 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
     let a_up = up(a_raw / down(i_phi_lo * i_phi_lo));
     let sqrt_a = up(a_up.sqrt());
 
-    let t_min = 0.03_f64;
+    let t_min = 0.02_f64;
     let t_max = 1.0e12_f64;
-    let n_t = 28000usize;
-    let t = log_t_grid(t_min, t_max, n_t);
+    let t = hybrid_t_grid();
+    let n_t = t.len() - 1;
 
     let mut phi_l = vec![0.0; n_s];
     for j in 0..n_s {
