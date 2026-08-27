@@ -3,7 +3,7 @@
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
 - Solver: Cursor Grok 4.6 xhigh
-- Status: residue on the leading coefficient 1.1185. q1 remainder dent unchanged. Ionization conjecture open.
+- Status: dent of the printed leading 1.1185. Same HPS chain with $\beta_3\ge 0.899526$ gives $N_c<1.1118Z+3.966\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -68,8 +68,31 @@ every tested $s>3$, so $b(4)$ cannot be used. Lieb remains the
 best integer envelope at $Z=2,3,4,5$. A compact-aspect lower
 bound $Q\ge0.901924$ (aspect $\le4$) is certified and does not
 replace Theorem 2.2. A claimed $1.1168$ lift was withdrawn. Replay:
-`problems/simon-ionization-excess/compute/q2/run_all.sh`. Leading
-$1.1185$ unchanged.
+`problems/simon-ionization-excess/compute/q2/run_all.sh`.
+
+A third search the same day lifts the aspect-$12$ compact bound
+$Q\ge 0.899526$ to every radial probability in HPS (4.1):
+mass-stationarity on a used support of aspect $\ge 12$ forces
+$Q>12/13$, and every atomic measure reduces to one of those two
+classes. Truncation plus spherical-shell approximation extends
+the bound. The same Section 7 chain with this $\beta_3$ gives
+
+$$
+N<1.1118Z+3.880\,Z^{1/3}+0.0133+0.1833\,Z^{-1/3}+0.01956\,Z^{-2/3}
+\qquad(Z\ge 4)
+$$
+
+and
+
+$$
+N_c<1.1118Z+3.966\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+This beats the printed leading $1.1185$. It does not use the
+aspect-$\le 4$ number $1.1087$ as an unrestricted bound, and it
+does not restore the withdrawn $1.1168$. Finite-$Z$ integers and
+$s>3$ stay residue. Replay:
+`problems/simon-ionization-excess/compute/q3/run_all.sh`.
 
 ## What would count as a new bound
 

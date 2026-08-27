@@ -31,3 +31,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — `verify_beta3.c` exhaustive faces ($n=18$, $262143$ faces, $0$ singular, $\min m^TMm>0.0128$); independent Rust $n=16$ rebuild; `s_gt_3.py` interval + rational $s=4$; `verify_tetra.c` / `.py`; `aspect_try.py` chains and random atomics; q1 remainder scripts left untouched.
 
 6. Proven vs still open — compact $Q\ge0.901924$ on aspect $\le4$ is certified and is not a published-record dent. $s>3$ is closed along HPS Lemma 4.3. Finite-$Z$ integer bounds unchanged (Lieb). Leading $1.1185$ unchanged. $N_0(Z)-Z$ bounded open. $1.1168$ withdrawn.
+
+## Later the same day — lift the aspect-12 class
+
+0. What was actually missing — a *global* lower bound on $Q$ strictly above $\min f$, or a proof that a minimizer of $\beta_3$ has bounded aspect. The compact $\gamma$ at $R=12$ was already $0.899526$, so $1/\gamma=1.11170<1.1185$ *inside that class*. The degree of freedom was the large-aspect measures.
+
+1. Named false starts — treating existence of a continuum minimizer as the only lift (the first-variation identity at large $r$ is $\psi(r)\sim(1-Q)r^2/2>0$, which bounds support of a *critical* point but does not, by itself, bound $Q$ for a non-critical tail); using the aspect-$\le 4$ number $1.1087$ unrestricted; two-window $p_{12}$ (still collapses); $s>3$ and finite-$Z$ integers (still residue); a signed Toeplitz symbol that dips *below* $\min f$.
+
+2. The useful failure — a forced-aspect-$12$ search can sit at $Q\approx 0.9226<12/13$ if it is *not* mass-stationary (relative first-variation error $0.065$). The algebra $Q>12/13$ is only for mass-critical points that use both ends. Incomplete optimisation is not a counterexample. The $R=12$ “singular” faces are mixed-sign residual skips, not a hole in copositivity.
+
+3. The click — mass-optimisation on a *fixed* finite set of radii always exists, and *that* point is mass-stationary. If the used aspect stays $\ge 12$, the moment identities force $Q>12/13>\gamma_{12}$. If an endpoint is dropped, the used aspect falls into the compact class. Every atomic measure is at least as large as its mass-opt, hence $Q\ge\gamma_{12}$. No global existence theorem is required.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 12$. Mass-opt dichotomy on aspect $\ge 12$. Weak $Q$-continuity on compact radial support (finite spherical shells). Truncation of a finite-$D$ measure ($r^2$ is UI for that one measure). Same §7 chain with $\beta_3\ge\gamma_{12}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed. Printed leading $1.1118$ is a round-up of $1.111696\ldots$.
+
+5. Computer search — stored $R=12$, $n=22$ faces (copositive, $5$ skips); stdlib reconstruction of $\gamma=\phi-P_{\max}(1-f_{\min})$; C and Rust on the $12/13$ grid and the $V(1)$, $V(R)$ identities; mass-opt scan, min $Q=0.923274>12/13$; $64$-atom trial $Q<12/13$ (upper bound on $\beta_3$ only); interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1185$ moves to $1.1118$. Remainders $2.953$, $3.892$, $3.9781$ stay. Aspect-$\le 4$ $1.1087$ is not unrestricted. $1.1168$ stays withdrawn. $s>3$ closed along Lemma 4.3. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.

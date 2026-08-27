@@ -1,0 +1,6 @@
+verify_aspect
+verify_aspect_rs
+__pycache__/
+work/__pycache__/
+work/dump_R12_singular
+*.pyc

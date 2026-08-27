@@ -45,3 +45,16 @@ No published paper opened this session proves $N_c\le Z+C$ for a $Z$-independent
 - [Lewin, CR Physique PDF](https://comptes-rendus.academie-sciences.fr/physique/item/10.5802/crphys.249.pdf). Open Problem 1: even $C=10^{100}$ for $N_{\max}\le Z+CM$ unknown (accepted 31 Mar 2025, before HPS).
 
 Failed / unchanged: APS PRA 29 full text still not obtained this pass; 2207.08328v2 body still not a record.
+
+## 2026-08-27 — q3, same-day record check (URLs opened this pass)
+
+- [HPS abs, arXiv:2504.18487](https://arxiv.org/abs/2504.18487). Still **v1 only** (25 Apr 2025). STATES $N_c(Z)<1.1185Z+O(Z^{1/3})$. Does NOT list a v2.
+- [HPS HTML, 2504.18487v1](https://arxiv.org/html/2504.18487v1). Re-read (4.1), Theorem 4.2, Proposition 4.5, Lemma 4.3, Figure 2, Section 7. STATES $\beta_s$ is an inf over $D_s=P\cap H^{-1}\cap L_{s-1}$, and that radial measures achieve it for $s\le 3$. Does NOT prove a coefficient below $1.1185$. Does NOT prove a minimizer of $\beta_3$ has bounded aspect.
+- [Nam abs, 1009.2367](https://arxiv.org/abs/1009.2367). Latest v3. STATES $N_c<1.22Z+3Z^{1/3}$. Does NOT beat $1.1185$.
+- [Benguria–González-Brantes abs, 2511.07582](https://arxiv.org/abs/2511.07582). Still v1 (10 Nov 2025). STATES a statistics-independent bound for $Z\ge 12$. Does NOT beat $1.1185$ for fermions.
+- [2511.07582v1 HTML](https://arxiv.org/html/2511.07582v1). Theorem 1.1 / (2) unchanged: $N<1.4811Z+3.1516Z^{1/3}$ for $Z\ge 12$.
+- [OpenAlex doi:10.48550/arXiv.2504.18487](https://api.openalex.org/works?filter=doi:10.48550/arXiv.2504.18487). STATES `cited_by_count: 0`, id W4416381655.
+- [arXiv API, excess-charge / ionization query](https://export.arxiv.org/api/query?search_query=all:%22excess+charge%22+AND+all:atoms+AND+all:ionization&start=0&max_results=15). No later fermionic leading coefficient. Hits are older Hartree–Fock / relativistic statistical papers.
+- Semantic Scholar `ARXIV:2504.18487` returned HTTP 429 this pass. Not used.
+
+Failed / unchanged: APS PRA 29 full text still not obtained; 2207.08328v2 body still not a record.
