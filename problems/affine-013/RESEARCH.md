@@ -41,3 +41,34 @@
 T(S) ≤ ⌈n²/2⌉ for every n-element S⊂ℤ, hence γ_{1,2,-3} ≤ 1/2.
 This is strictly below the published 3/4. It does not prove the
 conjecture 1/3. Independent check: `compute/verify_half.py`.
+
+## 2026-08-27
+
+- [Green, *100 Open Problems*, Problem 24](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf)
+  refetched. Dec 2025 text unchanged. SHA-256 still
+  `e06971245914947f152550dee59bbb29fe0e798f0c51b2bc2557f824c2f9a44a`.
+  No later update on this problem.
+- [Aaronson, arXiv:1801.07135v4](https://arxiv.org/abs/1801.07135)
+  and the [ar5iv HTML](https://ar5iv.labs.arxiv.org/html/1801.07135).
+  Lemma 2.3 is T(S1,S2,S3)² ≤ E(a1 S1, a2 S2) |S3|; Lemma 2.6 is
+  the 3/4 rearrangement. Still conjectures γ_{1,2,−3}=1/3. The
+  energy comparison T² ≤ n E(S,2S) cannot beat 1/2 even if the
+  interval maximises E: E_I ∼ 5n³/12 gives √(n E_I)/n² = √(5/12)
+  ≈ 0.645.
+- [Green–Sisask, arXiv:0709.4432](https://arxiv.org/abs/0709.4432)
+  HTML. Theorem 1.2 and the induction remark (endpoint 3AP degree).
+  E(k,m), F(k,m) are the 3AP maximisers; they do not beat 1/3 for
+  x+2y=3z.
+- [formal-conjectures Green #24](https://github.com/google-deepmind/formal-conjectures/blob/master/FormalConjectures/GreensOpenProblems/24.lean)
+  and [PR #1772](https://github.com/google-deepmind/formal-conjectures/pull/1772).
+  Still records published γ ≤ 3/4; conjecture γ=1/3 open. Does not
+  mention the 1/2 note in this repository.
+- [Aaronson thesis, ORA](https://ora.ox.ac.uk/objects/uuid:a97be3ae-d95a-4e85-8c97-777e74cc29b0/files/dxp68kg32w)
+  Chapter 3 is the same {0,1,3} discussion as the paper. No later
+  numerical improvement.
+- Failed lookup: arXiv / web search for a 2020–2026 paper that
+  moves γ_{1,2,−3}. Nothing found. Forum leads not chased to a
+  new paper.
+
+q1 residue: endpoint 2/3-budget fails; no family with limsup T/n² > 1/3.
+Constant still 1/2. Cert: `compute/q1/certs/q1.json`.

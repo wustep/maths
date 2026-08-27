@@ -134,3 +134,19 @@ cd q1 && ./run_all.sh
 ```
 
 Does not claim Green #59.
+
+## affine-013 / q1
+
+Continuation of the 2026-08-17 affine {0,1,3} campaign.
+Search lives in `problems/affine-013/compute/q1/`.
+
+Green #24 refetched (SHA-256 unchanged). Aaronson v4 still the
+paper. Parent `compute/run_all.sh` replayed, exit 0.
+
+The 1/2 bound did not move. Endpoint induction that would give 1/3
+fails: both ends can exceed the 2/3 budget (n=5 already; an 11-set
+scores 9/10) without beating the interval. No family with limsup
+T/n² > 1/3. Conjecture 1/3 still open.
+
+Replay: `cd problems/affine-013/compute/q1 && ./run_all.sh`.
+Cert: `problems/affine-013/compute/q1/certs/q1.json`.
