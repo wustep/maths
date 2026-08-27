@@ -1,0 +1,68 @@
+restart 0 greedy=238
+restart 0 size=239 step=0
+restart 0 size=240 step=2
+restart 0 size=241 step=4
+restart 0 size=242 step=5
+restart 0 size=244 step=7
+restart 0 size=245 step=8
+restart 0 size=246 step=22
+restart 0 size=247 step=33
+restart 0 size=248 step=37
+restart 0 size=249 step=49
+restart 0 size=250 step=55
+restart 0 size=251 step=60
+restart 0 size=252 step=65
+restart 0 size=253 step=78
+restart 0 size=254 step=84
+restart 0 size=255 step=95
+restart 0 size=256 step=98
+restart 0 size=257 step=118
+restart 0 size=258 step=176
+restart 0 size=259 step=198
+restart 0 size=260 step=220
+restart 0 size=261 step=228
+restart 0 size=262 step=253
+restart 0 size=263 step=266
+restart 0 size=264 step=280
+restart 0 size=265 step=403
+restart 0 size=266 step=496
+restart 0 size=267 step=517
+restart 0 size=268 step=663
+restart 0 size=269 step=690
+restart 0 size=270 step=704
+restart 0 size=271 step=860
+restart 0 size=272 step=1138
+restart 0 size=273 step=1172
+restart 0 size=274 step=1375
+restart 0 size=275 step=1408
+restart 0 size=276 step=1811
+restart 0 size=277 step=1980
+restart 0 size=278 step=2328
+restart 0 size=279 step=2343
+restart 0 size=280 step=2365
+restart 0 size=281 step=2577
+restart 0 size=282 step=2949
+restart 0 size=283 step=2981
+restart 0 size=284 step=3377
+restart 0 size=285 step=3514
+restart 0 size=286 step=6610
+restart 0 size=287 step=8388
+restart 0 size=288 step=10120
+restart 0 size=289 step=10142
+restart 0 size=290 step=16982
+restart 0 size=291 step=16995
+restart 0 size=292 step=17007
+restart 0 size=293 step=18832
+  restarts=5 best=293 last=291 t=1.0s
+restart 6 size=294 step=11282
+  restarts=10 best=294 last=294 t=1.9s
+  restarts=15 best=294 last=292 t=2.9s
+restart 18 size=295 step=18945
+  restarts=20 best=295 last=295 t=3.8s
+  restarts=25 best=295 last=294 t=4.8s
+restart 25 size=296 step=19136
+restart 25 size=297 step=19673
+  restarts=30 best=297 last=294 t=5.7s
+  restarts=35 best=297 last=292 t=6.7s
+  restarts=40 best=297 last=293 t=7.6s
+DONE restarts=40 best=297 t=7.64s

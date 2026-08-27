@@ -1,0 +1,21 @@
+name = "ionization"
+version = "0.1.0"
+defaultTargets = ["B3NatWitness", "HPSRational", "HPSCoefficient", "LiebPair"]
+packagesDir = "../../../.lake/packages"
+
+[[require]]
+name = "mathlib"
+git = "https://github.com/leanprover-community/mathlib4"
+rev = "v4.32.0"
+
+[[lean_lib]]
+name = "B3NatWitness"
+
+[[lean_lib]]
+name = "HPSRational"
+
+[[lean_lib]]
+name = "HPSCoefficient"
+
+[[lean_lib]]
+name = "LiebPair"

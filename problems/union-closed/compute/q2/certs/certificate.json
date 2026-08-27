@@ -1,0 +1,29 @@
+{
+  "family": "{b,1}",
+  "class": "2-sample bit protocols with product coupling of (S,T)",
+  "claimed_c_unchanged": 0.38304,
+  "ceiling": "0.383051356586825582501646873002",
+  "b_star": "0.296493923569337569030703383782",
+  "critical_equation": "h(b) = (1-b) log2((1-b)/b)",
+  "constant_moved": false,
+  "why": "every protocol has h(OR) ≤ 1 on the (b,b) cell, so first-crossing ≤ min 1-(1-b)h(b). Example 4 already attains the min.",
+  "hunts": [
+    "iid + Example-4 β-scan",
+    "iid + Example-5",
+    "Example-4 + Example-5",
+    "iid + Example-4 + maxent",
+    "Example-5 scale ℓ",
+    "half-target Fréchet protocol",
+    "scaled a(t)",
+    "3-atomic and 2-mixture samples",
+    "constructed 2-mixture witness at mean 0.38304"
+  ],
+  "mixture_witness": "certs/mixture_witness.json",
+  "not_claimed": [
+    "1/2 conjecture",
+    "every measure on [0,1]",
+    "a frequency above 0.38304",
+    "Gilmer Conjecture 1 (refuted by Ellis and Sawin)"
+  ],
+  "replay": "cd problems/union-closed/compute/q2 && ./run_all.sh"
+}

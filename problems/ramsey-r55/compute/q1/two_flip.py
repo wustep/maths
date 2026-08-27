@@ -131,8 +131,10 @@ def main() -> int:
         "new_sample": new_sample,
         "seconds": round(time.time() - t0, 3),
         "note": (
-            "Radius-2 walks of legal 1-flips. New 1-WL type is not a bound. "
-            "Same type as the 656 is not an isomorphism test."
+            "Radius-2 walks of legal 1-flips. The 1-WL key stored here is the "
+            "colour-class-size histogram: the 656 split into Aut=1 (42 singletons) "
+            "and Aut=2 (21 pairs). That is not an isomorphism test. The 1-flip "
+            "graphs were separately shown not to extend (extend_flips.c)."
         ),
     }
     dump_json(str(OUT), summary)

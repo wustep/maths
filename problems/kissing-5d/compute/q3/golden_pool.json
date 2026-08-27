@@ -1,0 +1,13 @@
+{
+  "n_golden": 480,
+  "n_d5": 40,
+  "n_half": 32,
+  "n": 552,
+  "n_edges": 131772,
+  "best": 40,
+  "nodes": 3000001,
+  "found_41": false,
+  "complete": false,
+  "clique41": null,
+  "comment": "Exact kissing graph on D5 plus the signed-permutation orbit of (\u03c6, 1, 1/\u03c6, 0, 0)/\u221a2 (field Q(\u221a2,\u221a5)) and the half-spinor layers.  A 41-clique would be a new code.  Incomplete search is residue."
+}

@@ -244,3 +244,63 @@ Replay:
 ```bash
 sh problems/kissing-5d/compute/q2/run_all.sh
 ```
+
+## 2026-08-27 — record still $40\le\tau_5\le 44$ (q3)
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+  Upper bound cited is Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Later-dimension news on the same table does
+  not touch dim 5.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Still the published upper bound.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026): “appears to be 40…
+  best upper bound that has been proved is 44”. Four 40-point geometries.
+  No size 41.
+- https://arxiv.org/html/0902.1105v3 — same $s_{14}(5)$ number, table of
+  SDP bounds for $n\le 24$.
+- https://arxiv.org/abs/math/0501493 — Pfender, improved Delsarte via a
+  diagonally-dominant kernel $f_\alpha$. Improves kissing bounds in dims
+  10, 16, 17, 25, 26; does not give an exact dual below 44 in dim 5.
+- https://doi.org/10.5281/zenodo.18449599 — unaffiliated note claiming a
+  Cohn–Kumar number $44.0297$. Retracted sibling of
+  doi:10.5281/zenodo.18449600. Not a paper; not an exact dual. Lead only.
+- https://arxiv.org/abs/math/0501493 — Pfender, *Improved Delsarte
+  bounds for spherical codes in small dimensions*. The extra function
+  is a diagonally-dominant kernel $f_\alpha$, not a Gegenbauer
+  polynomial. Improves kissing numbers in dimensions 10, 16, 17, 25,
+  26. Does not produce an exact dual below 44 in dimension 5.
+
+## 2026-08-27 — what we certified this run (q3)
+
+Still **no** change to the unrestricted range $40\le\tau_5\le 44$.
+
+### 9. $(1/4)\mathbb Z^5$: no 41-set with $n_1\ge 33$
+
+`compute/q3/complete_slices.json`. Every extra of squared-norm 2 in
+$(1/4)\mathbb Z^5$ kisses at most 36 of the 40 $D_5$ roots. A 41-set
+therefore uses at least five extras, and the extras' missed-root
+union $U$ satisfies $|E|\ge|U|+1$. Complete generation of every
+$k$-superset of an actual missed set, $k=4,5,6,7$ (that is $n_1=36$
+down to 33), finds no extras-clique of size $k+1$. So this 1480-point
+graph has no 41-clique that contains 33 or more $D_5$-type points.
+The $n_1\le 32$ slice is unfinished.
+
+### 10. No unrestricted dual below 44
+
+`compute/q3/dual_gap.json`. Continuum Delsarte is $46.3368\ldots$.
+A dual allowed to be positive on $[-1,-2/3)$ has numerical value
+$\approx 37.46$, but that gap is not a geometric lemma (the four
+published 40-point codes all have an angle in $[-1,-2/3)$) and the
+rational polynomials did not pass Sturm. Not a certificate.
+
+Replay:
+
+```bash
+sh problems/kissing-5d/compute/q3/run_all.sh
+```
+

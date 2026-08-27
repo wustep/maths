@@ -1,0 +1,3 @@
+n_orb=3360 constants=7
+alive=3262 t=2.1s
+orb74 vars=3262 clauses=668845 target=74
