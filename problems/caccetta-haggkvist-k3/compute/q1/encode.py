@@ -73,12 +73,17 @@ def encode(
     sb: bool = True,
     indeg0: int | None = None,
     exact_in: bool = False,
+    u_from_1: int | None = None,
 ):
     """Return (clauses, nvars).
 
     indeg0: if set, force N-(0) = {d+1, ..., d+indeg0} and no edge
     between 0 and the leftover vertices.  Vertices in N-(0) already
     have the out-arc to 0, so they need d-1 further out-neighbours.
+
+    u_from_1: if set (requires indeg0), force vertex 1 to send exactly
+    that many out-arcs into U = V \\ ({0} ∪ N+(0) ∪ N-(0)), and fix
+    those heads as the first |t| labels of U.  Legal by relabelling U.
     """
     clauses = []
     for i in range(n):
@@ -111,6 +116,22 @@ def encode(
         for a in range(1, d + 1):
             for b in range(d + 1, d + indeg0 + 1):
                 clauses.append([-var_id(n, a, b)])
+
+    if u_from_1 is not None:
+        if indeg0 is None:
+            raise ValueError("u_from_1 requires indeg0")
+        u0 = d + indeg0 + 1
+        u_len = n - u0
+        if u_from_1 < 0 or u_from_1 > u_len:
+            return [[]], 1
+        # 1 needs d out-neighbours from (N+(0)\\{1}) ∪ U, size (d-1)+u_len
+        # so t = |N+(1) ∩ U| satisfies t >= d-(d-1) = 1 and t <= d
+        for j, v in enumerate(range(u0, n)):
+            if j < u_from_1:
+                clauses.append([var_id(n, 1, v)])
+                clauses.append([-var_id(n, v, 1)])
+            else:
+                clauses.append([-var_id(n, 1, v)])
 
     nvars = n * n
     next_id = nvars + 1
@@ -175,11 +196,18 @@ def encode(
         for a, b in zip(range(1, d), range(2, d + 1)):
             add_lex(outbits(a), outbits(b))
         if indeg0 is not None:
-            # lex inside N-(0) and inside the non-neighbours of 0
+            # lex inside N-(0) and inside each labelled block of U
             inn = range(d + 1, d + indeg0 + 1)
-            rest = range(d + indeg0 + 1, n)
-            for group in (inn, rest):
-                gl = list(group)
+            u0 = d + indeg0 + 1
+            if u_from_1 is None:
+                groups = [list(inn), list(range(u0, n))]
+            else:
+                groups = [
+                    list(inn),
+                    list(range(u0, u0 + u_from_1)),
+                    list(range(u0 + u_from_1, n)),
+                ]
+            for gl in groups:
                 for a, b in zip(gl, gl[1:]):
                     add_lex(outbits(a), outbits(b))
         else:
@@ -213,6 +241,12 @@ def main():
     ap.add_argument("--no-sb", action="store_true")
     ap.add_argument("--indeg0", type=int, default=None, help="fix |N-(0)|=k and the labels")
     ap.add_argument("--exact-in", action="store_true", help="force every in-degree = d")
+    ap.add_argument(
+        "--u-from-1",
+        type=int,
+        default=None,
+        help="fix |N+(1) ∩ U| = t and the labels (needs --indeg0)",
+    )
     args = ap.parse_args()
     clauses, nvars = encode(
         args.n,
@@ -221,6 +255,7 @@ def main():
         sb=not args.no_sb,
         indeg0=args.indeg0,
         exact_in=args.exact_in,
+        u_from_1=args.u_from_1,
     )
     write_cnf(clauses, nvars, sys.stdout)
 

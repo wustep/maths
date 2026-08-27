@@ -125,3 +125,26 @@ The leftover that counts is the exact statement at n=18, δ⁺=6. Code for this 
 2. Split on k=|N⁻(0)| and fix N⁻(0)={7,…,6+k} by relabelling. Each cube is a separate instance. k=11 is empty by counting: each v∈N⁺(0) would need 6 out-neighbours from 5 legal candidates.
 
 A DRAT/UNSAT on every cube, or a verified C₃-free 6-outregular model, is the product. Incomplete SAT is residue.
+
+### 2026-08-27 — cubes
+
+Sequential-counter encoding recovers the 17 August census. DRAT-verified tonight with the new encoder: n=6 d=2, n=9 d=3, n=12 d=4, n=15 d=5, n=16 d=6, n=17 d=6 (18s; was 63s). Cube split on n=9 d=3 is all UNSAT; on n=9 d=2 some k are SAT with checked models. So the in-neighbourhood cut is not vacuously empty.
+
+n=18 d=6 cubes, kissat 4.0.4:
+
+| k=|N⁻(0)| | status | time | DRAT |
+| ---: | --- | ---: | --- |
+| 11 | UNSAT | 0.002s | VERIFIED, 8kB |
+| 10 | UNSAT | 0.002s | VERIFIED, 12kB |
+| 9 | UNSAT | 0.004s | VERIFIED, 24kB |
+| 8 | UNSAT | 0.003s | VERIFIED |
+| 7 | UNSAT | 0.012s | VERIFIED, 44kB |
+| 6 | UNSAT | 0.03s | VERIFIED, 39kB |
+| 5 | UNSAT | 1.1s | VERIFIED, 2.6MB |
+| 4 | UNSAT | 6s | (proof running) |
+| 3 | UNSAT | 24s | (proof running) |
+| 2 | UNSAT | 115s | VERIFIED, then dropped (245MB) |
+| 1 | UNKNOWN | 180s with proof log | leftover |
+| 0 | UNKNOWN | 180s with proof log | leftover |
+
+k=0 and k=1 are rerunning without proof logging (600s). A second split on those two cubes: t=|N⁺(1) ∩ U| ∈ {1,…,6}, U the vertices nonadjacent to 0.
