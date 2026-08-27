@@ -153,11 +153,11 @@ for a new scheme.
 
 The leftover whole-stratum thicken is no longer 4 of 164. Radius 1
 around the maximal Haas stratum finished every census triangulation
-of twist-rank at most 18 (136/136, 401,470,336 sign distributions,
-`compute/q1/certs/thick_r1_rank_le18.json`). Every scheme outside
-the published 2,367 is already one of the seventeen. Ranks 19–20
-of that leftover are residue until every remaining triangulation
-has a complete record.
+of twist-rank at most 19 (149/149, 714,994,560 sign distributions,
+`compute/q1/certs/thick_r1_rank_le19.json`). Every scheme outside
+the published 2,367 is already one of the seventeen. Rank 20 of
+that leftover is residue until every remaining triangulation has
+a complete record.
 
 Collection space: the one-split neighbourhood of all 38 published
 M-collections is exactly those 38 (`compute/q1/certs/dn_nbhd.json`).

@@ -349,7 +349,7 @@ from the published M-set to either open nest is at least 2.
 
 The 23 August leftover was four rank-16 triangulations. Cheap first,
 then the next ranks: every census triangulation of twist-rank at most
-18, radius 1 around the whole Haas maximal stratum, 136 of 136,
-401,470,336 sign distributions. Every scheme outside the published
-2,367 is already among the seventeen. Ranks 19–20 of that leftover
-are the expensive tail and are a separate question.
+19, radius 1 around the whole Haas maximal stratum, 149 of 149,
+714,994,560 sign distributions. Every scheme outside the published
+2,367 is already among the seventeen. Rank 20 of that leftover
+is the expensive tail and is a separate question.

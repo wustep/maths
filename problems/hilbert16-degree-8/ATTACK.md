@@ -877,20 +877,21 @@ open nest appeared, even as a PL curve.
 | one-split add/drop/swap around all 38 M-collections | 28,861 | exactly those 38, 0 new, 0 hits |
 | two-split ladder around all 12 depth-3 M-collections | 204,948 | 29 schemes, 0 new, 0 hits (**complete**) |
 | nested odd pairs on the five (19,3) collections | 122 | 0 hits; the a=10 nest admits **no** compatible nested odd pair |
-| radius-1 thicken, every census triangulation of rank ≤ 18 | 401,470,336 | 136/136 complete; novel vs census ⊆ the seventeen |
+| radius-1 thicken, every census triangulation of rank ≤ 19 | 714,994,560 | 149/149 complete; novel vs census ⊆ the seventeen |
 | radius-6 balls on the 11 of our 17 whose ball leaves the old region | 104,841,440 | 11/11 complete, 0 novel |
 
 Certificates: `compute/q1/certs/m2_balls_r4.json`,
 `odd_skel.json`, `even_pinned.json`, `even_family.json`,
 `dn_nbhd.json`, `dn_ladder.json`, `odd_cancel.json`,
 `hole_balls_r6.json`, `thick_r1_rank_le16.json`,
-`thick_r1_rank_le17.json`, `thick_r1_rank_le18.json`.
+`thick_r1_rank_le17.json`, `thick_r1_rank_le18.json`,
+`thick_r1_rank_le19.json`.
 
 The 4-of-164 leftover from 2026-08-23 is no longer the state of
-ranks ≤ 18. Those 136 triangulations are a **finished prefix**.
-Ranks 19–20 (28 triangulations of the original 164) were still
-running at write-up; until they all have a `complete` record that
-part is **residue**.
+ranks ≤ 19. Those 149 triangulations are a **finished prefix**.
+Rank 20 (15 triangulations of the original 164) was still running
+at write-up; until every one has a `complete` record that part is
+**residue**.
 
 ### What the (19,3) row actually does
 
@@ -919,7 +920,7 @@ non-regular patchwork can be algebraically unrealisable).
 Hilbert 16(a) in degree 8 remains open. The dent is still the
 seventeen schemes and the bound ≥ 2,384; both replay. No new
 scheme, no deep-nest decision. The leftover thicken is a finished
-prefix through rank 18 and residue on ranks 19–20.
+prefix through rank 19 and residue on rank 20.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q1/run_all.sh && python3 q1/collect.py`.
