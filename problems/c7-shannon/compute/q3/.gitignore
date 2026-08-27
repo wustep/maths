@@ -1,0 +1,7 @@
+search_cosets_finish
+search_hamming13
+*.o
+coset_unique.conn
+coset_leftover.conn
+R_cosets.txt
+R*_hamming13.txt
