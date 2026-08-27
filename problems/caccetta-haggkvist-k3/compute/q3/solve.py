@@ -29,10 +29,10 @@ def find_bin(name: str) -> Path:
     if env and Path(env).exists():
         return Path(env)
     for p in (BIN / name, HERE / name, Path("/tmp/solvers") / name):
-        if p.exists():
+        if p.is_file() and os.access(p, os.X_OK):
             return p
     kissat = Path("/tmp/solvers/kissat/build/kissat")
-    if name == "kissat" and kissat.exists():
+    if name == "kissat" and kissat.is_file():
         return kissat
     found = subprocess.run(["which", name], capture_output=True, text=True)
     if found.returncode == 0:

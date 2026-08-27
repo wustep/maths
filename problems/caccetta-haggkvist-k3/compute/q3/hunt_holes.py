@@ -101,8 +101,18 @@ def main():
             closed.append(n)
             print(f"CLOSED n={n}", flush=True)
 
+    prev_path = KEEP / "summary.json"
+    prev_closed = []
+    if prev_path.is_file():
+        try:
+            prev = json.loads(prev_path.read_text())
+            prev_closed = list(prev.get("closed") or [])
+        except json.JSONDecodeError:
+            prev_closed = []
+    all_closed = sorted(set(prev_closed) | set(closed))
     summary = {
-        "closed": closed,
+        "closed": all_closed,
+        "this_run": closed,
         "residue": [{"n": r["n"], "d": r["d"], "n_leftover": len(r["leftover"])} for r in residue],
         "f4": 0.34645,
         "published_hkn": 0.3465,

@@ -8,6 +8,7 @@ import sys
 from pathlib import Path
 
 from solve import run_one
+from cyclic_soundness import run as cyclic_run
 
 HERE = Path(__file__).resolve().parent
 OUT = HERE / "certs"
@@ -19,7 +20,7 @@ JOBS = [
     (9, 2, "SAT", 15, None),
     (9, 3, "UNSAT", 20, None),
     (18, 6, "UNSAT", 10, 11),
-    (38, 12, "SAT", 60, 12),  # cyclic degree; encoder is not vacuously UNSAT
+    (21, 6, "SAT", 30, 6),  # cyclic degree with SB; encoder is not vacuous
 ]
 
 
@@ -44,6 +45,18 @@ def main():
         rows.append(rec)
         if not ok:
             bad += 1
+    print("cyclic soundness at n=38 d=12 ...", flush=True)
+    cyc = cyclic_run(38, 12)
+    print(
+        f"  circulant_ok={cyc['circulant_ok']} "
+        f"cnf_nosb={cyc['cnf_accepts_placed_circulant_nosb']} "
+        f"cnf_sb={cyc['cnf_accepts_sorted_circulant_sb']} "
+        f"k={cyc['k']} ok={cyc['ok']}",
+        flush=True,
+    )
+    rows.append(cyc)
+    if not cyc["ok"]:
+        bad += 1
     path = OUT / "regression.json"
     path.write_text(json.dumps(rows, indent=2))
     print("wrote", path, "failures", bad)
