@@ -1,9 +1,9 @@
 {
-  "n_pools": 4,
+  "n_pools": 5,
   "n_expected": 6,
   "found_41": false,
-  "n_sat_unsat": 4,
-  "n_drat_verified": 4,
+  "n_sat_unsat": 5,
+  "n_drat_verified": 5,
   "complete": false,
   "pools": [
     {
@@ -45,6 +45,47 @@
         "exit": 0,
         "wall": 71.69192457199097,
         "bytes": 211850438
+      }
+    },
+    {
+      "name": "k31_n1_3",
+      "stars": [
+        0,
+        1,
+        2,
+        4,
+        6
+      ],
+      "type": [
+        1,
+        3
+      ],
+      "k": 31,
+      "n_extras": 596,
+      "n_roots": 31,
+      "cnf_vars": 31415,
+      "cnf_clauses": 105309,
+      "cnf_sha256": "4420eb4d99723b33e2a8fc2e9e895006ed7247987e9d9f19dfca358eb6ebfcdc",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 40611860,
+        "seconds": 3887.58,
+        "exit": 20,
+        "wall": 4401.458164930344,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_k31_n1_3.native.drat",
+      "drat_bytes": 4134873401,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 15253402,
+        "lemmas_total": 46128907,
+        "resolution_steps": 1635820812,
+        "exit": 0,
+        "wall": 4503.50901222229,
+        "bytes": 4134873401
       }
     },
     {

@@ -10,6 +10,7 @@
  * five_mode: 0 = 4-star prune only (default)
  *            1 = every 5-star union (valid after all three types empty)
  *            2 = type-(2,1) k=32 five-stars only (valid after that orbit SAT)
+ *            3 = types (2,1) and (1,3) (valid after those two orbit SATs)
  * Default target=20, node_limit=400000000, five_mode=0.
  */
 #include <stdio.h>
@@ -407,8 +408,11 @@ int main(int argc, char **argv)
                             else if (axes[ax] == 1)
                                 n1++;
                         }
-                        /* five_mode 2: only type (2,1) k=32 hosts */
+                        /* five_mode 2: type (2,1).  five_mode 3: (2,1) and (1,3). */
                         if (five_mode == 2 && !(n2 == 2 && n1 == 1))
+                            continue;
+                        if (five_mode == 3 && !((n2 == 2 && n1 == 1)
+                                               || (n2 == 1 && n1 == 3)))
                             continue;
                         fiveU[nfive++] = stars[a] | stars[b] | stars[c]
                             | stars[e] | stars[f];
