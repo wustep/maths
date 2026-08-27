@@ -279,3 +279,24 @@ Re-fetched HKN v4 (arXiv:0908.2791, Theorem 1.2 still 0.3465n; no v5) and CKLS (
 
 Merged `origin/main` into this branch. README Problems/ledger now keep the later claims (ionization 1.1057, CCR 1.44655, Landau 0.22525, Jacobian deg 125, kissing leftover, Hilbert 16(b), …) together with leftover CH through n=108 and F₄ c=0.34640.
 
+### 2026-08-27 — leftover cubes n=109–112
+
+Same encoder as q1–q4. High-k first, kissat 4.0.4, DRAT against a regenerated CNF. New proofs live in `compute/q5/certs/keep/` (q4 stays the n=73–108 store).
+
+Every needed cube at leftover n=109 through n=114 is UNSAT. 213 stored DRATs, all under 8 MB after `drat-trim -l` cores. Independent replay: `python3 verify_range.py --n-min 109 --n-max 114` in five batches (69+36+35+36+37), 0 failures.
+
+| n | d | cubes | DRAT |
+| ---: | ---: | --- | --- |
+| 109 | 37 | k=37..70 | VERIFIED, stored |
+| 110 | 37 | k=37..71 | VERIFIED, stored |
+| 111 | 37 | k=37..72 | VERIFIED, stored |
+| 112 | 38 | k=38..72 | VERIFIED, stored |
+| 113 | 38 | k=38..73 | VERIFIED, stored |
+| 114 | 38 | k=38..74 | VERIFIED, stored |
+
+Dent against those finite leftover holes. n=115 was started and is not fully stored. Residue, not a bound.
+
+F₄ hunt below 0.34640 is residue. The stored ray at 0.34640 still replays (worst F=−0.419 at r₃₀). The same (Q,b,cT,cV,d) at 0.34639 is already positive (worst F≈+8.44; HiGHS refit t≈+7.21). Warm Qs and extras at css_beta=0.8616 and 1/(1+0.16065) stay positive at 0.34639 / 0.34638 / 0.34635. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=115, δ⁺=39. Conjecture 1/3 open.
+
