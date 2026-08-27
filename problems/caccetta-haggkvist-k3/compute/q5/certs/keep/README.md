@@ -1,5 +1,5 @@
 DRAT proofs for exact Caccetta–Häggkvist triangle leftover orders
-n=109 through n=112 (140 cubes). First remaining hole n=113.
+n=109 through n=113 (176 cubes). First remaining hole n=114.
 
 A d-outregular oriented graph has n d arcs, so some in-degree is
 at least d. Relabel that vertex as 0. The exact statement reduces
@@ -15,6 +15,6 @@ cd problems/caccetta-haggkvist-k3/compute/q5
 
 The index is `replay.json` after a successful `verify_keep.py`.
 Independent range logs: `replay_109_110.json`, `replay_111.json`,
-`replay_112.json`.
+`replay_112.json`, `replay_113.json`.
 
 F₄ stays in `../q4/` at c=0.34640.
