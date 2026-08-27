@@ -617,9 +617,11 @@ classical Levenshtein number 48 before claiming any comparison.
 - Leftover-tight extras B&B with always-on grow prune ran 400M
   nodes in about 90 seconds, no 41-set, incomplete
   (`leftover_global_400m.json`). The $|P|\le 160$ cap was the
-  cost; remaining missed-union is cheap. A type-$(2,1)$ 5-star
-  prune (valid after the orbit SAT) is the next B&B cut; a 20G
-  node run is in flight.
-- $k=31$, $k=30$, and global leftover SAT $k=19$ are still
-  running. Residue until those certificates land. Did not claim
-  $\tau_5=40$.
+  cost; remaining missed-union is cheap. With the type-$(2,1)$
+  5-star prune (`five_mode=2`) the same search ran $20{,}000{,}000{,}001$
+  nodes in $3594$ seconds, no 41-set, incomplete
+  (`leftover_global.json`). Past the q6 200M cutoff; still residue.
+- $k=31$ leftover-tight SAT finished CaDiCaL UNSAT; Heule
+  `drat-trim` is checking the $3.9$ GB binary DRAT. $k=30$ and
+  global leftover SAT $k=19$ are still running. Residue until
+  those certificates land. Did not claim $\tau_5=40$.
