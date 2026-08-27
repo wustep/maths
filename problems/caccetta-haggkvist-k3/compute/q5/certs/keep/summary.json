@@ -1,0 +1,16 @@
+{
+  "closed": [109, 110, 111, 112],
+  "n_cubes": 140,
+  "residue": [],
+  "f4": 0.34640,
+  "published_hkn": 0.3465,
+  "prior_stored_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "next_hole": {"n": 113, "d": 38},
+  "replay": {
+    "n109_n110": {"checked": 69, "failures": 0, "log": "replay_109_110.json"},
+    "n111": {"checked": 36, "failures": 0, "log": "replay_111.json"},
+    "n112": {"checked": 35, "failures": 0, "log": "replay_112.json"}
+  },
+  "note": "closed = every needed cube UNSAT with stored DRAT. F4 is unchanged at the q4 CKLS-fork certificate 0.34640. Did not beat 0.3388."
+}
