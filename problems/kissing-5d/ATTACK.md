@@ -496,3 +496,28 @@ classical Levenshtein number 48 before claiming any comparison.
   No 41-code in the finished construction pools (`construct_more.json`).
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — continue (q6)
+
+- Start from the leftover branch after q5 (`cursor/kissing-5d-q4-cd01`,
+  PR #97 merged there). Folder `compute/q6/`. House rules unchanged:
+  do not claim $\tau_5=40$; a numerical SDP without an exact positivity
+  certificate is residue; covering stays frozen.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100, refs [9] and [17]; later-dimension news does not touch
+  dim 5),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  HTML <https://ar5iv.labs.arxiv.org/html/0902.1105v3> Table 1,
+  Bachoc–Vallentin arXiv:math/0608426v4,
+  Cohn–Rajagopal arXiv:2412.00937v3 (“appears to be 40… best upper
+  bound that has been proved is 44”).
+- Hunt: empty the leftover $n_1\le 21$ slice of the 1480-point
+  $(1/4)\mathbb Z^5$ graph (star-cover $\ge 4$), or produce an explicit
+  41-set; in parallel an exact unrestricted dual below 44. Residue if
+  the interval does not move.
+- First measurement: greedy colouring of extras in every 4-star pool
+  (`four_star_color.json`) uses 20 to 32 colours. So the 3-star
+  colouring bound $\omega\le 19$ does not lift. Pools are 320 extras
+  ($k=28$, two full axes), 384 ($k=27$), or 434 ($k=26$).

@@ -1,0 +1,14 @@
+__pycache__/
+*.o
+*.pyc
+four_star_extras
+certs/*.cnf
+certs/*.drat
+certs/*.log
+leftover_sat_k*.json
+four_star_extras_s*.json
+two_axis_extras.log
+four_star_extras.log
+leftover_sat.log
+dual_more.log
+verify.json
