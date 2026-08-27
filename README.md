@@ -1,20 +1,18 @@
 # maths
 
-Notebook for a few open problems.
+A public notebook of attacks on open problems.
 
-This is a public notebook of agent-run attacks on open problems.
-Agents (Codex, Claude, Grok, and the like) get a finite handle (a
-table bound, a constant, a small case) and try to move it. What
-stays in git is the attack log and, when the number is real, a
-verifier plus a certificate. Stephen Wu is the human author;
-models are named in the ledger below.
+Grok Bot orchestrates the agents. Each run hands Codex, Claude, Grok,
+or another model a finite handle (a table bound, a constant, a small
+case) and asks it to move the number. Stephen Wu is the human author.
+What stays in git is the attack log and, when the number is real, a
+verifier plus a certificate. Models are named in the ledger below.
 
-This README and the explainers are written for human readers. The
-other files in a problem folder (ATTACK.md, WALKTHROUGH.md, the
-PROBLEM.md status line, the skills) are working notes and may use
-two agent terms. A dent is a verified finite improvement of a
-published record. A residue is an incomplete search, not a lower
-bound.
+This README and the explainers are for human readers. The other files
+in a problem folder (ATTACK.md, WALKTHROUGH.md, the PROBLEM.md status
+line, the skills) are working notes and may use two agent terms. A
+dent is a verified finite improvement of a published record. A residue
+is an incomplete search.
 
 ## Interesting results
 
