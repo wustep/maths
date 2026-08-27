@@ -292,7 +292,9 @@ def chain_Q_equal_m(n, ratio):
     for d in range(-(n - 1), n):
         ad = abs(d)
         fd = f_of(q**ad)
-        inner = ((1 + u**d) / 2) * (u ** (n - ad) - 1) / um1
+        # d and −d both contribute (1 + u^{|d|})/2 times the geometric
+        # count of pairs; using u^d for d<0 is wrong.
+        inner = ((1 + u**ad) / 2) * (u ** (n - ad) - 1) / um1
         acc += fd * inner
     I = acc / (n * n)
     return I / D
