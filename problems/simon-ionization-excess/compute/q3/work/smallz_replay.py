@@ -276,8 +276,14 @@ def check_known(rows: list[dict]) -> None:
             raise SystemExit("Nam should sit above Lieb at Z<=5")
         if r["hps_s2_printed"]["U"] >= r["lieb"]["U"] and r["Z"] >= 6:
             raise SystemExit("HPS s=2 should beat Lieb as reals at Z=6")
-        if r["hps_s2_local"]["nmax"] != 2 * r["Z"]:
-            raise SystemExit("local HPS still same integer")
+        # Local remainder may sit above 2Z+1 at Z<=4 (same as printed).
+        # A drop of nmax below 2Z would be a dent; none here.
+        if r["hps_s2_local"]["nmax"] < 2 * r["Z"]:
+            raise SystemExit(f"local HPS nmax at Z={r['Z']} beat Lieb integer")
+        if r["Z"] == 5 and not (10 < float(r["hps_s2_local"]["U"]) < 11):
+            raise SystemExit("Z=5 local U should lie in (10,11)")
+        if r["Z"] == 6 and not (12 < float(r["hps_s2_local"]["U"]) < 13):
+            raise SystemExit("Z=6 local U should lie in (12,13)")
         if r["bgb"]["U"] <= r["lieb"]["U"] and r["Z"] <= 6:
             raise SystemExit("BGB formula is worse than Lieb at Z<=6")
 
