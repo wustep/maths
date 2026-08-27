@@ -139,4 +139,3 @@ The plane Jacobian conjecture is still open. No inverse was constructed for an
 arbitrary Keller map, and no plane counterexample was found. The 2026
 three-variable announcement is neither assumed nor refuted here. The q3
 obstruction covers only the raw tangent-sweep template.
-

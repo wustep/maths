@@ -39,4 +39,3 @@ JC2_72_108_PYTHON=/path/to/venv/bin/python \
 
 The final marker is `Q1_DEGREE_125_CERTIFICATE_PASS`. The result excludes the
 finite \((72,108)\) exception; it does not prove the plane Jacobian conjecture.
-

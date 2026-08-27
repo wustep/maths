@@ -38,4 +38,3 @@ Final marker: `Q3_TANGENT_SWEEP_OBSTRUCTION_PASS`.
 This obstruction is deliberately narrow. It does not exclude a construction
 with extra twists, different parameters, or additional coordinates, and it
 does not change the finite degree bound.
-

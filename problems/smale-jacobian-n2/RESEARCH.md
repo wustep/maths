@@ -122,4 +122,3 @@ find primary artifacts; no forum number is treated as a citation.
   explicitly that the two-variable conjecture remains open. Gao's tangent-line
   sweep motivated q3, which checks why the raw sweep cannot itself be Keller
   in two dimensions.
-

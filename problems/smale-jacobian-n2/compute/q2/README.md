@@ -46,4 +46,3 @@ and both compositions in exact sparse integer arithmetic, including degree
 ```
 
 Final marker: `Q2_HOMOGENEOUS_CLASS_PASS`.
-

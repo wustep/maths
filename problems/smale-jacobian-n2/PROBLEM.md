@@ -76,4 +76,3 @@ over only part of either coefficient system is residue and changes no bound.
 - [Moh, *On the Jacobian conjecture and the configurations of roots* (1983)](https://doi.org/10.1515/crll.1983.340.140)
 - [Guccione–Guccione–Horruitiner–Valqui, arXiv:2204.14178v1](https://arxiv.org/abs/2204.14178v1)
 - [Helali, exact \((72,108)\) certificate archive](https://doi.org/10.5281/zenodo.21479814)
-
