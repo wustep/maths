@@ -9,6 +9,7 @@ gcc -O3 -o q2/search_cosets_exact q2/search_cosets_exact.c
 gcc -O3 -o q2/search_hamming11 q2/search_hamming11.c
 gcc -O3 -o q2/search_ejection q2/search_ejection.c
 ./q2/search_cosets_exact | tee q2/coset_exact_log.txt
+python3 q2/sat_unknown_cosets.py
 ./q2/search_hamming11 R367.txt | tee q2/hamming11_log.txt
 python3 q2/search_hamming11_sat.py
 ./q2/search_ejection R367.txt 250000 16 | tee q2/ejection_log.txt

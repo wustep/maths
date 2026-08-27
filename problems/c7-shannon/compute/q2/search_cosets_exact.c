@@ -97,12 +97,40 @@ static inline int bs_first(const BS a) {
     return -1;
 }
 
+/* 1 = found 8, 0 = none, -1 = node cap (residue) */
+static int rec8_nodes;
+
+static int color_ub(const BS *adj, const BS cand) {
+    /* Greedy χ(complement): clique cover of G, hence α(G) ≤ colours. */
+    int color[QN];
+    for (int i = 0; i < QN; i++) color[i] = -1;
+    int ncolors = 0;
+    BS left;
+    memcpy(left, cand, sizeof(BS));
+    while (1) {
+        int v = bs_first(left);
+        if (v < 0) break;
+        uint8_t used[48];
+        memset(used, 0, sizeof used);
+        for (int u = 0; u < QN; u++) {
+            if (u == v || !bs_get(cand, u) || color[u] < 0) continue;
+            if (!bs_get(adj[v], u) && color[u] < 48) used[color[u]] = 1;
+        }
+        int c = 0;
+        while (c < 48 && used[c]) c++;
+        color[v] = c;
+        if (c + 1 > ncolors) ncolors = c + 1;
+        left[v >> 6] &= ~(1ull << (v & 63));
+    }
+    return ncolors;
+}
+
 static int rec8(const BS *adj, BS cand, int sofar) {
     if (sofar >= 8) return 1;
+    if (++rec8_nodes > 80000) return -1;
     int rem = bs_count(cand);
     if (sofar + rem < 8) return 0;
     if (rem == 0) return 0;
-    /* branch on a vertex of maximum degree in the candidate */
     int best_v = -1, best_d = -1;
     BS tmp;
     memcpy(tmp, cand, sizeof(BS));
@@ -122,7 +150,8 @@ static int rec8(const BS *adj, BS cand, int sofar) {
     memcpy(next, cand, sizeof(BS));
     next[v >> 6] &= ~(1ull << (v & 63));
     bs_andnot(next, adj[v]);
-    if (rec8(adj, next, sofar + 1)) return 1;
+    int a = rec8(adj, next, sofar + 1);
+    if (a != 0) return a;
     cand[v >> 6] &= ~(1ull << (v & 63));
     return rec8(adj, cand, sofar);
 }
@@ -130,7 +159,14 @@ static int rec8(const BS *adj, BS cand, int sofar) {
 static int exists8(const BS *adj) {
     BS cand;
     bs_fill343(cand);
-    return rec8(adj, cand, 0);
+    int ub = color_ub(adj, cand);
+    if (ub < 8) return 0;
+    /* Cayley: if an 8-set exists, a translate contains 0. Search a 7-set
+       in the non-neighbourhood of 0. */
+    cand[0] = cand[0] & ~1ull;
+    bs_andnot(cand, adj[0]);
+    rec8_nodes = 0;
+    return rec8(adj, cand, 1);
 }
 
 static int greedy_pack(const BS *adj, unsigned *rng, int *taken) {
@@ -314,6 +350,7 @@ static void write_hit(const char *path, const uint8_t *keep_cid, const int *cid,
 
 int main(void) {
     clock_t t0 = clock();
+    remove("q2/coset_unknown.conn");
     fill_tables();
     int pivots[10][2];
     int npiv = 0;
@@ -324,7 +361,7 @@ int main(void) {
             npiv++;
         }
 
-    int n_sub = 0, n_good = 0, n8 = 0, n_res_pos = 0;
+    int n_sub = 0, n_good = 0, n8 = 0, n8_unk = 0, n_res_pos = 0;
     int best_cosets = 0, best_total = 0, best_res = 0, max_res_n = 0;
     unsigned rng = 1;
     int cid[NV];
@@ -390,11 +427,20 @@ int main(void) {
             }
 
             int has8 = exists8(adj);
-            if (has8) n8++;
-            if (has8 > best_cosets) best_cosets = 8;
+            if (has8 == 1) n8++;
+            if (has8 == -1) {
+                n8_unk++;
+                FILE *uf = fopen("q2/coset_unknown.conn", "a");
+                if (uf) {
+                    for (int i = 0; i < QN; i++) fputc(conn[i] ? '1' : '0', uf);
+                    fputc('\n', uf);
+                    fclose(uf);
+                }
+            }
+            if (has8 == 1 && best_cosets < 8) best_cosets = 8;
 
             int local_best = 0, taken[QN];
-            for (int trial = 0; trial < 8; trial++) {
+            for (int trial = 0; trial < 24; trial++) {
                 int pack[QN];
                 int npk = greedy_pack(adj, &rng, pack);
                 if (npk > local_best) {
@@ -402,10 +448,10 @@ int main(void) {
                     memcpy(taken, pack, npk * sizeof(int));
                 }
             }
-            if (local_best > best_cosets && !has8) best_cosets = local_best;
+            if (local_best > best_cosets) best_cosets = local_best;
 
             /* materialise best greedy pack and measure residual */
-            if (local_best >= 6) {
+            if (local_best >= 7) {
                 for (int v = 0; v < NV; v++)
                     cid[v] = cid_of(coord[v], a, b, p0, p1);
                 uint8_t keep[QN];
@@ -431,7 +477,7 @@ int main(void) {
                            n_good, local_best, npack_v, nres, extra, total);
                     fflush(stdout);
                 }
-                if (has8 || total >= 368) {
+                if (has8 == 1 || total >= 368) {
                     uint8_t keep8[QN];
                     memset(keep8, 0, sizeof keep8);
                     if (has8) {
@@ -471,17 +517,17 @@ int main(void) {
             if (n_good <= 3 || n_good % 200 == 0) {
                 double sec = (double)(clock() - t0) / CLOCKS_PER_SEC;
                 printf("  good=%d sub=%d best_cosets=%d best_total=%d best_res=%d "
-                       "n8=%d nres>0=%d t=%.1fs\n",
+                       "n8=%d n8_unk=%d nres>0=%d t=%.1fs\n",
                        n_good, n_sub, best_cosets, best_total, best_res, n8,
-                       n_res_pos, sec);
+                       n8_unk, n_res_pos, sec);
                 fflush(stdout);
             }
         }
     }
 done:
-    printf("DONE subspaces=%d good=%d has8=%d best_cosets=%d best_total=%d "
-           "best_res=%d max_res_n=%d n_res_pos=%d t=%.1fs\n",
-           n_sub, n_good, n8, best_cosets, best_total, best_res, max_res_n,
-           n_res_pos, (double)(clock() - t0) / CLOCKS_PER_SEC);
+    printf("DONE subspaces=%d good=%d has8=%d n8_unk=%d best_cosets=%d "
+           "best_total=%d best_res=%d max_res_n=%d n_res_pos=%d t=%.1fs\n",
+           n_sub, n_good, n8, n8_unk, best_cosets, best_total, best_res,
+           max_res_n, n_res_pos, (double)(clock() - t0) / CLOCKS_PER_SEC);
     return hit ? 0 : 0;
 }

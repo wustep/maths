@@ -12,7 +12,19 @@ $$
 $$
 All $126$ such subsets were enumerated (`compute/q2/bound_support.py`). Toy checks: $\alpha(K_2\boxtimes C_7)=3$, $\alpha(C_7^{\boxtimes 2})=10=\alpha(K_2\boxtimes C_7^{\boxtimes 2})$. The published $367$-set is $7$-surjective on every coordinate; its $35$ adjacent pair-fibers have size $100$–$107$ and project to independent $4$-tuples.
 
-A $368$-set uses all seven letters in every coordinate. Code for the remaining shapes (exact $8$-coset, Hamming $11$ case-split, longer ejection) lives in `compute/q2/`.
+A $368$-set uses all seven letters in every coordinate.
+
+Hamming $11$ (5-out/6-in) around the published $367$-set is finished. Split on the added vertices' blocker counts:
+
+- 3712 vertices with $5$ blockers: each determines the removal $5$-set. Freed graphs have size $\le 11$, $\alpha\le 3$.
+- $1{,}103{,}157$ extensions of a $4$-blocker vertex by one extra removal: freed size $\le 11$, $\alpha\le 4$.
+- Leftover: add only $\le 3$-blocker vertices. Cadical, $1767$ candidates, $153218$ clauses: UNSAT in $102$s.
+
+No $368$-set at Hamming distance $11$ from this seed. Combined with q1's Hamming $\le 9$, the odd ball through $11$ is empty. Logs: `compute/q2/hamming11_log.txt`, `compute/q2/hamming11_sat_log.txt`.
+
+Ejection sample: $16$ restarts, $250000$ one-outs, $16672$ four-outs (`best_gain=0`), $8336$ five-outs (`best_gain=1`, size stayed $367$). Residue. `compute/q2/ejection_log.txt`.
+
+Exact $8$-coset census is running (`compute/q2/search_cosets_exact.c`).
 
 ## 2026-08-23 — replay
 
