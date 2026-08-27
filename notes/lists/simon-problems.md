@@ -31,13 +31,15 @@ open.
 | 11 | Shell model | Make mathematical sense of the nuclear / atomic shell model as a statement about the exact Schrödinger atom. | Open. Simon already called this vague. |
 | 12 | Molecular configurations | Justify, from the many-body Schrödinger equation, the techniques used to predict configurations of large molecules. | Open. Likewise vague; a programme, not a yes/no. |
 | 13 | Existence of crystals | Prove that the ground state of some neutral system of nuclei and electrons approaches a periodic configuration as the number of nuclei goes to infinity. | Open. Lewin, [C. R. Physique 26 (2025), 369–380](https://doi.org/10.5802/crphys.249), still lists macroscopic Coulomb crystallization as unproved. Short-range classical crystallization (Theil and later work) is a different theorem. |
-| 14 | Continuity of the IDS | Prove that the integrated density of states k(E) is continuous in the energy. | Open. Simon records continuity in one dimension and in the discrete case; the higher-dimensional continuum ask is the one that was open in 2000, and no paper opened this session closes it in that generality. |
+| 14 | [Continuity of the IDS](../../problems/simon-ids-continuity/) | Prove that the integrated density of states k(E) is continuous in the energy. | Open. Bourgain–Klein later proved the bounded continuum case in dimensions 2 and 3. Their method is critical at dimension 4, and the general bounded ergodic continuum case in dimensions at least 4 remains open. |
 | 15 | Lieb–Thirring constants | Prove the Lieb–Thirring conjecture on the constants L(γ,1) for 1/2<γ<3/2. | Open. Record lives in `problems/simon-lieb-thirring/`. |
 
 Folders in this notebook: [`problems/simon-lieb-thirring/`](../../problems/simon-lieb-thirring/)
 (Simon 2000 #15) and
 [`problems/simon-ionization-excess/`](../../problems/simon-ionization-excess/)
-(Simon 2000 #9 and 1984 10(a)).
+(Simon 2000 #9 and 1984 10(a)), and
+[`problems/simon-ids-continuity/`](../../problems/simon-ids-continuity/)
+(Simon 2000 #14).
 
 ## The 1984 list
 
