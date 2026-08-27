@@ -43,7 +43,7 @@ $$T_3(u)^2+T_3(v)^2=1/4.$$
 
 The degree-6 curve does not split into nine factors over Q. This gives H(11)≥9, which does not beat Han–Li 153. The strongest one-step lift at degree 11 is 4·37=148, as the paper says.
 
-Table 1 is not a complete N≤50 list. The same seeds also give one-step values at N that the paper did not print, for example LCh(9)=112, LCh(32)=1278, LCh(41)=2036, LCh(44)=2400, LCh(47)=3105, LCh(49)=3000. Those are lifts, not independent Hilbert numbers, and they are not a dent of 252/1080/1380/2012.
+Table 1 is not a complete N≤50 list. The same seeds give twelve extra one-step values the paper did not print: LCh(9)=112, 32=1278, 33=1404, 34=1372, 37=1488, 38=1413, 41=2036, 44=2400, 47=3105, 48=2597, 49=3000, 50=3159. Those are lifts, not independent Hilbert numbers, and they are not a dent of 252/1080/1380/2012.
 
 Replay:
 

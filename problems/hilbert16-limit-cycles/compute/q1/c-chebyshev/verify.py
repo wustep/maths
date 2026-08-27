@@ -20,6 +20,7 @@ from fractions import Fraction
 from typing import Any
 
 from sympy import (
+    Integer,
     Poly,
     QQ,
     ZZ,
@@ -362,7 +363,7 @@ def check_degree_formula() -> dict[str, Any]:
         (2, 4),
     ):
         tm = chebyshev_T(m)
-        Yu, Yv, _, _, _, _ = pullback(x**n, 0, tm)
+        Yu, Yv, _, _, _, _ = pullback(x**n, Integer(0), tm)
         deg = max(total_degree_bivariate(Yu), total_degree_bivariate(Yv))
         expected = n * m + (m - 1)
         if deg != expected:

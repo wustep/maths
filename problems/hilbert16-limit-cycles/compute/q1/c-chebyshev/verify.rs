@@ -91,13 +91,6 @@ impl Ratio {
                 .unwrap_or_else(|| fail("ratio mul den overflow")),
         )
     }
-
-    fn neg(self) -> Self {
-        Self {
-            n: -self.n,
-            d: self.d,
-        }
-    }
 }
 
 // ---------------------------------------------------------------------------
@@ -686,7 +679,6 @@ fn seeds_app_a() -> BTreeMap<i32, i64> {
         (35, 1536),
         (39, 1920),
         (43, 2272),
-        // 13,17,21,31,35,39,43 already listed; keep the map complete.
     ];
     rows.into_iter().collect()
 }
