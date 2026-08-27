@@ -257,15 +257,22 @@ def test_mixed_F(R, n, near_width=1):
     }
 
 
-def test_pair_aware_lambda(F, c, mu, q):
-    """Off-diagonal-only spread: λ_i = μ_i + Σ_{j≠i} F_ij μ_j if F_ii=1."""
-    n = len(mu)
-    mu = mu / mu.sum()
-    lam_full = F @ mu
-  # If diagonal F_ii=1, rewrite spread excluding diagonal floor
-    lam_off = lam_full - mu  # subtract 1*mu_i from diagonal
-    spread_off = float(lam_full.max() - lam_full.min())
-    return spread_off
+def spread_bound_ratio(l, w, q):
+    """Return drop / (P*spread) for vertex-optimal s (brute, small n)."""
+    lo, hi = 1.0 / q, q
+    P = (q - 1.0) / (q + 1.0)
+    l = np.asarray(l, float)
+    w = np.asarray(w, float)
+    phi = np.dot(l, w) / w.sum()
+    n = len(l)
+    best = 1e9
+    for bits in range(2**n):
+        s = np.array([hi if (bits >> i) & 1 else lo for i in range(n)])
+        best = min(best, np.sum(s * w * l) / np.sum(s * w))
+    spr = l.max() - l.min()
+    if spr < 1e-15:
+        return 0.0
+    return (phi - best) / (P * spr)
 
 
 def main() -> None:
@@ -274,6 +281,19 @@ def main() -> None:
         results["lambda_tests"].append(test_lambda_replacements(R, n))
         for w in (0, 1, 2, 3):
             results["mixed_F"].append(test_mixed_F(R, n, w))
+
+    # Small-n brute: max drop / (P*spread) over random (l,w)
+    rng = np.random.default_rng(5)
+    q12 = results["lambda_tests"][0]["q"]
+    brute = {}
+    for n in (3, 4, 5):
+        worst = 0.0
+        for _ in range(8000):
+            w = rng.random(n) + 0.05
+            l = rng.uniform(FMIN, 1.0, n)
+            worst = max(worst, spread_bound_ratio(l, w, q12))
+        brute[f"n{n}"] = worst
+    results["spread_bound_max_ratio"] = brute
 
     print(json.dumps(results, indent=2))
     for row in results["lambda_tests"]:
@@ -284,6 +304,7 @@ def main() -> None:
             f"lmax={row['savings_lmax']:.6f} "
             f"worst_ce gap={w['gap']:.6f} ({w['name']})"
         )
+    print("spread_bound_max_ratio", brute)
 
 
 if __name__ == "__main__":
