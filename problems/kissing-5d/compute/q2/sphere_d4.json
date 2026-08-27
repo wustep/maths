@@ -1,0 +1,8 @@
+{
+  "d": 4,
+  "n": 1480,
+  "found_41": false,
+  "complete": false,
+  "comment": "(1/4)Z^5 on |x|^2=2 has 1480 points. The 41-clique search was started and stopped without a hit or an emptiness proof. Residue, not a construction and not an exclusion.",
+  "bound_kind": "incomplete clique search"
+}

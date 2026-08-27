@@ -164,6 +164,27 @@ Rounded, η-shifted, and checked over Q: √(ab) = 0.9432425309706136,
 so F(N) ≤ √N + 0.94325 N^{1/4} + O(1). That does change the
 four-decimal statement 0.9435. Same lemma. New histograms.
 
+**Still open (after §7).** Erdős–Turán. A lower bound F(N) ≥ √N+ω(1)
+infinitely often. The $1000 form. A constant at the 0.9431 level, or a
+method that is not Lemma 2.1.
+
+## 8. 2026-08-27 later: the 32-bin cage
+
+q1 leftover refine / dropped-symmetry never finished. An L-lift of the
+q1 kernels saturates ($1.3\times 10^{-11}$). Block descent and extra
+free histograms at $m=32$ only saved $2\times 10^{-7}$. The eight
+(then eleven) 32-bin shapes were already near a local floor.
+
+The unused handle was the *grid of the optimized mix*, not of the
+published mix. q1’s $m=48$ phase started from Hou–Zhao’s histograms and
+never ran. Resampling the q1-grown mix to 48 bins first made $\gamma$
+worse ($0.943709$). Two block cycles on that finer grid then dropped
+it by $7\times 10^{-4}$, to $0.943006166$.
+
+Rounded, η-shifted, and checked over Q: √(ab) = 0.943006169985179,
+so F(N) ≤ √N + 0.94301 N^{1/4} + O(1). That is below the folder
+0.94325 and below Hou–Zhao 0.9435. Same lemma. Finer free histograms.
+
 **Still open.** Erdős–Turán. A lower bound F(N) ≥ √N+ω(1) infinitely
-often. The $1000 form. A constant at the 0.9431 level, or a method
+often. The $1000 form. A constant at the 0.942 level, or a method
 that is not Lemma 2.1.

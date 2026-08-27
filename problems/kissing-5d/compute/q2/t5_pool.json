@@ -1,0 +1,92 @@
+{
+  "n": 360,
+  "basis": [
+    [
+      "-1",
+      "-1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-1",
+      "1",
+      "0",
+      "0",
+      "0"
+    ],
+    [
+      "-1",
+      "0",
+      "-1",
+      "0",
+      "0"
+    ],
+    [
+      "-1",
+      "0",
+      "0",
+      "-1",
+      "0"
+    ],
+    [
+      "-1",
+      "0",
+      "0",
+      "0",
+      "-1"
+    ]
+  ],
+  "T": [
+    "-1",
+    "-4/5",
+    "-3/4",
+    "-1/2",
+    "-3/10",
+    "-1/4",
+    "0",
+    "1/5",
+    "1/2"
+  ],
+  "min_deg": 254,
+  "max_deg": 359,
+  "n_edges": 54204,
+  "published_40_in_pool": {
+    "D5": {
+      "n_in_pool": 40,
+      "missing": 0,
+      "is_clique": true
+    },
+    "L5": {
+      "n_in_pool": 40,
+      "missing": 0,
+      "is_clique": true
+    },
+    "Q5": {
+      "n_in_pool": 40,
+      "missing": 0,
+      "is_clique": true
+    },
+    "R5": {
+      "n_in_pool": 40,
+      "missing": 0,
+      "is_clique": true
+    }
+  },
+  "adj": "t5_adj.txt",
+  "adj_355": "t5_355_adj.txt",
+  "universal": {
+    "n_universal": 5,
+    "universal": [
+      0,
+      1,
+      2,
+      3,
+      4
+    ],
+    "n_remainder": 355,
+    "comment": "The five basis vectors are adjacent to every other pool point. A 41-clique in the 360-point pool exists iff the 355-point remainder has a 36-clique.  The 41-search on the 355-graph is complete; the 36-search is recorded separately."
+  },
+  "points": "t5_points.json",
+  "comment": "A 41-clique here would be an exact kissing code whose inner products against the D5 basis lie in the union of the four published angle sets.  Empty at 41 is residue for this ansatz."
+}
