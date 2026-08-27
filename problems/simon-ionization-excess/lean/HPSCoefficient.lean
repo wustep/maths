@@ -66,24 +66,8 @@ lemma inv_one_add_sqrt_two : (1 + Real.sqrt 2)⁻¹ = Real.sqrt 2 - 1 := by
 
 lemma sub_inv_cubic (t : ℝ) (ht : t ≠ 0) :
     (t - t⁻¹) ^ 3 + 3 * (t - t⁻¹) = t ^ 3 - t⁻¹ ^ 3 := by
-  have h1 : t * t⁻¹ = 1 := mul_inv_cancel₀ ht
-  have h2 : t ^ 2 * t⁻¹ = t := by
-    calc
-      t ^ 2 * t⁻¹ = t * t * t⁻¹ := by ring
-      _ = t * 1 := by rw [mul_assoc, h1]
-      _ = t := mul_one t
-  have h3 : t * t⁻¹ ^ 2 = t⁻¹ := by
-    calc
-      t * t⁻¹ ^ 2 = t * t⁻¹ * t⁻¹ := by ring
-      _ = 1 * t⁻¹ := by rw [h1]
-      _ = t⁻¹ := one_mul _
-  calc
-    (t - t⁻¹) ^ 3 + 3 * (t - t⁻¹)
-        = t ^ 3 - 3 * t ^ 2 * t⁻¹ + 3 * t * t⁻¹ ^ 2 - t⁻¹ ^ 3
-            + 3 * t - 3 * t⁻¹ := by ring
-    _ = t ^ 3 - 3 * t + 3 * t⁻¹ - t⁻¹ ^ 3 + 3 * t - 3 * t⁻¹ := by
-        rw [h2, h3]
-    _ = t ^ 3 - t⁻¹ ^ 3 := by ring
+  field_simp [ht]
+  ring
 
 lemma δ3_cubic : δ3 ^ 3 + 3 * δ3 = 2 := by
   unfold δ3
@@ -96,24 +80,23 @@ lemma δ3_pos : 0 < δ3 := by
   have hinv : t3⁻¹ < 1 := by
     have := mul_lt_mul_of_pos_right t3_gt_one (inv_pos.mpr t3_pos)
     rwa [one_mul, mul_inv_cancel₀ t3_ne_zero] at this
-  linarith
+  linarith [t3_gt_one]
 
 lemma b3_eq_of_t3 : b3 = (2 / 3) * t3 / (t3 ^ 2 - 1) := by
   unfold b3
   rw [rpow_two_thirds]
+  rfl
 
 lemma b3_eq_two_div_three_δ : b3 = (2 / 3) / δ3 := by
   have hden : t3 ^ 2 - 1 ≠ 0 := ne_of_gt (sub_pos.mpr t3_sq_gt_one)
   rw [b3_eq_of_t3]
   unfold δ3
   field_simp [t3_ne_zero, hden]
-  ring
 
 lemma cubic_eval_div {a b : ℝ} (hb : b ≠ 0) :
     (a / b) ^ 3 + 3 * (a / b) - 2
       = (a ^ 3 + 3 * a * b ^ 2 - 2 * b ^ 3) / b ^ 3 := by
   field_simp [hb]
-  ring
 
 lemma cubic_at_upper_neg :
     (4000 / 6711 : ℝ) ^ 3 + 3 * (4000 / 6711) - 2 < 0 := by
