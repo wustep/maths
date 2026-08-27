@@ -1,0 +1,18 @@
+{
+  "n": 18,
+  "d": 6,
+  "indeg0": 1,
+  "u_from_1": null,
+  "nplus1_from_2": null,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 5378 13143",
+  "status": "UNSAT",
+  "time_s": 587.242,
+  "timeout_s": 900,
+  "returncode": 20,
+  "cnf": "ch-18-6-k1.cnf",
+  "out": "ch-18-6-k1.out",
+  "drat": "VERIFIED",
+  "drat_bytes": 1207902119
+}

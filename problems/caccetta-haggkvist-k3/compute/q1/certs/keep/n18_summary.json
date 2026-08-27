@@ -1,0 +1,26 @@
+{
+  "n": 18,
+  "d": 6,
+  "published_hkn": 0.3465,
+  "repo_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "why_open": "ceil(18/3)=6 < 0.3465*18=6.237. First exact order not implied by Hoang-Reed or HKN.",
+  "encoding": "Sinz sequential counters, N+(0)={1..6}, cubes on k=|N-(0)| with N-(0)={7..6+k}",
+  "cubes": {
+    "k11": "UNSAT DRAT stored",
+    "k10": "UNSAT DRAT stored",
+    "k9": "UNSAT DRAT stored",
+    "k8": "UNSAT DRAT stored",
+    "k7": "UNSAT DRAT stored",
+    "k6": "UNSAT DRAT stored",
+    "k5": "UNSAT DRAT verified 2.6MB, regenerated not stored",
+    "k4": "UNSAT DRAT verified 14MB, regenerated not stored",
+    "k3": "UNSAT DRAT verified 52MB, regenerated not stored",
+    "k2": "UNSAT DRAT verified 245MB, regenerated not stored",
+    "k1": "UNSAT 587s, DRAT VERIFIED 1207902119 bytes, sha256 73441d6e484a246f31c22e3a636ab764aef2624a52aa7dbe94f3d3d04bdcbf73, not stored",
+    "k0": "UNKNOWN at 600s; t=1..5 UNSAT DRAT stored; t=6 UNKNOWN at 900s stable"
+  },
+  "pigeonhole": "6-outregular on 18 vertices has 108 arcs, so some in-degree is at least 6. Exact CH at n=18 reduces to cubes k=6..11.",
+  "exact_n18": "UNSAT for k=6..11 with stored DRAT. Every 18-vertex oriented graph with min out-degree 6 has a directed triangle.",
+  "unused_search": "k=0 t=6 still UNKNOWN; not needed once the pigeonhole is used"
+}

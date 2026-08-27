@@ -1,0 +1,16 @@
+{
+  "n": 12,
+  "d": 4,
+  "indeg0": null,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 1543 3817",
+  "status": "UNSAT",
+  "time_s": 0.047,
+  "timeout_s": 30,
+  "returncode": 20,
+  "cnf": "ch-12-4.cnf",
+  "out": "ch-12-4.out",
+  "drat": "VERIFIED",
+  "drat_bytes": 61090
+}

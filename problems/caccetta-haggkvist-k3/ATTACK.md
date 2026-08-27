@@ -112,3 +112,54 @@ Local search from the circulant plus one extra out-edge per vertex never produce
 
 - **Numerical:** 0.34645 < 0.3465, independently checkable F₄ certificate. Tiny. Did not beat 0.3388.
 - **Small-order:** DRAT-verified exact CH-triangle at n=12,15,16 (and n=17 pending proof). n=16 is the first n with ⌈n/3⌉=6. n=18 is the first n where this is not already a theorem. Residue if the n=18 run dies.
+
+## 2026-08-27 — q1, first open order
+
+Continue the 17 August campaign. Published unrestricted threshold is still HKN Combinatorica 0.3465: fetched arXiv:0908.2791v4 tonight; the abstract and Theorem 1.2 still state 0.3465n. Grzesik–Volec arXiv:2102.12830v2 (updated 2024-01-18) still quotes that number as the published out-degree bound and leaves 0.3388 as a personal communication. Cheng–Keevash arXiv:2402.16776 (2024) cites HKN 0.3465 as the triangle-case input. ProofAtlas's 2 August 2026 check still lists 0.3465 as the peer-reviewed unrestricted threshold. Do not treat 0.3388 as published.
+
+The stored F₄ certificate at c=0.34645 still replays (worst F=−0.12343, min eig 9.5·10⁻⁹). The same (Q,b) ray stays strictly negative through c=0.34644447 (worst F=−0.0225) and goes positive at 0.34644. So this system does not give a clean fifth-decimal step below 0.34645; 0.34645 remains the frozen number. F₅ already failed to move the threshold. Beating 0.34645 needs a new inequality or F₆.
+
+The leftover that counts is the exact statement at n=18, δ⁺=6. Code for this run is `compute/q1/`. Two changes to the SAT encoding:
+
+1. Sinz sequential counters replace the binomial at-most/at-least. The 17 August CNF was `p cnf 819 465269` mostly from C(17,7) per vertex.
+2. Split on k=|N⁻(0)| and fix N⁻(0)={7,…,6+k} by relabelling. Each cube is a separate instance. k=11 is empty by counting: each v∈N⁺(0) would need 6 out-neighbours from 5 legal candidates.
+
+A DRAT/UNSAT on every cube, or a verified C₃-free 6-outregular model, is the product. Incomplete SAT is residue.
+
+### 2026-08-27 — cubes
+
+Sequential-counter encoding recovers the 17 August census. DRAT-verified tonight with the new encoder: n=6 d=2, n=9 d=3, n=12 d=4, n=15 d=5, n=16 d=6, n=17 d=6 (18s; was 63s). Cube split on n=9 d=3 is all UNSAT; on n=9 d=2 some k are SAT with checked models. So the in-neighbourhood cut is not vacuously empty.
+
+n=18 d=6 cubes, kissat 4.0.4:
+
+| k=|N⁻(0)| | status | time | DRAT |
+| ---: | --- | ---: | --- |
+| 11 | UNSAT | 0.002s | VERIFIED, 8kB |
+| 10 | UNSAT | 0.002s | VERIFIED, 12kB |
+| 9 | UNSAT | 0.004s | VERIFIED, 24kB |
+| 8 | UNSAT | 0.003s | VERIFIED |
+| 7 | UNSAT | 0.012s | VERIFIED, 44kB |
+| 6 | UNSAT | 0.03s | VERIFIED, 39kB |
+| 5 | UNSAT | 1.1s | VERIFIED, 2.6MB |
+| 4 | UNSAT | 6s | (proof running) |
+| 3 | UNSAT | 24s | (proof running) |
+| 2 | UNSAT | 115s | VERIFIED, then dropped (245MB) |
+| 1 | UNKNOWN | 180s with proof log | leftover |
+| 0 | UNKNOWN | 180s with proof log | leftover |
+
+k=0 and k=1 reran without proof logging (600s): **k=1 UNSAT in 596s**. Regenerated with proof: kissat 587s, DRAT **VERIFIED**, 1.207 GB (`certs/keep/ch-18-6-k1-proof.json`, sha256 `73441d6e…`). The proof is too large to store; replay is `python3 solve.py --n 18 --d 6 --indeg0 1 --time 900 --proof`. k=0 still UNKNOWN at 600s.
+
+Second split t=|N⁺(1) ∩ U|:
+
+- k=0, t=1..5: UNSAT, DRAT stored and replayed
+- k=0, t=6: UNKNOWN at 900s (`--stable`)
+- k=1, t=1..5: UNSAT, DRAT stored and replayed
+- k=1, t=6: implied by the whole-k=1 DRAT
+
+Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s for s=0,1,2,3. That leftover is unused.
+
+**Pigeonhole.** A 6-outregular oriented graph on 18 vertices has 108 arcs, so some vertex has in-degree ≥ 6. Relabel that vertex as 0, its out-neighbours as 1..6, its in-neighbours as 7..6+k, and sort each block to meet the lex cut. The exact statement at n=18 therefore reduces to cubes k=6..11.
+
+Those six cubes are UNSAT with stored, replayed DRATs (`certs/keep/ch-18-6-k{6..11}.{cnf,drat}`). So every 18-vertex oriented graph with δ⁺ ≥ 6 has a directed triangle.
+
+This is a dent against the finite hole, not against HKN 0.3465 (that number already misses n=18). Did not beat 0.34645. Did not treat 0.3388 as published. The k=0 search is leftover bookkeeping, not a bound.
