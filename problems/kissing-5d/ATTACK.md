@@ -481,8 +481,9 @@ classical Levenshtein number 48 before claiming any comparison.
   (`t5_36_proof.json`, 16{,}548{,}926 proof lines). Heule `drat-trim`
   on that file ended `s NOT VERIFIED` (no conflict). Solver UNSAT
   without a verified proof is residue. Share 23: the $D_5$ and $L_5$
-  remainder 35s are complete empty (best extra 12, need 13); $Q_5$
-  and $R_5$ still running.
+  remainder 35s are complete empty (best extra 12, need 13); then
+  $Q_5$ and $R_5$ finished the same way (`t5_share23.json`). Share 23
+  is empty. A remaining 36-clique shares at most 22.
 - No unrestricted dual below 44 (`dual_more.json`: 1-point Delsarte
   still $\approx 46.337$). No 41-code in the finished construction
   pools (`construct_more.json`).
