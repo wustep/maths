@@ -245,10 +245,35 @@ def main() -> int:
     if report["code41"].get("present") and not report["code41"].get("ok"):
         ok = False
     for name in ("color_d4.json", "t5_omega.json", "n1_le32.json",
-                 "seed_cover.json", "dual_exact.json", "construct41.json"):
+                 "n1_check.json", "n1_complete_k12.json",
+                 "t5_share30.json", "t5_share30_c.json", "t5_36_proof.json",
+                 "analyze_stars.json", "seed_cover.json", "dual_exact.json",
+                 "construct41.json"):
         rec = check_search(name)
         report[name] = rec
         if rec.get("present") and not rec.get("ok"):
+            ok = False
+    stars = HERE / "analyze_stars.json"
+    if stars.exists():
+        data = json.loads(stars.read_text())
+        rec = {
+            "present": True,
+            "ok": bool(data.get("four_seeds_are_sign_choices"))
+            and data.get("n_stars") == 10,
+        }
+        report["analyze_stars"] = rec
+        if not rec["ok"]:
+            ok = False
+    k12 = HERE / "n1_complete_k12.json"
+    if k12.exists():
+        data = json.loads(k12.read_text())
+        rec = {
+            "present": True,
+            "ok": (not data.get("found_41")) and data.get("complete") is True,
+            "maxk": data.get("maxk"),
+        }
+        report["n1_complete_k12"] = rec
+        if not rec["ok"]:
             ok = False
     report["ok"] = ok
     (HERE / "verify.json").write_text(json.dumps(report, indent=2) + "\n")

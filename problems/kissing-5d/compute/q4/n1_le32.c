@@ -189,30 +189,83 @@ static int cmp_u64(const void *a, const void *b)
     return (x > y) - (x < y);
 }
 
-static void choose_from(const int *rest, int nrest, int need, u64 base,
-                        u64 *out, int *nout)
+struct slice_state {
+    u64 *seen;
+    int hs_bits;
+    long nU, raw, coll;
+    int tried, skipped, max_seeds;
+    int slice_found, slice_complete;
+    int best_ex;
+};
+
+static int process_U(u64 U, struct slice_state *S)
 {
-    int idx[16];
-    if (need == 0) {
-        out[(*nout)++] = base;
-        return;
+    S->raw++;
+    u64 h = U * 11400714819323198485ULL;
+    int slot = (int)(h >> (64 - S->hs_bits));
+    if (S->seen[slot] == U) {
+        S->coll++;
+        return 0;
     }
-    for (int i = 0; i < need; i++)
-        idx[i] = i;
-    for (;;) {
-        u64 U = base;
-        for (int i = 0; i < need; i++)
-            U |= 1ULL << rest[idx[i]];
-        out[(*nout)++] = U;
-        int p = need - 1;
-        while (p >= 0 && idx[p] == nrest - need + p)
-            p--;
-        if (p < 0)
-            break;
-        idx[p]++;
-        for (int q = p + 1; q < need; q++)
-            idx[q] = idx[q - 1] + 1;
+    if (S->seen[slot] == 0)
+        S->seen[slot] = U;
+    S->nU++;
+    int ng = 0;
+    int gsel[MAXG];
+    for (int g = 0; g < nG; g++)
+        if ((seeds[g] & ~U) == 0)
+            gsel[ng++] = g;
+    if (ng > S->max_seeds)
+        S->max_seeds = ng;
+    if (ng < target) {
+        S->skipped++;
+        return 0;
     }
+    u64 P[W];
+    memset(P, 0, sizeof P);
+    int psz = 0;
+    for (int t = 0; t < ng; t++) {
+        int g = gsel[t];
+        for (int s = 0; s < gsize[g]; s++) {
+            int v = gmem[g][s];
+            P[v >> 6] |= 1ULL << (v & 63);
+            psz++;
+        }
+    }
+    if (psz < target)
+        return 0;
+    S->tried++;
+    found = 0;
+    best = target - 1;
+    if (S->best_ex > best)
+        best = S->best_ex;
+    nodes = 0;
+    int stack[64];
+    expand(P, 0, stack, 0);
+    if (best > S->best_ex)
+        S->best_ex = best;
+    if (!(found || nodes <= node_limit))
+        S->slice_complete = 0;
+    if (found) {
+        S->slice_found = 1;
+        return 1;
+    }
+    return 0;
+}
+
+static int rec_choose(const int *rest, int nrest, int start, int need,
+                      u64 base, struct slice_state *S)
+{
+    if (S->slice_found)
+        return 1;
+    if (need == 0)
+        return process_U(base, S);
+    for (int i = start; i <= nrest - need; i++) {
+        if (rec_choose(rest, nrest, i + 1, need - 1,
+                       base | (1ULL << rest[i]), S))
+            return 1;
+    }
+    return 0;
 }
 
 int main(int argc, char **argv)
@@ -300,97 +353,43 @@ int main(int argc, char **argv)
     int any41 = 0;
     int all_complete = 1;
     for (int k = kmin; k <= kmax; k++) {
-        int cap = 12000000;
-        u64 *Us = malloc((size_t)cap * sizeof(u64));
-        if (!Us) {
-            fprintf(stderr, "oom\n");
+        const int HS_BITS = 26;
+        struct slice_state S;
+        memset(&S, 0, sizeof S);
+        S.hs_bits = HS_BITS;
+        S.slice_complete = 1;
+        S.seen = calloc((size_t)1 << HS_BITS, sizeof(u64));
+        if (!S.seen) {
+            fprintf(stderr, "oom hash\n");
             return 1;
         }
-        int nU = 0;
-        for (int g = 0; g < nG; g++) {
-            int pop = __builtin_popcountll(seeds[g]);
+        target = k + 1;
+        for (int g0 = 0; g0 < nG && !S.slice_found; g0++) {
+            int pop = __builtin_popcountll(seeds[g0]);
             if (pop > k)
                 continue;
             int rest[40], nrest = 0;
             for (int i = 0; i < 40; i++)
-                if (!((seeds[g] >> i) & 1ULL))
+                if (!((seeds[g0] >> i) & 1ULL))
                     rest[nrest++] = i;
-            int need = k - pop;
-            if (nU + 2000000 > cap) {
-                fprintf(stderr, "U cap\n");
-                return 1;
-            }
-            choose_from(rest, nrest, need, seeds[g], Us, &nU);
+            rec_choose(rest, nrest, 0, k - pop, seeds[g0], &S);
         }
-        qsort(Us, (size_t)nU, sizeof(u64), cmp_u64);
-        int uniq = 0;
-        for (int i = 0; i < nU; i++)
-            if (i == 0 || Us[i] != Us[i - 1])
-                Us[uniq++] = Us[i];
-        nU = uniq;
-
-        int tried = 0, skipped = 0;
-        int best_ex = 0, slice_found = 0, slice_complete = 1;
-        int max_seeds = 0;
-        target = k + 1;
-        for (int ui = 0; ui < nU; ui++) {
-            u64 U = Us[ui];
-            int ng = 0;
-            int gsel[MAXG];
-            for (int g = 0; g < nG; g++)
-                if ((seeds[g] & ~U) == 0)
-                    gsel[ng++] = g;
-            if (ng > max_seeds)
-                max_seeds = ng;
-            if (ng < target) {
-                skipped++;
-                continue;
-            }
-            /* pool bitset */
-            u64 P[W];
-            memset(P, 0, sizeof P);
-            int psz = 0;
-            for (int t = 0; t < ng; t++) {
-                int g = gsel[t];
-                for (int s = 0; s < gsize[g]; s++) {
-                    int v = gmem[g][s];
-                    P[v >> 6] |= 1ULL << (v & 63);
-                    psz++;
-                }
-            }
-            if (psz < target)
-                continue;
-            tried++;
-            found = 0;
-            best = target - 1;
-            if (best_ex > best)
-                best = best_ex;
-            nodes = 0;
-            int stack[64];
-            expand(P, 0, stack, 0);
-            if (best > best_ex)
-                best_ex = best;
-            if (!(found || nodes <= node_limit))
-                slice_complete = 0;
-            if (found) {
-                slice_found = 1;
-                any41 = 1;
-                break;
-            }
-        }
-        free(Us);
-        all_complete = all_complete && slice_complete && !slice_found;
-        printf("    \"%d\": {\"k\": %d, \"n1\": %d, \"n_U\": %d, \"tried\": %d, "
+        free(S.seen);
+        all_complete = all_complete && S.slice_complete && !S.slice_found;
+        if (S.slice_found)
+            any41 = 1;
+        printf("    \"%d\": {\"k\": %d, \"n1\": %d, \"n_U\": %ld, \"raw\": %ld, "
+               "\"hash_skip\": %ld, \"tried\": %d, "
                "\"skipped_few_groups\": %d, \"max_seeds_in_U\": %d, "
                "\"best_extras\": %d, \"best_total\": %d, \"found\": %s, "
                "\"complete\": %s}%s\n",
-               k, k, 40 - k, nU, tried, skipped, max_seeds, best_ex,
-               best_ex + (40 - k),
-               slice_found ? "true" : "false",
-               slice_complete && !slice_found ? "true" : "false",
+               k, k, 40 - k, S.nU, S.raw, S.coll, S.tried, S.skipped,
+               S.max_seeds, S.best_ex, S.best_ex + (40 - k),
+               S.slice_found ? "true" : "false",
+               S.slice_complete && !S.slice_found ? "true" : "false",
                k < kmax ? "," : "");
         fflush(stdout);
-        if (slice_found)
+        if (S.slice_found)
             break;
     }
     printf("  },\n");

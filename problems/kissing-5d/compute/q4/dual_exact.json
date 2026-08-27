@@ -156,16 +156,7 @@
     }
   },
   "putinar_sdp": {
-    "5": {
-      "status": "optimal_inaccurate",
-      "numerical_bound": 40.000791530586056,
-      "grid_ok": false,
-      "success": false,
-      "lift": {
-        "certified": false,
-        "reason": "no numerical dual"
-      }
-    }
+    "error": "No module named 'cvxpy'"
   },
   "rank1_ansatz": {
     "tried": 6,
@@ -242,5 +233,5 @@
   },
   "excludes_any_k": [],
   "certified_below_44": false,
-  "comment": "Exact S_k^5 matrices over Q, replayed by q4/bv.py self-tests.  1-point Delsarte is the Odlyzko–Sloane number ≈46.34 and cannot exclude 41–44.  Tried: constant-multiplier Putinar at d=1..4; diagonal and Cholesky grid duals; exact p4-span kernel at d=3,4,5 (nonnegative kernel vectors exist, none make h≤0 on I); square dictionary LP at d=5,6 (d=6 numerical 40.38 did not snap to an identity over Q); floating Putinar SDP at d=5 (solver hit the dummy cut 40, grid_ok false).  Nothing certified below 44.  Mittelmann–Vallentin s_14(5)=44.998… is the published upper bound and the numerical floor of this hierarchy at degree 14, so a dual <44 would need d>14 or a different hierarchy, and would still need an exact SOS/Putinar certificate."
+  "comment": "Exact S_k^5 matrices over Q, replayed by q4/bv.py self-tests.  1-point Delsarte is the Odlyzko\u2013Sloane number \u224846.34 and cannot exclude 41\u201344.  Tried: constant-multiplier Putinar at d=1..4; diagonal and Cholesky grid duals; exact p4-span kernel at d=3,4,5 (nonnegative kernel vectors exist, none make h\u22640 on I); square dictionary LP at d=5,6 (d=6 numerical 40.38 did not snap to an identity over Q); floating Putinar SDP at d=5 (solver hit the dummy cut 40, grid_ok false).  Nothing certified below 44.  Mittelmann\u2013Vallentin s_14(5)=44.998\u2026 is the published upper bound and the numerical floor of this hierarchy at degree 14, so a dual <44 would need d>14 or a different hierarchy, and would still need an exact SOS/Putinar certificate."
 }
