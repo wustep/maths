@@ -262,3 +262,33 @@ withdrawn. q1 remainders unchanged. $N_0(Z)-Z$ bounded still
 open.
 
 Replay: `problems/simon-ionization-excess/compute/q4/run_all.sh`.
+
+## 2026-08-27 — q5 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0.
+- Nam 1009.2367v3 and Benguria–González-Brantes 2511.07582v1
+  unchanged: no later fermionic leading coefficient below the
+  notebook $1.1057$.
+
+## 2026-08-27 — q5 dead line: $R\le 9$ cut
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1057$. Same wall at $R=8$ ($1.125$).
+Residue: `compute/q5/certs/r9_cut.json`. A sharper large-aspect
+cut would reopen this line; none is certified.
+
+## 2026-08-27 — q5 scan: more bins at $R=10$
+
+SLSQP plus the $P_{\max}$ tax (`certs/scan_compact.json`):
+
+- $R=10$, $n=26$ (q4 row): predicted $1.105688$.
+- $R=10$, $n=27$: $1.105110$.
+- $R=10$, $n=28$: $1.104547$.
+- $R=10$, $n=30$: $1.103463$ ($2^{30}$ faces).
+- $R=9.5$, $n=26$: $1.105316$, but $\gamma$ sits $4\cdot 10^{-5}$
+  below the cut $9.5/10.5$ — too tight to trust as a first row.
+
+The live line is $R=10$ with $n\ge 27$. Face enumeration is the
+certificate, not the SLSQP prediction.
