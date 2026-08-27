@@ -120,9 +120,9 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [three-in-line](problems/three-in-line) | Replayed Heule's rct4 142-set at $n=71$: $D(71)=142$. At the first current hole, $n=75$, an audited rct4 portfolio ended without a 150-set. |
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
-| [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. No improvement. |
+| [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
-| [sidon-second-term](problems/sidon-second-term) | Hou–Zhao L=6: $\sqrt{ab}=0.9434925085$, $$8.22\times 10^{-8}$$ below $\gamma_0$. Four-decimal 0.9435 unchanged. |
+| [sidon-second-term](problems/sidon-second-term) | Independent 8-kernel certificate: $$F(N)\le N^{1/2}+0.94325\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
 | [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
 | [hadwiger-nelson-plane](problems/hadwiger-nelson-plane) | Published interval $5\le\chi(\mathbb R^2)\le7$. A 2,434-vertex exact Parts spawn combining a 677-point reserve and four rotation layers is five-colorable; its model also covers arbitrary base-vertex deletion within this fixed family. No new lower bound. |
@@ -136,7 +136,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [kissing-5d](problems/kissing-5d) | Restricted Delsarte: $$T_{D_5}$$ bound 42, $$T_{L_5}$$ bound $239925/5456<44$. Unrestricted $40\le\tau_5\le 44$ unchanged. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
-| [one-third-two-thirds](problems/one-third-two-thirds) | Width-3 $W_{10}$ has $\delta=6/17<14/39$, $e=187$, still $>1/3$. Did not re-run the n=10 census. Conjecture open. |
+| [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 21. Conjecture open. |
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Incomplete search. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=23$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
@@ -187,9 +187,11 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | van der Waerden W(2,7) | `problems/vdw-w27` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |
+| Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
+| Sidon second term, free-histogram certificate | `problems/sidon-second-term/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
 | Chowla cosine | `problems/chowla-cosine` | SuperGrok 4.6 | 2026-08-17 |
 | two-squares gap | `problems/two-squares-gap` | SuperGrok 4.6 | 2026-08-17 |
 | cosine zeros | `problems/cosine-zeros` | SuperGrok 4.6 | 2026-08-17 |
@@ -202,6 +204,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
+| 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Seymour second neighborhood | `problems/seymour-second-neighborhood` | SuperGrok 4.6 | 2026-08-17 |
 | two smooth summands | `problems/two-smooth-summands` | SuperGrok 4.6 | 2026-08-17 |
 | Tuza triangles | `problems/tuza-triangle-packing-covering` | SuperGrok 4.6 | 2026-08-17 |

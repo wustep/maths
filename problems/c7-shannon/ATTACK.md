@@ -1,5 +1,33 @@
 # Attack log — C7 fifth power
 
+## 2026-08-27 — q2 start, 4-support finished
+
+Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438 (Table 1 still $367$–$401$), Itty et al. 2607.21517, Gao 2607.27869 (“367 remains the largest currently known” in the fifth power), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.
+
+q1 left 4-support as a local-search residue (best grown $309$). That shape is impossible, and so are 5- and 6-support.
+
+An adjacent pair of letters in one coordinate induces $K_2\boxtimes C_7^{\boxtimes 4}$. The two fibers project to a single independent set in $C_7^{\boxtimes 4}$, so they contribute at most $\alpha(C_7^{\boxtimes 4})\le 115$ (Baumert via Polak–Schrijver Table 1), not $230$. Every $k$-subset of $C_7$ with $k\le 6$ has matching number large enough that
+$$
+\nu\cdot 115+(k-2\nu)\cdot 115\le 345<368.
+$$
+All $126$ such subsets were enumerated (`compute/q2/bound_support.py`). Toy checks: $\alpha(K_2\boxtimes C_7)=3$, $\alpha(C_7^{\boxtimes 2})=10=\alpha(K_2\boxtimes C_7^{\boxtimes 2})$. The published $367$-set is $7$-surjective on every coordinate; its $35$ adjacent pair-fibers have size $100$–$107$ and project to independent $4$-tuples.
+
+A $368$-set uses all seven letters in every coordinate.
+
+Hamming $11$ (5-out/6-in) around the published $367$-set is finished. Split on the added vertices' blocker counts:
+
+- 3712 vertices with $5$ blockers: each determines the removal $5$-set. Freed graphs have size $\le 11$, $\alpha\le 3$.
+- $1{,}103{,}157$ extensions of a $4$-blocker vertex by one extra removal: freed size $\le 11$, $\alpha\le 4$.
+- Leftover: add only $\le 3$-blocker vertices. Cadical, $1767$ candidates, $153218$ clauses: UNSAT in $102$s.
+
+No $368$-set at Hamming distance $11$ from this seed. Combined with q1's Hamming $\le 9$, the odd ball through $11$ is empty. Logs: `compute/q2/hamming11_log.txt`, `compute/q2/hamming11_sat_log.txt`.
+
+Ejection sample: $16$ restarts, $250000$ one-outs, $16672$ four-outs (`best_gain=0`), $8336$ five-outs (`best_gain=1`, size stayed $367$). Residue. `compute/q2/ejection_log.txt`.
+
+Exact $8$-coset census of every $2$-dimensional subspace of $\mathbb F_7^5$: $140050$ subspaces (Gaussian $\binom{5}{2}_7$), $97240$ good ($V\cap\{-1,0,1\}^5=\{0\}$). Greedy and the capped exact search never found $8$ independent cosets. Every materialised $7$-pack had empty residual in the original graph (total $343$). First pass left $7040$ graphs at the node cap; a second Cayley search proved $5760$ of those have $\alpha<8$ and left $1280$ unknown. Residue, not a proof that no $8$-coset pack exists. No $392$-set. Logs: `compute/q2/coset_exact_log.txt`, `compute/q2/coset_unknown_c_log.txt`.
+
+No $368$-set. No $\Theta(C_7)$ claim. $367^{1/5}\approx 3.25787<3.258805$.
+
 ## 2026-08-23 — replay
 
 - Checkout `grok/c7-shannon`. Replayed `python3 compute/verify_set.py compute/R367.txt --min-size 367` → `size=367 unique=367`, `OK: independent in C7^{box5}`. Same verifier on `R_reconstructed.txt` (367) and `R361_sprime.txt` (361) also OK. This is the Polak–Schrijver record, not a dent.

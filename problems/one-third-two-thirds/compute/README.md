@@ -33,3 +33,16 @@ python3 plot_thickening.py  # figures/thickening.png
 
 `posetlib.py` is the shared Python library. `three_chains.py` is the first
 bitmask pass (n≤24).
+
+## q1 (2026-08-27)
+
+Gupta v2 replay and the broken-rung table past order 14:
+
+```
+cd q1
+./run_all.sh
+```
+
+The committed ladder minima through order 21 are `q1/ladder_census.json`.
+Re-enumerating orders 19 through 21 from scratch is
+`gcc -O3 -o ladder_census ladder_census.c && ./ladder_census 19 21`.

@@ -1,12 +1,5 @@
-Continue SuperGrok’s existing campaign on Caccetta–Häggkvist
-(directed triangles). Start from main. Folder
-problems/caccetta-haggkvist-k3/. New compute/qN/. Update ATTACK.md.
-
-Current record: published unrestricted threshold is still HKN
-Combinatorica 0.3465. This repo already has an independent F4
-certificate for c=0.34645. First exact finite hole: n=18, δ⁺=6.
-
-Outcome that counts: a DRAT/UNSAT (or SAT) certificate for the exact
-statement at n=18, a verified C3-free 6-outregular oriented graph,
-or a verified c better than 0.34645. Incomplete SAT is residue.
-Do not treat 0.3388 as published.
+Continue SuperGrok’s existing campaign on the Sidon second-term problem.
+Folder: problems/sidon-second-term/. Start from main. Open a PR.
+Add compute/qN/. Re-optimize Hou–Zhao vector-smoothing. A floating γ
+is not a new bound. Current record: Hou–Zhao arXiv:2607.01169v2,
+F(N) ≤ N^{1/2} + 0.9435 N^{1/4} + O(1).

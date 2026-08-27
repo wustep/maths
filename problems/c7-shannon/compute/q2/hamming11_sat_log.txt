@@ -1,0 +1,4 @@
+cands_le3 1767
+clauses 153218 vars 16721
+sat False seconds 103.70
+no 368 in <=3-blocker Hamming-11

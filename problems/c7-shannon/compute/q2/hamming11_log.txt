@@ -1,0 +1,12 @@
+blocker_hist 0:0 1:8 2:254 3:1505 4:3039 5:3712 6:3897 7:2842 8:921 9:199 10:61 11:2
+caseA n=3712 best_mis=3 max_freed=11 t=0.04s
+  caseB 400/3039 best_mis=4 max_freed=10 t=0.2s
+  caseB 800/3039 best_mis=4 max_freed=11 t=0.3s
+  caseB 1200/3039 best_mis=4 max_freed=11 t=0.4s
+  caseB 1600/3039 best_mis=4 max_freed=11 t=0.6s
+  caseB 2000/3039 best_mis=4 max_freed=11 t=0.7s
+  caseB 2400/3039 best_mis=4 max_freed=11 t=0.9s
+  caseB 2800/3039 best_mis=4 max_freed=11 t=1.0s
+caseB n=1103157 best_mis=4 max_freed=11
+DONE hit=0 caseA_best=3 caseB_best=4 t=1.07s
+no 368 in Hamming-11 cases A+B (added vertex with 4 or 5 blockers)
