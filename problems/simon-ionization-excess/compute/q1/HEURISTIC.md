@@ -1,0 +1,77 @@
+# These numbers are not a bound
+
+The files `certs/hf_table.json` and `certs/delta_e.json` are a
+heuristic Hartree–Fock table for small $N$ and $Z$. They do not move
+the ionization conjecture, and they do not improve a published
+non-asymptotic bound on Nc. Status: residue.
+
+Solovej already proved the ionization conjecture in Hartree–Fock
+(arXiv:math-ph/0012026). A numerical HF table cannot touch that
+theorem. The Schrödinger problem (Simon 2000 #9) is a different
+object; HF energies are not energies of $H(N,Z)$.
+
+## What was computed
+
+Three series, all labeled HEURISTIC, in Hartree.
+
+1. One-parameter Slater $1s$ Hartree–Fock for helium-like ions. For
+   one electron the energy is the exact hydrogenic value
+   $-Z^2/2$. For two electrons the restricted $1s^2$ ansatz with
+   scale $\zeta=Z-5/16$ gives $E=-(Z-5/16)^2$.
+2. Unrestricted HF in the uncontracted STO-3G primitive Gaussians
+   (a $1s$ shell for H and He; $1s,2s,2p$ for Li through Ne).
+   Integrals are analytic, same-centre Cartesian $s$ and $p$.
+   Occupations follow Hund’s rule. Closed shells stay
+   spin-restricted if the core-Hamiltonian guess is.
+3. The same UHF loop on a $Z$-scaled even-tempered $s$-only basis,
+   as a spherical check that never uses $p$ integrals.
+
+Replay:
+
+```bash
+python3 rhf_atoms.py --self-test
+python3 rhf_atoms.py
+python3 delta_e_table.py
+```
+
+## Binding, and what would count
+
+The table marks a pair as “binds” when the HF energy drops from
+$N-1$ to $N$. That comparison is not a proof that the true
+$E(N,Z)$ lies below $E(N-1,Z)$. Both numbers are variational
+upper bounds. A worse $N$-electron trial can sit above a better
+$(N-1)$-electron trial even if the $N$-electron atom is bound,
+and the other way around.
+
+A variational energy becomes a binding certificate — a genuine
+lower bound on N0 — only if it lies strictly below a certified
+value of $E(N-1,Z)$. The only exact thresholds used here are the
+bare nucleus $E(0,Z)=0$ and the hydrogenic $E(1,Z)=-Z^2/2$.
+
+For $Z\ge 2$ the Slater two-electron energy is below $-Z^2/2$, so
+N0 is at least 2. That is already in Zhislin’s theorem ($N<Z+1$
+binds) and is not a new bound. For $Z=1$ the same ansatz gives
+$-(11/16)^2=-0.47265625$, which is above $-1/2$, so it does not
+certify that H- is bound. The Hylleraas certificate that N0(1)
+equals 2 is a different calculation.
+
+Experimental ionization energies are leads, not certificates.
+
+## The 1984 10(a) check
+
+From the same energies the script writes
+
+$$
+\Delta E(N,Z)=E(N-1,Z)-E(N,Z)
+$$
+
+and tests $\Delta E(N-1,Z)\ge\Delta E(N,Z)$ on consecutive pairs
+that both exist in the table. A clean run on this range is not a
+proof of monotonicity. A failed pair is not a counterexample to
+10(a): the inputs are HF numbers, not $E(N,Z)$.
+
+## Thomas–Fermi
+
+A Thomas–Fermi or spherical LDA toy was not needed for the
+integrals and is not stored. Continuum TF energies do not decide
+a finite N0.
