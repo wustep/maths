@@ -120,7 +120,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [three-in-line](problems/three-in-line) | Replayed Heule's rct4 142-set at $n=71$: $D(71)=142$. At the first current hole, $n=75$, an audited rct4 portfolio ended without a 150-set. |
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
-| [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. No improvement. |
+| [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Hou–Zhao L=6: $\sqrt{ab}=0.9434925085$, $$8.22\times 10^{-8}$$ below $\gamma_0$. Four-decimal 0.9435 unchanged. |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
@@ -187,6 +187,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | van der Waerden W(2,7) | `problems/vdw-w27` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |
+| Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |

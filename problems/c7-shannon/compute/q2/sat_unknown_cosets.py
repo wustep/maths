@@ -26,17 +26,30 @@ def add_cid(i: int, d: int) -> int:
 
 
 def has8(conn: str) -> bool:
-    edges = []
-    for i in range(QN):
-        for d in range(QN):
-            if d == 0 or conn[d] != "1":
-                continue
-            j = add_cid(i, d)
-            if i < j:
-                edges.append((i, j))
-    lits = list(range(1, QN + 1))
-    clauses = [[-u - 1, -v - 1] for u, v in edges]
-    cnf = CardEnc.atleast(lits=lits, bound=8, top_id=QN, encoding=EncType.kmtotalizer)
+    """Cayley: force 0 into the set and look for 7 more non-neighbours."""
+    # closed neighbourhood of 0
+    n0 = {0}
+    for d in range(QN):
+        if conn[d] == "1":
+            n0.add(d)
+    cand = [i for i in range(QN) if i not in n0]
+    if len(cand) < 7:
+        return False
+    # map cand -> SAT vars 1..m
+    idx = {v: i + 1 for i, v in enumerate(cand)}
+    clauses = []
+    for a_i, a in enumerate(cand):
+        for b in cand[a_i + 1 :]:
+            d0 = (b // 49 - a // 49) % 7
+            d1 = ((b // 7) % 7 - (a // 7) % 7) % 7
+            d2 = (b % 7 - a % 7) % 7
+            d = d0 * 49 + d1 * 7 + d2
+            if conn[d] == "1":
+                clauses.append([-idx[a], -idx[b]])
+    lits = list(idx.values())
+    cnf = CardEnc.atleast(
+        lits=lits, bound=7, top_id=len(cand), encoding=EncType.kmtotalizer
+    )
     clauses.extend(cnf.clauses)
     return bool(Cadical195(bootstrap_with=clauses).solve())
 
@@ -51,16 +64,38 @@ def main() -> None:
     t0 = time.time()
     n_yes = 0
     n_no = 0
-    for i, conn in enumerate(lines, 1):
-        if len(conn) != QN:
-            raise SystemExit(f"bad line {i} len={len(conn)}")
-        if has8(conn):
-            n_yes += 1
-            print(f"YES line {i}", flush=True)
-        else:
-            n_no += 1
-        if i % 50 == 0 or i == len(lines):
-            print(f"  {i}/{len(lines)} yes={n_yes} no={n_no} t={time.time()-t0:.1f}s", flush=True)
+    workers = min(4, max(1, len(lines)))
+    if len(lines) >= 8:
+        from concurrent.futures import ProcessPoolExecutor, as_completed
+
+        with ProcessPoolExecutor(max_workers=workers) as ex:
+            futs = {ex.submit(has8, conn): i for i, conn in enumerate(lines, 1)}
+            done = 0
+            for fut in as_completed(futs):
+                i = futs[fut]
+                if len(lines[i - 1]) != QN:
+                    raise SystemExit(f"bad line {i} len={len(lines[i - 1])}")
+                if fut.result():
+                    n_yes += 1
+                    print(f"YES line {i}", flush=True)
+                else:
+                    n_no += 1
+                done += 1
+                if done % 50 == 0 or done == len(lines):
+                    print(
+                        f"  {done}/{len(lines)} yes={n_yes} no={n_no} "
+                        f"t={time.time()-t0:.1f}s",
+                        flush=True,
+                    )
+    else:
+        for i, conn in enumerate(lines, 1):
+            if len(conn) != QN:
+                raise SystemExit(f"bad line {i} len={len(conn)}")
+            if has8(conn):
+                n_yes += 1
+                print(f"YES line {i}", flush=True)
+            else:
+                n_no += 1
     text = (
         f"unknown {len(lines)} sat8 {n_yes} unsat {n_no} "
         f"seconds {time.time()-t0:.1f}\n"

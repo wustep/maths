@@ -1,4 +1,5 @@
 search_cosets_exact
+search_unknown_cosets
 search_hamming11
 search_ejection
 *.o

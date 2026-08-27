@@ -14,4 +14,4 @@ worst missing-letter bound 345
   k=5 n=21 bounds=[345] e.g. [0, 1, 2, 3, 4] matching=2 leftover=1 2*115+1*115=345
   k=6 n=7 bounds=[345] e.g. [0, 1, 2, 3, 4, 5] matching=3 leftover=0 3*115+0*115=345
 conclusion: a 368-set uses all 7 letters in every coordinate. 4-support (and 3,5,6) is impossible, not a search residue.
-seconds 2.93
+seconds 2.76

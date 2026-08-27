@@ -24,7 +24,9 @@ No $368$-set at Hamming distance $11$ from this seed. Combined with q1's Hamming
 
 Ejection sample: $16$ restarts, $250000$ one-outs, $16672$ four-outs (`best_gain=0`), $8336$ five-outs (`best_gain=1`, size stayed $367$). Residue. `compute/q2/ejection_log.txt`.
 
-Exact $8$-coset census is running (`compute/q2/search_cosets_exact.c`).
+Exact $8$-coset census of every $2$-dimensional subspace of $\mathbb F_7^5$: $140050$ subspaces (Gaussian $\binom{5}{2}_7$), $97240$ good ($V\cap\{-1,0,1\}^5=\{0\}$). Greedy and the capped exact search never found $8$ independent cosets. Every materialised $7$-pack had empty residual in the original graph (total $343$). First pass left $7040$ graphs at the node cap; a second Cayley search proved $5760$ of those have $\alpha<8$ and left $1280$ unknown. Residue, not a proof that no $8$-coset pack exists. No $392$-set. Logs: `compute/q2/coset_exact_log.txt`, `compute/q2/coset_unknown_c_log.txt`.
+
+No $368$-set. No $\Theta(C_7)$ claim. $367^{1/5}\approx 3.25787<3.258805$.
 
 ## 2026-08-23 — replay
 
