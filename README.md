@@ -145,7 +145,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
 | [hilbert16-limit-cycles](problems/hilbert16-limit-cycles) | Hilbert 16(b): the Hilbert number H(n), maximum isolated periodic orbits of a planar polynomial vector field of degree n. Published lower bounds still stand: H(2) at least 4 (Shi; Chen–Wang), H(3) at least 13 (Li–Liu–Yang), H(4) at least 28 (Prohens–Torregrosa), and the Han–Li / Chebyshev lifts. A quadratic with 5 cycles and a cubic with 14 were not constructed. Replayed: Shi’s order-3 jet, van der Pol uniqueness, the Chebyshev pullback identity and its 2026 table arithmetic, uniqueness for one radial cubic, and the first Lyapunov quantity of a quadratic focus. No published H(n) moved. Different problem from the degree-8 folder above. |
-| [simon-lieb-thirring](problems/simon-lieb-thirring) | Simon 2000 #15. Published record $$L_{1,d}\le 1.456\,L^{\mathrm{cl}}_{1,d}$$ (Frank–Hundertmark–Jex–Nam, JEMS 2021). The one-dimensional conjecture for exponents between 1/2 and 3/2 is open. |
+| [simon-lieb-thirring](problems/simon-lieb-thirring) | Frank–Hundertmark–Jex–Nam published $$L_{1,d}/L_{1,d}^{\mathrm{cl}}\le 1.456.$$ A certified trial pair gives $$\mathcal{C}_1\le 0.373548,\qquad L_{1,1}/L_{1,1}^{\mathrm{cl}}\le 1.45576.$$ Same one-dimensional lift as the paper, all dimensions. Conjecture open. |
 | [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz $1.1185$. Same HPS chain, using Lieb's ratio on $Z\ge 4$, tightens the printed remainders $2.96$, $3.90$, and $4$ to $2.953$, $3.892$, and $3.9781$. Leading coefficient unchanged. Hydrogen N0(1)=2 replayed. Bounded excess open. |
 
 Each problem folder:
@@ -233,7 +233,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hilbert 16(b) five-line campaign | `problems/hilbert16-limit-cycles/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Hadwiger–Nelson plane | `problems/hadwiger-nelson-plane` | GPT-5.6 Sol | 2026-08-23 |
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
-| Simon Lieb–Thirring constants | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
+| Lieb–Thirring (Simon 2000 #15) | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
+| Lieb–Thirring $\mathcal{C}_1$ trial pair | `problems/simon-lieb-thirring/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Simon ionization excess | `problems/simon-ionization-excess` | Grok 4.6 | 2026-08-27 |
 | Simon ionization excess / HPS remainder | `problems/simon-ionization-excess/compute/q1` | Grok 4.6 | 2026-08-27 |
 

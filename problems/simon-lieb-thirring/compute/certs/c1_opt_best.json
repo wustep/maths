@@ -1,0 +1,63 @@
+{
+  "schema": "fhjn-c1-panel-v1",
+  "name": "opt_best_A.best.parameters",
+  "params": {
+    "alpha": 4.055295525553317,
+    "beta": 0.27814272049262534,
+    "gamma": 0.31839679333692544,
+    "delta": 1.1649053972605006,
+    "eps": 6.200689745257155,
+    "kappa": 0.482136224760825,
+    "support": 1.5066015478078987
+  },
+  "grids": {
+    "t_min": 0.02,
+    "t_steep_lo": 0.25,
+    "t_steep_hi": 20.0,
+    "t_drop_hi": 400.0,
+    "T": 1000000000000.0,
+    "n_small": 1500,
+    "n_steep": 36000,
+    "n_drop": 12000,
+    "n_tail": 6000,
+    "n_s": 80000,
+    "n_phi": 400000,
+    "n_lin_mu": 200000,
+    "n_log_mu": 200000,
+    "U_mu": 10000000.0
+  },
+  "bounds": {
+    "I_f_upper": 1.6417308568716407,
+    "mu_upper": 7.466431395239454,
+    "I_phi_lower": 0.18988718003780042,
+    "I_phi_upper": 0.18989094694172107,
+    "a_raw_upper": 0.06002746113462818,
+    "a_upper": 1.664787036139494,
+    "sqrt_a_upper": 1.2902662655977502,
+    "near0_I_upper": 1.865368541002876e-12,
+    "panels_rectangle_I_upper": 0.5793413392476688,
+    "panels_exactweight_I_upper": 0.5790068423813207,
+    "tail_I_upper": 2.0000000010000803e-06,
+    "I_upper_rectangle": 0.5793433392495478,
+    "I_upper_exactweight": 0.5790088423831997,
+    "Ag_upper": 0.2895044211916067,
+    "C_1_upper": 0.373537788404941,
+    "C_1_upper_rectangle": 0.37375358341623965,
+    "C_1_upper_exactweight": 0.373537788404941,
+    "K_over_Kcl_lower": 0.47189418181703957,
+    "L_over_Lcl_upper": 1.4557194631446388,
+    "sqrt3_upper": 1.7320508075688772,
+    "published_L_record": 1.456,
+    "beats_1456": true,
+    "n_t_panels": 55500,
+    "n_s_panels": 80000,
+    "n_phi_panels": 400000,
+    "one_minus_g_first": 3.459952873503524e-08,
+    "one_minus_g_last": 1.0
+  },
+  "method": {
+    "python": "t-panels: (1-g)\u00b2 increasing so integrand \u2264 (1-g_upper(t_right))\u00b2 t^{-3/2}; certified contribution uses exact \u222b t^{-3/2} dt. Rectangle height/t_left^{3/2}*length is also stored. 1-g = \u222b \u03c6_raw(1-f)/I_\u03c6 \u2264 \u03a3 \u03c6_left_upper (1-f_lower(s_right t)) \u0394s / I_\u03c6_lower. Tail 2 T^{-1/2}. Near 0: (1-g)\u00b2 \u2264 (\u03b2 \u03bc S^\u03b1)\u00b2 t^{2\u03b1}.",
+    "rust": "u=log t: integrand becomes (1-g(e^u))\u00b2 e^{-u/2}; panel uses exact \u222b e^{-u/2} du times (1-g_right)\u00b2. Uniform s-grid, different count from Python. I_f via a left-Riemann u-grid."
+  },
+  "notes": "\u03bc_upper \u2265 \u03bc_exact so \u222bf\u00b2 \u2264 1. Scaling f up to unit L\u00b2 decreases C_1; the reported C_1_upper is therefore a valid trial bound. Replay by recomputing from params with verify_c1.py / verify_c1.rs."
+}
