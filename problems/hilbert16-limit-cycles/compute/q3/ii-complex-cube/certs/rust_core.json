@@ -1,0 +1,18 @@
+{
+  "det": "9(u^2+v^2)^2",
+  "identity_linear": true,
+  "identity_quad": true,
+  "identity_radial": true,
+  "deg_linear": 5,
+  "deg_quad": 8,
+  "deg_radial": 11,
+  "n_terms_radial_Yu": 12,
+  "n_terms_radial_Yv": 12,
+  "preimages_half_0": 3,
+  "preimages_quarter_quarter": 3,
+  "preimages_chebyshev_T3": 9,
+  "beats_T3": false,
+  "weaker_than_T3": true,
+  "attains_bezout": false,
+  "growth_complex": "linear"
+}

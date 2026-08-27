@@ -1,0 +1,15 @@
+{
+  "det": "4(u^2+v^2)",
+  "identity_radial": true,
+  "identity_linear": true,
+  "deg_radial": 7,
+  "deg_linear": 3,
+  "deg_two_step_radial": 15,
+  "preimages_half_0": 2,
+  "preimages_quarter_quarter": 2,
+  "preimages_phi2_half_0": 4,
+  "preimages_chebyshev_T2": 4,
+  "beats_theorem2": false,
+  "attains_m2_per_step": false,
+  "growth_complex": "linear"
+}

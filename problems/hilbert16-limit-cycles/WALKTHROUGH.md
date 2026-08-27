@@ -5,7 +5,8 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 - Problem: `problems/hilbert16-limit-cycles`
 - Model: Grok 4.6
 - Date: 2026-08-27
-- Problem status: open. No published H(n) moved.
+- Problem status: open. No published H(n) moved. The second
+  and third campaigns did not move a table entry either.
 
 ## 0. What was actually missing
 
@@ -115,3 +116,202 @@ Not proved, and not claimed:
   not reconstructed).
 - That the 2026 lifts H(14) ≥ 252 etc. are independent of
   those unreplayed seeds.
+
+## Second campaign (same day)
+
+Twenty-five new fictions (compute/q2/ideas.md). Five scored
+and attacked. All five imagined dents died; five forks lived.
+
+### 0. What was actually missing
+
+A handle that is not Chebyshev one-step and not Shi/van der Pol
+again: either a new seed, a new lift that beats m², or a
+certified upper the literature treats as open. The degree of
+freedom is still an explicit field or a polynomial identity.
+
+### 1. Named false starts
+
+- Homogeneous n-cycles: scaling produces a continuum.
+- Liénard beat of B(n): no field; full H(3,1)=1 needs oddness.
+- Iterated z↦z² past the quadratic ceiling: two sheets, not four.
+- Harnack recurrence: 1225 pairs, no table beat.
+- PT+1: their order-5 budget is already 28.
+
+Discarded without a worker, same deaths as A/B: Ye class I two
+cycles, invariant-line two, (2,2), Liénard two, two hemicycles,
+Shi equator as a planar cycle, QW3 fifth, figure-eight 14,
+Yu–Han 12+2.
+
+### 2. The useful failure
+
+Complex squaring is the model non-separable covering, and it is
+worse than Chebyshev, not better. Remark 4’s remaining half
+(iteration) does not get you past m² by changing the map to
+z↦z². The PT seed, once written as a primitive degree-4 field,
+is a concrete Darboux center a later line can perturb.
+
+### 3. The click
+
+Two. First: z↦z² is 2-to-1 on the plane because Cauchy–Riemann
+ties the components; Bézout’s 4 is a ceiling, not a count this
+map attains. Second: −B+4xA in the PT first integral cancels
+from degree 5 to degree 3, so the Darboux field is genuinely
+degree 4 and has three linear centers.
+
+### 4. The argument
+
+- Homogeneous: P(λx,λy)=λ^n P; compact orbits scale.
+- Odd-cubic Liénard: dE/dt=−αx²−βx⁴; Liénard list when α<0<β.
+- Φ=(u²−v²,2uv): adj identity, deg 7 for the radial cubic,
+  two regular preimages, 2^k=(N+1)/(n+1).
+- Har(m) table vs the q1 seeds.
+- PT primitive field; Coppel: quadratics restrict to degree ≤2
+  on a line.
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc identities and
+integer tables. Replay: `compute/run_all.sh` (q1 then q2).
+
+### 6. What is proved vs still open
+
+Proved here, extra to q1: homogeneous / unperturbed
+quasi-homogeneous fields have no isolated cycles; B(n)
+thresholds; the odd-cubic Liénard energy identity; iterated
+squaring sheet counts; Harnack arithmetic; the explicit PT
+H_{4,5} Darboux field and the quadratic contact identities.
+
+Not proved: any movement of a published H(n). Finiteness of
+H(n). The 28-cycle perturbation of that Darboux field.
+Li–Liu–Yang’s 13 (still paywalled).
+
+## Third campaign (same day)
+
+Ten new fictions (`compute/q3/ideas.md`). Official three, plus
+two extras so the menu was not idle. All five imagined dents
+died; five forks lived.
+
+### 0. What was actually missing
+
+An explicit cubic that is not Li–Liu–Yang’s paywalled field,
+or a perturbation of the PT seed we now own, or a non-separable
+covering that actually attains m². The degree of freedom is
+still an explicit polynomial or a counted Abelian integral,
+not a new status noun.
+
+### 1. Named false starts
+
+- Two-well 14 Abelian zeros: the integral is elliptic; one
+  sample and L1 prove I ≢ 0, not 14 roots.
+- PT L1 rank 29: unperturbed L1 is 0 (Darboux center); they
+  already stopped at 28.
+- Four zeros of M1 on ẋ=2y, ẏ=−x³: scaling caps a cubic at
+  two first-order zeros; the named family has one.
+- Holomorphic cube, nine sheets: z↦z³ is 3-to-1 (same CR as O).
+- Beat Z(2,n): the formula is a theorem.
+
+### 2. The useful failure
+
+The two-well Hamiltonian is the geometry people cite for 11
+then 13, and first-order on that well does not produce 14.
+The PT seed’s L1_E is a trap: at (1,±2) it is ±9/2 and the
+cubic jet cancels it. Evaluating only the q1 quadratic
+polynomial would have falsely called those points order-1
+foci.
+
+### 3. The click
+
+Two. First: after the q1 focal scaling, both wells of the
+named van der Pol perturbation have the same L1 = √2 μ, and
+I(0) = 4μ/15 is elementary on the figure-eight, so the
+obstruction is not “no formula” but “the formula is too
+small.” Second: z↦z³ has the same degree budget as T3 and
+is strictly weaker, so the next non-separable test after
+squaring is also a miss.
+
+### 4. The argument
+
+- Two-well: H = y²/2 + x⁴/4 − x²/2; dH/dt identities;
+  figure-eight reduction to 2/15; L1 cubic correction.
+- PT: translate three centers; L1 = L1_E + cubic; cancel.
+- Quasi-homogeneous: weights (1,2); the moment of x^k scales
+  as λ^{k+3}; I(h)=0 iff α = C √h.
+- Cube: CR, fibre 3, N=3n+2, T3 attains 9 at the same N.
+- Weak Hilbert: Ĩ(h)=h p(2h) attains floor((n−1)/2).
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc identities
+and integer boxes. Replay: `compute/run_all.sh` (q1, q2, q3).
+
+### 6. What is proved vs still open
+
+Proved here, extra to q1 and q2: the two-well classification
+and I(0); L1 = 0 at the three Darboux centers and two L1(μ)
+polynomials; first-order cyclicity ≤ 1 for
+Q=μ(α−x²)y on H=x⁴+4y²; holomorphic-cube sheet counts;
+the radial family attaining Z(2,n) for n=1…10.
+
+Not proved: any movement of a published H(n). Finiteness of
+H(n). Fourteen cubic cycles. A 29th quartic cycle.
+Li–Liu–Yang’s 13 (still paywalled).
+
+## Worker pool (same day)
+
+The leftover q3 menu and four extras ran so no line sat idle.
+All imagined dents died.
+
+### 0. What was actually missing
+
+An explicit +1 or 4-fold field we own, not only the identity.
+The degree of freedom is still a written polynomial.
+
+### 1. Named false starts
+
+- Gasull–Santana +1: second cycle is an unwritten Hopf.
+- Cubic + line, three cycles: Dulac kills the named field.
+- Five Abelian zeros: Z(2,3)=1, or else H(3)≥5 < 13.
+- (u²,v²) or T2 beating H(7)≥74: four ovals, not 74.
+- Kolmogorov 7: Dulac, 0 in the first quadrant.
+- L2 extra wells: order is already 1.
+- (x²+y²)X two cycles: still one circle.
+
+### 2. The useful failure
+
+(u²,v²) attains 4 sheets at N=2n+1, which holomorphic z↦z²
+does not. The obstruction in O and II was Cauchy–Riemann, not
+Bézout. Christopher–Lloyd uses the four sign combinations.
+
+### 3. The click
+
+Translate the radial circle into the first quadrant, then
+square each coordinate. Four ovals, degree 7, written
+term-by-term. Same count as T2, different map, still far
+from 74.
+
+### 4. The argument
+
+- KK: line 4x−15y misses the translated circle (15>0).
+- LL: Dulac 1/y on ẋ=16y+16x+x³, ẏ=16xy.
+- OO: Ĩ(h)=h(α−2h); Area on the cubic nest.
+- PP: u̇=v P(u²,v²), four quadrants, f'(ρ)=−1/2.
+- QQ: T2 field, 8+8 monomials.
+- RR: B=x^{-2}y^{-1}, div(BX)/B=−1.
+- SS: V2=−√2 μ(23μ²+18)/96.
+- TT: ṙ=r³(ρ²−r²).
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc. Replay:
+`compute/run_all.sh`.
+
+### 6. What is proved vs still open
+
+Proved here, extra: the degree-4 line product with one
+circle; a cubic with invariant line and 0 cycles; 1 and 0
+Abelian zeros on the two OO families; an explicit
+Christopher–Lloyd degree-7 four-oval field; an explicit T2
+degree-7 four-oval field; a cubic Kolmogorov Dulac; V2 at
+the two-well; the degree-5 radial product with one circle.
+
+Not proved: any movement of a published H(n).

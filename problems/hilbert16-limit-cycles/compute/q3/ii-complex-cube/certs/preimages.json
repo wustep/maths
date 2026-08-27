@@ -1,0 +1,94 @@
+{
+  "cube_half_0": {
+    "target": [
+      1,
+      2,
+      0,
+      1
+    ],
+    "real_regular": 3,
+    "complex_affine": 9,
+    "bezout_m2": 9,
+    "attains_m2": false,
+    "points": [
+      {
+        "u": "-2**(2/3)/4",
+        "v": "-2**(2/3)*sqrt(3)/4",
+        "det": "9*2**(2/3)/4"
+      },
+      {
+        "u": "-2**(2/3)/4",
+        "v": "2**(2/3)*sqrt(3)/4",
+        "det": "9*2**(2/3)/4"
+      },
+      {
+        "u": "2**(2/3)/2",
+        "v": "0",
+        "det": "9*2**(2/3)/4"
+      }
+    ]
+  },
+  "cube_quarter_quarter": {
+    "target": [
+      1,
+      4,
+      1,
+      4
+    ],
+    "real_regular": 3,
+    "complex_affine": 9,
+    "bezout_m2": 9,
+    "attains_m2": false,
+    "seed_point": [
+      -1,
+      2,
+      1,
+      2
+    ]
+  },
+  "chebyshev_T3_half_half": {
+    "target": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "real_regular": 9,
+    "attains_m2": true,
+    "t3_cubic": "8t^3-6t-1",
+    "disc": 5184,
+    "note": "T3 x T3 is 9-to-1 on (-1,1)^2; components independent"
+  },
+  "polar_z_to_z3": [
+    {
+      "target": [
+        1,
+        2,
+        0,
+        1
+      ],
+      "count": 3
+    },
+    {
+      "target": [
+        1,
+        4,
+        1,
+        4
+      ],
+      "count": 3
+    }
+  ],
+  "resultant": {
+    "Res_v": "64u^9-48x u^6-15x^2 u^3-27y^2 u^3-x^3",
+    "deg_u": 9,
+    "deg_t": 3,
+    "cubic_in_u3": true,
+    "bezout_complex": 9
+  },
+  "honesty": {
+    "real_plane_z_cubed_is_3_to_1": true,
+    "separable_T3_is_9_to_1_on_minus1_1_square": true,
+    "CR_couples_the_components": true
+  }
+}

@@ -1,0 +1,3 @@
+/verify-rs
+*.o
+/dumps/

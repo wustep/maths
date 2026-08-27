@@ -1,0 +1,150 @@
+{
+  "det": "4uv",
+  "time_rescale": "2uv",
+  "not_adj": true,
+  "adj_is_twice_cl": true,
+  "identity_cl": true,
+  "identity_adj": true,
+  "deg_linear": 3,
+  "deg_quad": 5,
+  "deg_radial": 7,
+  "n_terms_cl_Yu": 8,
+  "n_terms_cl_Yv": 8,
+  "preimages_cl_circle": 4,
+  "preimages_holomorphic": 2,
+  "preimages_t2": 4,
+  "ovals": 4,
+  "beats_T2": false,
+  "equals_T2_sheets": true,
+  "attains_bezout": true,
+  "sheets_gt_linear": true,
+  "beats_H7_74": false,
+  "H7_from_this_field": 4,
+  "published_H7": 74,
+  "Yu_monomials": [
+    {
+      "u": 0,
+      "v": 1,
+      "num": 27,
+      "den": 2
+    },
+    {
+      "u": 0,
+      "v": 3,
+      "num": -7,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 1,
+      "num": -63,
+      "den": 4
+    },
+    {
+      "u": 0,
+      "v": 5,
+      "num": 2,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 3,
+      "num": 4,
+      "den": 1
+    },
+    {
+      "u": 4,
+      "v": 1,
+      "num": 6,
+      "den": 1
+    },
+    {
+      "u": 2,
+      "v": 5,
+      "num": -1,
+      "den": 1
+    },
+    {
+      "u": 6,
+      "v": 1,
+      "num": -1,
+      "den": 1
+    }
+  ],
+  "Yv_monomials": [
+    {
+      "u": 1,
+      "v": 0,
+      "num": 35,
+      "den": 2
+    },
+    {
+      "u": 1,
+      "v": 2,
+      "num": -63,
+      "den": 4
+    },
+    {
+      "u": 3,
+      "v": 0,
+      "num": -9,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 4,
+      "num": 6,
+      "den": 1
+    },
+    {
+      "u": 3,
+      "v": 2,
+      "num": 4,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 0,
+      "num": 2,
+      "den": 1
+    },
+    {
+      "u": 1,
+      "v": 6,
+      "num": -1,
+      "den": 1
+    },
+    {
+      "u": 5,
+      "v": 2,
+      "num": -1,
+      "den": 1
+    }
+  ],
+  "rows": [
+    {
+      "n": 1,
+      "N": 3,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4
+    },
+    {
+      "n": 2,
+      "N": 5,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4
+    },
+    {
+      "n": 3,
+      "N": 7,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4
+    }
+  ]
+}
