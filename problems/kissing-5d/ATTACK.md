@@ -560,3 +560,37 @@ classical Levenshtein number 48 before claiming any comparison.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code. Did not
   claim $\tau_5=40$. Residue.
+
+## 2026-08-27 — continue (q7)
+
+- Start from main after PR #101 (`809cdad`). Folder `compute/q7/`.
+  House rules unchanged: do not claim $\tau_5=40$; a numerical SDP
+  without an exact positivity certificate is residue; covering and
+  `share/2026-08-16` stay frozen.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>
+  (range $40\le\tau_5\le 44$, conjectural value 40; upper bound
+  Mittelmann–Vallentin),
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin; dim 6 is 72 / 77; later-dimension news does
+  not touch dim 5),
+  Mittelmann–Vallentin arXiv:0902.1105v3
+  ($s_{14}(5)=44.99899685\ldots$), HTML
+  <https://ar5iv.labs.arxiv.org/html/0902.1105v3> Table 1,
+  Bachoc–Vallentin arXiv:math/0608426v4,
+  Cohn–Rajagopal arXiv:2412.00937v3 (“the kissing number in five
+  dimensions appears to be 40, although the best upper bound that
+  has been proved is 44”). Survey arXiv:1507.03631.
+- Hunt: empty leftover $|U|=19$ with star-cover at least 5, or empty
+  the 5-star leftover hosts (252 pools, three Aut($D_5$) orbits),
+  with stored native CaDiCaL DRAT; leftover-tight extras B&B past
+  the q6 200M-node cutoff by dropping the $|P|\le 160$ grow cap;
+  exact unrestricted dual below 44. Residue if the interval does
+  not move.
+- Plan: (1) classify 5-star hosts by signed-permutation orbits and
+  SAT leftover-tight CNFs on one representative of each type plus
+  the four q6 $k=32$ cutoff pools; (2) global leftover SAT $k=19$
+  star-cover $\ge 5$ with native CaDiCaL / Kissat; (3) always-on
+  grow prune in `leftover_global.c`; (4) one more $(t-1/2)^p q^2$
+  dual grid, then drop that line if it stays above 44.
