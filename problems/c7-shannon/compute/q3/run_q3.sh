@@ -8,6 +8,9 @@ python3 q2/bound_support.py
 gcc -O3 -o q3/search_cosets_finish q3/search_cosets_finish.c -lm
 ./q3/search_cosets_finish | tee q3/coset_finish_log.txt
 python3 q3/sat_leftover_cosets.py
+python3 q3/verify_unique_sample.py
+gcc -O3 -o q3/search_hamming13 q3/search_hamming13.c
+./q3/search_hamming13 R367.txt | tee q3/hamming13_log.txt
 python3 verify_set.py R367.txt --min-size 367
 if ls q3/R3*.txt >/dev/null 2>&1; then
   for f in q3/R3*.txt; do

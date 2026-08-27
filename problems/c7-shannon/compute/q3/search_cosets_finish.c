@@ -332,9 +332,11 @@ int main(void) {
     clock_t t0 = clock();
     fill_tables();
     remove("q3/coset_leftover.conn");
+    remove("q3/coset_unique.conn");
     FILE *leftover = fopen("q3/coset_leftover.conn", "w");
-    if (!leftover) {
-        fprintf(stderr, "cannot write q3/coset_leftover.conn\n");
+    FILE *unique_f = fopen("q3/coset_unique.conn", "w");
+    if (!leftover || !unique_f) {
+        fprintf(stderr, "cannot write q3 connection dumps\n");
         return 1;
     }
 
@@ -401,6 +403,7 @@ int main(void) {
 
             if (!ht_insert(conn)) continue;
             n_unique++;
+            write_conn(unique_f, conn);
 
             int deg = 0;
             long double hoff = 0;
@@ -466,6 +469,7 @@ int main(void) {
     }
 
     fclose(leftover);
+    fclose(unique_f);
     double sec = (double)(clock() - t0) / CLOCKS_PER_SEC;
     printf("DONE subspaces=%d good=%d unique=%d hoffman_lt8=%d cover_lt8=%d "
            "search_no=%d yes=%d leftover=%d deg[%d,%d] avg_deg=%.1f "
