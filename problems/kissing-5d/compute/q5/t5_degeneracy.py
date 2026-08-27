@@ -417,23 +417,23 @@ def main() -> int:
     if found_35:
         comment = (
             "Proper 35-colouring of the 355-point T^5 remainder.  "
-            "Published 35-cliques give ω = 35, so there is no 36-clique "
-            "in this remainder.  That does not by itself prove τ₅ = 40."
+            "Published 35-cliques give omega = 35, so there is no 36-clique "
+            "in this remainder.  That does not by itself prove tau_5 = 40."
         )
     elif found_36:
         comment = (
             "Greedy produced a proper 36-colouring of the 355-point T^5 "
-            "remainder, so χ ≤ 36.  The four published 35-cliques give "
-            "ω ≥ 35, and q4 found no 35-colouring (χ ≥ 36).  A "
-            "36-colouring does not prove ω = 35 and does not move the "
-            "published range 40 ≤ τ₅ ≤ 44."
+            "remainder, so chi <= 36.  The four published 35-cliques give "
+            "omega >= 35, and q4 found no 35-colouring (chi >= 36).  A "
+            "36-colouring does not prove omega = 35 and does not move the "
+            "published range 40 <= tau_5 <= 44."
         )
     else:
         comment = (
             "No 35- or 36-colouring from the greedy / DSATUR / "
             "degeneracy-order attempts.  Incomplete search, not a lower "
-            "bound on χ.  A d-degenerate graph is (d+1)-colourable; "
-            f"here d = {degeneracy}.  Did not claim τ₅ = 40."
+            "bound on chi.  A d-degenerate graph is (d+1)-colourable; "
+            f"here d = {degeneracy}.  Did not claim tau_5 = 40."
         )
 
     report = {
