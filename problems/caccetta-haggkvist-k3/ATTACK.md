@@ -249,5 +249,5 @@ The survivors (n=73: k=25..33) are not a linear obstruction: the [0,1] relaxatio
 
 ### 2026-08-27 — independent F₄ dump at c=0.3464
 
-Recomputed the 32 F-coordinates of `certs/keep/f4_or_new_certificate.json` without importing `verify_q4_certificate.py`. AC slices from `hkn_replay.ac_slices`; 4Ψ(κ) rebuilt from `flags4.enumerate_labeled` and matched HKN (4.7); fork penalty `12(3c−1)²/0.8616`. Script: `dump_f_coords.py`. Output: `certs/keep/f_coords_0.3464.json`. Did not start SAT.
+Recomputed the 32 F-coordinates of `certs/keep/f4_or_new_certificate.json` without importing `verify_q4_certificate.py`. AC slices from `hkn_replay.ac_slices`; 4Ψ(κ) rebuilt from `flags4.enumerate_labeled` and matched HKN (4.7); fork penalty `12(3c−1)²/0.8616`. Script: `dump_f_coords.py`. Output: `certs/keep/f_coords_0.3464.json`. min eig(Q) = 6.192452827718651e-10; worst F = −0.4190333660408214 at r₃₀; all 32 coordinates < −0.05. Did not start SAT. Did not beat the stored 0.3464 certificate; this is a replay of that file.
 
