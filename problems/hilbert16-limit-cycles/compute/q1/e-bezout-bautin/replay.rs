@@ -78,7 +78,7 @@ fn chebyshev_branches(m: i32, c: f64) -> Vec<f64> {
     assert!(c.abs() < 1.0);
     let ac = c.acos();
     (0..m)
-        .map(|k| ((ac + std::f64::consts::PI * k as f64) / m as f64).cos())
+        .map(|k| ((ac + 2.0 * std::f64::consts::PI * k as f64) / m as f64).cos())
         .collect()
 }
 

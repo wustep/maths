@@ -12,14 +12,17 @@ problems/hilbert16-limit-cycles/compute/q1/e-bezout-bautin/run.sh
 Python derives the identities; Rust expands L1, the constructed
 preimage counts, and two pullback degrees again. The two dumps
 are `diff`ed. Lean 4.32.0 checks T2, the 2×2 adjugate identity,
-and four integer points of two quadrics, without mathlib.
+and that (±1, ±1) lie on both u²+v²=2 and u²−v²=0, without
+mathlib.
 
 Opened this session:
 [arXiv:2604.12883v1](https://arxiv.org/abs/2604.12883) and its
 [HTML](https://arxiv.org/html/2604.12883v1) (Remark 4);
 [Llibre–Valls, EJDE 2025 no. 36](https://ejde.math.txstate.edu/Volumes/2025/36/abstr.html)
 and the [PDF](https://ejde.math.txstate.edu/Volumes/2025/36/llibre.pdf)
-(Theorem 2.2).
+(Theorem 2.2);
+[Yu–Zhang visualization preprint](https://publish.uwo.ca/~pyu/pub/preprints/YZ_IJBC2020.pdf)
+for the unperturbed Shi coefficients.
 
 ## Kept — Bézout ceiling (answers Remark 4 at one step)
 

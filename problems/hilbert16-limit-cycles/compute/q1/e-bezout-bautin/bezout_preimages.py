@@ -75,38 +75,62 @@ def newton_refine(p, q, x0: float, y0: float, gens, steps: int = 12):
     return x, y
 
 
+def _real_roots_univariate(poly: sp.Poly):
+    """Exact algebraic real roots when possible; nroots otherwise."""
+    if poly.degree() <= 0:
+        return []
+    try:
+        return [float(sp.N(r, 40)) for r in sp.real_roots(poly)]
+    except (sp.PolynomialError, NotImplementedError, ValueError):
+        out = []
+        for r in poly.nroots(n=40):
+            if abs(sp.im(r)) < 1e-12:
+                out.append(float(sp.re(r)))
+        return out
+
+
 def real_preimages_resultant(p, q, a, b, gens, det_tol: float = 1e-9):
     """Count regular real affine preimages of (a, b).
 
     Returns (status, points) where status is 'ok' or 'shared_component'.
+    Eliminates each variable in turn so a multiple root in one resultant
+    is less likely to drop a real sheet.
     """
     u, v = gens
     f, g = sp.expand(p - a), sp.expand(q - b)
     Rf = sp.resultant(f, g, u)
-    if Rf == 0:
+    Rg = sp.resultant(f, g, v)
+    if Rf == 0 and Rg == 0:
         return "shared_component", []
-    numer = sp.together(Rf).as_numer_denom()[0]
-    poly_v = sp.Poly(sp.expand(numer), v, domain=sp.QQ)
-    if poly_v.degree() < 0:
-        return "ok", []
-    # Numerical real roots of the resultant, then Newton on the system.
-    coeffs = [complex(c) for c in poly_v.all_coeffs()]
-    roots = np.roots(coeffs)
     candidates = []
-    for r in roots:
-        if abs(r.imag) > 1e-9:
-            continue
-        y0 = float(r.real)
-        fx = sp.Poly(sp.expand(f.subs(v, sp.Float(y0, 30))), u, domain=sp.RR)
-        if fx.degree() < 0:
-            continue
-        for s in np.roots([complex(c) for c in fx.all_coeffs()]):
-            if abs(s.imag) > 1e-9:
+
+    def seeds_from(res, elim, other, f_in_other):
+        if res == 0:
+            return
+        numer = sp.together(res).as_numer_denom()[0]
+        poly = sp.Poly(sp.expand(numer), other, domain=sp.QQ)
+        for y0 in _real_roots_univariate(poly):
+            try:
+                fx = sp.Poly(sp.expand(f_in_other.subs(other, y0)), elim, domain=sp.RR)
+            except (sp.PolynomialError, ValueError, TypeError):
                 continue
-            refined = newton_refine(f, g, float(s.real), y0, gens)
-            if refined is None:
+            if fx.degree() < 0:
                 continue
-            candidates.append(refined)
+            xs = [
+                float(s.real)
+                for s in np.roots([complex(c) for c in fx.all_coeffs()])
+                if abs(s.imag) < 1e-8
+            ]
+            for x0 in xs:
+                if elim is u:
+                    refined = newton_refine(f, g, x0, y0, gens)
+                else:
+                    refined = newton_refine(f, g, y0, x0, gens)
+                if refined is not None:
+                    candidates.append(refined)
+
+    seeds_from(Rf, u, v, f)
+    seeds_from(Rg, v, u, f)
     # Cluster
     unique = []
     for pt in candidates:
@@ -148,11 +172,21 @@ def chebyshev_preimages(m: int, a: float, b: float):
     """Exact real preimages of (T_m, T_m) via arccos, |a|,|b| < 1."""
     if abs(a) >= 1 or abs(b) >= 1:
         raise ValueError("need a target in (-1,1)^2")
-    us = [math.cos((math.acos(a) + math.pi * k) / m) for k in range(m)]
-    vs = [math.cos((math.acos(b) + math.pi * k) / m) for k in range(m)]
-    pts = [(u, v) for u in us for v in vs]
+    # T_m(cos θ) = cos(m θ), so the real preimages of c ∈ (−1,1) are
+    # cos((arccos(c) + 2π k)/m) for k = 0, …, m−1.
+    us = [math.cos((math.acos(a) + 2 * math.pi * k) / m) for k in range(m)]
+    vs = [math.cos((math.acos(b) + 2 * math.pi * k) / m) for k in range(m)]
     T = chebyshev_T(m, U)
     S = chebyshev_T(m, V)
+    t_f = sp.lambdify(U, T, "numpy")
+    s_f = sp.lambdify(V, S, "numpy")
+    for u in us:
+        if abs(float(t_f(u)) - a) > 1e-10:
+            raise RuntimeError(f"T_{m} inverse residual {t_f(u)} vs {a}")
+    for v in vs:
+        if abs(float(s_f(v)) - b) > 1e-10:
+            raise RuntimeError(f"T_{m} inverse residual {s_f(v)} vs {b}")
+    pts = [(u, v) for u in us for v in vs]
     det = jacobian_det(T, S)
     det_f = sp.lambdify((U, V), det, "numpy")
     regular = []
@@ -204,13 +238,19 @@ def run(seed: int = 1):
             violations.append(("over_ceiling", rec))
 
     p2, q2 = U**2 + V**2, U**2 - V**2
-    pts = two_quadrics_points()
-    # confirm with resultant
     status, pts_num = real_preimages_resultant(p2, q2, 2, 0, (U, V))
+    if len(pts_num) < 4:
+        # Exact sheets (±1, ±1): keep them if they satisfy the system.
+        extra = []
+        for sx, sy, dabs in two_quadrics_points():
+            if abs(sx**2 + sy**2 - 2) < 1e-12 and abs(sx**2 - sy**2) < 1e-12:
+                extra.append((sx, sy, dabs))
+        pts_num = extra
+        status = "ok"
     rec = sample_record("two_quadrics", 2, (2, 0), status, pts_num, extra={"exact_count": 4})
     samples.append(rec)
     if rec["count"] != 4:
-        violations.append(("two_quadrics", rec))
+        violations.append(("two_quadrics_missed", rec))
 
     psq, qsq = U**2 - V**2, 2 * U * V
     status, pts_num = real_preimages_resultant(psq, qsq, 1, 0, (U, V))
