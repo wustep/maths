@@ -16,10 +16,13 @@ gcc -O3 -std=c11 -o ../circulant_census ../circulant_census.c
 ../circulant_census 44 | tee logs/circ44.txt | tail -1
 ../circulant_census 45 | tee logs/circ45.txt | tail -1
 
-for g in c2c22 d22 c11c4 c3c15; do
+gcc -O3 -std=c11 -o d22_fast d22_fast.c
+for g in c2c22 c11c4 c3c15; do
   echo "=== cayley $g ==="
   ./cayley_census "$g" | tee "logs/cayley_${g}.txt" | tail -2
 done
+echo "=== cayley d22 (incremental) ==="
+./d22_fast | tee logs/cayley_d22.txt | tail -2
 
 python3 py_cayley.py c11c4
 python3 py_cayley.py c3c15

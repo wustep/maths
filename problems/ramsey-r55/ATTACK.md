@@ -116,11 +116,36 @@ Parent replay `compute/replay.sh` plus `python3 verify_mckay.py`: 328+328 ok, no
 
 q1 searches (code in `compute/q1/`):
 
-- Group laws for $C_2\times C_{22}$, $D_{22}$, $C_{11}\rtimes C_4$, $C_3\times C_{15}$, and $C_3\times C_3\times C_5$: identity, inverses, full associativity (`certs/group_laws.json`).
-- Circulants at 44 and 45 replayed empty (`logs/circ{44,45}.txt`).
-- Cayley, legal degrees from $R(4,5)=25$: $C_2\times C_{22}$ 625004 leaves, 0 hits, 5.16s; $C_{11}\rtimes C_4$ 294262 leaves, 0 hits, 2.77s; $C_3\times C_{15}$ 93976 leaves, 0 hits, 0.92s. Python independently replayed the two smaller zeros. $D_{22}$ still running at the time of this paragraph.
-- No integral strongly regular parameter set on 43 vertices with degree in $[18,24]$ (`certs/srg43_params.json`). $43\not\equiv 1\pmod 4$, so no conference graph either. This excludes an SRG $(5,5,43)$-graph; it is not a bound on $R(5,5)$.
-- Automorphisms of the 656: 424 have $|\mathrm{Aut}|=1$, 232 have $|\mathrm{Aut}|=2$ (an involution), none have a 7-cycle (`certs/aut_mckay.json`, 0.51s, not nauty). A $C_7$-symmetric $(5,5,42)$-graph would therefore be new.
-- $C_7$ encoder self-test on $n=7$ (8 circulants): SAT and `is_ramsey` agree (`certs/c7_selftest.json`).
-- One-flip-then-extend of the 656, radius-2 1-flips, and $C_7$ SAT at 42 and 43: see the later paragraphs in this section and `compute/q1/certs/q1_summary.json`.
+- Group laws for $C_2\times C_{22}$, $D_{22}$, $C_{11}\rtimes C_4$, $C_3\times C_{15}$, and $C_3\times C_3\times C_5$: identity, inverses, full associativity (`q1/certs/group_laws.json`).
+- Circulants at 44 and 45 replayed empty (`q1/logs/circ{44,45}.txt`), 1.70M legal connection sets each.
+- Cayley, legal degrees from $R(4,5)=25$. Hits independently re-checked in Python for the two smaller groups.
+
+| group | order | leaves | pruned | hits | sec |
+|---|---:|---:|---:|---:|---:|
+| $C_{44}$ (circulant) | 44 | 1704794 | — | **0** | 1.29 |
+| $C_2\times C_{22}$ | 44 | 625004 | 359690 | **0** | 5.16 |
+| $C_{11}\rtimes C_4$ | 44 | 294262 | 591004 | **0** | 2.77 |
+| $D_{22}$ (incremental) | 44 | 469925806 | 349496800 | **0** | 406.7 |
+| $C_{45}$ (circulant) | 45 | 1704794 | — | **0** | 0.95 |
+| $C_3\times C_{15}$ | 45 | 93976 | 271560 | **0** | 0.92 |
+
+Python replayed $C_{11}\rtimes C_4$ and $C_3\times C_{15}$ with the same leaf counts (`q1/certs/py_{c11c4,c3c15}.json`). There is no legal-degree undirected Cayley $(5,5)$-graph of order 44 or 45.
+- No strongly regular graph on 43 vertices with degree in $[18,24]$: zero integral parameter sets, and $43\not\equiv 1\pmod 4$ so no conference graph (`q1/certs/srg43_params.json`). This excludes an SRG $(5,5,43)$-graph. It is not a bound on $R(5,5)$.
+- Automorphisms of the 656: 424 have $|\mathrm{Aut}|=1$, 232 have $|\mathrm{Aut}|=2$ (an involution), none have a 7-cycle (`q1/certs/aut_mckay.json`, 0.51s, not nauty). A $C_7$-symmetric $(5,5,42)$-graph would be new.
+- $C_7$ encoder: $n=7$ self-test agrees with `is_ramsey` on all 8 circulants; $n=14$ is SAT and decodes to a $(5,5,14)$-graph with 56 edges. Slim $n=42$ (123 vars) and $n=43$ (129 vars) both `UNKNOWN` at 300s. Isolated SAT timeouts are not a dent.
+- One-flip then extend: 564816 candidate flips, 4080 stay $(5,5,42)$, **0 extensions** (`q1/logs/extend_flips.txt`, 183s). The published 656 do not grow by a 1-flip plus a vertex.
+- Radius-2 legal 1-flips: 22000 survivors, colour-class-size histogram still only the Aut=1 / Aut=2 shapes. Not an isomorphism test.
+
+## 2026-08-27 — result
+
+No 43-vertex $(5,5)$-graph. No 44- or 45-vertex Cayley $(5,5)$-graph. No nonexistence proof at 45. Published record still $43\le R(5,5)\le 46$.
+
+Documented residue, independently replayable from `compute/q1/`:
+
+- None of the 4080 one-flip $(5,5)$ neighbours of the 656 extend.
+- No legal-degree Cayley $(5,5)$-graph on any group of order 44 or 45.
+- No SRG on 43 vertices in the legal degree window.
+- $C_7$ SAT at 42 and 43 timed out. That is not a dent.
+
+Do not cite this folder as a bound. Cert: `compute/q1/certs/q1_summary.json`.
 

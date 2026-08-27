@@ -16,6 +16,6 @@ The diagonal Ramsey number satisfies 43 <= R(5,5) <= 46 as of the April 2026 dyn
 
 A certified 43-vertex Ramsey graph, a nonexistence proof at 45 with an independently checkable log, or a documented incomplete search. Isolated SAT timeouts are not a new bound. Fetch the current Radziszowski bounds before searching.
 
-## Status (2026-08-17)
+## Status (2026-08-27)
 
-Published record still $43\le R(5,5)\le 46$ (Radziszowski rev. 18; Angeltveit–McKay). No endpoint moved. Incomplete search: the 656 McKay graphs independently verified and non-extending; no circulant $(5,5)$-graph on 42–45 vertices; no Cayley $(5,5)$-graph on any group of order 42. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.
+Published record still $43\le R(5,5)\le 46$ (Radziszowski rev. 18, 24 April 2026; Angeltveit–McKay). No endpoint moved. Residue in `compute/q1/`: none of the 4080 one-flip neighbours of the 656 extend; no legal-degree Cayley $(5,5)$-graph on any group of order 44 or 45; no strongly regular graph on 43 vertices in the legal degree window; $C_7$ SAT at 42 and 43 timed out. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.

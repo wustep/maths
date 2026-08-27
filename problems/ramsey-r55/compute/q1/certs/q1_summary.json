@@ -1,0 +1,217 @@
+{
+  "any_43_graph": false,
+  "any_cayley_hit": false,
+  "aut_mckay": {
+    "aut_histogram": {
+      "1": 424,
+      "2": 232
+    },
+    "n_capped": 0,
+    "n_graphs": 656,
+    "n_has_7cycle": 0,
+    "n_has_involution": 232,
+    "n_nontrivial": 232,
+    "n_trivial": 424,
+    "seconds": 0.513
+  },
+  "c7_n14": {
+    "edges": 56,
+    "n": 14,
+    "nclauses": 4004,
+    "nvars": 13,
+    "ok_55": true,
+    "solve_sec": 0.0,
+    "status": "SAT",
+    "time_limit_hint": 180,
+    "total_sec": 0.044,
+    "use_card": false
+  },
+  "c7_n42": {
+    "n": 42,
+    "nclauses_card": 1725498,
+    "nclauses_slim": 1701336,
+    "note": "Cadical195 timeout 180s (card) and 300s (slim). Isolated SAT timeout is not a bound. Encoder self-test on n=7 agrees; n=14 is SAT and (5,5).",
+    "nvars_card": 6273,
+    "nvars_slim": 123,
+    "status": "UNKNOWN",
+    "time_limit_sec": [
+      180,
+      300
+    ],
+    "use_card": [
+      true,
+      false
+    ]
+  },
+  "c7_n43": {
+    "n": 43,
+    "nclauses_slim": 1925196,
+    "note": "Cadical195 timeout 300s on the slim C7 encoding (one fixed vertex, six 7-orbits). Isolated SAT timeout is not a bound.",
+    "nvars_slim": 129,
+    "status": "UNKNOWN",
+    "time_limit_sec": 300,
+    "use_card": false
+  },
+  "c7_selftest": {
+    "agree": true,
+    "brute_55": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+    ],
+    "n": 7,
+    "n_55": 6,
+    "sat": [
+      false,
+      true,
+      true,
+      true,
+      true,
+      true,
+      true,
+      false
+    ]
+  },
+  "cayley": {
+    "c11c4": {
+      "done": "DONE group=c11c4 n=44 scanned=294262 hits=0 pruned=591004 sec=2.774",
+      "hits": 0,
+      "n": 44,
+      "pruned": 591004,
+      "scanned": 294262,
+      "sec": 2.774
+    },
+    "c2c22": {
+      "done": "DONE group=c2c22 n=44 scanned=625004 hits=0 pruned=359690 sec=5.157",
+      "hits": 0,
+      "n": 44,
+      "pruned": 359690,
+      "scanned": 625004,
+      "sec": 5.157
+    },
+    "c3c15": {
+      "done": "DONE group=c3c15 n=45 scanned=93976 hits=0 pruned=271560 sec=0.923",
+      "hits": 0,
+      "n": 45,
+      "pruned": 271560,
+      "scanned": 93976,
+      "sec": 0.923
+    },
+    "d22": {
+      "done": "DONE group=d22 n=44 scanned=469925806 hits=0 pruned=349496800 sec=406.695",
+      "hits": 0,
+      "n": 44,
+      "pruned": 349496800,
+      "scanned": 469925806,
+      "sec": 406.695
+    }
+  },
+  "circulant44": {
+    "done": "DONE n=44 ndist=22 deg=[19,24] scanned=1704794 legal_deg=1704794 hits=0 sec=1.288",
+    "hits": 0,
+    "legal_deg": 1704794,
+    "n": 44,
+    "ndist": 22,
+    "scanned": 1704794,
+    "sec": 1.288
+  },
+  "circulant45": {
+    "done": "DONE n=45 ndist=22 deg=[20,24] scanned=1704794 legal_deg=1704794 hits=0 sec=0.946",
+    "hits": 0,
+    "legal_deg": 1704794,
+    "n": 45,
+    "ndist": 22,
+    "scanned": 1704794,
+    "sec": 0.946
+  },
+  "extend_flips": {
+    "done": "DONE graphs_pairs=328 tried=564816 flip_ok=4080 extensions=0 sec=183.310",
+    "extensions": 0,
+    "flip_ok": 4080,
+    "graphs_pairs": 328,
+    "sec": 183.31,
+    "tried": 564816
+  },
+  "group_laws": {
+    "all_ok": true,
+    "rows": [
+      {
+        "n": 44,
+        "name": "C2xC22",
+        "ninv": 3,
+        "ok": true
+      },
+      {
+        "n": 44,
+        "name": "D22",
+        "ninv": 23,
+        "ok": true
+      },
+      {
+        "n": 44,
+        "name": "C11rtimesC4",
+        "ninv": 1,
+        "ok": true
+      },
+      {
+        "n": 45,
+        "name": "C3xC15",
+        "ninv": 0,
+        "ok": true
+      },
+      {
+        "n": 45,
+        "name": "C3xC3xC5",
+        "ninv": 0,
+        "ok": true
+      }
+    ]
+  },
+  "interval_moved": false,
+  "note": "A HIT Cayley graph of order 44 or 45, or an extend_flips extension, would be a certified new (5,5)-graph and a dent. Isolated SAT timeouts are UNKNOWN, not a bound.",
+  "py_c11c4": {
+    "group": "c11c4",
+    "hits": 0,
+    "n": 44,
+    "ninv": 1,
+    "npairs": 21,
+    "pruned": 591004,
+    "scanned": 294262,
+    "seconds": 142.876
+  },
+  "py_c3c15": {
+    "group": "c3c15",
+    "hits": 0,
+    "n": 45,
+    "ninv": 0,
+    "npairs": 22,
+    "pruned": 271560,
+    "scanned": 93976,
+    "seconds": 33.359
+  },
+  "srg43": {
+    "degree_window": [
+      18,
+      24
+    ],
+    "n": 43,
+    "n_integral": 0,
+    "note": "No integral parameter set in the legal degree window. 43 \u2262 1 (mod 4), so there is also no conference graph. Every SRG is either a conference graph or has integer eigenvalues, so there is no strongly regular graph on 43 vertices with degree in [18,24]. That excludes an SRG (5,5,43)-graph. It is not a bound on R(5,5).",
+    "params": []
+  },
+  "two_flip": {
+    "n_graphs": 656,
+    "n_known_types": 2,
+    "n_radius1": 4080,
+    "n_radius2": 22000,
+    "n_radius2_new_type": 0,
+    "new_sample": [],
+    "note": "Radius-2 walks of legal 1-flips. The 1-WL key is the colour-class-size histogram: Aut=1 (42 singletons) vs Aut=2 (21 pairs). Not an isomorphism test. 1-flip graphs do not extend (extend_flips.c).",
+    "seconds": 19.539
+  }
+}
