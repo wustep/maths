@@ -106,3 +106,15 @@ The fear was that n=21 k=7 would be the n=18 k=1 situation (ten minutes, a gigab
 
 So the finite statement is now checked at n=21, 24, 26, 27, 29, 30, 32, 33, 35, 36. The stored proofs are the DRATs in `compute/q2/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The F₄ number did not move. The first hole not run is n=38.
 
+## 9. 27 August, leftover holes from n=38
+
+The same counting works at n=38. A 13-outregular oriented graph has 494 arcs, so some in-degree is at least 13. The leftover exact orders are those with ⌈n/3⌉ < 0.3465 n and n > 36.
+
+The fear was again that n=38 k=13 would be the n=18 k=1 situation. It was the n=36 k=12 situation: 84 milliseconds, a 370 kB DRAT. Every needed cube through n=72 died the same way, the slowest about two seconds.
+
+One false start: asking kissat to *find* the n=38 d=12 circulant under the lex cut. That search timed out at 60s. The circulant itself is explicit, C₃-free, 12-outregular, and after placing the in- and out-neighbourhoods of 0 it satisfies every arc-variable clause of the cube, including the lex units. So the encoder is not empty at this order. The small-n SAT pair n=21 d=6 k=6 still comes back SAT in 0.15s.
+
+A numerical try: add the missing order-2 type (two vertices, no arc) as a second 9×9 Cauchy–Schwarz block inside F₄. The old certificate at 0.34645 still works. Nothing at 0.346 or below does. The extra SOS is not a new threshold.
+
+The stored proofs are the 534 DRATs in `compute/q3/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The F₄ number did not move. The first hole not run is n=73.
+
