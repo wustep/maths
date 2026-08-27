@@ -283,7 +283,7 @@ Merged `origin/main` into this branch. README Problems/ledger now keep the later
 
 Same encoder as q1–q4. High-k first, kissat 4.0.4, DRAT against a regenerated CNF. New proofs live in `compute/q5/certs/keep/` (q4 stays the n=73–108 store).
 
-Every needed cube at leftover n=109, 110, 111, 112 is UNSAT. 140 stored DRATs, all under 7 MB after `drat-trim -l` cores. Independent replay: `python3 verify_range.py --n-min 109 --n-max 112` in three batches (69+36+35), 0 failures.
+Every needed cube at leftover n=109, 110, 111, 112, 113 is UNSAT. 176 stored DRATs, all under 7 MB after `drat-trim -l` cores. Independent replay: `python3 verify_range.py --n-min 109 --n-max 113` in four batches (69+36+35+36), 0 failures.
 
 | n | d | cubes | DRAT |
 | ---: | ---: | --- | --- |
@@ -291,10 +291,11 @@ Every needed cube at leftover n=109, 110, 111, 112 is UNSAT. 140 stored DRATs, a
 | 110 | 37 | k=37..71 | VERIFIED, stored |
 | 111 | 37 | k=37..72 | VERIFIED, stored |
 | 112 | 38 | k=38..72 | VERIFIED, stored |
+| 113 | 38 | k=38..73 | VERIFIED, stored |
 
-Dent against those finite leftover holes. n=113 was started (35 of 36 cubes UNSAT; k=38 still running; several raw proofs >100 MB). That is residue, not a bound.
+Dent against those finite leftover holes. n=114 was started and is not fully stored. Residue, not a bound.
 
 F₄ hunt below 0.34640 is residue. The stored ray at 0.34640 still replays (worst F=−0.419 at r₃₀). The same (Q,b,cT,cV,d) at 0.34639 is already positive (worst F≈+8.44; HiGHS refit t≈+7.21). Warm Qs and extras at css_beta=0.8616 and 1/(1+0.16065) stay positive at 0.34639 / 0.34638 / 0.34635. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
 
-First remaining hole n=113, δ⁺=38. Conjecture 1/3 open.
+First remaining hole n=114, δ⁺=38. Conjecture 1/3 open.
 

@@ -146,7 +146,7 @@ Opened again before wrapping the leftover-SAT claim against the published record
 
 Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
 
-## 2026-08-27 — wrap re-open (leftover through n=112)
+## 2026-08-27 — wrap re-open (leftover through n=113)
 
 Opened again before wrapping leftover SAT past n=108.
 
