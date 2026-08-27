@@ -103,3 +103,11 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 1. Named false starts — $R\le 9$ with the existing cut; treating $R=9.8$ $n=33$ as the first certificate (predicted $\gamma$ sits $3\cdot 10^{-5}$ above $9.8/10.8$); a PSD+NN shortcut on $M$ (two negative eigenvalues; zeroing off-diagonals does not restore PSD); $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
 
 2. The useful failure — $R=9.8$, $n=32$ still predicts $1.10238$ with $\gamma$ $2.8\cdot 10^{-4}$ below the cut. Raising $n$ at that split pushes $\gamma$ *over* the cut, so the unrestricted number would bind at $1.10204$ and inherit a hairline slack. The safer jump is more bins at the proven split $R=10$.
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=33$ is $0.91122$. Target $0.9111$ minus the $P$ error $0.00369$ gives $\gamma=0.907407$, and $10/11>\gamma$. Then $1/\gamma=1.102041<1.1021<1.1026$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $33$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=33$ faces ($8{,}589{,}934{,}591$, copositive, $2518$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1026$ moves to $1.1021$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.

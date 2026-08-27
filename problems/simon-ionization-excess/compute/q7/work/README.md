@@ -5,5 +5,5 @@
 - `smallz.py` — Lieb still best integers at $Z=2,\ldots,6$.
 - `analyze_M.py` — $M$ has two negative eigenvalues; PSD+NN
   fails; PD-pruning does not beat $2^n$.
-- `lift_notes.md` — compact $\gamma$ past $n=32$ at aspect $10$.
+- `lift_notes.md` — $n=33$ compact $\gamma$ at aspect $10$.
 - Scan and face dumps live in `../certs/`.
