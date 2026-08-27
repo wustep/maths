@@ -232,3 +232,12 @@ So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directe
 A second F₄ Cauchy–Schwarz block on the order-2 non-edge type was tried (`sos_nonedge.py`). The old c=0.34645 still certifies (t=−0.77); at c=0.346 the best t is +73. The extra SOS did not move the threshold. F₄ residue, not a numerical dent.
 
 The first remaining hole is n=73, δ⁺=25. The conjecture 1/3 is open. Did not treat 0.3388 as published.
+
+## 2026-08-27 — q4, first leftover hole n=73
+
+Continue from the q3 certificates through n=72. Code is `compute/q4/`. Published unrestricted threshold is still HKN Combinatorica 0.3465. Do not treat 0.3388 as published. The stored F₄ certificate at 0.34645 is not to be moved unless a new inequality appears.
+
+After n=72, the first remaining exact order is n=73, δ⁺=25 (0.3465·73 = 25.2945 > 25). A 25-outregular oriented graph on 73 vertices has 1825 arcs, so some in-degree is at least 25. Same encoder as q1/q2/q3: cubes k=|N⁻(0)|. Counting on N⁺(0) empties k=47. The statement reduces to k=25..46.
+
+A DRAT/UNSAT on every needed cube at n=73 (and as many later holes as finish), or a verified C₃-free 25-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound. A new F₄/F₆ certificate with some c < 0.34645 would be a numerical dent.
+
