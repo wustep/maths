@@ -1,0 +1,10 @@
+verify_q2
+*.o
+search.log
+certs/*.txt
+certs/best.json
+candidates/lift-*.json
+candidates/grow-*.json
+candidates/resample-m48-start.json
+candidates/resample-m48-blocks.json
+candidates/extra-*.json

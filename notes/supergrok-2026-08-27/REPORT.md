@@ -61,3 +61,76 @@ Certified in `problems/kissing-5d/compute/q1/`:
 Replay: `sh problems/kissing-5d/compute/q1/run_all.sh`.
 
 Does not claim $\tau_5=40$.
+
+## kissing-5d / q2
+
+Continuation the same day. Search lives in `compute/q2/`.
+
+Published range still $40\le\tau_5\le 44$ (Tao $C_{29}$, Cohn table,
+Mittelmann–Vallentin $s_{14}(5)=44.998\ldots$). The unaffiliated
+Zenodo $44.0297$ note is retracted.
+
+Replayed first: `compute/certs/restricted_delsarte.json` (bounds 42
+and $239925/5456$) and the q1 polar / $T_{Q_5}$ integer certificates.
+
+No unrestricted dual below 44. Numerical Delsarte is $46.3368\ldots$.
+Exact $(t-1/2)q(t)^2$ duals exist (best searched $53235/1109\approx 48.003$).
+No 41-point code. Finite graphs with no 41-clique: the 355-point $T^5$
+remainder, the 200-point half-integer sphere, the 320-point $Q_5$-cap
+orbit. The 36-clique hunt that would give a 41-set via five universal
+basis vectors, and the 1480-point $(1/4)\mathbb Z^5$ graph, did not
+finish.
+
+Replay: `sh problems/kissing-5d/compute/q2/run_all.sh`.
+
+Does not claim $\tau_5=40$. The unrestricted interval did not move.
+
+## union-closed / q1
+
+Continuation of the 2026-08-17 SuperGrok campaign on
+`problems/union-closed`. Search lives in `compute/q1/`.
+
+Published quoted constant is still Liu arXiv:2306.08824,
+0.382709 under two numerical hypotheses. The 2026-08-17 repo
+number on `{b,1}` was 0.38285 at mix weight `β = 1/5`.
+
+On that same family, pure Example 4 (`β = 1`) has first-crossing
+equal to the critical point of `1 − (1−b)h(b)`:
+
+    h(b) = (1−b) log₂((1−b)/b)
+
+which evaluates to 0.3830513565868…. Certified 5-decimal constant
+0.38304; mesh min ratio 1.000021687 (Python and C). Replay
+`cd problems/union-closed/compute/q1 && ./run_all.sh`.
+
+Does not claim 1/2. Does not claim every measure on [0,1].
+
+## two-smooth-summands / q1
+
+Continuation of the 2026-08-17 campaign. Search lives in
+`problems/two-smooth-summands/compute/q1/`.
+
+Published record still Balog 1989,
+$F(n)\ll_\varepsilon n^{4/(9\sqrt{e})+\varepsilon}$. Green #59 and
+Erdős #334 still open. No exponent below Balog. No infinite covering
+at any $\varepsilon<1/2$.
+
+Certified in that folder: closed-form templates fail through
+$n=20000$ at $9/20$, $2/5$, $1/3$, $27/100$; floor-divisor and
+largest-power-of-two have explicit infinite failure families;
+polynomial values of degree $d\ge 2$ cannot beat the square covering
+by size; two-factor $u\le n^{1/5}$ matches the known $F$ exception
+prefixes (sixteen at $2/5$, last $479$; seventy-six at $1/3$, last
+$18191$).
+
+Replay:
+
+```
+cd problems/two-smooth-summands/compute
+python3 verify_all.py
+cc -O3 -std=c11 -o g_of_y_c g_of_y.c
+./g_of_y_c 61 6077111 200000
+cd q1 && ./run_all.sh
+```
+
+Does not claim Green #59.
