@@ -8,8 +8,11 @@ sh compute/q7/run_all.sh
 
 The published range is still $40\le\tau_5\le 44$. After the four-star
 leftover emptiness, this folder records the leftover $n_1\le 21$ slice
-of the 1480-point $(1/4)\mathbb Z^5$ graph with star-cover at least 5,
-and a parallel hunt for an exact unrestricted dual below 44.
+of the 1480-point $(1/4)\mathbb Z^5$ graph with star-cover at least 5.
+Type-$(2,1)$ and type-$(1,3)$ five-star leftover hosts are empty
+(native CaDiCaL DRAT verified; Aut orbits in `orbits.json`). The
+type-$(0,5)$ hosts and the global $|U|=19$ SAT did not finish. No
+unrestricted dual below 44.
 
 Signed permutations of the coordinates act transitively on each of the
 three 5-star host types (`orbits.json`). Leftover-tight SAT on a

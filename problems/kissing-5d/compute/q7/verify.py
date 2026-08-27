@@ -154,6 +154,7 @@ def main() -> int:
         "leftover_sat.json",
         "leftover_sat_status.json",
         "leftover_global.json",
+        "leftover_global_mode3.json",
         "dual_more.json",
         "replay_five_star.json",
     ):

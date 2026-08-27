@@ -620,7 +620,10 @@ classical Levenshtein number 48 before claiming any comparison.
   cost; remaining missed-union is cheap. With the type-$(2,1)$
   5-star prune (`five_mode=2`) the same search ran $20{,}000{,}000{,}001$
   nodes in $3594$ seconds, no 41-set, incomplete
-  (`leftover_global.json`). Past the q6 200M cutoff; still residue.
+  (`leftover_global.json`). five_mode $3$ (types $(2,1)$ and
+  $(1,3)$, $220$ unions) ran another $20$G nodes in $4272$
+  seconds, no 41-set, incomplete (`leftover_global_mode3.json`).
+  Past the q6 200M cutoff; still residue.
 - $k=31$ leftover-tight SAT is UNSAT with a verified native DRAT
   (`five_k31_n1_3`: $40{,}611{,}860$ conflicts, DRAT
   $4{,}134{,}873{,}401$ bytes, `drat-trim` $15{,}253{,}402$ of
@@ -628,5 +631,9 @@ classical Levenshtein number 48 before claiming any comparison.
   steps). Combined with Aut transitivity this empties all 160
   type-$(1,3)$ five-star leftover hosts. Remaining 5-star leftover
   hosts are the 32 type-$(0,5)$ pools.
-- $k=30$ and global leftover SAT $k=19$ are still running. Residue
-  until those certificates land. Did not claim $\tau_5=40$.
+- $k=30$ leftover-tight SAT and global leftover SAT $k=19$ were
+  still writing native DRATs when this pass wrapped (past $9$ GB
+  and $7$ GB). Incomplete. Residue, not a lower bound.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
+  beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
+  not claim $\tau_5=40$. Residue.
