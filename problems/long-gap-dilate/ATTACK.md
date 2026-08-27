@@ -249,16 +249,18 @@ cheap; the first timeout is the wall.
 
 | p | n | G_upper | ratio | first timeout T | shakan |
 | --- | --- | --- | --- | --- | --- |
-| 73 | 9 | 24 | 2.959 | 24 (90s; also Glucose42, Cadical) | 14.22 |
+| 73 | 9 | 24 | 2.959 | **exact** $G=24$ (Cadical UNSAT at $T=24$ in 165s) | 14.22 |
 | 79 | 9 | 26 | 2.962 | 26 (60s) | 15.56 |
 | 83 | 9 | 27 | 2.928 | 27 (60s) | 16.44 |
 | 89 | 9 | 30 | 3.034 | 30 (60s) | 17.78 |
 
-Witnesses in `q1/certs/sat_extend.jsonl`. Cadical proved $T=23$
-UNSAT at $p=73$ in 54s, so $23\le G(73,9)\le 24$, but $T=24$ timed
-out on three solvers. Isolated timeout = residue. The exact table
-still ends at $p=71$. No lifting pattern: the new upper ratios sit
-on the same $2.93$–$3.03$ plateau as $G(71,8)/(p/n)=2.93$.
+Witnesses in `q1/certs/sat_extend.jsonl`. Cadical proved $T=24$
+UNSAT at $p=73$ in 165s after a 90s timeout on Glucose4/42, so
+$G(73,9)=24$ is exact (ratio $2.959$). That row is in
+`compute/certs/sat_G.jsonl`. The next primes still have only upper
+bounds; those timeouts are residue. No lifting pattern: $24$ sits
+on the same $2.93$–$3.03$ plateau as $G(71,8)/(p/n)=2.93$. One new
+exact row is not a universal $C>2$.
 
 ## 2026-08-27 — no $C\to 2$ family through $p=199$
 
@@ -273,10 +275,10 @@ $\max_d g\le(2+\varepsilon)\sqrt p$.
 ## 2026-08-27 — stop
 
 No certified universal $C>2$. No construction that meets Shakan on
-infinitely many primes. No exact SAT row past $p=71$, so no lifting
-argument. Shakan’s 2 is still the published leading constant. The
-q1 leftover is a degree-saturation of the rising factorials, SAT
-upper bounds $G\le 24,26,27,30$ at $p=73,79,83,89$, a Cadical
-UNSAT giving $G(73,9)\ge 23$, and a construction table through
-$p=199$. The live handle is no longer “expand $w$ and read degrees”;
-those degrees are full.
+infinitely many primes. Exact $G(73,9)=24$ extends the table by one
+prime and does not lift. Shakan’s 2 is still the published leading
+constant. The q1 leftover is a degree-saturation of the rising
+factorials, that one new exact row, SAT upper bounds at
+$p=79,83,89$, and a construction table through $p=199$. The live
+handle is no longer “expand $w$ and read degrees”; those degrees
+are full.

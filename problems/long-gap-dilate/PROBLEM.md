@@ -32,9 +32,9 @@ an incomplete search unless they imply a larger universal $C$.
 ## Outcome
 
 Incomplete search. Shakan’s 2 is still the published leading constant.
-Exact $G(p,\mathrm{round}\sqrt p)$ still ends at $p=71$. The search in
-`compute/q1/` saturates the rising-factorial Alon degrees, gives a
-SAT upper bounds $G(73,9)\le 24$, $G(79,9)\le 26$,
-$G(83,9)\le 27$, $G(89,9)\le 30$ without certified floors (Cadical
-gives $G(73,9)\ge 23$), and finds no $C\to 2$ family through
-$p=199$. Residue, not a dent.
+Exact $G(p,\mathrm{round}\sqrt p)$ now includes $G(73,9)=24$
+(Cadical unsat at $T=24$, Glucose4 witness at $T=25$). Upper bounds
+$G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$ have no certified
+floors. The search in `compute/q1/` saturates the rising-factorial
+Alon degrees and finds no $C\to 2$ family through $p=199$. One new
+exact row is not a universal $C>2$. Residue, not a dent.

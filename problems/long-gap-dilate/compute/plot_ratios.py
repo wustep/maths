@@ -23,7 +23,7 @@ def main():
     ax.plot(p, sh_mean, ":", color="0.45", label="Shakan 2(1-n/p)")
     ax.set_xlabel("prime p")
     ax.set_ylabel("ratio")
-    ax.set_title("Exact min-max dilate gap, p <= 71 (SAT, enum-checked to p=41)")
+    ax.set_title("Exact min-max dilate gap, p <= 73 (SAT, enum-checked to p=41)")
     ax.legend(frameon=False)
     ax.set_ylim(1.0, 3.4)
     fig.tight_layout()

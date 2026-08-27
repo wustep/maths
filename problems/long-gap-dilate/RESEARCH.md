@@ -95,7 +95,8 @@ compute/.venv/bin/python compute/enum_diagonal.py
 ## What we computed (residue, not a bound)
 
 Exact $G(p,n)=\min_{|A|=n}\max_d g(dA)$ for $n=\mathrm{round}\sqrt p$,
-primes $p\le 71$, by SAT (hits-every-$T$-AP), Glucose4:
+primes $p\le 73$, by SAT (hits-every-$T$-AP). Through $p=71$ this is
+Glucose4; $p=73$ is Glucose4 SAT plus Cadical unsat:
 
 | p | n | G | 2p/n−2 | G/(p/n) | G/√p |
 | --- | --- | --- | --- | --- | --- |
@@ -105,6 +106,7 @@ primes $p\le 71$, by SAT (hits-every-$T$-AP), Glucose4:
 | 47 | 7 | 18 | 11.43 | 2.681 | 2.626 |
 | 53 | 7 | 22 | 13.14 | 2.906 | 3.022 |
 | 71 | 8 | 26 | 15.75 | 2.930 | 3.086 |
+| 73 | 9 | 24 | 14.22 | 2.959 | 2.809 |
 
 On this range $G/\sqrt p$ lives in $[2.18,3.09]$ and extra above
 Shakan is order $n$. That is compatible with a hidden leading 3 and
@@ -138,12 +140,12 @@ cd compute/q1 && ./run_all.sh
 
 - Rising $w$ at $p=11,13$ and $m=G+1$: remainder 0, Alon degrees of
   $u,v$ equal $k=nm-p+1$. Cert: `compute/q1/certs/wronskian_slice.json`.
-- SAT upper bounds, Glucose4 walk, hard 60–90s kill:
-  $G(73,9)\le 24$, $G(79,9)\le 26$, $G(83,9)\le 27$,
-  $G(89,9)\le 30$. Cadical: $T=23$ UNSAT at $p=73$ in 54s, so
-  $23\le G(73,9)\le 24$; $T=24$ timed out on Glucose4, Glucose42,
-  Cadical. Certs: `compute/q1/certs/sat_extend.jsonl`,
-  `sat_alt_73.jsonl`. Not an exact census past $p=71$.
+- Exact $G(73,9)=24$: Glucose4 SAT at $T=25$, Cadical UNSAT at
+  $T=24$ in 165s. Row appended to `compute/certs/sat_G.jsonl`.
+  Independent recomputation of the witness: `verify_sat_witnesses.py`.
+  Upper bounds $G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$
+  timed out on the next smaller $T$. Certs:
+  `compute/q1/certs/sat_extend.jsonl`, `sat_alt_73.jsonl`.
 - Constructions through $p=199$: best diagonal ratios $3.3$–$5.3$
   past $p=50$. No family at $2+\varepsilon$.
   `compute/q1/certs/constructions_best.json`.
@@ -156,4 +158,4 @@ cd compute/q1 && ./run_all.sh
 - A construction showing that 2 is sharp.
 - A use of the rising-factorial structure that improves the Wronskian
   degree.
-- An exact $G$ row past $p=71$ that lifts to an infinite family.
+- An exact $G$ row past $p=73$ that lifts to an infinite family.

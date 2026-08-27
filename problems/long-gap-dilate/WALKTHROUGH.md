@@ -8,7 +8,7 @@ Discovery notes, not a paper. Empty sections would mean not done.
 - Date: 2026-08-17
 - Argument status: no certified $C>2$. Leftover is a verified SAT table
   through $p=71$, a degree-wall (homogeneous and rising-factorial), a
-  SAT upper bounds past $p=71$ without floors, and failed lifts
+  exact $G(73,9)=24$, SAT upper bounds at $p=79,83,89$, and failed lifts
 - Problem status: open
 
 ## 0. What was actually missing
@@ -161,10 +161,11 @@ $n$, Dirichlet gives $G(p,n)=p-o(p)$, so the Shakan constant $2$
 is not sharp at bounded size. This is the regime $|A|\le c\log p$.
 
 **Certified computation, not a bound.** For every prime
-$17\le p\le 71$ and $n=\mathrm{round}\sqrt p$,
+$17\le p\le 73$ and $n=\mathrm{round}\sqrt p$,
 $G(p,n)\ge 2.1\sqrt p$, with an independently checked witness of
 size $n$ and (for $p\le 41$) an exhaustive proof that nothing
-smaller-gap exists. This is a finite list.
+smaller-gap exists. $G(73,9)=24$ is SAT plus Cadical unsat, not
+enum. This is a finite list.
 
 **Still open.** Green #32: is there a universal $C=100$, or even a
 universal $C=2.01$, such that every $A$ of size $\sim\sqrt p$
@@ -181,12 +182,12 @@ $k\ge p$. The extra Stirling slice is the derivative of the top
 slice. There is nothing left in that polynomial to contradict at
 $C>2$.
 
-SAT past $p=71$ is cheap on the SAT side and unpaid on the UNSAT
-side. $G(73,9)\le 24$, $G(79,9)\le 26$, $G(83,9)\le 27$,
-$G(89,9)\le 30$ are witnesses, not a census. Cadical rules out
-$T=23$ at $p=73$, so that value is $23$ or $24$, still not exact.
+SAT past $p=71$ is cheap on the SAT side. Cadical finished the
+UNSAT at $T=24$ for $p=73$ in 165s, so $G(73,9)=24$ is exact.
+$G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$ are still only
+witnesses. One extra exact row does not lift to a universal $C>2$.
 Constructions through $p=199$ drift up to ratio $4$–$5$, not down
-to $2$. The new SAT upper ratios stay near $3$, same as $p=71$.
+to $2$. The new ratios stay near $3$, same as $p=71$.
 
 Replay: `sh problems/long-gap-dilate/compute/run_all.sh` and
 `cd problems/long-gap-dilate/compute/q1 && ./run_all.sh`.

@@ -1,33 +1,22 @@
 {
   "p": 73,
   "n": 9,
-  "shakan": 14.222222222222221,
+  "G": 24,
   "G_upper": 24,
-  "note": "SAT witnesses only. G <= 24. Floor not certified; T=24 was still open or timed out in q1.",
-  "rows": [
-    {
-      "T": 27,
-      "sat": true,
-      "sec": 0.021,
-      "g": 26,
-      "d": 1,
-      "A": [0, 1, 14, 31, 58, 59, 62, 66, 71]
-    },
-    {
-      "T": 26,
-      "sat": true,
-      "sec": 0.023,
-      "g": 25,
-      "d": 2,
-      "A": [0, 1, 14, 27, 29, 33, 58, 63, 68]
-    },
-    {
-      "T": 25,
-      "sat": true,
-      "sec": 0.161,
-      "g": 24,
-      "d": 2,
-      "A": [0, 1, 2, 7, 13, 24, 40, 57, 60]
-    }
-  ]
+  "exact": true,
+  "shakan": 14.222222222222221,
+  "note": "Cadical UNSAT at T=24 (164.7s) and SAT witness at T=25. G(73,9)=24.",
+  "witness": [
+    0,
+    1,
+    2,
+    7,
+    13,
+    24,
+    40,
+    57,
+    60
+  ],
+  "witness_g": 24,
+  "witness_d": 2
 }

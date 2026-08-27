@@ -17,18 +17,24 @@ def check_sat_upper(path: Path) -> list[dict]:
         return []
     data = json.loads(path.read_text())
     p, n = data["p"], data["n"]
-    best = data["G_upper"]
-    for row in data["rows"]:
-        A = uniq_mod(row["A"], p)
-        if len(A) != n:
-            bad.append({"tag": "upper-n", "T": row["T"]})
-            continue
+    if "rows" in data:
+        best = data["G_upper"]
+        for row in data["rows"]:
+            A = uniq_mod(row["A"], p)
+            if len(A) != n:
+                bad.append({"tag": "upper-n", "T": row["T"]})
+                continue
+            g, _ = max_gap_dilates(A, p)
+            if g != row["g"] or g >= row["T"]:
+                bad.append({"tag": "upper-g", "T": row["T"], "g": g})
+        got_best = min(row["g"] for row in data["rows"])
+        if got_best != best:
+            bad.append({"tag": "upper-best", "g": got_best, "best": best})
+    else:
+        A = uniq_mod(data["witness"], p)
         g, _ = max_gap_dilates(A, p)
-        if g != row["g"] or g >= row["T"]:
-            bad.append({"tag": "upper-g", "T": row["T"], "g": g})
-    got_best = min(row["g"] for row in data["rows"])
-    if got_best != best:
-        bad.append({"tag": "upper-best", "g": got_best, "best": best})
+        if g != data.get("G", data.get("G_upper")) or len(A) != n:
+            bad.append({"tag": "upper-witness", "p": p, "g": g})
     return bad
 
 

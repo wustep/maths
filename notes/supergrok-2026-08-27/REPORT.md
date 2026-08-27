@@ -72,10 +72,10 @@ The list id arXiv:2205.14038 is the Weyl-equation paper, not Shakan.
 Parent `compute/run_all.sh` still replays.
 
 Did not beat Shakan’s universal 2. Rising-factorial Alon degrees
-equal the worst-case $k$ on $p=11,13$. SAT upper bounds
-$G(73,9)\le 24$, $G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$;
-Cadical gives $G(73,9)\ge 23$. No exact row past $p=71$. No
-$C\to 2$ family through $p=199$.
+equal the worst-case $k$ on $p=11,13$. Exact $G(73,9)=24$ (Cadical
+unsat at $T=24$). SAT upper bounds $G(79,9)\le 26$,
+$G(83,9)\le 27$, $G(89,9)\le 30$. No $C\to 2$ family through
+$p=199$.
 
 Replay:
 

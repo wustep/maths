@@ -2,10 +2,11 @@
   {
     "p": 73,
     "n": 9,
+    "G": 24,
     "G_upper": 24,
     "sat_T": 25,
-    "exact": false,
-    "unknown": true,
+    "exact": true,
+    "unknown": false,
     "witness": [
       0,
       1,
@@ -18,9 +19,9 @@
       60
     ],
     "witness_g": 24,
-    "witness_d": 2,
     "shakan": 14.222222222222221,
-    "ratio_mean_upper": 2.958904109589041,
+    "ratio_mean": 2.958904109589041,
+    "unsat_T": 24,
     "log": [
       {
         "T": 25,
@@ -36,14 +37,20 @@
         "sat": null,
         "timeout": true,
         "sec": 90.0926
+      },
+      {
+        "T": 24,
+        "sat": false,
+        "timeout": false,
+        "sec": 164.668,
+        "solver": "cadical"
       }
-    ],
-    "solver": "glucose4",
-    "timeout": 90.0
+    ]
   },
   {
     "p": 79,
     "n": 9,
+    "G": null,
     "G_upper": 26,
     "sat_T": 27,
     "exact": false,
@@ -60,9 +67,9 @@
       74
     ],
     "witness_g": 26,
-    "witness_d": 1,
     "shakan": 15.555555555555557,
-    "ratio_mean_upper": 2.962025316455696,
+    "ratio_mean": 2.962025316455696,
+    "unsat_T": null,
     "log": [
       {
         "T": 32,
@@ -124,13 +131,12 @@
         "timeout": true,
         "sec": 60.0652
       }
-    ],
-    "solver": "glucose4",
-    "timeout": 60.0
+    ]
   },
   {
     "p": 83,
     "n": 9,
+    "G": null,
     "G_upper": 27,
     "sat_T": 28,
     "exact": false,
@@ -147,9 +153,9 @@
       82
     ],
     "witness_g": 27,
-    "witness_d": 1,
     "shakan": 16.444444444444443,
-    "ratio_mean_upper": 2.927710843373494,
+    "ratio_mean": 2.927710843373494,
+    "unsat_T": null,
     "log": [
       {
         "T": 32,
@@ -202,13 +208,12 @@
         "timeout": true,
         "sec": 60.0185
       }
-    ],
-    "solver": "glucose4",
-    "timeout": 60.0
+    ]
   },
   {
     "p": 89,
     "n": 9,
+    "G": null,
     "G_upper": 30,
     "sat_T": 31,
     "exact": false,
@@ -225,9 +230,9 @@
       88
     ],
     "witness_g": 30,
-    "witness_d": 3,
     "shakan": 17.77777777777778,
-    "ratio_mean_upper": 3.033707865168539,
+    "ratio_mean": 3.033707865168539,
+    "unsat_T": null,
     "log": [
       {
         "T": 32,
@@ -253,8 +258,6 @@
         "timeout": true,
         "sec": 60.0448
       }
-    ],
-    "solver": "glucose4",
-    "timeout": 60.0
+    ]
   }
 ]
