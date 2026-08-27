@@ -240,6 +240,36 @@ log — none of them touches the degree-8 census.
   and with a quartic (partial) on compact real surfaces; Bézout
   obstructions, Viro patchworking, a Julia library `NWT`. Not degree 8.
 
+## 2026-08-27 — freshness check (q1)
+
+Re-fetched the record before any new search. **Nothing about degree 8
+moved.** `python3 scripts/arxiv_fetch.py 2602.06888v3` returns
+**v3, 27 Jul 2026**, title *Limits of combinatorial patchworking*,
+43 pages, "major revision". Abs
+<https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still says
+**2,367** nonempty degree-8 T-curve schemes, "as the search is not
+exhaustive, this is a lower bound"; 38 of 89 M-schemes T-realised;
+Theorem 21 still restricts maximal T-curves to
+\((p,n)\in\{(19,3),(15,7),(11,11),(7,15)\}\); Question 39 still leaves
+39 M-schemes undecided. A request for
+<https://arxiv.org/abs/2602.06888v4> does not produce a v4 paper (the
+fetcher landed on the old v1 title). arXiv:2604.09221 is still **v1**
+(10 Apr 2026),
+<https://arxiv.org/abs/2604.09221>. `dmg-lab/CombinatorialPatchworking`
+HEAD is still `e85b809` (2026-07-21, merge of PR #1); no later commit.
+Parent `sh run_all.sh` this session: **2,367/2,367** certificates
+replay, **17/17** outside the census, Haas 38/38, C/Python agreement
+on ranks 6, 10, 12, 13, 16.
+
+A DOML 2026 slide deck by Spiegel,
+<https://christophspiegel.berlin/assets/slides/DOML_2026.pdf>, prints
+"at least 2,368 isotopy types of degree 8" including 38 M-curves.
+That is a talk slide, not a paper. The v3 text says 2,367 *nonempty*
+schemes; counting the empty scheme would make 2,368. Not treated as a
+census update. No new paper found that realises or excludes any of
+the six algebraically open M-schemes.
+
 Checked and **not** relevant to degree 8, recorded so the next check can
 skip them: E. Pasquereau, *On the topology of T-manifolds of higher
 codimension*, arXiv:2602.14988 (16 Feb 2026),

@@ -1,0 +1,10 @@
+{
+ "what": "Exhaustive Hamming radius-4 balls around every 20-oval census certificate (237 seeds).",
+ "radius": 4,
+ "seeds": 237,
+ "complete": 237,
+ "evals": 38920377,
+ "novel": [],
+ "distinct_schemes_min": 56,
+ "distinct_schemes_max": 1019
+}

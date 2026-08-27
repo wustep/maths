@@ -1,0 +1,19 @@
+{
+ "what": "BFS of even-split add/drop/swap that never drops an odd split, starting from the five published (19,3) collections and the Prop 31 bow-tie collection. Theorem 17 keeps (p,n) fixed.",
+ "pin_odd": true,
+ "evals": 200000,
+ "limit": 200000,
+ "queue_left": 196799,
+ "distinct_schemes": 5,
+ "new": 0,
+ "hits": 0,
+ "best_score": 6.0,
+ "best_scheme": "<17 u 1<2 u 1<1>>>",
+ "schemes": [
+  "<10 u 1<2 u 1<8>>>",
+  "<16 u 3<1>>",
+  "<17 u 1<1> u 1<2>>",
+  "<17 u 1<2 u 1<1>>>",
+  "<18 u 1<3>>"
+ ]
+}

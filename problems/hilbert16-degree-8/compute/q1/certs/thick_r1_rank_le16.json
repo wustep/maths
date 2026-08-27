@@ -1,0 +1,24 @@
+{
+ "what": "Radius-1 thicken of the Haas maximal stratum on every census triangulation of twist-rank at most 16 (the cheap prefix of the leftover 164).",
+ "scope_rank_max": 16,
+ "triangulations": 107,
+ "complete": 107,
+ "ranks": {
+  "6": 1,
+  "10": 5,
+  "11": 7,
+  "12": 12,
+  "13": 23,
+  "14": 19,
+  "15": 11,
+  "16": 29
+ },
+ "evals": 130151296,
+ "novel_vs_census": [
+  "<4 u 1<3> u 1<12>>"
+ ],
+ "already_certified": [
+  "<4 u 1<3> u 1<12>>"
+ ],
+ "new_schemes": []
+}

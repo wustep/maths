@@ -144,3 +144,33 @@ that already contains two published T-curves, so the target is a move
 along an occupied row rather than a new class. Details in ATTACK.md.
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-27)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. q1 produced no candidate
+for a new scheme.
+
+The leftover whole-stratum thicken is no longer 4 of 164. Radius 1
+around the maximal Haas stratum finished every census triangulation
+of twist-rank at most 20 (164/164, 1,438,512,000 sign distributions,
+exactly \(46\cdot 2^r\) on each,
+`compute/q1/certs/thick_r1_rank_le20.json`). Every scheme outside
+the published 2,367 is already one of the seventeen. Neither open
+nest appeared. That is a finished sweep of the intended leftover,
+not a lower bound. The twenty census triangulations of rank 21–26
+were never in that leftover.
+
+Collection space: the one-split neighbourhood of all 38 published
+M-collections is exactly those 38 (`compute/q1/certs/dn_nbhd.json`).
+The two-split ladder around all twelve depth-3 M-collections is
+also finished and adds nothing (`compute/q1/certs/dn_ladder.json`).
+Nested odd pairs on the five published (19,3) collections hit
+neither open nest; the a=10 nest admits no compatible nested odd
+pair. Even-only walks stay on the five known (19,3) M-schemes.
+Neither open nest is decided.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q1/run_all.sh && python3 q1/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.
