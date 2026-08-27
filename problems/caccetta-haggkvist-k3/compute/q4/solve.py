@@ -159,6 +159,19 @@ def run_one(
                 dest = KEEP / proof_path.name
                 shutil.copy2(proof_path, dest)
                 rec["keep"] = str(dest.name)
+                if dest.stat().st_size >= 8 * 1024 * 1024:
+                    from trim_keep import trim_keep_file
+
+                    parts = dest.stem.split("-")
+                    if len(parts) >= 4 and parts[3].startswith("k"):
+                        n_keep, d_keep, k_keep = (
+                            int(parts[1]),
+                            int(parts[2]),
+                            int(parts[3][1:]),
+                        )
+                        trim_rec = trim_keep_file(n_keep, d_keep, k_keep)
+                        rec["trimmed"] = trim_rec
+                        rec["drat_bytes"] = dest.stat().st_size
     return rec
 
 
