@@ -22,3 +22,30 @@ Certified on the polished family-A pair (Python panel, then Rust recomputation):
 - $K_1/K_1^{\mathrm{cl}}\ge 0.47187$
 
 That is a dent of the published $1.456$. It is not the Sobolev value $2/\sqrt{3}$ and it is not a closed form. Replay: `problems/simon-lieb-thirring/compute/q1/run_all.sh`. Lean proves only the algebraic conversion, in `lean/FhjnProp10Conversion.lean`.
+
+## 2026-08-27 (later the same day)
+
+Replayed q1 on this branch: `compute/q1/run_all.sh` exited 0. Paper Lemma 11 second pair still does not convert below $1.456$. Family A still certifies $\mathcal{C}_1\le 0.373548$, $L/L^{\mathrm{cl}}\le 1.45576$. Covering stayed frozen.
+
+The 1.456 record was already beaten. Carvalho Corso–Ried, arXiv:2403.04347, v1 7 Mar 2024 and v2 21 Dec 2024 (“corrected a few typos”), Corollary 1.7 and Table 1.1 state $L_{1,1,1}/L^{\mathrm{cl}}\le 1.44655$ from $M_3=0.371185695$. The abstract does not contain $1.44655$; that is why the q1 title/abstract search missed it. Identification (1.12) is $\mathcal{C}_{1,1}=M_3$. They present this as the method ceiling.
+
+A float replay of Theorem 1.3 / Lemma 4.6 (`compute/q2/replay_m3.py`) matches the table: $M_3=0.371185694940$, $L/L^{\mathrm{cl}}=1.446553086$. Their Lemma 11-style second pair is not involved.
+
+Carvalho Corso, arXiv:2407.10117v2, Corollary 1.8, writes the same bound as
+
+$$
+\frac{L_{1,1,1}}{L^{\mathrm{cl}}}\le\frac{\pi}{3}\exp\Bigl(\frac{3\,\mathrm{CI}_2(2\pi/3)}{2\pi}\Bigr)
+$$
+
+and rounds it to $1.447$. The Clausen value is the sine series
+$\mathrm{CI}_2(2\pi/3)=(\sqrt{3}/2)\sum_m\bigl(1/(3m+1)^2-1/(3m+2)^2\bigr)$.
+
+`compute/q2/verify_m3.py` and `verify_m3.rs` (different $n$, different tail) enclose that series and convert. Joint claim, worse of the two codes:
+
+- $M_3\le 0.371185695$
+- $L/L^{\mathrm{cl}}\le 1.4465531$
+- $K/K^{\mathrm{cl}}\ge 0.47789$
+
+That is below q1 $1.45576$ and below $1.45$. It is not below CCR $1.44655$. Residue vs beating the later record. No new trial pair. No priority claim. Papers opened after CCR (Nam 2510.24148, Coulomb 2409.01291, spheres 2602.00725, Pauli 2404.09926, …) do not state a smaller Euclidean $\gamma=1$ ratio; 2510.24148 still calls FHJN the best known constant.
+
+Replay: `problems/simon-lieb-thirring/compute/q2/run_all.sh`. Sobolev $2/\sqrt{3}$ untouched.

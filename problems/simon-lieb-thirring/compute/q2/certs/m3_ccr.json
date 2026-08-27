@@ -1,0 +1,23 @@
+{
+  "schema": "ccr-clausen-v1",
+  "source": "problems/simon-lieb-thirring/compute/q2/verify_m3.py",
+  "papers": [
+    "arXiv:2403.04347v2",
+    "arXiv:2407.10117v2"
+  ],
+  "alpha": 0.6666666666666666,
+  "n_terms": 20000,
+  "CI2_upper": 0.6766277379345432,
+  "CI2_raw_partial": 0.6766277375262482,
+  "tail_up": 1.3890377881951668e-10,
+  "H_upper": 0.8425625104429932,
+  "M3_upper": 0.37118569499870263,
+  "L_over_Lcl_upper": 1.446553086256098,
+  "K_over_Kcl_lower": 0.47789363646121763,
+  "formula_L": "(pi/3) exp(3 CI2(2pi/3) / (2pi))",
+  "formula_M3": "(16 pi / 81) H^3,  H = (4*sqrt(3)/3)^(-1/3) exp(CI2/(2pi))",
+  "beats_published_1456": true,
+  "below_q1_145576": true,
+  "beats_ccr_144655": false,
+  "note": "Independent envelope of the CCR / Carvalho Corso closed form. Not a new pair. Does not claim priority. Does not beat 1.44655."
+}

@@ -251,3 +251,97 @@ state $1.456$.
 A Laptev seminar PDF
 [msrn-files.sfedu.ru/…/laptev_pr.pdf](https://msrn-files.sfedu.ru/msrp/seminars_info/laptev_pr.pdf)
 (search hit) still writes $R_{1,1}=1.456\ldots$; lead only.
+
+## 2026-08-27 (later; q2)
+
+Correction of the log above: a later paper **does** beat $1.456$. The
+q1 title/abstract search listed 2403.04347 and did not open the body.
+The number is not in the abstract.
+
+### The later record
+
+- [Carvalho Corso–Ried, *On a variational problem related to the Cwikel–Lieb–Rozenblum and Lieb–Thirring inequalities*, arXiv:2403.04347](https://arxiv.org/abs/2403.04347)
+  ([v1 abs](https://arxiv.org/abs/2403.04347v1);
+  [v1 HTML](https://arxiv.org/html/2403.04347v1);
+  [v2 abs](https://arxiv.org/abs/2403.04347);
+  [v2 HTML](https://arxiv.org/html/2403.04347v2);
+  API `export.arxiv.org`).
+  v1 7 Mar 2024 (38 KB); v2 21 Dec 2024 (“Corrected a few typos”).
+  Opened abs v1, abs v2, HTML v1, HTML v2, and the API metadata.
+  The **abstract does not contain** $1.44655$ or $0.371185695$.
+  **Table 1.1** has $M_3=0.371185695$. **Corollary 1.7 / (1.14)** states
+  $L_{1,1,1}/L^{\mathrm{cl}}_{1,1,1}\le 1.44655$.
+  Identification **(1.12)**: $\mathcal{C}_{d,\sigma}=(d/\sigma)M_{2+d/\sigma}$,
+  so $\mathcal{C}_{1,1}=M_3$. Conversion **(1.13)** at $\gamma=3$ is the
+  same $(9\sqrt{3}/4)M_3$ as FHJN Proposition 10.
+  **Theorem 1.3** writes the optimiser $h=B_\gamma e^{\theta_\gamma}$.
+  **Lemma 4.6** (proof) has
+  $\mathrm{Re}\,\theta=-(1/\pi)\int_0^\infty g(k)(\cos(kx)\sinh(ky)-ky)/(k(\cosh(2k)-1))\,dk$.
+  They present $M_3$ as the method ceiling for FHJN/HKRV.
+  v1 already contains $1.44655$ and $0.371185695$.
+  HTML “Date: August 24, 2026” is the rendered date, not a new version.
+
+- [Carvalho Corso, *A generalized three lines lemma in Hardy-like spaces*, arXiv:2407.10117](https://arxiv.org/abs/2407.10117)
+  ([HTML](https://arxiv.org/html/2407.10117);
+  [HTML v2](https://arxiv.org/html/2407.10117v2);
+  TeX via `arxiv.org/e-print/2407.10117`).
+  v1 14 Jul 2024; v2 3 Jan 2025 (“Added a weighted version… corrected
+  many typos”). Opened abs, HTML v1, HTML v2, and the TeX source
+  (`introduction.tex`).
+  **(1.11)** is the Clausen formula for $H_{\infty,2}(\alpha)$.
+  **Corollary 1.8 / (eq:LTbound)** in the TeX is
+  $L_{1,d,s}/L^{\mathrm{cl}}\le \pi(1-\alpha)^{1/\alpha}/(\alpha\sin(\pi\alpha))\,\exp(\mathrm{CI}_2(2\pi(1-\alpha))/(\pi\alpha))$
+  with $\alpha=2s/(d+2s)$. At $d=s=1$ this is
+  $(\pi/3)\exp(3\,\mathrm{CI}_2(2\pi/3)/(2\pi))$.
+  The remark after the corollary writes $L_{1,1,1}/L^{\mathrm{cl}}\le 1.447$
+  and cites CCR24. **Does not** beat $1.44655$; it is the same bound,
+  rounded.
+
+### Later papers opened (did not move 1.44655)
+
+- [Duong–Le–Nam–Nguyen, *Finite-Rank Optimizers for the mass-supercritical Lieb–Thirring and Hardy–Lieb–Thirring Inequalities*, arXiv:2510.24148v1](https://arxiv.org/abs/2510.24148)
+  (opened abs/HTML). Still writes that FHJN “provid[es] the best known
+  constant to date.” Does **not** state $1.44655$ and does **not**
+  improve the Euclidean $\gamma=1$ ratio.
+
+- [Carvalho Corso–Weidl–Zeng, *Lieb-Thirring inequalities for the shifted Coulomb Hamiltonian*, arXiv:2409.01291v3](https://arxiv.org/abs/2409.01291)
+  (opened abs/HTML). Shifted Coulomb, not the Euclidean $\gamma=1$
+  ratio. Does **not** claim a smaller $1.44655$.
+
+- [Duong–Nam, *Lieb–Thirring inequalities for large quantum systems with inverse nearest-neighbor interactions*, arXiv:2501.00866v1](https://arxiv.org/abs/2501.00866)
+  (opened abs/HTML). Different operator. No $1.44655$.
+
+- [Frank–Kovařík, *Lieb-Thirring inequality for the 2D Pauli operator*, arXiv:2404.09926v1](https://arxiv.org/abs/2404.09926)
+  (opened abs/HTML). Pauli, not Euclidean $\gamma=1$.
+
+- [Kähler–Kowacs–Ruzhansky, *Lieb-Thirring inequalities for the Dirac operator on spheres*, arXiv:2602.00725v2](https://arxiv.org/abs/2602.00725)
+  (opened abs). Spheres, not $\mathbb{R}^d$.
+
+- [Melik-Adamyan title, arXiv:2607.15504v1](https://arxiv.org/abs/2607.15504)
+  (opened abs/HTML). Canonical Hamiltonians, not the Euclidean $\gamma=1$
+  ratio.
+
+- [Complex-potential LT, arXiv:2510.02288v1](https://arxiv.org/abs/2510.02288)
+  (opened abs/HTML). Complex potentials. No $1.44655$.
+
+### arXiv search log (q2)
+
+Queries against `https://export.arxiv.org/api/query`, 3 s between calls:
+
+- `ti:"Lieb-Thirring" AND submittedDate:[20240101 TO 20261231]` — 14
+  titles (2607.15504, 2602.00725, 2510.24148, 2510.02288, 2510.02192,
+  2509.17307, 2501.00866, 2409.01291, 2406.15134, 2406.00580,
+  2405.00799, 2404.09926, …). None of the titles/abstracts claim
+  $L_{1,d}/L^{\mathrm{cl}}<1.44655$.
+- `all:"1.44655" AND all:Lieb` — 0 (API does not index body numbers).
+- `all:"0.371185695"` — 0.
+- `all:"Carvalho Corso" AND all:Thirring` — 3 hits: 2409.01291,
+  2407.10117, 2403.04347.
+- `au:Frank AND all:"Lieb-Thirring" AND submittedDate:[20240301 TO 20261231]`
+  — 2404.09926 only.
+- `au:Nam AND all:"Lieb-Thirring" AND submittedDate:[20240301 TO 20261231]`
+  — 2510.24148, 2501.00866.
+
+Failed lookups: no arXiv hit for a Euclidean $\gamma=1$ ratio below
+$1.44655$. The Frank–Laptev–Weidl CUP 2023 book is still not on arXiv
+and was not opened as full text this session.

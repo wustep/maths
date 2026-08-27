@@ -3,7 +3,7 @@
 - Slug: `simon-lieb-thirring`
 - List: Simon 2000 #15
 - Solver: Cursor Grok 4.6 xhigh
-- Status: dent of FHJN 1.456. Certified family-A pair has $\mathcal{C}_1\le 0.373548$, hence $L_{1,1}/L_{1,1}^{\mathrm{cl}}\le 1.45576$ and $K_1/K_1^{\mathrm{cl}}\ge 0.47187$. Conjecture not claimed.
+- Status: residue vs CCR 1.44655. Later record is Carvalho Corso–Ried, arXiv:2403.04347v2, ratio $1.44655$ from \(M_3=0.371185695\). Independent Clausen envelope \(M_3\le 0.371185695\) and \(L/L^{\mathrm{cl}}\le 1.4465531\). Did not beat 1.44655. The q1 family-A pair remains a dent of FHJN 1.456 only. Conjecture not claimed.
 - Area: Mathematical physics / spectral theory
 - Sources: Simon, *Schrödinger Operators in the Twenty-First Century* (Mathematical Physics 2000); Lieb–Thirring 1976
 - Started: 2026-08-27
@@ -24,21 +24,23 @@ Laptev–Weidl proved the conjecture for every $d$ when $\gamma\ge\tfrac32$. Hun
 
 ## Precise statement
 
-The published record for the $\gamma=1$ ratio, in every dimension, is Frank–Hundertmark–Jex–Nam, arXiv:1808.09017 (JEMS 23 (2021)):
+The published record for the $\gamma=1$ ratio, in every dimension, is no longer the 2018 trial pair. Carvalho Corso–Ried, arXiv:2403.04347v2 (v1 already 7 Mar 2024), solve the FHJN/HKRV variational problem and get
 
 $$
-\frac{L_{1,d}}{L_{1,d}^{\mathrm{cl}}}\le 1.456,
+\frac{L_{1,1,1}}{L_{1,1,1}^{\mathrm{cl}}}\le 1.44655
 $$
 
-and, in one dimension, the more precise numerical claims $L_{1,1}/L_{1,1}^{\mathrm{cl}}\le 1.455786$ and $K_1/K_1^{\mathrm{cl}}\ge 0.471851$, coming from an explicit trial pair in their Lemma 11 with $\mathcal{C}_1\le 0.373556$. The one-bound-state (Sobolev) ratio in $d=1$ is $L_{1,1}^{\mathrm{So}}/L_{1,1}^{\mathrm{cl}}=2/\sqrt{3}\approx 1.154700$. Eden–Foias (1991), lifted by Dolbeault–Laptev–Loss (arXiv:0708.1165), had $\pi/\sqrt{3}\approx 1.8138$.
+from Table 1.1, $M_3=0.371185695$, and identification (1.12), $\mathcal{C}_{1,1}=M_3$. The same one-dimensional lift as FHJN sends the ratio to every $d$. Carvalho Corso, arXiv:2407.10117v2, Corollary 1.8, writes the same bound as a Clausen value and rounds it to $1.447$.
 
-This folder attacks the FHJN variational handle $\mathcal{C}_1$: an explicit pair $(f,\varphi)$ with $\int f^2=\int\varphi=1$ produces a rigorous upper bound on $\mathcal{C}_1$ and therefore on $L_{1,1}/L_{1,1}^{\mathrm{cl}}$.
+Frank–Hundertmark–Jex–Nam, arXiv:1808.09017 (JEMS 23 (2021)), Theorem 1 had $1.456$, with Lemma 11 $\mathcal{C}_1\le 0.373556$ converting to $1.455786$. The one-bound-state (Sobolev) ratio in $d=1$ is $2/\sqrt{3}\approx 1.154700$. Eden–Foias (1991), lifted by Dolbeault–Laptev–Loss (arXiv:0708.1165), had $\pi/\sqrt{3}\approx 1.8138$.
+
+This folder first attacked the FHJN handle $\mathcal{C}_1$ by trial pairs. After CCR, a new pair cannot beat $M_3$. The leftover handle is a different method, or a certified evaluation of the CCR/Clausen form.
 
 ## What would count as a new bound
 
 A verified finite improvement of a documented record, for example:
 
-1. A smaller rigorous upper bound than the published $1.456$ on $L_{1,d}/L_{1,d}^{\mathrm{cl}}$ (equivalently, a certified $\mathcal{C}_1$ that converts to a ratio strictly below $1.456$).
+1. A smaller rigorous upper bound than the published CCR $1.44655$ on $L_{1,d}/L_{1,d}^{\mathrm{cl}}$ (equivalently, a certified $\mathcal{C}_1$ or $M_3$ that converts to a ratio strictly below $1.44655$). An envelope of $1.44655$ is a replay, not a new bound.
 2. A new certified test-function lower bound that moves a published numerical lower bound on $L_{1,1}/L_{1,1}^{\mathrm{cl}}$ or on $K_1/K_1^{\mathrm{cl}}$.
 3. A reusable exact lemma that strictly tightens one of those conversions.
 
@@ -46,19 +48,23 @@ An incomplete numerical plot of $\mathcal{C}_1$, or a high-precision float with 
 
 ## After 2026-08-27
 
-FHJN Theorem 1 is still the published record to beat: $1.456$ in every dimension. Their Lemma 11 second pair really is $\mathcal{C}_1\approx 0.373553$ once the $t^{-3/2}$ tail is kept; the panel bound on that pair does not convert below $1.456$.
+The published record to cite is Carvalho Corso–Ried, arXiv:2403.04347v2: $L/L^{\mathrm{cl}}\le 1.44655$. The abstract does not contain that number; Corollary 1.7 and Table 1.1 do. v1 already has it. No later paper opened in this folder states a smaller Euclidean $\gamma=1$ ratio. Carvalho Corso, arXiv:2407.10117v2, restates the same bound as $1.447$.
 
-A different power-decay / compact-$\varphi$ pair (`compute/q1/opt_best_A.json`) has certified
-
-$$
-\mathcal{C}_1\le 0.373548,
-$$
-
-independently in Python (panel Darboux) and Rust (log substitution). Proposition 10 then gives
+Independently, the Clausen series for $\mathrm{CI}_2(2\pi/3)$ converts to
 
 $$
-\frac{L_{1,1}}{L_{1,1}^{\mathrm{cl}}}\le 1.45576,\qquad
-\frac{K_1}{K_1^{\mathrm{cl}}}\ge 0.47187,
+M_3\le 0.371185695,\qquad
+\frac{L_{1,1,1}}{L_{1,1,1}^{\mathrm{cl}}}\le 1.4465531,\qquad
+\frac{K_1}{K_1^{\mathrm{cl}}}\ge 0.47789.
 $$
 
-and the same one-dimensional operator-valued lift as the paper sends the ratio to every $d$. Replay: `compute/q1/run_all.sh`. Lean proves only the conversion, not the integral. The Sobolev value $2/\sqrt{3}$ is untouched.
+Python and Rust agree. Replay: `compute/q2/run_all.sh`. That is an envelope of the published value, not a dent of it.
+
+The q1 family-A pair (`compute/q1/opt_best_A.json`) is still a dent of FHJN $1.456$ only:
+
+$$
+\mathcal{C}_1\le 0.373548,\qquad
+\frac{L_{1,1}}{L_{1,1}^{\mathrm{cl}}}\le 1.45576.
+$$
+
+Replay: `compute/q1/run_all.sh`. Their Lemma 11 second pair does not convert below $1.456$. Lean proves only the conversion. The Sobolev value $2/\sqrt{3}$ is untouched. CCR present $M_3$ as the method ceiling: no FHJN trial pair goes below it.

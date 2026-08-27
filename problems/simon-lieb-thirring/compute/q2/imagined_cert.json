@@ -1,0 +1,32 @@
+{
+  "schema": "ccr-clausen-v1",
+  "name": "imagined-ccr-clausen",
+  "note": "Imagined certificate, written before the closed form was used. The first sketch was a certified evaluation of ||h_{-2/3}||_∞ (upper) and ||h_{-1}||_2 (lower) for the Theorem 1.3 optimiser. The working witness is instead the Fourier series for CI_2(2π/3), pushed through Carvalho Corso arXiv:2407.10117v2 Corollary 1.8 / (1.11) and the CCR conversion L/Lcl = (9√3/4) M_3 = (π/3) exp(3 CI_2(2π/3)/(2π)). A panel pair is the wrong witness. The bound is the method ceiling: no FHJN trial pair can go below this M_3.",
+  "source": {
+    "arxiv_ccr": "2403.04347",
+    "version_ccr": "v2",
+    "abs_ccr": "https://arxiv.org/abs/2403.04347v2",
+    "html_ccr": "https://arxiv.org/html/2403.04347v2",
+    "arxiv_closed": "2407.10117",
+    "version_closed": "v2",
+    "v1_already_has_1.44655": true
+  },
+  "gamma": 3,
+  "alpha": "2/3",
+  "formula": {
+    "CI2": "(√3/2) Σ_m (1/(3m+1)^2 − 1/(3m+2)^2)",
+    "L": "(π/3) exp(3 CI_2(2π/3) / (2π))",
+    "M3": "(16π/81) H^3,  H = (4√3/3)^{-1/3} exp(CI_2/(2π))",
+    "conversion": "C_1 = M_3,  L/Lcl = (9√3/4) C_1"
+  },
+  "claimed_in_paper": {
+    "M_3": 0.371185695,
+    "L_over_Lcl": 1.44655
+  },
+  "target_bounds": {
+    "beats_q1_1.45576": true,
+    "beats_published_1.456": true,
+    "below_1.45": true,
+    "beats_ccr_1.44655": false
+  }
+}
