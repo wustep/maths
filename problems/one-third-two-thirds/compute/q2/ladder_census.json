@@ -1,0 +1,271 @@
+{
+  "census": [
+    {
+      "n": 7,
+      "min_delta": [
+        9,
+        25
+      ],
+      "broken": [
+        1,
+        2
+      ],
+      "e": 25,
+      "n_non_sum": 16,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 8,
+      "min_delta": [
+        17,
+        46
+      ],
+      "broken": [
+        1,
+        2,
+        3
+      ],
+      "e": 46,
+      "n_non_sum": 32,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 9,
+      "min_delta": [
+        6,
+        17
+      ],
+      "broken": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "e": 85,
+      "n_non_sum": 64,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 10,
+      "min_delta": [
+        37,
+        106
+      ],
+      "broken": [
+        1,
+        5
+      ],
+      "e": 106,
+      "n_non_sum": 128,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 11,
+      "min_delta": [
+        20,
+        57
+      ],
+      "broken": [
+        1,
+        6
+      ],
+      "e": 171,
+      "n_non_sum": 256,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 12,
+      "min_delta": [
+        97,
+        277
+      ],
+      "broken": [
+        1,
+        7
+      ],
+      "e": 277,
+      "n_non_sum": 512,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 13,
+      "min_delta": [
+        157,
+        448
+      ],
+      "broken": [
+        1,
+        8
+      ],
+      "e": 448,
+      "n_non_sum": 1024,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 14,
+      "min_delta": [
+        254,
+        725
+      ],
+      "broken": [
+        1,
+        9
+      ],
+      "e": 725,
+      "n_non_sum": 2048,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 15,
+      "min_delta": [
+        166,
+        475
+      ],
+      "broken": [
+        1,
+        5,
+        6,
+        10
+      ],
+      "e": 1425,
+      "n_non_sum": 4096,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 16,
+      "min_delta": [
+        665,
+        1898
+      ],
+      "broken": [
+        1,
+        11
+      ],
+      "e": 1898,
+      "n_non_sum": 8192,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 17,
+      "min_delta": [
+        1304,
+        3737
+      ],
+      "broken": [
+        1,
+        5,
+        8,
+        12
+      ],
+      "e": 3737,
+      "n_non_sum": 16384,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 18,
+      "min_delta": [
+        387,
+        1108
+      ],
+      "broken": [
+        1,
+        5,
+        6,
+        9,
+        13
+      ],
+      "e": 6648,
+      "n_non_sum": 32768,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 19,
+      "min_delta": [
+        458,
+        1311
+      ],
+      "broken": [
+        1,
+        5,
+        6,
+        9,
+        10,
+        14
+      ],
+      "e": 11799,
+      "n_non_sum": 65536,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 20,
+      "min_delta": [
+        6059,
+        17366
+      ],
+      "broken": [
+        1,
+        5,
+        8,
+        11,
+        15
+      ],
+      "e": 17366,
+      "n_non_sum": 131072,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 21,
+      "min_delta": [
+        5402,
+        15485
+      ],
+      "broken": [
+        1,
+        5,
+        8,
+        9,
+        12,
+        16
+      ],
+      "e": 30970,
+      "n_non_sum": 262144,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    },
+    {
+      "n": 22,
+      "min_delta": [
+        1065,
+        3049
+      ],
+      "broken": [
+        1,
+        5,
+        6,
+        9,
+        12,
+        13,
+        17
+      ],
+      "e": 54882,
+      "n_non_sum": 524288,
+      "n_below_1_3": 0,
+      "source": "C exhaustive; Python replay of the witness"
+    }
+  ],
+  "note": "Non-sum broken-rung ladder minima. Stamp-based C enumerator."
+}
