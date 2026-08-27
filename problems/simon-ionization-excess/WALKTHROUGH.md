@@ -95,3 +95,11 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=32$ faces ($4{,}294{,}967{,}295$, copositive, $1157$ skips, $\min m^\top Mm>6\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1035$ moves to $1.1026$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later the same day — past $n=32$
+
+0. What was actually missing — after q6 the compact $\gamma$ at $R=10$, $n=32$ sat $0.00210$ below the cut $10/11$. The leftover was still the $P_{\max}$ tax. $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1026$: the cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; treating $R=9.8$ $n=33$ as the first certificate (predicted $\gamma$ sits $3\cdot 10^{-5}$ above $9.8/10.8$); a PSD+NN shortcut on $M$ (two negative eigenvalues; zeroing off-diagonals does not restore PSD); $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.8$, $n=32$ still predicts $1.10238$ with $\gamma$ $2.8\cdot 10^{-4}$ below the cut. Raising $n$ at that split pushes $\gamma$ *over* the cut, so the unrestricted number would bind at $1.10204$ and inherit a hairline slack. The safer jump is more bins at the proven split $R=10$.

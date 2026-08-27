@@ -10,6 +10,8 @@ replaces $1.1118$ by $1.1057$.
 $1.1057$ by $1.1035$.
 `q6/` raises the bin count at the same split and replaces
 $1.1035$ by $1.1026$.
+`q7/` keeps the aspect-$10$ split and asks whether $n>32$
+beats $1.1026$.
 
 ```bash
 ./run_all.sh

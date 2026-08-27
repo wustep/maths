@@ -377,3 +377,52 @@ prints as $1.1026$. Cut $10/11>\gamma$. $1.1168$ stays withdrawn.
 q1 remainders unchanged. $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q6/run_all.sh`.
+
+## 2026-08-27 — q7 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0. Submission history lists
+  only `[v1]` Fri 25 Apr 2025.
+- Nam 1009.2367v3 and Benguria–González-Brantes 2511.07582v1
+  unchanged: no later fermionic leading coefficient below the
+  notebook $1.1026$.
+- Independent replay of the q6 cert: `verify_lift.py` recon
+  $\gamma=0.9069918524731921$, $1/\gamma=1.1025457365170288<1.1035$,
+  cut $10/11>\gamma$. Rebuild matches $A$ to $10^{-15}$.
+  Hydrogen $N_0(1)=2$ replayed. q1 remainders $2.953$, $3.892$,
+  $3.9781$ unchanged.
+
+## 2026-08-27 — q7 dead line: $R\le 9$ cut
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1026$. Same wall at $R=8$ ($1.125$) and
+at $R=9.5$ ($1.10526$). Residue: `compute/q7/certs/r9_cut.json`.
+A sharper large-aspect cut would reopen $R\le 9$; none is
+certified.
+
+$s>3$ along Lemma 4.3 is still residue (two-shell $s=4$ rational
+$-1025/2048$). Lieb still gives the best integers at $Z=2,\ldots,6$.
+
+$M=A-\gamma\mathrm{Sym}(c,1)/2$ at the predicted $n=33$ target
+has two negative eigenvalues. Zeroing negative off-diagonals
+does not make it PSD, so the PSD+NN shortcut is not a
+certificate. Large principal submatrices stay non-PD.
+
+## 2026-08-27 — q7 scan: more bins at $R=10$
+
+SLSQP plus the $P_{\max}$ tax (`certs/scan_compact.json`):
+
+- $R=10$, $n=32$ (q6 row): predicted $1.102546$.
+- $R=10$, $n=33$: $1.102041$ ($2^{33}-1$ faces). Cut
+  $10/11>\gamma$.
+- $R=10$, $n=34$: $1.101667$.
+- $R=10$, $n=35$: $1.101300$ ($2^{35}-1$ faces).
+- $R=9.8$, $n=32$: $1.102384$, $\gamma$ still
+  $2.8\cdot 10^{-4}$ below $9.8/10.8$.
+- $R=9.8$, $n=33$: predicted $\gamma$ sits
+  $3\cdot 10^{-5}$ *above* the cut, so the split would bind
+  at $10.8/9.8\approx 1.10204$.
+
+The live line is $R=10$ with $n=33$. Face enumeration is the
+certificate, not the SLSQP prediction.
