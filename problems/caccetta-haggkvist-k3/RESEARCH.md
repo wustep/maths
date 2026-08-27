@@ -106,3 +106,32 @@ Opened tonight, in order, before the n=38 SAT.
 - https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending — newest hits are still Cheng–Keevash 2402.16776v4 and Mezher–Daamouch 2405.17797. No post-2017 paper in that list states a published unrestricted c < 0.3465.
 
 Failed lookup: no later Combinatorica / IMRN replacement of HKN 0.3465 with a public certificate. The 0.3388 figure remains a personal communication. Do not treat it as published.
+
+## 2026-08-27 — q4 literature
+
+Opened tonight, in order, before the n=73 SAT and the CKLS-fork replay.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract and Theorem 1.2 still: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. No v5.
+- https://arxiv.org/html/0908.2791v4 — same. Theorem 3.3: max δα(Ψ) < 0.3465. Lemma 3.4 is deg⁺ < √(2k) from CSS β≤γ. Lemma 4.7 is Ψ(κ)≥3(3c₀−1)². The closing remark records DHP 0.88 and a Shen private 0.865 as improvements of Lemma 3.5 that “only produce a tiny decrease” in Theorem 1.2; they did not publish that smaller number. Footnote still records the March 2014 personal communication 0.3388 (F₆).
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3.
+- https://arxiv.org/html/2102.12830v2 — Theorem 2.2 quotes HKN: every n-vertex oriented graph with δ⁺ ≥ 0.3465n contains C₃. Note: de Joannis de Verclos–Sereni–Volec [18] “established an improvement to 0.3388n”; bibliography [18] is personal communication. Does not replace the unrestricted triangle number.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash v4, 21 Aug 2024. Path lengths under a girth hypothesis. Uses HKN 0.3465 as the triangle-case input. No new unrestricted c.
+- https://arxiv.org/abs/2405.17797 — Mezher–Daamouch, 28 May 2024. Second-neighbourhood / 7-anti-transitive class. A restricted-class CH consequence, not a new unrestricted c.
+- https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending — 10 hits. Newest unrestricted-looking items are still 2405.17797 and 2402.16776v4. No post-2017 paper in that list states a published unrestricted c < 0.3465.
+- https://arxiv.org/abs/0909.2468 — Chen–Karson–Liu–Shen. Abstract: β(G) ≤ 0.8616 γ(G) for 3-free digraphs, improving DHP 0.88.
+- https://arxiv.org/html/0909.2468 — same. Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G). Published as *Electron. J. Linear Algebra* 28 (2015).
+- https://www.combinatorics.org/ojs/index.php/eljc/article/download/v14i1n19/pdf — Hamburger–Haxell–Kostochka, *Electron. J. Combin.* 14 (2007). Lemma 5: a triangle-free orientation obtained from a tournament by deleting k edges has a vertex of out-degree < √(2k).
+- https://www.proofatlas.ai/collaboration/caccetta-haggkvist-conjecture/ — checked tonight. Peer-reviewed unrestricted triangle threshold still listed as HKN 0.3465n. Conjecture open.
+
+Failed lookup: no later Combinatorica / IMRN replacement of HKN 0.3465 with a public certificate. The 0.3388 figure remains a personal communication. Do not treat it as published.
+
+## 2026-08-27 — F-coordinate dump, lemma chain
+
+Re-opened for the independent 4Ψ(κ) / F₄ dump (no SAT).
+
+- https://arxiv.org/html/0908.2791v4 — HKN Lemmas 3.4, 3.5, 4.6, 4.7 read in full. Lemma 3.4: k non-edges ⇒ some deg⁺ < √(2k). Lemma 3.5: P[Ψ^λ(α) < √(1−Ψ(ρ))+ε] > 0. Lemma 4.6: Φ(γ) ≥ c₀ − √(Φ(χ)). Lemma 4.7: Ψ(κ) ≥ 3(3c₀−1)², then (4.7) expands 4Ψ(κ−3(3c₀−1)²). Closing remark: DHP 0.88 / Shen 0.865 improve Lemma 3.5 and “only produce a tiny decrease”.
+- https://arxiv.org/abs/0908.2791 — same v4 record.
+- https://arxiv.org/html/0909.2468 — CKLS Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G). Proof uses μ=0.16065 and 1/(1+μ)=0.8616.
+- https://arxiv.org/abs/0909.2468 — abstract writes β ≤ 0.8616 γ (theorem statement is strict).
+- https://www.combinatorics.org/ojs/index.php/eljc/article/download/v14i1n19/pdf — HHK Lemma 5: triangle-free orientation from a tournament minus k edges has a vertex of out-degree < √(2k). The count is 1+⋯+m ≤ k after deleting k feedback arcs (their Lemma 4 / CSS). Replacing the budget k by 0.8616 k gives < √(2·0.8616 k).
+

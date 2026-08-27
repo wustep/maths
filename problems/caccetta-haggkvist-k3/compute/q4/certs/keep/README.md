@@ -23,3 +23,11 @@ A separate F₄ flag-algebra certificate with the CKLS 2015 fork
 ```
 python3 verify_q4_certificate.py certs/keep/f4_or_new_certificate.json
 ```
+
+Independent F-coordinates (no import of that verifier):
+
+```
+python3 dump_f_coords.py
+```
+
+writes `f_coords_0.3464.json`.

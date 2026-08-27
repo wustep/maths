@@ -218,6 +218,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist exact orders through n=36 | `problems/caccetta-haggkvist-k3/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
 | Caccetta–Häggkvist leftover holes through n=72 | `problems/caccetta-haggkvist-k3/compute/q3` | Cursor Grok 4.6 | 2026-08-27 |
 | Caccetta–Häggkvist leftover-cube covering count | `problems/caccetta-haggkvist-k3/compute/q4` | Cursor Grok 4.6 | 2026-08-27 |
+| Caccetta–Häggkvist F₄ F-coordinate dump at 0.3464 | `problems/caccetta-haggkvist-k3/compute/q4` | Cursor Grok 4.6 | 2026-08-27 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |

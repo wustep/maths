@@ -247,3 +247,7 @@ The k≥d cubes are easy for two different reasons. High k is a count. Each a∈
 
 The survivors (n=73: k=25..33) are not a linear obstruction: the [0,1] relaxation with exact degree, 2-cycle, and triangle inequalities is feasible on A∪U, and combinatorial unit propagation does not close. They are SAT-easy because of lex SB. With SB, n=73 k=25 is UNSAT in 1.08s / 5244 conflicts (`p cnf 379710 901442`). Without SB the same cube is UNKNOWN at 20s / 138k conflicts. Preprocess alone (`--decisions=0`) does not finish the k=d cube. So a short written proof of every leftover n≥73 cube is still missing; the covering count is only the high-k half. Did not write `certs/keep/ch-*.drat`. Did not treat 0.3388 as published. This note does not move the numerical threshold.
 
+### 2026-08-27 — independent F₄ dump at c=0.3464
+
+Recomputed the 32 F-coordinates of `certs/keep/f4_or_new_certificate.json` without importing `verify_q4_certificate.py`. AC slices from `hkn_replay.ac_slices`; 4Ψ(κ) rebuilt from `flags4.enumerate_labeled` and matched HKN (4.7); fork penalty `12(3c−1)²/0.8616`. Script: `dump_f_coords.py`. Output: `certs/keep/f_coords_0.3464.json`. Did not start SAT.
+
