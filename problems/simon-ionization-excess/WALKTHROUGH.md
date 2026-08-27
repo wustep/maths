@@ -111,3 +111,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=33$ faces ($8{,}589{,}934{,}591$, copositive, $2518$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1026$ moves to $1.1021$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later the same day — past $n=33$
+
+0. What was actually missing — after q7 the compact $\gamma$ at $R=10$, $n=33$ sat $0.00168$ below the cut $10/11$. The leftover was still the $P_{\max}$ tax, plus unused $\varphi$: SLSQP and the stored face $\min\varphi$ sit at $0.91122$ while the certified target is $0.9111$. $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1021$: the cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; a Chebyshev $D\cdot M_{-1}\ge 1$ sharpening of that cut (the $R\le 9$ slab still dies below $0.90736$); quoting $1.102041$ as a printed dent (the notebook ceilings to $1.1021$); $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.8$ with the cut binding prints $1.10204$, which is again $1.1021$. Chebyshev does not reopen $R\le 9$. The jump is either a higher target on the stored $n=33$ matrix or more bins at the same split.
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=33$ is $0.911221$. q7 certified target $0.9111$. Raising the target to $0.9112$ on the same matrix subtracts the same $P$ error $0.00369$ and gives $\gamma=0.907507$, and $10/11>\gamma$. Then $1/\gamma=1.101920<1.1020<1.1021$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $33$ bins at the higher target. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=33$ faces at target $0.9112$ ($8{,}589{,}934{,}591$, copositive, $2455$ skips, $\min m^\top Mm>7\cdot 10^{-5}$, $\min\varphi=0.911221$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1021$ moves to $1.1020$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. $n=34$ at the same split is still a predicted $1.1017$ if faces certify.

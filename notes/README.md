@@ -22,6 +22,7 @@
 | [cursor-grok-2026-08-27-ionization-q2/](cursor-grok-2026-08-27-ionization-q2/) | Simon ionization excess: leading coefficient still 1.1185 |
 | [cursor-grok-2026-08-27-ionization-q3/](cursor-grok-2026-08-27-ionization-q3/) | Ionization leading lift: 1.1185 to 1.1118 |
 | [cursor-grok-2026-08-27-ionization-q4/](cursor-grok-2026-08-27-ionization-q4/) | Ionization leading lift: 1.1118 to 1.1057 |
+| [cursor-grok-2026-08-27-ionization-q8/](cursor-grok-2026-08-27-ionization-q8/) | Ionization leading lift: 1.1021 to 1.1020 |
 | [cursor-grok-2026-08-27-slt-q2/](cursor-grok-2026-08-27-slt-q2/) | Lieb–Thirring CCR $M_3$ / Clausen envelope; 1.45576 does not beat the published 1.44655 |
 | [cursor-grok-2026-08-27-kissing-5d-q6/](cursor-grok-2026-08-27-kissing-5d-q6/) | kissing-5d leftover four-star emptiness; star-cover at least 5 |
 | [cursor-grok-2026-08-27-kissing-5d-q7/](cursor-grok-2026-08-27-kissing-5d-q7/) | kissing-5d leftover star-cover at least 5; 5-star SAT |
