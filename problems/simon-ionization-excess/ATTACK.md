@@ -353,3 +353,27 @@ the scan is stored):
 
 The live line is $R=10$ with $n=32$. Face enumeration is the
 certificate, not the SLSQP prediction.
+
+## 2026-08-27 — q6 dent
+
+Same HPS §7 chain with $\beta_3\ge 0.906992$ (aspect $10$,
+$n=32$ faces, $\varphi=0.9108$):
+
+$$
+N<1.1026Z+3.853\,Z^{1/3}+0.01320+0.1828\,Z^{-1/3}+0.019500\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1026Z+3.938\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
+$10/11$ algebra, mass-opt scan with no counterexample, stored
+$R=10$ $n=32$ faces ($4{,}294{,}967{,}295$, copositive, $1157$
+residual skips, $\min m^\top Mm>6\cdot 10^{-4}$). $1/\gamma=1.102546$
+prints as $1.1026$. Cut $10/11>\gamma$. $1.1168$ stays withdrawn.
+q1 remainders unchanged. $N_0(Z)-Z$ bounded still open.
+
+Replay: `problems/simon-ionization-excess/compute/q6/run_all.sh`.

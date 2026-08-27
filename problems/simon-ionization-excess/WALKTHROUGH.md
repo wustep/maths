@@ -79,3 +79,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=30$ faces ($1{,}073{,}741{,}823$, copositive, $420$ skips, $\min m^\top Mm>5\cdot 10^{-4}$); intermediate $n=28$ row at printed $1.1046$; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1057$ moves to $1.1035$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later the same day — more bins past $n=30$
+
+0. What was actually missing — after q5 the compact $\gamma$ at $R=10$, $n=30$ sat $0.00285$ below the cut $10/11$. The leftover was still the $P_{\max}$ tax. $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1035$: the cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; a fractional split $R=9.8$ as the first certificate; $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.8$, $n=32$ predicts $1.10238$, but $\gamma$ sits $2.8\cdot 10^{-4}$ below the cut $9.8/10.8$. That is more slack than q5's rejected $R=9.5$ row and still tighter than $R=10$. The jump is more bins at the same split.
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=32$ is $0.91098$. Target $0.9108$ minus the $P$ error $0.00381$ gives $\gamma=0.906992$, and $10/11>\gamma$. Then $1/\gamma=1.102546<1.1026<1.1035$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $32$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=32$ faces ($4{,}294{,}967{,}295$, copositive, $1157$ skips, $\min m^\top Mm>6\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1035$ moves to $1.1026$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
