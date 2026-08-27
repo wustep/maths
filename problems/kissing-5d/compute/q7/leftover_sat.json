@@ -9,5 +9,5 @@
   "sat": null,
   "found_41": false,
   "complete": false,
-  "comment": "Global leftover SAT k=19 star-cover>=5. Native CaDiCaL was still running when this snapshot was written (DRAT growing past 7GB). Incomplete. A model is a 41-set. UNSAT without a stored verified DRAT is residue. Did not claim tau5=40."
+  "comment": "Global leftover SAT k=19 star-cover>=5. Native CaDiCaL was still running when this snapshot was written (DRAT past 8GB; the k=30 five-star DRAT past 11GB). Incomplete. A model is a 41-set. UNSAT without a stored verified DRAT is residue. Did not claim tau5=40."
 }
