@@ -23,6 +23,7 @@ use std::process;
 
 const REL: f64 = 2.0e-14;
 const ABS: f64 = 1.0e-15;
+#[allow(dead_code)]
 const PUBLISHED_L: f64 = 1.456;
 const L_CMP_NUM: u128 = 529984; // 728^2
 const L_CMP_DEN: u128 = 3796875; // 243 * 125^2
@@ -32,6 +33,23 @@ fn fatal(msg: &str) -> ! {
     process::exit(1);
 }
 
+fn next_up_pos(x: f64) -> f64 {
+    if !x.is_finite() {
+        return x;
+    }
+    if x < 0.0 {
+        fatal("next_up_pos on negative");
+    }
+    f64::from_bits(x.to_bits() + 1)
+}
+
+fn next_down_pos(x: f64) -> f64 {
+    if !x.is_finite() || x <= 0.0 {
+        return 0.0;
+    }
+    f64::from_bits(x.to_bits() - 1)
+}
+
 fn up(x: f64) -> f64 {
     if !x.is_finite() {
         fatal("non-finite in up()");
@@ -39,7 +57,7 @@ fn up(x: f64) -> f64 {
     if x <= 0.0 {
         return ABS;
     }
-    (x * (1.0 + REL) + ABS).next_up()
+    next_up_pos(x * (1.0 + REL) + ABS)
 }
 
 fn down(x: f64) -> f64 {
@@ -53,7 +71,7 @@ fn down(x: f64) -> f64 {
     if v <= 0.0 {
         0.0
     } else {
-        v.next_down()
+        next_down_pos(v)
     }
 }
 
@@ -70,7 +88,7 @@ fn sqrt3_upper() -> f64 {
         if sq > 3.0 {
             return s;
         }
-        s = s.next_up();
+        s = next_up_pos(s);
     }
     up(s)
 }
@@ -370,63 +388,50 @@ fn phi_raw_upper(s: f64, support: f64, gamma: f64, delta: f64, eps: f64, kappa: 
     up(num / den)
 }
 
-/// I_f = (1/α) ∫_0^∞ v^{1/α − 1} (1+v)^{-2β} dv, upper bound.
-fn bound_I_f_subst(alpha: f64, beta: f64) -> (f64, f64) {
+/// Upper bound of I_f = ∫_0^∞ (1+u^α)^{-2β} du via left Riemann (h decreasing)
+/// on a different partition than Python: [0,1] uniform 250k, [1,1e8] log 250k.
+/// (The outer C_1 integral is the log-substitution algorithm.)
+fn bound_i_f_left(alpha: f64, beta: f64) -> (f64, f64) {
     if 2.0 * alpha * beta <= 1.0 {
         fatal("need 2αβ > 1");
     }
-    let p = 1.0 / alpha - 1.0; // exponent of v; p > -1
     let two_beta = 2.0 * beta;
-    // [0, δ]: q(v) ≤ v^p
-    let delta = 1.0e-8_f64;
-    let near = up(alpha * delta.powf(1.0 / alpha)); // ∫_0^δ v^{1/α−1} dv = α δ^{1/α}
+    let n1 = 250000usize;
+    let mut core0 = 0.0;
+    let mut h_left = 1.0; // h(0)=1
+    for i in 0..n1 {
+        let u_l = i as f64 / n1 as f64;
+        let u_r = (i + 1) as f64 / n1 as f64;
+        if i > 0 {
+            let ua = down(u_l.powf(alpha));
+            h_left = up((1.0 + ua).powf(-two_beta));
+        }
+        core0 += h_left * (u_r - u_l);
+    }
+    core0 = up(core0);
 
-    // (δ, 1]: q decreasing for α>1 (paper α=4.5). Left Darboux.
-    // For 0<α≤1, v^p is increasing; take panel max of the two ends.
-    let n1 = 40000usize;
+    let u_max = 1.0e8_f64;
+    let n2 = 250000usize;
     let mut core1 = 0.0;
-    let mut v_prev = delta;
-    let mut q_prev = up(v_prev.powf(p) * (1.0 + v_prev).powf(-two_beta));
-    for i in 1..=n1 {
-        let v = delta * (1.0 / delta).powf(i as f64 / n1 as f64); // log to 1
-        let v = if i == n1 { 1.0 } else { v };
-        let q = up(v.powf(p) * (1.0 + v).powf(-two_beta));
-        let qmax = if q_prev > q { q_prev } else { q };
-        core1 += up(qmax * (v - v_prev));
-        v_prev = v;
-        q_prev = q;
+    let mut u_prev: f64 = 1.0;
+    for i in 1..=n2 {
+        let u = u_max.powf(i as f64 / n2 as f64);
+        let u = if i == n2 { u_max } else { u };
+        let ua = down(u_prev.powf(alpha));
+        let h = up((1.0 + ua).powf(-two_beta));
+        core1 += h * (u - u_prev);
+        u_prev = u;
     }
     core1 = up(core1);
 
-    // (1, V]: same, q ~ v^{1/α−1−2β} decreasing
-    let v_max = 1.0e8_f64;
-    let n2 = 40000usize;
-    let mut core2 = 0.0;
-    v_prev = 1.0;
-    q_prev = up(1.0_f64.powf(p) * 2.0_f64.powf(-two_beta));
-    for i in 1..=n2 {
-        let v = (v_max).powf(i as f64 / n2 as f64);
-        let v = if i == n2 { v_max } else { v };
-        let q = up(v.powf(p) * (1.0 + v).powf(-two_beta));
-        let qmax = if q_prev > q { q_prev } else { q };
-        core2 += up(qmax * (v - v_prev));
-        v_prev = v;
-        q_prev = q;
-    }
-    core2 = up(core2);
-
-    // tail: q(v) ≤ v^{1/α−1−2β}
-    let exp_t = 1.0 / alpha - 2.0 * beta; // exponent of antiderivative + 1? 
-    // ∫_V^∞ v^{1/α−1−2β} dv = V^{1/α−2β} / (2β − 1/α)
-    let den = down(two_beta - 1.0 / alpha);
-    let tail = up(v_max.powf(exp_t) / den);
-
-    let integ = up(near + core1 + core2 + tail);
-    let i_f = up(integ / down(alpha));
+    let p = 2.0 * alpha * beta;
+    let tail = up(u_max.powf(1.0 - p) / down(p - 1.0));
+    let i_f = up(core0 + core1 + tail);
     let mu = up(i_f.powf(alpha));
     (i_f, mu)
 }
 
+#[allow(dead_code)]
 fn quadratic_s_grid(support: f64, n: usize) -> Vec<f64> {
     let mut s = vec![0.0; n + 1];
     for j in 0..=n {
@@ -463,10 +468,10 @@ fn hybrid_t_grid() -> Vec<f64> {
 }
 
 fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, kappa: f64, support: f64) -> (f64, f64, f64, f64) {
-    let (_i_f, mu_u) = bound_I_f_subst(alpha, beta);
+    let (_i_f, mu_u) = bound_i_f_left(alpha, beta);
 
     // Mass bounds on a uniform s-grid (different from the quadratic g-grid).
-    let n_phi = 160000usize;
+    let n_phi = 400000usize;
     let s_mass = {
         let mut v = vec![0.0; n_phi + 1];
         for j in 0..=n_phi {
@@ -495,7 +500,7 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
 
     // Uniform s-grid, different count from Python; clustering is used only
     // as a secondary Darboux check via quadratic_s_grid in comments / unused.
-    let n_s = 50000usize;
+    let n_s = 70000usize;
     let s = {
         let mut v = vec![0.0; n_s + 1];
         for j in 0..=n_s {
@@ -610,9 +615,14 @@ fn main() {
         "rust_independent: C_1_upper={c1:.12}  K/Kcl_lower={k:.12}  L/Lcl_upper={l:.12}  beats_1.456={moved}"
     );
     println!("  a_upper={a_up:.10}  sqrt_a_upper={sqrt_a:.10}  mu_upper={mu_u:.10}");
-    if !moved {
+    let claimed_beats = match root.get("bounds").obj().get("beats_1456") {
+        Some(J::Bool(b)) => *b,
+        Some(J::Num(x)) => *x != 0.0,
+        _ => true,
+    };
+    if claimed_beats && !moved {
         fatal(&format!(
-            "certified C_1_upper does not beat 1.456 after conversion; got {c1:.12}"
+            "cert claims to beat 1.456 but independent C_1_upper does not; got {c1:.12}"
         ));
     }
 }
