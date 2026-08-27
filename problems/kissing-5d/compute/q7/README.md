@@ -18,7 +18,8 @@ for that type. Global leftover SAT on $|U|=19$ is a separate CNF.
 Always-on grow prune is the leftover-tight extras branch-and-bound
 change from the q6 160-candidate cap. After the type-$(2,1)$ leftover
 SAT, `leftover_global` five_mode `2` also prunes grow that sits in
-one of those 60 five-star unions.
+one of those 60 five-star unions. five_mode `3` adds the 160
+type-$(1,3)$ unions after that orbit SAT.
 
 | Script | What it does |
 | --- | --- |

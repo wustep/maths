@@ -621,7 +621,12 @@ classical Levenshtein number 48 before claiming any comparison.
   5-star prune (`five_mode=2`) the same search ran $20{,}000{,}000{,}001$
   nodes in $3594$ seconds, no 41-set, incomplete
   (`leftover_global.json`). Past the q6 200M cutoff; still residue.
-- $k=31$ leftover-tight SAT finished CaDiCaL UNSAT; Heule
-  `drat-trim` is checking the $3.9$ GB binary DRAT. $k=30$ and
-  global leftover SAT $k=19$ are still running. Residue until
-  those certificates land. Did not claim $\tau_5=40$.
+- $k=31$ leftover-tight SAT is UNSAT with a verified native DRAT
+  (`five_k31_n1_3`: $40{,}611{,}860$ conflicts, DRAT
+  $4{,}134{,}873{,}401$ bytes, `drat-trim` $15{,}253{,}402$ of
+  $46{,}128{,}907$ lemmas, $1{,}635{,}820{,}812$ resolution
+  steps). Combined with Aut transitivity this empties all 160
+  type-$(1,3)$ five-star leftover hosts. Remaining 5-star leftover
+  hosts are the 32 type-$(0,5)$ pools.
+- $k=30$ and global leftover SAT $k=19$ are still running. Residue
+  until those certificates land. Did not claim $\tau_5=40$.
