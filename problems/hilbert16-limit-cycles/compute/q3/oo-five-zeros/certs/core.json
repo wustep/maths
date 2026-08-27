@@ -1,0 +1,25 @@
+{
+  "area_max_H6": "-19/32",
+  "beats_H3": false,
+  "circles_Z23": 1,
+  "circles_deg_p_at_most": 1,
+  "circles_extra_zeros_need_degQ": 11,
+  "circles_positive_zeros_at_most": 1,
+  "circles_sample_alpha": 1,
+  "circles_sample_zero_h": "1/2",
+  "claim": "n=3 radial slice on H=(x^2+y^2)/2 has I_tilde=h(alpha-2h) (one positive zero, Z(2,3)=1). Named family P=0, Q=mu y on H=y^2/2+x^3/3-x^2/2 has one-signed I and first-order cyclicity at most 1. Not five zeros and not a dent of H(3)>=13.",
+  "cubic_first_order_cyclicity_at_most": 1,
+  "five_zeros_produced": false,
+  "hn_moved": false,
+  "regular_I_zeros_circles": 1,
+  "regular_I_zeros_cubic": 0,
+  "schema": "hilbert16-oo-five-zeros-core/v1",
+  "well_bottom_I_zeros_cubic": 1,
+  "what_this_is_not": [
+    "not a dent of Z(2,3)",
+    "not a dent of H(3)",
+    "not five zeros of an Abelian integral",
+    "not a beat of Han-Yang-Yu local 5",
+    "not a numeric search"
+  ]
+}

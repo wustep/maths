@@ -1,0 +1,15 @@
+clique
+extras_bb
+sphere_types
+__pycache__/
+*.o
+*.adj.txt
+t5_adj.txt
+t5_355_adj.txt
+t5_36_replay.json
+t5_points.json
+golden_adj.txt
+expand_adj.txt
+sphere_d4_adj.txt
+.venv/
+run_all.log

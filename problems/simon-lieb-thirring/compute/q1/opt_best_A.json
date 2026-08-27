@@ -1,0 +1,17 @@
+{
+  "note": "Best family-A pair certified by verify_c1.py. Parameters from the L-BFGS polish recorded in opt_parametric.json (family A).",
+  "family": "A",
+  "best": {
+    "family": "A",
+    "parameters": {
+      "family": "A",
+      "alpha": 4.055295525553317,
+      "beta": 0.27814272049262534,
+      "gamma": 0.31839679333692544,
+      "delta": 1.1649053972605006,
+      "eps": 6.200689745257155,
+      "kappa": 0.482136224760825,
+      "T": 1.5066015478078987
+    }
+  }
+}

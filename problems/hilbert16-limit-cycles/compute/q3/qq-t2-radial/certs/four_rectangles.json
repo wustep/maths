@@ -1,0 +1,121 @@
+{
+  "rho2": [
+    1,
+    4
+  ],
+  "T2_prime_factorization": "4*t",
+  "intervals": [
+    {
+      "name": "I1",
+      "left": [
+        0,
+        1
+      ],
+      "right": [
+        1,
+        1
+      ],
+      "T2_left": [
+        -1,
+        1
+      ],
+      "T2_right": [
+        1,
+        1
+      ],
+      "T2_prime_sign": 1,
+      "T2_prime_roots_in_open": 0,
+      "T2_pm_half_sign_changes": true,
+      "preimage_of_[-1/2,1/2]_strictly_inside": true,
+      "diffeo_onto_(-1,1)": true
+    },
+    {
+      "name": "I2",
+      "left": [
+        -1,
+        1
+      ],
+      "right": [
+        0,
+        1
+      ],
+      "T2_left": [
+        1,
+        1
+      ],
+      "T2_right": [
+        -1,
+        1
+      ],
+      "T2_prime_sign": -1,
+      "T2_prime_roots_in_open": 0,
+      "T2_pm_half_sign_changes": true,
+      "preimage_of_[-1/2,1/2]_strictly_inside": true,
+      "diffeo_onto_(-1,1)": true
+    }
+  ],
+  "level_curve": {
+    "equation": "T2(u)^2 + T2(v)^2 - 1/4 = 0",
+    "cleared": "16u^4 - 16u^2 + 16v^4 - 16v^2 + 7",
+    "total_degree": 4,
+    "factor_over_Q": "16*u**4 - 16*u**2 + 16*v**4 - 16*v**2 + 7",
+    "n_Q_factors": 1,
+    "four_oval_factors_over_Q": false
+  },
+  "rectangles": [
+    {
+      "i": 1,
+      "j": 1,
+      "Iu": "I1",
+      "Iv": "I1",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T2'(u) T2'(v) = 16 u v",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 1,
+      "j": 2,
+      "Iu": "I1",
+      "Iv": "I2",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T2'(u) T2'(v) = 16 u v",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 2,
+      "j": 1,
+      "Iu": "I2",
+      "Iv": "I1",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T2'(u) T2'(v) = 16 u v",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    },
+    {
+      "i": 2,
+      "j": 2,
+      "Iu": "I2",
+      "Iv": "I2",
+      "Phi_diffeo_onto_(-1,1)^2": true,
+      "jacobian_det": "T2'(u) T2'(v) = 16 u v",
+      "jacobian_nonzero": true,
+      "circle_in_[-1/2,1/2]^2": true,
+      "circle_compactly_in_(-1,1)^2": true,
+      "one_compact_oval": true,
+      "oval_strictly_inside_open_rectangle": true
+    }
+  ],
+  "four_ovals": true,
+  "proof": "T2'=4t has no zero in either open I_k; T2(I_k)=(-1,1) by endpoint values \u00b11 and strict monotonicity; \u03a6 is a product diffeomorphism on each I_i\u00d7I_j; the circle of radius 1/2 is compactly in (-1,1)^2; each preimage is therefore one compact oval strictly inside its rectangle. The degree-4 curve does not split into four factors over Q; the ovals are real components."
+}

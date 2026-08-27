@@ -1,0 +1,225 @@
+{
+  "L1_formula": {
+    "cubic": [
+      {
+        "coeff": 1,
+        "term": "a12"
+      },
+      {
+        "coeff": 3,
+        "term": "a30"
+      },
+      {
+        "coeff": 3,
+        "term": "b03"
+      },
+      {
+        "coeff": 1,
+        "term": "b21"
+      }
+    ],
+    "quad": [
+      {
+        "coeff": 1,
+        "term": "a02*a11"
+      },
+      {
+        "coeff": 2,
+        "term": "a02*b02"
+      },
+      {
+        "coeff": 1,
+        "term": "a11*a20"
+      },
+      {
+        "coeff": -2,
+        "term": "a20*b20"
+      },
+      {
+        "coeff": -1,
+        "term": "b02*b11"
+      },
+      {
+        "coeff": -1,
+        "term": "b11*b20"
+      }
+    ]
+  },
+  "centers": [
+    {
+      "L1_E": "0",
+      "L1_cubic": "0",
+      "L1_full": "0",
+      "det": 44,
+      "jacobian": [
+        0,
+        4,
+        -11,
+        0
+      ],
+      "point": [
+        0,
+        0
+      ],
+      "trace": 0
+    },
+    {
+      "L1_E": "9/2",
+      "L1_cubic": "-9/2",
+      "L1_full": "0",
+      "det": 64,
+      "jacobian": [
+        0,
+        -8,
+        8,
+        0
+      ],
+      "point": [
+        1,
+        2
+      ],
+      "trace": 0
+    },
+    {
+      "L1_E": "-9/2",
+      "L1_cubic": "9/2",
+      "L1_full": "0",
+      "det": 64,
+      "jacobian": [
+        0,
+        -8,
+        8,
+        0
+      ],
+      "point": [
+        1,
+        -2
+      ],
+      "trace": 0
+    }
+  ],
+  "claim": "unperturbed PT Darboux centers have vanishing first Lyapunov quantity after the q1 normal form plus the cubic jet; not a dent of H(4)",
+  "field": {
+    "P": [
+      {
+        "coeff": "4",
+        "y": 1
+      },
+      {
+        "coeff": "-3",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1,
+        "y": 3
+      },
+      {
+        "coeff": "2",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "coeff": "1",
+        "x": 3,
+        "y": 1
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "6",
+        "y": 2
+      },
+      {
+        "coeff": "-2",
+        "y": 4
+      },
+      {
+        "coeff": "-11",
+        "x": 1
+      },
+      {
+        "coeff": "7",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-15",
+        "x": 2
+      },
+      {
+        "coeff": "3",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "coeff": "-21",
+        "x": 3
+      },
+      {
+        "coeff": "15",
+        "x": 4
+      }
+    ],
+    "deg_P": 4,
+    "deg_Q": 4,
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "origin_jet": {
+    "P1": "4*y",
+    "P2": "-3*x*y",
+    "P3": "2*x^2*y",
+    "Q1": "-11*x",
+    "Q2": "-15*x^2+6*y^2",
+    "Q3": "-21*x^3+7*x*y^2"
+  },
+  "perturbations": {
+    "tracefree_xy": {
+      "L1_full": [
+        "0",
+        "-1*mu",
+        "1*mu"
+      ],
+      "delta_P": "mu*x*(x-1)^2*y",
+      "delta_Q": "0",
+      "traces": [
+        "0",
+        "0",
+        "0"
+      ]
+    },
+    "user_xy": {
+      "L1_full": [
+        "0",
+        "strong",
+        "strong"
+      ],
+      "delta_P": "mu*x*(x-1)*y",
+      "delta_Q": "0",
+      "traces": [
+        "0",
+        "2*mu",
+        "-2*mu"
+      ]
+    },
+    "x2_shift": {
+      "L1_full": [
+        "-351/968*sqrt(11)*mu",
+        "-1/8*mu",
+        "-1/8*mu"
+      ],
+      "delta_P": "mu*x^2*(x-1)^2",
+      "delta_Q": "0",
+      "traces": [
+        "0",
+        "0",
+        "0"
+      ]
+    }
+  },
+  "schema": "hilbert16-gg-pt-lyapunov/v1"
+}

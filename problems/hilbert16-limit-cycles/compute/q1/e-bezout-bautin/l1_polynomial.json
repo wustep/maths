@@ -1,0 +1,94 @@
+{
+  "normal_form": "dx/dt = -y + a20 x^2 + a11 x y + a02 y^2; dy/dt = x + b20 x^2 + b11 x y + b02 y^2",
+  "L1_primitive": "a02*a11 + 2*a02*b02 + a11*a20 - 2*a20*b20 - b02*b11 - b11*b20",
+  "L1_monomials": [
+    {
+      "term": "a02*a11",
+      "coeff": 1,
+      "exponents": [
+        0,
+        1,
+        1,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "term": "a02*b02",
+      "coeff": 2,
+      "exponents": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        1
+      ]
+    },
+    {
+      "term": "a11*a20",
+      "coeff": 1,
+      "exponents": [
+        1,
+        1,
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "term": "a20*b20",
+      "coeff": -2,
+      "exponents": [
+        1,
+        0,
+        0,
+        1,
+        0,
+        0
+      ]
+    },
+    {
+      "term": "b02*b11",
+      "coeff": -1,
+      "exponents": [
+        0,
+        0,
+        0,
+        0,
+        1,
+        1
+      ]
+    },
+    {
+      "term": "b11*b20",
+      "coeff": -1,
+      "exponents": [
+        0,
+        0,
+        0,
+        1,
+        1,
+        0
+      ]
+    }
+  ],
+  "polar_a3_2pi": "pi*(a02*a11 + 2*a02*b02 + a11*a20 - 2*a20*b20 - b02*b11 - b11*b20)/4",
+  "polar_a3_over_L1": "pi/4",
+  "V1": "(a02*a11 + 2*a02*b02 + a11*a20 - 2*a20*b20 - b02*b11 - b11*b20)/8",
+  "V1_over_L1": "1/8",
+  "V2": "-5*a02**3*a11/96 - 5*a02**3*b02/48 - 31*a02**2*a11*a20/48 - 37*a02**2*a11*b11/192 - 19*a02**2*a20*b02/16 + 5*a02**2*a20*b20/16 - a02**2*b02*b11/3 + 5*a02**2*b11*b20/32 + a02*a11**3/192 - 13*a02*a11**2*b02/64 - 29*a02*a11**2*b20/192 - 119*a02*a11*a20**2/96 - 23*a02*a11*a20*b11/32 - 79*a02*a11*b02**2/96 - 17*a02*a11*b02*b20/24 - 9*a02*a11*b11**2/64 - 5*a02*a11*b20**2/32 - 3*a02*a20**2*b02/2 + 21*a02*a20**2*b20/16 - 17*a02*a20*b02*b11/48 + 29*a02*a20*b11*b20/24 - 19*a02*b02**3/24 - 13*a02*b02**2*b20/16 + a02*b02*b11**2/64 - 5*a02*b02*b20**2/16 + 53*a02*b11**2*b20/192 + a11**3*a20/192 - 37*a11**2*a20*b02/192 - 9*a11**2*a20*b20/64 + a11**2*b02*b11/64 + a11**2*b11*b20/64 - 31*a11*a20**3/48 - 101*a11*a20**2*b11/192 - a11*a20*b02**2/2 - 7*a11*a20*b02*b20/48 - 9*a11*a20*b11**2/64 + a11*a20*b20**2/12 + 29*a11*b02**2*b11/192 + 7*a11*b02*b11*b20/32 + 13*a11*b11*b20**2/192 - a20**3*b02/8 + 31*a20**3*b20/24 + 3*a20**2*b02*b11/4 + 175*a20**2*b11*b20/96 + a20*b02**3/8 + a20*b02**2*b20 + 109*a20*b02*b11**2/192 + 11*a20*b02*b20**2/16 + 53*a20*b11**2*b20/64 + 5*a20*b20**3/48 + 19*b02**3*b11/48 + 71*b02**2*b11*b20/96 + 23*b02*b11**3/192 + 19*b02*b11*b20**2/48 + 23*b11**3*b20/192 + 5*b11*b20**3/96",
+  "llibre_valls_w1": "a02*a11 + 2*a02*b02 + a11*a20 - 2*a20*b20 - b02*b11 - b11*b20",
+  "w1_minus_L1": "0",
+  "sources_opened": [
+    "https://arxiv.org/abs/2604.12883",
+    "https://arxiv.org/html/2604.12883v1",
+    "https://ejde.math.txstate.edu/Volumes/2025/36/abstr.html",
+    "https://ejde.math.txstate.edu/Volumes/2025/36/llibre.pdf",
+    "https://publish.uwo.ca/~pyu/pub/preprints/YZ_IJBC2020.pdf"
+  ],
+  "scope": "L1 kept. L2 kept as an independently computed V2 that vanishes on the listed center / Shi families. Full Bautin ideal L1=L2=L3=0 \u21d2 center is dropped.",
+  "failed_tests": 0
+}

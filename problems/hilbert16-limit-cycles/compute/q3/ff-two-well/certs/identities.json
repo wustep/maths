@@ -1,0 +1,435 @@
+{
+  "figure_eight": {
+    "I0_den": 15,
+    "I0_num": 4,
+    "anti15": [
+      {
+        "coeff": "-10",
+        "t": 3
+      },
+      {
+        "coeff": "12",
+        "t": 5
+      }
+    ],
+    "deriv_diff": [],
+    "integrand": [
+      {
+        "coeff": "-2",
+        "t": 2
+      },
+      {
+        "coeff": "4",
+        "t": 4
+      }
+    ],
+    "variables": [
+      "t"
+    ]
+  },
+  "jets": {
+    "L1_minus": {
+      "den": 1,
+      "num": 1,
+      "s_power": 1
+    },
+    "L1_plus": {
+      "den": 1,
+      "num": 1,
+      "s_power": 1
+    },
+    "minus": {
+      "a02": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a03": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a11": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a12": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a20": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a21": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a30": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b02": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b03": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b11": {
+        "den": 1,
+        "num": 1,
+        "s_power": 1
+      },
+      "b12": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b20": {
+        "den": 2,
+        "num": -3,
+        "s_power": 0
+      },
+      "b21": {
+        "den": 2,
+        "num": -1,
+        "s_power": 1
+      },
+      "b30": {
+        "den": 2,
+        "num": 1,
+        "s_power": 0
+      }
+    },
+    "plus": {
+      "a02": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a03": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a11": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a12": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a20": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a21": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "a30": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b02": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b03": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b11": {
+        "den": 1,
+        "num": -1,
+        "s_power": 1
+      },
+      "b12": {
+        "den": 1,
+        "num": 0,
+        "s_power": 0
+      },
+      "b20": {
+        "den": 2,
+        "num": 3,
+        "s_power": 0
+      },
+      "b21": {
+        "den": 2,
+        "num": -1,
+        "s_power": 1
+      },
+      "b30": {
+        "den": 2,
+        "num": 1,
+        "s_power": 0
+      }
+    }
+  },
+  "perturbed": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "mu": 1,
+        "y": 1
+      },
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "mu": 1,
+        "x": 2,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "claimed4": [
+      {
+        "coeff": "4",
+        "mu": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-4",
+        "mu": 1,
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "dH4": [
+      {
+        "coeff": "4",
+        "mu": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-4",
+        "mu": 1,
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "trace": [
+      {
+        "coeff": "1",
+        "mu": 1
+      },
+      {
+        "coeff": "-1",
+        "mu": 1,
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "mu"
+    ]
+  },
+  "schema": "hilbert16-ff-two-well-identities/v1",
+  "translate_minus": {
+    "Q": [
+      {
+        "X": 1,
+        "coeff": "-2"
+      },
+      {
+        "X": 1,
+        "Y": 1,
+        "coeff": "2",
+        "mu": 1
+      },
+      {
+        "X": 2,
+        "coeff": "3"
+      },
+      {
+        "X": 2,
+        "Y": 1,
+        "coeff": "-1",
+        "mu": 1
+      },
+      {
+        "X": 3,
+        "coeff": "-1"
+      }
+    ],
+    "claimed": [
+      {
+        "X": 1,
+        "coeff": "-2"
+      },
+      {
+        "X": 1,
+        "Y": 1,
+        "coeff": "2",
+        "mu": 1
+      },
+      {
+        "X": 2,
+        "coeff": "3"
+      },
+      {
+        "X": 2,
+        "Y": 1,
+        "coeff": "-1",
+        "mu": 1
+      },
+      {
+        "X": 3,
+        "coeff": "-1"
+      }
+    ],
+    "diff": [],
+    "variables": [
+      "X",
+      "Y",
+      "mu"
+    ]
+  },
+  "translate_plus": {
+    "Q": [
+      {
+        "X": 1,
+        "coeff": "-2"
+      },
+      {
+        "X": 1,
+        "Y": 1,
+        "coeff": "-2",
+        "mu": 1
+      },
+      {
+        "X": 2,
+        "coeff": "-3"
+      },
+      {
+        "X": 2,
+        "Y": 1,
+        "coeff": "-1",
+        "mu": 1
+      },
+      {
+        "X": 3,
+        "coeff": "-1"
+      }
+    ],
+    "claimed": [
+      {
+        "X": 1,
+        "coeff": "-2"
+      },
+      {
+        "X": 1,
+        "Y": 1,
+        "coeff": "-2",
+        "mu": 1
+      },
+      {
+        "X": 2,
+        "coeff": "-3"
+      },
+      {
+        "X": 2,
+        "Y": 1,
+        "coeff": "-1",
+        "mu": 1
+      },
+      {
+        "X": 3,
+        "coeff": "-1"
+      }
+    ],
+    "diff": [],
+    "variables": [
+      "X",
+      "Y",
+      "mu"
+    ]
+  },
+  "unperturbed": {
+    "H4": [
+      {
+        "coeff": "2",
+        "y": 2
+      },
+      {
+        "coeff": "-2",
+        "x": 2
+      },
+      {
+        "coeff": "1",
+        "x": 4
+      }
+    ],
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "Q_factored": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "dH4": [],
+    "det": [
+      {
+        "coeff": "-1"
+      },
+      {
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "div": [],
+    "variables": [
+      "x",
+      "y"
+    ]
+  }
+}

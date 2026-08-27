@@ -1,0 +1,81 @@
+{
+  "H_saddle": "0",
+  "H_wells": "-1/4",
+  "I0_left": "4/15*mu",
+  "I0_right": "4/15*mu",
+  "I_at_well_bottom": "0",
+  "L1_cubic_minus": "-sqrt(2)*mu/2",
+  "L1_cubic_plus": "-sqrt(2)*mu/2",
+  "L1_minus": "sqrt(2)*mu",
+  "L1_plus": "sqrt(2)*mu",
+  "L1_quad_minus": "3*sqrt(2)*mu/2",
+  "L1_quad_plus": "3*sqrt(2)*mu/2",
+  "L1_squared_coeff": 2,
+  "V1_plus": "sqrt(2)*mu/8",
+  "claim": "Unperturbed two-well cubic Hamiltonian classification, dH/dt identities, I(h) formula, I(0)=4 mu/15 per figure-eight lobe, and L1=sqrt(2)*mu at each well. Not 14 zeros of I(h) and not a bound on H(n).",
+  "cycles_proved": 0,
+  "degree": 3,
+  "equilibria": [
+    {
+      "H": "0",
+      "det": "-1",
+      "kind": "saddle",
+      "trace": "0",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "H": "-1/4",
+      "det": "2",
+      "kind": "center",
+      "trace": "0",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "H": "-1/4",
+      "det": "2",
+      "kind": "center",
+      "trace": "0",
+      "x": -1,
+      "y": 0
+    }
+  ],
+  "fourteen_zeros_produced": false,
+  "hn_moved": false,
+  "perturbed_equilibria": [
+    {
+      "det": "-1",
+      "kind": "saddle",
+      "trace": "mu",
+      "x": 0,
+      "y": 0
+    },
+    {
+      "det": "2",
+      "kind": "center",
+      "trace": "0",
+      "x": 1,
+      "y": 0
+    },
+    {
+      "det": "2",
+      "kind": "center",
+      "trace": "0",
+      "x": -1,
+      "y": 0
+    }
+  ],
+  "potential_shift": "1/4",
+  "regular_I_zeros_exhibited": 0,
+  "saddle_stays_saddle": true,
+  "schema": "hilbert16-ff-two-well-core/v1",
+  "trace_at_wells": "0",
+  "weak_focus_order": 1,
+  "what_this_is_not": [
+    "not a dent of H(n)",
+    "not fourteen zeros of an Abelian integral",
+    "not a proved pair of limit cycles",
+    "not a new H(3)"
+  ]
+}

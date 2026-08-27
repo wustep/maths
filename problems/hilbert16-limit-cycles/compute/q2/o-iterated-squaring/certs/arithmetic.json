@@ -1,0 +1,117 @@
+{
+  "n": 3,
+  "N_formula": "(n+1) 2^k - 1",
+  "rows": [
+    {
+      "k": 1,
+      "N": 7,
+      "sheet_ceiling_bezout": 4,
+      "actual_complex": 2,
+      "chebyshev_m": 2,
+      "chebyshev_sheets": 4,
+      "bezout_over_N2": [
+        4,
+        49
+      ],
+      "complex_over_N2": [
+        2,
+        49
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "k": 2,
+      "N": 15,
+      "sheet_ceiling_bezout": 16,
+      "actual_complex": 4,
+      "chebyshev_m": 4,
+      "chebyshev_sheets": 16,
+      "bezout_over_N2": [
+        16,
+        225
+      ],
+      "complex_over_N2": [
+        4,
+        225
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "k": 3,
+      "N": 31,
+      "sheet_ceiling_bezout": 64,
+      "actual_complex": 8,
+      "chebyshev_m": 8,
+      "chebyshev_sheets": 64,
+      "bezout_over_N2": [
+        64,
+        961
+      ],
+      "complex_over_N2": [
+        8,
+        961
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "k": 4,
+      "N": 63,
+      "sheet_ceiling_bezout": 256,
+      "actual_complex": 16,
+      "chebyshev_m": 16,
+      "chebyshev_sheets": 256,
+      "bezout_over_N2": [
+        256,
+        3969
+      ],
+      "complex_over_N2": [
+        16,
+        3969
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "k": 5,
+      "N": 127,
+      "sheet_ceiling_bezout": 1024,
+      "actual_complex": 32,
+      "chebyshev_m": 32,
+      "chebyshev_sheets": 1024,
+      "bezout_over_N2": [
+        1024,
+        16129
+      ],
+      "complex_over_N2": [
+        32,
+        16129
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    },
+    {
+      "k": 6,
+      "N": 255,
+      "sheet_ceiling_bezout": 4096,
+      "actual_complex": 64,
+      "chebyshev_m": 64,
+      "chebyshev_sheets": 4096,
+      "bezout_over_N2": [
+        4096,
+        65025
+      ],
+      "complex_over_N2": [
+        64,
+        65025
+      ],
+      "complex_eq_(N+1)/(n+1)": true
+    }
+  ],
+  "conclusion": {
+    "beats_theorem2": false,
+    "attains_m2_per_step": false,
+    "actual_complex_growth": "linear",
+    "complex_sheets_formula": "(N+1)/(n+1)",
+    "bezout_ceiling_growth": "quadratic",
+    "answers_remark4": "negative_for_complex_squaring",
+    "do_not_claim_252_1080_1380_2012": true
+  }
+}

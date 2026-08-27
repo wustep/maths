@@ -1,0 +1,50 @@
+{
+  "N_formula": "2n+1",
+  "rows": [
+    {
+      "n": 1,
+      "N": 3,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4,
+      "sheets_gt_linear": true,
+      "attains_bezout": true,
+      "equals_T2": true
+    },
+    {
+      "n": 2,
+      "N": 5,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4,
+      "sheets_gt_linear": true,
+      "attains_bezout": true,
+      "equals_T2": true
+    },
+    {
+      "n": 3,
+      "N": 7,
+      "sheets": 4,
+      "linear": 2,
+      "bezout": 4,
+      "T2": 4,
+      "sheets_gt_linear": true,
+      "attains_bezout": true,
+      "equals_T2": true
+    }
+  ],
+  "conclusion": {
+    "beats_T2": false,
+    "equals_T2_sheets": true,
+    "attains_bezout": true,
+    "sheets_gt_linear": true,
+    "linear_formula": "(N+1)/(n+1)",
+    "H7_from_this_field": 4,
+    "published_H7": 74,
+    "beats_H7_74": false,
+    "do_not_claim_dent": true,
+    "do_not_claim_252_1080_1380_2012": true
+  }
+}

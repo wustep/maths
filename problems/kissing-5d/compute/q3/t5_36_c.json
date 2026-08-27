@@ -1,0 +1,10 @@
+{
+  "n": 355,
+  "target": 36,
+  "nodes": 40000001,
+  "node_limit": 40000000,
+  "best": 35,
+  "found": false,
+  "complete": false,
+  "clique": []
+}
