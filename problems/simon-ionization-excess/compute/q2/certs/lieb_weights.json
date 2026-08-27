@@ -1,0 +1,440 @@
+{
+  "not_a_certificate": true,
+  "is_new_bound": false,
+  "need_R_gt": 2.0,
+  "note": "R_search is an upper bound on inf R_N(\u03c6). Every family tried has a configuration with R <= 2 at N=3 and at N=4 (usually near the Lieb value (N-1)/2, or only a few tenths above it). No weight here produces a certified R > 2. Kinetic positivity holds for \u03c6=|x|^b, b in [0,1] (Chen\u2013Siedentop); for the other families it was not proved and is not used as a bound.",
+  "rows": [
+    {
+      "N": 3,
+      "family": "power",
+      "param": 1.0,
+      "R_search_upper_on_inf": 1.0,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "power",
+      "param": 1.25,
+      "R_search_upper_on_inf": 1.1547005383792517,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "power",
+      "param": 1.5,
+      "R_search_upper_on_inf": 1.1547005383792515,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "power",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.1547005383792515,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "power",
+      "param": 3.0,
+      "R_search_upper_on_inf": 1.1547005383792512,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_rational",
+      "param": 0.25,
+      "R_search_upper_on_inf": 2.175056149325357e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_rational",
+      "param": 0.5,
+      "R_search_upper_on_inf": 9.732459930069869e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_rational",
+      "param": 1.0,
+      "R_search_upper_on_inf": 5.431397066423685e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_rational",
+      "param": 2.0,
+      "R_search_upper_on_inf": 2.9190318779548838e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_rational",
+      "param": 4.0,
+      "R_search_upper_on_inf": 1.3306056121324273e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "one_minus_exp",
+      "param": 0.25,
+      "R_search_upper_on_inf": 3.084208103851257e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "one_minus_exp",
+      "param": 0.5,
+      "R_search_upper_on_inf": 1.5482795275215255e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "one_minus_exp",
+      "param": 1.0,
+      "R_search_upper_on_inf": 8.054022490390622e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "one_minus_exp",
+      "param": 2.0,
+      "R_search_upper_on_inf": 3.794778271754518e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_exp",
+      "param": 0.1,
+      "R_search_upper_on_inf": 2.232688534338228e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_exp",
+      "param": 0.25,
+      "R_search_upper_on_inf": 2.5278109106768446e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_exp",
+      "param": 0.5,
+      "R_search_upper_on_inf": 3.0878201327253626e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_exp",
+      "param": 1.0,
+      "R_search_upper_on_inf": 4.167523322895149e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "screened_exp",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.830979027120311e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "min_r",
+      "param": 0.5,
+      "R_search_upper_on_inf": 6.730235280497287e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "min_r",
+      "param": 1.0,
+      "R_search_upper_on_inf": 1.0143805242500308e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "min_r",
+      "param": 2.0,
+      "R_search_upper_on_inf": 2.3429105312160284e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "min_r",
+      "param": 4.0,
+      "R_search_upper_on_inf": 4.6210091984341964e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "compact_cutoff",
+      "param": 0.5,
+      "R_search_upper_on_inf": 2e-16,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "compact_cutoff",
+      "param": 1.0,
+      "R_search_upper_on_inf": 6.928364273719189e-10,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "compact_cutoff",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.1885283988164565e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 3,
+      "family": "compact_cutoff",
+      "param": 4.0,
+      "R_search_upper_on_inf": 1.2164363635634007e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "power",
+      "param": 1.0,
+      "R_search_upper_on_inf": 1.5013202352856938,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "power",
+      "param": 1.25,
+      "R_search_upper_on_inf": 1.8317084238666832,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "power",
+      "param": 1.5,
+      "R_search_upper_on_inf": 1.8371173070873834,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "power",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.8371173070873832,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "power",
+      "param": 3.0,
+      "R_search_upper_on_inf": 1.8371173070873832,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_rational",
+      "param": 0.25,
+      "R_search_upper_on_inf": 2.4028889545512663e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_rational",
+      "param": 0.5,
+      "R_search_upper_on_inf": 1.2206773004015156e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_rational",
+      "param": 1.0,
+      "R_search_upper_on_inf": 5.541472315484425e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_rational",
+      "param": 2.0,
+      "R_search_upper_on_inf": 3.0175199376574485e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_rational",
+      "param": 4.0,
+      "R_search_upper_on_inf": 1.649831117178992e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "one_minus_exp",
+      "param": 0.25,
+      "R_search_upper_on_inf": 3.3946140519882666e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "one_minus_exp",
+      "param": 0.5,
+      "R_search_upper_on_inf": 1.9766484399619005e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "one_minus_exp",
+      "param": 1.0,
+      "R_search_upper_on_inf": 8.136325948566006e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "one_minus_exp",
+      "param": 2.0,
+      "R_search_upper_on_inf": 4.331108301015773e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_exp",
+      "param": 0.1,
+      "R_search_upper_on_inf": 2.8426567206577886e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_exp",
+      "param": 0.25,
+      "R_search_upper_on_inf": 4.362764576186074e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_exp",
+      "param": 0.5,
+      "R_search_upper_on_inf": 8.673067234209518e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_exp",
+      "param": 1.0,
+      "R_search_upper_on_inf": 2.7037393510644295e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "screened_exp",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.1708206532519999e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "min_r",
+      "param": 0.5,
+      "R_search_upper_on_inf": 6.3959327318765735e-06,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "min_r",
+      "param": 1.0,
+      "R_search_upper_on_inf": 1.2858250733959458e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "min_r",
+      "param": 2.0,
+      "R_search_upper_on_inf": 2.5971835078202053e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "min_r",
+      "param": 4.0,
+      "R_search_upper_on_inf": 5.028503913274453e-05,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "compact_cutoff",
+      "param": 0.5,
+      "R_search_upper_on_inf": 9.157983158315033e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "compact_cutoff",
+      "param": 1.0,
+      "R_search_upper_on_inf": 2.7746480976501167e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "compact_cutoff",
+      "param": 2.0,
+      "R_search_upper_on_inf": 1.5929928413194277e-09,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    },
+    {
+      "N": 4,
+      "family": "compact_cutoff",
+      "param": 4.0,
+      "R_search_upper_on_inf": 4.749690619908443e-10,
+      "excludes_Z2_if_this_were_a_lower_bound": false,
+      "already_cannot_exclude_Z2": true
+    }
+  ]
+}

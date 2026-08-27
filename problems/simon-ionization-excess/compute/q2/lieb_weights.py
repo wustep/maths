@@ -163,10 +163,10 @@ def main() -> None:
                     {
                         "N": N,
                         "family": name,
-                        "param": p,
-                        "R_search_upper_on_inf": R,
-                        "excludes_Z2_if_this_were_a_lower_bound": R > 2.0,
-                        "already_cannot_exclude_Z2": R <= 2.0,
+                        "param": float(p),
+                        "R_search_upper_on_inf": float(R),
+                        "excludes_Z2_if_this_were_a_lower_bound": bool(R > 2.0),
+                        "already_cannot_exclude_Z2": bool(R <= 2.0),
                     }
                 )
                 flag = "cannot exclude" if R <= 2.0 else "only an upper on inf"

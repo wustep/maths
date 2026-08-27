@@ -55,7 +55,23 @@ def main() -> None:
         "equilateral_centred_s2": {
             "alpha": math.sqrt(3.0) / 3.0,
             "exact": "sqrt(3)/3",
-            "note": "a configuration value, hence an upper bound on the inf",
+            "N3_times_2": 2.0 * math.sqrt(3.0) / 3.0,
+            "below_Z2": True,
+            "note": "configuration, hence an upper bound on inf alpha_3",
+        },
+        "tetrahedron_centred_s2": {
+            "alpha": math.sqrt(6.0) / 4.0,
+            "exact": "sqrt(6)/4",
+            "N4_times_3": 3.0 * math.sqrt(6.0) / 4.0,
+            "below_Z2": True,
+            "integer_form": "3*sqrt(6) < 8  <=>  54 < 64",
+            "note": (
+                "Regular tetrahedron centred at the origin. Evaluates "
+                "alpha_4,2 exactly. So alpha_4,2 <= sqrt(6)/4 < 2/3, and "
+                "alpha_4,2 * 3 <= 3*sqrt(6)/4 < 2. The s=2 pair geometry "
+                "cannot exclude N=4 at Z=2 even if the kinetic remainder "
+                "is dropped. Independent integer check: 9*6 = 54 < 64."
+            ),
         },
         "one_at_origin_opposite_s2": {
             "alpha": 0.75,
@@ -64,8 +80,9 @@ def main() -> None:
         },
         "note": (
             "Published elementary lowers on alpha_4 stop at 1/2 or at "
-            "sqrt(5)/4. Both give alpha_4 (N-1) < 2. No geometric dent "
-            "for Nc(2)<4 from these inequalities alone."
+            "sqrt(5)/4. The tetrahedron gives a certified *upper* on "
+            "alpha_4,2 below the 2/3 threshold. No geometric dent for "
+            "Nc(2)<4 from the |x|^s pair ratio."
         ),
     }
     # Integer check: 3 sqrt(5) < 8  <=>  (sqrt(5)/4)*3 < 2.
@@ -73,6 +90,25 @@ def main() -> None:
         raise RuntimeError("arithmetic of sqrt(5)/4 * 3 vs 2 drifted")
     if Fraction(3, 4) <= Fraction(2, 3):
         raise RuntimeError("3/4 should exceed 2/3")
+    # 3 sqrt(6) < 8  <=>  9*6 < 64.
+    if 54 >= 64:
+        raise RuntimeError("54 < 64 failed")
+    if 3 * 3 * 6 >= 8 * 8:
+        raise RuntimeError("tetrahedron 3*sqrt(6) < 8 failed")
+    # Cross-check the closed form on the tetrahedron vertices.
+    tet = (
+        (1.0, 1.0, 1.0),
+        (1.0, -1.0, -1.0),
+        (-1.0, 1.0, -1.0),
+        (-1.0, -1.0, 1.0),
+    )
+    r = math.sqrt(3.0)
+    d = math.sqrt(8.0)
+    num = 6.0 * (r**2 + r**2) / d
+    den = 3.0 * 4.0 * r
+    a_tet = num / den
+    if abs(a_tet - math.sqrt(6.0) / 4.0) > 1e-12:
+        raise RuntimeError(f"tetrahedron alpha drifted: {a_tet}")
     path = CERTS / "geometric_alpha.json"
     path.write_text(json.dumps(blob, indent=2) + "\n")
     print("Lieb s=1: alpha >= 1/2, N < 2Z+1, Nc(2)<=4")

@@ -1,0 +1,235 @@
+{
+  "not_a_new_bound": true,
+  "is_new_bound": false,
+  "record": [
+    "Lieb Phys. Rev. A 29 (1984): Nc < 2Z+1",
+    "Nam arXiv:1009.2367v3: Nc < 1.22 Z + 3 Z^{1/3}",
+    "HPS arXiv:2504.18487v1 Prop. 2.4\u20132.5",
+    "q1 remainder tightening 2.953 / 3.892 / 3.9781 (same HPS chain)"
+  ],
+  "constants": {
+    "b2": "1.207106781186547524400844362104849039285",
+    "b3": "1.118433799202706636641762578621416983973"
+  },
+  "at": [
+    {
+      "Z": 2,
+      "lieb": {
+        "U": "5.000000000000000000000000000000000000000",
+        "U_float": 5.0,
+        "max_integer_Nc": 4,
+        "excludes_N_geq": 5
+      },
+      "nam": {
+        "U": "6.219763149684619494301631821834685051711",
+        "U_float": 6.21976314968462,
+        "max_integer_Nc": 6,
+        "excludes_N_geq": 7
+      },
+      "hps_s2_printed": {
+        "U": "6.143579870061919616512632121753253996258",
+        "U_float": 6.143579870061919,
+        "max_integer_Nc": 6,
+        "excludes_N_geq": 7
+      },
+      "hps_s2_q1": {
+        "U": "6.134760422712655504359261647502306397804",
+        "U_float": 6.134760422712655,
+        "max_integer_Nc": 6,
+        "excludes_N_geq": 7
+      },
+      "hps_s3_printed": null,
+      "hps_s3_q1": null,
+      "hps_simplified_printed": null,
+      "hps_simplified_q1": null,
+      "best_published": {
+        "name": "lieb",
+        "U": "5.000000000000000000000000000000000000000",
+        "max_integer_Nc": 4,
+        "excludes_N_geq": 5
+      },
+      "zhislin_N0_at_least": 2,
+      "unsettled_integers": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "Z": 3,
+      "lieb": {
+        "U": "7.000000000000000000000000000000000000000",
+        "U_float": 7.0,
+        "max_integer_Nc": 6,
+        "excludes_N_geq": 7
+      },
+      "nam": {
+        "U": "7.986748710922225146964914932340328765176",
+        "U_float": 7.9867487109222255,
+        "max_integer_Nc": 7,
+        "excludes_N_geq": 8
+      },
+      "hps_s2_printed": {
+        "U": "7.890379071669571384874582486223671499494",
+        "U_float": 7.890379071669571,
+        "max_integer_Nc": 7,
+        "excludes_N_geq": 8
+      },
+      "hps_s2_q1": {
+        "U": "7.880283324677419526198331018048210732376",
+        "U_float": 7.8802833246774195,
+        "max_integer_Nc": 7,
+        "excludes_N_geq": 8
+      },
+      "hps_s3_printed": null,
+      "hps_s3_q1": null,
+      "hps_simplified_printed": null,
+      "hps_simplified_q1": null,
+      "best_published": {
+        "name": "lieb",
+        "U": "7.000000000000000000000000000000000000000",
+        "max_integer_Nc": 6,
+        "excludes_N_geq": 7
+      },
+      "zhislin_N0_at_least": 3,
+      "unsettled_integers": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "Z": 4,
+      "lieb": {
+        "U": "9.000000000000000000000000000000000000000",
+        "U_float": 9.0,
+        "max_integer_Nc": 8,
+        "excludes_N_geq": 9
+      },
+      "nam": {
+        "U": "9.642203155904598424255116917816924781174",
+        "U_float": 9.642203155904598,
+        "max_integer_Nc": 9,
+        "excludes_N_geq": 10
+      },
+      "hps_s2_printed": {
+        "U": "9.527134238572060542868426140665428607898",
+        "U_float": 9.52713423857206,
+        "max_integer_Nc": 9,
+        "excludes_N_geq": 10
+      },
+      "hps_s2_q1": {
+        "U": "9.516022431208283146545164201190522450075",
+        "U_float": 9.516022431208283,
+        "max_integer_Nc": 9,
+        "excludes_N_geq": 10
+      },
+      "hps_s3_printed": {
+        "U": "10.80169030123177700668356904114970147015",
+        "U_float": 10.801690301231776,
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "hps_s3_q1": {
+        "U": "10.78899109281603141088555539603552300406",
+        "U_float": 10.788991092816032,
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "hps_simplified_printed": {
+        "U": "10.82360420787279789900682255708923304157",
+        "U_float": 10.823604207872798,
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "hps_simplified_q1": {
+        "U": "10.78884012483469433050976020358916949066",
+        "U_float": 10.788840124834694,
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "best_published": {
+        "name": "lieb",
+        "U": "9.000000000000000000000000000000000000000",
+        "max_integer_Nc": 8,
+        "excludes_N_geq": 9
+      },
+      "zhislin_N0_at_least": 4,
+      "unsettled_integers": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "Z": 5,
+      "lieb": {
+        "U": "11.00000000000000000000000000000000000000",
+        "U_float": 11.0,
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "nam": {
+        "U": "11.22992784003009096805932661763158032960",
+        "U_float": 11.229927840030092,
+        "max_integer_Nc": 11,
+        "excludes_N_geq": 12
+      },
+      "hps_s2_printed": {
+        "U": "11.09706270809576071048942407325407112163",
+        "U_float": 11.097062708095761,
+        "max_integer_Nc": 11,
+        "excludes_N_geq": 12
+      },
+      "hps_s2_q1": {
+        "U": "11.08509287646902383156395231114626410086",
+        "U_float": 11.085092876469023,
+        "max_integer_Nc": 11,
+        "excludes_N_geq": 12
+      },
+      "hps_s3_printed": {
+        "U": "12.38878214652985756509485145766158683823",
+        "U_float": 12.388782146529858,
+        "max_integer_Nc": 12,
+        "excludes_N_geq": 13
+      },
+      "hps_s3_q1": {
+        "U": "12.37510233895644398918002658668123595735",
+        "U_float": 12.375102338956443,
+        "max_integer_Nc": 12,
+        "excludes_N_geq": 13
+      },
+      "hps_simplified_printed": {
+        "U": "12.43240378670678795741243549017544043947",
+        "U_float": 12.432403786706788,
+        "max_integer_Nc": 12,
+        "excludes_N_geq": 13
+      },
+      "hps_simplified_q1": {
+        "U": "12.39495531347456829334560240586672990307",
+        "U_float": 12.394955313474568,
+        "max_integer_Nc": 12,
+        "excludes_N_geq": 13
+      },
+      "best_published": {
+        "name": "lieb",
+        "U": "11.00000000000000000000000000000000000000",
+        "max_integer_Nc": 10,
+        "excludes_N_geq": 11
+      },
+      "zhislin_N0_at_least": 5,
+      "unsettled_integers": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    }
+  ],
+  "punch": "At Z=2,3,4,5 the best published integer bound is Lieb. Nam and both HPS envelopes sit above 2Z+1 here, so they exclude no extra integer N. Unsettled: Z=2 has N=2,3,4; Z=3 has N=3,4,5,6; Z=4 has N=4..8; Z=5 has N=5..10. Hydrogen uniqueness N0(1)=2 is Lieb 1984, not claimed here."
+}

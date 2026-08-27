@@ -21,6 +21,7 @@ def main() -> None:
     nam = load("nam_smallz.json")
     temple = load("temple.json")
     geom = load("geometric_alpha.json")
+    tetra = load("tetra.json")
 
     best = {row["Z"]: row["best_published"] for row in env["at"]}
     unsettled = {row["Z"]: row["unsettled_integers"] for row in env["at"]}
@@ -92,10 +93,12 @@ def main() -> None:
                 "destroys the bound at N=4."
             ),
             "alpha_search": (
-                f"Numerical upper on alpha_4,2 ≈ {a4s2}. Need > 2/3 if kinetic "
-                "is dropped; Nam kinetic error makes the need larger (~0.85). "
-                "A search min is not a lower bound."
+                f"Numerical upper on alpha_4,2 ≈ {a4s2}. The regular tetrahedron "
+                "gives the exact upper sqrt(6)/4, so alpha_4,2 * 3 < 2 by 54<64. "
+                "Need > 2/3 if kinetic is dropped. Pair geometry cannot exclude "
+                "N=4 at Z=2."
             ),
+            "tetrahedron": tetra["statement"],
             "temple_IH": (
                 "3e Slater trials have μ above the helium Hylleraas upper, so "
                 "Temple vs E_1 ≥ E(2,2) does not apply. IH minorants 1/|x-y|≥0 "

@@ -1,0 +1,3 @@
+# Local compile of verify_tetra.c; the replay writes /tmp/verify_tetra_q2.
+verify_tetra
+*.o

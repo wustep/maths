@@ -22,12 +22,12 @@ At every one of these four charges the best published envelope is
 Lieb $N_c<2Z+1$. Nam and both HPS forms (printed and q1) sit above
 $2Z+1$, so they exclude no extra integer $N$.
 
-| $Z$ | Lieb $U$ | Nam $U$ | HPS $s=2$ printed | HPS $s=2$ q1 | HPS $s=3$ / q1 | best integer | excludes | unsettled |
+| $Z$ | Lieb $U$ | Nam $U$ | HPS $s=2$ printed | HPS $s=2$ q1 | HPS $s=3$ printed / q1 | best integer | excludes | unsettled |
 | --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: | --- |
-| 2 | 5 | $\approx 6.22$ | $\approx 6.14$ | $\approx 6.13$ | n/a ($Z<4$) | $N_c\le 4$ | $N\ge 5$ | $2,3,4$ |
-| 3 | 7 | $\approx 7.99$ | $\approx 7.89$ | $\approx 7.88$ | n/a | $N_c\le 6$ | $N\ge 7$ | $3,4,5,6$ |
-| 4 | 9 | $\approx 9.64$ | $\approx 9.53$ | $\approx 9.52$ | $\approx 10.79$ / $10.78$ | $N_c\le 8$ | $N\ge 9$ | $4,\ldots,8$ |
-| 5 | 11 | $\approx 11.23$ | $\approx 11.10$ | $\approx 11.08$ | $\approx 12.38$ / $12.36$ | $N_c\le 10$ | $N\ge 11$ | $5,\ldots,10$ |
+| 2 | 5 | 6.219763 | 6.143580 | 6.134760 | n/a ($Z<4$) | $N_c\le 4$ | $N\ge 5$ | $2,3,4$ |
+| 3 | 7 | 7.986749 | 7.890379 | 7.880283 | n/a | $N_c\le 6$ | $N\ge 7$ | $3,4,5,6$ |
+| 4 | 9 | 9.642203 | 9.527134 | 9.516022 | 10.801690 / 10.788991 | $N_c\le 8$ | $N\ge 9$ | $4,\ldots,8$ |
+| 5 | 11 | 11.229928 | 11.097063 | 11.085093 | 12.388782 / 12.375102 | $N_c\le 10$ | $N\ge 11$ | $5,\ldots,10$ |
 
 Zhislin binds for every $N<Z+1$, so $N_0(Z)\ge Z$. Combined with Lieb,
 the only uniqueness in the published record at these charges is still
@@ -61,12 +61,14 @@ $R_3\ge 1<2$. To exclude $N=4$ or $N=3$ at $Z=2$ one needs $R>2$.
 - $\varphi=\min(|x|,\rho)$,
 - a $C^1$ compact cutoff $|x|\,\eta(|x|/\rho)$.
 
-A search minimum is an *upper* bound on $\inf R$. Every family produced
-a configuration with $R\le 2$ at both $N=3$ and $N=4$. Those weights
-therefore cannot exclude $N=3$ or $N=4$ at $Z=2$, independently of
-further search. Kinetic positivity is proved in the literature only
-for $\varphi=|x|^b$, $b\in[0,1]$ (Lieb; Chen–Siedentop); it was not
-used as a bound for the other families.
+A search minimum is an *upper* bound on $\inf R$. The power family
+reproduces the equilateral / tetrahedron values ($R_3=2/\sqrt{3}\approx 1.155$,
+$R_4=3\sqrt{6}/4\approx 1.837$), both below $2$. The screened and compact
+families degenerate: the optimiser pushes mass where $\varphi$ vanishes
+and $R$ collapses toward $0$, which is still $R\le 2$. Those weights
+therefore cannot exclude $N=3$ or $N=4$ at $Z=2$. Kinetic positivity is
+proved in the literature only for $\varphi=|x|^b$, $b\in[0,1]$ (Lieb;
+Chen–Siedentop); it was not used as a bound for the other families.
 
 ## Nam / HPS at small $N$
 
@@ -85,9 +87,17 @@ side $\approx 5$ (the $N^{1/3}$ remainder is $\sim 2.5$). No
 contradiction. Same at $Z=3,4,5$ for $N$ still allowed by Lieb.
 Dump: `certs/nam_smallz.json`.
 
+The centred regular tetrahedron evaluates $\alpha_{4,2}$ exactly:
+all $|x|=\sqrt{3}$, all $|x-y|=\sqrt{8}$, so $\alpha_{4,2}\le\sqrt{6}/4$.
+Then $\alpha_{4,2}\cdot 3\le 3\sqrt{6}/4<2$ because $54<64$. Two
+independent checks: `verify_tetra.py` and `verify_tetra.c`. This is a
+certified *obstruction* to a dent by the $s=2$ pair geometry, not a
+dent. The same for $N=3$: the centred equilateral triangle gives
+$\alpha_{3,2}\le\sqrt{3}/3$, hence $\alpha_{3,2}\cdot 2=2/\sqrt{3}<2$.
+
 `alpha_n.py` / `alpha_n_check.py` search $\alpha_{N,s}$. The search
-minimum is an upper bound on the infimum. It is recorded only to see
-whether the geometry has room; it is not a certificate.
+minimum matches those closed forms at $s\ge 1.5$. A search min is an
+upper bound on the infimum and is not used as a lower bound.
 
 ## Temple / intermediate Hamiltonian
 
@@ -96,15 +106,16 @@ $E(2,2)\le -54353/18800$ (q1, exact rational). That is a legal *upper*
 on the helium threshold.
 
 Hydrogenic $1s^2 2s$ and $1s2s2p\,{}^4P$ trials on $H(3,2)$ sit above
-that upper bound (q1 `three_electron_try.py`, replayed). Temple requires
-$\mu<E_1$. Taking $E_1$ as the HVZ threshold $E(2,2)$ makes the
-hypothesis false. No Temple number is claimed.
+that upper bound by $0.204$ and $0.885$ (q1 `three_electron_try.py`,
+replayed). Temple requires $\mu<E_1$. Taking $E_1$ as the HVZ threshold
+$E(2,2)$ makes the hypothesis false. No Temple number is claimed.
 
 Crude intermediate Hamiltonians:
 
 - drop repulsion: $E(3,2)\ge 3E(1,2)=-6$, far below helium;
 - replace $1/|x-y|$ by $1/(|x|+|y|)$: a product scan of that minorant
-  also sits well below $-54353/18800$.
+  reached about $-3.82$ at $\zeta=1.6$, still $0.93$ below
+  $-54353/18800$.
 
 Variational uppers on $E(3,2)$ were not used as non-binding evidence.
 HF/DFT were not used.

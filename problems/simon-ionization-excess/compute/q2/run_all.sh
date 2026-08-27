@@ -5,6 +5,8 @@ cd "$(dirname "$0")"
 python3 envelopes.py
 python3 envelopes_check.py
 python3 geometric_alpha.py
+python3 verify_tetra.py
+cc -O2 -o /tmp/verify_tetra_q2 verify_tetra.c && /tmp/verify_tetra_q2
 python3 alpha_n.py
 python3 alpha_n_check.py
 python3 lieb_weights.py
