@@ -1,0 +1,37 @@
+{
+  "status": "residue",
+  "reason": "At R<=9 the mass-opt cut R/(R+1) is at most 0.9, so min(gamma, cut) <= 0.9 and the leading is at least 1.1111. That cannot beat printed 1.1035. Dead without a sharper cut. q5 already recorded the same wall against 1.1057.",
+  "q5_printed": 1.1035,
+  "rows": [
+    {
+      "R": 8.0,
+      "cut": 0.8888888888888888,
+      "leading_if_cut_binds": 1.125,
+      "beats_1.1035_if_cut_binds": false
+    },
+    {
+      "R": 9.0,
+      "cut": 0.9,
+      "leading_if_cut_binds": 1.1111111111111112,
+      "beats_1.1035_if_cut_binds": false
+    },
+    {
+      "R": 9.5,
+      "cut": 0.9047619047619048,
+      "leading_if_cut_binds": 1.1052631578947367,
+      "beats_1.1035_if_cut_binds": false
+    },
+    {
+      "R": 9.8,
+      "cut": 0.9074074074074074,
+      "leading_if_cut_binds": 1.1020408163265305,
+      "beats_1.1035_if_cut_binds": true
+    },
+    {
+      "R": 10.0,
+      "cut": 0.9090909090909091,
+      "leading_if_cut_binds": 1.1,
+      "beats_1.1035_if_cut_binds": true
+    }
+  ]
+}
