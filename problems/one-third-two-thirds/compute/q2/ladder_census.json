@@ -264,6 +264,7 @@
       "e": 54882,
       "n_non_sum": 524288,
       "n_below_1_3": 0,
+      "pair": [0, 1, 35712, 19170],
       "source": "C exhaustive; Python replay of the witness"
     }
   ],
