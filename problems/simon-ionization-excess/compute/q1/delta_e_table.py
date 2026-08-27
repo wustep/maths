@@ -137,7 +137,13 @@ def main(argv: list[str] | None = None) -> int:
         hf = json.load(fh)
 
     blocks = {}
-        for key in ("helium_like_slater", "uhf_sp", "uhf_s_n12", "uhf_sto3g", "uhf_s_even_tempered"):
+    for key in (
+        "helium_like_slater",
+        "uhf_sp",
+        "uhf_s_n12",
+        "uhf_sto3g",
+        "uhf_s_even_tempered",
+    ):
         if key not in hf:
             continue
         rows = hf[key]["rows"]

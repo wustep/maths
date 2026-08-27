@@ -696,9 +696,13 @@ def uhf_energy(
     s: np.ndarray,
     h: np.ndarray,
     eri: np.ndarray,
-    max_iter: int = 80,
+    max_iter: int = 160,
     conv: float = 1e-8,
-    mix: float = 0.35,
+    mix: float = 0.4,
+    guess: tuple[np.ndarray, np.ndarray] | None = None,
+    return_density: bool = False,
+    shift0: float = 0.0,
+    allow_retry: bool = True,
 ) -> dict:
     """UHF SCF. Every field is HEURISTIC except the exact N=0,1 notes."""
     n_ao = h.shape[0]
@@ -714,11 +718,15 @@ def uhf_energy(
             "n_beta": n_b,
             "n_ao": n_ao,
         }
-    x = _canon_orth(s)
-    # Core-Hamiltonian guess (same spatial orbitals for alpha/beta).
-    eps, c = _eigh_gen(h, x)
-    pa = _density(c, n_a)
-    pb = _density(c, n_b)
+    x = _canon_orth(s, thresh=1e-7)
+    if guess is not None:
+        pa = 0.5 * (guess[0] + guess[0].T)
+        pb = 0.5 * (guess[1] + guess[1].T)
+    else:
+        # Core-Hamiltonian guess (same spatial orbitals for alpha/beta).
+        _eps, c = _eigh_gen(h, x)
+        pa = _density(c, n_a)
+        pb = _density(c, n_b)
     e_old = 0.0
     hist_f_a: list[np.ndarray] = []
     hist_e_a: list[np.ndarray] = []
@@ -727,7 +735,7 @@ def uhf_energy(
     energy = 0.0
     converged = False
     niter = 0
-    shift = 0.0
+    shift = float(shift0)
     for niter in range(1, max_iter + 1):
         pt = pa + pb
         j = np.einsum("ijkl,kl->ij", eri, pt, optimize=True)
@@ -763,13 +771,12 @@ def uhf_energy(
         eps_b, cb = _eigh_gen(fb, x)
         pa_n = _density(ca, n_a)
         pb_n = _density(cb, n_b)
+        dP = float(np.linalg.norm(pa_n - pa) + np.linalg.norm(pb_n - pb))
         # Damping early; DIIS takes over later.
-        damp = mix if niter < 8 else 0.15
+        damp = mix if niter < 8 else 0.12
         pa = (1.0 - damp) * pa_n + damp * pa
         pb = (1.0 - damp) * pb_n + damp * pb
         pt = pa + pb
-        # Energy from the damped densities and the last raw Fock-like
-        # rebuild so the formula is consistent.
         j = np.einsum("ijkl,kl->ij", eri, pt, optimize=True)
         ka = np.einsum("ikjl,kl->ij", eri, pa, optimize=True)
         kb = np.einsum("ikjl,kl->ij", eri, pb, optimize=True)
@@ -785,8 +792,7 @@ def uhf_energy(
                 + np.mean(np.asarray(err_b) ** 2)
             )
         )
-        if rms < conv and abs(energy - e_old) < conv:
-            # Final undamped occupy
+        if abs(energy - e_old) < conv and (dP < 2e-5 or rms < 1e-5 or niter > 4):
             pa = pa_n
             pb = pb_n
             pt = pa + pb
@@ -800,15 +806,37 @@ def uhf_energy(
             )
             eps_a, ca = _eigh_gen(fa_e, x)
             eps_b, cb = _eigh_gen(fb_e, x)
+            pa = _density(ca, n_a)
+            pb = _density(cb, n_b)
             converged = True
             break
-        if niter > 20 and abs(energy - e_old) > 0.5:
-            shift = min(2.0, shift + 0.25)
+        if niter > 16 and abs(energy - e_old) > 0.2:
+            shift = min(1.5, shift + 0.2)
         e_old = energy
+
+    # One retry with a level shift if the first pass stalled.
+    if not converged and allow_retry:
+        retry = uhf_energy(
+            z,
+            n_elec,
+            s,
+            h,
+            eri,
+            max_iter=min(120, max_iter),
+            conv=conv,
+            mix=0.55,
+            guess=(pa, pb),
+            return_density=return_density,
+            shift0=0.6,
+            allow_retry=False,
+        )
+        retry["n_iter"] = niter + int(retry.get("n_iter") or 0)
+        retry["retried_with_shift"] = True
+        return retry
 
     homo_a = float(eps_a[n_a - 1]) if n_a > 0 else None
     homo_b = float(eps_b[n_b - 1]) if n_b > 0 else None
-    return {
+    out = {
         "label": LABEL,
         "ok": True,
         "scf_converged": converged,
@@ -825,6 +853,10 @@ def uhf_energy(
         "homo_beta": homo_b,
         "units": HARTREE,
     }
+    if return_density:
+        out["_pa"] = pa
+        out["_pb"] = pb
+    return out
 
 
 # ---------------------------------------------------------------------------
@@ -924,6 +956,7 @@ def run_basis_scan(
         s, h = one_electron(float(z), basis)
         eri = two_electron(basis)
         cache[z] = (basis, s, h, eri)
+        guess = None
         for n in n_range(z):
             if n == 0:
                 row = {
@@ -940,13 +973,25 @@ def run_basis_scan(
                 }
                 rows.append(row)
                 continue
-            rec = uhf_energy(float(z), n, s, h, eri)
+            rec = uhf_energy(
+                float(z),
+                n,
+                s,
+                h,
+                eri,
+                guess=guess,
+                return_density=True,
+            )
             rec["method"] = basis_name
             rec["basis_tags"] = [ao.tag for ao in basis]
             if rec.get("ok"):
                 rec["certified_vs_exact_previous"] = _certified_vs_exact(
                     n, z, rec["E"]
                 )
+                if "_pa" in rec and "_pb" in rec:
+                    guess = (rec["_pa"], rec["_pb"])
+            rec.pop("_pa", None)
+            rec.pop("_pb", None)
             rows.append(rec)
     return rows
 
