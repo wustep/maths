@@ -56,12 +56,16 @@ def main():
         ["gcc", "-O3", "-o", str(HERE / "verify_beta3"), str(HERE / "verify_beta3.c"), "-lm"]
     )
 
+    mat = CERTS / "beta3_matrix_n12.txt"
+    faces_path = CERTS / "beta3_faces_n12.txt"
     for gt, expect_ok in ((0.9040, True), (0.9200, False)):
         M = A - (gt / 2.0) * (c[:, None] + c[None, :])
         py = python_face_min_M(M)
-        write_matrix(blob, gt, CERTS / "beta3_matrix.txt")
-        rc = subprocess.call([str(HERE / "verify_beta3")], cwd=str(HERE))
-        faces = parse_faces(CERTS / "beta3_faces.txt")
+        write_matrix(blob, gt, mat)
+        rc = subprocess.call(
+            [str(HERE / "verify_beta3"), str(mat), str(faces_path)], cwd=str(HERE)
+        )
+        faces = parse_faces(faces_path)
         print(
             f"gamma={gt}  py min mᵀMm={py:.6e}  C={faces['min_mMm']:.6e}  "
             f"C_ok={faces['copositive']} rc={rc}"

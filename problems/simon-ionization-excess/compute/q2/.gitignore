@@ -2,3 +2,7 @@ verify_beta3
 verify_beta3_rs
 __pycache__/
 *.pyc
+beta3_matrix_n12.txt
+beta3_faces_n12.txt
+*.bak
+beta3_matrix16.txt

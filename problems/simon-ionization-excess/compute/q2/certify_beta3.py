@@ -77,15 +77,15 @@ def parse_faces(path: Path) -> dict:
     return out
 
 
-def tail_certified(a, beta, fmin_hi, n_grid: int = 80):
-    """Interval minimum of the tail polynomial on the triangle.
+def tail_certified(a, beta, fmin):
+    """Lower-bound min of h on the triangle by edges + the unique critical point.
 
-    h(x,y) is quadratic, so a modest interval grid has no remainder
-    beyond the outward rounding already in mpmath.iv.
+    h is quadratic. det Hess < 0 (saddle). The min is on the boundary
+    or at that saddle. All four edges and the saddle are enclosed.
     """
-    a = iv.mpf(str(a)) if not isinstance(a, type(iv.mpf(1))) else a
-    beta = iv.mpf(str(beta)) if not isinstance(beta, type(iv.mpf(1))) else beta
-    fmin = iv.mpf(str(fmin_hi))
+    a = iv.mpf(str(a))
+    beta = iv.mpf(str(beta))
+    fmin = iv.mpf(str(fmin))
 
     def h_iv(x, y):
         Dc = 1 - x - y
@@ -95,35 +95,62 @@ def tail_certified(a, beta, fmin_hi, n_grid: int = 80):
             + y * (1 - a * (1 - fmin) - a * beta * Dc)
         )
 
-    a_hi = mpf(a.b)
-    best_lo = mpf("1e9")
-    at = (mpf(0), mpf(0))
-    nx, ny = n_grid, n_grid
-    for i in range(nx):
-        x = iv.mpf([str(a_hi * i / nx), str(a_hi * (i + 1) / nx)])
-        for j in range(ny):
-            # y ∈ [0, 1 − x] ⊃ [0, 1 − x.b] guaranteed inside the triangle
-            y_top = 1 - mpf(x.b)
-            if y_top <= 0:
-                continue
-            y = iv.mpf([0, str(y_top * (j + 1) / ny)])
-            # tighter cell
-            y = iv.mpf(
-                [str(y_top * j / ny), str(y_top * (j + 1) / ny)]
-            )
-            val = h_iv(x, y)
-            lo = mpf(val.a)
-            if lo < best_lo:
-                best_lo = lo
-                at = (mpf(x.mid), mpf(y.mid))
-    # also the three corners exactly
-    corners = [
-        tail_h(mpf(0), mpf(0), mpf(a.a), mpf(beta.a), mpf(fmin.a)),
-        tail_h(mpf(a.a), mpf(0), mpf(a.a), mpf(beta.a), mpf(fmin.a)),
-        tail_h(mpf(0), mpf(1) - mpf(a.a), mpf(a.a), mpf(beta.a), mpf(fmin.a)),
+    # --- edges, as interval lower bounds ---
+    # x=0: h = beta + y(1-beta-a(1-fmin+beta)) + a beta y^2
+    # ≥ beta iff 1-beta ≥ a(1-fmin+beta)
+    edge_x0_ok = mpf((1 - beta).a) >= mpf((a * (1 - fmin + beta)).b)
+    # y=0: h ≥ beta on x∈[0,a] iff beta ≤ 1-a (worst at x=a)
+    edge_y0_ok = mpf(beta.b) <= mpf((1 - a).a)
+    # x+y=1, x∈[0,a]: h = (1-x)(1-a(1-fmin)) ≥ (1-a)(1-a(1-fmin))
+    edge_hyp = (1 - a) * (1 - a * (1 - fmin))
+    # x=a, y∈[0,1-a]: convex parabola, min at an endpoint or vertex
+    y_hi = 1 - a
+    h_xa_left = h_iv(a, iv.mpf(0))
+    h_xa_right = h_iv(a, y_hi)
+    # vertex y = [(1-fmin)+beta(1-a)] / (2 beta)
+    y_vert = ((1 - fmin) + beta * (1 - a)) / (2 * beta)
+    h_xa_vert = h_iv(a, y_vert)
+    # --- unique critical point of the quadratic ---
+    k = (1 - beta) / a
+    c0 = 1 - a * (1 - fmin)
+    A11 = 2 * k
+    A12 = k - a * beta
+    A22 = -2 * a * beta
+    b1 = k - beta
+    b2 = c0 - beta - a * beta
+    det = A11 * A22 - A12 * A12
+    xc = (b1 * A22 - A12 * b2) / det
+    yc = (A11 * b2 - b1 * A12) / det
+    h_crit = h_iv(xc, yc)
+    hess_det = (-2 * k) * (2 * a * beta) - (A12) ** 2  # Hxx Hyy - Hxy^2
+
+    # Fat interval images of whole edges are not used as mins (wrapping).
+    # The three analytic edge tests plus the x=a endpoints/vertex and the
+    # saddle are the enclosure.
+    lowers = [
+        mpf(beta.a),  # origin
+        mpf(edge_hyp.a),
+        mpf(h_xa_left.a),
+        mpf(h_xa_right.a),
+        mpf(h_crit.a),
     ]
-    best_lo = min(best_lo, *corners)
-    return best_lo, best_lo, at, mpf(0)
+    yv_lo, yv_hi = mpf(y_vert.a), mpf(y_vert.b)
+    if yv_lo >= 0 and yv_hi <= mpf(y_hi.b):
+        lowers.append(mpf(h_xa_vert.a))
+    best_lo = min(lowers)
+    info = {
+        "edge_x0_coeff_nonneg": bool(edge_x0_ok),
+        "edge_y0_beta_le_1_minus_a": bool(edge_y0_ok),
+        "hess_det_negative": bool(mpf(hess_det.b) < 0),
+        "crit_x": list(iv_bounds(xc)),
+        "crit_y": list(iv_bounds(yc)),
+        "h_crit": list(iv_bounds(h_crit)),
+        "h_edge_hyp": list(iv_bounds(edge_hyp)),
+        "h_xa_endpoints": [list(iv_bounds(h_xa_left)), list(iv_bounds(h_xa_right))],
+        "h_xa_vertex": list(iv_bounds(h_xa_vert)),
+    }
+    at = (mpf(0), mpf(0))
+    return best_lo, mpf(beta.a), at, info
 
 
 def main() -> None:
@@ -138,11 +165,24 @@ def main() -> None:
 
     cbin = HERE / "verify_beta3"
     src = HERE / "verify_beta3.c"
-    print("compiling verify_beta3.c ...")
-    subprocess.check_call(["gcc", "-O3", "-o", str(cbin), str(src), "-lm"])
-    print("running face enumeration (2^{n}-1 faces) ...")
-    subprocess.check_call([str(cbin)], cwd=str(HERE))
-    faces = parse_faces(CERTS / "beta3_faces.txt")
+    faces_path = CERTS / "beta3_faces.txt"
+    reuse = False
+    if faces_path.exists() and cbin.exists():
+        prev = parse_faces(faces_path)
+        if (
+            prev.get("copositive")
+            and abs(prev.get("gamma_target", -1) - gamma_t) < 1e-14
+            and prev.get("n") == blob["n"]
+        ):
+            faces = prev
+            reuse = True
+            print("reusing", faces_path)
+    if not reuse:
+        print("compiling verify_beta3.c ...")
+        subprocess.check_call(["gcc", "-O3", "-o", str(cbin), str(src), "-lm"])
+        print("running face enumeration (2^{n}-1 faces) ...")
+        subprocess.check_call([str(cbin)], cwd=str(HERE))
+        faces = parse_faces(faces_path)
     if not faces.get("copositive"):
         raise SystemExit("C verifier: M not copositive")
 
@@ -160,9 +200,22 @@ def main() -> None:
     # Use a slightly smaller beta in h so the lemma is valid for our γ.
     # I ≥ h(D_L, D_R) with this beta, and min h ≥ gamma_mid (at origin
     # it equals beta). We take beta = gamma_mid.
-    h_lo, h_grid, h_at, h_rem = tail_certified(a, gamma_mid, fmin_hi, n_grid=200)
-    # Origin value is exactly gamma_mid. If the grid+Lipschitz still
-    # stays above 1/b(3), we have a global dent.
+    h_lo, h_origin, h_at, tail_info = tail_certified(a, gamma_mid, fmin_lo)
+    if not (
+        tail_info["edge_x0_coeff_nonneg"]
+        and tail_info["edge_y0_beta_le_1_minus_a"]
+        and tail_info["hess_det_negative"]
+    ):
+        raise SystemExit("tail lemma edge/saddle tests failed; cannot lift the middle bound")
+    grid_lo = mpf("1e9")
+    for i in range(41):
+        x = a * i / 40
+        for j in range(41):
+            y = (1 - x) * j / 40
+            grid_lo = min(grid_lo, tail_h(x, y, a, gamma_mid, fmin_lo))
+    if grid_lo < gamma_mid - mpf("1e-12"):
+        raise SystemExit("tail grid dipped below the origin value")
+    # Origin value is gamma_mid. The triangle min is ≥ h_lo.
     gamma_global = min(gamma_mid, h_lo)
 
     beats = bool(gamma_global > 1 / iv.mpf("1.1185") and gamma_global > fmin_hi)
@@ -218,11 +271,10 @@ def main() -> None:
         "tail_lemma": {
             "a": S(a),
             "beta_used": S(gamma_mid),
-            "h_grid_min": S(h_grid),
-            "h_at_DL_DR": [S(h_at[0]), S(h_at[1])],
-            "lipschitz_remainder": S(h_rem),
             "h_lower": S(h_lo),
-            "origin_value": S(gamma_mid),
+            "origin_value": S(h_origin),
+            "h_at": [S(h_at[0]), S(h_at[1])],
+            "edge_and_saddle": tail_info,
         },
         "enclosures": {
             "gamma_gt_HPS_fmin": bool(gamma_global > fmin_hi),

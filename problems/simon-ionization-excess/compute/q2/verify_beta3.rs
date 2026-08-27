@@ -123,44 +123,41 @@ fn face_min_mmm(n: usize, mmat: &[Vec<f64>]) -> (f64, u64) {
         if k <= 1 {
             continue;
         }
-        let ok = if k == 2 {
-            let a = mmat[idx[0]][idx[0]];
-            let b = mmat[idx[0]][idx[1]];
-            let c = mmat[idx[1]][idx[1]];
-            let det = a * c - b * b;
-            if det.abs() < 1e-14 {
-                false
-            } else {
-                x[0] = (c - b) / det;
-                x[1] = (a - b) / det;
-                true
+        for p in 0..k {
+            for q in 0..k {
+                gpack[p * 32 + q] = mmat[idx[p]][idx[q]];
             }
-        } else if k == 3 {
+            rhs[p] = 1.0;
+        }
+        let gauss_ok = solve(k, &mut gpack, 32, &rhs, &mut x);
+        if !gauss_ok {
+            continue;
+        }
+        if k == 3 {
             let mut g3 = [[0.0; 3]; 3];
             for p in 0..3 {
                 for q in 0..3 {
                     g3[p][q] = mmat[idx[p]][idx[q]];
                 }
             }
-            match cramer3(&g3, &[1.0, 1.0, 1.0]) {
-                Some(xx) => {
-                    x[0] = xx[0];
-                    x[1] = xx[1];
-                    x[2] = xx[2];
-                    true
+            if let Some(xx) = cramer3(&g3, &[1.0, 1.0, 1.0]) {
+                for p in 0..3 {
+                    if (xx[p] - x[p]).abs() > 1e-8 {
+                        fail("Cramer vs Gauss disagreement on a 3-face");
+                    }
                 }
-                None => false,
             }
-        } else {
-            for p in 0..k {
-                for q in 0..k {
-                    gpack[p * 32 + q] = mmat[idx[p]][idx[q]];
-                }
-                rhs[p] = 1.0;
+        }
+        // Reject ill-conditioned solves. 1/s is not m^T M m unless M_S x = 1.
+        let mut rmax: f64 = 0.0;
+        for p in 0..k {
+            let mut acc = 0.0;
+            for q in 0..k {
+                acc += mmat[idx[p]][idx[q]] * x[q];
             }
-            solve(k, &mut gpack, 32, &rhs, &mut x)
-        };
-        if !ok {
+            rmax = rmax.max((acc - 1.0).abs());
+        }
+        if rmax > 1e-8 {
             continue;
         }
         let mut sgn = 0i32;
@@ -183,10 +180,20 @@ fn face_min_mmm(n: usize, mmat: &[Vec<f64>]) -> (f64, u64) {
         if !good || s.abs() <= 1e-12 {
             continue;
         }
-        interior += 1;
+        let mut val_quad = 0.0;
+        for p in 0..k {
+            let mp = x[p] / s;
+            for q in 0..k {
+                val_quad += mp * (x[q] / s) * mmat[idx[p]][idx[q]];
+            }
+        }
         let val = 1.0 / s;
-        if val < min_val {
-            min_val = val;
+        if (val_quad - val).abs() > 1e-8 {
+            continue;
+        }
+        interior += 1;
+        if val_quad < min_val {
+            min_val = val_quad;
         }
     }
     let _ = nfaces;
@@ -247,6 +254,8 @@ fn main() {
     let mut cc = vec![0.0; n2];
     for i in 0..n2 {
         cc[i] = edges[i] * edges[i + 1];
+    }
+    for i in 0..n2 {
         for j in 0..n2 {
             let mut tlo = 1.0;
             let mut thi = 0.0;
@@ -285,6 +294,26 @@ fn main() {
             mm[i][j] = aa[i][j] - 0.5 * gt2 * (cc[i] + cc[j]);
         }
     }
+    let mut min_diag = f64::INFINITY;
+    let mut min_aa = f64::INFINITY;
+    let mut min_ij = (0, 0);
+    for i in 0..n2 {
+        if mm[i][i] < min_diag {
+            min_diag = mm[i][i];
+        }
+        for j in 0..n2 {
+            if aa[i][j] < min_aa {
+                min_aa = aa[i][j];
+                min_ij = (i, j);
+            }
+        }
+    }
+    eprintln!(
+        "n16 rebuild: minA={min_aa:.6} at {:?} minC={:.6} maxC={:.6} minMii={min_diag:.6}",
+        min_ij,
+        cc.iter().cloned().fold(f64::INFINITY, f64::min),
+        cc.iter().cloned().fold(0.0, f64::max)
+    );
     let (min2, _int2) = face_min_mmm(n2, &mm);
     let gamma16 = gt2 - err;
     let beats = min2 - 1e-10 >= 0.0 && gamma16 > 0.89410745697;

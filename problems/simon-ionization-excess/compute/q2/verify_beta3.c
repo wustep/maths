@@ -15,12 +15,14 @@
  * at a face-critical point (or a vertex). Singular faces have their min
  * on a proper subface (already enumerated).
  *
- * Input: certs/beta3_matrix.txt  (written by certify_beta3.py)
+ * Input: matrix path (default certs/beta3_matrix.txt)
  *   line 1: n gamma_target
  *   line 2: c_0 ... c_{n-1}
  *   next n lines: rows of A
  *
- * Output: certs/beta3_faces.txt
+ * Output: faces path (default certs/beta3_faces.txt)
+ *
+ * Usage: verify_beta3 [matrix.txt] [faces.txt]
  *
  * Build: gcc -O3 -o verify_beta3 verify_beta3.c -lm
  */
@@ -120,8 +122,10 @@ static int load_matrix(const char *path) {
     return 0;
 }
 
-int main(void) {
-    load_matrix("certs/beta3_matrix.txt");
+int main(int argc, char **argv) {
+    const char *mat_path = argc > 1 ? argv[1] : "certs/beta3_matrix.txt";
+    const char *faces_path = argc > 2 ? argv[2] : "certs/beta3_faces.txt";
+    load_matrix(mat_path);
 
     double min_val = 1e300;
     double min_phi = 1e300;
@@ -141,6 +145,12 @@ int main(void) {
     }
 
     for (mask = 1; mask <= nfaces; mask++) {
+        if ((mask & ((1ULL << 22) - 1)) == 0) {
+            fprintf(stderr, "  ... mask %llu / %llu  minM=%.4e\n",
+                    (unsigned long long)mask, (unsigned long long)nfaces,
+                    min_val);
+            fflush(stderr);
+        }
         int idx[NMAX];
         int k = 0;
         int b;
@@ -228,7 +238,7 @@ int main(void) {
     double min_phi_safe = min_phi - MARGIN;
     int ok = (min_val_safe >= 0.0);
 
-    FILE *out = fopen("certs/beta3_faces.txt", "w");
+    FILE *out = fopen(faces_path, "w");
     if (!out)
         die("cannot write faces");
     fprintf(out, "n %d\n", n);

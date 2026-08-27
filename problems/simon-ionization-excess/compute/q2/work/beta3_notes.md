@@ -53,14 +53,23 @@ only nonnegative remainders. For a=1/12 and β≤0.896 the interval
 minimum of h on the triangle is at the origin and equals β, so the
 middle bound lifts to every Borel probability with finite D.
 
-If the C copositivity check passes at γ_target=0.9072, then
-γ ≥ 0.9072 − err with err<0.012, hence γ>1/b(3) and
-γ^{-1}<1.1185.
+C face enumeration at γ_target=0.9072 (n=26, 2^{26}−1 faces):
+min mᵀMm = 4.219×10^{-3}>0, so φ_mid≥0.9072. Interval error
+err≤0.0118036978898114. Therefore
+
+  γ ≥ 0.9072 − err ≥ 0.895396302110
+
+and γ^{-1} ≤ 1.11682391099 < 1.1185, also strictly below the
+exact b(3)∈(1.1184,1.1185). The tail polynomial’s minimum on
+the (D_L,D_R) triangle sits at the origin and equals this γ,
+so the middle bound lifts to every Borel probability with
+finite D. Replay: `certs/beta3_rad.json`.
 
 Independent second path: `verify_beta3.rs` rebuilds F and the
-16-bin [1,4] Rayleigh from scratch (Cramer's rule on small faces)
-and checks that this smaller window already beats 1/b(3) as a
-compact-support bound.
+16-bin [1,4] Rayleigh from scratch (Gauss–Jordan plus Cramer
+on 3-faces, residual rejected). That compact-support window
+already beats 1/b(3) after the same mid-radius error, which is
+a method check, not the production global bound.
 
 ## What is not claimed
 
