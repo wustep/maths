@@ -144,3 +144,55 @@ that already contains two published T-curves, so the target is a move
 along an occupied row rather than a new class. Details in ATTACK.md.
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-27)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. q1 produced no candidate
+for a new scheme.
+
+The leftover whole-stratum thicken is no longer 4 of 164. Radius 1
+around the maximal Haas stratum finished every census triangulation
+of twist-rank at most 16 (107/107, 130,151,296 sign distributions,
+`compute/q1/certs/thick_r1_rank_le16.json`). The only scheme outside
+the published 2,367 is ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already one of the
+seventeen. Ranks 17–20 of that leftover are residue until every
+remaining triangulation has a complete record.
+
+Collection space: the one-split neighbourhood of all 38 published
+M-collections is exactly those 38 (`compute/q1/certs/dn_nbhd.json`).
+Nested odd pairs on the five published (19,3) collections hit
+neither open nest; the a=10 nest admits no compatible nested odd
+pair. Even-only walks stay on the five known (19,3) M-schemes.
+Neither open nest is decided.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q1/run_all.sh && python3 q1/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-27)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. q1 produced no candidate
+for a new scheme.
+
+The leftover whole-stratum thicken is no longer 4 of 164. Radius 1
+around the maximal Haas stratum finished every census triangulation
+of twist-rank at most 16 (107/107, 130,151,296 sign distributions,
+`compute/q1/certs/thick_r1_rank_le16.json`). The only scheme outside
+the published 2,367 is ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already one of the
+seventeen. Ranks 17–20 of that leftover are residue until every
+remaining triangulation has a complete record.
+
+Collection space: the one-split neighbourhood of all 38 published
+M-collections is exactly those 38 (`compute/q1/certs/dn_nbhd.json`).
+Nested odd pairs on the five published (19,3) collections hit
+neither open nest; the a=10 nest admits no compatible nested odd
+pair. Even-only walks stay on the five known (19,3) M-schemes.
+Neither open nest is decided.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q1/run_all.sh && python3 q1/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.

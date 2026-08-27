@@ -296,3 +296,60 @@ from 10 or 17 (published) to 4 or 14 (open) inside a row that is already
 occupied. Nothing here decides that — but it is a far better-posed
 question than "find a deeper nest", and it is the one the next attempt
 should score against.
+
+## 13. Named false start, q1: even twists cannot leave the five
+
+The 23 August note said to score a walk by \(\lvert a-4\rvert\) or
+\(\lvert a-14\rvert\) with \(b\) pinned at 2, using only even Harnack
+splits (paper Theorem 17: even splits keep \((p,n)\)). That walk was
+run. It is the wrong handle.
+
+Start from any of the five published (19,3) collections, including the
+Prop 31 bow-tie that produces ⟨17⊔1⟨2⊔1⟨1⟩⟩⟩. Add, drop, or swap even
+splits only, and never drop an odd split. Two hundred thousand
+collections later the schemes are exactly those five:
+
+⟨18⊔1⟨3⟩⟩, ⟨17⊔1⟨1⟩⊔1⟨2⟩⟩, ⟨17⊔1⟨2⊔1⟨1⟩⟩⟩, ⟨16⊔3⟨1⟩⟩,
+⟨10⊔1⟨2⊔1⟨8⟩⟩⟩.
+
+No \(a=11,\dots,16\). One even *drop* from the \(a=10\) nest jumps
+straight to the \(a=17\) nested box. The bow-tie path itself is even
+— every split's vertex parities include \((0,0)\) — so it was already
+inside the even-walk graph. The open nests are not one even move from
+any published (19,3) collection.
+
+The first BFS that *did* drop odd splits left the (19,3) row
+immediately. That is Theorem 17 in the other direction, and it is why
+the pin matters.
+
+## 14. The useful failure: the \(a=10\) nest already has seven odds
+
+Odd collections of size at most 3 were enumerated exhaustively
+(189 odd splits, 368,936 compatible collections). They produce twelve
+known M-schemes and neither open nest. That looked like a wall until
+the published \(a=10\) collection was opened: it is twelve splits, of
+which **seven are odd**. Size 3 cannot see the one published depth-3
+(19,3) T-curve, so silence there is not evidence about \(a=4\) or
+\(a=14\).
+
+Remark 20 says nested odd zones cancel, so a nested odd *pair* can
+stay on (19,3) while changing the odd skeleton. Adding every such
+pair to each of the five published (19,3) collections is a 122-curve
+check. The \(a=10\) nest admits **zero** compatible nested odd pairs.
+The other four seeds produce only known M-schemes. So the open nests
+are not a canceling pair away from a published (19,3) collection
+either.
+
+A stronger negative, still not an obstruction: the one-split
+add/drop/swap neighbourhood of *all 38* published M-collections is
+exactly those 38 schemes (28,861 evaluations). Collection-distance
+from the published M-set to either open nest is at least 2.
+
+## 15. What the leftover thicken actually said through rank 16
+
+The 23 August leftover was four rank-16 triangulations. Cheap first:
+every census triangulation of twist-rank at most 16, radius 1 around
+the whole Haas maximal stratum, 107 of 107, 130,151,296 sign
+distributions. The only scheme outside the published 2,367 is
+⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already certified. Ranks 17–20 of that leftover
+were the expensive tail and are a separate question.

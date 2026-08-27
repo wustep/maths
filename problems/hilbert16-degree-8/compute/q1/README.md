@@ -35,3 +35,27 @@ python3 q1/collect.py
 
 A new scheme is a T-curve only after `python3 verify_new.py q1/certs/new_schemes.json`.
 An incomplete search is not a lower bound.
+
+## What this run found
+
+The bound did not move. The seventeen still verify; nothing new
+appeared.
+
+Finished, with certificates under `certs/`:
+
+- Radius-4 balls around all 237 twenty-oval census certificates
+  (38,920,377 evaluations).
+- Compatible odd Harnack-split collections of size at most 3
+  (368,936 evaluations; twelve known M-schemes).
+- A 200,000-collection even-split walk that never drops an odd split
+  (only the five published (19,3) M-schemes).
+- The one-split add/drop/swap neighbourhood of every published
+  22-oval collection (28,861 evaluations; the same 38 M-schemes and
+  nothing else). The two open nests are not one move from any
+  published M-collection.
+
+The leftover whole-stratum thicken (radius 1, rank at most 20) is
+the long job. Ranks 6–16 are finished (107 triangulations,
+130,151,296 evaluations); the only scheme outside the published
+2,367 is already among the seventeen. Ranks 17–20 are complete
+only when every remaining triangulation has a `complete` record.

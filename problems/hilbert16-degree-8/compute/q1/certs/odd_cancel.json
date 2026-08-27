@@ -1,0 +1,30 @@
+{
+ "what": "Nested odd-split pairs added to each published (19,3) Haas collection. Remark 20: nested odd zones cancel, so the pair can stay on the (19,3) row while changing the odd skeleton.",
+ "seeds": 5,
+ "evals": 122,
+ "distinct_schemes": 11,
+ "hits_on_open_nests": 0,
+ "pn193_evals": 21,
+ "nested_odd_pairs": {
+  "<10 u 1<2 u 1<8>>>": 0,
+  "<16 u 3<1>>": 11,
+  "<17 u 1<1> u 1<2>>": 1,
+  "<17 u 1<2 u 1<1>>>": 4,
+  "<18 u 1<3>>": 101
+ },
+ "schemes": [
+  "<10 u 1<11>>",
+  "<10 u 1<2 u 1<8>>>",
+  "<12 u 2<1> u 1<5>>",
+  "<13 u 1<1> u 1<6>>",
+  "<13 u 1<6 u 1<1>>>",
+  "<14 u 1<7>>",
+  "<16 u 3<1>>",
+  "<17 u 1<1> u 1<2>>",
+  "<17 u 1<2 u 1<1>>>",
+  "<18 u 1<3>>",
+  "<9 u 1<10 u 1<1>>>"
+ ],
+ "open_nests_in_scope": false,
+ "note": "The published a=10 nest admits no compatible nested odd pair. The open nests are not a canceling-odd-pair away from any published (19,3) collection."
+}
