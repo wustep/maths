@@ -9,5 +9,6 @@
 | [chat/](chat/) | Grok Bot transcript recreation |
 | [grok-2026-08-27-ott/](grok-2026-08-27-ott/) | Grok 4.6 continuation of the 1/3–2/3 folder |
 | [cursor-grok-2026-08-27-caccetta-q2/](cursor-grok-2026-08-27-caccetta-q2/) | Caccetta exact orders through n=36 |
+| [cursor-grok-2026-08-27-caccetta-q3/](cursor-grok-2026-08-27-caccetta-q3/) | Caccetta leftover holes from n=38 |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).
