@@ -1,0 +1,9 @@
+{
+  "implementation": "C exhaustive nested-loop mesh",
+  "claimed_c": 0.38305,
+  "grid": {"n_b": 9000, "n_a": 7000, "b_lo": 0.02, "b_hi": 0.499, "a_lo": 0, "a_hi": 0.499, "total_cells": 63000000, "retained_cells": 20440358, "mean_tolerance": 1.0000000000000001e-15},
+  "min_ratio": 1.0000049143029008,
+  "n_bad_cells": 0,
+  "at": {"i_b": 5192, "i_a": 1728, "b": 0.29636048449827757, "a": 0.12319931418774112, "mean": 0.38304839024348419},
+  "all_ok": true
+}

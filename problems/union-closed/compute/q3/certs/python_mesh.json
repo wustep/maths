@@ -1,0 +1,35 @@
+{
+  "implementation": "Python row-boundary scan using ratio monotonicity in a",
+  "claimed_c": 0.38305,
+  "grid": {
+    "n_b": 9000,
+    "n_a": 7000,
+    "b_lo": 0.02,
+    "b_hi": 0.499,
+    "a_lo": 0.0,
+    "a_hi": 0.499,
+    "total_cells": 63000000,
+    "retained_cells": 20440358,
+    "retained_rows": 6821,
+    "mean_tolerance": 1e-15
+  },
+  "monotonicity": "mean increases and ratio=(1-a)h_or_ex4(b,b)/h(b) decreases with a, so each retained row is minimized at its last point",
+  "min_ratio": 1.0000049143029008,
+  "n_bad_boundary_rows": 0,
+  "n_bad_cells": 0,
+  "at": {
+    "i_b": 5192,
+    "i_a": 1728,
+    "b": 0.29636048449827757,
+    "a": 0.12319931418774112,
+    "mean": 0.3830483902434842
+  },
+  "checks": {
+    "claimed_above_q1": true,
+    "claimed_above_liu": true,
+    "retained_cells_nonzero": true,
+    "all_boundary_ratios_strictly_above_1": true,
+    "minimum_ratio_strictly_above_1": true
+  },
+  "all_ok": true
+}
