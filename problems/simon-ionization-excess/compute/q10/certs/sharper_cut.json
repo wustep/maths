@@ -1,0 +1,56 @@
+{
+  "status": "residue",
+  "reason": "Chebyshev D\u00b7M_{-1}\u22651 (since D\u00b7M_{-1}\u2265M_1\u22651) on the endpoint identities shrinks the (Q,D) slab. At R<=9 the new cut is still below 0.907688, so R<=9 stays dead against printed 1.1017. At R=9.5 the Chebyshev cut 0.91029 would sit above that floor; that is a probe, not a wired lift. The cheap live line stays the proven R=10 split.",
+  "need_gamma": 0.9076881183625307,
+  "reopens_R_le_9": false,
+  "rows": [
+    {
+      "R": 8.0,
+      "positivity_cut": 0.8888888888888888,
+      "chebyshev_cut": 0.8967368888891145,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": false,
+      "positivity_beats_1.1017": false
+    },
+    {
+      "R": 9.0,
+      "positivity_cut": 0.9,
+      "chebyshev_cut": 0.9061720000001775,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": false,
+      "positivity_beats_1.1017": false
+    },
+    {
+      "R": 9.5,
+      "positivity_cut": 0.9047619047619048,
+      "chebyshev_cut": 0.9102929047620638,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": true,
+      "positivity_beats_1.1017": false
+    },
+    {
+      "R": 9.8,
+      "positivity_cut": 0.9074074074074074,
+      "chebyshev_cut": 0.9126014074075568,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": true,
+      "positivity_beats_1.1017": false
+    },
+    {
+      "R": 9.9,
+      "positivity_cut": 0.908256880733945,
+      "chebyshev_cut": 0.9133448807340913,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": true,
+      "positivity_beats_1.1017": true
+    },
+    {
+      "R": 10.0,
+      "positivity_cut": 0.9090909090909091,
+      "chebyshev_cut": 0.9140769090910524,
+      "need_vs_1.1017": 0.9076881183625307,
+      "chebyshev_beats_1.1017": true,
+      "positivity_beats_1.1017": true
+    }
+  ]
+}

@@ -143,3 +143,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=34$ faces at target $0.9113$ ($17{,}179{,}869{,}183$, copositive, $4618$ skips, $\min m^\top Mm>5\cdot 10^{-4}$, $\min\varphi=0.911456$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1020$ moves to $1.1017$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. $n=35$ at the same split is still a predicted $1.1013$ if faces certify. Target $0.9114$ on this matrix is still a predicted $1.1016$.
+
+## Later the same day — leftover past $n=34$
+
+0. What was actually missing — after q9 the compact $\gamma$ at $R=10$, $n=34$ sat $0.00138$ below the cut $10/11$. The leftover is still the $P_{\max}$ tax. Unused $\varphi$ at $n=34$ is a hair (target $0.9113$, SLSQP $0.91145$, stored $\min\varphi=0.911456$). $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1017$: the cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; a Chebyshev $D\cdot M_{-1}\ge 1$ sharpening of that cut (the $R\le 9$ slab still dies below $0.90769$); treating a target-$0.9114$ probe on the $n=34$ matrix as an $n=35$ dent; $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.8$ with the cut binding prints $1.10204$, which is $1.1021$. Chebyshev does not reopen $R\le 9$. The jump is more bins at the proven split, or a higher target on the stored $n=34$ matrix (full re-enum, not an $n=35$ dent).
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=35$ is predicted near $0.91167$. Target $0.9115$ minus the $P$ error $\approx 0.00348$ gives $\gamma\approx 0.90802$, and $10/11>\gamma$. Then $1/\gamma\approx 1.10130$, which prints as $1.1013$ if faces certify.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $35$ bins if faces certify. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — leftover scripts in `compute/q10/`: $R\le 9$ cut, $s>3$ rational, Lieb integers, Chebyshev slab. Face enumeration of $2^{35}-1$ is the certificate. Do not invent a leading if the dump is not copositive.
+
+6. Proven vs still open — printed leading stays $1.1017$ until faces certify. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
