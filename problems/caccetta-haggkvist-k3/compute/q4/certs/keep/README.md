@@ -16,3 +16,10 @@ cd problems/caccetta-haggkvist-k3/compute/q4
 The index is `replay.json` after a successful `verify_keep.py`.
 Circulant soundness (cyclic degree, not a counterexample) is
 `soundness_n73_d24.json`.
+
+A separate F₄ flag-algebra certificate with the CKLS 2015 fork
+(`c = 0.34640`) is `f4_or_new_certificate.json`. Replay:
+
+```
+python3 verify_q4_certificate.py certs/keep/f4_or_new_certificate.json
+```

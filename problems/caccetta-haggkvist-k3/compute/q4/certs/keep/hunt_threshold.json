@@ -1,0 +1,15 @@
+{
+  "n_try_random": 80,
+  "scales": [15, 30, 50],
+  "css_beta_ckls": 0.8616,
+  "kappa4_rebuilt_matches_hkn": true,
+  "certified_c": 0.3464,
+  "best_t_by_c": {
+    "0.34645": {"t": -38.525785716277575, "ok": true, "kind": "sdp/ckls+refine"},
+    "0.34640": {"t": -0.41903336630272076, "ok": true, "kind": "sdp/ckls+refine"},
+    "0.346": {"t": 67.10638731180372, "ok": false, "kind": "hkn/ckls+ex"},
+    "0.340": {"t": 809.4494325971473, "ok": false, "kind": "mix-hkn"},
+    "0.3388": {"t": 1226.1006988435088, "ok": false, "kind": "hkn/ckls"}
+  },
+  "note": "CKLS 2015 fork (published beta<0.8616 gamma) moves the F4 threshold to c=0.34640 (f4_or_new_certificate.json). Eta 9x9 SOS, order-2 induction, and beta/eta-rooted out-regularity did not go below 0.34640. Best t at 0.346 and 0.340 stay positive. 0.3388 is a personal communication."
+}
