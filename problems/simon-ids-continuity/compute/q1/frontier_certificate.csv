@@ -1,0 +1,8 @@
+dimension,gap_num,gap_den,kappa_num,kappa_den,works
+2,2,3,1,4,true
+3,1,6,1,8,true
+4,0,1,0,1,false
+5,-1,12,-1,8,false
+6,-2,15,-1,4,false
+7,-1,6,-3,8,false
+8,-4,21,-1,2,false
