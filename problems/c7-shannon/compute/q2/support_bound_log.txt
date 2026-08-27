@@ -1,0 +1,17 @@
+seed size=367 independent=True
+R367 fibers [[55, 52, 53, 52, 55, 50, 50], [54, 51, 55, 50, 51, 54, 52], [55, 52, 53, 52, 55, 50, 50], [53, 52, 55, 50, 51, 54, 52], [55, 51, 54, 52, 55, 50, 50]]
+R367 is 7-surjective on every coordinate
+pair-fiber sizes min=100 max=107
+pair projections independent in C7^box4: 35 pairs
+alpha(K2 box C7)=3 (expect 3)
+alpha(C7 box2)=10 alpha(K2 box C7^box2)=10 (expect 10,10)
+subsets of size 1..6: 126 all have bound < 368
+worst missing-letter bound 345
+  k=1 n=7 bounds=[115] e.g. [0] matching=0 leftover=1 0*115+1*115=115
+  k=2 n=21 bounds=[115, 230] e.g. [0, 1] matching=1 leftover=0 1*115+0*115=115
+  k=3 n=35 bounds=[230, 345] e.g. [0, 1, 2] matching=1 leftover=1 1*115+1*115=230
+  k=4 n=35 bounds=[230, 345] e.g. [0, 1, 2, 3] matching=2 leftover=0 2*115+0*115=230
+  k=5 n=21 bounds=[345] e.g. [0, 1, 2, 3, 4] matching=2 leftover=1 2*115+1*115=345
+  k=6 n=7 bounds=[345] e.g. [0, 1, 2, 3, 4, 5] matching=3 leftover=0 3*115+0*115=345
+conclusion: a 368-set uses all 7 letters in every coordinate. 4-support (and 3,5,6) is impossible, not a search residue.
+seconds 2.93

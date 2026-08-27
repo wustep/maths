@@ -1,5 +1,19 @@
 # Attack log — C7 fifth power
 
+## 2026-08-27 — q2 start, 4-support finished
+
+Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438 (Table 1 still $367$–$401$), Itty et al. 2607.21517, Gao 2607.27869 (“367 remains the largest currently known” in the fifth power), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.
+
+q1 left 4-support as a local-search residue (best grown $309$). That shape is impossible, and so are 5- and 6-support.
+
+An adjacent pair of letters in one coordinate induces $K_2\boxtimes C_7^{\boxtimes 4}$. The two fibers project to a single independent set in $C_7^{\boxtimes 4}$, so they contribute at most $\alpha(C_7^{\boxtimes 4})\le 115$ (Baumert via Polak–Schrijver Table 1), not $230$. Every $k$-subset of $C_7$ with $k\le 6$ has matching number large enough that
+$$
+\nu\cdot 115+(k-2\nu)\cdot 115\le 345<368.
+$$
+All $126$ such subsets were enumerated (`compute/q2/bound_support.py`). Toy checks: $\alpha(K_2\boxtimes C_7)=3$, $\alpha(C_7^{\boxtimes 2})=10=\alpha(K_2\boxtimes C_7^{\boxtimes 2})$. The published $367$-set is $7$-surjective on every coordinate; its $35$ adjacent pair-fibers have size $100$–$107$ and project to independent $4$-tuples.
+
+A $368$-set uses all seven letters in every coordinate. Code for the remaining shapes (exact $8$-coset, Hamming $11$ case-split, longer ejection) lives in `compute/q2/`.
+
 ## 2026-08-23 — replay
 
 - Checkout `grok/c7-shannon`. Replayed `python3 compute/verify_set.py compute/R367.txt --min-size 367` → `size=367 unique=367`, `OK: independent in C7^{box5}`. Same verifier on `R_reconstructed.txt` (367) and `R361_sprime.txt` (361) also OK. This is the Polak–Schrijver record, not a dent.

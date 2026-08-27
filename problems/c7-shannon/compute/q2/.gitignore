@@ -1,0 +1,4 @@
+search_cosets_exact
+search_hamming11
+search_ejection
+*.o
