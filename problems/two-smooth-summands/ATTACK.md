@@ -239,3 +239,132 @@ is not $N_0(\varepsilon)$ for Balog's theorem.
 
 The published record is not beaten. Documented residue.
 
+## 2026-08-27 — literature fetched again before q1
+
+Opened, in order, before any q1 search:
+
+- Green, *100 Open Problems*, Problem 59, from
+  https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+  (Dec 2025 text). Still the Balog exponent $4/(9\sqrt{e})\approx 0.2695$,
+  still the Wooley / Vinogradov wall at $1/(4\sqrt{e})\approx 0.1516$,
+  still a pointer to Erdős #334. No update since the 17 August fetch.
+- [Erdős Problem #334](https://www.erdosproblems.com/334) live page
+  is behind Cloudflare here. Wayback
+  `https://web.archive.org/web/20260824194602/https://www.erdosproblems.com/334`
+  (captured 24 August 2026): **OPEN**, “cannot be resolved with a
+  finite computation”, last edited 03 April 2026, zero claimed proofs,
+  two comments. Statement and Balog exponent unchanged.
+- Wayback forum thread, same date: my99n (03 Mar 2026) on A062241
+  versus A045535; Woett (19 Nov 2025) on the ternary Sárközy bound,
+  the $n^{0.1}$ Vinogradov obstruction, and Erdős’s
+  $\exp(c\sqrt{\log n\log\log n})$ binary conjecture.
+- OEIS A062241 and A045535 via `scripts/oeis_lookup.py`. Terms match
+  the certified $G(y)$ table. A062241 still ends at $a(29)=2570169839$
+  in the JSON prefix we received.
+- Hildebrand–Tenenbaum, J. Théor. Nombres Bordeaux 5 (1993),
+  PDF from https://jtnb.centre-mersenne.org/item/10.5802/jtnb.101.pdf,
+  journal pp. 468–469: Balog–Sárközy 1984b give $N^{2/5}$; Balog 1989
+  improves to $0.2695$; $N^\varepsilon$ unknown for any fixed
+  $\varepsilon>0$. Ternary: $\exp(c\sqrt{\log N\log\log N})$.
+- arXiv:2006.15307 (Győry–Hajdu–Sárközy): decomposability of the
+  *set* of smooth numbers, not an all-integers binary exponent.
+- arXiv:2111.01601v5 (Blomer–Grimmelt–Li–Rydin Myerson): prime plus
+  two almost-prime squares; not two smooth summands.
+- arXiv:1912.11546v2 (Dimitrov–Vigneri–Attias): RSA / anti-Goldbach
+  heuristic, not a theorem.
+- Ki–Maier–Sankaranarayanan, Acta Arith. 175.4 (2016): cites Balog
+  $0.2695$ as the all-integers binary record; their own theorems are
+  square-plus-smooth and prime-plus-smooth almost-all results.
+  They also record Balog–Sárközy’s exponential-sum remark that $2/5$
+  can be lowered to $0.392$, still above Balog 1989.
+- Balog’s publication list
+  https://www.renyi.hu/~balog/publist.pdf : item [24] is the 1989
+  paper; items [9]–[10] are the 1984 Studia I/II pair.
+
+Published record unchanged. Still no later all-integers binary
+exponent. Scoped miss, not a proof that none exists.
+
+## 2026-08-27 — parent replay
+
+Started `python3 compute/verify_all.py` before any q1 search.
+Trivial covering and the obstruction lemma replayed immediately.
+The Python $G(y)$ bitset matched the published table through
+$y=53$. The $y=59$ and $y=61$ rows ($G=6077111$) are too large
+for a timely pure-Python bitset; the C program independently
+reproduced both:
+
+```
+cc -O3 -std=c11 -o g_of_y_c g_of_y.c
+./g_of_y_c 61 6077111 200000
+./g_of_y_c 59 6077111 200000
+```
+
+Both print `first_uncovered=6077111`, `limit_is_sum=0`,
+`G_equals_limit=1`, with smooth counts $114680$ and $102546$.
+Parent `covering_search.py` also replayed: no residue-class cover
+at any $\alpha<1/2$.
+
+## 2026-08-27 — closed-form templates, all fail below $1/2$
+
+New code in `compute/q1/`. Integer tests $F_{\mathrm{template}}^q>n^p$
+on $[2,20000]$:
+
+| template | $9/20$ holes | $2/5$ | $1/3$ | $27/100$ | last hole at $2/5$ |
+| --- | --- | --- | --- | --- | --- |
+| square-plus-remainder | 7081 | 10053 | 13646 | 16950 | 19999 |
+| largest power of two | 12737 | 14602 | 16708 | 18287 | 20000 |
+| triangular | 12272 | 14613 | 17731 | 19523 | 20000 |
+| cube | 9316 | 11375 | 14094 | 17360 | 20000 |
+| floor-divisor | 6034 | 9585 | 14244 | 17848 | 19968 |
+
+Holes persist to the right endpoint at every exponent below $1/2$.
+The square formula has zero failures of the *true* trivial bound
+$F_{\mathrm{split}}<2\sqrt n+1$ on this range, as it must.
+
+Floor-divisor is the closed-form short-interval rewrite: $u=\lfloor n^{p/q}\rfloor$,
+$a=n-(n\bmod u)$. The remainder is automatically $n^{p/q}$-smooth by
+size. The first summand fails exactly when $\lfloor n/u\rfloor$ is
+$n^{p/q}$-rough. At $\varepsilon=1/2$ this is the trivial covering
+again. Below $1/2$ it does not lift.
+
+## 2026-08-27 — infinite failure families
+
+`compute/q1/certs/infinite_family.json`:
+
+- Floor-divisor, 129 primes $11\le P\le 541$ and $10000\le P\le 10300$,
+  at $2/5$, $1/3$, and $27/100$: a $u$ near $P^{\varepsilon/(1-\varepsilon)}$
+  makes $n=Pu+1$ fail the template, 129/129 hits, zero misses. The
+  inequality $P>n^\varepsilon$ for this shape is exactly $\varepsilon<1/2$.
+  Large sample at $2/5$: $P=10289$, $n=4455138$.
+- Largest power of two, $k=4,\ldots,16$: $n=2^k+q$ with $q$ the next
+  prime after $2^{k-1}$ fails even $n^{1/2}$ (so fails every smaller
+  exponent). Example $k=16$: $n=98307=65536+32771$.
+
+These kill those two formulas as infinite coverings. They are not a
+lower bound on $F$.
+
+## 2026-08-27 — polynomial size obstruction
+
+`compute/q1/certs/poly_obstruction.json`. For each of
+$x^2$, $x^3$, $x(x+1)$, $x(x+1)/2$, $x^2+x+1$, $x(x+1)(x+2)/6$,
+the gap $P(k+1)-P(k)$ at $k\in\{20,50,100,200,400\}$ is at least
+$k^{d-1}/2$. Remainder-by-size therefore has exponent $1-1/d\ge 1/2$.
+Cubes are worse than squares. Smoothness of a large remainder is the
+square-adjustment search already run on 17 August, which left holes.
+
+## 2026-08-27 — two-factor search, same prefixes as $F$
+
+Balog–Sárközy shape: $a=uv$ with $u\le n^{1/5}$ and both $v$ and
+$n-a$ equal to $n^{p/q}$-smooth. On $[2,20000]$ this matches $F$
+exactly:
+
+- $2/5$: sixteen holes, last $479$, equal to the known $F$ exceptions.
+- $1/3$: seventy-six holes, last $18191$, equal to the known $F$
+  exceptions.
+
+The $n^{1/5}$ factor restriction does not lose a splitting on this
+range. It also does not produce $N_0$. A last exception on a prefix
+is not Balog–Sárközy made effective.
+
+No dent. Published record not beaten.
+

@@ -140,3 +140,64 @@ $4/(9\sqrt e)$. A last exception on $[2,10^6]$ is not $N_0$.
 A reproduction of A062241 is not a bound. The Vinogradov wall
 blocks any claim of $\varepsilon\le 0.15$ by a cover that would
 also bound $n(p)$.
+
+## 2026-08-27 — URLs opened this session
+
+- https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf
+  Green #59, Dec 2025 text. Still open. Record still Balog
+  $4/(9\sqrt{e})\approx 0.2695$. Wooley wall $1/(4\sqrt{e})$.
+  Does not claim an effective $N_0$.
+- https://www.erdosproblems.com/334
+  Cloudflare challenge; body not read from the live page.
+- https://web.archive.org/web/20260824194602/https://www.erdosproblems.com/334
+  OPEN, cannot be resolved with a finite computation, last edited
+  03 April 2026, zero claimed proofs, two comments, A062241 and
+  A045535. Balog exponent unchanged. Does not give a later binary
+  exponent.
+- https://web.archive.org/web/2026/https://www.erdosproblems.com/forum/thread/334
+  my99n 03 Mar 2026: $A062241(n)\le A045535(n-1)$, with a pointer to
+  https://github.com/vzsky/OEIS-compute (raw PDF not retrieved).
+  Woett 19 Nov 2025: ternary Sárközy bound; $n^{0.1}$ implies a
+  quadratic non-residue $\le p^{0.1}$ for $p\equiv 3\pmod 4$;
+  Erdős conjectured the ternary-shaped bound also in the binary
+  problem. Not a proof.
+- https://oeis.org/A062241
+  Smallest $n\ge 2$ not a sum of two $\mathrm{prime}(k)$-smooth
+  positives. Prefix $3,7,23,71,311,479,1559,\ldots$ matches the
+  certified $G(y)$ table. $a(30)$ still blank in this JSON.
+- https://oeis.org/A045535
+  Least negative pseudosquare modulo the first $n$ odd primes.
+  Prefix $7,23,71,311,479,\ldots$ tracks A062241 on the computed
+  range, as already used on 17 August.
+- https://jtnb.centre-mersenne.org/item/JTNB_1993__5_2_411_0/
+  and the PDF at
+  https://jtnb.centre-mersenne.org/item/10.5802/jtnb.101.pdf
+  Hildebrand–Tenenbaum survey. Additive paragraph (journal
+  pp. 468–469): 1984b gives $N^{2/5}$; Balog 1989 gives $0.2695$;
+  $N^\varepsilon$ unknown. Ternary much better. No later binary
+  exponent in that paragraph.
+- https://arxiv.org/abs/2006.15307
+  Győry–Hajdu–Sárközy. Additive *decomposability of the set of
+  smooth numbers*. Not an all-integers $F(n)$ exponent.
+- https://arxiv.org/abs/2111.01601
+  Blomer–Grimmelt–Li–Rydin Myerson v5. Prime plus two almost-prime
+  squares. Not two smooth summands.
+- https://arxiv.org/abs/1912.11546
+  Dimitrov–Vigneri–Attias v2. Cryptographic heuristic. No theorem
+  for Green #59.
+- https://www.impan.pl/shop/en/publication/transaction/download/product/91781
+  Ki–Maier–Sankaranarayanan, Acta Arith. 175.4 (2016). Introduction
+  cites Balog $N^{0.2695}$ as the all-integers binary record and
+  records Balog–Sárközy’s remark that exponential sums lower $2/5$
+  to $0.392$. Their theorems are almost-all square+smooth and
+  prime+smooth. Does not beat Balog 1989.
+- https://www.renyi.hu/~balog/
+  Author page (short HTML).
+- https://www.renyi.hu/~balog/publist.pdf
+  [9]–[10] = Studia 1984 I/II; [24] = Acta Math. Hungar. 54 (1989).
+
+Failed / blocked this session: live erdosproblems.com (Cloudflare);
+vzsky `sequences.pdf` raw URL returned 14 bytes; Springer landing
+for Balog 1989 (DOI only, PDF not fetched).
+
+No later all-integers binary exponent located. Scoped miss.
