@@ -130,3 +130,13 @@ A numerical try that did move: replace CSS β≤γ in the HKN fork by Chen–Kar
 
 The stored proofs are the 1026 DRATs in `compute/q4/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The first hole not run is n=109. The conjecture 1/3 is open.
 
+## 11. 27 August, leftover holes from n=109
+
+The same cubes keep dying past n=108. A 37-outregular oriented graph on 109 vertices has 4033 arcs, so some in-degree is at least 37. The needed k are 37 through 70; k=71 is empty by the N⁺ counting cut.
+
+n=109 k=37 is the old leftover hole from the n=108 wrap. It is UNSAT, and so is every later leftover order through n=112. Independent replay of those 140 cubes is 0 failures. Raw kissat proofs again grow past 100 MB; `drat-trim` core lemmas still replay.
+
+A numerical try that did not move: the stored CKLS-fork ray at 0.34640 already has worst F positive at 0.34639. Warm Qs, extra forms, and a CSS reading 1/(1+0.16065) do not produce a new certificate. F₄ stays 0.34640.
+
+The stored proofs for this range are the 140 DRATs in `compute/q5/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The first hole not run is n=113. The conjecture 1/3 is open.
+
