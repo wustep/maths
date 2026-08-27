@@ -66,9 +66,18 @@ $$
 $$
 
 and tests $\Delta E(N-1,Z)\ge\Delta E(N,Z)$ on consecutive pairs
-that both exist in the table. A clean run on this range is not a
-proof of monotonicity. A failed pair is not a counterexample to
-10(a): the inputs are HF numbers, not $E(N,Z)$.
+that both exist in the table. On this run the inequality held for
+every such pair (10 helium-like, 63 UHF $s/p$, 10 s-only). That is
+a property of these HF numbers, not a proof of monotonicity. A
+failed pair would not be a counterexample to 10(a) either: the
+inputs are HF numbers, not $E(N,Z)$.
+
+Heuristic N0-hat in the UHF $s/p$ table is 1 for $Z=1$ and $Z$
+for $Z=2$ through 10: no anion binds. H- is not below the exact
+$-1/2$, so there is no new binding certificate. For $Z\ge 2$ the
+two-electron energy is below $-Z^2/2$, which Zhislin already
+gives. Two lithium-anion SCF runs ($Z=3$, $N=4$ and $5$) hit the
+iteration cap; their energies still sit above Li.
 
 ## Thomas–Fermi
 
