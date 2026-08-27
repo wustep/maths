@@ -1,0 +1,208 @@
+{
+  "beats_H3": false,
+  "claim": "first-order Melnikov of the named cubic family P=0, Q=mu (alpha-x^2) y on the qh center has at most one positive zero; not a bound on H(3)",
+  "exact": {
+    "dx": [],
+    "variables": [
+      "x"
+    ],
+    "x2dx_cleared": []
+  },
+  "family": {
+    "P": [],
+    "Q": [
+      {
+        "alpha": 1,
+        "coeff": "1",
+        "mu": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "mu": 1,
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "Q_mu_y_extra": [
+      {
+        "coeff": "8",
+        "mu": 1,
+        "y": 2
+      }
+    ],
+    "claimed": [
+      {
+        "alpha": 1,
+        "coeff": "8",
+        "mu": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-8",
+        "mu": 1,
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "div": [
+      {
+        "alpha": 1,
+        "coeff": "1",
+        "mu": 1
+      },
+      {
+        "coeff": "-1",
+        "mu": 1,
+        "x": 2
+      }
+    ],
+    "extra": [
+      {
+        "alpha": 1,
+        "coeff": "8",
+        "mu": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-8",
+        "mu": 1,
+        "x": 2,
+        "y": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "mu",
+      "alpha"
+    ]
+  },
+  "fourteen_zeros": false,
+  "general_cubic_I_zeros_at_most": 2,
+  "hn_moved": false,
+  "melnikov": {
+    "divergence": "-iint (P_x + Q_y) dA",
+    "energy_factor_when_P_eq_0": 4,
+    "formula": "oint Q dx - P dy"
+  },
+  "named_family_cyclicity_at_most": 1,
+  "rectangles": {
+    "area_den": 16,
+    "area_num": 5,
+    "moment_den": 256,
+    "moment_num": 97
+  },
+  "scale": {
+    "H_diff": [],
+    "J0_exponent": 3,
+    "J2_exponent": 5,
+    "Jy2_exponent": 7,
+    "integrand_1": [],
+    "integrand_x2": [],
+    "integrand_y2": [],
+    "jac_diff": [],
+    "ratio_diff": [],
+    "ratio_exponent": 2,
+    "variables": [
+      "s",
+      "u",
+      "lam"
+    ]
+  },
+  "schema": "hilbert16-hh-qh-melnikov/v1",
+  "unperturbed": {
+    "H": [
+      {
+        "coeff": "4",
+        "y": 2
+      },
+      {
+        "coeff": "1",
+        "x": 4
+      }
+    ],
+    "Hx": [
+      {
+        "coeff": "4",
+        "x": 3
+      }
+    ],
+    "Hy": [
+      {
+        "coeff": "8",
+        "y": 1
+      }
+    ],
+    "P0": [
+      {
+        "coeff": "2",
+        "y": 1
+      }
+    ],
+    "Q0": [
+      {
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "dHdt": [],
+    "hess11": [
+      {
+        "coeff": "12",
+        "x": 2
+      }
+    ],
+    "hess12": [],
+    "hess22": [
+      {
+        "coeff": "8"
+      }
+    ],
+    "j11": [],
+    "j12": [
+      {
+        "coeff": "2"
+      }
+    ],
+    "j21": [
+      {
+        "coeff": "-3",
+        "x": 2
+      }
+    ],
+    "j22": [],
+    "origin_det": 0,
+    "origin_hess_det": 0,
+    "origin_trace": 0,
+    "sos": [
+      {
+        "coeff": "1",
+        "y": 2
+      },
+      {
+        "coeff": "1",
+        "x": 6
+      }
+    ],
+    "variables": [
+      "x",
+      "y"
+    ]
+  },
+  "weight": {
+    "H_weight_diff": [],
+    "P_weight_diff": [],
+    "Q_weight_diff": [],
+    "variables": [
+      "x",
+      "y",
+      "lam"
+    ]
+  },
+  "what_this_is_not": [
+    "not a dent of H(3)",
+    "not fourteen zeros of I(h)",
+    "not a beat of Gavrilov-He-Xiao arXiv:2606.22137"
+  ]
+}

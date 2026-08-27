@@ -1,0 +1,234 @@
+{
+  "paper": "arXiv:2604.12883v1 Remark 4 / Theorem 1 / Theorem 2 / \u00a76",
+  "Phi": "u^3-3uv^2, 3u^2v-v^3",
+  "det": "9(u^2+v^2)^2",
+  "cauchy_riemann": true,
+  "modulus_identity": true,
+  "identity": "DPhi \u00b7 Y = (det DPhi) (X o Phi)",
+  "linear": {
+    "P": "y",
+    "Q": "-x",
+    "identity_ok": true,
+    "deg_Y": 5,
+    "bound": 5,
+    "Yu_closed": "3v(u^2+v^2)^2",
+    "Yv_closed": "-3u(u^2+v^2)^2",
+    "Yu_monomials": [
+      {
+        "u": 0,
+        "v": 5,
+        "num": 3,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 3,
+        "num": 6,
+        "den": 1
+      },
+      {
+        "u": 4,
+        "v": 1,
+        "num": 3,
+        "den": 1
+      }
+    ],
+    "Yv_monomials": [
+      {
+        "u": 1,
+        "v": 4,
+        "num": -3,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 2,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 0,
+        "num": -3,
+        "den": 1
+      }
+    ]
+  },
+  "quadratic": {
+    "P": "x^2+y",
+    "Q": "y^2+x",
+    "identity_ok": true,
+    "deg_Y": 8,
+    "bound": 8,
+    "n_terms_Yu": 10,
+    "n_terms_Yv": 10
+  },
+  "radial": {
+    "rho2": [
+      1,
+      4
+    ],
+    "identity_ok": true,
+    "deg_Y": 11,
+    "bound": 11,
+    "exact": true,
+    "n_terms_Yu": 12,
+    "n_terms_Yv": 12,
+    "leading_Yu": "-3u(u^2+v^2)^5",
+    "leading_Yv": "-3v(u^2+v^2)^5",
+    "Yu_monomials": [
+      {
+        "u": 0,
+        "v": 5,
+        "num": 3,
+        "den": 1
+      },
+      {
+        "u": 1,
+        "v": 4,
+        "num": 3,
+        "den": 4
+      },
+      {
+        "u": 2,
+        "v": 3,
+        "num": 6,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 2,
+        "num": 3,
+        "den": 2
+      },
+      {
+        "u": 4,
+        "v": 1,
+        "num": 3,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 0,
+        "num": 3,
+        "den": 4
+      },
+      {
+        "u": 1,
+        "v": 10,
+        "num": -3,
+        "den": 1
+      },
+      {
+        "u": 3,
+        "v": 8,
+        "num": -15,
+        "den": 1
+      },
+      {
+        "u": 5,
+        "v": 6,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 7,
+        "v": 4,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 9,
+        "v": 2,
+        "num": -15,
+        "den": 1
+      },
+      {
+        "u": 11,
+        "v": 0,
+        "num": -3,
+        "den": 1
+      }
+    ],
+    "Yv_monomials": [
+      {
+        "u": 0,
+        "v": 5,
+        "num": 3,
+        "den": 4
+      },
+      {
+        "u": 1,
+        "v": 4,
+        "num": -3,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 3,
+        "num": 3,
+        "den": 2
+      },
+      {
+        "u": 3,
+        "v": 2,
+        "num": -6,
+        "den": 1
+      },
+      {
+        "u": 4,
+        "v": 1,
+        "num": 3,
+        "den": 4
+      },
+      {
+        "u": 5,
+        "v": 0,
+        "num": -3,
+        "den": 1
+      },
+      {
+        "u": 0,
+        "v": 11,
+        "num": -3,
+        "den": 1
+      },
+      {
+        "u": 2,
+        "v": 9,
+        "num": -15,
+        "den": 1
+      },
+      {
+        "u": 4,
+        "v": 7,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 6,
+        "v": 5,
+        "num": -30,
+        "den": 1
+      },
+      {
+        "u": 8,
+        "v": 3,
+        "num": -15,
+        "den": 1
+      },
+      {
+        "u": 10,
+        "v": 1,
+        "num": -3,
+        "den": 1
+      }
+    ]
+  },
+  "chebyshev_T3": {
+    "deg_linear": 5,
+    "deg_quad": 8,
+    "deg_radial": 11,
+    "identity_ok": true
+  }
+}
