@@ -1,0 +1,9 @@
+search_cosets_exact
+search_unknown_cosets
+search_hamming11
+search_ejection
+*.o
+R_cosets.txt
+R_ejection.txt
+R*_hamming11.txt
+coset_unknown.conn
