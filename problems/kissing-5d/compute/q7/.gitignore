@@ -9,6 +9,7 @@ certs/*.log
 certs/*.sat.json
 leftover_sat_k*.json
 leftover_global_smoke.json
+leftover_global_progress.json
 leftover_global.log
 five_star_sat.log
 leftover_sat.log

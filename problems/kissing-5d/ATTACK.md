@@ -594,3 +594,23 @@ classical Levenshtein number 48 before claiming any comparison.
   star-cover $\ge 5$ with native CaDiCaL / Kissat; (3) always-on
   grow prune in `leftover_global.c`; (4) one more $(t-1/2)^p q^2$
   dual grid, then drop that line if it stays above 44.
+- Signed permutations act transitively on each 5-star type
+  (`orbits.json`: 60 of type $(2,1)$ $k=32$, 160 of type $(1,3)$
+  $k=31$, 32 of type $(0,5)$ $k=30$; Aut order $3840$).
+- Minimum $|U|$ with star-cover $\ge 5$ is 5; with star-cover
+  $\ge 6$ is 8 (`star_cover_min.json`). Neither empties $|U|=19$.
+- Dual line dropped (`dual_more.json`): 1-point Delsarte still
+  $\approx 46.33687$; exact $(t-1/2)^p q^2$ duals that certify sit
+  at best $221991/3733\approx 59.47$. Did not beat
+  Mittelmann–Vallentin.
+- Native leftover-tight SAT on the $k=32$ orbit representative
+  (stars $(0,1,2,3,4)$) is UNSAT: CaDiCaL 3.0.1, $1{,}857{,}657$
+  conflicts, binary DRAT $211{,}850{,}438$ bytes, Heule
+  `drat-trim` `s VERIFIED` (`five_star_sat.json`). Combined with
+  Aut transitivity this empties all 60 type-$(2,1)$ five-star
+  leftover hosts. The q6 cutoff pool $(0,1,2,3,5)$ is likewise
+  UNSAT with a verified DRAT ($3{,}325{,}416$ conflicts).
+- $k=31$, $k=30$, the remaining two q6 $k=32$ cutoffs, global
+  leftover SAT $k=19$, and leftover-tight extras B&B past 200M
+  nodes are still running. Residue until those certificates land.
+  Did not claim $\tau_5=40$.

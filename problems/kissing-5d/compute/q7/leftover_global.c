@@ -196,6 +196,15 @@ static void expand(u64 *P, int rsz, int *stack, u64 U)
     nodes++;
     if (found || nodes > node_limit)
         return;
+    if ((nodes % 2000000L) == 0) {
+        FILE *pf = fopen("leftover_global_progress.json", "w");
+        if (pf) {
+            fprintf(pf,
+                    "{\"nodes\": %ld, \"best_extras\": %d, \"found_41\": %s}\n",
+                    nodes, best, found ? "true" : "false");
+            fclose(pf);
+        }
+    }
     int psz = popc(P);
     int uk = __builtin_popcountll(U);
     /* even taking every remaining extra, |E| = rsz+psz, need |E| >= |U|+1

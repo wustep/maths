@@ -1,0 +1,10 @@
+{
+  "kind": "global leftover",
+  "k": 19,
+  "min_star_cover": 5,
+  "path": "/workspace/problems/kissing-5d/compute/q7/certs/n1_k19_star5.cnf",
+  "vars": 30678,
+  "clauses": 219606,
+  "sha256": "e3cdf455510e3aba3749c40f75032f6868ad6c6977fd091ad25dbb48a61b3de9",
+  "bytes": 3023007
+}

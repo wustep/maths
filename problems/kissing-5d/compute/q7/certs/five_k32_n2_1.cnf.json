@@ -1,0 +1,23 @@
+{
+  "kind": "five-star leftover-tight",
+  "name": "k32_n2_1",
+  "stars": [
+    0,
+    1,
+    2,
+    3,
+    4
+  ],
+  "type": [
+    2,
+    1
+  ],
+  "k": 32,
+  "n_extras": 528,
+  "n_roots": 32,
+  "path": "/workspace/problems/kissing-5d/compute/q7/certs/five_k32_n2_1.cnf",
+  "vars": 28358,
+  "clauses": 89068,
+  "sha256": "40c830c09163029f0cd61c26bb47c94b8340599eb434ffa56005bc9d133f5f85",
+  "bytes": 1293548
+}

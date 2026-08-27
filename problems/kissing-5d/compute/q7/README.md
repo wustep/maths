@@ -29,6 +29,7 @@ change from the q6 160-candidate cap.
 | `replay_five_star.py` | independent CNF rebuild of the three orbit reps |
 | `dual_more.py` | further exact unrestricted dual attempts |
 | `verify.py` | replay any claimed 41-set and dual JSON |
+| `merge_sat.py` | assemble `five_star_sat.json` / `leftover_sat.json` from native sat.json |
 
 A numerical SDP that does not become an exact positivity certificate is
 an incomplete search. The unrestricted range remains $40\le\tau_5\le 44$

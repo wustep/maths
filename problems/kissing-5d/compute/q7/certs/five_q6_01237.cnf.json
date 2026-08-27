@@ -1,0 +1,23 @@
+{
+  "kind": "five-star leftover-tight",
+  "name": "q6_01237",
+  "stars": [
+    0,
+    1,
+    2,
+    3,
+    7
+  ],
+  "type": [
+    2,
+    1
+  ],
+  "k": 32,
+  "n_extras": 528,
+  "n_roots": 32,
+  "path": "/workspace/problems/kissing-5d/compute/q7/certs/five_q6_01237.cnf",
+  "vars": 28358,
+  "clauses": 89068,
+  "sha256": "6272e8caff4b0911f43ea34407397e03bfecca22eac52dd7903051685abb4427",
+  "bytes": 1293604
+}
