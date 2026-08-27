@@ -1,0 +1,66 @@
+# Landau 3: Legendre's conjecture
+
+- Slug: `landau-legendre`
+- List: Landau 3 in this notebook's ordering
+- Status: open; q1 in progress
+- Area: Analytic and computational number theory
+- Sources: Pintz 2009; Sorenson--Webster 2024; Chamberland--Straub 2026
+- Started: 2026-08-27
+
+## Statement
+
+For every integer $n\geq 1$, there is a prime $p$ such that
+
+$$
+n^2<p<(n+1)^2.
+$$
+
+Equivalently,
+
+$$
+\pi((n+1)^2)-\pi(n^2)>0
+$$
+
+for every $n\geq 1$. A global bound
+$p_{k+1}-p_k<2\sqrt{p_k}$ would imply Legendre's conjecture, but it is
+stronger and is not an equivalent formulation.
+
+The conjecture remains open, even assuming the Riemann hypothesis. The
+unconditional Baker--Harman--Pintz exponent $0.525$ for prime gaps gives
+primes between sufficiently large consecutive powers $x^\alpha$ and
+$(x+1)^\alpha$ only when $\alpha>1/(1-0.525)\approx2.1053$. Ingham's
+work gives a prime between sufficiently large consecutive cubes.
+
+## Published computational record
+
+Sorenson and Webster verified the stronger Oppermann conjecture for every
+integer
+
+$$
+n\leq N=70{,}500{,}000{,}000{,}000.
+$$
+
+Thus both $(n^2,n(n+1))$ and $(n(n+1),(n+1)^2)$ contain primes throughout
+that range. In particular, Legendre is checked through
+
+$$
+N^2=4{,}970{,}250{,}000{,}000{,}000{,}000{,}000{,}000{,}000.
+$$
+
+This supersedes the older shorthand that the conjecture was checked only
+through $2^{64}$ by maximal-prime-gap tables. The Prime Gap List community
+now reports exhaustive gap analysis through $10^{20}$, but that is still far
+below the square-height reached by Sorenson and Webster.
+
+## What would count as a dent
+
+- A verified finite extension past $N=7.05\cdot10^{13}$, with witnesses or
+  primality certificates and an independent verifier.
+- A smaller explicit exponent than the published conditional threshold
+  $\delta=0.2253$ in the Chamberland--Straub theorem on primes between
+  $x^{2+\delta}$ and $(x+1)^{2+\delta}$ for all real $x\geq1$, still under RH.
+- An independently replayed documented range, or a reproducible near-miss
+  table, with its scope stated exactly.
+
+An incomplete upstream-data reconstruction or unfinished search is residue,
+not a finite lower bound. None of these outcomes proves Legendre's conjecture.
