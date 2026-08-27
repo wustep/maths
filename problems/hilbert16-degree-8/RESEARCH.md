@@ -282,3 +282,14 @@ arXiv:2603.08094 (non-Abelian patchworking), Demory arXiv:2601.07751
 Janasz–Pokora arXiv:2512.24707 (M-arrangements of conics and lines),
 Frühbis-Krüger–Joswig–Kastner arXiv:2603.12985 (drawing real plane
 curves in OSCAR). No forum sources were used.
+
+## 2026-08-27 — freshness check (q2)
+
+Re-fetched before the leftover high-rank thicken. **Nothing about
+degree 8 moved.** `python3 scripts/arxiv_fetch.py 2602.06888v3`
+returns **v3, 27 Jul 2026**. Abs
+<https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes, "as the search is not exhaustive, this
+is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
+Parent 17/17 and q1 replay still green. Bound still ≥ 2,384.

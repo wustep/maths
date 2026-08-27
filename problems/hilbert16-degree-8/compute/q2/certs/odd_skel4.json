@@ -1,0 +1,29 @@
+{
+  "what": "Compatible odd Harnack-split collections through size 4. q1 finished size at most 3 (368,936 evaluations, twelve known M-schemes). The published a=10 nest has seven odd splits, so size 4 is the next enumerable odd skeleton.",
+  "maxsize": 4,
+  "odd_splits": 189,
+  "size3_evals": 368936,
+  "size3_complete": true,
+  "evals": 3740056,
+  "size4_index": 40,
+  "size4_of": 189,
+  "distinct_schemes": 12,
+  "hits_on_open_nests": 0,
+  "complete": false,
+  "schemes": [
+    "<10 u 1<11>>",
+    "<13 u 1<1> u 1<6>>",
+    "<13 u 1<6 u 1<1>>>",
+    "<14 u 1<7>>",
+    "<17 u 1<2 u 1<1>>>",
+    "<18 u 1<3>>",
+    "<5 u 1<1> u 1<14>>",
+    "<5 u 1<2> u 1<13>>",
+    "<6 u 1<15>>",
+    "<9 u 1<10 u 1<1>>>",
+    "<9 u 1<1> u 1<10>>",
+    "<9 u 1<2> u 1<9>>"
+  ],
+  "open_nests_in_scope": false,
+  "note": "Residue. Size 3 replayed the q1 count. Size 4 was still running at 40 of 189 when this snapshot was written and had not left those twelve schemes. Not a lower bound."
+}

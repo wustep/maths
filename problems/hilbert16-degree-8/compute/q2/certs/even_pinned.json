@@ -1,0 +1,22 @@
+{
+  "what": "BFS of even-split add/drop/swap that never drops an odd split, starting from the five published (19,3) collections and the Prop 31 bow-tie collection. Theorem 17 keeps (p,n) fixed. Longer cap than q1 (400,000 vs 200,000).",
+  "pin_odd": true,
+  "evals": 400000,
+  "limit": 400000,
+  "queue_left": 393239,
+  "distinct_schemes": 5,
+  "new": 0,
+  "hits": 0,
+  "best_score": 6.0,
+  "best_scheme": "<17 u 1<2 u 1<1>>>",
+  "complete": false,
+  "schemes": [
+    "<10 u 1<2 u 1<8>>>",
+    "<16 u 3<1>>",
+    "<17 u 1<1> u 1<2>>",
+    "<17 u 1<2 u 1<1>>>",
+    "<18 u 1<3>>"
+  ],
+  "open_nests_in_scope": false,
+  "note": "Residue. Same five published (19,3) M-schemes as q1 even_pinned. Queue still open. Not a lower bound."
+}
