@@ -480,3 +480,15 @@ F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q
 
 First remaining hole n=130, δ⁺=44. Conjecture 1/3 open.
 
+### 2026-08-27 — leftover cubes from n=130
+
+Same encoder as q1–q20. New proofs live in `compute/q21/certs/keep/` (q20 stays the n=129 store).
+
+Leftover n=130 is closed: d=44, cubes k=44..84, 41 stored DRATs after `drat-trim -l` (k=48 is 15.6 MB). Independent replay: `python3 verify_range.py --n-min 130 --n-max 130` reports 41 checked, 0 failures.
+
+Dent against that finite leftover hole. n=131 is started and is not fully stored. Residue, not a bound.
+
+F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=131, δ⁺=44. Conjecture 1/3 open.
+
