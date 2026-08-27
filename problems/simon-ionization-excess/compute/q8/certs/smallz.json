@@ -1,46 +1,46 @@
 {
   "status": "residue",
-  "reason": "Lieb N_c<2Z+1 still excludes the most integers at Z=2..6. The q7 simplified envelope sits above 2Z+1 there. A leading coefficient >1 cannot bound N0(Z)-Z.",
+  "reason": "Lieb N_c<2Z+1 still excludes the most integers at Z=2..6. The q8 simplified envelope sits above 2Z+1 there. A leading coefficient >1 cannot bound N0(Z)-Z.",
   "rows": [
     {
       "Z": 2,
       "Lieb_2Z+1": 5,
       "Lieb_integer_Nc_le": 4,
-      "q7_1.1021_3.937": 7.164509173436116,
+      "q8_1.1020_3.937": 7.164309173436116,
       "Nam_1.22_3": 6.219763149684619,
-      "q7_excludes_new_integer": false
+      "q8_excludes_new_integer": false
     },
     {
       "Z": 3,
       "Lieb_2Z+1": 7,
       "Lieb_integer_Nc_le": 6,
-      "q7_1.1021_3.937": 8.984436558300267,
+      "q8_1.1020_3.937": 8.984136558300266,
       "Nam_1.22_3": 7.986748710922225,
-      "q7_excludes_new_integer": false
+      "q8_excludes_new_integer": false
     },
     {
       "Z": 4,
       "Lieb_2Z+1": 9,
       "Lieb_integer_Nc_le": 8,
-      "q7_1.1021_3.937": 10.6579979415988,
+      "q8_1.1020_3.937": 10.657597941598802,
       "Nam_1.22_3": 9.642203155904598,
-      "q7_excludes_new_integer": false
+      "q8_excludes_new_integer": false
     },
     {
       "Z": 5,
       "Lieb_2Z+1": 11,
       "Lieb_integer_Nc_le": 10,
-      "q7_1.1021_3.937": 12.242675302066155,
+      "q8_1.1020_3.937": 12.242175302066155,
       "Nam_1.22_3": 11.22992784003009,
-      "q7_excludes_new_integer": false
+      "q8_excludes_new_integer": false
     },
     {
       "Z": 6,
       "Lieb_2Z+1": 13,
       "Lieb_integer_Nc_le": 12,
-      "q7_1.1021_3.937": 13.766603773980133,
+      "q8_1.1020_3.937": 13.766003773980135,
       "Nam_1.22_3": 12.77136177849642,
-      "q7_excludes_new_integer": false
+      "q8_excludes_new_integer": false
     }
   ]
 }

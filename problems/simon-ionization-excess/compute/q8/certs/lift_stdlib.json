@@ -1,0 +1,25 @@
+{
+  "row": "/workspace/problems/simon-ionization-excess/compute/q8/certs/raise_R10_n33_t0p9112.json",
+  "R": 10.0,
+  "n": 33,
+  "recon_gamma": 0.9075071558364936,
+  "stored_gamma": 0.9075071558364936,
+  "recon_ok": true,
+  "inv": 1.1019196857772997,
+  "inv_lt_1.1021": true,
+  "inv_lt_1.1026": true,
+  "inv_lt_1.1035": true,
+  "inv_lt_1.1057": true,
+  "inv_lt_1.1118": true,
+  "inv_lt_1.108741": true,
+  "cut": 0.9090909090909091,
+  "cut_gt_gamma": true,
+  "faces": {
+    "n": 33,
+    "copositive": true,
+    "min_mMm_safe": 7.261488634373565e-05,
+    "singular_or_illconditioned": 2455,
+    "gamma_target": 0.9112
+  },
+  "ok": true
+}

@@ -5,5 +5,5 @@
 - `smallz.py` — Lieb still best integers at $Z=2,\ldots,6$.
 - `analyze_M.py` — $M$ at the q8 targets; PSD+NN still fails.
 - `sharper_cut.py` — Chebyshev/Hölder on the endpoint slab.
-- `lift_notes.md` — compact $\gamma$ at aspect $10$.
+- `lift_notes.md` — $n=33$ target $0.9112$ compact $\gamma$ at aspect $10$.
 - Scan and face dumps live in `../certs/`.

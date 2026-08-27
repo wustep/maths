@@ -1,10 +1,9 @@
 #!/usr/bin/env python3
-"""Lieb still gives the best integers at Z=2..6 under the q7 envelope.
+"""Lieb still gives the best integers at Z=2..6 under the q8 envelope.
 
 A leading coefficient above 1 cannot bound N0(Z)-Z. The simplified
-q7 form N_c < 1.1021 Z + 3.937 Z^{1/3} sits above 2Z+1 on this
-range, so it excludes no new integer. q8 has not moved that envelope
-until a certified raise exists.
+q8 form N_c < 1.1020 Z + 3.937 Z^{1/3} sits above 2Z+1 on this
+range, so it excludes no new integer.
 
 Writes certs/smallz.json.
 """
@@ -25,7 +24,7 @@ def main() -> None:
     any_new = False
     for Z in range(2, 7):
         lieb = 2 * Z + 1
-        hps = 1.1021 * Z + 3.937 * (Z ** (1.0 / 3.0))
+        hps = 1.1020 * Z + 3.937 * (Z ** (1.0 / 3.0))
         nam = 1.22 * Z + 3.0 * (Z ** (1.0 / 3.0))
         lieb_int = 2 * Z  # N_c <= 2Z from N_c < 2Z+1
         hps_int = math.floor(hps - 1e-12)
@@ -36,16 +35,16 @@ def main() -> None:
                 "Z": Z,
                 "Lieb_2Z+1": lieb,
                 "Lieb_integer_Nc_le": lieb_int,
-                "q7_1.1021_3.937": hps,
+                "q8_1.1020_3.937": hps,
                 "Nam_1.22_3": nam,
-                "q7_excludes_new_integer": new_int,
+                "q8_excludes_new_integer": new_int,
             }
         )
     blob = {
         "status": "residue",
         "reason": (
             "Lieb N_c<2Z+1 still excludes the most integers at Z=2..6. "
-            "The q7 simplified envelope sits above 2Z+1 there. A leading "
+            "The q8 simplified envelope sits above 2Z+1 there. A leading "
             "coefficient >1 cannot bound N0(Z)-Z."
         ),
         "rows": rows,
@@ -54,7 +53,7 @@ def main() -> None:
     out.write_text(json.dumps(blob, indent=2) + "\n")
     print(json.dumps(blob, indent=2))
     if any_new:
-        raise SystemExit("smallz.py unexpected: q7 envelope beats Lieb integers")
+        raise SystemExit("smallz.py unexpected: q8 envelope beats Lieb integers")
     print("smallz.py PASS (finite-Z integers still residue)")
 
 

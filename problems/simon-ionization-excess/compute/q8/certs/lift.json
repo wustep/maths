@@ -1,0 +1,49 @@
+{
+  "arxiv": "2504.18487v1",
+  "status": "dent",
+  "is_new_bound": true,
+  "beats_1.1021": true,
+  "beats_1.1026": true,
+  "beats_1.1035": true,
+  "beats_1.1057": true,
+  "beats_1.1118": true,
+  "beats_1.1185": true,
+  "beats_1.108741_as_unrestricted": true,
+  "not_the_withdrawn_1.1168": true,
+  "used_class": "aspect\u226410 compact \u03b3, lifted by mass-opt dichotomy",
+  "beta3_lower": "0.9075071558364936000000000000000000000000",
+  "leading_hi": "1.1020",
+  "inequalities": [
+    {
+      "beats": "q7 leading 1.1021, q6 1.1026, q5 1.1035, q4 1.1057, q3 1.1118, and HPS printed 1.1185",
+      "range": "Z >= 4",
+      "inequality": "N < 1.1020 Z + 3.851 Z^{1/3} + 0.01320 + 0.1828 Z^{-1/3} + 0.019500 Z^{-2/3}"
+    },
+    {
+      "beats": "q7 simplified 1.1021 Z + 3.937 Z^{1/3}",
+      "range": "Z >= 4",
+      "inequality": "N_c < 1.1020 Z + 3.937 Z^{1/3}"
+    }
+  ],
+  "checks": {
+    "identities_ok": true,
+    "cut_exceeds_gamma": true,
+    "leading_beats_1.1021": true,
+    "leading_beats_1.1026": true,
+    "leading_beats_1.1035": true,
+    "leading_beats_1.1057": true,
+    "leading_beats_1.1118": true,
+    "leading_beats_1.1185": true,
+    "leading_printed_ok": true,
+    "stdlib_ok": true,
+    "mass_opt_no_counterexample": true
+  },
+  "pieces": {
+    "aspect_identities": "certs/aspect_identities.json",
+    "leading": "certs/leading.json",
+    "stdlib": "certs/lift_stdlib.json",
+    "mass_opt": "certs/mass_opt.json",
+    "row": "certs/raise_R10_n33_t0p9112.json"
+  },
+  "reason": "Same HPS \u00a77 chain with a tighter compact \u03b3 at the split R where R/(R+1) still exceeds \u03b3. Mass-stationary measures of aspect \u2265 R have Q>R/(R+1). Atomic measures reduce to one of those two classes. General radial D_3: truncate then approximate by finite spherical shells. Not the withdrawn 1.1168. Not a class-only use of the aspect-\u22644 number 1.1087."
+}

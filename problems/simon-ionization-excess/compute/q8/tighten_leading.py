@@ -100,6 +100,7 @@ def main() -> None:
         a1_max_hi = max(a1_max_hi, mpf(val.b))
 
     lead = ceil_dec(b_hi, 4)
+    lead_str = format(float(lead), ".4f")
     a1_dec = ceil_dec(a1_max_hi, 3)
     rem_dec = ceil_dec(mpf(coeff4.b), 3)
     extras_dec = (
@@ -139,7 +140,7 @@ def main() -> None:
         "R_split": int(row["R"]),
         "b_interval": list(iv_bounds(b)),
         "b_hi": S(b_hi),
-        "printed_leading": str(lead),
+        "printed_leading": lead_str,
         "a1_at_left": list(iv_bounds(a1_left)),
         "a1_at_9/4": list(iv_bounds(a1_94)),
         "a1_max_hi_on_interval": S(a1_max_hi),
@@ -174,7 +175,7 @@ def main() -> None:
                 "beats": "q7 leading 1.1021, q6 1.1026, q5 1.1035, q4 1.1057, q3 1.1118, and HPS printed 1.1185",
                 "range": "Z >= 4",
                 "inequality": (
-                    f"N < {lead} Z + {nstr(a1_dec, 4, strip_zeros=False)} Z^{{1/3}} "
+                    f"N < {lead_str} Z + {nstr(a1_dec, 4, strip_zeros=False)} Z^{{1/3}} "
                     f"+ {nstr(extras_dec[0], 4, strip_zeros=False)} "
                     f"+ {nstr(extras_dec[1], 4, strip_zeros=False)} Z^{{-1/3}} "
                     f"+ {nstr(extras_dec[2], 5, strip_zeros=False)} Z^{{-2/3}}"
@@ -183,7 +184,7 @@ def main() -> None:
             {
                 "beats": "q7 simplified 1.1021 Z + 3.937 Z^{1/3}",
                 "range": "Z >= 4",
-                "inequality": f"N_c < {lead} Z + {rem_dec} Z^{{1/3}}",
+                "inequality": f"N_c < {lead_str} Z + {rem_dec} Z^{{1/3}}",
             },
         ],
         "LT_factor": "1.456",
@@ -198,7 +199,7 @@ def main() -> None:
     }
     out = CERTS / "leading.json"
     out.write_text(json.dumps(blob, indent=2) + "\n")
-    print("b_hi", float(b_hi), "printed", float(lead), "ok", lead_ok)
+    print("b_hi", float(b_hi), "printed", lead_str, "ok", lead_ok)
     print("a1 max", float(a1_max_hi), "printed", float(a1_dec), "ok", a1_ok)
     print("Z4 coeff", float(mpf(coeff4.b)), "printed", float(rem_dec), "ok", rem_ok)
     print("beats 1.1021", beats_q7, "beats 1.1026", beats_q6)
