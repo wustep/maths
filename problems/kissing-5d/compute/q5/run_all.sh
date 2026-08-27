@@ -15,6 +15,7 @@ fi
 
 "$PY" extras_types.py
 "$PY" type_a_clique.py
+"$PY" type_a_small_U.py
 "$PY" seed_graph.py
 "$PY" four_star_census.py
 "$PY" t5_share_pruned.py

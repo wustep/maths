@@ -158,6 +158,7 @@ def main() -> int:
         "extras_clique.json",
         "t5_share23.json",
         "four_star_census.json",
+        "type_a_small_U.json",
     ):
         rec = check_search(name)
         report[name] = rec

@@ -44,7 +44,179 @@
       }
     ]
   },
-  "comment": "1-point continuum Delsarte cannot go below Odlyzko\u2013Sloane ~46.34.  No certified unrestricted dual below 44.",
-  "best_certified": null,
+  "ansatz_q34": [
+    {
+      "q": [
+        "1/3",
+        "7/4",
+        "10/3",
+        "7/4"
+      ],
+      "deg_q": 3,
+      "c": [
+        "1243/2520",
+        "18475/8316",
+        "14117/2970",
+        "5374/819",
+        "59567/9828",
+        "1027/270",
+        "1946/1287",
+        "196/715"
+      ],
+      "c_k_nonneg": true,
+      "unrestricted": true,
+      "certified": true,
+      "bound": "64715/1243",
+      "float_bound": 52.06355591311343,
+      "n_squarefree_roots": 0
+    },
+    {
+      "q": [
+        "1",
+        "3",
+        "3",
+        "1"
+      ],
+      "deg_q": 3,
+      "c": [
+        "8/15",
+        "104/33",
+        "112/15",
+        "1360/143",
+        "280/39",
+        "536/165",
+        "32/39",
+        "64/715"
+      ],
+      "c_k_nonneg": true,
+      "unrestricted": true,
+      "certified": true,
+      "bound": "60",
+      "float_bound": 60.0,
+      "n_squarefree_roots": 0
+    },
+    {
+      "q": [
+        "1",
+        "3",
+        "4",
+        "2"
+      ],
+      "deg_q": 3,
+      "c": [
+        "13/15",
+        "1075/231",
+        "1742/165",
+        "13796/1001",
+        "448/39",
+        "1024/165",
+        "896/429",
+        "256/715"
+      ],
+      "c_k_nonneg": true,
+      "unrestricted": true,
+      "certified": true,
+      "bound": "750/13",
+      "float_bound": 57.69230769230769,
+      "n_squarefree_roots": 0
+    },
+    {
+      "q": [
+        "1",
+        "0",
+        "0",
+        "0",
+        "1"
+      ],
+      "deg_q": 4,
+      "c": [
+        "-694/1155",
+        "4748/3003",
+        "-1424/2145",
+        "1376/1001",
+        "-160/273",
+        "2368/2805",
+        "-896/7293",
+        "2304/13585",
+        "-64/2431",
+        "128/4199"
+      ],
+      "c_k_nonneg": false,
+      "unrestricted": true,
+      "certified": false,
+      "bound": null,
+      "float_bound": null
+    },
+    {
+      "q": [
+        "1",
+        "2",
+        "2",
+        "2",
+        "1"
+      ],
+      "deg_q": 4,
+      "c": [
+        "32/77",
+        "8336/3003",
+        "928/143",
+        "8160/1001",
+        "48/7",
+        "2432/561",
+        "384/187",
+        "1920/2717",
+        "448/2431",
+        "128/4199"
+      ],
+      "c_k_nonneg": true,
+      "unrestricted": true,
+      "certified": true,
+      "bound": "77",
+      "float_bound": 77.0,
+      "n_squarefree_roots": 0
+    }
+  ],
+  "gapped_interpolation": {
+    "name": "Q5_minus_antipode",
+    "unrestricted": false,
+    "label": "NOT unrestricted \u2014 f may be positive on the antipodal gap",
+    "T_zero": [
+      "-4/5",
+      "-1/2",
+      "-3/10",
+      "0",
+      "1/5",
+      "1/2"
+    ],
+    "c": [
+      "1",
+      "459/113",
+      "10948/1243",
+      "71964/6215",
+      "19216/1469",
+      "10080/1243",
+      "89600/16159"
+    ],
+    "c_k_nonneg": true,
+    "f_le_0_on_T_zero": true,
+    "f_at_minus_1": "2646/565",
+    "f_at_minus_1_float": 4.6831858407079645,
+    "f_on_T_zero": {
+      "-4/5": "0",
+      "-1/2": "0",
+      "-3/10": "0",
+      "0": "0",
+      "1/5": "0",
+      "1/2": "0"
+    },
+    "bound_on_T_zero": "29484/565",
+    "float_bound_on_T_zero": 52.184070796460176,
+    "certified_unrestricted": false,
+    "comment": "Exact interpolation on the published Q5 angles except t=\u22121.  Positive at the antipode, so this is not an unrestricted dual and does not move \u03c45."
+  },
+  "comment": "1-point continuum Delsarte cannot go below Odlyzko\u2013Sloane ~46.34.  Degree-3/4 (t-1/2)q^2 duals that certify sit near 52 or higher.  The Q5-minus-antipode interpolant is NOT unrestricted.  No certified unrestricted dual below 44.",
+  "best_certified": "64715/1243",
+  "best_certified_float": 52.06355591311343,
+  "best_certified_source": "ansatz_q34",
   "below_44": false
 }

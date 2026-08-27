@@ -450,6 +450,8 @@ below 44. The published interval did not move.
 - No 41-point kissing code in the Szöllősi $T^5$ pool.
 - No leftover 41-set in the 1480-graph whose missed-root union sits
   in three $D_5$ coordinate-stars.
+- No leftover-tight type-A extras clique ($|C|\ge 20$ and
+  $|U|\le|C|-1$).
 - Share 23 with each published 35 is empty.
 
 **Still open.**

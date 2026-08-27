@@ -16,6 +16,7 @@ dual below 44 and no 41-point code.
 | --- | --- |
 | `extras_types.py` | extras types on the 1480-point graph; four-seeds vs six-seeds |
 | `type_a_clique.py` | 20-clique in the 160 type-A extras; missed-union size |
+| `type_a_small_U.py` | leftover-tight type-A cliques; complete empty |
 | `seed_graph.py` | 240-vertex seed compatibility; leftover-tight 3-star pools |
 | `triple_star_extras.py` | extras SAT / B&B on each 3-star leftover pool |
 | `n1_partcount.py` | HiGHS max contained-seeds for leftover $\lvert U\rvert\ge 19$ |

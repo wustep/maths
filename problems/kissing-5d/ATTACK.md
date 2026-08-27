@@ -460,7 +460,9 @@ classical Levenshtein number 48 before claiming any comparison.
 - Extra types on the 1480-graph: 160 four-seeds (1 type A
   $(4,2,2,2,2)$ + 4 type B $(5,2,1,1,1)$) and 80 six-seeds (8 type C
   $(3,3,3,2,1)$). A type-A 20-clique exists with $|U|=34$, total 26,
-  not a 41-set (`type_a_clique.json`).
+  not a 41-set (`type_a_clique.json`). Type-A leftover hunt
+  (`type_a_small_U.json`) is complete: no type-A clique $C$ with
+  $|C|\ge 20$ and $|U|\le|C|-1$ (196{,}750 nodes).
 - Seed compatibility graph is 240-vertex 231-regular
   (`seed_graph.json`). The 80 six-seeds form an 80-clique of union 40.
   Every 3-star union is leftover-tight: 80 pools $(22,21)$ and 40
@@ -490,7 +492,7 @@ classical Levenshtein number 48 before claiming any comparison.
   extras $\omega\le 12$ (need 13). Restricted finite-graph facts.
   Not an unrestricted bound.
 - No unrestricted dual below 44 (`dual_more.json`: 1-point Delsarte
-  still $\approx 46.337$). No 41-code in the finished construction
-  pools (`construct_more.json`).
+  still $\approx 46.337$; best certified ansatz $64715/1243\approx 52.06$).
+  No 41-code in the finished construction pools (`construct_more.json`).
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
