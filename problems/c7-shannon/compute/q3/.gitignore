@@ -5,3 +5,4 @@ coset_unique.conn
 coset_leftover.conn
 R_cosets.txt
 R*_hamming13.txt
+hamming13_sat_log.txt
