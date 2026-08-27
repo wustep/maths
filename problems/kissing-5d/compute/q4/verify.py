@@ -96,6 +96,74 @@ def verify_code41(path: Path):
     return {"present": True, "ok": True, "found_41": True}
 
 
+def verify_bv_dual(path: Path):
+    """Replay an exact Bachoc–Vallentin dual stored as rational F_k / Putinar."""
+    if not path.exists():
+        return {"present": False, "ok": True}
+    data = json.loads(path.read_text())
+    if not data.get("certified") or not data.get("unrestricted"):
+        return {"present": True, "ok": False, "reason": "not a certified unrestricted dual"}
+    bound = F(data["bound"])
+    if bound >= 44:
+        return {"present": True, "ok": False, "reason": "bound not < 44",
+                "bound": str(bound)}
+    sys.path.insert(0, str(HERE))
+    from bv import S_matrix as _S, frobenius as _fr, is_psd_exact as _psd
+    from bv import p4_gram as _p4, p_interval as _p, Poly3 as _P
+    d = int(data.get("d") or len(data.get("a", [])))
+    if "F_diag" not in data:
+        return {"present": True, "ok": False, "reason": "no F_diag"}
+    Fdiags = [[F(x) for x in row] for row in data["F_diag"]]
+    Fmats = []
+    for k, fd in enumerate(Fdiags):
+        m = len(fd)
+        A = [[F(0)] * m for _ in range(m)]
+        for i, x in enumerate(fd):
+            A[i][i] = x
+        if not _psd(A):
+            return {"present": True, "ok": False, "reason": f"F_{k} not PSD"}
+        Fmats.append(A)
+    S = [_S(k, d) for k in range(d + 1)]
+    b22 = F(data.get("b22", "0"))
+    g = _P.const(b22)
+    for k, Fm in enumerate(Fmats):
+        g = g + _fr(Fm, S[k])
+    gam = [F(x) for x in data.get("gamma", ["0", "0", "0"])]
+    p_sum = _p() + _p().permute((1, 0, 2)) + _p().permute((2, 1, 0))
+    residual = g + _P.const(gam[0]) + p_sum.scale(gam[1]) + _p4().scale(gam[2])
+    if residual.c:
+        return {"present": True, "ok": False, "reason": "Putinar g identity failed"}
+    if any(x < 0 for x in gam):
+        return {"present": True, "ok": False, "reason": "gamma negative"}
+    excludes = [k for k in (41, 42, 43, 44) if bound < k]
+    return {"present": True, "ok": True, "bound": str(bound),
+            "excludes": excludes, "certified": True}
+
+
+def verify_dual_exact_record():
+    path = HERE / "dual_exact.json"
+    if not path.exists():
+        return {"present": False, "ok": True}
+    data = json.loads(path.read_text())
+    claimed = bool(data.get("certified_below_44"))
+    best = data.get("best_certified_unrestricted") or {}
+    fb = best.get("float_bound")
+    if claimed:
+        if fb is None or fb >= 44 or not best.get("certified"):
+            return {"present": True, "ok": False,
+                    "reason": "certified_below_44 without a real dual"}
+        cert = HERE / "certs" / "bv_dual.json"
+        if not cert.exists() and not (HERE / "certs" / "unrestricted_delsarte.json").exists():
+            return {"present": True, "ok": False,
+                    "reason": "claimed <44 but no cert file"}
+    else:
+        if fb is not None and fb < 44 and best.get("certified"):
+            return {"present": True, "ok": False,
+                    "reason": "best bound <44 but certified_below_44 is false"}
+    return {"present": True, "ok": True, "certified_below_44": claimed,
+            "best_float": fb}
+
+
 def verify_duals():
     cert_path = HERE / "certs"
     if not cert_path.exists():
@@ -104,6 +172,12 @@ def verify_duals():
     ok_all = True
     for path in sorted(cert_path.glob("*.json")):
         data = json.loads(path.read_text())
+        if path.name == "bv_dual.json":
+            rec = verify_bv_dual(path)
+            report["bv_dual"] = rec
+            if rec.get("present") and not rec.get("ok"):
+                ok_all = False
+            continue
         if "gegenbauer_coeffs" not in data:
             continue
         c = [F(x) for x in data["gegenbauer_coeffs"]]
@@ -148,11 +222,22 @@ def check_search(name: str):
     return rec
 
 
+def verify_bv_lib():
+    sys.path.insert(0, str(HERE))
+    from bv import self_tests
+    tests = self_tests()
+    ok = all(v for _, v in tests)
+    return {"present": True, "ok": ok,
+            "failed": [n for n, v in tests if not v]}
+
+
 def main() -> int:
     report = {
+        "bv_lib": verify_bv_lib(),
         "d4_color": verify_d4_color(),
         "t5_color": verify_t5_color(),
         "duals": verify_duals(),
+        "dual_exact": verify_dual_exact_record(),
     }
     ok = all(report[k].get("ok", True) for k in report)
     code = HERE / "certs" / "code41.json"
