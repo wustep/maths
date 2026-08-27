@@ -165,3 +165,23 @@ classical Levenshtein number 48 before claiming any comparison.
 - Upper bound 44 (Mittelmann–Vallentin $s_{14}(5)=44.99899685\ldots$).
   We did not produce an unrestricted dual below 44.
 - What we *did* certify is restricted: see RESEARCH.md.
+
+## 2026-08-27 — continue (q1)
+
+- Start from main. Folder `compute/q1/`. House rules unchanged: do not
+  claim $\tau_5=40$; a numerical SDP without an exact positivity
+  certificate is residue; the published record is still
+  $40\le\tau_5\le 44$.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  refs [9] Korkine–Zolotareff and [17] Mittelmann–Vallentin),
+  Cohn–Rajagopal arXiv:2412.00937v3, Mittelmann–Vallentin
+  arXiv:0902.1105v3. A Zenodo note claiming a Cohn–Kumar LP number
+  $44.0297$ is a lead, not a citation: unrestricted Delsarte is already
+  $\approx 46.345$, and there is no exact dual.
+- Plan: (1) exact polar vertices of $D_5,L_5,Q_5,R_5$ (maximality of
+  $Q_5,R_5$ was only numerical on 17 August); (2) integer Delsarte boxes
+  for $T_{L_5}$ and $T_{Q_5}$; (3) $A_4$-containing height and the
+  discrete vertex-extra graph; (4) more interpolating duals; (5)
+  Szöllősi $T^5$ candidate graph on the known angles.

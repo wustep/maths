@@ -140,3 +140,24 @@ compute/.venv/bin/python compute/verify_certificates.py
 
 Expected last lines: `D5_inner_products: certified=True bound=42 … excludes=[43, 44]`
 and `L5_inner_products: certified=True bound=239925/5456 … excludes=[44]`.
+
+## 2026-08-27 — record still $40\le\tau_5\le 44$
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $40\le\tau_5\le 44$, conjectural value 40. Upper bound cited is
+  Mittelmann–Vallentin.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Later-dimension news (Cohn–Li, de Laat–
+  Leijenhorst, Ma et al. 2511.13391, …) does not touch dim 5.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026): “appears to be 40…
+  best upper bound that has been proved is 44”. Four 40-point geometries.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.998\ldots$, hence
+  $\tau_5\le 44$. Still the published upper bound.
+- https://arxiv.org/abs/1507.03631 — survey story $48\to 46.345\to 45\to 44.998$.
+- https://arxiv.org/abs/2301.08272 — Szöllősi $Q_5$, third 40-point code.
+- https://doi.org/10.5281/zenodo.18449600 — unaffiliated note claiming a
+  degree-36 Cohn–Kumar number $44.0297$. Not a paper; not an exact dual;
+  unrestricted Delsarte is already $\approx 46.345$. Lead only.
