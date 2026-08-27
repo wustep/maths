@@ -1,0 +1,119 @@
+{
+  "gaps": [
+    {
+      "lo": "-1",
+      "deg": 8,
+      "numerical": 47.998777257614584,
+      "certified": null
+    },
+    {
+      "lo": "-1",
+      "deg": 10,
+      "numerical": 46.336869215638316,
+      "certified": null
+    },
+    {
+      "lo": "-1",
+      "deg": 12,
+      "numerical": 46.336869215638316,
+      "certified": null
+    },
+    {
+      "lo": "-19/20",
+      "deg": 8,
+      "numerical": 47.99891070038997,
+      "certified": null
+    },
+    {
+      "lo": "-19/20",
+      "deg": 10,
+      "numerical": 46.3367450262246,
+      "certified": null
+    },
+    {
+      "lo": "-19/20",
+      "deg": 12,
+      "numerical": 46.3367450262246,
+      "certified": null
+    },
+    {
+      "lo": "-9/10",
+      "deg": 8,
+      "numerical": 47.99896763082857,
+      "certified": null
+    },
+    {
+      "lo": "-9/10",
+      "deg": 10,
+      "numerical": 46.33699667025259,
+      "certified": null
+    },
+    {
+      "lo": "-9/10",
+      "deg": 12,
+      "numerical": 46.33699667025259,
+      "certified": null
+    },
+    {
+      "lo": "-4/5",
+      "deg": 8,
+      "numerical": 47.99888947571201,
+      "certified": null
+    },
+    {
+      "lo": "-4/5",
+      "deg": 10,
+      "numerical": 46.33702419880609,
+      "certified": null
+    },
+    {
+      "lo": "-4/5",
+      "deg": 12,
+      "numerical": 46.33702419880609,
+      "certified": null
+    },
+    {
+      "lo": "-3/4",
+      "deg": 8,
+      "numerical": 47.9989348230194,
+      "certified": null
+    },
+    {
+      "lo": "-3/4",
+      "deg": 10,
+      "numerical": 45.37626213655032,
+      "certified": null
+    },
+    {
+      "lo": "-3/4",
+      "deg": 12,
+      "numerical": 45.37626213655032,
+      "certified": null
+    },
+    {
+      "lo": "-2/3",
+      "deg": 8,
+      "numerical": 41.30277365835573,
+      "certified": null
+    },
+    {
+      "lo": "-2/3",
+      "deg": 10,
+      "numerical": 37.464479929129915,
+      "certified": null
+    },
+    {
+      "lo": "-2/3",
+      "deg": 12,
+      "numerical": 37.464479929129915,
+      "certified": null
+    }
+  ],
+  "pfender": {
+    "used": false,
+    "reason": "Pfender f_\u03b1 is a diagonally-dominant kernel, not a polynomial in the Gegenbauer basis.  An exact SOS/matrix certificate of that kernel was not produced.  Residue, not a dual below 44."
+  },
+  "best_certified": null,
+  "excludes_any_k": [],
+  "comment": "Unrestricted (lo=-1) Delsarte is the Odlyzko\u2013Sloane number \u224846.34; it cannot exclude 41\u201344.  Gapped duals (lo>-1) are not unrestricted certificates unless a geometric lemma forbids t in [-1, lo).  No such lemma is claimed here.  Pfender's kernel was not certified."
+}
