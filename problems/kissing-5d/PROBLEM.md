@@ -23,3 +23,7 @@ Published range is still $40\le\tau_5\le 44$ (Tao $C_{29}$, Cohn table, Mittelma
 ## Outcome (2026-08-27)
 
 Still $40\le\tau_5\le 44$. New restricted certificates in `compute/q1/`: every published 40-point code is maximal (polar $\max|x|^2=5/4<2$), and the integer Delsarte slice of $T_{Q_5}$ is empty at $N=44$. No unrestricted dual below 44 and no 41-point code.
+
+## Outcome (2026-08-27, continued)
+
+Still $40\le\tau_5\le 44$. `compute/q2/` replayed the existing duals and q1 certificates, then searched for an unrestricted dual below 44 and for an exact 41-point code. Neither was found. Residue: the 36-clique hunt in the 355-point $T^5$ remainder and the 1480-point $(1/4)\mathbb Z^5$ graph did not finish.

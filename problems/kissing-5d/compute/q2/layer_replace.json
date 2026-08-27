@@ -1,0 +1,52 @@
+{
+  "n_normals": 546,
+  "n_swaps_tried": 3148,
+  "best_kissing_size": 40,
+  "best": {
+    "source": "D5",
+    "normal": [
+      "-2",
+      "-2",
+      "0",
+      "0",
+      "0"
+    ],
+    "c": "4",
+    "size": 40,
+    "kissing": true,
+    "norm2_ok": true
+  },
+  "n_size_41": 0,
+  "size_41": [],
+  "beats_40": false,
+  "orbits": {
+    "half_spinor": {
+      "n_orbit": 160,
+      "greedy": 16,
+      "best": 16,
+      "exact": false
+    },
+    "weight2": {
+      "n_orbit": 40,
+      "best": 40,
+      "exact": true,
+      "beats_40": false
+    },
+    "Q5_cap": {
+      "n_orbit": 320,
+      "greedy": 14,
+      "best": 14,
+      "exact": false,
+      "n_dumped": 320,
+      "adj": "q5cap_adj.txt"
+    }
+  },
+  "kissing_swaps_size": [
+    34,
+    36,
+    37,
+    39,
+    40
+  ],
+  "comment": "Layer-swaps recover size 40 (including Q5/R5 when n is all-ones) and smaller kissing codes.  No size 41."
+}

@@ -1,0 +1,9 @@
+{
+  "n": 320,
+  "n_universal": 0,
+  "remainder_target": 41,
+  "nodes": 7,
+  "best": 40,
+  "found_41": false,
+  "clique41": []
+}
