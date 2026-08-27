@@ -305,15 +305,18 @@ def gamma_at_R(R: int) -> float:
 
 def positivity_only_witness(R: float, Q: float, D: float) -> dict:
     m1, m3 = endpoint_moments(Q, D, R)
+    interval = positivity_interval(Q, R)
+    in_interval = interval is not None and interval[0] < D < interval[1]
     return {
         "R": R,
         "Q": Q,
         "D": D,
         "M_minus1": m1,
         "M_3": m3,
-        "positivity_ok": positivity_interval(Q, R) is not None,
+        "positivity_interval": interval,
+        "D_in_positivity_interval": in_interval,
         "support_ok": support_bounds(Q, D, R)["ok"],
-        "three_atom_ok": three_atom_feasible(m1, D, m3, R),
+        "three_atom_ok": three_atom_feasible(m1, D, m3, R) if in_interval else False,
     }
 
 
@@ -323,9 +326,8 @@ def main() -> None:
     interior = [scan_interior(R, gamma_at_R(R)) for R in targets]
 
     witnesses = [
-        positivity_only_witness(4.0, 0.85, 2.5),
-        positivity_only_witness(4.0, 0.88, 3.0),
-        positivity_only_witness(8.0, 0.895, 8.0),
+        positivity_only_witness(4.0, 0.801, 4.0),
+        positivity_only_witness(4.0, 0.8942672775378222, 2.691982118274256),
     ]
 
     out = {

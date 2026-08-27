@@ -31,8 +31,8 @@ probability on $[1,R]$ (checked by $2/3$-atom reconstruction in
 
 | layer | $Q<\gamma_4$? | witness |
 |---|---|---|
-| positivity + endpoint identities only | **nonempty** | $Q=0.85$, $D=2.5$ lies in the open $D$-interval |
-| + Hölder / Chebyshev / Markov | **nonempty** | e.g. $Q\approx0.895$, $D\approx2.63$ passes linear checks |
+| positivity + endpoint identities only | **nonempty** | scan finds pairs with $Q\approx0.80$, $D\approx4$ in the positivity slab |
+| + Hölder / Chebyshev / Markov | **nonempty** | best scan: $Q\approx0.894$, $D\approx2.69$ |
 | + Hausdorff / measure on $[1,4]$ | **empty** (scan) | sample above fails $3$-atom reconstruction; no endpoint-consistent $2$-atom has $Q<\gamma_4$ |
 
 So endpoint identities plus the listed moment inequalities **do not**
