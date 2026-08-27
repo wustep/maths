@@ -1,0 +1,10 @@
+{
+  "d": 2,
+  "n": 200,
+  "n_edges": 17660,
+  "nodes": 43126,
+  "best": 40,
+  "found_41": false,
+  "comment": "(1/2)Z^5 on |x|^2=2; kissing iff <a,b> <= 4",
+  "clique41": []
+}

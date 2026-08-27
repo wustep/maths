@@ -19,7 +19,6 @@ from fractions import Fraction
 from pathlib import Path
 
 import numpy as np
-import sympy as sp
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 
@@ -70,55 +69,214 @@ def rationalize(c_float, den: int):
     return c
 
 
-def f_as_sympy(c):
+def f_monomial(c):
+    """Monomial coefficients of f = sum c_k P_k, low degree first."""
     deg = len(c) - 1
     polys = gegenbauer_dim5(deg)
-    t = sp.symbols("t")
-    f = 0
+    acc = [F(0)] * (deg + 1)
     for k, ck in enumerate(c):
         if ck == 0:
             continue
-        pk = 0
-        pw = 1
-        for coeff in polys[k]:
-            pk += sp.Rational(coeff.numerator, coeff.denominator) * pw
-            pw *= t
-        f += sp.Rational(ck.numerator, ck.denominator) * pk
-    return sp.together(sp.expand(f)), t
+        for i, a in enumerate(polys[k]):
+            acc[i] += ck * a
+    return acc
+
+
+def _poly_trim(p):
+    p = [F(x) for x in p]
+    while len(p) > 1 and p[-1] == 0:
+        p.pop()
+    return p
+
+
+def _poly_eval(p, x):
+    s, pw = F(0), F(1)
+    for a in p:
+        s += a * pw
+        pw *= x
+    return s
+
+
+def _poly_der(p):
+    return [p[i] * i for i in range(1, len(p))]
+
+
+def _poly_rem(a, b):
+    A = _poly_trim(a)
+    B = _poly_trim(b)
+    if B == [F(0)]:
+        raise ZeroDivisionError
+    while len(A) >= len(B) and A != [F(0)]:
+        fac = A[-1] / B[-1]
+        shift = len(A) - len(B)
+        for i, coeff in enumerate(B):
+            A[i + shift] -= fac * coeff
+        A = _poly_trim(A)
+    return A
+
+
+def _poly_gcd(a, b):
+    A, B = _poly_trim(a), _poly_trim(b)
+    while B != [F(0)]:
+        A, B = B, _poly_rem(A, B)
+    # monic
+    if A[-1] != 0:
+        A = [x / A[-1] for x in A]
+    return A
+
+
+def _sturm_chain(p):
+    p0 = _poly_trim(p)
+    p1 = _poly_trim(_poly_der(p0))
+    chain = [p0, p1]
+    while chain[-1] != [F(0)]:
+        rem = _poly_rem(chain[-2], chain[-1])
+        chain.append(_poly_trim([-c for c in rem]))
+        if len(chain) > 40:
+            break
+    return chain
+
+
+def _sign_vars(chain, x):
+    signs = []
+    for p in chain:
+        if p == [F(0)]:
+            continue
+        v = _poly_eval(p, x)
+        if v == 0:
+            continue
+        s = 1 if v > 0 else -1
+        if not signs or signs[-1] != s:
+            signs.append(s)
+    return max(0, len(signs) - 1)
+
+
+def squarefree(p):
+    g = _poly_gcd(p, _poly_der(p))
+    if len(g) <= 1:
+        return _poly_trim(p)
+    # p / gcd(p,p')
+    # exact division
+    A = _poly_trim(p)
+    B = _poly_trim(g)
+    q = [F(0)] * (len(A) - len(B) + 1)
+    while len(A) >= len(B) and A != [F(0)]:
+        fac = A[-1] / B[-1]
+        shift = len(A) - len(B)
+        q[shift] = fac
+        for i, coeff in enumerate(B):
+            A[i + shift] -= fac * coeff
+        A = _poly_trim(A)
+    return _poly_trim(q)
 
 
 def certify_interval(c):
-    """Exact: f ≤ 0 on [-1, 1/2]?  Evaluate at endpoints and at real
-    critical points isolated by sympy.real_roots."""
-    f, t = f_as_sympy(c)
-    lo, hi = -1, sp.Rational(1, 2)
-    samples = [lo, hi]
-    df = sp.diff(f, t)
-    # real_roots returns algebraic numbers; comparison to rationals is exact
-    try:
-        roots = sp.real_roots(sp.Poly(sp.together(df), t), filter="R")
-    except Exception as e:
-        return {"certified": False, "error": str(e)}
-    for r in roots:
-        if r >= lo and r <= hi:
-            samples.append(r)
-    vals = []
-    pos = False
-    for x in samples:
-        v = sp.simplify(f.subs(t, x))
-        vals.append(str(v))
-        if v > 0:
-            pos = True
-    f1 = sum(c)  # P_k(1)=1
+    """Exact: f ≤ 0 on [-1, 1/2].
+
+    The square-free part of f has no root in (-1, 1/2) (Sturm) and f is
+    nonpositive at the endpoints and at the midpoint, so f cannot change
+    sign on the interval.
+    """
+    if any(ck < 0 for ck in c) or c[0] <= 0:
+        return {"certified": False, "error": "c_k not nonnegative"}
+    mono = f_monomial(c)
+    lo, hi, mid = F(-1), F(1, 2), F(-1, 4)
+    fa, fb, fm = _poly_eval(mono, lo), _poly_eval(mono, hi), _poly_eval(mono, mid)
+    if fa > 0 or fb > 0 or fm > 0:
+        return {
+            "certified": False,
+            "positive_sample": True,
+            "f1": str(sum(c)),
+            "bound": str(sum(c) / c[0]),
+            "float_bound": float(sum(c) / c[0]),
+        }
+    sf = squarefree(mono)
+    chain = _sturm_chain(sf)
+    # roots in (lo, hi): V(lo+) - V(hi-).  Endpoints are already ≤ 0.
+    # Evaluate just inside if an endpoint is a root.
+    eps = F(1, 10**9)
+    nroots = _sign_vars(chain, lo + eps) - _sign_vars(chain, hi - eps)
+    f1 = sum(c)
+    ok = nroots == 0
     return {
-        "certified": (not pos) and c[0] > 0 and all(ck >= 0 for ck in c),
-        "n_crit_in_interval": sum(1 for x in samples if x not in (lo, hi)),
-        "positive_sample": pos,
+        "certified": bool(ok),
+        "n_squarefree_roots": nroots,
+        "positive_sample": False,
         "f1": str(f1),
-        "bound": str(f1 / c[0]) if c[0] else None,
-        "float_bound": float(f1 / c[0]) if c[0] else None,
-        "sample_values": vals[:8],
+        "bound": str(f1 / c[0]),
+        "float_bound": float(f1 / c[0]),
+        "f_endpoints": [str(fa), str(fb), str(fm)],
     }
+
+
+def expand_gegenbauer(mono, max_deg=None):
+    """Convert a monomial polynomial to Gegenbauer coefficients."""
+    mono = _poly_trim(mono)
+    deg = len(mono) - 1
+    if max_deg is None:
+        max_deg = deg
+    polys = gegenbauer_dim5(max_deg)
+    # back-substitution: highest degree first
+    c = [F(0)] * (max_deg + 1)
+    rem = [F(x) for x in mono] + [F(0)] * (max_deg + 1 - len(mono))
+    rem = rem[: max_deg + 1]
+    for k in range(max_deg, -1, -1):
+        pk = polys[k]
+        if k >= len(pk) or pk[k] == 0:
+            continue
+        if rem[k] == 0:
+            continue
+        ck = rem[k] / pk[k]
+        c[k] = ck
+        for i, a in enumerate(pk):
+            rem[i] -= ck * a
+    return c
+
+
+def ansatz_duals():
+    """Exact duals of the form f(t)=(t-1/2) q(t)^2, automatically ≤ 0
+    on [-1, 1/2].  Kept only when every Gegenbauer coefficient is ≥ 0."""
+    jobs = []
+    qs = []
+    for a, b in ((1, 0), (1, 1), (1, 2), (2, 1), (3, 2), (1, -1), (2, -1)):
+        qs.append([F(a), F(b)])
+    for a, b, c in ((1, 0, 1), (1, 2, 1), (2, 0, 1), (1, 1, 1),
+                    (3, 0, 1), (1, 4, 4), (1, 0, 2)):
+        qs.append([F(a), F(b), F(c)])
+    # P0 + (17/6) P1 + (8/3) P2, the best small Gegenbauer ansatz (~48.003)
+    qs.append([F(1, 3), F(17, 6), F(10, 3)])
+    for a, b, c, d in ((1, 0, 0, 1), (1, 2, 0, 1), (1, 0, 2, 1)):
+        qs.append([F(a), F(b), F(c), F(d)])
+    for q in qs:
+        # (t-1/2) q(t)^2
+        # q^2
+        q2 = [F(0)] * (2 * len(q) - 1)
+        for i, x in enumerate(q):
+            for j, y in enumerate(q):
+                q2[i + j] += x * y
+        # multiply by (t - 1/2)
+        mono = [F(0)] * (len(q2) + 1)
+        for i, x in enumerate(q2):
+            mono[i] += x * F(-1, 2)
+            mono[i + 1] += x
+        c = expand_gegenbauer(mono)
+        rec = {
+            "q": [str(x) for x in q],
+            "c": [str(x) for x in c],
+            "c_k_nonneg": all(x >= 0 for x in c),
+            "f0": str(c[0]) if c else "0",
+        }
+        if rec["c_k_nonneg"] and c and c[0] > 0:
+            bound = sum(c) / c[0]
+            rec["bound"] = str(bound)
+            rec["float_bound"] = float(bound)
+            rec["certified"] = True
+            rec["excludes"] = [k for k in (41, 42, 43, 44) if bound < k]
+        else:
+            rec["certified"] = False
+            rec["excludes"] = []
+        jobs.append(rec)
+    return jobs
 
 
 def levenshtein_dual():
@@ -137,8 +295,32 @@ def levenshtein_dual():
 
 
 def main() -> int:
-    report = {"Levenshtein_L5": levenshtein_dual(), "degrees": {}}
+    report = {"Levenshtein_L5": levenshtein_dual(), "ansatz": [], "degrees": {}}
     best_cert = None
+    for rec in ansatz_duals():
+        report["ansatz"].append({
+            "q": rec["q"],
+            "certified": rec["certified"],
+            "bound": rec.get("bound"),
+            "float_bound": rec.get("float_bound"),
+            "excludes": rec["excludes"],
+        })
+        print(f"ansatz q={rec['q']}: certified={rec['certified']} "
+              f"bound={rec.get('float_bound')} excl={rec['excludes']}",
+              flush=True)
+        if rec.get("certified"):
+            if best_cert is None or rec["float_bound"] < best_cert["float_bound"]:
+                best_cert = {
+                    "deg": len(rec["c"]) - 1,
+                    "source": "ansatz (t-1/2)q(t)^2",
+                    "c": rec["c"],
+                    "bound": rec["bound"],
+                    "float_bound": rec["float_bound"],
+                    "excludes": rec["excludes"],
+                    "gegenbauer_coeffs": rec["c"],
+                    "T": "unrestricted [-1,1/2]",
+                    "unrestricted": True,
+                }
     for deg in (6, 8, 10, 12, 14, 16):
         num = numerical_dual(deg)
         entry = {"numerical": num, "rational_attempts": []}

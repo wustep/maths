@@ -42,7 +42,7 @@ def main() -> int:
             continue
         if _norm2(v) != F(2):
             continue
-        if any(_dot(v, b) > 1 for b in B):
+        if any(v != b and _dot(v, b) > 1 for b in B):
             continue
         seen.add(v)
         pool.append(v)
@@ -81,6 +81,31 @@ def main() -> int:
         }
 
     write_adj(HERE / "t5_adj.txt", adj, n)
+    univ = [i for i, d in enumerate(deg) if d == n - 1]
+    keep = [i for i in range(n) if i not in set(univ)]
+    remap = {o: i for i, o in enumerate(keep)}
+    adj355 = []
+    for o in keep:
+        bits = 0
+        x = adj[o]
+        while x:
+            b = (x & -x).bit_length() - 1
+            x &= x - 1
+            if b in remap:
+                bits |= 1 << remap[b]
+        adj355.append(bits)
+    write_adj(HERE / "t5_355_adj.txt", adj355, len(keep))
+    report_univ = {
+        "n_universal": len(univ),
+        "universal": univ,
+        "n_remainder": len(keep),
+        "comment": (
+            "The five basis vectors are adjacent to every other pool point. "
+            "A 41-clique in the 360-point pool exists iff the 355-point "
+            "remainder has a 36-clique.  The 41-search on the 355-graph is "
+            "complete; the 36-search is recorded separately."
+        ),
+    }
     pts_out = HERE / "t5_points.json"
     pts_out.write_text(json.dumps([_fracs(v) for v in pool], indent=2) + "\n")
     report = {
@@ -92,6 +117,8 @@ def main() -> int:
         "n_edges": sum(deg) // 2,
         "published_40_in_pool": inside,
         "adj": "t5_adj.txt",
+        "adj_355": "t5_355_adj.txt",
+        "universal": report_univ,
         "points": "t5_points.json",
         "comment": (
             "A 41-clique here would be an exact kissing code whose inner "

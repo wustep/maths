@@ -19,12 +19,14 @@ from fractions import Fraction
 from itertools import combinations, product
 from pathlib import Path
 
+HERE = Path(__file__).resolve().parent
 sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+sys.path.insert(0, str(HERE))
 
 from configs import CONFIGS, _dot, _norm2, is_kissing
+from graphio import write_adj
 
 F = Fraction
-HERE = Path(__file__).resolve().parent
 
 
 def _reflect(v, n):
@@ -201,6 +203,27 @@ def main() -> int:
         "weight2": orbit_seed_kissing((F(1), F(1), F(0), F(0), F(0))),
         "Q5_cap": orbit_seed_kissing((F(1, 5), F(1, 5), F(-4, 5), F(-4, 5), F(-4, 5))),
     }
+
+    # Dump the Q5-cap signed-permutation orbit for an exact 41-clique search.
+    seed = (F(1, 5), F(1, 5), F(-4, 5), F(-4, 5), F(-4, 5))
+    orbit = []
+    seen = set()
+    for perm in _perms(seed):
+        for signs in product((-1, 1), repeat=5):
+            v = tuple(signs[i] * perm[i] for i in range(5))
+            if v in seen or _norm2(v) != _norm2(seed):
+                continue
+            seen.add(v)
+            orbit.append(v)
+    half = _norm2(seed) / 2
+    adj = [0] * len(orbit)
+    for i, j in combinations(range(len(orbit)), 2):
+        if _dot(orbit[i], orbit[j]) <= half:
+            adj[i] |= 1 << j
+            adj[j] |= 1 << i
+    write_adj(HERE / "q5cap_adj.txt", adj, len(orbit))
+    orbits["Q5_cap"]["n_dumped"] = len(orbit)
+    orbits["Q5_cap"]["adj"] = "q5cap_adj.txt"
 
     report = {
         "n_normals": len(normals),

@@ -23,6 +23,7 @@ static u64 adj[MAXN][W];
 static int best;
 static int found41;
 static int found_idx[TARGET];
+static int target;
 static long nodes;
 
 static int popc(const u64 *a)
@@ -112,10 +113,10 @@ static void expand(u64 *P, int rsz, int *stack)
         u64 P2[W];
         band(P2, Q, adj[v]);
         stack[rsz] = v;
-        if (rsz + 1 >= TARGET) {
+        if (rsz + 1 >= target) {
             found41 = 1;
             best = rsz + 1;
-            memcpy(found_idx, stack, TARGET * sizeof(int));
+            memcpy(found_idx, stack, (size_t)target * sizeof(int));
             return;
         }
         expand(P2, rsz + 1, stack);
@@ -174,18 +175,56 @@ int main(int argc, char **argv)
     if (fp != stdin)
         fclose(fp);
 
-    best = 40; /* known published codes */
+    /* Peel vertices adjacent to every other living vertex.  A universal
+     * clique U satisfies omega(G) = omega(G-U) + |U|, so a 41-clique
+     * exists iff the remainder has a clique of size 41-|U|. */
+    u64 alive[W];
+    memset(alive, 0, sizeof alive);
+    for (int i = 0; i < n; i++)
+        alive[i >> 6] |= 1ULL << (i & 63);
+    int univ[MAXN], nu = 0;
+    int changed = 1;
+    while (changed) {
+        changed = 0;
+        for (int v = 0; v < n; v++) {
+            if (!bit_test(alive, v))
+                continue;
+            u64 tmp[W];
+            band(tmp, adj[v], alive);
+            if (popc(tmp) == popc(alive) - 1) {
+                univ[nu++] = v;
+                bit_clear(alive, v);
+                changed = 1;
+            }
+        }
+    }
+    target = TARGET - nu;
     found41 = 0;
     nodes = 0;
-    u64 P[W];
-    memset(P, 0, sizeof P);
-    for (int i = 0; i < n; i++)
-        P[i >> 6] |= 1ULL << (i & 63);
-    int stack[MAXN];
-    expand(P, 0, stack);
+    if (target <= 0) {
+        found41 = 1;
+        best = nu;
+        memcpy(found_idx, univ, (size_t)TARGET * sizeof(int));
+    } else {
+        /* Hunt a clique of size `target` in G-U.  best = target-1 so we
+         * only accept a genuine improvement, not the known 40-set. */
+        best = target - 1;
+        int stack[MAXN];
+        expand(alive, 0, stack);
+        if (found41) {
+            /* remainder clique is in found_idx[0..target); append U */
+            for (int i = 0; i < nu && target + i < TARGET; i++)
+                found_idx[target + i] = univ[i];
+            best = target + nu;
+        } else {
+            best = best + nu;
+        }
+    }
 
     printf("{\n");
     printf("  \"n\": %d,\n", n);
+    printf("  \"n_universal\": %d,\n", nu);
+    printf("  \"remainder_target\": %d,\n", target);
     printf("  \"nodes\": %ld,\n", nodes);
     printf("  \"best\": %d,\n", best);
     printf("  \"found_41\": %s,\n", found41 ? "true" : "false");

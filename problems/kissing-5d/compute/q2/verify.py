@@ -113,12 +113,37 @@ def main() -> int:
     if t5.get("present") and not t5.get("ok"):
         ok = False
     print("t5_clique", t5)
+    q5c = verify_clique_json(HERE / "q5cap_clique.json", None)
+    report["q5cap_clique"] = q5c
+    print("q5cap_clique", q5c)
+    if q5c.get("present") and not q5c.get("ok"):
+        ok = False
     for name in ("sphere_d2.json", "sphere_d4.json"):
         rec = verify_clique_json(HERE / name, None)
+        data_path = HERE / name
+        if data_path.exists():
+            raw = json.loads(data_path.read_text())
+            if raw.get("complete") is False:
+                rec = {
+                    "present": True,
+                    "ok": True,
+                    "found_41": False,
+                    "complete": False,
+                    "residue": True,
+                }
         report[name] = rec
         print(name, rec)
         if rec.get("present") and not rec.get("ok"):
             ok = False
+    res36 = HERE / "t5_36_residue.json"
+    if res36.exists():
+        R = json.loads(res36.read_text())
+        report["t5_36_residue"] = {
+            "complete": R.get("complete"),
+            "found_41": R.get("found_41"),
+            "ok": R.get("found_41") is False,
+        }
+        print("t5_36_residue", report["t5_36_residue"])
     lr_path = HERE / "layer_replace.json"
     if lr_path.exists():
         lr = json.loads(lr_path.read_text())

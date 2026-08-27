@@ -260,3 +260,30 @@ classical Levenshtein number 48 before claiming any comparison.
   $(1/2)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$ (200 points; contains
   $D_5$ and $L_5$); (3) other hyperplane layer-swaps; (4) low-degree
   unrestricted Delsarte with Sturm / real-root certification.
+
+## 2026-08-27 — q2 results (no unrestricted move)
+
+- Unrestricted numerical Delsarte at degree $\ge 10$ is $46.3368\ldots$,
+  matching Odlyzko–Sloane. Grid-rationalised polynomials fail the exact
+  Sturm test (they change sign on $[-1,1/2]$). An exact ansatz
+  $f(t)=(t-1/2)q(t)^2$ with $q=P_0+(17/6)P_1+(8/3)P_2$ gives bound
+  $53235/1109\approx 48.003$, just above Levenshtein 48. No certified
+  unrestricted dual has bound $<44$. No $k\in\{41,42,43\}$ is excluded
+  without a restricted angle set.
+- $T^5$ pool, after including the basis: 360 rational vectors, all four
+  published 40-point codes are cliques. Five basis vectors are adjacent
+  to every other pool point, so a 41-clique exists iff the remaining
+  355-point graph has a 36-clique. The 41-search on those 355 vertices
+  is empty (`t5_clique.json`, 607171 nodes). The 36-search was started
+  and stopped without a hit or an emptiness proof (`t5_36_residue.json`).
+- Half-integer sphere $(1/2)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$: 200
+  points, no 41-clique (`sphere_d2.json`). This class contains $D_5$
+  and $L_5$.
+- $(1/4)\mathbb Z^5$ sphere: 1480 points. 41-search incomplete
+  (`sphere_d4.json`). Residue.
+- Layer-swaps of $D_5$ and $L_5$ across 546 short integer normals:
+  3148 swaps, kissing sizes $\{34,36,37,39,40\}$, none 41.
+- Signed-permutation orbit of a $Q_5$ cap vector: 320 points, no
+  41-clique (`q5cap_clique.json`, 7 nodes).
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.
