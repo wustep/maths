@@ -1,0 +1,10 @@
+{"t": 1787813859.4907513, "tag": "q2-start", "phase": "leftover"}
+{"t": 1787813859.4920754, "tag": "leftover-q1-check", "n_rows": 77, "starts_present": ["nosym-start", "refine-start"], "finished_present": [], "incomplete": true, "has_finer": false, "has_widths": false}
+{"t": 1787813859.4921355, "tag": "q2-done", "phase": "leftover", "seconds": 0.0013840198516845703, "best_gamma": null, "best_tag": null}
+{"t": 1787813860.3421984, "tag": "q2-start", "phase": "lift"}
+{"t": 1787813860.3592188, "tag": "lift-start-q1-L6", "R": 8, "m": 32, "L": 6, "gamma": 0.9432425303235829, "a": 1.295003249088734, "b": 0.6870303002230322, "beats_0.9435": true, "beats_q1_float": false, "beats_q1_cert": true}
+{"t": 1787813860.3730092, "tag": "lift-q1-L7", "R": 8, "m": 32, "L": 7, "gamma": 0.9432425303106731, "a": 1.295003249088734, "b": 0.687030300204226, "beats_0.9435": true, "beats_q1_float": true, "beats_q1_cert": true}
+{"t": 1787813860.3949156, "tag": "lift-q1-L8", "R": 8, "m": 32, "L": 8, "gamma": 0.9432425303103693, "a": 1.295003249088734, "b": 0.6870303002037836, "beats_0.9435": true, "beats_q1_float": true, "beats_q1_cert": true}
+{"t": 1787813860.4211473, "tag": "lift-q1-L10", "R": 8, "m": 32, "L": 10, "gamma": 0.943242530310367, "a": 1.295003249088734, "b": 0.6870303002037801, "beats_0.9435": true, "beats_q1_float": true, "beats_q1_cert": true}
+{"t": 1787813860.4246087, "tag": "lift-meta", "best_L": 10, "best_gamma": 0.943242530310367, "delta_vs_q1_float": 1.3215872840532938e-11}
+{"t": 1787813860.4257226, "tag": "q2-done", "phase": "lift", "seconds": 0.08352351188659668, "best_gamma": 0.943242530310367, "best_tag": "lift-q1-L10"}

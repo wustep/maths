@@ -1,5 +1,30 @@
 # Research log — second term for Sidon subsets of [N]
 
+## Status (accessed 2026-08-27, q2 session)
+
+Opened this session:
+
+- [arXiv:2607.01169 abs](https://arxiv.org/abs/2607.01169) — still v2 (5 Jul 2026).
+  Theorem $F(N)\le N^{1/2}+0.9435 N^{1/4}+O(1)$. No v3.
+- [arXiv HTML v2](https://arxiv.org/html/2607.01169v2) — Lemma 2.1 requires
+  symmetric kernels; $L$ is free; §5 asks for more kernels / a systematic
+  outer search, and mentions cross-kernel correlations with a positivity
+  constraint (not implemented here).
+- [Green, *100 Open Problems*](https://people.maths.ox.ac.uk/greenbj/papers/open-problems.pdf)
+  — Problem 31, Dec 2025 update: still $N^{1/2}+O(1)\le F(N)\le N^{1/2}+N^{1/4}+O(1)$;
+  comments record BFR $0.998$ and CHO $0.98183$. Does not cite Hou–Zhao.
+- [Tao et al. $C_{5a}$](https://teorth.github.io/optimizationproblems/constants/5a.html)
+  — published upper bounds still stop at CHO25 $0.98183$; $0.97633$ still
+  unpublished. Does not list $0.9435$.
+- [Hou–Zhao GitHub](https://github.com/HbZhao1/sidon-vector-smoothing) —
+  landing page only; local snapshot in `compute/refs/` already matches
+  Claim 4.1. Did not clone.
+- [Erdős #30](https://www.erdosproblems.com/30) — Cloudflare interstitial;
+  page body not readable this session.
+
+Published record to beat is still Hou–Zhao $0.9435$. Folder record is
+the q1 certificate $C<0.94325$.
+
 ## Status (accessed 2026-08-27)
 
 Opened this session:

@@ -1,0 +1,23 @@
+{
+  "published_record": {
+    "HouZhao_stated": 0.9435,
+    "HouZhao_gamma0": 0.943492590713545,
+    "HouZhao_arxiv": "2607.01169v2"
+  },
+  "folder_record": {
+    "file": "../q1/certs/joint_r8_L6.json",
+    "gamma_exact_float": 0.9432425309706136,
+    "stated_C": 0.94325
+  },
+  "leftover_q1": {
+    "refine_and_nosym": "incomplete",
+    "replay": "python3 leftover_check.py"
+  },
+  "lift_q1_kernels": {
+    "L6": 0.9432425303235829,
+    "L7": 0.9432425303106731,
+    "L8": 0.9432425303103693,
+    "L10": 0.943242530310367,
+    "note": "saturates; drop 1.3e-11, not a new stated C"
+  }
+}

@@ -224,3 +224,58 @@ $0.94326$, worse than the free-histogram $R=8$. A longer L-BFGS refine
 of the certified mix, the dropped-symmetry search, the $m=48$ reshape,
 and the two-width L-BFGS had not returned a stricter rational when
 this was written. Those leftover phases are residue, not a bound.
+
+## 2026-08-27 — q2, leftover check and a different route
+
+Published record is still Hou–Zhao arXiv:2607.01169v2 (opened abs and
+HTML this session; still v2, 5 Jul 2026, no v3). Green #31 (Dec 2025
+PDF) still cites CHO $0.98183$. Tao $C_{5a}$ still stops at CHO /
+unpublished $0.97633$ and does not list Hou–Zhao. Erdős #30 was behind
+Cloudflare again.
+
+Independent replay of the folder record this session:
+
+```bash
+cd compute/q1 && ./run_all.sh
+```
+
+Python nested-loop and convolution verifiers both PASS on
+`q1/certs/joint_r8_L6.json` with $\sqrt{ab}=0.9432425309706136$. SHA-256
+still `edcc2c973809c4bb8a3f25233ffc80e6b5ce432a70c4d01697a3ba8ead8beda5`.
+The GMP C check needed `libgmp-dev` in this environment; after that
+install it also PASS (`ab < (0.94325)^2`). Do not regress this
+certificate.
+
+q1 `search.jsonl` has `nosym-start` and `refine-start` and no finished
+`nosym-lbfgs-L6` / `nosym-meta` / `refine-lbfgs` row. No `finer` or
+`widths` rows at all. Replay: `python3 compute/q2/leftover_check.py`.
+Those two phases are residue. q2 does not continue them.
+
+Hou–Zhao Lemma 2.1 still requires symmetric kernels; §5 asks for more
+kernels / a systematic outer search, and mentions cross-kernel
+correlations with a positivity constraint (not implemented here).
+Route in `compute/q2/`:
+
+1. L-lift of the *q1* kernels (L is free; q1 only certified L=6)
+2. block coordinate descent, one mix or one histogram at a time
+3. grow R by adding *free* histograms to the q1 mix, not 12-mode
+   cosine profiles on the published mix
+4. resample that mix to $m=48$ and re-block
+
+A floating γ is not a dent.
+
+## 2026-08-27 — q2 L-lift of the q1 kernels
+
+Independent QP on the stored q1 float mix:
+
+| L | floating √(ab) |
+| --- | --- |
+| 6 | 0.9432425303235829 |
+| 7 | 0.9432425303106731 |
+| 8 | 0.9432425303103693 |
+| 10 | 0.943242530310367 |
+
+Saturates by L=8. The drop from L=6 is $1.3\times 10^{-11}$, smaller
+than the rationalization gap on the existing certificate. Same shape
+class; more boundary is not a new four-decimal statement. Kept as a
+log, not a new cert.
