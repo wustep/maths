@@ -248,8 +248,10 @@ def main() -> int:
                  "n1_check.json", "n1_complete_k12.json",
                  "t5_share30.json", "t5_share30_c.json",
                  "t5_share29_c.json", "t5_share28_c.json",
-                 "t5_share27_c.json",
-                 "n1_dfs_k16.json",
+                 "t5_share27_c.json", "t5_share26_c.json",
+                 "t5_share25_c.json", "t5_share24_c.json",
+                 "n1_dfs_k16.json", "n1_dfs_k18.json",
+                 "replay_unions_k13.json",
                  "t5_36_proof.json",
                  "analyze_stars.json", "seed_cover.json", "dual_exact.json",
                  "construct41.json"):
@@ -299,6 +301,27 @@ def main() -> int:
                     rec["ok"] = False
                     rec["mismatch_k"] = k
         report["n1_dfs_k16"] = rec
+        if not rec["ok"]:
+            ok = False
+    k18 = HERE / "n1_dfs_k18.json"
+    if k18.exists():
+        data = json.loads(k18.read_text())
+        rec = {
+            "present": True,
+            "ok": (not data.get("found_41")) and data.get("complete") is True
+            and data.get("maxk") == 18
+            and data.get("algorithm") == "canonical-dfs",
+            "maxk": data.get("maxk"),
+            "n_unions_visited": data.get("n_unions_visited"),
+        }
+        if k16.exists():
+            a = json.loads(k16.read_text())
+            for k in range(4, 17):
+                sa, sb = a["slices"][str(k)], data["slices"][str(k)]
+                if sa.get("n_unions") != sb.get("n_unions") or sa.get("n_promising") != sb.get("n_promising"):
+                    rec["ok"] = False
+                    rec["mismatch_k"] = k
+        report["n1_dfs_k18"] = rec
         if not rec["ok"]:
             ok = False
     report["ok"] = ok

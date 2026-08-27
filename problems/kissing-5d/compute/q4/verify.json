@@ -77,7 +77,32 @@
     "ok": true,
     "found_41": false
   },
+  "t5_share26_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share25_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share24_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
   "n1_dfs_k16.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_dfs_k18.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "replay_unions_k13.json": {
     "present": true,
     "ok": true,
     "found_41": false
@@ -118,6 +143,12 @@
     "ok": true,
     "maxk": 16,
     "n_unions_visited": 164988439
+  },
+  "n1_dfs_k18": {
+    "present": true,
+    "ok": true,
+    "maxk": 18,
+    "n_unions_visited": 933648919
   },
   "ok": true
 }

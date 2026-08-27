@@ -16,10 +16,10 @@ code. Neither endpoint moved.
 | `analyze_stars.py` | the ten octads are the $D_5$ coordinate-stars |
 | `n1_le32.c` / `n1_check.py` | complete $n_1=32$ slice (C + Python) |
 | `n1_complete.c` | seed-union BFS; $k\le 12$ stored in `n1_complete_k12.json` |
-| `n1_dfs.c` | hash-free canonical DFS; $k\le 16$ in `n1_dfs_k16.json` |
+| `n1_dfs.c` | hash-free canonical DFS; $k\le 18$ in `n1_dfs_k18.json` |
 | `verify_n1.rs` | independent star pools, $\omega=8$ |
 | `t5_omega.py` | 35-colour / SAT 36-clique of the $T^5$ remainder |
-| `t5_share.c` | exact high-share 36-cliques against published 35s (28–30 empty) |
+| `t5_share.c` | exact high-share 36-cliques against published 35s (24–30 empty) |
 | `n1_ilp.py` | star-free seed count, HiGHS; k=4..7 empty, k≥8 cutoff |
 | `bv.py` / `dual_exact.py` | exact $S_k^5$ and unrestricted dual hunt |
 | `construct41.py` | algebraic 41-point ansätze outside the leftover graphs |

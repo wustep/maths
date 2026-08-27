@@ -419,20 +419,21 @@ classical Levenshtein number 48 before claiming any comparison.
 - Hash-free canonical DFS (`n1_dfs.c`) continues the same family
   without a table: each union has a unique parent (all but the last
   irredundant seed). Through $k=12$ the counts match the BFS. Through
-  $k=16$ the scan is complete and empty of a 41-set
-  (`n1_dfs_k16.json`): $164{,}988{,}439$ unions, promising at
-  $k=13,14,15,16$ with $31{,}400$ / $243{,}160$ / $1{,}192{,}760$ /
-  $4{,}349{,}685$ pools, each $\omega=k$, total 40. Therefore there is
-  no 41-set that uses 24 or more $D_5$-type points. The $n_1\le 23$
-  slice remains residue for the whole 1480-graph, not a 41-code.
+  $k=18$ the scan is complete and empty of a 41-set
+  (`n1_dfs_k18.json`): $933{,}648{,}919$ unions. Promising pools at
+  $k=13$ through $18$ have extras $\omega=k$, total 40. Independent
+  Python BFS matches the union census through $k=13$
+  (`replay_unions_k13.json`). Therefore there is no 41-set that uses
+  22 or more $D_5$-type points. The $n_1\le 21$ slice remains residue
+  for the whole 1480-graph, not a 41-code.
 - 40-colouring of the 1480-graph is UNSAT (Cadical and Glucose). That
   does not produce a 41-clique.
 - $T^5$ remainder: no 35-colouring. Cadical and Glucose return no
   36-clique (`t5_omega.json`). UNSAT without a stored DRAT is not an
   emptiness proof. Share $\ge 30$ with each published 35 is empty
-  (Python). Share 30, 29, 28 and 27 are empty in C (`t5_share30_c.json`,
-  `t5_share29_c.json`, `t5_share28_c.json`, `t5_share27_c.json`). Any
-  remaining 36-clique shares at most 26 with every published 35.
+  (Python). Share 30 down to 24 are empty in C (`t5_share30_c.json`
+  through `t5_share24_c.json`). Any remaining 36-clique shares at most
+  23 with every published 35.
 - Construction hunts outside these two graphs (other $(1/d)\mathbb Z^5$,
   $A_5$ hyperplane, $D_6$ projections, QR reflections) produced no
   41-code.
