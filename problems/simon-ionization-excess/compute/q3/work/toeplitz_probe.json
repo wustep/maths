@@ -1,0 +1,273 @@
+{
+  "status": "residue",
+  "is_new_bound": false,
+  "beats_1.1185_in_HPS_theorem": false,
+  "compact_class_1.1087_claimed_unrestricted": false,
+  "arxiv": "2504.18487v1",
+  "urls_opened": [
+    "https://arxiv.org/abs/2504.18487",
+    "https://arxiv.org/html/2504.18487v1"
+  ],
+  "fmin": "0.894107456974982284669208121599522742",
+  "b3": "1.11843379920270663664176257862141698",
+  "t0": "0.596071637983321523112805414399681828",
+  "s_gt_3": {
+    "Q4_exact": "-1025/2048",
+    "Q4_value": "-0.500488281250000000000000000000000000",
+    "Q35_closed": "1/sqrt(2) - 1 - 1/(65536 sqrt(2))",
+    "Q35_value": "-0.292904008406671264471293101950969211",
+    "Q35_negative": true,
+    "s3_discriminant_identity": "(t^4+t)^2 - 4 t^2 = t^2 (t^3-1)(t^3+3)",
+    "examples": [
+      {
+        "name": "s3_t_1/2",
+        "s": "3",
+        "ell": 1,
+        "t": "1/2",
+        "Q": "0.687500000000000000000000000000000000",
+        "sign": "positive"
+      },
+      {
+        "name": "s3_t_1/8_a16",
+        "s": "3",
+        "ell": 1,
+        "t": "1/8",
+        "Q": "2.99609375000000000000000000000000000",
+        "sign": "positive"
+      },
+      {
+        "name": "s31_t_1e-7",
+        "s": "3.1",
+        "ell": 1,
+        "t": "1e-7",
+        "Q": "-0.204263916528008358783388721628908662",
+        "sign": "negative"
+      },
+      {
+        "name": "s35_t_1/32",
+        "s": "7/2",
+        "ell": 1,
+        "t": "1/32",
+        "Q": "-0.292904008406671264471293101950969211",
+        "sign": "negative"
+      },
+      {
+        "name": "s4_t_1/8",
+        "s": "4",
+        "ell": 1,
+        "t": "1/8",
+        "Q": "-0.500488281250000000000000000000000000",
+        "sign": "negative"
+      },
+      {
+        "name": "s4_quad",
+        "s": "4",
+        "ell": 2,
+        "t": "1/8",
+        "Q": "1.24993896484375000000000000000000000",
+        "sign": "positive"
+      },
+      {
+        "name": "s4_same_sign",
+        "s": "4",
+        "ell": 1,
+        "t": "1/8",
+        "Q": "1.12698364257812500000000000000000000",
+        "sign": "positive"
+      },
+      {
+        "name": "s4_one_shell",
+        "s": "4",
+        "ell": 1,
+        "t": "1",
+        "Q": "1.00000000000000000000000000000000000",
+        "sign": "positive"
+      }
+    ],
+    "b4": "1.08302491750762443520688175679652421",
+    "t0_4": "0.692504842571842343320193403400383286",
+    "b4_lt_1.1185": true,
+    "I_s_negative_for_s_gt_3": true,
+    "certified_path_to_b4_in_Theorem_2_2": false
+  },
+  "two_atom": {
+    "t_star": "0.561552812808830274910704927987038513",
+    "t_star_closed": "(-3+sqrt(17))/2",
+    "w_star": "0.359611796797792431272323768003240372",
+    "Q2_star": "0.943299727218764334185247971972456839",
+    "Q2_star_closed": "(17*sqrt(17)-55)/16",
+    "inv_Q2_star": "1.06010843758898499446579633518270601",
+    "inv_Q2_star_closed": "(55+17*sqrt(17))/118",
+    "Q2_star_gt_fmin": true,
+    "inv_Q2_star_lt_1.1185": true,
+    "is_global_lower_bound": false,
+    "reason_not_global": "3-atomic radial trials already sit near 0.931 < Q2*. The two-atom floor is a bound only inside the 2-atomic class.",
+    "Q2_at_t0": "0.943662638467946875481444770332072447",
+    "Q2_at_t0_identity": "(3-t0)/(1+t0)^2",
+    "fmin": "0.894107456974982284669208121599522742",
+    "grid_min_Q2": "0.943299728066756832602132095248612010"
+  },
+  "t0_chain": {
+    "ratio": "t0",
+    "t0": "0.596071637983321523112805414399681828",
+    "min_n": 3,
+    "min_Q": "0.937926317980512689390652249694362574",
+    "Q3_closed": "(1/3) [1 + fmin (1+u)^2/(1+u+u^2) + f(t0^2) (1+u^2)/(1+u+u^2)] with u=t0^{-2}",
+    "Q3_value": "0.937926317980512689390652249694362574",
+    "Q24": "0.988232379740810311218782572924490511",
+    "limit_n_to_inf": "1",
+    "limit_reason": "equal m-mass 1/n: Q = 1 \u2212 (1/n) \u0394 / \u03a3 u^k with \u0394 = O(u^n) and \u03a3 u^k = O(u^n), so the fmin deficit is O(1/n).",
+    "is_lower_bound": false,
+    "is_trial_upper_bound_on_beta": true,
+    "beats_power_law_0.921": false,
+    "rows_n_1_to_12": [
+      {
+        "n": 1,
+        "equal_m_Q": "1.00000000000000000",
+        "equal_z_Q": "1.00000000000000000",
+        "inv": "1.00000000000000000"
+      },
+      {
+        "n": 2,
+        "equal_m_Q": "0.947053728487491142",
+        "equal_z_Q": "0.947053728487491142",
+        "inv": "1.05590630174390173"
+      },
+      {
+        "n": 3,
+        "equal_m_Q": "0.937926317980512689",
+        "equal_z_Q": "0.937926317980512689",
+        "inv": "1.06618183201548356"
+      },
+      {
+        "n": 4,
+        "equal_m_Q": "0.941318905068536507",
+        "equal_z_Q": "0.941318905068536507",
+        "inv": "1.06233922915549112"
+      },
+      {
+        "n": 5,
+        "equal_m_Q": "0.947938662109904488",
+        "equal_z_Q": "0.947938662109904488",
+        "inv": "1.05492057658479541"
+      },
+      {
+        "n": 6,
+        "equal_m_Q": "0.954558028887292714",
+        "equal_z_Q": "0.954558028887292714",
+        "inv": "1.04760524738938919"
+      },
+      {
+        "n": 7,
+        "equal_m_Q": "0.960249133994309499",
+        "equal_z_Q": "0.960249133994309499",
+        "inv": "1.04139640911764266"
+      },
+      {
+        "n": 8,
+        "equal_m_Q": "0.964913453593511189",
+        "equal_z_Q": "0.964913453593511189",
+        "inv": "1.03636237662126091"
+      },
+      {
+        "n": 9,
+        "equal_m_Q": "0.968697934295891390",
+        "equal_z_Q": "0.968697934295891390",
+        "inv": "1.03231354645848487"
+      },
+      {
+        "n": 10,
+        "equal_m_Q": "0.971785924889769028",
+        "equal_z_Q": "0.971785924889769028",
+        "inv": "1.02903322057626152"
+      },
+      {
+        "n": 11,
+        "equal_m_Q": "0.974335337660276353",
+        "equal_z_Q": "0.974335337660276353",
+        "inv": "1.02634068718204717"
+      },
+      {
+        "n": 12,
+        "equal_m_Q": "0.976468400474127572",
+        "equal_z_Q": "0.976468400474127572",
+        "inv": "1.02409868001304147"
+      }
+    ]
+  },
+  "log_radius_convolution": {
+    "kernel": "f(e^{-|h|}) with f=(1+t^3)/(1+t^2)",
+    "pointwise_floor": "0.894107456974982284669208121599522742",
+    "pointwise_floor_is_fmin": true,
+    "unweighted_two_bump": "0.947053728487491142334604060799761371",
+    "unweighted_two_bump_closed": "(1+fmin)/2",
+    "unweighted_three_bump": "0.936878055982235782419918270649258672",
+    "signed_symbol_n16_t0step_at_pi": "0.111865664192508993521864041951770409",
+    "signed_symbol_below_fmin": true,
+    "log_gaussian_n16": [
+      {
+        "sigma": "0.250000000000",
+        "Q": "0.928292317583863416",
+        "inv": "1.07724687693503226"
+      },
+      {
+        "sigma": "0.400000000000",
+        "Q": "0.923597815567856369",
+        "inv": "1.08272235289466251"
+      },
+      {
+        "sigma": "0.550000000000",
+        "Q": "0.930786434422442415",
+        "inv": "1.07436030760429480"
+      },
+      {
+        "sigma": "0.700000000000",
+        "Q": "0.942645033476054598",
+        "inv": "1.06084471300129367"
+      },
+      {
+        "sigma": "1.00000000000",
+        "Q": "0.966254594621647405",
+        "inv": "1.03492392746817018"
+      },
+      {
+        "sigma": "1.40000000000",
+        "Q": "0.985673210199613019",
+        "inv": "1.01453503012168262"
+      }
+    ],
+    "log_gaussian_best_Q": "0.923597815567856368850384720122738478",
+    "log_uniform_m_n16": [
+      {
+        "aspect": "2.00000000000",
+        "Q": "0.931005735777337101",
+        "inv": "1.07410723862518053"
+      },
+      {
+        "aspect": "3.50000000000",
+        "Q": "0.922668542902545134",
+        "inv": "1.08381282497632829"
+      },
+      {
+        "aspect": "6.00000000000",
+        "Q": "0.929154978998767073",
+        "inv": "1.07624672159382244"
+      },
+      {
+        "aspect": "12.0000000000",
+        "Q": "0.941823308671654840",
+        "inv": "1.06177028195490024"
+      }
+    ],
+    "recovers_only_fmin_as_global_floor": true,
+    "any_trial_beats_1.1185_as_lower_bound": false,
+    "note": "K(h)=f(e^{-|h|}) \u2265 fmin, with equality at |h|=\u2212log t0. Any average of K is therefore \u2265 fmin, which is Proposition 4.5. The signed Toeplitz symbol at \u03b8=\u03c0 is below fmin, so dropping positivity loses the floor. Positive trials (log-Gaussian, log-uniform, t0-chain) stay above the HPS power-law 0.921 or sit with it; none is a global lower bound above fmin."
+  },
+  "verdict": {
+    "global_gamma_gt_fmin": false,
+    "two_atom_is_global": false,
+    "t0_chain_is_global": false,
+    "convolution_beats_fmin_globally": false,
+    "reason": "Q is an average of f, so Q\u2265fmin for every radial probability (HPS Prop. 4.5). The two-atom min, the t0-chain, and the log-radius convolution do not raise that floor for every measure. The compact-aspect number 0.901924 (leading 1.1087) is not used and is not unrestricted. b(4) is not available for Theorem 2.2."
+  }
+}

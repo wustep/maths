@@ -354,3 +354,88 @@ classical Levenshtein number 48 before claiming any comparison.
   not 11. No 41-code.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
   Mittelmann–Vallentin. Did not produce a 41-point code.
+
+## 2026-08-27 — q4 unrestricted dual hunt
+
+- Folder `compute/q4/`. House rules unchanged: do not claim $\tau_5=40$;
+  a numerical SDP without an exact positivity certificate is residue.
+- Re-fetched tonight, all still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  refs [9] and [17]),
+  Mittelmann–Vallentin arXiv:0902.1105v3 ($s_{14}(5)=44.99899685\ldots$),
+  Bachoc–Vallentin arXiv:math/0608426v4 (3-point SDP, $\tau_5\le 45$
+  before MV; exact $Y_k^n$ / $S_k^n$ formulas, Remark 3.4 monomial
+  form),
+  Cohn–Rajagopal arXiv:2412.00937v3. The unaffiliated Zenodo $44.0297$
+  note remains retracted.
+- Implemented exact $S_k^5$ over $\mathbb Q$ (`bv.py`). Self-tests:
+  $Q_0=1$, $Q_1=t-uv$, $Q_k(u,u,1)=(1-u^2)^k$, $S_0(1,1,1)=J$,
+  $S_k(1,1,1)=0$ for $k\ge 1$, $P_k^5$ matches `delsarte.py`.
+- 1-point continuum Delsarte at degree 12 is $46.3368\ldots$. One
+  rationalization (`den=1000`) gives $46.337$ and fails Sturm. Did not
+  spend the session re-rationalizing Gegenbauer polynomials.
+- Exact 3-point search, all residue or $\ge 48$:
+  - constant-multiplier Putinar $d=1..4$: HiGHS infeasible;
+  - diagonal grid LP: infeasible at $d\le 3$, grid value $85.56$ at
+    $d=4$ (matches 1-point Delsarte $\approx 90$ at degree 4);
+  - exact $p_4$-span kernel at $d=3,4,5$: 34 / 81 / 148 nonnegative
+    kernel vectors, none make $h\le 0$ on $[-1,1/2]$;
+  - square-dictionary LP: infeasible at $d=5$; numerical $40.38$ at
+    $d=6$ does not snap to an identity over $\mathbb Q$;
+  - floating Putinar SDP at $d=5$ (Clarabel / SCS): solver values
+    below 40 or on the dummy cut $40$, `grid_ok=false`. Discarded.
+- Best certified unrestricted dual remains Levenshtein
+  $L_5(5,1/2)=48$ (the $F_k=0$ case of BV). No $k\in\{41,42,43,44\}$
+  is excluded on the whole interval. Mittelmann–Vallentin
+  $s_{14}(5)=44.998\ldots$ is still the published upper bound; that
+  hierarchy cannot go below its own optimum at $d=14$, so a dual
+  $<44$ would need $d>14$ or a different hierarchy *and* an exact
+  SOS certificate.
+- Wrote `compute/q4/dual_exact.json`. No `certs/unrestricted_delsarte.json`
+  or `certs/bv_dual.json`.
+
+## 2026-08-27 — q4 leftover graphs (no unrestricted move)
+
+- Same house rules. Re-fetched Tao $C_{29}$, Cohn, Mittelmann–Vallentin
+  $s_{14}(5)=44.99899685\ldots$, Cohn–Rajagopal arXiv:2412.00937v3:
+  still $40\le\tau_5\le 44$. Did not claim $\tau_5=40$.
+- The 240 missed-set seeds on the 40 $D_5$ roots split as 160
+  four-seeds and 80 six-seeds. The ten special octads are the
+  coordinate-stars $\{x_i=\pm 4\}\cap D_5$. Every four-seed lives in
+  exactly one star, as the $2^4$ sign choices on the other four axes
+  (`analyze_stars.py`). Independent Rust rebuild (`verify_n1.rs`):
+  each star has 16 four-seeds, extras pool 80, $\omega=8$.
+- Same-missed extras are edgeless, so a clique takes at most one extra
+  per seed. A 41-set with $n_1=40-k$ needs an extras-clique of size
+  $k+1$ whose missed sets sit in some $k$-set $U$.
+- $n_1=32$ ($k=8$): complete $k$-superset scan, C and Python agree
+  ($n_U=7\,407\,770$, 10 promising octads, best extras 8, total 40).
+  $n_1=31$ ($k=9$): C empty (`n1_le32_k9.json`).
+- Seed-union BFS through $|U|\le 12$ is complete and empty of a 41-set
+  (`n1_complete_k12.json`, Python `replay_unions.py`). Promising
+  unions only at $k=7$ (80 heptads), $k=8$ (10 stars), $k=11$ (960),
+  $k=12$ (4640); each has $\omega=k$, total 40.
+- Hash-free canonical DFS (`n1_dfs.c`) continues the same family
+  without a table: each union has a unique parent (all but the last
+  irredundant seed). Through $k=12$ the counts match the BFS. Through
+  $k=18$ the scan is complete and empty of a 41-set
+  (`n1_dfs_k18.json`): $933{,}648{,}919$ unions. Promising pools at
+  $k=13$ through $18$ have extras $\omega=k$, total 40. Independent
+  Python BFS matches the union census through $k=13$
+  (`replay_unions_k13.json`). Therefore there is no 41-set that uses
+  22 or more $D_5$-type points. The $n_1\le 21$ slice remains residue
+  for the whole 1480-graph, not a 41-code.
+- 40-colouring of the 1480-graph is UNSAT (Cadical and Glucose). That
+  does not produce a 41-clique.
+- $T^5$ remainder: no 35-colouring. Cadical and Glucose return no
+  36-clique (`t5_omega.json`). UNSAT without a stored DRAT is not an
+  emptiness proof. Share $\ge 30$ with each published 35 is empty
+  (Python). Share 30 down to 24 are empty in C (`t5_share30_c.json`
+  through `t5_share24_c.json`). Any remaining 36-clique shares at most
+  23 with every published 35.
+- Construction hunts outside these two graphs (other $(1/d)\mathbb Z^5$,
+  $A_5$ hyperplane, $D_6$ projections, QR reflections) produced no
+  41-code.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.

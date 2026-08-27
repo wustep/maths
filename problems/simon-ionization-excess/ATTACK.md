@@ -135,3 +135,70 @@ Residue. Leading coefficient still $1.1185$
 dent from q1 unchanged. $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q2/run_all.sh`.
+
+## 2026-08-27 — q3 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0. Semantic Scholar 429 this pass.
+- Nam 1009.2367v3 and Benguria–González-Brantes 2511.07582v1
+  unchanged: no fermionic leading coefficient below $1.1185$.
+- q1 and q2 replayed (`compute/q1/run_all.sh`,
+  `compute/q2/run_all.sh`), both exit 0.
+
+## 2026-08-27 — q3 leftovers: finite $Z$ and $s>3$
+
+Lieb still gives the best integers at $Z=2,\ldots,6$ ($N_c\le 2Z$).
+Nam and HPS $s=2$ sit below $2Z+1$ as reals at $Z=6$ and still
+above $12$. Five octahedron vertices block $N=5$ at $Z=3$ by pair
+geometry ($128<169$), the same obstruction as the tetrahedron.
+Two-shell dipoles still make $I_s$ negative for $s>3$
+($-1025/2048$ at $s=4$). Infinite $t_0$-chains and log-radius
+convolution recover only $\min f$ as a global floor. Residue:
+`compute/q3/work/smallz.md`, `s_gt_3_toeplitz.md`.
+
+## 2026-08-27 — q3 the click: mass-opt, not existence
+
+The leftover from q2 was “a minimizer has bounded aspect.” An
+adversarial probe found no $Q<0.8995$ and no mass-stationary
+$k$-atomic with $Q\le 0.921$ and aspect $\ge 12$, but existence
+of a global minimizer was still a sketch.
+
+The lift does not need a minimizer. For *any* finite set of
+radii, mass-optimisation on the simplex exists. The mass-critical
+point is stationary for $Q$ and satisfies
+$V(r_i)=(Q/2)(r_i^2+D)$ at every used atom. The endpoint
+identities then force $Q>R/(R+1)$ if the used aspect is $R\ge 12$.
+At $R=12$ that is $Q>12/13>0.899526$. If mass-opt drops an
+endpoint, the used aspect shrinks into the compact class.
+
+So every finitely atomic radial measure has $Q\ge\gamma_{12}$.
+A compactly supported radial probability is a $Q$-limit of finite
+spherical shells. A finite-$D$ measure is a $Q$-limit of compact
+truncations ($r^2$ is UI for that one measure). Hence
+$\beta_3\ge\gamma_{12}$ on HPS $D_3$.
+
+The aspect-$\le 4$ number $1.1087$ is *not* used: the split
+$\min(\gamma_R,R/(R+1))$ only beats $1.1185$ once $R\ge 9$.
+The stored $R=12$ row is the first certified class that works.
+$1.1168$ stays withdrawn.
+
+## 2026-08-27 — q3 dent
+
+Same HPS §7 chain with $\beta_3\ge 0.899526$:
+
+$$
+N<1.1118Z+3.880\,Z^{1/3}+0.0133+0.1833\,Z^{-1/3}+0.01956\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1118Z+3.966\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py`, C and Rust on the $12/13$ algebra,
+mass-opt scan with no counterexample, stored $R=12$ faces
+(copositive, $5$ residual skips). q1 remainders $2.953$, $3.892$,
+$3.9781$ unchanged. $N_0(Z)-Z$ bounded still open.
+
+Replay: `problems/simon-ionization-excess/compute/q3/run_all.sh`.

@@ -1,0 +1,266 @@
+{
+  "3": {
+    "d": 3,
+    "n": 1240,
+    "n_groups": 1200,
+    "best_total": 37,
+    "found_41": false,
+    "n_groups_searched": 1200,
+    "max_group": 1,
+    "max_best_extras": 1,
+    "any_incomplete": false,
+    "sample": [
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      },
+      {
+        "missed": 6,
+        "n_extras": 1,
+        "best": 1,
+        "target": 7,
+        "found": false,
+        "complete": true
+      }
+    ]
+  },
+  "5": {
+    "d": 5,
+    "n": 5240,
+    "n_groups": 2410,
+    "best_total": 38,
+    "found_41": false,
+    "n_groups_searched": 2410,
+    "max_group": 10,
+    "max_best_extras": 1,
+    "any_incomplete": false,
+    "sample": [
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      },
+      {
+        "missed": 3,
+        "n_extras": 10,
+        "best": 1,
+        "target": 4,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 38
+      }
+    ]
+  },
+  "6": {
+    "d": 6,
+    "n": 6200,
+    "n_groups": 2640,
+    "best_total": 37,
+    "found_41": false,
+    "n_groups_searched": 2640,
+    "max_group": 13,
+    "max_best_extras": 1,
+    "any_incomplete": false,
+    "sample": [
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      },
+      {
+        "missed": 4,
+        "n_extras": 13,
+        "best": 1,
+        "target": 5,
+        "found": false,
+        "complete": true,
+        "nodes": 2,
+        "total": 37
+      }
+    ]
+  },
+  "found_41": false
+}

@@ -1,0 +1,16 @@
+{
+  "d": 4,
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "n_extra_edges": 884720,
+  "n_intra_group_edges": 0,
+  "groups_edgeless": true,
+  "slices": {
+    "9": {"k": 9, "n1": 31, "n_U": 43947680, "tried": 320, "skipped_few_groups": 43947360, "max_seeds_in_U": 16, "best_extras": 9, "best_total": 40, "found": false, "complete": true}
+  },
+  "found_41": false,
+  "complete": true,
+  "comment": "complete k-supersets of actual missed sets; groups are independent so a clique takes at most one extra per seed"
+}

@@ -1,0 +1,18 @@
+{
+  "d": 4,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "groups_edgeless": true,
+  "k": 8,
+  "n1": 32,
+  "n_U": 7407770,
+  "tried": 10,
+  "max_seeds_in_U": 16,
+  "best_extras": 8,
+  "best_total": 40,
+  "found_41": false,
+  "complete": true,
+  "constructed_ge41": [],
+  "comment": "Independent Python replay of the k=8 slice.  Must match n1_le32.c: n_U=7407770, tried=10, best_extras=8, empty.",
+  "agree_with_c": true
+}

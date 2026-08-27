@@ -325,3 +325,81 @@ Sturm besides.
 - The $n_1\le 32$ slice of the 1480-point graph, and a 36-clique in
   the 355-point $T^5$ remainder.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 10. 27 August, later: exact $S_k^5$ over $\mathbb Q$, no dual below 44
+
+The missing object is still an exact 3-point certificate with value
+strictly less than 44. Mittelmann–Vallentin already have a
+high-accuracy number $s_{14}(5)=44.99899685\ldots$; that is how 45
+died, and it is not a rational Gram matrix.
+
+`compute/q4/bv.py` builds the matrices. $Q_k^{4}$ is the polynomial
+identity that clears the square roots in
+$P_k^{4}((t-uv)/\sqrt{(1-u^2)(1-v^2)})$. $S_k^5$ is the average of
+$u^i v^j Q_k$ over the six permutations of $(u,v,t)$ (Bachoc–Vallentin
+Remark 3.4). The self-tests check $Q_0=1$, $Q_1=t-uv$,
+$Q_k(u,u,1)=(1-u^2)^k$, $S_0(1,1,1)=J$, and $S_k(1,1,1)=0$ for
+$k\ge 1$.
+
+1-point Delsarte on the whole interval is still $46.3368\ldots$. A
+polynomial with nonnegative Gegenbauer coefficients cannot go below
+that, so the rest of the night was 3-point. Constant-multiplier
+Putinar, the exact $p_4$-span of $g$, a dictionary of squares, and a
+floating Putinar SDP at $d\le 6$ all failed to produce a rational
+identity with value $<44$. The $d=6$ dictionary number $40.38$ did
+not snap; the SDP values near 40 failed a grid sign check. Residue.
+
+The hierarchy itself explains the miss. Bachoc–Vallentin needed
+$d=10$ to reach 45. Mittelmann–Vallentin needed $d=14$ to reach
+$44.998$. Any feasible dual at $d=14$ has value at least that
+optimum, so it cannot exclude 44. A dent would need $d>14$ or a
+different hierarchy, and then an exact SOS certificate of a number
+strictly less than 44.
+
+## 11. 27 August, later: the octads are the $D_5$ coordinate-stars
+
+The $n_1\le 32$ leftover is not an unstructured $k$-superset scan.
+The 40 $D_5$ roots are the signed pairs $\pm 4e_i\pm 4e_j$. For each
+axis $i$ and sign $s$ the eight roots with $x_i=s\cdot 4$ form a
+star. There are ten of them. The 160 four-seeds partition among those
+stars: inside a star the four other axes each contribute a sign pair,
+and the 16 four-seeds are the $2^4$ ways to pick one sign on each.
+
+A 7- or 8-subset of a star is exactly the promising $U$ at $k=7,8$.
+The extras pool of a star has 80 vertices and clique number 8, so the
+best 41-candidate on that $U$ is $8+(40-8)=40$. C and Python empty
+every 8-superset of an actual seed ($7\,407\,770$ of them; only the
+ten stars are promising). Seed-union BFS then empties $k=9,10$ by
+part-count and $k=11,12$ by a coloured search: 960 and 4640 promising
+unions, $\omega=k$ again, total 40.
+
+That is the $n_1\ge 28$ half of the leftover graph, on top of q3's
+$n_1\ge 33$. The remaining 41-candidates use at least 13 extras. A
+hash-free walk of the same seed-unions — each $U$ has a unique
+parent, the union of all but its last irredundant seed — finishes
+$k=13$ through $18$ without a table. Promising pools grow into the
+tens of millions by $k=18$, but every extras-clique is size $k$,
+total 40. So there is no 41-set with $n_1\ge 22$. The $n_1\le 21$
+slice is unfinished. Residue, not a 41-code.
+
+The $T^5$ remainder still has $\omega\ge 35$ and $\chi\ge 36$. Two
+SAT solvers return no 36-clique; without a DRAT that is not a
+certificate. Share 30 through 24 with each published 35 are empty
+in C, so a 36-clique, if one exists, shares at most 23 with
+$D_5,L_5,Q_5$ and $R_5$.
+
+**Proved on 27 August, later (restricted).**
+
+- No 41-point code in $(1/4)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$
+  uses 22 or more $D_5$-type points.
+- Each $D_5$ coordinate-star has extras-clique number 8.
+- No 36-clique in the $T^5$ remainder shares 24 or more vertices with
+  a published 35-clique.
+- No certified unrestricted Delsarte dual below 44.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 41-set in the 1480-graph with $n_1\le 21$, and a 36-clique in
+  the $T^5$ remainder that shares at most 23 with every published 35.
+- An exact SOS certificate that $s_d(5)<44$.

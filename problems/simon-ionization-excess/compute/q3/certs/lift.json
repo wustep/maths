@@ -1,0 +1,42 @@
+{
+  "arxiv": "2504.18487v1",
+  "status": "dent",
+  "is_new_bound": true,
+  "beats_1.1185_in_HPS_theorem": true,
+  "not_the_R4_number": true,
+  "compact_class_only_without_lift": "1.108741 at aspect\u22644",
+  "used_class": "aspect\u226412 compact \u03b3, lifted by mass-opt dichotomy",
+  "beta3_lower": "0.8995260524666926617922278920310721986121",
+  "leading_hi": "1.1118",
+  "inequalities": [
+    {
+      "beats": "HPS Theorem 2.2 / Prop. 2.5 leading 1.1185",
+      "range": "Z >= 4",
+      "inequality": "N < 1.1118 Z + 3.880 Z^{1/3} + 0.0133 + 0.1833 Z^{-1/3} + 0.01956 Z^{-2/3}"
+    },
+    {
+      "beats": "HPS simplified 1.1185 Z + 4 Z^{1/3}",
+      "range": "Z >= 4",
+      "inequality": "N_c < 1.1118 Z + 3.966 Z^{1/3}"
+    }
+  ],
+  "checks": {
+    "identities_ok": true,
+    "cut_exceeds_gamma": true,
+    "leading_beats_1.1185": true,
+    "leading_printed_ok": true,
+    "stdlib_ok": true,
+    "mass_opt_no_counterexample": true,
+    "trial_below_cut": true
+  },
+  "pieces": {
+    "aspect_identities": "certs/aspect_identities.json",
+    "leading": "certs/leading.json",
+    "stdlib": "certs/lift_stdlib.json",
+    "mass_opt": "certs/mass_opt.json",
+    "trial": "certs/trial_atomic.json",
+    "q2_compact_R12": "../q2/certs/beta3_compact.json",
+    "q2_faces_R12": "../q2/certs/beta3_mid_faces_R12_n22.txt"
+  },
+  "reason": "Same HPS \u00a77 chain with \u03b2_3 \u2265 0.899526 (R=12 compact \u03b3). Mass-stationary measures of aspect \u2265 12 have Q>12/13. Atomic measures reduce to one of those two classes. General radial D_3 measures: truncate then approximate by finite spherical shells. Not the withdrawn 1.1168 lift, and not the unrestricted use of the aspect-\u22644 number 1.1087."
+}

@@ -1,0 +1,47 @@
+{
+  "n_stars": 10,
+  "star_names": [
+    "e0-",
+    "e0+",
+    "e1-",
+    "e1+",
+    "e2-",
+    "e2+",
+    "e3-",
+    "e3+",
+    "e4-",
+    "e4+"
+  ],
+  "star_sizes": [
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8,
+    8
+  ],
+  "four_seeds_per_star": {
+    "e0-": 16,
+    "e0+": 16,
+    "e1-": 16,
+    "e1+": 16,
+    "e2-": 16,
+    "e2+": 16,
+    "e3-": 16,
+    "e3+": 16,
+    "e4-": 16,
+    "e4+": 16
+  },
+  "four_seeds_are_sign_choices": true,
+  "six_seeds": 80,
+  "six_max_meet_star": 3,
+  "pairwise_star_union_sizes": [
+    15,
+    16
+  ],
+  "comment": "10 coordinate-stars; 16 four-seeds per star are the sign choices on the other four axes.  Every four-seed lives in exactly one star.  Promising k=7,8 unions are the 7- and 8-subsets of these stars."
+}

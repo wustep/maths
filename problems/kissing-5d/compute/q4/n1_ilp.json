@@ -1,0 +1,12 @@
+{
+  "n_groups": 240,
+  "n_stars": 10,
+  "slices": {
+    "4": {"k": 4, "n1": 36, "max_seeds_star_free": 1, "status": "ok", "empty_by_part_count": true},
+    "5": {"k": 5, "n1": 35, "max_seeds_star_free": 2, "status": "ok", "empty_by_part_count": true},
+    "6": {"k": 6, "n1": 34, "max_seeds_star_free": 4, "status": "ok", "empty_by_part_count": true},
+    "7": {"k": 7, "n1": 33, "max_seeds_star_free": 4, "status": "ok", "empty_by_part_count": true}
+  },
+  "any_promising_star_free_through_7": false,
+  "comment": "HiGHS MILP, star-free k-sets (every coordinate-star meets U in at most 6 points). k=4..7 agree with the seed-union scan: no promising star-free U. k>=8 hit the 20s HiGHS cutoff; not a proof for those k."
+}

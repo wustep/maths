@@ -1,0 +1,18 @@
+{
+  "recon_gamma": 0.8995260524666927,
+  "stored_gamma": 0.8995260524666927,
+  "recon_ok": true,
+  "inv": 1.1116965398142569,
+  "inv_lt_1.1185": true,
+  "cut_12_13": 0.9230769230769231,
+  "cut_gt_gamma": true,
+  "faces": {
+    "n": 22,
+    "copositive": true,
+    "min_mMm_safe": 0.004479592204425791,
+    "singular_or_illconditioned": 5,
+    "gamma_target": 0.9055
+  },
+  "ok": true,
+  "note": "The five singular faces are skipped by the C enumerator (no interior critical point). Copositivity uses vertices and the well-conditioned interior critical points."
+}
