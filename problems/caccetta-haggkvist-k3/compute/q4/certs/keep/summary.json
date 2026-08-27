@@ -9,7 +9,8 @@
   "next_hole": {"n": 109, "d": 37},
   "replay": {
     "n73_n92": {"checked": 516, "failures": 0, "log": "replay_73_92.json"},
-    "n93_n100": {"checked": 244, "failures": 0, "log": "replay_93_100.json"}
+    "n93_n100": {"checked": 244, "failures": 0, "log": "replay_93_100.json"},
+    "n101_n108": {"checked": 266, "failures": 0, "log": "replay_101_108.json"}
   },
   "note": "closed = every needed cube UNSAT with stored DRAT. F4 is the CKLS-fork certificate at 0.34640. Did not beat 0.3388."
 }

@@ -257,7 +257,7 @@ q3 leftover through n=72 still stands. Same encoder as q1/q2/q3. High-k cubes fi
 
 Soundness: n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free 6-outregular model. The n=73 circulant (d=24) is C₃-free and 24-outregular; after placing N⁺(0) and N⁻(0), every arc-variable clause of the cube is satisfied (`certs/keep/soundness_n73_d24.json`). The encoder is not vacuously UNSAT at these orders.
 
-Every needed cube k≥d at the remaining leftover holes through n=108 is UNSAT. 1026 stored DRATs. Independent replay so far: n=73–92 (516 cubes, 0 failures) and n=93–100 (244 cubes, 0 failures). The slowest stored cube is about 27s (n=108).
+Every needed cube k≥d at the remaining leftover holes through n=108 is UNSAT. 1026 stored DRATs. Independent replay: `python3 verify_range.py --n-min 73 --n-max 108` in three batches (516+244+266), 0 failures. The slowest stored cube is about 27s (n=108).
 
 | n | d | cubes | worst time | DRAT |
 | ---: | ---: | --- | ---: | --- |
