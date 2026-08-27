@@ -40,7 +40,7 @@ This folder first attacked the FHJN handle $\mathcal{C}_1$ by trial pairs. After
 
 A verified finite improvement of a documented record, for example:
 
-1. A smaller rigorous upper bound than the published $1.456$ on $L_{1,d}/L_{1,d}^{\mathrm{cl}}$ (equivalently, a certified $\mathcal{C}_1$ that converts to a ratio strictly below $1.456$).
+1. A smaller rigorous upper bound than the published CCR $1.44655$ on $L_{1,d}/L_{1,d}^{\mathrm{cl}}$ (equivalently, a certified $\mathcal{C}_1$ or $M_3$ that converts to a ratio strictly below $1.44655$). An envelope of $1.44655$ is a replay, not a new bound.
 2. A new certified test-function lower bound that moves a published numerical lower bound on $L_{1,1}/L_{1,1}^{\mathrm{cl}}$ or on $K_1/K_1^{\mathrm{cl}}$.
 3. A reusable exact lemma that strictly tightens one of those conversions.
 
