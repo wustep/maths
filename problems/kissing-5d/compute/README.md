@@ -37,3 +37,7 @@ The unrestricted dual hunt is `q4/dual_exact.py`; nothing certified
 below 44.
 
 Later search: `sh compute/q4/run_all.sh`.
+q5 leftover slices: `sh compute/q5/run_all.sh`.
+The 355-point $T^5$ remainder has no 36-clique (native CaDiCaL DRAT,
+`drat-trim` verified). The $n_1\le 21$ slice of the 1480-graph is
+unfinished. The unrestricted range remains $40\le\tau_5\le 44$.

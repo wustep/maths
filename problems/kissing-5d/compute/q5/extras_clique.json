@@ -1,0 +1,15 @@
+{
+  "d": 4,
+  "n": 1480,
+  "n_d5": 40,
+  "n_extras": 1440,
+  "n_groups": 240,
+  "n_extra_edges": 884720,
+  "target": 20,
+  "nodes": 200000001,
+  "node_limit": 200000000,
+  "best_extras": 19,
+  "found_41": false,
+  "complete": false,
+  "comment": "extras B&B for |E|>=target and |E|>=|U|+1"
+}

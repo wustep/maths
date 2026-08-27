@@ -1,0 +1,183 @@
+{
+  "n": 355,
+  "m": 52419,
+  "degree": {
+    "min": 249,
+    "max": 346,
+    "mean": 295.3183098591549,
+    "mean_exact": "104838/355",
+    "histogram": {
+      "249": 6,
+      "253": 12,
+      "257": 6,
+      "258": 2,
+      "268": 12,
+      "272": 6,
+      "274": 12,
+      "275": 6,
+      "278": 12,
+      "279": 12,
+      "280": 12,
+      "281": 12,
+      "285": 12,
+      "286": 6,
+      "287": 18,
+      "288": 14,
+      "290": 3,
+      "291": 12,
+      "292": 6,
+      "293": 6,
+      "296": 6,
+      "297": 12,
+      "298": 5,
+      "301": 18,
+      "305": 12,
+      "307": 6,
+      "310": 2,
+      "313": 12,
+      "314": 9,
+      "316": 6,
+      "319": 6,
+      "320": 18,
+      "322": 18,
+      "326": 18,
+      "328": 2,
+      "330": 9,
+      "332": 6,
+      "346": 3
+    }
+  },
+  "degeneracy": 260,
+  "elim_degree_max": 260,
+  "core_check_ok": true,
+  "core_histogram": {
+    "249": 6,
+    "253": 12,
+    "257": 8,
+    "260": 329
+  },
+  "published": {
+    "D5": {
+      "remainder_size": 35,
+      "is_35_clique": true
+    },
+    "L5": {
+      "remainder_size": 35,
+      "is_35_clique": true
+    },
+    "Q5": {
+      "remainder_size": 35,
+      "is_35_clique": true
+    },
+    "R5": {
+      "remainder_size": 35,
+      "is_35_clique": true
+    }
+  },
+  "published_intersections": {
+    "pairwise": {
+      "D5&L5": 27,
+      "D5&Q5": 25,
+      "D5&R5": 21,
+      "L5&Q5": 21,
+      "L5&R5": 25,
+      "Q5&R5": 31
+    },
+    "triple": {
+      "D5&L5&Q5": 21,
+      "D5&L5&R5": 21,
+      "D5&Q5&R5": 21,
+      "L5&Q5&R5": 21
+    },
+    "D5&L5&Q5&R5": 21
+  },
+  "in_how_many_published_35": {
+    "0": 302,
+    "1": 8,
+    "2": 24,
+    "3": 0,
+    "4": 21
+  },
+  "union_of_published_35": 53,
+  "smallest_last_colors": 55,
+  "colouring": {
+    "ncolors_attempt": 36,
+    "found_36": false,
+    "found_35": false,
+    "method": null,
+    "colors_used": null,
+    "colouring": null,
+    "attempts": [
+      {
+        "method": "smallest_last_unlimited",
+        "colors_used": 55
+      },
+      {
+        "method": "smallest_last_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "largest_degree_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "smallest_degree_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "natural_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "dsatur_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_D5_dsatur_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_D5_sl_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_L5_dsatur_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_L5_sl_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_Q5_dsatur_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_Q5_sl_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_R5_dsatur_36",
+        "ok": false,
+        "ncolors": 36
+      },
+      {
+        "method": "precolour_R5_sl_36",
+        "ok": false,
+        "ncolors": 36
+      }
+    ]
+  },
+  "comment": "No 35- or 36-colouring from the greedy / DSATUR / degeneracy-order attempts.  Incomplete search, not a lower bound on chi.  A d-degenerate graph is (d+1)-colourable; here d = 260.  Did not claim tau_5 = 40."
+}

@@ -1,0 +1,20 @@
+{
+  "n": 355,
+  "share": 23,
+  "leave": 12,
+  "need": 13,
+  "by_code": {
+    "0": {"tried": 834451800, "empty": 834451800, "incomplete": 0, "found": 0, "best_extra": 12, "complete": true},
+    "1": {"tried": 834451800, "empty": 834451800, "incomplete": 0, "found": 0, "best_extra": 12, "complete": true},
+    "2": {"tried": 834451800, "empty": 834451800, "incomplete": 0, "found": 0, "best_extra": 12, "complete": true},
+    "3": {"tried": 834451800, "empty": 834451800, "incomplete": 0, "found": 0, "best_extra": 12, "complete": true}
+  },
+  "tried": 3337807200,
+  "empty": 3337807200,
+  "incomplete": 0,
+  "found_36": false,
+  "best_extra": 12,
+  "complete": true,
+  "source": "t5_share stderr log 2026-08-27; C(35,12)=834451800; codes 0..3 are D5,L5,Q5,R5 remainder 35s",
+  "comment": "Share 23 with each published 35 is empty.  A remaining 36-clique shares at most 22.  This does not empty the 355-graph and does not move 40 <= tau5 <= 44."
+}

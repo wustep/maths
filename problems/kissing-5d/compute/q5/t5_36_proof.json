@@ -1,0 +1,38 @@
+{
+  "n": 355,
+  "target": 36,
+  "cnf_vars": 23323,
+  "cnf_clauses": 56352,
+  "pysat_cadical195": {
+    "sat": false,
+    "proof_lines": 16548926,
+    "drat": "t5_clique36.drat",
+    "drat_trim": "NOT VERIFIED",
+    "drat_trim_error": "no conflict"
+  },
+  "native_cadical": {
+    "version": "3.0.1",
+    "sat": false,
+    "exit": 20,
+    "conflicts": 9921324,
+    "seconds": 573.49,
+    "drat": "t5_clique36.native.drat",
+    "drat_bytes": 671198215,
+    "drat_format": "binary"
+  },
+  "drat_trim": {
+    "status": "VERIFIED",
+    "proof": "t5_clique36.native.drat",
+    "bytes_read": 671198215,
+    "core_clauses": 18420,
+    "lemmas_in_core": 4787602,
+    "lemmas_total": 10804713,
+    "resolution_steps": 303220601,
+    "rat_lemmas": 0,
+    "seconds": 756.366
+  },
+  "sat": false,
+  "found_36": false,
+  "found_41": false,
+  "comment": "Native CaDiCaL 3.0.1 UNSAT on the 36-clique CNF of the 355-point T^5 remainder; Heule drat-trim s VERIFIED.  The five universal D5-basis vectors of the Szollosi pool do not extend to a 41-point kissing code.  PySAT Cadical195 also returned UNSAT but its ASCII DRAT did not verify.  Replay: python3 t5_36_proof.py --cnf-only && ./bin/cadical certs/t5_clique36.cnf certs/t5_clique36.native.drat && ./bin/drat-trim certs/t5_clique36.cnf certs/t5_clique36.native.drat.  Restricted finite-graph fact.  Does not move 40 <= tau5 <= 44."
+}
