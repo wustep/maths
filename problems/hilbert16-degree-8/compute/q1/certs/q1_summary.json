@@ -1,8 +1,8 @@
 {
  "search": "q1: leftover whole-stratum thicken (radius 1, rank <= 20), even-split walk on the (19,3) row, perturbations of the two published deep-nest triangulations, radius-4 balls around every 20-oval certificate, and targeted balls at the four hole-map targets",
  "thicken": {
-  "triangulations_logged": 114,
-  "triangulations_complete": 114,
+  "triangulations_logged": 136,
+  "triangulations_complete": 136,
   "ranks_completed": {
    "6": 1,
    "10": 5,
@@ -12,13 +12,26 @@
    "14": 19,
    "15": 11,
    "16": 29,
-   "17": 7
+   "17": 13,
+   "18": 16
   },
-  "total_evaluations": 172356480,
+  "total_evaluations": 401470336,
   "novel_on_thicken": []
  },
  "even_walk": {
   "summaries": [
+   {
+    "kind": "summary",
+    "evals": 603735,
+    "distinct": 5,
+    "new": 0,
+    "hits": 0,
+    "best_score": 6.0,
+    "best_scheme": "<17 u 1<2 u 1<1>>>",
+    "mode": "family",
+    "seed": 1,
+    "rounds": 151
+   },
    {
     "kind": "summary",
     "evals": 122,
@@ -70,11 +83,20 @@
   "novel": []
  },
  "hole_balls": {
-  "seeds_done": 6,
+  "seeds_done": 11,
   "novel": []
  },
  "dn_sweep": {
   "summaries": [
+   {
+    "kind": "summary",
+    "evals": 204948,
+    "distinct": 29,
+    "new": 0,
+    "best_score": 6.0,
+    "best_scheme": "<17 u 1<2 u 1<1>>>",
+    "mode": "ladder"
+   },
    {
     "kind": "summary",
     "evals": 28861,

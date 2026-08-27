@@ -55,7 +55,12 @@ Finished, with certificates under `certs/`:
   published M-collection.
 
 The leftover whole-stratum thicken (radius 1, rank at most 20) is
-the long job. Ranks 6–16 are finished (107 triangulations,
-130,151,296 evaluations); the only scheme outside the published
-2,367 is already among the seventeen. Ranks 17–20 are complete
+the long job. Ranks 6–18 are finished (136 triangulations,
+401,470,336 evaluations); every scheme outside the published
+2,367 is already among the seventeen. Ranks 19–20 are complete
 only when every remaining triangulation has a `complete` record.
+
+Also finished: radius-6 balls around the eleven of our seventeen
+certificates whose ball leaves the old swept region (0 novel);
+the two-split ladder around all twelve published depth-3
+M-collections (0 new).

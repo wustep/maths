@@ -347,9 +347,9 @@ from the published M-set to either open nest is at least 2.
 
 ## 15. What the leftover thicken actually said through rank 16
 
-The 23 August leftover was four rank-16 triangulations. Cheap first:
-every census triangulation of twist-rank at most 16, radius 1 around
-the whole Haas maximal stratum, 107 of 107, 130,151,296 sign
-distributions. The only scheme outside the published 2,367 is
-⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already certified. Ranks 17–20 of that leftover
-were the expensive tail and are a separate question.
+The 23 August leftover was four rank-16 triangulations. Cheap first,
+then the next ranks: every census triangulation of twist-rank at most
+18, radius 1 around the whole Haas maximal stratum, 136 of 136,
+401,470,336 sign distributions. Every scheme outside the published
+2,367 is already among the seventeen. Ranks 19–20 of that leftover
+are the expensive tail and are a separate question.

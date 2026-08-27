@@ -862,9 +862,9 @@ Code in `compute/q1/`. Replay: `sh q1/run_all.sh`.
 
 ### The bound did not move
 
-`NEW_candidates` is empty. The only scheme the leftover thicken
-found outside the published 2,367 is ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, already
-one of the seventeen. No open nest appeared, even as a PL curve.
+`NEW_candidates` is empty. Every scheme the leftover thicken found
+outside the published 2,367 is already one of the seventeen. No
+open nest appeared, even as a PL curve.
 
 ### Finished searches
 
@@ -873,18 +873,24 @@ one of the seventeen. No open nest appeared, even as a PL curve.
 | radius-4 balls, all 237 twenty-oval census certs | 38,920,377 | 0 novel |
 | odd collections, size ≤ 3 | 368,936 | 12 known M-schemes, 0 hits |
 | pinned even-split BFS, 200,000 collections | 200,000 | the five published (19,3) M-schemes only; queue left 196,799 (**residue**) |
+| even-split family anneal, 151 rounds | 603,735 | the five published (19,3) M-schemes only |
 | one-split add/drop/swap around all 38 M-collections | 28,861 | exactly those 38, 0 new, 0 hits |
+| two-split ladder around all 12 depth-3 M-collections | 204,948 | 29 schemes, 0 new, 0 hits (**complete**) |
 | nested odd pairs on the five (19,3) collections | 122 | 0 hits; the a=10 nest admits **no** compatible nested odd pair |
-| radius-1 thicken, every census triangulation of rank ≤ 16 | 130,151,296 | 107/107 complete; novel vs census = the already-certified ⟨4 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ |
+| radius-1 thicken, every census triangulation of rank ≤ 18 | 401,470,336 | 136/136 complete; novel vs census ⊆ the seventeen |
+| radius-6 balls on the 11 of our 17 whose ball leaves the old region | 104,841,440 | 11/11 complete, 0 novel |
 
 Certificates: `compute/q1/certs/m2_balls_r4.json`,
-`odd_skel.json`, `even_pinned.json`, `dn_nbhd.json`,
-`odd_cancel.json`, `thick_r1_rank_le16.json`.
+`odd_skel.json`, `even_pinned.json`, `even_family.json`,
+`dn_nbhd.json`, `dn_ladder.json`, `odd_cancel.json`,
+`hole_balls_r6.json`, `thick_r1_rank_le16.json`,
+`thick_r1_rank_le17.json`, `thick_r1_rank_le18.json`.
 
-The 4-of-164 leftover from 2026-08-23 is no longer the state of the
-cheap ranks. Ranks 6–16 are a **finished prefix**. Ranks 17–20 (57
-triangulations of the original 164) were still running at write-up;
-until they all have a `complete` record that part is **residue**.
+The 4-of-164 leftover from 2026-08-23 is no longer the state of
+ranks ≤ 18. Those 136 triangulations are a **finished prefix**.
+Ranks 19–20 (28 triangulations of the original 164) were still
+running at write-up; until they all have a `complete` record that
+part is **residue**.
 
 ### What the (19,3) row actually does
 
@@ -899,9 +905,10 @@ The published a=10 nest is already a 12-split collection with
 **seven odd** splits. Size ≤ 3 odd enumeration cannot see it, and
 adding a nested odd pair to it is impossible (zero compatible
 pairs). The open nests ⟨4⊔1⟨2⊔1⟨14⟩⟩⟩ and ⟨14⊔1⟨2⊔1⟨4⟩⟩⟩ are
-not one add/drop/swap from any of the 38 published M-collections
-and not a canceling-odd-pair from any published (19,3)
-collection. That is a distance statement, not an obstruction.
+not one add/drop/swap from any of the 38 published M-collections,
+not a two-split move from any published depth-3 M-collection, and
+not a canceling-odd-pair from any published (19,3) collection.
+That is a distance statement, not an obstruction.
 
 A hit in collection space would still need `haas.regularize` plus
 exact `tcurve.check_convexity` (Orevkov arXiv:2607.19457: a
@@ -912,7 +919,7 @@ non-regular patchwork can be algebraically unrealisable).
 Hilbert 16(a) in degree 8 remains open. The dent is still the
 seventeen schemes and the bound ≥ 2,384; both replay. No new
 scheme, no deep-nest decision. The leftover thicken is a finished
-prefix through rank 16 and residue past that.
+prefix through rank 18 and residue on ranks 19–20.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q1/run_all.sh && python3 q1/collect.py`.
