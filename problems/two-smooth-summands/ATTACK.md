@@ -289,10 +289,20 @@ exponent. Scoped miss, not a proof that none exists.
 Started `python3 compute/verify_all.py` before any q1 search.
 Trivial covering and the obstruction lemma replayed immediately.
 The Python $G(y)$ bitset matched the published table through
-$y=53$. The $y=59$ and $y=61$ rows ($G=6077111$) are the slow
-pure-Python bitset; those values were already certified by the C
-program in `certs/g_certified.json`. The parent covering-search
-script runs after $G$.
+$y=53$. The $y=59$ and $y=61$ rows ($G=6077111$) are too large
+for a timely pure-Python bitset; the C program independently
+reproduced both:
+
+```
+cc -O3 -std=c11 -o g_of_y_c g_of_y.c
+./g_of_y_c 61 6077111 200000
+./g_of_y_c 59 6077111 200000
+```
+
+Both print `first_uncovered=6077111`, `limit_is_sum=0`,
+`G_equals_limit=1`, with smooth counts $114680$ and $102546$.
+Parent `covering_search.py` also replayed: no residue-class cover
+at any $\alpha<1/2$.
 
 ## 2026-08-27 — closed-form templates, all fail below $1/2$
 

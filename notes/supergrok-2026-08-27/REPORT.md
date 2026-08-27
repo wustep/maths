@@ -85,6 +85,8 @@ Replay:
 ```
 cd problems/two-smooth-summands/compute
 python3 verify_all.py
+cc -O3 -std=c11 -o g_of_y_c g_of_y.c
+./g_of_y_c 61 6077111 200000
 cd q1 && ./run_all.sh
 ```
 
