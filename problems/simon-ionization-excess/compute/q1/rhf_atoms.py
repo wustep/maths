@@ -17,12 +17,12 @@ Methods
 -------
 1. One-parameter Slater 1s Hartree–Fock for helium-like ions (N = 1, 2).
    Closed form: E(1) = -Z^2/2, E(2) = -(Z - 5/16)^2.
-2. Unrestricted HF (UHF) in a small same-center Gaussian basis built
-   from uncontracted STO-3G primitives (1s for H/He; 1s, 2s, 2p for
-   Li–Ne). Closed shells stay spin-restricted if the guess is. Analytic
-   one- and two-electron integrals (s and Cartesian p).
-3. Optional s-only even-tempered UHF, as a spherical check that does
-   not need p integrals.
+2. Unrestricted HF (UHF) in a small same-center even-tempered Gaussian
+   basis with 1s / 2s / 2p scales. Closed shells stay spin-restricted
+   if the guess is. Analytic one- and two-electron integrals (s and
+   Cartesian p).
+3. The same UHF loop on s-Gaussians only, for N = 0, 1, 2, as a
+   spherical check that never uses p integrals.
 
 Units are Hartree. Replay:
 
@@ -473,11 +473,53 @@ def sto3g_basis(z: int, contracted: bool = False, with_p: bool = True) -> list[A
 def even_tempered_s(z: int, n_s: int = 8) -> list[AO]:
     """Z-scaled even-tempered s Gaussians. Spherical check, no p."""
     # Cover 1s (~Z^2) down toward a loose valence / anion tail.
-    alphas = [(z**2) * 0.06 * (2.4**k) for k in range(n_s)]
+    alphas = [(z**2) * 0.05 * (2.2**k) for k in range(n_s)]
+    alphas += [0.04, 0.015]
     aos = []
+    seen = set()
     for alpha in alphas:
+        key = round(alpha, 10)
+        if key in seen or alpha <= 0:
+            continue
+        seen.add(key)
         n = prim_norm(alpha, 0, 0, 0)
         aos.append(AO([Prim(alpha, (0, 0, 0), n)], f"s:{alpha:.6g}"))
+    return aos
+
+
+def even_tempered_sp(z: int, with_p: bool | None = None) -> list[AO]:
+    """Hydrogenic-scaled even-tempered 1s / 2s / 2p Gaussians.
+
+    Tight s exponents track Z^2, valence s/p track (Z/2)^2, plus a
+    short diffuse tail so N = Z+1, Z+2 is representable. This is not a
+    library STO-nG contraction; the angular content is 1s, 2s, 2p.
+    """
+    if with_p is None:
+        with_p = z >= 3
+    s_alphas = [z * z * x for x in (20.0, 6.0, 2.0, 0.7, 0.25)]
+    s_alphas += [(max(z, 2) * 0.5) ** 2 * x for x in (1.8, 0.6, 0.2, 0.07)]
+    s_alphas += [0.035, 0.012]
+    aos: list[AO] = []
+    seen: set[float] = set()
+    for alpha in s_alphas:
+        key = round(alpha, 10)
+        if key in seen or alpha <= 1e-8:
+            continue
+        seen.add(key)
+        n = prim_norm(alpha, 0, 0, 0)
+        aos.append(AO([Prim(alpha, (0, 0, 0), n)], f"s:{alpha:.6g}"))
+    if with_p:
+        p_alphas = [(max(z, 3) * 0.5) ** 2 * x for x in (3.0, 1.0, 0.35, 0.12, 0.04)]
+        p_alphas += [0.02]
+        seen_p: set[float] = set()
+        for alpha in p_alphas:
+            key = round(alpha, 10)
+            if key in seen_p or alpha <= 1e-8:
+                continue
+            seen_p.add(key)
+            for ell, tag in (((1, 0, 0), "px"), ((0, 1, 0), "py"), ((0, 0, 1), "pz")):
+                n = prim_norm(alpha, *ell)
+                aos.append(AO([Prim(alpha, ell, n)], f"{tag}:{alpha:.6g}"))
     return aos
 
 
@@ -846,12 +888,8 @@ def helium_like(z: int, n_elec: int) -> dict:
 
 
 def n_range(z: int) -> list[int]:
-    """N around Z-1, Z, Z+1, Z+2, plus N=0,1 so Delta E(1) exists."""
-    vals = {0, 1}
-    for n in (z - 1, z, z + 1, z + 2):
-        if n >= 0:
-            vals.add(n)
-    return sorted(vals)
+    """N = 0 .. Z+2, so consecutive ΔE(N,Z) exists through the anion."""
+    return list(range(0, z + 3))
 
 
 def _certified_vs_exact(n_elec: int, z: int, energy: float) -> dict | None:
@@ -947,15 +985,20 @@ def n0_hat(rows: list[dict]) -> dict:
     out = {}
     by = {}
     for r in rows:
-        if r.get("ok") and r.get("scf_converged"):
-            by.setdefault(r["Z"], {})[r["N"]] = r
+        if not r.get("ok") or "E" not in r:
+            continue
+        if r.get("scf_converged") is False:
+            continue
+        by.setdefault(int(r["Z"]), {})[int(r["N"])] = r
     for z, byn in by.items():
         best = 0
-        for n in sorted(k for k in byn if k > 0):
+        n = 1
+        while n in byn:
             if byn[n].get("heuristic_binds_vs_N-1") is True:
                 best = n
-            else:
-                break
+                n += 1
+                continue
+            break
         out[str(z)] = {
             "N0_hat": best,
             "label": LABEL,
@@ -1035,27 +1078,25 @@ def self_test() -> list[str]:
     he2 = helium_like(2, 2)
     check("He certified", he2["certified_vs_exact_previous"]["below"] is True, "")
 
-    # UHF on H, 1s uncontracted STO-3G: below the single-GTO floor, above -0.5.
-    basis = sto3g_basis(1, contracted=False, with_p=False)
+    # UHF on H / He in the even-tempered s basis: near the hydrogenic / HF values.
+    basis = even_tempered_sp(1, with_p=False)
     s, h = one_electron(1.0, basis)
     eri = two_electron(basis)
     rec = uhf_energy(1.0, 1, s, h, eri)
     check("H-UHF-ok", rec.get("ok") and rec.get("scf_converged"), str(rec))
     if rec.get("ok"):
-        check("H-UHF-range", -0.5 - 1e-8 <= rec["E"] <= -0.42, str(rec["E"]))
+        check("H-UHF-range", -0.5 - 1e-8 <= rec["E"] <= -0.498, str(rec["E"]))
 
-    # He UHF (closed shell) should sit near STO-3G / HF-limit window.
-    basis = sto3g_basis(2, contracted=False, with_p=False)
+    basis = even_tempered_sp(2, with_p=False)
     s, h = one_electron(2.0, basis)
     eri = two_electron(basis)
     rec = uhf_energy(2.0, 2, s, h, eri)
     check("He-UHF-ok", rec.get("ok") and rec.get("scf_converged"), str(rec))
     if rec.get("ok"):
-        # Uncontracted 3-GTO 1s is better than contracted STO-3G (~-2.81)
-        # and cannot beat the HF limit -2.86168.
+        # Cannot beat the HF limit -2.86168; a decent s basis sits just above.
         check(
             "He-UHF-range",
-            -2.86168 - 1e-4 <= rec["E"] <= -2.70,
+            -2.86168 - 1e-4 <= rec["E"] <= -2.85,
             str(rec["E"]),
         )
 
@@ -1064,6 +1105,18 @@ def self_test() -> list[str]:
     check("hund-2", hund_ab(2) == (1, 1), str(hund_ab(2)))
     check("hund-7", hund_ab(7) == (5, 2), str(hund_ab(7)))
     check("hund-10", hund_ab(10) == (5, 5), str(hund_ab(10)))
+
+    # Li: the 3-electron UHF energy should sit below the 2-electron energy
+    # in this basis (heuristic binding, not a certificate).
+    basis = even_tempered_sp(3)
+    s, h = one_electron(3.0, basis)
+    eri = two_electron(basis)
+    e2 = uhf_energy(3.0, 2, s, h, eri)
+    e3 = uhf_energy(3.0, 3, s, h, eri)
+    check("Li2-ok", e2.get("ok") and e2.get("scf_converged"), str(e2))
+    check("Li3-ok", e3.get("ok") and e3.get("scf_converged"), str(e3))
+    if e2.get("ok") and e3.get("ok"):
+        check("Li-binds-heuristic", e3["E"] < e2["E"], f"{e3['E']} vs {e2['E']}")
     return fails
 
 
@@ -1075,24 +1128,44 @@ def build_table(z_max: int = 10) -> dict:
             he_rows.append(helium_like(z, n))
     attach_binding(he_rows)
 
-    def make_sto(z):
-        return sto3g_basis(z, contracted=False, with_p=(z >= 3))
-
     uhf_rows = run_basis_scan(
         z_list,
-        "UHF uncontracted STO-3G primitives (1s / 1s,2s,2p)",
-        make_sto,
+        "UHF even-tempered Gaussian 1s/2s/2p, analytic same-centre integrals",
+        even_tempered_sp,
     )
     attach_binding(uhf_rows)
 
-    def make_s(z):
-        return even_tempered_s(z, n_s=7)
-
-    s_rows = run_basis_scan(
-        z_list,
-        "UHF even-tempered s-GTO (spherical check)",
-        make_s,
-    )
+    # s-only: N = 0, 1, 2 only. Extra electrons in a spherical s basis are
+    # not a model of B–Ne and produce meaningless positive energies.
+    s_rows = []
+    for z in z_list:
+        basis = even_tempered_s(z, n_s=8)
+        s_mat, h_mat = one_electron(float(z), basis)
+        eri = two_electron(basis)
+        for n in (0, 1, 2):
+            if n == 0:
+                s_rows.append(
+                    {
+                        "label": LABEL,
+                        "ok": True,
+                        "method": "UHF even-tempered s-GTO (N<=2 spherical check)",
+                        "N": 0,
+                        "Z": z,
+                        "E": 0.0,
+                        "scf_converged": True,
+                        "note": "bare nucleus, exact",
+                        "units": HARTREE,
+                        "n_ao": len(basis),
+                    }
+                )
+                continue
+            rec = uhf_energy(float(z), n, s_mat, h_mat, eri)
+            rec["method"] = "UHF even-tempered s-GTO (N<=2 spherical check)"
+            if rec.get("ok"):
+                rec["certified_vs_exact_previous"] = _certified_vs_exact(
+                    n, z, rec["E"]
+                )
+            s_rows.append(rec)
     attach_binding(s_rows)
 
     table = {
@@ -1113,15 +1186,18 @@ def build_table(z_max: int = 10) -> dict:
             "rows": he_rows,
             "N0_hat": n0_hat(he_rows),
         },
-        "uhf_sto3g": {
+        "uhf_sp": {
             "label": LABEL,
-            "method": "UHF, uncontracted STO-3G primitives, analytic s/p integrals",
+            "method": (
+                "UHF, even-tempered same-centre Gaussians with 1s/2s/2p "
+                "scales, analytic s and Cartesian p integrals"
+            ),
             "rows": uhf_rows,
             "N0_hat": n0_hat(uhf_rows),
         },
-        "uhf_s_even_tempered": {
+        "uhf_s_n12": {
             "label": LABEL,
-            "method": "UHF, even-tempered s-Gaussians only (no p)",
+            "method": "UHF, even-tempered s-Gaussians only, N=0,1,2",
             "rows": s_rows,
             "N0_hat": n0_hat(s_rows),
         },
@@ -1164,7 +1240,7 @@ def main(argv: list[str] | None = None) -> int:
         json.dump(table, fh, indent=2)
         fh.write("\n")
     print(f"wrote {args.out}  label={LABEL}")
-    for name in ("helium_like_slater", "uhf_sto3g", "uhf_s_even_tempered"):
+    for name in ("helium_like_slater", "uhf_sp", "uhf_s_n12"):
         block = table[name]
         print(f"\n{name}  N0_hat (HEURISTIC, residue):")
         for z, rec in block["N0_hat"].items():

@@ -18,13 +18,13 @@ Three series, all labeled HEURISTIC, in Hartree.
    one electron the energy is the exact hydrogenic value
    $-Z^2/2$. For two electrons the restricted $1s^2$ ansatz with
    scale $\zeta=Z-5/16$ gives $E=-(Z-5/16)^2$.
-2. Unrestricted HF in the uncontracted STO-3G primitive Gaussians
-   (a $1s$ shell for H and He; $1s,2s,2p$ for Li through Ne).
-   Integrals are analytic, same-centre Cartesian $s$ and $p$.
-   Occupations follow Hund’s rule. Closed shells stay
-   spin-restricted if the core-Hamiltonian guess is.
-3. The same UHF loop on a $Z$-scaled even-tempered $s$-only basis,
-   as a spherical check that never uses $p$ integrals.
+2. Unrestricted HF in a small even-tempered Gaussian basis with 1s,
+   2s and 2p scales (tight exponents ~ $Z^2$, valence ~ $(Z/2)^2$,
+   plus a short diffuse tail). Integrals are analytic, same-centre
+   Cartesian $s$ and $p$. Occupations follow Hund’s rule. Closed
+   shells stay spin-restricted if the core-Hamiltonian guess is.
+3. The same UHF loop on $s$-Gaussians only, for $N=0,1,2$. Extra
+   electrons in a spherical $s$ basis are not a model of B–Ne.
 
 Replay:
 
