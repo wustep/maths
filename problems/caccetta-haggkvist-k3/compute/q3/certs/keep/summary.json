@@ -1,0 +1,330 @@
+{
+  "published_hkn": 0.3465,
+  "repo_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "exact_orders": [
+    38,
+    39,
+    41,
+    42,
+    44,
+    45,
+    47,
+    48,
+    50,
+    51,
+    52,
+    53,
+    54,
+    55,
+    56,
+    57,
+    58,
+    59,
+    60,
+    61,
+    62,
+    63,
+    64,
+    65,
+    66,
+    67,
+    68,
+    69,
+    70,
+    71,
+    72
+  ],
+  "n_orders": 31,
+  "n_cubes": 534,
+  "failures": 0,
+  "orders": [
+    {
+      "n": 38,
+      "d": 13,
+      "cubes": 11,
+      "k_min": 13,
+      "k_max": 23,
+      "drat_bytes": 3926383,
+      "all_verified": true
+    },
+    {
+      "n": 39,
+      "d": 13,
+      "cubes": 12,
+      "k_min": 13,
+      "k_max": 24,
+      "drat_bytes": 4590711,
+      "all_verified": true
+    },
+    {
+      "n": 41,
+      "d": 14,
+      "cubes": 12,
+      "k_min": 14,
+      "k_max": 25,
+      "drat_bytes": 5483804,
+      "all_verified": true
+    },
+    {
+      "n": 42,
+      "d": 14,
+      "cubes": 13,
+      "k_min": 14,
+      "k_max": 26,
+      "drat_bytes": 6355700,
+      "all_verified": true
+    },
+    {
+      "n": 44,
+      "d": 15,
+      "cubes": 13,
+      "k_min": 15,
+      "k_max": 27,
+      "drat_bytes": 7427300,
+      "all_verified": true
+    },
+    {
+      "n": 45,
+      "d": 15,
+      "cubes": 14,
+      "k_min": 15,
+      "k_max": 28,
+      "drat_bytes": 8543755,
+      "all_verified": true
+    },
+    {
+      "n": 47,
+      "d": 16,
+      "cubes": 14,
+      "k_min": 16,
+      "k_max": 29,
+      "drat_bytes": 9870092,
+      "all_verified": true
+    },
+    {
+      "n": 48,
+      "d": 16,
+      "cubes": 15,
+      "k_min": 16,
+      "k_max": 30,
+      "drat_bytes": 11216225,
+      "all_verified": true
+    },
+    {
+      "n": 50,
+      "d": 17,
+      "cubes": 15,
+      "k_min": 17,
+      "k_max": 31,
+      "drat_bytes": 13046416,
+      "all_verified": true
+    },
+    {
+      "n": 51,
+      "d": 17,
+      "cubes": 16,
+      "k_min": 17,
+      "k_max": 32,
+      "drat_bytes": 14569776,
+      "all_verified": true
+    },
+    {
+      "n": 52,
+      "d": 18,
+      "cubes": 15,
+      "k_min": 18,
+      "k_max": 32,
+      "drat_bytes": 14687362,
+      "all_verified": true
+    },
+    {
+      "n": 53,
+      "d": 18,
+      "cubes": 16,
+      "k_min": 18,
+      "k_max": 33,
+      "drat_bytes": 16623123,
+      "all_verified": true
+    },
+    {
+      "n": 54,
+      "d": 18,
+      "cubes": 17,
+      "k_min": 18,
+      "k_max": 34,
+      "drat_bytes": 18590473,
+      "all_verified": true
+    },
+    {
+      "n": 55,
+      "d": 19,
+      "cubes": 16,
+      "k_min": 19,
+      "k_max": 34,
+      "drat_bytes": 18759950,
+      "all_verified": true
+    },
+    {
+      "n": 56,
+      "d": 19,
+      "cubes": 17,
+      "k_min": 19,
+      "k_max": 35,
+      "drat_bytes": 21568043,
+      "all_verified": true
+    },
+    {
+      "n": 57,
+      "d": 19,
+      "cubes": 18,
+      "k_min": 19,
+      "k_max": 36,
+      "drat_bytes": 23480432,
+      "all_verified": true
+    },
+    {
+      "n": 58,
+      "d": 20,
+      "cubes": 17,
+      "k_min": 20,
+      "k_max": 36,
+      "drat_bytes": 23594951,
+      "all_verified": true
+    },
+    {
+      "n": 59,
+      "d": 20,
+      "cubes": 18,
+      "k_min": 20,
+      "k_max": 37,
+      "drat_bytes": 26483273,
+      "all_verified": true
+    },
+    {
+      "n": 60,
+      "d": 20,
+      "cubes": 19,
+      "k_min": 20,
+      "k_max": 38,
+      "drat_bytes": 29113772,
+      "all_verified": true
+    },
+    {
+      "n": 61,
+      "d": 21,
+      "cubes": 18,
+      "k_min": 21,
+      "k_max": 38,
+      "drat_bytes": 30311190,
+      "all_verified": true
+    },
+    {
+      "n": 62,
+      "d": 21,
+      "cubes": 19,
+      "k_min": 21,
+      "k_max": 39,
+      "drat_bytes": 32933513,
+      "all_verified": true
+    },
+    {
+      "n": 63,
+      "d": 21,
+      "cubes": 20,
+      "k_min": 21,
+      "k_max": 40,
+      "drat_bytes": 36334158,
+      "all_verified": true
+    },
+    {
+      "n": 64,
+      "d": 22,
+      "cubes": 19,
+      "k_min": 22,
+      "k_max": 40,
+      "drat_bytes": 35980866,
+      "all_verified": true
+    },
+    {
+      "n": 65,
+      "d": 22,
+      "cubes": 20,
+      "k_min": 22,
+      "k_max": 41,
+      "drat_bytes": 40470466,
+      "all_verified": true
+    },
+    {
+      "n": 66,
+      "d": 22,
+      "cubes": 21,
+      "k_min": 22,
+      "k_max": 42,
+      "drat_bytes": 45383370,
+      "all_verified": true
+    },
+    {
+      "n": 67,
+      "d": 23,
+      "cubes": 20,
+      "k_min": 23,
+      "k_max": 42,
+      "drat_bytes": 44277073,
+      "all_verified": true
+    },
+    {
+      "n": 68,
+      "d": 23,
+      "cubes": 21,
+      "k_min": 23,
+      "k_max": 43,
+      "drat_bytes": 48680730,
+      "all_verified": true
+    },
+    {
+      "n": 69,
+      "d": 23,
+      "cubes": 22,
+      "k_min": 23,
+      "k_max": 44,
+      "drat_bytes": 54484084,
+      "all_verified": true
+    },
+    {
+      "n": 70,
+      "d": 24,
+      "cubes": 21,
+      "k_min": 24,
+      "k_max": 44,
+      "drat_bytes": 52783393,
+      "all_verified": true
+    },
+    {
+      "n": 71,
+      "d": 24,
+      "cubes": 22,
+      "k_min": 24,
+      "k_max": 45,
+      "drat_bytes": 58333816,
+      "all_verified": true
+    },
+    {
+      "n": 72,
+      "d": 24,
+      "cubes": 23,
+      "k_min": 24,
+      "k_max": 46,
+      "drat_bytes": 63979405,
+      "all_verified": true
+    }
+  ],
+  "method": "Sinz sequential counters, N+(0)={1..d}, cubes on k=|N-(0)| with N-(0)={d+1..d+k}. Pigeonhole: n*d arcs so some in-degree is at least d. Each needed cube has a stored DRAT.",
+  "soundness": "n=21 d=6 k=6 SAT with a checked C3-free model; n=38 d=12 circulant is C3-free and satisfies the cube arc clauses after placing neighbourhoods of 0.",
+  "f4": "unchanged at 0.34645; extra non-edge SOS did not certify any c<0.34645",
+  "next_hole": {
+    "n": 73,
+    "d": 25
+  },
+  "replay": "./run_all.sh from compute/q3 after ./build_solvers.sh"
+}

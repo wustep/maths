@@ -33,3 +33,6 @@ The n=18 in-degree cubes live in `q1/`. Replay: `cd q1 && ./run_all.sh`.
 
 The next exact holes after n=18 live in `q2/`. Stored DRATs cover
 n=21, 24, 26, 27, 29, 30, 32, 33, 35, 36. Replay: `cd q2 && ./run_all.sh`.
+
+Leftover holes from n=38 through n=72 live in `q3/`. Replay:
+`cd q3 && ./run_all.sh`.

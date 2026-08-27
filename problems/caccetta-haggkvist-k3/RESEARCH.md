@@ -91,3 +91,18 @@ Opened tonight, in order, before the n=21 SAT.
 - https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending — newest unrestricted-looking hits are Cheng–Keevash 2402.16776v4 and Raz 2405.17797 (second-neighbourhood / anti-transitive, not a triangle-threshold paper). No post-2017 paper in that list states a published unrestricted c < 0.3465.
 
 Failed lookup: no later Combinatorica / IMRN replacement of HKN 0.3465 with a public certificate. The 0.3388 figure remains a personal communication.
+
+## 2026-08-27 — q3 literature
+
+Opened tonight, in order, before the n=38 SAT.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract and Theorem 1.2 still: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. No v5.
+- https://arxiv.org/html/0908.2791v4 — same paper. Theorem 1.2 is the 0.3465n statement; Theorem 3.3 is emptiness of R(0.3465) in the triangle-free flag algebra. Footnote still records the March 2014 personal communication 0.3388 (F₆); that number is not a theorem in this file.
+- https://export.arxiv.org/api/query?id_list=0908.2791 — same record via the API.
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3. Does not publish a new unrestricted triangle c.
+- https://arxiv.org/html/2102.12830v2 — same. Still states the original CH triangle case as open.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash v4, 21 Aug 2024. Path lengths under a girth hypothesis. Uses HKN 0.3465 as the triangle-case input. No new unrestricted c.
+- https://arxiv.org/abs/2405.17797 — Mezher–Daamouch, 28 May 2024. Second-neighbourhood / anti-transitive class. A restricted-class CH consequence, not a new unrestricted c.
+- https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending — newest hits are still Cheng–Keevash 2402.16776v4 and Mezher–Daamouch 2405.17797. No post-2017 paper in that list states a published unrestricted c < 0.3465.
+
+Failed lookup: no later Combinatorica / IMRN replacement of HKN 0.3465 with a public certificate. The 0.3388 figure remains a personal communication. Do not treat it as published.
