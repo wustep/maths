@@ -3,7 +3,7 @@
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
 - Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the printed leading 1.1185 and of the q3 leading 1.1118. Same HPS chain: $N_c<1.1057Z+3.946\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
+- Status: dent of the printed leading 1.1185, of the q3 leading 1.1118, and of the q4 leading 1.1057. Same HPS chain: $N_c<1.1035Z+3.941\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -116,6 +116,29 @@ leading sits below the aspect-$\le 4$ class-only number $1.1087$;
 that class-only figure is not used as a bound. $1.1168$ stays
 withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$ stay residue. Replay:
 `problems/simon-ionization-excess/compute/q4/run_all.sh`.
+
+A fifth search the same day keeps the mass-opt dichotomy at
+aspect $10$ and raises the mid-radius bin count to $30$. Faces
+certify $Q\ge 0.906238$ (target $\varphi=0.9103$). The cut
+$Q>10/11$ still exceeds that $\gamma$. The same Section 7 chain
+gives
+
+$$
+N<1.1035Z+3.855\,Z^{1/3}+0.01320+0.1828\,Z^{-1/3}+0.019510\,Z^{-2/3}
+\qquad(Z\ge 4)
+$$
+
+and
+
+$$
+N_c<1.1035Z+3.941\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+This beats q4's $1.1057$, q3's $1.1118$, and the printed $1.1185$.
+$R\le 9$ with the mass-opt cut cannot beat $1.1057$ and is residue.
+$1.1168$ stays withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$ stay
+residue. Replay:
+`problems/simon-ionization-excess/compute/q5/run_all.sh`.
 
 ## What would count as a new bound
 

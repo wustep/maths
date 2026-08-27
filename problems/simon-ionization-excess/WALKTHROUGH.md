@@ -63,3 +63,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=26$ faces ($67{,}108{,}863$, copositive, $23$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); independent Rust Cramer re-enum of the same matrix, same copositivity and the same $23$ skips; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`. Intermediate certified rows ($R=12$ $n=22$ at $0.90685$, $R=10$ $n=24$ at $0.9084$) sit between $1.1118$ and $1.1057$.
 
 6. Proven vs still open — printed leading $1.1118$ moves to $1.1057$. Remainders $2.953$, $3.892$, $3.9781$ stay. Aspect-$\le 4$ $1.1087$ is no longer the best unrestricted figure and is still not used as a class-only quote. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later the same day — more bins at aspect 10
+
+0. What was actually missing — after q4 the compact $\gamma$ at $R=10$, $n=26$ sat $0.0047$ below the cut $10/11$. The leftover was the $P_{\max}$ tax, which shrinks as $q=R^{1/n}\to 1$. A smaller split $R$ cannot help while the large-aspect bound stays $R/(R+1)$: at $R=9$ that cut is $0.9$, so the leading is at least $1.1111$.
+
+1. Named false starts — $R\le 9$ with the existing cut; quoting the aspect-$\le 4$ class-only $1.1087$; a moment-only sharper cut; $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.5$, $n=26$ predicts $1.1053$, but $\gamma$ sits $4\cdot 10^{-5}$ below the cut $9.5/10.5$. That row is too tight to be the first certificate. The jump is more bins at the same split, not a fractional $R$.
+
+3. The click — SLSQP $\varphi$ at $R=10$, $n=30$ is $0.91046$. Target $0.9103$ minus the $P$ error $0.00406$ gives $\gamma=0.906238$, and $10/11>\gamma$. Then $1/\gamma=1.103463<1.1035<1.1057$.
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $30$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=30$ faces ($1{,}073{,}741{,}823$, copositive, $420$ skips, $\min m^\top Mm>5\cdot 10^{-4}$); intermediate $n=28$ row at printed $1.1046$; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1057$ moves to $1.1035$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
