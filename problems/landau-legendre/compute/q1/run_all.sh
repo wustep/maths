@@ -19,6 +19,7 @@ python3 "$SCRIPT_DIR/verify_rh_certificate.py" "$SCRIPT_DIR/certs/rh_delta.json"
 cc -std=c11 -O2 -Wall -Wextra -pedantic \
   "$SCRIPT_DIR/verify_rh_float.c" -lm -o "$TMP_DIR/verify_rh_float"
 "$TMP_DIR/verify_rh_float"
+python3 "$SCRIPT_DIR/verify_gap_row.py"
 
 python3 "$SCRIPT_DIR/verify_olc_audit.py" \
   --rows "$SCRIPT_DIR/certs/olc_rows.tsv.gz" \

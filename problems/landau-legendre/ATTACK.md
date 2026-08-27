@@ -11,9 +11,13 @@ $n^2=4.97025\cdot10^{27}$. A finite search near $2^{64}$ can be an independent
 replay, but it cannot move the record.
 
 The proposed prime-gap formulation also needed correction. The inequality
-$p_{k+1}-p_k<2\sqrt{p_k}$ is sufficient for Legendre, not equivalent to it.
-The exact finite predicate is that no interval between consecutive integer
-squares is prime-free.
+
+$$
+p_{k+1}-p_k<2\sqrt{p_k}
+$$
+
+is sufficient for Legendre, not equivalent to it. The exact finite predicate
+is that no interval between consecutive integer squares is prime-free.
 
 ## Ten imagined end-states
 
@@ -112,3 +116,131 @@ $n\in[2^{32}-100000,2^{32}-1]$ and the least prime in each open Oppermann
 half. `certs/edge_summary.json` will pin the range, row hash, maxima, and the
 largest normalized least-prime offsets. The generator and verifier will use
 different deterministic Miller--Rabin base sets and separate source files.
+
+## Execute A backwards: conditional exponent
+
+The imagined certificate reduces cleanly. Put
+
+$$
+d=\frac{901}{4000},\qquad \alpha=2+d=\frac{8901}{4000},\qquad
+X=N^{2/\alpha},\qquad N=7.05\cdot10^{13}.
+$$
+
+At $x=X$, Chamberland--Straub inequality (5) is
+
+$$
+N^{901/8901}\geq\frac{7040}{8901}\log N.
+$$
+
+The independent exact verifier reconstructs rational atanh-series bounds for
+both logarithms. It proves
+
+$$
+\frac{901}{8901}\log N
+-\log\!\left(\frac{7040}{8901}\log N\right)
+>0.0000797000675.
+$$
+
+It also proves $(901/8901)\log N>1$, so
+$x^{d/2}/\log x$ increases for $x\geq X$. The finite proposition covers
+$x<X$ and the RH interval theorem covers $x\geq X$, including the splice
+point. If $\alpha'\geq\alpha$, write $\alpha'=r\alpha$ and use
+$x^r+1\leq(x+1)^r$ to transfer the result to the larger exponent.
+
+`verify_rh_float.c` independently recomputes the overlap margin as
+$0.0000797048500882\ldots$ with `logl`. The exact rational verifier is the
+authoritative check.
+
+**Dent:** under RH, the printed threshold improves from
+$\delta=0.2253$ to
+
+$$
+\delta=\frac{901}{4000}=0.22525.
+$$
+
+This is a tightening inside the published argument, not a proof of Legendre.
+
+## Execute B backwards: public OLC evidence
+
+The published endpoint replay contradicted the available source artifacts, so
+that line was dropped immediately. The finite leftover was still checkable and
+became a public-data audit.
+
+The first parser made a real mistake: it treated every cumulative worker row
+as an independent total. In an OLC `*.out` file, counters accumulate across
+rows. The correct invariant is
+
+$$
+\Delta\texttt{found}=2(\texttt{nend}-\texttt{nbegin}),
+$$
+
+with previous count zero for the first row. Every raw row also satisfies
+`found = R0 + R1 + R2 + R3 + R4`. The upstream field named `countfails`
+counts use of a fallback, not a conjecture failure.
+
+A second scope mistake included `bigdawg/data14e12/bench.txt`, inflating the
+row count from 322,073 to 322,357. The certificate now selects exactly the
+2,560 tracked worker blobs matching
+`^(bigdawg|phi)/data[^/]*/[^/]+\.out$` at commit
+`5cdaa95f0a4b1428a05480cc1c69d556a8f9517a`.
+
+The authenticated replay gives 322,073 rows, 318,840 distinct intervals,
+3,233 duplicate interval rows, no counter-invariant failures, and five union
+components. The four absent half-open ranges are
+
+$$
+\begin{aligned}
+[29{,}983{,}700{,}000{,}048,&\ 29{,}983{,}800{,}000{,}000),\\
+[31{,}868{,}300{,}000{,}352,&\ 31{,}868{,}400{,}000{,}000),\\
+[31{,}871{,}500{,}000{,}352,&\ 31{,}871{,}600{,}000{,}000),\\
+[31{,}893{,}900{,}000{,}352,&\ 31{,}894{,}000{,}000{,}000).
+\end{aligned}
+$$
+
+The public maximum endpoint is $31{,}894{,}400{,}000{,}352$, so these blobs
+cannot reconstruct the paper's endpoint $70{,}500{,}000{,}000{,}000$.
+
+**Residue:** the pinned public projection is internally consistent but
+incomplete. Missing public rows do not contradict the published computation
+and do not create a lower bound.
+
+## Execute C backwards: $2^{64}$ edge
+
+Rust generated the least prime offset in both open Oppermann halves for every
+
+$$
+n\in[4{,}294{,}867{,}296,\ 4{,}294{,}967{,}295].
+$$
+
+The independent Python verifier used the first twelve prime Miller--Rabin
+bases, retested every earlier odd candidate, and checked all 200,000 leastness
+claims. Sorenson--Webster's value of $\psi_{12}$ exceeds $2^{64}$, so this is
+a deterministic test on the whole certificate range.
+
+The largest normalized least-prime offsets in this slice are
+
+| Half | $n$ | Offset | Width | Prime |
+| --- | ---: | ---: | ---: | ---: |
+| left | 4,294,952,072 | 489 | 4,294,952,072 | 18,446,613,300,777,093,673 |
+| left | 4,294,933,977 | 398 | 4,294,933,977 | 18,446,457,866,789,036,927 |
+| right | 4,294,923,873 | 479 | 4,294,923,874 | 18,446,371,079,160,244,481 |
+| right | 4,294,892,011 | 467 | 4,294,892,012 | 18,446,097,390,446,516,599 |
+
+The maxima are only about $1.14\cdot10^{-7}$ and
+$1.12\cdot10^{-7}$ of their half widths. This is a descriptive near-miss
+ranking for the named slice, not a global closeness measure.
+
+**Independent replay:** 100,000 consecutive square intervals and both halves
+verified immediately below square-height $2^{64}$. It does not move the
+modern record.
+
+## Stop
+
+`compute/q1/run_all.sh` regenerates the two local certificates, byte-compares
+them with the committed copies, runs the exact and independent verifiers, and
+checks the public OLC projection offline. `replay_olc.sh /path/to/olc`
+additionally authenticates that projection against the pinned Git object.
+
+The conditional exponent inequality is the dent. The public-log audit is
+residue. The edge slice is an independent replay with a near-miss table.
+Legendre's conjecture remains open.

@@ -33,6 +33,8 @@ problems/landau-legendre/compute/q1/replay_olc.sh /path/to/olc
   rechecks every earlier candidate with the first twelve prime
   Miller--Rabin bases. `make_edge_summary.py` derives the certificate hash and
   exact near-miss rankings.
+- `verify_gap_row.py` replays one published maximal-gap row with the same
+  deterministic range. It does not claim to rescan the full source table.
 
 ## Invariants
 
@@ -47,7 +49,7 @@ problems/landau-legendre/compute/q1/replay_olc.sh /path/to/olc
    order. A nonzero upstream `countfails` means a fallback was used, not that
    an Oppermann interval failed.
 4. OLC coverage is the union of completed half-open integer ranges. Its four
-   public-log holes are residue and do not revise the paper's result.
+   public-log holes do not revise the paper's result.
 5. Slice endpoints use 128-bit or arbitrary-precision arithmetic. Every
    witness is strictly inside its half, prime, and the least prime after the
    left endpoint. Rankings compare exact offset-to-width ratios.

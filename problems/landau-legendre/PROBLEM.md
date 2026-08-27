@@ -2,7 +2,7 @@
 
 - Slug: `landau-legendre`
 - List: Landau 3 in this notebook's ordering
-- Status: open; q1 in progress
+- Status: open; conditional exponent dent $0.2253\to0.22525$
 - Area: Analytic and computational number theory
 - Sources: Pintz 2009; Sorenson--Webster 2024; Chamberland--Straub 2026
 - Started: 2026-08-27
@@ -22,8 +22,13 @@ $$
 $$
 
 for every $n\geq 1$. A global bound
-$p_{k+1}-p_k<2\sqrt{p_k}$ would imply Legendre's conjecture, but it is
-stronger and is not an equivalent formulation.
+
+$$
+p_{k+1}-p_k<2\sqrt{p_k}
+$$
+
+would imply Legendre's conjecture, but it is stronger and is not an equivalent
+formulation.
 
 The conjecture remains open, even assuming the Riemann hypothesis. The
 unconditional Baker--Harman--Pintz exponent $0.525$ for prime gaps gives
@@ -52,7 +57,7 @@ through $2^{64}$ by maximal-prime-gap tables. The Prime Gap List community
 now reports exhaustive gap analysis through $10^{20}$, but that is still far
 below the square-height reached by Sorenson and Webster.
 
-## What would count as a dent
+## What would count as a new result
 
 - A verified finite extension past $N=7.05\cdot10^{13}$, with witnesses or
   primality certificates and an independent verifier.
@@ -62,5 +67,36 @@ below the square-height reached by Sorenson and Webster.
 - An independently replayed documented range, or a reproducible near-miss
   table, with its scope stated exactly.
 
-An incomplete upstream-data reconstruction or unfinished search is residue,
-not a finite lower bound. None of these outcomes proves Legendre's conjecture.
+An incomplete upstream-data reconstruction or unfinished search is not a
+finite lower bound. None of these outcomes proves Legendre's conjecture.
+
+## Result of the 2026-08-27 attack
+
+Assume RH. For every real $x\geq1$ and every
+
+$$
+\delta\geq\frac{901}{4000}=0.22525,
+$$
+
+the interval $[x^{2+\delta},(x+1)^{2+\delta}]$ contains a prime. This improves
+the $0.2253$ printed by Chamberland and Straub. The exact certificate proves
+that their finite and analytic ranges overlap at this smaller rational value.
+It does not remove RH and does not settle the exponent $2$ case.
+
+The computation also independently verifies both Oppermann halves for the
+100,000 integers
+
+$$
+2^{32}-100000\leq n<2^{32},
+$$
+
+ending at square-height $2^{64}$. This replay is far below the published
+record and is not a record extension.
+
+Finally, the checked-in public OLC worker logs at the pinned upstream commit
+have four holes and stop at $n=31{,}894{,}400{,}000{,}352$. This is an
+incomplete public-data reconstruction only. It does not revise the
+peer-reviewed $N=7.05\cdot10^{13}$ result.
+
+Replay all network-free checks with
+`problems/landau-legendre/compute/q1/run_all.sh`.

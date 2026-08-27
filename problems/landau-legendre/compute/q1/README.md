@@ -4,12 +4,12 @@
 
 There are three deliberately separate results.
 
-1. **Conditional dent.** Assume RH. For every real $x\geq1$ and every
+1. **Conditional improvement.** Assume RH. For every real $x\geq1$ and every
    $\delta\geq901/4000=0.22525$, the interval
    $[x^{2+\delta},(x+1)^{2+\delta}]$ contains a prime. This tightens the
    printed $0.2253$ at the end of Chamberland--Straub, Section 3, by
    $1/20000$. It does not prove Legendre's conjecture.
-2. **Public-data residue.** The pinned public OLC worker logs contain five
+2. **Incomplete public-data reconstruction.** The pinned public OLC worker logs contain five
    coverage components and four holes. Their maximum endpoint is
    $31{,}894{,}400{,}000{,}352$, below the published
    $70{,}500{,}000{,}000{,}000$. This is a statement about checked-in logs,
@@ -103,3 +103,9 @@ Sorenson and Webster computed the first composite passing those bases as
 $318665857834031151167461>2^{64}$ in
 [*Strong Pseudoprimes to Twelve Prime Bases*](https://arxiv.org/abs/1509.00864),
 so the test is deterministic on every certificate candidate.
+
+`verify_gap_row.py` uses the same deterministic range to replay the reported
+Oliveira e Silva--Herzog--Pardi row: both endpoints
+$1425172824437699411$ and $1425172824437700887$ are prime, and all odd
+interior values are composite, giving gap $1476$. This checks that row, not
+the exhaustiveness of their full table.

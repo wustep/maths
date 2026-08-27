@@ -115,5 +115,44 @@ IDs. It recovered the same definitions and references.
   `pdftotext` is absent. The arXiv abstracts and full HTML versions were then
   inspected directly.
 - The public OLC repository advertises the $7.05\cdot10^{13}$ result, but the
-  checked-in detailed logs appear to stop earlier. That observation must be
-  reproduced by `compute/q1/audit_olc.py` before any exact counts are recorded.
+  checked-in detailed logs stop earlier. The pinned audit below records the
+  exact scope. This is an artifact-availability result, not evidence against
+  the paper.
+
+## 2026-08-27: verified artifacts
+
+- The exact overlap equation has numerical root
+  $0.22524401991936525179\ldots$. Rational interval arithmetic certifies the
+  clean value $901/4000=0.22525$, with an overlap lower margin greater than
+  $0.0000797000675$. This is below the $0.2253$ printed at the end of
+  Chamberland--Straub Section 3.
+- The OLC audit pins commit
+  `5cdaa95f0a4b1428a05480cc1c69d556a8f9517a` and selects 2,560 tracked
+  worker `*.out` blobs. It finds 322,073 cumulative rows, 318,840 distinct
+  intervals, 3,233 duplicate interval rows, no invariant failures, five
+  union components, and four holes. The public maximum endpoint is
+  $31{,}894{,}400{,}000{,}352$.
+- The edge certificate covers every
+  $n\in[2^{32}-100000,2^{32}-1]$. Its square-height range is
+  $[18445885090250351616,2^{64}]$. Both strict Oppermann halves have a least
+  prime witness for all 100,000 values.
+- The reported Oliveira e Silva--Herzog--Pardi gap row was independently
+  replayed. The numbers $1425172824437699411$ and
+  $1425172824437700887$ are prime, and every odd integer strictly between
+  them is composite, so the gap is $1476$. This verifies the row, not the
+  exhaustiveness of the full $4\cdot10^{18}$ table.
+- Jonathan Sorenson and Jonathan Webster,
+  [*Strong Pseudoprimes to Twelve Prime
+  Bases*](https://arxiv.org/abs/1509.00864), *Mathematics of Computation* 86
+  (2017), prove
+  $\psi_{12}=318665857834031151167461>2^{64}$. Their
+  [paper PDF](https://arxiv.org/pdf/1509.00864) was opened. This makes the
+  first-twelve-prime-base Miller--Rabin verifier deterministic throughout the
+  edge certificate.
+
+Replay commands:
+
+```bash
+problems/landau-legendre/compute/q1/run_all.sh
+problems/landau-legendre/compute/q1/replay_olc.sh /path/to/olc
+```

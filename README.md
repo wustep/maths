@@ -118,6 +118,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [schur](problems/schur) | No 1697-coloring found. |
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
+| [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22525$, tightening the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
@@ -190,6 +191,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
+| Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre/compute/q1` | Codex 5.6 Sol | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
