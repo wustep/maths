@@ -135,3 +135,14 @@ Re-opened for the independent 4Ψ(κ) / F₄ dump (no SAT).
 - https://arxiv.org/abs/0909.2468 — abstract writes β ≤ 0.8616 γ (theorem statement is strict).
 - https://www.combinatorics.org/ojs/index.php/eljc/article/download/v14i1n19/pdf — HHK Lemma 5: triangle-free orientation from a tournament minus k edges has a vertex of out-degree < √(2k). The count is 1+⋯+m ≤ k after deleting k feedback arcs (their Lemma 4 / CSS). Replacing the budget k by 0.8616 k gives < √(2·0.8616 k).
 
+## 2026-08-27 — wrap re-open (leftover through n=108)
+
+Opened again before wrapping the leftover-SAT claim against the published record.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract and Theorem 1.2 still: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. No v5.
+- https://arxiv.org/html/0908.2791v4 — same. Theorem 1.2 is the 0.3465n statement. The closing remark still records the March 2014 personal communication 0.3388 (F₆) and says DHP 0.88 / Shen 0.865 only produce a tiny decrease in Theorem 1.2.
+- https://arxiv.org/abs/0909.2468 — Chen–Karson–Liu–Shen. Abstract writes β ≤ 0.8616 γ.
+- https://arxiv.org/html/0909.2468 — Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G), with μ=0.16065.
+
+Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
+

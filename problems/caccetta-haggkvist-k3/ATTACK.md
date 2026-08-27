@@ -273,3 +273,9 @@ The stored parent certificate at c=0.34645 still replays (worst F=−0.12343). A
 
 The first remaining hole is n=109, δ⁺=37. The conjecture 1/3 is open. Did not treat 0.3388 as published.
 
+### 2026-08-27 — wrap: inventory, n=109 residue, merge main
+
+Re-fetched HKN v4 (arXiv:0908.2791, Theorem 1.2 still 0.3465n; no v5) and CKLS (arXiv:0909.2468, Theorem 2.5: β<0.8616γ). Keep/ has exactly the 1026 needed cubes for leftover n=73..108, no extras, none ≥90 MB. n=109 was started (high-k cubes k=38..70 came back UNSAT) and interrupted before the k=d end; those files were not stored. Residue, not a lower bound. First remaining hole still n=109.
+
+Merged `origin/main` into this branch. README Problems/ledger now keep the later claims (ionization 1.1057, CCR 1.44655, Landau 0.22525, Jacobian deg 125, kissing leftover, Hilbert 16(b), …) together with leftover CH through n=108 and F₄ c=0.34640.
+

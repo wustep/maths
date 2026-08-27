@@ -11,6 +11,10 @@ pigeonhole DRATs). First remaining hole n=109. F₄ moved to
 c=0.34640 via the CKLS 2015 fork (β<0.8616γ). Did not beat 0.3388.
 The conjecture 1/3 is open.
 
+Wrapped after merging `origin/main`. README keeps the later
+notebook claims together with leftover CH through n=108 and
+F₄ c=0.34640. n=109 was started and interrupted; not stored.
+
 Replay:
 
 ```
