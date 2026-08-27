@@ -60,3 +60,20 @@ Tonight independently rebuilt every matrix and linear form (`flags4.py`, `ind_fo
 ### False or unused full-proof claims
 
 None used. The 0.3388 communication is not taken as a theorem for the purpose of claiming a new threshold.
+
+## 2026-08-27
+
+Opened tonight, in order.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016, final Combinatorica text. Abstract and Theorem 1.2: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. No later version.
+- https://arxiv.org/html/0908.2791v4 — same paper, HTML. Theorem 3.3: max δα(Ψ) < 0.3465 on Hom⁺ of the triangle-free flag algebra. Footnote still records the March 2014 personal communication 0.3388 (F₆); that number is not a theorem in this file.
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3. Does not replace the unrestricted triangle threshold.
+- https://arxiv.org/html/2102.12830v2 — same. Still states the original CH triangle case as open, quotes the classical 0.3820 bound in the survey paragraph, and does not publish a new unrestricted c.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash, 26 Feb 2024, *On the length of directed paths in digraphs*. Theorem 9 quotes HKN: every oriented graph of order n and minimum out-degree 0.3465n contains a directed triangle. No new unrestricted c.
+- https://www.proofatlas.ai/collaboration/caccetta-haggkvist-conjecture/ — status checked 2 Aug 2026. Peer-reviewed unrestricted triangle threshold still listed as HKN 0.3465n. Conjecture open.
+- http://www2.im.uj.edu.pl/AndrzejGrzesik/CH/CH.pdf — Grzesik–Volec slides/notes on the T₅-free case. Cites HKN 0.3465 and “Sereni and Volec [27] stated even further improvement to 0.3388”. That is the same personal communication, not a paper.
+- https://www.combinatorics.org/ojs/index.php/eljc/article/download/v24i2p19/pdf — Grzesik–Volec, *Electron. J. Combin.* 24 (2017), CH with a forbidden T₅. Same 0.3388 sentence. Restricted class; not the unrestricted threshold.
+- https://arxiv.org/pdf/1112.3477 — Lichiardopol, two-sided / connectivity refinements. Uses HKN 0.3465 as input. Different theorem (semidegree).
+- https://www.sciencedirect.com/science/article/pii/S0012365X10003043 — Lichiardopol, *Discrete Math.* 2010, two-sided 0.343545. Already in the 17 August table; not unrestricted.
+
+Failed lookup: no arXiv hit after 2024 that states a published unrestricted c < 0.3465 with a public certificate. The 0.3388 figure remains a personal communication.
