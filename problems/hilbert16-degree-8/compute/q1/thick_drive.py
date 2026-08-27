@@ -19,7 +19,7 @@ import sys
 import tarfile
 import time
 
-from common import boot, census_schemes
+from common import boot, census_schemes, resolve_out
 
 boot()
 
@@ -38,8 +38,7 @@ def main():
                               int(sys.argv[3]), sys.argv[4])
     radius = int(sys.argv[5]) if len(sys.argv) > 5 else 1
     secs = sys.argv[6] if len(sys.argv) > 6 else None
-    if not os.path.isabs(outdir):
-        outdir = os.path.join(HERE, outdir)
+    outdir = resolve_out(outdir)
     os.makedirs(outdir, exist_ok=True)
     census = census_schemes()
     splits = haas.all_splits()
@@ -76,23 +75,42 @@ def main():
         E = edgeset(tris)
         S = [s for s in splits if s.edges <= E]
         basis = f2_basis([delta_bits(s, pts) for s in S])
-        task = f"/tmp/q1_thick_w{w}.task"
+        # Include radius so a second thicken cannot clobber another worker.
+        task = f"/tmp/q1_thick_r{radius}_w{w}.task"
         export_span.emit(cx, pts, basis, task)
-        wit = f"/tmp/q1_thick_w{w}.jsonl"
+        wit = f"/tmp/q1_thick_r{radius}_w{w}.jsonl"
         cmd = [BIN, task, "0", "1", wit, str(radius)]
         if secs:
             cmd.append(secs)
         subprocess.run(cmd, check=True)
         schemes, summ = {}, None
         for line in open(wit):
-            r = json.loads(line)
-            if r["kind"] == "summary":
+            line = line.strip()
+            if not line:
+                continue
+            try:
+                r = json.loads(line)
+            except json.JSONDecodeError:
+                continue
+            if r.get("kind") == "summary":
                 summ = r
+                continue
+            if "signs" not in r:
                 continue
             nc, sch = cx.eval(r["signs"])
             if sch is None:
                 continue
             schemes.setdefault(sch, (nc, r))
+        if summ is None:
+            rec = {"kind": "tri_done", "cert": d["cert"], "rank": len(basis),
+                   "radius": radius, "evals": 0, "complete": False,
+                   "distinct_schemes": 0, "novel": [],
+                   "seconds": round(time.time() - t0, 1),
+                   "error": "no summary in walker output"}
+            res.write(json.dumps(rec) + "\n")
+            res.flush()
+            print(json.dumps(rec), flush=True)
+            continue
         novel = sorted(s for s in schemes if s not in census)
         rec = {"kind": "tri_done", "cert": d["cert"], "rank": len(basis),
                "radius": radius, "evals": summ["evals"],

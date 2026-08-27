@@ -16,7 +16,7 @@ import sys
 import tarfile
 import time
 
-from common import HERE, boot, known_schemes
+from common import HERE, boot, known_schemes, resolve_out
 
 boot()
 
@@ -31,8 +31,7 @@ def main():
     radius, outdir = int(sys.argv[1]), sys.argv[2]
     w = int(sys.argv[3]) if len(sys.argv) > 3 else 0
     nw = int(sys.argv[4]) if len(sys.argv) > 4 else 1
-    if not os.path.isabs(outdir):
-        outdir = os.path.join(HERE, outdir)
+    outdir = resolve_out(outdir)
     os.makedirs(outdir, exist_ok=True)
     known = known_schemes()
     census = {l.strip() for l in open("census_schemes.txt") if l.strip()}

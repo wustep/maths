@@ -19,6 +19,15 @@ def boot():
     return ROOT
 
 
+def resolve_out(path):
+    """Interpret a relative output path as under q1/, unless it already is."""
+    if os.path.isabs(path):
+        return path
+    if path.startswith("q1" + os.sep) or path.startswith("q1/"):
+        return os.path.join(ROOT, path)
+    return os.path.join(HERE, path)
+
+
 def known_schemes():
     ks = {l.strip() for l in open("census_schemes.txt") if l.strip()}
     assert len(ks) == 2367, len(ks)

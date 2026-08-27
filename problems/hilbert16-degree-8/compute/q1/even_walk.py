@@ -31,7 +31,7 @@ import time
 from collections import deque
 from fractions import Fraction
 
-from common import HERE, boot, known_schemes
+from common import HERE, boot, known_schemes, resolve_out
 
 boot()
 
@@ -199,18 +199,27 @@ class Log:
         self.f.close()
 
 
-def even_neighbours(ids, adj, emask):
-    """One even-split add / drop / swap from ids."""
+def even_neighbours(ids, adj, emask, pin_odd=False):
+    """One even-split add / drop / swap from ids.
+
+    If pin_odd, odd splits in the seed are never dropped (Theorem 17:
+    only even twists keep (p,n)).  The first BFS dropped odd splits
+    and immediately left the (19,3) row.
+    """
     n = len(adj)
     have = set(ids)
     mask = compat_mask(adj, ids)
     for k, i in enumerate(ids):
+        if pin_odd and not (emask >> i) & 1:
+            continue
         yield ids[:k] + ids[k + 1:]
     for j in range(n):
         if j in have or not (emask >> j) & 1 or not (mask >> j) & 1:
             continue
         yield sorted(ids + [j])
     for k, i in enumerate(ids):
+        if pin_odd and not (emask >> i) & 1:
+            continue
         sub = ids[:k] + ids[k + 1:]
         m2 = compat_mask(adj, sub)
         for j in range(n):
@@ -233,7 +242,7 @@ def run_probe():
               f"even-compatible-adds={len(even_ok)}")
 
 
-def run_bfs(out, limit=200000):
+def run_bfs(out, limit=200000, pin_odd=True):
     sp = dn.splits()
     adj = dn.compat_matrix()
     emask = even_mask(sp)
@@ -251,7 +260,7 @@ def run_bfs(out, limit=200000):
     t0 = time.time()
     while q and lg.evals < limit:
         ids = q.popleft()
-        for nw in even_neighbours(ids, adj, emask):
+        for nw in even_neighbours(ids, adj, emask, pin_odd=pin_odd):
             t = tuple(nw)
             if t in seen:
                 continue
@@ -266,10 +275,10 @@ def run_bfs(out, limit=200000):
                   f"schemes={len(lg.seen)} new={lg.new} "
                   f"best={lg.best[0]} {lg.best[1]} "
                   f"({time.time()-t0:.0f}s)", flush=True)
-    lg.close({"mode": "bfs", "collections": len(seen),
+    lg.close({"mode": "bfs", "pin_odd": pin_odd, "collections": len(seen),
               "queue_left": len(q), "limit": limit})
-    print(f"bfs: {lg.evals} evals, {len(lg.seen)} schemes, {lg.new} new, "
-          f"{len(lg.hits)} hits, best {lg.best[0]} {lg.best[1]}")
+    print(f"bfs pin_odd={pin_odd}: {lg.evals} evals, {len(lg.seen)} schemes, "
+          f"{lg.new} new, {len(lg.hits)} hits, best {lg.best[0]} {lg.best[1]}")
 
 
 def run_beam(seedno, minutes, out, width=50, depth=16):
@@ -290,7 +299,7 @@ def run_beam(seedno, minutes, out, width=50, depth=16):
         cand = []
         for sc, ids in frontier:
             ids = list(ids)
-            moves = list(even_neighbours(ids, adj, emask))
+            moves = list(even_neighbours(ids, adj, emask, pin_odd=True))
             rng.shuffle(moves)
             for nw in moves[:80]:
                 t = tuple(nw)
@@ -342,7 +351,7 @@ def run_family(seedno, minutes, out):
             if step % 128 == 0 and time.time() > deadline:
                 break
             T = 3.0 * (0.04 / 3.0) ** (step / 4000)
-            moves = list(even_neighbours(ids, adj, emask))
+            moves = list(even_neighbours(ids, adj, emask, pin_odd=True))
             if not moves:
                 break
             nw = rng.choice(moves)
@@ -365,19 +374,14 @@ if __name__ == "__main__":
         run_probe()
     elif m == "bfs":
         out = sys.argv[2]
-        if not os.path.isabs(out):
-            out = os.path.join(HERE, out)
+        out = resolve_out(out)
         limit = int(sys.argv[3]) if len(sys.argv) > 3 else 200000
-        run_bfs(out, limit)
+        run_bfs(out, limit, pin_odd=True)
     elif m == "beam":
-        out = sys.argv[4]
-        if not os.path.isabs(out):
-            out = os.path.join(HERE, out)
+        out = resolve_out(sys.argv[4])
         run_beam(int(sys.argv[2]), float(sys.argv[3]), out)
     elif m == "family":
-        out = sys.argv[4]
-        if not os.path.isabs(out):
-            out = os.path.join(HERE, out)
+        out = resolve_out(sys.argv[4])
         run_family(int(sys.argv[2]), float(sys.argv[3]), out)
     else:
         raise SystemExit(__doc__)

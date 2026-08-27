@@ -42,11 +42,17 @@ def main():
     novel = {}
     for pattern in (
         os.path.join(HERE, "thick_out", "*_novel.jsonl"),
+        os.path.join(HERE, "q1", "thick_out", "*_novel.jsonl"),
         os.path.join(HERE, "walk_out", "*_novel.jsonl"),
+        os.path.join(HERE, "q1", "walk_out", "*_novel.jsonl"),
         os.path.join(HERE, "hole_out", "*_novel.jsonl"),
         os.path.join(HERE, "hot_out", "*_novel.jsonl"),
         os.path.join(HERE, "m2_out", "*_novel.jsonl"),
+        os.path.join(HERE, "q1", "m2_out", "*_novel.jsonl"),
         os.path.join(HERE, "even_out", "*.jsonl"),
+        os.path.join(HERE, "q1", "even_out", "*.jsonl"),
+        os.path.join(HERE, "dn_out", "*.jsonl"),
+        os.path.join(HERE, "thick2_out", "*_novel.jsonl"),
     ):
         for r in load_jsonl(pattern):
             if r.get("kind") not in ("NOVEL", "NEW", "HIT"):
@@ -72,6 +78,7 @@ def main():
                   open(cand_path, "w"), indent=1)
 
     thick = [r for r in load_jsonl(os.path.join(HERE, "thick_out", "h*.jsonl"))
+             + load_jsonl(os.path.join(HERE, "q1", "thick_out", "h*.jsonl"))
              if r.get("kind") == "tri_done"]
     thick = [r for r in thick if not r.get("_skip")]
     by_cert = {}
@@ -80,18 +87,23 @@ def main():
     thick = list(by_cert.values())
     complete = [r for r in thick if r.get("complete")]
 
-    even_summ = [r for r in load_jsonl(os.path.join(HERE, "even_out", "*.jsonl"))
-                 if r.get("kind") == "summary"]
-    even_hits = [r for r in load_jsonl(os.path.join(HERE, "even_out", "*.jsonl"))
-                 if r.get("kind") == "HIT"]
+    even_rows = (load_jsonl(os.path.join(HERE, "even_out", "*.jsonl"))
+                 + load_jsonl(os.path.join(HERE, "q1", "even_out", "*.jsonl")))
+    even_summ = [r for r in even_rows if r.get("kind") == "summary"]
+    even_hits = [r for r in even_rows if r.get("kind") == "HIT"]
     walk = [r for r in load_jsonl(os.path.join(HERE, "walk_out", "k*.jsonl"))
+            + load_jsonl(os.path.join(HERE, "q1", "walk_out", "k*.jsonl"))
             if r.get("kind") == "tri_done"]
     m2 = [r for r in load_jsonl(os.path.join(HERE, "m2_out", "m*.jsonl"))
+          + load_jsonl(os.path.join(HERE, "q1", "m2_out", "m*.jsonl"))
           if r.get("kind") == "seed_done"]
     hot = [r for r in load_jsonl(os.path.join(HERE, "hot_out", "t*.jsonl"))
            if r.get("kind") == "seed_done"]
     hole = [r for r in load_jsonl(os.path.join(HERE, "hole_out", "*.jsonl"))
             if r.get("kind") == "seed_done"]
+    dn_rows = load_jsonl(os.path.join(HERE, "dn_out", "*.jsonl"))
+    dn_summ = [r for r in dn_rows if r.get("kind") == "summary"]
+    dn_new = [r for r in dn_rows if r.get("kind") in ("NEW", "HIT")]
 
     summary = {
         "search": "q1: leftover whole-stratum thicken (radius 1, rank <= 20), "
@@ -137,6 +149,11 @@ def main():
             "seeds_done": len(hole),
             "novel": sorted({s for r in hole for s in r.get("novel", [])
                              if canon(s) not in already}),
+        },
+        "dn_sweep": {
+            "summaries": dn_summ,
+            "new_or_hit": [{"kind": r.get("kind"), "scheme": r.get("scheme")}
+                           for r in dn_new],
         },
         "NEW_candidates": candidates,
         "NEW_candidates_ovals": {s: stats(s)[0] for s in candidates},

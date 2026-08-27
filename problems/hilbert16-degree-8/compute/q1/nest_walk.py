@@ -22,7 +22,7 @@ import tarfile
 import time
 from fractions import Fraction
 
-from common import HERE, boot, census_schemes
+from common import HERE, boot, census_schemes, resolve_out
 
 boot()
 
@@ -38,6 +38,9 @@ K = 10 ** 6
 SEEDS = [
     "deg8/o22-p19-n03/(10v1(2v1(8))).pcom",
     "deg8/o22-p19-n03/(17v1(2v1(1))).pcom",
+    "deg8/o22-p19-n03/(17v1(1)v1(2)).pcom",
+    "deg8/o22-p19-n03/(16v3(1)).pcom",
+    "deg8/o22-p19-n03/(18v1(3)).pcom",
 ]
 OPEN = {"<4 u 1<2 u 1<14>>>", "<14 u 1<2 u 1<4>>>"}
 
@@ -51,8 +54,7 @@ def main():
     w, seed, ntrials, outdir = (int(sys.argv[1]), int(sys.argv[2]),
                                 int(sys.argv[3]), sys.argv[4])
     minrank = int(sys.argv[5]) if len(sys.argv) > 5 else 12
-    if not os.path.isabs(outdir):
-        outdir = os.path.join(HERE, outdir)
+    outdir = resolve_out(outdir)
     os.makedirs(outdir, exist_ok=True)
     census = census_schemes()
     splits = haas.all_splits()
@@ -71,7 +73,7 @@ def main():
     tried = swept = 0
     for it in range(ntrials):
         cert, base = rng.choice(bases)
-        amp = rng.choice([K // 200, K // 80, K // 30, K // 10, K // 3])
+        amp = rng.choice([K // 50, K // 20, K // 8, K // 3, K, 3 * K])
         h = {p: base[p] + rng.randint(-amp, amp) for p in PTS}
         tried += 1
         tris = lower_hull_triangles(PTS, [float(h[p]) for p in PTS])
@@ -112,7 +114,8 @@ def main():
         rec = {"kind": "tri_done", "src": cert, "sig": s,
                "rank": len(basis), "nsplits": len(S),
                "evals": summ["evals"] if summ else 0,
-               "complete": bool(summ["complete"]) if summ else False,
+               # zonec always finishes a shard; it has no complete flag
+               "complete": True if summ else False,
                "schemes": sorted(schemes), "novel": novel, "hits": hits,
                "seconds": round(time.time() - t0, 1)}
         res.write(json.dumps(rec) + "\n")
