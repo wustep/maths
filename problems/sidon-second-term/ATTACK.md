@@ -175,3 +175,12 @@ handles with L-BFGS instead of Powell:
 5. two-width L-BFGS
 
 A floating $\gamma$ is not a dent. Code: `compute/q1/`.
+
+Independent replay this session (exact, then floating QP):
+
+- `verify_houzhao.py` PASS. Hash matches Claim 4.1. All 129 covering
+  inequalities hold. $\sqrt{ab}=0.943492590713545<0.9435$.
+- q1 floating Table 1 matches Hou–Zhao to all printed digits
+  (R=1: $0.9461473014$, …, R=8 L=4: $0.94349259006$).
+- Same kernels at L=6: $0.94349250848$. Independent left/right weights
+  on the symmetric mix give the same number, as they should.
