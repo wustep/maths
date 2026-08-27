@@ -151,5 +151,53 @@ Official three: `ff-two-well/`, `gg-pt-lyapunov/`, `hh-qh-melnikov/`.
 Two more started so the menu is not left idle: `ii-complex-cube/`,
 `jj-weak-hilbert/`.
 
-All five imagined dents dropped. Forks kept; see `README.md`
-and ATTACK.md. No published H(n) moved.
+Worker pool raised. Leftover menu executed: `kk-plus-one/`,
+`ll-invariant-line/`, `oo-five-zeros/`. Recycled without a
+second copy: MM (same family as I), NN (same first integral as Q).
+Four extra live lines: `pp-christopher-lloyd/`, `qq-t2-radial/`,
+`rr-kolmogorov/`, `ss-cubic-l2/`, and `tt-radial-factor/`.
+
+### PP — Christopher–Lloyd (u², v²) four-fold
+
+Claim. The map (x,y)↦(u²,v²) applied to a first-quadrant
+translate of the radial cubic is a degree-7 field with four
+hyperbolic cycles that beats H(7)≥74.
+
+Why it might work: Gasull–Santana §4 and Christopher–Lloyd
+1995; four sign combinations, N=2n+1.
+
+Why it might die: 4 does not beat 74. Same sheet count as T2.
+
+### QQ — T2 of the radial cubic, four ovals
+
+Claim. The T2 pullback of the §6 radial cubic is an explicit
+degree-7 field with four hyperbolic cycles beating H(7)≥74.
+
+Why it might work: q1 already has the identity; this writes the
+field.
+
+Why it might die: same 4 at N=7; 4 < 74.
+
+### RR — cubic Kolmogorov with 7 first-quadrant cycles
+
+Claim. An explicit cubic Kolmogorov field has 7 isolated cycles
+in x>0, y>0, beating M_K(3)≥6.
+
+Why it might die: a weighted Dulac still kills the named family.
+
+### SS — L2 of the two-well cubic jet gives extra cycles
+
+Claim. V2 at the FF wells is a new small-cycle source, hence
+H(3)≥14.
+
+Why it might die: L1≠0 already, so the order is 1.
+
+### TT — (x²+y²) times the radial cubic has two cycles
+
+Claim. Y=(x²+y²)X is degree 5 with two hyperbolic cycles
+(H(n+2)≥H(n)+1 made explicit).
+
+Why it might die: unperturbed Y still has exactly one circle.
+
+All imagined dents dropped. Forks kept; see `README.md` and
+ATTACK.md. No published H(n) moved.

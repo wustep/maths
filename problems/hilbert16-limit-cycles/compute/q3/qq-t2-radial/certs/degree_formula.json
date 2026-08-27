@@ -1,0 +1,25 @@
+{
+  "lemma5_samples": [
+    {
+      "n": 1,
+      "m": 2,
+      "X": "(x^1, 0)",
+      "deg_Y": 3,
+      "nm_plus_m_minus_1": 3
+    },
+    {
+      "n": 2,
+      "m": 2,
+      "X": "(x^2, 0)",
+      "deg_Y": 5,
+      "nm_plus_m_minus_1": 5
+    },
+    {
+      "n": 3,
+      "m": 2,
+      "X": "(x^3, 0)",
+      "deg_Y": 7,
+      "nm_plus_m_minus_1": 7
+    }
+  ]
+}

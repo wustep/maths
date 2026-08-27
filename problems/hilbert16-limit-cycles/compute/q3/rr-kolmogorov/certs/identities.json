@@ -1,0 +1,386 @@
+{
+  "axes": {
+    "P": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "a": 1,
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "P_at_x0": [],
+    "Q": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "y": 2
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "Q_at_y0": [],
+    "variables": [
+      "x",
+      "y",
+      "a",
+      "b",
+      "c"
+    ]
+  },
+  "beats_HK5": false,
+  "beats_MK3": false,
+  "claim": "named cubic Kolmogorov family dx/dt = x(1-x-y), dy/dt = y(1-b x-y-c x^2) has weighted Dulac divergence -1, hence 0 isolated cycles in the open first quadrant; not a bound on H(n)",
+  "dulac_constant": -1,
+  "general": {
+    "P": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "a": 1,
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "y": 2
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "claimed": [
+      {
+        "beta": 1,
+        "coeff": "1"
+      },
+      {
+        "alpha": 1,
+        "coeff": "1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "a": 1,
+        "alpha": 1,
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "b": 1,
+        "beta": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "c": 1,
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "diff": [],
+    "p": [
+      {
+        "coeff": "1"
+      },
+      {
+        "a": 1,
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1
+      }
+    ],
+    "q": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "a",
+      "b",
+      "c",
+      "alpha",
+      "beta"
+    ],
+    "weighted": [
+      {
+        "beta": 1,
+        "coeff": "1"
+      },
+      {
+        "alpha": 1,
+        "coeff": "1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "a": 1,
+        "alpha": 1,
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "b": 1,
+        "beta": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "c": 1,
+        "coeff": "-1",
+        "x": 2
+      }
+    ]
+  },
+  "hn_moved": false,
+  "isolated_cycles_in_Q1": 0,
+  "named": {
+    "P": [
+      {
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "y": 2
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "claimed": [
+      {
+        "coeff": "-1"
+      }
+    ],
+    "cleared": [
+      {
+        "coeff": "-1"
+      }
+    ],
+    "cubic_term": [
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "p": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1
+      }
+    ],
+    "q": [
+      {
+        "coeff": "1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "c": 1,
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "b",
+      "c"
+    ],
+    "weighted": [
+      {
+        "coeff": "-1"
+      }
+    ]
+  },
+  "named_alpha": -1,
+  "named_beta": 0,
+  "schema": "hilbert16-rr-kolmogorov/v1",
+  "seven_cycles": false,
+  "specialization": {
+    "one_signed": [
+      {
+        "coeff": "-1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "a": 1,
+        "coeff": "1",
+        "y": 1
+      }
+    ],
+    "one_signed_claimed": [
+      {
+        "coeff": "-1"
+      },
+      {
+        "coeff": "-1",
+        "y": 1
+      },
+      {
+        "a": 1,
+        "coeff": "1",
+        "y": 1
+      }
+    ],
+    "sliced": [
+      {
+        "coeff": "-1"
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "a",
+      "b",
+      "c",
+      "alpha",
+      "beta"
+    ]
+  },
+  "what_this_is_not": [
+    "not seven isolated cycles",
+    "not a beat of Carvalho-Cruz-Gouveia M_K(3)>=6",
+    "not a claim of Gasull-Santana H_K(5)>=28",
+    "not a bound on H(3)"
+  ]
+}

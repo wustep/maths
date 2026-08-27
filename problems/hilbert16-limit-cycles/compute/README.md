@@ -23,5 +23,10 @@ explicit Prohens–Torregrosa Darboux field, the two-well energy
 and figure-eight integral, L1 = 0 at the three Darboux centers,
 first-order cyclicity at most 1 for one cubic perturbation of
 the quasi-homogeneous center, the holomorphic-cube sheet count,
-and the radial family attaining Z(2,n). Shi’s order-3 jet and
-van der Pol’s Liénard hypotheses are replayed, not new bounds.
+and the radial family attaining Z(2,n), the degree-4 line
+product of the translated radial cubic, a named cubic with an
+invariant line and no cycles, the Christopher–Lloyd and T2
+degree-7 four-oval fields, a cubic Kolmogorov Dulac, the
+second Poincaré quantity at the two-well, and the degree-5
+radial product. Shi’s order-3 jet and van der Pol’s Liénard
+hypotheses are replayed, not new bounds.
