@@ -2,7 +2,7 @@
 
 | Folder | What |
 | --- | --- |
-| [lists/](lists/) | Problem lists: the 50, Hilbert, Smale, Landau |
+| [lists/](lists/) | Problem lists: the 50, Hilbert, Smale, Landau, Simon |
 | [picks/](picks/) | Which ones we tried and why |
 | [supergrok-2026-08-17/](supergrok-2026-08-17/) | Dated SuperGrok run (REPORT + prompts; logs stay local) |
 | [supergrok-2026-08-27/](supergrok-2026-08-27/) | Sidon q1, Caccetta n=18, and kissing-5d Q5/R5 |
