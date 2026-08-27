@@ -9,9 +9,9 @@ vertex has in-degree at least d. Relabel that vertex as 0. The
 exact statement reduces to cubes k=|N⁻(0)| ≥ d.
 
 Those cubes are UNSAT, with stored DRATs, at every leftover order
-through n=113. After n=72 the leftover n are consecutive. 176
-stored proofs in this folder (34+35+36+35+36). The first remaining
-hole is n=114, δ⁺=38.
+through n=114. After n=72 the leftover n are consecutive. 213
+stored proofs in this folder (34+35+36+35+36+37). The first remaining
+hole is n=115, δ⁺=39.
 
 The numerical threshold is unchanged: c = 0.34640 (CKLS 2015 fork).
 It does not beat 0.3388.
