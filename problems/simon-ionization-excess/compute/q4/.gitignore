@@ -1,0 +1,7 @@
+verify_beta3
+verify_lift
+verify_aspect
+*_rs
+__pycache__/
+work/__pycache__/
+*.pyc

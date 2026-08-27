@@ -1,0 +1,396 @@
+{
+  "not_a_new_bound": true,
+  "is_new_bound": false,
+  "status": "residue",
+  "record": [
+    "Lieb Phys. Rev. A 29 (1984): Nc < 2Z+1",
+    "Nam arXiv:1009.2367v3: Nc < 1.22 Z + 3 Z^{1/3}",
+    "HPS arXiv:2504.18487v1 Prop. 2.4\u20132.5 (printed remainders)",
+    "q1 remainder tightening 2.953 / 3.892 / 3.9781",
+    "q3 dent (Z>=4): N_c < 1.1118 Z + 3.966 Z^{1/3} via beta3 >= 0.899526"
+  ],
+  "constants": {
+    "b2": 1.2071067811865475,
+    "b3": 1.1184337992027067,
+    "q3_leading": 1.1118,
+    "q3_Z4_remainder": 3.966
+  },
+  "at": [
+    {
+      "Z": 2,
+      "lieb": {
+        "U": 5.0,
+        "nmax": 4,
+        "excludes_geq": 5
+      },
+      "nam": {
+        "U": 6.219763149684619,
+        "nmax": 6,
+        "excludes_geq": 7
+      },
+      "hps_s2_printed": {
+        "U": 6.143579870061919,
+        "nmax": 6,
+        "excludes_geq": 7
+      },
+      "hps_s2_q1": {
+        "U": 6.134760422712655,
+        "nmax": 6,
+        "excludes_geq": 7
+      },
+      "hps_s3_printed": null,
+      "hps_s3_q1": null,
+      "hps_simp_printed": null,
+      "hps_simp_q1": null,
+      "q3_simp_printed": null,
+      "best_published_name": "lieb",
+      "best_published_nmax": 4,
+      "best_including_q3_name": "lieb",
+      "best_including_q3_nmax": 4,
+      "q3_excludes_extra_vs_published": false,
+      "unsettled": [
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "Z": 3,
+      "lieb": {
+        "U": 7.0,
+        "nmax": 6,
+        "excludes_geq": 7
+      },
+      "nam": {
+        "U": 7.986748710922225,
+        "nmax": 7,
+        "excludes_geq": 8
+      },
+      "hps_s2_printed": {
+        "U": 7.890379071669571,
+        "nmax": 7,
+        "excludes_geq": 8
+      },
+      "hps_s2_q1": {
+        "U": 7.8802833246774195,
+        "nmax": 7,
+        "excludes_geq": 8
+      },
+      "hps_s3_printed": null,
+      "hps_s3_q1": null,
+      "hps_simp_printed": null,
+      "hps_simp_q1": null,
+      "q3_simp_printed": null,
+      "best_published_name": "lieb",
+      "best_published_nmax": 6,
+      "best_including_q3_name": "lieb",
+      "best_including_q3_nmax": 6,
+      "q3_excludes_extra_vs_published": false,
+      "unsettled": [
+        3,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "Z": 4,
+      "lieb": {
+        "U": 9.0,
+        "nmax": 8,
+        "excludes_geq": 9
+      },
+      "nam": {
+        "U": 9.642203155904598,
+        "nmax": 9,
+        "excludes_geq": 10
+      },
+      "hps_s2_printed": {
+        "U": 9.52713423857206,
+        "nmax": 9,
+        "excludes_geq": 10
+      },
+      "hps_s2_q1": {
+        "U": 9.516022431208281,
+        "nmax": 9,
+        "excludes_geq": 10
+      },
+      "hps_s3_printed": {
+        "U": 10.801690301231778,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "hps_s3_q1": {
+        "U": 10.788991092816033,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "hps_simp_printed": {
+        "U": 10.823604207872798,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "hps_simp_q1": {
+        "U": 10.788840124834694,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "q3_simp_printed": {
+        "U": 10.742832572105879,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "best_published_name": "lieb",
+      "best_published_nmax": 8,
+      "best_including_q3_name": "lieb",
+      "best_including_q3_nmax": 8,
+      "q3_excludes_extra_vs_published": false,
+      "unsettled": [
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "Z": 5,
+      "lieb": {
+        "U": 11.0,
+        "nmax": 10,
+        "excludes_geq": 11
+      },
+      "nam": {
+        "U": 11.22992784003009,
+        "nmax": 11,
+        "excludes_geq": 12
+      },
+      "hps_s2_printed": {
+        "U": 11.09706270809576,
+        "nmax": 11,
+        "excludes_geq": 12
+      },
+      "hps_s2_q1": {
+        "U": 11.085092876469023,
+        "nmax": 11,
+        "excludes_geq": 12
+      },
+      "hps_s3_printed": {
+        "U": 12.388782146529858,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_s3_q1": {
+        "U": 12.375102338956443,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_simp_printed": {
+        "U": 12.432403786706788,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_simp_q1": {
+        "U": 12.394955313474568,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "q3_simp_printed": {
+        "U": 12.34076460451978,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "best_published_name": "lieb",
+      "best_published_nmax": 10,
+      "best_including_q3_name": "lieb",
+      "best_including_q3_nmax": 10,
+      "q3_excludes_extra_vs_published": false,
+      "unsettled": [
+        5,
+        6,
+        7,
+        8,
+        9,
+        10
+      ]
+    },
+    {
+      "Z": 6,
+      "lieb": {
+        "U": 13.0,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "nam": {
+        "U": 12.77136177849642,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_s2_printed": {
+        "U": 12.621317641902419,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_s2_q1": {
+        "U": 12.608597797752594,
+        "nmax": 12,
+        "excludes_geq": 13
+      },
+      "hps_s3_printed": {
+        "U": 13.91796813683094,
+        "nmax": 13,
+        "excludes_geq": 14
+      },
+      "hps_s3_q1": {
+        "U": 13.903431172088283,
+        "nmax": 13,
+        "excludes_geq": 14
+      },
+      "hps_simp_printed": {
+        "U": 13.979482371328558,
+        "nmax": 13,
+        "excludes_geq": 14
+      },
+      "hps_simp_q1": {
+        "U": 13.939687430345536,
+        "nmax": 13,
+        "excludes_geq": 14
+      },
+      "q3_simp_printed": {
+        "U": 13.877500271172266,
+        "nmax": 13,
+        "excludes_geq": 14
+      },
+      "best_published_name": "hps_s2_q1",
+      "best_published_nmax": 12,
+      "best_including_q3_name": "hps_s2_q1",
+      "best_including_q3_nmax": 12,
+      "q3_excludes_extra_vs_published": false,
+      "unsettled": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12
+      ]
+    }
+  ],
+  "q3_integer_exclusion_at_Z_ge_4": {
+    "any_extra_integer_excluded_vs_lieb_nam_hps_printed": false,
+    "by_Z": [
+      {
+        "Z": 4,
+        "published_nmax": 8,
+        "with_q3_nmax": 8,
+        "extra_excluded": false
+      },
+      {
+        "Z": 5,
+        "published_nmax": 10,
+        "with_q3_nmax": 10,
+        "extra_excluded": false
+      },
+      {
+        "Z": 6,
+        "published_nmax": 12,
+        "with_q3_nmax": 12,
+        "extra_excluded": false
+      }
+    ]
+  },
+  "finite_Z_try": {
+    "nam_lemma1_at_lieb_edge_and_Z2_candidates": [
+      {
+        "Z": 2,
+        "N": 4,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 1.6770509831248424,
+        "lemma1_rhs": 2.539716357669188,
+        "contradiction": false,
+        "margin": 0.8626653745443456
+      },
+      {
+        "Z": 3,
+        "N": 6,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 2.7950849718747373,
+        "lemma1_rhs": 3.6178210015629273,
+        "contradiction": false,
+        "margin": 0.82273602968819
+      },
+      {
+        "Z": 4,
+        "N": 8,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 3.913118960624632,
+        "lemma1_rhs": 4.68,
+        "contradiction": false,
+        "margin": 0.7668810393753676
+      },
+      {
+        "Z": 5,
+        "N": 10,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 5.031152949374527,
+        "lemma1_rhs": 5.73250779461084,
+        "contradiction": false,
+        "margin": 0.7013548452363132
+      },
+      {
+        "Z": 6,
+        "N": 12,
+        "alpha_lower": 0.574653828931107,
+        "lhs_lower": 6.321192118242177,
+        "lemma1_rhs": 6.778405684936265,
+        "contradiction": false,
+        "margin": 0.4572135666940884
+      },
+      {
+        "Z": 2,
+        "N": 3,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 1.118033988749895,
+        "lemma1_rhs": 2.6538198052060253,
+        "contradiction": false,
+        "margin": 1.5357858164561304
+      },
+      {
+        "Z": 2,
+        "N": 4,
+        "alpha_lower": 0.5590169943749475,
+        "lhs_lower": 1.6770509831248424,
+        "lemma1_rhs": 2.539716357669188,
+        "contradiction": false,
+        "margin": 0.8626653745443456
+      }
+    ],
+    "he4_hylleraas_product": {
+      "separated_He_plus_2H": {
+        "trial": "He_Hylleraas_at_infinity_plus_2H_1s",
+        "Z": 2,
+        "N": 4,
+        "energy_upper": -3.8911170212765955,
+        "hylleraas_core_exact": -2.8911170212765955,
+        "hydrogenic_1s_exact": -0.5
+      },
+      "compact_attempt": {
+        "trial": "Hylleraas_1s2_times_exp(-zeta(r3+r4))^2_outer_1s_only",
+        "best_energy_if_repulsion_ignored": -5.738768755651595,
+        "best_zeta": 1.6853750000000003,
+        "valid_variational_upper": false,
+        "reason": "core\u2013outer repulsion omitted; energy too negative"
+      },
+      "q1_three_electron_hydrogenic_1s2_2s_upper": -7.289057803205487,
+      "separated_upper_above_N3_upper": true,
+      "proves_N4_nonbinding": false,
+      "note": "Separated He+2H gives a legal upper bound E(4,2) <= -54353/18800 - 1. Comparing to the q1 N=3 hydrogenic upper does not prove E(4,2) >= E(3,2). Variational uppers alone cannot prove non-binding."
+    }
+  },
+  "N0_minus_Z": {
+    "can_move_this_session": false,
+    "reason": "No verified integer envelope beats Lieb at Z=2..6. The q3 leading dent is Z>=4 and does not tighten integer caps. A leading coefficient >1 cannot prove a Z-independent excess bound on N0(Z)-Z."
+  },
+  "punch": "Best published integer bound at Z=2..6 remains Lieb Nc<=2Z. The q3 simplified envelope 1.1118 Z + 3.966 Z^{1/3} beats the printed HPS leading at Z>=4 as reals but excludes no extra integer N beyond Lieb/Nam/HPS printed. Nam Lemma 1 at the Lieb edge and a four-electron Hylleraas product trial for Z=2, N=4 do not yield a dent. N0(Z)-Z bounded cannot move here."
+}
