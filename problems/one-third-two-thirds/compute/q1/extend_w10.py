@@ -230,6 +230,14 @@ def main():
     if n_below:
         raise AssertionError("n=11 width-3 below 6/17 contradicts Gupta v2 tail")
 
+    nonsum = [r for r in n11 if not r["sum"]]
+    nonsum.sort(key=lambda r: r["delta"][0] / r["delta"][1])
+    best_nonsum = nonsum[0] if nonsum else None
+    print(
+        f"n=11 best non-sum "
+        f"{best_nonsum['delta'][0]}/{best_nonsum['delta'][1] if best_nonsum else None}"
+    )
+
     print("iterate non-sum δ≤6/17 extensions toward n=15")
     grown, best, n_below_grown = search_from_W10(15)
     out = {

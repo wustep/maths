@@ -195,16 +195,24 @@ def main():
         args.replay = True
         args.census = (7, 18)
 
-    blob: dict = {}
+    path = HERE / "ladder_census.json"
+    blob = {}
+    if path.exists():
+        blob = json.loads(path.read_text())
     if args.replay:
         print("named published ladders")
         blob["named"] = replay_published()
+        named_path = HERE / "ladder_named.json"
+        named_path.write_text(json.dumps({"named": blob["named"]}, indent=2) + "\n")
+        print(f"wrote {named_path}")
     if args.census:
         print(f"non-sum ladder census {args.census[0]}..{args.census[1]}")
         blob["census"] = census_range(args.census[0], args.census[1])
-    path = HERE / "ladder_census.json"
-    path.write_text(json.dumps(blob, indent=2) + "\n")
-    print(f"wrote {path}")
+        path.write_text(json.dumps(blob, indent=2) + "\n")
+        print(f"wrote {path}")
+    elif args.replay and "census" not in blob:
+        # replay-only: do not clobber a committed census
+        pass
 
 
 if __name__ == "__main__":

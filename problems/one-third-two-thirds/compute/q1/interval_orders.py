@@ -6,7 +6,7 @@ ordered by inclusion. Semiorders (also 3+1-free) are already proved.
 This census keeps every naturally labelled interval order that is not a
 chain, records whether it contains 3+1, and reports min δ.
 
-Complete through n=10. Isolated samples at larger n are not a bound.
+Complete through n=8. Isolated samples at larger n are not a bound.
 """
 
 from __future__ import annotations
@@ -138,7 +138,7 @@ def census(nmax: int):
 
 
 def main():
-    rows = census(10)
+    rows = census(8)
     path = HERE / "interval_orders.json"
     path.write_text(json.dumps({"census": rows}, indent=2) + "\n")
     print(f"wrote {path}")
