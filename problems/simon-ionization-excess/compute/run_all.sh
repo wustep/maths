@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Problem-level replay: q1 record, q2 residue, q3–q7 leading lifts.
+# Problem-level replay: q1 record, q2 residue, q3–q8 leading lifts.
 set -euo pipefail
 cd "$(dirname "$0")"
 echo "==> q1"
@@ -16,4 +16,6 @@ echo "==> q6"
 ( cd q6 && ./run_all.sh )
 echo "==> q7"
 ( cd q7 && ./run_all.sh )
+echo "==> q8"
+( cd q8 && ./run_all.sh )
 echo "simon-ionization-excess compute PASS"

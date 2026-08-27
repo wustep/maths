@@ -12,6 +12,7 @@ $1.1057$ by $1.1035$.
 $1.1035$ by $1.1026$.
 `q7/` raises the bin count at the same split and replaces
 $1.1026$ by $1.1021$.
+`q8/` continues the same split past $1.1021$.
 
 ```bash
 ./run_all.sh
