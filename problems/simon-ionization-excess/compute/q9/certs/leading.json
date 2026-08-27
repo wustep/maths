@@ -1,0 +1,78 @@
+{
+  "arxiv": "2504.18487v1",
+  "beta3_lower": "0.9077156846635223",
+  "source": "q9 compact R=10 n=34 target=0.9113, lifted by mass-opt dichotomy",
+  "row": "certs/raise_R10_n34_t0p9113.json",
+  "R_split": 10,
+  "b_interval": [
+    "1.101666542614261673164542435977138547969",
+    "1.101666542614261673164542435977138547969"
+  ],
+  "b_hi": "1.101666542614261673164542435977138547969",
+  "printed_leading": "1.1017",
+  "a1_at_left": [
+    "3.849916816462881110086962578403136156356",
+    "3.849916816462881110086962578403136156356"
+  ],
+  "a1_at_9/4": [
+    "3.824297931403986100996742715628395389119",
+    "3.824297931403986100996742715628395389119"
+  ],
+  "a1_max_hi_on_interval": "3.849916816462881110086962578403136156356",
+  "a1_printed": "3.850",
+  "a2": [
+    "0.01311507788826501991862550519020403033297",
+    "0.01311507788826501991862550519020403033297"
+  ],
+  "a3": [
+    "0.1826928450095448204656923963053306034147",
+    "0.1826928450095448204656923963053306034147"
+  ],
+  "a4": [
+    "0.01949334720923348998844437494820652295758",
+    "0.01949334720923348998844437494820652295758"
+  ],
+  "Z4_remainder_coeff": [
+    "3.935553838205211099959529654902135127557",
+    "3.935553838205211099959529654902135127557"
+  ],
+  "Z4_printed": "3.936",
+  "extras_printed": [
+    "0.01320",
+    "0.1827",
+    "0.019500"
+  ],
+  "r_max": [
+    "0.4705180144405142455387763635073145689990",
+    "0.4705180144405142455387763635073145689990"
+  ],
+  "checks": {
+    "leading_lt_printed": true,
+    "a1_lt_printed": true,
+    "Z4_coeff_lt_printed": true,
+    "extras_ok": true,
+    "r_max_lt_0.5": true,
+    "beats_1.1185": true,
+    "beats_1.1118": true,
+    "beats_1.1057": true,
+    "beats_1.1020": true,
+    "beats_1.1021": true,
+    "beats_1.1026": true,
+    "beats_1.1035": true,
+    "beats_1.108741_class_number": true
+  },
+  "inequalities": [
+    {
+      "beats": "q8 leading 1.1020, q7 1.1021, q6 1.1026, q5 1.1035, q4 1.1057, q3 1.1118, and HPS printed 1.1185",
+      "range": "Z >= 4",
+      "inequality": "N < 1.1017 Z + 3.850 Z^{1/3} + 0.01320 + 0.1827 Z^{-1/3} + 0.019500 Z^{-2/3}"
+    },
+    {
+      "beats": "q8 simplified 1.1020 Z + 3.937 Z^{1/3}",
+      "range": "Z >= 4",
+      "inequality": "N_c < 1.1017 Z + 3.936 Z^{1/3}"
+    }
+  ],
+  "LT_factor": "1.456",
+  "note": "\u03b2_3 \u2265 compact \u03b3 on every radial probability, by the aspect-10 compact certificate plus the mass-stationary cut Q>10/11. Not the withdrawn 1.1168. The aspect-\u22644 number 1.1087 is not used as a class-only quote; the unrestricted leading is the compact \u03b3 at the split R."
+}

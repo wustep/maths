@@ -136,10 +136,10 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 
 2. The useful failure — $R=9.8$ with the cut binding prints $1.10204$, which is $1.1021$. Chebyshev does not reopen $R\le 9$. The jump is more bins at the proven split.
 
-3. The click — SLSQP $\varphi$ at $R=10$, $n=34$ is $0.911452$. Target $0.9113$ minus the $P$ error $0.00358$ gives $\gamma=0.907716$, and $10/11>\gamma$. Then $1/\gamma=1.101667<1.1017<1.1020$ *if faces certify*.
+3. The click — SLSQP $\varphi$ at $R=10$, $n=34$ is $0.911452$. Target $0.9113$ minus the $P$ error $0.00358$ gives $\gamma=0.907716$, and $10/11>\gamma$. Then $1/\gamma=1.101667<1.1017<1.1020$.
 
 4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $34$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
 
-5. Computer search — face enumeration at $R=10$, $n=34$, target $0.9113$ is the certificate ($17{,}179{,}869{,}183$ faces). SLSQP and leftover scripts are stored; they are not a bound.
+5. Computer search — stored $R=10$, $n=34$ faces at target $0.9113$ ($17{,}179{,}869{,}183$, copositive, $4618$ skips, $\min m^\top Mm>5\cdot 10^{-4}$, $\min\varphi=0.911456$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
-6. Proven vs still open — pending faces. Printed leading still $1.1020$ until the dump says copositive. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+6. Proven vs still open — printed leading $1.1020$ moves to $1.1017$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. $n=35$ at the same split is still a predicted $1.1013$ if faces certify. Target $0.9114$ on this matrix is still a predicted $1.1016$.

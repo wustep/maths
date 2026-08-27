@@ -14,7 +14,8 @@ $1.1035$ by $1.1026$.
 $1.1026$ by $1.1021$.
 `q8/` raises the face target on the $n=33$ matrix and replaces
 $1.1021$ by $1.1020$.
-`q9/` raises the bin count at the same split past printed $1.1020$.
+`q9/` raises the bin count at the same split and replaces
+$1.1020$ by $1.1017$.
 
 ```bash
 ./run_all.sh

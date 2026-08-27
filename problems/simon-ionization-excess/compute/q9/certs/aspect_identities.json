@@ -1,0 +1,33 @@
+{
+  "status": "ok",
+  "R_split": 10,
+  "n": 34,
+  "target": 0.9113,
+  "Q_cut": "10/11",
+  "Q_cut_value": "0.9090909090909090909090909090909090909091",
+  "compact_gamma": "0.9077156846635223000000000000000000000000",
+  "compact_inv": "1.101666542614261672062875893362876874805",
+  "cut_exceeds_compact_gamma": true,
+  "empty_D_interval_for_Q_le_cut": true,
+  "algebra": "Mass-stationarity at inf=1 and sup=R gives M_{-1}=Q+(Q-1)D>0 and M_3=(Q-1)R^3+Q D R>0, hence R<Q/(1-Q) and Q>R/(R+1).",
+  "beats_1.1020": true,
+  "beats_1.1021": true,
+  "beats_1.1026": true,
+  "beats_1.1035": true,
+  "beats_1.1057": true,
+  "beats_1.1118": true,
+  "beats_1.108741": true,
+  "faces": {
+    "n": 34,
+    "gamma_target": 0.9113,
+    "n_faces": 17179869183,
+    "interior_critical": 4831742,
+    "singular_or_illconditioned": 4618,
+    "min_mMm": 0.0005345960446841493,
+    "min_mMm_safe": 0.0005345959446841493,
+    "min_phi": 0.9114563561060878,
+    "min_phi_safe": 0.9114563560060878,
+    "copositive": 1
+  },
+  "source": "certs/raise_R10_n34_t0p9113.json"
+}
