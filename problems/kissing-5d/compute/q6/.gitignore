@@ -3,6 +3,7 @@ __pycache__/
 *.pyc
 four_star_extras
 five_star_extras
+leftover_global
 certs/*.cnf
 certs/*.drat
 certs/*.log

@@ -124,6 +124,10 @@ def main() -> int:
         "five_star_extras.json",
         "replay_four_star.json",
         "dual_more.json",
+        "star_cover_min.json",
+        "five_star_color.json",
+        "five_star_sample.json",
+        "leftover_sat.json",
         "leftover_sat_k19.json",
     ):
         rec = check_search(name)

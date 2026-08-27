@@ -1,0 +1,53 @@
+{
+  "n_four_star_unions": 210,
+  "four_star_union_sizes": [
+    26,
+    27,
+    28
+  ],
+  "four_star_complement_sizes": [
+    12,
+    13,
+    14
+  ],
+  "n_five_star_unions": 252,
+  "five_star_union_sizes": [
+    30,
+    31,
+    32
+  ],
+  "greedy_hitting_set": [
+    0,
+    3,
+    28,
+    31,
+    12,
+    24
+  ],
+  "greedy_size": 6,
+  "min_star_cover_5": 5,
+  "witness": [
+    12,
+    15,
+    19,
+    21,
+    28
+  ],
+  "binary_search": [
+    {
+      "bound": 3,
+      "sat": false
+    },
+    {
+      "bound": 5,
+      "sat": true
+    },
+    {
+      "bound": 4,
+      "sat": false
+    }
+  ],
+  "k19_empty_by_cover": false,
+  "k20_empty_by_cover": false,
+  "comment": "min |U| with star-cover >= 5 is the min hitting set of the complements of the 210 four-star unions.  If that minimum is >= 20, leftover |U|=19 with cover >= 5 is empty."
+}

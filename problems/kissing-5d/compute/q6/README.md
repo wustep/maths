@@ -1,4 +1,4 @@
-# q6 — leftover n1 ≤ 21, star-cover ≥ 4
+# Leftover n1 ≤ 21, star-cover ≥ 4
 
 Replay:
 
@@ -6,19 +6,28 @@ Replay:
 sh compute/q6/run_all.sh
 ```
 
-The published range is still $40\le\tau_5\le 44$. q5 certified that the
-355-point $T^5$ remainder has no 36-clique and emptied every 3-star
-hosted leftover 41-set. This folder records the leftover $n_1\le 21$
-slice of the 1480-point $(1/4)\mathbb Z^5$ graph (star-cover at least
-4) and a parallel hunt for an exact unrestricted dual below 44.
+The published range is still $40\le\tau_5\le 44$. After the $T^5$
+remainder 36-clique DRAT and the 3-star leftover emptiness, this
+folder records the leftover $n_1\le 21$ slice of the 1480-point
+$(1/4)\mathbb Z^5$ graph and a parallel hunt for an exact
+unrestricted dual below 44.
+
+C leftover-tight branch-and-bound empties every 4-star host
+(`four_star_extras.json`). A covering Python leftover-tight sample
+matches (`replay_four_star.json`). A remaining 41-set in that graph
+has star-cover at least 5. That slice is unfinished. No
+unrestricted dual below 44.
 
 | Script | What it does |
 | --- | --- |
 | `four_star_color.py` | greedy colouring of extras in each 4-star pool |
 | `four_star_extras.c` / `.py` | leftover-tight extras B&B / SAT on each 4-star pool |
+| `replay_four_star.py` | independent leftover-tight Python sample |
 | `two_axis_extras.py` | the ten $k=28$ two-axis pools (four-seeds only) |
-| `five_star_census.py` | part-count census of 5-star unions |
-| `leftover_sat.py` | global SAT, $n_1\le 21$, star-cover $\ge 4$ |
+| `star_cover_min.py` | min $|U|$ with star-cover at least 5 |
+| `five_star_color.py` / `five_star_census.py` | 5-star colouring and part-count |
+| `leftover_sat.py` | global SAT, $n_1\le 21$, star-cover at least 5 |
+| `leftover_global.c` | leftover-tight extras B&B with a 4-star grow-prune |
 | `dual_more.py` | further exact unrestricted dual attempts |
 | `verify.py` | replay any claimed 41-set and dual JSON |
 

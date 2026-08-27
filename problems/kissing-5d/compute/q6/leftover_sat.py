@@ -123,7 +123,8 @@ def main() -> int:
     if args.kmax is not None:
         out = HERE / f"leftover_sat_k{args.k}_{kmax}.json"
     out.write_text(json.dumps(report, indent=2) + "\n")
-    print("wrote", out, "found_41=", found)
+    (HERE / "leftover_sat.json").write_text(json.dumps(report, indent=2) + "\n")
+    print("wrote", out, "and leftover_sat.json found_41=", found)
     return 0
 
 

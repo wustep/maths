@@ -460,3 +460,46 @@ below 44. The published interval did not move.
 - A 41-set in the 1480-graph with $n_1\le 21$ and star-cover at
   least 4.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 13. 27 August, later: four stars are not enough
+
+The leftover after three stars was a union that needs at least four
+coordinate-stars. Colouring does not kill it. Every 4-star extras
+graph uses 20 to 32 colours, so the 3-star bound $\omega\le 19$
+does not lift.
+
+The useful failure was the colouring, and also the part-count: all
+210 four-star unions are leftover-tight by seed count (64, 72, or
+79 seeds). A seed pool is not a 41-code.
+
+The click was to stop asking for extras $\omega$ and run the
+leftover-tight cut. A 20-clique of extras with large missed-union
+is not a 41-set. C branch-and-bound on each of the 210 pools, with
+that cut, finishes: 26.8 million nodes, no leftover 41-set.
+Python leftover-tight search on a covering sample of 38 pools
+(every two-axis $k=28$ pool and a stride of the rest) matches, 38
+of 38. Two algorithms, same emptiness. Restricted to the 1480-graph.
+
+So a remaining 41-set in that graph has star-cover at least 5. That
+is not empty by combinatorics: the smallest $D_5$-root set that
+hits every 4-star complement has size 5. Five-star extras graphs
+are larger (528 to 625 vertices, 28 to 39 colours). Four of them
+ate 20 million nodes and did not finish. Global leftover SAT on
+$|U|=19$ with the 4-star forbid is the handle that is left.
+
+No unrestricted dual below 44. 1-point Delsarte is still the
+Odlyzko–Sloane number. The $(t-1/2)q^2$ grid that certified sat
+near 59, worse than the previous ansatz 52. Did not claim
+$\tau_5=40$.
+
+**Proved on 27 August, later still (restricted).**
+
+- No leftover 41-set in the 1480-graph whose missed-root union sits
+  in four $D_5$ coordinate-stars.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A 41-set in the 1480-graph with $n_1\le 21$ and star-cover at
+  least 5.
+- An exact SOS certificate that $s_d(5)<44$.

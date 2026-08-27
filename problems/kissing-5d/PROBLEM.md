@@ -46,4 +46,4 @@ Still $40\le\tau_5\le 44$. The 355-point $T^5$ remainder has no 36-clique: nativ
 
 ## Outcome (2026-08-27, q6)
 
-Still $40\le\tau_5\le 44$ unless a later q6 verifier-plus-certificate pair says otherwise. Hunt: leftover $n_1\le 21$ with star-cover at least 4, or an exact unrestricted dual below 44. Did not claim $\tau_5=40$. Replay: `sh compute/q6/run_all.sh`.
+Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^5$ graph whose missed-root union sits in four $D_5$ coordinate-stars (`compute/q6/four_star_extras.json`, replayed in `replay_four_star.json`). The $n_1\le 21$ slice with star-cover at least 5 remains residue. No unrestricted dual below 44 and no 41-point code. Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q6/run_all.sh`.

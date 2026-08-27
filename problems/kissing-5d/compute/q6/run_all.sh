@@ -15,6 +15,7 @@ fi
 
 "$PY" four_star_color.py
 "$PY" five_star_census.py
+"$PY" star_cover_min.py
 "$PY" dual_more.py
 gcc -O3 -std=c11 four_star_extras.c -o four_star_extras -lm
 gcc -O3 -std=c11 five_star_extras.c -o five_star_extras -lm

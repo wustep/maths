@@ -521,3 +521,27 @@ classical Levenshtein number 48 before claiming any comparison.
   (`four_star_color.json`) uses 20 to 32 colours. So the 3-star
   colouring bound $\omega\le 19$ does not lift. Pools are 320 extras
   ($k=28$, two full axes), 384 ($k=27$), or 434 ($k=26$).
+- C leftover-tight B&B on all 210 four-star pools is complete and
+  empty (`four_star_extras.json`, 26{,}857{,}470 nodes, `best=19`
+  is the start value). Independent Python leftover-tight replay of
+  38 pools (every $k=28$ two-axis pool and a stride of the rest)
+  matches: 38/38 complete empty, no 41-set (`replay_four_star.json`).
+  Restricted: no leftover 41-set has $U$ contained in four
+  $D_5$ coordinate-stars. Not extras $\omega$, not an unrestricted
+  bound. The leftover $n_1\le 21$ slice, if nonempty, has star-cover
+  at least 5.
+- Minimum $|U|$ with star-cover $\ge 5$ is 5 (`star_cover_min.json`,
+  Cadical hitting-set of the 210 four-star complements; witness
+  $\{12,15,19,21,28\}$ independently checked). So $|U|=19$ is not
+  empty by combinatorics.
+- Five-star colouring uses 28 to 39 colours; none $\le 19$
+  (`five_star_color.json`). Four $k=32$ five-star C pools hit a 20M
+  node cutoff incomplete (`five_star_sample.json`).
+- No unrestricted dual below 44 (`dual_more.json`): 1-point Delsarte
+  still $\approx 46.33687$; rationalizations fail Sturm; 51 certified
+  $(t-1/2)q^2$ ansätze, best $221991/3733\approx 59.47$. Did not beat
+  Mittelmann–Vallentin. Did not claim $\tau_5=40$.
+- Global leftover SAT $k=19$ with star-cover $\ge 5$ (30{,}678 vars)
+  and leftover-tight extras B&B with a 4-star grow-prune are running.
+  Residue unless a later verifier-plus-certificate pair moves the
+  interval. Unrestricted range still $40\le\tau_5\le 44$.

@@ -1,0 +1,14 @@
+{
+  "n_pools_attempted": 4,
+  "node_limit": 20000000,
+  "n_incomplete": 4,
+  "n_hit": 0,
+  "found_41": false,
+  "pools": [
+    {"stars": [0, 1, 2, 3, 4], "k": 32, "n_extras": 528, "best": 19, "nodes": 20000001, "complete": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 6], "k": 32, "n_extras": 528, "best": 19, "nodes": 20000001, "complete": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 5], "k": 32, "n_extras": 528, "best": 19, "nodes": 20000001, "complete": false, "found_41": false},
+    {"stars": [0, 1, 2, 3, 7], "k": 32, "n_extras": 528, "best": 19, "nodes": 20000001, "complete": false, "found_41": false}
+  ],
+  "comment": "C leftover-tight B&B on four 5-star k=32 pools hit the 20M node cutoff. best=19 is the start value, not extras omega. Incomplete; not a 41-set and not an emptiness proof."
+}
