@@ -15,7 +15,7 @@ Fetched and read tonight, in the order used.
 
 - [Peczarski, *The Gold Partition Conjecture*, Order 23 (2006)](https://doi.org/10.1007/s11083-006-9033-1). GPC through 11; GPC implies $1/3$–$2/3$.
 - [De Loof–De Baets–De Meyer, *Counting linear extension majority cycles…*, Comput. Math. Appl. 59 (2010)](https://doi.org/10.1016/j.camwa.2009.12.021). Mutual rank probabilities through 13; identifies worst balanced posets through 13.
-- [Gupta, *The Gold Partition Conjecture holds through fourteen elements*, arXiv:2607.23926](https://arxiv.org/abs/2607.23926) (27 Jul 2026). GPC (hence $1/3$–$2/3$) through 14. Not a $\delta$-census at 14. Shard archive doi:10.5281/zenodo.21576030.
+- [Gupta, *The Gold Partition Conjecture holds through fourteen elements*, arXiv:2607.23926v1](https://arxiv.org/abs/2607.23926v1) (27 Jul 2026). GPC (hence $1/3$–$2/3$) through 14. Not a $\delta$-census. This is the version the 17 August note cited.
 - [Peczarski, *The worst balanced partially ordered sets—ladders with broken rungs*, Exp. Math. 28 (2019)](https://doi.org/10.1080/10586458.2017.1368050). Global (all widths) worst indecomposable examples through 11 are broken ladders; numerical gap $\approx 0.348843$. This is *not* a width-3 census at 10: the global minimum at those orders is width 2.
 
 ### Structural theorems used tonight
@@ -41,4 +41,19 @@ Fetched and read tonight, in the order used.
 
 - No paper claiming a general proof of $1/3$–$2/3$ was treated as a resolution. Chan–Pak and Aires–Kahn still call it open.
 - Aires–Kahn is real progress on Kahn–Saks, not on the $1/3$ constant.
-- [Aires–Kahn, *Variance vs. range for linear extensions, and balancing extensions in posets of bounded width*, arXiv:2510.26134v1](https://arxiv.org/abs/2510.26134) (30 Oct 2025). TODO: claimed result; verified how?
+
+## 2026-08-27
+
+Opened tonight, in the order used.
+
+- [Gupta, *Balance Constants, Majority Cycles, and the Gold Partition Conjecture through Fourteen Elements*, arXiv:2607.23926v2](https://arxiv.org/abs/2607.23926) (30 Jul 2026). Full exact-balance census of all $1{,}338{,}193{,}159{,}771$ unlabelled 14-element posets. Least $\delta>1/3$ is $37/106$; least non-ordinal-sum is $254/725=L_{14,1,9}$; no value in the printed gap $(1/3,0.348843)$; 128 equality classes, all Aigner sums; longest majority cycle length 8 (30 classes). GPC through 14 unchanged from v1. HTML v2 and abs opened. Compact aggregate [census-n14.txt](https://github.com/agupta/gold-partition-conjecture/blob/main/data/census-n14.txt) opened; Zenodo 10.5281/zenodo.21696940 cited there, not re-downloaded. Width-3 $6/17$ appears as 29 ordinal sums; every strictly smaller tail value is width 2.
+- [Chan–Pak, arXiv:2311.02743v2](https://arxiv.org/abs/2311.02743) re-opened. Conjecture 13.1 still open. Does not cite Gupta v2 (Feb 2025).
+- [Olson–Sagan, arXiv:1706.04985v2](https://arxiv.org/abs/1706.04985) re-opened. Question 3.9 (products of $k\ge 3$ chains) still stated as open. Fig. 13 A already has $\delta=6/17$ (width 2).
+- [Aires–Kahn, arXiv:2509.11549v1](https://arxiv.org/abs/2509.11549) re-opened. Large-width Kahn–Saks progress, not a $1/3$ proof. They record the guess that $\delta>1/3$ when width $\ge 3$.
+- [Aires–Kahn, *Variance vs. range…*, arXiv:2510.26134v1](https://arxiv.org/abs/2510.26134) (30 Oct 2025). Kahn–Saks for large variance and bounded width; implies the large-$\pi(x)$ form. Does not prove $1/3$–$2/3$.
+- [Wikipedia, *1/3–2/3 conjecture*](https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture) re-opened. Still lists the conjecture as open; cites Gupta 2026 for order 14.
+- [Peczarski research page](https://mimuw.edu.pl/~marpe/research/index.html) opened for the ladder definition and figures. Paper: Exp. Math. 28 (2019).
+- [agupta/gold-partition-conjecture](https://github.com/agupta/gold-partition-conjecture) README and `scripts/census_witness.py` opened for the Peczarski §1 formula ($x_i<x_{i+2}$ rails, $x_i<x_{i+3}$ rungs) and the published encodings.
+- Zenodo 18985094 / 18985093 (Silva Alvarado, Mar 2026) claim a general proof. Not arXiv; Lean is conditional on an extra axiom; unaffiliated. Treated as a lead, not a record. Chan–Pak and Gupta v2 still call the conjecture open.
+
+Failed or unused: no later arXiv paper closing Olson–Sagan Question 3.9, interval orders, or dimension 2. No width-3 $\delta<6/17$ in Gupta's published tail.
