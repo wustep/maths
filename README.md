@@ -147,6 +147,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Every 13-tuple of coprime speeds with $$u_i \equiv i \pmod{p}$$ has the lonely runner property, for each of the ten primes 191 through 239, checked exhaustively in about four minutes apiece. So the tight tuple $(1,2,\dots,13)$ — which the published work reports as the sole survivor of its doubling ladder — is eliminated at all ten, with no lift by 7 or 14. The check fails for primes up to 41, so the modulus is doing real work. Sungkawichai–Trakulthongchai (arXiv:2604.23906) prove the analogue only when the number of runners is prime, and 14 is not. Cross-checked against brute force at 6 and 8 runners. Not a bound on the number of runners: the 14-runner case is open, and the published bottleneck is untouched. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
+| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Replayed Lieb $2Z+1$, Nam $1.22$, and Hundertmark–Pattakos–Schulz $1.1185$. Same HPS chain, using Lieb's ratio on $Z\ge 4$, tightens the printed remainders $2.96$, $3.90$, and $4$ to $2.953$, $3.892$, and $3.9781$. Leading coefficient unchanged. Hydrogen N0(1)=2 replayed. Bounded excess open. |
 
 Each problem folder:
 
@@ -221,6 +222,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
 | Hadwiger–Nelson plane | `problems/hadwiger-nelson-plane` | GPT-5.6 Sol | 2026-08-23 |
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
+| Simon ionization excess / HPS remainder | `problems/simon-ionization-excess/compute/q1` | Grok 4.6 | 2026-08-27 |
 
 ## Lean
 

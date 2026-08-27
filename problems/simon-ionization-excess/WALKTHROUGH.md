@@ -1,18 +1,17 @@
 # Walkthrough — simon-ionization-excess
 
 Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
-Empty beats mean the campaign is not done.
 
-0. What was actually missing — a replayable certificate for the 2025 HPS numbers, and any finite handle (remainder, small-$Z$ uniqueness, coefficient) that moves a published inequality. The bounded-excess conjecture itself is the missing theorem. For hydrogen the missing *object* was an explicit trial with a strict, checkable gap below $-1/2$, not the uniqueness statement (Lieb already has that).
+0. What was actually missing — a replayable certificate for the 2025 HPS numbers, and any finite handle that moves a printed inequality. The bounded-excess conjecture itself is the missing theorem. The leftover degree of freedom in HPS §7 is the interval on which they maximise $a_1(N/Z)$: they wrote $[ \beta_3^{-1},5/2]$ and then evaluated only the left endpoint.
 
-1. Named false starts — The uncorrelated product $\exp(-\alpha(r_1+r_2))$ is the textbook first try. Its energy is $-(Z-5/16)^2$. At $Z=1$ that is $-121/256>-1/2$, so H$^-$ does not bind in Hartree. A single-charge hydrogenic $1s2s2p$ quartet for He$^-$ lands near $-2.01$, far above helium.
+1. Named false starts — beating $1.1185$ by taking $s>3$ (not proved); replacing the LT factor $1.456$ by an unreplayed 2024 claim; improving Nam’s $\beta$ lower bound far enough to matter (the ionization upper bound uses $1/\beta$, so an *upper* bound on $\beta$ is the wrong direction).
 
-2. The useful failure — The three-electron Slater scan is honest residue. Screened $1s^2 2s$ for He$^-$ bottoms out near the uncorrelated helium energy (about $-2.85$) once the extra $2s$ is made diffuse. That is the picture of an unbound electron at infinity, not a bound He$^-$. Lithium's screened $1s^2 2s$ does go below the published Li$^+$ energy, but without a lower bound on $E(2,3)$ that is not a certificate.
+2. The useful failure — replaying $a_1(x)$ on HPS’s stated interval $[b(3),5/2]$ shows the maximum is at $x=5/2$, value $3.89949\ldots$, not at the left. Their $3.893$ is only the left-endpoint number. The printed $3.90$ still covers $5/2$, so Prop. 2.5 is safe. The failure teaches that the interval, not the algebra of $b(3)$, is the handle.
 
-3. The click — Rational parameters make the Hylleraas and Chandrasekhar Rayleigh quotients exact fractions. The comparison $E+1/2<0$ is then integer arithmetic. The tiny pair $\alpha=5/6$, $c=1/2$ already gives $-815/1602$ and gap $7/801$. Chandrasekhar $a=26/25$, $b=7/25$ is closer to the classical minimum and gives a larger gap.
+3. The click — Prop. 2.5 is for $Z\ge4$. Lieb already gives $N<2Z+1$, hence $N/Z<2+1/Z\le9/4$. On $[b(3),9/4]$ the maximum of $a_1$ *is* at the left, and $a_1<3.892$. The extras are unchanged. At $Z=4$ the collected $Z^{1/3}$ remainder is $<3.9781$, which beats the printed $4$.
 
-4. The argument — Variational lemma: a trial below the exact hydrogen threshold proves at least two bound electrons at $Z=1$. Lieb's published $2Z+1$ theorem cuts the other side. Combined uniqueness at hydrogen. The Lieb triangle is invoked, not re-proved. Helium is the same algebra at $Z=2$ and is only an energy object.
+4. The argument — same HPS chain: weight $|x|^3$, Lemma 6.4 with $\kappa$ from FHJN $1.456$, $\lambda=(5/12)^{1/3}$, contradiction assumption $N\ge\beta_3^{-1}Z+a_1 Z^{1/3}+\cdots$. The only change is the Lieb interval used to bound $a_1(N/Z)$, plus exact $b(3)$ in place of $1.1185$ inside that estimate. No new $\beta_3$.
 
-5. Computer search — `hylleraas.py` / `he_hylleraas.py` evaluate the closed forms. `three_electron_try.py` scans hydrogenic and screened $N=3$ Slater determinants and replays $J(1s,2s)=17ζ/81$, $K(1s,2s)=16ζ/729$ from the Coulomb generating function.
+5. Computer search — `replay_hps.py` / `tighten_hps.py` (mpmath intervals), `verify_remainder.py` (stdlib math, no shared code), `verify_b3.c` and `verify_b3.rs` (closed form vs ternary max of $(1+t^{s-1})/(1+t^s)$). Hylleraas exact rationals for $H^-$. Lean cubic witnesses for the printed $b(3)$ enclosure. UHF table is heuristic.
 
-6. Proven vs still open — Simon 2000 #9 open. Uniqueness at hydrogen is already in Lieb plus the classical H$^-$ variational bound; we only replay it. He$^-$ is residue. No uniqueness claim for $Z>1$.
+6. Proven vs still open — printed HPS remainders $2.96$, $3.90$, $4$ move to $2.953$, $3.892$, $3.9781$. Leading $1.1185$ does not move. $N_0(Z)-Z$ bounded is open. $N_0(1)=2$ is a replay. He$^-$ binding is residue. 1984 10(a) is open.

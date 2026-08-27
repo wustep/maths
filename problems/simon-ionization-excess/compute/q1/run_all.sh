@@ -19,6 +19,7 @@ run_if_present() {
 # Published-record replays and remainder arithmetic (fatal if present).
 run_if_present replay_hps.py
 run_if_present tighten_hps.py
+run_if_present verify_remainder.py
 run_if_present replay_nam_beta.py
 run_if_present hylleraas.py
 
