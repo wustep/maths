@@ -565,3 +565,15 @@ finish.
   star-cover at least 6.
 - The global $|U|=19$ leftover SAT.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 15. 27 August, later: the last five-star type
+
+The leftover after types $(2,1)$ and $(1,3)$ is one axis type:
+five half-stars, $k=30$, 625 extras, 32 hosts in one Aut orbit.
+The same leftover-tight CNF, on a larger extras graph. Kissat
+without a proof is the probe; native CaDiCaL plus `drat-trim` is
+the certificate.
+
+The global $|U|=19$ SAT can now forbid those two empty five-star
+types as well as every 4-star. A model is a leftover hosted by a
+type-$(0,5)$ five-star, or one with star-cover at least 6.

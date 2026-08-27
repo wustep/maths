@@ -1,0 +1,15 @@
+__pycache__/
+*.o
+*.pyc
+leftover_global
+leftover_k30
+bin
+certs/*.cnf
+certs/*.drat
+certs/*.log
+certs/*.sat.json
+leftover_k30_smoke.json
+leftover_global_smoke.json
+leftover_global_progress.json
+verify.json
+orbits.log

@@ -471,3 +471,24 @@ Opened tonight:
 math/0608426v4, 1507.03631: metadata matches; RESEARCH already had
 stubs for the first three.
 
+## 2026-08-27 — record still $40\le\tau_5\le 44$ (q8)
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+  Upper bound cited is Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Dim 6 is 72 / 77. Later-dimension news does
+  not touch dim 5.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Still the published upper bound.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026): “the kissing
+  number in five dimensions appears to be 40, although the best upper
+  bound that has been proved is 44”. Four 40-point geometries. No
+  size 41.
+
+`python3 scripts/arxiv_fetch.py` on 0902.1105 and 2412.00937:
+stubs already present.
+

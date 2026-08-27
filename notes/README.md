@@ -30,6 +30,7 @@
 | [cursor-grok-2026-08-27-slt-q2/](cursor-grok-2026-08-27-slt-q2/) | Lieb–Thirring CCR $M_3$ / Clausen envelope; 1.45576 does not beat the published 1.44655 |
 | [cursor-grok-2026-08-27-kissing-5d-q6/](cursor-grok-2026-08-27-kissing-5d-q6/) | kissing-5d leftover four-star emptiness; star-cover at least 5 |
 | [cursor-grok-2026-08-27-kissing-5d-q7/](cursor-grok-2026-08-27-kissing-5d-q7/) | kissing-5d leftover star-cover at least 5; 5-star SAT |
+| [cursor-grok-2026-08-27-kissing-5d-q8/](cursor-grok-2026-08-27-kissing-5d-q8/) | kissing-5d leftover type-(0,5) five-stars and |U|=19 |
 | [grok-2026-08-27-hilbert16-d8/](grok-2026-08-27-hilbert16-d8/) | Grok 4.6 continuation of Hilbert 16(a) degree 8 |
 | [grok-2026-08-27-hilbert16-d8-q2/](grok-2026-08-27-hilbert16-d8-q2/) | Grok 4.6 leftover ranks 21–26 and the next (19,3) moves |
 | [grok-2026-08-27-hilbert16-d8-q3/](grok-2026-08-27-hilbert16-d8-q3/) | Grok 4.6 leftover ranks 22–26 and the open (19,3) nests |

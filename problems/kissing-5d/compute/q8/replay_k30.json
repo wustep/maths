@@ -1,0 +1,25 @@
+{
+  "ok": true,
+  "found_41": false,
+  "rep": {
+    "name": "k30_n0_5",
+    "stars": [
+      0,
+      2,
+      4,
+      6,
+      8
+    ],
+    "k": 30,
+    "n_extras": 625,
+    "n_roots": 30,
+    "cnf_vars": 32308,
+    "cnf_clauses": 111856,
+    "cnf_sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c",
+    "bb_smoke_best": 19,
+    "bb_smoke_nodes": 2001,
+    "bb_smoke_complete": false,
+    "bb_smoke_hit": false
+  },
+  "comment": "CNF rebuild of the type-(0,5) leftover-tight representative.  Tiny leftover_bb smoke is not a certificate."
+}

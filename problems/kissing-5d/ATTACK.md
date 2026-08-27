@@ -637,3 +637,21 @@ classical Levenshtein number 48 before claiming any comparison.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
   beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
   not claim $\tau_5=40$. Residue.
+
+## 2026-08-27 — continue (q8)
+
+- Start from main after PR #102 (`87674a7`). Folder `compute/q8/`.
+  Covering frozen. Do not claim $\tau_5=40$.
+- Re-opened tonight, still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100),
+  Mittelmann–Vallentin arXiv:0902.1105v3,
+  Cohn–Rajagopal arXiv:2412.00937v3.
+- Leftover after q7: type-$(0,5)$ five-star hosts (32 pools, $k=30$,
+  625 extras) and global leftover SAT $|U|=19$ with star-cover at
+  least 5. The global CNF here also forbids the type-$(2,1)$ and
+  type-$(1,3)$ five-star unions q7 emptied.
+- Hunt: leftover-tight SAT / B&B on the type-$(0,5)$ orbit
+  representative with a stored native DRAT, or a 41-set; stronger
+  global leftover SAT. Residue if the interval does not move.
