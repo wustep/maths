@@ -6,19 +6,21 @@ Replay:
 sh compute/q4/run_all.sh
 ```
 
-The published range is still $40\le\tau_5\le 44$. This folder finishes the
-two leftover finite graphs from the previous campaign, and hunts in
-parallel for an exact unrestricted dual below 44 or an explicit 41-point
-code.
+The published range is still $40\le\tau_5\le 44$. This folder records
+the leftover finite graphs from the previous campaign and a parallel
+hunt for an exact unrestricted dual below 44 or an explicit 41-point
+code. Neither endpoint moved.
 
 | Script | What it does |
 | --- | --- |
-| `color_d4.py` | 40-colour the 1480-point $(1/4)\mathbb Z^5$ graph |
-| `n1_le32.c` | complete $n_1\le 32$ slices by $k$-supersets of missed sets |
-| `t5_omega.py` | 35-colour the 355-point $T^5$ remainder, or SAT a 36-clique |
-| `bv.py` | exact Bachoc–Vallentin $S_k^5$ over $\mathbb Q$ |
-| `dual_exact.py` | unrestricted / 3-point dual hunt with Sturm or SOS |
-| `putinar_sdp.py` | floating Putinar SDP (residue unless a rational Gram lifts) |
+| `analyze_stars.py` | the ten octads are the $D_5$ coordinate-stars |
+| `n1_le32.c` / `n1_check.py` | complete $n_1=32$ slice (C + Python) |
+| `n1_complete.c` | seed-union BFS; $k\le 12$ stored in `n1_complete_k12.json` |
+| `verify_n1.rs` | independent star pools, $\omega=8$ |
+| `t5_omega.py` | 35-colour / SAT 36-clique of the $T^5$ remainder |
+| `t5_share.c` | exact high-share 36-cliques against published 35s (28–30 empty) |
+| `n1_ilp.py` | star-free seed count, HiGHS; k=4..7 empty, k≥8 cutoff |
+| `bv.py` / `dual_exact.py` | exact $S_k^5$ and unrestricted dual hunt |
 | `construct41.py` | algebraic 41-point ansätze outside the leftover graphs |
 | `verify.py` | replay colourings, any claimed 41-set, and dual JSON |
 

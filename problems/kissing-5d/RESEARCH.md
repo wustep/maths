@@ -348,3 +348,38 @@ python3 problems/kissing-5d/compute/q4/dual_exact.py
 python3 problems/kissing-5d/compute/q4/verify.py
 ```
 
+## 2026-08-27 — leftover graphs (q4)
+
+Opened again:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  still $40\le\tau_5\le 44$, conjectural value 40.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  HTML https://ar5iv.labs.arxiv.org/html/0902.1105v3 Table 1.
+- https://arxiv.org/abs/2412.00937 — v3 still “appears to be 40…
+  best upper bound that has been proved is 44”.
+
+Still **no** change to the unrestricted range.
+
+### 11. $(1/4)\mathbb Z^5$: no 41-set with $n_1\ge 28$
+
+`compute/q4/n1_complete_k12.json`, `n1_le32.json`, `n1_check.json`,
+`analyze_stars.json`, `verify_n1.rs`. The ten octads are the $D_5$
+coordinate-stars. Seed-unions through $|U|\le 12$ have no extras-clique
+of size $|U|+1$. The $n_1\le 27$ slice is unfinished.
+
+### 12. $T^5$ 36-clique still residue
+
+`compute/q4/t5_omega.json`: Cadical and Glucose return no 36-clique;
+no stored DRAT. `t5_share30_c.json`, `t5_share29_c.json`,
+`t5_share28_c.json`: share 30, 29 and 28 empty.
+
+Replay:
+
+```bash
+sh problems/kissing-5d/compute/q4/run_all.sh
+python3 problems/kissing-5d/compute/q4/analyze_stars.py
+python3 problems/kissing-5d/compute/q4/n1_check.py
+rustc -O -o /tmp/verify_n1 problems/kissing-5d/compute/q4/verify_n1.rs && /tmp/verify_n1
+```
+

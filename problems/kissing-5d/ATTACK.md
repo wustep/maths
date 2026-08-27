@@ -394,3 +394,41 @@ classical Levenshtein number 48 before claiming any comparison.
   SOS certificate.
 - Wrote `compute/q4/dual_exact.json`. No `certs/unrestricted_delsarte.json`
   or `certs/bv_dual.json`.
+
+## 2026-08-27 — q4 leftover graphs (no unrestricted move)
+
+- Same house rules. Re-fetched Tao $C_{29}$, Cohn, Mittelmann–Vallentin
+  $s_{14}(5)=44.99899685\ldots$, Cohn–Rajagopal arXiv:2412.00937v3:
+  still $40\le\tau_5\le 44$. Did not claim $\tau_5=40$.
+- The 240 missed-set seeds on the 40 $D_5$ roots split as 160
+  four-seeds and 80 six-seeds. The ten special octads are the
+  coordinate-stars $\{x_i=\pm 4\}\cap D_5$. Every four-seed lives in
+  exactly one star, as the $2^4$ sign choices on the other four axes
+  (`analyze_stars.py`). Independent Rust rebuild (`verify_n1.rs`):
+  each star has 16 four-seeds, extras pool 80, $\omega=8$.
+- Same-missed extras are edgeless, so a clique takes at most one extra
+  per seed. A 41-set with $n_1=40-k$ needs an extras-clique of size
+  $k+1$ whose missed sets sit in some $k$-set $U$.
+- $n_1=32$ ($k=8$): complete $k$-superset scan, C and Python agree
+  ($n_U=7\,407\,770$, 10 promising octads, best extras 8, total 40).
+  $n_1=31$ ($k=9$): C empty (`n1_le32_k9.json`).
+- Seed-union BFS through $|U|\le 12$ is complete and empty of a 41-set
+  (`n1_complete_k12.json`, Python `replay_unions.py`). Promising
+  unions only at $k=7$ (80 heptads), $k=8$ (10 stars), $k=11$ (960),
+  $k=12$ (4640); each has $\omega=k$, total 40. The $n_1\le 27$
+  star-containing unions ($|U|\ge 13$) and the star-free family at
+  those sizes were not emptied: a 67-million-slot hash overflowed.
+  Residue for the whole 1480-graph, not a 41-code.
+- 40-colouring of the 1480-graph is UNSAT (Cadical and Glucose). That
+  does not produce a 41-clique.
+- $T^5$ remainder: no 35-colouring. Cadical and Glucose return no
+  36-clique (`t5_omega.json`). UNSAT without a stored DRAT is not an
+  emptiness proof. Share $\ge 30$ with each published 35 is empty
+  (Python). Share 30, 29 and 28 are empty in C (`t5_share30_c.json`,
+  `t5_share29_c.json`, `t5_share28_c.json`). Any remaining 36-clique
+  shares at most 27 with every published 35.
+- Construction hunts outside these two graphs (other $(1/d)\mathbb Z^5$,
+  $A_5$ hyperplane, $D_6$ projections, QR reflections) produced no
+  41-code.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.

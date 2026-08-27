@@ -246,7 +246,9 @@ def main() -> int:
         ok = False
     for name in ("color_d4.json", "t5_omega.json", "n1_le32.json",
                  "n1_check.json", "n1_complete_k12.json",
-                 "t5_share30.json", "t5_share30_c.json", "t5_36_proof.json",
+                 "t5_share30.json", "t5_share30_c.json",
+                 "t5_share29_c.json", "t5_share28_c.json",
+                 "t5_36_proof.json",
                  "analyze_stars.json", "seed_cover.json", "dual_exact.json",
                  "construct41.json"):
         rec = check_search(name)
