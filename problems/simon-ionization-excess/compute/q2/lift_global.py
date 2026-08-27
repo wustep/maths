@@ -136,7 +136,15 @@ def main() -> None:
     out = CERTS / "beta3_lift.json"
     out.write_text(json.dumps(blob, indent=2) + "\n")
     print("p12_max", float(pmax), "at eta", float(at[0]) if at else None)
-    print("gamma_R2", float(gamma_2), "inv", float(inv2), "beats", beats)
+    print(
+        "gamma_R2",
+        float(gamma_2),
+        "inv",
+        float(inv2),
+        "above_fmin_on_aspect_le_R2",
+        beats,
+        "(not a Thm 2.2 dent)",
+    )
     print("wrote", out)
 
 

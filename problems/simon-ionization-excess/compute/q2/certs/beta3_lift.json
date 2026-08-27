@@ -1,4 +1,7 @@
 {
+  "status": "residue",
+  "is_new_bound": false,
+  "beats_1.1185_in_HPS_theorem": false,
   "R": 12,
   "gamma_R_compact": "0.899526050000000000000000",
   "fmin": "0.894107456974982284669208",

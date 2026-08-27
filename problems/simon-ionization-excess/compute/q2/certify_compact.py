@@ -147,7 +147,8 @@ def main() -> None:
         (8, 20, 0.9060),
         (12, 22, 0.9055),
     ]
-    if "--quick" in sys.argv:
+    quick = "--quick" in sys.argv
+    if quick:
         configs = [(4, 18, 0.9060)]
     rows = []
     best_compact = fmin
@@ -231,7 +232,8 @@ def main() -> None:
             best = row
         print(
             f"  compact γ≥{float(compact):.8f}  1/γ≤{float(1/compact):.6f}  "
-            f"aspect≤{R} dent={row['beats_1.1185_on_aspect_le_R']}"
+            f"aspect≤{R} class_only={row['beats_1.1185_on_aspect_le_R']} "
+            f"(not a Thm 2.2 dent)"
         )
 
     # Withdrawn global number from certify_beta3.py
@@ -277,7 +279,7 @@ def main() -> None:
     }
     # overwrite status to residue explicitly
     cert["status"] = "residue"
-    out = CERTS / "beta3_compact.json"
+    out = CERTS / ("beta3_compact_quick.json" if quick else "beta3_compact.json")
     out.write_text(json.dumps(cert, indent=2, default=str) + "\n")
     print("wrote", out)
     print("OVERALL status: residue (compact bound not lifted to all measures)")
