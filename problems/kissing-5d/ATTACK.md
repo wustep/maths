@@ -465,18 +465,24 @@ classical Levenshtein number 48 before claiming any comparison.
   (`seed_graph.json`). The 80 six-seeds form an 80-clique of union 40.
   Every 3-star union is leftover-tight: 80 pools $(22,21)$ and 40
   pools $(23,22)$. A seed-clique is a pool, not a 41-code.
+- Extras B&B on all 120 three-star pools is complete and empty of a
+  leftover 41-set (`triple_star_extras.json`): extras $\omega\le 18$
+  on the 80 unions of size 21, $\omega\le 19$ on the 40 unions of
+  size 22. With q4's $|U|\le 18$ empty, no 41-set has $U$ contained
+  in three coordinate-stars. The leftover $n_1\le 21$ slice, if
+  nonempty, has star-cover at least 4.
 - Part-count MILP on $|U|\in\{19,20,21\}$ hits cutoff with verified
   incumbents $42,47,50$ contained seeds (`n1_partcount.json`). The
   leftover is not empty by part-count. Cutoff is not a proof of the
   maximum.
 - $n_1$ leftover SAT $k=19$ (30{,}678 vars) is running; no model yet.
   Extras B&B 200M nodes: no 41-set, incomplete (`extras_clique.json`).
-- $T^5$ remainder: Cadical returns UNSAT for a 36-clique
-  (`t5_36_proof.json`, 16{,}548{,}926 proof lines). DRAT is stored
-  locally and is being replayed with Heule `drat-trim`; until
-  `s VERIFIED` this is not an emptiness certificate. Share 23: the
-  $D_5$ and $L_5$ remainder 35s are complete empty (best extra 12,
-  need 13); $Q_5$ and $R_5$ still running.
+- $T^5$ remainder: PySAT Cadical195 returns UNSAT for a 36-clique
+  (`t5_36_proof.json`, 16{,}548{,}926 proof lines). Heule `drat-trim`
+  on that file ended `s NOT VERIFIED` (no conflict). Solver UNSAT
+  without a verified proof is residue. Share 23: the $D_5$ and $L_5$
+  remainder 35s are complete empty (best extra 12, need 13); $Q_5$
+  and $R_5$ still running.
 - No unrestricted dual below 44 (`dual_more.json`: 1-point Delsarte
   still $\approx 46.337$). No 41-code in the finished construction
   pools (`construct_more.json`).

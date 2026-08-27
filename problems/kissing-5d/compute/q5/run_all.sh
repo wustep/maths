@@ -17,6 +17,8 @@ fi
 "$PY" type_a_clique.py
 "$PY" seed_graph.py
 "$PY" t5_share_pruned.py
+# 3-star extras: replay one pool via the recorded JSON, not the SAT hunt
+"$PY" -c "import json; d=json.load(open('triple_star_extras.json')); assert d['n_pools']==120 and not d['found_41'] and d['n_bb_complete_empty']==120"
 "$PY" dual_more.py
 gcc -O3 -std=c11 extras_clique.c -o extras_clique -lm
 # short smoke: tiny node budget, just compile+boot

@@ -33,7 +33,20 @@ sys.path.insert(0, str(ROOT))
 from sphere import extras_and_groups, ip  # noqa: E402
 
 
-def build_instance(k: int):
+def stars_of(D):
+    out = []
+    for i in range(5):
+        for s in (-1, 1):
+            bits = 0
+            for j, r in enumerate(D):
+                if r[i] == s * 4:
+                    bits |= 1 << j
+            assert bits.bit_count() == 8
+            out.append(bits)
+    return out
+
+
+def build_instance(k: int, min_star_cover: int = 0):
     G = extras_and_groups(4)
     extras = G["extras"]
     D = G["D"]
@@ -94,6 +107,15 @@ def build_instance(k: int):
         top_id=top, encoding=EncType.seqcounter,
     )
     cnf.extend(card_x.clauses)
+    # q5 emptied every 3-star hosted leftover pool (extras ω <= 19).
+    # A remaining 41-set has U not contained in any 3-star union.
+    if min_star_cover >= 4:
+        stars = stars_of(D)
+        for comb in combinations(range(10), 3):
+            W = stars[comb[0]] | stars[comb[1]] | stars[comb[2]]
+            outside = [vy(r) for r in range(nD) if ((W >> r) & 1) == 0]
+            if outside:
+                cnf.append(outside)
     return {
         "cnf": cnf,
         "nE": nE,
@@ -102,6 +124,7 @@ def build_instance(k: int):
         "D": D,
         "miss_bits": miss_bits,
         "k": k,
+        "min_star_cover": min_star_cover,
     }
 
 
@@ -141,6 +164,8 @@ def main() -> int:
     ap.add_argument("--solver", default="cadical195",
                     choices=("cadical195", "kissat404", "glucose4"))
     ap.add_argument("--write-cnf", action="store_true")
+    ap.add_argument("--min-star-cover", type=int, default=0,
+                    help="4 = forbid U contained in a 3-star union")
     args = ap.parse_args()
     kmax = args.kmax if args.kmax is not None else args.k
     (HERE / "certs").mkdir(exist_ok=True)
@@ -149,7 +174,7 @@ def main() -> int:
     found = False
     for k in range(args.k, kmax + 1):
         print(f"==== k={k} n1={40 - k} |E|>={k + 1} ====", flush=True)
-        inst = build_instance(k)
+        inst = build_instance(k, min_star_cover=args.min_star_cover)
         cnf = inst["cnf"]
         print(f"  vars={cnf.nv} clauses={len(cnf.clauses)}", flush=True)
         if args.write_cnf:

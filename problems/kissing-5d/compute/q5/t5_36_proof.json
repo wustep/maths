@@ -8,5 +8,7 @@
   "proof_lines": 16548926,
   "found_36": false,
   "drat": "t5_clique36.drat",
-  "comment": "Cadical UNSAT proof for a 36-clique in the 355-point T^5 remainder.  Replay with drat-trim."
+  "drat_trim": "NOT VERIFIED",
+  "drat_trim_error": "no conflict",
+  "comment": "PySAT Cadical195 returned UNSAT and wrote 16548926 DRAT lines.  Heule drat-trim on that file ended s NOT VERIFIED (no conflict).  Solver UNSAT without a verified proof is residue, not an emptiness certificate."
 }
