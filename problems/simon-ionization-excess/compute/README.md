@@ -8,6 +8,8 @@ by $1.1118$.
 replaces $1.1118$ by $1.1057$.
 `q5/` raises the bin count at the same split and replaces
 $1.1057$ by $1.1035$.
+`q6/` raises the bin count at the same split and replaces
+$1.1035$ by $1.1026$.
 
 ```bash
 ./run_all.sh
