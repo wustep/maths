@@ -213,3 +213,26 @@ Lean 4.32.0, no mathlib: T2 recurrence, 2×2 adjugate identity,
 four integer points on two quadrics (`AdjBezout.lean`).
 
 Certs: `compute/q1/e-bezout-bautin/*.json`.
+
+## 2026-08-27 — q2: twenty-five new imagined end-states
+
+Same method as q1, new claims. The twenty-five one-sentence
+fictions, the one-line why-it-might-work / why-it-might-die, and
+the ranking live in `compute/q2/ideas.md`. They are not A–E
+recycled.
+
+Published record unchanged: H(2) ≥ 4, H(3) ≥ 13, H(4) ≥ 28,
+Prohens–Torregrosa table, Han–Li, Chebyshev identity. Coppel 1966
+and Llibre–Schlomiuk 2004 are now fetched (RESEARCH.md).
+Li–Liu–Yang full text is still 403.
+
+Five lines scored by (published-record delta) × (checkability
+tonight) and assigned under `compute/q2/{f,i,o,p,q}/`. Discarded
+on the same theorems that killed A/B, with no new bypass: Ye
+class I two cycles, invariant-line two cycles, (2,2), Liénard
+(3,1) two cycles, two-hemicycle H(2)≥6, Shi equator as a fifth
+planar cycle, QW3 fifth cycle, figure-eight 14, Yu–Han 12+2.
+
+Workers write the imagined certificate first, then try to verify
+it. Drop as soon as a theorem or a replayed identity contradicts
+the fiction. Keep a fork if it is still a finite checkable claim.
