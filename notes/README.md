@@ -8,5 +8,6 @@
 | [supergrok-2026-08-27/](supergrok-2026-08-27/) | Sidon q1, Caccetta n=18, and kissing-5d Q5/R5 |
 | [chat/](chat/) | Grok Bot transcript recreation |
 | [grok-2026-08-27-ott/](grok-2026-08-27-ott/) | Grok 4.6 continuation of the 1/3–2/3 folder |
+| [grok-hilbert16-limit-cycles-2026-08-27/](grok-hilbert16-limit-cycles-2026-08-27/) | Grok 4.6 Hilbert 16(b) / H(n) campaign |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).

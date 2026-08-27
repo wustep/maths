@@ -44,9 +44,15 @@ Journal / PDF pages opened (not arXiv ids):
 
 - [PlanetMath, Hilbert 16th for quadratic vector fields](https://planetmath.org/hilberts16thproblemforquadraticvectorfields). Lead only: writes the Shi system and 0<−λ≪−ε≪−δ≪1. Not a citation.
 
+- [Eshkobilov–Kadyrov–Mamayusupov HTML](https://arxiv.org/html/2604.12883v1). Theorem 1, Theorem 2, §6 cubic, Remark 4, Appendix A seed table. Same claims as the abs fetch; this is the page the Chebyshev replay was read from.
+
+- [Llibre–Valls, *Global asymptotic stability in quadratic systems*, EJDE 2025 no. 36 abstract](https://ejde.math.txstate.edu/Volumes/2025/36/abstr.html). Opened as the source line E used for the w1 = Aα − Bβ cross-check of L1. The paper characterises globally asymptotically stable quadratics; it does not move H(n).
+
 Failed / not used as record:
 
+- Llibre–Schlomiuk, Canad. J. Math. 56 (2004), and Coppel 1966: no PDF opened this session. Li Chengzhi polynomials and Coppel’s unique-singularity statement are used as quoted in line A, not as a fetched record.
 - No OEIS lookup (H(n) is not an OEIS sequence we needed).
 - Wikipedia and MathOverflow numbers were not opened as citations.
-- Piecewise paper [arXiv:1809.03433](https://arxiv.org/abs/1809.03433) (Llibre–Teixeira–Torregrosa style H_p(2)≥16) is a different function; abs not used as an H(n) bound.
+- Piecewise paper [arXiv:1809.03433](https://arxiv.org/abs/1809.03433) (H_p(2)≥16) is a different function; abs not used as an H(n) bound.
 - Entropy 26 (2024) quadratic formula: not fetched; the refutation is 2411.09594.
+- Li–Liu–Yang JDE 246 (2009) full text: paywalled. Their 13 is cited from later papers’ introductions, not replayed.

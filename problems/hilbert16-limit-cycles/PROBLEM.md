@@ -3,8 +3,10 @@
 - Slug: `hilbert16-limit-cycles`
 - List: Hilbert 16 (second part); Smale 13 (1998)
 - Solver: Grok 4.6
-- Status: open. Published lower bounds still stand. Hilbert
-  16(b) itself is untouched.
+- Status: open. No published H(n) moved. Five imagined
+  end-states were attacked backwards (ATTACK.md). Two lower-bound
+  fictions were dropped (H(2)≥5, H(3)≥14). Reusable exact lemmas
+  live in `compute/q1/`. Hilbert 16(b) itself is untouched.
 - Area: Qualitative theory of planar polynomial ODEs
 - Sources: Shi, Sci. Sinica 23 (1980); Chen–Wang 1979; Bautin
   1952/54; Li–Liu–Yang, JDE 246 (2009); Christopher–Lloyd,
