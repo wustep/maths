@@ -1,0 +1,176 @@
+{
+  "exhaustive": [
+    {
+      "n": 8,
+      "min_delta": [
+        111,
+        268
+      ],
+      "broken4": [],
+      "broken5": [],
+      "e": 268,
+      "n_non_sum": 128,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 9,
+      "min_delta": [
+        7,
+        18
+      ],
+      "broken4": [
+        2
+      ],
+      "broken5": [
+        1,
+        2
+      ],
+      "e": 684,
+      "n_non_sum": 512,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 10,
+      "min_delta": [
+        31,
+        79
+      ],
+      "broken4": [
+        2,
+        3
+      ],
+      "broken5": [
+        1,
+        2,
+        3
+      ],
+      "e": 1738,
+      "n_non_sum": 2048,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 11,
+      "min_delta": [
+        103,
+        261
+      ],
+      "broken4": [
+        2,
+        3,
+        4
+      ],
+      "broken5": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "e": 4437,
+      "n_non_sum": 8192,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 12,
+      "min_delta": [
+        3466,
+        8587
+      ],
+      "broken4": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "broken5": [],
+      "e": 8587,
+      "n_non_sum": 32768,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 13,
+      "min_delta": [
+        3854,
+        9973
+      ],
+      "broken4": [
+        2,
+        6
+      ],
+      "broken5": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "e": 19946,
+      "n_non_sum": 131072,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 14,
+      "min_delta": [
+        17581,
+        44872
+      ],
+      "broken4": [
+        2,
+        3,
+        7
+      ],
+      "broken5": [
+        1,
+        2,
+        6,
+        7
+      ],
+      "e": 44872,
+      "n_non_sum": 524288,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    },
+    {
+      "n": 15,
+      "min_delta": [
+        30572,
+        78185
+      ],
+      "broken4": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8
+      ],
+      "broken5": [
+        1,
+        2,
+        4,
+        5,
+        7,
+        8
+      ],
+      "e": 156370,
+      "n_non_sum": 2097152,
+      "n_below_6_17": 0,
+      "n_below_1_3": 0,
+      "complete": true
+    }
+  ],
+  "note": "Three-rail non-sum minima. C exhaustive."
+}

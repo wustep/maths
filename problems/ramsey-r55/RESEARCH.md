@@ -73,3 +73,31 @@ python3 verify_mckay.py
 python3 py_circulant.py 43
 python3 check_groups.py
 ```
+
+## 2026-08-27 — urls opened
+
+- `https://www.cs.rit.edu/~spr/ElJC/eline.html` — revision list still ends at #18, 24 April 2026, 149pp / 1066 refs. No #19.
+- `https://www.cs.rit.edu/~spr/ElJC/ejcram18.pdf` — 585821-byte PDF, version 1.4, 149 pages. Title page “revision #18: April 24, 2026”. Table Ia: $R(5,5)$ is $43$–$46$. Item 2.1(e): conjecture $R(5,5)=43$ with exactly 656 critical graphs on 42 vertices; upper bound 46 via [AnM3]. [AnM4] in the reference list is the 2026 Journal of Graph Theory print.
+- `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` — living DS1, `citation_firstpage` “DS1: Apr 24”, `DC.Date.modified` 2026-04-23. No later survey.
+- `https://arxiv.org/abs/2409.15709` — Angeltveit–McKay v2, 1 September 2025. “The lower bound of 43 … is still the best.” 45 would need new theory.
+- `https://arxiv.org/html/2409.15709v2` — same paper, HTML text used by `scripts/arxiv_fetch.py`.
+- `https://export.arxiv.org/api/query?search_query=all:"R(5,5)"…&sortBy=submittedDate&sortOrder=descending` — 6 hits. Newest after 2409.15709 is 2508.16699v2.
+- `https://arxiv.org/abs/2508.16699` — Tamburini, random-projector heuristic for $R(5,5)=45$. Abstract: diagnostics “identify $R(5,5)$ at $n=45$”; not a colouring and not a nonexistence log. Lead, not a bound.
+- `https://users.cecs.anu.edu.au/~bdm/data/ramsey.html` — “The largest known Ramsey(5,5)-graphs”: Exoo then McKay–Radziszowski 656; “there could be more with 42 vertices and even some with 43-47 vertices.” File `r55_42some.g6` still offered.
+
+Failed / unused: `https://www.cs.rit.edu/~spr/PUBLIC/index.html` returned 404 (the survey lives under `ElJC/`).
+
+Independent parent replay this session: `compute/replay.sh` and `python3 verify_mckay.py`. 328+328 ok, 0 extensions, circulant 42/43 empty.
+
+## 2026-08-27 — what q1 checked
+
+Not a new bound. Independently verified tonight:
+
+1. Group laws for the four groups of order 44 and both groups of order 45 (`q1/check_groups.py`).
+2. No legal-degree Cayley $(5,5)$-graph on $C_2\times C_{22}$, $C_{11}\rtimes C_4$, $D_{22}$, or $C_3\times C_{15}$. Circulants at 44 and 45 empty (replay of the 17 August census). Python matched the C leaf counts on $C_{11}\rtimes C_4$ and $C_3\times C_{15}$.
+3. 4080 one-flip $(5,5,42)$ neighbours of the 656; none extend (`q1/extend_flips.c`).
+4. $|\mathrm{Aut}|$ of the 656 is $1$ (424 graphs) or $2$ (232 graphs); no 7-cycle.
+5. No integral SRG parameters on 43 vertices with degree in $[18,24]$; $43\not\equiv 1\pmod 4$.
+6. $C_7$ encoder agrees with brute force on $n=7$ and produces a $(5,5,14)$-graph. The 42- and 43-vertex slim instances timed out. Those timeouts are not a dent.
+
+Cert: `compute/q1/certs/q1_summary.json`. Replay: `cd compute/q1 && ./run_all.sh`.

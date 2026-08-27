@@ -192,3 +192,55 @@ Replay:
 ```bash
 sh problems/kissing-5d/compute/q1/run_all.sh
 ```
+
+## 2026-08-27 — record still $40\le\tau_5\le 44$ (q2)
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $40\le\tau_5\le 44$, conjectural value 40. Upper bound cited is
+  Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Later-dimension news (Cohn–Li, Ho 2603.10425,
+  Ma et al. 2511.13391, Takhanov et al. 2606.18984, Sun–Wang 2607.20359)
+  does not touch dim 5.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Still the published upper bound.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026), title now
+  “Variations on five-dimensional sphere packings”: “appears to be 40…
+  best upper bound that has been proved is 44”. Four 40-point geometries.
+  No size 41.
+- https://arxiv.org/abs/1507.03631 — survey story $48\to 46.345\to 45\to 44.998$.
+- https://arxiv.org/abs/2301.08272 — Szöllősi $Q_5$.
+- https://arxiv.org/abs/math/0608426 — Bachoc–Vallentin, $\tau_5\le 45$
+  before Mittelmann–Vallentin.
+- https://doi.org/10.5281/zenodo.18449600 — the unaffiliated Cohn–Kumar
+  $44.0297$ note is **retracted** (removed 5 Feb 2026). Not a paper;
+  not an exact dual. Lead only.
+
+## 2026-08-27 — what we certified this run (q2)
+
+Still **no** change to the unrestricted range $40\le\tau_5\le 44$.
+
+### 7. Finite exact graphs with no 41-clique
+
+- `compute/q2/t5_clique.json`: Szöllősi $T^5$ remainder, 355 vertices,
+  607171 nodes, no 41-clique. The five basis vectors of the 360-point
+  pool are universal; a 41-set in the full pool needs a 36-clique in
+  this remainder, which was not settled (`t5_36_residue.json`).
+- `compute/q2/sphere_d2.json`: 200 half-integer points of squared
+  norm 2, no 41-clique. Contains $D_5$ and $L_5$.
+- `compute/q2/q5cap_clique.json`: 320-point $Q_5$-cap orbit, no 41-clique.
+
+### 8. No unrestricted dual below 44
+
+`compute/q2/unrestricted_dual.json`: numerical continuum Delsarte
+$46.3368\ldots$ at degree $\ge 10$. Exact $(t-1/2)q(t)^2$ duals exist
+(best in the search $53235/1109\approx 48.003$). None has bound $<44$.
+
+Replay:
+
+```bash
+sh problems/kissing-5d/compute/q2/run_all.sh
+```

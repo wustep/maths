@@ -1,0 +1,67 @@
+{
+  "constants": {
+    "b3": 1.1184337992027067,
+    "b3_window": [
+      1.1184,
+      1.1185
+    ],
+    "half_sqrt2_plus_one": 1.2071067811865475,
+    "s2_window": [
+      1.2071,
+      1.2072
+    ]
+  },
+  "crossovers": {
+    "Nam_beats_Lieb_first_integer_Z": 6,
+    "HPS_s2_beats_Nam_first_integer_Z": 2,
+    "HPS_s3_beats_HPS_s2_first_integer_Z": 36,
+    "paper_Nam_beats_Lieb": 6,
+    "paper_s3_beats_s2_remark": 35.8
+  },
+  "at_Z_118": {
+    "Lieb": 237.0,
+    "Nam": 158.67460439457204,
+    "HPS_s3": 151.15590247641137,
+    "HPS_coarse": 151.60247252609608
+  },
+  "sample_rows": [
+    {
+      "Z": 1,
+      "Lieb": 3.0,
+      "Nam": 4.22
+    },
+    {
+      "Z": 5,
+      "Lieb": 11.0,
+      "Nam": 11.22992784003009,
+      "HPS_s2": 11.09706270809576,
+      "HPS_s3": 12.388782146529858,
+      "HPS_coarse": 12.432403786706788
+    },
+    {
+      "Z": 6,
+      "Lieb": 13.0,
+      "Nam": 12.77136177849642,
+      "HPS_s2": 12.621317641902419,
+      "HPS_s3": 13.91796813683094,
+      "HPS_coarse": 13.979482371328558
+    },
+    {
+      "Z": 36,
+      "Lieb": 73.0,
+      "Nam": 53.82578174668388,
+      "HPS_s2": 53.2295487794438,
+      "HPS_s3": 53.21205578944662,
+      "HPS_coarse": 53.47370899557851
+    },
+    {
+      "Z": 118,
+      "Lieb": 237.0,
+      "Nam": 158.67460439457204,
+      "HPS_s2": 156.9570098493237,
+      "HPS_s3": 151.15590247641137,
+      "HPS_coarse": 151.60247252609608
+    }
+  ],
+  "note": "These are already-published upper bounds on Nc(Z). Replaying the comparison is not a new bound."
+}

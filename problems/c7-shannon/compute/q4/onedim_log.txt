@@ -1,0 +1,74 @@
+pack=29 unique=1 deg=188 hoff=516.464 g=(1 2 0 0 0)
+total=203 pack=29 residual=0 unique=1
+  unique=1 good=1 hoff_lt53=0 best_pack=29 best_total=203 deg[188,188] t=0.0s
+pack=39 unique=2 deg=206 hoff=515.592 g=(1 2 1 0 0)
+total=273 pack=39 residual=0 unique=2
+  unique=2 good=5 hoff_lt53=0 best_pack=39 best_total=273 deg[188,206] t=0.0s
+  unique=3 good=6 hoff_lt53=0 best_pack=39 best_total=273 deg[188,224] t=0.0s
+pack=40 unique=7 deg=206 hoff=515.592 g=(1 1 2 0 0)
+total=280 pack=40 residual=0 unique=7
+pack=41 unique=10 deg=242 hoff=514.236 g=(1 4 2 0 0)
+total=287 pack=41 residual=0 unique=10
+  unique=20 good=42 hoff_lt53=0 best_pack=41 best_total=287 deg[188,242] t=0.2s
+pack=42 unique=33 deg=218 hoff=515.091 g=(1 6 2 1 0)
+total=294 pack=42 residual=0 unique=33
+  unique=40 good=62 hoff_lt53=0 best_pack=42 best_total=294 deg[188,242] t=0.3s
+pack=43 unique=49 deg=218 hoff=515.091 g=(1 1 5 1 0)
+total=301 pack=43 residual=0 unique=49
+  unique=60 good=82 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=0.4s
+  unique=80 good=102 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=0.6s
+  unique=100 good=122 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=0.7s
+  unique=120 good=143 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=0.8s
+  unique=140 good=163 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.0s
+  unique=160 good=321 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.1s
+  unique=180 good=341 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.2s
+  unique=200 good=361 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.4s
+  unique=220 good=381 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.5s
+  unique=240 good=401 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.6s
+  unique=260 good=421 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.8s
+  unique=280 good=441 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=1.9s
+  unique=300 good=461 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.1s
+  unique=320 good=481 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.2s
+  unique=340 good=501 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.3s
+  unique=360 good=521 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.5s
+  unique=380 good=541 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.6s
+  unique=400 good=561 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.7s
+  unique=420 good=581 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=2.9s
+  unique=440 good=601 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.0s
+  unique=460 good=621 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.2s
+  unique=480 good=641 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.3s
+  unique=500 good=661 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.4s
+  unique=520 good=681 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.6s
+  unique=540 good=701 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.7s
+  unique=560 good=721 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=3.8s
+  unique=580 good=741 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.0s
+  unique=600 good=761 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.1s
+  unique=620 good=781 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.3s
+  unique=640 good=801 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.4s
+  unique=660 good=821 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.5s
+  unique=680 good=841 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.7s
+  unique=700 good=861 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=4.8s
+  unique=720 good=881 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.0s
+  unique=740 good=901 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.1s
+  unique=760 good=921 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.2s
+  unique=780 good=941 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.4s
+  unique=800 good=961 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.5s
+  unique=820 good=982 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.6s
+  unique=840 good=1002 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.8s
+  unique=860 good=1022 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=5.9s
+  unique=880 good=1042 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.1s
+  unique=900 good=1062 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.2s
+  unique=920 good=1082 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.3s
+  unique=940 good=1102 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.5s
+  unique=960 good=1122 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.6s
+  unique=980 good=1142 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.8s
+  unique=1000 good=1162 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=6.9s
+  unique=1020 good=1182 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.0s
+  unique=1040 good=1202 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.2s
+  unique=1060 good=1222 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.3s
+  unique=1080 good=1242 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.4s
+  unique=1100 good=1262 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.6s
+  unique=1120 good=1282 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.7s
+  unique=1140 good=1302 hoff_lt53=0 best_pack=43 best_total=301 deg[188,242] t=7.9s
+wrote q4/R301_1dim_bestpack.txt size=301
+DONE subspaces=2801 good=2680 unique=1156 hoffman_lt53=0 best_pack=43 best_total=301 hit=0 deg[188,242] best_hoff=366.010 worst_hoff=516.464 t=8.0s

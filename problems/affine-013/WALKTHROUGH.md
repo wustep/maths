@@ -186,3 +186,47 @@ have 3z−2y *equal* to an existing point, not merely to *some*
 point on the correct side. Closing that slack is the original
 problem. Isolated small-n counts, including the +1 almost-interval
 and the n=7 sporadic, do not close it.
+
+## 7. q1 (2026-08-27): what was actually missing
+
+The leftover handle was the Green–Sisask *induction* remark, not
+another fibre injection. If one endpoint of S used at most
+2(n−1)/3 triples as an x- or y-value, deleting it would give
+T(n) ≤ T(n−1)+1+2(n−1)/3 and the constant 1/3. The interval
+meets that 2/3 budget with equality, so the only question was
+whether every set does.
+
+## 8. Named false starts
+
+- **Believe the 2/3 budget.** {0,2,3,4,6} scores 3 at each end
+  against a cap of 8/3. Affine to Green–Sisask E(1,1). T equals
+  the interval. Larger over-budget examples ({0,2,3,4,6,8,9,10,12}
+  at 7/8; an 11-set at 9/10) still sit at or below T_I.
+- **Periodize a high end-score seed.** The n=9 set is
+  [0,12] ∩ (2ℤ ∪ 3ℤ ∪ 4ℤ). Lifting it with period 12 keeps
+  min(end_L,end_R)/(n−1) near 5/6 and drops T/n² to about 0.30.
+- **3-scale and add a point.** One extra point on 3·(n=10 seed)
+  reaches end-ratio 9/10. Iterating the lift makes the ratio fall
+  and T/n² fall. Not a family with α→1, and not a T-family above
+  1/3.
+- **Rich middle fibres, threshold 1.6.** A split of the 1/2 sum
+  at τ=8/5 would give γ≤4/9 if only O(1) middle points could
+  saturate that ratio. Search saw at most one such point (a double
+  geometric progression). That is not a proof: a second centre is
+  not excluded, so 4/9 is not claimed.
+
+## 9. The useful failure
+
+Endpoint degree can exceed 2/3 on *both* sides at once, but the
+sets that do it are unions of a few long APs sharing the two
+endpoints. They spend their extra end-hooks on a thin pencil and
+lose the bulk interval mass, so T does not rise. The obstruction
+to 1/3 by induction is real; it is not a new construction.
+
+## 10. What is proved vs still open (after q1)
+
+Still proved: T ≤ ⌈n²/2⌉, γ ≤ 1/2. Still open: γ=1/3. q1 adds
+the hook identity T = n+∑(N1+N2), the unique hole-pair proof of
+the almost-interval formula through n=120, and a list of
+over-budget endpoint sets that do not beat the interval. The
+constant did not move.

@@ -163,3 +163,72 @@ Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s fo
 Those six cubes are UNSAT with stored, replayed DRATs (`certs/keep/ch-18-6-k{6..11}.{cnf,drat}`). So every 18-vertex oriented graph with δ⁺ ≥ 6 has a directed triangle.
 
 This is a dent against the finite hole, not against HKN 0.3465 (that number already misses n=18). Did not beat 0.34645. Did not treat 0.3388 as published. The k=0 search is leftover bookkeeping, not a bound.
+
+## 2026-08-27 — q2, next exact holes
+
+Continue from the n=18 pigeonhole. Code is `compute/q2/`. Published unrestricted threshold is still HKN Combinatorica 0.3465: fetched arXiv:0908.2791v4 tonight (abstract and Theorem 1.2 still 0.3465n; no later version). Grzesik–Volec arXiv:2102.12830v2 still does not replace the unrestricted triangle number. Cheng–Keevash arXiv:2402.16776v4 (21 Aug 2024) quotes HKN 0.3465 as the triangle-case input and proves a path-length statement, not a new c. No arXiv hit after 2024 states a published unrestricted c < 0.3465 with a public certificate. Do not treat 0.3388 as published. The stored F₄ certificate at 0.34645 is not to be moved unless a new inequality appears.
+
+After n=18, the first remaining exact order is n=21, δ⁺=7 (0.3465·21 = 7.2765 > 7; even 0.3388·21 = 7.1148 > 7). Then n=24, and a few near-threshold orders such as n=26 (0.3465·26 = 9.009 > 9). A 7-outregular oriented graph on 21 vertices has 147 arcs, so some in-degree is at least 7. Same encoder as q1: cubes k=|N⁻(0)|. Counting on N⁺(0) empties k=13. The statement reduces to k=7..12.
+
+A DRAT/UNSAT on every needed cube, or a verified C₃-free 7-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound.
+
+### 2026-08-27 — cubes through n=36
+
+Same encoder as q1. High-k cubes first, kissat 4.0.4, DRAT checked against a CNF regenerated from `encode.py` (not against leftover scratch files).
+
+Soundness: n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free 6-outregular model. n=24 d=7 k=7 is SAT in 7s, same check. So the encoder is not vacuously UNSAT at these orders.
+
+Every needed cube k≥d at the remaining holes through n=36 is UNSAT. Each proof is tens to a few hundred kilobytes and finishes in well under a second:
+
+| n | d | cubes | worst time | DRAT |
+| ---: | ---: | --- | ---: | --- |
+| 21 | 7 | k=7..12 | 0.04s | VERIFIED, stored |
+| 24 | 8 | k=8..14 | 0.04s | VERIFIED, stored |
+| 26 | 9 | k=9..15 | 0.06s | VERIFIED, stored |
+| 27 | 9 | k=9..16 | 0.07s | VERIFIED, stored |
+| 29 | 10 | k=10..17 | 0.05s | VERIFIED, stored |
+| 30 | 10 | k=10..18 | 0.07s | VERIFIED, stored |
+| 32 | 11 | k=11..19 | 0.07s | VERIFIED, stored |
+| 33 | 11 | k=11..20 | 0.06s | VERIFIED, stored |
+| 35 | 12 | k=12..21 | 0.07s | VERIFIED, stored |
+| 36 | 12 | k=12..22 | 0.16s | VERIFIED, stored |
+
+Independent replay: `python3 verify_keep.py` (95 cubes, 0 failures).
+
+So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directed triangle. This is a dent against those finite holes, not against HKN 0.3465. Did not beat 0.34645. Did not treat 0.3388 as published.
+
+The first remaining hole is n=38, δ⁺=13 (0.3465·38 = 13.167 > 13). Then 39, 41, 42, … . Those were not run.
+
+## 2026-08-27 — q3, first leftover hole n=38
+
+Continue from the q2 certificates through n=36. Code is `compute/q3/`. Published unrestricted threshold is still HKN Combinatorica 0.3465: fetched arXiv:0908.2791v4 tonight (abstract and Theorem 1.2 still 0.3465n; no later version). Grzesik–Volec arXiv:2102.12830v2 still does not replace the unrestricted triangle number. Cheng–Keevash arXiv:2402.16776v4 quotes HKN 0.3465 as the triangle-case input. Mezher–Daamouch arXiv:2405.17797 is a restricted-class second-neighbourhood note, not a new unrestricted c. No arXiv hit after 2024 states a published unrestricted c < 0.3465 with a public certificate. Do not treat 0.3388 as published. The stored F₄ certificate at 0.34645 is not to be moved unless a new inequality appears.
+
+After n=36, the first remaining exact order is n=38, δ⁺=13 (0.3465·38 = 13.167 > 13; even 0.3388·38 = 12.8744 < 13, so granting the personal communication would already imply n=38 — we do not grant it). Then 39, 41, 42, 44, 45, … . A 13-outregular oriented graph on 38 vertices has 494 arcs, so some in-degree is at least 13. Same encoder as q1/q2: cubes k=|N⁻(0)|. Counting on N⁺(0) empties k=24. The statement reduces to k=13..23.
+
+Replay q2 first: `cd compute/q2 && ./run_all.sh`. A DRAT/UNSAT on every needed cube at n=38 (and as many later holes as finish), or a verified C₃-free 13-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound. A new F₄/F₆ certificate with some c < 0.34645 would be a numerical dent; the same (Q,b) ray does not give one.
+
+### 2026-08-27 — cubes through n=72
+
+q2 replay first: F₄ still 0.34645 (worst F=−0.12343); 95 stored pigeonhole DRATs, 0 failures.
+
+Same encoder as q1/q2. High-k cubes first, kissat 4.0.4, DRAT checked against a CNF regenerated from `encode.py`.
+
+Soundness: n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free 6-outregular model. The n=38 circulant (d=12) is C₃-free and 12-outregular; after placing N⁺(0) and N⁻(0), every arc-variable clause of both the non-SB and the lex-SB cube is satisfied (`certs/keep/soundness_n38_d12.json`). Kissat searching for that SAT model timed out at 60s; the explicit circulant is the check. The encoder is not vacuously UNSAT at these orders.
+
+Every needed cube k≥d at the remaining holes through n=72 is UNSAT. Each proof is tens of milliseconds to a couple of seconds:
+
+| n | d | cubes | worst time | DRAT |
+| ---: | ---: | --- | ---: | --- |
+| 38 | 13 | k=13..23 | 0.12s | VERIFIED, stored |
+| 39 | 13 | k=13..24 | 0.15s | VERIFIED, stored |
+| 41 | 14 | k=14..25 | 0.13s | VERIFIED, stored |
+| 42 | 14 | k=14..26 | 0.15s | VERIFIED, stored |
+| 44–72 | ⌈n/3⌉ | every k≥d not empty by count | ≤1.9s | VERIFIED, stored |
+
+Independent replay: `python3 verify_keep.py` (534 cubes). Orders closed tonight: 38, 39, 41, 42, 44, 45, 47, 48, 50–72. The n≡1 (mod 3) values 40, 43, 46, 49 are already implied by HKN 0.3465 and were not cubes.
+
+So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directed triangle. This is a dent against those finite holes, not against HKN 0.3465. Did not beat 0.34645.
+
+A second F₄ Cauchy–Schwarz block on the order-2 non-edge type was tried (`sos_nonedge.py`). The old c=0.34645 still certifies (t=−0.77); at c=0.346 the best t is +73. The extra SOS did not move the threshold. F₄ residue, not a numerical dent.
+
+The first remaining hole is n=73, δ⁺=25. The conjecture 1/3 is open. Did not treat 0.3388 as published.

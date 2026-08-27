@@ -1,0 +1,65 @@
+{
+  "claimed_c_unchanged": 0.38304,
+  "published": {
+    "c_star": 0.38234553336670274,
+    "c_star_str": "0.382345533366702721145993",
+    "c5": 0.38270908791873504,
+    "c5_str": "0.382709087918735029930313",
+    "c5_minus_quote": -5.9396931817445875e-15,
+    "c_star_minus_quote": -2.7755575615628914e-16
+  },
+  "ceiling": {
+    "b_star": "0.296493923569337569030703",
+    "crossing": "0.383051356586825582501647",
+    "crossing_float": 0.3830513565868256,
+    "residual": 1.0542197943230523e-81,
+    "g_second_deriv": -7.358970972584755
+  },
+  "small_mesh": {
+    "min_ratio": 1.000045065317412,
+    "n": 350489
+  },
+  "hunt_best": {
+    "ex4": 0.38305135658682565,
+    "half": 0.38305135658682565,
+    "scaled": 0.38305135658682554,
+    "ex5": 0.38270908778350354,
+    "ex4_ex5": 0.38305135658682565,
+    "three_way": 0.38305135658682565
+  },
+  "three_hits_at_claimed_atomic": 0,
+  "three_hits_at_claimed_2mix": 9,
+  "three_hits_at_0_40": 3,
+  "mixture_witness": {
+    "mean": 0.38304,
+    "ciid_example4_ratio": 0.9091371378730101,
+    "liu_beta_0_10_ex5_ratio": 1.032452542008268
+  },
+  "checks": {
+    "c_star_matches_cambie": true,
+    "c5_matches_liu": true,
+    "ceiling_residual_tiny": true,
+    "g_second_deriv_negative": true,
+    "ceiling_above_claimed": true,
+    "ceiling_below_half": true,
+    "ceiling_matches_q1": true,
+    "claimed_mesh_ratio_ge_1": true,
+    "mixes_present": true,
+    "mixes_do_not_beat_ceiling": true,
+    "ex4_best_at_ceiling": true,
+    "ex4_best_not_above_claimed_mesh": true,
+    "protocols_do_not_beat_ceiling": true,
+    "half_matches_ex4": true,
+    "scaled_not_above_ex4": true,
+    "ellis_replays": true,
+    "ellis_perturbation_negative": true,
+    "three_present": true,
+    "three_atomic_no_hits": true,
+    "ceiling_file_ok": true,
+    "mixture_witness_fails_pure_ex4": true,
+    "mixture_witness_iid_saves": true,
+    "no_new_claimed_constant": true
+  },
+  "all_ok": true,
+  "constant_moved": false
+}

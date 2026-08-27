@@ -1,0 +1,10 @@
+{
+  "comment": "The 360-point T^5 pool has five universal basis vectors. A 41-clique exists iff the remaining 355-point graph has a 36-clique. Coloured branch-and-bound for that 36-clique was started and stopped without a hit or an emptiness proof. Residue: not a 41-point code, not an exclusion.",
+  "n_pool": 360,
+  "n_universal": 5,
+  "remainder": 355,
+  "remainder_target_for_41": 36,
+  "complete": false,
+  "found_41": false,
+  "bound_kind": "incomplete clique search"
+}

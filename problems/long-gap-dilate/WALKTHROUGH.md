@@ -6,8 +6,9 @@ Discovery notes, not a paper. Empty sections would mean not done.
 - Quest: Green 100 #32, improve Shakan’s universal 2
 - Model: SuperGrok CLI `grok-4.6`
 - Date: 2026-08-17
-- Argument status: no certified $C>2$. Leftover is a verified SAT table,
-  a degree-wall for the published method, and failed lifts
+- Argument status: no certified $C>2$. Leftover is a verified SAT table
+  through $p=71$, a degree-wall (homogeneous and rising-factorial), a
+  exact $G(73,9)=24$, SAT upper bounds at $p=79,83,89$, and failed lifts
 - Problem status: open
 
 ## 0. What was actually missing
@@ -160,12 +161,33 @@ $n$, Dirichlet gives $G(p,n)=p-o(p)$, so the Shakan constant $2$
 is not sharp at bounded size. This is the regime $|A|\le c\log p$.
 
 **Certified computation, not a bound.** For every prime
-$17\le p\le 71$ and $n=\mathrm{round}\sqrt p$,
+$17\le p\le 73$ and $n=\mathrm{round}\sqrt p$,
 $G(p,n)\ge 2.1\sqrt p$, with an independently checked witness of
 size $n$ and (for $p\le 41$) an exhaustive proof that nothing
-smaller-gap exists. This is a finite list.
+smaller-gap exists. $G(73,9)=24$ is SAT plus Cadical unsat, not
+enum. This is a finite list.
 
 **Still open.** Green #32: is there a universal $C=100$, or even a
 universal $C=2.01$, such that every $A$ of size $\sim\sqrt p$
 has a dilate missing $C\sqrt p$? No such $C>2$ is proved here.
 No construction shows that $2$ is sharp either.
+
+## 7. 2026-08-27 continuation
+
+The unused handle was named: keep the interval in
+$w(d,t)=d\prod_a(t+da+1)_m$. Expanding it does not help. On the
+stored witnesses the Alon degrees of the rising $w$ equal the
+worst-case $k=nm-p+1$, and at the actual $G$ one already has
+$k\ge p$. The extra Stirling slice is the derivative of the top
+slice. There is nothing left in that polynomial to contradict at
+$C>2$.
+
+SAT past $p=71$ is cheap on the SAT side. Cadical finished the
+UNSAT at $T=24$ for $p=73$ in 165s, so $G(73,9)=24$ is exact.
+$G(79,9)\le 26$, $G(83,9)\le 27$, $G(89,9)\le 30$ are still only
+witnesses. One extra exact row does not lift to a universal $C>2$.
+Constructions through $p=199$ drift up to ratio $4$–$5$, not down
+to $2$. The new ratios stay near $3$, same as $p=71$.
+
+Replay: `sh problems/long-gap-dilate/compute/run_all.sh` and
+`cd problems/long-gap-dilate/compute/q1 && ./run_all.sh`.

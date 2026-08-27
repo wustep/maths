@@ -136,3 +136,52 @@ Replay: `cd compute/q1 && ./run_all.sh`.
 **Certified tonight.** Gupta v2 named witnesses. The broken-rung non-sum minimum at every order $7$ through $21$. No width-3 one-point extension of $W_{10}$ below $6/17$. No naturally labelled interval order on $\le 8$ elements below $1/3$.
 
 **Still open.** The unrestricted conjecture. Width-3 $\delta<6/17$ at $n\ge 15$. Three-chain products. Dimension 2. Interval orders as a class. Gold Partition past 14. The $n=22$ ladder row.
+
+# 2026-08-27, continued
+
+## 0. What was actually missing
+
+q1 named the leftover handles and then stopped. The $n=22$ ladder row was left running. Three-rail at $n=15$ was a greedy walk. Interval orders stopped at $n=8$ because the Python generator was slow. None of those is a new class: they are the same three classes, one integer further, if the enumerator can finish.
+
+## 1. Named false starts
+
+**Write the unfinished $n=22$ search as a minimum.** House rule. A partial mask sweep is residue.
+
+**Look for a three-rail $\delta<6/17$ at $n\le 14$.** Gupta's tail already forbids a width-3 value there. The $n=13$ and $n=14$ passes were still run, as a check, and stayed above $6/17$.
+
+**Treat $n=10$ interval orders as tonight's finite order before $n=9$ is certified.** A367494 says $197{,}409{,}097$ naturally labelled interval orders at $n=10$. $n=9$ is $9{,}062{,}503$ and was certified first; $n=10$ then finished and matched the OEIS count.
+
+## 2. The useful failure
+
+The q1 C ladder enumerator is correct and slow for a boring reason: every subset `memset`s $2^n$ words. At $n=22$ that is the whole budget. Once the ideals are stamped instead of zeroed, $2^{19}$ width-2 posets finish in seconds and the $n=22$ row is ordinary.
+
+The $n=22$ minimum itself is a failure in the interesting direction: $\delta$ goes *up* from $5402/15485$ to $1065/3049$. The class does not march into the printed gap.
+
+## 3. The click
+
+The leftover handles were already finite subset searches. The missing degree of freedom was the memset.
+
+## 4. The argument, in the order it was found
+
+Replay the published record first (Gupta v2 still the order-14 census; Chan–Pak 13.1 still open; Question 3.9 still open). Then the stamp engine against q1: ladders $7$ through $21$, three-rail $8$ through $12$, interval $3$ through $8$. Then the unused integers.
+
+$L_{22,1,5,6,9,12,13,17}$ has $e=54882$ and $\delta=1065/3049$. Python pair counters agree. $524{,}288$ non-sum ladders, none below $1/3$.
+
+Three-rail through $15$: $2{,}097{,}152$ non-sums at $n=15$, minimum $30572/78185$, width $3$, above $6/17$. Winners replayed.
+
+Interval orders through $10$: $9{,}062{,}503$ at $n=9$ and $197{,}409{,}097$ at $n=10$, matching A367494. Minimum $1/3$. Non-semiorder minimum $8/21$ through $9$ and $47/130$ at $10$. Witnesses replay.
+
+## 5. Computer search
+
+- `compute/q2/ladder_census.c` / `ladder_census.json`
+- `compute/q2/three_rail_census.c` / `three_rail.json`
+- `compute/q2/interval_census.c` / `interval_orders.json`
+- `figures/q2_class_minima.png`
+
+Replay: `cd compute/q2 && ./run_all.sh`.
+
+## 6. What is proved vs still open
+
+**Certified tonight.** The broken-rung non-sum minimum at $n=22$. Every three-rail poset on $\le 15$ elements has $\delta>6/17$. Every naturally labelled interval order on $\le 10$ elements has $\delta\ge 1/3$.
+
+**Still open.** The unrestricted conjecture. Width-3 $\delta<6/17$ outside the three-rail class at $n\ge 15$. Three-chain products. Dimension 2. Interval orders as a class past $n=10$. Gold Partition past 14. No $\delta<1/3$.
