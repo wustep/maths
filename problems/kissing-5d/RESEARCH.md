@@ -161,3 +161,34 @@ Opened tonight:
 - https://doi.org/10.5281/zenodo.18449600 — unaffiliated note claiming a
   degree-36 Cohn–Kumar number $44.0297$. Not a paper; not an exact dual;
   unrestricted Delsarte is already $\approx 46.345$. Lead only.
+
+## 2026-08-27 — what we certified this run
+
+Still **no** change to the unrestricted range $40\le\tau_5\le 44$.
+
+### 5. Polar maximality of the four 40-point codes
+
+`compute/q1/polar_vertices.json`, replayed by `replay_max_vertex.py`
+(Fraction GE, not the Cramer path in `polar.c`). For each of
+$D_5,L_5,Q_5,R_5$ the polar is bounded and $\max|x|^2=5/4<2$.
+Python and C enumerations agree on the vertex counts. Consequently
+none of these four codes admits a 41st kissing point. This is a
+statement about those four codes, not about $\tau_5$.
+
+### 6. Integer Delsarte on $T_{Q_5}$ excludes 44
+
+`compute/q1/integer_q5_44.json`: $14\,753\,818\,985$ integer points in
+a box containing the real AABB by 15, zero Delsarte-feasible. Tables
+match `delsarte.py`; $Q_5$'s own $N=40$ histogram passes. So $k=44$
+is impossible for inner products in
+$T_{Q_5}=\{-1,-4/5,-1/2,-3/10,0,1/5,1/2\}$. Real Delsarte is still
+$\approx 44.67$; this is integrality, not a dual below 44.
+
+$T_{L_5}$ still has integer hits at $N=41,42,43$
+(`compute/q1/integer_restricted.json`).
+
+Replay:
+
+```bash
+sh problems/kissing-5d/compute/q1/run_all.sh
+```

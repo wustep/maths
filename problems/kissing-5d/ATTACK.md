@@ -185,3 +185,50 @@ classical Levenshtein number 48 before claiming any comparison.
   for $T_{L_5}$ and $T_{Q_5}$; (3) $A_4$-containing height and the
   discrete vertex-extra graph; (4) more interpolating duals; (5)
   Szöllősi $T^5$ candidate graph on the known angles.
+
+## 2026-08-27 — polar vertices: all four codes are maximal
+
+- $P(C)=\{x:\langle x,p\rangle\le 1\ \forall p\in C\}$ is a bounded
+  rational polytope for each of $D_5,L_5,Q_5,R_5$ (no recession ray).
+- Exhaustive 5-subset vertex enumeration, twice:
+  `compute/q1/polar.c` and `polar_vertices.py --python`.
+  Counts agree: $D_5$ 5504 vertices, $L_5$ 5440, $Q_5$ 4024, $R_5$ 3960.
+- $\max|x|^2=5/4<2$ on every polar. Independent Fraction GE
+  (`replay_max_vertex.py`) rebuilds the recorded vertex over $\mathbb Q$:
+  $Q_5$ and $D_5$ attain $5/4$ at $\pm\frac12(1,1,1,1,1)$; $L_5$ and
+  $R_5$ at a coordinate half-axis. All inequalities hold.
+- So $Q_5$ and $R_5$ are maximal as spherical codes. That was numerical
+  slack $\approx-0.2649$ on 17 August. $D_5$ and $L_5$ were already
+  maximal by other exact arguments; the polar is a uniform proof.
+- This excludes a 41st point *on these four codes*. It does not exclude
+  an unrelated 41-point code. Unrestricted $\tau_5$ is unchanged.
+
+## 2026-08-27 — $T_{Q_5}$ integer slice empty at $N=44$
+
+- Real Delsarte on $T_{Q_5}$ is still $\approx 44.67$ (no interpolating
+  dual below 44; several supports certified only in the 45–60 range).
+- Integer pair-counts: $n_t=N A_t/2\in\mathbb Z$, $\sum n_t=C(44,2)=946$.
+- `integer_q5_44.c` scans a box containing the HiGHS axis-aligned range
+  by 15 in each coordinate ($n_{-1}$ in the full $0..22$). $14\,753\,818\,985$
+  points, 0 hits. Tables match `delsarte.py`; the published $Q_5$
+  histogram at $N=40$ passes every row.
+- Dent in this class: no spherical code in $S^4$ with distinct inner
+  products in $\{-1,-4/5,-1/2,-3/10,0,1/5,1/2\}$ has 44 points.
+  Does *not* exclude 41, 42 or 43, and is not an unrestricted dual.
+
+## 2026-08-27 — $T_{L_5}$ integer does not kill 41–43
+
+- $N=44$ is already empty by the 17 August dual $239925/5456<44$.
+- $N=41,42,43$ each have integer Delsarte-feasible distributions
+  (first hits in `integer_restricted.json`), all with $n_{-1}=0$.
+  Residue: integrality does not improve the $T_{L_5}$ dual.
+
+## 2026-08-27 — $A_4$ extras and Szöllősi graph
+
+- Height over a fixed $A_4$ equator: $|s|\ge 2$. Poles conflict with
+  every other extra in the same hemisphere ($8/5>1$). Discrete
+  two-level vertex extras: independence 10 per hemisphere, 20 total,
+  so $A_4$ plus vertex extras is at most 40. Continuous extras with
+  $|s|>2$ are not in that graph.
+- Szöllősi $T^5$ pool: 355 equal-norm vectors. Exact clique on 355
+  vertices was not run. Residue, not a 41-point code.
