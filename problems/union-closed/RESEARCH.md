@@ -37,3 +37,28 @@ Fetched and read tonight, in the order used.
 - Best *unconditional explicit* published constant with a complete reduction: Yu–Cambie `c* = 0.3823455333667027…` (computer-checked 2-variable inequality). Independently recomputed tonight, residual `<10^{-15}` vs Cambie's quote.
 - Best *quoted* published constant: Liu `0.382709087918741`, under two numerical hypotheses. Independently recomputed: `0.382709087918735`. Mesh first-crossing of his Example-5 mix on `{b,1}`: `0.38271065`.
 - Tonight's number `0.38285` beats Liu on that same family, with his Example 4 protocol. It does not replace Yu–Cambie as an unconditional theorem, and it is not `1/2`.
+
+## 2026-08-27
+
+Fetched and read tonight, in the order used. No paper after Liu moves the frequency constant.
+
+### Primary (frequency constant, re-opened)
+
+- [Gilmer, *A constant lower bound for the union-closed sets conjecture*, arXiv:2211.09055v2](https://arxiv.org/abs/2211.09055) (28 Nov 2022). Re-fetched. Theorem: some element in a 0.01 fraction. Does not claim `φ` as a theorem; conjectures it as the iid limit. Local PDF: `compute/refs/gilmer-2211.09055.pdf`.
+- [Liu, *Improving the lower bound… via conditionally IID coupling*, arXiv:2306.08824v1](https://arxiv.org/abs/2306.08824) (15 Jun 2023). Re-fetched HTML. Example 4 is (22)–(23); Theorem 6 is existential `c > c*`; Theorem 13 is `c′ ≈ 0.382709087918741` under PSD + global-min, Example 5, `β* ≈ 0.10005`. No Example-4 numerical section. Local: `compute/refs/liu-2306.08824.pdf`.
+- [Lu–Raz, *Note on the union-closed sets conjecture and Reimer's average set size theorem*, arXiv:2405.10639](https://arxiv.org/abs/2405.10639). Re-opened abs page. Still: “The best constant lower bound currently is approximately 0.38271, proven by Liu.”
+- [Wikipedia, *Union-closed sets conjecture*](https://en.wikipedia.org/wiki/Union-closed_sets_conjecture), fetched 2026-08-27. Still quotes 0.38271 and cites Liu + Lu–Raz. Finite cases still 50 sets / 12 elements.
+- [Das–Wu, *Frequent elements in union-closed set families*, arXiv:2412.03862v3](https://arxiv.org/abs/2412.03862) (11 Jul 2025). Re-opened abs. k-th frequent element; large-family frequency `φ − o(1)`. Intro treats 0.3823455 as “where things stand today” and cites Liu's CISS writeup separately. Does not claim a number above Liu.
+
+### Later papers that do not move the frequency constant
+
+- [DeFranco, *On Boolean polynomials and the Union-Closed Conjecture*, arXiv:2606.26191](https://arxiv.org/abs/2606.26191) (24 Jun 2026). Encoding: the conjecture for given `(m,n)` iff a Boolean polynomial is identically zero. No numerical constant.
+- [Tian, *Frankl's Conjecture at Height Four…*, arXiv:2608.25147](https://arxiv.org/abs/2608.25147) (25 Aug 2026). Proves the empty-set-free form for poset height ≤ 4. Structural constraints at height 5. Not a frequency constant; first-open universe size remains 13 in the papers that state that frontier.
+- [Gendler, *Partial results for union-closed conjectures on the weighted cube*, arXiv:2504.13347v3](https://arxiv.org/abs/2504.13347) (4 Nov 2025). Weighted product measure; Karpas-type density and Knill log bound. No 0.38-style constant.
+- arXiv API query `all:union-closed AND all:conjecture`, sorted by submitted date, 30 hits (2026-08-27). No hit after Liu claims a frequency constant above 0.38271.
+
+### What we compare against tonight
+
+- Best *quoted* published constant: still Liu 0.382709087918741 (conditional). Independently recomputed: 0.382709087918735.
+- Repo ray-record from 2026-08-17: 0.38285 at `β = 1/5`, mesh min ratio 1.000077. Replayed; `compute/run_all.sh` exit 0.
+- Tonight: analytic first-crossing of pure Example 4 on `{b,1}` is 0.38305135658682558…; certified 0.38304 with mesh min ratio 1.000021687. Beats both. Same hypothesis class. Not `1/2`.
