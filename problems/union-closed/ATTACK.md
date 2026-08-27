@@ -100,3 +100,45 @@ This is search residue. It is consistent with the `{b,1}` ray remaining worst, b
 Claim: on the published optimizer family `{b,1}`, iid + Liu Example 4 at `β=1/5` gives a mesh-certified frequency constant **0.38285**, strictly larger than Liu's published **0.382709** (Example 5). Replay `compute/verify.py`.
 
 Do not claim: the `1/2` conjecture; an unconditional bound for every measure on `[0,1]`; a new `n` or `|F|` classification; that Liu's PSD hypothesis has been proved.
+
+## 2026-08-27 — replay, then β past 0.40
+
+Parent `compute/run_all.sh` still exits 0: claimed 0.38285, mesh min ratio 1.000077. Fetched Gilmer 2211.09055v2 (constant 0.01) and Liu 2306.08824v1 (Theorem 13: 0.382709 under PSD + global-min; Theorem 6: some unspecified `c > c*` via Example 4). No later arXiv paper moves the frequency constant. Wikipedia (fetched tonight) still quotes 0.38271. Tian arXiv:2608.25147 proves the empty-set-free form at poset height ≤ 4; that is a finite classification of a different parameter, not a frequency dent, and it is not claimed here.
+
+The 2026-08-17 `first_crossing.json` already had Example-4 best at `β = 0.3825` with mesh crossing 0.382988, and said `c(β)` was still increasing at 0.40. The claimed number used `β = 1/5`. The leftover handle was the rest of the β interval.
+
+### 1-D formula
+
+On `{b,1}` the worse Example-4 C3 endpoint is always the independent one, so
+
+    ratio = (1−a) Hmix(b,β) / h(b),
+
+and the first mean with ratio < 1 is
+
+    c(β) = min_b  1 − (1−b) h(b) / Hmix(b,β).
+
+`compute/q1/scan_beta.py` evaluates this on `β ∈ [0,1]`. The curve is strictly increasing. At `β = 1`, Hmix = 1 on the whole interval `(1−1/√2, 1/2]`, and `c(1) = 0.3830513565868…`. Adding Sawin's max-entropy term does not beat pure Example 4 on this ray.
+
+### Analytic crossing
+
+For `b ∈ (1−1/√2, 1/2]`, Example 4 saturates `Π_{b,b}(0,0) = 1/2`. The first-crossing is therefore the unique critical point of `f(b) = 1 − (1−b)h(b)`:
+
+    h(b) = (1−b) log₂((1−b)/b).
+
+mpmath dps=80: `b* = 0.296493923569337…`, `c = 0.38305135658682558…`, residual `10^{-81}`, `g''(b*) < 0`. The 2026-08-17 closed form `1 − h(2^{-1/2})/√2 ≈ 0.383099` is `f` at the left endpoint `b = 1−1/√2`, not the minimum. The nearby Sawin-type point they treated as a failure is this critical point, and it is still above 0.38285.
+
+### Claimed number
+
+**0.38304**, strictly below the analytic crossing. On the 4500×3500 mesh, every cell with mean `≤ 0.38304` has ratio `≥ 1.000021687`. Independent C nested-loop mesh: same min ratio, 0 bad cells, same arg. Replay `compute/q1/run_all.sh`.
+
+This is a dent of the repo ray-record 0.38285 and of Liu's published 0.382709, in the same `{b,1}` hypothesis class. It is not 1/2 and not every measure.
+
+### Mixture residue
+
+`hunt_two_atomic.py` at `(β,c) = (1, 0.38304)`: 13556 uniform 2-atomic samples, worst ratio 1.00195; 10077 near-ray perturbations, worst 1.00142; **0 hits** below 1. Incomplete search, not a Krein–Milman certificate.
+
+### What we claim / do not claim
+
+Claim: on `{b,1}`, pure Example 4 has Gilmer ratio ≥ 1 whenever the mean is at most 0.38304. The exact first-crossing of the ray is the analytic number 0.3830513565868….
+
+Do not claim: the 1/2 conjecture; every measure on [0,1]; a new `n` or `|F|` classification; Tian's height-4 theorem (already published); Liu's PSD hypothesis.

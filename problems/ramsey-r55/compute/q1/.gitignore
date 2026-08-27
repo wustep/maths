@@ -1,0 +1,5 @@
+cayley_census
+extend_flips
+__pycache__/
+*.pyc
+cnf/

@@ -1,0 +1,355 @@
+{
+  "statement": "A fixed polynomial of degree d>=2 produces remainder windows of exponent 1-1/d >= 1/2. Size-of-remainder covering therefore cannot beat the square template.",
+  "polys": [
+    {
+      "poly": "x^2",
+      "degree": 2,
+      "remainder_exponent": "1-1/2",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 400,
+          "gap": 41,
+          "n_at_max_remainder": 440,
+          "max_remainder": 40,
+          "gap_d": 1681,
+          "n_d_minus_1": 440,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 2500,
+          "gap": 101,
+          "n_at_max_remainder": 2600,
+          "max_remainder": 100,
+          "gap_d": 10201,
+          "n_d_minus_1": 2600,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 10000,
+          "gap": 201,
+          "n_at_max_remainder": 10200,
+          "max_remainder": 200,
+          "gap_d": 40401,
+          "n_d_minus_1": 10200,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 40000,
+          "gap": 401,
+          "n_at_max_remainder": 40400,
+          "max_remainder": 400,
+          "gap_d": 160801,
+          "n_d_minus_1": 40400,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 160000,
+          "gap": 801,
+          "n_at_max_remainder": 160800,
+          "max_remainder": 800,
+          "gap_d": 641601,
+          "n_d_minus_1": 160800,
+          "gap_beats_half_window": true
+        }
+      ]
+    },
+    {
+      "poly": "x^3",
+      "degree": 3,
+      "remainder_exponent": "1-1/3",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 8000,
+          "gap": 1261,
+          "n_at_max_remainder": 9260,
+          "max_remainder": 1260,
+          "gap_d": 2005142581,
+          "n_d_minus_1": 85747600,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 125000,
+          "gap": 7651,
+          "n_at_max_remainder": 132650,
+          "max_remainder": 7650,
+          "gap_d": 447872715451,
+          "n_d_minus_1": 17596022500,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 1000000,
+          "gap": 30301,
+          "n_at_max_remainder": 1030300,
+          "max_remainder": 30300,
+          "gap_d": 27820881360901,
+          "n_d_minus_1": 1061518090000,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 8000000,
+          "gap": 120601,
+          "n_at_max_remainder": 8120600,
+          "max_remainder": 120600,
+          "gap_d": 1754093449441801,
+          "n_d_minus_1": 65944144360000,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 64000000,
+          "gap": 481201,
+          "n_at_max_remainder": 64481200,
+          "max_remainder": 481200,
+          "gap_d": 111424209989763601,
+          "n_d_minus_1": 4157825153440000,
+          "gap_beats_half_window": true
+        }
+      ]
+    },
+    {
+      "poly": "x(x+1)",
+      "degree": 2,
+      "remainder_exponent": "1-1/2",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 420,
+          "gap": 42,
+          "n_at_max_remainder": 461,
+          "max_remainder": 41,
+          "gap_d": 1764,
+          "n_d_minus_1": 461,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 2550,
+          "gap": 102,
+          "n_at_max_remainder": 2651,
+          "max_remainder": 101,
+          "gap_d": 10404,
+          "n_d_minus_1": 2651,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 10100,
+          "gap": 202,
+          "n_at_max_remainder": 10301,
+          "max_remainder": 201,
+          "gap_d": 40804,
+          "n_d_minus_1": 10301,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 40200,
+          "gap": 402,
+          "n_at_max_remainder": 40601,
+          "max_remainder": 401,
+          "gap_d": 161604,
+          "n_d_minus_1": 40601,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 160400,
+          "gap": 802,
+          "n_at_max_remainder": 161201,
+          "max_remainder": 801,
+          "gap_d": 643204,
+          "n_d_minus_1": 161201,
+          "gap_beats_half_window": true
+        }
+      ]
+    },
+    {
+      "poly": "x(x+1)/2",
+      "degree": 2,
+      "remainder_exponent": "1-1/2",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 210,
+          "gap": 21,
+          "n_at_max_remainder": 230,
+          "max_remainder": 20,
+          "gap_d": 441,
+          "n_d_minus_1": 230,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 1275,
+          "gap": 51,
+          "n_at_max_remainder": 1325,
+          "max_remainder": 50,
+          "gap_d": 2601,
+          "n_d_minus_1": 1325,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 5050,
+          "gap": 101,
+          "n_at_max_remainder": 5150,
+          "max_remainder": 100,
+          "gap_d": 10201,
+          "n_d_minus_1": 5150,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 20100,
+          "gap": 201,
+          "n_at_max_remainder": 20300,
+          "max_remainder": 200,
+          "gap_d": 40401,
+          "n_d_minus_1": 20300,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 80200,
+          "gap": 401,
+          "n_at_max_remainder": 80600,
+          "max_remainder": 400,
+          "gap_d": 160801,
+          "n_d_minus_1": 80600,
+          "gap_beats_half_window": true
+        }
+      ]
+    },
+    {
+      "poly": "x^2+x+1",
+      "degree": 2,
+      "remainder_exponent": "1-1/2",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 421,
+          "gap": 42,
+          "n_at_max_remainder": 462,
+          "max_remainder": 41,
+          "gap_d": 1764,
+          "n_d_minus_1": 462,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 2551,
+          "gap": 102,
+          "n_at_max_remainder": 2652,
+          "max_remainder": 101,
+          "gap_d": 10404,
+          "n_d_minus_1": 2652,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 10101,
+          "gap": 202,
+          "n_at_max_remainder": 10302,
+          "max_remainder": 201,
+          "gap_d": 40804,
+          "n_d_minus_1": 10302,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 40201,
+          "gap": 402,
+          "n_at_max_remainder": 40602,
+          "max_remainder": 401,
+          "gap_d": 161604,
+          "n_d_minus_1": 40602,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 160401,
+          "gap": 802,
+          "n_at_max_remainder": 161202,
+          "max_remainder": 801,
+          "gap_d": 643204,
+          "n_d_minus_1": 161202,
+          "gap_beats_half_window": true
+        }
+      ]
+    },
+    {
+      "poly": "x(x+1)(x+2)/6",
+      "degree": 3,
+      "remainder_exponent": "1-1/3",
+      "beats_square_by_size": false,
+      "samples": [
+        {
+          "k": 20,
+          "P_k": 1540,
+          "gap": 231,
+          "n_at_max_remainder": 1770,
+          "max_remainder": 230,
+          "gap_d": 12326391,
+          "n_d_minus_1": 3132900,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 50,
+          "P_k": 22100,
+          "gap": 1326,
+          "n_at_max_remainder": 23425,
+          "max_remainder": 1325,
+          "gap_d": 2331473976,
+          "n_d_minus_1": 548730625,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 100,
+          "P_k": 171700,
+          "gap": 5151,
+          "n_at_max_remainder": 176850,
+          "max_remainder": 5150,
+          "gap_d": 136670457951,
+          "n_d_minus_1": 31275922500,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 200,
+          "P_k": 1353400,
+          "gap": 20301,
+          "n_at_max_remainder": 1373700,
+          "max_remainder": 20300,
+          "gap_d": 8366663330901,
+          "n_d_minus_1": 1887051690000,
+          "gap_beats_half_window": true
+        },
+        {
+          "k": 400,
+          "P_k": 10746800,
+          "gap": 80601,
+          "n_at_max_remainder": 10827400,
+          "max_remainder": 80600,
+          "gap_d": 523626105321801,
+          "n_d_minus_1": 117232590760000,
+          "gap_beats_half_window": true
+        }
+      ]
+    }
+  ],
+  "is_dent": false,
+  "size_lower_bound_holds": true
+}

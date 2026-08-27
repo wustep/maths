@@ -100,3 +100,27 @@ There is no legal-degree undirected Cayley `(5,5)`-graph of order 42. Combined w
 
 Python independently replayed the circulant zeros at 42 and 43 (`certs/py_circulant_{42,43}.json`, 145s / 150s, same 1167322 legal connection sets).
 
+## 2026-08-27 — q1, after the algebraic census
+
+House unchanged: dent = a certified 43-vertex $(5,5)$-graph, a nonexistence proof at 45 with an independently checkable log, or a documented residue. Isolated SAT timeouts are not a dent.
+
+Fetched again, before searching:
+
+- Radziszowski revision #18, 24 April 2026, `https://www.cs.rit.edu/~spr/ElJC/ejcram18.pdf` (149 pp, 585821 bytes). Table Ia still $43\le R(5,5)\le 46$. Item 2.1(e) still the McKay–Radziszowski conjecture $R(5,5)=43$ with 656 critical graphs; upper bound 46 via [AnM3]. [AnM4] is listed as the Journal of Graph Theory 2026 print of the same bound.
+- E-JC DS1 page `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` still dates the living article 24 April 2026 (`DC.Date.modified` 2026-04-23). `https://www.cs.rit.edu/~spr/ElJC/eline.html` has no revision #19.
+- Angeltveit–McKay arXiv:2409.15709v2, 1 September 2025. Lower bound 43 (Exoo) still the best; they write that 45 wants new theory.
+- McKay combinatorial-data page still hosts `r55_42some.g6` and still says there could be more 42-vertex examples and even some on 43–47 vertices.
+- arXiv API, newest `R(5,5)` hit after 2409.15709: Tamburini 2508.16699v2, a random-projector / prime-factor *heuristic* for $R(5,5)=45$. Not a colouring and not a nonexistence proof. Lead, not a citation.
+
+Parent replay `compute/replay.sh` plus `python3 verify_mckay.py`: 328+328 ok, none extend, circulant 42/43 empty, 1-WL flip types and Seidel isolation unchanged.
+
+q1 searches (code in `compute/q1/`):
+
+- Group laws for $C_2\times C_{22}$, $D_{22}$, $C_{11}\rtimes C_4$, $C_3\times C_{15}$, and $C_3\times C_3\times C_5$: identity, inverses, full associativity (`certs/group_laws.json`).
+- Circulants at 44 and 45 replayed empty (`logs/circ{44,45}.txt`).
+- Cayley, legal degrees from $R(4,5)=25$: $C_2\times C_{22}$ 625004 leaves, 0 hits, 5.16s; $C_{11}\rtimes C_4$ 294262 leaves, 0 hits, 2.77s; $C_3\times C_{15}$ 93976 leaves, 0 hits, 0.92s. Python independently replayed the two smaller zeros. $D_{22}$ still running at the time of this paragraph.
+- No integral strongly regular parameter set on 43 vertices with degree in $[18,24]$ (`certs/srg43_params.json`). $43\not\equiv 1\pmod 4$, so no conference graph either. This excludes an SRG $(5,5,43)$-graph; it is not a bound on $R(5,5)$.
+- Automorphisms of the 656: 424 have $|\mathrm{Aut}|=1$, 232 have $|\mathrm{Aut}|=2$ (an involution), none have a 7-cycle (`certs/aut_mckay.json`, 0.51s, not nauty). A $C_7$-symmetric $(5,5,42)$-graph would therefore be new.
+- $C_7$ encoder self-test on $n=7$ (8 circulants): SAT and `is_ramsey` agree (`certs/c7_selftest.json`).
+- One-flip-then-extend of the 656, radius-2 1-flips, and $C_7$ SAT at 42 and 43: see the later paragraphs in this section and `compute/q1/certs/q1_summary.json`.
+

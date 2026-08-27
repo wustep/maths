@@ -1,0 +1,10 @@
+{
+  "degree_window": [
+    18,
+    24
+  ],
+  "n": 43,
+  "n_integral": 0,
+  "note": "Integrality only. Prime order plus vertex-transitivity would force a circulant, already empty. This list does not prove there is no asymmetric SRG, and an SRG can still contain a K5.",
+  "params": []
+}

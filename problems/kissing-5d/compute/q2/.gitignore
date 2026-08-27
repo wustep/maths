@@ -1,0 +1,12 @@
+clique41
+sphere_clique
+__pycache__/
+*.o
+points_*.txt
+adj_*.txt
+t5_adj.txt
+t5_355_adj.txt
+t5_points.json
+q5cap_adj.txt
+.venv/
+run_all.log

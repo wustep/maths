@@ -64,3 +64,49 @@ This is the same hypothesis class as Liu Theorem 13: the bound is the Gilmer con
 **Proved tonight, replayable.** On every 2-atomic law supported on `{b,1}`, the iid + Example-4 mix with `β=1/5` has Gilmer ratio at least 1 whenever the mean is at most `0.38285`. Liu's published numerical constant, produced by the same calculation with Example 5, is `0.382709`. The mesh recovers his number and beats it.
 
 **Still open.** The `1/2` conjecture. An unconditional constant for every measure on `[0,1]`, not just `{b,1}`. Liu's PSD hypothesis for Example 5 (and the missing PSD for Example 4). Universe size 13. Families of 51 sets. Whether power sets are the only tight examples.
+
+---
+
+# Walkthrough — pure Example 4 on `{b,1}`, 2026-08-27
+
+## 0. What was actually missing
+
+The 2026-08-17 campaign found that Example 4 beats Example 5 on `{b,1}`, then stopped the mix-weight scan at `β = 0.40` and claimed 0.38285 at `β = 1/5`. The leftover degree of freedom was the rest of the interval. On this ray the first-crossing `c(β)` is monotone in `β` all the way to 1.
+
+## 1. Named false starts
+
+**Treat the closed form `1 − h(2^{-1/2})/√2 ≈ 0.383099` as either a bound or a reason to abandon `β = 1`.** That number is `f(1−1/√2)`, the left endpoint of the saturation interval, not the first-crossing. The 2026-08-17 note already said a nearby point dips below it; that nearby point is the actual minimizer, and its value is 0.383051, still above 0.38285.
+
+**Push a 3-way mix with Sawin max-entropy.** On `{b,1}` the max-entropy term does not beat pure Example 4. The 3-way scan's best was a rounding of `β + γ = 1`.
+
+**Promote Tian arXiv:2608.25147 (height ≤ 4) to a dent from this run.** The paper is real; it is not this campaign's certificate, and it does not move the frequency constant.
+
+## 2. The useful failure
+
+Evaluating `f` at the saturation threshold is the right 1-parameter function and the wrong point. Once `f(b) = 1 − (1−b)h(b)` is written down, the endpoint is visibly larger than values just to its right (`f(0.2965) ≈ 0.383051 < 0.383099`). The closed form taught the formula; the critical point is the crossing.
+
+## 3. The click
+
+For `β = 1` and `b ∈ (1−1/√2, 1/2]`, Example 4 forces `Π_{b,b}(0,0) = 1/2`, so `Hmix = 1` and the equality mean collapses to `1 − (1−b)h(b)`. Below the threshold, Example 4 coincides with iid and the equality weight is negative (that interval sits below `φ`). The first-crossing is therefore a one-variable calculus problem: solve `h(b) = (1−b) log₂((1−b)/b)`.
+
+![First-crossing c(β) on {b,1} through β=1](figures/q1_beta_curve.png)
+
+## 4. The argument, in the order it was found
+
+Replay of `compute/verify.py` recovered 0.38285. The stored `first_crossing.json` already showed Example 4 still improving at `β = 0.3825`. A 1-D scan of `c(β) = min_b 1 − (1−b)h(b)/Hmix(b,β)` on `[0,1]` is strictly increasing and ends at 0.383051356….
+
+That terminal value is the critical point of `1 − (1−b)h(b)`, solved at 80 decimals. Claim 0.38304, below the crossing. A 4500×3500 mesh and an independent C loop both give min ratio 1.000021687 on the claimed box.
+
+## 5. Computer search
+
+- `compute/q1/certs/analytic_crossing.json`: `b*`, crossing, residual `10^{-81}`.
+- `compute/q1/certs/verify.json`: published constants, analytic residual, mesh first-crossing 0.38305312, min ratio 1.000021687 on 5.1M cells; old 0.38285 still replays.
+- `compute/q1/verify.c`: same min ratio, 0 bad cells.
+- `compute/q1/certs/hunt_two_atomic.json`: 13.6k uniform 2-atomic samples and 10.1k near-ray perturbations, worst ratios 1.002 and 1.001, zero hits below 1. Incomplete search.
+- `figures/q1_beta_curve.png`: the `c(β)` figure above.
+
+## 6. What is proved vs still open
+
+**Proved tonight, replayable.** On every 2-atomic law supported on `{b,1}`, pure Example 4 has Gilmer ratio at least 1 whenever the mean is at most 0.38304. The exact first-crossing of the ray is the analytic number 0.3830513565868…. This beats the 2026-08-17 number 0.38285 and Liu's 0.382709.
+
+**Still open.** The `1/2` conjecture. An unconditional constant for every measure. Liu's PSD hypothesis. Universe size 13. Families of 51 sets. Height 5 in Tian's empty-set-free form.
