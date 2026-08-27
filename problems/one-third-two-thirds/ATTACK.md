@@ -209,7 +209,7 @@ Three-rail (rails $x_i<x_{i+3}$, optional $+4$ and $+5$), exhaustive through $n=
 
 $30572/78185\approx 0.391021>6/17$. The first unused width-3 order has no three-rail example below the Gupta tail. That is a class statement, not a width-3 census.
 
-Naturally labelled interval orders through $n=9$. Counts $7,37,272,2637,32469,493602,9062503$ match OEIS A367494 exactly. Every non-chain has $\delta\ge 1/3$. The overall minimum is $1/3$ (Aigner family). Among those that contain $3+1$ (not semiorders) the minimum is $8/21$ from $n=7$ onward. $n=10$ ($197{,}409{,}097$ naturally labelled, A367494) was started; if it is not finished it is residue, not a row.
+Naturally labelled interval orders through $n=10$. Counts $7,37,272,2637,32469,493602,9062503,197409097$ match OEIS A367494 exactly. Every non-chain has $\delta\ge 1/3$. The overall minimum is $1/3$ (Aigner family). Among those that contain $3+1$ (not semiorders) the minimum is $8/21$ at $n=7,8,9$ and $47/130$ at $n=10$.
 
 No dent of the conjecture: no certified $\delta<1/3$. No certified width-3 example below $6/17$.
 

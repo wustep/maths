@@ -102,7 +102,7 @@ static void print_down(const uint32_t *d) {
 
 int main(int argc, char **argv) {
     int n0 = argc > 1 ? atoi(argv[1]) : 3;
-    int n1 = argc > 2 ? atoi(argv[2]) : 9;
+    int n1 = argc > 2 ? atoi(argv[2]) : 10;
     if (n0 < 3 || n1 > MAXN || n0 > n1) {
         fprintf(stderr, "usage: interval_census n0 n1  (3..%d)\n", MAXN);
         return 1;
