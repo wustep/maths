@@ -1,0 +1,47 @@
+{
+  "duals": {
+    "present": true,
+    "ok": true,
+    "duals": {}
+  },
+  "t5_clique": {
+    "present": true,
+    "ok": true,
+    "found_41": false,
+    "best": 40
+  },
+  "q5cap_clique": {
+    "present": true,
+    "ok": true,
+    "found_41": false,
+    "best": 40
+  },
+  "sphere_d2.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false,
+    "best": 40
+  },
+  "sphere_d4.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false,
+    "complete": false,
+    "residue": true
+  },
+  "t5_36_residue": {
+    "complete": false,
+    "found_41": false,
+    "ok": true
+  },
+  "layer_replace": {
+    "best_kissing_size": 40,
+    "n_size_41": 0,
+    "ok": true
+  },
+  "unrestricted": {
+    "best": 48.00270513976555,
+    "excludes": []
+  },
+  "ok": true
+}
