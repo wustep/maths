@@ -1,6 +1,6 @@
 {
   "schema": "fhjn-c1-panel-v1",
-  "name": "opt_parametric.families.A.meta",
+  "name": "opt_best_A.best.parameters",
   "params": {
     "alpha": 4.055295525553317,
     "beta": 0.27814272049262534,
@@ -57,7 +57,7 @@
   },
   "method": {
     "python": "t-panels: (1-g)\u00b2 increasing so integrand \u2264 (1-g_upper(t_right))\u00b2 t^{-3/2}; certified contribution uses exact \u222b t^{-3/2} dt. Rectangle height/t_left^{3/2}*length is also stored. 1-g = \u222b \u03c6_raw(1-f)/I_\u03c6 \u2264 \u03a3 \u03c6_left_upper (1-f_lower(s_right t)) \u0394s / I_\u03c6_lower. Tail 2 T^{-1/2}. Near 0: (1-g)\u00b2 \u2264 (\u03b2 \u03bc S^\u03b1)\u00b2 t^{2\u03b1}.",
-    "rust": "u=log t: integrand becomes (1-g(e^u))\u00b2 e^{-u/2}; panel uses exact \u222b e^{-u/2} du times (1-g_right)\u00b2. s-grid is quadratic s=S (j/n)\u00b2. I_f via v=u^\u03b1 Beta-form Darboux."
+    "rust": "u=log t: integrand becomes (1-g(e^u))\u00b2 e^{-u/2}; panel uses exact \u222b e^{-u/2} du times (1-g_right)\u00b2. Uniform s-grid, different count from Python. I_f via a left-Riemann u-grid."
   },
-  "notes": "\u03bc_upper \u2265 \u03bc_exact so \u222bf\u00b2 \u2264 1. Scaling f up to unit L\u00b2 decreases C_1; the reported C_1_upper is therefore a valid trial bound. Replay the stored panel_contrib_upper plus near0 and tail, or recompute from params with verify_c1.py / verify_c1.rs."
+  "notes": "\u03bc_upper \u2265 \u03bc_exact so \u222bf\u00b2 \u2264 1. Scaling f up to unit L\u00b2 decreases C_1; the reported C_1_upper is therefore a valid trial bound. Replay by recomputing from params with verify_c1.py / verify_c1.rs."
 }
