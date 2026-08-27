@@ -255,9 +255,10 @@ $$
 Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
 stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
 $10/11$ algebra, mass-opt scan with no counterexample, stored
-$R=10$ $n=26$ faces (copositive, $23$ residual skips). The
-unrestricted leading sits below the aspect-$\le 4$ class-only
-$1.1087$. $1.1168$ stays withdrawn. q1 remainders unchanged.
-$N_0(Z)-Z$ bounded still open.
+$R=10$ $n=26$ faces (C dump and independent Rust Cramer re-enum,
+both copositive, $23$ residual skips). The unrestricted leading
+sits below the aspect-$\le 4$ class-only $1.1087$. $1.1168$ stays
+withdrawn. q1 remainders unchanged. $N_0(Z)-Z$ bounded still
+open.
 
 Replay: `problems/simon-ionization-excess/compute/q4/run_all.sh`.

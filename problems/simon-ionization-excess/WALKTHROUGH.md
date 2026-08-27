@@ -60,6 +60,6 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 
 4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
 
-5. Computer search — stored $R=10$, $n=26$ faces ($67{,}108{,}863$, copositive, $23$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`. Intermediate certified rows ($R=12$ $n=22$ at $0.90685$, $R=10$ $n=24$ at $0.9084$) sit between $1.1118$ and $1.1057$.
+5. Computer search — stored $R=10$, $n=26$ faces ($67{,}108{,}863$, copositive, $23$ skips, $\min m^\top Mm>4\cdot 10^{-4}$); independent Rust Cramer re-enum of the same matrix, same copositivity and the same $23$ skips; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`. Intermediate certified rows ($R=12$ $n=22$ at $0.90685$, $R=10$ $n=24$ at $0.9084$) sit between $1.1118$ and $1.1057$.
 
 6. Proven vs still open — printed leading $1.1118$ moves to $1.1057$. Remainders $2.953$, $3.892$, $3.9781$ stay. Aspect-$\le 4$ $1.1087$ is no longer the best unrestricted figure and is still not used as a class-only quote. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.

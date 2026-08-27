@@ -22,4 +22,6 @@ Certificates: `certs/lift.json`, `leading.json`,
 `aspect_identities.json`, `lift_stdlib.json`, `rebuild.json`.
 Independent algebra: `verify_aspect.c`, `verify_aspect.rs`.
 Faces dump: `certs/beta3_mid_faces_R10_n26_t0p9091.txt`
-(not re-enumerated on the fast path). Leftover probes in `work/`.
+(not re-enumerated on the fast path). Second enum:
+`certs/faces_rs.txt` (Rust Cramer, copositive). Leftover
+probes in `work/`.

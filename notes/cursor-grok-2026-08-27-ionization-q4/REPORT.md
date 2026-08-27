@@ -36,4 +36,6 @@ problems/simon-ionization-excess/compute/q4/run_all.sh
 ```
 
 q4 exit 0 is the leading-coefficient dent. Certificate:
-`compute/q4/certs/lift.json`.
+`compute/q4/certs/lift.json`. Independent Rust Cramer re-enum
+of the $R=10$ $n=26$ matrix: `compute/q4/certs/faces_rs.txt`
+(copositive, $23$ residual skips; matches the C dump).
