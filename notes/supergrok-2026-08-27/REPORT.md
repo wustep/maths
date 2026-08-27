@@ -84,3 +84,23 @@ finish.
 Replay: `sh problems/kissing-5d/compute/q2/run_all.sh`.
 
 Does not claim $\tau_5=40$. The unrestricted interval did not move.
+
+## union-closed / q1
+
+Continuation of the 2026-08-17 SuperGrok campaign on
+`problems/union-closed`. Search lives in `compute/q1/`.
+
+Published quoted constant is still Liu arXiv:2306.08824,
+0.382709 under two numerical hypotheses. The 2026-08-17 repo
+number on `{b,1}` was 0.38285 at mix weight `β = 1/5`.
+
+On that same family, pure Example 4 (`β = 1`) has first-crossing
+equal to the critical point of `1 − (1−b)h(b)`:
+
+    h(b) = (1−b) log₂((1−b)/b)
+
+which evaluates to 0.3830513565868…. Certified 5-decimal constant
+0.38304; mesh min ratio 1.000021687 (Python and C). Replay
+`cd problems/union-closed/compute/q1 && ./run_all.sh`.
+
+Does not claim 1/2. Does not claim every measure on [0,1].
