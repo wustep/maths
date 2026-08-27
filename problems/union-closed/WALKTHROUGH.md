@@ -10,7 +10,7 @@ The missing degree of freedom was not a new inequality. It was the protocol Liu 
 
 **Treat Wikipedia 0.38271 as a theorem.** Lu–Raz (May 2024) and the Wikipedia page fetched tonight both say “the best constant is 0.38271, proven by Liu”. Liu's own Theorem 13 is explicitly under a PSD hypothesis and a global-min hypothesis. Beating a conditional number with another un-checked float is not a new bound. The first job was to recompute every published number.
 
-**Push `n=13` or `|F|=51`.** Those are the first open finite cases (Vučković–Živković 2017; Roberts–Simpson plus `q≥13`). A generic SAT encoding of 51 subsets of `[13]` is not a one-night certificate. Abandoned as the main quest.
+**Push `n=13` or `|F|=51`.** Those are the first open finite cases (Vučković–Živković 2017; Roberts–Simpson plus `q≥13`). A generic SAT encoding of 51 subsets of `[13]` is not a one-night certificate. Abandoned as the main campaign.
 
 **Tighten Roberts–Simpson `4q−1` to `4q+3`.** Their Theorem 4 uses `|D_a| < n−q` and then writes “at most `n−q+1` sets in `A_{\bar x}`”. For `a ∉ H` the integer bound is `n−q`, which would give `|A| ≥ 4q+3` and settle `|F|≤54`. If the abundant element of `A_{\bar x}` lies in `H`, the count is exactly `n−q+1` and their bound is tight. Not claimed.
 
@@ -165,3 +165,91 @@ Half-target and scaled `a(t)` recover the same point. 3-atomic product samples a
 **Proved tonight, replayable.** No 2-sample bit protocol on `{b,1}` can certify a frequency above 0.383051356…. Mixes, a half-target protocol, and scaled `a(t)` do not beat it. Gilmer Conjecture 1 fails on Ellis's n=2 law. Pure Example 4 fails a constructed 2-mixture at mean 0.38304.
 
 **Still open.** The `1/2` conjecture. A frequency above 0.38304. An unconditional constant for every measure. Liu's PSD hypothesis. Universe size 13. Families of 51 sets.
+
+---
+
+# Walkthrough — certify `0.38305` on `{b,1}`, 2026-08-27
+
+## 0. What was actually missing
+
+q1 stopped at the printed value `0.38304`, while its analytic
+first-crossing was `0.3830513565868…`. q2 showed that a new two-sample
+bit protocol cannot move the analytic crossing on this family. The
+unused handle was the fifth decimal already inside the proved analytic
+margin, together with a finer independent mesh.
+
+## 1. Named false starts
+
+**Share one input across two unions.** Three iid samples give the pair
+`(A∪B,A∪C)`, whose entropy is bounded above by `2H(A)` on a
+union-closed family. For iid `Bern(b)` bits, however, the coordinate
+inequality reaches equality at `b=0.3437082595…` and then reverses. It
+is much weaker than the current protocol.
+
+**Change the protocol while keeping one OR output.** q2 already gives
+the obstruction: the diagonal binary entropy is at most 1, and Example
+4 attains 1 at the ray optimizer. This cannot raise the analytic
+crossing.
+
+**Print `0.383051`.** It lies below the analytic crossing, but q1
+reported five decimals and the requested comparison uses that same
+honesty. The next five-decimal value is `0.38305`.
+
+## 2. The useful failure
+
+The shared-union calculation separated a new-looking entropy expression
+from an actually stronger one. Reusing an input creates enough
+correlation to lose the inequality before the iid two-sample threshold.
+That directed the finite work back to the small, explicit margin q1 had
+already exposed.
+
+## 3. The click
+
+The analytic crossing exceeds `0.38305` by
+`1.3565868255825…×10⁻⁶`. At its optimizer, changing the mean from the
+crossing to the claimed value raises the saturation ratio to
+`1.0000021988650758…`. The fifth decimal has positive room even before
+the mesh is sampled.
+
+## 4. The argument, in the order it was found
+
+First q1 and q2 were replayed without changes. The q3 analytic script
+then solved the same critical equation at 80 decimal digits and checked
+the strict inequalities
+
+    0.38305135658682558… > 0.38305 > 0.38304 > 0.382709087918741.
+
+The mesh doubles q1's resolution in each direction: 9,000 values of
+`b` and 7,000 values of the atom weight `a`. For fixed `b`, both facts
+needed by the Python scan are elementary: the mean `b+(1−b)a`
+increases with `a`, and the pure-Example-4 ratio
+`(1−a)h_or(b,b)/h(b)` decreases with `a`. It is enough to check the
+last retained point of every row.
+
+The C program uses the other algorithm. It visits each point whose mean
+is at most `0.38305` and evaluates the two C3 endpoints directly. The
+programs agree on 20,440,358 retained points, the minimizer, and minimum
+ratio `1.0000049143029008`. No retained point has ratio at most 1.
+
+## 5. Computer search
+
+- `compute/q3/certs/analytic_margin.json`: critical point, analytic
+  crossing, and the strict margin above `0.38305`.
+- `compute/q3/certs/python_mesh.json`: row-boundary certificate for the
+  9,000×7,000 grid.
+- `compute/q3/certs/c_mesh.json`: exhaustive C result on the same grid.
+- `compute/q3/certs/certificate.json`: deterministic comparison of the
+  two implementations.
+- `compute/q3/certs/joint_star.json`: the failed shared-union equality at
+  `0.3437082595…`.
+
+## 6. What is proved vs still open
+
+**Proved and replayable.** On the two-point family `{b,1}`, pure Liu
+Example 4 has Gilmer ratio greater than 1 at every retained mesh point
+of mean at most `0.38305`. This improves the printed q1 ray value and
+Liu's published Example 5 number.
+
+**Still open.** Frankl's `1/2` conjecture, an every-measure inequality,
+a protocol beyond the q2 ray ceiling, universe size 13, and families of
+51 sets.

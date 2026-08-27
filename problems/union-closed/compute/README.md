@@ -16,5 +16,8 @@ Requires numpy, scipy, mpmath, matplotlib (`/tmp/ucvenv` if present).
 | `enum_small.py` | union-closed families on n≤4 (min abundance = 1/2) |
 | `q1/` | pure Example 4 on {b,1}; claimed 0.38304; `q1/run_all.sh` |
 | `q2/` | 2-sample ceiling on {b,1}; mixes / 3-atomic / new protocols; constant unchanged; `q2/run_all.sh` |
+| `q3/` | tighter 9,000×7,000 certificate on {b,1}; claimed 0.38305; `q3/run_all.sh` |
 
-Papers used tonight live in `refs/`. The 2026-08-27 replay of the new constant is `q1/run_all.sh`. The later 2-sample-class check is `q2/run_all.sh`.
+Papers used tonight live in `refs/`. The 2026-08-27 replay of the
+current printed constant is `q3/run_all.sh`; q1 supplies the analytic
+crossing and q2 supplies the 2-sample-class ceiling.

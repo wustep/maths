@@ -182,3 +182,68 @@ Pure Example 4 does not extend off the ray. Mix the `{b*,1}` law at mean 0.45 wi
 Claim: the 2-sample bit-protocol class on `{b,1}` cannot certify a frequency above 0.383051356…. The repo constant is still 0.38304.
 
 Do not claim: a dent of 0.38304; the 1/2 conjecture; every measure; that the 2-mixture witness kills the ray claim; Gilmer Conjecture 1.
+
+## 2026-08-27 — q3: the fifth decimal
+
+### Required replay and record
+
+`compute/q1/run_all.sh` exits 0 with analytic crossing
+`0.38305135658682558…`, mesh minimum `1.000021687055941`, and the same
+Python/C minimizer. `compute/q2/run_all.sh` exits 0 with the two-sample
+ceiling, Ellis counterexample, and 2-mixture witness unchanged. Liu's
+current arXiv record is still v1; its abstract describes `0.38271` as
+conditional on numerically verified hypotheses. Gilmer's current
+record is still v2 and notes that the proposed KL strengthening was
+refuted.
+
+### Shared-union handle
+
+Try two outputs from three iid samples:
+
+    U = A ∪ B,    V = A ∪ C.
+
+Both outputs stay in the family, so `H(U,V) ≤ 2H(A)`. For iid
+`Bern(b)` coordinate bits, the four output probabilities are
+
+    (1−b)³, b(1−b)², b(1−b)², 1−(1−b)³−2b(1−b)².
+
+The interior equality `H(U,V)=2h(b)` occurs at
+`b=0.3437082595655936…`; the gap changes from positive to negative
+there. This is well below 0.38304. The shared-input joint entropy leaves
+residue for this independent protocol, and q2's ceiling survives.
+Replay: `compute/q3/probe_joint.py`.
+
+### Claimed number
+
+Dent: **0.38305**, with
+
+    0.38305 > 0.38304 > 0.382709087918741.
+
+The analytic crossing exceeds the claim by
+`0.0000013565868255825…`. At the saturation optimizer the corresponding
+ratio is `1.0000021988650758…`, so the next five-decimal value has
+positive analytic room.
+
+The q3 mesh has 9,000 `b` values and 7,000 `a` values. Of its
+63,000,000 points, 20,440,358 have mean at most 0.38305. The Python
+verifier uses the fact that, for fixed `b`, the mean increases and the
+ratio decreases with `a`; it checks the last retained point in each
+row. The C verifier independently loops through every retained point.
+Both find zero bad cells and the same minimum:
+
+    ratio = 1.0000049143029008
+    b = 0.29636048449827757
+    a = 0.12319931418774112
+    mean = 0.3830483902434842.
+
+`compute/q3/run_all.sh` regenerates the analytic, Python, C, failed
+joint-handle, and comparison certificates, then exits 0.
+
+### What remains
+
+The first-crossing `0.3830513565868…` is still a ceiling for every
+two-sample bit protocol on `{b,1}`. Further progress needs a different
+tensorizable inequality, a larger certified hypothesis class with a
+new reduction, or a finite classification. Frankl's `1/2` statement,
+the every-measure inequality, universe size 13, and families of 51 sets
+remain open.

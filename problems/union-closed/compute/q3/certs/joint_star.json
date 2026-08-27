@@ -1,0 +1,11 @@
+{
+  "protocol": "(X OR Y, X OR Z) for iid Bernoulli inputs",
+  "interior_equality_b": "0.343708259565593633604564834261331729339",
+  "residual": "0.0",
+  "gap_1e_6_below": "2.6715534405364760135e-6",
+  "gap_1e_6_above": "-2.6715588450801598831e-6",
+  "claimed_c": 0.38305,
+  "equality_below_claimed": true,
+  "note": "failed handle: the independent shared-union joint-entropy inequality reaches equality below the q1/q3 ray constant",
+  "all_ok": true
+}

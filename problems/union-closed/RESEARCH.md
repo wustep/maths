@@ -85,3 +85,15 @@ Fetched and read tonight, in the order used. No paper after Liu moves the freque
 - Best *quoted* published constant: still Liu 0.382709087918741 (conditional). Independently recomputed: 0.382709087918735.
 - Repo ray-record from q1: 0.38304, analytic crossing 0.38305135658682558…. Replayed; `compute/q1/run_all.sh` exit 0.
 - Tonight: that crossing is a ceiling for every 2-sample bit protocol on `{b,1}`. Mixes and a half-target protocol do not beat it. A constructed 2-mixture has pure-Example-4 CIID ratio 0.909137 at mean 0.38304. Constant unchanged. Not `1/2`.
+
+## 2026-08-27 (q3)
+
+- [Liu, *Improving the Lower Bound for the Union-closed Sets Conjecture via Conditionally IID Coupling*, arXiv:2306.08824v1](https://arxiv.org/abs/2306.08824) (15 Jun 2023). Re-opened the current arXiv record. It still has only v1, and the abstract still states `≈0.38271` under numerically verified hypotheses. The repository fetch helper was also attempted and received an arXiv API 429 response.
+- [Gilmer, *A constant lower bound for the union-closed sets conjecture*, arXiv:2211.09055v2](https://arxiv.org/abs/2211.09055) (28 Nov 2022). Re-opened the current record. The theorem remains the 0.01 frequency, and the v2 comments still note follow-up work refuting Conjecture 1.
+- [Ellis, *Note: a counterexample to a conjecture of Gilmer which would imply the union-closed conjecture*, arXiv:2211.12401v1](https://arxiv.org/abs/2211.12401) (22 Nov 2022). Re-opened the current record; the three-page counterexample remains the obstruction replayed in q2.
+
+### What we compare against
+
+- Liu's quoted published number is `0.382709087918741`, conditional in the paper's own wording.
+- q1's ray-certified notebook number is `0.38304`, with analytic crossing `0.38305135658682558…`.
+- q3 certifies the next five-decimal value `0.38305` on the same `{b,1}` family. This is a notebook ray result; Frankl's `1/2` target and the every-measure inequality remain open.

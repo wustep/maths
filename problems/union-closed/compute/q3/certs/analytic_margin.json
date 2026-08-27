@@ -1,0 +1,22 @@
+{
+  "claimed_c": 0.38305,
+  "q1_c": 0.38304,
+  "liu_quote": 0.382709087918741,
+  "record_inequality": "0.38305 > 0.38304 > 0.382709087918741",
+  "b_star": "0.2964939235693375690307033837822290478675",
+  "crossing": "0.3830513565868255825016468730022052750943",
+  "crossing_float": 0.3830513565868256,
+  "crossing_minus_claimed": "0.00000135658682558250164687300220528",
+  "critical_eq_residual": "1.05421979432e-81",
+  "g_second_derivative": "-7.35897097258475540845923306712",
+  "saturation_ratio_at_bstar_for_claimed_c": "1.00000219886507583093403450291",
+  "checks": {
+    "critical_residual_below_1e_60": true,
+    "g_second_derivative_negative": true,
+    "crossing_above_claimed": true,
+    "claimed_above_q1": true,
+    "claimed_above_liu": true,
+    "saturation_ratio_strictly_above_1": true
+  },
+  "all_ok": true
+}

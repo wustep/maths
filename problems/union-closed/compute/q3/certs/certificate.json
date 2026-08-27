@@ -1,0 +1,66 @@
+{
+  "status": "dent",
+  "record_inequality": "0.38305 > 0.38304 > 0.382709087918741",
+  "claimed_c": 0.38305,
+  "analytic_crossing": "0.3830513565868255825016468730022052750943",
+  "crossing_minus_claimed": "0.00000135658682558250164687300220528",
+  "grid": {
+    "n_b": 9000,
+    "n_a": 7000,
+    "b_lo": 0.02,
+    "b_hi": 0.499,
+    "a_lo": 0.0,
+    "a_hi": 0.499,
+    "total_cells": 63000000,
+    "retained_cells": 20440358,
+    "retained_rows": 6821,
+    "mean_tolerance": 1e-15
+  },
+  "python": {
+    "algorithm": "Python row-boundary scan using ratio monotonicity in a",
+    "min_ratio": 1.0000049143029008,
+    "n_bad_cells": 0,
+    "at": {
+      "i_b": 5192,
+      "i_a": 1728,
+      "b": 0.29636048449827757,
+      "a": 0.12319931418774112,
+      "mean": 0.3830483902434842
+    }
+  },
+  "c": {
+    "algorithm": "C exhaustive nested-loop mesh",
+    "min_ratio": 1.0000049143029008,
+    "n_bad_cells": 0,
+    "at": {
+      "i_b": 5192,
+      "i_a": 1728,
+      "b": 0.29636048449827757,
+      "a": 0.12319931418774112,
+      "mean": 0.3830483902434842
+    }
+  },
+  "joint_star_probe": {
+    "interior_equality_b": "0.343708259565593633604564834261331729339",
+    "note": "failed handle: the independent shared-union joint-entropy inequality reaches equality below the q1/q3 ray constant"
+  },
+  "checks": {
+    "analytic_replay_ok": true,
+    "failed_joint_handle_replays": true,
+    "python_replay_ok": true,
+    "c_replay_ok": true,
+    "claimed_constant_matches": true,
+    "grid_dimensions_match": true,
+    "retained_cell_counts_match": true,
+    "minimum_ratios_match": true,
+    "minimum_indices_match": true,
+    "minimum_coordinates_match": true,
+    "both_minima_strictly_above_1": true,
+    "both_have_zero_bad_cells": true,
+    "claim_below_analytic_crossing": true,
+    "claim_strictly_beats_q1": true,
+    "claim_strictly_beats_liu": true
+  },
+  "all_ok": true,
+  "scope": "pure Liu Example 4 on the two-point family {b,1}; the every-measure and 1/2 statements remain open"
+}
