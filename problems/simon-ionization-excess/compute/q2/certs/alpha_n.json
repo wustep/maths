@@ -1,0 +1,156 @@
+{
+  "not_a_certificate": true,
+  "is_new_bound": false,
+  "note": "search_min is an upper bound on alpha_{N,s}. It cannot prove non-binding. A value below the threshold needed for Z=2 shows the Nam\u2013HPS pair geometry does not, by itself, exclude that N.",
+  "thresholds": {
+    "N4_Z2_kinetic_dropped": 0.6666666666666666,
+    "N3_Z2_kinetic_dropped": 1.0,
+    "Nam_sqrt5_over_4": 0.5590169943749475
+  },
+  "rows": [
+    {
+      "N": 3,
+      "s": 1.0,
+      "search_min": 0.5,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 3,
+      "s": 1.25,
+      "search_min": 0.5773502691896258,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 3,
+      "s": 1.5,
+      "search_min": 0.5773502691896258,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 3,
+      "s": 2.0,
+      "search_min": 0.5773502691896257,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 3,
+      "s": 2.5,
+      "search_min": 0.5773502691896258,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 3,
+      "s": 3.0,
+      "search_min": 0.5773502691896256,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": 1.0
+    },
+    {
+      "N": 4,
+      "s": 1.0,
+      "search_min": 0.5000011170243487,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 4,
+      "s": 1.25,
+      "search_min": 0.6105694746033381,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 4,
+      "s": 1.5,
+      "search_min": 0.6123724356957945,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 4,
+      "s": 2.0,
+      "search_min": 0.6123724356957944,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 4,
+      "s": 2.5,
+      "search_min": 0.6123724356957944,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 4,
+      "s": 3.0,
+      "search_min": 0.6123724356957945,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": 0.6666666666666666,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 1.0,
+      "search_min": 0.5045715567397302,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 1.25,
+      "search_min": 0.622443619550234,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 1.5,
+      "search_min": 0.6470095206535147,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 2.0,
+      "search_min": 0.6474226764154579,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 2.5,
+      "search_min": 0.6474168883387811,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    },
+    {
+      "N": 5,
+      "s": 3.0,
+      "search_min": 0.647407251148609,
+      "search_min_is_upper_on_inf": true,
+      "need_for_Nc_lt_4_at_Z2_if_kinetic_dropped": null,
+      "need_for_Nc_lt_3_at_Z2_if_kinetic_dropped": null
+    }
+  ]
+}

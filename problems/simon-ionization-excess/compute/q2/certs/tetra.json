@@ -1,0 +1,8 @@
+{
+  "is_new_bound": false,
+  "statement": "alpha_4,2 <= sqrt(6)/4, hence alpha_4,2 * 3 < 2. The s=2 pair geometry cannot exclude N=4 at Z=2 even with the kinetic remainder dropped.",
+  "alpha_tetrahedron": 0.6123724356957944,
+  "closed_form": "sqrt(6)/4",
+  "integer_comparison": "54 < 64",
+  "certifies_dent": false
+}

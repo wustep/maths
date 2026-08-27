@@ -30,3 +30,18 @@ numbers are leads, not citations.
 ## What the record does not say
 
 No published paper opened this session proves $N_c\le Z+C$ for a $Z$-independent $C$ in the many-body Schrödinger theory. HPS 1.1185 is a leading coefficient, not a bounded excess. Nam’s $\beta\ge0.8218$ is a lower bound on a classical variational constant, not a new ionization coefficient beyond 1.22.
+
+## 2026-08-27 — q2, later papers (URLs opened this pass)
+
+- [HPS abs, arXiv:2504.18487](https://arxiv.org/abs/2504.18487). Still **v1 only** (25 Apr 2025). STATES $N_c(Z)<1.1185Z+O(Z^{1/3})$. Does NOT list a v2.
+- [HPS HTML, 2504.18487v1](https://arxiv.org/html/2504.18487v1). Re-read Theorem 2.2, Remark 2.3 ($s\ge1$ conjectured), Prop. 4.5, Lemma 4.3 ($s\le3$), Figure 2 (min $f$ not sharp). Does NOT prove a coefficient below $1.1185$.
+- [Nam abs, 1009.2367](https://arxiv.org/abs/1009.2367). Latest v3. STATES $N_c<1.22Z+3Z^{1/3}$. Does NOT beat $1.1185$.
+- [Nam, 2206.15393v1](https://arxiv.org/abs/2206.15393). Lieb write-up; conjecture 2 still open.
+- [Benguria–González-Brantes abs, 2511.07582](https://arxiv.org/abs/2511.07582) (10 Nov 2025, v1 only). STATES a statistics-independent bound that improves Lieb for $Z\ge12$. Does NOT mention $1.1185$.
+- [2511.07582v1 HTML](https://arxiv.org/html/2511.07582v1). STATES Theorem 1.1 / display (2): $N<1.4811Z+3.1516Z^{1/3}$ for $Z\ge12$ (bosonic atom; argument written as statistics-independent). Remark 1.2: improves Lieb $N(Z)<2Z+1$ for $Z\ge12$ in the bosonic case. Does NOT beat Nam $1.22$ or HPS $1.1185$ for fermions; does NOT prove $N_c\le Z+C$; does NOT unique $N_0(Z)$ for $Z>1$.
+- [2207.08328 abs](https://arxiv.org/abs/2207.08328). Comment: “This version is not definite and has errors.” Official PDF/HTML of v2 404 earlier; not a record.
+- [Semantic Scholar ARXIV:2504.18487](https://api.semanticscholar.org/graph/v1/paper/ARXIV:2504.18487?fields=title,year,citationCount,citations.title,citations.year,citations.externalIds). STATES `citationCount: 0`, `citations: []`.
+- [OpenAlex doi:10.48550/arXiv.2504.18487](https://api.openalex.org/works?filter=doi:10.48550/arXiv.2504.18487). STATES `cited_by_count: 0`, id W4416381655.
+- [Lewin, CR Physique PDF](https://comptes-rendus.academie-sciences.fr/physique/item/10.5802/crphys.249.pdf). Open Problem 1: even $C=10^{100}$ for $N_{\max}\le Z+CM$ unknown (accepted 31 Mar 2025, before HPS).
+
+Failed / unchanged: APS PRA 29 full text still not obtained this pass; 2207.08328v2 body still not a record.

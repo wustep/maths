@@ -1,0 +1,7 @@
+{
+  "matrix_copositive": true,
+  "n16_R4_gamma": 0.895462149026,
+  "n16_R4_beats_fmin": true,
+  "is_new_bound": false,
+  "note": "compact aspect<=4 method check, not a Theorem 2.2 dent"
+}

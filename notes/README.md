@@ -18,5 +18,6 @@
 | [grok-c7-shannon-2026-08-27-q3/](grok-c7-shannon-2026-08-27-q3/) | Grok 4.6 continuation of the C7 fifth-power folder |
 | [grok-c7-shannon-2026-08-27-q4/](grok-c7-shannon-2026-08-27-q4/) | Grok 4.6 new-shape search in the C7 fifth-power folder |
 | [cursor-grok-2026-08-27-union-closed-q2/](cursor-grok-2026-08-27-union-closed-q2/) | Union-closed q2: 2-sample ceiling, constant unchanged |
+| [cursor-grok-2026-08-27-ionization-q2/](cursor-grok-2026-08-27-ionization-q2/) | Simon ionization excess: leading coefficient still 1.1185 |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).

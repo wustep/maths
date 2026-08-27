@@ -1,0 +1,40 @@
+{
+  "not_a_certificate": true,
+  "is_new_bound": false,
+  "E22_hylleraas_upper": {
+    "exact": "-54353/18800",
+    "float": -2.8911170212765955,
+    "note": "variational upper on E(2,2); legal threshold only as an upper"
+  },
+  "E22_published_comparison": -2.9037243770341195,
+  "three_electron_variational_uppers": {
+    "hydrogenic_doublet": {
+      "energy": "-17410872362191/6480000000000",
+      "float": -2.6868630188566356,
+      "above_hylleraas": 0.20425400241995995
+    },
+    "hydrogenic_4P": {
+      "energy": "-131653344966733/65610000000000",
+      "float": -2.006604861556668,
+      "above_hylleraas": 0.8845121597199276
+    }
+  },
+  "temple": {
+    "applies_if_E1_is_published_He": false,
+    "applies_if_E1_is_hylleraas_upper": false,
+    "reason": "\u03bc > E(2,2) for every trial here. Temple needs \u03bc < E_1. Taking E_1 as the HVZ threshold E(2,2) makes the hypothesis false. No Temple number is claimed."
+  },
+  "intermediate_hamiltonian": {
+    "repulsion_dropped": {
+      "lower": -6.0,
+      "below_he_upper_by": -3.1088829787234045
+    },
+    "triangle_minorant_product_scan": {
+      "approx_float": -3.818689668783247,
+      "zeta": 1.6,
+      "below_he_upper_by": -0.9275726475066515,
+      "note": "Product (not fermionic) expectation of the minorant. A number this low cannot prove E(3,2) \u2265 E(2,2)."
+    }
+  },
+  "note": "No Temple or intermediate-Hamiltonian inequality certified Nc(2)<3 or Nc(2)<4. Variational uppers on E(3,2) are not used as non-binding evidence."
+}

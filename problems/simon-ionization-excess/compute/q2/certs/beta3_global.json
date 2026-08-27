@@ -1,0 +1,98 @@
+{
+  "arxiv": "2504.18487v1",
+  "urls_opened": [
+    "https://arxiv.org/abs/2504.18487",
+    "https://arxiv.org/html/2504.18487v1"
+  ],
+  "status": "residue",
+  "is_new_bound": false,
+  "beats_1.1185": false,
+  "gamma_lower": "0.8941074569749822842368303099647164344788",
+  "gamma_inv_upper": "1.118433799202706637182621459492153000041",
+  "HPS_fmin": "0.8941074569749822846692081215995227421700",
+  "HPS_b3": "1.118433799202706636641762578621416983973",
+  "printed_1.1185": "1.1185",
+  "method": "Conservative z-kernel on geometric bins of [1,R] after inf(supp z)=1. PSD or C face-enum of M(\u03bb). Right-tail mixture g(\u03b5,s) clipped at fmin. The older h(D_L,D_R) lift is withdrawn.",
+  "configs": [
+    {
+      "R": 4,
+      "n": 16,
+      "slsqp_rayleigh": 0.7647299434001209,
+      "psd_lambda": 0.8941074569749823,
+      "psd_eig_min": -0.837370053819182,
+      "compact_beta": 0.8941074569749823,
+      "face_target": 0.7646299434001209,
+      "faces": null,
+      "g_min": 0.8941074569749823,
+      "g_at_eps_s": [
+        0.0,
+        0.0
+      ],
+      "global_gamma": 0.8941074569749823,
+      "global_inv": 1.1184337992027067,
+      "beats_1.1185": false
+    },
+    {
+      "R": 6,
+      "n": 18,
+      "slsqp_rayleigh": 0.7442143769349249,
+      "psd_lambda": 0.8941074569749823,
+      "psd_eig_min": -0.918142226893401,
+      "compact_beta": 0.8941074569749823,
+      "face_target": 0.7441143769349249,
+      "faces": null,
+      "g_min": 0.8941074569749823,
+      "g_at_eps_s": [
+        0.0,
+        0.0
+      ],
+      "global_gamma": 0.8941074569749823,
+      "global_inv": 1.1184337992027067,
+      "beats_1.1185": false
+    },
+    {
+      "R": 8,
+      "n": 20,
+      "slsqp_rayleigh": 0.7373085280479241,
+      "psd_lambda": 0.8941074569749823,
+      "psd_eig_min": -0.9530622369081574,
+      "compact_beta": 0.8941074569749823,
+      "face_target": 0.7372085280479241,
+      "faces": null,
+      "g_min": 0.8941074569749823,
+      "g_at_eps_s": [
+        0.0,
+        0.0
+      ],
+      "global_gamma": 0.8941074569749823,
+      "global_inv": 1.1184337992027067,
+      "beats_1.1185": false
+    },
+    {
+      "R": 12,
+      "n": 20,
+      "slsqp_rayleigh": 0.7066316005532361,
+      "psd_lambda": 0.8941074569749823,
+      "psd_eig_min": -1.0169921009658167,
+      "compact_beta": 0.8941074569749823,
+      "face_target": 0.7065316005532362,
+      "faces": null,
+      "g_min": 0.8941074569749823,
+      "g_at_eps_s": [
+        0.0,
+        0.0
+      ],
+      "global_gamma": 0.8941074569749823,
+      "global_inv": 1.1184337992027067,
+      "beats_1.1185": false
+    }
+  ],
+  "best": null,
+  "withdrawn_tail_lemma": {
+    "h_at_0_1": 0.9911756214145818,
+    "power_law_I_over_D": 0.9206549402498677,
+    "fails": true,
+    "note": "h(0,1)\u22480.991 > 0.921 = I/D of the HPS power-law trial placed entirely in a fixed-window 'tail'. The mid-radius + h(D_L,D_R) lift in certify_beta3.py is not a global bound."
+  },
+  "did_not_use_invalid_1.1168": true
+}

@@ -3,7 +3,7 @@
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
 - Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the HPS printed remainders 2.96, 3.90, and 4. Same Section 7 chain. Leading coefficient still 1.1185. Ionization conjecture open.
+- Status: residue on the leading coefficient 1.1185. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -58,6 +58,18 @@ $$
 Also $N_c<b(2)Z+2.953Z^{1/3}$ for $Z\ge2$. This beats the printed remainders 3.90, 4, and 2.96. It does not beat the leading 1.1185. Replay: `problems/simon-ionization-excess/compute/q1/run_all.sh`.
 
 $N_0(1)=2$ is replayed (Hylleraas $E=-815/1602<-1/2$, plus Lieb). That uniqueness is already in Lieb 1984.
+
+A later search (same day) replayed HPS v1, Nam, Lieb, and
+Benguria–González-Brantes arXiv:2511.07582v1
+($N<1.4811Z+3.1516Z^{1/3}$ for $Z\ge12$, bosonic / statistics-
+independent). That paper does not beat $1.1185$ for fermions.
+Two-shell dipoles make the HPS radialization form negative for
+every tested $s>3$, so $b(4)$ cannot be used. Lieb remains the
+best integer envelope at $Z=2,3,4,5$. A compact-aspect lower
+bound $Q\ge0.901924$ (aspect $\le4$) is certified and does not
+replace Theorem 2.2. A claimed $1.1168$ lift was withdrawn. Replay:
+`problems/simon-ionization-excess/compute/q2/run_all.sh`. Leading
+$1.1185$ unchanged.
 
 ## What would count as a new bound
 
