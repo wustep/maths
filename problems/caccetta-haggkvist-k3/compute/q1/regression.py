@@ -27,8 +27,8 @@ JOBS = [
     (9, 3, "UNSAT", 20, None),
     (12, 3, "SAT", 20, None),
     (12, 4, "UNSAT", 30, None),  # Hoàng–Reed
-    (15, 5, "UNSAT", 60, None),
-    (16, 6, "UNSAT", 60, None),
+    (15, 5, "UNSAT", 30, None),
+    (16, 6, "UNSAT", 20, None),
 ]
 
 

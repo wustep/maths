@@ -1,0 +1,16 @@
+{
+  "n": 6,
+  "d": 2,
+  "indeg0": null,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 163 394",
+  "status": "UNSAT",
+  "time_s": 0.002,
+  "timeout_s": 10,
+  "returncode": 20,
+  "cnf": "ch-6-2.cnf",
+  "out": "ch-6-2.out",
+  "drat": "VERIFIED",
+  "drat_bytes": 2234
+}

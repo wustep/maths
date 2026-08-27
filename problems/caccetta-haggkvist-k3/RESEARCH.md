@@ -77,3 +77,5 @@ Opened tonight, in order.
 - https://www.sciencedirect.com/science/article/pii/S0012365X10003043 — Lichiardopol, *Discrete Math.* 2010, two-sided 0.343545. Already in the 17 August table; not unrestricted.
 
 Failed lookup: no arXiv hit after 2024 that states a published unrestricted c < 0.3465 with a public certificate. The 0.3388 figure remains a personal communication.
+
+Replay tonight: the stored F₄ certificate at c=0.34645 still has min eig(Q)=9.53e-9 and worst F=−0.12343. The same ray is negative at 0.34644447 and positive at 0.34644, so this system does not give a clean step below 0.34645.

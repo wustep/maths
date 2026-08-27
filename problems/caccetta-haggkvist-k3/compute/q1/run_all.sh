@@ -2,7 +2,7 @@
 # Replay q1: F4 certificate still holds, encoder matches known small-n
 # SAT/UNSAT, and any stored n=18 cube proofs check with drat-trim.
 set -e
-here=$(dirname "$0")
+here=$(cd "$(dirname "$0")" && pwd)
 cd "$here"
 parent=$(dirname "$here")
 
@@ -12,7 +12,7 @@ python3 "$parent/verify_certificate.py" "$parent/certs/f4_certificate.json" --ma
 echo "== sequential-counter encoding vs known small n =="
 python3 regression.py
 
-echo "== stored n=18 cube DRATs, if any =="
+echo "== stored n=18 cube DRATs in certs/keep =="
 if [ -x "$here/bin/drat-trim" ]; then
   DRAT="$here/bin/drat-trim"
 elif [ -x /tmp/solvers/drat-trim ]; then
@@ -21,7 +21,7 @@ else
   DRAT=""
 fi
 found=0
-for f in "$here"/certs/ch-18-6-k*.drat; do
+for f in "$here"/certs/keep/ch-18-6-k*.drat; do
   [ -f "$f" ] || continue
   cnf=${f%.drat}.cnf
   if [ -n "$DRAT" ] && [ -f "$cnf" ]; then

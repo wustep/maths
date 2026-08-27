@@ -3,7 +3,7 @@
 - Slug: `caccetta-haggkvist-k3`
 - List: P36
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
-- Status: open — F₄ certificate c=0.34645 (HKN 0.3465); DRAT exact CH at n=12,15,16,17; n=18 UNKNOWN
+- Status: open — F₄ certificate c=0.34645 (HKN 0.3465); DRAT exact CH at n=12,15,16,17; n=18 cubes k≥1 UNSAT, leftover source slice t=6
 - Area: Directed graph theory
 - Sources: AIM Caccetta–Häggkvist summary; Egres open problem page
 - Started: 2026-08-17

@@ -89,3 +89,12 @@ is negative for every k=0…31 (worst −0.12343 at H₀). Q has no negative eig
 - The conjecture (c = 1/3).
 - Any improvement of the 0.3388 personal communication.
 - The exact statement at n=18, δ⁺=6 — the first order not implied by Hoàng–Reed or HKN — unless the running SAT instance finishes UNSAT. That is the leftover.
+
+## 7. 27 August
+
+The binomial CNF at n=18 was mostly cardinality. Sequential counters drop it from 465k clauses to 13k. Split by k=|N⁻(0)|, with N⁻(0) labelled {7,…,6+k}. High k dies immediately: each v in N⁺(0) has only 16−k legal out-targets.
+
+k=1 through k=11 came back UNSAT. k=1 took 587s and a 1.2 GB DRAT that `drat-trim` accepted. k=6..11 have tiny stored proofs. k=2..5 were verified and the large proofs dropped.
+
+k=0 (a source) is the leftover. A second split t=|N⁺(1) ∩ U| kills t=1..5 at once. t=6 — the out-neighbour of the source that sends all six arcs into the 11 non-neighbours — is still UNKNOWN at 900s. That slice is the hole, not a bound.
+

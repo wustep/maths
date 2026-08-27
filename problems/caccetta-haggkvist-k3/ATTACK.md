@@ -147,13 +147,15 @@ n=18 d=6 cubes, kissat 4.0.4:
 | 1 | UNKNOWN | 180s with proof log | leftover |
 | 0 | UNKNOWN | 180s with proof log | leftover |
 
-k=0 and k=1 reran without proof logging (600s): **k=1 UNSAT in 596s** (DRAT regenerating); k=0 still UNKNOWN.
+k=0 and k=1 reran without proof logging (600s): **k=1 UNSAT in 596s**. Regenerated with proof: kissat 587s, DRAT **VERIFIED**, 1.207 GB (`certs/keep/ch-18-6-k1-proof.json`, sha256 `73441d6e…`). The proof is too large to store; replay is `python3 solve.py --n 18 --d 6 --indeg0 1 --time 900 --proof`. k=0 still UNKNOWN at 600s.
 
 Second split t=|N⁺(1) ∩ U|:
 
-- k=0, t=1..5: UNSAT, DRAT verified, each < 0.03s
-- k=0, t=6: UNKNOWN at 180s
-- k=1, t=1..5: UNSAT in < 0.03s
-- k=1, t=6: UNKNOWN at 180s (the whole k=1 cube is already UNSAT)
+- k=0, t=1..5: UNSAT, DRAT stored and replayed
+- k=0, t=6: UNKNOWN at 900s (`--stable`)
+- k=1, t=1..5: UNSAT, DRAT stored and replayed
+- k=1, t=6: implied by the whole-k=1 DRAT
 
-Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| did not finish at 180s for s=0. Leftover is the t=6 slice of k=0, plus a DRAT for k=1.
+Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| timed out at 180s for s=0,1,2,3. Leftover is only the source cube k=0 with t=6.
+
+**Certified tonight (DRAT).** Cubes k=1 and k=6..11; slices (k,t)=(0,1..5) and (1,1..5). Cubes k=2..5 UNSAT with verified-then-dropped large DRATs, regenerable. **Residue:** k=0, t=6. Not a bound. Did not beat 0.34645. Did not treat 0.3388 as published.

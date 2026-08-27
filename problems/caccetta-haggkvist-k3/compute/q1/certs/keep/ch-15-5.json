@@ -1,0 +1,16 @@
+{
+  "n": 15,
+  "d": 5,
+  "indeg0": null,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 3097 7621",
+  "status": "UNSAT",
+  "time_s": 2.388,
+  "timeout_s": 90,
+  "returncode": 20,
+  "cnf": "ch-15-5.cnf",
+  "out": "ch-15-5.out",
+  "drat": "VERIFIED",
+  "drat_bytes": 5279759
+}
