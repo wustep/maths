@@ -199,7 +199,8 @@ def main() -> int:
               flush=True)
 
     # compare to C if present
-    for cand in (HERE / f"n1_complete_k{maxk}.json", HERE / "n1_complete.json"):
+    for cand in (HERE / f"n1_dfs_k{maxk}.json", HERE / f"n1_complete_k{maxk}.json",
+                 HERE / "n1_dfs_k16.json", HERE / "n1_complete.json"):
         if cand.exists():
             C = json.loads(cand.read_text())
             ok = True

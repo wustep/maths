@@ -248,6 +248,8 @@ def main() -> int:
                  "n1_check.json", "n1_complete_k12.json",
                  "t5_share30.json", "t5_share30_c.json",
                  "t5_share29_c.json", "t5_share28_c.json",
+                 "t5_share27_c.json",
+                 "n1_dfs_k16.json",
                  "t5_36_proof.json",
                  "analyze_stars.json", "seed_cover.json", "dual_exact.json",
                  "construct41.json"):
@@ -275,6 +277,28 @@ def main() -> int:
             "maxk": data.get("maxk"),
         }
         report["n1_complete_k12"] = rec
+        if not rec["ok"]:
+            ok = False
+    k16 = HERE / "n1_dfs_k16.json"
+    if k16.exists():
+        data = json.loads(k16.read_text())
+        rec = {
+            "present": True,
+            "ok": (not data.get("found_41")) and data.get("complete") is True
+            and data.get("maxk") == 16
+            and data.get("algorithm") == "canonical-dfs",
+            "maxk": data.get("maxk"),
+            "n_unions_visited": data.get("n_unions_visited"),
+        }
+        sl = data.get("slices") or {}
+        for k in range(4, 13):
+            a = sl.get(str(k), {})
+            if k12.exists():
+                b = json.loads(k12.read_text())["slices"][str(k)]
+                if a.get("n_unions") != b.get("n_unions") or a.get("n_promising") != b.get("n_promising"):
+                    rec["ok"] = False
+                    rec["mismatch_k"] = k
+        report["n1_dfs_k16"] = rec
         if not rec["ok"]:
             ok = False
     report["ok"] = ok

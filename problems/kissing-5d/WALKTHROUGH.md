@@ -374,29 +374,33 @@ part-count and $k=11,12$ by a coloured search: 960 and 4640 promising
 unions, $\omega=k$ again, total 40.
 
 That is the $n_1\ge 28$ half of the leftover graph, on top of q3's
-$n_1\ge 33$. The remaining 41-candidates use at least 13 extras whose
-missed-root union still meets some star in 7 points, or else avoid
-every star-heptad. Both families overflowed a $2^{26}$-slot hash.
-Residue, not a 41-code.
+$n_1\ge 33$. The remaining 41-candidates use at least 13 extras. A
+hash-free walk of the same seed-unions — each $U$ has a unique
+parent, the union of all but its last irredundant seed — finishes
+$k=13,14,15,16$ without a table. Promising pools grow
+($31{,}400$, then $243{,}160$, then $1.19$ million, then
+$4.35$ million) but every extras-clique is size $k$, total 40.
+So there is no 41-set with $n_1\ge 24$. The $n_1\le 23$ slice is
+unfinished. Residue, not a 41-code.
 
 The $T^5$ remainder still has $\omega\ge 35$ and $\chi\ge 36$. Two
 SAT solvers return no 36-clique; without a DRAT that is not a
-certificate. Share 30, 29 and 28 with each published 35 are empty
-in C, so a 36-clique, if one exists, shares at most 27 with
+certificate. Share 30 through 27 with each published 35 are empty
+in C, so a 36-clique, if one exists, shares at most 26 with
 $D_5,L_5,Q_5$ and $R_5$.
 
 **Proved on 27 August, later (restricted).**
 
 - No 41-point code in $(1/4)\mathbb Z^5\cap\{\lvert x\rvert^2=2\}$
-  uses 28 or more $D_5$-type points.
+  uses 24 or more $D_5$-type points.
 - Each $D_5$ coordinate-star has extras-clique number 8.
-- No 36-clique in the $T^5$ remainder shares 28 or more vertices with
+- No 36-clique in the $T^5$ remainder shares 27 or more vertices with
   a published 35-clique.
 - No certified unrestricted Delsarte dual below 44.
 
 **Still open.**
 
 - The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
-- A 41-set in the 1480-graph with $n_1\le 27$, and a 36-clique in
-  the $T^5$ remainder that shares at most 27 with every published 35.
+- A 41-set in the 1480-graph with $n_1\le 23$, and a 36-clique in
+  the $T^5$ remainder that shares at most 26 with every published 35.
 - An exact SOS certificate that $s_d(5)<44$.

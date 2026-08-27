@@ -13,7 +13,7 @@
     "ok": true
   },
   "duals": {
-    "present": false,
+    "present": true,
     "ok": true,
     "duals": {}
   },
@@ -62,6 +62,26 @@
     "ok": true,
     "found_41": false
   },
+  "t5_share29_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share28_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share27_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_dfs_k16.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
   "t5_36_proof.json": {
     "present": false,
     "ok": true
@@ -92,6 +112,12 @@
     "present": true,
     "ok": true,
     "maxk": 12
+  },
+  "n1_dfs_k16": {
+    "present": true,
+    "ok": true,
+    "maxk": 16,
+    "n_unions_visited": 164988439
   },
   "ok": true
 }

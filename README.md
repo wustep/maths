@@ -130,7 +130,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [thin-cyclic-bases](problems/thin-cyclic-bases) | BEL $\sqrt{8/3}$ family replayed through $q=61$. No thinner liminf. $\sqrt2$ open. |
 | [union-closed](problems/union-closed) | Certified frequency $0.38304$ on the two-point family {b,1} under Liu Example 4. Analytic first-crossing $0.383051$; mesh min ratio $1.000022$. Recovers Liu $0.382709$. Not one half. |
 | [cohn-elkies](problems/cohn-elkies) | Exact $R=3627599/500000=7.255198$, beats printed Table 4 $7.25520$. Not a magic function. |
-| [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Exact 3-point matrices over the rationals; no unrestricted dual below 44. The leftover $(1/4)\mathbb Z^5$ graph has no 41-set using 28 or more D5-type points; the $T^5$ remainder has no SAT 36-clique without a stored proof. Range still $$40\le\tau_5\le 44$$. |
+| [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Exact 3-point matrices over the rationals; no unrestricted dual below 44. The leftover $(1/4)\mathbb Z^5$ graph has no 41-set using 24 or more D5-type points; the $T^5$ remainder has no SAT 36-clique without a stored proof. Range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
 | [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 22. Three-rail minima through 15 stay above $6/17$. Interval orders through 10 stay at or above $1/3$. Conjecture open. |
@@ -212,6 +212,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | kissing number 5d / leftover (1/4)Z^5 and T^5 36-clique | `problems/kissing-5d/compute/q3` | Grok 4.6 | 2026-08-27 |
 | kissing number 5d / exact unrestricted 3-point dual | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
 | kissing number 5d / D5 stars and T5 share 28 | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
+| kissing number 5d / leftover n1>=24 and T5 share 27 | `problems/kissing-5d/compute/q4` | Grok 4.6 | 2026-08-27 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |

@@ -366,18 +366,19 @@ Opened again (and re-fetched the arXiv sources):
 
 Still **no** change to the unrestricted range.
 
-### 11. $(1/4)\mathbb Z^5$: no 41-set with $n_1\ge 28$
+### 11. $(1/4)\mathbb Z^5$: no 41-set with $n_1\ge 24$
 
-`compute/q4/n1_complete_k12.json`, `n1_le32.json`, `n1_check.json`,
-`analyze_stars.json`, `verify_n1.rs`. The ten octads are the $D_5$
-coordinate-stars. Seed-unions through $|U|\le 12$ have no extras-clique
-of size $|U|+1$. The $n_1\le 27$ slice is unfinished.
+`compute/q4/n1_complete_k12.json`, `n1_dfs_k16.json`, `n1_le32.json`,
+`n1_check.json`, `analyze_stars.json`, `verify_n1.rs`. The ten octads
+are the $D_5$ coordinate-stars. Seed-unions through $|U|\le 16$ have
+no extras-clique of size $|U|+1$ (`n1_dfs.c`, $164{,}988{,}439$
+unions). The $n_1\le 23$ slice is unfinished.
 
 ### 12. $T^5$ 36-clique still residue
 
 `compute/q4/t5_omega.json`: Cadical and Glucose return no 36-clique;
-no stored DRAT. `t5_share30_c.json`, `t5_share29_c.json`,
-`t5_share28_c.json`: share 30, 29 and 28 empty.
+no stored DRAT. `t5_share30_c.json` through `t5_share27_c.json`:
+share 30, 29, 28 and 27 empty.
 
 Replay:
 
