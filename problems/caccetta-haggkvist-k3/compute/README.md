@@ -43,3 +43,6 @@ the CKLS-fork F₄ certificate at c=0.34640. Replay:
 
 Leftover holes from n=109 through n=114 live in `q5/`. Replay:
 `cd q5 && ./run_all.sh`.
+
+Leftover holes from n=115 live in `q6/`. Replay:
+`cd q6 && ./run_all.sh`.
