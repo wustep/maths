@@ -64,9 +64,12 @@ def main() -> int:
         "n_integral": len(rows),
         "params": rows,
         "note": (
-            "Integrality only. Prime order plus vertex-transitivity would force "
-            "a circulant, already empty. This list does not prove there is no "
-            "asymmetric SRG, and an SRG can still contain a K5."
+            "No integral parameter set in the legal degree window. "
+            "43 ≢ 1 (mod 4), so there is also no conference graph. "
+            "Every SRG is either a conference graph or has integer "
+            "eigenvalues, so there is no strongly regular graph on 43 "
+            "vertices with degree in [18,24]. That excludes an SRG "
+            "(5,5,43)-graph. It is not a bound on R(5,5)."
         ),
     }
     dump_json(str(OUT), payload)

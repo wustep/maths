@@ -88,3 +88,16 @@ python3 check_groups.py
 Failed / unused: `https://www.cs.rit.edu/~spr/PUBLIC/index.html` returned 404 (the survey lives under `ElJC/`).
 
 Independent parent replay this session: `compute/replay.sh` and `python3 verify_mckay.py`. 328+328 ok, 0 extensions, circulant 42/43 empty.
+
+## 2026-08-27 — what q1 checked
+
+Not a new bound. Independently verified tonight:
+
+1. Group laws for the four groups of order 44 and both groups of order 45 (`q1/check_groups.py`).
+2. No legal-degree Cayley $(5,5)$-graph on $C_2\times C_{22}$, $C_{11}\rtimes C_4$, $D_{22}$, or $C_3\times C_{15}$. Circulants at 44 and 45 empty (replay of the 17 August census). Python matched the C leaf counts on $C_{11}\rtimes C_4$ and $C_3\times C_{15}$.
+3. 4080 one-flip $(5,5,42)$ neighbours of the 656; none extend (`q1/extend_flips.c`).
+4. $|\mathrm{Aut}|$ of the 656 is $1$ (424 graphs) or $2$ (232 graphs); no 7-cycle.
+5. No integral SRG parameters on 43 vertices with degree in $[18,24]$; $43\not\equiv 1\pmod 4$.
+6. $C_7$ encoder agrees with brute force on $n=7$ and produces a $(5,5,14)$-graph. The 42- and 43-vertex slim instances timed out. Those timeouts are not a dent.
+
+Cert: `compute/q1/certs/q1_summary.json`. Replay: `cd compute/q1 && ./run_all.sh`.
