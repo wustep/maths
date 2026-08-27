@@ -1,0 +1,10 @@
+{
+  "status": "residue",
+  "arxiv": "2504.18487v1",
+  "Q_s4_t_1_8_alpha_16_beta_-1": "-1025/2048",
+  "Q_value": -0.50048828125,
+  "Q_s3_same_weights": "767/256",
+  "sign_s4": "negative",
+  "sign_s3": "nonnegative",
+  "reason": "Lemma 4.3 needs I_s(\u03bd)\u22650. Two-shell opposite dipoles give Q=-1025/2048 at s=4. b(4) cannot be used in Theorem 2.2."
+}

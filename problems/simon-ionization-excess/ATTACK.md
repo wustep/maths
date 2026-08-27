@@ -316,3 +316,64 @@ $1.1046$. $1.1168$ stays withdrawn. q1 remainders unchanged.
 $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q5/run_all.sh`.
+
+## 2026-08-27 — q6 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0.
+- Nam 1009.2367v3 and Benguria–González-Brantes 2511.07582v1
+  unchanged: no later fermionic leading coefficient below the
+  notebook $1.1035$.
+- Independent replay of the q5 cert: `verify_lift.py` recon
+  $\gamma=0.906238$, $1/\gamma=1.103463<1.1057$, cut $10/11>\gamma$.
+  Hydrogen $N_0(1)=2$ replayed. q1 remainders $2.953$, $3.892$,
+  $3.9781$ unchanged.
+
+## 2026-08-27 — q6 dead line: $R\le 9$ cut
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1035$. Same wall at $R=8$ ($1.125$).
+Residue: `compute/q6/certs/r9_cut.json`. A sharper large-aspect
+cut would reopen this line; none is certified.
+
+$s>3$ along Lemma 4.3 is still residue (two-shell $s=4$ rational
+$-1025/2048$). Lieb still gives the best integers at $Z=2,\ldots,6$.
+
+## 2026-08-27 — q6 scan: more bins at $R=10$
+
+SLSQP plus the $P_{\max}$ tax (`certs/scan_compact.json` after
+the scan is stored):
+
+- $R=10$, $n=30$ (q5 row): predicted $1.103463$.
+- $R=10$, $n=31$: $1.102938$.
+- $R=10$, $n=32$: $1.102546$ ($2^{32}-1$ faces).
+- $R=9.8$, $n=32$: $1.102384$, but $\gamma$ sits $2.8\cdot 10^{-4}$
+  below the cut $9.8/10.8$ — tighter than the $R=10$ row.
+
+The live line is $R=10$ with $n=32$. Face enumeration is the
+certificate, not the SLSQP prediction.
+
+## 2026-08-27 — q6 dent
+
+Same HPS §7 chain with $\beta_3\ge 0.906992$ (aspect $10$,
+$n=32$ faces, $\varphi=0.9108$):
+
+$$
+N<1.1026Z+3.853\,Z^{1/3}+0.01320+0.1828\,Z^{-1/3}+0.019500\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1026Z+3.938\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
+$10/11$ algebra, mass-opt scan with no counterexample, stored
+$R=10$ $n=32$ faces ($4{,}294{,}967{,}295$, copositive, $1157$
+residual skips, $\min m^\top Mm>6\cdot 10^{-4}$). $1/\gamma=1.102546$
+prints as $1.1026$. Cut $10/11>\gamma$. $1.1168$ stays withdrawn.
+q1 remainders unchanged. $N_0(Z)-Z$ bounded still open.
+
+Replay: `problems/simon-ionization-excess/compute/q6/run_all.sh`.
