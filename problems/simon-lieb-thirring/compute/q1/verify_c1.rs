@@ -451,10 +451,10 @@ fn log_t_grid(t_min: f64, t_max: f64, n: usize) -> Vec<f64> {
 
 fn hybrid_t_grid() -> Vec<f64> {
     // Uniform in u=log t on each piece. Denser on the steep rise of 1-g.
-    let a = log_t_grid(0.02, 0.25, 1000);
-    let b = log_t_grid(0.25, 20.0, 24000);
-    let c = log_t_grid(20.0, 400.0, 8000);
-    let d = log_t_grid(400.0, 1.0e12, 4000);
+    let a = log_t_grid(0.02, 0.25, 1500);
+    let b = log_t_grid(0.25, 20.0, 32000);
+    let c = log_t_grid(20.0, 400.0, 10000);
+    let d = log_t_grid(400.0, 1.0e12, 5000);
     let mut t = a;
     t.extend_from_slice(&b[1..]);
     t.extend_from_slice(&c[1..]);
@@ -493,8 +493,17 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
     let a_raw = up(a_raw);
     let _ = i_phi_hi;
 
-    let n_s = 20000usize;
-    let s = quadratic_s_grid(support, n_s);
+    // Uniform s-grid, different count from Python; clustering is used only
+    // as a secondary Darboux check via quadratic_s_grid in comments / unused.
+    let n_s = 50000usize;
+    let s = {
+        let mut v = vec![0.0; n_s + 1];
+        for j in 0..=n_s {
+            v[j] = support * (j as f64 / n_s as f64);
+        }
+        v[n_s] = support;
+        v
+    };
     let mut ds = vec![0.0; n_s];
     for j in 0..n_s {
         ds[j] = s[j + 1] - s[j];
