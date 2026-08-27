@@ -2,7 +2,7 @@
 
 - Slug: `union-closed`
 - List: P33
-- Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
+- Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh` (2026-08-17); Grok 4.6 q1 (2026-08-27)
 - Status: open (ray-certified frequency 0.38304; 1/2 still open)
 - Area: Extremal set theory
 - Sources: Bruhn–Schaudt; Gilmer arXiv:2211.09055
