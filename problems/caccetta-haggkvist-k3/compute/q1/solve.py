@@ -44,6 +44,7 @@ def run_one(
     proof: bool,
     tag: str | None,
     u_from_1: int | None = None,
+    nplus1_from_2: int | None = None,
 ) -> dict:
     CERTS.mkdir(exist_ok=True)
     suffix = []
@@ -51,6 +52,8 @@ def run_one(
         suffix.append(f"k{indeg0}")
     if u_from_1 is not None:
         suffix.append(f"t{u_from_1}")
+    if nplus1_from_2 is not None:
+        suffix.append(f"s{nplus1_from_2}")
     if exact_in:
         suffix.append("ein")
     if not sb:
@@ -61,7 +64,14 @@ def run_one(
     proof_path = CERTS / f"{stem}.drat"
 
     clauses, nvars = encode(
-        n, d, exact=True, sb=sb, indeg0=indeg0, exact_in=exact_in, u_from_1=u_from_1
+        n,
+        d,
+        exact=True,
+        sb=sb,
+        indeg0=indeg0,
+        exact_in=exact_in,
+        u_from_1=u_from_1,
+        nplus1_from_2=nplus1_from_2,
     )
     with cnf_path.open("w") as f:
         write_cnf(clauses, nvars, f)
@@ -88,6 +98,7 @@ def run_one(
         "d": d,
         "indeg0": indeg0,
         "u_from_1": u_from_1,
+        "nplus1_from_2": nplus1_from_2,
         "exact_in": exact_in,
         "sb": sb,
         "header": header,
@@ -150,6 +161,7 @@ def main():
     ap.add_argument("--no-sb", action="store_true")
     ap.add_argument("--proof", action="store_true")
     ap.add_argument("--u-from-1", type=int, default=None)
+    ap.add_argument("--nplus1-from-2", type=int, default=None)
     ap.add_argument("--tag", default=None)
     ap.add_argument("--json-out", type=Path, default=None)
     args = ap.parse_args()
@@ -163,6 +175,7 @@ def main():
         proof=args.proof,
         tag=args.tag,
         u_from_1=args.u_from_1,
+        nplus1_from_2=args.nplus1_from_2,
     )
     print(json.dumps({k: v for k, v in rec.items() if k != "arcs"}, indent=2))
     if args.json_out:

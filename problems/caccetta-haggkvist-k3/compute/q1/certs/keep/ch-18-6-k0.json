@@ -1,0 +1,14 @@
+{
+  "n": 18,
+  "d": 6,
+  "indeg0": 0,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 5443 13335",
+  "status": "UNKNOWN",
+  "time_s": 600.003,
+  "timeout_s": 600,
+  "returncode": 0,
+  "cnf": "ch-18-6-k0.cnf",
+  "out": "ch-18-6-k0.out"
+}

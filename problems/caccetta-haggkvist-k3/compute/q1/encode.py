@@ -74,6 +74,7 @@ def encode(
     indeg0: int | None = None,
     exact_in: bool = False,
     u_from_1: int | None = None,
+    nplus1_from_2: int | None = None,
 ):
     """Return (clauses, nvars).
 
@@ -132,6 +133,22 @@ def encode(
                 clauses.append([-var_id(n, v, 1)])
             else:
                 clauses.append([-var_id(n, 1, v)])
+
+    if nplus1_from_2 is not None:
+        if u_from_1 is None:
+            raise ValueError("nplus1_from_2 requires u_from_1")
+        # N+(1) ∩ U = first u_from_1 labels of U.  Relabel inside that
+        # block so N+(2) hits the first s of them.
+        u0 = d + indeg0 + 1
+        block = list(range(u0, u0 + u_from_1))
+        if nplus1_from_2 < 0 or nplus1_from_2 > len(block):
+            return [[]], 1
+        for j, v in enumerate(block):
+            if j < nplus1_from_2:
+                clauses.append([var_id(n, 2, v)])
+                clauses.append([-var_id(n, v, 2)])
+            else:
+                clauses.append([-var_id(n, 2, v)])
 
     nvars = n * n
     next_id = nvars + 1
@@ -201,10 +218,17 @@ def encode(
             u0 = d + indeg0 + 1
             if u_from_1 is None:
                 groups = [list(inn), list(range(u0, n))]
-            else:
+            elif nplus1_from_2 is None:
                 groups = [
                     list(inn),
                     list(range(u0, u0 + u_from_1)),
+                    list(range(u0 + u_from_1, n)),
+                ]
+            else:
+                groups = [
+                    list(inn),
+                    list(range(u0, u0 + nplus1_from_2)),
+                    list(range(u0 + nplus1_from_2, u0 + u_from_1)),
                     list(range(u0 + u_from_1, n)),
                 ]
             for gl in groups:
@@ -247,6 +271,12 @@ def main():
         default=None,
         help="fix |N+(1) ∩ U| = t and the labels (needs --indeg0)",
     )
+    ap.add_argument(
+        "--nplus1-from-2",
+        type=int,
+        default=None,
+        help="fix |N+(2) ∩ (N+(1)∩U)| = s (needs --u-from-1)",
+    )
     args = ap.parse_args()
     clauses, nvars = encode(
         args.n,
@@ -256,6 +286,7 @@ def main():
         indeg0=args.indeg0,
         exact_in=args.exact_in,
         u_from_1=args.u_from_1,
+        nplus1_from_2=args.nplus1_from_2,
     )
     write_cnf(clauses, nvars, sys.stdout)
 

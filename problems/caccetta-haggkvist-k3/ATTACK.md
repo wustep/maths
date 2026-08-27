@@ -147,4 +147,13 @@ n=18 d=6 cubes, kissat 4.0.4:
 | 1 | UNKNOWN | 180s with proof log | leftover |
 | 0 | UNKNOWN | 180s with proof log | leftover |
 
-k=0 and k=1 are rerunning without proof logging (600s). A second split on those two cubes: t=|N⁺(1) ∩ U| ∈ {1,…,6}, U the vertices nonadjacent to 0.
+k=0 and k=1 reran without proof logging (600s): **k=1 UNSAT in 596s** (DRAT regenerating); k=0 still UNKNOWN.
+
+Second split t=|N⁺(1) ∩ U|:
+
+- k=0, t=1..5: UNSAT, DRAT verified, each < 0.03s
+- k=0, t=6: UNKNOWN at 180s
+- k=1, t=1..5: UNSAT in < 0.03s
+- k=1, t=6: UNKNOWN at 180s (the whole k=1 cube is already UNSAT)
+
+Third split of (k=0,t=6) on s=|N⁺(2) ∩ (N⁺(1) ∩ U)| did not finish at 180s for s=0. Leftover is the t=6 slice of k=0, plus a DRAT for k=1.

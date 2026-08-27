@@ -16,8 +16,10 @@ from encode import encode
 from verify_model import check, var_id
 
 
-def solve_pysat(n, d, indeg0, engine, secs):
-    clauses, nvars = encode(n, d, exact=True, sb=True, indeg0=indeg0)
+def solve_pysat(n, d, indeg0, engine, secs, u_from_1=None):
+    clauses, nvars = encode(
+        n, d, exact=True, sb=True, indeg0=indeg0, u_from_1=u_from_1
+    )
     if engine == "cadical":
         from pysat.solvers import Cadical195 as S
     elif engine == "glucose":
@@ -73,11 +75,14 @@ def main():
     ap.add_argument("--n", type=int, default=18)
     ap.add_argument("--d", type=int, default=6)
     ap.add_argument("--indeg0", type=int, required=True)
+    ap.add_argument("--u-from-1", type=int, default=None)
     ap.add_argument("--engine", default="cadical", choices=("cadical", "glucose"))
     ap.add_argument("--time", type=int, default=120)
     ap.add_argument("--json-out", type=Path, default=None)
     args = ap.parse_args()
-    rec = solve_pysat(args.n, args.d, args.indeg0, args.engine, args.time)
+    rec = solve_pysat(
+        args.n, args.d, args.indeg0, args.engine, args.time, u_from_1=args.u_from_1
+    )
     print(json.dumps({k: v for k, v in rec.items() if k != "arcs"}, indent=2))
     if args.json_out:
         args.json_out.write_text(json.dumps(rec, indent=2))

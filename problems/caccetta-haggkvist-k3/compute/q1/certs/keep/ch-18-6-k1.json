@@ -1,0 +1,14 @@
+{
+  "n": 18,
+  "d": 6,
+  "indeg0": 1,
+  "exact_in": false,
+  "sb": true,
+  "header": "p cnf 5378 13143",
+  "status": "UNSAT",
+  "time_s": 596.392,
+  "timeout_s": 600,
+  "returncode": 20,
+  "cnf": "ch-18-6-k1.cnf",
+  "out": "ch-18-6-k1.out"
+}
