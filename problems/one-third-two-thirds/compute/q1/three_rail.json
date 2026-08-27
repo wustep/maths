@@ -1,0 +1,148 @@
+{
+  "exhaustive": [
+    {
+      "n": 8,
+      "min_delta": [
+        111,
+        268
+      ],
+      "broken4": [],
+      "broken5": [],
+      "e": 268,
+      "pair": [
+        1,
+        2,
+        157,
+        111
+      ],
+      "n_non_sum": 128,
+      "n_below_6_17": 0,
+      "complete": true
+    },
+    {
+      "n": 9,
+      "min_delta": [
+        7,
+        18
+      ],
+      "broken4": [
+        2
+      ],
+      "broken5": [
+        1,
+        2
+      ],
+      "e": 684,
+      "pair": [
+        1,
+        2,
+        418,
+        266
+      ],
+      "n_non_sum": 512,
+      "n_below_6_17": 0,
+      "complete": true
+    },
+    {
+      "n": 10,
+      "min_delta": [
+        31,
+        79
+      ],
+      "broken4": [
+        2,
+        3
+      ],
+      "broken5": [
+        1,
+        2,
+        3
+      ],
+      "e": 1738,
+      "pair": [
+        0,
+        1,
+        1056,
+        682
+      ],
+      "n_non_sum": 2048,
+      "n_below_6_17": 0,
+      "complete": true
+    },
+    {
+      "n": 11,
+      "min_delta": [
+        103,
+        261
+      ],
+      "broken4": [
+        2,
+        3,
+        4
+      ],
+      "broken5": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "e": 4437,
+      "pair": [
+        1,
+        2,
+        2686,
+        1751
+      ],
+      "n_non_sum": 8192,
+      "n_below_6_17": 0,
+      "complete": true
+    },
+    {
+      "n": 12,
+      "min_delta": [
+        3466,
+        8587
+      ],
+      "broken4": [
+        2,
+        3,
+        4,
+        5
+      ],
+      "broken5": [],
+      "e": 8587,
+      "pair": [
+        0,
+        1,
+        5121,
+        3466
+      ],
+      "n_non_sum": 32768,
+      "n_below_6_17": 0,
+      "complete": true
+    }
+  ],
+  "note": "n<=12 exhaustive; n=15 greedy only",
+  "n15_greedy": {
+    "n": 15,
+    "method": "greedy flip of +4/+5 rungs",
+    "delta": [
+      4855,
+      11607
+    ],
+    "e": 69642,
+    "pair": [
+      1,
+      2,
+      40512,
+      29130
+    ],
+    "broken4": [
+      5
+    ],
+    "broken5": [],
+    "steps": 2,
+    "beats_6_17": false,
+    "complete": false
+  }
+}

@@ -11,3 +11,17 @@
 | $C_2\times C_6\times C_3$ | $\delta\approx 0.480377$ | — | exact $273419876590786707/569177957111013830$ |
 
 BFT general bound $(5-\sqrt5)/10$ is untouched. Width-2 records (Chen $\kappa\approx 0.3489$, Olson $37/106$) are untouched.
+
+## 2026-08-27
+
+Gupta v2 named witnesses, this notebook's counters:
+
+| object | value |
+| --- | --- |
+| $L_{14,1,9}$ | $\delta=254/725$, $e=725$ |
+| Gupta $37/106$ encoding | $e=318$, width 2 |
+| Gupta width-3 $6/17$ encoding | ordinal sum, $e=561$ |
+| $L_{15,1,5,6,10}$ | $166/475$ |
+| $L_{21,1,5,8,9,12,16}$ | $5402/15485$ |
+
+Broken-rung non-sum minima $7\le n\le 21$ are in `q1/ladder_census.json`. No width-3 one-point extension of $W_{10}$ has $\delta<6/17$.

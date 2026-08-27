@@ -1,0 +1,245 @@
+{
+  "named": [
+    {
+      "n": 7,
+      "broken": [
+        1,
+        2
+      ],
+      "delta": [
+        9,
+        25
+      ],
+      "e": 25,
+      "pair": [
+        0,
+        1,
+        16,
+        9
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        9,
+        25
+      ]
+    },
+    {
+      "n": 8,
+      "broken": [
+        1,
+        2,
+        3
+      ],
+      "delta": [
+        17,
+        46
+      ],
+      "e": 46,
+      "pair": [
+        3,
+        4,
+        29,
+        17
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        17,
+        46
+      ]
+    },
+    {
+      "n": 9,
+      "broken": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "delta": [
+        6,
+        17
+      ],
+      "e": 85,
+      "pair": [
+        0,
+        1,
+        55,
+        30
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        6,
+        17
+      ]
+    },
+    {
+      "n": 10,
+      "broken": [
+        1,
+        5
+      ],
+      "delta": [
+        37,
+        106
+      ],
+      "e": 106,
+      "pair": [
+        0,
+        1,
+        69,
+        37
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        37,
+        106
+      ]
+    },
+    {
+      "n": 11,
+      "broken": [
+        1,
+        6
+      ],
+      "delta": [
+        20,
+        57
+      ],
+      "e": 171,
+      "pair": [
+        0,
+        1,
+        111,
+        60
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        20,
+        57
+      ]
+    },
+    {
+      "n": 12,
+      "broken": [
+        1,
+        7
+      ],
+      "delta": [
+        97,
+        277
+      ],
+      "e": 277,
+      "pair": [
+        0,
+        1,
+        180,
+        97
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        97,
+        277
+      ]
+    },
+    {
+      "n": 13,
+      "broken": [
+        1,
+        8
+      ],
+      "delta": [
+        157,
+        448
+      ],
+      "e": 448,
+      "pair": [
+        0,
+        1,
+        291,
+        157
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        157,
+        448
+      ]
+    },
+    {
+      "n": 14,
+      "broken": [
+        1,
+        9
+      ],
+      "delta": [
+        254,
+        725
+      ],
+      "e": 725,
+      "pair": [
+        0,
+        1,
+        471,
+        254
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": [
+        254,
+        725
+      ]
+    },
+    {
+      "n": 15,
+      "broken": [
+        1,
+        5,
+        6,
+        10
+      ],
+      "delta": [
+        166,
+        475
+      ],
+      "e": 1425,
+      "pair": [
+        0,
+        1,
+        927,
+        498
+      ],
+      "width": 2,
+      "n_summands": 1,
+      "published_delta": null
+    },
+    {
+      "n": 17,
+      "broken": [
+        1,
+        5,
+        8,
+        12
+      ],
+      "delta": [
+        1304,
+        3737
+      ],
+      "e": 3737,
+      "pair": [
+        0,
+        1,
+        2433,
+        1304
+      ],
+      "width": null,
+      "n_summands": 1,
+      "published_delta": null
+    }
+  ]
+}
