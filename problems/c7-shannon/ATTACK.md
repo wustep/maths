@@ -1,5 +1,25 @@
 # Attack log — C7 fifth power
 
+## 2026-08-27 — q4, new shapes, Hamming 13 finished
+
+Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438v2 (Table 1 still $367$–$401$), Itty et al. 2607.21517v2 (fifth-power record still 367), Gao 2607.27869 (“it remains the largest currently known such set”), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.
+
+q3 closed the $8$-coset leftover. This pass hunted shapes that are not an $8$-coset pack, not a missing letter, and not Hamming $11$ from the seed.
+
+**Hamming $13$ is finished.** q3 already killed $5$- and $6$-blocker adds (`best_mis=4`). Case C: every $4$-blocker plus two extra removals, $199{,}671{,}417$ pairs, `max_freed=14`, no $\alpha\ge 7$. Leftover SAT on the $1767$ vertices with $\le 3$ blockers ($153967$ clauses): Cadical UNSAT in $548$s. Combined with q1's odd ball through $9$ and q2's Hamming $11$, the odd Hamming ball through $13$ around this seed is empty. Logs: `compute/q4/hamming13_four_log.txt`, `hamming13_sat_log.txt`.
+
+**$1$-dimensional good codes.** $(7^5-1)/6=2801$ subspaces, $2680$ good, $1156$ unique connection sets on $\mathbb F_7^4$. Degrees $188$–$242$. Hoffman never dropped below $53$ (best float $366.01$). Random greedy plus a short improve reached $43$ cosets ($301$ vertices); a harder ejection on five generators reached $46$ ($322$). Those packs had empty original-graph residual. No $371$-set. Cadical on a $53$-pack is unfinished (residue). `compute/q4/onedim_log.txt`, `grow_1dim_log.txt`.
+
+**Cyclic-coordinate $5$-orbits.** $3360$ orbits, $3262$ internally independent. Greedy $\le 52$ orbits ($260$) or $53$ plus $\{00000,22222,44444\}$ ($268$). Cadical for $74$ orbits ($370$) is unfinished (residue). `compute/q4/cyclic_log.txt`.
+
+**Negation pairs.** $8282$ internally independent pairs $\{v,-v\}$. Cadical for $184$ pairs ($368$) is unfinished (residue).
+
+**Hamming $15$ high-blocker.** $2842$ vertices with $7$ blockers have freed $\alpha\le 4$; $1{,}406{,}817$ extensions of a $6$-blocker by one extra have freed $\alpha\le 5$. Residue: add only $\le 5$-blocker vertices. `compute/q4/hamming15_log.txt`.
+
+**Ejection from $343$.** $80$ random good $3$-dimensional codes, $25000$ delete-and-repack steps each, `best=343`. The linear sets did not move. Residue. From-scratch GRASP, $40$ restarts: best $297$. Wider fold grid recovered $361$ by greedy residual (the published $367$ needs the exact $40$-set). Mixing the published $367$-set with the reconstructed pipeline set (symmetric difference $4$) has independence number $367$.
+
+No $368$-set. No $\Theta(C_7)$ claim. $367^{1/5}\approx 3.25787<3.258805$. This is not a dent.
+
 ## 2026-08-27 — q3, 8-coset leftover finished
 
 Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438 (Table 1 still $367$–$401$), Itty et al. 2607.21517v2 (fifth-power record still 367; v2 only adds a $C_{15}$ capacity bound), Gao 2607.27869 (“it remains the largest currently known such set” in the fifth power), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.

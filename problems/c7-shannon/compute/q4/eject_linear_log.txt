@@ -1,0 +1,12 @@
+  codes=1 tried=1365 best=343 t=0.3s
+  codes=2 tried=1543 best=343 t=0.5s
+  codes=3 tried=1598 best=343 t=0.7s
+  codes=10 tried=14539 best=343 t=2.4s
+  codes=20 tried=30719 best=343 t=4.7s
+  codes=30 tried=42663 best=343 t=7.1s
+  codes=40 tried=59247 best=343 t=9.5s
+  codes=50 tried=73376 best=343 t=11.9s
+  codes=60 tried=89708 best=343 t=14.3s
+  codes=70 tried=100692 best=343 t=16.7s
+  codes=80 tried=114975 best=343 t=19.0s
+DONE good=80 tried=114975 best=343 t=19.01s

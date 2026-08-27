@@ -16,7 +16,11 @@ A 368-set is already a new bound. Its fifth root is about 3.2596, which would al
 
 **Small swaps.** The 367-set is maximal (0 free vertices). Exhaustive 1-out, 2-out, and 3-out searches have gain 0. That matches the paper's 3-out/4-in report and extends it to a complete 3-out census (8,171,255 triples).
 
-**Few-flip SAT (stolen from W(2,7)).** Cadical with library `CardEnc.atmost` refuted every odd Hamming distance $\le 9$ from the seed, so 4-out/5-in is also empty. Hamming $11$ is now finished as well: every $5$-out/$6$-in that adds a $4$- or $5$-blocker vertex frees at most $11$ candidates with $\alpha\le 4$, and the leftover SAT on $\le 3$-blocker candidates is UNSAT. Hamming $13$ is empty in the $5$- and $6$-blocker cases (freed $\alpha\le 4$). That is still a ball around one seed, not $\alpha\le 367$.
+**Few-flip SAT (stolen from W(2,7)).** Cadical with library `CardEnc.atmost` refuted every odd Hamming distance $\le 9$ from the seed, so 4-out/5-in is also empty. Hamming $11$ and Hamming $13$ are now finished as well: every high-blocker $5$-out/$6$-in or $6$-out/$7$-in frees at most $14$ candidates with $\alpha\le 4$, and the leftover SAT instances on $\le 3$-blocker candidates are both UNSAT. That is still a ball around one seed, not $\alpha\le 367$.
+
+**One-dimensional codes.** A good $1$-dimensional subspace has $7$-point cosets. Fifty-three independent cosets would be $371$. The $2680$ good generators collapse to $1156$ Cayley graphs on $\mathbb F_7^4$. Hoffman sits around $366$–$516$ and does not kill $53$. Local search reached $46$ cosets ($322$ vertices) with empty residual. Not a $368$-set.
+
+**Cyclic $5$-orbits.** The coordinate cycle splits the graph into $3360$ orbits of size $5$. Seventy-four independent orbits would be $370$. Greedy packing stopped at $52$ orbits ($260$).
 
 **Four-letter local search.** Growing the $367$-set inside a $4$-letter slice reached $309$. That number is irrelevant: a $4$-support set cannot reach $368$ at all.
 
@@ -46,7 +50,7 @@ Seed first. The Itty ancillary `R367.txt` is the Polak–Schrijver appendix. A p
 
 Then the homomorphism search, the S' MIS, the swap census, the linear residuals, and the fold/shift reruns. None produced 368.
 
-The pair-fiber bound came later, while trying to finish the $4$-support search that had been left as a local grow. Hamming $11$ was the other leftover from the few-flip ball. The $8$-coset census looked unfinished because $1280$ graphs hit an $80000$-node cap. Deduplicating the connection sets dropped $97240$ codes to $9584$ Cayley graphs; a complete search on those unique graphs found no $8$-pack.
+The pair-fiber bound came later, while trying to finish the $4$-support search that had been left as a local grow. Hamming $11$ was the other leftover from the few-flip ball; Hamming $13$ was the leftover after that. The $8$-coset census looked unfinished because $1280$ graphs hit an $80000$-node cap. Deduplicating the connection sets dropped $97240$ codes to $9584$ Cayley graphs; a complete search on those unique graphs found no $8$-pack. The $1$-dimensional quotients are larger ($2401$ vertices) and the Hoffman number never approaches $53$.
 
 ## 5. Computer search
 
@@ -62,7 +66,11 @@ The pair-fiber bound came later, while trying to finish the $4$-support search t
 - `compute/q3/coset_finish_log.txt` — $9584$ unique connection sets, clique cover $359$, exact search $9225$, leftover $0$
 - `compute/q3/unique_sample_log.txt` — Python RREF count and Cadical sample of $159$ unique graphs, all UNSAT
 - `compute/q3/hamming13_log.txt` — Hamming $13$ cases A+B empty (`best_mis=4`)
+- `compute/q4/hamming13_four_log.txt`, `hamming13_sat_log.txt` — Hamming $13$ case C empty, leftover SAT UNSAT
+- `compute/q4/onedim_log.txt` — $2680$ good $1$-dimensional codes, $1156$ unique, best pack $43$ then $46$
+- `compute/q4/cyclic_log.txt` — cyclic $5$-orbit greedy $\le 52$
+- `compute/q4/hamming15_log.txt` — Hamming $15$ cases A+B empty (`best_mis=5`)
 
 ## 6. What is proved vs still open
 
-The 367-set is independent. $\alpha(C_7^{\boxtimes 5})\ge 367$ is old. This search did not find 368 and did not prove 367 is maximum. An independent set that misses a letter in any coordinate has size at most $345$. Hamming distance $11$ from the published $367$-set contains no $368$-set. The union of the published set with any translate has independence number 367. No good $2$-dimensional $\mathbb F_7$-code has eight independent cosets. Hamming $13$ is empty when an added vertex has $5$ or $6$ blockers; the $\le 4$-blocker slice is residue. Lovász still gives $\alpha\le 401$. $\Theta(C_7)$ is not claimed from this folder.
+The 367-set is independent. $\alpha(C_7^{\boxtimes 5})\ge 367$ is old. This search did not find 368 and did not prove 367 is maximum. An independent set that misses a letter in any coordinate has size at most $345$. Hamming distance $13$ from the published $367$-set contains no $368$-set. The union of the published set with any translate has independence number 367. No good $2$-dimensional $\mathbb F_7$-code has eight independent cosets. A $1$-dimensional good-code pack was not found at size $53$; Hoffman does not forbid it. Cyclic $5$-orbit SAT for $74$ orbits and negation-pair SAT for $184$ pairs are unfinished. Hamming $15$ is empty when an added vertex has $6$ or $7$ blockers. Lovász still gives $\alpha\le 401$. $\Theta(C_7)$ is not claimed from this folder.

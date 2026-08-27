@@ -1,0 +1,5 @@
+best=243 M=0 n=382 q=7 den=216 shift=0,0,0,0,0
+best=357 M=327 n=382 q=7 den=109 shift=0,0,0,0,0
+best=361 M=327 n=382 q=7 den=109 shift=40,123,40,123,40
+n=382 need=110 bestk=108 nq=3 running_best=361 tries=162 t=0.0s
+DONE tries=162 best=361 t=0.05s
