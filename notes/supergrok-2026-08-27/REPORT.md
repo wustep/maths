@@ -61,3 +61,31 @@ Certified in `problems/kissing-5d/compute/q1/`:
 Replay: `sh problems/kissing-5d/compute/q1/run_all.sh`.
 
 Does not claim $\tau_5=40$.
+
+## two-smooth-summands / q1
+
+Continuation of the 2026-08-17 campaign. Search lives in
+`problems/two-smooth-summands/compute/q1/`.
+
+Published record still Balog 1989,
+$F(n)\ll_\varepsilon n^{4/(9\sqrt{e})+\varepsilon}$. Green #59 and
+Erdős #334 still open. No exponent below Balog. No infinite covering
+at any $\varepsilon<1/2$.
+
+Certified in that folder: closed-form templates fail through
+$n=20000$ at $9/20$, $2/5$, $1/3$, $27/100$; floor-divisor and
+largest-power-of-two have explicit infinite failure families;
+polynomial values of degree $d\ge 2$ cannot beat the square covering
+by size; two-factor $u\le n^{1/5}$ matches the known $F$ exception
+prefixes (sixteen at $2/5$, last $479$; seventy-six at $1/3$, last
+$18191$).
+
+Replay:
+
+```
+cd problems/two-smooth-summands/compute
+python3 verify_all.py
+cd q1 && ./run_all.sh
+```
+
+Does not claim Green #59.
