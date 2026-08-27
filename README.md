@@ -137,13 +137,15 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Incomplete search. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=79$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
-| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Exact CH-triangle at n=18, 21, 24, 26, 27, 29, 30, 32, 33, 35, 36 by an in-degree pigeonhole with stored DRAT proofs. $$F_4\text{ certificate still }c=0.34645,\ 5\cdot 10^{-5}\text{ below HKN }0.3465.$$ Numerical threshold unchanged. Conjecture 1/3 open. |
+| [caccetta-haggkvist-k3](problems/caccetta-haggkvist-k3) | Exact CH-triangle at n=18, 21, 24, 26, 27, 29, 30, 32, 33, 35, 36 and every leftover order through n=72 (534 stored DRATs). First remaining hole n=73. $$F_4\text{ certificate still }c=0.34645,\ 5\cdot 10^{-5}\text{ below HKN }0.3465.$$ Numerical threshold unchanged. Conjecture 1/3 open. |
 | [projective-plane-order-twelve](problems/projective-plane-order-twelve) | Two involution 2-MOLS replayed (intercalates $108+108$ vs $90+78$). $t=3$ timeout. Published Aut still $\lvert G\rvert\in\{1,2,3\}$. Plane open. |
 | [ramsey-r55](problems/ramsey-r55) | McKay 328+328 $(5,5,42)$ graphs replayed; circulant 42/43 empty. Interval still $43\le R(5,5)\le 46$. |
 | [graph-reconstruction-next-order](problems/graph-reconstruction-next-order) | Full independent degseq census: all 8,571,837 n=14 graphs are $4^{11}6^{3}$; 17,143 `labelg` samples matched. Uniqueness (hence reconstructibility) not independently re-sorted. McKay n=13 unchanged. |
 | [lonely-runner-fourteen](problems/lonely-runner-fourteen) | Every 13-tuple of coprime speeds with $$u_i \equiv i \pmod{p}$$ has the lonely runner property, for each of the ten primes 191 through 239, checked exhaustively in about four minutes apiece. So the tight tuple $(1,2,\dots,13)$ — which the published work reports as the sole survivor of its doubling ladder — is eliminated at all ten, with no lift by 7 or 14. The check fails for primes up to 41, so the modulus is doing real work. Sungkawichai–Trakulthongchai (arXiv:2604.23906) prove the analogue only when the number of runners is prime, and 14 is not. Cross-checked against brute force at 6 and 8 runners. Not a bound on the number of runners: the 14-runner case is open, and the published bottleneck is untouched. |
 | [fekete-s2](problems/fekete-s2) | Replayed Ridgway–Cheviakov 2018 Table 3 for $N=2$–$65$. No improvement. Smale 7 open. |
 | [hilbert16-degree-8](problems/hilbert16-degree-8) | Seventeen real schemes realized as T-curves sit outside the 2,367 of arXiv:2602.06888v3, so that census lower bound is $\ge 2{,}384$. All 2,367 published certificates replayed. Haas zone decompositions checked against all 38 published M-certificates. Every census triangulation swept exhaustively (230.5 million sign distributions) realizes exactly their 38 M-schemes and no others; 4,609 further triangulations add none. A later sweep of the full sign-vector stratum reached 4 of 164 triangulations before the machine restarted and found nothing new, and a search for the two undecided deep nests left no result. Hilbert 16(a) degree 8 open. |
+| [simon-lieb-thirring](problems/simon-lieb-thirring) | Simon 2000 #15. Published record $$L_{1,d}\le 1.456\,L^{\mathrm{cl}}_{1,d}$$ (Frank–Hundertmark–Jex–Nam, JEMS 2021). The one-dimensional conjecture for exponents between 1/2 and 3/2 is open. |
+| [simon-ionization-excess](problems/simon-ionization-excess) | Simon 2000 #9. Published record $$N_c(Z)<1.1185Z+4Z^{1/3}$$ for Z at least 4 (Hundertmark–Pattakos–Schulz). Bounded excess and 1984 ionization-energy monotonicity remain open. |
 
 Each problem folder:
 
@@ -201,6 +203,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | thin cyclic bases | `problems/thin-cyclic-bases` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed | `problems/union-closed` | SuperGrok 4.6 | 2026-08-17 |
 | union-closed / Example 4 on {b,1} | `problems/union-closed/compute/q1` | Grok 4.6 | 2026-08-27 |
+| union-closed / 2-sample ceiling on {b,1} | `problems/union-closed/compute/q2` | Grok 4.6 | 2026-08-27 |
 | 0/1 polynomials | `problems/zero-one-polynomials` | SuperGrok 4.6 | 2026-08-17 |
 | Cohn–Elkies planar | `problems/cohn-elkies` | SuperGrok 4.6 | 2026-08-17 |
 | kissing number 5d | `problems/kissing-5d` | SuperGrok 4.6 | 2026-08-17 |
@@ -215,6 +218,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist | `problems/caccetta-haggkvist-k3` | SuperGrok 4.6 | 2026-08-17 |
 | Caccetta–Häggkvist n=18 cubes | `problems/caccetta-haggkvist-k3/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Caccetta–Häggkvist exact orders through n=36 | `problems/caccetta-haggkvist-k3/compute/q2` | Cursor Grok 4.6 | 2026-08-27 |
+| Caccetta–Häggkvist leftover holes through n=72 | `problems/caccetta-haggkvist-k3/compute/q3` | Cursor Grok 4.6 | 2026-08-27 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
@@ -225,6 +229,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
 | Hadwiger–Nelson plane | `problems/hadwiger-nelson-plane` | GPT-5.6 Sol | 2026-08-23 |
 | Hadwiger–Nelson fourth rotation layer | `problems/hadwiger-nelson-plane/compute/q4` | GPT-5.6 Sol | 2026-08-23 |
+| Simon Lieb–Thirring constants | `problems/simon-lieb-thirring` | Grok 4.6 | 2026-08-27 |
+| Simon ionization excess | `problems/simon-ionization-excess` | Grok 4.6 | 2026-08-27 |
 
 ## Lean
 

@@ -1,0 +1,37 @@
+{
+  "claimed_c": 0.38304,
+  "P0": {
+    "atoms": [
+      0.29649392356933757,
+      1.0
+    ],
+    "weights": [
+      0.781798506688816,
+      0.21820149331118394
+    ],
+    "mean": 0.44999999999999996,
+    "ratio_ex4": 0.891484252169206
+  },
+  "P1": {
+    "atoms": [
+      0.01
+    ],
+    "weights": [
+      1.0
+    ],
+    "mean": 0.01,
+    "ratio_ex4": 1.7436964335940552
+  },
+  "q": 0.1521818181818181,
+  "mixture_mean": 0.38304,
+  "ciid_example4_ratio": 0.9091371378730101,
+  "ciid_example5_ratio": 0.9052721511245316,
+  "product_iid_ratio": 1.0465836965509054,
+  "liu_beta_0_10_ex5_ratio": 1.032452542008268,
+  "repo_beta_0_20_ex4_ratio": 1.0190943848153267,
+  "product_ex4_ratio": 1.0466387936290182,
+  "fails_pure_ex4": true,
+  "mean_matches_claimed": true,
+  "iid_weight_saves": true,
+  "note": "pure Example 4 on this 2-mixture is below 1.  The {b,1} ray claim is a single 2-atomic law and is untouched.  Liu's positive iid weight saves the witness and lowers the ray."
+}
