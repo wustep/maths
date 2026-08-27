@@ -338,4 +338,19 @@ Opened again before wrapping leftover SAT past n=125.
 
 Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
 
+## 2026-08-27 — wrap re-open (leftover through n=127)
+
+Opened again before wrapping leftover SAT past n=126.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. Journal reference Combinatorica 37 (2017). No v5.
+- https://arxiv.org/html/0908.2791v4 — Theorem 1.2 is the 0.3465n statement. Closing remark: de Joannis de Verclos–Sereni–Volec 0.3388 in March 2014 by F₆ (personal communication); DHP 0.88 / Shen 0.865 only produce a tiny decrease in Theorem 1.2.
+- https://arxiv.org/abs/0909.2468 — Chen–Karson–Liu–Shen. Abstract writes β ≤ 0.8616 γ. The same page includes Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G), with μ=0.16065.
+- https://arxiv.org/html/0909.2468 — Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G), with μ=0.16065.
+- https://export.arxiv.org/api/query?search_query=all:Caccetta+AND+all:Haggkvist&sortBy=submittedDate&sortOrder=descending&max_results=10 — 10 hits. Newest unrestricted-looking items are still 2405.17797 and 2402.16776v4. No post-2017 paper in that list states a published unrestricted c < 0.3465.
+- https://arxiv.org/abs/2405.17797 — Mezher–Daamouch. Restricted: a special case of Caccetta–Häggkvist on 7-anti-transitive oriented graphs (via Seymour vertices). No unrestricted numerical c.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash. Path-length bounds that *use* HKN 0.3465n (their Theorem 9); they do not replace it.
+- https://arxiv.org/html/2402.16776 — Theorem 9 quotes HKN 0.3465n.
+
+Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
+
 
