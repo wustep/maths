@@ -452,21 +452,25 @@ fn log_t_grid(t_min: f64, t_max: f64, n: usize) -> Vec<f64> {
 fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, kappa: f64, support: f64) -> (f64, f64, f64, f64) {
     let (_i_f, mu_u) = bound_I_f_subst(alpha, beta);
 
-    let n_s = 22000usize;
-    let s = quadratic_s_grid(support, n_s);
+    // Mass bounds on a uniform s-grid (different from the quadratic g-grid).
+    let n_phi = 160000usize;
+    let s_mass = {
+        let mut v = vec![0.0; n_phi + 1];
+        for j in 0..=n_phi {
+            v[j] = support * (j as f64 / n_phi as f64);
+        }
+        v[n_phi] = support;
+        v
+    };
     let mut i_phi_lo = 0.0;
     let mut i_phi_hi = 0.0;
     let mut a_raw = 0.0;
-    let mut phi_r = vec![0.0; n_s];
-    let mut ds = vec![0.0; n_s];
-    for j in 0..n_s {
-        let sl = s[j];
-        let sr = s[j + 1];
+    for j in 0..n_phi {
+        let sl = s_mass[j];
+        let sr = s_mass[j + 1];
         let d = sr - sl;
-        ds[j] = d;
         let pl = phi_raw_upper(sl, support, gamma, delta, eps, kappa);
         let pr = phi_raw_lower(sr, support, gamma, delta, eps, kappa);
-        phi_r[j] = pr;
         i_phi_lo += pr * d;
         i_phi_hi += pl * d;
         a_raw += pl * pl * d;
@@ -474,6 +478,14 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
     let i_phi_lo = down(i_phi_lo);
     let i_phi_hi = up(i_phi_hi);
     let a_raw = up(a_raw);
+    let _ = i_phi_hi;
+
+    let n_s = 20000usize;
+    let s = quadratic_s_grid(support, n_s);
+    let mut ds = vec![0.0; n_s];
+    for j in 0..n_s {
+        ds[j] = s[j + 1] - s[j];
+    }
     if i_phi_lo <= 0.0 {
         fatal("I_φ lower vanished");
     }
@@ -485,18 +497,23 @@ fn certify_independent(alpha: f64, beta: f64, gamma: f64, delta: f64, eps: f64, 
     let n_t = 28000usize;
     let t = log_t_grid(t_min, t_max, n_t);
 
+    let mut phi_l = vec![0.0; n_s];
+    for j in 0..n_s {
+        phi_l[j] = phi_raw_upper(s[j], support, gamma, delta, eps, kappa);
+    }
+
     let mut panels = 0.0;
     for i in 0..n_t {
         let t_l = t[i];
         let t_r = t[i + 1];
-        let mut g_raw = 0.0;
+        // 1-g = ∫ φ_raw (1-f) / I_φ ≤ Σ φ_left_upper (1-f_lower(s_right t)) Δs / I_φ_lower
+        let mut num = 0.0;
         for j in 0..n_s {
             let fv = f_lower(s[j + 1] * t_r, mu_u, alpha, beta);
-            g_raw += phi_r[j] * fv * ds[j];
+            num += phi_l[j] * (1.0 - fv).max(0.0) * ds[j];
         }
-        let g_lo = down(g_raw / i_phi_hi).min(1.0).max(0.0);
-        let one = (1.0 - g_lo).max(0.0);
-        // exact ∫ t^{-3/2} dt = 2 (t_l^{-1/2} - t_r^{-1/2})
+        let one = up(up(num) / i_phi_lo).min(1.0).max(0.0);
+        // exact ∫ t^{-3/2} dt = 2 (t_l^{-1/2} - t_r^{-1/2})  (log substitution)
         let w = 2.0 * (down(t_l.sqrt().recip()) - up(t_r.sqrt().recip()));
         let w = w.max(0.0);
         panels += up(one * one * w);

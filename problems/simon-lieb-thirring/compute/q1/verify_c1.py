@@ -16,11 +16,13 @@ is not a bound.
 On each t-panel [t_i, t_{i+1}]:
     (1-g)² is increasing (g decreasing, 0 ≤ g ≤ 1),
     t^{-3/2} is decreasing,
-    so the integrand ≤ (1 - g_lower(t_{i+1}))² / t_i^{3/2}.
+    so the integrand ≤ (1 - g(t_{i+1}))² / t_i^{3/2}.
 The panel contribution is that height times the panel length.
 
-g is bounded from below by a right Darboux sum: φ_raw and s ↦ f(s t)
-are decreasing, so their product is decreasing.
+1-g(t) = ∫ φ_raw(s) (1-f(s t)) ds / ∫ φ_raw. On each s-panel φ_raw is
+decreasing and 1-f(s t) is increasing, so the product is at most
+φ_raw(s_left) (1-f(s_right t)). That gives a rigorous upper bound on
+1-g without subtracting two near-1 quantities.
 
 μ is taken large enough that ∫ f² ≤ 1 (μ_upper ≥ μ_exact). The resulting
 pair is not L²-normalised, but scaling f up to unit L² only decreases C_1,
@@ -316,26 +318,36 @@ def bound_phi_mass(
     }
 
 
-def g_raw_lower_on_t(
+def one_minus_g_upper_on_t(
     t_right: np.ndarray,
     s_right: np.ndarray,
-    phi_right_lower: np.ndarray,
+    phi_left_upper: np.ndarray,
     ds: np.ndarray,
+    i_phi_lower: float,
     mu_upper: float,
     alpha: float,
     beta: float,
-    chunk: int = 128,
+    chunk: int = 80,
 ) -> np.ndarray:
-    """Right-Darboux lower bound of ∫ φ_raw(s) f(s t) ds at each t_right."""
+    """Upper bound of 1-g(t) = ∫ φ_raw(s) (1-f(s t)) ds / ∫ φ_raw.
+
+    On each s-panel φ is decreasing and 1-f(s t) is increasing, so the
+    product is ≤ φ(s_left) (1-f(s_right t)). Using φ_left_upper and
+    f_lower keeps the inequality. Divide by I_φ_lower.
+    """
     n_t = int(t_right.size)
     out = np.empty(n_t, dtype=np.float64)
-    weight = phi_right_lower * ds
+    weight = phi_left_upper * ds
     for start in range(0, n_t, chunk):
         tr = t_right[start : start + chunk]
         st = s_right[None, :] * tr[:, None]
         fv = f_lower_arr(st, mu_upper, alpha, beta)
-        out[start : start + tr.size] = fv @ weight
-    return down_arr(out)
+        one_f = np.maximum(0.0, 1.0 - fv)
+        num = one_f @ weight
+        out[start : start + tr.size] = num
+    num_up = up_arr(out)
+    omg = num_up / i_phi_lower
+    return np.minimum(1.0, up_arr(omg))
 
 
 def near0_I_upper(t_min: float, mu_upper: float, alpha: float, beta: float, support: float) -> float:
@@ -356,16 +368,16 @@ def tail_I_upper(T: float) -> float:
     return up(2.0 / down(math.sqrt(T)))
 
 
-def panel_rectangle(t_left: np.ndarray, t_right: np.ndarray, g_lower_right: np.ndarray) -> np.ndarray:
+def panel_rectangle(t_left: np.ndarray, t_right: np.ndarray, one_minus_g_upper: np.ndarray) -> np.ndarray:
     """User-specified height: (1-g_R)² / t_L^{3/2} times length."""
-    one = np.maximum(0.0, 1.0 - g_lower_right)
+    one = np.maximum(0.0, np.minimum(1.0, one_minus_g_upper))
     height = (one * one) / down_arr(np.power(t_left, 1.5))
     return up_arr((t_right - t_left) * height)
 
 
-def panel_exact_weight(t_left: np.ndarray, t_right: np.ndarray, g_lower_right: np.ndarray) -> np.ndarray:
+def panel_exact_weight(t_left: np.ndarray, t_right: np.ndarray, one_minus_g_upper: np.ndarray) -> np.ndarray:
     """Same freeze of (1-g)², exact ∫ t^{-3/2} dt = 2(t_L^{-1/2}-t_R^{-1/2})."""
-    one = np.maximum(0.0, 1.0 - g_lower_right)
+    one = np.maximum(0.0, np.minimum(1.0, one_minus_g_upper))
     w = 2.0 * (down_arr(np.power(t_left, -0.5)) - up_arr(np.power(t_right, -0.5)))
     w = np.maximum(w, 0.0)
     return up_arr((one * one) * w)
@@ -383,13 +395,14 @@ def default_grids() -> dict:
         "t_drop_hi": 400.0,
         "T": 1.0e12,
         "n_small": 2000,
-        "n_drop": 20000,
-        "n_tail": 8000,
-        "n_s": 30000,
-        "n_lin_mu": 60000,
-        "n_log_mu": 60000,
+        "n_drop": 18000,
+        "n_tail": 6000,
+        "n_s": 24000,
+        "n_phi": 200000,
+        "n_lin_mu": 80000,
+        "n_log_mu": 80000,
         "U_mu": 1.0e7,
-        "chunk": 96,
+        "chunk": 80,
     }
 
 
@@ -410,8 +423,13 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
     mu_b = bound_I_f(alpha, beta, gspec["U_mu"], gspec["n_lin_mu"], gspec["n_log_mu"])
     mu_u = mu_b["mu_upper"]
 
+    s_mass = uniform_s_grid(support, int(gspec["n_phi"]))
+    phi_b = bound_phi_mass(s_mass, support, gamma, delta, eps, kappa)
+
     s = uniform_s_grid(support, int(gspec["n_s"]))
-    phi_b = bound_phi_mass(s, support, gamma, delta, eps, kappa)
+    ds = np.diff(s)
+    phi_L_up = phi_raw_arr(s[:-1], support, gamma, delta, eps, kappa, "upper")
+    phi_R_dn = phi_raw_arr(s[1:], support, gamma, delta, eps, kappa, "lower")
 
     t = hybrid_t_grid(
         gspec["t_min"],
@@ -424,20 +442,20 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
     )
     t_left = t[:-1]
     t_right = t[1:]
-    g_raw = g_raw_lower_on_t(
+    omg = one_minus_g_upper_on_t(
         t_right,
         s[1:],
-        phi_b["phi_right_lower"],
-        phi_b["ds"],
+        phi_L_up,
+        ds,
+        phi_b["I_phi_lower"],
         mu_u,
         alpha,
         beta,
         chunk=int(gspec["chunk"]),
     )
-    g_lower = np.minimum(1.0, down_arr(g_raw / phi_b["I_phi_upper"]))
 
-    rect = panel_rectangle(t_left, t_right, g_lower)
-    exactw = panel_exact_weight(t_left, t_right, g_lower)
+    rect = panel_rectangle(t_left, t_right, omg)
+    exactw = panel_exact_weight(t_left, t_right, omg)
     panels_rect = sum_up(rect)
     panels_exact = sum_up(exactw)
     near = near0_I_upper(gspec["t_min"], mu_u, alpha, beta, support)
@@ -482,8 +500,9 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "beats_1456": bool(moved),
         "n_t_panels": int(t_left.size),
         "n_s_panels": int(s.size - 1),
-        "g_lower_first": float(g_lower[0]),
-        "g_lower_last": float(g_lower[-1]),
+        "n_phi_panels": int(s_mass.size - 1),
+        "one_minus_g_first": float(omg[0]),
+        "one_minus_g_last": float(omg[-1]),
     }
 
     cert = {
@@ -507,6 +526,7 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
             "n_drop": int(gspec["n_drop"]),
             "n_tail": int(gspec["n_tail"]),
             "n_s": int(gspec["n_s"]),
+            "n_phi": int(gspec["n_phi"]),
             "n_lin_mu": int(gspec["n_lin_mu"]),
             "n_log_mu": int(gspec["n_log_mu"]),
             "U_mu": gspec["U_mu"],
@@ -514,9 +534,10 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
         "bounds": bounds,
         "method": {
             "python": (
-                "t-panels: integrand ≤ (1-g_lower(t_right))² / t_left^{3/2}; "
-                "times panel length. g_lower = right-Darboux of decreasing "
-                "φ_raw(s) f(s t), divided by I_φ upper. Tail 2 T^{-1/2}. "
+                "t-panels: integrand ≤ (1-g_upper(t_right))² / t_left^{3/2}; "
+                "times panel length. 1-g = ∫ φ_raw(1-f)/I_φ is bounded above "
+                "by Σ φ_left_upper (1-f_lower(s_right t)) Δs / I_φ_lower "
+                "(φ decreasing, 1-f increasing). Tail 2 T^{-1/2}. "
                 "Near 0: (1-g)² ≤ (β μ S^α)² t^{2α}."
             ),
             "rust": (
@@ -526,11 +547,12 @@ def certify_pair(params: dict, grids: dict | None = None) -> dict:
             ),
         },
         "t_nodes": [float(x) for x in t],
-        "g_lower_right": [float(x) for x in g_lower],
+        "one_minus_g_upper_right": [float(x) for x in omg],
+        "g_lower_right": [float(x) for x in np.maximum(0.0, 1.0 - omg)],
         "panel_contrib_upper": [float(x) for x in rect],
         "s_nodes": [float(x) for x in s],
-        "phi_right_lower": [float(x) for x in phi_b["phi_right_lower"]],
-        "phi_left_upper": [float(x) for x in phi_b["phi_left_upper"]],
+        "phi_right_lower": [float(x) for x in phi_R_dn],
+        "phi_left_upper": [float(x) for x in phi_L_up],
         "notes": (
             "μ_upper ≥ μ_exact so ∫f² ≤ 1. Scaling f up to unit L² decreases "
             "C_1; the reported C_1_upper is therefore a valid trial bound. "
