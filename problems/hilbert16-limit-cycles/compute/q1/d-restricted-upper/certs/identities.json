@@ -1,0 +1,469 @@
+{
+  "claim": "polar identities for the radial cubic; Hamiltonian dH/dt = 0; Lotka-Volterra weighted Dulac and Delta=0 reduction",
+  "cramer": {
+    "Delta": [
+      {
+        "c": 1,
+        "coeff": "-1",
+        "e": 1
+      },
+      {
+        "b": 1,
+        "coeff": "1",
+        "f": 1
+      }
+    ],
+    "alpha_Delta": [
+      {
+        "coeff": "1",
+        "e": 1,
+        "f": 1
+      },
+      {
+        "b": 1,
+        "coeff": "-1",
+        "f": 1
+      }
+    ],
+    "beta_Delta": [
+      {
+        "b": 1,
+        "coeff": "-1",
+        "f": 1
+      },
+      {
+        "b": 1,
+        "c": 1,
+        "coeff": "1"
+      }
+    ],
+    "variables": [
+      "b",
+      "c",
+      "e",
+      "f"
+    ],
+    "x_coeff_times_Delta": [],
+    "y_coeff_times_Delta": []
+  },
+  "hamiltonian": {
+    "H": [
+      {
+        "a00": 1,
+        "coeff": "1"
+      },
+      {
+        "a01": 1,
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "a02": 1,
+        "coeff": "1",
+        "y": 2
+      },
+      {
+        "a03": 1,
+        "coeff": "1",
+        "y": 3
+      },
+      {
+        "a10": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "a11": 1,
+        "coeff": "1",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "a12": 1,
+        "coeff": "1",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "a20": 1,
+        "coeff": "1",
+        "x": 2
+      },
+      {
+        "a21": 1,
+        "coeff": "1",
+        "x": 2,
+        "y": 1
+      },
+      {
+        "a30": 1,
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "Hx": [
+      {
+        "a10": 1,
+        "coeff": "1"
+      },
+      {
+        "a11": 1,
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "a12": 1,
+        "coeff": "1",
+        "y": 2
+      },
+      {
+        "a20": 1,
+        "coeff": "2",
+        "x": 1
+      },
+      {
+        "a21": 1,
+        "coeff": "2",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "a30": 1,
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "Hy": [
+      {
+        "a01": 1,
+        "coeff": "1"
+      },
+      {
+        "a02": 1,
+        "coeff": "2",
+        "y": 1
+      },
+      {
+        "a03": 1,
+        "coeff": "3",
+        "y": 2
+      },
+      {
+        "a11": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "a12": 1,
+        "coeff": "2",
+        "x": 1,
+        "y": 1
+      },
+      {
+        "a21": 1,
+        "coeff": "1",
+        "x": 2
+      }
+    ],
+    "dHdt": [],
+    "variables": [
+      "x",
+      "y",
+      "a30",
+      "a21",
+      "a12",
+      "a03",
+      "a20",
+      "a11",
+      "a02",
+      "a10",
+      "a01",
+      "a00"
+    ]
+  },
+  "lotka_volterra": {
+    "claimed_linear": [
+      {
+        "beta": 1,
+        "coeff": "1",
+        "d": 1
+      },
+      {
+        "a": 1,
+        "alpha": 1,
+        "coeff": "1"
+      },
+      {
+        "coeff": "1",
+        "f": 1,
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "f": 1,
+        "y": 1
+      },
+      {
+        "alpha": 1,
+        "c": 1,
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "e": 1,
+        "x": 1
+      },
+      {
+        "b": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "alpha": 1,
+        "b": 1,
+        "coeff": "1",
+        "x": 1
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "a",
+      "b",
+      "c",
+      "d",
+      "e",
+      "f",
+      "alpha",
+      "beta"
+    ],
+    "weighted_div_over_B": [
+      {
+        "beta": 1,
+        "coeff": "1",
+        "d": 1
+      },
+      {
+        "a": 1,
+        "alpha": 1,
+        "coeff": "1"
+      },
+      {
+        "coeff": "1",
+        "f": 1,
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "f": 1,
+        "y": 1
+      },
+      {
+        "alpha": 1,
+        "c": 1,
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "e": 1,
+        "x": 1
+      },
+      {
+        "b": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "alpha": 1,
+        "b": 1,
+        "coeff": "1",
+        "x": 1
+      }
+    ]
+  },
+  "parallel": {
+    "left": [
+      {
+        "coeff": "-1",
+        "d": 1
+      },
+      {
+        "a": 1,
+        "coeff": "1",
+        "lam": 1
+      }
+    ],
+    "right": [
+      {
+        "coeff": "-1",
+        "d": 1
+      },
+      {
+        "a": 1,
+        "coeff": "1",
+        "lam": 1
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "a",
+      "b",
+      "c",
+      "d",
+      "lam"
+    ]
+  },
+  "polar": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "coeff": "1",
+        "rho": 2,
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 1,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "1",
+        "rho": 2,
+        "y": 1
+      },
+      {
+        "coeff": "-1",
+        "y": 3
+      },
+      {
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "coeff": "-1",
+        "x": 2,
+        "y": 1
+      }
+    ],
+    "angular_left": [
+      {
+        "coeff": "-1",
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "angular_right": [
+      {
+        "coeff": "-1",
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 2
+      }
+    ],
+    "radial_left": [
+      {
+        "coeff": "1",
+        "rho": 2,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "y": 4
+      },
+      {
+        "coeff": "1",
+        "rho": 2,
+        "x": 2
+      },
+      {
+        "coeff": "-2",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 4
+      }
+    ],
+    "radial_right": [
+      {
+        "coeff": "1",
+        "rho": 2,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "y": 4
+      },
+      {
+        "coeff": "1",
+        "rho": 2,
+        "x": 2
+      },
+      {
+        "coeff": "-2",
+        "x": 2,
+        "y": 2
+      },
+      {
+        "coeff": "-1",
+        "x": 4
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "rho"
+    ]
+  },
+  "radial_speed": {
+    "factored": [
+      {
+        "coeff": "1",
+        "r": 1,
+        "rho": 2
+      },
+      {
+        "coeff": "-1",
+        "r": 3
+      }
+    ],
+    "r_times_rho2_minus_r2": [
+      {
+        "coeff": "1",
+        "r": 1,
+        "rho": 2
+      },
+      {
+        "coeff": "-1",
+        "r": 3
+      }
+    ],
+    "variables": [
+      "r",
+      "rho"
+    ]
+  },
+  "schema": "hilbert16-d-restricted-upper/v1"
+}
