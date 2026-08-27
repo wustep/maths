@@ -118,3 +118,15 @@ A numerical try: add the missing order-2 type (two vertices, no arc) as a second
 
 The stored proofs are the 534 DRATs in `compute/q3/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The F₄ number did not move. The first hole not run is n=73.
 
+## 10. 27 August, leftover holes from n=73
+
+The same counting works at n=73. A 25-outregular oriented graph has 1825 arcs, so some in-degree is at least 25. After n=72 every leftover n is consecutive: HKN 0.3465 already implies the n≡1 (mod 3) orders through about n=50, and after that ⌈n/3⌉ stays below 0.3465 n.
+
+n=73 k=25 was 1.08s and 5244 conflicts with lex SB, not the n=18 k=1 situation. Every needed cube through n=108 died the same way, the slowest about 27 seconds. Raw kissat proofs at n≈84+ grew past 100 MB; `drat-trim` core lemmas (binary) still replay against a regenerated CNF and fit in the repo.
+
+The encoder is not empty. n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free model. The n=73 circulant (degree 24) satisfies the cube clauses after the neighbourhoods of 0 are placed.
+
+A numerical try that did move: replace CSS β≤γ in the HKN fork by Chen–Karson–Liu–Shen 2015, β<0.8616γ. Same 32 types, same 4Ψ(κ) coefficients, stronger uniform penalty. The stored certificate at 0.34645 still works. A new ray certifies **c=0.34640** (worst F=−0.419 at r₃₀). Nothing at 0.346 or 0.3388 does. HKN said this tightening of Lemma 3.5 would only produce a tiny decrease. That is the move.
+
+The stored proofs are the 1026 DRATs in `compute/q4/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The first hole not run is n=109. The conjecture 1/3 is open.
+

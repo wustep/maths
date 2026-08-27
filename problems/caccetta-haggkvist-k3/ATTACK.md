@@ -232,3 +232,50 @@ So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directe
 A second F₄ Cauchy–Schwarz block on the order-2 non-edge type was tried (`sos_nonedge.py`). The old c=0.34645 still certifies (t=−0.77); at c=0.346 the best t is +73. The extra SOS did not move the threshold. F₄ residue, not a numerical dent.
 
 The first remaining hole is n=73, δ⁺=25. The conjecture 1/3 is open. Did not treat 0.3388 as published.
+
+## 2026-08-27 — q4, first leftover hole n=73
+
+Continue from the q3 certificates through n=72. Code is `compute/q4/`. Published unrestricted threshold is still HKN Combinatorica 0.3465. Do not treat 0.3388 as published. The stored F₄ certificate at 0.34645 is not to be moved unless a new inequality appears.
+
+After n=72, the first remaining exact order is n=73, δ⁺=25 (0.3465·73 = 25.2945 > 25). A 25-outregular oriented graph on 73 vertices has 1825 arcs, so some in-degree is at least 25. Same encoder as q1/q2/q3: cubes k=|N⁻(0)|. Counting on N⁺(0) empties k=47. The statement reduces to k=25..46.
+
+A DRAT/UNSAT on every needed cube at n=73 (and as many later holes as finish), or a verified C₃-free 25-outregular model, is the product. Incomplete SAT is residue. Isolated random-graph statistics are not a bound. A new F₄/F₆ certificate with some c < 0.34645 would be a numerical dent.
+
+### 2026-08-27 — why leftover cubes are easy
+
+The k≥d cubes are easy for two different reasons. High k is a count. Each a∈N⁺(0) omits exactly σ=n−2−d−k vertices of (N⁺(0)\\{a}) ∪ U. Avoiding 2-cycles in N⁺(0) needs at least C(d,2) A-omissions, so σ≥(d−1)/2. Equality (d odd) forces a C₃-free tournament on A, hence a transitive tournament, whose out-degrees cannot all meet s_a≥d−|U|. Replay: `python3 compute/q4/count_obstruction.py --self-test`. On n=73 that empties k=34..46. The same count on n=73..120 empties 792 of 1464 needed cubes and leaves at least nine survivors at every order (`certs/keep/covering_73_120.json`).
+
+The survivors (n=73: k=25..33) are not a linear obstruction: the [0,1] relaxation with exact degree, 2-cycle, and triangle inequalities is feasible on A∪U, and combinatorial unit propagation does not close. They are SAT-easy because of lex SB. With SB, n=73 k=25 is UNSAT in 1.08s / 5244 conflicts (`p cnf 379710 901442`). Without SB the same cube is UNKNOWN at 20s / 138k conflicts. Preprocess alone (`--decisions=0`) does not finish the k=d cube. So a short written proof of every leftover n≥73 cube is still missing; the covering count is only the high-k half. Did not write `certs/keep/ch-*.drat`. Did not treat 0.3388 as published. This note does not move the numerical threshold.
+
+### 2026-08-27 — independent F₄ dump at c=0.3464
+
+Recomputed the 32 F-coordinates of `certs/keep/f4_or_new_certificate.json` without importing `verify_q4_certificate.py`. AC slices from `hkn_replay.ac_slices`; 4Ψ(κ) rebuilt from `flags4.enumerate_labeled` and matched HKN (4.7); fork penalty `12(3c−1)²/0.8616`. Script: `dump_f_coords.py`. Output: `certs/keep/f_coords_0.3464.json`. min eig(Q) = 6.192452827718651e-10; worst F = −0.4190333660408214 at r₃₀; all 32 coordinates < −0.05. Did not start SAT. Did not beat the stored 0.3464 certificate; this is a replay of that file.
+
+### 2026-08-27 — cubes through n=108
+
+q3 leftover through n=72 still stands. Same encoder as q1/q2/q3. High-k cubes first, kissat 4.0.4, DRAT checked against a CNF regenerated from `encode.py`. Raw kissat proofs at n≈84+ grow past GitHub’s 100 MB cap; those files were replaced by `drat-trim` core lemmas that still replay.
+
+Soundness: n=21 d=6 k=6 is SAT in 0.15s with a checked C₃-free 6-outregular model. The n=73 circulant (d=24) is C₃-free and 24-outregular; after placing N⁺(0) and N⁻(0), every arc-variable clause of the cube is satisfied (`certs/keep/soundness_n73_d24.json`). The encoder is not vacuously UNSAT at these orders.
+
+Every needed cube k≥d at the remaining leftover holes through n=108 is UNSAT. 1026 stored DRATs. Independent replay: `python3 verify_range.py --n-min 73 --n-max 108` in three batches (516+244+266), 0 failures. The slowest stored cube is about 27s (n=108).
+
+| n | d | cubes | worst time | DRAT |
+| ---: | ---: | --- | ---: | --- |
+| 73 | 25 | k=25..46 | 1.08s | VERIFIED, stored |
+| 74–107 | ⌈n/3⌉ | every k≥d not empty by count | ≤25.7s | VERIFIED, stored |
+| 108 | 36 | k=36..70 | 27.1s | VERIFIED, stored |
+
+So every oriented graph on one of those n with δ⁺ ≥ ⌈n/3⌉ has a directed triangle. This is a dent against those finite holes. After n=72 every leftover n is consecutive (the n≡1 (mod 3) window implied by HKN 0.3465 ended near n=50).
+
+### 2026-08-27 — F₄ with the CKLS fork
+
+The stored parent certificate at c=0.34645 still replays (worst F=−0.12343). A new Farkas ray on the same 32 types, with the published CKLS 2015 constant β<0.8616γ in place of CSS β≤γ, certifies **c=0.34640**. Replay: `python3 verify_q4_certificate.py certs/keep/f4_or_new_certificate.json --margin 0.05` (worst F=−0.4190333660 at r₃₀, min eig(Q)=6.19·10⁻¹⁰). Hunt log: t at 0.34645 is −38.5; at 0.34640 is −0.419; at 0.346 / 0.340 / 0.3388 the best t stays positive. Did not beat 0.3388. HKN already said tightening Lemma 3.5 only gives a tiny decrease; this is that fifth-decimal move, now with a public certificate.
+
+The first remaining hole is n=109, δ⁺=37. The conjecture 1/3 is open. Did not treat 0.3388 as published.
+
+### 2026-08-27 — wrap: inventory, n=109 residue, merge main
+
+Re-fetched HKN v4 (arXiv:0908.2791, Theorem 1.2 still 0.3465n; no v5) and CKLS (arXiv:0909.2468, Theorem 2.5: β<0.8616γ). Keep/ has exactly the 1026 needed cubes for leftover n=73..108, no extras, none ≥90 MB. n=109 was started (high-k cubes k=38..70 came back UNSAT) and interrupted before the k=d end; those files were not stored. Residue, not a lower bound. First remaining hole still n=109.
+
+Merged `origin/main` into this branch. README Problems/ledger now keep the later claims (ionization 1.1057, CCR 1.44655, Landau 0.22525, Jacobian deg 125, kissing leftover, Hilbert 16(b), …) together with leftover CH through n=108 and F₄ c=0.34640.
+

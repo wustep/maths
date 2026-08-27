@@ -1,0 +1,117 @@
+{
+  "problem": "caccetta-haggkvist-k3",
+  "folder": "problems/caccetta-haggkvist-k3/compute/q4",
+  "date": "2026-08-27",
+  "question": "Why leftover-hole SAT cubes k=|N-(0)| >= d are UNSAT in under 2s through n=72, and whether that is a short counting proof for every leftover n>=73 cube or only a SAT phenomenon.",
+  "published_record": {
+    "unrestricted_c": 0.3465,
+    "source": "Hladky-Kral-Norin Combinatorica 37 (2017); arXiv:0908.2791v4",
+    "repo_f4_prior": 0.34645,
+    "sibling_q4_claim": "certs/keep/f4_or_new_certificate.json claims 0.34640; this note does not replay or use that file",
+    "do_not_treat_as_published": 0.3388,
+    "exact_statement": "every n-vertex oriented graph with delta+ >= ceil(n/3) has a directed C3",
+    "first_leftover_after_q3": {"n": 73, "d": 25}
+  },
+  "setup": {
+    "encoder": "problems/caccetta-haggkvist-k3/compute/q1/encode.py re-exported by q4/encode.py",
+    "cube": "N+(0)=A={1..d}, N-(0)=B={d+1..d+k}, U=V\\({0} union A union B), no A->B arcs, Sinz exact out-degree d, lex SB on out-neighbourhoods inside A, B, U",
+    "pigeonhole": "n*d arcs so some indeg >= d; only k>=d is needed",
+    "nplus_count": "each a in A needs d outs from (A\\{a}) union U, size n-2-k; empties k > n-2-d",
+    "slack": "sigma = n-2-d-k = |U|-1; each a omits exactly sigma vertices of (A\\{a}) union U"
+  },
+  "obstruction": {
+    "found_for_all_leftover_cubes": false,
+    "found_partial_counting": true,
+    "name": "2-cycle covering on A, plus transitive-tournament at equality",
+    "statement": "A leftover cube is empty by counting when sigma < (d-1)/2 (too few A-omissions to avoid 2-cycles in A). When sigma = (d-1)/2 exactly (d odd), A must be a tournament and every omission sits in A; a C3-free tournament is transitive, so the A-out-degrees are {0,1,...,d-1}, which cannot all meet s_a >= d-|U| = d-sigma-1. The N+ count still empties k = n-1-d.",
+    "does_not_kill": "k near d, where sigma > (d-1)/2. For n=73 d=25 those are k=25..33 (9 cubes). Every n in 73..120 has such survivors.",
+    "closed_form_survivors": "k = d, d+1, ..., n-3-d-floor((d-1)/2)",
+    "replay": "python3 count_obstruction.py --self-test && python3 count_obstruction.py --n-min 73 --n-max 120"
+  },
+  "n73": {
+    "d": 25,
+    "needed_cubes": [25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46],
+    "empty_by_nplus_count": [47],
+    "killed_by_covering": [34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46],
+    "survives_covering": [25, 26, 27, 28, 29, 30, 31, 32, 33],
+    "k34_reason": "sigma=12=(d-1)/2, covering-eq-transitive-tournament",
+    "k35_to_46_reason": "sigma < 12, 2cycle-covering (k=46 is also sigma=0, combinatorial UP)"
+  },
+  "covering_73_120": {
+    "n_orders": 48,
+    "cubes_killed": 792,
+    "cubes_survive": 672,
+    "all_orders_have_survivors": true,
+    "table": "certs/keep/covering_73_120.json",
+    "note": "A counting proof of every leftover n>=73 cube would close the exact finite statement past q3. This count only closes the high-k half."
+  },
+  "why_high_k_sat_is_easy": {
+    "mechanism": "The covering count is a global pigeonhole on A-omissions. Kissat derives it from Sinz exact-degree plus 2-cycle clauses. No lex SB is required.",
+    "n21_k12_nosb": {"conflicts": 0, "decisions": 0, "status": "UNSAT", "note": "sigma=0: each a must take all of A, bidirectional 2-cycles. Combinatorial UP also fires (deg-under after forcing)."},
+    "n21_k10_nosb": {"conflicts": 21, "status": "UNSAT", "note": "covering kill; 2-cycle LP already infeasible"},
+    "n21_k10_sb": {"conflicts": 0, "status": "UNSAT"},
+    "n21_k9_sb": {"conflicts": 0, "status": "UNSAT", "note": "equality / transitive-tournament case"},
+    "n73_k46_sb": {"conflicts": 0, "decisions": 0, "time_s": 0.04, "status": "UNSAT", "header": "sigma=0 tight cube"},
+    "n73_k34_sb": {"conflicts": 1383, "time_s": 0.38, "status": "UNSAT", "note": "equality case; CDCL still walks the Sinz counters, not 0-conflict at this order"}
+  },
+  "why_k_near_d_sat_is_easy": {
+    "mechanism": "lex SB on out-neighbourhoods, not a linear count. With SB, CDCL proofs stay at tens to a few thousand conflicts. Without SB the same cube is a large UNKNOWN.",
+    "n18_k6_sb": {"conflicts": 8, "decisions": 42, "time_s": 0.03, "status": "UNSAT"},
+    "n21_k7_sb": {"conflicts": 16, "decisions": 73, "time_s": 0.03, "status": "UNSAT", "preprocess_share": "about 88 percent probe/sweep, 1 percent search"},
+    "n21_k7_plain_sb": {"conflicts": 47, "status": "UNSAT", "note": "--plain still tiny"},
+    "n21_k7_decisions_0": {"conflicts": 0, "status": "UNKNOWN", "note": "full CNF is not UP-unsat; preprocess does not finish the k=d cube"},
+    "n21_k7_nosb": {"conflicts": 936407, "decisions": 2738540, "time_s": 30, "status": "UNKNOWN"},
+    "n36_k12_sb": {"conflicts": 215, "decisions": 1008, "time_s": 0.07, "status": "UNSAT"},
+    "n36_k12_nosb": {"conflicts": 391306, "time_s": 20, "status": "UNKNOWN"},
+    "n73_k25_sb": {
+      "header": "p cnf 379710 901442",
+      "conflicts": 5244,
+      "decisions": 21533,
+      "time_s": 1.081,
+      "status": "UNSAT",
+      "note": "same easy regime as q3 n=72; first leftover hole is SAT-easy with SB"
+    },
+    "n73_k25_nosb": {"conflicts": 137983, "decisions": 2023516, "time_s": 20, "status": "UNKNOWN"}
+  },
+  "why_clean_counting_failed_for_survivors": {
+    "combinatorial_UP": "Arc-variable unit propagation (forced/forbidden arcs + exact degree + triangles, no Sinz, no lex) only empties sigma=0. On n=21 k=7 it leaves 331 undecided arcs. Failed-literal probing on those arcs also fails. The covering pigeonhole is global: no single arc is implied.",
+    "linear_relaxation": {
+      "model": "[0,1] arc variables, exact out-degree, x_ij+x_ji<=1, x_ij+x_jk+x_ki<=2, cube units",
+      "n21_k7_full": "feasible (0.03s) — no Farkas / linear counting proof",
+      "n21_k10_no_triangles": "infeasible — covering is linear once sigma < (d-1)/2",
+      "n36_k12_full": "feasible (0.55s)",
+      "n73_k25_no_triangles": "feasible",
+      "n73_k25_A_union_U_triangles": "feasible (0.21s, 47 vertices). The core A-degree constraints plus C3 inequalities do not empty the cube fractionally.",
+      "n73_k34_A_union_U_triangles": "feasible. Equality is integral: a 1/2-regular fractional tournament satisfies the triangle inequalities and the degree bounds; only 0-1 + C3-free forces a transitive tournament."
+    },
+    "shen_style_first_moment": "Shen 3-sqrt(7)~0.354 does not reach d=ceil(n/3). The extra hypothesis k>=d shrinks U to at most n-1-2d, which is what makes the covering count work at high k, but leaves slack sigma~(n-2-2d) ~ n/3 at k=d.",
+    "lex_is_wlog_not_a_count": "Lex SB is a legal relabelling. It is not a degree or triangle identity. A short written proof would have to argue inside the lex-ordered out-neighbourhoods of A; the 16–5244 conflict DRATs are not that argument."
+  },
+  "unit_propagation_checker": {
+    "implemented": "compute/q4/count_obstruction.py (ArcProp + optional failed literals)",
+    "kills": "sigma=0 cubes only, matching kissat 0-conflict DRATs",
+    "does_not_replace_sat_for_survivors": true,
+    "certificate_path": "Still encode.py + kissat + drat-trim. Covering-killed cubes produce tiny or 0-conflict DRATs. Survivor cubes at n=73 k=25 already finish in 1.08s with SB; a custom UP engine is slower to write than that run and does not prove them.",
+    "kissat_note": "q4/bin/kissat was configured --quiet (no statistics). Conflict counts in this file are from /tmp/solvers/kissat-stats/build/kissat, same 4.0.4 sources without QUIET."
+  },
+  "n73_kissat_scratch": {
+    "cnf": "/tmp/ch-73-25-k25.cnf",
+    "not_written_to_keep_drat": true,
+    "note": "Did not write certs/keep/ch-*.drat. Another agent may be storing those certificates."
+  },
+  "soundness_reminder": {
+    "n21_d6_k6": "SAT, checked C3-free 6-outregular model; encoder is not vacuous",
+    "n73_d24_circulant": "cyclic degree floor((n-1)/3)=24, not a counterexample to ceil(n/3)=25; lives at k=24 < d"
+  },
+  "status": {
+    "dent": false,
+    "residue": "covering leaves k=d .. n-3-d-floor((d-1)/2) at every n=73..120; those cubes are SAT-easy with lex SB (n=73 k=25: 5244 conflicts, 1.08s) but have no stored DRAT from this note and no written counting proof",
+    "did_not_move_numerical_threshold": true,
+    "did_not_treat_0.3388_as_published": true
+  },
+  "files_written": [
+    "problems/caccetta-haggkvist-k3/compute/q4/count_obstruction.py",
+    "problems/caccetta-haggkvist-k3/compute/q4/certs/keep/combinatorial_notes.json",
+    "problems/caccetta-haggkvist-k3/compute/q4/certs/keep/covering_73_120.json"
+  ]
+}

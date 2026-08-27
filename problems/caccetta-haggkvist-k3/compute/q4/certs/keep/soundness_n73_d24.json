@@ -1,0 +1,18 @@
+{
+  "n": 73,
+  "d": 24,
+  "k": 24,
+  "header_sb": "p cnf 379852 901678",
+  "header_nosb": "p cnf 369985 862141",
+  "circulant_ok": true,
+  "min_out": 24,
+  "narcs": 1752,
+  "triangles": 0,
+  "two_cycles": 0,
+  "cnf_accepts_placed_circulant_nosb": true,
+  "unsat_clauses_nosb": 0,
+  "cnf_accepts_sorted_circulant_sb": true,
+  "unsat_clauses_sb": 0,
+  "ok": true,
+  "note": "cyclic degree floor((n-1)/3), not a counterexample to ceil(n/3). The placed circulant meets the non-SB cube units. Lex SB at this order is checked by the small-n SAT pair, not by this model."
+}
