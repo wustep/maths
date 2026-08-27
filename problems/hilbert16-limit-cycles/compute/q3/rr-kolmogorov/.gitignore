@@ -1,0 +1,4 @@
+/verify-rs
+*.o
+/dumps/
+__pycache__/

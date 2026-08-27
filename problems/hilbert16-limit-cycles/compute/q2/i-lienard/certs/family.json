@@ -1,0 +1,291 @@
+{
+  "F": {
+    "F": [
+      {
+        "alpha": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "Fprime": [
+      {
+        "alpha": 1,
+        "coeff": "1"
+      },
+      {
+        "beta": 1,
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "factored": [
+      {
+        "alpha": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "fg_num": [
+      {
+        "alpha": 1,
+        "coeff": "-1"
+      },
+      {
+        "beta": 1,
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "odd_sum": [],
+    "variables": [
+      "x",
+      "alpha",
+      "beta"
+    ]
+  },
+  "H31_full_proved": false,
+  "claim": "Energy identity dE/dt = -alpha x^2 - beta x^4 for dx/dt = y-(alpha x + beta x^3), dy/dt = -x. Odd cubic F meets the Li\u00e9nard algebraic hypotheses when beta>0 and alpha<0. Not a bound on planar H(n) or on all deg-F<=3 fields.",
+  "cousin_of_van_der_Pol": {
+    "classical_F": "mu*(x**3/3 - x)",
+    "new_H3": false,
+    "slice": "alpha = -mu, beta = mu/3, equivalently alpha + 3*beta = 0 with beta>0"
+  },
+  "energy": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "-1",
+        "x": 1
+      }
+    ],
+    "claimed": [
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 2
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 4
+      }
+    ],
+    "dEdt": [
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 2
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 4
+      }
+    ],
+    "factored": [
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 2
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 4
+      }
+    ],
+    "variables": [
+      "x",
+      "y",
+      "alpha",
+      "beta"
+    ]
+  },
+  "even_term": {
+    "claimed": [
+      {
+        "coeff": "2",
+        "gamma": 1,
+        "x": 2
+      }
+    ],
+    "note": "F(x)+F(-x)=2 gamma x^2. A quadratic term kills oddness; full deg-F<=3 is dropped.",
+    "odd_sum": [
+      {
+        "coeff": "2",
+        "gamma": 1,
+        "x": 2
+      }
+    ],
+    "variables": [
+      "x",
+      "alpha",
+      "beta",
+      "gamma"
+    ]
+  },
+  "field": {
+    "P": "y - (alpha*x + beta*x**3)",
+    "Q": "-x"
+  },
+  "hn_moved": false,
+  "isolated_periodic_orbits_when_alpha_beta_nonneg_not_both_zero": 0,
+  "isolated_periodic_orbits_when_beta_pos_alpha_neg": 1,
+  "linear": {
+    "P": [
+      {
+        "coeff": "1",
+        "y": 1
+      },
+      {
+        "alpha": 1,
+        "coeff": "-1",
+        "x": 1
+      }
+    ],
+    "Q": [
+      {
+        "coeff": "-1",
+        "x": 1
+      }
+    ],
+    "charpoly": "lambda**2 + alpha*lambda + 1",
+    "d2Edt": [
+      {
+        "alpha": 1,
+        "coeff": "-2",
+        "x": 2
+      }
+    ],
+    "det": "1",
+    "trace": "-alpha",
+    "variables": [
+      "x",
+      "y",
+      "alpha"
+    ]
+  },
+  "schema": "hilbert16-i-lienard-family/v1",
+  "vdp_chart": {
+    "F": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "Fprime": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "-1"
+      },
+      {
+        "beta": 1,
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "factored": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "-1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "1",
+        "x": 3
+      }
+    ],
+    "minus_F": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "sign_pos": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "1",
+        "x": 1
+      },
+      {
+        "beta": 1,
+        "coeff": "-1",
+        "x": 3
+      }
+    ],
+    "substitution": "alpha = -beta * a**2",
+    "tail": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "-1"
+      },
+      {
+        "beta": 1,
+        "coeff": "3",
+        "x": 2
+      }
+    ],
+    "two_beta_a2": [
+      {
+        "a": 2,
+        "beta": 1,
+        "coeff": "2"
+      }
+    ],
+    "variables": [
+      "x",
+      "a",
+      "beta"
+    ]
+  },
+  "what_this_is_not": [
+    "not a dent of planar H(n)",
+    "not a field that beats B(n)",
+    "not a proof that every deg-F<=3 Li\u00e9nard has at most one cycle",
+    "not a new H(3)"
+  ]
+}

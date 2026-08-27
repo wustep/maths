@@ -1,0 +1,52 @@
+{
+  "hunts": [
+    {
+      "field": "Q(sqrt2)",
+      "seed": "(1,1,sqrt2,0,0)/sqrt2",
+      "n_orbit": 240,
+      "n": 280,
+      "n_edges": 34260,
+      "best": 40,
+      "nodes": 35473,
+      "found_41": false,
+      "complete": true
+    },
+    {
+      "field": "Q(sqrt2)",
+      "seed": "(sqrt2,1,1,0,0)/sqrt2",
+      "n_orbit": 240,
+      "n": 240,
+      "n_edges": 24600,
+      "best": 32,
+      "nodes": 102409,
+      "found_41": false,
+      "complete": true
+    },
+    {
+      "field": "Q(sqrt5)",
+      "seed": "(sqrt5,1,1,1,0)/2",
+      "n_orbit": 320,
+      "n": 360,
+      "n_edges": 54380,
+      "best": 40,
+      "nodes": 495,
+      "found_41": false,
+      "complete": true
+    },
+    {
+      "field": "Q(sqrt5)",
+      "seed": "(2,sqrt5,1,0,0)/sqrt5",
+      "n_orbit": 480,
+      "n": 480,
+      "n_edges": 100800,
+      "best": 32,
+      "nodes": 2000001,
+      "found_41": false,
+      "complete": false
+    }
+  ],
+  "found_41": false,
+  "best": 40,
+  "complete": false,
+  "comment": "Q(sqrt2) orbit of (1,1,sqrt2,0,0)/sqrt2 and (sqrt2,1,1,0,0)/sqrt2; Q(sqrt5) orbits of (sqrt5,1,1,1,0)/2 and (2,sqrt5,1,0,0)/sqrt5. Not the q3 golden (phi,1,1/phi,0,0) pool."
+}

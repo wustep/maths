@@ -1,0 +1,20 @@
+{
+  "one_step_formula": "deg Y = 2n+1",
+  "n_linear": 1,
+  "n_quad": 2,
+  "n_radial": 3,
+  "m": 2,
+  "linear_deg": 3,
+  "linear_bound": 3,
+  "quad_deg": 5,
+  "quad_bound": 5,
+  "radial_deg": 7,
+  "radial_bound": 7,
+  "radial_n_terms_Yu": 8,
+  "radial_n_terms_Yv": 8,
+  "chebyshev_T2_linear": 3,
+  "chebyshev_T2_quad": 5,
+  "chebyshev_T2_radial": 7,
+  "not_adj": true,
+  "adj_is_twice_cl": true
+}

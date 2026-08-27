@@ -1,0 +1,67 @@
+{
+  "duals": {
+    "present": true,
+    "ok": true,
+    "duals": {}
+  },
+  "sphere_types.json": {
+    "present": true,
+    "found_41": false,
+    "complete": null,
+    "ok": true
+  },
+  "union_slices.json": {
+    "present": true,
+    "found_41": false,
+    "complete": null,
+    "ok": true
+  },
+  "complete_slices.json": {
+    "present": true,
+    "found_41": false,
+    "complete": null,
+    "ok": true
+  },
+  "t5_36.json": {
+    "present": true,
+    "found_41": false,
+    "complete": false,
+    "ok": true
+  },
+  "t5_repair.json": {
+    "present": true,
+    "found_41": false,
+    "complete": true,
+    "ok": true
+  },
+  "golden_pool.json": {
+    "present": true,
+    "found_41": false,
+    "complete": false,
+    "ok": true
+  },
+  "expand_T.json": {
+    "present": true,
+    "found_41": false,
+    "complete": false,
+    "ok": true
+  },
+  "a4_continuous.json": {
+    "present": true,
+    "found_41": false,
+    "complete": null,
+    "ok": true
+  },
+  "dual_gap.json": {
+    "present": true,
+    "found_41": false,
+    "complete": null,
+    "ok": true
+  },
+  "complete_slices_n1": {
+    "present": true,
+    "ok": true,
+    "n1_ge_33_empty": true
+  },
+  "ok": true
+}

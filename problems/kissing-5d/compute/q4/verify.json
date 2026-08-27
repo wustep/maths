@@ -1,0 +1,154 @@
+{
+  "bv_lib": {
+    "present": true,
+    "ok": true,
+    "failed": []
+  },
+  "d4_color": {
+    "present": false,
+    "ok": true
+  },
+  "t5_color": {
+    "present": false,
+    "ok": true
+  },
+  "duals": {
+    "present": true,
+    "ok": true,
+    "duals": {}
+  },
+  "dual_exact": {
+    "present": true,
+    "ok": true,
+    "certified_below_44": false,
+    "best_float": 48.0
+  },
+  "code41": {
+    "present": false,
+    "ok": true
+  },
+  "color_d4.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_omega.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_le32.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_check.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_complete_k12.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share30.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share30_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share29_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share28_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share27_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share26_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share25_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_share24_c.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_dfs_k16.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "n1_dfs_k18.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "replay_unions_k13.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "t5_36_proof.json": {
+    "present": false,
+    "ok": true
+  },
+  "analyze_stars.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "seed_cover.json": {
+    "present": false,
+    "ok": true
+  },
+  "dual_exact.json": {
+    "present": true,
+    "ok": true,
+    "found_41": false
+  },
+  "construct41.json": {
+    "present": false,
+    "ok": true
+  },
+  "analyze_stars": {
+    "present": true,
+    "ok": true
+  },
+  "n1_complete_k12": {
+    "present": true,
+    "ok": true,
+    "maxk": 12
+  },
+  "n1_dfs_k16": {
+    "present": true,
+    "ok": true,
+    "maxk": 16,
+    "n_unions_visited": 164988439
+  },
+  "n1_dfs_k18": {
+    "present": true,
+    "ok": true,
+    "maxk": 18,
+    "n_unions_visited": 933648919
+  },
+  "ok": true
+}

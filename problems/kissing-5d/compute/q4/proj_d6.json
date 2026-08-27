@@ -1,0 +1,26 @@
+{
+  "n_d6": 60,
+  "n_normals": 4332,
+  "n_equal_graphs": 19204,
+  "n_radial_graphs": 4332,
+  "best": 40,
+  "best_rec": {
+    "normal": [
+      -2,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "n": 40,
+    "best": 40,
+    "found_41": false,
+    "complete": true,
+    "label": "eq n2=4 a2=0"
+  },
+  "found_41": false,
+  "complete": true,
+  "hit": null,
+  "comment": "Exact projections of the 60 D6 roots orthogonal to short integer normals.  Incomplete clique search is residue."
+}

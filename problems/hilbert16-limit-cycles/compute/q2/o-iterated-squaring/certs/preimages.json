@@ -1,0 +1,100 @@
+{
+  "square_half_0": {
+    "target": [
+      1,
+      2,
+      0,
+      1
+    ],
+    "real_regular": 2,
+    "complex_affine": 4,
+    "bezout_m2": 4,
+    "attains_m2": false,
+    "points": [
+      {
+        "u": "-sqrt(2)/2",
+        "v": "0",
+        "det": "2"
+      },
+      {
+        "u": "sqrt(2)/2",
+        "v": "0",
+        "det": "2"
+      }
+    ]
+  },
+  "square_quarter_quarter": {
+    "target": [
+      1,
+      4,
+      1,
+      4
+    ],
+    "real_regular": 2,
+    "complex_affine": 4,
+    "bezout_m2": 4,
+    "attains_m2": false,
+    "u2_quadratic": "64t^2 - 16t - 1",
+    "disc": 512
+  },
+  "phi2_half_0": {
+    "target": [
+      1,
+      2,
+      0,
+      1
+    ],
+    "real_regular": 4,
+    "complexified_uv_at_most": 16,
+    "holomorphic_in_C": 4,
+    "note": "z^4 = 1/2 has 4 points in R^2 \u2245 C, not 16"
+  },
+  "chebyshev_T2_half_half": {
+    "target": [
+      1,
+      2,
+      1,
+      2
+    ],
+    "real_regular": 4,
+    "attains_m2": true,
+    "note": "T2 x T2 is 4-to-1 on (-1,1)^2; components independent"
+  },
+  "polar_z_to_z_2k_of_half": [
+    {
+      "k": 1,
+      "count": 2,
+      "expected": 2
+    },
+    {
+      "k": 2,
+      "count": 4,
+      "expected": 4
+    },
+    {
+      "k": 3,
+      "count": 8,
+      "expected": 8
+    },
+    {
+      "k": 4,
+      "count": 16,
+      "expected": 16
+    },
+    {
+      "k": 5,
+      "count": 32,
+      "expected": 32
+    },
+    {
+      "k": 6,
+      "count": 64,
+      "expected": 64
+    }
+  ],
+  "honesty": {
+    "real_plane_z_squared_is_2_to_1": true,
+    "separable_T2_is_4_to_1_on_minus1_1_square": true,
+    "CR_couples_the_components": true
+  }
+}
