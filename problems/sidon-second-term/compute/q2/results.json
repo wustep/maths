@@ -4,7 +4,7 @@
     "HouZhao_gamma0": 0.943492590713545,
     "HouZhao_arxiv": "2607.01169v2"
   },
-  "folder_record": {
+  "folder_record_q1": {
     "file": "../q1/certs/joint_r8_L6.json",
     "gamma_exact_float": 0.9432425309706136,
     "stated_C": 0.94325
@@ -19,5 +19,30 @@
     "L8": 0.9432425303103693,
     "L10": 0.943242530310367,
     "note": "saturates; drop 1.3e-11, not a new stated C"
+  },
+  "certificate": {
+    "file": "certs/r11_m48_L6.json",
+    "sha256": "341cba5bd8364cd315561d1b89ad3e3ba0c9d5160047781d86c40213b53b02c6",
+    "R": 11,
+    "m": 48,
+    "L": 6,
+    "asymmetric": false,
+    "gamma_exact_float": 0.943006169985179,
+    "stated_C": 0.94301,
+    "beats_0.9435": true,
+    "beats_0.94325": true,
+    "beats_0.94301": true,
+    "min_slack": 0,
+    "verifiers": [
+      "../verify_certificate.py --beat 0.94301",
+      "verify_q2.py --beat 0.94301",
+      "verify_q2.c 94301 100000"
+    ]
+  },
+  "search_floats": {
+    "q1_float": 0.9432425303235829,
+    "blocks_R8_L6": 0.9432423456642274,
+    "grow_R11_L6": 0.9432423220054517,
+    "resample_m48": 0.9430061660443552
   }
 }

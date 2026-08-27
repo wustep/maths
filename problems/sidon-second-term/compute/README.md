@@ -26,5 +26,6 @@ q1 (2026-08-27) re-optimizes the eight kernels as free histograms.
 `q1/certs/joint_r8_L6.json` has √(ab) = 0.94324253097 < 0.94325.
 Replay: `cd compute/q1 && ./run_all.sh`.
 
-q2 starts from that mix and searches a different handle (block
-descent, then extra free histograms). Replay: `cd compute/q2 && ./run_all.sh`.
+q2 starts from that mix, grows free histograms, then reshapes at
+m=48. `q2/certs/r11_m48_L6.json` has √(ab) = 0.943006169985179 < 0.94301.
+Replay: `cd compute/q2 && ./run_all.sh`.

@@ -122,7 +122,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 54110 primes $n^2+1$ for $n\le 10^6$, matching Wolf $\pi_q(10^{12})$. Infinitude open. |
-| [sidon-second-term](problems/sidon-second-term) | Independent 8-kernel certificate: $$F(N)\le N^{1/2}+0.94325\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
+| [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
 | [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
 | [hadwiger-nelson-plane](problems/hadwiger-nelson-plane) | Published interval $5\le\chi(\mathbb R^2)\le7$. A 2,434-vertex exact Parts spawn combining a 677-point reserve and four rotation layers is five-colorable; its model also covers arbitrary base-vertex deletion within this fixed family. No new lower bound. |
@@ -192,6 +192,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term, free-histogram certificate | `problems/sidon-second-term/compute/q1` | SuperGrok 4.6 | 2026-08-27 |
+| Sidon second term, m=48 free-histogram certificate | `problems/sidon-second-term/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Chowla cosine | `problems/chowla-cosine` | SuperGrok 4.6 | 2026-08-17 |
 | two-squares gap | `problems/two-squares-gap` | SuperGrok 4.6 | 2026-08-17 |
 | cosine zeros | `problems/cosine-zeros` | SuperGrok 4.6 | 2026-08-17 |

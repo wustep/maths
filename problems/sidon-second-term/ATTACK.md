@@ -279,3 +279,49 @@ Saturates by L=8. The drop from L=6 is $1.3\times 10^{-11}$, smaller
 than the rationalization gap on the existing certificate. Same shape
 class; more boundary is not a new four-decimal statement. Kept as a
 log, not a new cert.
+
+## 2026-08-27 — q2 dent: m=48 free histograms, C<0.94301
+
+Block coordinate descent on the q1 mix (one mix or one histogram at a
+time, four cycles) reached floating $\gamma=0.94324234566$. Adding
+free-histogram kernels $R=9,10,11$ to that mix only saved another
+$2\times 10^{-8}$. The leftover slack was not a ninth six-mode profile
+and not more $R$ on the 32-bin grid.
+
+Piecewise-constant resample of the $R=11$ mix to $m=48$ first jumped
+*up* to $0.943709$ (the 32-bin shapes are not already continuous-limit
+optimal on the finer grid). Two block cycles on that 48-bin mix dropped
+the float to $0.94300616604$.
+
+`rationalize_certificate.py` on `candidates/resample-m48-best.json`
+wrote `compute/q2/certs/r11_m48_L6.json`. Exact check:
+
+- all 289 covering inequalities hold (min slack 0)
+- $\sqrt{ab}=0.943006169985179$
+- $ab<(0.94301)^2<(0.94325)^2<(0.9435)^2$
+
+Three verifiers that do not share covering code all PASS:
+
+```bash
+cd compute/q2 && ./run_all.sh
+```
+
+that is: leftover check, q1 cert still beats $0.94325$, then
+
+```bash
+python3 compute/verify_certificate.py compute/q2/certs/r11_m48_L6.json --beat 0.94301
+python3 compute/q2/verify_q2.py compute/q2/certs/r11_m48_L6.json --beat 0.94301
+# gcc -O2 -o compute/q2/verify_q2 compute/q2/verify_q2.c -lgmp
+# python3 compute/q2/dump_cert.py ... && ./compute/q2/verify_q2 ... 94301 100000
+```
+
+So
+
+    F(N) ≤ √N + 0.94301 N^{1/4} + O(1)
+
+holds for all large $N$. This is a dent of the folder record $0.94325$
+and of Hou–Zhao’s published $0.9435$. Same lemma, finer free histograms.
+SHA-256 of the JSON:
+`341cba5bd8364cd315561d1b89ad3e3ba0c9d5160047781d86c40213b53b02c6`.
+
+Erdős–Turán not claimed. No growing lower-bound second term.

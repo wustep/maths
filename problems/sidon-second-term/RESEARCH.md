@@ -115,6 +115,18 @@ python3 compute/verify_beat_hz.py
 This is a microscopic tightening of the published certificate, not a new
 argument and not an improvement of the four-decimal statement 0.9435.
 
+## 2026-08-27 — q2 certificate
+
+`compute/q2/certs/r11_m48_L6.json`, SHA-256
+`341cba5bd8364cd315561d1b89ad3e3ba0c9d5160047781d86c40213b53b02c6`.
+Eleven free symmetric histograms, m=48, L=6, grown from the q1 mix.
+Exact √(ab) = 0.943006169985179 < 0.94301. Parent nested-loop
+verifier, q2 matrix-vector verifier, and a GMP C nested-sum verifier
+all PASS. Beats the folder 0.94325 and Hou–Zhao 0.9435.
+
+q1 leftover refine / nosym confirmed incomplete
+(`compute/q2/leftover_check.py`). L-lift of the q1 kernels saturates.
+
 ## 2026-08-27 — q1 certificate
 
 `compute/q1/certs/joint_r8_L6.json`, SHA-256
@@ -135,7 +147,7 @@ Published record beaten: Hou–Zhao 0.9435.
 - Erdős–Turán / the $1000 form.
 - $F(N)\ge\sqrt{N}+\omega(1)$ for infinitely many N. Singer gives +½+o(1);
   Shakan’s gap 2√p unwraps to another O(1). Greedy extras stay bounded.
-- A constant at the 0.9434 level or below. L-lifts saturate by L=6;
-  1-kernel search stays ~0.946; m-refinement of the same histograms is
-  inert; multi-scale / coordinate-descent searches had not beaten the L=6
-  plateau when this log was written.
+- A constant at the 0.942 level or below. L-lifts of both the published
+  mix and the q1 mix saturate; 1-kernel search stays ~0.946; equal-bin
+  splits of a fixed shape are inert. The m=48 reshape of the *q1-grown*
+  mix is what moved the folder record to C<0.94301.
