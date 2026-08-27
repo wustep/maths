@@ -1,22 +1,25 @@
-# n=21 and the next exact holes
+# Next exact holes after n=18
 
 After the n=18 in-degree pigeonhole, the remaining exact orders
 not implied by Hoàng–Reed or by HKN 0.3465 (nor by the stored F₄
-certificate at 0.34645) are n=21, 24, 27, … . The first of those
-is n=21, δ⁺=7: ⌈21/3⌉=7 < 0.3465·21=7.2765.
+certificate at 0.34645) begin at n=21, 24, 26, 27, … .
 
-A 7-outregular oriented graph on 21 vertices has 147 arcs, so some
-vertex has in-degree at least 7. Relabel that vertex as 0. The
-exact statement reduces to cubes k=|N⁻(0)| ∈ {7,…,13}.
+A d-outregular oriented graph on n vertices has n d arcs, so some
+vertex has in-degree at least d. Relabel that vertex as 0. The
+exact statement reduces to cubes k=|N⁻(0)| ≥ d.
 
-`encode.py` is the q1 sequential-counter encoder. `--indeg0 k`
-fixes N⁻(0)={8,…,7+k}.
+Those cubes are UNSAT, with stored DRATs, at
 
-Replay:
+    n = 21, 24, 26, 27, 29, 30, 32, 33, 35, 36.
+
+The numerical threshold is unchanged: c = 0.34645. The first
+remaining hole is n=38, δ⁺=13.
+
+`encode.py` is the q1 sequential-counter encoder. Replay:
 
 ```
 ./build_solvers.sh
 ./run_all.sh
 ```
 
-A timeout on a cube is an incomplete search, not a bound.
+A timeout on a later cube is an incomplete search, not a bound.

@@ -19,6 +19,7 @@ JOBS = [
     (9, 2, "SAT", 15, None),
     (9, 3, "UNSAT", 20, None),
     (18, 6, "UNSAT", 10, 11),
+    (21, 6, "SAT", 30, 6),  # cyclic degree; encoder is not vacuously UNSAT
 ]
 
 
