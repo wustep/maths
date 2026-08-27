@@ -7,8 +7,8 @@ q4 stays the n=73–108 store and the F₄ certificate.
 Published unrestricted threshold is still HKN 0.3465
 (arXiv:0908.2791v4, Theorem 1.2). Do not treat 0.3388 as published.
 
-Exact leftover holes n=109 through n=113 are closed (176 stored
-pigeonhole DRATs). First remaining hole n=114. F₄ unchanged at
+Exact leftover holes n=109 through n=114 are closed (213 stored
+pigeonhole DRATs). First remaining hole n=115. F₄ unchanged at
 c=0.34640. Did not beat 0.3388. The conjecture 1/3 is open.
 
 Replay:
@@ -20,5 +20,5 @@ cd q4
 python3 verify_q4_certificate.py certs/keep/f4_or_new_certificate.json --margin 0.05
 cd ../q5
 ./build_solvers.sh
-python3 verify_range.py --n-min 109 --n-max 113
+python3 verify_range.py --n-min 109 --n-max 114
 ```
