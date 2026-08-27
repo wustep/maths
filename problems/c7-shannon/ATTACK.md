@@ -1,5 +1,13 @@
 # Attack log — C7 fifth power
 
+## 2026-08-27 — q4 start, new shapes
+
+Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438v2 (Table 1 still $367$–$401$), Itty et al. 2607.21517v2 (fifth-power record still 367), Gao 2607.27869 (“it remains the largest currently known such set”), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.
+
+q3 closed the $8$-coset leftover (`leftover=0`). Hamming $13$ with only $\le 4$-blocker adds is still residue. A $368$-set is not an $8$-coset pack, not missing a letter, and not Hamming $11$ from the seed.
+
+New shapes under `compute/q4/`: $1$-dimensional good-code coset packs ($53$ cosets $=371$, or $52$ plus residual); cyclic-coordinate $5$-orbits ($74$ orbits $=370$, or $73$ plus $\{00000,22222,44444\}$); negation-symmetric $184$-pairs; Hamming $13$ case C ($4$-blocker plus two extras) then $\le 3$-blocker SAT; ejection from good $3$-dimensional $343$-sets; from-scratch GRASP.
+
 ## 2026-08-27 — q3, 8-coset leftover finished
 
 Replay: `python3 compute/verify_set.py compute/R367.txt --min-size 367` → OK. Opened Polak–Schrijver arXiv:1808.07438 (Table 1 still $367$–$401$), Itty et al. 2607.21517v2 (fifth-power record still 367; v2 only adds a $C_{15}$ capacity bound), Gao 2607.27869 (“it remains the largest currently known such set” in the fifth power), Buys–Polak–Zuiddam 2607.29681 (profile $(367,8,367,322)$). No 368 in those papers.

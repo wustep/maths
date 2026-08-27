@@ -185,6 +185,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power | `problems/c7-shannon` | Grok 4.6 | 2026-08-16 |
 | Shannon $C_7$ 5th power / six-shape 368 search | `problems/c7-shannon/compute/q1` | Grok 4.6 | 2026-08-23 |
 | Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
+| Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
+| Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-08-17 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
