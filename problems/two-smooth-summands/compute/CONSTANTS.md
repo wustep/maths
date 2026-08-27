@@ -57,3 +57,11 @@ search residue.
 - No finite residue cover that lifts.
 - No exponent below $4/(9\sqrt e)$.
 - No effective $N_0$ for Balog 1989.
+
+## 2026-08-27 closed-form search (still not a dent)
+
+See `q1/certs/`. Square / triangular / cube / power-of-two /
+floor-divisor all have holes persisting through $n=20000$ at
+$9/20$, $2/5$, $1/3$, and $27/100$. Floor-divisor and power-of-two
+have explicit infinite failure families. Two-factor $u\le n^{1/5}$
+matches the $F$ exception prefixes and does not lift.

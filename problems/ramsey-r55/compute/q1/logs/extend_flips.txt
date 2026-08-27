@@ -1,0 +1,2 @@
+idx side op u v sat nodes
+DONE graphs_pairs=328 tried=564816 flip_ok=4080 extensions=0 sec=183.310

@@ -14,3 +14,9 @@ python3 py_circulant.py 43
 ```
 
 `kissat` is a local build of 4.0.4 (`build_kissat.sh`). Involution test: `cnf/involution17.cnf` must be SAT and decode to a `(5,5,17)`-graph via `decode_involution.py`.
+
+The 2026-08-27 search lives in `q1/`:
+
+```
+cd q1 && ./run_all.sh
+```

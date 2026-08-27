@@ -1,0 +1,19 @@
+{
+  "family": "{b,1}",
+  "protocol": "Liu Example 4",
+  "beta": 1.0,
+  "claimed_c": 0.38304,
+  "analytic_crossing": "0.383051356586825582501646873002",
+  "b_star": "0.296493923569337569030703383782",
+  "critical_equation": "h(b) = (1-b) log2((1-b)/b)",
+  "beats": {
+    "repo_2026_08_17": 0.38285,
+    "liu_quote": 0.382709087918741
+  },
+  "not_claimed": [
+    "1/2 conjecture",
+    "every measure on [0,1]",
+    "Liu PSD hypothesis"
+  ],
+  "replay": "cd problems/union-closed/compute/q1 && ./run_all.sh"
+}

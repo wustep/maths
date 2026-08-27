@@ -1,0 +1,18 @@
+{
+  "b_star": "0.296493923569337569030703383782",
+  "b_star_float": 0.29649392356933757,
+  "h_b": "0.876962778407473904290489498992",
+  "crossing": "0.383051356586825582501646873002",
+  "crossing_float": 0.3830513565868256,
+  "critical_eq_residual": 1.0542197943230523e-81,
+  "g_second_deriv": "-7.3589709725847554085",
+  "g_second_deriv_negative": true,
+  "f_at_thresh": "0.383099297681388324963411",
+  "f_at_half": "0.5",
+  "thresh": "0.292893218813452475599156",
+  "phi": "0.381966011250105151795413",
+  "claimed_c": 0.38304,
+  "claimed_below_crossing": true,
+  "beats_repo_0_38285": true,
+  "beats_liu": true
+}

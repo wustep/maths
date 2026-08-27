@@ -55,6 +55,17 @@ Opened again, and used:
 
 Did not reopen CWI/Tilburg PDFs, FunSearch, Green P38, or the Itty GitHub certificates this session.
 
+## 2026-08-27 (q3 session)
+
+Opened again, and used:
+
+- [arXiv:1808.07438](https://arxiv.org/abs/1808.07438) / [ar5iv](https://ar5iv.labs.arxiv.org/html/1808.07438) / [HTML v2](https://arxiv.org/html/1808.07438v2) — Table 1 unchanged: $\alpha(C_7^{\boxtimes 5})\in[367,401]$. No 368 from their shift/divisor/3-out search.
+- [arXiv:2607.21517](https://arxiv.org/abs/2607.21517) / [HTML v2](https://arxiv.org/html/2607.21517v2) — now v2 (2026-07-30); the new text is a $C_{15}$ capacity bound. Fifth-power record still the size-$367$ set. “For the 7-cycle $C_7$, the best current bound comes from the strong 5-product, for which the largest known independent set has size 367.”
+- [arXiv:2607.27869](https://arxiv.org/abs/2607.27869) / [HTML v1](https://arxiv.org/html/2607.27869v1) — “it remains the largest currently known such set” for the fifth power.
+- [arXiv:2607.29681](https://arxiv.org/abs/2607.29681) / [HTML v1](https://arxiv.org/html/2607.29681v1) — Lean-verified $\Theta(C_7)\ge 3.258805\ldots$ from profile $(367,8,367,322)$. Not a larger $5$-set.
+
+Did not reopen CWI/Tilburg PDFs, FunSearch, Green P38, or the Itty GitHub certificates this session.
+
 ## W(2,7) steal (no new URL)
 
 Methods came from the sibling agent's finish note, not from a new page: `CardEnc.atmost` instead of a homemade sequential counter; few-flip SAT around a published seed; one-violation min-conflicts as a cage; CEGAR on a cyclic/product template with a leftover plateau stop. PySAT `Cadical195` was used locally. No new $\Theta(C_7)$ paper was opened.

@@ -27,3 +27,12 @@ cc -O3 -std=c11 -o f_exceptions f_exceptions.c -lm
 ```
 
 A hole-free prefix is not an asymptotic bound. See `CONSTANTS.md`.
+
+The 2026-08-27 closed-form search lives in `q1/`. Replay:
+
+```
+cd q1 && ./run_all.sh
+```
+
+That folder does not improve the exponent. It records why the
+closed-form templates fail, including two infinite failure families.

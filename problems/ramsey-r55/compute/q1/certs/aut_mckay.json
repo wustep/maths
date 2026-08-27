@@ -1,0 +1,8119 @@
+{
+  "aut_histogram": {
+    "1": 424,
+    "2": 232
+  },
+  "n_capped": 0,
+  "n_graphs": 656,
+  "n_has_7cycle": 0,
+  "n_has_involution": 232,
+  "n_nontrivial": 232,
+  "n_trivial": 424,
+  "records": [
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 0,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 0,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 1,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 1,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 2,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 2,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 3,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 3,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 4,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 4,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 5,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 5,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 6,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 6,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 7,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 7,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 8,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 8,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 9,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 9,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 10,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 10,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 11,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 11,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 12,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 12,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 13,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 13,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 14,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 14,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 15,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 15,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 16,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 16,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 17,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 17,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 18,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 18,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 19,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 19,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 20,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 20,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 21,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 21,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 22,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 22,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 23,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 23,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 24,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 24,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 25,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 25,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 26,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 26,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 27,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 27,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 28,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 28,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 29,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 29,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 30,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 30,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 31,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 31,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 32,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 32,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 33,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 33,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 34,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 34,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 35,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 35,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 36,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 36,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 37,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 37,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 38,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 38,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 39,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 39,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 40,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 40,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 41,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 41,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 42,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 42,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 43,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 43,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 44,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 44,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 45,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 45,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 46,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 46,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 47,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 47,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 48,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 48,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 49,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 49,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 50,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 50,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 51,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 51,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 52,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 52,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 53,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 53,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 54,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 54,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 55,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 55,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 56,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 56,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 57,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 57,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 58,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 58,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 59,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 59,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 60,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 60,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 61,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 61,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 62,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 62,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 63,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 63,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 64,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 64,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 65,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 65,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 66,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 66,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 67,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 67,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 68,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 68,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 69,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 69,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 70,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 70,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 71,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 71,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 72,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 72,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 73,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 73,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 74,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 74,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 75,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 75,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 76,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 76,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 77,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 77,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 78,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 78,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 79,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 79,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 80,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 80,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 81,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 81,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 82,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 82,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 83,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 83,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 84,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 84,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 85,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 85,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 86,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 86,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 87,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 87,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 88,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 88,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 89,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 89,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 90,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 90,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 91,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 91,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 92,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 92,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 93,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 93,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 94,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 94,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 95,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 95,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 96,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 96,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 97,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 97,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 98,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 98,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 99,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 99,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 100,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 100,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 101,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 101,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 102,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 102,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 103,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 103,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 104,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 104,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 105,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 105,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 106,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 106,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 107,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 107,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 108,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 108,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 109,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 109,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 110,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 110,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 111,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 111,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 112,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 112,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 113,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 113,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 114,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 114,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 115,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 115,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 116,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 116,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 117,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 117,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 118,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 118,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 119,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 119,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 120,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 120,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 121,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 121,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 122,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 122,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 123,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 123,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 124,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 124,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 125,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 125,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 126,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 126,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 127,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 127,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 128,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 128,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 129,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 129,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 130,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 130,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 131,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 131,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 132,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 132,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 133,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 133,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 134,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 134,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 135,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 135,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 136,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 136,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 137,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 137,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 138,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 138,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 139,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 139,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 140,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 140,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 141,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 141,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 142,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 142,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 143,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 143,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 144,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 144,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 145,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 145,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 146,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 146,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 147,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 147,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 148,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 148,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 149,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 149,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 150,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 150,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 151,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 151,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 152,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 152,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 153,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 153,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 154,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 154,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 155,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 155,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 156,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 156,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 157,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 157,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 158,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 158,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 159,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 159,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 160,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 160,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 161,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 161,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 162,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 162,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 163,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 163,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 164,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 164,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 165,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 165,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 166,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 166,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 167,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 167,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 168,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 168,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 169,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 169,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 170,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 170,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 171,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 171,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 172,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 172,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 173,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 173,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 174,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 174,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 175,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 175,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 176,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 176,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 177,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 177,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 178,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 178,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 179,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 179,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 180,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 180,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 181,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 181,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 182,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 182,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 183,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 183,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 184,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 184,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 185,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 185,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 186,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 186,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 187,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 187,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 188,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 188,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 189,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 189,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 190,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 190,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 191,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 191,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 192,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 192,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 193,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 193,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 194,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 194,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 195,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 195,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 196,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 196,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 197,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 197,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 198,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 198,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 199,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 199,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 200,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 200,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 201,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 201,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 202,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 202,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 203,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 203,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 204,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 204,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 205,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 205,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 206,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 206,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 207,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 207,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 208,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 208,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 209,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 209,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 210,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 210,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 211,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 211,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 212,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 212,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 213,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 213,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 214,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 214,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 215,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 215,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 216,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 216,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 217,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 217,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 218,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 218,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 219,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 219,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 220,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 220,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 221,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 221,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 222,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 222,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 223,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 223,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 224,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 224,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 225,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 225,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 226,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 226,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 227,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 227,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 228,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 228,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 229,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 229,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 230,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 230,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 231,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 231,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 232,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 232,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 233,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 233,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 234,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 234,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 235,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 235,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 236,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 236,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 237,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 237,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 238,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 238,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 239,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 239,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 240,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 240,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 241,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 241,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 242,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 242,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 243,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 243,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 244,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 244,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 245,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 245,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 246,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 246,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 247,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 247,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 248,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 248,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 249,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 249,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 250,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 250,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 251,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 251,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 252,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 252,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 253,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 253,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 254,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 254,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 255,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 255,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 256,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 256,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 257,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 257,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 258,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 258,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 259,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 259,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 260,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 260,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 261,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 261,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 262,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 262,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 263,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 263,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 264,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 264,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 265,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 265,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 266,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 266,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 267,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 267,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 268,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 268,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 269,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 269,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 270,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 270,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 271,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 271,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 272,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 272,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 273,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 273,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 274,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 274,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 275,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 275,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 276,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 276,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 277,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 277,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 278,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 278,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 279,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 279,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 280,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 280,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 281,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 281,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 282,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 282,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 283,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 283,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 284,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 284,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 285,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 285,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 286,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 286,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 287,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 287,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 288,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 288,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 289,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 289,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 290,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 290,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 291,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 291,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 292,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 292,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 293,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 293,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 294,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 294,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 295,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 295,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 296,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 296,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 297,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 297,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 298,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 298,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 299,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 299,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 300,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 300,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 301,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 301,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 302,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 302,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 303,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 303,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 304,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 304,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 305,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 305,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 306,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 306,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 307,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 307,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 308,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 308,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 309,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 309,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 310,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 310,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 311,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 311,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 312,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 312,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 313,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 313,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 314,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 314,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 315,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 315,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 316,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 316,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 317,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 317,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 318,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 318,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 319,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 319,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 320,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 320,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 321,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 321,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 322,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 322,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 323,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 323,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 324,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 324,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 325,
+      "n_colors": 21,
+      "side": "stored"
+    },
+    {
+      "aut": 2,
+      "aut_orders": {
+        "1": 1,
+        "2": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": true,
+      "i": 325,
+      "n_colors": 21,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 326,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 326,
+      "n_colors": 42,
+      "side": "comp"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 327,
+      "n_colors": 42,
+      "side": "stored"
+    },
+    {
+      "aut": 1,
+      "aut_orders": {
+        "1": 1
+      },
+      "capped": false,
+      "has_7cycle": false,
+      "has_involution": false,
+      "i": 327,
+      "n_colors": 42,
+      "side": "comp"
+    }
+  ],
+  "seconds": 0.513
+}

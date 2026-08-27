@@ -1,0 +1,2 @@
+c group=c3c15 n=45 npairs=22 ninv=0 deg=[20,24]
+DONE group=c3c15 n=45 scanned=93976 hits=0 pruned=271560 sec=0.923

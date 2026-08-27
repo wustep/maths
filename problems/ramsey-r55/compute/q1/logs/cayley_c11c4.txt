@@ -1,0 +1,2 @@
+c group=c11c4 n=44 npairs=21 ninv=1 deg=[19,24]
+DONE group=c11c4 n=44 scanned=294262 hits=0 pruned=591004 sec=2.774

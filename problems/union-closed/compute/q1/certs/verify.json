@@ -1,0 +1,56 @@
+{
+  "claimed_c": 0.38304,
+  "claimed_beta": 1.0,
+  "published": {
+    "phi": 0.38196601125010515,
+    "c_star": 0.38234553336670274,
+    "c_star_str": "0.382345533366702721145993",
+    "c5": 0.38270908791873504,
+    "c5_str": "0.382709087918735029930313",
+    "c5_minus_quote": -5.9396931817445875e-15,
+    "c_star_minus_quote": -2.7755575615628914e-16
+  },
+  "analytic": {
+    "b_star": "0.296493923569337569030703",
+    "b_star_float": 0.29649392356933757,
+    "crossing": "0.383051356586825582501647",
+    "crossing_float": 0.3830513565868256,
+    "residual": 1.0542197943230523e-81,
+    "g_second_deriv": -7.358970972584755
+  },
+  "first_crossing_mesh_beta1": {
+    "c": 0.3830531177314117,
+    "a": 0.12250385824521291,
+    "b": 0.2969235385641254,
+    "ratio": 0.9999982455165852,
+    "n_bad": 10239052,
+    "n_cells": 15750000
+  },
+  "min_ratio_claimed": {
+    "min_ratio": 1.000021687055941,
+    "n": 5109983,
+    "at_mean": 0.38303949464042086,
+    "at_a": 0.12221863389539869,
+    "at_b": 0.2971364747721716
+  },
+  "min_ratio_repo_replay": {
+    "min_ratio": 1.0000771402076711,
+    "n": 5104195,
+    "at_mean": 0.38284778738357345,
+    "at_a": 0.10610345813089454,
+    "at_b": 0.3095932429428762
+  },
+  "checks": {
+    "c_star_matches_cambie": true,
+    "c5_matches_liu": true,
+    "critical_residual_tiny": true,
+    "g_second_deriv_negative": true,
+    "analytic_beats_claimed": true,
+    "claimed_beats_repo": true,
+    "claimed_beats_liu": true,
+    "mesh_crossing_above_claimed": true,
+    "claimed_mesh_ratio_ge_1": true,
+    "repo_mesh_still_ok": true
+  },
+  "all_ok": true
+}
