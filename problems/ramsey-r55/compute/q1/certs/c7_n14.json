@@ -1,0 +1,12 @@
+{
+  "edges": 56,
+  "n": 14,
+  "nclauses": 4004,
+  "nvars": 13,
+  "ok_55": true,
+  "solve_sec": 0.0,
+  "status": "SAT",
+  "time_limit_hint": 180,
+  "total_sec": 0.044,
+  "use_card": false
+}

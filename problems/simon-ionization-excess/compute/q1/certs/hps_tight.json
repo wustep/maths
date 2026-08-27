@@ -1,0 +1,152 @@
+{
+  "status": "dent",
+  "reason": "interval-certified improvements of the printed HPS remainders 2.96, 3.90, and 4, using the same Section 7 chain",
+  "arxiv": "2504.18487v1",
+  "theorem_unchanged": true,
+  "did_not_beat_1.1185": true,
+  "LT_factor": "1.456",
+  "LT_source": "Frank\u2013Hundertmark\u2013Jex\u2013Nam arXiv:1808.09017 Theorem 1",
+  "later_LT_lead_not_used": {
+    "arxiv": "2403.04347",
+    "claimed": "L_{1,1,1}/L^{cl} <= 1.44655",
+    "why_not_used": "not independently replayed"
+  },
+  "tightenings": {
+    "1_exact_b3_in_a1": true,
+    "2_Lieb_N/Z_lt_2+1/Z_for_Z_ge_4": true,
+    "3_actual_a1_function": true,
+    "4_optimize_lambda": {
+      "best_lambda": "0.7465500000000000000000000000000000000000",
+      "best_max_a1": "3.891856413153097230002275417045379336481",
+      "hps_lambda": "0.7469007910928607847912470023397632451945",
+      "hps_max_a1": "3.891855917536407862423677607764617923966",
+      "moved_a1": false
+    },
+    "5_interval_enclosures": true
+  },
+  "why_lambda_did_not_move_a1": "For Z>=4 the allowed x-interval is [b(3), 9/4]. a1(x) has a minimum inside and the larger endpoint is x=b(3). At that point Z = N \u03b23, so the crude replacement Z < N \u03b23 is equality, and a1 = (\u03bb^{-1}+6\u03bb\u00b2/5) \u03b23^{-1} + c \u03b23^{-1/3}, which HPS already minimises by \u03bb=(5/12)^{1/3}.",
+  "HPS_5/2_interval_replay": {
+    "a1_at_left": [
+      "3.891855917536407862423677607764617923966",
+      "3.891855917536407862423677607764617923966"
+    ],
+    "a1_at_5/2": [
+      "3.899495157762337995751372241432359472817",
+      "3.899495157762337995751372241432359472817"
+    ],
+    "sup_is_at": "x=5/2",
+    "3.893_valid_on_5/2_interval": false,
+    "3.90_valid_on_5/2_interval": true,
+    "note": "HPS claimed the sup on [\u03b23^{-1}, 5/2] is at the left. Independently the sup is at 5/2 and is < 3.90 but not < 3.893. Prop. 2.5 is only stated for Z>=4, where Lieb gives 9/4 not 5/2."
+  },
+  "intermediates": {
+    "b2_interval": [
+      "1.207106781186547524400844362104849039285",
+      "1.207106781186547524400844362104849039285"
+    ],
+    "b3_interval": [
+      "1.118433799202706636641762578621416983973",
+      "1.118433799202706636641762578621416983973"
+    ],
+    "kappa_interval": [
+      "0.7156511510061795178815821763078492748336",
+      "0.7156511510061795178815821763078492748336"
+    ],
+    "C1_inv_interval": [
+      "2.341311542369653845094875615140092825333",
+      "2.341311542369653845094875615140092825333"
+    ],
+    "C2_inv_sqrt_interval": [
+      "2.215376835236356794199019678595406726648",
+      "2.215376835236356794199019678595406726648"
+    ],
+    "c_interval": [
+      "1.585436982049326057582984553635934279879",
+      "1.585436982049326057582984553635934279879"
+    ],
+    "lambda_s2_interval": [
+      "0.6283358625603360818460567972501173627912",
+      "0.6283358625603360818460567972501173627912"
+    ],
+    "lambda_s3": "0.7469007910928607847912470023397632451945",
+    "a_s2_at_5/2": [
+      "2.952038354343948425034033355200872450699",
+      "2.952038354343948425034033355200872450699"
+    ],
+    "a1_at_b3": [
+      "3.891855917536407862423677607764617923966",
+      "3.891855917536407862423677607764617923966"
+    ],
+    "a1_exact_x_at_b3": [
+      "3.891855917536407862423677607764617923966",
+      "3.891855917536407862423677607764617923966"
+    ],
+    "a1_at_9/4": [
+      "3.868190406136808397861494672915143824966",
+      "3.868190406136808397861494672915143824966"
+    ],
+    "a1_at_2": [
+      "3.843380631427884734180282404371191047149",
+      "3.843380631427884734180282404371191047149"
+    ],
+    "a2": [
+      "0.01331468808574650757906860212644544028539",
+      "0.01331468808574650757906860212644544028539"
+    ],
+    "a3": [
+      "0.1836150378723424123136965427940548227968",
+      "0.1836150378723424123136965427940548227968"
+    ],
+    "a4": [
+      "0.01959174529191402018517833493881986367727",
+      "0.01959174529191402018517833493881986367727"
+    ],
+    "Z4_remainder_coeff": [
+      "3.978009257824328899981904022527038575515",
+      "3.978009257824328899981904022527038575515"
+    ],
+    "r_max_on_contradiction_set": [
+      "0.4705180144405142455387763635073145689990",
+      "0.4705180144405142455387763635073145689990"
+    ],
+    "r_max_lt_0.5": true
+  },
+  "enclosures": {
+    "a_s2_lt_2.953": true,
+    "a1_lt_3.892": true,
+    "a1_lt_3.893": true,
+    "a2_lt_0.01332": true,
+    "a2_lt_0.0134": true,
+    "a3_lt_0.18362": true,
+    "a3_lt_0.184": true,
+    "a4_lt_0.01960": true,
+    "Z4_coeff_lt_3.9781": true,
+    "Z4_coeff_lt_3.979": true
+  },
+  "inequalities": [
+    {
+      "beats": "HPS Prop. 2.4 printed remainder 2.96",
+      "range": "Z >= 2",
+      "inequality": "N_c < b(2) Z + 2.953 Z^{1/3}",
+      "b2": "(sqrt(2)+1)/2"
+    },
+    {
+      "beats": "HPS Prop. 2.5 printed remainder 3.90",
+      "range": "Z >= 4",
+      "inequality": "N < b(3) Z + 3.892 Z^{1/3} + 0.0134 + 0.184 Z^{-1/3} + 0.0196 Z^{-2/3}",
+      "b3": "(2/3)(1+sqrt(2))^{1/3}/((1+sqrt(2))^{2/3}-1)",
+      "note": "same extras as the printed (2.9); only a1 is tightened. Uses Lieb N/Z < 2+1/Z <= 9/4 so the a1 max is at x=b(3)."
+    },
+    {
+      "beats": "HPS simplified printed remainder 4",
+      "range": "Z >= 4",
+      "inequality": "N_c < b(3) Z + 3.9781 Z^{1/3}"
+    },
+    {
+      "beats": "HPS simplified printed remainder 4 (with 1.1185 kept)",
+      "range": "Z >= 4",
+      "inequality": "N_c < 1.1185 Z + 3.9781 Z^{1/3}",
+      "note": "1.1185 is still only an enclosure of b(3), not a new leading coefficient"
+    }
+  ]
+}

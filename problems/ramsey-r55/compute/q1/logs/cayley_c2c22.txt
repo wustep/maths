@@ -1,0 +1,2 @@
+c group=c2c22 n=44 npairs=20 ninv=3 deg=[19,24]
+DONE group=c2c22 n=44 scanned=625004 hits=0 pruned=359690 sec=5.157

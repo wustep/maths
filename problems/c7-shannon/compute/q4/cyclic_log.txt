@@ -1,0 +1,11 @@
+n_orb=3360 constants=0 2801 5602 8403 11204 14005 16806
+internally_independent_orbits=3262 self_adj_pairs=1400
+orbits_free_of_024=3178
+greedy orbits=46 size=230 trial=0
+greedy+024 orbits=46 total=233 trial=0
+greedy orbits=50 size=250 trial=1
+greedy+024 orbits=49 total=248 trial=1
+greedy orbits=52 size=260 trial=5
+greedy+024 orbits=51 total=258 trial=5
+greedy+024 orbits=53 total=268 trial=6
+DONE best_orbits=52 best_size=260 best024_orbits=53 best024_total=268 t=0.07s

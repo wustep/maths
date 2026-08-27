@@ -1,0 +1,25 @@
+{
+  "agree": true,
+  "brute_55": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false
+  ],
+  "n": 7,
+  "n_55": 6,
+  "sat": [
+    false,
+    true,
+    true,
+    true,
+    true,
+    true,
+    true,
+    false
+  ]
+}

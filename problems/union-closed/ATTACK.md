@@ -100,3 +100,85 @@ This is search residue. It is consistent with the `{b,1}` ray remaining worst, b
 Claim: on the published optimizer family `{b,1}`, iid + Liu Example 4 at `β=1/5` gives a mesh-certified frequency constant **0.38285**, strictly larger than Liu's published **0.382709** (Example 5). Replay `compute/verify.py`.
 
 Do not claim: the `1/2` conjecture; an unconditional bound for every measure on `[0,1]`; a new `n` or `|F|` classification; that Liu's PSD hypothesis has been proved.
+
+## 2026-08-27 — replay, then β past 0.40
+
+Parent `compute/run_all.sh` still exits 0: claimed 0.38285, mesh min ratio 1.000077. Fetched Gilmer 2211.09055v2 (constant 0.01) and Liu 2306.08824v1 (Theorem 13: 0.382709 under PSD + global-min; Theorem 6: some unspecified `c > c*` via Example 4). No later arXiv paper moves the frequency constant. Wikipedia (fetched tonight) still quotes 0.38271. Tian arXiv:2608.25147 proves the empty-set-free form at poset height ≤ 4; that is a finite classification of a different parameter, not a frequency dent, and it is not claimed here.
+
+The 2026-08-17 `first_crossing.json` already had Example-4 best at `β = 0.3825` with mesh crossing 0.382988, and said `c(β)` was still increasing at 0.40. The claimed number used `β = 1/5`. The leftover handle was the rest of the β interval.
+
+### 1-D formula
+
+On `{b,1}` the worse Example-4 C3 endpoint is always the independent one, so
+
+    ratio = (1−a) Hmix(b,β) / h(b),
+
+and the first mean with ratio < 1 is
+
+    c(β) = min_b  1 − (1−b) h(b) / Hmix(b,β).
+
+`compute/q1/scan_beta.py` evaluates this on `β ∈ [0,1]`. The curve is strictly increasing. At `β = 1`, Hmix = 1 on the whole interval `(1−1/√2, 1/2]`, and `c(1) = 0.3830513565868…`. Adding Sawin's max-entropy term does not beat pure Example 4 on this ray.
+
+### Analytic crossing
+
+For `b ∈ (1−1/√2, 1/2]`, Example 4 saturates `Π_{b,b}(0,0) = 1/2`. The first-crossing is therefore the unique critical point of `f(b) = 1 − (1−b)h(b)`:
+
+    h(b) = (1−b) log₂((1−b)/b).
+
+mpmath dps=80: `b* = 0.296493923569337…`, `c = 0.38305135658682558…`, residual `10^{-81}`, `g''(b*) < 0`. The 2026-08-17 closed form `1 − h(2^{-1/2})/√2 ≈ 0.383099` is `f` at the left endpoint `b = 1−1/√2`, not the minimum. The nearby Sawin-type point they treated as a failure is this critical point, and it is still above 0.38285.
+
+### Claimed number
+
+**0.38304**, strictly below the analytic crossing. On the 4500×3500 mesh, every cell with mean `≤ 0.38304` has ratio `≥ 1.000021687`. Independent C nested-loop mesh: same min ratio, 0 bad cells, same arg. Replay `compute/q1/run_all.sh`.
+
+This is a dent of the repo ray-record 0.38285 and of Liu's published 0.382709, in the same `{b,1}` hypothesis class. It is not 1/2 and not every measure.
+
+### Mixture residue
+
+`hunt_two_atomic.py` at `(β,c) = (1, 0.38304)`: 13556 uniform 2-atomic samples, worst ratio 1.00195; 10077 near-ray perturbations, worst 1.00142; **0 hits** below 1. Incomplete search, not a Krein–Milman certificate.
+
+### What we claim / do not claim
+
+Claim: on `{b,1}`, pure Example 4 has Gilmer ratio ≥ 1 whenever the mean is at most 0.38304. The exact first-crossing of the ray is the analytic number 0.3830513565868….
+
+Do not claim: the 1/2 conjecture; every measure on [0,1]; a new `n` or `|F|` classification; Tian's height-4 theorem (already published); Liu's PSD hypothesis.
+
+## 2026-08-27 — q2: past 0.38304 toward 1/2
+
+Parent `compute/q1/run_all.sh` still exits 0: claimed 0.38304, analytic crossing 0.3830513565868…, mesh min ratio 1.000021687. Fetched Gilmer 2211.09055v2 (constant 0.01; §5 Conjecture 1 would have given 1/2) and Liu 2306.08824v1 (Theorem 13 still 0.382709 under PSD + global-min). Wikipedia still quotes 0.38271. arXiv API, 25 newest `union-closed`+`conjecture` hits: no paper after Liu moves the frequency constant. Ellis 2211.12401 and Sawin already refute Gilmer Conjecture 1.
+
+This was not a small-dent pass. The leftover handles were a new β, Example-5 mixes, 3-point support, and a new protocol.
+
+### Ceiling
+
+On `{b,1}` with a product coupling of `(S,T)`, OR-entropy lives only on the `(b,b)` cell. Any 2-sample bit protocol has `h(Π_{b,b}) ≤ 1`, so the first-crossing is at most `f(b) = 1 − (1-b)h(b)`. Example 4 saturates `h=1` on `(1−1/√2, 1/2]`, so the class maximum is the q1 critical point 0.383051356…. Independent C grid + golden-section recovers the same min. `f(1/2)=1/2` is the wrong point of `f`.
+
+### Mix and protocol scans
+
+`hunt_mixes.py` / `hunt_protocols.py` on the ray:
+
+| class | best first-crossing |
+| --- | ---: |
+| iid + Example 4, `β ∈ [0,1]` | 0.383051356 at `β=1` |
+| iid + Example 5 | 0.382709088 (Liu) |
+| Example 4 + Example 5 | 0.383051356 (pure 4) |
+| iid + Example 4 + maxent | 0.383051356 (pure 4) |
+| Example 5 scale `ℓ` | 0.383049767 |
+| half-target Fréchet | 0.383051356 |
+| scaled `a(t)`, `α ∈ [0,1.4]` | 0.383051356 at `α=1` |
+
+No mix or named protocol beats the ceiling. Half-target agrees with Example 4 on the diagonal at `b*` (`Π=1/2`).
+
+### 3-atomic residue
+
+Product 3-atomic samples at mean `≤ 0.38304`: 12532 uniform + 12367 near-ray + 6132 half-target + 4622 Example-4/5 mix, **0 hits** below 1. Incomplete search, not a Krein–Milman certificate. The deterministic `{b,1}` point at mean 0.39 has ratio 0.9887, as the ceiling requires.
+
+### 2-mixture witness (residue, not a dent)
+
+Pure Example 4 does not extend off the ray. Mix the `{b*,1}` law at mean 0.45 with `δ_{0.01}` so the mixture mean is 0.38304. The CIID (2-mixture-of-products) Example-4 ratio is **0.909137**. Independent C replay agrees. The product `μ⊗μ` iid ratio on the same law is 1.0466; Liu `β=0.10` Example 5 + iid is 1.0325. A positive iid weight saves the witness and drops the `{b,1}` crossing below 0.38304. Random 2-mixtures at `c=0.38304` found 9 further hits (worst 0.825). Not a lower bound, and not a move of the ray number.
+
+### What we claim / do not claim
+
+Claim: the 2-sample bit-protocol class on `{b,1}` cannot certify a frequency above 0.383051356…. The repo constant is still 0.38304.
+
+Do not claim: a dent of 0.38304; the 1/2 conjecture; every measure; that the 2-mixture witness kills the ray claim; Gilmer Conjecture 1.

@@ -1,0 +1,45 @@
+{
+  "n_rows": 3270,
+  "best_two": {
+    "fam": "two_4_23_1",
+    "n": 27,
+    "T": 239,
+    "I": 243,
+    "ratio": 0.3278463648834019
+  },
+  "above_third": [],
+  "fibre": [
+    {
+      "n": 30,
+      "T": 300,
+      "rich_15": 4,
+      "rich_12": 14,
+      "max_fibre_ratio": 1.5,
+      "name": "interval_30"
+    },
+    {
+      "n": 30,
+      "T": 301,
+      "rich_15": 6,
+      "rich_12": 14,
+      "max_fibre_ratio": 2.0,
+      "name": "almost_30"
+    },
+    {
+      "n": 7,
+      "T": 18,
+      "rich_15": 2,
+      "rich_12": 3,
+      "max_fibre_ratio": 2.0,
+      "name": "n7"
+    },
+    {
+      "n": 17,
+      "T": 89,
+      "rich_15": 8,
+      "rich_12": 9,
+      "max_fibre_ratio": 2.0,
+      "name": "E22"
+    }
+  ]
+}

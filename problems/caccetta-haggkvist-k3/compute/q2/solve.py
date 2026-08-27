@@ -27,7 +27,7 @@ def find_bin(name: str) -> Path:
     if env and Path(env).exists():
         return Path(env)
     for p in (BIN / name, HERE / name, Path("/tmp/solvers") / name):
-        if p.exists():
+        if p.is_file():
             return p
     kissat = Path("/tmp/solvers/kissat/build/kissat")
     if name == "kissat" and kissat.exists():

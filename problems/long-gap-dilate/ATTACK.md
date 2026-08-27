@@ -206,3 +206,79 @@ $\max_d g\le(2+\varepsilon)\sqrt p$. Shakan’s 2 is still the
 published universal leading constant. The SAT table and the failed
 homogeneous / Dirichlet / energy / CS attempts are the residue.
 The interval structure of $B$ remains the live handle, unused.
+
+## 2026-08-27 — q1, replay first
+
+Fetched Green #32 (PDF) and Shakan `2004.14828` before searching.
+Confirmed `2205.14038` is the Weyl-equation paper. Parent
+`compute/run_all.sh` replays: Shakan holds on every proper nonempty
+subset for $p\le 13$; every stored SAT witness recomputes; enum
+matches SAT through $p=41$.
+
+Work lives in `compute/q1/`. Three handles: the unused rising
+factorials, a SAT push past $p=71$, and more families that might
+sit at $C=2+\varepsilon$.
+
+## 2026-08-27 — rising factorials saturate the Alon degree
+
+`wronskian_slice.py` rebuilds $\chi^m=t^pg+h$ on every stored SAT
+witness at $m=G+1$. For every prime $11\le p\le 71$ one already has
+$k=nm-p+1\ge p$, so the “middle coefficient” list is empty at the
+*actual* $G$, not only at hypothetical $C>2$. The Wronskian still
+satisfies $\deg W\le 2k-1$ and $\deg W\ge n(m-1)$; there is slack
+in the upper bound but not enough to force a larger $m$.
+
+The full rising $w(d,t)=d\prod_a(t+da+1)_m$ was expanded for
+$p=11,13$. It vanishes on $\mathbb F_p^2$ (remainder 0), and the
+Alon degrees of $u,v$ equal $k$ on the nose (`max_u_tot = max_v_tot
+= k`). The Stirling terms occupy the full worst-case degree. They
+are not a leftover that a sharper $\alpha<2$ can spend.
+
+Differentiating the top slice recovers the degree-$nm$ Stirling
+slice, so that slice is not an independent equation. BSW’s Rédei–
+Szőnyi direction bound is a different problem (and is tight on
+rectangles). Incidence geometry on $A\times B$ versus all
+non-vertical lines is $p^{3/4}$ against a $p^2$ incidence demand;
+no contradiction at $C=2$ or $C=3$.
+
+## 2026-08-27 — SAT past 71 is residue
+
+Downward Glucose4 walk, hard process kill (SIGALRM `interrupt()`
+does not stop Glucose). SAT near the local-search upper bound is
+cheap; the first timeout is the wall.
+
+| p | n | G_upper | ratio | first timeout T | shakan |
+| --- | --- | --- | --- | --- | --- |
+| 73 | 9 | 24 | 2.959 | **exact** $G=24$ (Cadical UNSAT at $T=24$ in 165s) | 14.22 |
+| 79 | 9 | 26 | 2.962 | 26 (60s) | 15.56 |
+| 83 | 9 | 27 | 2.928 | 27 (60s) | 16.44 |
+| 89 | 9 | 30 | 3.034 | 30 (60s) | 17.78 |
+
+Witnesses in `q1/certs/sat_extend.jsonl`. Cadical proved $T=24$
+UNSAT at $p=73$ in 165s after a 90s timeout on Glucose4/42, so
+$G(73,9)=24$ is exact (ratio $2.959$). That row is in
+`compute/certs/sat_G.jsonl`. The next primes still have only upper
+bounds; those timeouts are residue. No lifting pattern: $24$ sits
+on the same $2.93$–$3.03$ plateau as $G(71,8)/(p/n)=2.93$. One new
+exact row is not a universal $C>2$.
+
+## 2026-08-27 — no $C\to 2$ family through $p=199$
+
+`constructions_q1.py`: quadratic rulers, Paley prefixes, cyclotomic
+cosets, two-scale grids, the $(73,9,1)$ Singer orbit $\{2^k\}$ in
+$\mathbb F_{73}$ (gap 27, ratio $3.33$), and a longer anneal.
+Best diagonal ratios climb from $2.1$ at $p=19$ to $3.3$–$5.3$ by
+$p=199$. Subgroups sometimes win a single $p$ (e.g. $p=127$,
+ratio $3.29$) and then lose. No infinite family with
+$\max_d g\le(2+\varepsilon)\sqrt p$.
+
+## 2026-08-27 — stop
+
+No certified universal $C>2$. No construction that meets Shakan on
+infinitely many primes. Exact $G(73,9)=24$ extends the table by one
+prime and does not lift. Shakan’s 2 is still the published leading
+constant. The q1 leftover is a degree-saturation of the rising
+factorials, that one new exact row, SAT upper bounds at
+$p=79,83,89$, and a construction table through $p=199$. The live
+handle is no longer “expand $w$ and read degrees”; those degrees
+are full.

@@ -3,7 +3,7 @@
 - Slug: `sidon-second-term`
 - List: P07
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort max`
-- Status: dent of Hou–Zhao 0.9435. Independent 8-kernel certificate (free histograms, L=6) has √(ab)=0.94324253097, so C<0.94325. Erdős–Turán not claimed.
+- Status: dent of Hou–Zhao 0.9435 and of the folder 0.94325. Independent 11-kernel certificate (free histograms, m=48, L=6) has √(ab)=0.943006169985179, so C<0.94301. Erdős–Turán not claimed.
 - Area: Additive combinatorics
 - Sources: Erdos Problem #30; Green 100 #31
 - Started: 2026-08-17
@@ -47,3 +47,16 @@ The rational certificate `compute/q1/certs/joint_r8_L6.json` has
 with exact √(ab) = 0.9432425309706136. That is a dent of the published
 0.9435, not only of γ0. Replay in `compute/q1/README.md`. Erdős–Turán
 not claimed. No growing lower-bound second term.
+
+## After q2 (2026-08-27)
+
+q1 leftover refine / dropped-symmetry never finished. An L-lift of
+those kernels saturates. A later search grows free histograms from the
+q1 mix and reshapes them at $m=48$. The rational certificate
+`compute/q2/certs/r11_m48_L6.json` has
+
+    F(N) ≤ √N + 0.94301 N^{1/4} + O(1)
+
+with exact √(ab) = 0.943006169985179. That is below the folder 0.94325
+and below Hou–Zhao 0.9435. Replay in `compute/q2/README.md`.
+Erdős–Turán not claimed. No growing lower-bound second term.

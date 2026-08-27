@@ -1,0 +1,13 @@
+verify_b3.c — closed-form HPS constants (long double)
+Not a new bound. Replay of arXiv:2504.18487v1 Prop. 2.4–2.5.
+
+b2 = 1.207106781186547524382
+b3 = 1.118433799202706636607
+assert 1.2071 < b2 < 1.2072 : PASS
+assert 1.1184 < b3 < 1.1185 : PASS
+
+b(s) = max_{0<=t<=1} (1 + t^{s-1}) / (1 + t^s)
+b(2) = (sqrt(2)+1)/2
+b(3) = (2/3) * cbrt(1+sqrt(2)) / ((1+sqrt(2))^{2/3} - 1)
+
+Wrote certs/bound_table.csv for integer Z=1..200.
