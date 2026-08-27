@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Walk remaining exact holes after q16, high-k cubes first, store DRATs.
+"""Walk remaining exact holes after q17, high-k cubes first, store DRATs.
 
 If a cube times out, retry with a longer budget, kissat --stable, then a
 t = |N⁺(1) ∩ U| split. One timeout is not residue.
