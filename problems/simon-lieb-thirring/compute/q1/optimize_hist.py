@@ -21,7 +21,7 @@ from scipy.optimize import minimize
 
 from c1_functional import evaluate_c1, paper_second_pair, ratio_from_c1
 from grid_c1 import FastC1, normalize_mu, power_decay_vec, ratio_L, stretch_l2_unit
-from optimize_parametric import eval_A, pair_callables
+from optimize_parametric import pair_callables, _f_two_scale_on, _two_scale_sigma
 
 HERE = Path(__file__).resolve().parent
 
@@ -330,6 +330,53 @@ def optimize_f_power(phi: PhiHist, x0: np.ndarray, grid: FastC1) -> tuple[tuple,
     return (f_vec, f_sc, mu, alpha, beta), float(C), res.x
 
 
+def optimize_f_twoscale(phi: PhiHist, x0: np.ndarray, grid: FastC1) -> tuple[tuple, float, np.ndarray]:
+    bounds = [
+        (0.8, 14.0),
+        (0.06, 2.5),
+        (0.8, 14.0),
+        (0.06, 2.5),
+        (0.0, 5.0),
+        (0.1, 10.0),
+    ]
+
+    def fun(x):
+        a1, b1, a2, b2, lam, r = [float(v) for v in x]
+        if min(a1, b1, a2, b2, r) <= 0.0 or lam < 0.0:
+            return 1e9
+        if 2.0 * a1 * b1 <= 1.05:
+            return 1e9
+        sigma = _two_scale_sigma(a1, b1, a2, b2, lam, r, grid)
+        if not np.isfinite(sigma) or sigma <= 0.0:
+            return 1e9
+
+        def f_vec(t):
+            return _f_two_scale_on(np.asarray(t), a1, b1, a2, b2, lam, r, sigma)
+
+        return c1_pair(f_vec, phi, grid)["C_1"]
+
+    res = minimize(
+        fun,
+        x0,
+        method="L-BFGS-B",
+        bounds=bounds,
+        options={"maxiter": 70, "maxfun": 400, "ftol": 1e-12},
+    )
+    a1, b1, a2, b2, lam, r = [float(v) for v in res.x]
+    sigma = _two_scale_sigma(a1, b1, a2, b2, lam, r, grid)
+
+    def f_vec(t):
+        return _f_two_scale_on(np.asarray(t), a1, b1, a2, b2, lam, r, sigma)
+
+    def f_sc(t: float) -> float:
+        if t <= 0.0:
+            return 1.0
+        return float(f_vec(np.array([t]))[0])
+
+    C = c1_pair(f_vec, phi, grid)["C_1"]
+    return (f_vec, f_sc, dict(alpha1=a1, beta1=b1, alpha2=a2, beta2=b2, lam=lam, r=r, sigma=sigma)), float(C), res.x
+
+
 def optimize_f_hist_lbfgs(phi: PhiHist, fh: FHist, grid: FastC1, maxiter: int = 120) -> tuple[FHist, float]:
     # free vars: log(shape[1:]), log(p-0.5)
     nfree = fh.n - 1
@@ -427,28 +474,60 @@ def load_parametric_seed() -> dict | None:
 
 def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
     print(f"\n--- hist support T={T} M={M} ---", flush=True)
-    if seed_meta and seed_meta.get("parameters", {}).get("family") in ("A", "B", "D"):
+    twoscale_x = np.array([4.5, 0.25, 1.5, 1.0, 0.15, 2.0])
+    used_seed = False
+    if seed_meta and seed_meta.get("parameters"):
         try:
-            f0, phi0, support0, extra = pair_callables(seed_meta["parameters"])
-            phi = discretize_phi_from_callable(phi0, T, M)
-            # if seed support differs, still sample the callable (0 outside)
-            f_vec = lambda t: np.array(
-                [f0(float(x)) for x in np.ravel(t)], dtype=float
-            ).reshape(np.shape(t))
-            # faster: if family A, use power
             params = seed_meta["parameters"]
-            if params.get("family") == "A":
+            f0, phi0, support0, extra = pair_callables(params)
+            phi = discretize_phi_from_callable(phi0, T, M)
+            if params.get("family") == "C":
+                twoscale_x = np.array(
+                    [
+                        params["alpha1"],
+                        params["beta1"],
+                        params["alpha2"],
+                        params["beta2"],
+                        params["lam"],
+                        params["r"],
+                    ],
+                    dtype=float,
+                )
+                sigma = float(params["sigma"])
+
+                def f_vec(t, _p=params, _s=sigma):
+                    return _f_two_scale_on(
+                        np.asarray(t),
+                        _p["alpha1"],
+                        _p["beta1"],
+                        _p["alpha2"],
+                        _p["beta2"],
+                        _p["lam"],
+                        _p["r"],
+                        _s,
+                    )
+
+                f_sc = f0
+                mu = None
+                alpha, beta = float(params["alpha1"]), float(params["beta1"])
+            elif params.get("family") in ("A", "B", "D") and "alpha" in params:
                 f_vec, f_sc, mu = f_from_power(params["alpha"], params["beta"])
                 alpha, beta = params["alpha"], params["beta"]
             else:
                 f_sc = f0
                 mu = extra.get("mu")
                 alpha, beta = params.get("alpha", 4.5), params.get("beta", 0.25)
+
+                def f_vec(t, _f=f0):
+                    arr = np.asarray(t, dtype=float)
+                    return np.vectorize(_f)(arr)
+
+            used_seed = True
         except Exception as exc:
             print(f"  seed failed ({exc}); using paper pair", flush=True)
-            seed_meta = None
+            used_seed = False
 
-    if not seed_meta:
+    if not used_seed:
         f_paper, phi_paper, mu, c0 = paper_second_pair()
         phi = discretize_phi_from_callable(phi_paper, T, M)
         f_vec, f_sc, mu = f_from_power(4.5, 0.25)
@@ -458,56 +537,56 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
     print(f"  init grid C_1={rec0['C_1']:.8f}", flush=True)
 
     A, _, _ = design_matrix(f_vec, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=220)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=250)
+    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=160)
+    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=180)
     phi = phi_b if Cb <= Ca else phi_a
-    C_phi = min(Ca, Cb)
     print(f"  φ L-BFGS {Ca:.8f}  PG {Cb:.8f}", flush=True)
 
-    (f_vec, f_sc, mu, alpha, beta), C_f, xab = optimize_f_power(phi, np.array([alpha, beta]), GRID)
-    print(f"  f power L-BFGS α={alpha:.4f} β={beta:.4f} C_1={C_f:.8f}", flush=True)
+    (pack_ts, C_ts, xts) = optimize_f_twoscale(phi, twoscale_x, GRID)
+    f_vec, f_sc, ts_meta = pack_ts
+    print(f"  f two-scale C_1={C_ts:.8f} {ts_meta}", flush=True)
 
-    # rebuild A and re-optimize φ
+    (f_vec_p, f_sc_p, mu, alpha, beta), C_f, xab = optimize_f_power(phi, np.array([alpha, beta]), GRID)
+    print(f"  f power L-BFGS α={alpha:.4f} β={beta:.4f} C_1={C_f:.8f}", flush=True)
+    if C_f < C_ts:
+        f_vec, f_sc = f_vec_p, f_sc_p
+        C_ts = C_f
+
     A, _, _ = design_matrix(f_vec, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=220)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=200)
+    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=140)
+    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=140)
     phi = phi_b if Cb <= Ca else phi_a
     print(f"  φ again {min(Ca,Cb):.8f}", flush=True)
 
-    (f_vec, f_sc, mu, alpha, beta), C_f, xab = optimize_f_power(phi, xab, GRID)
-    print(f"  f power again C_1={C_f:.8f}", flush=True)
+    (pack_ts, C_ts, xts) = optimize_f_twoscale(phi, xts, GRID)
+    f_vec, f_sc, ts_meta = pack_ts
+    print(f"  f two-scale again C_1={C_ts:.8f}", flush=True)
 
-    # histogram f
     fh = discretize_f_from_callable(f_sc, n=n_f)
     rec_h = c1_pair(fh.eval, phi, GRID)
     print(f"  f-hist init {rec_h['C_1']:.8f}", flush=True)
-    fh, C_fh = optimize_f_hist_lbfgs(phi, fh, GRID, maxiter=80)
+    fh, C_fh = optimize_f_hist_lbfgs(phi, fh, GRID, maxiter=50)
     print(f"  f-hist L-BFGS {C_fh:.8f}", flush=True)
-    fh, C_pg = optimize_f_hist_pg(phi, fh, GRID, steps=40)
+    fh, C_pg = optimize_f_hist_pg(phi, fh, GRID, steps=18)
     print(f"  f-hist PG {C_pg:.8f}", flush=True)
 
-    # one more φ pass against hist f
     A, _, _ = design_matrix(fh.eval, phi, GRID)
-    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=160)
-    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=160)
+    phi_a, Ca = optimize_phi_lbfgs(A, phi, GRID, maxiter=100)
+    phi_b, Cb = optimize_phi_pg(A, phi_a, GRID, steps=100)
     phi = phi_b if Cb <= Ca else phi_a
     C_end = c1_pair(fh.eval, phi, GRID)["C_1"]
-    print(f"  end grid C_1={C_end:.8f}", flush=True)
+    C_par = c1_pair(f_vec, phi, GRID)["C_1"]
+    print(f"  end hist-f {C_end:.8f}  two-scale-f {C_par:.8f}", flush=True)
 
-    # also keep parametric-f + hist-φ (sometimes cleaner)
-    f_vec_p, f_sc_p, mu_p = f_from_power(alpha, beta)
-    C_par = c1_pair(f_vec_p, phi, GRID)["C_1"]
-
-    use_hist_f = C_end <= C_par
-    if use_hist_f:
+    if C_end <= C_par:
         f_sc_best = fh.callable()
         C_grid = C_end
         f_kind = "hist"
     else:
-        f_sc_best = f_sc_p
+        f_sc_best = f_sc
         C_grid = C_par
-        f_kind = "power"
-        fh = discretize_f_from_callable(f_sc_p, n=n_f)
+        f_kind = "twoscale"
+        fh = discretize_f_from_callable(f_sc, n=n_f)
 
     official = rescore_hist(f_sc_best, phi)
     print(
@@ -523,6 +602,7 @@ def run_support(T: float, M: int, n_f: int, seed_meta: dict | None) -> dict:
         "alpha": alpha,
         "beta": beta,
         "mu": mu if f_kind == "power" else None,
+        "twoscale": ts_meta,
         "phi_heights": phi.h.tolist(),
         "phi_dx": phi.dx,
         "f_hist": fh.to_dict(),
@@ -539,12 +619,14 @@ def main() -> int:
     else:
         print("no parametric seed; starting from Lemma 11 second pair", flush=True)
 
+    T_seed = 1.66
+    if seed and seed.get("parameters", {}).get("T"):
+        T_seed = float(seed["parameters"]["T"])
     jobs = [
+        (T_seed, 72, 40),
         (1.0, 64, 40),
-        (1.3, 72, 40),
-        (0.85, 56, 40),
-        (1.8, 80, 40),
-        (2.4, 80, 40),
+        (2.1, 80, 40),
+        (1.35, 72, 40),
     ]
     runs = []
     best = None

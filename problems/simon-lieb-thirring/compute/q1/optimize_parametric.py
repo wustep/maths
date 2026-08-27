@@ -661,6 +661,21 @@ def main() -> int:
         )
         if best is None or score < best["official"]["C_1_full_est"]:
             best = rec
+        (HERE / "opt_parametric.partial.json").write_text(
+            json.dumps(
+                {
+                    "families_done": {k: v["official"] for k, v in results.items()},
+                    "best_so_far": {
+                        "family": best["family"],
+                        "C_1": best["official"]["C_1_full_est"],
+                        "C_1_tcut1e6": best["official"]["C_1_float_tcut1e6"],
+                        "parameters": best["meta"],
+                    },
+                },
+                indent=2,
+            )
+            + "\n"
+        )
 
     # Fine-grid polish of the winner (DE on GRID_FINE is too expensive).
     win = best["family"]
