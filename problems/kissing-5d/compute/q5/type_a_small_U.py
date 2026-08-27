@@ -55,26 +55,27 @@ def signed_perm_orbit(v):
     return out
 
 
-def stab_other_axes(p0):
-    ax = [i for i in range(5) if abs(p0[i]) == 4]
-    assert len(ax) == 1
-    a4 = ax[0]
-    others = [i for i in range(5) if i != a4]
+def apply_b5(p, perm, signs):
+    return tuple(signs[i] * p[perm[i]] for i in range(5))
 
-    def apply(p, perm):
-        q = list(p)
-        vals = [p[i] for i in others]
-        for i, src in enumerate(perm):
-            q[others[i]] = vals[src]
-        return tuple(q)
 
-    return apply, list(permutations(range(4)))
+def b5_stab(p0):
+    """Signed-permutation stabilizer of p0.  |B5|/160 = 24."""
+    stab = []
+    for perm in permutations(range(5)):
+        for signs in product((-1, 1), repeat=5):
+            if apply_b5(p0, perm, signs) == p0:
+                stab.append((perm, signs))
+    return stab
 
 
 def neighbour_orbit_reps(type_A, adj, p0_index=0):
+    """Stab(p0) orbits on neighbours.  One representative per orbit."""
     n = len(type_A)
     idx = {p: i for i, p in enumerate(type_A)}
-    apply, perms = stab_other_axes(type_A[p0_index])
+    p0 = type_A[p0_index]
+    stab = b5_stab(p0)
+    assert len(stab) == 24
     nbrs = [i for i in range(n) if i != p0_index and (adj[p0_index] >> i) & 1]
     nbr_set = set(nbrs)
     reps = []
@@ -83,14 +84,14 @@ def neighbour_orbit_reps(type_A, adj, p0_index=0):
         if i in seen:
             continue
         orb = []
-        for perm in perms:
-            q = apply(type_A[i], perm)
-            j = idx[q]
+        for perm, signs in stab:
+            j = idx[apply_b5(type_A[i], perm, signs)]
             if j in nbr_set and j not in seen:
                 seen.add(j)
                 orb.append(j)
         reps.append(min(orb))
-    return sorted(set(reps))
+    assert seen == nbr_set
+    return reps
 
 
 def write_code41(type_A, D, clique, Umask):
@@ -269,6 +270,8 @@ def main() -> int:
         U = miss[0] | miss[r]
         P = adj[0] & adj[r]
         starts.append((stack, U, P))
+    # small-U second vertices first
+    starts.sort(key=lambda t: (t[1].bit_count(), t[0][1]))
 
     found, best_ex, best_U, clique, Umask, nodes, complete = small_U_search(
         adj, miss, n, starts, target=TARGET, node_limit=NODE_LIMIT
