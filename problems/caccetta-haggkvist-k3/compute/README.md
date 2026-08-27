@@ -61,3 +61,6 @@ Leftover holes from n=119 live in `q10/`. Replay:
 
 Leftover holes from n=120 live in `q11/`. Replay:
 `cd q11 && ./run_all.sh`.
+
+Leftover holes from n=121 live in `q12/`. Replay:
+`cd q12 && ./run_all.sh`.
