@@ -219,6 +219,8 @@ four-decimal statement $0.9435$, not only of their $\gamma_0$. Same
 lemma, new kernels. SHA-256 of the JSON:
 `edcc2c973809c4bb8a3f25233ffc80e6b5ce432a70c4d01697a3ba8ead8beda5`.
 
-Continuation / nosym / finer / longer refine were still running when
-this certificate was written. Those floats are residue unless they
-produce a stricter rational.
+Adding $R=9$–$12$ twelve-mode kernels on the published mix reached
+$0.94326$, worse than the free-histogram $R=8$. A longer L-BFGS refine
+of the certified mix, the dropped-symmetry search, the $m=48$ reshape,
+and the two-width L-BFGS had not returned a stricter rational when
+this was written. Those leftover phases are residue, not a bound.
