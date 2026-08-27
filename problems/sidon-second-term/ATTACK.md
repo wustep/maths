@@ -154,3 +154,73 @@ python3 compute/verify_houzhao.py
 python3 compute/verify_certificate.py compute/certs/hz_kernels_L6.json --beat 0.94349259
 python3 compute/verify_beat_hz.py
 ```
+
+## 2026-08-27 — q1, continue the vector-smoothing search
+
+Published record is still Hou–Zhao arXiv:2607.01169v2: $F(N)\le N^{1/2}+0.9435\,N^{1/4}+O(1)$.
+Fetched the abs page and the HTML. Still v2 (5 Jul 2026); no v3. Green #31
+(Dec 2025 PDF) still cites CHO $0.98183$. Tao $C_{5a}$ still stops at CHO /
+unpublished $0.97633$ and does not list Hou–Zhao. Erdős #30 was behind
+Cloudflare this session.
+
+The 2026-08-17 L=6 lift already has $\sqrt{ab}=0.9434925085<\gamma_0$, but
+it does not change the four-decimal statement $0.9435$. Hou–Zhao §5 asks
+for a systematic outer search and more kernels. q1 takes the leftover
+handles with L-BFGS instead of Powell:
+
+1. joint free-histogram re-opt of all eight published kernels at $L=6$
+2. continuation $R=9,10,12$ with 12 cosine modes at $L=6$
+3. drop kernel symmetry (independent left/right weights)
+4. resample to $m=48$ and re-shape (not a bin-split)
+5. two-width L-BFGS
+
+A floating $\gamma$ is not a dent. Code: `compute/q1/`.
+
+Independent replay this session (exact, then floating QP):
+
+- `verify_houzhao.py` PASS. Hash matches Claim 4.1. All 129 covering
+  inequalities hold. $\sqrt{ab}=0.943492590713545<0.9435$.
+- q1 floating Table 1 matches Hou–Zhao to all printed digits
+  (R=1: $0.9461473014$, …, R=8 L=4: $0.94349259006$).
+- Same kernels at L=6: $0.94349250848$. Independent left/right weights
+  on the symmetric mix give the same number, as they should.
+
+## 2026-08-27 — q1 dent: free histograms beat 0.9435
+
+L-BFGS on the eight published kernels, now as free symmetric
+histograms (16 half-logits each) at $L=6$, dropped the floating
+$\gamma$ from the L=6 plateau $0.9434925085$ to $0.9432425303$
+(maxiter 40, not declared converged). Adding $R=9,\ldots,12$
+twelve-mode kernels from the *published* mix only reached $0.94326$,
+so the leftover slack was in the six-mode shape class, not in $R$.
+
+`rationalize_certificate.py` on `candidates/joint-lbfgs-hz8-L6.json`
+wrote `compute/q1/certs/joint_r8_L6.json`. Exact check:
+
+- all 193 covering inequalities hold (min slack 0)
+- $\sqrt{ab}=0.9432425309706136$
+- $ab<(0.943243)^2<(0.94325)^2<(0.9433)^2<(0.9435)^2$
+
+Three verifiers that do not share covering code all PASS:
+
+```bash
+python3 compute/verify_certificate.py compute/q1/certs/joint_r8_L6.json --beat 0.94325
+python3 compute/q1/verify_q1.py compute/q1/certs/joint_r8_L6.json --beat 0.94325
+# gcc -O2 -o compute/q1/verify_q1 compute/q1/verify_q1.c -lgmp
+# python3 compute/q1/dump_cert.py ... && ./compute/q1/verify_q1 ... 94325 100000
+```
+
+So
+
+    F(N) ≤ √N + 0.94325 N^{1/4} + O(1)
+
+holds for all large $N$. This is a dent of Hou–Zhao’s published
+four-decimal statement $0.9435$, not only of their $\gamma_0$. Same
+lemma, new kernels. SHA-256 of the JSON:
+`edcc2c973809c4bb8a3f25233ffc80e6b5ce432a70c4d01697a3ba8ead8beda5`.
+
+Adding $R=9$–$12$ twelve-mode kernels on the published mix reached
+$0.94326$, worse than the free-histogram $R=8$. A longer L-BFGS refine
+of the certified mix, the dropped-symmetry search, the $m=48$ reshape,
+and the two-width L-BFGS had not returned a stricter rational when
+this was written. Those leftover phases are residue, not a bound.

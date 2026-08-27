@@ -137,11 +137,33 @@ with an explicit rational certificate whose a is Hou–Zhao’s a and whose
 √(ab) is 8.22×10^{-8} below their γ0. Independently, Hou–Zhao’s own
 L=4 certificate is valid, so C < 0.9435 was already in the literature.
 
-**Still open.** Erdős–Turán (do not claim it). A lower bound
+**Still open (2026-08-17).** Erdős–Turán (do not claim it). A lower bound
 F(N) ≥ √N+ω(1) for infinitely many N. Any constant at the 0.9434 level
 or a new method. The $1000 form h(N)=N^{1/2}+O_ε(N^ε).
 
 The L=6 lift is a strict numerical improvement of a published
 certificate. It is not a new proof idea. If a later reader wants only
-improvements that change the four-decimal statement 0.9435, this is
-an incomplete search, not a new bound.
+improvements that change the four-decimal statement 0.9435, the 17
+August search is incomplete.
+
+## 7. 2026-08-27: the six-mode cage
+
+Hou–Zhao’s Table 1, rows R=4 through R=8, add one *six-mode* cosine
+profile at a time. The 17 August coordinate descent and Powell
+searches stayed inside that cage, or never returned. The 27 August
+search used L-BFGS on the eight kernels as free symmetric histograms
+(16 half-bin logits, no mode cutoff) at L=6.
+
+The floating γ dropped by 2.5×10^{-4}, from 0.94349251 to
+0.94324253. Adding R=9..12 twelve-mode kernels on top of the
+*published* mix only reached 0.94326. The degree of freedom was the
+shape class of the existing eight kernels, not a ninth kernel and
+not a longer boundary.
+
+Rounded, η-shifted, and checked over Q: √(ab) = 0.9432425309706136,
+so F(N) ≤ √N + 0.94325 N^{1/4} + O(1). That does change the
+four-decimal statement 0.9435. Same lemma. New histograms.
+
+**Still open.** Erdős–Turán. A lower bound F(N) ≥ √N+ω(1) infinitely
+often. The $1000 form. A constant at the 0.9431 level, or a method
+that is not Lemma 2.1.
