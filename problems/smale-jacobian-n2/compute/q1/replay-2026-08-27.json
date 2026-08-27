@@ -1,6 +1,14 @@
 {
   "date": "2026-08-27",
   "platform": "Apple Silicon macOS",
+  "toolchain": {
+    "python": "3.14.6",
+    "rustc": "1.97.1",
+    "gmpy2": "2.3.1",
+    "numpy": "2.5.2",
+    "python_flint": "0.9.0",
+    "sympy": "1.14.0"
+  },
   "archive_sha256": "232204bdb598cc2ea0368e154c8573e18bbfdc69fa631c8878de4b884b38bb18",
   "bridge": {
     "implementations": ["Python 3", "Rust 1.97.1"],
@@ -21,4 +29,3 @@
     "terminal_marker": "Q1_DEGREE_125_CERTIFICATE_PASS"
   }
 }
-
