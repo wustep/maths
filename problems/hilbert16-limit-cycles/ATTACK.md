@@ -309,3 +309,96 @@ identities: a quadratic restricts to degree ≤2 on a line;
 three collinear finite equilibria force a line of equilibria;
 unperturbed Shi has exactly two real finite equilibria.
 Not a bound on H(4). Cert: `compute/q2/q-pt-darboux/certs/`.
+
+## 2026-08-27 — q3: ten new imagined end-states
+
+Same method. Absorb q2: the PT Darboux seed is explicit; the
+quasi-homogeneous annulus ẋ=2y, ẏ=−x³ is certified; z↦z² is
+2-to-1 so the next map is z↦z³; Li–Liu–Yang is still paywalled,
+so a 14th cubic cycle has to be written from a Hamiltonian we
+own. The ten one-sentence fictions and the ranking live in
+`compute/q3/ideas.md`. They are not A–E and not the q2 five.
+
+Official three by (published-record delta) × (checkability
+tonight): FF two-well 14, GG PT L1 rank 29, HH qh M1 four zeros.
+Two extras so the menu was not idle: II holomorphic cube, JJ
+weak Hilbert Z(2,n). Pruned: KK constructive +1, OO five
+Abelian zeros, LL cubic+line, MM Abel two zeros, NN PT algebraic
+extra.
+
+## 2026-08-27 — five q3 lines return
+
+Replay: `problems/hilbert16-limit-cycles/compute/run_all.sh`
+(q1 then q2 then q3). Exit 0.
+
+### FF dropped, forked
+
+Fourteen zeros of I(h), hence H(3) ≥ 14, is dropped. The first
+Melnikov integral on the two-well cubic is elliptic. One exact
+sample and a nonzero L1 prove I ≢ 0; they do not locate 14 roots.
+
+Fork kept. Unperturbed ẋ=y, ẏ=x−x³. Equilibria (0,0) saddle
+(det −1) and (±1,0) centers (det 2). H = y²/2 + x⁴/4 − x²/2,
+so H(0,0)=0, H(±1,0)=−1/4, and dH/dt ≡ 0. Named perturbation
+ẏ = x−x³+μ(1−x²)y: dH/dt = μ y²(1−x²) and
+I(h) = ∮ μ(1−x²) y dx. On each figure-eight lobe, I(0)=4μ/15.
+At the well bottom, I(−1/4)=0. Regular isolated zeros exhibited:
+none. After the q1 focal scaling, L1 = √2 μ at both wells
+(V1 = L1/8). Trace at the wells stays 0, so a Hopf birth is
+not proved and two cycles are not claimed. The saddle stays a
+saddle. Not a bound on H(3). Certs:
+`compute/q3/ff-two-well/certs/`.
+
+### GG dropped, forked
+
+H(4) ≥ 29 is dropped. The unperturbed field is a Darboux center,
+so every Lyapunov quantity vanishes. Prohens–Torregrosa already
+stopped at 28 at order 5; their first-order count is 22, not 29.
+No explicit 28-cycle perturbation is written here.
+
+Fork kept. Linearizations replayed: (0,0) det 44; (1,±2) det 64;
+all traces 0. The q1 polynomial L1_E is only the quadratic piece.
+The cubic jet adds 3 a30 + a12 + b21 + 3 b03. Unperturbed L1 is
+0 at all three centers (at (1,±2) the pieces ±9/2 cancel).
+Location-preserving L1(μ): μ x(x−1)² y gives L1 = 0, −μ, μ;
+μ x²(x−1)² gives a nonzero multiple of μ at all three. Three
+Hopf cycles would be H(4) ≥ 3, not 29. Cert:
+`compute/q3/gg-pt-lyapunov/certs/lyapunov.json`.
+
+### HH dropped, forked
+
+Fourteen zeros of I(h) on the quasi-homogeneous annulus, hence
+H(3) ≥ 14, is dropped. A general cubic perturbation has
+I(h) = h^{3/4}(c0 + c1 √h + c2 h), at most two positive zeros.
+Gavrilov–He–Xiao arXiv:2606.22137 already treat this oval family.
+
+Fork kept. Unperturbed ẋ=2y, ẏ=−x³, H=x⁴+4y², dH/dt ≡ 0, only
+eq (0,0), linearization nilpotent. Named family P=0,
+Q=μ(α−x²)y: I(h)=μ(α J0 − J2)=0 iff α = C √h, at most one
+h>0. First-order cyclicity ≤ 1 for this family. The slice
+Q=μ y has I(h) ∝ h^{3/4}, no positive zero. Not a bound on
+H(3). Cert: `compute/q3/hh-qh-melnikov/certs/identities.json`.
+
+### II dropped, forked
+
+Nine regular sheets from z↦z³ is dropped. Cauchy–Riemann makes
+the real map 3-to-1, not 9-to-1. Same death as O.
+
+Fork kept. CR, Jac = 9(u²+v²)², generic fibre 3, pullback
+degree N=3n+2 (n=1→5, n=2→8, n=3→11). Sheets 3=(N+1)/(n+1),
+linear. T3 has the same N and attains 9. Strictly weaker.
+Remark 4 is negative for this holomorphic map. Certs:
+`compute/q3/ii-complex-cube/certs/`.
+
+### JJ dropped, forked
+
+Beating Z(2,n)=⌊(n−1)/2⌋ by one extra Abelian zero is dropped.
+The formula is a theorem (M(h) is a polynomial).
+
+Fork kept. Quadratic Hamiltonian H=(x²+y²)/2 and
+Q=μ y p(x²+y²). Reduced integral Ĩ(h)=h p(2h) has the same
+positive zeros as I(h). For n=3, one zero at h=1/2, matching
+Z(2,3)=1. For n=5, zeros at h=1/2 and h=2, matching Z(2,5)=2.
+The table n=1…10 attains the formula and does not beat it.
+This is cyclicity of this period annulus, not H(2). Cert:
+`compute/q3/jj-weak-hilbert/certs/family.json`.

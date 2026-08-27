@@ -104,3 +104,24 @@ Failed / not used as record (q2):
 - Llibre’s `mat.uab.cat/~jllibre/` homepage returned 164 bytes, not a publication list. The 2004 PDF was the Cambridge file above.
 - Piecewise 2025–2026 papers are a different Hilbert number; not used as H(n).
 - No OEIS lookup.
+
+## 2026-08-27 (q3)
+
+No new published H(n). Li–Liu–Yang full text still 403. Papers
+opened or re-opened while scoring the ten ideas:
+
+- [Gavrilov–He–Xiao, arXiv:2606.22137v1](https://arxiv.org/abs/2606.22137). Re-opened [abs](https://arxiv.org/abs/2606.22137) and [HTML](https://arxiv.org/html/2606.22137v1) for line HH. Their §5 application is the period annulus of a constant multiple of H = x⁴ + 4y² (after rescaling y). They bound every Melnikov order for one-parameter polynomial perturbations of a quasi-homogeneous center and get cyclicity 1 for a linear unfolding. Not a new H(3). Not beaten here.
+
+- [Eshkobilov–Kadyrov–Mamayusupov, arXiv:2604.12883v1](https://arxiv.org/abs/2604.12883). Re-opened abs and HTML for line II (Remark 4, T3 degree budget N = 3n+2). Same claims as q1.
+
+- [Scholarpedia, Han–Li–Li 2010](http://www.scholarpedia.org/article/Limit_cycles_of_planar_polynomial_vector_fields). Re-opened for line JJ. Z(2,n) = floor((n−1)/2) because M(h) is a polynomial. Lead for the formula; the attaining family is replayed in `compute/q3/jj-weak-hilbert/`.
+
+- [Villanueva–Tucker, *Center conditions and cyclicity for generic planar polynomial vector fields*, arXiv:2602.22558v1](https://arxiv.org/abs/2602.22558). Opened [abs](https://arxiv.org/abs/2602.22558) and [HTML](https://arxiv.org/html/2602.22558v1). Generic (residual) upper bounds on small-amplitude cyclicity: M_h^*(n) ≤ n+2 for homogeneous nonlinearities, and a quadratic-in-n bound for generic non-homogeneous fields. They note 3 = M(2) < M^*(2) = 4, so the generic bound is not Bautin. Not a uniform H(n). Not a new lower bound.
+
+- [Gasull–Santana, *A note on Hilbert 16th problem*, PAMS 153 (2025) 669–677](https://ddd.uab.cat/pub/artpub/2025/309367/GasSan24-Postprint.pdf). Opened the UAB postprint. Same two theorems as arXiv:2407.13465v2 (already in q1): H(n+1) ≥ H(n)+1, and if H(n) is finite it is attained by a structurally stable field with only hyperbolic cycles. Table still H(2)≥4, H(3)≥13, H(4)≥28.
+
+Failed / not used as record (q3):
+
+- Li–Liu–Yang JDE 246 (2009) full text: still 403. Their 13 is still not replayed.
+- Piecewise crossing numbers (arXiv:2601.21865) remain a different function.
+- No OEIS lookup.

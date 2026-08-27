@@ -9,5 +9,7 @@
 | [chat/](chat/) | Grok Bot transcript recreation |
 | [grok-2026-08-27-ott/](grok-2026-08-27-ott/) | Grok 4.6 continuation of the 1/3–2/3 folder |
 | [grok-hilbert16-limit-cycles-2026-08-27/](grok-hilbert16-limit-cycles-2026-08-27/) | Grok 4.6 Hilbert 16(b) / H(n) campaign |
+| [grok-hilbert16-q2-2026-08-27/](grok-hilbert16-q2-2026-08-27/) | Grok 4.6 Hilbert 16(b) twenty-five ideas |
+| [grok-hilbert16-q3-2026-08-27/](grok-hilbert16-q3-2026-08-27/) | Grok 4.6 Hilbert 16(b) ten ideas |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).

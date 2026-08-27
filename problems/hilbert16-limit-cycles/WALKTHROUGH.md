@@ -6,7 +6,7 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 - Model: Grok 4.6
 - Date: 2026-08-27
 - Problem status: open. No published H(n) moved. The second
-  campaign did not move a table entry either.
+  and third campaigns did not move a table entry either.
 
 ## 0. What was actually missing
 
@@ -183,4 +183,75 @@ H_{4,5} Darboux field and the quadratic contact identities.
 
 Not proved: any movement of a published H(n). Finiteness of
 H(n). The 28-cycle perturbation of that Darboux field.
+Li–Liu–Yang’s 13 (still paywalled).
+
+## Third campaign (same day)
+
+Ten new fictions (`compute/q3/ideas.md`). Official three, plus
+two extras so the menu was not idle. All five imagined dents
+died; five forks lived.
+
+### 0. What was actually missing
+
+An explicit cubic that is not Li–Liu–Yang’s paywalled field,
+or a perturbation of the PT seed we now own, or a non-separable
+covering that actually attains m². The degree of freedom is
+still an explicit polynomial or a counted Abelian integral,
+not a new status noun.
+
+### 1. Named false starts
+
+- Two-well 14 Abelian zeros: the integral is elliptic; one
+  sample and L1 prove I ≢ 0, not 14 roots.
+- PT L1 rank 29: unperturbed L1 is 0 (Darboux center); they
+  already stopped at 28.
+- Four zeros of M1 on ẋ=2y, ẏ=−x³: scaling caps a cubic at
+  two first-order zeros; the named family has one.
+- Holomorphic cube, nine sheets: z↦z³ is 3-to-1 (same CR as O).
+- Beat Z(2,n): the formula is a theorem.
+
+### 2. The useful failure
+
+The two-well Hamiltonian is the geometry people cite for 11
+then 13, and first-order on that well does not produce 14.
+The PT seed’s L1_E is a trap: at (1,±2) it is ±9/2 and the
+cubic jet cancels it. Evaluating only the q1 quadratic
+polynomial would have falsely called those points order-1
+foci.
+
+### 3. The click
+
+Two. First: after the q1 focal scaling, both wells of the
+named van der Pol perturbation have the same L1 = √2 μ, and
+I(0) = 4μ/15 is elementary on the figure-eight, so the
+obstruction is not “no formula” but “the formula is too
+small.” Second: z↦z³ has the same degree budget as T3 and
+is strictly weaker, so the next non-separable test after
+squaring is also a miss.
+
+### 4. The argument
+
+- Two-well: H = y²/2 + x⁴/4 − x²/2; dH/dt identities;
+  figure-eight reduction to 2/15; L1 cubic correction.
+- PT: translate three centers; L1 = L1_E + cubic; cancel.
+- Quasi-homogeneous: weights (1,2); the moment of x^k scales
+  as λ^{k+3}; I(h)=0 iff α = C √h.
+- Cube: CR, fibre 3, N=3n+2, T3 attains 9 at the same N.
+- Weak Hilbert: Ĩ(h)=h p(2h) attains floor((n−1)/2).
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc identities
+and integer boxes. Replay: `compute/run_all.sh` (q1, q2, q3).
+
+### 6. What is proved vs still open
+
+Proved here, extra to q1 and q2: the two-well classification
+and I(0); L1 = 0 at the three Darboux centers and two L1(μ)
+polynomials; first-order cyclicity ≤ 1 for
+Q=μ(α−x²)y on H=x⁴+4y²; holomorphic-cube sheet counts;
+the radial family attaining Z(2,n) for n=1…10.
+
+Not proved: any movement of a published H(n). Finiteness of
+H(n). Fourteen cubic cycles. A 29th quartic cycle.
 Li–Liu–Yang’s 13 (still paywalled).

@@ -5,10 +5,12 @@
 - Solver: Grok 4.6
 - Status: open. No published H(n) moved. First campaign dropped
   H(2)≥5 and H(3)≥14. Second campaign wrote 25 new fictions and
-  dropped the five that scored highest (homogeneous n cycles;
-  Liénard B(n); iterated squaring; Harnack recurrence; PT+1).
-  Reusable exact lemmas live in `compute/q1/` and `compute/q2/`.
-  Hilbert 16(b) itself is untouched.
+  dropped the five that scored highest. Third campaign wrote
+  ten more and dropped the official three plus two extras
+  (two-well 14; PT L1 rank 29; qh M1 four zeros; holomorphic
+  cube 9-sheet; beat of Z(2,n)). Residue: every imagined dent
+  died; certified forks live in `compute/q1/` through
+  `compute/q3/`. Hilbert 16(b) itself is untouched.
 - Area: Qualitative theory of planar polynomial ODEs
 - Sources: Shi, Sci. Sinica 23 (1980); Chen–Wang 1979; Bautin
   1952/54; Li–Liu–Yang, JDE 246 (2009); Christopher–Lloyd,
@@ -17,7 +19,9 @@
   arXiv:2407.13465; Eshkobilov–Kadyrov–Mamayusupov,
   arXiv:2604.12883; Coppel, JDE 2 (1966); Llibre–Schlomiuk,
   Canad. J. Math. 56 (2004); Chen–Dai–Kaloshin–Li,
-  arXiv:2608.17773; Gasull–Santana, arXiv:2510.11705
+  arXiv:2608.17773; Gasull–Santana, arXiv:2510.11705;
+  Gavrilov–He–Xiao, arXiv:2606.22137; Villanueva–Tucker,
+  arXiv:2602.22558
 - Started: 2026-08-27
 
 This folder is Hilbert 16(b): isolated periodic orbits of planar
