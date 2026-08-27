@@ -139,7 +139,7 @@ Q2(t) = (1 + 2t + t³) / (1 + 2t + t²).
 
 ```
 t* = (−3 + √17) / 2 ≈ 0.5615528128,
-Q2* = (17√17 − 55) / 16 ≈ 0.9433006280,
+Q2* = (17√17 − 55) / 16 ≈ 0.9432997272,
 1/Q2* = (55 + 17√17) / 118 ≈ 1.0601084376.
 ```
 
@@ -150,7 +150,7 @@ That coefficient is below `1.1185`. It is a lower bound only for
 At the HPS ratio `t0` one has the identity `t0³ = 2 − 3 t0`, so
 
 ```
-Q2(t0) = (3 − t0) / (1 + t0)² ≈ 0.94396,
+Q2(t0) = (3 − t0) / (1 + t0)² ≈ 0.94366,
 ```
 
 slightly above `Q2*`. The pairs that saturate `f = fmin` are not
@@ -208,18 +208,18 @@ finite points.
 
 Dropping positivity makes it worse. The truncated Toeplitz
 symbol of `K` on a 16-point `t0`-step grid, evaluated at
-`θ = π`, sits below `fmin`. Signed log-densities are not a
+`θ = π`, is `≈ 0.11187 < fmin`. Signed log-densities are not a
 path to a higher floor.
 
 Positive trials on at most 16 log-nodes (the cap here):
 
 - two bumps at distance `−log t0`: unweighted energy
   `(1 + fmin)/2 ≈ 0.94705`;
-- three equal bumps at `0, h0, 2h0`: about `0.938`;
-- log-Gaussians, `n = 16`: best `Q` in the scan stays near
-  `0.93`, above the power-law `0.921`;
+- three equal bumps at `0, h0, 2h0`: `≈ 0.93688`;
+- log-Gaussians, `n = 16`: best `Q ≈ 0.92360` at `σ = 0.4`,
+  still above the power-law `0.9207`;
 - log-uniform `m` (i.e. `m(dr) ∝ dr/r`) on aspect `2` through
-  `12`: same story.
+  `12`: best in the scan `≈ 0.92267` at aspect `3.5`.
 
 None of these is a lower bound. None of them raises the global
 floor above `fmin`. A number that does not beat `1.1185`
