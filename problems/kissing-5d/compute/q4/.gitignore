@@ -3,6 +3,7 @@ __pycache__/
 color_d4
 n1_le32
 n1_complete
+n1_dfs
 n1_stars
 n1_stars_contain
 n1_stars_free

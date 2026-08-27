@@ -22,6 +22,21 @@ if command -v rustc >/dev/null 2>&1; then
   ./verify_n1
 fi
 "$PY" replay_unions.py --maxk 8
+gcc -O3 -std=c11 n1_dfs.c -o n1_dfs -lm
+./n1_dfs 12 > n1_dfs_k12.json
+"$PY" - <<'PY'
+import json
+from pathlib import Path
+a = json.loads(Path("n1_complete_k12.json").read_text())
+b = json.loads(Path("n1_dfs_k12.json").read_text())
+assert a["n_unions_visited"] == b["n_unions_visited"]
+assert a["found_41"] is False and b["found_41"] is False and b["complete"]
+for k in range(4, 13):
+    sa, sb = a["slices"][str(k)], b["slices"][str(k)]
+    for key in ("n_unions", "n_promising", "tried", "max_seeds", "best_extras"):
+        assert sa[key] == sb[key], (k, key, sa[key], sb[key])
+print("n1_dfs k=12 matches n1_complete_k12")
+PY
 "$PY" -c "import bv; t=bv.self_tests(); assert all(v for _,v in t), t"
 "$PY" verify.py
 echo "Q4_ALL_OK"

@@ -350,12 +350,17 @@ python3 problems/kissing-5d/compute/q4/verify.py
 
 ## 2026-08-27 — leftover graphs (q4)
 
-Opened again:
+Opened again (and re-fetched the arXiv sources):
 
 - https://teorth.github.io/optimizationproblems/constants/29a.html —
   still $40\le\tau_5\le 44$, conjectural value 40.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  refs [9] Korkine–Zolotareff and [17] Mittelmann–Vallentin.
+  Dim 6 is 72 / 77; dim 5 is untouched.
 - https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
   HTML https://ar5iv.labs.arxiv.org/html/0902.1105v3 Table 1.
+  Range of possible values limited from $\{40,\ldots,45\}$ to
+  $\{40,\ldots,44\}$.
 - https://arxiv.org/abs/2412.00937 — v3 still “appears to be 40…
   best upper bound that has been proved is 44”.
 
