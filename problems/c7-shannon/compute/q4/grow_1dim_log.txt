@@ -1,0 +1,20 @@
+g=(1, 1, 5, 1, 0) pivot=0 deg=218
+  pack=45 trial=0 t=0.3s
+  pack=46 trial=14 t=2.3s
+done best=46 t=5.9s
+g=(1, 4, 2, 0, 0) pivot=0 deg=242
+  pack=41 trial=0 t=0.3s
+  pack=44 trial=2 t=0.6s
+done best=44 t=6.1s
+g=(1, 6, 2, 1, 0) pivot=0 deg=218
+  pack=45 trial=0 t=0.3s
+  pack=46 trial=1 t=0.4s
+done best=46 t=5.9s
+g=(0, 1, 2, 3, 4) pivot=1 deg=242
+  pack=45 trial=0 t=0.3s
+done best=45 t=6.2s
+g=(0, 0, 1, 2, 4) pivot=2 deg=242
+  pack=43 trial=0 t=0.3s
+  pack=44 trial=2 t=0.6s
+done best=44 t=6.0s
+ALL best_pack=46

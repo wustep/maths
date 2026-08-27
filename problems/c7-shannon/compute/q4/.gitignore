@@ -1,8 +1,10 @@
 search_1dim_cosets
 search_cyclic_orbits
 search_hamming13_four
+search_hamming15
 search_eject_linear
 search_scratch
+search_fold_wide
 *.o
 onedim_unique.conn
 cyclic_orbits.adj

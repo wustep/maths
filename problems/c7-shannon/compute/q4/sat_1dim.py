@@ -75,8 +75,12 @@ def main() -> int:
     if not path.exists():
         print("missing onedim_unique.conn; run search_1dim_cosets first")
         return 1
+    max_graphs = 3
+    if len(sys.argv) > 1:
+        max_graphs = int(sys.argv[1])
     t0 = time.time()
     n_sat = 0
+    n_unsat = 0
     for idx, line in enumerate(path.read_text().splitlines(), 1):
         conn = line.strip()
         if len(conn) != QN:
@@ -84,7 +88,10 @@ def main() -> int:
         if solve_conn(conn, idx):
             n_sat += 1
             break
-    print(f"DONE sat_graphs={n_sat} t={time.time() - t0:.1f}s")
+        n_unsat += 1
+        if idx >= max_graphs:
+            break
+    print(f"DONE sat_graphs={n_sat} unsat={n_unsat} t={time.time() - t0:.1f}s")
     return 0
 
 
