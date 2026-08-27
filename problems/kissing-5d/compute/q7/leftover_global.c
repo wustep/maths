@@ -6,14 +6,18 @@
  * 4-star, prune (those hosts are empty).  Optional 5-star prune
  * after leftover-tight SAT empties 5-star hosts:
  *
- *   ./leftover_global [target] [node_limit] [five_star_prune]
- * Default target=20, node_limit=400000000, five_star_prune=0.
+ *   ./leftover_global [target] [node_limit] [five_mode]
+ * five_mode: 0 = 4-star prune only (default)
+ *            1 = every 5-star union (valid after all three types empty)
+ *            2 = type-(2,1) k=32 five-stars only (valid after that orbit SAT)
+ * Default target=20, node_limit=400000000, five_mode=0.
  */
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdint.h>
 #include <math.h>
+#include <time.h>
 #include <sys/stat.h>
 
 #define MAXN 2048
@@ -37,7 +41,7 @@ static u64 adj[MAXE][W];
 static u64 stars[10];
 static u64 fourU[256];
 static u64 fiveU[256];
-static int nfour, nfive, use_five;
+static int nfour, nfive, use_five, five_mode;
 
 static long nodes, node_limit = 400000000L;
 static int found, best;
@@ -298,7 +302,8 @@ int main(int argc, char **argv)
     if (argc >= 3)
         node_limit = atol(argv[2]);
     if (argc >= 4)
-        use_five = atoi(argv[3]);
+        five_mode = atoi(argv[3]);
+    use_five = five_mode >= 1;
     if (target < 19 || target > 40) {
         fprintf(stderr, "target out of range\n");
         return 1;
@@ -390,14 +395,30 @@ int main(int argc, char **argv)
         for (int b = a + 1; b < 10; b++)
             for (int c = b + 1; c < 10; c++)
                 for (int e = c + 1; e < 10; e++)
-                    for (int f = e + 1; f < 10; f++)
+                    for (int f = e + 1; f < 10; f++) {
+                        int idx[5] = {a, b, c, e, f};
+                        int axes[5] = {0, 0, 0, 0, 0};
+                        for (int t = 0; t < 5; t++)
+                            axes[idx[t] / 2]++;
+                        int n2 = 0, n1 = 0;
+                        for (int ax = 0; ax < 5; ax++) {
+                            if (axes[ax] == 2)
+                                n2++;
+                            else if (axes[ax] == 1)
+                                n1++;
+                        }
+                        /* five_mode 2: only type (2,1) k=32 hosts */
+                        if (five_mode == 2 && !(n2 == 2 && n1 == 1))
+                            continue;
                         fiveU[nfive++] = stars[a] | stars[b] | stars[c]
                             | stars[e] | stars[f];
+                    }
 
     mkdir("certs", 0755);
     found = 0;
     best = target - 1;
     nodes = 0;
+    time_t t0 = time(NULL);
     u64 P[W];
     memset(P, 0, sizeof P);
     for (int v = 0; v < nE; v++)
@@ -423,8 +444,11 @@ int main(int argc, char **argv)
         printf("  \"found_n1\": %d,\n", 40 - __builtin_popcountll(found_U));
     printf("  \"complete\": %s,\n", slice_complete && !found ? "true" : "false");
     printf("  \"n_four_star\": %d,\n", nfour);
-    printf("  \"n_five_star\": %d,\n", nfive);
+    printf("  \"n_five_used\": %d,\n", nfive);
+    printf("  \"n_five_star\": 252,\n");
+    printf("  \"five_mode\": %d,\n", five_mode);
     printf("  \"five_star_prune\": %s,\n", use_five ? "true" : "false");
+    printf("  \"wall_seconds\": %ld,\n", (long)(time(NULL) - t0));
     printf("  \"comment\": \"leftover-tight extras B&B; always-on grow prune; 4-star hosted cut\"\n");
     printf("}\n");
     return 0;

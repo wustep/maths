@@ -16,7 +16,9 @@ three 5-star host types (`orbits.json`). Leftover-tight SAT on a
 representative, with a native CaDiCaL binary DRAT, is the certificate
 for that type. Global leftover SAT on $|U|=19$ is a separate CNF.
 Always-on grow prune is the leftover-tight extras branch-and-bound
-change from the q6 160-candidate cap.
+change from the q6 160-candidate cap. After the type-$(2,1)$ leftover
+SAT, `leftover_global` five_mode `2` also prunes grow that sits in
+one of those 60 five-star unions.
 
 | Script | What it does |
 | --- | --- |

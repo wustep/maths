@@ -610,7 +610,16 @@ classical Levenshtein number 48 before claiming any comparison.
   Aut transitivity this empties all 60 type-$(2,1)$ five-star
   leftover hosts. The q6 cutoff pool $(0,1,2,3,5)$ is likewise
   UNSAT with a verified DRAT ($3{,}325{,}416$ conflicts).
-- $k=31$, $k=30$, the remaining two q6 $k=32$ cutoffs, global
-  leftover SAT $k=19$, and leftover-tight extras B&B past 200M
-  nodes are still running. Residue until those certificates land.
-  Did not claim $\tau_5=40$.
+- All four q6 $k=32$ cutoff pools are UNSAT with verified native
+  DRATs (`five_q6_01235`, `five_q6_01236`, `five_q6_01237`, and
+  the orbit representative). Combined with Aut transitivity the
+  type-$(2,1)$ leftover hosts are empty.
+- Leftover-tight extras B&B with always-on grow prune ran 400M
+  nodes in about 90 seconds, no 41-set, incomplete
+  (`leftover_global_400m.json`). The $|P|\le 160$ cap was the
+  cost; remaining missed-union is cheap. A type-$(2,1)$ 5-star
+  prune (valid after the orbit SAT) is the next B&B cut; a 20G
+  node run is in flight.
+- $k=31$, $k=30$, and global leftover SAT $k=19$ are still
+  running. Residue until those certificates land. Did not claim
+  $\tau_5=40$.

@@ -1,9 +1,9 @@
 {
-  "n_pools": 2,
+  "n_pools": 4,
   "n_expected": 6,
   "found_41": false,
-  "n_sat_unsat": 2,
-  "n_drat_verified": 2,
+  "n_sat_unsat": 4,
+  "n_drat_verified": 4,
   "complete": false,
   "pools": [
     {
@@ -86,6 +86,88 @@
         "exit": 0,
         "wall": 171.89970874786377,
         "bytes": 345553964
+      }
+    },
+    {
+      "name": "q6_01236",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        6
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "193faafc4cf23cc654f5de2dab22b809a8b8464a6c27304ce0d0353ca1adb78b",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 2424042,
+        "seconds": 195.97,
+        "exit": 20,
+        "wall": 196.25121450424194,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_q6_01236.native.drat",
+      "drat_bytes": 281441877,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 701537,
+        "lemmas_total": 3718758,
+        "resolution_steps": 57306623,
+        "exit": 0,
+        "wall": 80.2661817073822,
+        "bytes": 281441877
+      }
+    },
+    {
+      "name": "q6_01237",
+      "stars": [
+        0,
+        1,
+        2,
+        3,
+        7
+      ],
+      "type": [
+        2,
+        1
+      ],
+      "k": 32,
+      "n_extras": 528,
+      "n_roots": 32,
+      "cnf_vars": 28358,
+      "cnf_clauses": 89068,
+      "cnf_sha256": "6272e8caff4b0911f43ea34407397e03bfecca22eac52dd7903051685abb4427",
+      "sat": false,
+      "found_41": false,
+      "cadical": {
+        "sat": false,
+        "conflicts": 1933340,
+        "seconds": 169.31,
+        "exit": 20,
+        "wall": 169.3999581336975,
+        "solver": "cadical-3.0.1"
+      },
+      "drat": "five_q6_01237.native.drat",
+      "drat_bytes": 209165540,
+      "drat_trim": {
+        "status": "VERIFIED",
+        "lemmas_in_core": 749740,
+        "lemmas_total": 3112724,
+        "resolution_steps": 76359303,
+        "exit": 0,
+        "wall": 108.39210081100464,
+        "bytes": 209165540
       }
     }
   ],
