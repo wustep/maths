@@ -1,0 +1,8 @@
+__pycache__/
+*.o
+color_d4
+n1_le32
+t5_clique
+t5_355_adj.txt
+d4_adj.txt
+*.pyc
