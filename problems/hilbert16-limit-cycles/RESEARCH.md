@@ -125,3 +125,74 @@ Failed / not used as record (q3):
 - Li–Liu–Yang JDE 246 (2009) full text: still 403. Their 13 is still not replayed.
 - Piecewise crossing numbers (arXiv:2601.21865) remain a different function.
 - No OEIS lookup.
+
+## 2026-08-27 (q3 extra)
+
+No published planar H(n) moved. Li–Liu–Yang full text still 403; their 13 is still not replayed. No 2025–2026 paper claiming H(3)≥14 was found. Fetched with `python3 scripts/arxiv_fetch.py <id> --text none --research …` then opened abs/HTML (or the author PDF) and expanded the stubs. Every URL below was opened this session. Already-logged ids were not re-entered as new.
+
+### Li–Liu–Yang JDE 246 (2009) retry
+
+- [ScienceDirect landing, Li–Liu–Yang JDE 246](https://www.sciencedirect.com/science/article/pii/S0022039609000643). HTTP 403 (Cloudflare challenge). The search-tool snippet of that landing still only gives the abstract: a planar cubic with at least 13 cycles, via zeros of Abelian integrals. No article body.
+- [DOI 10.1016/j.jde.2009.01.038](https://doi.org/10.1016/j.jde.2009.01.038). 302 to [linkinghub](https://linkinghub.elsevier.com/retrieve/pii/S0022039609000643) (200, 2.6 KB interstitials). Not the article.
+- Elsevier PDF endpoints all 403: [`/pdf`](https://www.sciencedirect.com/science/article/pii/S0022039609000643/pdf), [`/pdfft`](https://www.sciencedirect.com/science/article/pii/S0022039609000643/pdfft), and the `md5=c114a9579f640438744a304af416cef8` `/pdf` URL from the landing snippet.
+- [Elsevier API PII S0022039609000643](https://api.elsevier.com/content/article/pii/S0022039609000643). 200 with empty body; `WARNING - Unauthorized request results in minimized metadata response.`
+- [Unpaywall API](https://api.unpaywall.org/v2/10.1016/j.jde.2009.01.038?email=research@wustep.me) timed out (25 s, then 60 s, 0 bytes). [unpaywall.org/10.1016/j.jde.2009.01.038](https://unpaywall.org/10.1016/j.jde.2009.01.038) 302 to `oadoi.org`; [oadoi.org](https://oadoi.org/10.1016/j.jde.2009.01.038) returned no usable PDF this session.
+- [Semantic Scholar API, DOI 10.1016/j.jde.2009.01.038](https://api.semanticscholar.org/graph/v1/paper/DOI:10.1016/j.jde.2009.01.038?fields=title,year,openAccessPdf,url,authors,externalIds). `openAccessPdf.status` is BRONZE; the PDF URL is the same Elsevier `/pdf` endpoint (403). [S2 HTML page](https://www.semanticscholar.org/paper/13aa0db96cefb0a331c9a340a35227e67f1fab83) is a JS captcha, not a paper.
+- [ADS abs 2009JDE...246.3609L](https://ui.adsabs.harvard.edu/abs/2009JDE...246.3609L/abstract). AWS WAF captcha. Full-text source listed as Elsevier only.
+- [Changjian Liu, SYSU Zhuhai](https://mathzh.sysu.edu.cn/en/teacher/1386). Publication list; no PDF of the 2009 JDE paper (the visible items skip that year). No author copy.
+- [Chengzhi Li, *Abelian Integrals and Limit Cycles*, QTDS 11 (2012) 111–128 landing](https://link.springer.com/article/10.1007/s12346-011-0051-z). Abstract and reference list only (no article PDF). Cites Li–Liu–Yang 2009 as the cubic with thirteen cycles. Survey of the weak problem; does not replay the 13 and does not move H(n).
+- [Pei Yu UWO homepage](https://publish.uwo.ca/~pyu/) and [publication list](https://publish.uwo.ca/~pyu/pub/index/publication1.html). Opened. The `/pub/` directory itself is 403. Yu hosts later cubics (below); he does not host Li–Liu–Yang.
+
+Status: full text still not fetched. Do not treat 13 as replayed.
+
+### Christopher–Lloyd 1995 (the 4-fold paper)
+
+- [DOI 10.1098/rspa.1995.0081](https://doi.org/10.1098/rspa.1995.0081). 302 to the Royal Society article page, then 403 (Cloudflare). [RS landing](https://royalsocietypublishing.org/doi/10.1098/rspa.1995.0081) and [RS PDF](https://royalsocietypublishing.org/doi/pdf/10.1098/rspa.1995.0081) both 403. Abstract on the DOI/search page: H_n grows at least as n² log n (it was already known to be ≳ kn²).
+- [Semantic Scholar API, same DOI](https://api.semanticscholar.org/graph/v1/paper/DOI:10.1098/rspa.1995.0081?fields=title,year,openAccessPdf,url,externalIds). `openAccessPdf.status` CLOSED; empty PDF URL. No author-page or institutional PDF found (Plymouth/Aberystwyth searches returned no file).
+- [Li–Llibre–Pérez–Torregrosa 2001, UAB PDF](https://ddd.uab.cat/pub/artpub/2001/110469/extmat_a2001v16n3p441.pdf). Opened the PDF. This is *not* Christopher–Lloyd 1995. It quotes their bound as H_m ≥ ½(m+1)²(log₂(m+1)−3)+3m. Weakened 16th (Abelian zeros), not a new planar H(n).
+- The (x,y)↦(x²−A,y²−A) 4-fold recipe is stated in already-logged [arXiv:2601.21865 HTML](https://arxiv.org/html/2601.21865v1) (re-opened by search this session; not re-logged as new): degree doubles, four copies of the cycles, plus new axis centers, recurrence S_{k+1}=4S_k+(2^k−1)² on degrees 2^k−1. That is a secondary account. The 1995 PDF itself was not read.
+
+### Han–Yang–Yu five Abelian / Hopf zeros
+
+- [Han–Yang–Yu, *Hopf bifurcations for near-Hamiltonian systems*, IJBC 19 (2009) 4117–4130, Slideblast extract](https://slideblast.com/hopf-bifurcations-for-near-hamiltonian-systems-semantic-scholar_59afef801723dde7879f106b.html). Opened. This is Scholarpedia’s [46]. Algorithm for the coefficients b_ℓ of M(h)=h ∑ b_ℓ h^ℓ near an elementary Hamiltonian center. Theorem 4: a quadratic Hamiltonian with cubic perturbation, after using the Hamiltonian coefficients as extra parameters, has Hopf cyclicity 5 at the origin (explicit δ₀, σ₀ with b^*=(2/13)√26, c^*=2b^*). Theorem 5: the a=0 slice has cyclicity 3. This is five *small* cycles from one quadratic center, not H(3)≥14 and not a global 13. Does not move the table.
+- [World Scientific abs 10.1142/S0218127409025250](https://www.worldscientific.com/doi/abs/10.1142/S0218127409025250). Cloudflare interstitial; no PDF.
+- [Semantic Scholar API, same DOI](https://api.semanticscholar.org/graph/v1/paper/DOI:10.1142/S0218127409025250?fields=title,year,openAccessPdf,url,externalIds). CLOSED.
+- [Yu-hosted HYY PDF](https://publish.uwo.ca/~pyu/pub/preprints/HYY_IJBC2009.pdf). 404 (the publication list still points here). The Slideblast extract is the text that was actually read.
+- [Tian–Han, *Hopf and homoclinic bifurcations for near-Hamiltonian systems*, JDE 262 (2017) ScienceDirect landing](https://www.sciencedirect.com/science/article/pii/S0022039616304351). Cites Han–Yang–Yu as the Hopf-coefficient method. Homoclinic expansion at h=h_s; not a new H(n).
+- [Yang–Han–Li–Yu, *Existence conditions of thirteen limit cycles in a cubic system*, IJBC 20 (2010), Yu PDF](http://publish.uwo.ca/~pyu/pub/preprints/YHLY_IJBC2010.pdf). Opened the 9-page PDF. Theorem 1: a concrete (k,b,δ) condition (they take k=100, b=7/2) under which their cubic (2) has 13 cycles. They write Li–Liu–Yang (1) as ẋ=y(y²−k²), ẏ=x(x+1)(x−λ)+εy(α₁+α₂x+α₃x²+α₄y²) and say LLY need k sufficiently large; the 13-cycle *distribution* is the same as LLY Fig. 1 (five centers, double homoclinics, one surrounding nest). Still 13, not 14. This is a second 13, not a replay of the 2009 JDE text.
+
+### Ye class I / invariant-line cubics
+
+- [Artés–Chen–Ferrer–Jia, *Quadratic vector fields in class I*, UAB preprint](https://ddd.uab.cat/pub/artpub/2025/318296/ArtCheFerJia2024-Preprint.pdf). Opened the PDF (Dyn. Syst. 40 (2025) 191–222). Ye class I is ẋ=y, ẏ=−x+fy+ℓx²+2mxy+ny². Theorem 1: 49 topological portraits, 261 parameter regions; seven portraits have *one* limit cycle (V5, V6, V13, V31, 1S5, 5S5, 9S3). They quote Rychkov: class I has at most one cycle, and they use that to rule out a double-cycle bubble. Does not produce two class-I cycles. Does not move H(2).
+- [DOI 10.1080/14689367.2024.2436223](https://doi.org/10.1080/14689367.2024.2436223). Same paper; landing/abstract only in the search fetch.
+- [Gasull–Giacomini, arXiv:2210.15803v1](https://arxiv.org/abs/2210.15803). Opened [abs](https://arxiv.org/abs/2210.15803) and the PDF. Quadratic with an invariant line: at most one cycle (they take this as known). Invariant parabola reduces to the line case (Theorem 1.1). Eight known algebraic-cycle quadratics have no extra cycle (Theorem 1.2). Two generalized invariant curves: at most 2M+2 cycles (Theorem 1.3). Section 7 treats some cubics with a quadratic or cubic invariant curve; those are uniqueness/non-existence statements, not H(3)≥14. Does not move the table.
+- [Kooij, *Cubic systems with four real line invariants*, Math. Proc. Cambridge Philos. Soc. 118 (1995)](https://doi.org/10.1017/s0305004100073412). DOI/search landing only. Semantic Scholar CLOSED. Cambridge `/content/view/…pdf` redirected to a product page, no PDF. [Christopher *Uniqueness of limit cycles in polynomial systems with algebraic invariants*](https://doi.org/10.1017/s0004972700016026) was opened via search: a cubic with four real line invariants has at most one (hyperbolic) cycle. Uniqueness, not a lower bound.
+
+### New 2025–2026 papers (not already in this file)
+
+- [Yang–Zhang, *Limit cycles appearing from the perturbation of a cubic isochronous center*, arXiv:2503.09014v1](https://arxiv.org/abs/2503.09014). Opened [abs](https://arxiv.org/abs/2503.09014) and [HTML](https://arxiv.org/html/2503.09014). Pleshkan S₂^* under degree-n perturbation: if the Abelian integral is not ≡0 then at most 4⌊(n+1)/2⌋+1 cycles from that period annulus (Theorem 1.1). S₃^*, S₄^* left open. Weak Hilbert for one isochronous cubic, not H(3). For n=3 the bound is 9, below Li–Liu–Yang 13. Table unchanged.
+
+- [Yang–Zhang, *Bifurcation of limit cycles from a cubic reversible isochrone*, arXiv:2503.09004v1](https://arxiv.org/abs/2503.09004). Opened [abs](https://arxiv.org/abs/2503.09004) and [HTML](https://arxiv.org/html/2503.09004v1). CR₅ under Liénard perturbation of degree n: at most 22n+6 from the annulus; they exhibit 1 cycle for n=1,2 and 2 for n=3. Journal version [QTDS 2026 DOI landing](https://doi.org/10.1007/s12346-026-01498-w) states the same numbers. Not a planar H(n) seed.
+
+- [Fazoli–Santana, *Planar vector fields without invariant algebraic curves*, arXiv:2511.13596v1](https://arxiv.org/abs/2511.13596). Opened [abs](https://arxiv.org/abs/2511.13596) and [HTML](https://arxiv.org/html/2511.13596v1). Theorems A–C: generically (residual, full measure) a degree-n field has no invariant algebraic curve other than a prescribed nodal F; Kolmogorov fields generically have only the axes. Theorem D: if H(n)<∞ it is attained by a structurally stable simple field *without algebraic limit cycles* (they restate H(2)≥4, H(3)≥13, H(4)≥28). Refines Gasull–Santana 2407.13465; does not raise any H(n).
+
+- [Arakaki–Novaes, arXiv:2504.13832v1](https://arxiv.org/abs/2504.13832). Opened abs. 3D normally hyperbolic limit tori: N_h(m+1)≥N_h(m)+1 if that number is finite. Analog of Gasull–Santana increase, not planar H(n).
+
+- [Arakaki–Gouveia–Novaes, arXiv:2507.17932v1](https://arxiv.org/abs/2507.17932). Opened abs. N_h(2)≥3, N_h(3)≥5, N_h(4)≥7, N_h(5)≥13, then a Christopher–Lloyd-style lift in 3D. Introduction restates the planar table H(2)≥4, H(3)≥13, H(4)≥28, …. Different function.
+
+- [Sui–Zhang–Li, arXiv:2504.01661v1](https://arxiv.org/abs/2504.01661). Opened abs. Piecewise-cubic perturbations of the unique weight-degree-2 quasi-homogeneous center; switching line x=0 or y=0. Different Hilbert number (crossing / non-smooth).
+
+### H(3)≥14 search
+
+- arXiv API queries `all:"fourteen limit cycles"`, `all:"H(3)" AND all:cubic AND all:"limit cycles"`, and `all:"thirteen limit cycles"` for 2025–2026 returned no new planar paper.
+- [Wang–Mao–Jing, *Fourteen limit cycles in a cubic Hamiltonian system with nine-order perturbed term*, Chaos Solitons Fractals landing](https://www.sciencedirect.com/science/article/abs/pii/S0960077902000498). Opened via search. The perturbation is degree 8 (n=8 in εx(mx^n+ℓy^n−λ)); not a cubic field. Not H(3)≥14.
+- 2025–2026 introductions that we opened (2511.13596, 2507.17932, 2503.09014) still print H(3)≥13.
+
+Failed / not used as record (q3 extra):
+
+- Li–Liu–Yang full text: still 403 after ScienceDirect, four Elsevier PDF URLs, Unpaywall/oadoi timeout, Semantic Scholar bronze→Elsevier, ADS captcha, Liu SYSU page, Li 2012 survey landing, Yu’s site. 13 not replayed.
+- Christopher–Lloyd 1995 PDF: Royal Society 403, S2 CLOSED, no author PDF. The 4-fold map was not read from the 1995 paper.
+- Han–Yang–Yu official PDF: World Scientific Cloudflare; Yu `HYY_IJBC2009.pdf` 404. Text read from the Slideblast extract and from YHLY 2010.
+- Kooij 1995 Cambridge PDF: not obtained.
+- Piecewise 2025–2026 (2504.01661 and the Pleshkan-piecewise hits 2605.05010 / 2604.19483 from the API sweep) remain a different function; 2605.05010 and 2604.19483 abs pages were not opened.
+- No OEIS lookup.

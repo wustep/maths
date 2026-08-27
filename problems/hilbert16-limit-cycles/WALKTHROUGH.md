@@ -255,3 +255,63 @@ the radial family attaining Z(2,n) for n=1…10.
 Not proved: any movement of a published H(n). Finiteness of
 H(n). Fourteen cubic cycles. A 29th quartic cycle.
 Li–Liu–Yang’s 13 (still paywalled).
+
+## Worker pool (same day)
+
+The leftover q3 menu and four extras ran so no line sat idle.
+All imagined dents died.
+
+### 0. What was actually missing
+
+An explicit +1 or 4-fold field we own, not only the identity.
+The degree of freedom is still a written polynomial.
+
+### 1. Named false starts
+
+- Gasull–Santana +1: second cycle is an unwritten Hopf.
+- Cubic + line, three cycles: Dulac kills the named field.
+- Five Abelian zeros: Z(2,3)=1, or else H(3)≥5 < 13.
+- (u²,v²) or T2 beating H(7)≥74: four ovals, not 74.
+- Kolmogorov 7: Dulac, 0 in the first quadrant.
+- L2 extra wells: order is already 1.
+- (x²+y²)X two cycles: still one circle.
+
+### 2. The useful failure
+
+(u²,v²) attains 4 sheets at N=2n+1, which holomorphic z↦z²
+does not. The obstruction in O and II was Cauchy–Riemann, not
+Bézout. Christopher–Lloyd uses the four sign combinations.
+
+### 3. The click
+
+Translate the radial circle into the first quadrant, then
+square each coordinate. Four ovals, degree 7, written
+term-by-term. Same count as T2, different map, still far
+from 74.
+
+### 4. The argument
+
+- KK: line 4x−15y misses the translated circle (15>0).
+- LL: Dulac 1/y on ẋ=16y+16x+x³, ẏ=16xy.
+- OO: Ĩ(h)=h(α−2h); Area on the cubic nest.
+- PP: u̇=v P(u²,v²), four quadrants, f'(ρ)=−1/2.
+- QQ: T2 field, 8+8 monomials.
+- RR: B=x^{-2}y^{-1}, div(BX)/B=−1.
+- SS: V2=−√2 μ(23μ²+18)/96.
+- TT: ṙ=r³(ρ²−r²).
+
+### 5. Computer search
+
+No SAT. No integrator as a bound. sympy / rustc. Replay:
+`compute/run_all.sh`.
+
+### 6. What is proved vs still open
+
+Proved here, extra: the degree-4 line product with one
+circle; a cubic with invariant line and 0 cycles; 1 and 0
+Abelian zeros on the two OO families; an explicit
+Christopher–Lloyd degree-7 four-oval field; an explicit T2
+degree-7 four-oval field; a cubic Kolmogorov Dulac; V2 at
+the two-well; the degree-5 radial product with one circle.
+
+Not proved: any movement of a published H(n).

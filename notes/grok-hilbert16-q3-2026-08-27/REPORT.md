@@ -13,5 +13,10 @@ three plus two extras so the menu was not idle.
 | II | holomorphic cube, 9 sheets | dropped; fork: 3-to-1, N=3n+2 |
 | JJ | beat Z(2,n) | dropped; fork: radial family attains it |
 
+Worker pool raised. Leftover menu KK/LL/OO plus PP–TT
+all dropped; forks kept (degree-4 line product; cubic Dulac;
+CL and T2 four-oval fields; Kolmogorov Dulac; V2; degree-5
+product). MM/NN recycled.
+
 No published H(n) moved. Replay:
 `problems/hilbert16-limit-cycles/compute/run_all.sh`.

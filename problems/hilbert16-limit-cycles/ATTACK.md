@@ -402,3 +402,99 @@ Z(2,3)=1. For n=5, zeros at h=1/2 and h=2, matching Z(2,5)=2.
 The table n=1…10 attains the formula and does not beat it.
 This is cyclicity of this period annulus, not H(2). Cert:
 `compute/q3/jj-weak-hilbert/certs/family.json`.
+
+## 2026-08-27 — q3 worker pool: leftover menu and four extras
+
+The official three plus two extras left KK, LL, OO unexplored
+and MM, NN recycled. Workers were raised: those three ran, MM
+and NN were not copied, and five more live lines started
+(PP, QQ, RR, SS, TT). Replay still
+`problems/hilbert16-limit-cycles/compute/run_all.sh`.
+
+### KK dropped, forked
+
+Two hyperbolic cycles, hence a constructive +1 beating nothing
+on the H(4) table, is dropped. The second orbit is a Hopf
+Gasull–Santana do not write.
+
+Fork kept. Translate the radial cubic so (2,0) is the origin.
+Line L=4x−15y. Degree-4 field (L P_t, L Q_t). Distance from
+(−2,0) to the line is 8/√241 > 1/2 (cleared: 15>0), so the
+translated circle misses the line and remains a periodic orbit
+of the product. Origin of the product is non-isolated, det=0,
+trace=0. Not a bound on H(4). Cert: `compute/q3/kk-plus-one/`.
+
+### LL dropped, forked
+
+Three cycles on a cubic with an invariant line is dropped.
+
+Fork kept. Named cubic ẋ=16y+16x+x³, ẏ=16xy (μ=1/16). Line
+y=0 is invariant, not a line of equilibria. Dulac B=1/y gives
+div(BX)=(16+3x²)/y, one-signed in each open half-plane, hence
+0 isolated cycles. Ye/Cherkas uniqueness is for quadratics and
+was not re-proved. Cert: `compute/q3/ll-invariant-line/`.
+
+### OO dropped, forked
+
+Five zeros of I(h) is dropped on both readings. Circles: Z(2,3)=1.
+Cubic Hamiltonian of a quadratic field: five zeros would be
+H(3)≥5, not 14. Han–Yang–Yu 2009 is Hopf cyclicity 5 at one
+quadratic center (Slideblast extract), not a global 13.
+
+Fork kept. Circles, Q=μ y(α−r²): Ĩ(h)=h(α−2h), one positive
+zero. Cubic H=y²/2+x³/3−x²/2 with Q=μ y: I(h)=±μ Area, no
+regular zero, cyclicity ≤1 at first order. Cert:
+`compute/q3/oo-five-zeros/`.
+
+### PP dropped, forked
+
+H(7)≥4 as a dent of 74 is dropped.
+
+Fork kept. Christopher–Lloyd / Gasull–Santana §4: translate the
+radial circle into the first quadrant, then
+u̇=v P(u²,v²), v̇=u Q(u²,v²). Degree exactly 7, 8+8 monomials,
+four ovals (u²−2)²+(v²−2)²=1/4, one per open quadrant.
+Attains 4 sheets at N=2n+1, better than holomorphic z↦z²
+(2 sheets) and equal to T2. Explicit field. Not a dent of 74.
+Cert: `compute/q3/pp-christopher-lloyd/`.
+
+### QQ dropped, forked
+
+T2 of the untranslated radial cubic is also degree 7 with four
+ovals and does not beat 74.
+
+Fork kept. Explicit
+Yu = 3v−8v³−30u²v+16v⁵+32u²v³+48u⁴v−32u²v⁵−32u⁶v
+and the matching Yv (8+8 terms). T2'=4t has no zero in the
+open branches. Same 4 sheets as PP at the same N. Cert:
+`compute/q3/qq-t2-radial/`.
+
+### RR dropped, forked
+
+Seven first-quadrant Kolmogorov cycles is dropped. H_K(5)≥28
+is already on arXiv:2510.11705 and was not claimed.
+
+Fork kept. Named family ẋ=x(1−x−y), ẏ=y(1−bx−y−c x²).
+Weighted Dulac B=x^{-2} y^{-1} has div(BX)/B ≡ −1, hence
+0 isolated cycles in x>0, y>0. Cert: `compute/q3/rr-kolmogorov/`.
+
+### SS dropped, forked
+
+L2 as a source of a 14th cubic cycle is dropped. The FF wells
+are order 1.
+
+Fork kept. L1=√2 μ replays. In the q1 Poincaré gauge,
+V2=−√2 μ(23μ²+18)/96 at both wells. Not the first nonzero
+quantity. Cert: `compute/q3/ss-cubic-l2/`.
+
+### TT dropped, forked
+
+Y=(x²+y²)X with two cycles is dropped. Unperturbed ṙ=r³(ρ²−r²)
+still has exactly one positive periodic orbit.
+
+Fork kept. Polar identities for the degree-5 product; unique
+circle r=ρ. This is H(5)≥1, not a +1. Cert:
+`compute/q3/tt-radial-factor/`.
+
+MM and NN were not copied. MM is the odd-cubic Liénard of
+line I. NN is the Darboux first integral of line Q.

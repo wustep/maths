@@ -8,8 +8,11 @@
   dropped the five that scored highest. Third campaign wrote
   ten more and dropped the official three plus two extras
   (two-well 14; PT L1 rank 29; qh M1 four zeros; holomorphic
-  cube 9-sheet; beat of Z(2,n)). Residue: every imagined dent
-  died; certified forks live in `compute/q1/` through
+  cube 9-sheet; beat of Z(2,n)). The leftover menu and four
+  extras also dropped (constructive +1; cubic+line 3; five
+  Abelian zeros; (u²,v²) or T2 beating 74; Kolmogorov 7; L2
+  extra wells; (x²+y²)X two cycles). Residue: every imagined
+  dent died; certified forks live in `compute/q1/` through
   `compute/q3/`. Hilbert 16(b) itself is untouched.
 - Area: Qualitative theory of planar polynomial ODEs
 - Sources: Shi, Sci. Sinica 23 (1980); Chen–Wang 1979; Bautin
