@@ -37,8 +37,16 @@ def t_from_hooks(pts: Iterable[int]) -> int:
 
 
 def end_scores(pts: Iterable[int]) -> tuple[int, int]:
-    """(N1+N2 at min, N1+N2 at max)."""
+    """(N1+N2 at min, N1+N2 at max of -S).
+
+    Forward hooks from max(S) are empty. The right-end degree is the
+    left-end degree of the reflected set; x+2y=3z is reflection-invariant.
+    """
     s = list(pts)
-    hooks = n1_n2(s)
-    lo, hi = min(s), max(s)
-    return sum(hooks[lo]), sum(hooks[hi])
+    hooks_left = n1_n2(s)
+    lo = min(s)
+    left = sum(hooks_left[lo])
+    reflected = [-p for p in s]
+    hooks_right = n1_n2(reflected)
+    right = sum(hooks_right[min(reflected)])
+    return left, right
