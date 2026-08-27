@@ -68,6 +68,6 @@ Opened tonight, in the order used.
 - [Aires–Kahn arXiv:2509.11549v1](https://arxiv.org/abs/2509.11549) and [arXiv:2510.26134v1](https://arxiv.org/abs/2510.26134) re-opened. Kahn–Saks progress, not a $1/3$ proof.
 - [Wikipedia, *1/3–2/3 conjecture*](https://en.wikipedia.org/wiki/1/3%E2%80%932/3_conjecture), raw wikitext fetched 2026-08-27 (`last-modified` 26 Aug 2026). Still an unsolved problem; cites Gupta 2026 for order 14. Lists semiorders, not interval orders. Width-3 example still given as Saks $14/39$.
 - [agupta/gold-partition-conjecture](https://github.com/agupta/gold-partition-conjecture) README re-opened. Order-14 GPC and balance census; no $n=22$ ladder table.
-- [OEIS A367494](https://oeis.org/A367494) via `scripts/oeis_lookup.py` (API). Number of $(2+2)$-free naturally labelled posets on $[n]$: $1,1,2,7,37,272,2637,32469,493602,9062503,197409097,\ldots$. Exact match for the interval-order census through $n=9$.
+- [OEIS A367494](https://oeis.org/A367494) via `scripts/oeis_lookup.py` (API). Number of $(2+2)$-free naturally labelled posets on $[n]$: $1,1,2,7,37,272,2637,32469,493602,9062503,197409097,\ldots$. Exact match for the interval-order census through $n=10$.
 
 Failed or unused: no arXiv paper since Gupta v2 closing the conjecture, Question 3.9, interval orders, or dimension 2. No published $n=22$ broken-rung minimum to compare against. The Wikipedia width-3 $14/39$ line is the 1992 record, not Gupta's $6/17$ tail.

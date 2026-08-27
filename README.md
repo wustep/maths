@@ -133,7 +133,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [kissing-5d](problems/kissing-5d) | All four 40-point codes (D5, L5, Q5, R5) are polar-maximal (polar max $$5/4$$). Integer Delsarte on the Q5 angles excludes size 44. Unrestricted range still $$40\le\tau_5\le 44$$. |
 | [affine-013](problems/affine-013) | $T(S)\le\lceil n^2/2\rceil$ for affine copies of $\{0,1,3\}$. Beats Aaronson $3/4$. Conjecture $1/3$ open. |
 | [zero-one-polynomials](problems/zero-one-polynomials) | BSKK $\theta=0.00373556$ (published $0.003736$ over-round). Census $n\le 20$. $p_n\to 1$ open. |
-| [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 22. Three-rail minima through 15 stay above $6/17$. Interval orders through 9 stay at or above $1/3$. Conjecture open. |
+| [one-third-two-thirds](problems/one-third-two-thirds) | Gupta v2 is a full order-14 balance census (least above $1/3$ is $37/106$). Width-3 $W_{10}$ at $6/17$ is the width-3 minimum through 14. Broken-rung ladder minima independently replayed through 14 and computed through 22. Three-rail minima through 15 stay above $6/17$. Interval orders through 10 stay at or above $1/3$. Conjecture open. |
 | [seymour-second-neighborhood](problems/seymour-second-neighborhood) | Explicit n=8 Pisa graphs with irregular missing degrees $3^2 2^6$, $3^4 2^4$, $3^6 2^2$. Seven stored witnesses replayed. Did not re-run the 2.5B census. Conjecture open. |
 | [two-smooth-summands](problems/two-smooth-summands) | Incomplete search. $F(131486759)=83$, not a $79$-smooth sum. $G(y)$ through $y=79$ replayed. No exponent below Balog $4/(9\sqrt{e})$. Green #59 open. |
 | [tuza-triangle-packing-covering](problems/tuza-triangle-packing-covering) | 8-regular codegree-7 Puleo pair: 1044 cores independently checked (STS(9) on $K_7$). Does not prove Tuza for $\Delta\le 8$. |
@@ -205,7 +205,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |
-| 1/3–2/3 posets / ladder 22, three-rail 15, interval 9 | `problems/one-third-two-thirds/compute/q2` | Grok 4.6 | 2026-08-27 |
+| 1/3–2/3 posets / ladder 22, three-rail 15, interval 10 | `problems/one-third-two-thirds/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Seymour second neighborhood | `problems/seymour-second-neighborhood` | SuperGrok 4.6 | 2026-08-17 |
 | two smooth summands | `problems/two-smooth-summands` | SuperGrok 4.6 | 2026-08-17 |
 | Tuza triangles | `problems/tuza-triangle-packing-covering` | SuperGrok 4.6 | 2026-08-17 |
