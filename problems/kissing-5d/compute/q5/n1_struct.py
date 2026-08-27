@@ -14,9 +14,14 @@ inequality hold for every U.
 
 A missed-root colouring of extras would prove the inequality: colour
 each extra by a D5 root it misses.  If that were a proper colouring,
-then pool(U) would be |U|-colourable, hence ω <= |U|.  The script
-checks this and records why it fails if it fails.  It does not claim
-τ5 = 40, and it does not claim a proof it has not checked.
+then pool(U) would be |U|-colourable, hence omega <= |U|.  Replay
+(2026-08-27) found no such colouring: extras that miss the same root
+can still kiss (287360 root-edge incidences; an explicit pair has
+inner product 15 <= 16).  A tight star clique has missed-set rank 5
+over Q and 4 over GF(2), so linear independence also fails.  The
+concrete tests found omega <= |U| on every star, every single seed,
+and 200 random seed-unions, with no counterexample.  That is not a
+proof for every U.  The script does not claim tau_5 = 40.
 """
 
 from __future__ import annotations
@@ -276,42 +281,52 @@ def main() -> int:
 
     # Colouring extras by a missed root: colour class r = extras that
     # miss r.  Proper iff those extras never kiss.
-    shared_root_edges = 0
+    # Replay: they do kiss.  Colouring is not a proof of omega <= |U|.
+    shared_root_incidences = 0
+    shared_root_pairs = 0
     example_pair = None
     per_root = []
+    for i in range(len(extras)):
+        bits = adj[i]
+        j = 0
+        x = bits
+        while x:
+            j = (x & -x).bit_length() - 1
+            x &= ~(1 << j)
+            if j <= i:
+                continue
+            common = masks[i] & masks[j]
+            if not common:
+                continue
+            shared_root_pairs += 1
+            shared_root_incidences += common.bit_count()
+            if example_pair is None:
+                roots = []
+                y = common
+                while y:
+                    b = (y & -y).bit_length() - 1
+                    roots.append(b)
+                    y &= ~(1 << b)
+                example_pair = {
+                    "extra_i": list(extras[i]),
+                    "extra_j": list(extras[j]),
+                    "inner": ip(extras[i], extras[j]),
+                    "thresh": thresh,
+                    "missed_i": masks[i].bit_count(),
+                    "missed_j": masks[j].bit_count(),
+                    "n_shared_roots": common.bit_count(),
+                    "shared_root_indices": roots,
+                }
     for r in range(40):
         bit = 1 << r
         idx = [i for i, m in enumerate(masks) if m & bit]
         e = 0
-        sample = None
         for a in range(len(idx)):
             bits = adj[idx[a]]
             for b in range(a + 1, len(idx)):
                 if (bits >> idx[b]) & 1:
                     e += 1
-                    if sample is None:
-                        sample = (idx[a], idx[b])
-        shared_root_edges += e
         per_root.append({"root": r, "n_extras": len(idx), "edges": e})
-        if example_pair is None and sample is not None:
-            i, j = sample
-            common = masks[i] & masks[j]
-            roots = []
-            x = common
-            while x:
-                b = (x & -x).bit_length() - 1
-                roots.append(b)
-                x &= ~(1 << b)
-            example_pair = {
-                "extra_i": list(extras[i]),
-                "extra_j": list(extras[j]),
-                "inner": ip(extras[i], extras[j]),
-                "thresh": thresh,
-                "missed_i": masks[i].bit_count(),
-                "missed_j": masks[j].bit_count(),
-                "n_shared_roots": common.bit_count(),
-                "shared_root_indices": roots,
-            }
 
     # Principal-root colouring (unique max inner product among missed
     # roots).  A proper colouring of this form would prove ω <= |U|
@@ -342,9 +357,10 @@ def main() -> int:
     # each edge counted twice
     prin_conflicts //= 2
 
-    colouring_ok = shared_root_edges == 0
+    colouring_ok = shared_root_pairs == 0
     print(
-        f"shared-root kissing edges={shared_root_edges} "
+        f"shared-root kissing pairs={shared_root_pairs} "
+        f"incidences={shared_root_incidences} "
         f"unique_principal={n_unique_principal} "
         f"principal_conflicts={prin_conflicts}",
         flush=True,
@@ -490,36 +506,45 @@ def main() -> int:
             "Colour each extra by any D5 root it misses.  Extras that "
             "miss a common root never kiss, so this is a proper "
             "colouring.  On pool(U) the colours used all lie in U, "
-            "hence ω(pool(U)) <= |U| for every U.  A 41-set in the "
+            "hence omega(pool(U)) <= |U| for every U.  A 41-set in the "
             "1480-graph would need a clique E with |E| >= |U| + 1, "
             "which cannot occur.  This empties the leftover graph; it "
-            "does not by itself prove τ5 = 40."
+            "does not by itself prove tau_5 = 40."
         )
     else:
+        la_note = ""
+        if la.get("checked"):
+            la_note = (
+                f" A tight star 8-clique on {la['star']} has missed-set "
+                f"rank {la['rank_Q']} over Q and {la['rank_GF2']} over "
+                "GF(2), so the characteristic vectors are dependent and "
+                "do not force |E| <= |U|."
+            )
         argument = (
             "A missed-root colouring of extras does not prove "
-            "ω(pool(U)) <= |U|.  Two extras that miss the same D5 root "
-            "can still kiss: the extras-graph has "
-            f"{shared_root_edges} such edges.  An explicit pair is "
-            "recorded under coloring.example_pair (inner product "
-            f"{example_pair['inner'] if example_pair else 'n/a'} <= "
-            f"{thresh}).  Same-missed extras — those with the same "
+            "omega(pool(U)) <= |U|.  Two extras that miss the same D5 "
+            "root can still kiss: "
+            f"{shared_root_pairs} kissing pairs share at least one "
+            f"root ({shared_root_incidences} root-edge incidences).  "
+            "An explicit pair is recorded under coloring.example_pair "
+            f"(inner product {example_pair['inner'] if example_pair else 'n/a'} "
+            f"<= {thresh}).  Same-missed extras — those with the same "
             "full seed — are edgeless, but sharing a single root is "
             "weaker and is not a stable set.  "
             "A principal-root colouring (the unique missed root of "
-            "largest inner product, when it exists) also fails: "
-            f"{n_unique_principal} extras have a unique principal "
-            f"root, and {prin_conflicts} kissing pairs share it.  "
-            "Linear independence of missed-set characteristic vectors "
-            "on a tight star clique also fails as a proof: those "
-            "vectors live in an affine 4-flat (one root from each "
-            "opposite pair in the star) and are dependent at size 8.  "
+            "largest inner product, when it exists) does not cover "
+            f"the graph: only {n_unique_principal} extras have a "
+            "unique principal root (the 640 type-B points); the 800 "
+            "type-A and type-C extras have a tie, and "
+            f"{prin_conflicts} kissing pairs among the type-B points "
+            "share a principal root."
+            f"{la_note}  "
             "Hall matching of a clique into U is equivalent to the "
             "inequality itself, not a separate reason.  The tests "
-            "below found no U with ω > |U|, but that is a finite "
+            "below found no U with omega > |U|, but that is a finite "
             "sample (plus the ten stars and every single seed), not a "
             "proof for every U.  Leftover |U| >= 19 of the 1480-graph "
-            "remains open.  This does not claim τ5 = 40."
+            "remains open.  This does not claim tau_5 = 40."
         )
 
     report = {
@@ -553,7 +578,8 @@ def main() -> int:
         "leads": leads,
         "coloring": {
             "same_missed_edgeless": intra == 0,
-            "shared_root_kissing_edges": shared_root_edges,
+            "shared_root_kissing_pairs": shared_root_pairs,
+            "shared_root_incidences": shared_root_incidences,
             "shared_root_is_stable": colouring_ok,
             "example_pair": example_pair,
             "per_root_edge_min": min(p["edges"] for p in per_root),
@@ -626,10 +652,10 @@ def main() -> int:
         "comment": (
             "q4 emptied every seed-union with |U| <= 18; leftover is "
             "|U| >= 19.  A 41-set needs |E| >= |U| + 1.  This file "
-            "asks whether ω(pool(U)) <= |U| always.  A yes with a "
+            "asks whether omega(pool(U)) <= |U| always.  A yes with a "
             "proof would empty the 1480-graph.  A single U with "
-            "ω > |U| is a 41-lead.  Tests used cliqueutil.clique_search "
-            f"with node_limit={NODE_LIMIT}.  No claim that τ5 = 40."
+            "omega > |U| is a 41-lead.  Tests used cliqueutil.clique_search "
+            f"with node_limit={NODE_LIMIT}.  No claim that tau_5 = 40."
         ),
     }
 
@@ -642,7 +668,7 @@ def main() -> int:
         "stars": star_stats,
         "single_seeds": seed_stats,
         "random": rand_stats,
-        "shared_root_edges": shared_root_edges,
+        "shared_root_pairs": shared_root_pairs,
         "la": {k: la[k] for k in la if k != "comment"},
     }
     print(json.dumps(summary, indent=2))
