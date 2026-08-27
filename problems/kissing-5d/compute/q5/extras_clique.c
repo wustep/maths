@@ -153,7 +153,7 @@ static void write_code41(int rsz, const int *stack, u64 U)
         if (!first)
             fprintf(f, ",\n");
         first = 0;
-        fprintf(f, "    [%d, %d, %d, %d, %d]",
+        fprintf(f, "    [\"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\"]",
                 pts[i][0], pts[i][1], pts[i][2], pts[i][3], pts[i][4]);
     }
     for (int j = 0; j < nD; j++) {
@@ -163,7 +163,7 @@ static void write_code41(int rsz, const int *stack, u64 U)
         if (!first)
             fprintf(f, ",\n");
         first = 0;
-        fprintf(f, "    [%d, %d, %d, %d, %d]",
+        fprintf(f, "    [\"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\"]",
                 pts[i][0], pts[i][1], pts[i][2], pts[i][3], pts[i][4]);
     }
     fprintf(f, "\n  ]\n}\n");
@@ -186,6 +186,19 @@ static void expand(u64 *P, int rsz, int *stack, u64 U)
         return;
     if (rsz + psz < 20)
         return;
+    if (uk < 19 && psz <= 96) {
+        u64 grow = U;
+        for (int w = 0; w < nwords; w++) {
+            u64 bits = P[w];
+            while (bits) {
+                int b = __builtin_ctzll(bits);
+                bits &= bits - 1;
+                grow |= miss[w * 64 + b];
+            }
+        }
+        if (__builtin_popcountll(grow) < 19)
+            return;
+    }
     if (psz == 0) {
         if (rsz > best)
             best = rsz;

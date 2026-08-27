@@ -18,8 +18,11 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from fractions import Fraction
 from itertools import combinations
 from pathlib import Path
+
+F = Fraction
 
 HERE = Path(__file__).resolve().parent
 Q4 = HERE.parent / "q4"
@@ -113,10 +116,13 @@ def write_code41(inst, E, U, path: Path):
     extras = inst["extras"]
     D = inst["D"]
     Uset = set(U)
-    pts = [list(extras[i]) for i in E]
+    def scale(p):
+        return [str(F(x, 4)) for x in p]
+
+    pts = [scale(extras[i]) for i in E]
     for r, p in enumerate(D):
         if r not in Uset:
-            pts.append(list(p))
+            pts.append(scale(p))
     path.write_text(json.dumps({
         "n": len(pts),
         "source": "q5 n1 leftover SAT",

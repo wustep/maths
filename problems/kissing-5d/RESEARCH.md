@@ -407,3 +407,10 @@ Opened tonight:
 - https://arxiv.org/abs/math/0608426 — Bachoc–Vallentin, $\tau_5\le 45$
   before Mittelmann–Vallentin.
 
+Re-opened the same five URLs later on 2026-08-27 (q5). Endpoints
+unchanged: Tao $C_{29}$ still $40\le\tau_5\le 44$; Cohn table dim 5
+still 40 / 44, ratio 1.100, dim 6 is 72 / 77; Mittelmann–Vallentin
+$s_{14}(5)=44.99899685\ldots$; Cohn–Rajagopal v3 still “appears to be 40…
+best upper bound that has been proved is 44”. No later accepted
+improvement of either endpoint.
+

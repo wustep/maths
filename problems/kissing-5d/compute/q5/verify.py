@@ -40,13 +40,19 @@ def verify_code41(path: Path):
     if len(vecs) < 41:
         return {"present": True, "ok": False, "reason": "fewer than 41"}
     vecs = vecs[:41]
+    norms = {sum(x * x for x in v) for v in vecs}
+    if norms == {F(2)}:
+        thresh = F(1)
+    elif norms == {F(32)}:
+        # integer model of (1/4)Z^5: a·a = 32, kissing iff a·b <= 16
+        thresh = F(16)
+    else:
+        return {"present": True, "ok": False, "reason": "norm"}
     for a in range(41):
-        if sum(x * x for x in vecs[a]) != F(2):
-            return {"present": True, "ok": False, "reason": "norm"}
         for b in range(a + 1, 41):
-            if _dot(vecs[a], vecs[b]) > 1:
+            if _dot(vecs[a], vecs[b]) > thresh:
                 return {"present": True, "ok": False, "reason": "pair"}
-    return {"present": True, "ok": True, "found_41": True}
+    return {"present": True, "ok": True, "found_41": True, "norm": str(next(iter(norms)))}
 
 
 def verify_types():
@@ -129,7 +135,9 @@ def main() -> int:
         "extras_types.json",
         "seed_graph.json",
         "n1_leftover_sat_k19.json",
+        "n1_partcount.json",
         "t5_36_proof.json",
+        "triple_star_extras.json",
         "t5_share_pruned.json",
         "dual_more.json",
         "construct_more.json",

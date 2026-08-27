@@ -451,3 +451,34 @@ classical Levenshtein number 48 before claiming any comparison.
   $n_1\le 21$, or a $T^5$ 36-clique sharing $\le 23$ with every
   published 35), or produce an exact 41-point code, or an exact
   unrestricted dual below 44. Residue if the interval does not move.
+
+## 2026-08-27 — q5 leftovers (interval unchanged so far)
+
+- Re-fetched Tao $C_{29}$, Cohn, Mittelmann–Vallentin
+  $s_{14}(5)=44.99899685\ldots$, Cohn–Rajagopal arXiv:2412.00937v3:
+  still $40\le\tau_5\le 44$. Did not claim $\tau_5=40$.
+- Extra types on the 1480-graph: 160 four-seeds (1 type A
+  $(4,2,2,2,2)$ + 4 type B $(5,2,1,1,1)$) and 80 six-seeds (8 type C
+  $(3,3,3,2,1)$). A type-A 20-clique exists with $|U|=34$, total 26,
+  not a 41-set (`type_a_clique.json`).
+- Seed compatibility graph is 240-vertex 231-regular
+  (`seed_graph.json`). The 80 six-seeds form an 80-clique of union 40.
+  Every 3-star union is leftover-tight: 80 pools $(22,21)$ and 40
+  pools $(23,22)$. A seed-clique is a pool, not a 41-code.
+- Part-count MILP on $|U|\in\{19,20,21\}$ hits cutoff with verified
+  incumbents $42,47,50$ contained seeds (`n1_partcount.json`). The
+  leftover is not empty by part-count. Cutoff is not a proof of the
+  maximum.
+- $n_1$ leftover SAT $k=19$ (30{,}678 vars) is running; no model yet.
+  Extras B&B 200M nodes: no 41-set, incomplete (`extras_clique.json`).
+- $T^5$ remainder: Cadical returns UNSAT for a 36-clique
+  (`t5_36_proof.json`, 16{,}548{,}926 proof lines). DRAT is stored
+  locally and is being replayed with Heule `drat-trim`; until
+  `s VERIFIED` this is not an emptiness certificate. Share 23: the
+  $D_5$ and $L_5$ remainder 35s are complete empty (best extra 12,
+  need 13); $Q_5$ and $R_5$ still running.
+- No unrestricted dual below 44 (`dual_more.json`: 1-point Delsarte
+  still $\approx 46.337$). No 41-code in the finished construction
+  pools (`construct_more.json`).
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not beat
+  Mittelmann–Vallentin. Did not produce a 41-point code.

@@ -14,6 +14,8 @@ if ! "$PY" -c "import pysat" 2>/dev/null; then
 fi
 
 "$PY" extras_types.py
+"$PY" type_a_clique.py
+"$PY" seed_graph.py
 "$PY" t5_share_pruned.py
 "$PY" dual_more.py
 gcc -O3 -std=c11 extras_clique.c -o extras_clique -lm

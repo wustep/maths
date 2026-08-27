@@ -15,7 +15,9 @@ endpoint moves unless a verifier-plus-certificate pair here says so.
 | --- | --- |
 | `extras_types.py` | extras types on the 1480-point graph; four-seeds vs six-seeds |
 | `type_a_clique.py` | 20-clique in the 160 type-A extras; missed-union size |
-| `seed_graph.py` | 240-vertex seed compatibility; clique number vs union size |
+| `seed_graph.py` | 240-vertex seed compatibility; leftover-tight 3-star pools |
+| `triple_star_extras.py` | extras SAT / B&B on each 3-star leftover pool |
+| `n1_partcount.py` | HiGHS max contained-seeds for leftover $\lvert U\rvert\ge 19$ |
 | `n1_leftover_sat.py` | SAT for a 41-set with $n_1\le 21$ (Cadical / Kissat) |
 | `extras_clique.c` | coloured B&B for extras with $\lvert E\rvert\ge\lvert U\rvert+1$ |
 | `t5_36_proof.py` | 36-clique CNF on the $T^5$ remainder; Cadical DRAT if UNSAT |

@@ -1,0 +1,12 @@
+{
+  "n": 355,
+  "target": 36,
+  "cnf_vars": 23323,
+  "cnf_clauses": 56352,
+  "solver": "cadical195",
+  "sat": false,
+  "proof_lines": 16548926,
+  "found_36": false,
+  "drat": "t5_clique36.drat",
+  "comment": "Cadical UNSAT proof for a 36-clique in the 355-point T^5 remainder.  Replay with drat-trim."
+}
