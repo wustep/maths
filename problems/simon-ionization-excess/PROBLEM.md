@@ -259,6 +259,12 @@ $1.1017$ and is residue. $1.1168$ stays withdrawn. Finite-$Z$
 integers and $N_0(Z)-Z$ stay residue. Replay:
 `problems/simon-ionization-excess/compute/q10/run_all.sh`.
 
+A later leftover at the same split raises the mid-radius bin
+count to $36$. Face enumeration is the certificate. Until those
+faces certify a compact $\gamma$ below $10/11$ whose printed
+$1/\gamma$ beats $1.1013$, the leading stays $1.1013$. Replay:
+`problems/simon-ionization-excess/compute/q11/run_all.sh`.
+
 ## What would count as a new bound
 
 A verified inequality that strictly improves a published record, with a replayable certificate. Examples: a leading coefficient below $1.1185$ for all large $Z$; a remainder strictly below the printed $3.90$ or $4$ on the HPS range; $N_c\le Z+C$ for a universal $C$; a unique exact $N_0(Z)$ for some $Z>1$ that the published inequalities do not already settle.

@@ -289,6 +289,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Simon ionization excess / leading 1.1017 | `problems/simon-ionization-excess/compute/q9` | Cursor Grok 4.6 | 2026-08-27 |
 | Simon ionization excess / n=35 at aspect 10 | `problems/simon-ionization-excess/compute/q10` | Cursor Grok 4.6 | 2026-08-27 |
 | Simon ionization excess / leading 1.1013 | `problems/simon-ionization-excess/compute/q10` | Cursor Grok 4.6 | 2026-08-28 |
+| Simon ionization excess / n=36 at aspect 10 | `problems/simon-ionization-excess/compute/q11` | Cursor Grok 4.6 | 2026-08-28 |
 | Simon IDS continuity / dimension frontier and free-direction replay | `problems/simon-ids-continuity` | GPT-5.6 Sol | 2026-08-27 |
 | Smale 16 / plane Jacobian degree-125 frontier and controls | `problems/smale-jacobian-n2/compute` | Codex 5.6 Sol | 2026-08-27 |
 
