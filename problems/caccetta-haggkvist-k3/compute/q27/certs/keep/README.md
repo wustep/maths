@@ -1,8 +1,7 @@
 DRAT proofs for exact Caccetta–Häggkvist triangle leftover orders
 from n=136 onward. q26 stays the n=135 store.
 
-n=136 is not stored. First remaining hole n=136, δ⁺=46.
-Incomplete search is residue, not a bound.
+n=136 is stored (43 cubes, k=46..88). First remaining hole n=137.
 
 A d-outregular oriented graph has n d arcs, so some in-degree is
 at least d. Relabel that vertex as 0. The exact statement reduces
@@ -17,6 +16,6 @@ cd problems/caccetta-haggkvist-k3/compute/q27
 ```
 
 The index is `replay.json` after a successful `verify_keep.py`.
-Independent range log: `replay_136.json` once n=136 is stored.
+Independent range log: `replay_136.json`.
 
 F₄ stays in `../q4/` at c=0.34640.
