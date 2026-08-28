@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+from concurrent.futures import ThreadPoolExecutor, as_completed
 
 from holes import cube_range
 from solve import find_bin
@@ -17,6 +18,7 @@ def main():
     ap.add_argument("--n-min", type=int, required=True)
     ap.add_argument("--n-max", type=int, required=True)
     ap.add_argument("--json-out", default=None)
+    ap.add_argument("--jobs", type=int, default=1)
     args = ap.parse_args()
     drat_bin = find_bin("drat-trim")
     rows = []
@@ -26,13 +28,31 @@ def main():
         d = (n + 2) // 3
         ks = cube_range(n, d)["needed_cubes"]
         print(f"== n={n} d={d} k={ks[0]}..{ks[-1]} ==", flush=True)
-        for k in ks:
-            rec = replay_one(n, d, k, drat_bin)
-            mark = "OK" if rec["ok"] else "FAIL"
-            print(
-                f"  k={k} {mark} {rec.get('header')} drat={rec.get('drat_bytes')}",
-                flush=True,
-            )
+        if args.jobs <= 1:
+            recs = [replay_one(n, d, k, drat_bin) for k in ks]
+        else:
+            recs = []
+            with ThreadPoolExecutor(max_workers=args.jobs) as ex:
+                futs = {ex.submit(replay_one, n, d, k, drat_bin): k for k in ks}
+                by_k = {}
+                for fut in as_completed(futs):
+                    rec = fut.result()
+                    by_k[rec["k"]] = rec
+                    mark = "OK" if rec["ok"] else "FAIL"
+                    print(
+                        f"  k={rec['k']} {mark} {rec.get('header')} "
+                        f"drat={rec.get('drat_bytes')}",
+                        flush=True,
+                    )
+                recs = [by_k[k] for k in ks]
+        for rec in recs:
+            if args.jobs <= 1:
+                mark = "OK" if rec["ok"] else "FAIL"
+                print(
+                    f"  k={rec['k']} {mark} {rec.get('header')} "
+                    f"drat={rec.get('drat_bytes')}",
+                    flush=True,
+                )
             rows.append(rec)
             if not rec["ok"]:
                 bad += 1
