@@ -588,3 +588,13 @@ F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q
 
 First remaining hole n=139, δ⁺=47. Conjecture 1/3 open.
 
+### 2026-08-28 — leftover cubes from n=139
+
+Same encoder as q1–q29. New proofs live in `compute/q30/certs/keep/` (q29 stays the n=138 store).
+
+Leftover n=139 is not stored. d=47, cubes k=47..90. Residue, not a bound.
+
+F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=139, δ⁺=47. Conjecture 1/3 open.
+
