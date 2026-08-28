@@ -77,7 +77,8 @@ def main() -> None:
             try:
                 r = json.loads(l)
                 if r.get("kind") == "tri_done" and r.get("complete"):
-                    done.add((r["cert"], r.get("radius", 1)))
+                    done.add((r["cert"], r.get("radius", 1),
+                              r.get("shard", 0), r.get("nshards", 1)))
             except Exception:
                 pass
     if args.only:
@@ -86,10 +87,10 @@ def main() -> None:
         mine = [(i, d) for i, d in enumerate(tasks) if i % nw == w]
     print(f"worker {w}/{nw} ranks {args.minrank}-{args.maxrank} "
           f"radius={radius} assigned {len(mine)} already-done "
-          f"{sum(1 for _, d in mine if (d['cert'], radius) in done)}",
+          f"{sum(1 for _, d in mine if (d['cert'], radius, args.shard, args.nshards) in done)}",
           flush=True)
     for i, d in mine:
-        if (d["cert"], radius) in done:
+        if (d["cert"], radius, args.shard, args.nshards) in done:
             continue
         t0 = time.time()
         tris, hfrac, _s, _c = parse_pcom(

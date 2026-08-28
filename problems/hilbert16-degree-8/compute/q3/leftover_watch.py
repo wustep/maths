@@ -52,6 +52,19 @@ def complete_certs():
     return have
 
 
+def finished_shards(cert):
+    """Shards already written with complete=true. Do not relaunch them."""
+    have = set()
+    for rec in collect_rows():
+        if rec.get("cert") != cert:
+            continue
+        if rec.get("nshards", 1) <= 1:
+            continue
+        if rec.get("complete") and rec.get("evals"):
+            have.add(rec.get("shard", 0))
+    return have
+
+
 def ps_args():
     out = subprocess.check_output(["ps", "-eo", "args"], text=True)
     return [ln.strip() for ln in out.splitlines() if ln.strip()]
@@ -190,6 +203,7 @@ def step(max_workers):
     for cert, (nsh, have) in shards.items():
         if cert in done or busy >= max_workers:
             continue
+        have = set(have) | finished_shards(cert)
         rank = next(t["rank"] for t in leftover if t["cert"] == cert)
         for s in range(nsh):
             if s in have or busy >= max_workers:
