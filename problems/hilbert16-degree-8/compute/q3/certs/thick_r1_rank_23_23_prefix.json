@@ -5,15 +5,14 @@
   "min_rank": 23,
   "max_rank": 23,
   "n_tasks": 6,
-  "n_complete": 1,
+  "n_complete": 2,
   "n_incomplete": 0,
-  "n_missing": 5,
+  "n_missing": 4,
   "complete": false,
   "expected_evals": 2315255808,
-  "evals": 385875968,
+  "evals": 771751936,
   "novel": [],
   "missing": [
-    "deg8/o09-p06-n03/(1(2v1(5))).pcom",
     "deg8/o19-p15-n04/(8v1(3v1(6))).pcom",
     "deg8/o20-p03-n17/(1(16v1(2))).pcom",
     "deg8/o20-p06-n14/(4v1(6)v1(8)).pcom",
@@ -21,6 +20,16 @@
   ],
   "incomplete": [],
   "tasks": [
+    {
+      "cert": "deg8/o09-p06-n03/(1(2v1(5))).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 113,
+      "complete": true,
+      "novel": [],
+      "seconds": 9798.6
+    },
     {
       "cert": "deg8/o22-p19-n03/(18v1(3)).pcom",
       "rank": 23,
