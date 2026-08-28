@@ -13,9 +13,11 @@ on main.
 
 Did not move. No `q3/certs/new_schemes.json`.
 
-Rank 22 leftover thicken is 4/5, each with evals \(46\cdot 2^{22}\).
-Novel empty. Prefix only. Odd collections of size 4 finished:
-twelve known M-schemes, no nest.
+Rank 22 leftover thicken is 5/5, each with evals \(46\cdot 2^{22}\).
+The rank-23 Harnack triangulation is also finished,
+evals \(46\cdot 2^{23}\), 26 schemes. Novel empty on both.
+Leftover ranks 22–26 are 6/15. Prefix only. Odd collections of
+size 4 finished: twelve known M-schemes, no nest.
 
 ## Scope
 

@@ -1005,17 +1005,18 @@ is claimed until `verify_new.py` accepts a certificate outside the
 
 | search | evals | result |
 | --- | --- | --- |
-| radius-1 thicken, leftover rank 22 | 771,751,936 | **4/5 complete**; evals = \(46\cdot 2^{22}\) on each; novel vs census empty (**residue**) |
+| radius-1 thicken, leftover rank 22 | 964,689,920 | **5/5 complete**; evals = \(46\cdot 2^{22}\) on each; novel vs census empty |
+| radius-1 thicken, leftover rank 23 Harnack | 385,875,968 | `deg8/o22-p19-n03/(18v1(3)).pcom`; evals = \(46\cdot 2^{23}\); 26 schemes; novel empty |
+| leftover ranks 22–26 | 1,350,565,888 | **6/15 complete**; novel empty (**residue**) |
 | odd collections, size 4 | 5,308,103 | **complete**; twelve known M-schemes, 0 hits on the open nests |
 
-Certificates: `compute/q3/certs/thick_r1_rank_22_22_prefix.json`,
+Certificates: `compute/q3/certs/thick_r1_rank_22.json`,
+`thick_r1_rank_23_23_prefix.json`,
 `thick_r1_rank_22_26_prefix.json`, `odd_skel4.json`. No
 `q3/certs/new_schemes.json`. Bound still ≥ 2,384.
 
-The four finished rank-22 certificates are
-`deg8/o14-p03-n11/(1(1)v1(2)v1(8)).pcom` (107 schemes),
-`deg8/o21-p07-n14/(5v1(4)v1(10)).pcom` (76 schemes),
-`deg8/o22-p07-n15/(5v1(1)v1(14)).pcom` (81 schemes), and
-`deg8/o22-p11-n11/(9v1(10v1(1))).pcom` (39 schemes). The last rank-22
-certificate and the ten leftover triangulations of ranks 23–26, and
-both open nests, are still open. That prefix is not a wrap.
+Rank 22 is a finished neighbourhood and added nothing. The Harnack
+triangulation is the only leftover (19,3) census certificate; radius 1
+around its maximal Haas stratum also added nothing. Nine leftover
+triangulations of ranks 23–26, and both open nests, remain. That is
+not a wrap.
