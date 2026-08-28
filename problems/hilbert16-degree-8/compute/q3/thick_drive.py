@@ -78,7 +78,10 @@ def main() -> None:
                     done.add((r["cert"], r.get("radius", 1)))
             except Exception:
                 pass
-    mine = [(i, d) for i, d in enumerate(tasks) if i % nw == w]
+    if args.only:
+        mine = list(enumerate(tasks))
+    else:
+        mine = [(i, d) for i, d in enumerate(tasks) if i % nw == w]
     print(f"worker {w}/{nw} ranks {args.minrank}-{args.maxrank} "
           f"radius={radius} assigned {len(mine)} already-done "
           f"{sum(1 for _, d in mine if (d['cert'], radius) in done)}",
