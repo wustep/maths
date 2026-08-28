@@ -260,6 +260,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist leftover holes through n=133 | `problems/caccetta-haggkvist-k3/compute/q24` | Cursor Grok 4.6 | 2026-08-28 |
 | Caccetta–Häggkvist leftover holes through n=134 | `problems/caccetta-haggkvist-k3/compute/q25` | Cursor Grok 4.6 | 2026-08-28 |
 | Caccetta–Häggkvist leftover holes through n=135 | `problems/caccetta-haggkvist-k3/compute/q26` | Cursor Grok 4.6 | 2026-08-28 |
+| Caccetta–Häggkvist leftover holes from n=136 | `problems/caccetta-haggkvist-k3/compute/q27` | Cursor Grok 4.6 | 2026-08-28 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
