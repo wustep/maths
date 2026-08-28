@@ -22,6 +22,7 @@ import time
 from pathlib import Path
 
 from common import HERE, ROOT, boot
+from write_thick_cert import collect_rows, expected_evals, merge_rows
 
 boot()
 
@@ -39,22 +40,15 @@ def leftover_tasks():
 
 def complete_certs():
     have = set()
-    if not Q3_OUT.exists():
-        return have
-    for path in sorted(Q3_OUT.glob("*.jsonl")):
-        if path.name.endswith("_novel.jsonl"):
+    grouped = {}
+    for rec in collect_rows():
+        if rec.get("rank", 0) < 22:
             continue
-        for line in path.read_text().splitlines():
-            if not line.strip():
-                continue
-            rec = json.loads(line)
-            if rec.get("kind") != "tri_done":
-                continue
-            if rec.get("nshards", 1) != 1:
-                continue
-            exp = 46 * (1 << rec["rank"])
-            if rec.get("complete") and rec.get("evals") == exp:
-                have.add(rec["cert"])
+        grouped.setdefault(rec["cert"], []).append(rec)
+    for cert, recs in grouped.items():
+        merged = merge_rows(recs, expected_evals(recs[-1]["rank"]))
+        if merged and merged["complete"]:
+            have.add(cert)
     return have
 
 
@@ -107,19 +101,30 @@ def _drive_argv(line, which):
 def running_q3_only(lines):
     certs = set()
     workers = set()
+    shards = {}
     for ln in lines:
         argv = _drive_argv(ln, "q3")
         if argv is None:
             continue
+        cert = None
         if "--only" in argv:
             i = argv.index("--only")
             if i + 1 < len(argv):
-                certs.add(argv[i + 1])
+                cert = argv[i + 1]
+                certs.add(cert)
         try:
             workers.add(int(argv[0]))
         except (ValueError, IndexError):
             pass
-    return certs, workers
+        nsh = 1
+        shard = 0
+        if "--nshards" in argv:
+            nsh = int(argv[argv.index("--nshards") + 1])
+        if "--shard" in argv:
+            shard = int(argv[argv.index("--shard") + 1])
+        if cert and nsh > 1:
+            shards.setdefault(cert, (nsh, set()))[1].add(shard)
+    return certs, workers, shards
 
 
 def q2_reserved(lines, done):
@@ -148,22 +153,29 @@ def import_q2():
     subprocess.run([sys.executable, str(IMPORT), str(Q2_OUT)], check=False)
 
 
-def launch(cert, rank, worker):
+def launch(cert, rank, worker, shard=0, nshards=1):
     Q3_OUT.mkdir(exist_ok=True)
     log = Q3_OUT / f"h{worker}.console.log"
     cmd = [sys.executable, str(DRIVE), str(worker), "1",
            str(rank), str(rank), "q3/thick_out", "1", "--only", cert]
+    if nshards > 1:
+        cmd.extend(["--shard", str(shard), "--nshards", str(nshards)])
     logf = open(log, "a")
     subprocess.Popen(cmd, cwd=ROOT, stdout=logf, stderr=subprocess.STDOUT,
                      start_new_session=True)
-    print(f"launch w{worker} rank={rank} {cert}", flush=True)
+    extra = f" shard {shard}/{nshards}" if nshards > 1 else ""
+    print(f"launch w{worker} rank={rank}{extra} {cert}", flush=True)
+
+
+def _free_worker(used_w):
+    return next(i for i in range(16) if i not in used_w)
 
 
 def step(max_workers):
     import_q2()
     done = complete_certs()
     lines = ps_args()
-    inflight, used_w = running_q3_only(lines)
+    inflight, used_w, shards = running_q3_only(lines)
     reserved = q2_reserved(lines, done)
     n_c = running_thicken_count(lines)
     n_d = running_drive_count(lines)
@@ -175,12 +187,35 @@ def step(max_workers):
           flush=True)
     if busy >= max_workers:
         return len(done) == len(leftover)
+    for cert, (nsh, have) in shards.items():
+        if cert in done or busy >= max_workers:
+            continue
+        rank = next(t["rank"] for t in leftover if t["cert"] == cert)
+        for s in range(nsh):
+            if s in have or busy >= max_workers:
+                continue
+            w = _free_worker(used_w)
+            launch(cert, rank, w, shard=s, nshards=nsh)
+            used_w.add(w)
+            busy += 1
     blocked = done | inflight | reserved
     nxt = next((t for t in leftover if t["cert"] not in blocked), None)
     if nxt is None:
         return len(done) == len(leftover)
-    worker = next(i for i in range(16) if i not in used_w)
-    launch(nxt["cert"], nxt["rank"], worker)
+    if busy >= max_workers:
+        return False
+    if nxt["rank"] >= 26:
+        nsh = 4
+        for s in range(nsh):
+            if busy >= max_workers:
+                break
+            w = _free_worker(used_w)
+            launch(nxt["cert"], nxt["rank"], w, shard=s, nshards=nsh)
+            used_w.add(w)
+            busy += 1
+        return False
+    w = _free_worker(used_w)
+    launch(nxt["cert"], nxt["rank"], w)
     return False
 
 

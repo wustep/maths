@@ -19,7 +19,7 @@ def main():
     leftover.sort(key=lambda d: (d["rank"], d["cert"]))
     done = complete_certs()
     lines = ps_args()
-    inflight, _ = running_q3_only(lines)
+    inflight, _, _ = running_q3_only(lines)
     reserved = q2_reserved(lines, done)
     print(f"leftover {len(done)}/{len(leftover)} complete; "
           f"thicken {running_thicken_count(lines)} "
