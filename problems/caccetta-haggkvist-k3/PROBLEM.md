@@ -3,7 +3,7 @@
 - Slug: `caccetta-haggkvist-k3`
 - List: P36
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
-- Status: dent — leftover exact cubes through n=137 stored and replayed (q28 n=137: 44 DRATs, verify_range 0 failures). F₄ certificate c=0.34640 (CKLS 2015 fork; HKN 0.3465; prior stored 0.34645). First leftover hole n=138. Did not beat 0.3388. Conjecture 1/3 open.
+- Status: dent — leftover exact cubes through n=138 stored and replayed (q29 n=138: 45 DRATs, verify_range 0 failures). F₄ certificate c=0.34640 (CKLS 2015 fork; HKN 0.3465; prior stored 0.34645). First leftover hole n=139. Did not beat 0.3388. Conjecture 1/3 open.
 - Area: Directed graph theory
 - Sources: AIM Caccetta–Häggkvist summary; Egres open problem page
 - Started: 2026-08-17

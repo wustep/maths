@@ -580,9 +580,11 @@ First remaining hole n=138, δ⁺=46. Conjecture 1/3 open.
 
 Same encoder as q1–q28. New proofs live in `compute/q29/certs/keep/` (q28 stays the n=137 store).
 
-Leftover n=138 is not stored. d=46, cubes k=46..90. Residue, not a bound.
+Leftover n=138 is closed: d=46, cubes k=46..90, 45 stored DRATs after `drat-trim -l` (k=48 is 16.4 MB). Independent replay: `python3 verify_range.py --n-min 138 --n-max 138` reports 45 checked, 0 failures.
+
+Dent against that finite leftover hole. n=139 is not stored. Residue, not a bound.
 
 F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
 
-First remaining hole n=138, δ⁺=46. Conjecture 1/3 open.
+First remaining hole n=139, δ⁺=47. Conjecture 1/3 open.
 
