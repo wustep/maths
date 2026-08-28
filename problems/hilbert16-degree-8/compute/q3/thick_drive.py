@@ -43,6 +43,8 @@ def parse_args():
     p.add_argument("seconds", nargs="?", default=None)
     p.add_argument("--only", action="append", default=[])
     p.add_argument("--prefer-193", action="store_true")
+    p.add_argument("--shard", type=int, default=0)
+    p.add_argument("--nshards", type=int, default=1)
     return p.parse_args()
 
 
@@ -98,10 +100,11 @@ def main() -> None:
         E = edgeset(tris)
         S = [s for s in splits if s.edges <= E]
         basis = f2_basis([delta_bits(s, pts) for s in S])
-        task = f"/tmp/{QNAME}_thick_r{radius}_w{w}.task"
+        tag = f"w{w}" if args.nshards == 1 else f"w{w}_s{args.shard}"
+        task = f"/tmp/{QNAME}_thick_r{radius}_{tag}.task"
         export_span.emit(cx, pts, basis, task)
-        wit = f"/tmp/{QNAME}_thick_r{radius}_w{w}.jsonl"
-        cmd = [BIN, task, "0", "1", wit, str(radius)]
+        wit = f"/tmp/{QNAME}_thick_r{radius}_{tag}.jsonl"
+        cmd = [BIN, task, str(args.shard), str(args.nshards), wit, str(radius)]
         if args.seconds:
             cmd.append(str(args.seconds))
         subprocess.run(cmd, check=True)
@@ -128,6 +131,7 @@ def main() -> None:
                    "radius": radius, "evals": 0, "complete": False,
                    "distinct_schemes": 0, "novel": [],
                    "seconds": round(time.time() - t0, 1),
+                   "shard": args.shard, "nshards": args.nshards,
                    "error": "no summary in walker output"}
             res.write(json.dumps(rec) + "\n")
             res.flush()
@@ -138,7 +142,8 @@ def main() -> None:
                "radius": radius, "evals": summ["evals"],
                "complete": bool(summ["complete"]),
                "distinct_schemes": len(schemes), "novel": novel,
-               "seconds": round(time.time() - t0, 1)}
+               "seconds": round(time.time() - t0, 1),
+               "shard": args.shard, "nshards": args.nshards}
         res.write(json.dumps(rec) + "\n")
         res.flush()
         for s in novel:

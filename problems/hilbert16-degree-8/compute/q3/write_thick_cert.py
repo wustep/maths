@@ -37,28 +37,86 @@ def collect_rows():
     return rows
 
 
+def merge_rows(recs, exp):
+    """A leftover triangulation is complete only if evals == 46 * 2^rank.
+
+    Unsharded rows (nshards missing or 1) win when they meet that count.
+    Sharded rows complete only when every shard is present and the
+    summed evaluation count equals the same expected value.
+    """
+    unsharded = [r for r in recs if r.get("nshards", 1) == 1]
+    for rec in reversed(unsharded):
+        ok = bool(rec.get("complete")) and rec.get("evals") == exp
+        if ok:
+            return {
+                "cert": rec["cert"],
+                "rank": rec["rank"],
+                "evals": rec["evals"],
+                "expected": exp,
+                "distinct_schemes": rec.get("distinct_schemes"),
+                "complete": True,
+                "novel": rec.get("novel") or [],
+                "seconds": rec.get("seconds"),
+            }
+    sharded = [r for r in recs if r.get("nshards", 1) > 1]
+    if not sharded:
+        if unsharded:
+            rec = unsharded[-1]
+            return {
+                "cert": rec["cert"],
+                "rank": rec["rank"],
+                "evals": rec.get("evals", 0),
+                "expected": exp,
+                "distinct_schemes": rec.get("distinct_schemes"),
+                "complete": False,
+                "novel": rec.get("novel") or [],
+                "seconds": rec.get("seconds"),
+            }
+        return None
+    nsh = sharded[-1]["nshards"]
+    by_shard = {}
+    for rec in sharded:
+        if rec.get("nshards") != nsh:
+            continue
+        by_shard[rec.get("shard")] = rec
+    if set(by_shard) != set(range(nsh)):
+        return None
+    evals = sum(r.get("evals", 0) for r in by_shard.values())
+    ok = all(r.get("complete") for r in by_shard.values()) and evals == exp
+    novel = []
+    for r in by_shard.values():
+        novel.extend(r.get("novel") or [])
+    return {
+        "cert": sharded[-1]["cert"],
+        "rank": sharded[-1]["rank"],
+        "evals": evals,
+        "expected": exp,
+        "distinct_schemes": sum(r.get("distinct_schemes") or 0
+                                for r in by_shard.values()),
+        "complete": ok,
+        "novel": novel,
+        "seconds": sum(r.get("seconds") or 0 for r in by_shard.values()),
+        "nshards": nsh,
+    }
+
+
 def main() -> None:
     min_rank = int(sys.argv[1]) if len(sys.argv) > 1 else 22
     max_rank = int(sys.argv[2]) if len(sys.argv) > 2 else 26
     span = [t for t in load_span() if min_rank <= t["rank"] <= max_rank]
     by_cert = {t["cert"]: t for t in span}
-    done = {}
+    grouped = {}
     for rec in collect_rows():
         cert = rec["cert"]
         if cert not in by_cert:
             continue
-        exp = expected_evals(rec["rank"])
-        ok = bool(rec.get("complete")) and rec.get("evals") == exp
-        done[cert] = {
-            "cert": cert,
-            "rank": rec["rank"],
-            "evals": rec["evals"],
-            "expected": exp,
-            "distinct_schemes": rec.get("distinct_schemes"),
-            "complete": ok,
-            "novel": rec.get("novel") or [],
-            "seconds": rec.get("seconds"),
-        }
+        grouped.setdefault(cert, []).append(rec)
+    done = {}
+    for cert, recs in grouped.items():
+        exp = expected_evals(by_cert[cert]["rank"])
+        merged = merge_rows(recs, exp)
+        if merged is not None:
+            done[cert] = merged
     missing = [t["cert"] for t in span if t["cert"] not in done]
     incomplete = [c for c, r in done.items() if not r["complete"]]
     novel = [n for r in done.values() for n in r["novel"]]

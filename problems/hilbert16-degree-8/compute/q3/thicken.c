@@ -96,7 +96,21 @@ int main(int argc, char **argv)
             if (f >= 0) cursign[f] = -cursign[f];
             if (radius == 0) break;
         }
-        if ((m & 0xffff) == 0 && deadline > 0 && now() > deadline) stop = 1;
+        if ((m & 0xffff) == 0) {
+            char ppath[512];
+            snprintf(ppath, sizeof(ppath), "%s.progress", argv[4]);
+            FILE *pf = fopen(ppath, "w");
+            if (pf) {
+                fprintf(pf,
+                        "{\"m\":%llu,\"lo\":%llu,\"hi\":%llu,\"evals\":%llu,"
+                        "\"rank\":%d,\"radius\":%d}\n",
+                        (unsigned long long)m, (unsigned long long)lo,
+                        (unsigned long long)hi, (unsigned long long)evals,
+                        rnk, radius);
+                fclose(pf);
+            }
+            if (deadline > 0 && now() > deadline) stop = 1;
+        }
     }
     fprintf(out, "{\"kind\":\"summary\",\"rank\":%d,\"radius\":%d,"
                  "\"span_points\":%llu,\"evals\":%llu,\"valid\":%llu,"

@@ -29,6 +29,8 @@ From the same directory, after `python3 prep.py`:
 ```
 gcc -O3 -march=native -o q3/thicken q3/thicken.c
 python3 q3/thick_drive.py 0 2 22 26 q3/thick_out 1 --prefer-193
+python3 q3/leftover_watch.py --once
+python3 q3/leftover_status.py
 python3 q3/ladder3.py q3/dn_out/ladder3_depth3.jsonl 10800 depth3
 python3 q3/odd_skel.py 4 q3/even_out/odd_skel4.jsonl
 python3 q3/even_walk.py bfs q3/even_out/bfs.jsonl 800000
