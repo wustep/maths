@@ -1,31 +1,31 @@
-# Cursor Grok 2026-08-27 — Simon ionization excess, leftover past 1.1017
+# Cursor Grok 2026-08-28 — Simon ionization excess, leading 1.1013
 
 Cursor Grok 4.6. Folder `problems/simon-ionization-excess/compute/q10/`.
 
-## Result so far
+## Result
 
-No new printed leading. q9 (`#119` / `b258707`) stays the notebook
-record: compact $\gamma=0.9077156846635223$, $1/\gamma$ prints as
-$1.1017$. Independent replay of `compute/q9/verify_lift.py` passed.
-The stored $17{,}179{,}869{,}183$ faces were not re-enumerated.
+Lift of the q9 leading $1.1017$ and of the printed HPS $1.1185$.
+Same Hundertmark–Pattakos–Schulz chain (arXiv:2504.18487v1, §7)
+with
 
-HPS is still v1 only (25 Apr 2025). OpenAlex W4416381655
-`cited_by_count` 0. Nam $1.22$ and BGB $1.4811$ (bosonic /
-statistics-independent, $Z\ge 12$) do not beat $1.1017$ for
-fermions.
+$$
+\beta_3\ge 0.908018
+$$
 
-Leftover at the proven aspect-10 split:
+(the compact bound on $D$-aspect $\le 10$ at $n=35$ bins, target
+$\varphi=0.9115$, lifted by mass-stationarity: used aspect $\ge 10$
+forces $Q>10/11$). Then
 
-- Primary: $n=35$, target $0.9115$. SLSQP $\varphi=0.911672$.
-  Predicted $1/\gamma=1.101300$, printed $1.1013$ if faces
-  certify ($34{,}359{,}738{,}367$ faces). Cut $10/11>\gamma$.
-- Optional probe: target $0.9114$ on the $n=34$ matrix.
-  Predicted printed $1.1016$. Not an $n=35$ dent.
+$$
+N_c<1.1013Z+3.935\,Z^{1/3}\qquad(Z\ge 4).
+$$
 
-$R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1017$. Chebyshev
-on the endpoint slab does not reopen that line. Finite-Z
-integers (Lieb), bounded excess, and $s>3$ along Lemma 4.3
-stay leftover.
+$R\le 9$ with the mass-opt cut cannot beat $1.1017$.
+The withdrawn $1.1168$ stays withdrawn. q1 remainders unchanged.
+Bounded excess is still open. Hydrogen $N_0(1)=2$ is not claimed.
+
+Finite $Z$ remains leftover (Lieb integers). The optional
+$n=34$ target-$0.9114$ probe was not run and is not this lift.
 
 ## Replay
 
@@ -33,5 +33,5 @@ stay leftover.
 problems/simon-ionization-excess/compute/q10/run_all.sh
 ```
 
-Exit 0 with no `certs/raise_*.json` is a recorded leftover, not a
-new leading. Do not invent a printed coefficient.
+q10 exit 0 is the leading-coefficient lift. Certificate:
+`compute/q10/certs/lift.json`.
