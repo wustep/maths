@@ -1000,3 +1000,20 @@ The only leftover (19,3) certificate is the rank-23 Harnack
 An incomplete prefix is residue, not a lower bound. No new scheme
 is claimed until `verify_new.py` accepts a certificate outside the
 2,367 and the seventeen.
+
+### So far
+
+| search | evals | result |
+| --- | --- | --- |
+| radius-1 thicken, leftover rank 22 | 385,875,968 | **2/5 complete**; evals = \(46\cdot 2^{22}\) on each; novel vs census empty (**residue**) |
+| odd collections, size 4 | 5,308,103 | **complete**; twelve known M-schemes, 0 hits on the open nests |
+
+Certificates: `compute/q3/certs/thick_r1_rank_22_22_prefix.json`,
+`thick_r1_rank_22_26_prefix.json`, `odd_skel4.json`. No
+`q3/certs/new_schemes.json`. Bound still ≥ 2,384.
+
+The two finished rank-22 certificates are
+`deg8/o14-p03-n11/(1(1)v1(2)v1(8)).pcom` (107 schemes) and
+`deg8/o21-p07-n14/(5v1(4)v1(10)).pcom` (76 schemes). The remaining
+thirteen leftover triangulations, and both open nests, are still
+open. That prefix is not a wrap.
