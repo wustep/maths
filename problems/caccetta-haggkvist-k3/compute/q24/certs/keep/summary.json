@@ -1,11 +1,14 @@
 {
-  "closed": [],
-  "n_cubes": 0,
+  "closed": [133],
+  "n_cubes": 42,
   "residue": [],
   "f4": 0.34640,
   "published_hkn": 0.3465,
   "prior_stored_f4": 0.34645,
   "personal_communication_3388": 0.3388,
-  "next_hole": {"n": 133, "d": 45},
-  "note": "q24 starts at leftover n=133. closed is empty until an independent verify_range. F4 is unchanged at the q4 CKLS-fork certificate 0.34640. Did not beat 0.3388."
+  "next_hole": {"n": 134, "d": 45},
+  "replay": {
+    "n133": {"checked": 42, "failures": 0, "log": "replay_133.json"}
+  },
+  "note": "closed = every needed cube UNSAT with stored DRAT. F4 is unchanged at the q4 CKLS-fork certificate 0.34640. Did not beat 0.3388."
 }
