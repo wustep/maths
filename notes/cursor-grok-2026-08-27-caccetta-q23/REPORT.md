@@ -8,9 +8,12 @@ F₄ certificate.
 Published unrestricted threshold is still HKN 0.3465
 (arXiv:0908.2791v4, Theorem 1.2). Do not treat 0.3388 as published.
 
-This run resumes leftover n=132 cubes started on an earlier hunt
-(residue until independently replayed). First remaining hole after
-q22 is n=132. F₄ unchanged at c=0.34640. Did not beat 0.3388. The
+Leftover n=132 is closed: d=44, cubes k=44..86, 43 stored DRATs.
+Independent replay `python3 verify_range.py --n-min 132 --n-max 132`
+reports 43 checked, 0 failures, every row `drat==VERIFIED`. Largest
+core is k=44 at 11.9 MB. First remaining hole n=133, δ⁺=45.
+n=133 is started on disk and is not fully stored: residue, not a
+bound. F₄ unchanged at c=0.34640. Did not beat 0.3388. The
 conjecture 1/3 is open.
 
 Replay:
