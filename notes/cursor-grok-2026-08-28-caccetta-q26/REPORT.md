@@ -8,11 +8,14 @@ F₄ certificate.
 Published unrestricted threshold is still HKN 0.3465
 (arXiv:0908.2791v4, Theorem 1.2). Do not treat 0.3388 as published.
 
-Leftover n=135 is not stored: d=45, cubes k=45..88. Residue, not a
-bound. F₄ unchanged at c=0.34640. Did not beat 0.3388. The
-conjecture 1/3 is open.
+Leftover n=135 is closed: d=45, cubes k=45..88, 44 stored DRATs.
+Independent replay `python3 verify_range.py --n-min 135 --n-max 135`
+reports 44 checked, 0 failures, every row `drat==VERIFIED`. Largest
+core is k=49 at 17.1 MB. First remaining hole n=136, δ⁺=46.
+n=136 is not stored: residue, not a bound. F₄ unchanged at
+c=0.34640. Did not beat 0.3388. The conjecture 1/3 is open.
 
-Replay after certificates are stored:
+Replay:
 
 ```
 cd problems/caccetta-haggkvist-k3/compute
