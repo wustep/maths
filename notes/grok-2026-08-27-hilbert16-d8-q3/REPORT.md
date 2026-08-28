@@ -13,10 +13,9 @@ on main.
 
 Did not move. No `q3/certs/new_schemes.json`.
 
-Rank 22 leftover thicken is 2/5:
-`o14-p03-n11/(1(1)v1(2)v1(8))` and `o21-p07-n14/(5v1(4)v1(10))`,
-each with evals \(46\cdot 2^{22}\). Novel empty. Prefix only.
-Odd collections of size 4 finished: twelve known M-schemes, no nest.
+Rank 22 leftover thicken is 4/5, each with evals \(46\cdot 2^{22}\).
+Novel empty. Prefix only. Odd collections of size 4 finished:
+twelve known M-schemes, no nest.
 
 ## Scope
 
