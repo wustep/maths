@@ -86,20 +86,37 @@ def running_drive_count(lines):
     return n
 
 
+def _drive_argv(line, which):
+    """Return argv after thick_drive.py for a q2 or q3 driver.
+
+    Popen launches the absolute script path, so a literal
+    ``q3/thick_drive.py`` token is not always present.
+    """
+    if "leftover_watch" in line:
+        return None
+    needle = f"{which}/thick_drive.py"
+    if needle not in line:
+        return None
+    parts = line.split()
+    for i, part in enumerate(parts):
+        if part.endswith(needle):
+            return parts[i + 1:]
+    return None
+
+
 def running_q3_only(lines):
     certs = set()
     workers = set()
     for ln in lines:
-        if "q3/thick_drive.py" not in ln:
+        argv = _drive_argv(ln, "q3")
+        if argv is None:
             continue
-        parts = ln.split()
-        if "--only" in parts:
-            i = parts.index("--only")
-            if i + 1 < len(parts):
-                certs.add(parts[i + 1])
+        if "--only" in argv:
+            i = argv.index("--only")
+            if i + 1 < len(argv):
+                certs.add(argv[i + 1])
         try:
-            idx = parts.index("q3/thick_drive.py")
-            workers.add(int(parts[idx + 1]))
+            workers.add(int(argv[0]))
         except (ValueError, IndexError):
             pass
     return certs, workers
@@ -111,16 +128,13 @@ def q2_reserved(lines, done):
              if 21 <= t["rank"] <= 22]
     tasks.sort(key=lambda d: (d["rank"], d["cert"]))
     for ln in lines:
-        if "q2/thick_drive.py" not in ln:
+        argv = _drive_argv(ln, "q2")
+        if argv is None or len(argv) < 4:
             continue
-        parts = ln.split()
         try:
-            idx = parts.index("q2/thick_drive.py")
-            w = int(parts[idx + 1])
-            nw = int(parts[idx + 2])
-            lo = int(parts[idx + 3])
-            hi = int(parts[idx + 4])
-        except (ValueError, IndexError):
+            w, nw, lo, hi = (int(argv[0]), int(argv[1]),
+                             int(argv[2]), int(argv[3]))
+        except ValueError:
             continue
         mine = [d for i, d in enumerate(tasks)
                 if lo <= d["rank"] <= hi and i % nw == w]
