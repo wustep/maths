@@ -1,0 +1,19 @@
+{
+  "closed": [
+    142
+  ],
+  "this_run": [
+    142
+  ],
+  "n_cubes": 45,
+  "residue": [],
+  "f4": 0.3464,
+  "published_hkn": 0.3465,
+  "prior_stored_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "next_hole": {
+    "n": 143,
+    "d": 48
+  },
+  "note": "closed = every needed cube UNSAT with stored DRAT. A leftover is residue, not a bound. F4 unchanged unless a new certificate says otherwise. Did not beat 0.3388."
+}
