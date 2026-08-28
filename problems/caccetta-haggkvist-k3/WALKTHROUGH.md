@@ -310,3 +310,13 @@ A numerical try that did not move: F₄ stays 0.34640 at the stored CKLS-fork ra
 
 The stored proofs for this order are the 42 DRATs in `compute/q22/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The first hole not run is n=132. The conjecture 1/3 is open.
 
+## 29. 27 August, leftover holes from n=132
+
+The same cubes keep dying past n=131. A 44-outregular oriented graph on 132 vertices has 5808 arcs, so some in-degree is at least 44. The needed k are 44 through 86; k=87 is empty by the N⁺ counting cut.
+
+n=132 k=44 is the old leftover hole from the n=131 wrap. It is UNSAT. Independent replay of those 43 cubes is 0 failures. Raw kissat proofs again grow past 100 MB; `drat-trim` core lemmas still replay. The k=44 core stays about 12 MB.
+
+A numerical try that did not move: F₄ stays 0.34640 at the stored CKLS-fork ray.
+
+The stored proofs for this order are the 43 DRATs in `compute/q23/certs/keep/`. Replay regenerates each CNF and runs `drat-trim`. The first hole not run is n=133. The conjecture 1/3 is open.
+
