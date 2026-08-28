@@ -75,6 +75,17 @@ def running_thicken_count(lines):
     return n
 
 
+def running_drive_count(lines):
+    """A live thick_drive still owns a core: it will start the next C walker."""
+    n = 0
+    for ln in lines:
+        if "leftover_watch" in ln:
+            continue
+        if "q2/thick_drive.py" in ln or "q3/thick_drive.py" in ln:
+            n += 1
+    return n
+
+
 def running_q3_only(lines):
     certs = set()
     workers = set()
@@ -141,12 +152,14 @@ def step(max_workers):
     inflight, used_w = running_q3_only(lines)
     reserved = q2_reserved(lines, done)
     n_c = running_thicken_count(lines)
+    n_d = running_drive_count(lines)
     leftover = leftover_tasks()
     leftover.sort(key=lambda d: (d["rank"], d["cert"]))
+    busy = max(n_c, n_d)
     print(f"complete {len(done)}/{len(leftover)} thicken={n_c} "
-          f"inflight={len(inflight)} reserved={len(reserved)}",
+          f"drives={n_d} inflight={len(inflight)} reserved={len(reserved)}",
           flush=True)
-    if n_c >= max_workers:
+    if busy >= max_workers:
         return len(done) == len(leftover)
     blocked = done | inflight | reserved
     nxt = next((t for t in leftover if t["cert"] not in blocked), None)

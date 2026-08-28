@@ -9,7 +9,8 @@ from pathlib import Path
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from leftover_watch import (complete_certs, leftover_tasks, ps_args,
-                            q2_reserved, running_q3_only, running_thicken_count)
+                            q2_reserved, running_drive_count, running_q3_only,
+                            running_thicken_count)
 from write_thick_cert import expected_evals
 
 
@@ -21,7 +22,8 @@ def main():
     inflight, _ = running_q3_only(lines)
     reserved = q2_reserved(lines, done)
     print(f"leftover {len(done)}/{len(leftover)} complete; "
-          f"thicken processes {running_thicken_count(lines)}")
+          f"thicken {running_thicken_count(lines)} "
+          f"drives {running_drive_count(lines)}")
     for t in leftover:
         cert = t["cert"]
         exp = expected_evals(t["rank"])
