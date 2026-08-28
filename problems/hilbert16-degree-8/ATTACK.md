@@ -1007,15 +1007,19 @@ is claimed until `verify_new.py` accepts a certificate outside the
 | --- | --- | --- |
 | radius-1 thicken, leftover rank 22 | 964,689,920 | **5/5 complete**; evals = \(46\cdot 2^{22}\) on each; novel vs census empty |
 | radius-1 thicken, leftover rank 23 | 2,315,255,808 | **6/6 complete**; evals = \(46\cdot 2^{23}\) on each; novel vs census empty |
-| leftover ranks 22–26 | 3,279,945,728 | **11/15 complete**; novel empty (**residue**) |
+| leftover ranks 22–26 | 4,051,697,664 | **12/15 complete**; novel empty (**residue**) |
+| radius-1 thicken, leftover rank 24 | 771,751,936 | **1/3 complete**; `o10-p03-n07`; evals = \(46\cdot 2^{24}\); novel empty |
 | odd collections, size 4 | 5,308,103 | **complete**; twelve known M-schemes, 0 hits on the open nests |
 
 Certificates: `compute/q3/certs/thick_r1_rank_22.json`,
 `thick_r1_rank_23.json`,
+`thick_r1_rank_24_24_prefix.json`,
 `thick_r1_rank_22_26_prefix.json`, `odd_skel4.json`. No
 `q3/certs/new_schemes.json`. Bound still ≥ 2,384.
 
 Ranks 22 and 23 are finished neighbourhoods and added nothing,
 including the Harnack triangulation (the only leftover (19,3)
-census certificate). Four leftover triangulations of ranks 24–26,
-and both open nests, remain. That is not a wrap.
+census certificate). One of the three rank-24 leftover
+triangulations is finished (`o10-p03-n07`, evals \(46\cdot 2^{24}\)).
+Three leftover triangulations of ranks 24–26, and both open nests,
+remain. That is not a wrap.
