@@ -544,3 +544,16 @@ Opened before hunting leftover SAT past n=140.
 
 Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
 
+## 2026-08-28 — leftover from n=142 (q33 start)
+
+Opened before hunting leftover SAT past n=141.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin. Abstract: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. Theorem 1.2 is that statement. Closing remark: de Joannis de Verclos–Sereni–Volec 0.3388 in March 2014 by F₆; DHP 0.88 / Shen 0.865 only produce a tiny decrease in Theorem 1.2.
+- https://arxiv.org/html/0908.2791v4 — same Theorem 1.2 at 0.3465n. The 0.3388 figure is written as an F₆ extension, not as a Combinatorica replacement.
+- https://arxiv.org/abs/0909.2468 — Chen–Karson–Liu–Shen. Abstract writes β ≤ 0.8616 γ. Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G), with μ=0.16065. Uses HKN 0.3465 as the current unrestricted triangle number.
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3. Does not replace the unrestricted triangle threshold.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash v4, 21 Aug 2024. Path-length bounds. Does not replace HKN 0.3465n.
+- https://arxiv.org/abs/2405.17797 — Mezher–Daamouch. Restricted: a special case of Caccetta–Häggkvist on 7-anti-transitive oriented graphs (via Seymour vertices). No unrestricted numerical c.
+
+Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
+
