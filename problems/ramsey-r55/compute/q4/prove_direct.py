@@ -72,7 +72,7 @@ def run_kissat(
     time_limit: int,
     extra: list[str],
 ) -> tuple[str, int]:
-    cmd = [str(kissat), "--plain", f"--time={time_limit}", *extra, str(cnf), str(proof)]
+    cmd = [str(kissat), f"--time={time_limit}", *extra, str(cnf), str(proof)]
     started = time.monotonic()
     result = subprocess.run(cmd, check=False, capture_output=True, text=True)
     log.write_text(result.stdout + result.stderr)
@@ -145,7 +145,7 @@ def main() -> int:
     build_cert = ROOT / "certs" / f"{case['name']}_build.json"
     build = build_cnf(case, cnf, build_cert)
 
-    extra = ["--unsat", f"--seed={args.seed}"] if args.unsat else []
+    extra = ["--unsat", f"--seed={args.seed}"] if args.unsat else ["--plain"]
     raw_proof = work / "raw.drat"
     kissat_log = ROOT / "logs" / f"{case['name']}_kissat.txt"
     status, solve_sec = run_kissat(
@@ -158,7 +158,7 @@ def main() -> int:
             "cnf_sha256", "nvars", "nclauses", "edge_orbit_vars",
             "five_subset_orbits", "anchor_symbreak", "p5_symbreak",
         ) if key in build},
-        "kissat": " ".join(["--plain", f"--time={args.time}", *extra]),
+        "kissat": " ".join([f"--time={args.time}", *extra]),
         "solve_sec": solve_sec,
         "status": status,
     }

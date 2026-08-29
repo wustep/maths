@@ -26,14 +26,15 @@ from orbit_sat import OrbitEncoding  # noqa: E402
 
 
 def local_formula(p: int, cycles: int, selected: int, p5_symbreak: bool):
+    """Local neighbourhood + the encoder's selected-cycle symmetry, in order.
+
+    Auxiliary variables keep the numbers assigned by the full q2 encoding, so a
+    local completion proof can sit next to a proof of the original CNF.
+    """
     obj = OrbitEncoding(43, p, cycles)
     obj.add_base_clauses()
     obj.add_degrees()
     obj.add_fixed_cycle_prefix(selected)
-    if p5_symbreak:
-        obj.add_p5_symmetry_breaking()
-    else:
-        obj.add_anchor_symmetry_breaking(selected)
 
     vertices = [obj.cyc_vertex(cycle, r) for cycle in range(selected) for r in range(p)]
     projected = sorted(
@@ -50,17 +51,33 @@ def local_formula(p: int, cycles: int, selected: int, p5_symbreak: bool):
             tuple(sorted({obj.edge_var(u, v) for u, v in itertools.combinations(subset, 2)}))
         )
 
-    local_vars = set(projected)
-    selected_symmetry = [
-        clause
-        for clause in obj.enc.clauses
-        if clause and all(abs(lit) in local_vars or abs(lit) > len(obj.enc.names) for lit in clause)
-        and any(abs(lit) in local_vars for lit in clause)
-    ]
-    # Keep only the projected clique/independent-set constraints for a
-    # self-contained local formula; symmetry is already baked into the full CNF
-    # cubes via the original instance.
-    clauses = [list(clause) for clause in sorted(base)]
+    # Recreate the encoder's symmetry constraints in the same order.
+    selected_symmetry: list[list[int]] = []
+    ndist = p // 2
+    if p5_symbreak:
+        blocks = ((0, 1, 2, 3), (4, 5, 6, 7))
+        phase_upto = 8
+    else:
+        blocks = (tuple(range(selected)), tuple(range(selected, cycles)))
+        phase_upto = cycles
+    for block in blocks:
+        for left, right in zip(block, block[1:]):
+            begin = len(obj.enc.clauses)
+            obj.enc.lex_leq(
+                [obj.enc.var("cc", left, d) for d in range(1, ndist + 1)],
+                [obj.enc.var("cc", right, d) for d in range(1, ndist + 1)],
+            )
+            if left < selected and right < selected:
+                selected_symmetry.extend(obj.enc.clauses[begin:])
+    for cycle in range(1, phase_upto):
+        bits = [obj.enc.var("cb", 0, cycle, d) for d in range(p)]
+        begin = len(obj.enc.clauses)
+        for shift in range(1, p):
+            obj.enc.lex_leq(bits, [bits[(d + shift) % p] for d in range(p)])
+        if cycle < selected:
+            selected_symmetry.extend(obj.enc.clauses[begin:])
+
+    clauses = [list(clause) for clause in sorted(base)] + selected_symmetry
     return obj, projected, clauses, selected_symmetry
 
 
