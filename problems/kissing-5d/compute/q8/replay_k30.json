@@ -16,6 +16,8 @@
     "cnf_vars": 32308,
     "cnf_clauses": 111856,
     "cnf_sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c",
+    "sha_match": true,
+    "stored_sat": null,
     "bb_smoke_best": 19,
     "bb_smoke_nodes": 2001,
     "bb_smoke_complete": false,

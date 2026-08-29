@@ -492,3 +492,20 @@ Opened tonight:
 `python3 scripts/arxiv_fetch.py` on 0902.1105 and 2412.00937:
 stubs already present.
 
+## 2026-08-29 — wrap, record still $40\le\tau_5\le 44$
+
+Opened again before the q8 wrap:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$.
+- https://arxiv.org/abs/2412.00937 — v3 (4 Mar 2026), authors
+  Henry Cohn and Isaac Rajagopal: appears to be 40, proved upper
+  bound 44. No size 41.
+
+No stored verified leftover DRAT from the type-$(0,5)$ or $|U|=19$
+hunts. Incomplete search; not a move of either endpoint.
+

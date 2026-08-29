@@ -1,0 +1,27 @@
+{
+  "n_pools": 1,
+  "orbit_size": 32,
+  "found_41": false,
+  "n_sat_unsat": 0,
+  "n_drat_verified": 0,
+  "complete": false,
+  "pools": [
+    {
+      "name": "k30_n0_5",
+      "stars": [0, 2, 4, 6, 8],
+      "type": [0, 5],
+      "k": 30,
+      "n_extras": 625,
+      "n_roots": 30,
+      "cnf_vars": 32308,
+      "cnf_clauses": 111856,
+      "cnf_sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c",
+      "sat": null,
+      "found_41": false,
+      "complete": false,
+      "drat": null,
+      "drat_trim": null
+    }
+  ],
+  "comment": "Leftover-tight SAT on the type-(0,5) orbit representative. Native CaDiCaL wrote past 15GB of binary DRAT and did not finish. No stored Heule-verified proof. Aut transitivity would empty all 32 hosts if verified unsat. Residue. Did not claim tau5=40."
+}

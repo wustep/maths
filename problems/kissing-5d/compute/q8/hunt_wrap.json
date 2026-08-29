@@ -1,0 +1,47 @@
+{
+  "wrapped": "2026-08-29",
+  "interval": "40 <= tau5 <= 44",
+  "found_41": false,
+  "stored_verified_drat": false,
+  "k30": {
+    "cnf": "certs/five_k30_n0_5.cnf",
+    "sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c",
+    "vars": 32308,
+    "clauses": 111856,
+    "same_as_q7": true,
+    "cadical": {
+      "status": "unfinished",
+      "drat_bytes_last_seen": 15594061824,
+      "process_seconds_last_seen": 15082,
+      "comment": "q7/q8 leftover-tight instance; binary DRAT still growing when the hunt stopped"
+    },
+    "kissat": {
+      "status": "unfinished",
+      "process_seconds_last_seen": 3398
+    }
+  },
+  "global_q8": {
+    "cnf": "certs/n1_k19_star5_no21_no13.cnf",
+    "sha256": "5e3c482a76287dca23819cc77270760db57377ed9de50e9559c5d81db6dcac66",
+    "vars": 30678,
+    "clauses": 219826,
+    "n_five_forbids": 220,
+    "cadical": {
+      "status": "not_started_to_completion"
+    },
+    "kissat": {
+      "status": "unfinished",
+      "process_seconds_last_seen": 3400
+    }
+  },
+  "global_q7_weaker": {
+    "cnf": "q7/certs/n1_k19_star5.cnf",
+    "sha256": "e3cdf455510e3aba3749c40f75032f6868ad6c6977fd091ad25dbb48a61b3de9",
+    "cadical": {
+      "status": "unfinished",
+      "drat_bytes_last_seen": 11496345600,
+      "process_seconds_last_seen": 15042
+    }
+  },
+  "comment": "Incomplete leftover SAT. Not a move of 40-44. Tiny leftover_bb smoke is not a certificate. Did not claim tau5=40."
+}

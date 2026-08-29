@@ -24,8 +24,9 @@ five-star types.
 | `replay_k30.py` | independent CNF rebuild of the type-$(0,5)$ rep |
 | `verify.py` | replay any claimed 41-set and search JSON |
 
-A numerical SDP that does not become an exact positivity certificate is
-an incomplete search. The unrestricted range remains $40\le\tau_5\le 44$
-unless a verifier-plus-certificate pair here says otherwise.
+The leftover-tight $k=30$ SAT and the stronger global leftover SAT did
+not finish: no stored Heule-verified DRAT and no 41-set. Tiny
+leftover_k30 smoke is not a certificate. The unrestricted range remains
+$40\le\tau_5\le 44$.
 
 Native solvers (symlink to `q7/bin/`, or `sh compute/q8/setup_solvers.sh`).

@@ -45,5 +45,6 @@ unfinished after four-star leftover emptiness
 at least 5 lives in `q7/` (`sh compute/q7/run_all.sh`): type-$(2,1)$
 and type-$(1,3)$ five-star leftover hosts are empty (native CaDiCaL
 DRAT verified). The remaining type-$(0,5)$ hosts and the global
-$|U|=19$ leftover SAT live in `q8/` (`sh compute/q8/run_all.sh`).
+$|U|=19$ leftover SAT live in `q8/` (`sh compute/q8/run_all.sh`);
+those SAT hunts did not finish (no stored verified DRAT).
 The unrestricted range remains $40\le\tau_5\le 44$.
