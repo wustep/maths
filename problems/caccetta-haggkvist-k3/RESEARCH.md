@@ -609,3 +609,16 @@ Opened before hunting leftover SAT past n=146.
 
 Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
 
+## 2026-08-29 — leftover from n=148 (q38 start)
+
+Opened before hunting leftover SAT past n=147.
+
+- https://arxiv.org/abs/0908.2791 — Hladký–Král'–Norin v4, 22 Feb 2016. Abstract and Theorem 1.2: every n-vertex digraph of minimum out-degree 0.3465n contains an oriented triangle. Journal reference Combinatorica 37 (2017). No v5.
+- https://arxiv.org/html/0908.2791v4 — Theorem 3.3: max δα(Ψ) < 0.3465 on Hom⁺ of the triangle-free flag algebra. Closing remark: de Joannis de Verclos–Sereni–Volec 0.3388 in March 2014 by F₆ (personal communication); DHP 0.88 / Shen 0.865 only produce a tiny decrease in Theorem 1.2.
+- https://arxiv.org/abs/0909.2468 — Chen–Karson–Liu–Shen. Abstract writes β ≤ 0.8616 γ. Theorem 2.5: if G is 3-free then β(G) < 0.8616 γ(G), with μ=0.16065. Uses HKN 0.3465 as the current unrestricted triangle number.
+- https://arxiv.org/abs/2102.12830 — Grzesik–Volec v2, 18 Jan 2024. Semidegree thresholds for directed cycles of length ≠ 3. Does not replace the unrestricted triangle threshold.
+- https://arxiv.org/abs/2402.16776 — Cheng–Keevash v4, 21 Aug 2024. Path-length bounds. Theorem 9 quotes HKN 0.3465n as the triangle-case input; they do not replace it.
+- https://arxiv.org/abs/2405.17797 — Mezher–Daamouch. Restricted: a special case of Caccetta–Häggkvist on 7-anti-transitive oriented graphs (via Seymour vertices). No unrestricted numerical c.
+
+Failed lookup: no later Combinatorica replacement of HKN 0.3465. Do not treat 0.3388 as published.
+
