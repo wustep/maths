@@ -8,8 +8,9 @@ A d-outregular oriented graph on n vertices has n d arcs, so some
 vertex has in-degree at least d. Relabel that vertex as 0. The
 exact statement reduces to cubes k=|N⁻(0)| ≥ d.
 
-Those cubes are not stored yet at leftover n=151. The first
-remaining hole is n=151, δ⁺=51.
+Those cubes are UNSAT, with stored DRATs, at leftover n=151
+(d=51, k=51..98, 48 cubes; k=99 empty by the N⁺ counting cut).
+The first remaining hole is n=152, δ⁺=51.
 
 The numerical threshold is unchanged: c = 0.34640 (CKLS 2015 fork).
 It does not beat 0.3388.

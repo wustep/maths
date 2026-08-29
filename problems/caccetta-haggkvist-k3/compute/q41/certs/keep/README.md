@@ -1,7 +1,7 @@
 DRAT proofs for exact Caccetta–Häggkvist triangle leftover orders
 from n=151 onward. q40 stays the n=150 store.
 
-n=151 is not stored yet. First remaining hole n=151.
+n=151 is stored (48 cubes, k=51..98). First remaining hole n=152.
 
 A d-outregular oriented graph has n d arcs, so some in-degree is
 at least d. Relabel that vertex as 0. The exact statement reduces
