@@ -1,0 +1,11 @@
+{
+  "closed": [],
+  "n_cubes": 0,
+  "residue": [],
+  "f4": 0.34640,
+  "published_hkn": 0.3465,
+  "prior_stored_f4": 0.34645,
+  "personal_communication_3388": 0.3388,
+  "next_hole": {"n": 147, "d": 49},
+  "note": "q37 scaffold. Hunt starts at leftover n=147, d=49. F4 unchanged at 0.34640. Did not beat 0.3388."
+}
