@@ -340,3 +340,14 @@ returns **v3, 27 Jul 2026**. Abs
 <https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
 nonempty degree-8 T-schemes. <https://arxiv.org/abs/2602.06888v4>
 is 404. Parent 17/17 still the folder bound. Bound still ≥ 2,384.
+
+## 2026-08-29 — leftover wrap (q5)
+
+Stopped the even-split BFS remainder and the three odd size-5
+shards before either neighbourhood finished. **Nothing about
+degree 8 moved.** No `q5/certs/new_schemes.json`. Combined odd
+progress 18,340,000 of 37,632,123 evaluations; even-split queue
+still open at 4,619,029 after 3,554,000 remainder evaluations.
+Same twelve published M-schemes as the size-4 sweep. Incomplete
+search, not a lower bound. Bound still ≥ 2,384. ATTACK.md and the
+README Problems row were left unchanged.

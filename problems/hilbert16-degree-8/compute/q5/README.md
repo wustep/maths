@@ -52,5 +52,20 @@ An incomplete search is not a lower bound.
 
 ## What this run found
 
-See `certs/` after `collect.py`. A new scheme is a T-curve only after
-the exact verifier.
+Stopped before either leftover neighbourhood finished. No
+`certs/new_schemes.json`. The bound stays 2,384.
+
+Odd size 5: three first-index shards, last progress 6,140,000 /
+6,120,000 / 6,080,000 evaluations of 12,700,937 / 12,394,262 /
+12,536,924 tuples. Combined 18,340,000 of 37,632,123. The union is
+the same twelve published M-schemes as the finished size-4 sweep.
+Zero hits on the open nests. No shard completed.
+
+Even-split BFS remainder (no giant pickle): last printed line
+walked 4,754,000, remainder evaluations 3,554,000 of a 4,000,000
+cap, queue 4,619,029 and still growing. Four published (19,3)
+M-schemes only. The queue did not empty.
+
+An incomplete search is not a lower bound. A new scheme is a
+T-curve only after the exact verifier. Numbers:
+`notes/grok-2026-08-29-hilbert16-d8-q5/leftover_wrap.json`.
