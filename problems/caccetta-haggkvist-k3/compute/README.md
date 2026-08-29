@@ -154,3 +154,6 @@ Leftover holes from n=151 live in `q41/`. Replay:
 
 Leftover holes from n=152 live in `q42/`. Replay:
 `cd q42 && ./run_all.sh`.
+
+Leftover holes from n=153 live in `q43/`. Replay:
+`cd q43 && ./run_all.sh`.
