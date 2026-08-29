@@ -1,0 +1,10 @@
+/cnf/
+/proofs/
+/work/
+/logs/
+.venv
+/.venv
+/.venv/
+*.o
+__pycache__/
+
