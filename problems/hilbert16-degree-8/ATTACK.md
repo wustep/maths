@@ -1044,3 +1044,16 @@ finished and added nothing.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q3/run_all.sh && python3 q3/collect.py`.
+
+## 2026-08-29 — q4: leftover (19,3) nests
+
+Grok 4.6, new branch from `origin/main` `b93fded` (q3 wrap merged).
+Record re-fetched: arXiv:2602.06888 still **v3, 27 Jul 2026**;
+§5.3 still 2,367 nonempty T-schemes. Bound still ≥ 2,384.
+
+The leftover named in the q3 wrap is the two open (19,3) nests.
+Code in `compute/q4/`. Replay: `sh q4/run_all.sh`.
+
+An incomplete prefix is residue, not a lower bound. No new scheme
+is claimed until `verify_new.py` accepts a certificate outside the
+2,367 and the seventeen.
