@@ -123,8 +123,10 @@ def merge_odd():
 def main():
     which = sys.argv[1] if len(sys.argv) > 1 else "all"
     if which in ("even_bfs", "all"):
-        summ, schemes, hits, news = last_summary(
-            HERE / "even_out" / "bfs.jsonl")
+        bfs_path = HERE / "even_out" / "bfs_nodump.jsonl"
+        if not bfs_path.exists():
+            bfs_path = HERE / "even_out" / "bfs.jsonl"
+        summ, schemes, hits, news = last_summary(bfs_path)
         if summ:
             write("even_bfs.json", {
                 "what": ("Pinned even-split BFS remainder after the q4 "
