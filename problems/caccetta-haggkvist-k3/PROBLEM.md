@@ -3,7 +3,7 @@
 - Slug: `caccetta-haggkvist-k3`
 - List: P36
 - Solver: SuperGrok CLI `grok-4.6` `--reasoning-effort xhigh`
-- Status: residue — leftover exact cubes through n=151 stored and replayed (q41 n=151: 48 DRATs, verify_range 0 failures). F₄ certificate c=0.34640 (CKLS 2015 fork; HKN 0.3465; prior stored 0.34645). First leftover hole n=152. Did not beat 0.3388. Conjecture 1/3 open.
+- Status: residue — leftover exact cubes through n=152 stored and replayed (q42 n=152: 49 DRATs, verify_range 0 failures). F₄ certificate c=0.34640 (CKLS 2015 fork; HKN 0.3465; prior stored 0.34645). First leftover hole n=153. Did not beat 0.3388. Conjecture 1/3 open.
 - Area: Directed graph theory
 - Sources: AIM Caccetta–Häggkvist summary; Egres open problem page
 - Started: 2026-08-17
