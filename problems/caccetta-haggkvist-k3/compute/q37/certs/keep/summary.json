@@ -1,11 +1,19 @@
 {
-  "closed": [],
-  "n_cubes": 0,
+  "closed": [
+    147
+  ],
+  "this_run": [
+    147
+  ],
+  "n_cubes": 48,
   "residue": [],
-  "f4": 0.34640,
+  "f4": 0.3464,
   "published_hkn": 0.3465,
   "prior_stored_f4": 0.34645,
   "personal_communication_3388": 0.3388,
-  "next_hole": {"n": 147, "d": 49},
-  "note": "q37 scaffold. Hunt starts at leftover n=147, d=49. F4 unchanged at 0.34640. Did not beat 0.3388."
+  "next_hole": {
+    "n": 148,
+    "d": 50
+  },
+  "note": "closed = every needed cube UNSAT with stored DRAT. A leftover is residue, not a bound. F4 unchanged unless a new certificate says otherwise. Did not beat 0.3388."
 }
