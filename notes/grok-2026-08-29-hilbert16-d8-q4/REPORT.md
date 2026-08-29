@@ -13,6 +13,9 @@ finished on main.
 
 Did not move. No `q4/certs/new_schemes.json`.
 
+Pinned even-split BFS at 1,200,000 collections stays on the five
+published (19,3) M-schemes. Queue left 1,167,098. Prefix only.
+
 ## Scope
 
 The two open (19,3) nests, and any further collection-space
