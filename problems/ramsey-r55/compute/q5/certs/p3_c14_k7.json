@@ -1,0 +1,27 @@
+{
+  "anchor_symbreak": true,
+  "build": {
+    "anchor_symbreak": true,
+    "cnf_sha256": "d9cfe3d0949d66e37547e5c2f7dbfe44a2fef65d80331518f05c4352bf4c434d",
+    "edge_orbit_vars": 301,
+    "five_subset_orbits": 320866,
+    "nclauses": 701208,
+    "nvars": 15549,
+    "p5_symbreak": false
+  },
+  "covers_k": [
+    7
+  ],
+  "cycle_type": "3^14 1^1",
+  "cycles": 14,
+  "expected_cnf_sha256": "d9cfe3d0949d66e37547e5c2f7dbfe44a2fef65d80331518f05c4352bf4c434d",
+  "fixed": 1,
+  "fixed_cycle_count": 7,
+  "kissat": "--time=1800 --unsat --seed=17",
+  "maximum_cycle": true,
+  "name": "p3_c14_k7",
+  "p": 3,
+  "p5_symbreak": false,
+  "solve_sec": 1800,
+  "status": "UNKNOWN"
+}

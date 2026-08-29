@@ -275,3 +275,47 @@ Documented residue, independently replayable from `compute/q4/`:
 
 Do not cite this folder as a bound. Cert: `compute/q4/certs/q4_summary.json`.
 Replay: `cd compute/q4 && ./run_all.sh`.
+
+## 2026-08-29 — leftover SAT after certified 5^6 and 5^7
+
+House unchanged. q4 is on main as `fdc22a0`. The leftover is the five
+maximum-cycle order-2/3/5 representatives plus the 139 degree-feasible
+cases that q4 did not close. A stored DRAT is a restriction on a
+hypothetical automorphism, not a bound on $R(5,5)$. A timeout is
+residue. The published interval remains $43\le R(5,5)\le46$.
+
+Reused q2's `orbit_sat.py` without changing the encoding. The five
+maximum-cycle CNF hashes from q2/q3/q4 still match.
+
+`kissat --unsat --seed=17` produced an independently checked DRAT for
+one leftover cycle type:
+
+| cycle type | checked $k$ | certificate |
+|---|---|---|
+| $5^4 1^{23}$ | 4 | DRAT-UNSAT; complementation covers 0 |
+
+The trimmed proof is 829MB. gzip -9 is 119MB, over GitHub's blob
+limit. The stored file is `xz -9` (93MB), SHA-256
+`acd7777a97d3323041d459b4357cbcdf94f8fc9b2d68da93f4051379a4785eba`.
+
+Independent replay: `cd compute/q5 && ./run_all.sh` prints `VERIFIED`
+for `p5_c4_k4`.
+
+The five maximum-cycle representatives timed out at thirty minutes, as
+did $5^4 1^{23}$ at $k=1$ and $k=2$, and $3^{13}1^{4}$ at $k=6$. No
+$(5,5,43)$-graph was decoded.
+
+## 2026-08-29 — leftover SAT result
+
+No 43-vertex $(5,5)$-graph. No nonexistence proof at 45. Published
+record still $43\le R(5,5)\le46$.
+
+Documented residue, independently replayable from `compute/q5/`:
+
+- cycle type $5^4 1^{23}$ at $k\in\{0,4\}$ is certified UNSAT;
+- all five maximum-cycle order-2, order-3, and order-5 instances remain
+  `UNKNOWN`; and
+- the other leftover 2/3/5 cycle types are incomplete.
+
+Do not cite this folder as a bound. Cert: `compute/q5/certs/q5_summary.json`.
+Replay: `cd compute/q5 && ./run_all.sh`.

@@ -1,0 +1,3 @@
+VERIFIED p5_c4_k4
+{"found_43_graph": false, "interval_moved": false, "pending": 130, "timeouts": 8, "unsat": 1}
+OK
