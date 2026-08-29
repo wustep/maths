@@ -29,3 +29,12 @@ ball around a score-2 near graph:
 cd q2
 PATH="$PWD/../../../../.venv/bin:$PATH" ./run_all.sh
 ```
+
+The 2026-08-29 follow-up lives in `q3/`. It closes every order-7
+automorphism cycle type on 43 vertices with checked DRAT/DRUP certificates.
+The published interval remains $43\le R(5,5)\le46$.
+
+```sh
+cd q3
+./run_all.sh
+```

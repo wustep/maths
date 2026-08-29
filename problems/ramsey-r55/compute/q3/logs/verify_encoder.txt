@@ -1,0 +1,32 @@
+{
+  "all_ok": true,
+  "graph_tests": [
+    {
+      "agree": true,
+      "assignments": 512,
+      "distinct_base_clause_keys": 3,
+      "edge_orbit_vars": 9,
+      "five_subset_orbits": 3,
+      "n": 6,
+      "p": 2
+    },
+    {
+      "agree": true,
+      "assignments": 8,
+      "distinct_base_clause_keys": 1,
+      "edge_orbit_vars": 3,
+      "five_subset_orbits": 3,
+      "n": 7,
+      "p": 7
+    }
+  ],
+  "lex_constraint": {
+    "agree": true,
+    "assignments": 64
+  },
+  "note": "The n=6 order-2 and n=7 order-7 edge-orbit encodings were exhausted assignment by assignment against r55lib.is_ramsey. The repeated-literal weighted counter and lex constraint were also exhausted under all inputs.",
+  "weighted_counter": {
+    "agree": true,
+    "assignments": 8
+  }
+}

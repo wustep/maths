@@ -172,3 +172,87 @@ A score-2 near graph from local search has no $(5,5,43)$-graph inside six
 edge edits. That is a ball around one failed construction, not a bound.
 
 Still $43\le R(5,5)\le 46$.
+
+---
+
+# 2026-08-29 — closing the order-7 symmetry
+
+- Argument status: documented incomplete search; published record
+  $43\le R(5,5)\le46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+q2 had proved that primes at least 11 cannot divide the automorphism-group
+order of a hypothetical $(5,5,43)$-graph. It had not done the same for 7: the
+maximum-cycle order-7 formula timed out, and the other five cycle counts had
+not been exhausted. The finite degree of freedom was therefore the complete
+list $7^c 1^{43-7c}$ for $1\le c\le6$.
+
+## 1. False starts
+
+- **Another monolithic solver portfolio.** Default, UNSAT-biased, CaDiCaL,
+  Lingeling, and MapleChrono runs all left the $7^6 1^1$ formula `UNKNOWN`.
+- **Treating one fixed-neighbour count as the cycle type.** A fixed vertex can
+  meet different numbers $k$ of 7-cycles. Every degree-feasible $k$ must be
+  checked or covered by complementation; one timeout or one representative is
+  not an exclusion.
+- **Using failed-assumption cores as a global proof.** Early cores covered one
+  neighbourhood row each. They did not compress the 787 cases into a smaller
+  unchecked assertion.
+
+## 2. The useful failure
+
+The hard maximum-cycle formula has one fixed vertex. Its degree is a multiple
+of 7 and lies in $[18,24]$, so it is exactly 21. Its neighbourhood is therefore
+three 7-cycles, with no $K_4$ and no independent 5-set. Enumerating only that
+induced graph under q2's existing symmetry breaking produced 787 possibilities.
+A full assignment of those 30 orbit variables turned the hard global formula
+into a short UNSAT run.
+
+## 3. The click
+
+The split object did not need a new encoder. It needed two layers of evidence:
+a small DRUP proving that the 787 neighbourhood rows are exhaustive, then one
+DRUP against the original q2 CNF plus each row. Checking the pieces separately
+keeps memory bounded and makes the finite cover explicit.
+
+The other click was complementation. If a fixed vertex meets $k$ of the $c$
+7-cycles, the complement meets $c-k$. Together with the degree window, one or
+two representatives cover every $k$ for each of the five remaining cycle
+counts.
+
+## 4. The argument, in the order it was found
+
+1. Regenerate q2's six maximum-cycle instances and match every recorded hash.
+2. Run a solver portfolio. The maximum order-2, order-3, and order-5 cases stay
+   `UNKNOWN`; the maximum order-7 case also stays hard monolithically.
+3. Enumerate the 21-vertex order-7 neighbourhood: 787 rows, with a checked
+   completion DRUP.
+4. Refute all 787 full cubes and replay every proof with `drat-trim`.
+5. Enumerate the degree-feasible fixed-neighbour counts for $c=1,\dots,5$,
+   pair them by complementation, and run the eight representatives.
+6. Check all eight direct DRAT proofs. The six cycle counts are now exhausted.
+
+No step constructs a 43-vertex graph or proves nonexistence at 45.
+
+## 5. Computer search
+
+- `compute/q3/certs/q3_summary.json` — collected result and remaining timeouts
+- `compute/q3/certs/p7_neighborhoods.json` — the 787-row finite cover
+- `compute/q3/certs/p7_proofs.json` — hashes for every conquer proof and archive
+- `compute/q3/certs/proofs/` — eight direct compressed DRATs, eight conquer
+  archives, and the local-completion DRUP
+- `compute/q3/run_all.sh` — regenerate all CNFs and replay every proof
+
+## 6. What is proved vs still open
+
+**Checked, not new as a Ramsey bound.** No $(5,5,43)$-graph has an
+automorphism of order 7. Combining q2 and q3, a hypothetical graph's
+automorphism-group order can have prime divisors only among 2, 3, and 5.
+
+**Still open.** The interval is still $43\le R(5,5)\le46$. Orders 2, 3, and 5
+remain `UNKNOWN`, and their non-maximum cycle types have not been exhausted.
+Graphs with trivial automorphism group are untouched.
+
+Do not cite this folder as a bound.

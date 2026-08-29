@@ -28,3 +28,13 @@ Published record still $43\le R(5,5)\le 46$. No endpoint moved. Residue in
 prime-order automorphism cycle types on 43 vertices are DRAT-UNSAT; a
 radius-6 ball around a score-2 near graph is DRAT-UNSAT. Small-prime SAT
 timeouts remain UNKNOWN. See `ATTACK.md` and `compute/q2/README.md`.
+
+## Status (2026-08-29)
+
+Published record still $43\le R(5,5)\le46$. No endpoint moved. Residue in
+`compute/q3/`: checked DRAT/DRUP certificates exclude every order-7
+automorphism cycle type on 43 vertices. Together with q2, a hypothetical
+$(5,5,43)$-graph has automorphism-group order with prime divisors only among
+2, 3, and 5. The maximum-cycle order-2, order-3, and order-5 instances remain
+`UNKNOWN`, and their other cycle types are not exhaustively searched. This is
+an automorphism restriction, not a bound on $R(5,5)$.
