@@ -1,0 +1,488 @@
+{
+  "n_min": 149,
+  "n_max": 149,
+  "checked": 48,
+  "failures": 0,
+  "rows": [
+    {
+      "n": 149,
+      "d": 50,
+      "k": 50,
+      "header": "p cnf 3270164 7697698",
+      "cnf_sha256": "bd65c8152f36c4caba260af7d1102a2b27bd7fc5e44deb82d9a2e952cf6cafeb",
+      "drat_bytes": 7629932,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 51,
+      "header": "p cnf 3269870 7697159",
+      "cnf_sha256": "6abc2f75c22dfd17df0e8cefdebd43b2e06952816a9564915392edcbb232e54b",
+      "drat_bytes": 28281558,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 52,
+      "header": "p cnf 3269576 7696620",
+      "cnf_sha256": "2a98b6f5cb705513a9217fae56f0e84aa22145f75edfa42edf6041243cb5a733",
+      "drat_bytes": 13218240,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 53,
+      "header": "p cnf 3269282 7696081",
+      "cnf_sha256": "36aa4ca36da5fe84da3721838be8a3127de4b19607b559211598bcae90ed027a",
+      "drat_bytes": 23117107,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 54,
+      "header": "p cnf 3268988 7695542",
+      "cnf_sha256": "37ed8fe1af81d8d51842524a9feb83b12f29f16e60749854908422c7699e7f87",
+      "drat_bytes": 18427433,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 55,
+      "header": "p cnf 3268694 7695003",
+      "cnf_sha256": "9d578a9e5f8660237235d441366e2fcc6ffd5066d24ff306fcbb5766140c7fa1",
+      "drat_bytes": 16889186,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 56,
+      "header": "p cnf 3268400 7694464",
+      "cnf_sha256": "d4f5fe7e78b1c04ec03a68bad8059be273bbff7bb46dfdf160b13d1b7883985e",
+      "drat_bytes": 9934452,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 57,
+      "header": "p cnf 3268106 7693925",
+      "cnf_sha256": "84cf9cea585e47c6508721215efb0d55cf526a58cc7c37d4b3b2adc3092d4b30",
+      "drat_bytes": 14475960,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 58,
+      "header": "p cnf 3267812 7693386",
+      "cnf_sha256": "b2b6a9f4d47c4f9d1e5cebf22b16e5404fa2d5055bf99087e1dbf15bede176b3",
+      "drat_bytes": 5176149,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 59,
+      "header": "p cnf 3267518 7692847",
+      "cnf_sha256": "aed18b3e38b43ec72b045b36e814467039ff9e9dde0bfdb15e10f0e0511e6408",
+      "drat_bytes": 2404601,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 60,
+      "header": "p cnf 3267224 7692308",
+      "cnf_sha256": "7a1c1cb5d7f7a5758217b034fcf7812f22cf624e2fe8b82a1da31b5dce190e76",
+      "drat_bytes": 2364485,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 61,
+      "header": "p cnf 3266930 7691769",
+      "cnf_sha256": "41da5c0ee4a8b8938deb706820d923f24adf8feb7767b5da2df833b0d63f8f5c",
+      "drat_bytes": 1962956,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 62,
+      "header": "p cnf 3266636 7691230",
+      "cnf_sha256": "21a13cb1aba49b3a2fc8bc77d43edca998eecb5588ab71f5e677fa374f0fc472",
+      "drat_bytes": 4667720,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 63,
+      "header": "p cnf 3266342 7690691",
+      "cnf_sha256": "785d30fbc2ab51e5a424bb4448bd2c0129ceead4f94fa0dd164d21f9b30c5a9b",
+      "drat_bytes": 1518919,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 64,
+      "header": "p cnf 3266048 7690152",
+      "cnf_sha256": "a1243dd6ed85dfd0dbec595e71e0da093bf1bb76e2c000b7284a079fa73daddc",
+      "drat_bytes": 12376939,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 65,
+      "header": "p cnf 3265754 7689613",
+      "cnf_sha256": "835b769c79966b8b2075cdadc301f76b52209246e90781c1e2afbd5e264ccfc8",
+      "drat_bytes": 1493715,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 66,
+      "header": "p cnf 3265460 7689074",
+      "cnf_sha256": "246e6f7ebe27ac0c4b17f3be97cd4ebcf83ac6b1e7484e03a6ceae3f2a1742c3",
+      "drat_bytes": 1395663,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 67,
+      "header": "p cnf 3265166 7688535",
+      "cnf_sha256": "2f28627d4547262708769fc0dae3af72d6f4a2e045217e53e21ffb358702755e",
+      "drat_bytes": 760884,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 68,
+      "header": "p cnf 3264872 7687996",
+      "cnf_sha256": "57beaf43d305d7cd72971c7cde269f44c2776523859058541db5342c33da68a2",
+      "drat_bytes": 436744,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 69,
+      "header": "p cnf 3264578 7687457",
+      "cnf_sha256": "3529f0aaaf79d18893a658171a2eb0ef4cc5bd75732ccbfe572b9b264d8aecd3",
+      "drat_bytes": 1157028,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 70,
+      "header": "p cnf 3264284 7686918",
+      "cnf_sha256": "eca81c07e7f07fc0421a68623a76ba37ec672cc4b5c25ea964700bc8e079b555",
+      "drat_bytes": 2596904,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 71,
+      "header": "p cnf 3263990 7686379",
+      "cnf_sha256": "b615b684453ebf4bc07173103c5331e452c7ee24b98cf62245bebee167f83bd0",
+      "drat_bytes": 475743,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 72,
+      "header": "p cnf 3263696 7685840",
+      "cnf_sha256": "38855ec445bbc7f561fd7203002a54ee928d175daf0f489be2dd4866a5737ac6",
+      "drat_bytes": 1519306,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 73,
+      "header": "p cnf 3263402 7685301",
+      "cnf_sha256": "d094dcdff725714f953db791493a50d258c09a0f08489669cf53704db9048312",
+      "drat_bytes": 375597,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 74,
+      "header": "p cnf 3263108 7684762",
+      "cnf_sha256": "1f26d80e1029515943db8f6cb08d48b645b18ca9254f9cd37fdcae07a3309bd1",
+      "drat_bytes": 602578,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 75,
+      "header": "p cnf 3262814 7684223",
+      "cnf_sha256": "edb725ada8a0ce87ae325b3bbb484450ee7178007583ddc93340cb8da75af4f2",
+      "drat_bytes": 404034,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 76,
+      "header": "p cnf 3262520 7683684",
+      "cnf_sha256": "8ccee90bc9b51f1d92038e549321bf378d8fbc9dce41c4731e07734d25037c0b",
+      "drat_bytes": 292597,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 77,
+      "header": "p cnf 3262226 7683145",
+      "cnf_sha256": "e953c12d2bbcf3e91a565595109fde5b45cc8da88c741a63a1e5e292565ace88",
+      "drat_bytes": 392626,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 78,
+      "header": "p cnf 3261932 7682606",
+      "cnf_sha256": "4b5d5e791bf398bb68766c7a096b35eb8cab7ed0f3e284dac57379616795bb67",
+      "drat_bytes": 292172,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 79,
+      "header": "p cnf 3261638 7682067",
+      "cnf_sha256": "f83dee6ef57fcac8fbfdc84fe16edba568366237cc0d489ffa0ba043fa8e57c6",
+      "drat_bytes": 152571,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 80,
+      "header": "p cnf 3261344 7681528",
+      "cnf_sha256": "1b6f4a655af95a78bd3427d33904c8ddd8bbc7155706ff38c980e95f5ed61ddf",
+      "drat_bytes": 159495,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 81,
+      "header": "p cnf 3261050 7680989",
+      "cnf_sha256": "702b1491fe6871a386bbbf4a55aa0ea6c103bafd18d4f9e7609c811862668c30",
+      "drat_bytes": 98594,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 82,
+      "header": "p cnf 3260756 7680450",
+      "cnf_sha256": "3c6e033d7ac57adb57eb8abc13a3dc104322fddd939c2791e3a9af84d3bd4662",
+      "drat_bytes": 82178,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 83,
+      "header": "p cnf 3260462 7679911",
+      "cnf_sha256": "4df4782ac9c67a3dadb3677d44992d1ceba8a539bfa044887adafcb482fc987c",
+      "drat_bytes": 52345,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 84,
+      "header": "p cnf 3260168 7679372",
+      "cnf_sha256": "41b86bcc77dcf30cdf8bd93887c84e30b09cbc29a0059fe9a7c767dec1cfad9f",
+      "drat_bytes": 64779,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 85,
+      "header": "p cnf 3259874 7678833",
+      "cnf_sha256": "f889687f9a94912d4401c05e7f99ea6eb425c41c201635cb1d62fdd49e07297c",
+      "drat_bytes": 63579,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 86,
+      "header": "p cnf 3259580 7678294",
+      "cnf_sha256": "30ea749dc5dcfb2678af36d9ff55673f50f4c86f6ef0d3d66e4f88f963111cbf",
+      "drat_bytes": 57938,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 87,
+      "header": "p cnf 3259286 7677755",
+      "cnf_sha256": "dafca357deb3599c5ccf8b662ce3849f6f790d728149a7674d7a10329da310fe",
+      "drat_bytes": 69900,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 88,
+      "header": "p cnf 3258992 7677216",
+      "cnf_sha256": "1b31ebf4f91307507585775f7c9c89066c654dba5aa250ddfcab54a0261aafd3",
+      "drat_bytes": 47904,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 89,
+      "header": "p cnf 3258698 7676677",
+      "cnf_sha256": "521b45ab9acc519c83d53549b1ce65bebd980b1f37de1543c57e2f70440bc537",
+      "drat_bytes": 46208,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 90,
+      "header": "p cnf 3258404 7676138",
+      "cnf_sha256": "0449a2570ccde214b9681259b18c3dabae0bbbfcce608f57c8644e1dc88f4da3",
+      "drat_bytes": 29398,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 91,
+      "header": "p cnf 3258110 7675599",
+      "cnf_sha256": "ea46a3e553cc632b902692a5d25ac8d7667e14521c014043b6ddbaa70ba95dbe",
+      "drat_bytes": 28357,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 92,
+      "header": "p cnf 3257816 7675060",
+      "cnf_sha256": "f866da8684de63d87939d8d25eb9f183df82b661f7a781a122efdfb3c51d78ce",
+      "drat_bytes": 18144,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 93,
+      "header": "p cnf 3257522 7674521",
+      "cnf_sha256": "8272c6d52a32a5f27f6e81833d927f14ce255353b2dcf8540f65bef27fe594c3",
+      "drat_bytes": 10300,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 94,
+      "header": "p cnf 3257228 7673982",
+      "cnf_sha256": "e164fcf751a9848af0a4c44fbde7b8ca7a7e0c1af2444afb68010524508ac49b",
+      "drat_bytes": 7730,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 95,
+      "header": "p cnf 3256934 7673443",
+      "cnf_sha256": "39a14c6154152ecc65da9deb705c6d00d4e6fd55ec1ae17914f231d1e38f13b0",
+      "drat_bytes": 344,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 96,
+      "header": "p cnf 3256640 7672904",
+      "cnf_sha256": "de3916994dad01beaf6cbb52b8e0ce7e127337449f20f35427cc18011fd14035",
+      "drat_bytes": 2850,
+      "drat": "VERIFIED",
+      "ok": true
+    },
+    {
+      "n": 149,
+      "d": 50,
+      "k": 97,
+      "header": "p cnf 3256346 7672365",
+      "cnf_sha256": "f6c11aa1ad21ec562b582ef022ae8669501433aa86b2abd1721c1e6a071b3df1",
+      "drat_bytes": 3359284,
+      "drat": "VERIFIED",
+      "ok": true
+    }
+  ]
+}

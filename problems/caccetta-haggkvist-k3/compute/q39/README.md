@@ -8,11 +8,9 @@ A d-outregular oriented graph on n vertices has n d arcs, so some
 vertex has in-degree at least d. Relabel that vertex as 0. The
 exact statement reduces to cubes k=|N⁻(0)| ≥ d.
 
-At leftover n=149 that is d=50 and k=50..97 (48 cubes). k=98 is
-empty by the N⁺ counting cut: each v ∈ N⁺(0) needs d out-neighbours
-from (N⁺(0)\{v}) ∪ U, of size n-2-k, so k ≤ n-2-d = 97. The
-2-cycle covering count on A further empties k≥73, but those cubes
-still get stored DRATs. The SAT work is k=50..72.
+Those cubes are UNSAT, with stored DRATs, at leftover n=149
+(d=50, k=50..97, 48 cubes; k=98 empty by the N⁺ counting cut).
+The first remaining hole is n=150, δ⁺=50.
 
 The numerical threshold is unchanged: c = 0.34640 (CKLS 2015 fork).
 It does not beat 0.3388.
