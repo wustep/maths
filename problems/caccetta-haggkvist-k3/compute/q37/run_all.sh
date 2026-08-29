@@ -16,4 +16,5 @@ python3 regression.py
 
 echo "== stored pigeonhole DRATs against regenerated CNFs =="
 python3 verify_keep.py
+python3 verify_range.py --n-min 147 --n-max 147 --jobs 3
 echo "q37 replay finished"

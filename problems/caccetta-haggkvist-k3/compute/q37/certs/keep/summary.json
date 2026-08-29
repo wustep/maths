@@ -1,19 +1,14 @@
 {
-  "closed": [
-    147
-  ],
-  "this_run": [
-    147
-  ],
+  "closed": [147],
   "n_cubes": 48,
   "residue": [],
-  "f4": 0.3464,
+  "f4": 0.34640,
   "published_hkn": 0.3465,
   "prior_stored_f4": 0.34645,
   "personal_communication_3388": 0.3388,
-  "next_hole": {
-    "n": 148,
-    "d": 50
+  "next_hole": {"n": 148, "d": 50},
+  "replay": {
+    "n147": {"checked": 48, "failures": 0, "log": "replay_147.json"}
   },
-  "note": "closed = every needed cube UNSAT with stored DRAT. A leftover is residue, not a bound. F4 unchanged unless a new certificate says otherwise. Did not beat 0.3388."
+  "note": "closed = every needed cube UNSAT with stored DRAT. F4 is unchanged at the q4 CKLS-fork certificate 0.34640. Did not beat 0.3388."
 }
