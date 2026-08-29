@@ -734,3 +734,15 @@ Independent cube bounds at leftover n=150: ⌈150/3⌉=50, so d=50. HKN 0.3465·
 
 F₄ stays 0.34640. Did not beat 0.3388. n=150 not stored yet. Residue until the 49 DRATs exist and an independent `verify_range` reports 0 failures. Stored leftover SAT is residue, not a bound. A dent is only a verified move of F₄ below 0.3388, or a new exact-CH theorem.
 
+### 2026-08-29 — leftover cubes from n=150
+
+Same encoder as q1–q39. New proofs live in `compute/q40/certs/keep/` (q39 stays the n=149 store).
+
+Leftover n=150 is closed: d=50, cubes k=50..98, 49 stored DRATs after `drat-trim -l` (k=52 is 37.9 MB). Independent replay: `python3 verify_range.py --n-min 150 --n-max 150` reports 49 checked, 0 failures.
+
+Stored leftover SAT is residue, not a bound. n=151 is not stored. A dent is only a verified move of F₄ below 0.3388, or a new exact-CH theorem.
+
+F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=151, δ⁺=51. Conjecture 1/3 open.
+
