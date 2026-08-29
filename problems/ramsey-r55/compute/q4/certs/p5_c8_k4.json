@@ -1,0 +1,28 @@
+{
+  "anchor_symbreak": false,
+  "build": {
+    "anchor_symbreak": false,
+    "cnf_sha256": "de64155ef134bc37a27659db67cbba31ee6d998e52dedd8ce9f4c80cabda627d",
+    "edge_orbit_vars": 183,
+    "five_subset_orbits": 192526,
+    "nclauses": 428644,
+    "nvars": 11457,
+    "p5_symbreak": true
+  },
+  "covers_k": [
+    4
+  ],
+  "cycle_type": "5^8 1^3",
+  "cycles": 8,
+  "expected_cnf_sha256": "de64155ef134bc37a27659db67cbba31ee6d998e52dedd8ce9f4c80cabda627d",
+  "fixed": 3,
+  "fixed_cycle_count": 4,
+  "kissat": "--time=900 --unsat --seed=17",
+  "maximum_cycle": true,
+  "name": "p5_c8_k4",
+  "p": 5,
+  "p5_symbreak": true,
+  "solve_sec": 900,
+  "status": "UNKNOWN",
+  "unsat_config_timeout": true
+}

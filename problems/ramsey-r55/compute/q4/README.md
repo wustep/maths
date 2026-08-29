@@ -3,21 +3,35 @@
 No endpoint moved. The published interval remains
 $43\le R(5,5)\le 46$.
 
-This folder continues the leftover SAT after q3 closed every order-7
-automorphism on 43 vertices. The encoder is q2's `orbit_sat.py`, unchanged.
-A stored DRAT/DRUP is a restriction on a hypothetical graph. A timeout is
-residue. A SAT model that decodes to a genuine $(5,5,43)$-graph would move
-the lower endpoint; none is stored here unless `certs/q4_summary.json` says
-otherwise.
+## Exact finite results
 
-## Leftover instances
+A hypothetical $(5,5,43)$-graph cannot have an automorphism of cycle type
+$5^6 1^{13}$ or $5^7 1^8$. The encoder is q2's `orbit_sat.py`, unchanged.
+Complementation sends the fixed-neighbour count $k$ to $c-k$. The stored
+proofs are:
 
-After q2 and q3, a hypothetical $(5,5,43)$-graph can have automorphism-group
-order with prime divisors only among 2, 3, and 5. The degree window
-$18\le d\le 24$ and complementation ($k\leftrightarrow c-k$) reduce those
-primes to 142 fixed-neighbour representatives: 86 of order 2, 42 of order 3,
-and 14 of order 5. The five maximum-cycle formulas already timed out at five
-minutes in q3; their CNF hashes are required to match q2/q3.
+| cycle type | checked $k$ | covers | certificate |
+|---|---|---|---|
+| $5^6 1^{13}$ | 2 | 2, 4 | `certs/proofs/p5_c6_k2.drat.gz` |
+| $5^6 1^{13}$ | 3 | 3 | `certs/proofs/p5_c6_k3.drat.gz` |
+| $5^7 1^8$ | 3 | 3, 4 | `certs/proofs/p5_c7_k3.drat.gz` |
+
+Each compressed DRAT was checked by the pinned `drat-trim` build, then
+replayed by regenerating the CNF and checking again.
+
+Together with q2 and q3, a hypothetical $(5,5,43)$-graph can have
+automorphism-group order with prime divisors only among 2, 3, and 5, and if
+5 divides that order then the permutation is not of type $5^6$ or $5^7$.
+This is a restriction on a hypothetical graph, not a bound on $R(5,5)$.
+
+## Searches still incomplete
+
+The five maximum-cycle representatives for orders 2, 3, and 5 remain
+`UNKNOWN` (the order-5 maximum-cycle formula timed out at fifteen minutes
+under `kissat --unsat`). The other leftover cycle types for those primes
+are not exhaustively searched. These timeouts imply no further restriction.
+
+No $(5,5,43)$-graph was decoded.
 
 ## Replay
 

@@ -1,0 +1,286 @@
+{
+  "found_43_graph": false,
+  "interval_moved": false,
+  "models": [],
+  "note": "A stored DRAT is a restriction on a hypothetical (5,5,43)-graph automorphism. Isolated SAT timeouts are residue, not a bound. The published interval remains 43 <= R(5,5) <= 46 unless a decoded (5,5,43)-graph is stored.",
+  "pending": [
+    "p2_c1_k1",
+    "p2_c2_k1",
+    "p2_c2_k2",
+    "p2_c3_k1",
+    "p2_c3_k3",
+    "p2_c4_k1",
+    "p2_c4_k2",
+    "p2_c4_k4",
+    "p2_c5_k1",
+    "p2_c5_k2",
+    "p2_c5_k5",
+    "p2_c6_k1",
+    "p2_c6_k2",
+    "p2_c6_k3",
+    "p2_c6_k6",
+    "p2_c7_k1",
+    "p2_c7_k2",
+    "p2_c7_k3",
+    "p2_c7_k7",
+    "p2_c8_k1",
+    "p2_c8_k2",
+    "p2_c8_k3",
+    "p2_c8_k4",
+    "p2_c8_k8",
+    "p2_c9_k1",
+    "p2_c9_k2",
+    "p2_c9_k3",
+    "p2_c9_k4",
+    "p2_c9_k9",
+    "p2_c10_k1",
+    "p2_c10_k2",
+    "p2_c10_k3",
+    "p2_c10_k4",
+    "p2_c10_k5",
+    "p2_c10_k10",
+    "p2_c11_k1",
+    "p2_c11_k2",
+    "p2_c11_k3",
+    "p2_c11_k4",
+    "p2_c11_k5",
+    "p2_c11_k11",
+    "p2_c12_k1",
+    "p2_c12_k2",
+    "p2_c12_k3",
+    "p2_c12_k4",
+    "p2_c12_k5",
+    "p2_c12_k6",
+    "p2_c12_k12",
+    "p2_c13_k1",
+    "p2_c13_k2",
+    "p2_c13_k3",
+    "p2_c13_k4",
+    "p2_c13_k5",
+    "p2_c13_k6",
+    "p2_c14_k2",
+    "p2_c14_k3",
+    "p2_c14_k4",
+    "p2_c14_k5",
+    "p2_c14_k6",
+    "p2_c14_k7",
+    "p2_c15_k3",
+    "p2_c15_k4",
+    "p2_c15_k5",
+    "p2_c15_k6",
+    "p2_c15_k7",
+    "p2_c16_k4",
+    "p2_c16_k5",
+    "p2_c16_k6",
+    "p2_c16_k7",
+    "p2_c16_k8",
+    "p2_c17_k5",
+    "p2_c17_k6",
+    "p2_c17_k7",
+    "p2_c17_k8",
+    "p2_c18_k6",
+    "p2_c18_k7",
+    "p2_c18_k8",
+    "p2_c18_k9",
+    "p2_c19_k7",
+    "p2_c19_k8",
+    "p2_c19_k9",
+    "p2_c20_k8",
+    "p2_c20_k9",
+    "p2_c20_k10",
+    "p2_c21_k9",
+    "p2_c21_k10",
+    "p3_c1_k1",
+    "p3_c2_k1",
+    "p3_c2_k2",
+    "p3_c3_k1",
+    "p3_c3_k3",
+    "p3_c4_k1",
+    "p3_c4_k2",
+    "p3_c4_k4",
+    "p3_c5_k1",
+    "p3_c5_k2",
+    "p3_c5_k5",
+    "p3_c6_k1",
+    "p3_c6_k2",
+    "p3_c6_k3",
+    "p3_c6_k6",
+    "p3_c7_k1",
+    "p3_c7_k2",
+    "p3_c7_k3",
+    "p3_c7_k7",
+    "p3_c8_k1",
+    "p3_c8_k2",
+    "p3_c8_k3",
+    "p3_c8_k4",
+    "p3_c8_k8",
+    "p3_c9_k1",
+    "p3_c9_k2",
+    "p3_c9_k3",
+    "p3_c9_k4",
+    "p3_c10_k2",
+    "p3_c10_k3",
+    "p3_c10_k4",
+    "p3_c10_k5",
+    "p3_c11_k3",
+    "p3_c11_k4",
+    "p3_c11_k5",
+    "p3_c12_k4",
+    "p3_c12_k5",
+    "p3_c12_k6",
+    "p3_c13_k5",
+    "p3_c14_k6",
+    "p3_c14_k7"
+  ],
+  "published_interval": [
+    43,
+    46
+  ],
+  "timeouts": [
+    {
+      "log": "logs/p3_c13_k6_kissat.txt",
+      "name": "p3_c13_k6",
+      "solve_sec": 600,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c1_k1_kissat.txt",
+      "name": "p5_c1_k1",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c2_k1_kissat.txt",
+      "name": "p5_c2_k1",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c2_k2_kissat.txt",
+      "name": "p5_c2_k2",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c3_k1_kissat.txt",
+      "name": "p5_c3_k1",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c3_k3_kissat.txt",
+      "name": "p5_c3_k3",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c4_k1_kissat.txt",
+      "name": "p5_c4_k1",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c4_k2_kissat.txt",
+      "name": "p5_c4_k2",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c4_k4_kissat.txt",
+      "name": "p5_c4_k4",
+      "solve_sec": 180,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c5_k1_kissat.txt",
+      "name": "p5_c5_k1",
+      "solve_sec": 600,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c5_k2_kissat.txt",
+      "name": "p5_c5_k2",
+      "solve_sec": 600,
+      "status": "UNKNOWN"
+    },
+    {
+      "log": "logs/p5_c8_k4_kissat.txt",
+      "name": "p5_c8_k4",
+      "solve_sec": 900,
+      "status": "UNKNOWN"
+    }
+  ],
+  "unsat_by_prime": {
+    "2": [],
+    "3": [],
+    "5": [
+      "5^6 1^13 k=2",
+      "5^6 1^13 k=3",
+      "5^7 1^8 k=3"
+    ]
+  },
+  "unsat_representatives": [
+    {
+      "covers_k": [
+        2,
+        4
+      ],
+      "cycle_type": "5^6 1^13",
+      "cycles": 6,
+      "fixed": 13,
+      "fixed_cycle_count": 2,
+      "nclauses": 461648,
+      "nvars": 19527,
+      "p": 5,
+      "proof": {
+        "bytes": 4741329,
+        "path": "certs/proofs/p5_c6_k2.drat.gz",
+        "sha256": "f09e90f1e1fc1fea6a888a4368e0cfbe1264d2ed235aa8b7165c72993fe2d2c9",
+        "verified": true
+      },
+      "solve_sec": 160,
+      "status": "UNSAT"
+    },
+    {
+      "covers_k": [
+        3
+      ],
+      "cycle_type": "5^6 1^13",
+      "cycles": 6,
+      "fixed": 13,
+      "fixed_cycle_count": 3,
+      "nclauses": 461648,
+      "nvars": 19527,
+      "p": 5,
+      "proof": {
+        "bytes": 5201754,
+        "path": "certs/proofs/p5_c6_k3.drat.gz",
+        "sha256": "8fcdaff4849bf6b8b7bf99bfc97000cae69f4163c169620c62dda622a2a41b4e",
+        "verified": true
+      },
+      "solve_sec": 200,
+      "status": "UNSAT"
+    },
+    {
+      "covers_k": [
+        3,
+        4
+      ],
+      "cycle_type": "5^7 1^8",
+      "cycles": 7,
+      "fixed": 8,
+      "fixed_cycle_count": 3,
+      "nclauses": 444322,
+      "nvars": 15482,
+      "p": 5,
+      "proof": {
+        "bytes": 3024902,
+        "path": "certs/proofs/p5_c7_k3.drat.gz",
+        "sha256": "9b1d639f7bdd9bb74142fa43a7cf3c1c8c9ec52d13af55a9b56e0a8272aac526",
+        "verified": true
+      },
+      "solve_sec": 180,
+      "status": "UNSAT"
+    }
+  ]
+}

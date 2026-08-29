@@ -232,3 +232,46 @@ Documented residue, independently replayable from `compute/q3/`:
 
 Do not cite this folder as a bound. Cert: `compute/q3/certs/q3_summary.json`.
 Replay: `cd compute/q3 && ./run_all.sh`.
+
+## 2026-08-29 — q4 leftover orders 2, 3, and 5
+
+House unchanged. A stored DRAT is a restriction on a hypothetical
+automorphism, not a bound on $R(5,5)$. A timeout is residue. The published
+interval remains $43\le R(5,5)\le46$.
+
+Reused q2's `orbit_sat.py` without changing the encoding. The five
+maximum-cycle CNF hashes from q2/q3 still match. Degree window and
+complementation give 142 leftover representatives: 86 of order 2, 42 of
+order 3, and 14 of order 5.
+
+`kissat --unsat --seed=17` produced independently checked DRAT proofs for
+two cycle types:
+
+| cycle type | checked $k$ | certificate |
+|---|---|---|
+| $5^6 1^{13}$ | 2, 3 | DRAT-UNSAT; complementation covers 4 |
+| $5^7 1^8$ | 3 | DRAT-UNSAT; complementation covers 4 |
+
+Replay of both stored proofs: `cd compute/q4 && ./run_all.sh` prints
+`VERIFIED` for `p5_c6_k2`, `p5_c6_k3`, and `p5_c7_k3`.
+
+The other twelve order-5 representatives timed out, including the
+maximum-cycle formula $5^8 1^3$ at fifteen minutes. One high-cycle order-3
+representative ($3^{13}1^{4}$, $k=6$) also timed out. Orders 2 and 3, and
+the remaining order-5 types, are unfinished. No $(5,5,43)$-graph was
+decoded.
+
+## 2026-08-29 — q4 result
+
+No 43-vertex $(5,5)$-graph. No nonexistence proof at 45. Published record
+still $43\le R(5,5)\le46$.
+
+Documented residue, independently replayable from `compute/q4/`:
+
+- cycle types $5^6 1^{13}$ and $5^7 1^8$ are certified UNSAT;
+- the maximum-cycle order-2, order-3, and order-5 instances remain
+  `UNKNOWN`; and
+- the other leftover 2/3/5 cycle types are incomplete.
+
+Do not cite this folder as a bound. Cert: `compute/q4/certs/q4_summary.json`.
+Replay: `cd compute/q4 && ./run_all.sh`.

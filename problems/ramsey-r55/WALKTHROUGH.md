@@ -256,3 +256,87 @@ remain `UNKNOWN`, and their non-maximum cycle types have not been exhausted.
 Graphs with trivial automorphism group are untouched.
 
 Do not cite this folder as a bound.
+
+---
+
+# 2026-08-29 — leftover orders 2, 3, and 5
+
+- Argument status: documented incomplete search; published record
+  $43\le R(5,5)\le46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+q3 had closed every order-7 cycle type. The finite leftover was the list
+$p^c 1^{43-pc}$ for $p\in\{2,3,5\}$. q2 and q3 had only run the five
+maximum-cycle representatives, and those had timed out.
+
+## 1. False starts
+
+- **Plain CDCL at three minutes.** Every order-5 representative returned
+  `UNKNOWN`. The configuration that had worked for most of the order-7 list
+  did not move these leftover primes.
+- **Neighbourhood cubes copied from order 7.** After the existing
+  cycle/phase breaking there are 706 legal neighbourhoods for $5^7 1^8$ and
+  3036 for $5^8 1^3$. The first $5^7$ cube still timed out at a minute:
+  assigning the selected cycles leaves twenty or more free vertices, unlike
+  the order-7 maximum-cycle split.
+- **Treating one timeout as an exclusion.** The maximum-cycle order-5
+  formula stayed `UNKNOWN` at fifteen minutes even under the UNSAT-biased
+  kissat configuration.
+
+## 2. The useful failure
+
+The neighbourhood split taught the wrong size. What actually solved two
+cycle types was the same UNSAT-biased kissat run that q3 had used for
+$7^1 1^{36}$, applied to the high-cycle order-5 formulas $5^6 1^{13}$ and
+$5^7 1^8$. Those instances are small enough for inprocessing to finish and
+large enough that the cyclic constraints bite.
+
+## 3. The click
+
+Complementation still pairs $k$ with $c-k$. For $5^6 1^{13}$ the legal
+values are $k=2,3,4$; checking 2 and 3 covers all three. For $5^7 1^8$ the
+only legal values are 3 and 4, so one representative is enough. The
+encoder did not change.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Radziszowski revision 18 and Angeltveit–McKay v2 again. The live
+   window is still $43\le R(5,5)\le46$. Tamburini 2508.16699 remains a
+   heuristic.
+2. Enumerate the 142 degree-feasible leftover representatives. Match the
+   five maximum-cycle CNF hashes from q2/q3.
+3. Run plain CDCL for three minutes on all fourteen order-5 cases. All
+   `UNKNOWN`.
+4. Switch to `kissat --unsat --seed=17`. Store checked DRATs for
+   $5^6 1^{13}$ ($k=2,3$) and $5^7 1^8$ ($k=3$).
+5. Independently regenerate those three CNFs and replay every stored proof
+   with the pinned `drat-trim`.
+6. Leave the maximum-cycle formulas and the rest of orders 2 and 3 as
+   timeouts.
+
+No step constructs a 43-vertex graph or proves nonexistence at 45.
+
+## 5. Computer search
+
+- `compute/q4/certs/q4_summary.json` — collected result
+- `compute/q4/certs/proofs/p5_c6_k2.drat.gz`, `p5_c6_k3.drat.gz`,
+  `p5_c7_k3.drat.gz` — the three stored proofs
+- `compute/q4/logs/replay_direct.txt` — independent `VERIFIED` lines
+- `compute/q4/run_all.sh` — regenerate the CNFs and replay the proofs
+
+## 6. What is proved vs still open
+
+**Checked, not new as a Ramsey bound.** No $(5,5,43)$-graph has an
+automorphism of cycle type $5^6 1^{13}$ or $5^7 1^8$. Combined with q2 and
+q3, a hypothetical graph's automorphism-group order can have prime
+divisors only among 2, 3, and 5, and if 5 divides that order then the
+permutation is not of type $5^6$ or $5^7$.
+
+**Still open.** The interval is still $43\le R(5,5)\le46$. The
+maximum-cycle order-2, order-3, and order-5 instances remain `UNKNOWN`.
+Other leftover 2/3/5 cycle types are unfinished. Graphs with trivial
+automorphism group are untouched.
+
+Do not cite this folder as a bound.

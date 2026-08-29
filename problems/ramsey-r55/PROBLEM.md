@@ -38,3 +38,12 @@ $(5,5,43)$-graph has automorphism-group order with prime divisors only among
 2, 3, and 5. The maximum-cycle order-2, order-3, and order-5 instances remain
 `UNKNOWN`, and their other cycle types are not exhaustively searched. This is
 an automorphism restriction, not a bound on $R(5,5)$.
+
+## Status (2026-08-29, q4)
+
+Published record still $43\le R(5,5)\le46$. No endpoint moved. Residue in
+`compute/q4/`: checked DRAT certificates exclude automorphism cycle types
+$5^6 1^{13}$ and $5^7 1^8$ on 43 vertices. The maximum-cycle order-2,
+order-3, and order-5 instances remain `UNKNOWN`, and the other leftover
+2/3/5 cycle types are not exhaustively searched. This is an automorphism
+restriction, not a bound on $R(5,5)$.
