@@ -378,15 +378,16 @@ were already rank 20. The only (19,3) certificate in ranks 21–26
 is the Harnack triangulation at rank 23.
 
 So the leftover thicken is no longer "ranks 21–26 were never
-tried." It is "ranks 21–24 are finished neighbourhoods and added
-nothing; the one leftover rank-26 triangulation is still open."
-That is still not an obstruction. Hamming distance greater than 1,
-or a triangulation outside the 184, remains possible.
+tried." It is "ranks 21–26 are finished neighbourhoods and added
+nothing." That is still not an obstruction. Hamming distance
+greater than 1, or a triangulation outside the 184, remains
+possible.
 
 The Harnack triangulation itself, radius 1 around the whole Haas
 maximal stratum, produced 26 schemes already in the published
-census. The other five rank-23 leftover certificates, and all
-three rank-24 leftover certificates, did the same.
+census. The other five rank-23 leftover certificates, all three
+rank-24 leftover certificates, and the one rank-26 leftover
+certificate did the same.
 
 Collection space was pushed one step past q1 and stayed quiet.
 Four hundred thousand even twists still produce exactly the five

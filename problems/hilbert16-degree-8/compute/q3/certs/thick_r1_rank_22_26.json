@@ -1,0 +1,170 @@
+{
+  "what": "Radius-1 thicken of leftover census triangulations of twist-rank 22\u201326. Complete only when every task has evals == 46 * 2^rank.",
+  "kind": "leftover_thicken_r1",
+  "radius": 1,
+  "min_rank": 22,
+  "max_rank": 26,
+  "n_tasks": 15,
+  "n_complete": 15,
+  "n_incomplete": 0,
+  "n_missing": 0,
+  "complete": true,
+  "expected_evals": 8682209280,
+  "evals": 8682209280,
+  "novel": [],
+  "missing": [],
+  "incomplete": [],
+  "tasks": [
+    {
+      "cert": "deg8/o14-p03-n11/(1(1)v1(2)v1(8)).pcom",
+      "rank": 22,
+      "evals": 192937984,
+      "expected": 192937984,
+      "distinct_schemes": 107,
+      "complete": true,
+      "novel": [],
+      "seconds": 8952.2
+    },
+    {
+      "cert": "deg8/o21-p07-n14/(5v1(4)v1(10)).pcom",
+      "rank": 22,
+      "evals": 192937984,
+      "expected": 192937984,
+      "distinct_schemes": 76,
+      "complete": true,
+      "novel": [],
+      "seconds": 17503.9
+    },
+    {
+      "cert": "deg8/o22-p07-n15/(5v1(1)v1(14)).pcom",
+      "rank": 22,
+      "evals": 192937984,
+      "expected": 192937984,
+      "distinct_schemes": 81,
+      "complete": true,
+      "novel": [],
+      "seconds": 16503.5
+    },
+    {
+      "cert": "deg8/o22-p11-n11/(9v1(10v1(1))).pcom",
+      "rank": 22,
+      "evals": 192937984,
+      "expected": 192937984,
+      "distinct_schemes": 39,
+      "complete": true,
+      "novel": [],
+      "seconds": 5184.2
+    },
+    {
+      "cert": "deg8/o22-p15-n07/(11v1(6v1(3))).pcom",
+      "rank": 22,
+      "evals": 192937984,
+      "expected": 192937984,
+      "distinct_schemes": 108,
+      "complete": true,
+      "novel": [],
+      "seconds": 5316.0
+    },
+    {
+      "cert": "deg8/o09-p06-n03/(1(2v1(5))).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 113,
+      "complete": true,
+      "novel": [],
+      "seconds": 9798.6
+    },
+    {
+      "cert": "deg8/o19-p15-n04/(8v1(3v1(6))).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 50,
+      "complete": true,
+      "novel": [],
+      "seconds": 23111.4
+    },
+    {
+      "cert": "deg8/o20-p03-n17/(1(16v1(2))).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 23,
+      "complete": true,
+      "novel": [],
+      "seconds": 25561.0
+    },
+    {
+      "cert": "deg8/o20-p06-n14/(4v1(6)v1(8)).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 77,
+      "complete": true,
+      "novel": [],
+      "seconds": 22487.0
+    },
+    {
+      "cert": "deg8/o22-p15-n07/(12v2(1)v1(5)).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 73,
+      "complete": true,
+      "novel": [],
+      "seconds": 24267.1
+    },
+    {
+      "cert": "deg8/o22-p19-n03/(18v1(3)).pcom",
+      "rank": 23,
+      "evals": 385875968,
+      "expected": 385875968,
+      "distinct_schemes": 26,
+      "complete": true,
+      "novel": [],
+      "seconds": 22221.7
+    },
+    {
+      "cert": "deg8/o10-p03-n07/(1(1)v1(2)v1(4)).pcom",
+      "rank": 24,
+      "evals": 771751936,
+      "expected": 771751936,
+      "distinct_schemes": 107,
+      "complete": true,
+      "novel": [],
+      "seconds": 44184.8
+    },
+    {
+      "cert": "deg8/o18-p03-n15/(1(14v1(2))).pcom",
+      "rank": 24,
+      "evals": 771751936,
+      "expected": 771751936,
+      "distinct_schemes": 22,
+      "complete": true,
+      "novel": [],
+      "seconds": 43676.6
+    },
+    {
+      "cert": "deg8/o19-p18-n01/(15v1(1(2))).pcom",
+      "rank": 24,
+      "evals": 771751936,
+      "expected": 771751936,
+      "distinct_schemes": 67,
+      "complete": true,
+      "novel": [],
+      "seconds": 42322.0
+    },
+    {
+      "cert": "deg8/o20-p19-n01/(17v1(1(1))).pcom",
+      "rank": 26,
+      "evals": 3087007744,
+      "expected": 3087007744,
+      "distinct_schemes": 60,
+      "complete": true,
+      "novel": [],
+      "seconds": 116783.4,
+      "nshards": 4
+    }
+  ]
+}

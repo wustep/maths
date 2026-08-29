@@ -42,9 +42,9 @@ An incomplete search is not a lower bound.
 
 ## What this run found
 
-Ranks 22–24 leftover thicken finished: 5/5, 6/6, and 3/3, each
-with evals \(46\cdot 2^r\), novel empty. Rank 26 is the last
-leftover census triangulation; shard 0 of four is finished.
-See `certs/` after `collect.py`. The bound does not move unless a
-certificate sits outside the published 2,367 and the seventeen
-already stored, and then only after the exact verifier.
+Leftover ranks 22–26 radius-1 thicken finished 15/15, each with
+evals \(46\cdot 2^r\), novel empty. The rank-26 certificate is
+four shards summing to \(46\cdot 2^{26}\). No
+`certs/new_schemes.json`. The bound stays 2,384. See `certs/`
+after `collect.py`. A new scheme is a T-curve only after the
+exact verifier.

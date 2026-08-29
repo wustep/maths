@@ -14,13 +14,12 @@ on main.
 Did not move. No `q3/certs/new_schemes.json`.
 
 Rank 22 leftover thicken is 5/5, each with evals \(46\cdot 2^{22}\).
-The rank-23 Harnack triangulation is also finished,
-evals \(46\cdot 2^{23}\), 26 schemes. Novel empty on both.
-Ranks 22, 23, and 24 leftover thicken are finished (5/5, 6/6,
-and 3/3). Novel empty. Leftover ranks 22–26 are 14/15. The last
-piece is the rank-26 triangulation, four shards; shard 0 is
-finished. Prefix only. Odd collections of size 4 finished:
-twelve known M-schemes, no nest.
+Ranks 23 and 24 are 6/6 and 3/3. Rank 26 is 1/1: four shards
+each with evals \(46\cdot 2^{24}\), summing to \(46\cdot 2^{26}\).
+Leftover ranks 22–26 are **15/15**, 8,682,209,280 evaluations,
+novel empty. No `q3/certs/new_schemes.json`. Bound still
+≥ 2,384. Odd collections of size 4 finished: twelve known
+M-schemes, no nest. The two open (19,3) nests remain.
 
 ## Scope
 
