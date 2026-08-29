@@ -1058,14 +1058,38 @@ An incomplete prefix is residue, not a lower bound. No new scheme
 is claimed until `verify_new.py` accepts a certificate outside the
 2,367 and the seventeen.
 
-### So far
+### Finished searches
 
 | search | evals | result |
 | --- | --- | --- |
+| three-split ladder, twelve published depth-3 M-collections | 3,909,329 | **12/12 complete**; 29 known schemes, 0 new, 0 hits on the open nests |
 | pinned even-split BFS, 1,200,000 collections | 1,200,000 | the five published (19,3) M-schemes only; queue left 1,167,098 (**residue**) |
 
-Certificate: `compute/q4/certs/even_bfs.json`. No
-`q4/certs/new_schemes.json`. Bound still ≥ 2,384.
+Certificates: `compute/q4/certs/ladder3_depth3.json`,
+`even_bfs.json`. No `q4/certs/new_schemes.json`. Bound still
+≥ 2,384.
 
-The three-split ladder (193 and depth-3) and odd collections of
-size 5 are still running. That is not a wrap.
+The depth-3 three-split includes the five published (19,3)
+collections. Neither open nest appeared. That is a finished
+neighbourhood, not a lower bound. Odd collections of size 5 were
+still in size 4 when this wrap was written.
+
+### What the (19,3) row did this time
+
+A longer even walk (1.2M vs q2's 400k) stays on the same five
+published (19,3) M-schemes; the queue is still open. Three-split
+moves around every published depth-3 M-collection reach 29 known
+schemes and neither open nest.
+
+None of that decides ⟨4⊔1⟨2⊔1⟨14⟩⟩⟩ or ⟨14⊔1⟨2⊔1⟨4⟩⟩⟩.
+
+### Status
+
+Hilbert 16(a) in degree 8 remains open. The dent is still the
+seventeen schemes and the bound ≥ 2,384; both replay. No new
+scheme, no deep-nest decision. The leftover three-split around
+the twelve published depth-3 M-collections is finished and added
+nothing.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q4/run_all.sh && python3 q4/collect.py`.

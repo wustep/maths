@@ -35,6 +35,10 @@ An incomplete search is not a lower bound.
 
 ## What this run found
 
-See `certs/` after `collect.py`. The bound does not move unless a
-certificate sits outside the published 2,367 and the seventeen
-already stored, and then only after the exact verifier.
+The three-split around the twelve published depth-3 M-collections
+finished 12/12: 3,909,329 evaluations, 29 known schemes, neither
+open nest. A 1.2 million even-split BFS stays on the five
+published (19,3) M-schemes with the queue still open. No
+`certs/new_schemes.json`. The bound stays 2,384. See `certs/`
+after `collect.py`. A new scheme is a T-curve only after the
+exact verifier.

@@ -13,8 +13,10 @@ finished on main.
 
 Did not move. No `q4/certs/new_schemes.json`.
 
-Pinned even-split BFS at 1,200,000 collections stays on the five
-published (19,3) M-schemes. Queue left 1,167,098. Prefix only.
+Three-split around the twelve published depth-3 M-collections
+finished 12/12: 3,909,329 evaluations, 29 known schemes, neither
+open nest. Pinned even-split BFS at 1,200,000 collections stays
+on the five published (19,3) M-schemes; queue left 1,167,098.
 
 ## Scope
 
