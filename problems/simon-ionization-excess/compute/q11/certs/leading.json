@@ -1,0 +1,80 @@
+{
+  "arxiv": "2504.18487v1",
+  "beta3_lower": "0.9083146735963096",
+  "source": "q11 compact R=10 n=36 target=0.9117, lifted by mass-opt dichotomy",
+  "row": "certs/raise_R10_n36_t0p9117.json",
+  "R_split": 10,
+  "b_interval": [
+    "1.100940047616624686609845814719716068225",
+    "1.100940047616624686609845814719716068225"
+  ],
+  "b_hi": "1.100940047616624686609845814719716068225",
+  "printed_leading": "1.1010",
+  "a1_at_left": [
+    "3.848097780892683991221996720955287886394",
+    "3.848097780892683991221996720955287886394"
+  ],
+  "a1_at_9/4": [
+    "3.822392904464849784890952044953962337424",
+    "3.822392904464849784890952044953962337424"
+  ],
+  "a1_max_hi_on_interval": "3.848097780892683991221996720955287886394",
+  "a1_printed": "3.849",
+  "a2": [
+    "0.01310642913829315103106959303237757224078",
+    "0.01310642913829315103106959303237757224078"
+  ],
+  "a3": [
+    "0.1826526771914059320765541911321791474983",
+    "0.1826526771914059320765541911321791474983"
+  ],
+  "a4": [
+    "0.01948906129849857428832669344612882161340",
+    "0.01948906129849857428832669344612882161340"
+  ],
+  "Z4_remainder_coeff": [
+    "3.933712342177065599829426700402979222079",
+    "3.933712342177065599829426700402979222079"
+  ],
+  "Z4_printed": "3.934",
+  "extras_printed": [
+    "0.01320",
+    "0.1827",
+    "0.019490"
+  ],
+  "r_max": [
+    "0.4705180144405142455387763635073145689990",
+    "0.4705180144405142455387763635073145689990"
+  ],
+  "checks": {
+    "leading_lt_printed": true,
+    "a1_lt_printed": true,
+    "Z4_coeff_lt_printed": true,
+    "extras_ok": true,
+    "r_max_lt_0.5": true,
+    "beats_1.1185": true,
+    "beats_1.1118": true,
+    "beats_1.1057": true,
+    "beats_1.1013": true,
+    "beats_1.1017": true,
+    "beats_1.1020": true,
+    "beats_1.1021": true,
+    "beats_1.1026": true,
+    "beats_1.1035": true,
+    "beats_1.108741_class_number": true
+  },
+  "inequalities": [
+    {
+      "beats": "q10 leading 1.1013, q9 1.1017, q8 1.1020, q7 1.1021, q6 1.1026, q5 1.1035, q4 1.1057, q3 1.1118, and HPS printed 1.1185",
+      "range": "Z >= 4",
+      "inequality": "N < 1.1010 Z + 3.849 Z^{1/3} + 0.01320 + 0.1827 Z^{-1/3} + 0.019490 Z^{-2/3}"
+    },
+    {
+      "beats": "q10 simplified 1.1013 Z + 3.935 Z^{1/3}",
+      "range": "Z >= 4",
+      "inequality": "N_c < 1.1010 Z + 3.934 Z^{1/3}"
+    }
+  ],
+  "LT_factor": "1.456",
+  "note": "\u03b2_3 \u2265 compact \u03b3 on every radial probability, by the aspect-10 compact certificate plus the mass-stationary cut Q>10/11. Not the withdrawn 1.1168. The aspect-\u22644 number 1.1087 is not used as a class-only quote; the unrestricted leading is the compact \u03b3 at the split R."
+}
