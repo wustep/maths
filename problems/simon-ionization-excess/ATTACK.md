@@ -731,3 +731,30 @@ enumeration is the certificate, not the SLSQP prediction.
 If faces do not certify, this wrap is residue and the
 printed leading stays $1.1013$.
 
+## 2026-08-29 — q11 dent
+
+Same HPS §7 chain with $\beta_3\ge 0.908315$ (aspect $10$,
+$n=36$ faces, $\varphi=0.9117$):
+
+$$
+N<1.1010Z+3.849\,Z^{1/3}+0.01320+0.1827\,Z^{-1/3}+0.019490\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1010Z+3.934\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
+$10/11$ algebra, mass-opt scan with no counterexample, stored
+$R=10$ $n=36$ faces ($68{,}719{,}476{,}735$, copositive, $16296$
+residual skips, $\min m^\top Mm>6\cdot 10^{-4}$,
+$\min\varphi=0.911885$).
+$1/\gamma=1.100940$ prints as $1.1010$. Cut $10/11>\gamma$.
+$1.1168$ stays withdrawn. q1 remainders unchanged. $N_0(Z)-Z$
+bounded still open. Higher-target probes on the $n=34$ or
+$n=35$ matrix were not run and are not an $n=36$ dent.
+
+Replay: `problems/simon-ionization-excess/compute/q11/run_all.sh`.
+

@@ -18,8 +18,8 @@ $1.1021$ by $1.1020$.
 $1.1020$ by $1.1017$.
 `q10/` raises the bin count at the same split and replaces
 $1.1017$ by $1.1013$.
-`q11/` leftover: $n=36$ bins at the same split. No new leading
-until faces certify.
+`q11/` raises the bin count at the same split and replaces
+$1.1013$ by $1.1010$.
 
 ```bash
 ./run_all.sh

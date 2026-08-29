@@ -168,10 +168,10 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 
 2. The useful failure — $R=9.8$ with the cut binding prints $1.10204$, which is $1.1021$. Chebyshev does not reopen $R\le 9$. The jump is more bins at the proven split, or a higher target on a stored matrix (full re-enum, not an $n=36$ dent).
 
-3. The click — predicted only until faces run. $n=36$ mid-radius bins at aspect $10$. Compact $\gamma$ must sit below $10/11$, and printed $1/\gamma$ must beat $1.1013$. Face enumeration is the certificate.
+3. The click — SLSQP $\varphi$ at $R=10$, $n=36$ is $0.911881$. Target $0.9117$ minus the $P$ error $0.003385$ gives $\gamma=0.908315$, and $10/11>\gamma$. Then $1/\gamma=1.100940<1.1010<1.1013$.
 
-4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $36$ bins if faces certify. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Same §7 chain.
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $36$ bins. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
 
-5. Computer search — leftover. $2^{36}-1=68{,}719{,}476{,}735$ faces. SLSQP prediction in `compute/q11/certs/scan_compact.json`. No new leading until the dump is copositive.
+5. Computer search — stored $R=10$, $n=36$ faces at target $0.9117$ ($68{,}719{,}476{,}735$, copositive, $16296$ skips, $\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.911885$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
-6. Proven vs still open — printed leading stays $1.1013$ until faces certify. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+6. Proven vs still open — printed leading $1.1013$ moves to $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. Higher-target probes on the $n=34$ or $n=35$ matrix were not run and are not this dent.
