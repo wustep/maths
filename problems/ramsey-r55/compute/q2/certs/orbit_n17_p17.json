@@ -1,0 +1,31 @@
+{
+  "build_sec": 0.158,
+  "cycles": 1,
+  "degree_constraints": true,
+  "distinct_base_clause_keys": 53,
+  "edge_orbit_vars": 8,
+  "fingerprint": {
+    "alpha_ge5": false,
+    "deg_hist": {
+      "10": 17
+    },
+    "edges": 85,
+    "max_deg": 10,
+    "min_deg": 10,
+    "n": 17,
+    "omega_ge5": false,
+    "triangles": 153
+  },
+  "five_subset_orbits": 364,
+  "fixed": 0,
+  "fixed_cycle_count": null,
+  "graph6": "P~]}z[vEwZovovWZuE}ovzB[",
+  "n": 17,
+  "nclauses": 1144,
+  "nvars": 280,
+  "p": 17,
+  "solve_sec": 0.001,
+  "solver": "PySAT Cadical195",
+  "status": "SAT",
+  "verified_55": true
+}

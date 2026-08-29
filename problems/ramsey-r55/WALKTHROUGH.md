@@ -152,3 +152,23 @@ Replay: `cd problems/ramsey-r55/compute && ./replay.sh && cd q1 && ./run_all.sh`
 - Whether $\mathcal R(5,5,45)$ is empty.
 
 Do not cite this folder as a bound.
+
+
+## 7. Two-edit ball and large-prime automorphisms (2026-08-28)
+
+The one-flip neighbourhood of the 656 was already empty for extensions. The
+two-edit ball is the next finite neighbourhood that still sits on a laptop:
+every unordered pair of edge toggles among 42 vertices, including pairs that
+leave the Ramsey class in the middle. 242 million pairs, 11136 legal
+endpoints, zero 43rd vertices.
+
+Separately, a 43-vertex example with an automorphism of prime order $p\ge 11$
+is now excluded for the cycle types that fit, by checked DRAT proofs, and a
+few leftover types die on the degree window alone. Combined with the old
+circulant census, that leaves only automorphism groups whose primes are
+among $2,3,5,7$. Those SAT instances timed out.
+
+A score-2 near graph from local search has no $(5,5,43)$-graph inside six
+edge edits. That is a ball around one failed construction, not a bound.
+
+Still $43\le R(5,5)\le 46$.

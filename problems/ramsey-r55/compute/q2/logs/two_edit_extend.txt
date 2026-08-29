@@ -1,0 +1,1 @@
+DONE graph_pairs=328 toggle_pairs=242870880 final_ok=11136 extensions=0 extension_nodes=14589220 sec=586.913

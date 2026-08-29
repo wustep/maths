@@ -1,0 +1,16 @@
+cnf/
+/proofs/
+refs/
+work/
+certs/proofs/*.drat
+certs/proofs/orbit_n43_p11.drat.gz
+certs/proofs/orbit_n43_p17.drat.gz
+certs/proofs/orbit_n43_p19.drat.gz
+certs/proofs/orbit_n43_p23.drat.gz
+certs/proofs/repair_r[2-5].drat.gz
+*.o
+orbit_sat
+two_edit_extend
+local_search
+
+__pycache__/

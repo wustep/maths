@@ -149,3 +149,31 @@ Documented residue, independently replayable from `compute/q1/`:
 
 Do not cite this folder as a bound. Cert: `compute/q1/certs/q1_summary.json`.
 
+
+
+## 2026-08-28 — q2 Sol / 20xx
+
+GPT-5.6 Sol on the 20xx workspace. Session died on workspace credits before
+the wrap. Interval still $43\le R(5,5)\le 46$. No 43-vertex $(5,5)$-graph.
+No nonexistence proof at 45. Residue, independently replayable from
+`compute/q2/`.
+
+- Complete two-edit ball around the 656: $656\binom{\binom{42}{2}}{2}=242870880$
+  unordered toggle pairs. 11136 finish at a $(5,5,42)$-graph; none accepts a
+  43rd vertex (`logs/two_edit_extend.txt`, 587s). Classification: 10864 pairs
+  have two legal intermediates, 272 have one (`logs/two_edit_classify.txt`).
+- Prime-order automorphism cycle types on 43 vertices, DRAT-verified UNSAT:
+  $11^c1^{43-11c}$ for $c=1,2,3$; $13^c$ for $c=1,2$; $17^c$ for $c=1,2$;
+  $19^c$ for $c=1,2$; $23^11^{20}$. Degree window $18\le d\le 24$ separately
+  excludes $13^31^4$, $29^11^{14}$, $31^11^{12}$, $37^11^6$, $41^11^2$.
+  Circulant order 43 was already empty. A hypothetical $(5,5,43)$-graph
+  therefore has $|\mathrm{Aut}|$ with no prime divisor $\ge 11$. That is a
+  restriction on a hypothetical graph, not a bound on $R(5,5)$.
+- Local-search near graph with two bad 5-sets. Radius-6 Hamming ball is
+  UNSAT by a checked DRAT (`certs/repair_r6.json`,
+  `certs/proofs/repair_r6.drat.gz`). The near graph is not a Ramsey graph.
+- Orders 2, 3, 5, 7: symmetry-broken SAT left `UNKNOWN`. Timeouts are not
+  restrictions.
+
+Do not cite this folder as a bound. Cert: `compute/q2/certs/q2_summary.json`.
+Replay: `cd compute/q2 && ./run_all.sh`.
