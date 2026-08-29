@@ -746,3 +746,23 @@ F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q
 
 First remaining hole n=151, δ⁺=51. Conjecture 1/3 open.
 
+### 2026-08-29 — leftover cubes from n=151 (q41 start)
+
+Same encoder as q1–q40. New proofs will live in `compute/q41/certs/keep/` (q40 stays the n=150 store).
+
+Independent cube bounds at leftover n=151: ⌈151/3⌉=51, so d=51. HKN 0.3465·151=52.3215 and the stored F₄ 0.34640·151=52.3064 both sit above 51, so the order is leftover. Even the 0.3388 personal communication still has 0.3388·151=51.1588>51. A 51-outregular graph on 151 vertices has 7701 arcs, so some in-degree is at least 51. Each v∈N⁺(0) needs 51 outs from (N⁺(0)\{v})∪U, size 149−k, hence k≤98. Absolute max k=99 is empty by that N⁺ cut. Needed cubes: k=51..98 (48). The 2-cycle covering count on A empties k≥73 (σ=n−2−d−k=98−k; survive when σ≥⌊(d−1)/2⌋+1=26, i.e. k≤72). SAT work is k=51..72. That arithmetic is recomputed here, not copied as a prescription.
+
+F₄ stays 0.34640. Did not beat 0.3388. n=151 not stored yet. Residue until the 48 DRATs exist and an independent `verify_range` reports 0 failures. Stored leftover SAT is residue, not a bound. A dent is only a verified move of F₄ below 0.3388, or a new exact-CH theorem.
+
+### 2026-08-29 — leftover cubes from n=151
+
+Same encoder as q1–q40. New proofs live in `compute/q41/certs/keep/` (q40 stays the n=150 store).
+
+Leftover n=151 is closed: d=51, cubes k=51..98, 48 stored DRATs after `drat-trim -l` (k=52 is 35.3 MB). Independent replay: `python3 verify_range.py --n-min 151 --n-max 151` reports 48 checked, 0 failures.
+
+Stored leftover SAT is residue, not a bound. n=152 is not stored. A dent is only a verified move of F₄ below 0.3388, or a new exact-CH theorem.
+
+F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=152, δ⁺=51. Conjecture 1/3 open.
+
