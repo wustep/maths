@@ -151,10 +151,10 @@ Do not cite this folder as a bound. Cert: `compute/q1/certs/q1_summary.json`.
 
 
 
-## 2026-08-28 — q2 Sol / 20xx
+## 2026-08-28 — q2
 
-GPT-5.6 Sol on the 20xx workspace. Session died on workspace credits before
-the wrap. Interval still $43\le R(5,5)\le 46$. No 43-vertex $(5,5)$-graph.
+The session ended before the wrap. Interval still $43\le R(5,5)\le 46$.
+No 43-vertex $(5,5)$-graph.
 No nonexistence proof at 45. Residue, independently replayable from
 `compute/q2/`.
 
@@ -177,3 +177,58 @@ No nonexistence proof at 45. Residue, independently replayable from
 
 Do not cite this folder as a bound. Cert: `compute/q2/certs/q2_summary.json`.
 Replay: `cd compute/q2 && ./run_all.sh`.
+
+## 2026-08-29 — q3 order-7 leftover
+
+House unchanged: a timeout or a restriction on a hypothetical automorphism
+group is residue, not a dent. The published interval remains
+$43\le R(5,5)\le46$.
+
+Reused q2's `orbit_sat.py` without changing its encoding. The six regenerated
+maximum-cycle CNFs for orders 2, 3, 5, and 7 match q2's recorded SHA-256
+hashes byte for byte. Plain-CDCL five-minute reruns for the maximum-cycle
+order-2, order-3, and order-5 representatives remained `UNKNOWN`.
+
+For an order-7 permutation of type $7^c 1^{43-7c}$, choose a fixed vertex and
+let $k$ count adjacent 7-cycles. The degree window $[18,24]$, complementation
+($k\leftrightarrow c-k$), and relabelling of the fixed vertex reduce all
+feasible values to these representatives:
+
+| $c$ | fixed vertices | checked $k$ | result |
+|---:|---:|---:|---|
+| 1 | 36 | 1 | DRAT-UNSAT; covers $k=0$ by complement |
+| 2 | 29 | 1, 2 | DRAT-UNSAT; covers $k=0$ by complement |
+| 3 | 22 | 1, 3 | DRAT-UNSAT; covers $k=2,0$ by complement |
+| 4 | 15 | 1, 2 | DRAT-UNSAT; covers $k=3$ by complement |
+| 5 | 8 | 2 | DRAT-UNSAT; covers $k=3$ by complement |
+| 6 | 1 | 3 | 787-case DRUP-UNSAT |
+
+The eight direct representative proofs were independently accepted by the
+pinned `drat-trim`. For $7^6 1^1$, the unique fixed vertex has degree 21 and
+its three adjacent cycles induce 21 vertices with no $K_4$ and no independent
+5-set. Under q2's existing symmetry breaking there are exactly 787 assignments
+to the 30 edge-orbit variables in that neighbourhood. A local DRUP certifies
+that enumeration as complete; 787 further DRUPs, one for each full cube, all
+verify against the original q2 CNF plus the cube units. Archive and member
+hashes are in `compute/q3/certs/p7_proofs.json`.
+
+Thus no $(5,5,43)$-graph has an automorphism of order 7. With q2's exclusions
+for primes at least 11, Cauchy's theorem leaves only 2, 3, and 5 as possible
+prime divisors of the automorphism-group order of a hypothetical graph. This
+does not move either Ramsey endpoint.
+
+## 2026-08-29 — q3 result
+
+No 43-vertex $(5,5)$-graph found. No nonexistence proof at 45. Published
+record still $43\le R(5,5)\le46$.
+
+Documented residue, independently replayable from `compute/q3/`:
+
+- every order-7 automorphism cycle type on 43 vertices is certified UNSAT;
+- the hypothetical automorphism-group order has prime divisors only among
+  2, 3, and 5; and
+- maximum-cycle order-2, order-3, and order-5 SAT remains `UNKNOWN`. Other
+  cycle types for those primes remain unsearched.
+
+Do not cite this folder as a bound. Cert: `compute/q3/certs/q3_summary.json`.
+Replay: `cd compute/q3 && ./run_all.sh`.

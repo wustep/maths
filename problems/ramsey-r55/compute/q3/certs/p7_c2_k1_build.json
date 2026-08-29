@@ -1,0 +1,18 @@
+{
+  "anchor_symbreak": true,
+  "build_sec": 9.424,
+  "c7_symbreak": false,
+  "cnf_sha256": "1ffcd2f7b2d14073e06562a0bc83eb42a9a0b904067516cd35732edc6e958d0a",
+  "cycles": 2,
+  "degree_constraints": true,
+  "distinct_base_clause_keys": 238214,
+  "edge_orbit_vars": 477,
+  "five_subset_orbits": 239304,
+  "fixed": 29,
+  "fixed_cycle_count": 1,
+  "n": 43,
+  "nclauses": 599510,
+  "nvars": 31773,
+  "p": 7,
+  "p5_symbreak": false
+}

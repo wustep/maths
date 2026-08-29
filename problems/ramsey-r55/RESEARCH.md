@@ -101,3 +101,36 @@ Not a new bound. Independently verified tonight:
 6. $C_7$ encoder agrees with brute force on $n=7$ and produces a $(5,5,14)$-graph. The 42- and 43-vertex slim instances timed out. Those timeouts are not a dent.
 
 Cert: `compute/q1/certs/q1_summary.json`. Replay: `cd compute/q1 && ./run_all.sh`.
+
+## 2026-08-29 — q3 order-7 certificates
+
+No new Ramsey bound. The published interval remains $43\le R(5,5)\le46$.
+
+The q2 prime-order encoder was reused unchanged. Checked certificates now
+exclude all six order-7 permutation cycle counts $7^c 1^{43-7c}$ on 43
+vertices. Direct DRAT proofs cover eight fixed-neighbour representatives for
+$c=1,\dots,5$; complementation pairs $k$ with $c-k$. For $c=6$, a local DRUP
+exhausts 787 possible 21-vertex neighbourhoods and 787 conquer DRUPs refute the
+original q2 CNF under those assignments. Certificate:
+`compute/q3/certs/q3_summary.json`.
+
+By Cauchy's theorem, combining q2 and q3 leaves only 2, 3, and 5 as possible
+prime divisors of the automorphism-group order of a hypothetical
+$(5,5,43)$-graph. This does not rule out such a graph and does not move an
+endpoint. The maximum-cycle order-2, order-3, and order-5 instances still time
+out, and their other cycle types remain incomplete.
+
+Proof-format and case-splitting references opened during the certificate work:
+
+- `https://github.com/marijnheule/drat-trim` and
+  `https://arxiv.org/abs/1610.06229` — DRAT format and the independent checker.
+- `https://github.com/marijnheule/CnC` and
+  `https://github.com/marijnheule/CnC/blob/master/cube-glucose-proof.sh` —
+  reference cube-and-conquer implementation and incremental proof driver.
+- `https://arxiv.org/abs/2209.05201` and
+  `https://github.com/abhisheknair1729/Proof-Stitch` — proof combination for
+  divide-and-conquer SAT. q3 keeps the 787 subproofs separate and certifies the
+  finite cover, so each checker run stays small.
+- `https://github.com/arminbiere/cadical` — alternate solver source inspected;
+  the environment lacked a C++ compiler, so the installed PySAT CaDiCaL 1.9.5
+  backend was used only for search, never as the final proof checker.
