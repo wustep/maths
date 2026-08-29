@@ -365,3 +365,53 @@ Documented residue, independently replayable from `compute/q6/`:
 
 Do not cite this folder as a bound. Cert: `compute/q6/certs/q6_summary.json`.
 Replay: `cd compute/q6 && ./run_all.sh`.
+
+## 2026-08-29 — leftover SAT after certified 5^5 at k=2
+
+House unchanged. q6 is on main as `4352c20`. The leftover is 137
+degree-feasible representatives after skipping the five independently
+replayed names. A stored DRAT is a restriction on a hypothetical
+automorphism, not a bound on $R(5,5)$. A timeout is residue. The
+published interval remains $43\le R(5,5)\le46$.
+
+Reused q2's `orbit_sat.py` without changing the encoding. The five
+maximum-cycle CNF hashes from q2/q3/q4 still match. The $5^5$ at
+$k=1$ CNF hash matches q6.
+
+`kissat --unsat --seed=17` on $5^5 1^{18}$ at $k=1$ printed
+`s UNSATISFIABLE` in 7575s (q6 had timed this name out at 3600s).
+The raw DRAT is 11033169135 bytes, SHA-256
+`89fde05597fabd99ddd64a0e1b08baf02a5df02888c0f1d5f86b4c9f0adea694`.
+`drat-trim -l` produced a 4123082549-byte trimmed proof, SHA-256
+`d1f770b0b7c50ca2bb08a4d8872b4bc21a17bda8401cdef9360267e071df8574`.
+That is over GitHub's blob limit. The proof is not stored. The
+independent check of the trimmed file was still running at wrap
+and was stopped. This is not an independently replayed certificate.
+
+Other leftover names that were run:
+
+| cycle type | checked $k$ | result |
+|---|---|---|
+| $5^2 1^{33}$ | 2 | `UNKNOWN` at 3600s |
+| $3^{12}1^{7}$ | 5 | `UNKNOWN` at 3600s |
+| $5^3 1^{28}$ | 3 | stopped mid-run at wrap |
+| $3^{11}1^{10}$ | 5 | stopped mid-run at wrap |
+| $2^{20}1^{3}$ | 10 | stopped mid-run at wrap |
+
+No $(5,5,43)$-graph was decoded.
+
+## 2026-08-29 — leftover SAT after 5^5 at k=1 result
+
+No 43-vertex $(5,5)$-graph. No nonexistence proof at 45. Published
+record still $43\le R(5,5)\le46$.
+
+Documented residue from `compute/q7/`:
+
+- $5^5 1^{18}$ at $k=1$ is kissat UNSAT with an unstored 3.9GB trim;
+  the independent check did not finish;
+- $5^2 1^{33}$ at $k=2$ and $3^{12}1^{7}$ at $k=5$ remain `UNKNOWN`;
+  and
+- the other leftover 2/3/5 cycle types are incomplete.
+
+Do not cite this folder as a bound. Cert: `compute/q7/certs/q7_summary.json`.
+Replay: `cd compute/q7 && ./run_all.sh`.

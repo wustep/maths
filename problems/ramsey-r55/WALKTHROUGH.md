@@ -507,3 +507,79 @@ leftover 2/3/5 list, are unfinished. Graphs with trivial
 automorphism group are untouched.
 
 Do not cite this folder as a bound.
+
+---
+
+# 2026-08-29 — leftover SAT after 5^5 at k=2
+
+- Argument status: documented incomplete search; published record
+  $43\le R(5,5)\le46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+q6 closed $5^5 1^{18}$ at $k\in\{2,3\}$. Completing that cycle type
+needs the remaining neighbour count $k=1$. q6 had given it sixty
+minutes and a 7.7GB unfinished DRAT.
+
+## 1. False starts
+
+- **Expecting a storeable proof.** Lengthening $k=1$ to 10800s got
+  kissat `s UNSATISFIABLE` in 7575s. The raw DRAT is 11GB. The
+  trimmed file is 3.9GB. GitHub will not take that blob.
+- **Finishing the independent check before wrap.** `drat-trim` on
+  the 3.9GB file was still running when the leftover hunt was
+  stopped. A local UNSAT line without a stored, replayed proof is
+  not a certificate.
+- **$5^3$, $5^2$, and high-cycle order 3 at sixty minutes.** Those
+  names either timed out or were still running at wrap.
+
+## 2. The useful failure
+
+q6's 3600s cap was the obstruction for a kissat decision, not for
+a stored lemma. The same `kissat --unsat --seed=17` run that closed
+$k=2$ in 867s finishes $k=1$ in 7575s, but the lemma core is an
+order of magnitude larger than the $k=2$ gzip. An unstored 3.9GB
+trim is not an independently checkable log.
+
+## 3. The click
+
+There was no click that produced a stored certificate. The finite
+leftover is still the 2/3/5 list minus the five names already on
+main. The encoder did not change. The $k=1$ CNF hash matches q6.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Angeltveit–McKay v2 and the revision-18 survey again. The live
+   window is still $43\le R(5,5)\le46$.
+2. Copy the q6 stack to a new folder. Skip the five certified names.
+3. Re-solve $5^5 1^{18}$ at $k=1$ with `kissat --unsat --seed=17`.
+   kissat prints UNSAT in 7575s. Trim to 3.9GB.
+4. Do not store the 3.9GB file. Stop the independent check at wrap.
+5. Record the 3600s timeouts on $5^2$ at $k=2$ and $3^{12}$ at $k=5$.
+
+No step constructs a 43-vertex graph or proves nonexistence at 45.
+
+## 5. Computer search
+
+- `compute/q7/certs/q7_summary.json` — collected result
+- `compute/q7/certs/p5_c5_k1.json` — unstored-proof hashes and sizes
+- `compute/q7/run_all.sh` — no stored proof to replay
+
+## 6. What is proved vs still open
+
+**Checked, not new as a Ramsey bound.** No new independently
+replayed certificate. Combined with q2 through q6, a hypothetical
+graph's automorphism-group order can have prime divisors only among
+2, 3, and 5, and if 5 divides that order then the permutation is
+not of type $5^6$ or $5^7$, is not the $5^4$ neighbour-count pair
+already excluded, and is not the $5^5$ neighbour-count pair already
+excluded.
+
+**Still open.** The interval is still $43\le R(5,5)\le46$. $5^5$ at
+$k=1$ has no stored proof. All five maximum-cycle order-2, order-3,
+and order-5 instances remain `UNKNOWN`. The rest of the leftover
+2/3/5 list is unfinished. Graphs with trivial automorphism group
+are untouched.
+
+Do not cite this folder as a bound.

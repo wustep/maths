@@ -284,6 +284,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Ramsey R(5,5) / q4 leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q4` | Cursor Grok 4.6 | 2026-08-29 |
 | Ramsey R(5,5) / leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q5` | Cursor Grok 4.6 | 2026-08-29 |
 | Ramsey R(5,5) / leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q6` | Cursor Grok 4.6 | 2026-08-29 |
+| Ramsey R(5,5) / leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q7` | Cursor Grok 4.6 | 2026-08-29 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | Opus 5 | 2026-08-22 |

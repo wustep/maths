@@ -5,9 +5,15 @@ $43\le R(5,5)\le 46$.
 
 ## Exact finite results
 
-Search in progress. A stored, independently replayed DRAT will be a
-restriction on a hypothetical $(5,5,43)$-graph automorphism, not a
-bound on $R(5,5)$. The encoder is q2's `orbit_sat.py`, unchanged.
+No new independently replayed certificate. The encoder is q2's
+`orbit_sat.py`, unchanged.
+
+`kissat --unsat --seed=17` printed `s UNSATISFIABLE` for
+$5^5 1^{18}$ at $k=1$ in 7575s. The trimmed DRAT is 3.9GB. That is
+over GitHub's blob limit, so the proof is not stored. The
+independent check of the trimmed file was stopped at wrap. Hashes
+and sizes are in `certs/p5_c5_k1.json`. This is not a restriction
+you can replay from the repo.
 
 Together with q2, q3, q4, q5, and q6, a hypothetical $(5,5,43)$-graph
 can have automorphism-group order with prime divisors only among 2, 3,
@@ -19,12 +25,11 @@ hypothetical graph, not a bound on $R(5,5)$.
 
 ## Searches still incomplete
 
-$5^5 1^{18}$ at $k=1$ remains `UNKNOWN` at sixty minutes. $5^3 1^{28}$
-at $k=1$ and $k=3$, $3^{12}1^{7}$ at $k=6$, and $3^{13}1^{4}$ at $k=5$
-timed out at thirty minutes. The five maximum-cycle order-2/3/5
-representatives, the other $k$ values on $5^4$, and $3^{13}1^{4}$ at
-$k=6$ were not re-run under the same 1800s config that already timed
-them out. The rest of the leftover 2/3/5 list is unfinished. These
+$5^5 1^{18}$ at $k=1$ has no stored proof. $5^2 1^{33}$ at $k=2$ and
+$3^{12}1^{7}$ at $k=5$ timed out at sixty minutes. $5^3 1^{28}$ at
+$k=3$, $3^{11}1^{10}$ at $k=5$, and $2^{20}1^{3}$ at $k=10$ were
+stopped mid-run. The five maximum-cycle order-2/3/5 representatives
+and the rest of the leftover 2/3/5 list are unfinished. These
 timeouts imply no further restriction.
 
 No $(5,5,43)$-graph was decoded.
@@ -43,4 +48,6 @@ python3 -m venv .venv
 ./run_all.sh
 ```
 
-Collected result: `certs/q7_summary.json`.
+There is no stored DRAT. `run_all.sh` regenerates the leftover case
+list and writes `certs/q7_summary.json`. Collected result:
+`certs/q7_summary.json`.
