@@ -318,13 +318,20 @@ def run_bfs(out, limit=200000, pin_odd=True, skip_eval_until=0,
         nonlocal last_dump
         if not ckpt:
             return
-        if force or walked - last_dump >= 100000:
+        # Prefix reconstruction is cheap; remainder dumps are large.
+        # Dump after the prefix, then every 500,000 remainder evals.
+        if force or (
+                skip_eval_until and last_dump < skip_eval_until
+                and walked >= skip_eval_until) or (
+                lg.evals and lg.evals - getattr(maybe_dump, "_evals", 0)
+                >= 500000):
             dump_ckpt(ckpt, seen, q, walked, {
                 "pin_odd": pin_odd,
                 "skip_eval_until": skip_eval_until,
                 "remainder_evals": lg.evals,
             })
             last_dump = walked
+            maybe_dump._evals = lg.evals
             if not quiet:
                 print(f"  wrote checkpoint walked={walked} queue={len(q)} "
                       f"evals={lg.evals}", flush=True)
