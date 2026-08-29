@@ -758,3 +758,88 @@ $n=35$ matrix were not run and are not an $n=36$ dent.
 
 Replay: `problems/simon-ionization-excess/compute/q11/run_all.sh`.
 
+## 2026-08-29 — q12 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0. Submission history lists
+  only `[v1]` Fri 25 Apr 2025 16:54:13 UTC. og:url is
+  `.../2504.18487v1`.
+- Nam 1009.2367: $N_c<1.22Z+3Z^{1/3}$. Does not beat $1.1010$.
+- Benguria–González-Brantes 2511.07582v1: $N<1.4811Z+3.1516Z^{1/3}$
+  for $Z\ge 12$, bosonic / statistics-independent. Does not beat
+  $1.1010$ for fermions.
+- arXiv API excess-charge query: five hits, none a later fermionic
+  leading.
+- Independent replay of the q11 cert: `verify_lift.py` recon
+  $\gamma=0.9083146735963096$, $1/\gamma=1.1009400476166247$
+  prints as $1.1010$, cut $10/11>\gamma$. Rebuild matches $A$ to
+  $10^{-15}$. Do not re-enumerate the stored
+  $68{,}719{,}476{,}735$ faces. q10 $n=35$ stays frozen.
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1010$. Same wall at $R=8$ ($1.125$) and
+at $R=9.5$ ($1.10526$). $R=9.9$ binding prints $1.10101$, which
+is $1.1011>1.1010$. Residue: `compute/q12/certs/r9_cut.json`.
+Chebyshev $D\cdot M_{-1}\ge 1$ on the endpoint slab does not
+push the $R\le 9$ cut above $1/1.1010\approx 0.908265$
+(`certs/sharper_cut.json`). The cheap live line stays the
+proven $R=10$ split.
+
+$s>3$ along Lemma 4.3 is still residue (two-shell $s=4$ rational
+$-1025/2048$). Lieb still gives the best integers at $Z=2,\ldots,6$.
+
+## 2026-08-29 — q12 leftover: $n=37$ at aspect 10
+
+Copied the q11 encoder / solver / trim / verify stack into
+`compute/q12/`. `verify_beta3.c` and `verify_faces.rs` now have
+`NMAX 40`, so $n=37$ loads. The stored q11 $n=36$ faces stay
+frozen.
+
+SLSQP plus the $P_{\max}$ tax (`certs/scan_compact.json`). The
+notebook prints by ceiling to the next $10^{-4}$, so $1.10059$
+is $1.1006$.
+
+Predicted rows that print below $1.1010$ if faces certify:
+
+- $R=10$, $n=37$, target $0.9119$: $1/\gamma\approx 1.10059$,
+  printed $1.1006$. Cut $10/11>\gamma$. $2^{37}-1$ faces.
+  SLSQP $\varphi=0.912082$.
+- $R=10$, $n=36$, target $0.9118$: printed $1.1009$, if
+  $\min\varphi$ still clears $0.9118$. That is a probe on the
+  frozen $n=36$ matrix, not an $n=37$ dent. Those faces stay
+  frozen.
+- $R=10$, $n=35$, target $0.9116$: printed $1.1012$, which
+  does not beat $1.1010$.
+
+The live line is $n=37$ at the proven split. Face enumeration
+is the certificate, not the SLSQP prediction. If faces do not
+certify, this wrap is residue and the printed leading stays
+$1.1010$.
+
+## 2026-08-29 — q12 wrap: residue
+
+The $n=37$ dump was stopped incomplete. Four shards,
+$2^{37}-1=137{,}438{,}953{,}471$ faces assigned:
+
+- shard 0: $36.3\%$ (`mask_hi` $12{,}461{,}277{,}184$)
+- shard 1: $32.7\%$
+- shard 2: $32.8\%$
+- shard 3: $29.6\%$ (slowest)
+
+On the scanned masks, every shard stays copositive,
+$\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.912085>0.9119$.
+That does not certify the remaining masks. Predicted printed
+$1.1006$ is uncertified. No `raise_*.json`, no `lift.json`.
+Printed leading stays $1.1010$. Checkpoint:
+`compute/q12/certs/leftover_n37.json` and the four `*.part*`
+dumps. Resume from those files; do not restart a shard with
+$\min m^\top Mm>0$ from zero.
+
+$R\le 9$ with the mass-opt cut cannot beat $1.1010$. Finite-$Z$
+integers, $N_0(Z)-Z$ bounded, and $s>3$ along Lemma 4.3 stay
+leftover. $1.1168$ stays withdrawn. q1 remainders unchanged.
+
+Replay: `problems/simon-ionization-excess/compute/q12/run_all.sh`
+(exit 0, residue).
+
