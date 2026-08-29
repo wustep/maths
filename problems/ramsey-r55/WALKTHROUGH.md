@@ -422,3 +422,88 @@ $5^4$, are unfinished. Graphs with trivial automorphism group are
 untouched.
 
 Do not cite this folder as a bound.
+
+---
+
+# 2026-08-29 — leftover SAT after 5^4 at k=4
+
+- Argument status: documented incomplete search; published record
+  $43\le R(5,5)\le46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+q5 closed $5^4 1^{23}$ at $k\in\{0,4\}$. The finite leftover was still
+the list $p^c 1^{43-pc}$ for $p\in\{2,3,5\}$, now minus $5^6$, $5^7$,
+and that $5^4$ neighbour-count pair. The five maximum-cycle formulas
+had never returned a decision. $5^5 1^{18}$ sat between two closed
+types and had only been given ten minutes.
+
+## 1. False starts
+
+- **Re-running the eight 1800s timeouts first.** All five max-cycle
+  representatives, the other $k$ on $5^4$, and $3^{13}1^{4}$ at $k=6$
+  already died at thirty minutes. The same config was unlikely to
+  move them.
+- **Expecting $5^5$ at $k=1$ to fall with $k=2$.** $k=2$ closed in
+  867s. $k=1$ wrote a 7.7GB DRAT and timed out at sixty minutes.
+  Completing the $5^5$ type needs that representative, and it did
+  not finish.
+- **$5^3$ at thirty minutes.** Both leftover neighbour counts timed
+  out. More fixed vertices, larger CNFs, no decision.
+
+## 2. The useful failure
+
+q4's 600s cap on $5^5$ was the obstruction, not the instance. The
+same `kissat --unsat --seed=17` run that closed $5^6$, $5^7$, and
+$5^4$ at $k=4$ closes $5^5$ at $k=2$ in 867s, 267 seconds past the
+old cutoff. The lemma core is smaller than the $5^4$ proof: 357MB
+trimmed, 57MB gzip.
+
+## 3. The click
+
+$5^5 1^{18}$ sits between the closed $5^4$ and $5^6$ types. q4 had
+stopped at 600s. Lengthening that one name, rather than the already
+timed-out max-cycle formulas, is what produced a certificate. The
+encoder did not change. The $5^5$ CNF hash matches q4.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Angeltveit–McKay v2 and the revision-18 survey again. The live
+   window is still $43\le R(5,5)\le46$.
+2. Copy the q5 stack to a new folder. Skip the four certified
+   $5^6$/$5^7$/$5^4$-at-$k=4$ names.
+3. Re-solve $5^5 1^{18}$ at $k=2$ with `kissat --unsat --seed=17`.
+   UNSAT in 867s. Trim, then `drat-trim` prints `s VERIFIED`.
+4. Store gzip -9 of the trimmed proof. Independently regenerate the
+   CNF and replay.
+5. Lengthen $k=1$ to sixty minutes and try $5^3$ plus two high-cycle
+   order-3 names at thirty minutes. All `UNKNOWN`.
+
+No step constructs a 43-vertex graph or proves nonexistence at 45.
+
+## 5. Computer search
+
+- `compute/q6/certs/q6_summary.json` — collected result
+- `compute/q6/certs/proofs/p5_c5_k2.drat.gz` — the stored proof
+- `compute/q6/logs/replay_direct.txt` — independent `VERIFIED` line
+- `compute/q6/run_all.sh` — regenerate the CNF and replay the proof
+
+## 6. What is proved vs still open
+
+**Checked, not new as a Ramsey bound.** No $(5,5,43)$-graph has an
+automorphism of cycle type $5^5 1^{18}$ in which a fixed vertex meets
+2 or 3 of the five 5-cycles. Combined with q2, q3, q4, and q5, a
+hypothetical graph's automorphism-group order can have prime
+divisors only among 2, 3, and 5, and if 5 divides that order then
+the permutation is not of type $5^6$ or $5^7$, is not the $5^4$
+neighbour-count pair already excluded, and is not this $5^5$
+neighbour-count pair.
+
+**Still open.** The interval is still $43\le R(5,5)\le46$. All five
+maximum-cycle order-2, order-3, and order-5 instances remain
+`UNKNOWN`. The other $k$ on $5^5$ and $5^4$, and the rest of the
+leftover 2/3/5 list, are unfinished. Graphs with trivial
+automorphism group are untouched.
+
+Do not cite this folder as a bound.
