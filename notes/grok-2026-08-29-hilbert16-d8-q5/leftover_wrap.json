@@ -1,0 +1,90 @@
+{
+  "what": "Leftover wrap, 2026-08-29. Incomplete search; not a lower bound. No new scheme reached verify_new.py. Census bound still 2384.",
+  "stopped_at_utc": "2026-08-29T19:39:14Z",
+  "bound": 2384,
+  "new_scheme": false,
+  "new_schemes_json": false,
+  "neighbourhoods_complete": {
+    "odd_size5": false,
+    "even_bfs_queue_empty": false
+  },
+  "odd_size5": {
+    "odd_splits": 189,
+    "size5_tuples": 37632123,
+    "shards": [
+      {
+        "range": [0, 11],
+        "tuples": 12700937,
+        "last_progress_evals": 6140000,
+        "finished_first_index_through": 1,
+        "stopped_in_first_index": 2,
+        "schemes": 12,
+        "hits": 0,
+        "complete": false
+      },
+      {
+        "range": [11, 32],
+        "tuples": 12394262,
+        "last_progress_evals": 6120000,
+        "finished_first_index_through": 19,
+        "stopped_in_first_index": 20,
+        "schemes": 12,
+        "hits": 0,
+        "complete": false
+      },
+      {
+        "range": [32, 189],
+        "tuples": 12536924,
+        "last_progress_evals": 6080000,
+        "finished_first_index_through": 44,
+        "stopped_in_first_index": 45,
+        "schemes": 8,
+        "hits": 0,
+        "complete": false
+      }
+    ],
+    "combined_last_progress_evals": 18340000,
+    "union_schemes": [
+      "<10 u 1<11>>",
+      "<13 u 1<1> u 1<6>>",
+      "<13 u 1<6 u 1<1>>>",
+      "<14 u 1<7>>",
+      "<17 u 1<2 u 1<1>>>",
+      "<18 u 1<3>>",
+      "<5 u 1<1> u 1<14>>",
+      "<5 u 1<2> u 1<13>>",
+      "<6 u 1<15>>",
+      "<9 u 1<10 u 1<1>>>",
+      "<9 u 1<1> u 1<10>>",
+      "<9 u 1<2> u 1<9>>"
+    ],
+    "new_scheme_true": 0,
+    "same_twelve_as_q3_size4": true
+  },
+  "even_bfs": {
+    "mode": "bfs_nodump",
+    "skip_eval_until": 1200000,
+    "remainder_limit": 4000000,
+    "last_printed": {
+      "walked": 4754000,
+      "remainder_evals": 3554000,
+      "queue": 4619029,
+      "schemes": 4,
+      "new": 0,
+      "best_score": 6.0,
+      "best_scheme": "<17 u 1<2 u 1<1>>>"
+    },
+    "schemes": [
+      "<16 u 3<1>>",
+      "<17 u 1<1> u 1<2>>",
+      "<17 u 1<2 u 1<1>>>",
+      "<18 u 1<3>>"
+    ],
+    "queue_empty": false,
+    "giant_pickle_rewritten": false
+  },
+  "open_nests": [
+    "<4 u 1<2 u 1<14>>>",
+    "<14 u 1<2 u 1<4>>>"
+  ]
+}

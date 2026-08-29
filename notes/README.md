@@ -35,6 +35,7 @@
 | [grok-2026-08-27-hilbert16-d8-q2/](grok-2026-08-27-hilbert16-d8-q2/) | Grok 4.6 leftover ranks 21–26 and the next (19,3) moves |
 | [grok-2026-08-27-hilbert16-d8-q3/](grok-2026-08-27-hilbert16-d8-q3/) | Grok 4.6 leftover ranks 22–26 and the open (19,3) nests |
 | [grok-2026-08-29-hilbert16-d8-q4/](grok-2026-08-29-hilbert16-d8-q4/) | Grok 4.6 leftover (19,3) nests after the ranks 22–26 thicken |
+| [grok-2026-08-29-hilbert16-d8-q5/](grok-2026-08-29-hilbert16-d8-q5/) | Grok 4.6 leftover even-BFS remainder and odd size 5; stopped incomplete |
 
 | [cursor-grok-2026-08-27-caccetta-q22/](cursor-grok-2026-08-27-caccetta-q22/) | leftover SAT through n=131 |
 

@@ -1,0 +1,10 @@
+{
+  "what": "Compatible odd 5-tuples among the 189 odd Harnack splits. Count only; not a scheme search.",
+  "odd_splits": 189,
+  "size5_tuples": 37632123,
+  "shards_3": [
+    [0, 11, 12700937],
+    [11, 32, 12394262],
+    [32, 189, 12536924]
+  ]
+}

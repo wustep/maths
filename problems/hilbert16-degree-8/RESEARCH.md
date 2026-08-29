@@ -317,3 +317,37 @@ nonempty degree-8 T-schemes, "as the search is not exhaustive, this
 is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
 Parent 17/17 still the folder bound. Leftover ranks 22–26 finished
 on main. Bound still ≥ 2,384.
+
+## 2026-08-29 — freshness check (q5)
+
+Re-fetched after the leftover (19,3) neighbourhood wrap merged as
+`e6fe948` (PR #151). **Nothing about degree 8 moved.**
+`python3 scripts/arxiv_fetch.py 2602.06888v3` returns **v3, 27 Jul
+2026**. Abs <https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes, "as the search is not exhaustive, this
+is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
+Parent 17/17 still the folder bound. q4 finished the depth-3
+three-split 12/12 and left the even-split BFS queue at 1,167,098.
+Bound still ≥ 2,384.
+
+## 2026-08-29 — freshness check (q5 resume)
+
+Re-fetched after the leftover walk was interrupted. **Nothing about
+degree 8 moved.** `python3 scripts/arxiv_fetch.py 2602.06888v3`
+returns **v3, 27 Jul 2026**. Abs
+<https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes. <https://arxiv.org/abs/2602.06888v4>
+is 404. Parent 17/17 still the folder bound. Bound still ≥ 2,384.
+
+## 2026-08-29 — leftover wrap (q5)
+
+Stopped the even-split BFS remainder and the three odd size-5
+shards before either neighbourhood finished. **Nothing about
+degree 8 moved.** No `q5/certs/new_schemes.json`. Combined odd
+progress 18,340,000 of 37,632,123 evaluations; even-split queue
+still open at 4,619,029 after 3,554,000 remainder evaluations.
+Same twelve published M-schemes as the size-4 sweep. Incomplete
+search, not a lower bound. Bound still ≥ 2,384. ATTACK.md and the
+README Problems row were left unchanged.
