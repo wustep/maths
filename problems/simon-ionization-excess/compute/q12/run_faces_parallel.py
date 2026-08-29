@@ -127,7 +127,9 @@ def main() -> None:
 
     cbin = HERE / "verify_beta3"
     src = HERE / "verify_beta3.c"
-    subprocess.check_call(["gcc", "-O3", "-o", str(cbin), str(src), "-lm"])
+    subprocess.check_call(
+        ["gcc", "-O3", "-march=native", "-funroll-loops", "-o", str(cbin), str(src), "-lm"]
+    )
 
     span = nfaces // jobs
     procs = []

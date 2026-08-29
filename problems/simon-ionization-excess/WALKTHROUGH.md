@@ -184,10 +184,10 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 
 2. The useful failure — $R=9.9$ with the cut binding prints $1.10101$, which is $1.1011>1.1010$. Chebyshev does not reopen $R\le 9$. The live line is more bins at the proven split, if a predicted $\gamma$ actually prints below $1.1010$ and faces certify.
 
-3. The click — empty. $n=37$ printing below $1.1010$ is a hypothesis until SLSQP plus the $P_{\max}$ tax, then faces.
+3. The click — SLSQP $\varphi$ at $R=10$, $n=37$ is $0.912082$. Target $0.9119$ minus the $P$ error $0.003294$ gives $\gamma=0.908606$, and $10/11>\gamma$. Then $1/\gamma=1.100587<1.1006<1.1010$. That is a prediction. Faces have not certified it.
 
 4. The argument — same as q11 if faces certify: Theorem 4.2, radial $Q$, compact cert on aspect $\le 10$ with $37$ bins, mass-opt cut $Q>10/11$, same §7 chain.
 
-5. Computer search — q11 replay only so far. `compute/q12/` is the copied stack with `NMAX 40`. Scan and faces not yet stored.
+5. Computer search — q11 replay; stored SLSQP scan; $n=37$ matrix assembled at target $0.9119$. Face dump not yet complete ($2^{37}-1$).
 
-6. Proven vs still open — printed leading still $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+6. Proven vs still open — printed leading still $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. A predicted $1.1006$ is not a bound.

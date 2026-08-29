@@ -796,10 +796,24 @@ Copied the q11 encoder / solver / trim / verify stack into
 `NMAX 40`, so $n=37$ loads. The stored q11 $n=36$ faces stay
 frozen.
 
-Whether $n=37$ prints below $1.1010$ is a hypothesis. Face
-enumeration is the certificate, not an SLSQP prediction.
-$R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1010$. A higher-target
-probe on the frozen $n=35$ or $n=36$ matrix is not an $n=37$
-dent. If faces do not certify, this wrap is residue and the
-printed leading stays $1.1010$.
+SLSQP plus the $P_{\max}$ tax (`certs/scan_compact.json`). The
+notebook prints by ceiling to the next $10^{-4}$, so $1.10059$
+is $1.1006$.
+
+Predicted rows that print below $1.1010$ if faces certify:
+
+- $R=10$, $n=37$, target $0.9119$: $1/\gamma\approx 1.10059$,
+  printed $1.1006$. Cut $10/11>\gamma$. $2^{37}-1$ faces.
+  SLSQP $\varphi=0.912082$.
+- $R=10$, $n=36$, target $0.9118$: printed $1.1009$, if
+  $\min\varphi$ still clears $0.9118$. That is a probe on the
+  frozen $n=36$ matrix, not an $n=37$ dent. Those faces stay
+  frozen.
+- $R=10$, $n=35$, target $0.9116$: printed $1.1012$, which
+  does not beat $1.1010$.
+
+The live line is $n=37$ at the proven split. Face enumeration
+is the certificate, not the SLSQP prediction. If faces do not
+certify, this wrap is residue and the printed leading stays
+$1.1010$.
 
