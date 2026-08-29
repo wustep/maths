@@ -220,9 +220,12 @@ def step(max_workers):
         return False
     if nxt["rank"] >= 26:
         nsh = 4
+        have = finished_shards(nxt["cert"])
+        running = shards.get(nxt["cert"], (nsh, set()))[1]
+        have |= set(running)
         for s in range(nsh):
-            if busy >= max_workers:
-                break
+            if s in have or busy >= max_workers:
+                continue
             w = _free_worker(used_w)
             launch(nxt["cert"], nxt["rank"], w, shard=s, nshards=nsh)
             used_w.add(w)
