@@ -317,3 +317,16 @@ nonempty degree-8 T-schemes, "as the search is not exhaustive, this
 is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
 Parent 17/17 still the folder bound. Leftover ranks 22–26 finished
 on main. Bound still ≥ 2,384.
+
+## 2026-08-29 — freshness check (q5)
+
+Re-fetched after the leftover (19,3) neighbourhood wrap merged as
+`e6fe948` (PR #151). **Nothing about degree 8 moved.**
+`python3 scripts/arxiv_fetch.py 2602.06888v3` returns **v3, 27 Jul
+2026**. Abs <https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes, "as the search is not exhaustive, this
+is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
+Parent 17/17 still the folder bound. q4 finished the depth-3
+three-split 12/12 and left the even-split BFS queue at 1,167,098.
+Bound still ≥ 2,384.
