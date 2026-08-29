@@ -19,3 +19,12 @@ A certified 43-vertex Ramsey graph, a nonexistence proof at 45 with an independe
 ## Status (2026-08-27)
 
 Published record still $43\le R(5,5)\le 46$ (Radziszowski rev. 18, 24 April 2026; Angeltveit–McKay). No endpoint moved. Residue in `compute/q1/`: none of the 4080 one-flip neighbours of the 656 extend; no legal-degree Cayley $(5,5)$-graph on any group of order 44 or 45; no strongly regular graph on 43 vertices in the legal degree window; $C_7$ SAT at 42 and 43 timed out. See `ATTACK.md`, `WALKTHROUGH.md`, `RESEARCH.md`.
+
+
+## Status (2026-08-28)
+
+Published record still $43\le R(5,5)\le 46$. No endpoint moved. Residue in
+`compute/q2/`: complete two-edit ball around the 656 does not extend; listed
+prime-order automorphism cycle types on 43 vertices are DRAT-UNSAT; a
+radius-6 ball around a score-2 near graph is DRAT-UNSAT. Small-prime SAT
+timeouts remain UNKNOWN. See `ATTACK.md` and `compute/q2/README.md`.

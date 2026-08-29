@@ -1,0 +1,8 @@
+c parsing input formula with 11175 variables and 150382 clauses
+c finished parsing
+c detected empty clause; start verification via backward checking
+c 1159 of 150382 clauses in core                            
+c 1060 of 13502 lemmas in core using 11343 resolution steps
+c 333 RAT lemmas in core; 1 redundant literals in core lemmas
+s VERIFIED
+c verification time: 0.777 seconds

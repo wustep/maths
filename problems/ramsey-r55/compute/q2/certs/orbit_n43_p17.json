@@ -1,0 +1,21 @@
+{
+  "anchor_symbreak": false,
+  "build_sec": 19.117,
+  "c7_symbreak": false,
+  "cnf_sha256": "fca7aa03f03c5bbfa91f5a0c1383d5238bd8a3ab1ef0b44700891bbd565a85ce",
+  "cycles": 2,
+  "degree_constraints": true,
+  "distinct_base_clause_keys": 53400,
+  "edge_orbit_vars": 87,
+  "five_subset_orbits": 56742,
+  "fixed": 9,
+  "fixed_cycle_count": null,
+  "n": 43,
+  "nclauses": 150382,
+  "nvars": 11175,
+  "p": 17,
+  "p5_symbreak": false,
+  "solve_sec": 0.105,
+  "solver": "PySAT Cadical195",
+  "status": "UNSAT"
+}

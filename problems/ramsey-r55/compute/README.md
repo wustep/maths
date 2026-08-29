@@ -20,3 +20,12 @@ The 2026-08-27 search lives in `q1/`:
 ```
 cd q1 && ./run_all.sh
 ```
+
+The 2026-08-29 search lives in `q2/`. It adds the complete two-edit extension
+ball, prime-order automorphism cycle-type proofs, and a certified radius-6
+ball around a score-2 near graph:
+
+```sh
+cd q2
+PATH="$PWD/../../../../.venv/bin:$PATH" ./run_all.sh
+```

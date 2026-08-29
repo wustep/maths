@@ -1,0 +1,32 @@
+{
+  "build_sec": 1.484,
+  "cnf_sha256": "f6b06b719c19bd32489f5e2a5b2b996330f6546bcac488c7f02f3d6875d8a691",
+  "five_set_edge_histogram": {
+    "0": 0,
+    "1": 7161,
+    "10": 2,
+    "2": 32697,
+    "3": 101693,
+    "4": 198808,
+    "5": 255255,
+    "6": 215554,
+    "7": 110219,
+    "8": 34599,
+    "9": 6610
+  },
+  "n": 43,
+  "nclauses": 88288,
+  "nvars": 2709,
+  "radius": 2,
+  "relevant_clique_clauses": 41211,
+  "relevant_independent_clauses": 39858,
+  "solve_sec": 0.121,
+  "solver": "PySAT Cadical195",
+  "source_bad_masks": [
+    "0x240000811",
+    "0x240020801"
+  ],
+  "source_graph6_sha256": "07ef1440495d71459ee06e67d92b83764deb6a7ca42eded1161223ddd4278ce5",
+  "source_objective": 2,
+  "status": "UNSAT"
+}

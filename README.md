@@ -273,6 +273,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist leftover holes through n=146 | `problems/caccetta-haggkvist-k3/compute/q36` | Cursor Grok 4.6 | 2026-08-29 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
+| Ramsey R(5,5) / q2 finite search | `problems/ramsey-r55/compute/q2` | GPT-5.6 Sol / 20xx | 2026-08-28 |
 | graph reconstruction n=14 | `problems/graph-reconstruction-next-order` | SuperGrok 4.6 | 2026-08-17 |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | SuperGrok 4.6 | 2026-08-17 (incomplete) |
 | lonely runner 14 | `problems/lonely-runner-fourteen` | Opus 5 | 2026-08-22 |

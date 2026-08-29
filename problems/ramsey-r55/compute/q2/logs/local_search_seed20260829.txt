@@ -1,0 +1,40 @@
+BEST score=105 restart=0 step=0 src=114 side=1
+BEST score=102 restart=0 step=1 src=114 side=1
+BEST score=97 restart=0 step=2 src=114 side=1
+BEST score=91 restart=0 step=3 src=114 side=1
+BEST score=87 restart=0 step=7 src=114 side=1
+BEST score=85 restart=0 step=8 src=114 side=1
+BEST score=84 restart=0 step=10 src=114 side=1
+BEST score=79 restart=0 step=17 src=114 side=1
+BEST score=78 restart=0 step=20 src=114 side=1
+BEST score=77 restart=0 step=33 src=114 side=1
+BEST score=76 restart=0 step=34 src=114 side=1
+BEST score=75 restart=0 step=35 src=114 side=1
+BEST score=73 restart=0 step=41 src=114 side=1
+BEST score=70 restart=0 step=408 src=114 side=1
+BEST score=69 restart=0 step=409 src=114 side=1
+BEST score=64 restart=0 step=410 src=114 side=1
+BEST score=60 restart=0 step=414 src=114 side=1
+BEST score=59 restart=0 step=420 src=114 side=1
+BEST score=55 restart=0 step=421 src=114 side=1
+BEST score=49 restart=0 step=422 src=114 side=1
+BEST score=48 restart=0 step=423 src=114 side=1
+BEST score=47 restart=0 step=424 src=114 side=1
+BEST score=43 restart=0 step=484 src=114 side=1
+BEST score=38 restart=0 step=485 src=114 side=1
+BEST score=36 restart=0 step=486 src=114 side=1
+BEST score=27 restart=0 step=487 src=114 side=1
+BEST score=26 restart=0 step=488 src=114 side=1
+BEST score=24 restart=0 step=490 src=114 side=1
+BEST score=18 restart=0 step=491 src=114 side=1
+BEST score=16 restart=0 step=492 src=114 side=1
+BEST score=14 restart=0 step=493 src=114 side=1
+BEST score=8 restart=0 step=494 src=114 side=1
+BEST score=7 restart=0 step=497 src=114 side=1
+BEST score=6 restart=0 step=498 src=114 side=1
+BEST score=3 restart=0 step=504 src=114 side=1
+BEST score=2 restart=0 step=510 src=114 side=1
+DONE seed=20260829 restarts=20 max_steps=200000 best=2 sec=7.379
+BEST_GRAPH score=2 graph6=jp`AB}zZdtRwf_}AtsRpDJiURTQKUr_\{ETvWxajHkWBn[ZaUeRPYnegRlbMs_Buml`FUuB}INoj|HeYaMh`|CJ{yy\DQpuNZdPwdytTSWsixO}CkTy{eTEzPaqbuWXyHB]UZSWvaGaz_|b`OIzlqiDw
+BAD mask=0x240000811
+BAD mask=0x240020801
