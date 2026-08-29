@@ -726,3 +726,11 @@ F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q
 
 First remaining hole n=150, δ⁺=50. Conjecture 1/3 open.
 
+### 2026-08-29 — leftover cubes from n=150 (q40 start)
+
+Same encoder as q1–q39. New proofs will live in `compute/q40/certs/keep/` (q39 stays the n=149 store).
+
+Independent cube bounds at leftover n=150: ⌈150/3⌉=50, so d=50. HKN 0.3465·150=51.975 and the stored F₄ 0.34640·150=51.96 both sit above 50, so the order is leftover. Even the 0.3388 personal communication still has 0.3388·150=50.82>50. A 50-outregular graph on 150 vertices has 7500 arcs, so some in-degree is at least 50. Each v∈N⁺(0) needs 50 outs from (N⁺(0)\{v})∪U, size 148−k, hence k≤98. Absolute max k=99 is empty by that N⁺ cut. Needed cubes: k=50..98 (49). The 2-cycle covering count on A empties k≥74 (σ=n−2−d−k=98−k; survive when σ≥⌊(d−1)/2⌋+1=25, i.e. k≤73). SAT work is k=50..73. That is the same arithmetic as n=149, recomputed here, not copied as a prescription.
+
+F₄ stays 0.34640. Did not beat 0.3388. n=150 not stored yet. Residue until the 49 DRATs exist and an independent `verify_range` reports 0 failures. Stored leftover SAT is residue, not a bound. A dent is only a verified move of F₄ below 0.3388, or a new exact-CH theorem.
+
