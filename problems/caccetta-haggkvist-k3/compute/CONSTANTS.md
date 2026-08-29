@@ -18,6 +18,6 @@ Exact finite statement: every $n$-vertex oriented graph with $\delta^+\ge\lceil 
 
 First $n$ not implied by Hoàng–Reed ($r\le 5$) plus HKN $0.3465$ was $n=18$. That order, and the later holes $n=21,24,26,27,29,30,32,33,35,36$, now have stored in-degree-cube DRATs.
 
-Exact orders with stored in-degree-cube DRATs now include every leftover hole through $n=147$.
+Exact orders with stored in-degree-cube DRATs now include every leftover hole through $n=148$.
 
-First remaining hole: **$n=148$, $\delta^+=50$**.
+First remaining hole: **$n=149$, $\delta^+=50$**.
