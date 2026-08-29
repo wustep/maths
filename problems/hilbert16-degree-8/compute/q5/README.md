@@ -38,11 +38,14 @@ python3 q5/collect.py
 
 The even-split BFS reconstructs the q4 prefix of 1,200,000
 collections without re-evaluating schemes, then evaluates the
-remainder. Complete only if the queue empties. There are
+remainder. It does not write the giant seen/queue pickle (that
+stalls the machine). Complete only if the queue empties. There are
 37,632,123 compatible odd 5-tuples (`certs/odd_skel5_count.json`).
 Size 5 is complete only if every first-index shard finishes and
-the shards cover all 189 odd splits. Sizes at most 4 are already
-finished (`q3/certs/odd_skel4.json`).
+the shards cover all 189 odd splits. Each shard writes a tiny
+`.next` first-index file so a later run can skip finished
+indices. Sizes at most 4 are already finished
+(`q3/certs/odd_skel4.json`).
 
 A new scheme is a T-curve only after `python3 verify_new.py q5/certs/new_schemes.json`.
 An incomplete search is not a lower bound.

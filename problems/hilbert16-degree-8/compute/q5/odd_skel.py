@@ -41,6 +41,8 @@ def parse_args(argv):
     p.add_argument("--minsize", type=int, default=5)
     p.add_argument("--shard", default=None,
                    help="first-index range lo:hi, half-open")
+    p.add_argument("--resume-from", type=int, default=None,
+                   help="first-index to continue from (overrides .next)")
     args = p.parse_args(argv)
     return args
 
@@ -108,14 +110,36 @@ def main(argv):
     adj = dn.compat_matrix()
     odds = [i for i, s in enumerate(sp) if not s.even]
     lo, hi = shard_bounds(len(odds), args.shard)
+    next_path = out + ".next"
+    resume_a = lo
+    if args.resume_from is not None:
+        resume_a = args.resume_from
+    elif os.path.exists(next_path):
+        prev = json.load(open(next_path))
+        resume_a = int(prev.get("next_a", lo))
+    resume_a = max(lo, min(resume_a, hi))
     print(f"{len(odds)} odd splits, maxsize={maxsize} minsize={minsize} "
-          f"shard=[{lo},{hi}) cap={cap}", flush=True)
+          f"shard=[{lo},{hi}) resume_a={resume_a} cap={cap}", flush=True)
     known = known_schemes()
-    f = open(out, "w")
+    f = open(out, "a" if resume_a > lo else "w")
     seen_sch = {}
     t0 = time.time()
     evals = hits = pn193 = 0
     stop = False
+
+    def write_next(done_a):
+        tmp = next_path + ".tmp"
+        with open(tmp, "w") as cf:
+            json.dump({
+                "next_a": done_a + 1,
+                "evals": evals,
+                "hits": hits,
+                "pn193": pn193,
+                "schemes": sorted(seen_sch),
+                "shard": [lo, hi],
+                "n_odds": len(odds),
+            }, cf)
+        os.replace(tmp, next_path)
 
     def visit(ids):
         nonlocal evals, hits, pn193, stop
@@ -232,7 +256,7 @@ def main(argv):
         print(f"size 4 done evals={evals} schemes={len(seen_sch)} "
               f"({time.time()-t0:.0f}s)", flush=True)
     if maxsize >= 5 and minsize <= 5 and not stop:
-        for a in range(lo, hi):
+        for a in range(resume_a, hi):
             i = odds[a]
             ai = adj[i]
             cand = [odds[b] for b in range(a + 1, len(odds))
@@ -265,6 +289,7 @@ def main(argv):
                     break
             if stop:
                 break
+            write_next(a)
             print(f"  size5 {a}/{len(odds)} shard=[{lo},{hi}) "
                   f"evals={evals} schemes={len(seen_sch)} hits={hits} "
                   f"({time.time()-t0:.0f}s)", flush=True)

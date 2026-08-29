@@ -25,6 +25,7 @@ tcurve.check_convexity.
 Modes
   probe                              size the even-split neighbourhoods
   bfs     <out.jsonl> [limit] [skip] exhaustive even add/drop/swap BFS
+                                         (no giant pickle by default)
   resume  <ckpt> <out.jsonl> [limit] continue from a dumped queue
   check-skip                         prefix-skip agrees with a full BFS
   beam    <seed> <minutes> <out>
@@ -312,7 +313,8 @@ def run_bfs(out, limit=200000, pin_odd=True, skip_eval_until=0,
 
     t0 = time.time()
     last_dump = walked
-    ckpt = ckpt or (os.path.splitext(out)[0] + ".ckpt" if out else None)
+    # Giant seen/queue pickles stall the machine. Dump only if a path
+    # is passed explicitly. Default is no checkpoint.
 
     def maybe_dump(force=False):
         nonlocal last_dump
@@ -515,7 +517,7 @@ if __name__ == "__main__":
         out = resolve_out(out)
         limit = int(sys.argv[3]) if len(sys.argv) > 3 else 200000
         skip = int(sys.argv[4]) if len(sys.argv) > 4 else Q4_PREFIX
-        run_bfs(out, limit, pin_odd=True, skip_eval_until=skip)
+        run_bfs(out, limit, pin_odd=True, skip_eval_until=skip, ckpt="")
     elif m == "resume":
         ckpt = resolve_out(sys.argv[2])
         out = resolve_out(sys.argv[3])

@@ -330,3 +330,13 @@ is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
 Parent 17/17 still the folder bound. q4 finished the depth-3
 three-split 12/12 and left the even-split BFS queue at 1,167,098.
 Bound still ≥ 2,384.
+
+## 2026-08-29 — freshness check (q5 resume)
+
+Re-fetched after the leftover walk was interrupted. **Nothing about
+degree 8 moved.** `python3 scripts/arxiv_fetch.py 2602.06888v3`
+returns **v3, 27 Jul 2026**. Abs
+<https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes. <https://arxiv.org/abs/2602.06888v4>
+is 404. Parent 17/17 still the folder bound. Bound still ≥ 2,384.
