@@ -296,6 +296,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hilbert 16(a) degree 8 / leftover ranks 21–26 | `problems/hilbert16-degree-8/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(a) degree 8 / leftover ranks 22–26 | `problems/hilbert16-degree-8/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(a) degree 8 / leftover (19,3) nests | `problems/hilbert16-degree-8/compute/q4` | Grok 4.6 | 2026-08-29 |
+| Hilbert 16(a) degree 8 / leftover even-BFS and odd size 5 | `problems/hilbert16-degree-8/compute/q5` | Grok 4.6 | 2026-08-29 |
 | Hilbert 16(b) Hilbert number H(n) | `problems/hilbert16-limit-cycles` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(b) five-line campaign | `problems/hilbert16-limit-cycles/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(b) twenty-five ideas, five lines | `problems/hilbert16-limit-cycles/compute/q2` | Grok 4.6 | 2026-08-27 |
