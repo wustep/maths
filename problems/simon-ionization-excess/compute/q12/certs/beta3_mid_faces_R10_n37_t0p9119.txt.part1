@@ -2,9 +2,9 @@ n 37
 gamma_target 9.1190000000000004e-01
 n_faces 137438953471
 mask_lo 34359738368
-mask_hi 42270195712
-interior_critical 353679
-singular_or_illconditioned 1000
+mask_hi 42836426752
+interior_critical 380381
+singular_or_illconditioned 1079
 min_mMm 9.8293210606152266e-03
 min_mMm_safe 9.8293209606152270e-03
 min_phi 9.1231824584428001e-01
