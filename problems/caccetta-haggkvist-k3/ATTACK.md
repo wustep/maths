@@ -706,3 +706,23 @@ F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q
 
 First remaining hole n=149, δ⁺=50. Conjecture 1/3 open.
 
+### 2026-08-29 — leftover cubes from n=149 (q39 start)
+
+Same encoder as q1–q38. New proofs will live in `compute/q39/certs/keep/` (q38 stays the n=148 store).
+
+Independent cube bounds at leftover n=149: ⌈149/3⌉=50, so d=50. HKN 0.3465·149=51.6285 and the stored F₄ 0.34640·149=51.6136 both sit above 50, so the order is leftover. Even the 0.3388 personal communication still has 0.3388·149=50.4812>50. A 50-outregular graph on 149 vertices has 7450 arcs, so some in-degree is at least 50. Each v∈N⁺(0) needs 50 outs from (N⁺(0)\{v})∪U, size 147−k, hence k≤97. Absolute max k=98 is empty by that N⁺ cut. Needed cubes: k=50..97 (48). The 2-cycle covering count on A empties k≥73; SAT work is k=50..72. That is the same arithmetic as n=148, recomputed here, not copied as a prescription.
+
+F₄ stays 0.34640. Did not beat 0.3388. n=149 not stored yet. Residue until the 48 DRATs exist and an independent `verify_range` reports 0 failures.
+
+### 2026-08-29 — leftover cubes from n=149
+
+Same encoder as q1–q38. New proofs live in `compute/q39/certs/keep/` (q38 stays the n=148 store).
+
+Leftover n=149 is closed: d=50, cubes k=50..97, 48 stored DRATs after `drat-trim -l` (k=51 is 28.3 MB). Independent replay: `python3 verify_range.py --n-min 149 --n-max 149` reports 48 checked, 0 failures.
+
+Dent against that finite leftover hole. n=150 is not stored. Residue, not a bound.
+
+F₄ stays 0.34640. The stored CKLS-fork ray still replays. Did not overwrite `q4/certs/keep/f4_or_new_certificate.json`. Did not beat 0.3388.
+
+First remaining hole n=150, δ⁺=50. Conjecture 1/3 open.
+
