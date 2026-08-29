@@ -1,0 +1,6 @@
+bin/
+certs/*.out
+certs/*.drat
+certs/*.cnf
+certs/*.json
+__pycache__/
