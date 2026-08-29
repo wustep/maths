@@ -26,6 +26,7 @@
 | [cursor-grok-2026-08-27-ionization-q9/](cursor-grok-2026-08-27-ionization-q9/) | Ionization leading lift: 1.1020 to 1.1017 |
 | [cursor-grok-2026-08-27-ionization-q10/](cursor-grok-2026-08-27-ionization-q10/) | Ionization leading lift: 1.1017 to 1.1013 |
 | [cursor-grok-2026-08-28-ionization-q11/](cursor-grok-2026-08-28-ionization-q11/) | Ionization leftover: n=36 at aspect 10; leading still 1.1013 |
+| [cursor-grok-2026-08-29-ionization-q12/](cursor-grok-2026-08-29-ionization-q12/) | Ionization leftover: n=37 at aspect 10; leading still 1.1010 |
 | [cursor-grok-2026-08-27-slt-q2/](cursor-grok-2026-08-27-slt-q2/) | Lieb–Thirring CCR $M_3$ / Clausen envelope; 1.45576 does not beat the published 1.44655 |
 | [cursor-grok-2026-08-27-kissing-5d-q6/](cursor-grok-2026-08-27-kissing-5d-q6/) | kissing-5d leftover four-star emptiness; star-cover at least 5 |
 | [cursor-grok-2026-08-27-kissing-5d-q7/](cursor-grok-2026-08-27-kissing-5d-q7/) | kissing-5d leftover star-cover at least 5; 5-star SAT |

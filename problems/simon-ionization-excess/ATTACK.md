@@ -758,3 +758,48 @@ $n=35$ matrix were not run and are not an $n=36$ dent.
 
 Replay: `problems/simon-ionization-excess/compute/q11/run_all.sh`.
 
+## 2026-08-29 — q12 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0. Submission history lists
+  only `[v1]` Fri 25 Apr 2025 16:54:13 UTC. og:url is
+  `.../2504.18487v1`.
+- Nam 1009.2367: $N_c<1.22Z+3Z^{1/3}$. Does not beat $1.1010$.
+- Benguria–González-Brantes 2511.07582v1: $N<1.4811Z+3.1516Z^{1/3}$
+  for $Z\ge 12$, bosonic / statistics-independent. Does not beat
+  $1.1010$ for fermions.
+- arXiv API excess-charge query: five hits, none a later fermionic
+  leading.
+- Independent replay of the q11 cert: `verify_lift.py` recon
+  $\gamma=0.9083146735963096$, $1/\gamma=1.1009400476166247$
+  prints as $1.1010$, cut $10/11>\gamma$. Rebuild matches $A$ to
+  $10^{-15}$. Do not re-enumerate the stored
+  $68{,}719{,}476{,}735$ faces. q10 $n=35$ stays frozen.
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1010$. Same wall at $R=8$ ($1.125$) and
+at $R=9.5$ ($1.10526$). $R=9.9$ binding prints $1.10101$, which
+is $1.1011>1.1010$. Residue: `compute/q12/certs/r9_cut.json`.
+Chebyshev $D\cdot M_{-1}\ge 1$ on the endpoint slab does not
+push the $R\le 9$ cut above $1/1.1010\approx 0.908265$
+(`certs/sharper_cut.json`). The cheap live line stays the
+proven $R=10$ split.
+
+$s>3$ along Lemma 4.3 is still residue (two-shell $s=4$ rational
+$-1025/2048$). Lieb still gives the best integers at $Z=2,\ldots,6$.
+
+## 2026-08-29 — q12 leftover: $n=37$ at aspect 10
+
+Copied the q11 encoder / solver / trim / verify stack into
+`compute/q12/`. `verify_beta3.c` and `verify_faces.rs` now have
+`NMAX 40`, so $n=37$ loads. The stored q11 $n=36$ faces stay
+frozen.
+
+Whether $n=37$ prints below $1.1010$ is a hypothesis. Face
+enumeration is the certificate, not an SLSQP prediction.
+$R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1010$. A higher-target
+probe on the frozen $n=35$ or $n=36$ matrix is not an $n=37$
+dent. If faces do not certify, this wrap is residue and the
+printed leading stays $1.1010$.
+

@@ -175,3 +175,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=36$ faces at target $0.9117$ ($68{,}719{,}476{,}735$, copositive, $16296$ skips, $\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.911885$); stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1013$ moves to $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. Higher-target probes on the $n=34$ or $n=35$ matrix were not run and are not this dent.
+
+## Later — leftover past $n=36$
+
+0. What was actually missing — after q11 the compact $\gamma$ at $R=10$, $n=36$ sat $0.000776$ below the cut $10/11$. The leftover is still the $P_{\max}$ tax. $R\le 9$ with $Q>R/(R+1)$ cannot beat $1.1010$: the cut is $0.9$, so the leading is at least $1.1111$. The C enumerator on main stopped at `NMAX 36`, so $n=37$ could not even load.
+
+1. Named false starts — $R\le 9$ with the existing cut; a Chebyshev $D\cdot M_{-1}\ge 1$ sharpening of that cut (the $R\le 9$ slab still dies below $0.908265$); treating a higher-target probe on the frozen $n=35$ or $n=36$ matrix as an $n=37$ dent; $s>3$ and finite-$Z$ integers; recycling the withdrawn $1.1168$.
+
+2. The useful failure — $R=9.9$ with the cut binding prints $1.10101$, which is $1.1011>1.1010$. Chebyshev does not reopen $R\le 9$. The live line is more bins at the proven split, if a predicted $\gamma$ actually prints below $1.1010$ and faces certify.
+
+3. The click — empty. $n=37$ printing below $1.1010$ is a hypothesis until SLSQP plus the $P_{\max}$ tax, then faces.
+
+4. The argument — same as q11 if faces certify: Theorem 4.2, radial $Q$, compact cert on aspect $\le 10$ with $37$ bins, mass-opt cut $Q>10/11$, same §7 chain.
+
+5. Computer search — q11 replay only so far. `compute/q12/` is the copied stack with `NMAX 40`. Scan and faces not yet stored.
+
+6. Proven vs still open — printed leading still $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
