@@ -509,3 +509,21 @@ Opened again before the q8 wrap:
 No stored verified leftover DRAT from the type-$(0,5)$ or $|U|=19$
 hunts. Incomplete search; not a move of either endpoint.
 
+## 2026-08-29 — q9 start, record still $40\le\tau_5\le 44$
+
+Opened tonight:
+
+- https://teorth.github.io/optimizationproblems/constants/29a.html —
+  $C_{29}=\tau_5$, range $40\le\tau_5\le 44$, conjectural value 40.
+  Upper bound cited is Mittelmann–Vallentin. No later endpoint.
+- https://cohn.mit.edu/kissing-numbers/ — dim 5 lower 40, upper 44,
+  ratio 1.100, citations [9] Korkine–Zolotareff and [17]
+  Mittelmann–Vallentin. Later-dimension news does not touch dim 5.
+- https://arxiv.org/abs/0902.1105 — $s_{14}(5)=44.99899685\ldots$,
+  hence $\tau_5\le 44$. Range limited to $\{40,\ldots,44\}$.
+- https://arxiv.org/abs/2412.00937 — Henry Cohn and Isaac Rajagopal,
+  title on the abs page “Variations on five-dimensional sphere
+  packings”: “the kissing number in five dimensions appears to be
+  40, although the best upper bound that has been proved is 44”.
+  Four 40-point geometries. No size 41.
+

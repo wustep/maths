@@ -1,0 +1,22 @@
+{
+  "n_pools": 1,
+  "orbit_size": 32,
+  "found_41": false,
+  "n_sat_unsat": 0,
+  "n_drat_verified": 0,
+  "complete": false,
+  "pools": [
+    {
+      "name": "k30_n0_5",
+      "type": [0, 5],
+      "k": 30,
+      "n_extras": 625,
+      "n_roots": 30,
+      "cnf_sha256": "cdec5e76ef58cddadf999f77ec31f7e319764ab867454cdac0ae74f2e53f078c",
+      "sat": null,
+      "found_41": false,
+      "complete": false
+    }
+  ],
+  "comment": "Hunt started. Leftover-tight SAT on the type-(0,5) representative. Encoder is q8/cnfutil.py. Incomplete leftover SAT is residue. Did not claim tau5=40."
+}

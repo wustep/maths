@@ -224,6 +224,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | kissing number 5d / leftover n1<=21 star-cover 4 | `problems/kissing-5d/compute/q6` | Grok 4.6 | 2026-08-27 |
 | kissing number 5d / leftover n1<=21 star-cover 5 | `problems/kissing-5d/compute/q7` | Cursor Grok 4.6 | 2026-08-27 |
 | kissing number 5d / leftover type-(0,5) and |U|=19 | `problems/kissing-5d/compute/q8` | Cursor Grok 4.6 | 2026-08-29 |
+| kissing number 5d / leftover type-(0,5) and |U|=19 SAT | `problems/kissing-5d/compute/q9` | Cursor Grok 4.6 | 2026-08-29 |
 | affine {0,1,3} copies | `problems/affine-013` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets | `problems/one-third-two-thirds` | SuperGrok 4.6 | 2026-08-17 |
 | 1/3–2/3 posets / Gupta v2 replay and ladder table | `problems/one-third-two-thirds/compute/q1` | Grok 4.6 | 2026-08-27 |

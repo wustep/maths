@@ -600,3 +600,23 @@ nodes is the replay check, not emptiness.
 - The global $|U|=19$ leftover SAT, with or without the extra
   five-star forbids.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 16. 29 August: the same leftover SAT, again
+
+q8 left the type-$(0,5)$ leftover-tight CNF and the stronger global
+$|U|=19$ CNF without a stored `s VERIFIED`. The encoding is the
+same. q9 imports `q8/cnfutil.py` and rebuilds those DIMACS files.
+The hunt is the same two instances: native CaDiCaL with a binary
+DRAT on $k=30$, Kissat on the global CNF.
+
+Nothing new is proved until a stored independently replayed DRAT
+exists, or a leftover 41-set is written down. Incomplete leftover
+SAT is not a move of $40$–$44$.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A leftover 41-set hosted by a type-$(0,5)$ five-star, or with
+  star-cover at least 6.
+- The global $|U|=19$ leftover SAT.
+- An exact SOS certificate that $s_d(5)<44$.

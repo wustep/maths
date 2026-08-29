@@ -684,3 +684,23 @@ classical Levenshtein number 48 before claiming any comparison.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
   beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
   not claim $\tau_5=40$. Residue.
+
+## 2026-08-29 — continue (q9)
+
+- Start from main after PR #117 (`bb1e632`). Folder `compute/q9/`.
+  Covering and `share/2026-08-16` frozen. Do not claim $\tau_5=40$.
+- Re-opened tonight, still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100),
+  Mittelmann–Vallentin arXiv:0902.1105,
+  Cohn–Rajagopal arXiv:2412.00937.
+- Resume the leftover SAT that q8 did not finish, same encoding
+  (`q8/cnfutil.py`): leftover-tight type-$(0,5)$ representative
+  (sha256 `cdec5e76…`) and global leftover SAT $|U|=19$ forbidding
+  type-$(2,1)$ and type-$(1,3)$ (`5e3c482a…`). Independently
+  replayed type-$(2,1)$ and type-$(1,3)$ names stay skipped.
+- Native CaDiCaL on leftover-tight $k=30$ with a binary DRAT;
+  Kissat on the global CNF. A stored Heule `s VERIFIED` or a
+  leftover 41-set would be a finite-graph fact. Incomplete leftover
+  SAT is residue, not a move of $40$–$44$.

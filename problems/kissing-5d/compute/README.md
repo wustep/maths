@@ -47,4 +47,6 @@ and type-$(1,3)$ five-star leftover hosts are empty (native CaDiCaL
 DRAT verified). The remaining type-$(0,5)$ hosts and the global
 $|U|=19$ leftover SAT live in `q8/` (`sh compute/q8/run_all.sh`);
 those SAT hunts did not finish (no stored verified DRAT).
+The same leftover SAT continues in `q9/` (`sh compute/q9/run_all.sh`
+replays the encoder; it does not re-run the long SAT hunts).
 The unrestricted range remains $40\le\tau_5\le 44$.
