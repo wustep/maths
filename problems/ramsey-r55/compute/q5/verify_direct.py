@@ -22,12 +22,30 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+def proof_path(name: str) -> Path | None:
+    xz = ROOT / "certs" / "proofs" / f"{name}.drat.xz"
+    gz = ROOT / "certs" / "proofs" / f"{name}.drat.gz"
+    if xz.exists():
+        return xz
+    if gz.exists():
+        return gz
+    return None
+
+
+def extract_proof(stored: Path, dest: Path) -> None:
+    if stored.suffix == ".xz":
+        dest.write_bytes(subprocess.check_output(["xz", "-dc", str(stored)]))
+        return
+    with gzip.open(stored, "rb") as source:
+        dest.write_bytes(source.read())
+
+
 def stored_proofs() -> list[dict]:
     rows = []
     for case in all_cases():
         cert = ROOT / "certs" / f"{case['name']}.json"
-        proof = ROOT / "certs" / "proofs" / f"{case['name']}.drat.gz"
-        if not cert.exists() or not proof.exists():
+        proof = proof_path(case["name"])
+        if not cert.exists() or proof is None:
             continue
         rec = json.loads(cert.read_text())
         if rec.get("status") != "UNSAT" or not rec.get("proof_verified"):
@@ -71,8 +89,7 @@ def main() -> int:
         if actual != expected:
             raise RuntimeError(f"CNF hash mismatch for {name}")
         proof = args.work_dir / f"{name}.drat"
-        with gzip.open(case["proof"], "rb") as source:
-            proof.write_bytes(source.read())
+        extract_proof(case["proof"], proof)
         result = subprocess.run(
             [str(args.drat_trim), str(cnf), str(proof)],
             check=False,

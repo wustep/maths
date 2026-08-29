@@ -25,6 +25,30 @@ def sha256(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
+GITHUB_BLOB_LIMIT = 100 * 1024 * 1024
+
+
+def store_compressed_proof(src: Path, stem: Path) -> Path:
+    """gzip -9, or xz -9 when gzip would exceed GitHub's 100MB blob limit."""
+    gz = Path(str(stem) + ".drat.gz")
+    xz = Path(str(stem) + ".drat.xz")
+    with src.open("rb") as incoming, gz.open("wb") as raw:
+        with gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as out:
+            shutil.copyfileobj(incoming, out)
+    if gz.stat().st_size < GITHUB_BLOB_LIMIT:
+        if xz.exists():
+            xz.unlink()
+        return gz
+    gz.unlink()
+    result = subprocess.run(
+        ["xz", "-9", "-T", "1", "-c", str(src)],
+        check=True,
+        capture_output=True,
+    )
+    xz.write_bytes(result.stdout)
+    return xz
+
+
 def case_by_name(name: str) -> dict:
     for row in all_cases():
         if row["name"] == name:
@@ -236,14 +260,11 @@ def main() -> int:
             timeout=check_timeout,
         ):
             raise RuntimeError(f"{case['name']}: stored DRAT failed to verify")
-        gz = ROOT / "certs" / "proofs" / f"{case['name']}.drat.gz"
-        with stored_src.open("rb") as src, gz.open("wb") as raw:
-            with gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as out:
-                shutil.copyfileobj(src, out)
+        stored = store_compressed_proof(stored_src, ROOT / "certs" / "proofs" / case["name"])
         record["proof"] = {
-            "bytes": gz.stat().st_size,
-            "path": str(gz.relative_to(ROOT)),
-            "sha256": sha256(gz),
+            "bytes": stored.stat().st_size,
+            "path": str(stored.relative_to(ROOT)),
+            "sha256": sha256(stored),
             "verified": True,
         }
         record["proof_verified"] = True
