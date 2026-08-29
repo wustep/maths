@@ -1,0 +1,6 @@
+/cnf/
+/proofs/
+/work/
+/.venv/
+*.o
+__pycache__/
