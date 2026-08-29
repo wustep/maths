@@ -390,12 +390,14 @@ rank-24 leftover certificates, and the one rank-26 leftover
 certificate did the same.
 
 Collection space was pushed one step past q1 and stayed quiet.
-Four hundred thousand even twists still produce exactly the five
-published (19,3) M-schemes. Dropping at most one split and adding
-three, from those same five collections, produces thirty known
-M-schemes and neither open nest — and the last seed was cut by a
-time cap, so even that is only a prefix. Odd collections of size 4
-finished and stayed on the same twelve M-schemes as size ≤ 3. The
-published \(a=10\) nest still has seven odd splits; size 4 can see
-a larger odd part than size 3, but it did not see a new M-scheme,
-and silence there is still not evidence about \(a=4\) or \(a=14\).
+Four hundred thousand even twists, then 1.2 million, still produce
+exactly the five published (19,3) M-schemes; the queue is still
+open. Dropping at most one split and adding three, from every
+published depth-3 M-collection, now finishes: twenty-nine known
+M-schemes and neither open nest. That includes the five published
+(19,3) collections that q2 left under a time cap. Odd collections
+of size 4 finished and stayed on the same twelve M-schemes as
+size ≤ 3. The published \(a=10\) nest still has seven odd splits;
+size 4 can see a larger odd part than size 3, but it did not see
+a new M-scheme, and silence there is still not evidence about
+\(a=4\) or \(a=14\).

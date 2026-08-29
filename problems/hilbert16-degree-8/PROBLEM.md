@@ -226,3 +226,22 @@ Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q3/run_all.sh && python3 q3/collect.py`
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-29, leftover (19,3) neighbourhood)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. No q4 candidate for a new
+scheme.
+
+Three-split moves around every published depth-3 M-collection
+finished 12/12 (3,909,329 evaluations, 29 known schemes, neither
+open nest, `compute/q4/certs/ladder3_depth3.json`). That includes
+the five published (19,3) collections. A 1,200,000-step even-split
+BFS stays on those five schemes with the queue still open
+(`compute/q4/certs/even_bfs.json`). Neither open nest is decided.
+That is a finished neighbourhood, not a lower bound.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q4/run_all.sh && python3 q4/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.

@@ -1,0 +1,21 @@
+{
+  "what": "Pinned even-split BFS from the published (19,3) collections. Complete only if the queue empties.",
+  "pin_odd": true,
+  "evals": 1200000,
+  "limit": 1200000,
+  "queue_left": 1167098,
+  "distinct_schemes": 5,
+  "new": 0,
+  "hits": 0,
+  "best_score": 6.0,
+  "best_scheme": "<17 u 1<2 u 1<1>>>",
+  "complete": false,
+  "schemes": [
+    "<10 u 1<2 u 1<8>>>",
+    "<16 u 3<1>>",
+    "<17 u 1<1> u 1<2>>",
+    "<17 u 1<2 u 1<1>>>",
+    "<18 u 1<3>>"
+  ],
+  "open_nests_in_scope": false
+}
