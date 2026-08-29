@@ -1057,3 +1057,15 @@ Code in `compute/q4/`. Replay: `sh q4/run_all.sh`.
 An incomplete prefix is residue, not a lower bound. No new scheme
 is claimed until `verify_new.py` accepts a certificate outside the
 2,367 and the seventeen.
+
+### So far
+
+| search | evals | result |
+| --- | --- | --- |
+| pinned even-split BFS, 1,200,000 collections | 1,200,000 | the five published (19,3) M-schemes only; queue left 1,167,098 (**residue**) |
+
+Certificate: `compute/q4/certs/even_bfs.json`. No
+`q4/certs/new_schemes.json`. Bound still ≥ 2,384.
+
+The three-split ladder (193 and depth-3) and odd collections of
+size 5 are still running. That is not a wrap.
