@@ -51,3 +51,7 @@ Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^
 ## Outcome (2026-08-27, q7)
 
 Still $40\le\tau_5\le 44$. No leftover 41-set in the 1480-point $(1/4)\mathbb Z^5$ graph whose missed-root union sits in a type-$(2,1)$ or type-$(1,3)$ five-star of $D_5$ coordinate-stars (`compute/q7/five_star_sat.json`, Aut orbits in `orbits.json`, native CaDiCaL DRAT verified). The 32 type-$(0,5)$ five-star hosts and the global $|U|=19$ leftover SAT remain residue. Leftover-tight extras B&B ran $20$G nodes with the type-$(2,1)$ prune and did not finish (`leftover_global.json`). No unrestricted dual below 44 (best certified $(t-1/2)q^2$ still $221991/3733\approx 59.47$). Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q7/run_all.sh`.
+
+## Outcome (2026-08-29, q8)
+
+Still $40\le\tau_5\le 44$. Leftover-tight SAT on the type-$(0,5)$ orbit representative (`compute/q8/certs/five_k30_n0_5.cnf.json`, sha256 `cdec5e76…`, 32 hosts by Aut) and the stronger global leftover SAT $|U|=19$ forbidding type-$(2,1)$ and type-$(1,3)$ (`n1_k19_star5_no21_no13.cnf.json`) did not finish. No stored Heule-verified DRAT and no 41-set. Tiny leftover_k30 smoke is not a certificate. Residue, not a dent. Did not claim $\tau_5=40$. Replay: `sh compute/q8/run_all.sh`.

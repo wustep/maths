@@ -1,0 +1,467 @@
+/* Leftover-tight extras B&B on the type-(0,5) five-star host
+ * stars 0,2,4,6,8 (625 extras).  Aut transitivity + emptiness here
+ * empties all 32 type-(0,5) leftover hosts.
+
+ * q6 emptied every 4-star leftover host and ran 200M nodes with a
+ * grow-prune that only fired when |P| <= 160.  This file always
+ * computes the remaining missed-union.  If that union sits in a
+ * 4-star, prune (those hosts are empty).  Optional 5-star prune
+ * after leftover-tight SAT empties 5-star hosts:
+ *
+ *   ./leftover_k30 [target] [node_limit] [five_mode]
+ * five_mode: 0 = 4-star prune only (default)
+ *            1 = every 5-star union (valid after all three types empty)
+ *            2 = type-(2,1) k=32 five-stars only (valid after that orbit SAT)
+ *            3 = types (2,1) and (1,3) (valid after those two orbit SATs)
+ * Default target=20, node_limit=400000000, five_mode=0.
+ */
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdint.h>
+#include <math.h>
+#include <time.h>
+#include <sys/stat.h>
+
+#define MAXN 2048
+#define MAXE 1600
+#define MAXG 512
+#define W ((MAXN + 63) / 64)
+
+typedef uint64_t u64;
+
+static int d = 4, thresh, target_norm;
+static int n, nD, nE, nG, nwords, target;
+static int pts[MAXN][5];
+static int isD[MAXN];
+static int Dlist[64];
+static int eidx[MAXE];
+static u64 miss[MAXE];
+static int g_of[MAXE];
+static int gsize[MAXG];
+static int gmem[MAXG][16];
+static u64 adj[MAXE][W];
+static u64 stars[10];
+static u64 fourU[256];
+static u64 fiveU[256];
+static int nfour, nfive, use_five, five_mode;
+
+static long nodes, node_limit = 400000000L;
+static int found, best;
+static int found_idx[64];
+static u64 found_U;
+static int slice_complete = 1;
+
+static int ip_pts(int i, int j)
+{
+    int s = 0;
+    for (int k = 0; k < 5; k++)
+        s += pts[i][k] * pts[j][k];
+    return s;
+}
+
+static int isqrt(int x)
+{
+    int r = (int)(sqrt((double)x) + 0.5);
+    while (r * r > x)
+        r--;
+    while ((r + 1) * (r + 1) <= x)
+        r++;
+    return r;
+}
+
+static void enumerate(void)
+{
+    int lim = isqrt(target_norm);
+    n = 0;
+    for (int a = -lim; a <= lim; a++) {
+        int r2 = target_norm - a * a;
+        for (int b = -lim; b <= lim; b++) {
+            int r3 = r2 - b * b;
+            if (r3 < 0)
+                continue;
+            for (int c = -lim; c <= lim; c++) {
+                int r4 = r3 - c * c;
+                if (r4 < 0)
+                    continue;
+                for (int e = -lim; e <= lim; e++) {
+                    int rem = r4 - e * e;
+                    if (rem < 0)
+                        continue;
+                    int f = isqrt(rem);
+                    if (f * f != rem)
+                        continue;
+                    int nf = (f == 0) ? 1 : 2;
+                    int fs[2] = {f, -f};
+                    for (int k = 0; k < nf; k++) {
+                        pts[n][0] = a;
+                        pts[n][1] = b;
+                        pts[n][2] = c;
+                        pts[n][3] = e;
+                        pts[n][4] = fs[k];
+                        n++;
+                    }
+                }
+            }
+        }
+    }
+}
+
+static int popc(const u64 *a)
+{
+    int s = 0;
+    for (int i = 0; i < nwords; i++)
+        s += __builtin_popcountll(a[i]);
+    return s;
+}
+
+static int first_bit(const u64 *a)
+{
+    for (int i = 0; i < nwords; i++)
+        if (a[i])
+            return i * 64 + __builtin_ctzll(a[i]);
+    return -1;
+}
+
+static void bit_clear(u64 *a, int v)
+{
+    a[v >> 6] &= ~(1ULL << (v & 63));
+}
+
+static int colour_order(const u64 *P, int *ord, int *col)
+{
+    u64 rem[W];
+    memcpy(rem, P, nwords * sizeof(u64));
+    int m = 0, c = 0;
+    while (popc(rem)) {
+        c++;
+        u64 avail[W];
+        memcpy(avail, rem, nwords * sizeof(u64));
+        int v;
+        while ((v = first_bit(avail)) >= 0) {
+            ord[m] = v;
+            col[m] = c;
+            m++;
+            bit_clear(avail, v);
+            for (int w = 0; w < nwords; w++)
+                avail[w] &= ~adj[v][w];
+            bit_clear(rem, v);
+        }
+    }
+    return m;
+}
+
+static int hosted_by_known(u64 U)
+{
+    for (int t = 0; t < nfour; t++) {
+        if ((U & ~fourU[t]) == 0)
+            return 1;
+    }
+    if (use_five) {
+        for (int t = 0; t < nfive; t++) {
+            if ((U & ~fiveU[t]) == 0)
+                return 1;
+        }
+    }
+    return 0;
+}
+
+static void write_code41(int rsz, const int *stack, u64 U)
+{
+    FILE *f = fopen("certs/code41.json", "w");
+    if (!f)
+        return;
+    fprintf(f, "{\n  \"n\": %d,\n", rsz + (40 - __builtin_popcountll(U)));
+    fprintf(f, "  \"source\": \"q8 leftover_k30.c\",\n");
+    fprintf(f, "  \"n_extras\": %d,\n  \"n1\": %d,\n  \"points\": [\n",
+            rsz, 40 - __builtin_popcountll(U));
+    int first = 1;
+    for (int t = 0; t < rsz; t++) {
+        int i = eidx[stack[t]];
+        if (!first)
+            fprintf(f, ",\n");
+        first = 0;
+        fprintf(f, "    [\"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\"]",
+                pts[i][0], pts[i][1], pts[i][2], pts[i][3], pts[i][4]);
+    }
+    for (int j = 0; j < nD; j++) {
+        if ((U >> j) & 1ULL)
+            continue;
+        int i = Dlist[j];
+        if (!first)
+            fprintf(f, ",\n");
+        first = 0;
+        fprintf(f, "    [\"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\", \"%d/4\"]",
+                pts[i][0], pts[i][1], pts[i][2], pts[i][3], pts[i][4]);
+    }
+    fprintf(f, "\n  ]\n}\n");
+    fclose(f);
+}
+
+static void expand(u64 *P, int rsz, int *stack, u64 U)
+{
+    nodes++;
+    if (found || nodes > node_limit)
+        return;
+    if ((nodes % 2000000L) == 0) {
+        FILE *pf = fopen("leftover_k30_progress.json", "w");
+        if (pf) {
+            fprintf(pf,
+                    "{\"nodes\": %ld, \"best_extras\": %d, \"found_41\": %s}\n",
+                    nodes, best, found ? "true" : "false");
+            fclose(pf);
+        }
+    }
+    int psz = popc(P);
+    int uk = __builtin_popcountll(U);
+    /* even taking every remaining extra, |E| = rsz+psz, need |E| >= |U|+1
+     * and |U| can only grow.  q4 emptied |U|<=18, so a leftover 41-set
+     * also needs |U| >= 19. */
+    if (rsz + psz <= uk)
+        return;
+    if (rsz + psz < target)
+        return;
+    if (rsz + psz < 20)
+        return;
+    {
+        u64 grow = U;
+        for (int w = 0; w < nwords; w++) {
+            u64 bits = P[w];
+            while (bits) {
+                int b = __builtin_ctzll(bits);
+                bits &= bits - 1;
+                grow |= miss[w * 64 + b];
+            }
+        }
+        if (__builtin_popcountll(grow) < 19)
+            return;
+        for (int t = 0; t < nfour; t++) {
+            if ((grow & ~fourU[t]) == 0)
+                return;
+        }
+        if (use_five) {
+            for (int t = 0; t < nfive; t++) {
+                if ((grow & ~fiveU[t]) == 0)
+                    return;
+            }
+        }
+    }
+    if (psz == 0) {
+        if (rsz > best)
+            best = rsz;
+        if (rsz >= uk + 1 && rsz >= target && uk >= 19) {
+            if (!hosted_by_known(U)) {
+                found = 1;
+                found_U = U;
+                memcpy(found_idx, stack, (size_t)rsz * sizeof(int));
+                write_code41(rsz, stack, U);
+            }
+        }
+        return;
+    }
+    int ord[MAXN], col[MAXN];
+    int m = colour_order(P, ord, col);
+    u64 Q[W];
+    memcpy(Q, P, nwords * sizeof(u64));
+    for (int i = m - 1; i >= 0; i--) {
+        if (found || nodes > node_limit)
+            return;
+        if (rsz + col[i] < target)
+            return;
+        int v = ord[i];
+        u64 U2 = U | miss[v];
+        int uk2 = __builtin_popcountll(U2);
+        if (rsz + 1 + (psz - 1) <= uk2) {
+            bit_clear(Q, v);
+            continue;
+        }
+        u64 P2[W];
+        for (int w = 0; w < nwords; w++)
+            P2[w] = Q[w] & adj[v][w];
+        int g = g_of[v];
+        for (int t = 0; t < gsize[g]; t++)
+            bit_clear(P2, gmem[g][t]);
+        stack[rsz] = v;
+        if (rsz + 1 >= target && rsz + 1 >= uk2 + 1 && uk2 >= 19) {
+            if (!hosted_by_known(U2)) {
+                found = 1;
+                best = rsz + 1;
+                found_U = U2;
+                memcpy(found_idx, stack, (size_t)(rsz + 1) * sizeof(int));
+                write_code41(rsz + 1, stack, U2);
+                return;
+            }
+        }
+        expand(P2, rsz + 1, stack, U2);
+        bit_clear(Q, v);
+    }
+}
+
+int main(int argc, char **argv)
+{
+    target = 20;
+    if (argc >= 2)
+        target = atoi(argv[1]);
+    if (argc >= 3)
+        node_limit = atol(argv[2]);
+    if (argc >= 4)
+        five_mode = atoi(argv[3]);
+    use_five = five_mode >= 1;
+    if (target < 19 || target > 40) {
+        fprintf(stderr, "target out of range\n");
+        return 1;
+    }
+    target_norm = 2 * d * d;
+    thresh = d * d;
+    enumerate();
+
+    nD = 0;
+    memset(isD, 0, sizeof isD);
+    for (int i = 0; i < n; i++) {
+        int nz = 0, ok = 1;
+        for (int k = 0; k < 5; k++) {
+            int a = pts[i][k] < 0 ? -pts[i][k] : pts[i][k];
+            if (a == 0)
+                continue;
+            nz++;
+            if (a != d)
+                ok = 0;
+        }
+        if (ok && nz == 2) {
+            isD[i] = 1;
+            Dlist[nD++] = i;
+        }
+    }
+
+    memset(stars, 0, sizeof stars);
+    int ns = 0;
+    for (int ax = 0; ax < 5; ax++) {
+        for (int sg = -1; sg <= 1; sg += 2) {
+            u64 bits = 0;
+            for (int j = 0; j < nD; j++) {
+                int i = Dlist[j];
+                if (pts[i][ax] == sg * d)
+                    bits |= 1ULL << j;
+            }
+            stars[ns++] = bits;
+        }
+    }
+    /* type (0,5) representative: one sign per axis */
+    u64 host = stars[0] | stars[2] | stars[4] | stars[6] | stars[8];
+
+    nE = 0;
+    nG = 0;
+    u64 seeds[MAXG];
+    for (int i = 0; i < n; i++) {
+        if (isD[i])
+            continue;
+        u64 msk = 0;
+        for (int j = 0; j < nD; j++)
+            if (ip_pts(i, Dlist[j]) > thresh)
+                msk |= 1ULL << j;
+        if ((msk & ~host) != 0)
+            continue;
+        int gi = -1;
+        for (int g = 0; g < nG; g++)
+            if (seeds[g] == msk) {
+                gi = g;
+                break;
+            }
+        if (gi < 0) {
+            gi = nG++;
+            seeds[gi] = msk;
+            gsize[gi] = 0;
+        }
+        eidx[nE] = i;
+        miss[nE] = msk;
+        g_of[nE] = gi;
+        gmem[gi][gsize[gi]++] = nE;
+        nE++;
+    }
+
+    nwords = (nE + 63) / 64;
+    memset(adj, 0, sizeof adj);
+    long edges = 0;
+    for (int i = 0; i < nE; i++) {
+        for (int j = i + 1; j < nE; j++) {
+            if (ip_pts(eidx[i], eidx[j]) <= thresh) {
+                adj[i][j >> 6] |= 1ULL << (j & 63);
+                adj[j][i >> 6] |= 1ULL << (i & 63);
+                edges++;
+            }
+        }
+    }
+
+    nfour = 0;
+    for (int a = 0; a < 10; a++)
+        for (int b = a + 1; b < 10; b++)
+            for (int c = b + 1; c < 10; c++)
+                for (int e = c + 1; e < 10; e++)
+                    fourU[nfour++] = stars[a] | stars[b] | stars[c] | stars[e];
+    nfive = 0;
+    for (int a = 0; a < 10; a++)
+        for (int b = a + 1; b < 10; b++)
+            for (int c = b + 1; c < 10; c++)
+                for (int e = c + 1; e < 10; e++)
+                    for (int f = e + 1; f < 10; f++) {
+                        int idx[5] = {a, b, c, e, f};
+                        int axes[5] = {0, 0, 0, 0, 0};
+                        for (int t = 0; t < 5; t++)
+                            axes[idx[t] / 2]++;
+                        int n2 = 0, n1 = 0;
+                        for (int ax = 0; ax < 5; ax++) {
+                            if (axes[ax] == 2)
+                                n2++;
+                            else if (axes[ax] == 1)
+                                n1++;
+                        }
+                        /* five_mode 2: type (2,1).  five_mode 3: (2,1) and (1,3). */
+                        if (five_mode == 2 && !(n2 == 2 && n1 == 1))
+                            continue;
+                        if (five_mode == 3 && !((n2 == 2 && n1 == 1)
+                                               || (n2 == 1 && n1 == 3)))
+                            continue;
+                        fiveU[nfive++] = stars[a] | stars[b] | stars[c]
+                            | stars[e] | stars[f];
+                    }
+
+    mkdir("certs", 0755);
+    found = 0;
+    best = target - 1;
+    nodes = 0;
+    time_t t0 = time(NULL);
+    u64 P[W];
+    memset(P, 0, sizeof P);
+    for (int v = 0; v < nE; v++)
+        P[v >> 6] |= 1ULL << (v & 63);
+    int stack[64];
+    expand(P, 0, stack, 0);
+    if (nodes > node_limit && !found)
+        slice_complete = 0;
+
+    printf("{\n");
+    printf("  \"d\": %d,\n", d);
+    printf("  \"n\": %d,\n", n);
+    printf("  \"n_d5\": %d,\n", nD);
+    printf("  \"n_extras\": %d,\n", nE);
+    printf("  \"n_groups\": %d,\n", nG);
+    printf("  \"n_extra_edges\": %ld,\n", edges);
+    printf("  \"target\": %d,\n", target);
+    printf("  \"nodes\": %ld,\n", nodes);
+    printf("  \"node_limit\": %ld,\n", node_limit);
+    printf("  \"best_extras\": %d,\n", best);
+    printf("  \"found_41\": %s,\n", found ? "true" : "false");
+    if (found)
+        printf("  \"found_n1\": %d,\n", 40 - __builtin_popcountll(found_U));
+    printf("  \"complete\": %s,\n", slice_complete && !found ? "true" : "false");
+    printf("  \"n_four_star\": %d,\n", nfour);
+    printf("  \"n_five_used\": %d,\n", nfive);
+    printf("  \"n_five_star\": 252,\n");
+    printf("  \"five_mode\": %d,\n", five_mode);
+    printf("  \"five_star_prune\": %s,\n", use_five ? "true" : "false");
+    printf("  \"wall_seconds\": %ld,\n", (long)(time(NULL) - t0));
+    printf("  \"pool\": \"k30_n0_5\",\n");
+    printf("  \"comment\": \"leftover-tight B&B on the type-(0,5) five-star host\"\n");
+    printf("}\n");
+    return 0;
+}

@@ -637,3 +637,50 @@ classical Levenshtein number 48 before claiming any comparison.
 - Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
   beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
   not claim $\tau_5=40$. Residue.
+
+## 2026-08-27 — continue (q8)
+
+- Start from main after PR #102 (`87674a7`). Folder `compute/q8/`.
+  Covering frozen. Do not claim $\tau_5=40$.
+- Re-opened tonight, still $40\le\tau_5\le 44$:
+  Tao $C_{29}$ <https://teorth.github.io/optimizationproblems/constants/29a.html>,
+  Cohn table <https://cohn.mit.edu/kissing-numbers/> (dim 5: 40 / 44,
+  ratio 1.100),
+  Mittelmann–Vallentin arXiv:0902.1105v3,
+  Cohn–Rajagopal arXiv:2412.00937v3.
+- Leftover after q7: type-$(0,5)$ five-star hosts (32 pools, $k=30$,
+  625 extras) and global leftover SAT $|U|=19$ with star-cover at
+  least 5. The global CNF here also forbids the type-$(2,1)$ and
+  type-$(1,3)$ five-star unions q7 emptied.
+- Hunt: leftover-tight SAT / B&B on the type-$(0,5)$ orbit
+  representative with a stored native DRAT, or a 41-set; stronger
+  global leftover SAT. Residue if the interval does not move.
+
+## 2026-08-29 — wrap (q8)
+
+- Rebased onto `origin/main` (`b5a2b71`). Covering and
+  `share/2026-08-16` untouched. Later README claims left as they
+  stand (Caccetta leftover through $n=151$, hole $n=152$,
+  $F_4$ $0.34640$; ionization $1.1010$; and the rest).
+- Re-opened the record: still $40\le\tau_5\le 44$
+  (Tao $C_{29}$, Cohn table dim 5: 40 / 44,
+  Mittelmann–Vallentin $s_{14}(5)=44.99899685\ldots$,
+  Cohn–Rajagopal arXiv:2412.00937v3).
+- Type-$(0,5)$ leftover-tight CNF
+  (`certs/five_k30_n0_5.cnf.json`, sha256 `cdec5e76…`, same
+  encoding as the unfinished q7 $k=30$ instance) and the stronger
+  global leftover CNF (`n1_k19_star5_no21_no13.cnf.json`, 220
+  five-star forbids) were written and independently rebuilt.
+  Cubes pin $|U|=u$ for $u=19,\ldots,30$
+  (`certs/k30_cubes.json`).
+- Native CaDiCaL on the $k=30$ leftover-tight instance wrote a
+  binary DRAT past $15$ GB (about four hours of solver time) and
+  did not exit. The weaker q7 global leftover DRAT passed $11$ GB
+  and did not exit. Kissat probes on both q8 CNFs were unfinished.
+  No `drat-trim` `s VERIFIED`. No `certs/code41.json`.
+- leftover_k30 smoke (2000 nodes, `five_mode` 3) is not a
+  certificate. q7 leftover extras B&B at $20$G nodes with the
+  type-$(2,1)$/$(1,3)$ prune was already incomplete.
+- Unrestricted interval unchanged: $40\le\tau_5\le 44$. Did not
+  beat Mittelmann–Vallentin. Did not produce a 41-point code. Did
+  not claim $\tau_5=40$. Residue.

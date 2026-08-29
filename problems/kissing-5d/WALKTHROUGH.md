@@ -565,3 +565,38 @@ finish.
   star-cover at least 6.
 - The global $|U|=19$ leftover SAT.
 - An exact SOS certificate that $s_d(5)<44$.
+
+## 15. 27 August, later: the last five-star type
+
+The leftover after types $(2,1)$ and $(1,3)$ is one axis type:
+five half-stars, $k=30$, 625 extras, 32 hosts in one Aut orbit.
+The same leftover-tight CNF, on a larger extras graph. Kissat
+without a proof is the probe; native CaDiCaL plus `drat-trim` is
+the certificate.
+
+The global $|U|=19$ SAT can now forbid those two empty five-star
+types as well as every 4-star. A model is a leftover hosted by a
+type-$(0,5)$ five-star, or one with star-cover at least 6.
+
+The $k=30$ leftover-tight DIMACS matches the unfinished q7
+instance (sha256 `cdec5e76…`). Native CaDiCaL wrote past $15$ GB
+of binary DRAT and did not finish. The weaker global leftover
+proof passed $11$ GB. Kissat on both q8 CNFs was still running
+when the machine stopped. There is no stored `s VERIFIED` and no
+41-set. Splitting the host by $|U|=u$ writes twelve cubes; none
+of them has a stored proof either. leftover_k30 smoke at 2000
+nodes is the replay check, not emptiness.
+
+**Proved on 29 August (restricted).**
+
+- Nothing new on the 1480-graph beyond q7. Types $(2,1)$ and
+  $(1,3)$ stay empty by the stored q7 DRATs.
+
+**Still open.**
+
+- The unrestricted kissing number: $40\le\tau_5\le 44$, unchanged.
+- A leftover 41-set hosted by a type-$(0,5)$ five-star, or with
+  star-cover at least 6.
+- The global $|U|=19$ leftover SAT, with or without the extra
+  five-star forbids.
+- An exact SOS certificate that $s_d(5)<44$.
