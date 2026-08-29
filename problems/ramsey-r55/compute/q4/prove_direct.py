@@ -180,8 +180,9 @@ def main() -> int:
         ):
             raise RuntimeError(f"{case['name']}: stored DRAT failed to verify")
         gz = ROOT / "certs" / "proofs" / f"{case['name']}.drat.gz"
-        with stored_src.open("rb") as src, gzip.open(gz, "wb", compresslevel=9, mtime=0) as out:
-            shutil.copyfileobj(src, out)
+        with stored_src.open("rb") as src, gz.open("wb") as raw:
+            with gzip.GzipFile(fileobj=raw, mode="wb", compresslevel=9, mtime=0) as out:
+                shutil.copyfileobj(src, out)
         record["proof"] = {
             "bytes": gz.stat().st_size,
             "path": str(gz.relative_to(ROOT)),
