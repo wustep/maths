@@ -282,6 +282,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Hilbert 16(a) degree 8 | `problems/hilbert16-degree-8` | Fable 5, Opus 5 | 2026-08-21, 2026-08-23 |
 | Hilbert 16(a) degree 8 / leftover thicken and (19,3) row | `problems/hilbert16-degree-8/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(a) degree 8 / leftover ranks 21–26 | `problems/hilbert16-degree-8/compute/q2` | Grok 4.6 | 2026-08-27 |
+| Hilbert 16(a) degree 8 / leftover ranks 22–26 | `problems/hilbert16-degree-8/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(b) Hilbert number H(n) | `problems/hilbert16-limit-cycles` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(b) five-line campaign | `problems/hilbert16-limit-cycles/compute/q1` | Grok 4.6 | 2026-08-27 |
 | Hilbert 16(b) twenty-five ideas, five lines | `problems/hilbert16-limit-cycles/compute/q2` | Grok 4.6 | 2026-08-27 |

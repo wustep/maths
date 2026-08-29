@@ -1,0 +1,32 @@
+{
+  "what": "Radius-1 thicken of leftover census triangulations of twist-rank 24. Complete only when every task has evals == 46 * 2^rank.",
+  "kind": "leftover_thicken_r1",
+  "radius": 1,
+  "min_rank": 24,
+  "max_rank": 24,
+  "n_tasks": 3,
+  "n_complete": 1,
+  "n_incomplete": 0,
+  "n_missing": 2,
+  "complete": false,
+  "expected_evals": 2315255808,
+  "evals": 771751936,
+  "novel": [],
+  "missing": [
+    "deg8/o18-p03-n15/(1(14v1(2))).pcom",
+    "deg8/o19-p18-n01/(15v1(1(2))).pcom"
+  ],
+  "incomplete": [],
+  "tasks": [
+    {
+      "cert": "deg8/o10-p03-n07/(1(1)v1(2)v1(4)).pcom",
+      "rank": 24,
+      "evals": 771751936,
+      "expected": 771751936,
+      "distinct_schemes": 107,
+      "complete": true,
+      "novel": [],
+      "seconds": 44184.8
+    }
+  ]
+}

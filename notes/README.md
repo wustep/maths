@@ -31,6 +31,7 @@
 | [cursor-grok-2026-08-27-kissing-5d-q7/](cursor-grok-2026-08-27-kissing-5d-q7/) | kissing-5d leftover star-cover at least 5; 5-star SAT |
 | [grok-2026-08-27-hilbert16-d8/](grok-2026-08-27-hilbert16-d8/) | Grok 4.6 continuation of Hilbert 16(a) degree 8 |
 | [grok-2026-08-27-hilbert16-d8-q2/](grok-2026-08-27-hilbert16-d8-q2/) | Grok 4.6 leftover ranks 21–26 and the next (19,3) moves |
+| [grok-2026-08-27-hilbert16-d8-q3/](grok-2026-08-27-hilbert16-d8-q3/) | Grok 4.6 leftover ranks 22–26 and the open (19,3) nests |
 
 | [cursor-grok-2026-08-27-caccetta-q22/](cursor-grok-2026-08-27-caccetta-q22/) | leftover SAT through n=131 |
 

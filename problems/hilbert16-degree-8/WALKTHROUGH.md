@@ -375,13 +375,19 @@ Novel versus the published census is empty. None of the seventeen
 reappears either — those five certificates simply do not see the
 schemes that sit off the census. The two published (19,3) liftings
 were already rank 20. The only (19,3) certificate in ranks 21–26
-is the Harnack triangulation at rank 23, still untouched.
+is the Harnack triangulation at rank 23.
 
 So the leftover thicken is no longer "ranks 21–26 were never
-tried." It is "rank 21 is a finished neighbourhood and added
-nothing; ranks 22–26 are still open." That is still not an
-obstruction. Hamming distance greater than 1, or a triangulation
-outside the 184, remains possible.
+tried." It is "ranks 21–26 are finished neighbourhoods and added
+nothing." That is still not an obstruction. Hamming distance
+greater than 1, or a triangulation outside the 184, remains
+possible.
+
+The Harnack triangulation itself, radius 1 around the whole Haas
+maximal stratum, produced 26 schemes already in the published
+census. The other five rank-23 leftover certificates, all three
+rank-24 leftover certificates, and the one rank-26 leftover
+certificate did the same.
 
 Collection space was pushed one step past q1 and stayed quiet.
 Four hundred thousand even twists still produce exactly the five
@@ -389,8 +395,7 @@ published (19,3) M-schemes. Dropping at most one split and adding
 three, from those same five collections, produces thirty known
 M-schemes and neither open nest — and the last seed was cut by a
 time cap, so even that is only a prefix. Odd collections of size 4
-had not left the twelve schemes of size ≤ 3 when the snapshot was
-taken (40 of 189 outer indices). The published \(a=10\) nest still
-has seven odd splits; size 4 can see a larger odd part than size 3,
-but it has not seen a new M-scheme yet, and silence there is still
-not evidence about \(a=4\) or \(a=14\).
+finished and stayed on the same twelve M-schemes as size ≤ 3. The
+published \(a=10\) nest still has seven odd splits; size 4 can see
+a larger odd part than size 3, but it did not see a new M-scheme,
+and silence there is still not evidence about \(a=4\) or \(a=14\).

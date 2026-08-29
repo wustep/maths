@@ -982,3 +982,65 @@ finished and added nothing. Ranks 22–26 remain.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q2/run_all.sh && python3 q2/collect.py`.
+
+## 2026-08-27 — q3: leftover ranks 22–26 and the open nests
+
+Grok 4.6, new branch from `origin/main` `db98cb1` (q2 wrap merged).
+Record re-fetched: arXiv:2602.06888 still **v3, 27 Jul 2026**;
+§5.3 still 2,367 nonempty T-schemes. Bound still ≥ 2,384.
+
+Code in `compute/q3/`. Replay: `sh q3/run_all.sh`.
+
+The leftover named in the q2 wrap is the fifteen census triangulations
+of twist-rank 22–26 (expected 8,682,209,280 radius-1 evaluations,
+exactly \(46\cdot 2^r\) on each) and the two open (19,3) nests.
+The only leftover (19,3) certificate is the rank-23 Harnack
+`deg8/o22-p19-n03/(18v1(3)).pcom`.
+
+An incomplete prefix is residue, not a lower bound. No new scheme
+is claimed until `verify_new.py` accepts a certificate outside the
+2,367 and the seventeen.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| radius-1 thicken, leftover rank 22 | 964,689,920 | **5/5 complete**; evals = \(46\cdot 2^{22}\) on each; novel vs census empty |
+| radius-1 thicken, leftover rank 23 | 2,315,255,808 | **6/6 complete**; evals = \(46\cdot 2^{23}\) on each; novel vs census empty |
+| radius-1 thicken, leftover rank 24 | 2,315,255,808 | **3/3 complete**; evals = \(46\cdot 2^{24}\) on each; novel vs census empty |
+| radius-1 thicken, leftover rank 26 | 3,087,007,744 | **1/1 complete**; four shards each with evals = \(46\cdot 2^{24}\), sum \(46\cdot 2^{26}\); novel vs census empty |
+| leftover ranks 22–26 | 8,682,209,280 | **15/15 complete**; evals = \(46\cdot 2^r\) on each; novel vs census empty |
+| odd collections, size 4 | 5,308,103 | **complete**; twelve known M-schemes, 0 hits on the open nests |
+
+Certificates: `compute/q3/certs/thick_r1_rank_22.json`,
+`thick_r1_rank_23.json`,
+`thick_r1_rank_24.json`,
+`thick_r1_rank_26.json`,
+`thick_r1_rank_22_26.json`, `odd_skel4.json`. No
+`q3/certs/new_schemes.json`. Bound still ≥ 2,384.
+
+Ranks 22–26 are finished neighbourhoods and added nothing,
+including the Harnack triangulation (the only leftover (19,3)
+census certificate) and the rank-26 triangulation
+`deg8/o20-p19-n01/(17v1(1(1))).pcom`. Both open nests remain.
+That is a finished leftover thicken, not a lower bound.
+
+### What the (19,3) row did this time
+
+The leftover (19,3) census certificate is finished: radius 1
+around the whole Haas maximal stratum on the Harnack
+triangulation produced 26 schemes already in the published
+census. Odd collections of size 4 stay on the same twelve
+M-schemes as size ≤ 3. Neither decides
+⟨4⊔1⟨2⊔1⟨14⟩⟩⟩ or ⟨14⊔1⟨2⊔1⟨4⟩⟩⟩.
+
+### Status
+
+Hilbert 16(a) in degree 8 remains open. The dent is still the
+seventeen schemes and the bound ≥ 2,384; both replay. No new
+scheme, no deep-nest decision. The leftover radius-1 thicken of
+every leftover census triangulation of twist-rank 22–26 is
+finished and added nothing.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q3/run_all.sh && python3 q3/collect.py`.

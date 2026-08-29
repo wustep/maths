@@ -293,3 +293,15 @@ returns **v3, 27 Jul 2026**. Abs
 nonempty degree-8 T-schemes, "as the search is not exhaustive, this
 is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
 Parent 17/17 and q1 replay still green. Bound still ≥ 2,384.
+
+## 2026-08-27 — freshness check (q3)
+
+Re-fetched before the leftover ranks 22–26 thicken. **Nothing about
+degree 8 moved.** `python3 scripts/arxiv_fetch.py 2602.06888v3`
+returns **v3, 27 Jul 2026**. Abs
+<https://arxiv.org/abs/2602.06888> and full HTML
+<https://arxiv.org/html/2602.06888v3> re-read: §5.3 still **2,367**
+nonempty degree-8 T-schemes, "as the search is not exhaustive, this
+is a lower bound". <https://arxiv.org/abs/2602.06888v4> is 404.
+Parent 17/17 still the folder bound. Rank 21 leftover finished on
+main. Bound still ≥ 2,384.

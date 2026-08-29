@@ -202,3 +202,27 @@ Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q2/run_all.sh && python3 q2/collect.py`
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-08-29, leftover ranks 22–26)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. No q3 candidate for a new
+scheme.
+
+Radius 1 around the maximal Haas stratum finished every leftover
+census triangulation of twist-rank 22–26 (15/15, 8,682,209,280
+sign distributions, exactly \(46\cdot 2^r\) on each,
+`compute/q3/certs/thick_r1_rank_22_26.json`). The rank-26
+certificate is four shards whose evaluation counts sum to
+\(46\cdot 2^{26}\). Every scheme found is already in the published
+2,367. Neither open nest appeared. That is a finished sweep of
+this leftover, not a lower bound.
+
+Odd collections of size 4 finished and stay on the same twelve
+M-schemes as size ≤ 3 (`compute/q3/certs/odd_skel4.json`).
+Neither open nest is decided.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q3/run_all.sh && python3 q3/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.
