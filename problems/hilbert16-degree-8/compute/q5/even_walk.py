@@ -345,9 +345,10 @@ def run_bfs(out, limit=200000, pin_odd=True, skip_eval_until=0,
                 q.append(nw)
                 if lg.evals >= limit:
                     break
-        if not quiet and (lg.evals % 200 == 0 or
-                          (skip_eval_until and walked <= skip_eval_until
-                           and walked % 50000 == 0)):
+        if not quiet and (
+                (lg.evals and lg.evals % 2000 == 0) or
+                (skip_eval_until and walked <= skip_eval_until
+                 and walked % 100000 == 0)):
             print(f"  bfs walked={walked} evals={lg.evals} queue={len(q)} "
                   f"seen_coll={len(seen)} schemes={len(lg.seen)} "
                   f"new={lg.new} best={lg.best[0]} {lg.best[1]} "

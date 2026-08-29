@@ -123,6 +123,10 @@ def main(argv):
             stop = True
             return
         evals += 1
+        if evals % 20000 == 0:
+            print(f"  progress shard=[{lo},{hi}) evals={evals} "
+                  f"schemes={len(seen_sch)} hits={hits} "
+                  f"({time.time()-t0:.0f}s)", flush=True)
         nc, sch = ev(sp, ids)
         if sch is None:
             return
