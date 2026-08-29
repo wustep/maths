@@ -206,3 +206,29 @@ replay: `compute/q6/logs/replay_direct.txt`. $5^5$ at $k=1$ timed out
 at sixty minutes. The other leftover representatives that were run
 also timed out. This does not move an endpoint.
 
+## 2026-08-29 — leftover SAT after 5^5 at k=2
+
+Fetched again before searching:
+
+- `https://arxiv.org/abs/2409.15709` — Angeltveit–McKay v2. Lower bound 43
+  is still the best; $R(5,5)\le46$; 45 wants new theory.
+- `https://www.cs.rit.edu/~spr/ElJC/eline.html` — revision list still ends
+  at #18, 24 April 2026, 149pp / 1066 refs. No #19.
+- `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` —
+  living DS1 still dated 24 April 2026 (`#DS1: Apr 24, 2026`).
+- `https://www.cs.rit.edu/~spr/ElJC/ejcram18.pdf` — 585821-byte PDF, SHA-256
+  `9519a676ee381f02f03269c22e3f101162b2fdcc9d432e4103cb1192fdff91bc`.
+- `https://export.arxiv.org/api/query?search_query=all:"R(5,5)"&sortBy=submittedDate&sortOrder=descending&max_results=8`
+  — 6 hits. Newest after 2409.15709 is still 2508.16699v2.
+- `https://arxiv.org/abs/2508.16699` — Tamburini heuristic for $R(5,5)=45$.
+  Not a colouring and not a nonexistence log.
+- `https://users.cecs.anu.edu.au/~bdm/data/ramsey.html` — still hosts
+  `r55_42some.g6`; still says there could be more on 42–47 vertices.
+
+q2's encoder was reused unchanged. $5^5 1^{18}$ at $k=1$ returned
+kissat UNSAT after 7575s. The trimmed DRAT is 4123082549 bytes
+(SHA-256 `d1f770b0b7c50ca2bb08a4d8872b4bc21a17bda8401cdef9360267e071df8574`)
+and was not stored. The independent check was stopped at wrap. This
+is not an independently replayed certificate and does not move an
+endpoint.
+

@@ -65,3 +65,12 @@ $5^5 1^{18}$ at $k\in\{2,3\}$ on 43 vertices. The other neighbour count on
 that type, the five maximum-cycle order-2/3/5 instances, and the rest of
 the leftover 2/3/5 list remain unfinished. This is an automorphism
 restriction, not a bound on $R(5,5)$.
+
+## Status (2026-08-29, leftover 2/3/5 after 5^5 at k=2)
+
+Published record still $43\le R(5,5)\le46$. No endpoint moved. Residue in
+`compute/q7/`: $5^5 1^{18}$ at $k=1$ returned kissat UNSAT after 7575s, but
+the trimmed DRAT is 3.9GB and was not stored; the independent check was
+stopped at wrap. $5^2 1^{33}$ at $k=2$ and $3^{12}1^{7}$ at $k=5$ timed
+out at sixty minutes. No new independently replayed certificate. This is
+not a bound on $R(5,5)$.
