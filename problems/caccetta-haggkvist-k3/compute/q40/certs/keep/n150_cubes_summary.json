@@ -1,0 +1,2192 @@
+{
+  "n": 150,
+  "d": 50,
+  "pigeonhole": {
+    "n": 150,
+    "d": 50,
+    "arcs": 7500,
+    "mean_indeg": 50,
+    "k_min_pigeonhole": 50,
+    "k_max_absolute": 99,
+    "k_max_count": 98,
+    "needed_cubes": [
+      50,
+      51,
+      52,
+      53,
+      54,
+      55,
+      56,
+      57,
+      58,
+      59,
+      60,
+      61,
+      62,
+      63,
+      64,
+      65,
+      66,
+      67,
+      68,
+      69,
+      70,
+      71,
+      72,
+      73,
+      74,
+      75,
+      76,
+      77,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      85,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98
+    ],
+    "empty_by_count": [
+      99
+    ]
+  },
+  "all_unsat": true,
+  "leftover": [],
+  "rows": [
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 98,
+      "status": "UNSAT",
+      "drat": "VERIFIED",
+      "keep": "ch-150-50-k98.drat",
+      "skipped_existing": true
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 97,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3322898 7828545",
+      "status": "UNSAT",
+      "time_s": 1.111,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k97.cnf",
+      "out": "ch-150-50-k97.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 2870,
+      "keep": "ch-150-50-k97.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 97,
+        "raw_bytes": 16046786,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 6029,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 2870,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 2870,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 96,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3323194 7829088",
+      "status": "UNSAT",
+      "time_s": 1.097,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k96.cnf",
+      "out": "ch-150-50-k96.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 344,
+      "keep": "ch-150-50-k96.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 96,
+        "raw_bytes": 16094698,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 698,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 344,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 344,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 95,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3323490 7829631",
+      "status": "UNSAT",
+      "time_s": 2.718,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k95.cnf",
+      "out": "ch-150-50-k95.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 7780,
+      "keep": "ch-150-50-k95.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 95,
+        "raw_bytes": 31493173,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 16623,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 7780,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 7780,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 94,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3323786 7830174",
+      "status": "UNSAT",
+      "time_s": 3.248,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k94.cnf",
+      "out": "ch-150-50-k94.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 10360,
+      "keep": "ch-150-50-k94.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 94,
+        "raw_bytes": 31219204,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 22423,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 10360,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 10360,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 93,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3324082 7830717",
+      "status": "UNSAT",
+      "time_s": 3.628,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k93.cnf",
+      "out": "ch-150-50-k93.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 12685,
+      "keep": "ch-150-50-k93.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 93,
+        "raw_bytes": 31255133,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 27701,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 12685,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 12685,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 92,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3324378 7831260",
+      "status": "UNSAT",
+      "time_s": 3.283,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k92.cnf",
+      "out": "ch-150-50-k92.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 28417,
+      "keep": "ch-150-50-k92.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 92,
+        "raw_bytes": 30815121,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 61875,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 28417,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 28417,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 91,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3324674 7831803",
+      "status": "UNSAT",
+      "time_s": 3.348,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k91.cnf",
+      "out": "ch-150-50-k91.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 33435,
+      "keep": "ch-150-50-k91.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 91,
+        "raw_bytes": 30703407,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 72708,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 33435,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 33435,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 90,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3324970 7832346",
+      "status": "UNSAT",
+      "time_s": 3.433,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k90.cnf",
+      "out": "ch-150-50-k90.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 46565,
+      "keep": "ch-150-50-k90.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 90,
+        "raw_bytes": 30401613,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 101376,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 46565,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 46565,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 89,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3325266 7832889",
+      "status": "UNSAT",
+      "time_s": 3.399,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k89.cnf",
+      "out": "ch-150-50-k89.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 48068,
+      "keep": "ch-150-50-k89.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 89,
+        "raw_bytes": 30207940,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 106372,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 48068,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 48068,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 88,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3325562 7833432",
+      "status": "UNSAT",
+      "time_s": 3.069,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k88.cnf",
+      "out": "ch-150-50-k88.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 55244,
+      "keep": "ch-150-50-k88.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 88,
+        "raw_bytes": 30026859,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 121007,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 55244,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 55244,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 87,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3325858 7833975",
+      "status": "UNSAT",
+      "time_s": 3.333,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k87.cnf",
+      "out": "ch-150-50-k87.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 57906,
+      "keep": "ch-150-50-k87.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 87,
+        "raw_bytes": 29793263,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 128080,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 57906,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 57906,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 86,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3326154 7834518",
+      "status": "UNSAT",
+      "time_s": 3.136,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k86.cnf",
+      "out": "ch-150-50-k86.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 63733,
+      "keep": "ch-150-50-k86.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 86,
+        "raw_bytes": 29556432,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 142678,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 63733,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 63733,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 85,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3326450 7835061",
+      "status": "UNSAT",
+      "time_s": 3.646,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k85.cnf",
+      "out": "ch-150-50-k85.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 55843,
+      "keep": "ch-150-50-k85.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 85,
+        "raw_bytes": 29542171,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 124392,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 55843,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 55843,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 84,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3326746 7835604",
+      "status": "UNSAT",
+      "time_s": 3.732,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k84.cnf",
+      "out": "ch-150-50-k84.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 101263,
+      "keep": "ch-150-50-k84.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 84,
+        "raw_bytes": 30131201,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 223816,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 101263,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 101263,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 83,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3327042 7836147",
+      "status": "UNSAT",
+      "time_s": 3.629,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k83.cnf",
+      "out": "ch-150-50-k83.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 83076,
+      "keep": "ch-150-50-k83.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 83,
+        "raw_bytes": 28961855,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 186780,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 83076,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 83076,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 82,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3327338 7836690",
+      "status": "UNSAT",
+      "time_s": 3.664,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k82.cnf",
+      "out": "ch-150-50-k82.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 98003,
+      "keep": "ch-150-50-k82.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 82,
+        "raw_bytes": 28690946,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 222082,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 98003,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 98003,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 81,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3327634 7837233",
+      "status": "UNSAT",
+      "time_s": 8.061,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k81.cnf",
+      "out": "ch-150-50-k81.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 166087,
+      "keep": "ch-150-50-k81.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 81,
+        "raw_bytes": 28790117,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 382561,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 166087,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 166087,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 80,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3327930 7837776",
+      "status": "UNSAT",
+      "time_s": 10.824,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k80.cnf",
+      "out": "ch-150-50-k80.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 246107,
+      "keep": "ch-150-50-k80.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 80,
+        "raw_bytes": 28823526,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 560677,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 246107,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 246107,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 79,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3328226 7838319",
+      "status": "UNSAT",
+      "time_s": 5.174,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k79.cnf",
+      "out": "ch-150-50-k79.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 236299,
+      "keep": "ch-150-50-k79.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 79,
+        "raw_bytes": 28449293,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 544106,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 236299,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 236299,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 78,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3328522 7838862",
+      "status": "UNSAT",
+      "time_s": 9.103,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k78.cnf",
+      "out": "ch-150-50-k78.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 260607,
+      "keep": "ch-150-50-k78.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 78,
+        "raw_bytes": 28553622,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 597519,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 260607,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 260607,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 77,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3328818 7839405",
+      "status": "UNSAT",
+      "time_s": 10.802,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k77.cnf",
+      "out": "ch-150-50-k77.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 317923,
+      "keep": "ch-150-50-k77.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 77,
+        "raw_bytes": 28690810,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 727270,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 317923,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 317923,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 76,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3329114 7839948",
+      "status": "UNSAT",
+      "time_s": 18.01,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k76.cnf",
+      "out": "ch-150-50-k76.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 317712,
+      "keep": "ch-150-50-k76.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 76,
+        "raw_bytes": 30262546,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 736279,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 317712,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 317712,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 75,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3329410 7840491",
+      "status": "UNSAT",
+      "time_s": 14.346,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k75.cnf",
+      "out": "ch-150-50-k75.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 199709,
+      "keep": "ch-150-50-k75.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 75,
+        "raw_bytes": 29028282,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 452295,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 199709,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 199709,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 74,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3329706 7841034",
+      "status": "UNSAT",
+      "time_s": 14.383,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k74.cnf",
+      "out": "ch-150-50-k74.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 484450,
+      "keep": "ch-150-50-k74.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 74,
+        "raw_bytes": 28079868,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1127626,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 484450,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 484450,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 73,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3330002 7841577",
+      "status": "UNSAT",
+      "time_s": 14.993,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k73.cnf",
+      "out": "ch-150-50-k73.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 609158,
+      "keep": "ch-150-50-k73.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 73,
+        "raw_bytes": 28086099,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1392934,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 609158,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 609158,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 72,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3330298 7842120",
+      "status": "UNSAT",
+      "time_s": 52.113,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k72.cnf",
+      "out": "ch-150-50-k72.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 453522,
+      "keep": "ch-150-50-k72.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 72,
+        "raw_bytes": 386158506,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1032041,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 453522,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 453522,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 71,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3330594 7842663",
+      "status": "UNSAT",
+      "time_s": 51.667,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k71.cnf",
+      "out": "ch-150-50-k71.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 378501,
+      "keep": "ch-150-50-k71.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 71,
+        "raw_bytes": 1013397181,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 858339,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 378501,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 378501,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 70,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3330890 7843206",
+      "status": "UNSAT",
+      "time_s": 44.501,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k70.cnf",
+      "out": "ch-150-50-k70.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 1053118,
+      "keep": "ch-150-50-k70.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 70,
+        "raw_bytes": 369219841,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 2419780,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 1053118,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 1053118,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 69,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3331186 7843749",
+      "status": "UNSAT",
+      "time_s": 24.507,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k69.cnf",
+      "out": "ch-150-50-k69.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 499137,
+      "keep": "ch-150-50-k69.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 69,
+        "raw_bytes": 30906167,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1131842,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 499137,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 499137,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 68,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3331482 7844292",
+      "status": "UNSAT",
+      "time_s": 24.005,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k68.cnf",
+      "out": "ch-150-50-k68.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 857265,
+      "keep": "ch-150-50-k68.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 68,
+        "raw_bytes": 27780606,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1965515,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 857265,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 857265,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 67,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3331778 7844835",
+      "status": "UNSAT",
+      "time_s": 44.825,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k67.cnf",
+      "out": "ch-150-50-k67.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 467739,
+      "keep": "ch-150-50-k67.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 67,
+        "raw_bytes": 91830243,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 1069542,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 467739,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 467739,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 66,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3332074 7845378",
+      "status": "UNSAT",
+      "time_s": 61.959,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k66.cnf",
+      "out": "ch-150-50-k66.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 2217476,
+      "keep": "ch-150-50-k66.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 66,
+        "raw_bytes": 379164834,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 5044483,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 2217476,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 2217476,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 65,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3332370 7845921",
+      "status": "UNSAT",
+      "time_s": 55.832,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k65.cnf",
+      "out": "ch-150-50-k65.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 2723856,
+      "keep": "ch-150-50-k65.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 65,
+        "raw_bytes": 883429283,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 6228408,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 2723856,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 2723856,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 64,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3332666 7846464",
+      "status": "UNSAT",
+      "time_s": 56.472,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k64.cnf",
+      "out": "ch-150-50-k64.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 3081282,
+      "keep": "ch-150-50-k64.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 64,
+        "raw_bytes": 404289424,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 7007543,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 3081282,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 3081282,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 63,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3332962 7847007",
+      "status": "UNSAT",
+      "time_s": 57.227,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k63.cnf",
+      "out": "ch-150-50-k63.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 1588668,
+      "keep": "ch-150-50-k63.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 63,
+        "raw_bytes": 421270842,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 3664417,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 1588668,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 1588668,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 62,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3333258 7847550",
+      "status": "UNSAT",
+      "time_s": 94.655,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k62.cnf",
+      "out": "ch-150-50-k62.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 6280638,
+      "keep": "ch-150-50-k62.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 62,
+        "raw_bytes": 508203785,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 14304649,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 6280638,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 6280638,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 61,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3333554 7848093",
+      "status": "UNSAT",
+      "time_s": 60.906,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k61.cnf",
+      "out": "ch-150-50-k61.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 1361855,
+      "keep": "ch-150-50-k61.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 61,
+        "raw_bytes": 227279952,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 3134878,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 1361855,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 1361855,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 60,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3333850 7848636",
+      "status": "UNSAT",
+      "time_s": 91.296,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k60.cnf",
+      "out": "ch-150-50-k60.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 3001221,
+      "keep": "ch-150-50-k60.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 60,
+        "raw_bytes": 460652898,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 6866625,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 3001221,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 3001221,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 59,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3334146 7849179",
+      "status": "UNSAT",
+      "time_s": 61.016,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k59.cnf",
+      "out": "ch-150-50-k59.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 3283019,
+      "keep": "ch-150-50-k59.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 59,
+        "raw_bytes": 395097215,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 7490761,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 3283019,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 3283019,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 58,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3334442 7849722",
+      "status": "UNSAT",
+      "time_s": 49.468,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k58.cnf",
+      "out": "ch-150-50-k58.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 9643492,
+      "keep": "ch-150-50-k58.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 58,
+        "raw_bytes": 409820346,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 21974583,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 9643492,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 9643492,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 57,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3334738 7850265",
+      "status": "UNSAT",
+      "time_s": 88.407,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k57.cnf",
+      "out": "ch-150-50-k57.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 11676118,
+      "keep": "ch-150-50-k57.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 57,
+        "raw_bytes": 569062700,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 26592446,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 11676118,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 11676118,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 56,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3335034 7850808",
+      "status": "UNSAT",
+      "time_s": 76.818,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k56.cnf",
+      "out": "ch-150-50-k56.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 19451845,
+      "keep": "ch-150-50-k56.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 56,
+        "raw_bytes": 502007145,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 44345153,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 19451845,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 19451845,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 55,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3335330 7851351",
+      "status": "UNSAT",
+      "time_s": 57.976,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k55.cnf",
+      "out": "ch-150-50-k55.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 4822495,
+      "keep": "ch-150-50-k55.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 55,
+        "raw_bytes": 385481050,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 11228964,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 4822495,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 4822495,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 54,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3335626 7851894",
+      "status": "UNSAT",
+      "time_s": 57.067,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k54.cnf",
+      "out": "ch-150-50-k54.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 18406068,
+      "keep": "ch-150-50-k54.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 54,
+        "raw_bytes": 445549946,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 41955265,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 18406068,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 18406068,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 53,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3335922 7852437",
+      "status": "UNSAT",
+      "time_s": 133.707,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k53.cnf",
+      "out": "ch-150-50-k53.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 15816006,
+      "keep": "ch-150-50-k53.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 53,
+        "raw_bytes": 596602417,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 35990337,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 15816006,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 15816006,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 52,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3336218 7852980",
+      "status": "UNSAT",
+      "time_s": 125.6,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k52.cnf",
+      "out": "ch-150-50-k52.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 37937354,
+      "keep": "ch-150-50-k52.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 52,
+        "raw_bytes": 648176828,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 86494183,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 37937354,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 37937354,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 51,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3336514 7853523",
+      "status": "UNSAT",
+      "time_s": 101.33,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k51.cnf",
+      "out": "ch-150-50-k51.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 24945100,
+      "keep": "ch-150-50-k51.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 51,
+        "raw_bytes": 490359652,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 56624596,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 24945100,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 24945100,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    },
+    {
+      "n": 150,
+      "d": 50,
+      "indeg0": 50,
+      "u_from_1": null,
+      "nplus1_from_2": null,
+      "exact_in": false,
+      "sb": true,
+      "header": "p cnf 3336810 7854066",
+      "status": "UNSAT",
+      "time_s": 180.408,
+      "timeout_s": 600,
+      "returncode": 20,
+      "cnf": "ch-150-50-k50.cnf",
+      "out": "ch-150-50-k50.out",
+      "drat": "VERIFIED",
+      "drat_bytes": 26844896,
+      "keep": "ch-150-50-k50.drat",
+      "trimmed": {
+        "n": 150,
+        "d": 50,
+        "k": 50,
+        "raw_bytes": 669385779,
+        "replaced": true,
+        "ok": true,
+        "attempts": [
+          {
+            "binary": false,
+            "core_bytes": 60877668,
+            "replay_verified": true
+          },
+          {
+            "binary": true,
+            "core_bytes": 26844896,
+            "replay_verified": true
+          }
+        ],
+        "core_bytes": 26844896,
+        "binary": true
+      },
+      "attempt": 0,
+      "stable": false,
+      "n_attempts": 1
+    }
+  ]
+}
