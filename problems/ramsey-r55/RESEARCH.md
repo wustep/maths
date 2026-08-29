@@ -134,3 +134,29 @@ Proof-format and case-splitting references opened during the certificate work:
 - `https://github.com/arminbiere/cadical` — alternate solver source inspected;
   the environment lacked a C++ compiler, so the installed PySAT CaDiCaL 1.9.5
   backend was used only for search, never as the final proof checker.
+
+## 2026-08-29 — q4 leftover 2/3/5
+
+No new Ramsey bound. The published interval remains $43\le R(5,5)\le46$.
+
+Fetched again before searching:
+
+- `https://www.cs.rit.edu/~spr/ElJC/eline.html` — revision list still ends at
+  #18, 24 April 2026. No #19.
+- `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` — living
+  DS1 still dated 24 April 2026.
+- `https://arxiv.org/abs/2409.15709` — Angeltveit–McKay v2. Lower bound 43 is
+  still the best; 45 wants new theory.
+- `https://export.arxiv.org/api/query?search_query=all:"R(5,5)"&sortBy=submittedDate&sortOrder=descending&max_results=8`
+  — 6 hits. Newest after 2409.15709 is still 2508.16699v2.
+- `https://arxiv.org/abs/2508.16699` — Tamburini heuristic for $R(5,5)=45$.
+  Not a colouring and not a nonexistence log.
+- `https://users.cecs.anu.edu.au/~bdm/data/ramsey.html` — still hosts
+  `r55_42some.g6`; still says there could be more on 42–47 vertices.
+
+q2's encoder was reused unchanged. Checked certificates now exclude the
+order-5 cycle types $5^6 1^{13}$ and $5^7 1^8$ on 43 vertices (three stored
+DRATs; complementation covers the paired neighbour counts). Independent
+replay: `compute/q4/logs/replay_direct.txt`. The maximum-cycle order-2,
+order-3, and order-5 formulas still time out, as do the other leftover
+representatives that were run. This does not move an endpoint.

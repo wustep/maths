@@ -38,3 +38,12 @@ The published interval remains $43\le R(5,5)\le46$.
 cd q3
 ./run_all.sh
 ```
+
+The later 2026-08-29 leftover search lives in `q4/`. It certifies that a
+hypothetical $(5,5,43)$-graph has no automorphism of cycle type $5^6 1^{13}$
+or $5^7 1^8$. The published interval remains $43\le R(5,5)\le46$.
+
+```sh
+cd q4
+./run_all.sh
+```

@@ -1,0 +1,35 @@
+{
+  "anchor_symbreak": true,
+  "build": {
+    "anchor_symbreak": true,
+    "cnf_sha256": "67c2da560b2e016e3fc202534a6a43b5bdf1e59470c735dc8f69c1702fa6c972",
+    "edge_orbit_vars": 243,
+    "five_subset_orbits": 193554,
+    "nclauses": 461648,
+    "nvars": 19527,
+    "p5_symbreak": false
+  },
+  "covers_k": [
+    2,
+    4
+  ],
+  "cycle_type": "5^6 1^13",
+  "cycles": 6,
+  "expected_cnf_sha256": null,
+  "fixed": 13,
+  "fixed_cycle_count": 2,
+  "kissat": "--time=600 --unsat --seed=17",
+  "maximum_cycle": false,
+  "name": "p5_c6_k2",
+  "p": 5,
+  "p5_symbreak": false,
+  "proof": {
+    "bytes": 4741329,
+    "path": "certs/proofs/p5_c6_k2.drat.gz",
+    "sha256": "f09e90f1e1fc1fea6a888a4368e0cfbe1264d2ed235aa8b7165c72993fe2d2c9",
+    "verified": true
+  },
+  "proof_verified": true,
+  "solve_sec": 160,
+  "status": "UNSAT"
+}

@@ -1,0 +1,28 @@
+{
+  "anchor_symbreak": true,
+  "build": {
+    "anchor_symbreak": true,
+    "cnf_sha256": "ad27d2cdbdb8f622ecc5b4cfec2ace99f42c675b595782265c007e2a4bb3a830",
+    "edge_orbit_vars": 603,
+    "five_subset_orbits": 382390,
+    "nclauses": 901445,
+    "nvars": 35910,
+    "p5_symbreak": false
+  },
+  "covers_k": [
+    0,
+    2
+  ],
+  "cycle_type": "5^2 1^33",
+  "cycles": 2,
+  "expected_cnf_sha256": null,
+  "fixed": 33,
+  "fixed_cycle_count": 2,
+  "kissat": "--plain --time=180",
+  "maximum_cycle": false,
+  "name": "p5_c2_k2",
+  "p": 5,
+  "p5_symbreak": false,
+  "solve_sec": 180,
+  "status": "UNKNOWN"
+}
