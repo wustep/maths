@@ -56,3 +56,12 @@ $5^4 1^{23}$ at $k\in\{0,4\}$ on 43 vertices. The maximum-cycle order-2,
 order-3, and order-5 instances remain `UNKNOWN` at thirty minutes, and the
 other leftover 2/3/5 cycle types are not exhaustively searched. This is an
 automorphism restriction, not a bound on $R(5,5)$.
+
+## Status (2026-08-29, leftover 2/3/5 after 5^4 at k=4)
+
+Published record still $43\le R(5,5)\le46$. No endpoint moved. Residue in
+`compute/q6/`: a checked DRAT certificate excludes automorphism cycle type
+$5^5 1^{18}$ at $k\in\{2,3\}$ on 43 vertices. The other neighbour count on
+that type, the five maximum-cycle order-2/3/5 instances, and the rest of
+the leftover 2/3/5 list remain unfinished. This is an automorphism
+restriction, not a bound on $R(5,5)$.

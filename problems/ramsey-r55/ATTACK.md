@@ -319,3 +319,49 @@ Documented residue, independently replayable from `compute/q5/`:
 
 Do not cite this folder as a bound. Cert: `compute/q5/certs/q5_summary.json`.
 Replay: `cd compute/q5 && ./run_all.sh`.
+
+## 2026-08-29 — leftover SAT after certified 5^4 at k=4
+
+House unchanged. q5 is on main as `25d07b4`. The leftover is 138
+degree-feasible representatives after skipping the four independently
+replayed names. A stored DRAT is
+a restriction on a hypothetical automorphism, not a bound on
+$R(5,5)$. A timeout is residue. The published interval remains
+$43\le R(5,5)\le46$.
+
+Reused q2's `orbit_sat.py` without changing the encoding. The five
+maximum-cycle CNF hashes from q2/q3/q4 still match. The $5^5$ CNF
+hashes match q4's recorded builds.
+
+q4 had given $5^5 1^{18}$ only 600s. Lengthening to 3600s with
+`kissat --unsat --seed=17` produced an independently checked DRAT
+for one leftover cycle type:
+
+| cycle type | checked $k$ | certificate |
+|---|---|---|
+| $5^5 1^{18}$ | 2 | DRAT-UNSAT; complementation covers 3 |
+
+UNSAT in 867s. The trimmed proof is 357MB. gzip -9 is 57MB, SHA-256
+`2aa59d8e171ffcfeea7ad446fbcaafbf45b2e5af45f2c08742cf53a32c0ca46d`.
+
+Independent replay: `cd compute/q6 && ./run_all.sh` prints `VERIFIED`
+for `p5_c5_k2`.
+
+The sibling $k=1$ representative timed out at sixty minutes. $5^3$
+at $k=1$ and $k=3$, $3^{12}1^{7}$ at $k=6$, and $3^{13}1^{4}$ at
+$k=5$ timed out at thirty minutes. The eight q5 1800s timeouts were
+not re-run under the same config. No $(5,5,43)$-graph was decoded.
+
+## 2026-08-29 — leftover SAT after 5^5 at k=2 result
+
+No 43-vertex $(5,5)$-graph. No nonexistence proof at 45. Published
+record still $43\le R(5,5)\le46$.
+
+Documented residue, independently replayable from `compute/q6/`:
+
+- cycle type $5^5 1^{18}$ at $k\in\{2,3\}$ is certified UNSAT;
+- $5^5 1^{18}$ at $k=1$ remains `UNKNOWN` at sixty minutes; and
+- the other leftover 2/3/5 cycle types are incomplete.
+
+Do not cite this folder as a bound. Cert: `compute/q6/certs/q6_summary.json`.
+Replay: `cd compute/q6 && ./run_all.sh`.
