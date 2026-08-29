@@ -340,3 +340,85 @@ Other leftover 2/3/5 cycle types are unfinished. Graphs with trivial
 automorphism group are untouched.
 
 Do not cite this folder as a bound.
+
+---
+
+# 2026-08-29 — leftover SAT after 5^6 and 5^7
+
+- Argument status: documented incomplete search; published record
+  $43\le R(5,5)\le46$ not beaten
+- Problem status: open
+
+## 0. What was actually missing
+
+q4 closed $5^6 1^{13}$ and $5^7 1^8$. The finite leftover was still the
+list $p^c 1^{43-pc}$ for $p\in\{2,3,5\}$, now minus those two types.
+The five maximum-cycle formulas had never returned a decision.
+
+## 1. False starts
+
+- **Storing the 5^4 proof as gzip.** The same `kissat --unsat --seed=17`
+  run that closed $5^6$ and $5^7$ also closed $5^4 1^{23}$ at $k=4$ in
+  about ten minutes, but the trimmed DRAT is 829MB and gzip -9 is 119MB.
+  GitHub rejects that blob. The exclusion is real; the archive format
+  was wrong.
+- **Waiting on maximum-cycle SAT.** All five max-cycle representatives
+  stayed `UNKNOWN` at thirty minutes. A timeout is not a restriction.
+- **Expecting the other 5^4 neighbour counts to fall the same way.**
+  $k=1$ and $k=2$ timed out at thirty minutes. Completing the $5^4$
+  type needs those two, and they did not finish.
+
+## 2. The useful failure
+
+The oversized gzip taught the size of the lemma core: about seven
+million lemmas survive the trim. `xz -9` of the same bytes is 93MB,
+under the blob limit, and decompresses to a DRAT the pinned checker
+accepts.
+
+## 3. The click
+
+$5^4 1^{23}$ at $k=4$ is the same high-but-not-max band that closed
+$5^6$ and $5^7$. Complementation pairs $k=4$ with $k=0$, so one
+representative covers both. The encoder did not change. The
+maximum-cycle hashes from q2/q3 still match.
+
+## 4. The argument, in the order it was found
+
+1. Fetch Angeltveit–McKay v2 and the revision-18 survey again. The live
+   window is still $43\le R(5,5)\le46$.
+2. Copy the q4 stack to a new folder. Skip the three certified
+   $5^6$/$5^7$ names.
+3. Re-solve $5^4 1^{23}$ at $k=4$ with `kissat --unsat --seed=17`.
+   UNSAT in 562s. The raw DRAT is byte-identical to the leftover q4
+   solve (1197192721 bytes). Trim, then `drat-trim` prints `s VERIFIED`.
+4. Store `xz -9` of the trimmed proof. Independently regenerate the CNF
+   and replay.
+5. Run the five maximum-cycle formulas and the other nearby leftover
+   names for thirty minutes. All `UNKNOWN`.
+
+No step constructs a 43-vertex graph or proves nonexistence at 45.
+
+## 5. Computer search
+
+- `compute/q5/certs/q5_summary.json` — collected result
+- `compute/q5/certs/proofs/p5_c4_k4.drat.xz` — the stored proof
+- `compute/q5/logs/replay_direct.txt` — independent `VERIFIED` line
+- `compute/q5/run_all.sh` — regenerate the CNF and replay the proof
+
+## 6. What is proved vs still open
+
+**Checked, not new as a Ramsey bound.** No $(5,5,43)$-graph has an
+automorphism of cycle type $5^4 1^{23}$ in which a fixed vertex meets
+0 or 4 of the four 5-cycles. Combined with q2, q3, and q4, a
+hypothetical graph's automorphism-group order can have prime divisors
+only among 2, 3, and 5, and if 5 divides that order then the
+permutation is not of type $5^6$ or $5^7$ and is not this $5^4$
+neighbour-count pair.
+
+**Still open.** The interval is still $43\le R(5,5)\le46$. All five
+maximum-cycle order-2, order-3, and order-5 instances remain
+`UNKNOWN`. Other leftover 2/3/5 cycle types, including the rest of
+$5^4$, are unfinished. Graphs with trivial automorphism group are
+untouched.
+
+Do not cite this folder as a bound.

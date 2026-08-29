@@ -47,3 +47,13 @@ or $5^7 1^8$. The published interval remains $43\le R(5,5)\le46$.
 cd q4
 ./run_all.sh
 ```
+
+The later leftover search lives in `q5/`. It certifies that a
+hypothetical $(5,5,43)$-graph has no automorphism of cycle type
+$5^4 1^{23}$ with a fixed vertex adjacent to 0 or 4 of the 5-cycles.
+The published interval remains $43\le R(5,5)\le46$.
+
+```sh
+cd q5
+./run_all.sh
+```

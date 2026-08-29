@@ -160,3 +160,23 @@ DRATs; complementation covers the paired neighbour counts). Independent
 replay: `compute/q4/logs/replay_direct.txt`. The maximum-cycle order-2,
 order-3, and order-5 formulas still time out, as do the other leftover
 representatives that were run. This does not move an endpoint.
+
+## 2026-08-29 — leftover SAT after 5^6 and 5^7
+
+Fetched again before searching:
+
+- `https://arxiv.org/abs/2409.15709` — Angeltveit–McKay v2. Lower bound 43
+  is still the best; $R(5,5)\le46$; 45 wants new theory.
+- `https://www.cs.rit.edu/~spr/ElJC/eline.html` — direct fetch timed out;
+  the search snippet still lists revision #18, 24 April 2026, and no #19.
+- `https://www.combinatorics.org/ojs/index.php/eljc/article/view/DS1` —
+  living DS1 still dated 24 April 2026.
+- `https://cs.rit.edu/~spr/ElJC/sur.pdf` — revision #18, 24 April 2026.
+
+q2's encoder was reused unchanged. One new checked certificate excludes
+the order-5 cycle type $5^4 1^{23}$ at $k\in\{0,4\}$ on 43 vertices
+(stored as `compute/q5/certs/proofs/p5_c4_k4.drat.xz`). Independent
+replay: `compute/q5/logs/replay_direct.txt`. All five maximum-cycle
+formulas still time out at thirty minutes, as do the other leftover
+representatives that were run. This does not move an endpoint.
+
