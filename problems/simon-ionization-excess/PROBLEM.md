@@ -3,7 +3,7 @@
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
 - Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013. Same HPS chain: $N_c<1.1010Z+3.934\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
+- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013. Same HPS chain: $N_c<1.1010Z+3.934\,Z^{1/3}$ for $Z\ge 4$. q12 $n=37$ faces dump residue; printed leading stays $1.1010$. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -283,6 +283,18 @@ cut cannot beat $1.1013$ and is residue. $1.1168$ stays
 withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$ stay residue.
 Replay:
 `problems/simon-ionization-excess/compute/q11/run_all.sh`.
+
+A twelfth search the same day keeps the mass-opt dichotomy at
+aspect $10$ and starts $n=37$ mid-radius bins, target
+$\varphi=0.9119$. SLSQP predicts printed $1.1006$ if faces
+certify. The dump of $2^{37}-1$ faces was stopped with the
+slowest shard at about $30\%$. Scanned faces stay copositive
+and $\min\varphi$ stays above $0.9119$; the rest of the mask
+space was not enumerated. Incomplete search is not a bound.
+Printed leading stays $1.1010$. $R\le 9$ with the mass-opt cut
+cannot beat $1.1010$ and is leftover. Finite-$Z$ integers and
+$N_0(Z)-Z$ stay leftover. Replay:
+`problems/simon-ionization-excess/compute/q12/run_all.sh`.
 
 ## What would count as a new bound
 

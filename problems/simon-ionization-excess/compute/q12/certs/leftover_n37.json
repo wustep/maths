@@ -1,0 +1,59 @@
+{
+  "status": "residue",
+  "is_new_bound": false,
+  "reason": "Incomplete face dump at aspect 10, n=37, target 0.9119. Slowest shard about 29.6 percent. Scanned faces stay copositive with min_phi=0.91208523 > 0.9119, but the remaining masks were not enumerated. Predicted printed 1.1006 is uncertified. Printed leading stays 1.1010.",
+  "R": 10.0,
+  "n": 37,
+  "target": 0.9119,
+  "n_faces": 137438953471,
+  "predicted_printed_lead": "1.1006",
+  "predicted_inv": 1.1005869210379662,
+  "q11_printed": "1.1010",
+  "beats_1.1010": false,
+  "min_phi_seen": 0.9120852295539137,
+  "min_phi_above_target": true,
+  "min_mMm_seen": 6.2948373564909873e-04,
+  "slowest_shard_percent": 29.578,
+  "shards": [
+    {
+      "id": 0,
+      "mask_lo": 1,
+      "mask_hi": 12461277184,
+      "assigned_hi": 34359738367,
+      "percent": 36.267,
+      "min_mMm": 6.2948373564909873e-04,
+      "min_phi": 0.9120852295539137,
+      "copositive_on_scanned": true
+    },
+    {
+      "id": 1,
+      "mask_lo": 34359738368,
+      "mask_hi": 45600473088,
+      "assigned_hi": 68719476734,
+      "percent": 32.715,
+      "min_mMm": 8.50948770078549e-03,
+      "min_phi": 0.9122578408804657,
+      "copositive_on_scanned": true
+    },
+    {
+      "id": 2,
+      "mask_lo": 68719476735,
+      "mask_hi": 79976988672,
+      "assigned_hi": 103079215101,
+      "percent": 32.764,
+      "min_mMm": 1.5626663777468131e-02,
+      "min_phi": 0.9125071822152467,
+      "copositive_on_scanned": true
+    },
+    {
+      "id": 3,
+      "mask_lo": 103079215102,
+      "mask_hi": 113242013696,
+      "assigned_hi": 137438953471,
+      "percent": 29.578,
+      "min_mMm": 1.037685587587864e-02,
+      "min_phi": 0.9122858075084681,
+      "copositive_on_scanned": true
+    }
+  ]
+}

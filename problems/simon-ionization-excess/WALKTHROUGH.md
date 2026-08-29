@@ -188,6 +188,6 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 
 4. The argument — same as q11 if faces certify: Theorem 4.2, radial $Q$, compact cert on aspect $\le 10$ with $37$ bins, mass-opt cut $Q>10/11$, same §7 chain.
 
-5. Computer search — q11 replay; stored SLSQP scan; $n=37$ matrix assembled at target $0.9119$. Face dump not yet complete ($2^{37}-1$).
+5. Computer search — q11 replay; stored SLSQP scan; $n=37$ matrix assembled at target $0.9119$. Face dump stopped at slowest shard $29.6\%$ of $2^{37}-1$. Scanned faces copositive, $\min\varphi=0.912085>0.9119$. Remaining masks not enumerated.
 
-6. Proven vs still open — printed leading still $1.1010$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open. A predicted $1.1006$ is not a bound.
+6. Proven vs still open — printed leading still $1.1010$. Predicted $1.1006$ is not a bound. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.

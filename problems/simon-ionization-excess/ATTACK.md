@@ -817,3 +817,29 @@ is the certificate, not the SLSQP prediction. If faces do not
 certify, this wrap is residue and the printed leading stays
 $1.1010$.
 
+## 2026-08-29 — q12 wrap: residue
+
+The $n=37$ dump was stopped incomplete. Four shards,
+$2^{37}-1=137{,}438{,}953{,}471$ faces assigned:
+
+- shard 0: $36.3\%$ (`mask_hi` $12{,}461{,}277{,}184$)
+- shard 1: $32.7\%$
+- shard 2: $32.8\%$
+- shard 3: $29.6\%$ (slowest)
+
+On the scanned masks, every shard stays copositive,
+$\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.912085>0.9119$.
+That does not certify the remaining masks. Predicted printed
+$1.1006$ is uncertified. No `raise_*.json`, no `lift.json`.
+Printed leading stays $1.1010$. Checkpoint:
+`compute/q12/certs/leftover_n37.json` and the four `*.part*`
+dumps. Resume from those files; do not restart a shard with
+$\min m^\top Mm>0$ from zero.
+
+$R\le 9$ with the mass-opt cut cannot beat $1.1010$. Finite-$Z$
+integers, $N_0(Z)-Z$ bounded, and $s>3$ along Lemma 4.3 stay
+leftover. $1.1168$ stays withdrawn. q1 remainders unchanged.
+
+Replay: `problems/simon-ionization-excess/compute/q12/run_all.sh`
+(exit 0, residue).
+
