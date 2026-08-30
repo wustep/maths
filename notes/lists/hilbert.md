@@ -36,3 +36,5 @@ question. Sources: [Wikipedia](https://en.wikipedia.org/wiki/Hilbert%27s_problem
 | 24 | Proof simplicity (unpublished) | Too vague | Recovered by Thiele 2000. |
 
 Hilbert 8 overlaps Landau. Hilbert 16 is Smale 13.
+
+See also the Clay list in `millennium.md` (Riemann is 8(a)).

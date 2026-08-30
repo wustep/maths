@@ -30,3 +30,5 @@ Smale's essay.
 | 18 | Limits of intelligence | Too vague | Open-ended programme, not a yes/no. |
 
 Later addenda (Smale): mean-value problem; Gottschalk (is $S^3$ a minimal set?); Anosov vs Franks Lie-group model.
+
+See also the Clay list in `millennium.md` (Smale 1, 3, 15).
