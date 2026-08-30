@@ -37,6 +37,7 @@ def main():
 
     rows = []
     exact_nonempty_total = 0
+    largest_nonempty = 0
     for odd, seeds in components.items():
         candidates = emask
         for i in odd:
@@ -67,6 +68,7 @@ def main():
 
         ncollections = count(candidates)
         exact_nonempty_total += ncollections
+        largest_nonempty = max(largest_nonempty, ncollections)
         rows.append({
             "seeds": seeds,
             "odd_splits": list(odd),
@@ -88,7 +90,14 @@ def main():
         "even_split_count": emask.bit_count(),
         "fixed_odd_components": len(components),
         "exact_nonempty_component_collections": exact_nonempty_total,
-        "full_bfs_collections_at_least": exact_nonempty_total,
+        "all_even_component_collections_at_least": largest_nonempty,
+        "full_bfs_collections_at_least": (
+            exact_nonempty_total + largest_nonempty
+        ),
+        "lower_bound_reason": (
+            "Removing the fixed odd splits injects every even clique "
+            "from a nonempty-odd component into the all-even component."
+        ),
         "full_bfs_complete": False,
         "components": rows,
     }

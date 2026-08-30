@@ -4,7 +4,9 @@
   "even_split_count": 1065,
   "fixed_odd_components": 6,
   "exact_nonempty_component_collections": 538188419044,
-  "full_bfs_collections_at_least": 538188419044,
+  "all_even_component_collections_at_least": 249665706104,
+  "full_bfs_collections_at_least": 787854125148,
+  "lower_bound_reason": "Removing the fixed odd splits injects every even clique from a nonempty-odd component into the all-even component.",
   "full_bfs_complete": false,
   "components": [
     {
