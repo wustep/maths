@@ -1,0 +1,61 @@
+{
+  "schema": "riemann-q1-v1",
+  "published": {
+    "rodgers_tao_lower": "0",
+    "polymath_theorem_upper": "11/50",
+    "platt_trudgian_height": 3000175332800,
+    "platt_trudgian_zeros": 12363153437138,
+    "platt_trudgian_upper": "1/5",
+    "table_row": {
+      "X": 5000000194858,
+      "t0": "186/1000",
+      "y0": "16733/100000",
+      "rounded_parameter_value": "3999993289/20000000000"
+    }
+  },
+  "candidate": {
+    "status": "off-arXiv lead; not promoted to a published record",
+    "repository": "https://github.com/judegomila/dbn-lambda-01787854-candidate-audit",
+    "commit": "a74738deb6d5e0f76887cb36901da08b68dca705",
+    "X": 6000000185827,
+    "t0": "129/800",
+    "y0_squared": "87677/2500000",
+    "claimed_upper": "893927/5000000",
+    "finite_range": {
+      "first_N": 690988,
+      "last_N": 3840000,
+      "stored_rows_parsed": 3149013,
+      "fresh_singletons": [690988],
+      "full_range_freshly_regenerated": false,
+      "producer_sha256": "580d0b51165da58d4ca22e16d80a8c3db603dd0d9246f26dd027b5f820bf0808"
+    },
+    "stored_assembly": {
+      "seal_files": 443,
+      "finite_floor": "791366/1000000000000",
+      "finite_error_upper": "233494905212337849/1000000000000000000000000",
+      "finite_margin_lower": "557/1000000000"
+    }
+  },
+  "lehmer_pair": {
+    "source": "Saouter-Gourdon-Demichel, Math. Comp. 80 (2011), 2281-2287",
+    "verified_height_T": "3293531632.415",
+    "t_k_minus_1": "7954022502373.1219461606",
+    "t_k": "7954022502373.43289015387",
+    "t_k_plus_1": "7954022502373.43289494012",
+    "t_k_plus_2": "7954022502373.7336782379",
+    "printed_G_upper": "379.1995",
+    "printed_delta_squared_G_upper": "0.0000000347471",
+    "printed_lambda_lower": "-0.0000000000114541"
+  },
+  "fresh_logs": {
+    "barrier_target_closed.log": "0bf0dc844a1d5c005e0812e5564add1802e8050c88daee8dcc1b2c96d913cc3b",
+    "prop410_arb_256.log": "995651e49112928472d6511a191d727783b0abdf77c20f2f6c32ec814986b244",
+    "prop410_arb_512.log": "3945dee56684fb1ebc6866c67b09b5850d315fd191b65e594f1430ee52076edb",
+    "singleton_N690988.log": "c9d036de644fca43288bded59da0708af822cb539f43e53044de6ffe51e6f2f8",
+    "storedsum_provenance.log": "9f0b732e81dcde089ed78224efa7d6f613601dd240f0da6feee98ec265776cc4",
+    "storedsum_taylor_tail.log": "31102fa5feba5b07d3ccb155e7e3f2741bf359e95ac2e5282fa9961f04df19eb",
+    "tail_arb_256.log": "bd189e5095d1e62f061f9606e7547793e5cee2f086d41be6e03c53f7744a7a66",
+    "tail_arb_512.log": "ee09daef9cddc219facdeca8cd5b9027370b5140fd33edd5d3160973b5e16708",
+    "uniform_error.log": "7f43bc240b8852fde73fe4f95ff050481af601acead90a5232e58e604c55a163"
+  }
+}
