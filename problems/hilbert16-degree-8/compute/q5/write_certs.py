@@ -7,10 +7,12 @@ T-curve until verify_new.py accepts a stored certificate.
 from __future__ import annotations
 
 import json
+import os
 import sys
 from pathlib import Path
 
-HERE = Path(__file__).resolve().parent
+SOURCE_HERE = Path(__file__).resolve().parent
+HERE = Path(os.environ.get("H16_QDIR", SOURCE_HERE)).resolve()
 CERT = HERE / "certs"
 
 
@@ -88,6 +90,14 @@ def merge_odd():
         })
     if not shards:
         return
+    prefix_path = CERT / "odd_skel5_prefix.json"
+    prefix = json.loads(prefix_path.read_text()) if prefix_path.exists() else None
+    if prefix:
+        schemes.update(prefix.get("schemes", []))
+        hits += int(prefix.get("hits_on_open_nests", 0))
+        news += int(prefix.get("new", 0))
+        evals += int(prefix.get("evals", 0))
+        pn193 += int(prefix.get("pn193_evals", 0))
     covered.sort()
     full = False
     if n_odds and covered:
@@ -99,6 +109,12 @@ def merge_odd():
                 break
             cur = max(cur, hi)
         full = ok and cur >= n_odds
+    complete = bool(all_complete and full)
+    if prefix:
+        complete = bool(
+            all_complete
+            and evals == int(prefix["expected_total_evals"])
+        )
     write("odd_skel5.json", {
         "what": ("Compatible odd Harnack-split collections of size 5. "
                  "Sizes at most 4 finished in q3. Complete only if every "
@@ -111,10 +127,11 @@ def merge_odd():
         "pn193_evals": pn193,
         "distinct_schemes": len(schemes),
         "hits_on_open_nests": hits,
-        "complete": bool(all_complete and full),
-        "shards_cover_all": full,
+        "complete": complete,
+        "shards_cover_all": bool(full or (prefix and complete)),
         "seconds": round(seconds, 1),
         "shards": shards,
+        "q5_prefix": prefix,
         "schemes": sorted(schemes),
         "open_nests_in_scope": hits > 0,
     })

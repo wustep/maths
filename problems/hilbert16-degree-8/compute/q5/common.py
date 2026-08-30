@@ -8,7 +8,11 @@ import json
 import os
 import sys
 
-HERE = os.path.dirname(os.path.abspath(__file__))
+SOURCE_HERE = os.path.dirname(os.path.abspath(__file__))
+# A later campaign may reuse the q5 encoders while keeping all mutable
+# output in its own folder.  With no override, q5 behaves exactly as
+# before.
+HERE = os.path.abspath(os.environ.get("H16_QDIR", SOURCE_HERE))
 ROOT = os.path.dirname(HERE)
 QNAME = os.path.basename(HERE)
 if ROOT not in sys.path:

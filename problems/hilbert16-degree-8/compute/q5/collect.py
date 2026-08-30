@@ -11,7 +11,7 @@ import glob
 import json
 import os
 
-from common import HERE, boot, census_schemes
+from common import HERE, QNAME, boot, census_schemes
 
 boot()
 
@@ -62,7 +62,7 @@ def main():
                     "triangles": novel[s]["triangles"],
                     "heights": novel[s]["heights"],
                     "signs": novel[s]["signs"],
-                    "source": novel[s].get("source", "q5")}
+                    "source": novel[s].get("source", QNAME)}
                    for s in candidates],
                   open(cand_path, "w"), indent=1)
 
@@ -74,7 +74,7 @@ def main():
     dn_new = [r for r in dn_rows if r.get("kind") in ("NEW", "HIT")]
 
     summary = {
-        "search": "q5: leftover (19,3) nests — pinned even BFS remainder "
+        "search": f"{QNAME}: leftover (19,3) nests — pinned even BFS remainder "
                   "after 1,200,000, odd collections of size 5",
         "even_walk": {
             "summaries": even_summ,
@@ -91,7 +91,7 @@ def main():
         "NEW_candidates_ovals": {s: stats(s)[0] for s in candidates},
         "candidate_cert_file": cand_path,
     }
-    out = os.path.join(HERE, "certs", "q5_summary.json")
+    out = os.path.join(HERE, "certs", f"{QNAME}_summary.json")
     json.dump(summary, open(out, "w"), indent=1)
     print(json.dumps({k: summary[k] for k in summary
                       if k != "even_walk"}, indent=1))
