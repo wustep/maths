@@ -27,4 +27,9 @@ if [ -f q6/certs/odd_skel5.json ]; then
   python3 -c "import json; r=json.load(open('q6/certs/odd_skel5.json')); assert r['complete'] and r['evals']==37632123; print(r['evals'], 'tuples,', r['distinct_schemes'], 'schemes,', r['hits_on_open_nests'], 'hits')"
 fi
 
+if [ -f q6/certs/even_component_a10.json ]; then
+  echo "== q6 completed small even component =="
+  python3 -c "import json; r=json.load(open('q6/certs/even_component_a10.json')); assert r['complete'] and r['evals']==126336; print(r['evals'], 'collections,', r['distinct'], 'schemes,', r['hits'], 'hits')"
+fi
+
 echo "q6 replay finished"
