@@ -881,3 +881,11 @@ target $0.9119$ is the live line: predicted printed $1.1006$
 if faces certify. Face copositivity is the certificate, not
 the SLSQP prediction. Incomplete search is not a bound.
 
+The first Gray run was killed after about 16 minutes when the
+worktree directory disappeared (`git worktree` listed it
+prunable). Scanned faces at that point were still copositive
+with $\min\varphi=0.912085>0.9119$; the dump was not complete
+and is not a bound. The enumerator now lives under `/tmp`
+with absolute paths and mirrors checkpoints to
+`GRAY_BACKUP`. A worktree wipe is not a certificate.
+
