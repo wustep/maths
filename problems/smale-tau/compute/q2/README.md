@@ -47,4 +47,15 @@ the construction optimal, and a nonempty list yields the exact maximum.
 
 ## Results
 
-See `table.json` and PROBLEM.md.
+| \(k\) | 0 | 1 | 2 | 3 | 4 | 5 | 6 |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| \(T(k)\) | 1 | 1 | 2 | 3 | 3 | 4 | 5 |
+| witness | \(x\) | \(x+1\) | \(x(x-1)\) | \(x^3-x\) | \(x^3-x\) | \((x^2-2x)(x^2-1)\) | \(x\bigl((x^2-2)^2-x^2\bigr)\) |
+
+Node counts per depth 7, 67, 880, 16141, 396475, 12465248; distinct
+polynomials reached within \(k\) steps 2, 9, 36, 186, 1270, 11404,
+133743. With thresholds \(T(k-1)+1\) and \(T(k)+1\) the candidate lists
+are empty for \(k\le 5\); at \(k=6\) exactly four polynomials
+(\(\pm x(x^4-5x^2+4)\), \(\pm x^2(x^4-5x^2+4)\), root set
+\(\{-2,\dots,2\}\)) reach five zeros and none reaches six. \(k=7\) is
+pending (`table.json`).
