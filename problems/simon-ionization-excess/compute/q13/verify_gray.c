@@ -393,6 +393,26 @@ static void write_faces(const char *path, unsigned long long cur_i) {
     fprintf(out, "min_phi_safe %.16e\n", min_phi_safe);
     fprintf(out, "copositive %d\n", ok);
     fclose(out);
+    {
+        const char *bak = getenv("GRAY_BACKUP");
+        if (bak && bak[0]) {
+            FILE *b = fopen(bak, "w");
+            if (b) {
+                fprintf(b, "n %d\n", n);
+                fprintf(b, "gamma_target %.16e\n", gamma_t);
+                fprintf(b, "n_faces %llu\n", nfaces);
+                fprintf(b, "gray_i %llu\n", cur_i);
+                fprintf(b, "interior_critical %llu\n", interior);
+                fprintf(b, "singular_or_illconditioned %llu\n", singular);
+                fprintf(b, "min_mMm %.16e\n", min_val);
+                fprintf(b, "min_mMm_safe %.16e\n", min_val_safe);
+                fprintf(b, "min_phi %.16e\n", min_phi);
+                fprintf(b, "min_phi_safe %.16e\n", min_phi_safe);
+                fprintf(b, "copositive %d\n", ok);
+                fclose(b);
+            }
+        }
+    }
 }
 
 static int load_checkpoint(const char *path) {
