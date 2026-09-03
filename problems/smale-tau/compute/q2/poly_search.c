@@ -184,6 +184,7 @@ static void push(ctx_t *c, int pos) {
     int d = c->nset; c->qblock[d] = c->qlen; c->hmark[d] = c->hslot_top;
     c->set[d] = c->queue[pos]; c->setpos[d] = pos; c->nset = d + 1;
     c->hstate[hfind(c, &c->set[d])] = 2;
+    c->setz[d] = c->set[d].deg < 0 ? 0 : (c->set[d].deg == 0 ? 0 : zbound(&c->set[d]));
     int steps = d - 1;
     poly_t r;
     for (int i = 0; i <= d; i++) {
@@ -209,6 +210,45 @@ static void examine(ctx_t *c, int steps) {
     int zb = zbound(p);
     if (zb >= g_need[steps]) { c->cand[steps]++; report(c, p, steps, "CAND"); }
 }
+static int g_leafmode = 0;   /* 1: examine the last-depth children without pushing them */
+
+/* examine one child value r (a candidate at depth `steps`) without pushing */
+static void examine_value(ctx_t *c, const poly_t *r, int steps, int i, int j, char op) {
+    c->nodes[steps]++;
+    if (r->deg < g_need[steps]) return;
+    int zb = zbound(r);
+    if (zb >= g_need[steps]) {
+        c->cand[steps]++;
+        char buf[8192]; pprint(r, buf, sizeof buf);
+        char prog[16384]; size_t pos = 0;
+        for (int k = 0; k < c->nset; k++) { char b2[8192]; pprint(&c->set[k], b2, sizeof b2); pos += (size_t)snprintf(prog + pos, sizeof prog - pos, "%s%s", k ? ";" : "", b2); }
+        #pragma omp critical(out)
+        { printf("CAND %d %s %s;%s [%d,%d,%c]\n", steps, buf, prog, buf, i, j, op); fflush(stdout); }
+    }
+}
+/* children of the current node at the last depth: every value derivable in
+   one step that is not already in the set.  The canonical order allows any
+   queue position after the parent's, and every such child is a queue entry
+   generated from some pair; we simply generate all pairs (superset). */
+static void leaf_children(ctx_t *c) {
+    int steps = c->nset - 1;   /* depth of the children */
+    int need = g_need[steps];
+    poly_t r;
+    for (int i = 0; i < c->nset; i++) for (int j = i; j < c->nset; j++) {
+        const poly_t *a = &c->set[i], *b = &c->set[j];
+        int dmax = a->deg > b->deg ? a->deg : b->deg;
+        if (dmax >= need) {
+            if (padd(a, b, &r, +1)) examine_value(c, &r, steps, i, j, '+');
+            if (i != j) { if (padd(a, b, &r, -1)) examine_value(c, &r, steps, i, j, '-'); if (padd(b, a, &r, -1)) examine_value(c, &r, steps, j, i, '-'); }
+        }
+        if (a->deg >= 0 && b->deg >= 0 && a->deg + b->deg >= need && c->setz[i] + c->setz[j] >= need) {
+            if (pmul(a, b, &r)) examine_value(c, &r, steps, i, j, '*');
+            else { c->wide[steps]++; char b1[8192], b2[8192]; pprint(a, b1, sizeof b1); pprint(b, b2, sizeof b2);
+                #pragma omp critical(out)
+                { printf("WIDE %d %s %s\n", steps, b1, b2); fflush(stdout); } }
+        }
+    }
+}
 static void dfs(ctx_t *c, int qstart) {
     int end = c->qlen;
     for (int pos = qstart; pos < end; pos++) {
@@ -216,7 +256,8 @@ static void dfs(ctx_t *c, int qstart) {
         int steps = c->nset - 2;
         c->nodes[steps]++;
         examine(c, steps);
-        if (steps < g_depth) dfs(c, pos + 1);
+        if (steps < g_depth - g_leafmode) dfs(c, pos + 1);
+        else if (g_leafmode && steps == g_depth - 1) leaf_children(c);
         pop(c);
     }
 }
@@ -226,6 +267,7 @@ static void ctx_init(ctx_t *c) {
     if (!c->queue || !c->hvals) { fprintf(stderr, "FATAL malloc\n"); exit(2); }
     c->set[0].deg = 0; c->set[0].c[0] = 1; c->set[0].lb = 0; c->set[1].deg = 1; c->set[1].c[0] = 0; c->set[1].c[1] = 1; c->set[1].lb = 0; c->nset = 2;
     for (int i = 0; i < 2; i++) { uint32_t s = hfind(c, &c->set[i]); c->hvals[s] = c->set[i]; c->hstate[s] = 2; }
+    c->setz[0] = 0; c->setz[1] = 1;
     poly_t r;
     for (int i = 0; i < 2; i++) for (int j = i; j < 2; j++) {
         padd(&c->set[i], &c->set[j], &r, +1); enqueue(c, &r);
@@ -249,7 +291,7 @@ int main(int argc, char **argv) {
     if (g_depth > MAXD - 1) { fprintf(stderr, "D too large\n"); return 1; }
     for (int d = 1; d <= g_depth; d++) g_need[d] = atoi(argv[1 + d]);
     int nthreads = 0;
-    for (int i = 2 + g_depth; i + 1 < argc; i += 2) { if (!strcmp(argv[i], "--split")) g_split = atoi(argv[i + 1]); else if (!strcmp(argv[i], "--threads")) nthreads = atoi(argv[i + 1]); }
+    for (int i = 2 + g_depth; i < argc; i++) { if (!strcmp(argv[i], "--split") && i + 1 < argc) g_split = atoi(argv[++i]); else if (!strcmp(argv[i], "--threads") && i + 1 < argc) nthreads = atoi(argv[++i]); else if (!strcmp(argv[i], "--leaf")) g_leafmode = 1; }
     if (nthreads) omp_set_num_threads(nthreads);
     if (g_split > g_depth) g_split = g_depth;
     ctx_t *c0 = malloc(sizeof(ctx_t)); ctx_init(c0);
