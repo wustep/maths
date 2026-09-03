@@ -843,3 +843,41 @@ leftover. $1.1168$ stays withdrawn. q1 remainders unchanged.
 Replay: `problems/simon-ionization-excess/compute/q12/run_all.sh`
 (exit 0, residue).
 
+## 2026-09-03 — q13 record replay
+
+- HPS 2504.18487 still **v1 only** (25 Apr 2025). OpenAlex
+  W4416381655 `cited_by_count` 0. Submission history lists
+  only `[v1]` Fri 25 Apr 2025 16:54:13 UTC.
+- Nam 1009.2367: $N_c<1.22Z+3Z^{1/3}$. Does not beat $1.1010$.
+- Benguria–González-Brantes 2511.07582v1: $N<1.4811Z+3.1516Z^{1/3}$
+  for $Z\ge 12$, bosonic / statistics-independent. Does not beat
+  $1.1010$ for fermions.
+- arXiv API excess-charge query: five hits, none a later fermionic
+  leading.
+- Independent replay of the q11 cert: `verify_lift.py` recon
+  $\gamma=0.9083146735963096$, $1/\gamma=1.1009400476166247$
+  prints as $1.1010$, cut $10/11>\gamma$. Rebuild matches $A$ to
+  $10^{-15}$. Do not re-enumerate the stored
+  $68{,}719{,}476{,}735$ faces. q12 leftover shards were not
+  resumed.
+
+The mass-opt identities still only give $Q>R/(R+1)$. At $R=9$
+that is $0.9$, so $\min(\gamma_9,9/10)\le 0.9$ and the leading
+is at least $1.1111>1.1010$. Residue:
+`compute/q13/certs/r9_cut.json`. Chebyshev does not reopen
+$R\le 9$ against $1.1010$.
+
+## 2026-09-03 — q13: replace the dump with Gray-code faces
+
+Copied the q12 stack into `compute/q13/`. The naive mask loop
+is $O(k^3)$ Gauss-Jordan per subset and at $n=37$ is a
+multi-day dump. A binary-reflected Gray walk updates $M_S^{-1}$
+in $O(k^2)$ when one bin is added or dropped
+(`verify_gray.c`). On the stored q4 $n=26$ matrix it matches
+the old dump (same interior count $187266$, same
+$\min m^\top Mm$, same $\min\varphi$) at about $9\cdot 10^6$
+masks/s and $2$ MB RSS. One thread. The $n=37$ matrix at
+target $0.9119$ is the live line: predicted printed $1.1006$
+if faces certify. Face copositivity is the certificate, not
+the SLSQP prediction. Incomplete search is not a bound.
+
