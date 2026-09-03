@@ -7,3 +7,4 @@ _bc_*
 _cmp_*
 *.log
 gmon.out
+ck*.txt

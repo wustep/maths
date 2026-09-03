@@ -63,8 +63,12 @@ print("12-step replay ok:", d12)
 PYEOF
 
 if [ "$mode" = "--full" ]; then
-  echo "== decision at 13 steps"
-  ./slp_search --steps 13 --targets targets13.txt --threads "$THREADS" --split 6 > decide13.json
+  echo "== decision at 13 steps (crash-safe; resumes from ck13.txt if present)"
+  ulimit -s unlimited 2>/dev/null || true; export OMP_STACKSIZE=512M
+  ./slp_search --steps 13 --targets targets13.txt --threads "$THREADS" --split 6 --checkpoint ck13.txt > decide13.json
+  $PY decide_from_checkpoint.py ck13.txt 10609 13 \
+      "20!=2432902008176640000" "21!=51090942171709440000" \
+      "22!=1124000727777607680000" "37#=7420738134810" > decide13_from_ckpt.json
   $PY verify_slp.py decide13.json | tail -1
 fi
 
