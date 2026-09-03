@@ -10,7 +10,8 @@ gcc -O3 -march=native -fopenmp -o poly_search poly_search.c -lm
 ./poly_search 6 2 3 4 4 5 6 --threads "$THREADS" > cand6.txt
 if [ "${1:-}" = "--full" ]; then
   ./poly_search 7 2 3 4 4 5 6 6 --threads "$THREADS" > cand7.txt
-  cat cand6.txt cand7.txt | $PY count_roots.py > table.json
+  ./poly_search 8 2 3 4 4 5 6 6 7 --threads "$THREADS" --leaf > cand8.txt
+  cat cand6.txt cand7.txt cand8.txt | $PY count_roots.py > table.json
 else
   $PY count_roots.py < cand6.txt > table.json
 fi

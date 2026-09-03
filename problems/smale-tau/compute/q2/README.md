@@ -41,7 +41,12 @@ where \(B\) is the Cauchy root bound; and, when \(2B<2\cdot10^7\), the
 number of distinct roots modulo a prime \(q>2B\) (the degree of
 \(\gcd(f,x^q-x)\) over \(\mathbb F_q\)). Only polynomials whose bound
 reaches the threshold are written out; `count_roots.py` then finds their
-integer roots exactly. The threshold at depth \(d\) is one more than the
+integer roots exactly. In leaf mode (`--leaf`) the last depth is not
+pushed: every one-step child of a depth \(D-1\) node is formed and
+examined directly, skipping children whose degree is below the threshold
+and products \(fg\) with \(\bar Z(f)+\bar Z(g)\) below it, where
+\(\bar Z\) is the rigorous bound computed for every set member (since
+\(Z(fg)\le Z(f)+Z(g)\)). This visits about one child in fifteen. The threshold at depth \(d\) is one more than the
 best construction known at that depth, so an empty candidate list proves
 the construction optimal, and a nonempty list yields the exact maximum.
 
