@@ -84,8 +84,10 @@ snippets are leads, not citations.
   need 14 steps. That partial search is a lead, not a record.
 - [OEIS A217031](https://oeis.org/A217031) (ultimate cost of \(n!\)),
   [A216999](https://oeis.org/A216999) (integers reachable in \(n\) steps,
-  negatives included), [A141414](https://oeis.org/A141414),
-  [A003065](https://oeis.org/A003065): names and first terms only.
+  negatives included), [A141414](https://oeis.org/A141414) (least \(n\)
+  with \(\tau(n)=k\): 1, 3, 5, 7, 13, 41, 113, 311, 1821, 10267, …),
+  [A003065](https://oeis.org/A003065): names and first terms only. The
+  A141414 terms 1821 and 10267 agree with the table in `compute/q1`.
 - [Al Zimmermann's Programming Contests, Factorials](http://www.azspcs.com/Contest/Factorials)
   (Jan–Apr 2013; description page live, final report and standings via
   the Wayback Machine). Task: shortest SLP for \(n!\), \(13\le n\le 37\),

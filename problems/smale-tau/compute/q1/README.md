@@ -7,14 +7,18 @@ Decides whether an integer \(N\) has a straight-line program of length
 
 | file | role |
 | --- | --- |
-| `slp_search.c` | the search (C, OpenMP); count mode, decide mode, endgame test mode |
-| `targets.txt`, `targets_core.txt` | targets: \(n!\) for \(13\le n\le 34\), primorials \(29\#\)–\(47\#\); the core list used for the long runs |
-| `brute_check.py` | brute-force cross-check of the three-step endgame (Python, sympy) |
+| `slp_search.c` | the search (C, OpenMP): count mode, decide mode, endgame test mode |
+| `check.rs` | independent Rust re-implementation: count mode and a brute-force endgame sampler |
+| `targets.txt`, `targets_core.txt`, `targets13.txt` | targets: \(n!\) for \(13\le n\le 34\) and primorials to \(47\#\); the core list for the 11- and 12-step runs; the 13-step list (20!, 21!, 22!, 37#) |
+| `brute_check.py` | Python brute-force cross-check of the three-step endgame at prefix depths 3–6 |
+| `compare_endgame.py` | Rust brute-force sampler versus the C endgame at prefix depths 7–10 (`compare_*.txt`) |
 | `verify_slp.py` | exact replay of every witness program (stdlib) |
-| `run_all.sh` | replay driver: builds, runs the controls, verifies the certificates |
-| `count9.json` | count mode to 9 steps with the \(\tau(n)\) table for \(n\le 5000\) |
+| `make_tau_table.py`, `tau_table_10266.txt` | \(\tau(n)\) for \(n\le 10266\), C and Rust tables compared, OEIS b-file format |
+| `b173419.txt` | OEIS A173419 b-file (n ≤ 1800) used as a control |
+| `run_all.sh`, `launch13.sh` | replay driver; launcher for the 13-step decision |
+| `count9.json`, `count9_10266.json`, `check_count9_10266.json` | count mode to 9 steps (C twice, Rust once) |
 | `decide11_core.json`, `decide12.json`, `decide13.json` | decisions at 11, 12, 13 steps |
-| `certificate.json` | summary written by `run_all.sh` |
+| `make_certificate.py`, `certificate.json` | summary of every decision |
 
 ## Definitions
 
