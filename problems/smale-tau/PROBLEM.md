@@ -3,7 +3,7 @@
 - Slug: `smale-tau`
 - Status: open — dent: exhaustive 12-step search gives
   \(\tau(29\#)=\tau(31\#)=12\) (Markström had \(\le 13\) and \(\le 15\));
-  the 13-step decision for \(20!\), \(21!\), \(22!\) is running (ATTACK.md).
+  the crash-safe 13-step decision for \(20!\), \(21!\), \(22!\) is running (ATTACK.md).
   The polynomial table is \(T(k)=1,1,2,3,3,4,5\) for \(k\le 6\). The
   conjecture itself is untouched.
 - Area: algebraic complexity; straight-line programs; Diophantine

@@ -112,3 +112,22 @@ Chronological attempts, newest last. A failed attack belongs here too.
   worktree was re-created from the pushed branch (commit 22881ad). Nothing
   committed was lost; the recovered `decide13.json` is copied into
   `compute/q1` when the run ends.
+
+## 2026-09-03 — q1, 13-step decision, crash-safe re-run
+
+- First 13-step run (20!, 21!, 22!, 37#) reached task 10560/10609 after
+  9.8 h and then a worker thread took SIGSEGV; because the program printed
+  its JSON only at the end, nothing was saved. The box had shown memory
+  pressure earlier (an OOM kill of an unrelated process), so the fault may
+  have been induced rather than a logic bug, but the real defect was the
+  all-or-nothing output.
+- Fix: `slp_search --checkpoint FILE` writes a flushed `DONE k` line per
+  finished task and a flushed `FOUND`/`PROG` line the moment any program is
+  found. On restart it skips completed tasks and restores found programs, so
+  a crash costs only the tasks in flight. A SIGSEGV/SIGBUS/SIGABRT handler
+  records which tasks were running. `decide_from_checkpoint.py` reconstructs
+  the decision from the checkpoint alone, and reports whether all 10609
+  tasks are done. Verified by a full run, an instant resume, and a
+  kill-and-resume, all reproducing the 11-step decision.
+- Re-run launched with the checkpoint; a monitor auto-resumes on any further
+  crash. Result pending.
