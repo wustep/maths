@@ -51,13 +51,33 @@ def main() -> None:
             f"incomplete dump gray_i={faces.get('gray_i')} < {nfaces}"
         )
     certified = bool(faces.get("copositive") and faces.get("min_mMm_safe", -1) >= 0)
-    # P = (q-1)/(q+1), q = R^{1/n}. Hair of 2 ulp vs mpmath interval.
-    q = math.exp(math.log(R) / n)
-    P = (q - 1.0) / (q + 1.0)
-    t0 = (1.0 + math.sqrt(2.0)) ** (1.0 / 3.0)
-    t0 = t0 - 1.0 / t0
-    fmin = 1.5 * t0
-    err_hi = P * (1.0 - fmin) * (1.0 + 2e-15) + 2e-16
+    # Prefer the stored mpmath P interval from scan_compact.json.
+    err_hi = None
+    P_hi = None
+    scan_path = CERTS / "scan_compact.json"
+    if scan_path.exists():
+        scan = json.loads(scan_path.read_text())
+        for rec in scan.get("rows", []):
+            if (
+                rec.get("R") == R
+                and rec.get("n") == n
+                and abs(float(rec.get("target_suggest", 0)) - target) < 1e-12
+            ):
+                err_hi = float(rec["err_P_hi"])
+                P_hi = float(rec["P_max_hi"])
+                break
+        best = scan.get("best_split") or {}
+        if err_hi is None and best.get("n") == n and best.get("R") == R:
+            err_hi = float(best["err_P_hi"])
+            P_hi = float(best["P_max_hi"])
+    if err_hi is None:
+        q = math.exp(math.log(R) / n)
+        P = (q - 1.0) / (q + 1.0)
+        t0 = (1.0 + math.sqrt(2.0)) ** (1.0 / 3.0)
+        t0 = t0 - 1.0 / t0
+        fmin = 1.5 * t0
+        err_hi = P * (1.0 - fmin) * (1.0 + 2e-15) + 2e-16
+        P_hi = P * (1.0 + 2e-15) + 1e-16
     gamma = target - err_hi if certified else None
     inv = (1.0 / gamma) if gamma else None
     cut = R / (R + 1.0)

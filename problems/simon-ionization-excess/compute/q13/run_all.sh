@@ -3,30 +3,31 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 mkdir -p certs work
+PYTHON="${PYTHON:-python3}"
 
 echo "==> dead line: R<=9 cut cannot beat 1.1010"
-python3 work/r9_cut.py
+"$PYTHON" work/r9_cut.py
 
 echo "==> leftover: s>3 two-shell sign, finite-Z integers, Chebyshev cut"
-python3 work/s_gt_3_replay.py
-python3 work/smallz.py
-python3 work/sharper_cut.py
+"$PYTHON" work/s_gt_3_replay.py
+"$PYTHON" work/smallz.py
+"$PYTHON" work/sharper_cut.py
 
 if [ -f certs/scan_compact.json ]; then
   echo "==> scan_compact.json is stored (SLSQP grid; skip re-run)"
-  python3 -c "import json; from pathlib import Path; d=json.loads(Path('certs/scan_compact.json').read_text()); b=d.get('best_split'); print('best predicted', b)"
+  "$PYTHON" -c "import json; from pathlib import Path; d=json.loads(Path('certs/scan_compact.json').read_text()); b=d.get('best_split'); print('best predicted', b)"
 fi
 
 if [ ! -f certs/raise_R10_n37_t0p9119.json ] && [ -f certs/beta3_mid_faces_R10_n37_t0p9119.txt ]; then
   echo "==> try write_raise.py from a complete Gray dump"
-  python3 write_raise.py || echo "write_raise skipped (dump incomplete or not copositive)"
+  "$PYTHON" write_raise.py || echo "write_raise skipped (dump incomplete or not copositive)"
 fi
 
 if ls certs/raise_*.json >/dev/null 2>&1; then
   echo "==> aspect algebra and rebuild"
-  python3 aspect_identities.py
-  python3 verify_lift.py
-  python3 verify_rebuild.py
+  "$PYTHON" aspect_identities.py
+  "$PYTHON" verify_lift.py
+  "$PYTHON" verify_rebuild.py
 
   echo "==> verify_aspect.c / .rs"
   gcc -O2 -o verify_aspect verify_aspect.c -lm
@@ -35,18 +36,18 @@ if ls certs/raise_*.json >/dev/null 2>&1; then
   ./verify_aspect_rs
 
   echo "==> mass-opt check and §7"
-  python3 mass_opt_check.py
-  python3 tighten_leading.py
+  "$PYTHON" mass_opt_check.py
+  "$PYTHON" tighten_leading.py
 
   echo "==> rust faces dump (optional second enum; C dump is the cert)"
   if [ -f certs/faces_rs.txt ]; then
-    python3 -c "from pathlib import Path; t=Path('certs/faces_rs.txt').read_text(); assert 'copositive 1' in t; print('faces_rs copositive')"
+    "$PYTHON" -c "from pathlib import Path; t=Path('certs/faces_rs.txt').read_text(); assert 'copositive 1' in t; print('faces_rs copositive')"
   else
     echo "skip rust re-enum on the fast path"
   fi
 
   echo "==> assemble"
-  python3 lift_cert.py
+  "$PYTHON" lift_cert.py
   echo "q13 PASS (leading 1.1010 lifted)"
 else
   echo "q13 PASS (residue so far; no certified raise_*.json)"
