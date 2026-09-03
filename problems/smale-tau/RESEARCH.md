@@ -60,8 +60,12 @@ snippets are leads, not citations.
   Figure 3: \(\tau(n!)\) exact for \(n\le 19\) with programs, and
   \(\tau(20!)\le 14\) with lower bound 13. Figure 2: the ultimate cost
   \(\tau'(n!)\) (best over nonzero multiples) exact for \(n\le 28\).
-  Figures 4–5: primorials, \(\tau(29\#)\le 13\) and \(\tau(31\#)\le 15\)
-  with lower bound 12. Appendix A: normalisation to distinct positive
+  Figures 4–5: primorials. Figure 5 (exact \(\tau(p\#)\)) lists only
+  \(p\le 31\): \(\tau(29\#)\le 13\) and \(\tau(31\#)\le 15\), both with
+  lower bound 12. Figure 4 (ultimate cost \(\tau'(p\#)\), the best over
+  nonzero multiples) reaches \(p=43\): for \(p\in\{37,41,43\}\) it gives
+  \(\tau'(p\#)\le 14\) with lower bound 13, so no exact \(\tau(37\#)\) is
+  printed. Appendix A: normalisation to distinct positive
   values, range-isomorphism classes to length 9, then a targeted DFS with
   the bound \(x^{2^{K-k}}<N\). The abstract's "\(n\le 22\)" refers to the
   ultimate cost table, not to \(\tau(n!)\) itself.
