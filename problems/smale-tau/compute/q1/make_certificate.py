@@ -8,8 +8,19 @@ c9 = json.load(open(os.path.join(HERE, "count9.json")))
 cert["reached_within_k_steps"] = c9["reached_cumulative"]
 cert["nodes_per_depth_to_9"] = c9["nodes_per_depth"]
 decisions = {}
+def load_json(f):
+    try:
+        txt = open(f).read()
+        if not txt.strip():
+            return None
+        return json.loads(txt)
+    except (json.JSONDecodeError, OSError):
+        return None   # in-progress or partial file
+
 for f in sorted(glob.glob(os.path.join(HERE, "decide*.json"))):
-    d = json.load(open(f))
+    d = load_json(f)
+    if d is None or "targets" not in d:
+        continue
     for t in d["targets"]:
         name = t["name"]
         e = decisions.setdefault(name, {"value": t["value"], "shortest_found": None, "no_program_of_length_at_most": None, "program": None})
@@ -28,6 +39,11 @@ for name, e in decisions.items():
     else:
         e["tau_at_least"] = lo
 cert["targets"] = decisions
-cert["runs"] = {os.path.basename(f): {k: v for k, v in json.load(open(f)).items() if k != "targets"} for f in sorted(glob.glob(os.path.join(HERE, "decide*.json")))}
+cert["runs"] = {}
+for f in sorted(glob.glob(os.path.join(HERE, "decide*.json"))):
+    d = load_json(f)
+    if d is None or "targets" not in d:
+        continue
+    cert["runs"][os.path.basename(f)] = {k: v for k, v in d.items() if k != "targets"}
 json.dump(cert, open(os.path.join(HERE, "certificate.json"), "w"), indent=1)
 print(json.dumps({k: (v.get("tau") or v.get("tau_range") or v.get("tau_at_least")) for k, v in decisions.items()}))

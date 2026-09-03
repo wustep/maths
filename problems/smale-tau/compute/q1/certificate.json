@@ -1,0 +1,259 @@
+{
+ "problem": "smale-tau",
+ "quest": "q1",
+ "definition": "tau(N) = least k with x_0 = 1, x_k = N, x_i = x_j o x_l (j, l < i), o in {+, -, *}",
+ "reached_within_k_steps": [
+  1,
+  2,
+  4,
+  9,
+  26,
+  102,
+  562,
+  4363,
+  46154,
+  652227
+ ],
+ "nodes_per_depth_to_9": [
+  1,
+  2,
+  8,
+  59,
+  663,
+  10609,
+  225219,
+  6057298,
+  199290037
+ ],
+ "targets": {
+  "13!": {
+   "value": "6227020800",
+   "shortest_found": 11,
+   "no_program_of_length_at_most": null,
+   "program": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "9",
+    "36",
+    "39",
+    "324",
+    "12636",
+    "492804",
+    "492800",
+    "6227020800"
+   ],
+   "tau_range": [
+    1,
+    11
+   ]
+  },
+  "14!": {
+   "value": "87178291200",
+   "shortest_found": 11,
+   "no_program_of_length_at_most": null,
+   "program": [
+    "1",
+    "2",
+    "4",
+    "6",
+    "12",
+    "144",
+    "140",
+    "840",
+    "120960",
+    "725760",
+    "120120",
+    "87178291200"
+   ],
+   "tau_range": [
+    1,
+    11
+   ]
+  },
+  "15!": {
+   "value": "1307674368000",
+   "shortest_found": 12,
+   "no_program_of_length_at_most": 11,
+   "program": [
+    "1",
+    "2",
+    "3",
+    "6",
+    "8",
+    "36",
+    "28",
+    "1008",
+    "1000",
+    "36000",
+    "36036",
+    "36288000",
+    "1307674368000"
+   ],
+   "tau": 12
+  },
+  "16!": {
+   "value": "20922789888000",
+   "shortest_found": 12,
+   "no_program_of_length_at_most": 11,
+   "program": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "7",
+    "12",
+    "144",
+    "143",
+    "1008",
+    "144144",
+    "144000",
+    "145297152",
+    "20922789888000"
+   ],
+   "tau": 12
+  },
+  "17!": {
+   "value": "355687428096000",
+   "shortest_found": 12,
+   "no_program_of_length_at_most": 11,
+   "program": [
+    "1",
+    "2",
+    "4",
+    "6",
+    "12",
+    "144",
+    "140",
+    "156",
+    "20160",
+    "936",
+    "18869760",
+    "18849600",
+    "355687428096000"
+   ],
+   "tau": 12
+  },
+  "18!": {
+   "value": "6402373705728000",
+   "shortest_found": null,
+   "no_program_of_length_at_most": 12,
+   "program": null,
+   "tau_at_least": 13
+  },
+  "19!": {
+   "value": "121645100408832000",
+   "shortest_found": null,
+   "no_program_of_length_at_most": 12,
+   "program": null,
+   "tau_at_least": 13
+  },
+  "20!": {
+   "value": "2432902008176640000",
+   "shortest_found": null,
+   "no_program_of_length_at_most": 12,
+   "program": null,
+   "tau_at_least": 13
+  },
+  "21!": {
+   "value": "51090942171709440000",
+   "shortest_found": null,
+   "no_program_of_length_at_most": 12,
+   "program": null,
+   "tau_at_least": 13
+  },
+  "22!": {
+   "value": "1124000727777607680000",
+   "shortest_found": null,
+   "no_program_of_length_at_most": 12,
+   "program": null,
+   "tau_at_least": 13
+  },
+  "29#": {
+   "value": "6469693230",
+   "shortest_found": 12,
+   "no_program_of_length_at_most": 11,
+   "program": [
+    "1",
+    "2",
+    "3",
+    "4",
+    "16",
+    "19",
+    "22",
+    "35",
+    "665",
+    "14630",
+    "442225",
+    "442221",
+    "6469693230"
+   ],
+   "tau": 12
+  },
+  "31#": {
+   "value": "200560490130",
+   "shortest_found": 12,
+   "no_program_of_length_at_most": 11,
+   "program": [
+    "1",
+    "2",
+    "3",
+    "5",
+    "10",
+    "100",
+    "1000",
+    "1001",
+    "10010",
+    "2001",
+    "10013",
+    "20030010",
+    "200560490130"
+   ],
+   "tau": 12
+  }
+ },
+ "runs": {
+  "decide11_core.json": {
+   "mode": "decide",
+   "steps": 11,
+   "prefix_depth": 8,
+   "threads": 8,
+   "seconds": 50.3,
+   "nodes_per_depth": [
+    1,
+    2,
+    8,
+    59,
+    663,
+    10609,
+    225219,
+    6057298
+   ],
+   "leaves": 6057298,
+   "pruned": 0,
+   "leaf_target_pairs_filtered_by_size": 40136159
+  },
+  "decide12.json": {
+   "mode": "decide",
+   "steps": 12,
+   "prefix_depth": 9,
+   "threads": 8,
+   "seconds": 2998.0,
+   "nodes_per_depth": [
+    1,
+    2,
+    8,
+    59,
+    663,
+    10609,
+    225219,
+    6057298,
+    199290037
+   ],
+   "leaves": 199290037,
+   "pruned": 0,
+   "leaf_target_pairs_filtered_by_size": 979391334
+  }
+ }
+}
