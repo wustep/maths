@@ -77,3 +77,28 @@ Chronological attempts, newest last. A failed attack belongs here too.
 - \(k=7\) (about \(4\cdot10^8\) nodes) is queued behind the q1 run;
   \(k=8\) is \(\approx1.3\cdot10^{10}\) nodes and needs the 8-thread
   machine for an hour or two.
+
+## 2026-09-03 — q1, 12-step decision: two primorial dents
+
+- Complete 12-step search on the core list (prefix depth 9, 199290037
+  leaves, 50 min on 8 threads). Replay: 13! and 14! in 11 steps, 15!, 16!,
+  17! in 12, and no program of length 12 for 18!–22!, exactly as in OEIS
+  A217032 and Markström's Figure 3.
+- Dent: \(29\#=6469693230\) in 12 steps,
+  `1, 2, 3, 4, 16, 19, 22, 35, 665, 14630, 442225, 442221, 6469693230`
+  (\(29\#=14630\cdot 442221\) with \(442221=665^2-4\)). Markström's
+  Figure 5 had \(\tau(29\#)\le 13\) with lower bound 12; the 11-step run
+  finds nothing, so
+
+  $$\tau(29\#)=12 .$$
+
+- Dent: \(31\#=200560490130\) in 12 steps,
+  `1, 2, 3, 5, 10, 100, 1000, 1001, 10010, 2001, 10013, 20030010, 200560490130`
+  (\(31\#=10010\cdot 2001\cdot 10013\)). Markström's Figure 5 had
+  \(\tau(31\#)\le 15\) with lower bound 12, so
+
+  $$\tau(31\#)=12 .$$
+
+- Both witnesses replayed exactly by `compute/q1/verify_slp.py`.
+- 13-step decision launched on 20!, 21!, 22! and \(37\#\) (prefix depth
+  10, split depth 6, 10609 tasks).
