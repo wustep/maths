@@ -42,6 +42,22 @@
 #include <stdbool.h>
 #include <time.h>
 #include <omp.h>
+#include <signal.h>
+#include <unistd.h>
+
+/* --- crash-safe checkpointing (see README "Crash safety") --- */
+#define MAXTHREADS 128
+static FILE *g_ckpt = NULL;             /* append log: DONE <k>, FOUND <t> <steps>, PROG <t> <steps> <json> */
+static char *g_done_task = NULL;        /* g_done_task[k] = 1 if task k already completed (this or a prior run) */
+static volatile int g_cur_task[MAXTHREADS];
+static void crash_handler(int sig) {
+    char buf[512];
+    int n = snprintf(buf, sizeof buf, "FATAL signal %d; tasks in flight:", sig);
+    for (int t = 0; t < MAXTHREADS; t++) if (g_cur_task[t] >= 0) n += snprintf(buf + n, sizeof buf - n, " %d", g_cur_task[t]);
+    n += snprintf(buf + n, sizeof buf - n, "\n");
+    ssize_t w = write(2, buf, (size_t)n); (void)w;
+    _exit(128 + sig);
+}
 
 typedef unsigned __int128 u128;
 
@@ -371,7 +387,12 @@ static void record_hit(ctx_t *c, int t, int steps, const val_t *extra, int nextr
     uint32_t mark = c->arena_top;
     #pragma omp critical(hit)
     {
-        if (steps < targets[t].best) { targets[t].best = steps; explain_program(c, extra, nextra, targets[t].witness, sizeof targets[t].witness); }
+        if (steps < targets[t].best) {
+            if (g_ckpt) { fprintf(g_ckpt, "FOUND %d %d\n", t, steps); fflush(g_ckpt); }
+            targets[t].best = steps;
+            explain_program(c, extra, nextra, targets[t].witness, sizeof targets[t].witness);
+            if (g_ckpt) { fprintf(g_ckpt, "PROG %d %d %s\n", t, steps, targets[t].witness); fflush(g_ckpt); }
+        }
     }
     c->arena_top = mark;
 }
@@ -806,7 +827,9 @@ static void load_targets(const char *tfile) {
 }
 
 int main(int argc, char **argv) {
-    const char *tfile = NULL, *pfile = NULL; int nthreads = 0;
+    const char *tfile = NULL, *pfile = NULL, *cfile = NULL; int nthreads = 0;
+    for (int t = 0; t < MAXTHREADS; t++) g_cur_task[t] = -1;
+    signal(SIGSEGV, crash_handler); signal(SIGBUS, crash_handler); signal(SIGABRT, crash_handler);
     for (int i = 1; i < argc; i++) {
         if (!strcmp(argv[i], "--count") && i + 1 < argc) { g_countmode = true; g_depth = atoi(argv[++i]); g_steps = g_depth; }
         else if (!strcmp(argv[i], "--steps") && i + 1 < argc) g_steps = atoi(argv[++i]);
@@ -815,6 +838,7 @@ int main(int argc, char **argv) {
         else if (!strcmp(argv[i], "--split") && i + 1 < argc) g_split = atoi(argv[++i]);
         else if (!strcmp(argv[i], "--table") && i + 1 < argc) g_table_bound = strtoull(argv[++i], NULL, 10);
         else if (!strcmp(argv[i], "--endgame-test") && i + 1 < argc) { g_endgame_test = true; pfile = argv[++i]; }
+        else if (!strcmp(argv[i], "--checkpoint") && i + 1 < argc) cfile = argv[++i];
         else { fprintf(stderr, "unknown arg %s\n", argv[i]); return 1; }
     }
     if (nthreads) omp_set_num_threads(nthreads);
@@ -856,14 +880,35 @@ int main(int argc, char **argv) {
     if (g_split > g_depth) g_split = g_depth;
     collect(c0, 0);
     fprintf(stderr, "split depth %d: %d tasks (%.1fs)\n", g_split, g_ntasks, now() - t0);
+    int resumed_done = 0;
+    if (cfile && !g_countmode) {
+        g_done_task = calloc((size_t)g_ntasks, 1);
+        FILE *cf = fopen(cfile, "r");
+        if (cf) {   /* replay a prior run's checkpoint */
+            char line[16384];
+            while (fgets(line, sizeof line, cf)) {
+                int k, t, st;
+                if (sscanf(line, "DONE %d", &k) == 1) { if (k >= 0 && k < g_ntasks && !g_done_task[k]) { g_done_task[k] = 1; resumed_done++; } }
+                else if (sscanf(line, "FOUND %d %d", &t, &st) == 2) { if (t >= 0 && t < ntargets && st < targets[t].best) targets[t].best = st; }
+                else if (!strncmp(line, "PROG ", 5)) { if (sscanf(line + 5, "%d %d", &t, &st) == 2 && t >= 0 && t < ntargets) { char *p = strchr(line + 5, '{'); if (p) { char *nl = strchr(p, '\n'); if (nl) *nl = 0; snprintf(targets[t].witness, sizeof targets[t].witness, "%s", p); } } }
+            }
+            fclose(cf);
+            fprintf(stderr, "resumed from %s: %d/%d tasks already done\n", cfile, resumed_done, g_ntasks);
+        }
+        g_ckpt = fopen(cfile, "a");
+        if (!g_ckpt) { fprintf(stderr, "FATAL cannot open checkpoint %s\n", cfile); return 2; }
+    }
     uint64_t total_nodes[MAXDEPTH + 2]; uint64_t total_leaves = 0, total_pruned = 0, total_filtered = 0;
     for (int d = 0; d <= MAXDEPTH + 1; d++) total_nodes[d] = c0->nodes[d];
-    int done = 0;
+    int done = resumed_done;
     #pragma omp parallel
     {
         ctx_t *c = malloc(sizeof(ctx_t)); ctx_init(c);
+        int tid = omp_get_thread_num();
         #pragma omp for schedule(dynamic, 1)
         for (int k = 0; k < g_ntasks; k++) {
+            if (g_done_task && g_done_task[k]) continue;
+            if (tid < MAXTHREADS) g_cur_task[tid] = k;
             task_t *tk = &g_tasks[k];
             for (int i = 1; i < tk->n; i++) {
                 int pos = tk->pos[i];
@@ -873,6 +918,11 @@ int main(int argc, char **argv) {
             if (g_split == g_depth) { if (!g_countmode) run_endgames(c); }
             else dfs(c, tk->pos[tk->n - 1] + 1);
             for (int i = 1; i < tk->n; i++) pop_value(c);
+            if (tid < MAXTHREADS) g_cur_task[tid] = -1;
+            if (g_ckpt) {
+                #pragma omp critical(ckpt)
+                { fprintf(g_ckpt, "DONE %d\n", k); fflush(g_ckpt); }
+            }
             int dn;
             #pragma omp atomic capture
             dn = ++done;
