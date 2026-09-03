@@ -345,3 +345,103 @@ Queries against `https://export.arxiv.org/api/query`, 3 s between calls:
 Failed lookups: no arXiv hit for a Euclidean $\gamma=1$ ratio below
 $1.44655$. The Frank–Laptev–Weidl CUP 2023 book is still not on arXiv
 and was not opened as full text this session.
+
+## 2026-09-02
+
+Record for the Euclidean $\gamma=1$ ratio, after fetching and reading
+the sources below: still Carvalho Corso–Ried, arXiv:2403.04347v2,
+$L_{1,1,1}/L^{\mathrm{cl}}\le 1.44655$ from $M_3=0.371185695$. No later
+paper opened today states a smaller ratio. Alternative 1D conversions
+(Weidl interpolation, Seiringer–Solovej absorption, Neumann covering)
+convert to numbers *above* $1.44655$.
+
+### Re-opened record papers
+
+- [Carvalho Corso–Ried, arXiv:2403.04347v2](https://arxiv.org/abs/2403.04347)
+  ([HTML](https://arxiv.org/html/2403.04347v2)). Re-opened abs, HTML, and
+  `export.arxiv.org` metadata. Corollary 1.7 / (1.14) still
+  $L_{1,1,1}/L^{\mathrm{cl}}\le 1.44655$. Table 1.1 $M_3=0.371185695$.
+  They present this as the method ceiling of FHJN/HKRV.
+
+- [Carvalho Corso, arXiv:2407.10117v2](https://arxiv.org/abs/2407.10117)
+  ([HTML](https://arxiv.org/html/2407.10117v2)). Corollary 1.8 is the
+  Clausen form, rounded to $1.447$. Does **not** beat $1.44655$.
+
+- [Frank–Hundertmark–Jex–Nam, arXiv:1808.09017v1](https://arxiv.org/abs/1808.09017)
+  ([HTML](https://arxiv.org/html/1808.09017v1)). Theorem 1 still $1.456$.
+  Proposition 10 is the $\mathcal{C}_d$ conversion. Lemma 5 solves the
+  no-averaging $A_f$ problem in closed form (ratio $1.618435$ at $d=1$).
+  The Cauchy–Schwarz (18)/(38) is the remaining loss inside the method.
+
+- [Dolbeault–Laptev–Loss, arXiv:0708.1165v2](https://arxiv.org/abs/0708.1165)
+  ([HTML](https://arxiv.org/html/0708.1165v2)). Theorem 1:
+  $\sum|\lambda_n|\le\frac{2}{3\sqrt{3}}\int\mathrm{Tr}[V^{3/2}]$, i.e.
+  $R=\pi/\sqrt{3}\approx 1.8138$. The proof of Theorem 3 is Agmon plus
+  Cauchy–Schwarz on the projection kernel, giving $T\ge\int\rho^3$.
+  Does **not** claim a $\kappa>1$.
+
+### Alternative conversions (opened; weaker than CCR)
+
+- [Weidl, arXiv:quant-ph/9504013](https://arxiv.org/abs/quant-ph/9504013)
+  ([ar5iv HTML](https://ar5iv.labs.arxiv.org/html/quant-ph/9504013)).
+  Commun. Math. Phys. 178 (1996), 135–146. Theorem 1: $1/2\le L_{1/2,1}\le\varsigma(3)/3<1.005$.
+  Theorem 3 uses Aizenman–Lieb and the old $1.005$, giving $L_{1,1}^*<0.853$
+  (ratio about $4$). Theorem 4 interpolates $\gamma=1/2$ and $\gamma=3/2$
+  by a $K$-functional; (32)–(34) are the formulae used in
+  `compute/q3/weidl_interp.py`. (23) is the Hadamard envelope for
+  *characteristic-function* potentials only. HLT later sharpened
+  $L_{1/2,1}=1/2$; plugging that in still leaves $C(1/2)\approx 2.660$
+  and ratio $\approx 3.8385$. Does **not** beat $1.44655$.
+
+- [Seiringer–Solovej, arXiv:2303.04504v2](https://arxiv.org/abs/2303.04504)
+  ([HTML](https://ar5iv.labs.arxiv.org/html/2303.04504v2)). Theorem 1 is
+  a remainder inequality. Corollary 2 absorbs it by Hoffmann–Ostenhof.
+  At $d=1$, $R_1=(-3/a)^3/16$ with $a$ the largest real zero of $\mathrm{Ai}$,
+  $R_1\approx 0.132$. They write that this is weaker than FHJN and weaker
+  than Rumin $d/(d+4)$. Independent series enclosure in
+  `compute/q3/ss_airy.py`: $R_1\le 0.13203$, ratio $\le 2.752$. Does
+  **not** beat $1.44655$.
+
+- [Nam, arXiv:2012.12045v2](https://arxiv.org/abs/2012.12045). Direct
+  methods survey. Restates FHJN $1.456$. Does **not** move the Euclidean
+  $\gamma=1$ ratio.
+
+- [Frank, arXiv:2109.13660v1](https://arxiv.org/abs/2109.13660)
+  ([HTML](https://ar5iv.labs.arxiv.org/html/2109.13660)). ICM survey of
+  orthonormal inequalities. Theorem 4 remark: best constants then due to
+  FHJN. Does **not** state $1.44655$ (the talk predates CCR).
+
+- [Levitt, arXiv:1206.1473v1](https://arxiv.org/abs/1206.1473). Numerical
+  maximizers. Lower bounds from trial potentials, not upper bounds. In
+  1D the one-bound-state case is the numerical maximizer in the remaining
+  window. Does **not** claim $L/L^{\mathrm{cl}}>2/\sqrt{3}$.
+
+- [Bachmann–Froese–Schraven, arXiv:2403.19023v3](https://arxiv.org/abs/2403.19023).
+  Two-sided bounds in terms of the landscape function, for atomic
+  Hamiltonians. Does **not** claim a Euclidean $\gamma=1$ ratio below
+  $1.44655$.
+
+- [Hundertmark–Kunstmann–Ried–Vugalter, arXiv:1809.05069v1](https://arxiv.org/abs/1809.05069)
+  is the 2018 CLR paper (Invent. Math. 231 (2023), 111–167). Opened the
+  abs page. CLR constants, not the Euclidean $\gamma=1$ LT ratio.
+
+### arXiv search log (q3)
+
+Queries against `https://export.arxiv.org/api/query`, 3 s between calls
+until HTTP 429:
+
+- `ti:"Lieb-Thirring" AND submittedDate:[20240101 TO 20261231]` — 12
+  titles including 2403.04347, 2403.19023, 2409.01291, 2510.24148,
+  2501.00866, 2602.00725, 2607.15504. None of the titles/abstracts claim
+  $L_{1,d}/L^{\mathrm{cl}}<1.44655$.
+- `au:Hundertmark AND au:Ried AND au:Vugalter` — 1809.05069 and two
+  Boltzmann papers.
+- Later queries (`au:Hundertmark AND au:Vugalter` with a date window,
+  `ti:Cwikel AND au:Hundertmark`, `au:Frank AND au:Nam AND Lieb-Thirring`
+  after 2019) returned HTTP 429. Not retried.
+
+Failed lookups: no arXiv hit for a Euclidean $\gamma=1$ ratio below
+$1.44655$. The Frank–Laptev–Weidl CUP 2023 book was cited by
+2303.04504 as a survey; full text still not on arXiv and was not opened
+this session. Eden–Foias 1991 journal PDF still not obtained (the DLL
+HTML is the proof that was read).

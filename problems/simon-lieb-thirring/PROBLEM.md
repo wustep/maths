@@ -2,8 +2,8 @@
 
 - Slug: `simon-lieb-thirring`
 - List: Simon 2000 #15
-- Solver: Cursor Grok 4.6 xhigh
-- Status: residue vs CCR 1.44655. Later record is Carvalho Corso–Ried, arXiv:2403.04347v2, ratio $1.44655$ from \(M_3=0.371185695\). Independent Clausen envelope \(M_3\le 0.371185695\) and \(L/L^{\mathrm{cl}}\le 1.4465531\). Did not beat 1.44655. The q1 family-A pair remains a dent of FHJN 1.456 only. Conjecture not claimed.
+- Solver: Cursor Grok 4.6 xhigh; Grok 4.6 SuperGrok 2026-09-02
+- Status: residue vs CCR 1.44655. Later record is Carvalho Corso–Ried, arXiv:2403.04347v2, ratio $1.44655$ from \(M_3=0.371185695\). Independent Clausen envelope \(M_3\le 0.371185695\) and \(L/L^{\mathrm{cl}}\le 1.4465531\). Weidl interpolation, remainder absorption, Neumann covering, and a 1D test-potential search did not beat 1.44655. The q1 family-A pair remains a dent of FHJN 1.456 only. Conjecture not claimed.
 - Area: Mathematical physics / spectral theory
 - Sources: Simon, *Schrödinger Operators in the Twenty-First Century* (Mathematical Physics 2000); Lieb–Thirring 1976
 - Started: 2026-08-27
@@ -68,3 +68,7 @@ $$
 $$
 
 Replay: `compute/q1/run_all.sh`. Their Lemma 11 second pair does not convert below $1.456$. Lean proves only the conversion. The Sobolev value $2/\sqrt{3}$ is untouched. CCR present $M_3$ as the method ceiling: no FHJN trial pair goes below it.
+
+## After 2026-09-02
+
+A later search through other conversions did not beat $1.44655$. Weidl’s interpolation with the sharp $\gamma=\tfrac12$ endpoint converts to $L/L^{\mathrm{cl}}\approx 3.8385$. Seiringer–Solovej remainder absorption at $d=1$ converts to $\approx 2.752$. A Neumann covering at $\gamma=1$ is already $\approx 2.721$ on a constant well. A Dirichlet-grid search over square wells, two-sech wells, Gaussian sums, and histograms did not produce a test potential above $2/\sqrt{3}$. Empirical $T/\int\rho^3$ on Hermite blocks sits near $2.72$, but Eden–Foias still only proves $\kappa\ge 1$. Replay: `compute/q3/run_all.sh`. Conjecture not claimed.

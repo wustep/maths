@@ -37,3 +37,15 @@ $$
 
 A trapezoid float (`q1/float_c1.py`) is not a bound. Lean conversion
 only: `../lean/FhjnProp10Conversion.lean`.
+
+Other conversions, versus the same record:
+
+```bash
+cd problems/simon-lieb-thirring/compute/q3
+./run_all.sh
+```
+
+Weidl interpolation with the sharp $\gamma=1/2$ endpoint, Seiringer–Solovej
+Airy absorption, a Neumann covering at $\gamma=1$, and a 1D test-potential
+search. None of those beat $1.44655$. The script replays the q2 Clausen
+envelope at the end.
