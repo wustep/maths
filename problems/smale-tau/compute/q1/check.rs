@@ -110,7 +110,10 @@ fn count_mode(dmax: usize) {
     let mut per = vec![0usize; dmax + 1]; for (_, d) in reached.iter() { per[*d] += 1; }
     let mut cum = 0usize; let mut cums = vec![];
     for d in 0..=dmax { cum += per[d]; cums.push(cum); }
-    println!("{{\"nodes_per_depth\": {:?}, \"reached_cumulative\": {:?}}}", &nodes[1..], cums);
+    let bound: u128 = env::args().nth(3).map(|s| s.parse().unwrap()).unwrap_or(0);
+    let mut table = vec![];
+    for n in 1..=bound { table.push(match reached.get(&Val::S(n)) { Some(d) => *d as i64, None => -1 }); }
+    println!("{{\"nodes_per_depth\": {:?}, \"reached_cumulative\": {:?}, \"tau_table_bound\": {}, \"tau\": {:?}}}", &nodes[1..], cums, bound, table);
 }
 
 // xorshift for reproducible sampling
