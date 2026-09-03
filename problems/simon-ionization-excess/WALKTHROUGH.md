@@ -191,3 +191,19 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — q11 replay; stored SLSQP scan; $n=37$ matrix assembled at target $0.9119$. Face dump stopped at slowest shard $29.6\%$ of $2^{37}-1$. Scanned faces copositive, $\min\varphi=0.912085>0.9119$. Remaining masks not enumerated.
 
 6. Proven vs still open — printed leading still $1.1010$. Predicted $1.1006$ is not a bound. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later — finish $n=37$ without the mask dump
+
+0. What was actually missing — q12 assembled the $n=37$ matrix and predicted printed $1.1006$, then stopped the $2^{37}-1$ Gauss-Jordan dump at 30%. The leftover was a certificate that visits every face without storing them or holding four shards in RAM.
+
+1. Named false starts — resuming the four q12 shards (a worktree wipe had already killed a live dump once); PD pruning of large principal submatrices (two negative eigenvalues, $\lambda_{\min}\approx-18$ even after dropping eight bins); the PSD+NN split (still fails); $R\le 9$ with $Q>R/(R+1)$.
+
+2. The useful failure — the naive mask loop is $O(k^3)$ per subset. At $n=24$ that is a million masks a second; at $n=37$ it is days. The worktree itself disappeared under the first Gray run at 16 minutes. An incomplete copositive scan is still not a bound.
+
+3. The click — binary-reflected Gray order changes one index per step, so $M_S^{-1}$ is a rank-1 / border update. Same copositivity test, $O(k^2)$ per face, about 2 MB RSS, one thread. On the stored $n=26$ matrix it matches the old dump (same $187266$ interior points, same $\min m^\top Mm$, same $\min\varphi$).
+
+4. The argument — Theorem 4.2, radial $Q$. Compact cert on aspect $\le 10$ with $37$ bins, target $\varphi=0.9119$. Mass-opt dichotomy on aspect $\ge 10$: $Q>10/11$. Weak $Q$-continuity on compact radial support. Truncation of a finite-$D$ measure. Same §7 chain with $\beta_3\ge\gamma_{10}$, Lieb $9/4$ on $Z\ge 4$, extras recomputed.
+
+5. Computer search — stored $R=10$, $n=37$ faces at target $0.9119$ ($137{,}438{,}953{,}471$, copositive, $0$ skips, $\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.912085$); Gray enumerator about $5.7\cdot 10^6$ masks/s at the end, 1832 kB RSS; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
+
+6. Proven vs still open — printed leading $1.1010$ moves to $1.1006$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
