@@ -17,6 +17,11 @@ if [ -f certs/scan_compact.json ]; then
   python3 -c "import json; from pathlib import Path; d=json.loads(Path('certs/scan_compact.json').read_text()); b=d.get('best_split'); print('best predicted', b)"
 fi
 
+if [ ! -f certs/raise_R10_n37_t0p9119.json ] && [ -f certs/beta3_mid_faces_R10_n37_t0p9119.txt ]; then
+  echo "==> try write_raise.py from a complete Gray dump"
+  python3 write_raise.py || echo "write_raise skipped (dump incomplete or not copositive)"
+fi
+
 if ls certs/raise_*.json >/dev/null 2>&1; then
   echo "==> aspect algebra and rebuild"
   python3 aspect_identities.py
