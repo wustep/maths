@@ -24,7 +24,8 @@ $1.1013$ by $1.1010$.
 The faces dump was stopped incomplete. Printed leading stays
 $1.1010$.
 `q13/` replaces that dump with a single-thread Gray-code
-enumerator at the same split and target.
+enumerator at the same split and target, and replaces printed
+$1.1010$ by $1.1006$.
 
 ```bash
 ./run_all.sh

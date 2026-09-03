@@ -48,7 +48,7 @@ if ls certs/raise_*.json >/dev/null 2>&1; then
 
   echo "==> assemble"
   "$PYTHON" lift_cert.py
-  echo "q13 PASS (leading 1.1010 lifted)"
+  echo "q13 PASS (leading 1.1010 lifted to 1.1006)"
 else
   echo "q13 PASS (residue so far; no certified raise_*.json)"
 fi

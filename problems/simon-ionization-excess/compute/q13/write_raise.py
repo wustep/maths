@@ -89,7 +89,7 @@ def main() -> None:
         "faces": faces,
         "certified": certified,
         "err_P_hi": err_hi,
-        "P_max_hi": P * (1.0 + 2e-15) + 1e-16,
+        "P_max_hi": P_hi,
         "compact_gamma": gamma,
         "compact_inv": inv,
         "cut": cut,

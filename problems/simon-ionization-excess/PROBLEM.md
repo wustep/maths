@@ -3,7 +3,7 @@
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
 - Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013. Same HPS chain: $N_c<1.1010Z+3.934\,Z^{1/3}$ for $Z\ge 4$. q12 $n=37$ faces dump residue; printed leading stays $1.1010$. q1 remainder dent unchanged. Ionization conjecture open.
+- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013, 1.1010. Same HPS chain: $N_c<1.1006Z+3.933\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -295,6 +295,32 @@ Printed leading stays $1.1010$. $R\le 9$ with the mass-opt cut
 cannot beat $1.1010$ and is leftover. Finite-$Z$ integers and
 $N_0(Z)-Z$ stay leftover. Replay:
 `problems/simon-ionization-excess/compute/q12/run_all.sh`.
+
+A thirteenth search finishes $n=37$ at the same split with a
+Gray-code enumerator in place of the incomplete mask dump.
+Faces $137{,}438{,}953{,}471$, copositive, $0$ residual skips,
+$\min\varphi=0.912085>0.9119$. Compact $\gamma=0.908606$,
+$1/\gamma=1.100587$, cut $10/11>\gamma$. The same Section 7
+chain gives
+
+$$
+N<1.1006Z+3.848\,Z^{1/3}+0.01320+0.1827\,Z^{-1/3}+0.019490\,Z^{-2/3}
+\qquad(Z\ge 4)
+$$
+
+and
+
+$$
+N_c<1.1006Z+3.933\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+This beats q11's $1.1010$, q10's $1.1013$, q9's $1.1017$, q8's
+$1.1020$, q7's $1.1021$, q6's $1.1026$, q5's $1.1035$, q4's
+$1.1057$, q3's $1.1118$, and the printed $1.1185$. $R\le 9$
+with the mass-opt cut cannot beat $1.1006$ and is leftover.
+$1.1168$ stays withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$
+stay leftover. Replay:
+`problems/simon-ionization-excess/compute/q13/run_all.sh`.
 
 ## What would count as a new bound
 

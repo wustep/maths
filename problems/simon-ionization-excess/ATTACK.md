@@ -889,3 +889,30 @@ and is not a bound. The enumerator now lives under `/tmp`
 with absolute paths and mirrors checkpoints to
 `GRAY_BACKUP`. A worktree wipe is not a certificate.
 
+## 2026-09-03 — q13 dent
+
+The Gray walk finished. $2^{37}-1=137{,}438{,}953{,}471$ faces,
+copositive, $0$ residual skips, $\min m^\top Mm>6\cdot 10^{-4}$,
+$\min\varphi=0.912085>0.9119$. Compact $\gamma=0.908606$,
+$1/\gamma=1.100587$ prints as $1.1006$. Cut $10/11>\gamma$.
+
+Same HPS §7 chain with $\beta_3\ge 0.908606$ (aspect $10$,
+$n=37$ faces, $\varphi=0.9119$):
+
+$$
+N<1.1006Z+3.848\,Z^{1/3}+0.01320+0.1827\,Z^{-1/3}+0.019490\,Z^{-2/3}
+\qquad(Z\ge 4),
+$$
+
+$$
+N_c<1.1006Z+3.933\,Z^{1/3}\qquad(Z\ge 4).
+$$
+
+Certified: `certs/lift.json`, interval §7 in `tighten_leading.py`,
+stdlib `verify_lift.py` / `verify_rebuild.py`, C and Rust on the
+$10/11$ algebra, mass-opt scan with no counterexample, stored
+$R=10$ $n=37$ Gray faces. $1.1168$ stays withdrawn. q1 remainders
+unchanged. $N_0(Z)-Z$ bounded still open.
+
+Replay: `problems/simon-ionization-excess/compute/q13/run_all.sh`.
+

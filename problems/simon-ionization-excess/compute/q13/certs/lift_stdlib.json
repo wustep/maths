@@ -1,0 +1,29 @@
+{
+  "row": "/workspace/projects/maths-ion-q13/problems/simon-ionization-excess/compute/q13/certs/raise_R10_n37_t0p9119.json",
+  "R": 10.0,
+  "n": 37,
+  "recon_gamma": 0.9086061090539742,
+  "stored_gamma": 0.9086061090539742,
+  "recon_ok": true,
+  "inv": 1.1005869210379662,
+  "inv_lt_1.1010": true,
+  "inv_lt_1.1013": true,
+  "inv_lt_1.1017": true,
+  "inv_lt_1.1020": true,
+  "inv_lt_1.1021": true,
+  "inv_lt_1.1026": true,
+  "inv_lt_1.1035": true,
+  "inv_lt_1.1057": true,
+  "inv_lt_1.1118": true,
+  "inv_lt_1.108741": true,
+  "cut": 0.9090909090909091,
+  "cut_gt_gamma": true,
+  "faces": {
+    "n": 37,
+    "copositive": true,
+    "min_mMm_safe": 0.0006294836356492559,
+    "singular_or_illconditioned": 0,
+    "gamma_target": 0.9119
+  },
+  "ok": true
+}
