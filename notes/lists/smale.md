@@ -13,7 +13,7 @@ Smale's essay.
 | 1 | Riemann hypothesis | Open | Also Hilbert 8a, Clay. |
 | 2 | Poincaré conjecture | Resolved (yes) | Perelman 2003, Ricci flow. |
 | 3 | P vs NP | Open | Clay. |
-| 4 | Shub–Smale $\tau$-conjecture (integer zeros of a univariate polynomial) | Open | Algebraic-complexity form of "P≠NP". |
+| 4 | Shub–Smale $\tau$-conjecture (integer zeros of a univariate polynomial) | Open | Algebraic-complexity form of "P≠NP". Folder: [`problems/smale-tau`](../../problems/smale-tau). |
 | 5 | Integer points on a plane curve in time $(2s)^c$ | Open | Hilbert 10 is undecidable in many variables; this asks exponential time in two. |
 | 6 | Finitely many relative equilibria in the $n$-body problem? | Open | Almost all 5-body planar systems: Albouy–Kaloshin. |
 | 7 | Fekete / log-energy points on $S^2$ | Open | Related to Thomson. Finite-$N$ records are computational. |

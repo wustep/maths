@@ -1,0 +1,1 @@
+{"depth": 10, "trials": 150, "seed": 101, "pairs": 5393, "reachable_pairs": 3593, "mismatches": 0}

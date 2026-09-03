@@ -1,0 +1,9 @@
+slp_search
+slp_search_new
+slp_prof
+check
+check_new
+_bc_*
+_cmp_*
+*.log
+gmon.out
