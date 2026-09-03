@@ -102,3 +102,13 @@ Chronological attempts, newest last. A failed attack belongs here too.
 - Both witnesses replayed exactly by `compute/q1/verify_slp.py`.
 - 13-step decision launched on 20!, 21!, 22! and \(37\#\) (prefix depth
   10, split depth 6, 10609 tasks).
+
+## 2026-09-03 — incident: worktree deleted mid-run
+
+- About 90 minutes into the 13-step run the worktree directory
+  `/workspace/projects/maths-tau-q1` disappeared (not by this session).
+  The search process survived with its output files unlinked; both were
+  captured through `/proc/<pid>/fd` into `/home/box/tau-recover/` and the
+  worktree was re-created from the pushed branch (commit 22881ad). Nothing
+  committed was lost; the recovered `decide13.json` is copied into
+  `compute/q1` when the run ends.
