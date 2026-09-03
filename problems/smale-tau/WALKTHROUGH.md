@@ -33,16 +33,31 @@ Empty beats mean the quest is not done.
 3. The click — Rokicki's pending queue from the 2013 contest list gives a
    canonical order that visits every normalised program exactly once, and
    a three-step endgame turns a depth-13 tree into a depth-10 tree with a
-   constant-size case analysis at each leaf.
+   constant-size case analysis at each leaf. The second click was that the
+   same machinery decides *any* small target for free: the primorials
+   \(29\#\) and \(31\#\), where Markström's bounds had gaps of one and
+   three steps, came out at exactly 12 in the 12-step run, three steps
+   under the printed 15 for \(31\#\).
 
 4. The argument — in `compute/q1/README.md`: normalisation (positive,
    distinct), the lexicographically least valid order, and the complete
-   case split of the last three steps.
+   case split of the last three steps. The primorial programs are short
+   enough to check by hand: \(31\#=10010\cdot 2001\cdot 10013\) with
+   \(10010=1001\cdot 10\), \(2001=1000+1001\), \(10013=10010+3\); and
+   \(29\#=14630\cdot(665^2-4)\) with \(665=19\cdot 35\), \(14630=665\cdot 22\).
 
 5. Computer search — `compute/q1`: counts through 9 steps match
    Markström's Figure 1, \(\tau(n)\) for \(n\le 1800\) matches OEIS
-   A173419, the endgame matches a brute-force expansion on 7489 random
-   pairs, and the 11-step and 12-step decisions replay the contest record.
-   (13-step run: pending.)
+   A173419 and the table is extended to \(n\le 10266\) by two
+   implementations, the endgame matches brute-force expansions (Python and
+   Rust) on about forty thousand random pairs, and the 11-step and 12-step
+   decisions replay the contest record. `compute/q2`: the polynomial
+   table \(T(k)=1,1,2,3,3,4,5\) for \(k\le 6\), with the surprise that
+   six steps already give five integer zeros through
+   \(x\bigl((x^2-2)^2-x^2\bigr)\). (13-step run: pending.)
 
-6. Proven vs still open — pending the 13-step run.
+6. Proven vs still open — proven: \(\tau(29\#)=\tau(31\#)=12\), the
+   replayed values \(\tau(n!)\) for \(13\le n\le 19\), \(T(k)\) for
+   \(k\le 6\). Pending: the 13-step decision for \(20!\), \(21!\),
+   \(22!\). Open: everything Smale asked; nothing here touches the
+   conjecture or the growth of \(\tau(k!)\).
