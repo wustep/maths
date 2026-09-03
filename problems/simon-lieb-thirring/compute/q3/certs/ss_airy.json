@@ -1,0 +1,20 @@
+{
+  "paper": "arXiv:2303.04504v2",
+  "formula": "R_1 = (3/|a|)^3 / 16, a = largest real zero of Ai",
+  "bracket": {
+    "a_lo": -2.3381074105,
+    "a_hi": -2.3381074104,
+    "Ai_lo": -2.8211849523174237e-11,
+    "Ai_hi": 4.190919833391149e-11,
+    "a_abs_lo": 2.3381074104,
+    "a_abs_hi": 2.3381074105
+  },
+  "R1_upper": 0.13202324734424478,
+  "R1_lower": 0.1320232446868401,
+  "K_over_Kcl_upper": 0.13202324734424478,
+  "L_over_Lcl_from_best_R1": 2.7521670728211878,
+  "beats_CCR": false,
+  "beats_FHJN": false,
+  "beats_q1": false,
+  "note": "Hoffmann\u2013Ostenhof absorption of the Seiringer\u2013Solovej remainder. R_1 \u2248 0.132 is weaker than CCR 0.47789 and weaker than Rumin 1/5. Not a dent of 1.44655."
+}

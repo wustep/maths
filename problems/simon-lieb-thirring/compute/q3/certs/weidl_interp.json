@@ -1,0 +1,22 @@
+{
+  "eta": 0.5,
+  "gamma": 1.0,
+  "C": 2.6603522379859967,
+  "Theta_1_2": 3.771236166328254,
+  "Theta_half_3half": 4.009494124259953,
+  "M": 2.0000000000000004,
+  "Nstar": 1.0,
+  "I0": 2.3047713191638057,
+  "I1": 0.06066715926283936,
+  "den": 0.7071067811865476,
+  "L_starstar": 0.8145631898921214,
+  "Lcl_gamma": 0.21220659078919374,
+  "ratio": 3.838538599874635,
+  "naive_Hadamard_L": 0.3061862178478973,
+  "naive_ratio": 1.4428685589320975,
+  "L_half_used": 0.5,
+  "beats_CCR": false,
+  "beats_FHJN": false,
+  "beats_q1": false,
+  "note": "Weidl interpolation at gamma=1 with HLT L_{1/2,1}=1/2. Ky-Fan factor M(1/2)=2 forces C>2; the ratio is far above CCR 1.44655. The C=1 Hadamard envelope applies only to characteristic-function potentials (Weidl (23)), where it would read ~1.44287, still not a bound for general V."
+}

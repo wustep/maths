@@ -1,0 +1,82 @@
+{
+  "EF_kappa_proved": 1.0,
+  "kappa_needed_to_beat_CCR": 1.35,
+  "one_bound_state_kappa": 2.4674011002723395,
+  "min_empirical": 2.717301004834492,
+  "records": [
+    {
+      "family": "hermite",
+      "n_fun": 1,
+      "T": 0.49937552050797895,
+      "I3": 0.183776298473932,
+      "kappa": 2.717301004834492,
+      "L_over_Lcl_if_K_eq_kappa": 1.1003234549066563
+    },
+    {
+      "family": "hermite",
+      "n_fun": 2,
+      "T": 1.9962541634134268,
+      "I3": 0.6534268390184256,
+      "kappa": 3.055053824253974,
+      "L_over_Lcl_if_K_eq_kappa": 1.0377191046948484
+    },
+    {
+      "family": "hermite",
+      "n_fun": 3,
+      "T": 4.4881421709103435,
+      "I3": 1.4225646807796963,
+      "kappa": 3.1549652761310147,
+      "L_over_Lcl_if_K_eq_kappa": 1.021155670827616
+    },
+    {
+      "family": "hermite",
+      "n_fun": 5,
+      "T": 12.446992024574357,
+      "I3": 3.8673817150361534,
+      "kappa": 3.2184544846403917,
+      "L_over_Lcl_if_K_eq_kappa": 1.0110335315519638
+    },
+    {
+      "family": "hermite",
+      "n_fun": 8,
+      "T": 31.78573180167499,
+      "I3": 9.808469923456315,
+      "kappa": 3.240641205990905,
+      "L_over_Lcl_if_K_eq_kappa": 1.007566618125378
+    },
+    {
+      "family": "finite-well-eigs",
+      "n_fun": 1,
+      "n_bound_available": 4,
+      "T": 0.3682149849831864,
+      "I3": 0.10917412930045024,
+      "kappa": 3.3727311345882
+    },
+    {
+      "family": "finite-well-eigs",
+      "n_fun": 2,
+      "n_bound_available": 4,
+      "T": 1.8052396794650654,
+      "I3": 0.565438527743727,
+      "kappa": 3.1926364951969664
+    },
+    {
+      "family": "finite-well-eigs",
+      "n_fun": 3,
+      "n_bound_available": 4,
+      "T": 4.862706971891784,
+      "I3": 1.5596158894527237,
+      "kappa": 3.1178875547351153
+    },
+    {
+      "family": "finite-well-eigs",
+      "n_fun": 4,
+      "n_bound_available": 4,
+      "T": 9.47883767712177,
+      "I3": 3.0444037080639204,
+      "kappa": 3.1135284890156076
+    }
+  ],
+  "beats_CCR": false,
+  "note": "Empirical kappa sits near 2.5\u20134, above the 1.35 threshold, but this is not a proof that kappa\u22651.35 for every orthonormal system. The EF CS step still only gives kappa\u22651."
+}

@@ -1,0 +1,46 @@
+{
+  "schema": "slt-q3-leftover-v1",
+  "date": "2026-09-02",
+  "published_record": {
+    "paper": "arXiv:2403.04347v2",
+    "L_over_Lcl": 1.44655,
+    "M3": 0.371185695
+  },
+  "q2_clausen_envelope": {
+    "L_over_Lcl_upper": 1.4465531,
+    "beats_CCR": false
+  },
+  "attempts": [
+    {
+      "name": "Weidl interpolation with HLT L_{1/2,1}=1/2",
+      "ratio": 3.838539,
+      "beats_CCR": false
+    },
+    {
+      "name": "Seiringer-Solovej Airy R_1 after HO absorption",
+      "R1_upper": 0.13202325,
+      "ratio": 2.752167,
+      "beats_CCR": false
+    },
+    {
+      "name": "Neumann covering at gamma=1, alpha=3",
+      "constant_well_ratio": 2.720699,
+      "beats_CCR": false
+    },
+    {
+      "name": "1D trial potentials (square, two-sech, gauss-sum, histogram)",
+      "best_ratio_over_classical": 1.154701,
+      "above_sobolev": false,
+      "note": "Keller one-bound-state exact; no trial exceeded 2/sqrt(3)"
+    },
+    {
+      "name": "Eden-Foias empirical kappa",
+      "min_empirical_kappa": 2.7173,
+      "kappa_needed_for_CCR": 1.35,
+      "proved_kappa": 1.0,
+      "beats_CCR": false
+    }
+  ],
+  "beats_CCR_1.44655": false,
+  "note": "Incomplete as an upper-bound hunt: every closed alternative conversion sits above 1.44655, and the test-potential search did not raise the one-bound-state lower bound. Not a lower bound on L. Conjecture open."
+}
