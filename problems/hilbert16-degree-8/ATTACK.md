@@ -1111,3 +1111,18 @@ indices rather than resumed from the interrupted Python shards.
 An incomplete prefix is residue, not a lower bound. No new scheme
 is claimed until `verify_new.py` accepts a certificate outside the
 2,367 and the seventeen.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| odd collections, size 5 | 37,632,123 | **complete**; twelve known M-schemes, 0 hits on the open nests |
+| radius-1 thicken of those distinct-scheme refinements | 1,440 | 0 novel |
+| even component of the published a=10 nest | 126,336 | **complete**; two known (19,3) M-schemes, 0 hits |
+
+Certificates: `compute/q7/certs/odd_skel5.json`,
+`thicken_witnesses.json`,
+`even_component_10v1(2v1(8)).json`.
+The nested-box a=17 even component (25,292,736 collections) is
+still running. The other nonempty-odd even components are larger
+than \(10^{10}\) and are counted, not enumerated.
