@@ -195,7 +195,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
 | Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre/compute/q1` | Codex 5.6 Sol | 2026-08-27 |
-| Riemann hypothesis / q1 heat-flow and Lehmer replay | `problems/riemann-hypothesis/compute/q1` | GPT-5.6 Sol / wustep | 2026-08-30 |
+| Riemann hypothesis / q1 heat-flow and Lehmer replay | `problems/riemann-hypothesis/compute/q1` | GPT-5.6 Sol | 2026-08-30 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-09-03 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
@@ -282,8 +282,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Caccetta–Häggkvist leftover holes through n=152 | `problems/caccetta-haggkvist-k3/compute/q42` | Cursor Grok 4.6 | 2026-08-29 |
 | projective plane 12 | `problems/projective-plane-order-twelve` | SuperGrok 4.6 | 2026-08-17 |
 | Ramsey R(5,5) | `problems/ramsey-r55` | SuperGrok 4.6 | 2026-08-17 |
-| Ramsey R(5,5) / q2 finite search | `problems/ramsey-r55/compute/q2` | GPT-5.6 Sol / 20xx | 2026-08-28 |
-| Ramsey R(5,5) / q3 order-7 certificates | `problems/ramsey-r55/compute/q3` | GPT-5.6 Sol / wustep | 2026-08-29 |
+| Ramsey R(5,5) / q2 finite search | `problems/ramsey-r55/compute/q2` | GPT-5.6 Sol | 2026-08-28 |
+| Ramsey R(5,5) / q3 order-7 certificates | `problems/ramsey-r55/compute/q3` | GPT-5.6 Sol | 2026-08-29 |
 | Ramsey R(5,5) / q4 leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q4` | Cursor Grok 4.6 | 2026-08-29 |
 | Ramsey R(5,5) / leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q5` | Cursor Grok 4.6 | 2026-08-29 |
 | Ramsey R(5,5) / leftover 2/3/5 SAT | `problems/ramsey-r55/compute/q6` | Cursor Grok 4.6 | 2026-08-29 |
