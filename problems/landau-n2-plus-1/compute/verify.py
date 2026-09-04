@@ -91,8 +91,10 @@ def main() -> None:
 
     print(f"scanning primes by Miller–Rabin up to {n_max}", flush=True)
     found = scan_primes(n_max)
-    extra = [n for n in claimed if n not in set(found)]
-    missing = [n for n in found if n not in set(claimed)]
+    found_set = set(found)
+    claimed_set = set(claimed)
+    extra = [n for n in claimed if n not in found_set]
+    missing = [n for n in found if n not in claimed_set]
     print(
         f"primes n_max={n_max} claimed={len(claimed)} found={len(found)} "
         f"extra={len(extra)} missing={len(missing)}",
@@ -110,7 +112,9 @@ def main() -> None:
     print("primes OK", flush=True)
 
     bad = 0
-    for n, fs in p2_rows:
+    for i, (n, fs) in enumerate(p2_rows, 1):
+        if i % 200_000 == 0:
+            print(f"  P2 multiply-back {i}/{len(p2_rows)}", flush=True)
         m = n * n + 1
         if not fs or math.prod(fs) != m or len(fs) != 2:
             bad += 1
