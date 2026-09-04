@@ -27,6 +27,7 @@ run_shard 11 32
 run_shard 32 189
 
 python3 q7/odd5_collect.py
+python3 q7/thicken_witnesses.py
 if [ -f q7/certs/new_schemes.json ]; then
   python3 verify_new.py q7/certs/new_schemes.json
 fi

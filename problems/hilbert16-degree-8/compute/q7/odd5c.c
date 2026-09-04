@@ -322,6 +322,13 @@ int main(int argc, char **argv)
                                 (unsigned long long)fp.b, ids[0], ids[1], ids[2], ids[3], ids[4]);
                         }
                         if (cap && evals >= cap) { stopped = 1; break; }
+                        if (evals % 200000 == 0) {
+                            fprintf(stderr, "  progress a=%d evals=%llu/%llu distinct=%llu %.1fs\n",
+                                    a, (unsigned long long)evals,
+                                    (unsigned long long)expected,
+                                    (unsigned long long)logged, now_seconds() - t0);
+                            fflush(stderr);
+                        }
                     }
                 }
             }
