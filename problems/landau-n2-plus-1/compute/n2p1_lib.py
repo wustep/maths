@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Shared arithmetic for n^2+1 primes and Iwaniec P2s.
 
-Deterministic Miller–Rabin is the 64-bit Jaeschke/Sinclair witness set
-(2,3,5,7,11,13,23), sufficient for every n^2+1 with n < 2^32.
+Deterministic Miller–Rabin uses the Jaeschke / Feitsma–Galway prime
+bases (2,3,5,7,11,13,17,19,23). OEIS A014233: these suffice for every
+odd n < 3,825,123,056,546,413,051, hence for every n^2+1 with
+n <= 10^9. The previous six-prime set without 17 only covered
+n^2+1 < 3.474e12 (so N=10^6 was safe; N=10^7 is not).
 """
 from __future__ import annotations
 
@@ -12,6 +15,10 @@ from array import array
 # Wolf / OEIS A199401 / Hardy–Littlewood conjecture E.
 C_Q = 1.372813462818246009112192696727
 EULER = 0.57721566490153286060651209008240243
+
+# First 9 primes as MR bases. Bound: A014233 a(9) = 3825123056546413051.
+MR_WITNESSES = (2, 3, 5, 7, 11, 13, 17, 19, 23)
+MR_BOUND = 3_825_123_056_546_413_051
 
 # Wolf Table I / OEIS A083844: number of primes q = m^2+1 with q < 10^k.
 WOLF_PI_Q = {
@@ -55,7 +62,9 @@ def miller_rabin(n: int) -> bool:
     while d % 2 == 0:
         d //= 2
         s += 1
-    for a in (2, 3, 5, 7, 11, 13, 23):
+    if n >= MR_BOUND:
+        raise ValueError(f"n={n} exceeds deterministic MR bound {MR_BOUND}")
+    for a in MR_WITNESSES:
         if a % n == 0:
             continue
         x = pow(a, d, n)

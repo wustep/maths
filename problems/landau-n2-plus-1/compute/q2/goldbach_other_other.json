@@ -1,0 +1,13 @@
+{
+  "n_terms": 456362,
+  "n_max": 9999960,
+  "missing": [],
+  "max_j": 38,
+  "champion": {
+    "a": 1174484,
+    "b": 1173810,
+    "c": 674,
+    "j": 38
+  },
+  "note": "Goldbach other-other on this prefix only. Grantham\u2013Graves already verified it to 6.25e28. Not a new bound."
+}

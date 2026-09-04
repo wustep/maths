@@ -61,6 +61,8 @@ def scan_primes(n_max: int) -> list[int]:
     if n_max >= 1 and miller_rabin(2):
         found.append(1)
     for n in range(2, n_max + 1, 2):
+        if n % 200_000 == 0:
+            print(f"  prime scan n={n} found={len(found)}", flush=True)
         if miller_rabin(n * n + 1):
             found.append(n)
     return found
@@ -68,20 +70,31 @@ def scan_primes(n_max: int) -> list[int]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--summary", type=Path, default=HERE / "n2p1.json")
+    parser.add_argument(
+        "--dir",
+        type=Path,
+        default=HERE,
+        help="Directory holding n2p1.json, prime_n.txt, p2_omega2.txt",
+    )
+    parser.add_argument("--summary", type=Path, default=None)
     parser.add_argument("--skip-complete-p2", action="store_true")
     args = parser.parse_args()
 
-    data = json.loads(args.summary.read_text())
+    out_dir = args.dir.resolve()
+    summary_path = args.summary if args.summary is not None else out_dir / "n2p1.json"
+    data = json.loads(summary_path.read_text())
     n_max = int(data["n_max"])
-    print(f"loaded summary n_max={n_max}", flush=True)
-    claimed = load_int_column(HERE / "prime_n.txt")
-    p2_rows = load_p2(HERE / "p2_omega2.txt")
+    print(f"loaded summary n_max={n_max} from {summary_path}", flush=True)
+    claimed = load_int_column(out_dir / "prime_n.txt")
+    p2_rows = load_p2(out_dir / "p2_omega2.txt")
     print(f"loaded lists primes={len(claimed)} p2={len(p2_rows)}; scanning primes", flush=True)
 
+    print(f"scanning primes by Miller–Rabin up to {n_max}", flush=True)
     found = scan_primes(n_max)
-    extra = [n for n in claimed if n not in set(found)]
-    missing = [n for n in found if n not in set(claimed)]
+    found_set = set(found)
+    claimed_set = set(claimed)
+    extra = [n for n in claimed if n not in found_set]
+    missing = [n for n in found if n not in claimed_set]
     print(
         f"primes n_max={n_max} claimed={len(claimed)} found={len(found)} "
         f"extra={len(extra)} missing={len(missing)}",
@@ -99,7 +112,9 @@ def main() -> None:
     print("primes OK", flush=True)
 
     bad = 0
-    for n, fs in p2_rows:
+    for i, (n, fs) in enumerate(p2_rows, 1):
+        if i % 200_000 == 0:
+            print(f"  P2 multiply-back {i}/{len(p2_rows)}", flush=True)
         m = n * n + 1
         if not fs or math.prod(fs) != m or len(fs) != 2:
             bad += 1
@@ -156,7 +171,9 @@ def main() -> None:
             sys.exit(1)
         print("P2 completeness OK", flush=True)
 
-    oeis = HERE / "refs" / "b005574.txt"
+    oeis = out_dir / "refs" / "b005574.txt"
+    if not oeis.is_file():
+        oeis = HERE / "refs" / "b005574.txt"
     if oeis.is_file():
         oeis_n = load_oeis_n(oeis)
         take = [n for n in oeis_n if n <= n_max]

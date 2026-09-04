@@ -1,0 +1,26 @@
+{
+  "n_max": 10000000,
+  "c_verifier": {
+    "seconds": 53.1,
+    "primes_claimed": 456362,
+    "primes_found": 456362,
+    "extra": 0,
+    "missing": 0,
+    "p2_rows": 1334083,
+    "complete_miss": 0,
+    "complete_extra": 0
+  },
+  "python_verify_py": {
+    "seconds": 885.18,
+    "primes_claimed": 456362,
+    "primes_found": 456362,
+    "extra": 0,
+    "missing": 0,
+    "p2_rows": 1334083,
+    "complete_miss": 0,
+    "complete_extra": 0,
+    "oeis_a005574_terms": 10000,
+    "wolf_pi_q_10_13": 156081,
+    "wolf_pi_q_10_14": 456362
+  }
+}
