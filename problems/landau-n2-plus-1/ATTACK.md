@@ -82,3 +82,56 @@ The first complete-scan attempt used a 50000 trial bound and was killed after se
 ## 2026-08-17 — stop
 
 No new prime. Infinitude not claimed. The replayable objects are the two lists, the Wolf match, and the Bateman–Horn table in `compute/comparison.json` / `figures/counts_vs_bh.png`.
+
+## 2026-09-04 — literature before extending
+
+Re-opened Wolf arXiv:0803.1456v3 HTML. Table I: $\pi_q(10^{13})=156081$, $\pi_q(10^{14})=456362$. OEIS A083844 matches. Grantham–Graves arXiv:2502.03513: complete list through $6.25\times 10^{28}$. A new prime still needs $n\gtrsim 2.5\times 10^{14}$; not attempted.
+
+Miller–Rabin: the committed witness set $(2,3,5,7,11,13,23)$ is missing 17. OEIS A014233 / Wikipedia: bases $2,3,5,7,11,13$ only cover $n<3.474\times 10^{12}$. At $N=10^6$, $n^2+1\le 10^{12}+1$ was inside that bound. At $N=10^7$, $n^2+1\le 10^{14}+1$ is not. Added $17,19,23$ (A014233 $a(9)=3.825\times 10^{18}$).
+
+## 2026-09-04 — C residue sieve at $N=10^7$
+
+`compute/q2/sieve_n2p1.c` is the same residue algorithm as `sieve_n2p1.py`. Cross-check at $N=2000$ (lists identical) and at $N=10^6$ (identical to the committed 54110 primes and 147612 $\Omega=2$ rows, including the $\Omega$ histogram). RSS 7 MB at $N=10^6$, 1.2 s.
+
+Then $N=10^7$, 15 s, RSS 56 MB:
+
+- primes: 456362
+- $\Omega=2$ composites: 1334083
+- Iwaniec $P_2$: 1790445
+- $\omega\le 2$ composites: 1421501
+- unsplit: 0
+- $\Omega$ histogram on the 5000001 live $n$ partitions: $1{:}456362$, $2{:}1334083$, $3{:}1590647$, $4{:}1041493$, $5{:}425651$, $6{:}120548$, $7{:}25585$, $8{:}4724$, $9{:}747$, $10{:}139$, $11{:}18$, $12{:}4$
+
+Wolf / A083844 match for $k=6,\ldots,14$, including the two new rows $\pi_q(10^{13})=156081$ and $\pi_q(10^{14})=456362$. Prefix of both lists equals the committed $N=10^6$ files. Bateman–Horn at $N=10^7$: $C_q\int=456409.53$, count/BH $=0.99990$.
+
+## 2026-09-04 — independent C verifier
+
+`compute/q2/verify_n2p1.c`: Miller–Rabin every even $n$, multiply-back every P2 row, trial primes $\le 2003$ plus Pollard of every even $n^2+1$. Different algorithm from the residue sieve. 53 s:
+
+- primes claimed=456362 found=456362 extra=0 missing=0
+- 1334083 P2 rows multiply back
+- complete P2 scan miss=0 extra=0
+
+## 2026-09-04 — Python verify.py OK
+
+`compute/verify.py --dir compute/q2`, 885 s after fixing a quadratic
+`set(found)` in the extra/missing check (that construction hung the first
+N=10^7 attempt). Independent of the residue sieve:
+
+- primes claimed=456362 found=456362 extra=0 missing=0
+- 1334083 P2 rows multiply back
+- complete trial+Pollard scan miss=0 extra=0
+- OEIS A005574 prefix, 10000 terms
+- Wolf $\pi_q(10^k)$ for $k=6,\ldots,14$
+
+Dent: independently certified extension past $N=10^6$ matching Wolf
+$\pi_q(10^{13})=156081$ and $\pi_q(10^{14})=456362$, plus a complete
+$\Omega=2$ list on the same range. Did not produce a prime off
+Wolf/Grantham. Infinitude not claimed.
+
+## 2026-09-04 — stop
+
+The replayable objects are `compute/q2/prime_n.txt`,
+`compute/q2/p2_omega2.txt`, the Wolf match through $10^{14}$, and
+`compute/q2/comparison.json`. RSS 56 MB. No new prime.
+
