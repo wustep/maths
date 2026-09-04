@@ -11,7 +11,7 @@
 - Area: Real algebraic geometry / topology of real plane curves
 - Sources: Orevkov GAFA 12 (2002); Itenberg–Viro (1996); Viro
   arXiv:math/0611382; Geiselmann–Joswig–Kastner–Mundinger–Pokutta–
-  Spiegel–Wack–Zimmer arXiv:2602.06888 v3 and arXiv:2604.09221;
+  Spiegel–Wack–Zimmer arXiv:2602.06888 v4 and arXiv:2604.09221;
   Gabard arXiv:1310.1865
 - Started: 2026-08-21
 
@@ -23,7 +23,9 @@ curve has at most 22 ovals (Harnack); curves attaining the bound are
 M-curves. The classification is complete through degree 7 (Gudkov for
 6, Viro for 7). For degree 8 it is not.
 
-Published record, fetched and replayed 2026-08-21 (see RESEARCH.md):
+Current paper record, fetched as v4 on 2026-09-04; the published
+certificate archive was fetched and replayed on 2026-08-21 (see
+RESEARCH.md):
 
 - **M-schemes (22 ovals).** After Gudkov–Rokhlin, Bezout-with-a-conic,
   and the Fiedler–Viro parity restrictions, 104 candidate M-schemes
@@ -41,7 +43,7 @@ Published record, fetched and replayed 2026-08-21 (see RESEARCH.md):
   realizable (Orevkov Thm 1.2b), so no purely topological obstruction
   can kill them.
 - **T-curves (combinatorial patchworking).** Geiselmann et al.,
-  arXiv:2602.06888 v3 (July 2026): 2,367 distinct nonempty degree-8
+  arXiv:2602.06888 v4 (August 2026): 2,367 distinct nonempty degree-8
   real schemes realized as T-curves (explicitly a lower bound, search
   not exhaustive); certificates published in
   `dmg-lab/CombinatorialPatchworking`. Of the 89 M-schemes, 38 are
@@ -57,7 +59,7 @@ triangulation of \(T_8\) plus signs, exact convexity certificate,
 independently computed isotopy type) realizing one of the two open
 M-schemes with \((p,n)=(19,3)\). By Viro's theorem that would settle
 their algebraic realizability. The four \((p,n)=(3,19)\) open schemes
-are unreachable by this stack (Theorem 21 of arXiv:2602.06888v3).
+are unreachable by this stack (Theorem 21 of arXiv:2602.06888v4).
 
 **(B)** A certified exclusion of one of the six. Needs link-theory /
 braid-theoretic obstructions, not this stack; not attempted.

@@ -83,11 +83,18 @@ static H128 enc(int c)
 {
     int n = 0;
     for (int k = tree_head[c]; k >= 0; k = tree_next[k]) n++;
+#ifdef TCORE_MAX_CHILDREN
+    if (n > TCORE_MAX_CHILDREN) abort();
+    H128 ch[TCORE_MAX_CHILDREN];
+#else
     H128 *ch = malloc((n ? n : 1) * sizeof(H128));
+#endif
     int i = 0;
     for (int k = tree_head[c]; k >= 0; k = tree_next[k]) ch[i++] = enc(k);
     H128 h = fold(ch, n);
+#ifndef TCORE_MAX_CHILDREN
     free(ch);
+#endif
     nodeh[c] = h;
     return h;
 }
@@ -242,14 +249,21 @@ static int evaluate(const signed char *signs, int *ok, H128 *fp)
             if (parent_reg[x] == other) { tree_next[x] = tree_head[c]; tree_head[c] = x; }
         }
     }
+#ifdef TCORE_MAX_CHILDREN
+    if (nov > TCORE_MAX_CHILDREN) abort();
+    H128 rootch[TCORE_MAX_CHILDREN];
+#else
     H128 *rootch = malloc((nov ? nov : 1) * sizeof(H128));
+#endif
     int nrt = 0;
     for (int i = 0; i < nov; i++) {
         int c = ovals[i];
         if (parent_reg[c] == root) rootch[nrt++] = enc(c);
     }
     *fp = fold(rootch, nrt);
+#ifndef TCORE_MAX_CHILDREN
     free(rootch);
+#endif
     *ok = 1;
     return nc;
 }

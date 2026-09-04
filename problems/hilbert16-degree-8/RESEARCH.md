@@ -351,3 +351,29 @@ still open at 4,619,029 after 3,554,000 remainder evaluations.
 Same twelve published M-schemes as the size-4 sweep. Incomplete
 search, not a lower bound. Bound still ≥ 2,384. ATTACK.md and the
 README Problems row were left unchanged.
+
+## 2026-09-04 — freshness check (q7)
+
+The paper moved from v3 to **v4 on 31 Aug 2026**, but its degree-8
+record did not move. Fetched this session:
+
+- abs <https://arxiv.org/abs/2602.06888> — v4, 31 Aug 2026, 37 pages,
+  “major revision”
+- PDF <https://arxiv.org/pdf/2602.06888v4> (saved locally and
+  `pdftotext`’d)
+- HTML <https://arxiv.org/html/2602.06888v4> did not expose a usable
+  text extract in this session; the PDF is the source for the numbers
+  below
+- data repo <https://github.com/dmg-lab/CombinatorialPatchworking>
+  and <https://github.com/dmg-lab/CombinatorialPatchworking/commits/main>
+
+Section 4.3 still gives **2,367** distinct nonempty degree-8 T-schemes
+and still says the search is not exhaustive, so that figure is a lower
+bound. 38 of the 89 M-schemes are T-curves; Theorem 21 is unchanged
+(maximal degree-8 T-curves have
+\((p,n)\in\{(19,3),(15,7),(11,11),(7,15)\}\)); the concluding question
+is now Question 31 and still leaves 39 of the 89 maximal schemes
+undecided. The certificate repository main branch still ends at
+`e85b809` (21 Jul 2026, merge of PR #1), so the archived 2,367
+certificates are unchanged. Parent `verify_new.py` still has 17/17
+outside that archive. Working lower bound still **≥ 2,384**.

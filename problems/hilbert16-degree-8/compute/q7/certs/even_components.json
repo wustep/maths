@@ -1,0 +1,100 @@
+{
+  "what": "Component sizes for q5's pinned even add/drop/swap BFS. Five nonempty fixed-odd components are counted exactly. The all-even component is additional, so the sum is a certified lower bound on the full BFS closure, not a lower bound on real schemes.",
+  "split_count": 1254,
+  "even_split_count": 1065,
+  "fixed_odd_components": 6,
+  "exact_nonempty_component_collections": 538188419044,
+  "all_even_component_collections_at_least": 249665706104,
+  "full_bfs_collections_at_least": 787854125148,
+  "lower_bound_reason": "Removing the fixed odd splits injects every even clique from a nonempty-odd component into the all-even component.",
+  "full_bfs_complete": false,
+  "components": [
+    {
+      "seeds": [
+        "<10v1<2v1<8>>>"
+      ],
+      "odd_splits": [
+        13,
+        29,
+        69,
+        116,
+        179,
+        245,
+        496
+      ],
+      "compatible_even_splits": 28,
+      "collections": 126336,
+      "complete": true,
+      "memo_states": 144
+    },
+    {
+      "seeds": [
+        "<16v3<1>>"
+      ],
+      "odd_splits": [
+        26,
+        1121
+      ],
+      "compatible_even_splits": 340,
+      "collections": 249665706104,
+      "complete": true,
+      "memo_states": 404618
+    },
+    {
+      "seeds": [
+        "<17v1<1>v1<2>>"
+      ],
+      "odd_splits": [
+        65,
+        116,
+        428,
+        975
+      ],
+      "compatible_even_splits": 294,
+      "collections": 199741441484,
+      "complete": true,
+      "memo_states": 347612
+    },
+    {
+      "seeds": [
+        "<17v1<2v1<1>>>"
+      ],
+      "odd_splits": [
+        9,
+        13,
+        65,
+        101,
+        245,
+        496,
+        914
+      ],
+      "compatible_even_splits": 60,
+      "collections": 25292736,
+      "complete": true,
+      "memo_states": 4668
+    },
+    {
+      "seeds": [
+        "<18v1<3>>"
+      ],
+      "odd_splits": [
+        93,
+        432
+      ],
+      "compatible_even_splits": 321,
+      "collections": 88755852384,
+      "complete": true,
+      "memo_states": 458813
+    },
+    {
+      "seeds": [
+        "bowtie_B8"
+      ],
+      "odd_splits": [],
+      "compatible_even_splits": 1065,
+      "collections": null,
+      "complete": false,
+      "why_incomplete": "The all-even component is larger than the already huge nonempty-odd components; it is not needed for the certified lower bound on the BFS closure size."
+    }
+  ]
+}

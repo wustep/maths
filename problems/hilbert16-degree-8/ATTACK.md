@@ -1093,3 +1093,21 @@ nothing.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q4/run_all.sh && python3 q4/collect.py`.
+
+## 2026-09-04 — q7: leftover (19,3) nests
+
+SuperGrok 4.6, new branch from `origin/main` `d37f7a8`. Record
+re-fetched: arXiv:2602.06888 is now **v4, 31 Aug 2026**; §4.3 still
+2,367 nonempty T-schemes and still a lower bound. Theorem 21
+unchanged. Parent 17/17 still green. Bound still ≥ 2,384.
+
+q5 left two incomplete neighbourhoods: odd collections of size 5
+(18,340,000 of 37,632,123) and a pinned even-split BFS whose queue
+was still growing. Code in `compute/q7/`. Replay: `sh q7/run_all.sh`.
+The even BFS is replaced by exact fixed-odd component counts (no
+giant pickle). Size 5 is re-evaluated in C over all 189 first
+indices rather than resumed from the interrupted Python shards.
+
+An incomplete prefix is residue, not a lower bound. No new scheme
+is claimed until `verify_new.py` accepts a certificate outside the
+2,367 and the seventeen.
