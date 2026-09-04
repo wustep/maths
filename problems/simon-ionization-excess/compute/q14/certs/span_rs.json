@@ -1,0 +1,14 @@
+{
+  "implementation": "Rust f64 with 1e-14 outward pads",
+  "stored_F_min": 8.94107456974982173e-1,
+  "stored_F_max": 9.88770194699323812e-1,
+  "analytic_F_max_upper": 9.88770194699333915e-1,
+  "span_upper": 9.46627377243616230e-2,
+  "error_upper": 2.94457688818202269e-3,
+  "matrix_rounding_pad": 9.99999999999999980e-13,
+  "beta3_lower": 9.08955423111817984e-1,
+  "leading_upper": 1.10016396247078774e0,
+  "cut": 9.09090909090909061e-1,
+  "face_certificate_ok": true,
+  "ok": true
+}

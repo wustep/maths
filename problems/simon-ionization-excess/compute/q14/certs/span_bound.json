@@ -1,0 +1,81 @@
+{
+  "arxiv": "2504.18487v1",
+  "source": "q13 R=10 n=37 target=0.9119 complete Gray faces",
+  "proof": "For each mass vector, I/D is a reweighting of the F-average by factors in [1/q,q]. Its total-variation distance from the mid-radius weights is at most P=(q-1)/(q+1). Each lambda_i is a convex combination of F_ij. Geometric-bin monotonicity gives f_min <= F_ij <= f(q^2/R), so the loss is at most P*(f(q^2/R)-f_min), rather than P*(1-f_min).",
+  "R": 10,
+  "n": 37,
+  "target": "0.9119",
+  "q_interval": [
+    "1.0642092440647242279460666120728549607362544426247",
+    "1.0642092440647242279460666120728549607362544426247"
+  ],
+  "P_interval": [
+    "0.031105976416560857934999226667992512534112752496450",
+    "0.031105976416560857934999226667992512534112752496450"
+  ],
+  "t_star_interval": [
+    "0.59607163798332152311280541439968182811332549439621",
+    "0.59607163798332152311280541439968182811332549439621"
+  ],
+  "q2_over_R_interval": [
+    "0.11325413151528117793861236696986028915824488920671",
+    "0.11325413151528117793861236696986028915824488920671"
+  ],
+  "one_over_q_interval": [
+    "0.93966483149546943726170542740952005040621919127537",
+    "0.93966483149546943726170542740952005040621919127537"
+  ],
+  "f_min_interval": [
+    "0.89410745697498228466920812159952274216998824159432",
+    "0.89410745697498228466920812159952274216998824159432"
+  ],
+  "f_q2_over_R_interval": [
+    "0.98877019469932392829296684994298319206888099109326",
+    "0.98877019469932392829296684994298319206888099109326"
+  ],
+  "f_one_over_q_interval": [
+    "0.97170738588939970054809053484267455900089342148279",
+    "0.97170738588939970054809053484267455900089342148279"
+  ],
+  "F_span_upper": "0.094662737724341643623758728343460449898892749498941",
+  "reweight_error_upper": "0.0029445768881804570232887634288781601151091953350972",
+  "matrix_rounding_pad": "0.0000000000010000000000000000000000000000000000000000000000000",
+  "q13_error_upper": "0.0032938909460258570000000000000000000000000000000000",
+  "beta3_lower": "0.90895542311181954297671123657112183988489080466490",
+  "leading_upper": "1.1001639624707758287031751987621110825098161026466",
+  "printed_leading": "1.1002",
+  "cut": "0.90909090909090909090909090909090909090909090909091",
+  "monotone_checks": {
+    "q2_over_R_lt_t_star": true,
+    "t_star_lt_1_over_q": true,
+    "f_near_lt_f_far": true
+  },
+  "face_checks": {
+    "n_is_37": true,
+    "target_is_0.9119": true,
+    "all_faces_visited": true,
+    "face_count_matches": true,
+    "copositive": true,
+    "positive_safe_margin": true,
+    "no_residual_skips": true
+  },
+  "numeric_checks": {
+    "span_positive": true,
+    "new_error_lt_q13_error": true,
+    "gamma_below_cut": true,
+    "leading_lt_1.1002": true,
+    "printed_beats_1.1006": true
+  },
+  "q13_faces": {
+    "path": "problems/simon-ionization-excess/compute/q13/certs/beta3_mid_faces_R10_n37_t0p9119.txt",
+    "sha256": "257d56b689c24a55ef0f6f6e2adca1a6dbcef3eee3619325d67482665c9c1e79",
+    "min_mMm_safe": "6.2948363564925590e-04",
+    "min_phi_safe": "9.1208522945391213e-01",
+    "interior_critical": "16990883"
+  },
+  "q13_matrix": {
+    "path": "problems/simon-ionization-excess/compute/q13/certs/beta3_mid_R10_n37_t0p9119.txt",
+    "sha256": "42c0e8db988921e0ee14775076f2bba854e70b89353f23b3c82900813daaf84a"
+  },
+  "ok": true
+}
