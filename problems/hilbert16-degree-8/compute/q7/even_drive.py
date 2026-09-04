@@ -69,7 +69,8 @@ def decode_log(path, sp):
 def main():
     seed = sys.argv[1] if len(sys.argv) > 1 else "<17v1<2v1<1>>>"
     odd, n_even, expected = component_of(seed)
-    tag = seed.strip("<>").replace(" ", "")
+    import re
+    tag = re.sub(r"[^A-Za-z0-9]+", "_", seed).strip("_")
     task = HERE / "work" / "odd5.task"
     if not task.exists():
         subprocess.check_call([sys.executable, str(HERE / "odd5_export.py")])

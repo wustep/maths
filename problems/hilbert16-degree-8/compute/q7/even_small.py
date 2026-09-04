@@ -76,7 +76,8 @@ def main():
     hits = []
     novel = []
     evaluated = 0
-    tag = seed.strip("<>").replace(" ", "")
+    import re
+    tag = re.sub(r"[^A-Za-z0-9]+", "_", seed).strip("_")
     out = HERE / "even_out" / f"even_component_{tag}.jsonl"
     out.parent.mkdir(exist_ok=True)
     with out.open("w") as log:

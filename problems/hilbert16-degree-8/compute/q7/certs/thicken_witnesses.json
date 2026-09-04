@@ -1,0 +1,8 @@
+{
+  "what": "Radius-1 sign flips on greedy refinements of distinct odd size-5 collections.",
+  "witnesses": 32,
+  "evals": 1440,
+  "novel": [],
+  "regular": [],
+  "complete": true
+}
