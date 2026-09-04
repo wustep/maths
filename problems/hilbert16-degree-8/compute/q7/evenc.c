@@ -301,7 +301,7 @@ static FILE *outf;
 static uint64_t evals, bad, logged, expected;
 static int n_odd_fix, odd_fix[MAX_IDS];
 static int n_even_c, even_c[MAX_EVENS];
-static uint64_t even_adj[MAX_EVENS];
+static uint64_t even_adj[MAX_EVENS][2];
 static int ids_buf[MAX_IDS];
 static double t0;
 
@@ -340,15 +340,23 @@ static void visit(const int *evens, int ne)
     }
 }
 
-static void rec_cliques(uint64_t mask, int *chosen, int nchosen)
+static void rec_cliques(uint64_t m0, uint64_t m1, int *chosen, int nchosen)
 {
     visit(chosen, nchosen);
-    while (mask) {
-        uint64_t bit = mask & -mask;
-        mask ^= bit;
-        int v = (int)__builtin_ctzll(bit);
+    while (m0 || m1) {
+        int v;
+        if (m0) {
+            uint64_t bit = m0 & -m0;
+            m0 ^= bit;
+            v = (int)__builtin_ctzll(bit);
+        } else {
+            uint64_t bit = m1 & -m1;
+            m1 ^= bit;
+            v = 64 + (int)__builtin_ctzll(bit);
+        }
         chosen[nchosen] = even_c[v];
-        rec_cliques(mask & even_adj[v], chosen, nchosen + 1);
+        rec_cliques(m0 & even_adj[v][0], m1 & even_adj[v][1],
+                    chosen, nchosen + 1);
     }
 }
 
@@ -379,12 +387,12 @@ int main(int argc, char **argv)
         if (n_even_c >= MAX_EVENS) { fprintf(stderr, "too many even candidates\n"); exit(2); }
         even_c[n_even_c++] = s;
     }
-    if (n_even_c > 64) { fprintf(stderr, "even candidates %d > 64\n", n_even_c); exit(2); }
+    if (n_even_c > 128) { fprintf(stderr, "even candidates %d > 128\n", n_even_c); exit(2); }
     for (int i = 0; i < n_even_c; i++) {
-        even_adj[i] = 0;
+        even_adj[i][0] = even_adj[i][1] = 0;
         for (int j = 0; j < n_even_c; j++)
             if (i != j && splits_compat(even_c[i], even_c[j]))
-                even_adj[i] |= 1ULL << j;
+                even_adj[i][j >> 6] |= 1ULL << (j & 63);
     }
     outf = fopen(argv[2], "w");
     if (!outf) { perror(argv[2]); return 2; }
@@ -392,8 +400,14 @@ int main(int argc, char **argv)
     fprintf(stderr, "evenc odd=%d even_candidates=%d expected=%llu\n",
             n_odd_fix, n_even_c, (unsigned long long)expected);
     int chosen[MAX_EVENS];
-    uint64_t all = n_even_c == 64 ? ~0ULL : ((1ULL << n_even_c) - 1);
-    rec_cliques(all, chosen, 0);
+    uint64_t a0 = 0, a1 = 0;
+    if (n_even_c >= 64) a0 = ~0ULL;
+    else a0 = (1ULL << n_even_c) - 1;
+    if (n_even_c > 64) {
+        int extra = n_even_c - 64;
+        a1 = extra == 64 ? ~0ULL : ((1ULL << extra) - 1);
+    }
+    rec_cliques(a0, a1, chosen, 0);
     int complete = evals == expected && bad == 0;
     fprintf(outf, "{\"kind\":\"summary\",\"evals\":%llu,\"expected\":%llu,"
         "\"distinct\":%llu,\"bad\":%llu,\"odd_splits\":%d,"
