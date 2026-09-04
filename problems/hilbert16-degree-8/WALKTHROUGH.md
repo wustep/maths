@@ -401,3 +401,29 @@ size ≤ 3. The published \(a=10\) nest still has seven odd splits;
 size 4 can see a larger odd part than size 3, but it did not see
 a new M-scheme, and silence there is still not evidence about
 \(a=4\) or \(a=14\).
+
+## 17. Named false start, leftover even components: the hole is skipped
+
+Size 5 odd collections are now finished: 37,632,123 of them, the
+same twelve published M-schemes as size 4, neither open nest. The
+published \(a=10\) nest still has seven odds, so size 5 was never
+going to see it. What size 5 does show is that no *new* M-scheme
+has an odd skeleton of size exactly 5.
+
+The even components that *can* be enumerated say something
+sharper. Fix the seven odd splits of the published \(a=10\) nest
+and take every compatible even subset: 126,336 collections, and
+the schemes are exactly \(\langle 10\sqcup 1\langle 2\sqcup 1\langle 8\rangle\rangle\rangle\)
+and \(\langle 17\sqcup 1\langle 2\sqcup 1\langle 1\rangle\rangle\rangle\).
+Fix the nested-box odds instead: 25,292,736 collections, and the
+scheme is only the nested box. There is no intermediate \(a\).
+
+The same skip happens on the (7,15) hole that the hole-map had
+marked as both-neighbours-realised. The even component of
+\(\langle 5\sqcup 1\langle 5\rangle\sqcup 1\langle 10\rangle\rangle\)
+contains \(b=2,4,5,7\) and not \(b=6\). Even twists jump over the
+missing rung rather than filling it. That is why a BFS that only
+adds and drops even splits, however long, cannot be the construction
+that realises \(\langle 5\sqcup 1\langle 6\rangle\sqcup 1\langle 9\rangle\rangle\)
+or the two open (19,3) nests from the published collections that
+share their odd skeleton.
