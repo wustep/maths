@@ -1,0 +1,28 @@
+{
+  "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+  "seed": "<9v1<5>v1<6>>",
+  "odd_splits": [
+    29,
+    85,
+    116,
+    239,
+    497,
+    1055,
+    1245
+  ],
+  "compatible_even_splits": 39,
+  "evals": 2680560,
+  "expected": 2680560,
+  "distinct": 3,
+  "new": 0,
+  "hits": 0,
+  "complete": true,
+  "seconds": 135.072,
+  "schemes": [
+    "<10 u 1<11>>",
+    "<9 u 1<10 u 1<1>>>",
+    "<9 u 1<5> u 1<6>>"
+  ],
+  "novel": [],
+  "hits_on_open_nests": []
+}

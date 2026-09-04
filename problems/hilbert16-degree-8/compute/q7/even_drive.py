@@ -18,15 +18,36 @@ import deepnest as dn
 import even_walk as ew
 
 
+def ids_of(seed, sp):
+    for name, ids in ew.seed_collections(sp):
+        if name == seed:
+            return ids
+    key = {x.key: i for i, x in enumerate(sp)}
+    recs = json.load(open("certs/mcert_collections.json"))
+    rec = recs.get(seed)
+    if rec is None:
+        # accept the paper-style name without spaces
+        for claimed, r in recs.items():
+            if claimed.replace(" ", "") == seed.replace(" ", ""):
+                rec = r
+                break
+    if rec is None:
+        return None
+    ids = []
+    for p in rec["collection"]:
+        t = tuple(tuple(v) for v in p)
+        k = t if t[0] < t[-1] else t[::-1]
+        if k not in key:
+            return None
+        ids.append(key[k])
+    return sorted(set(ids))
+
+
 def component_of(seed):
     sp = dn.splits()
     adj = dn.compat_matrix()
     emask = ew.even_mask(sp)
-    seed_ids = None
-    for name, ids in ew.seed_collections(sp):
-        if name == seed:
-            seed_ids = ids
-            break
+    seed_ids = ids_of(seed, sp)
     if seed_ids is None:
         raise SystemExit(f"missing seed {seed}")
     odd = [i for i in seed_ids if not sp[i].even]

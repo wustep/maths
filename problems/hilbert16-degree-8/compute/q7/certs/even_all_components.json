@@ -1,0 +1,738 @@
+{
+  "what": "Fixed-odd even-split component sizes for all 38 published M-collections. Components with more than 40 even candidates are sized only by candidate count.",
+  "components": [
+    {
+      "scheme": "<10v1<11>>",
+      "cert": "deg8/o22-p11-n11/(10v1(11)).pcom",
+      "odd_splits": [
+        72,
+        240
+      ],
+      "compatible_even_splits": 207,
+      "collections": 87476126460,
+      "memo_states": 304918,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<10v1<2v1<8>>>",
+      "cert": "deg8/o22-p19-n03/(10v1(2v1(8))).pcom",
+      "odd_splits": [
+        13,
+        29,
+        69,
+        116,
+        179,
+        245,
+        496
+      ],
+      "compatible_even_splits": 28,
+      "collections": 126336,
+      "memo_states": 144,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<10v1<6v1<4>>>",
+      "cert": "deg8/o22-p15-n07/(10v1(6v1(4))).pcom",
+      "odd_splits": [
+        65,
+        83,
+        430,
+        497,
+        566
+      ],
+      "compatible_even_splits": 103,
+      "collections": 38355284,
+      "memo_states": 7721,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<11v1<6v1<3>>>",
+      "cert": "deg8/o22-p15-n07/(11v1(6v1(3))).pcom",
+      "odd_splits": [
+        13,
+        116,
+        432,
+        814,
+        1243
+      ],
+      "compatible_even_splits": 59,
+      "collections": 40712128,
+      "memo_states": 1411,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<12v1<1>v2<3>>",
+      "cert": "deg8/o22-p15-n07/(12v1(1)v2(3)).pcom",
+      "odd_splits": [
+        46,
+        497,
+        623,
+        707
+      ],
+      "compatible_even_splits": 108,
+      "collections": 20436160,
+      "memo_states": 4812,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<12v2<1>v1<5>>",
+      "cert": "deg8/o22-p15-n07/(12v2(1)v1(5)).pcom",
+      "odd_splits": [
+        4,
+        8,
+        32,
+        239,
+        561
+      ],
+      "compatible_even_splits": 378,
+      "collections": 9975092004,
+      "memo_states": 754513,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<13v1<1>v1<6>>",
+      "cert": "deg8/o22-p15-n07/(13v1(1)v1(6)).pcom",
+      "odd_splits": [
+        4,
+        810
+      ],
+      "compatible_even_splits": 349,
+      "collections": 169260811068,
+      "memo_states": 580153,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<13v1<2>v1<5>>",
+      "cert": "deg8/o22-p15-n07/(13v1(2)v1(5)).pcom",
+      "odd_splits": [
+        4,
+        68,
+        172,
+        1251
+      ],
+      "compatible_even_splits": 138,
+      "collections": 10344940704,
+      "memo_states": 38356,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<13v1<3>v1<4>>",
+      "cert": "deg8/o22-p15-n07/(13v1(3)v1(4)).pcom",
+      "odd_splits": [
+        623,
+        707,
+        1122
+      ],
+      "compatible_even_splits": 262,
+      "collections": 1675363600,
+      "memo_states": 166866,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<13v1<6v1<1>>>",
+      "cert": "deg8/o22-p15-n07/(13v1(6v1(1))).pcom",
+      "odd_splits": [
+        46,
+        83,
+        853,
+        1122
+      ],
+      "compatible_even_splits": 98,
+      "collections": 326328832,
+      "memo_states": 4752,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<14v1<7>>",
+      "cert": "deg8/o22-p15-n07/(14v1(7)).pcom",
+      "odd_splits": [
+        52,
+        101,
+        304
+      ],
+      "compatible_even_splits": 88,
+      "collections": 323923344,
+      "memo_states": 20560,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<16v3<1>>",
+      "cert": "deg8/o22-p19-n03/(16v3(1)).pcom",
+      "odd_splits": [
+        26,
+        1121
+      ],
+      "compatible_even_splits": 340,
+      "collections": 249665706104,
+      "memo_states": 404618,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<17v1<1>v1<2>>",
+      "cert": "deg8/o22-p19-n03/(17v1(1)v1(2)).pcom",
+      "odd_splits": [
+        65,
+        116,
+        428,
+        975
+      ],
+      "compatible_even_splits": 294,
+      "collections": 199741441484,
+      "memo_states": 347612,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<17v1<2v1<1>>>",
+      "cert": "deg8/o22-p19-n03/(17v1(2v1(1))).pcom",
+      "odd_splits": [
+        9,
+        13,
+        65,
+        101,
+        245,
+        496,
+        914
+      ],
+      "compatible_even_splits": 60,
+      "collections": 25292736,
+      "memo_states": 4668,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<18v1<3>>",
+      "cert": "deg8/o22-p19-n03/(18v1(3)).pcom",
+      "odd_splits": [
+        93,
+        432
+      ],
+      "compatible_even_splits": 321,
+      "collections": 88755852384,
+      "memo_states": 458813,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<10v1<5>>>",
+      "cert": "deg8/o22-p11-n11/(5v1(10v1(5))).pcom",
+      "odd_splits": [
+        4,
+        25,
+        49,
+        72,
+        91
+      ],
+      "compatible_even_splits": 89,
+      "collections": 251747760,
+      "memo_states": 5470,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<14v1<1>>>",
+      "cert": "deg8/o22-p07-n15/(5v1(14v1(1))).pcom",
+      "odd_splits": [
+        72,
+        91,
+        113
+      ],
+      "compatible_even_splits": 191,
+      "collections": 9773495424,
+      "memo_states": 298702,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<1>v1<14>>",
+      "cert": "deg8/o22-p07-n15/(5v1(1)v1(14)).pcom",
+      "odd_splits": [
+        49,
+        103,
+        113,
+        172,
+        702
+      ],
+      "compatible_even_splits": 49,
+      "collections": 8417280,
+      "memo_states": 4663,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<2>v1<13>>",
+      "cert": "deg8/o22-p07-n15/(5v1(2)v1(13)).pcom",
+      "odd_splits": [
+        85,
+        808,
+        810
+      ],
+      "compatible_even_splits": 102,
+      "collections": 67063384,
+      "memo_states": 5922,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<3>v1<12>>",
+      "cert": "deg8/o22-p07-n15/(5v1(3)v1(12)).pcom",
+      "odd_splits": [
+        29,
+        32,
+        626
+      ],
+      "compatible_even_splits": 78,
+      "collections": 136762290,
+      "memo_states": 13944,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<4>v1<11>>",
+      "cert": "deg8/o22-p07-n15/(5v1(4)v1(11)).pcom",
+      "odd_splits": [
+        29,
+        622,
+        626
+      ],
+      "compatible_even_splits": 77,
+      "collections": 41860704,
+      "memo_states": 5754,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<5>v1<10>>",
+      "cert": "deg8/o22-p07-n15/(5v1(5)v1(10)).pcom",
+      "odd_splits": [
+        29,
+        622,
+        626
+      ],
+      "compatible_even_splits": 77,
+      "collections": 41860704,
+      "memo_states": 5754,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<7>v1<8>>",
+      "cert": "deg8/o22-p07-n15/(5v1(7)v1(8)).pcom",
+      "odd_splits": [
+        29,
+        85,
+        245
+      ],
+      "compatible_even_splits": 106,
+      "collections": 181892958,
+      "memo_states": 25095,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<6v1<10v1<4>>>",
+      "cert": "deg8/o22-p11-n11/(6v1(10v1(4))).pcom",
+      "odd_splits": [
+        29,
+        83,
+        566
+      ],
+      "compatible_even_splits": 119,
+      "collections": 291091356,
+      "memo_states": 30276,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<6v1<15>>",
+      "cert": "deg8/o22-p07-n15/(6v1(15)).pcom",
+      "odd_splits": [
+        54,
+        55,
+        178,
+        368,
+        432,
+        497
+      ],
+      "compatible_even_splits": 85,
+      "collections": 48522656,
+      "memo_states": 8478,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<6v1<6v1<8>>>",
+      "cert": "deg8/o22-p15-n07/(6v1(6v1(8))).pcom",
+      "odd_splits": [
+        4,
+        68,
+        89,
+        103,
+        111,
+        702,
+        1253
+      ],
+      "compatible_even_splits": 52,
+      "collections": 238848,
+      "memo_states": 599,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<7v1<10v1<3>>>",
+      "cert": "deg8/o22-p11-n11/(7v1(10v1(3))).pcom",
+      "odd_splits": [
+        9,
+        46,
+        65,
+        83,
+        852
+      ],
+      "compatible_even_splits": 82,
+      "collections": 69899328,
+      "memo_states": 4243,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<8v1<1>v1<3>v1<7>>",
+      "cert": "deg8/o22-p11-n11/(8v1(1)v1(3)v1(7)).pcom",
+      "odd_splits": [
+        29,
+        626
+      ],
+      "compatible_even_splits": 207,
+      "collections": 10831604034,
+      "memo_states": 168086,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<8v1<1>v2<5>>",
+      "cert": "deg8/o22-p11-n11/(8v1(1)v2(5)).pcom",
+      "odd_splits": [
+        29,
+        85,
+        303
+      ],
+      "compatible_even_splits": 114,
+      "collections": 2588476710,
+      "memo_states": 113546,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<8v2<1>v1<9>>",
+      "cert": "deg8/o22-p11-n11/(8v2(1)v1(9)).pcom",
+      "odd_splits": [
+        65,
+        103,
+        116,
+        239,
+        368,
+        852,
+        1186
+      ],
+      "compatible_even_splits": 44,
+      "collections": 1807680,
+      "memo_states": 1455,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<8v2<3>v1<5>>",
+      "cert": "deg8/o22-p11-n11/(8v2(3)v1(5)).pcom",
+      "odd_splits": [
+        9,
+        116,
+        852
+      ],
+      "compatible_even_splits": 109,
+      "collections": 802992132,
+      "memo_states": 31413,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<10v1<1>>>",
+      "cert": "deg8/o22-p11-n11/(9v1(10v1(1))).pcom",
+      "odd_splits": [
+        5,
+        26,
+        46,
+        83,
+        1120
+      ],
+      "compatible_even_splits": 103,
+      "collections": 1835885184,
+      "memo_states": 5859,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<1>v1<10>>",
+      "cert": "deg8/o22-p11-n11/(9v1(1)v1(10)).pcom",
+      "odd_splits": [
+        13,
+        1246
+      ],
+      "compatible_even_splits": 209,
+      "collections": 139643816928,
+      "memo_states": 754648,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<2>v1<9>>",
+      "cert": "deg8/o22-p11-n11/(9v1(2)v1(9)).pcom",
+      "odd_splits": [
+        116,
+        431,
+        622,
+        626,
+        703
+      ],
+      "compatible_even_splits": 72,
+      "collections": 6907328,
+      "memo_states": 3655,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<3>v1<8>>",
+      "cert": "deg8/o22-p11-n11/(9v1(3)v1(8)).pcom",
+      "odd_splits": [
+        9,
+        245,
+        303,
+        368,
+        1245
+      ],
+      "compatible_even_splits": 78,
+      "collections": 53562904,
+      "memo_states": 6995,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<4>v1<7>>",
+      "cert": "deg8/o22-p11-n11/(9v1(4)v1(7)).pcom",
+      "odd_splits": [
+        4,
+        8,
+        34,
+        172,
+        809,
+        977
+      ],
+      "compatible_even_splits": 123,
+      "collections": 16238772,
+      "memo_states": 3390,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<5>v1<6>>",
+      "cert": "deg8/o22-p11-n11/(9v1(5)v1(6)).pcom",
+      "odd_splits": [
+        29,
+        85,
+        116,
+        239,
+        497,
+        1055,
+        1245
+      ],
+      "compatible_even_splits": 39,
+      "collections": 2680560,
+      "memo_states": 668,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<6v1<5>>>",
+      "cert": "deg8/o22-p15-n07/(9v1(6v1(5))).pcom",
+      "odd_splits": [
+        13,
+        29,
+        65,
+        87,
+        116,
+        368
+      ],
+      "compatible_even_splits": 38,
+      "collections": 33500544,
+      "memo_states": 1403,
+      "complete": true,
+      "why_incomplete": null
+    }
+  ],
+  "enumerable": [
+    {
+      "scheme": "<10v1<2v1<8>>>",
+      "cert": "deg8/o22-p19-n03/(10v1(2v1(8))).pcom",
+      "odd_splits": [
+        13,
+        29,
+        69,
+        116,
+        179,
+        245,
+        496
+      ],
+      "compatible_even_splits": 28,
+      "collections": 126336,
+      "memo_states": 144,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<12v1<1>v2<3>>",
+      "cert": "deg8/o22-p15-n07/(12v1(1)v2(3)).pcom",
+      "odd_splits": [
+        46,
+        497,
+        623,
+        707
+      ],
+      "compatible_even_splits": 108,
+      "collections": 20436160,
+      "memo_states": 4812,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<17v1<2v1<1>>>",
+      "cert": "deg8/o22-p19-n03/(17v1(2v1(1))).pcom",
+      "odd_splits": [
+        9,
+        13,
+        65,
+        101,
+        245,
+        496,
+        914
+      ],
+      "compatible_even_splits": 60,
+      "collections": 25292736,
+      "memo_states": 4668,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<5v1<1>v1<14>>",
+      "cert": "deg8/o22-p07-n15/(5v1(1)v1(14)).pcom",
+      "odd_splits": [
+        49,
+        103,
+        113,
+        172,
+        702
+      ],
+      "compatible_even_splits": 49,
+      "collections": 8417280,
+      "memo_states": 4663,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<6v1<6v1<8>>>",
+      "cert": "deg8/o22-p15-n07/(6v1(6v1(8))).pcom",
+      "odd_splits": [
+        4,
+        68,
+        89,
+        103,
+        111,
+        702,
+        1253
+      ],
+      "compatible_even_splits": 52,
+      "collections": 238848,
+      "memo_states": 599,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<8v2<1>v1<9>>",
+      "cert": "deg8/o22-p11-n11/(8v2(1)v1(9)).pcom",
+      "odd_splits": [
+        65,
+        103,
+        116,
+        239,
+        368,
+        852,
+        1186
+      ],
+      "compatible_even_splits": 44,
+      "collections": 1807680,
+      "memo_states": 1455,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<2>v1<9>>",
+      "cert": "deg8/o22-p11-n11/(9v1(2)v1(9)).pcom",
+      "odd_splits": [
+        116,
+        431,
+        622,
+        626,
+        703
+      ],
+      "compatible_even_splits": 72,
+      "collections": 6907328,
+      "memo_states": 3655,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<4>v1<7>>",
+      "cert": "deg8/o22-p11-n11/(9v1(4)v1(7)).pcom",
+      "odd_splits": [
+        4,
+        8,
+        34,
+        172,
+        809,
+        977
+      ],
+      "compatible_even_splits": 123,
+      "collections": 16238772,
+      "memo_states": 3390,
+      "complete": true,
+      "why_incomplete": null
+    },
+    {
+      "scheme": "<9v1<5>v1<6>>",
+      "cert": "deg8/o22-p11-n11/(9v1(5)v1(6)).pcom",
+      "odd_splits": [
+        29,
+        85,
+        116,
+        239,
+        497,
+        1055,
+        1245
+      ],
+      "compatible_even_splits": 39,
+      "collections": 2680560,
+      "memo_states": 668,
+      "complete": true,
+      "why_incomplete": null
+    }
+  ]
+}
