@@ -2,7 +2,8 @@
 
 - Slug: `landau-legendre`
 - List: Landau 3 in this notebook's ordering
-- Status: open; conditional exponent dent $0.2253\to0.22525$
+- Status: open; conditional exponent dent
+  $0.22525\to0.22524401991935$
 - Area: Analytic and computational number theory
 - Sources: Pintz 2009; Sorenson--Webster 2024; Chamberland--Straub 2026
 - Started: 2026-08-27
@@ -70,18 +71,22 @@ below the square-height reached by Sorenson and Webster.
 An incomplete upstream-data reconstruction or unfinished search is not a
 finite lower bound. None of these outcomes proves Legendre's conjecture.
 
-## Result of the 2026-08-27 attack
+## Results through 2026-09-04
 
 Assume RH. For every real $x\geq1$ and every
 
 $$
-\delta\geq\frac{901}{4000}=0.22525,
+\delta\geq\frac{4504880398387}{20000000000000}
+=0.22524401991935,
 $$
 
 the interval $[x^{2+\delta},(x+1)^{2+\delta}]$ contains a prime. This improves
-the $0.2253$ printed by Chamberland and Straub. The exact certificate proves
-that their finite and analytic ranges overlap at this smaller rational value.
-It does not remove RH and does not settle the exponent $2$ case.
+the earlier notebook value $901/4000=0.22525$, which had tightened the
+$0.2253$ printed by Chamberland and Straub. The new exact certificate retains
+the positive quadratic Taylor term in their inequality (6). Their simpler
+condition (5) fails at the new rational value, but the strengthened splice
+inequality holds and is increasing from the splice onward. This does not
+remove RH and does not settle the exponent $2$ case.
 
 The computation also independently verifies both Oppermann halves for the
 100,000 integers
@@ -98,5 +103,6 @@ have four holes and stop at $n=31{,}894{,}400{,}000{,}352$. This is an
 incomplete public-data reconstruction only. It does not revise the
 peer-reviewed $N=7.05\cdot10^{13}$ result.
 
-Replay all network-free checks with
-`problems/landau-legendre/compute/q1/run_all.sh`.
+Replay the original finite certificates with
+`problems/landau-legendre/compute/q1/run_all.sh` and the new exponent
+certificate with `problems/landau-legendre/compute/q3/run_all.sh`.

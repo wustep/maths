@@ -119,7 +119,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [vdw-w27](problems/vdw-w27) | Verified Paley/QR coloring of $[3703]$. Does not extend to 3704. No improvement. |
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [riemann-hypothesis](problems/riemann-hypothesis) | Clay Riemann hypothesis; also Hilbert 8(a) and Smale 1. The published explicit de Bruijn–Newman window remains $$0\leq\Lambda\leq0.2.$$ The Polymath 15 / Platt–Trudgian arithmetic and a historical Lehmer pair were independently replayed. An off-arXiv $0.1787854$ candidate passed its stored assembly plus fresh tail, error, and barrier checks, while full finite regeneration and independent analytic review remain. |
-| [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22525$, tightening the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
+| [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22524401991935$, improving the earlier notebook threshold $0.22525$ and the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
 | [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 456362 primes $n^2+1$ for $n\le 10^7$, matching Wolf $\pi_q(10^{14})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
@@ -194,7 +194,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power / support bound and Hamming 11 | `problems/c7-shannon/compute/q2` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / 8-coset leftover | `problems/c7-shannon/compute/q3` | Grok 4.6 | 2026-08-27 |
 | Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
-| Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre/compute/q1` | Codex 5.6 Sol | 2026-08-27 |
+| Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre` | GPT-5.6 Sol | 2026-09-04 |
 | Riemann hypothesis / q1 heat-flow and Lehmer replay | `problems/riemann-hypothesis/compute/q1` | GPT-5.6 Sol | 2026-08-30 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-09-03 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |

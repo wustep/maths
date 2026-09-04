@@ -244,3 +244,88 @@ additionally authenticates that projection against the pinned Git object.
 The conditional exponent inequality is the dent. The public-log audit is
 residue. The edge slice is an independent replay with a near-miss table.
 Legendre's conjecture remains open.
+
+## 2026-09-04: q3 starts from the exact q1 boundary
+
+The starting conditional record was $d=901/4000=0.22525$. Merely solving
+the q1 splice equation more accurately gives the numerical root
+
+$$
+d=0.22524401991936525179\ldots.
+$$
+
+That route could move the printed decimal, but it would still discard a
+positive term already visible one line earlier in the published proof.
+Chamberland--Straub explicitly describe their inequality (5) as sufficient,
+not necessary. Their preceding inequality (6) was therefore the useful
+place to restart.
+
+The finite-extension route was pruned. The public OLC data audited in q1 do
+not reach the published endpoint, so they cannot certify even the first new
+integer above $7.05\cdot10^{13}$. No incomplete computation was promoted to
+a bound.
+
+## Retain the quadratic term
+
+Write $\alpha=2+d$. Since $2<\alpha<3$, Taylor's theorem with positive third
+derivative gives
+
+$$
+(x+1)^\alpha-x^\alpha
+>\alpha x^{\alpha-1}
++\frac{\alpha(\alpha-1)}2x^{\alpha-2}.
+$$
+
+After subtracting $1$ and dividing by $\alpha x^{\alpha/2}$, the
+Chamberland--Straub short-interval inequality follows from
+
+$$
+S(x)=x^{d/2}+\frac{\alpha-1}{2}x^{d/2-1}
+-\frac1\alpha x^{-\alpha/2}-\frac{22}{25}\log x>0.
+$$
+
+At $X=N^{2/\alpha}$, put $A=X^{d/2}=N^{d/\alpha}$ and
+$b=(\alpha-1)/2$. Relative to the first term, the correction is
+
+$$
+t=\frac bX-\frac1{\alpha N A}.
+$$
+
+The exact q3 certificate proves $2\cdot10^{12}<X<2.8\cdot10^{12}$ and
+$25<A<26$. It encloses every logarithm by rational atanh series. At
+
+$$
+d=\frac{4504880398387}{20000000000000}=0.22524401991935,
+$$
+
+the upper bound for the old condition (5) log margin is
+$-2.0321572\cdot10^{-13}$, so that condition really fails. Using the exact
+lower bound on $t$ and $\log(1+t)\geq t/(1+t)$ changes the certified total
+margin to more than $1.5199\cdot10^{-14}$.
+
+Finally,
+
+$$
+xS'(x)=\frac d2x^{d/2}-\frac{22}{25}
+-b\left(1-\frac d2\right)x^{d/2-1}
++\frac12x^{-\alpha/2}.
+$$
+
+The same coarse bounds give a rational lower bound greater than $1.9355$ for
+all $x\geq X$. Thus the analytic range includes $X$ and everything above it;
+the published finite proposition covers $x<X$.
+
+`compute/q3/run_all.sh` first replays q1's exact $0.22525$ certificate. It
+then regenerates and byte-compares the new rational certificate, reconstructs
+every field independently, and checks the calculation through a separate C
+`long double` path. The full q1 replay, including all 200,000 edge witnesses,
+also passed unchanged.
+
+**Dent:** assuming RH, for every real $x\geq1$ and every
+
+$$
+\delta\geq0.22524401991935,
+$$
+
+the interval $[x^{2+\delta},(x+1)^{2+\delta}]$ contains a prime. The finite
+record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open.

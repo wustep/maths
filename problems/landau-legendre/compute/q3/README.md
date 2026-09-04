@@ -5,7 +5,8 @@
 Assume RH. For every real $x\geq1$ and every
 
 $$
-\delta\geq0.22524401991935,
+\delta\geq\frac{4504880398387}{20000000000000}
+=0.22524401991935,
 $$
 
 the interval $[x^{2+\delta},(x+1)^{2+\delta}]$ contains a prime. This
@@ -53,7 +54,7 @@ $$
 
 Their simpler condition (5) drops the last two power terms. At the splice
 $x=X$, its certified logarithmic margin is negative: its exact upper bound is
-less than $-6.99\cdot10^{-14}$. Thus q1's one-term test does not certify this
+less than $-2.03\cdot10^{-13}$. Thus q1's one-term test does not certify this
 new value.
 
 Write $A=X^{d/2}=N^{d/\alpha}$ and $b=(\alpha-1)/2$. At $X$, the ratio of
