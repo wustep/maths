@@ -351,3 +351,20 @@ still open at 4,619,029 after 3,554,000 remainder evaluations.
 Same twelve published M-schemes as the size-4 sweep. Incomplete
 search, not a lower bound. Bound still ≥ 2,384. ATTACK.md and the
 README Problems row were left unchanged.
+
+## 2026-09-03 — freshness check (q6)
+
+The paper moved from v3 to **v4 on 31 Aug 2026**, but its degree-8
+record did not move. The arXiv API and the full 37-page v4 PDF were
+fetched before the q6 search:
+<https://arxiv.org/abs/2602.06888>,
+<https://arxiv.org/pdf/2602.06888v4>. Section 4.3 still gives **2,367**
+distinct nonempty degree-8 T-schemes and explicitly calls the search
+non-exhaustive; it still gives 38 of the 89 M-schemes as T-curves and
+leaves 39 undecided. Theorem 21 and the two algebraically open
+\((p,n)=(19,3)\) deep nests are unchanged (the concluding question is
+renumbered from Question 39 to Question 31). arXiv:2604.09221 remains
+v1 (10 Apr 2026). The certificate repository main branch remains at
+`e85b809` (21 Jul 2026), so the archived 2,367 certificates are
+unchanged. The folder's seventeen independently verified additions
+therefore still put the working lower bound at **≥ 2,384**.
