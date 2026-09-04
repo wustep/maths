@@ -207,3 +207,59 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=37$ faces at target $0.9119$ ($137{,}438{,}953{,}471$, copositive, $0$ skips, $\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.912085$); Gray enumerator about $5.7\cdot 10^6$ masks/s at the end, 1832 kB RSS; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1010$ moves to $1.1006$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## Later — spend the finite range before adding bins
+
+0. What was actually missing — q13 had already certified the
+$n=37$ discrete Rayleigh target $0.9119$. The remaining loss came from
+reweighting mid-radius masses back to their true second moments. That
+step treated the binwise averages as if they filled the whole interval
+$[f_{\min},1]$, although the finite aspect-10 matrix never reaches 1.
+
+1. Named false starts — raising the target to $0.9120$ on the same
+matrix, which changes the copositivity matrix and needs another
+$2^{37}-1$ faces; taking $n=38$, which doubles the face count; and
+using q13's stored minimum Rayleigh value as a new target without
+re-enumerating the changed matrix.
+
+2. The useful failure — the largest reconstructed q13 kernel entry is
+$0.988770\ldots$, not 1. The coarse endpoint was costing about
+$3.49\times10^{-4}$ in $\beta_3$, already several times the amount
+needed to move the printed coefficient.
+
+3. The click — for geometric bins, every bin-pair minimum lies between
+$f_{\min}$ and $f(q^2/R)$. On the increasing side of $f$, the relevant
+endpoint is at most $1/q$; on the decreasing side it is at least
+$q^2/R$; interval arithmetic shows $f(1/q)<f(q^2/R)$. The old
+total-variation lemma applies with this actual span. An earlier note
+had mistaken $F_{ii}$ for $f(1)$; it is actually the minimum over the
+same-bin ratio interval $[1/q,1]$, namely $f(1/q)<1$.
+
+4. The argument — q13 gives discrete $\varphi\ge0.9119$. Reweighting
+by factors in $[1/q,q]$ changes an expectation by at most
+$P=(q-1)/(q+1)$ times its range. Since each row average is a convex
+combination of the bin-pair kernel entries, subtract only
+
+$$
+P\bigl(f(q^2/R)-f_{\min}\bigr),
+$$
+
+plus a $10^{-12}$ matrix pad. This gives
+$\beta_3\ge0.9089554231118$. The q3 mass-opt cut still gives
+$10/11>\beta_3$, and the HPS Section 7 chain is unchanged.
+
+5. Computer search — no new face search. The frozen q13 summary has
+$137{,}438{,}953{,}471$ faces, zero skips, and positive margin. Python
+intervals give $\beta_3^{-1}<1.100164$; stdlib Decimal rebuilds the
+matrix range directly; Rust independently parses the matrix and face
+summary and reaches the same strict $1.1002$ enclosure. The interval
+Section 7 printer gives remainder coefficient $3.932$.
+
+6. Proven vs still open — printed leading $1.1006$ moves to $1.1002$:
+
+$$
+N_c<1.1002Z+3.932Z^{1/3}\qquad(Z\ge4).
+$$
+
+The bounded-excess conjecture, finite-$Z$ integers, and $s>3$ along
+Lemma 4.3 remain open.

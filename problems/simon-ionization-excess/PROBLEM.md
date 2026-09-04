@@ -2,8 +2,8 @@
 
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
-- Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013, 1.1010. Same HPS chain: $N_c<1.1006Z+3.933\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
+- Solver: see the README ledger
+- Status: dent of q13 / #169's printed leading $1.1006$. Same HPS chain: $N_c<1.1002Z+3.932\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -321,6 +321,45 @@ with the mass-opt cut cannot beat $1.1006$ and is leftover.
 $1.1168$ stays withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$
 stay leftover. Replay:
 `problems/simon-ionization-excess/compute/q13/run_all.sh`.
+
+A fourteenth search keeps q13's completed $n=37$ face certificate
+and sharpens only the continuous reweighting step. For geometric bins
+with $q=10^{1/37}$, the discrete kernel entries satisfy
+
+$$
+f_{\min}\le F_{ij}\le f(q^2/10)<1.
+$$
+
+Thus the same total-variation argument improves the loss from
+
+$$
+P(1-f_{\min})
+\quad\hbox{to}\quad
+P\bigl(f(q^2/10)-f_{\min}\bigr),
+\qquad P=\frac{q-1}{q+1}.
+$$
+
+Including a $10^{-12}$ matrix-representation pad gives
+$\gamma\ge0.9089554231118$ and
+$1/\gamma<1.100164<1.1002$. The mass-opt cut $10/11$ remains above
+$\gamma$. The same Section 7 chain gives
+
+$$
+N<1.1002Z+3.847\,Z^{1/3}+0.01310+0.1827\,Z^{-1/3}+0.019490\,Z^{-2/3}
+\qquad(Z\ge4)
+$$
+
+and
+
+$$
+N_c<1.1002Z+3.932\,Z^{1/3}\qquad(Z\ge4).
+$$
+
+This beats q13's printed $1.1006$ inequality without a new face
+dump. Interval Python, stdlib Decimal, and an independent Rust
+implementation replay the finite-range loss. Finite-$Z$ integers and
+$N_0(Z)-Z$ stay residue. Replay:
+`problems/simon-ionization-excess/compute/q14/run_all.sh`.
 
 ## What would count as a new bound
 

@@ -916,3 +916,92 @@ unchanged. $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q13/run_all.sh`.
 
+## 2026-09-03 — q14 record replay
+
+- [HPS arXiv:2504.18487](https://arxiv.org/abs/2504.18487) still lists
+  only v1 (25 Apr 2025) and the printed
+  $N_c<1.1185Z+O(Z^{1/3})$.
+- [Nam arXiv:1009.2367](https://arxiv.org/abs/1009.2367) remains v3
+  with $N_c<1.22Z+3Z^{1/3}$.
+- [Benguria--González-Brantes arXiv:2511.07582](https://arxiv.org/abs/2511.07582)
+  remains v1 and improves Lieb for $Z\ge12$ without beating the
+  fermionic q13 leading.
+- q13's fast path was independently replayed before the new step:
+  complete $n=37$ Gray summary, stdlib matrix rebuild, C/Rust aspect
+  algebra, mass-opt check, and interval Section 7 printer all pass.
+
+## 2026-09-03 — q14 useful failure: another face dump is unnecessary
+
+Raising q13's target from $0.9119$ to $0.9120$ would require a new
+$2^{37}-1$ face enumeration. Moving to $n=38$ doubles that count.
+Both preserve the same coarse continuous loss
+$P(1-f_{\min})$, so the first check was whether the old tax had spent
+the actual finite range of the discrete matrix. It had not.
+
+## 2026-09-03 — q14 click: use the finite $F$ range
+
+For $R=10$, $n=37$, and $q=R^{1/n}$, every bin-pair kernel minimum
+satisfies
+
+$$
+f_{\min}\le F_{ij}\le
+\max\{f(q^2/R),f(1/q)\}=f(q^2/R)=0.988770\ldots.
+$$
+
+Below the minimizer of $f$, a bin-pair right endpoint is at least
+$q^2/R$; above it, a left endpoint is at most $1/q$; and a pair
+crossing the minimizer contributes $f_{\min}$. The row averages are
+
+$$
+\lambda_i=\sum_jF_{ij}\mu_j,
+$$
+
+so each is a convex combination of one row of $F$.
+
+The earlier q4 finite-range note had rejected this shortcut by writing
+$F_{ii}=1$. That confused a point value with the bin-pair minimum:
+the same-bin ratio interval is $[1/q,1]$, hence
+$F_{ii}=f(1/q)<1$. Direct reconstruction of all $37^2$ entries catches
+the mistake and gives maximum $f(q^2/R)$.
+
+The old total-variation proof therefore loses at most
+
+$$
+\frac{q-1}{q+1}\bigl(f(q^2/R)-f_{\min}\bigr)
+<0.002944576889,
+$$
+
+not $0.003293890947$. The completed q13 faces still give the discrete
+target $0.9119$, so after a $10^{-12}$ representation pad,
+
+$$
+\beta_3\ge0.9089554231118,
+\qquad \beta_3^{-1}<1.100164<1.1002<1.1006.
+$$
+
+The cut $10/11>\beta_3$ still lifts the compact bound to every radial
+probability by the q3 mass-opt dichotomy.
+
+## 2026-09-03 — q14 dent
+
+The same HPS Section 7 chain gives
+
+$$
+N<1.1002Z+3.847\,Z^{1/3}+0.01310+0.1827\,Z^{-1/3}+0.019490\,Z^{-2/3}
+\qquad(Z\ge4),
+$$
+
+and
+
+$$
+N_c<1.1002Z+3.932\,Z^{1/3}\qquad(Z\ge4).
+$$
+
+This beats q13 / #169's printed
+$N_c<1.1006Z+3.933Z^{1/3}$. The new step is replayed with mpmath
+intervals, an unrelated stdlib Decimal reconstruction, and Rust with
+outward pads; all also validate the frozen q13 face count, target,
+positive margin, zero residual skips, and matrix header. No new giant
+dump is used. $N_0(Z)-Z$ bounded, finite-$Z$ integers, and $s>3$
+along Lemma 4.3 stay residue. Replay:
+`problems/simon-ionization-excess/compute/q14/run_all.sh`.

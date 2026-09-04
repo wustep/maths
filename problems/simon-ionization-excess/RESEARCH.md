@@ -215,3 +215,22 @@ Independent replay this pass: `compute/q11/verify_lift.py` (recon $\gamma=0.9083
 
 Failed / unchanged: APS PRA 29 full text still not obtained; 2207.08328v2 body still not a record. No paper opened this pass proves $N_c\le Z+C$.
 
+## 2026-09-03 — q14 current-record check (URLs opened this pass)
+
+- [HPS abs, arXiv:2504.18487](https://arxiv.org/abs/2504.18487).
+  Submission history still has v1 only (25 Apr 2025). The abstract
+  states $N_c(Z)<1.1185Z+O(Z^{1/3})$; no later printed HPS coefficient
+  appears.
+- [Nam abs, arXiv:1009.2367](https://arxiv.org/abs/1009.2367).
+  Latest remains v3 (26 Nov 2011), stating
+  $N_c<1.22Z+3Z^{1/3}$.
+- [Benguria--González-Brantes abs, arXiv:2511.07582](https://arxiv.org/abs/2511.07582).
+  Still v1 (10 Nov 2025). The abstract states a
+  statistics-independent improvement of Lieb for $Z\ge12$; it does
+  not replace the fermionic q13 coefficient.
+
+Independent replay this pass: q13's complete Gray summary and fast
+driver (stdlib rebuild, C/Rust aspect algebra, mass-opt check, and
+interval Section 7 printer) pass. q14 changes only the finite-range
+reweighting loss and verifies it independently in interval Python,
+stdlib Decimal, and Rust.

@@ -19,12 +19,21 @@ def main() -> None:
     std = load("span_stdlib.json")
     rust = load("span_rs.json")
     leading = load("leading.json")
+    beta_interval = float(span["beta3_lower"])
+    beta_decimal = float(std["beta3_lower"])
+    beta_rust = float(rust["beta3_lower"])
+    lead_decimal = float(std["leading_upper"])
+    lead_rust = float(rust["leading_upper"])
     checks = {
         "interval_span_ok": span.get("ok"),
         "frozen_q13_faces_ok": all(span.get("face_checks", {}).values()),
         "monotonicity_ok": all(span.get("monotone_checks", {}).values()),
         "stdlib_independent_ok": std.get("ok"),
         "rust_independent_ok": rust.get("ok"),
+        "decimal_agrees_with_interval": abs(beta_decimal - beta_interval) < 1e-14,
+        "rust_agrees_with_interval": abs(beta_rust - beta_interval) < 2e-14,
+        "decimal_leading_lt_1.1002": lead_decimal < 1.1002,
+        "rust_leading_lt_1.1002": lead_rust < 1.1002,
         "cut_exceeds_gamma": float(span["cut"]) > float(span["beta3_lower"]),
         "leading_printed_ok": leading["checks"]["leading_lt_printed"],
         "leading_beats_q13_1.1006": leading["checks"]["beats_1.1006"],
