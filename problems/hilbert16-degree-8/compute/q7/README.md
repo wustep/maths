@@ -43,3 +43,16 @@ collections; the nested-box a=17 component has 25,292,736. The other
 nonempty-odd components are larger than 10^10 and are counted, not
 enumerated. Any unfinished component is search residue, not a lower
 bound or an obstruction.
+
+## What this run found
+
+Odd size 5 finished 37,632,123/37,632,123: twelve published
+M-schemes, neither open nest. The a=10 and a=17 even components
+finished on known (19,3) schemes. Further enumerable even
+components of published M-collections, including the (7,15)
+neighbour of ⟨5⊔1⟨6⟩⊔1⟨9⟩⟩, likewise stayed on known schemes.
+No `certs/new_schemes.json`. The bound stays 2,384.
+
+The leftover Harnack / Wiman / ⟨17⊔1⟨1⟩⊔1⟨2⟩⟩ even components
+remain unenumerated (counts 8.8e10, 2.5e11, 2.0e11). Incomplete
+search is not a lower bound.

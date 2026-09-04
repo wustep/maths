@@ -247,3 +247,31 @@ Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q4/run_all.sh && python3 q4/collect.py`
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Close (2026-09-04, leftover (19,3) neighbourhoods)
+
+The bound is unchanged. Parent `verify_new.py` still replays 17/17, so
+the census lower bound stays **≥ 2,384**. No candidate for a new
+scheme.
+
+Compatible odd collections of size 5 finished all 37,632,123
+tuples (`compute/q7/certs/odd_skel5.json`): the same twelve
+published M-schemes as size 4, neither open nest. The published
+\(a=10\) even component (126,336 collections) and the nested-box
+\(a=17\) even component (25,292,736) both finished and stay on
+known (19,3) schemes. Several other enumerable even components of
+published M-collections finished the same way, including the
+(7,15) neighbour of the hole \(\langle 5\sqcup 1\langle 6\rangle\sqcup 1\langle 9\rangle\rangle\),
+which is not an even twist of \(\langle 5\sqcup 1\langle 5\rangle\sqcup 1\langle 10\rangle\rangle\).
+Radius-1 thickens of size-5 refinements, of 40 random regular
+triangulations, and of five walk-from-M-certificate triangulations
+found only schemes already among the 2,367 or the seventeen.
+
+The remaining even components of the published (19,3) collections
+are larger than \(10^{10}\) collections and were counted, not
+enumerated. That leftover is residue, not a lower bound.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q7/run_all.sh && python3 q7/collect.py`
+
+Hilbert 16(a) in degree 8 remains open.

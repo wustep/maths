@@ -35,4 +35,9 @@ if [ -f q7/certs/odd_skel5.json ]; then
   python3 -c "import json; r=json.load(open('q7/certs/odd_skel5.json')); assert r['complete'] and r['evals']==37632123; print(r['evals'], 'tuples,', r['distinct_schemes'], 'schemes,', len(r['hits_on_open_nests']), 'hits')"
 fi
 
+if [ -f q7/certs/even_component_17v1_2v1_1.json ]; then
+  echo "== q7 nested-box even component =="
+  python3 -c "import json; r=json.load(open('q7/certs/even_component_17v1_2v1_1.json')); assert r['complete'] and r['evals']==25292736; print(r['evals'], 'collections,', r['distinct'], 'schemes,', r['hits'], 'hits')"
+fi
+
 echo "q7 replay finished"

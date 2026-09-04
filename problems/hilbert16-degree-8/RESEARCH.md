@@ -377,3 +377,16 @@ undecided. The certificate repository main branch still ends at
 `e85b809` (21 Jul 2026, merge of PR #1), so the archived 2,367
 certificates are unchanged. Parent `verify_new.py` still has 17/17
 outside that archive. Working lower bound still **≥ 2,384**.
+
+## 2026-09-04 — leftover wrap (q7)
+
+Finished the q5 odd size-5 leftover in C (37,632,123/37,632,123,
+twelve published M-schemes, neither open nest) and the two tractable
+(19,3) even components. Further enumerable even components of
+published M-collections, including the (7,15) neighbour of the
+hole-map target ⟨5⊔1⟨6⟩⊔1⟨9⟩⟩, stayed on known schemes. No
+`q7/certs/new_schemes.json`. The Harnack / Wiman / ⟨17⊔1⟨1⟩⊔1⟨2⟩⟩
+even components remain unenumerated (counts \(8.8\times 10^{10}\),
+\(2.5\times 10^{11}\), \(2.0\times 10^{11}\)). Compatible odd
+6-tuples number 174,457,166 (count only). Incomplete search, not a
+lower bound. Bound still ≥ 2,384.

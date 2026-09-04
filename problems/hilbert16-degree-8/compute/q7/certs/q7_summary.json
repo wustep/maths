@@ -1,0 +1,365 @@
+{
+ "search": "q7: leftover odd size-5 and tractable even components",
+ "odd_skel5": {
+  "evals": 37632123,
+  "complete": true,
+  "hits": [],
+  "schemes": [
+   "<10 u 1<11>>",
+   "<13 u 1<1> u 1<6>>",
+   "<13 u 1<6 u 1<1>>>",
+   "<14 u 1<7>>",
+   "<17 u 1<2 u 1<1>>>",
+   "<18 u 1<3>>",
+   "<5 u 1<1> u 1<14>>",
+   "<5 u 1<2> u 1<13>>",
+   "<6 u 1<15>>",
+   "<9 u 1<10 u 1<1>>>",
+   "<9 u 1<1> u 1<10>>",
+   "<9 u 1<2> u 1<9>>"
+  ]
+ },
+ "even_components": {
+  "what": "Component sizes for q5's pinned even add/drop/swap BFS. Five nonempty fixed-odd components are counted exactly. The all-even component is additional, so the sum is a certified lower bound on the full BFS closure, not a lower bound on real schemes.",
+  "split_count": 1254,
+  "even_split_count": 1065,
+  "fixed_odd_components": 6,
+  "exact_nonempty_component_collections": 538188419044,
+  "all_even_component_collections_at_least": 249665706104,
+  "full_bfs_collections_at_least": 787854125148,
+  "lower_bound_reason": "Removing the fixed odd splits injects every even clique from a nonempty-odd component into the all-even component.",
+  "full_bfs_complete": false,
+  "components": [
+   {
+    "seeds": [
+     "<10v1<2v1<8>>>"
+    ],
+    "odd_splits": [
+     13,
+     29,
+     69,
+     116,
+     179,
+     245,
+     496
+    ],
+    "compatible_even_splits": 28,
+    "collections": 126336,
+    "complete": true,
+    "memo_states": 144
+   },
+   {
+    "seeds": [
+     "<16v3<1>>"
+    ],
+    "odd_splits": [
+     26,
+     1121
+    ],
+    "compatible_even_splits": 340,
+    "collections": 249665706104,
+    "complete": true,
+    "memo_states": 404618
+   },
+   {
+    "seeds": [
+     "<17v1<1>v1<2>>"
+    ],
+    "odd_splits": [
+     65,
+     116,
+     428,
+     975
+    ],
+    "compatible_even_splits": 294,
+    "collections": 199741441484,
+    "complete": true,
+    "memo_states": 347612
+   },
+   {
+    "seeds": [
+     "<17v1<2v1<1>>>"
+    ],
+    "odd_splits": [
+     9,
+     13,
+     65,
+     101,
+     245,
+     496,
+     914
+    ],
+    "compatible_even_splits": 60,
+    "collections": 25292736,
+    "complete": true,
+    "memo_states": 4668
+   },
+   {
+    "seeds": [
+     "<18v1<3>>"
+    ],
+    "odd_splits": [
+     93,
+     432
+    ],
+    "compatible_even_splits": 321,
+    "collections": 88755852384,
+    "complete": true,
+    "memo_states": 458813
+   },
+   {
+    "seeds": [
+     "bowtie_B8"
+    ],
+    "odd_splits": [],
+    "compatible_even_splits": 1065,
+    "collections": null,
+    "complete": false,
+    "why_incomplete": "The all-even component is larger than the already huge nonempty-odd components; it is not needed for the certified lower bound on the BFS closure size."
+   }
+  ]
+ },
+ "even_enumerated": [
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<10v1<2v1<8>>>",
+   "odd_splits": [
+    13,
+    29,
+    69,
+    116,
+    179,
+    245,
+    496
+   ],
+   "compatible_even_splits": 28,
+   "evals": 126336,
+   "expected": 126336,
+   "distinct": 2,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 6.643,
+   "schemes": [
+    "<10 u 1<2 u 1<8>>>",
+    "<17 u 1<2 u 1<1>>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<12v1<1>v2<3>>",
+   "odd_splits": [
+    46,
+    497,
+    623,
+    707
+   ],
+   "compatible_even_splits": 108,
+   "evals": 20436160,
+   "expected": 20436160,
+   "distinct": 4,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 1148.473,
+   "schemes": [
+    "<12 u 1<1> u 2<3>>",
+    "<12 u 2<1> u 1<5>>",
+    "<13 u 1<1> u 1<6>>",
+    "<13 u 1<3> u 1<4>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<17v1<2v1<1>>>",
+   "odd_splits": [
+    9,
+    13,
+    65,
+    101,
+    245,
+    496,
+    914
+   ],
+   "compatible_even_splits": 60,
+   "evals": 25292736,
+   "expected": 25292736,
+   "distinct": 1,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 1541.611,
+   "schemes": [
+    "<17 u 1<2 u 1<1>>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<5v1<1>v1<14>>",
+   "odd_splits": [
+    49,
+    103,
+    113,
+    172,
+    702
+   ],
+   "compatible_even_splits": 49,
+   "evals": 8417280,
+   "expected": 8417280,
+   "distinct": 2,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 455.092,
+   "schemes": [
+    "<5 u 1<1> u 1<14>>",
+    "<5 u 1<7> u 1<8>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<5v1<5>v1<10>>",
+   "odd_splits": [
+    29,
+    622,
+    626
+   ],
+   "compatible_even_splits": 77,
+   "evals": 41860704,
+   "expected": 41860704,
+   "distinct": 4,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 2086.928,
+   "schemes": [
+    "<5 u 1<2> u 1<13>>",
+    "<5 u 1<4> u 1<11>>",
+    "<5 u 1<5> u 1<10>>",
+    "<5 u 1<7> u 1<8>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<6v1<6v1<8>>>",
+   "odd_splits": [
+    4,
+    68,
+    89,
+    103,
+    111,
+    702,
+    1253
+   ],
+   "compatible_even_splits": 52,
+   "evals": 238848,
+   "expected": 238848,
+   "distinct": 2,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 13.045,
+   "schemes": [
+    "<13 u 1<6 u 1<1>>>",
+    "<6 u 1<6 u 1<8>>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<8v2<1>v1<9>>",
+   "odd_splits": [
+    65,
+    103,
+    116,
+    239,
+    368,
+    852,
+    1186
+   ],
+   "compatible_even_splits": 44,
+   "evals": 1807680,
+   "expected": 1807680,
+   "distinct": 3,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 93.745,
+   "schemes": [
+    "<8 u 2<1> u 1<9>>",
+    "<9 u 1<1> u 1<10>>",
+    "<9 u 1<4> u 1<7>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<9v1<2>v1<9>>",
+   "odd_splits": [
+    116,
+    431,
+    622,
+    626,
+    703
+   ],
+   "compatible_even_splits": 72,
+   "evals": 6907328,
+   "expected": 6907328,
+   "distinct": 3,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 327.813,
+   "schemes": [
+    "<9 u 1<2> u 1<9>>",
+    "<9 u 1<4> u 1<7>>",
+    "<9 u 1<5> u 1<6>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  },
+  {
+   "what": "All compatible even-split subsets with the odd splits of a published (19,3) collection held fixed.",
+   "seed": "<9v1<5>v1<6>>",
+   "odd_splits": [
+    29,
+    85,
+    116,
+    239,
+    497,
+    1055,
+    1245
+   ],
+   "compatible_even_splits": 39,
+   "evals": 2680560,
+   "expected": 2680560,
+   "distinct": 3,
+   "new": 0,
+   "hits": 0,
+   "complete": true,
+   "seconds": 135.072,
+   "schemes": [
+    "<10 u 1<11>>",
+    "<9 u 1<10 u 1<1>>>",
+    "<9 u 1<5> u 1<6>>"
+   ],
+   "novel": [],
+   "hits_on_open_nests": []
+  }
+ ],
+ "NEW_candidates": [],
+ "NEW_candidates_ovals": {},
+ "candidate_cert_file": null
+}

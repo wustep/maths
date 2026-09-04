@@ -1123,6 +1123,37 @@ is claimed until `verify_new.py` accepts a certificate outside the
 Certificates: `compute/q7/certs/odd_skel5.json`,
 `thicken_witnesses.json`,
 `even_component_10v1(2v1(8)).json`.
-The nested-box a=17 even component (25,292,736 collections) is
-still running. The other nonempty-odd even components are larger
-than \(10^{10}\) and are counted, not enumerated.
+The nested-box a=17 even component (25,292,736 collections)
+finished on the published nested box only. Several other
+enumerable even components of published M-collections finished
+on known schemes, including the (7,15) neighbour of
+⟨5⊔1⟨6⟩⊔1⟨9⟩⟩ (41,860,704 collections; four known schemes, hole
+absent). Radius-1 thicken of 40 random regular triangulations
+(1,389,568 evals) and of five walk-from-M-certificate
+triangulations of rank 11–16 (10,645,504 evals, 120 schemes)
+found nothing outside census+17.
+
+### What the (19,3) row did this time
+
+Odd size 5 cannot see the published a=10 nest (seven odds) and
+does not produce a=4 or a=14 either. Completing the a=10 even
+component shows even twists of that odd skeleton only realise
+the two published depth-3 (19,3) T-curves. Completing the a=17
+nested-box component shows that skeleton realises only itself.
+The remaining (19,3) even components are \(8.8\times 10^{10}\),
+\(2.0\times 10^{11}\) and \(2.5\times 10^{11}\) collections
+(Harnack, ⟨17⊔1⟨1⟩⊔1⟨2⟩⟩, Wiman) plus the all-even bow-tie;
+those were counted, not enumerated (**residue**).
+
+None of that decides ⟨4⊔1⟨2⊔1⟨14⟩⟩⟩ or ⟨14⊔1⟨2⊔1⟨4⟩⟩⟩.
+
+### Status
+
+Hilbert 16(a) in degree 8 remains open. The dent is still the
+seventeen schemes and the bound ≥ 2,384; both replay. No new
+scheme, no deep-nest decision. The leftover odd size-5
+neighbourhood and the tractable even components are finished
+and added nothing.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
+sh q7/run_all.sh && python3 q7/collect.py`.
