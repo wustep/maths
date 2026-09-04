@@ -104,7 +104,14 @@ def classify(
     unsplit = 0
 
     size = n_max // 2
+    t_cls = time.perf_counter()
     for i in range(size):
+        if i and i % 500_000 == 0:
+            print(
+                f"  classify {i}/{size} primes={len(prime_n)} p2={len(p2)} "
+                f"{time.perf_counter() - t_cls:.1f}s",
+                flush=True,
+            )
         n = n_from_index(i)
         rem = int(remaining[i])
         om = int(big_omega_small[i])
@@ -210,23 +217,34 @@ def write_lists(prime_n: list[int], p2: list[tuple[int, list[int]]], here: Path)
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--n-max", type=int, default=1_000_000)
-    parser.add_argument("--out", type=Path, default=HERE / "n2p1.json")
+    parser.add_argument(
+        "--dir",
+        type=Path,
+        default=HERE,
+        help="Directory for prime_n.txt, p2_omega2.txt, and default --out",
+    )
+    parser.add_argument("--out", type=Path, default=None)
     parser.add_argument("--self-test", action="store_true")
     args = parser.parse_args()
     if args.self_test:
         _self_test()
         return
 
+    out_dir = args.dir.resolve()
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out_json = args.out if args.out is not None else out_dir / "n2p1.json"
+
     n_max = args.n_max
     t0 = time.perf_counter()
     remaining, big_omega_small, little_omega_small, primes = factor_sieve(n_max)
     t1 = time.perf_counter()
+    print(f"sieve done in {t1 - t0:.2f}s; classifying", flush=True)
     cls = classify(n_max, remaining, big_omega_small, little_omega_small, primes)
     t2 = time.perf_counter()
 
     prime_n: list[int] = cls["prime_n"]
     p2: list[tuple[int, list[int]]] = cls["p2"]
-    hashes = write_lists(prime_n, p2, HERE)
+    hashes = write_lists(prime_n, p2, out_dir)
 
     bh_int = bateman_horn_integral(n_max)
     bh = C_Q * bh_int
@@ -269,7 +287,7 @@ def main() -> None:
         ),
         **hashes,
     }
-    args.out.write_text(json.dumps(payload, indent=2) + "\n")
+    out_json.write_text(json.dumps(payload, indent=2) + "\n")
     print(
         f"n_max={n_max} primes={len(prime_n)} p2_Omega2={len(p2)} "
         f"iwaniec_P2={iwaniec_p2} ω<=2_comp={cls['w_le2_composite']} "
@@ -278,7 +296,7 @@ def main() -> None:
     print(f"BH={bh:.3f} count/BH={payload['prime_over_bh']:.6f} wolf_li={wolf_li:.3f}")
     print("wolf rows", wolf_rows)
     print("first primes", payload["first_prime_values"][:12])
-    print(f"wrote {args.out} in {t2 - t0:.2f}s (sieve {t1 - t0:.2f}s)")
+    print(f"wrote {out_json} in {t2 - t0:.2f}s (sieve {t1 - t0:.2f}s)")
 
 
 def _self_test() -> None:

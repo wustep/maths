@@ -15,8 +15,7 @@ import numpy as np
 from n2p1_lib import C_Q, bateman_horn_integral, wolf_prediction_li
 
 HERE = Path(__file__).resolve().parent
-FIG = HERE.parent / "figures"
-FIG.mkdir(exist_ok=True)
+FIG_DEFAULT = HERE.parent / "figures"
 
 
 def load_n(path: Path) -> np.ndarray:
@@ -30,16 +29,24 @@ def load_n(path: Path) -> np.ndarray:
 
 
 def main() -> None:
-    summary = json.loads((HERE / "n2p1.json").read_text())
+    import argparse
+
+    parser = argparse.ArgumentParser()
+    parser.add_argument("--dir", type=Path, default=HERE)
+    parser.add_argument("--fig", type=Path, default=None)
+    args = parser.parse_args()
+    out_dir = args.dir.resolve()
+
+    summary = json.loads((out_dir / "n2p1.json").read_text())
     n_max = int(summary["n_max"])
-    primes = load_n(HERE / "prime_n.txt")
-    p2 = load_n(HERE / "p2_omega2.txt")
+    primes = load_n(out_dir / "prime_n.txt")
+    p2 = load_n(out_dir / "p2_omega2.txt")
 
     # Checkpoints at round N, plus 2e5 to match the first certified prefix.
     ns = []
-    for e in range(3, 7):
+    for e in range(3, 9):
         ns.append(10**e)
-        if e < 6:
+        if e < 8:
             ns.append(2 * 10**e)
             ns.append(5 * 10**e)
     ns = [n for n in ns if n <= n_max]
@@ -68,8 +75,12 @@ def main() -> None:
             }
         )
 
-    out_json = HERE / "comparison.json"
+    out_json = out_dir / "comparison.json"
     out_json.write_text(json.dumps({"n_max": n_max, "rows": rows}, indent=2) + "\n")
+    summary_path = out_dir / "n2p1.json"
+    if summary_path.is_file():
+        summary["comparison_rows"] = rows
+        summary_path.write_text(json.dumps(summary, indent=2) + "\n")
 
     fig, axes = plt.subplots(3, 1, figsize=(7.2, 8.4), sharex=True)
     ax0, ax1, ax2 = axes
@@ -108,7 +119,9 @@ def main() -> None:
     ax2.grid(True, which="both", alpha=0.3)
 
     fig.tight_layout()
-    out = FIG / "counts_vs_bh.png"
+    fig_path = args.fig if args.fig is not None else FIG_DEFAULT / "counts_vs_bh.png"
+    fig_path.parent.mkdir(parents=True, exist_ok=True)
+    out = fig_path
     fig.savefig(out, dpi=140)
     print(f"wrote {out}")
     print(f"wrote {out_json}")
