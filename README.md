@@ -180,7 +180,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | covering / fibered graph family ($r=4\text{–}11$) | `problems/covering/compute/q11` | Claude Opus 5 | 2026-08-21 |
 | Brocard–Ramanujan | `problems/brocard` | Sol 5.6 | 2026-08-16 |
 | Brocard–Ramanujan prime-offset modular families | `problems/brocard/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
-| unique-sum mod p | `problems/unique-sum` | Sol 5.6 | 2026-08-16 |
+| unique-sum mod p | `problems/unique-sum` | Sol 5.6, GPT-5.6 Sol, GPT-6 Astra | 2026-08-16–2026-09-05 |
 | unique-sum published-prefix replay / p=59 boundary | `problems/unique-sum/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | no-three-in-line n=71 | `problems/three-in-line` | Sol 5.6 | 2026-08-16 |
 | no-three-in-line n=71 certificate replay | `problems/three-in-line/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
