@@ -1,0 +1,27 @@
+{
+  "source": "verify_exact.rs",
+  "runs": [
+    {
+      "p": 47,
+      "limit": 12,
+      "status": "UNSAT",
+      "node_limit": 1000000,
+      "nodes": 311395,
+      "memo_hits": 9081,
+      "cover_prunes": 269518,
+      "memo": 13525,
+      "seconds": 13.848511
+    },
+    {
+      "p": 53,
+      "limit": 13,
+      "status": "UNSAT",
+      "node_limit": 10000000,
+      "nodes": 2372916,
+      "memo_hits": 60458,
+      "cover_prunes": 2132343,
+      "memo": 90659,
+      "seconds": 214.155414
+    }
+  ]
+}

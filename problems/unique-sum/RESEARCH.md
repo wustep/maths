@@ -31,3 +31,17 @@
   showing the sequence definition and its first 12 terms (the helper truncates
   output). The 15-term baseline supplied for this run is also in the notebook;
   all 15 saved witnesses passed the direct arithmetic verifier.
+- The full [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  subsequently succeeded via curl. It has **20**, not 15, terms, through 73:
+  `3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16`.
+  The extension is attributed to Paweł Kwaczyński on 2026-08-08.
+  `compute/q4/published_oeis.json` saves the numerical data and attribution.
+- Opened [unique-sum-free-cert](https://github.com/pawelkwaczynski/unique-sum-free-cert).
+  Its README says two independent searches established the values at
+  59, 61, 67, 71, and 73, but retained lower proof objects are not supplied
+  there for those rows. The 53 ledger records hashes of proofs deleted after
+  checking. This is a published claim, not a lower proof replayed by q4.
+  It credits Scheinerman's 2019 thesis for witnesses through 59 and links
+  Watson for retained lower proofs.
+- Opening the linked [Zenodo DOI](https://doi.org/10.5281/zenodo.22067683)
+  failed in the browser; a GitHub API directory request returned HTTP 403.

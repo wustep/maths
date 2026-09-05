@@ -1,0 +1,21 @@
+{
+  "p": 59,
+  "bound": 14,
+  "atmost": true,
+  "depth": 12,
+  "solver": "cadical195",
+  "conflict_budget": 3000000,
+  "status": "UNKNOWN",
+  "witness": null,
+  "statistics": {
+    "restarts": 80247,
+    "conflicts": 3000001,
+    "decisions": 3972148,
+    "propagations": 2443783599
+  },
+  "cnf_sha256": "5165e50b3649b608f567b4475a9c13765a7db180d39ba0fe338f0db2dda8ca51",
+  "variables": 44028,
+  "clauses": 129301,
+  "seconds": 360.6583150709994,
+  "max_rss_kib": 100344
+}
