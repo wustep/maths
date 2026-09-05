@@ -12,6 +12,8 @@
 use std::env;
 use std::time::Instant;
 
+// Fixed direct-mapped cache: collisions evict a state; only full-key equality
+// can prune. Eviction costs time, never completeness. Default storage: 64 MiB.
 struct MaskSet {
     slots: Vec<u64>,
     len: usize,
@@ -19,53 +21,24 @@ struct MaskSet {
 
 impl MaskSet {
     fn new() -> Self {
-        Self {
-            slots: vec![0; 1024],
-            len: 0,
-        }
+        Self { slots: vec![0; 1 << 23], len: 0 }
     }
 
-    fn hash(mut value: u64) -> usize {
+    fn insert(&mut self, mut value: u64) -> bool {
+        let key = value;
         value ^= value >> 30;
         value = value.wrapping_mul(0xbf58_476d_1ce4_e5b9);
         value ^= value >> 27;
         value = value.wrapping_mul(0x94d0_49bb_1331_11eb);
-        (value ^ (value >> 31)) as usize
+        let index = ((value ^ (value >> 31)) as usize) & (self.slots.len() - 1);
+        let old = self.slots[index];
+        if old == key { return false; }
+        self.len += usize::from(old == 0);
+        self.slots[index] = key;
+        true
     }
 
-    fn insert_without_growing(&mut self, value: u64) -> bool {
-        debug_assert_ne!(value, 0);
-        let mut index = Self::hash(value) & (self.slots.len() - 1);
-        loop {
-            match self.slots[index] {
-                0 => {
-                    self.slots[index] = value;
-                    self.len += 1;
-                    return true;
-                }
-                present if present == value => return false,
-                _ => index = (index + 1) & (self.slots.len() - 1),
-            }
-        }
-    }
-
-    fn insert(&mut self, value: u64) -> bool {
-        if (self.len + 1) * 10 >= self.slots.len() * 7 {
-            let new_capacity = self.slots.len() * 2;
-            let old_slots = std::mem::replace(&mut self.slots, vec![0; new_capacity]);
-            self.len = 0;
-            for old in old_slots {
-                if old != 0 {
-                    self.insert_without_growing(old);
-                }
-            }
-        }
-        self.insert_without_growing(value)
-    }
-
-    fn len(&self) -> usize {
-        self.len
-    }
+    fn len(&self) -> usize { self.len }
 }
 
 #[derive(Default)]
@@ -80,7 +53,7 @@ struct Search {
     p: u32,
     limit: u32,
     pairs_by_sum: Vec<Vec<u64>>,
-    inverses: Vec<u32>,
+    images: Vec<Vec<u64>>,
     memo: MaskSet,
     stats: Stats,
     node_limit: Option<u64>,
@@ -105,11 +78,22 @@ impl Search {
                 .find(|candidate| value * candidate % p == 1)
                 .expect("nonzero residue must be invertible modulo a prime");
         }
+        let mut images = vec![vec![0; p as usize]; (p * p) as usize];
+        for center in 0..p {
+            for endpoint in 0..p {
+                if center == endpoint { continue; }
+                let multiplier = inverses[((endpoint + p - center) % p) as usize];
+                for value in 0..p {
+                    images[(center * p + endpoint) as usize][value as usize] =
+                        1 << (((value + p - center) % p) * multiplier % p);
+                }
+            }
+        }
         Self {
             p,
             limit,
             pairs_by_sum,
-            inverses,
+            images,
             memo: MaskSet::new(),
             stats: Stats::default(),
             node_limit,
@@ -133,11 +117,10 @@ impl Search {
                 if mask & (1_u64 << opposite) == 0 {
                     continue;
                 }
-                let multiplier = self.inverses[difference as usize];
+                let map = &self.images[(center * self.p + endpoint) as usize];
                 let mut image = 0_u64;
                 for &value in &selected {
-                    let shifted = (value + self.p - center) % self.p;
-                    image |= 1_u64 << (shifted * multiplier % self.p);
+                    image |= map[value as usize];
                 }
                 best = best.min(image);
             }
@@ -195,17 +178,19 @@ impl Search {
             return None;
         }
 
-        let mask = self.canonical(raw_mask);
-        if !self.memo.insert(mask) {
-            self.stats.memo_hits += 1;
-            return None;
-        }
-        self.stats.max_memo = self.stats.max_memo.max(self.memo.len());
-
+        let mask = raw_mask;
         let remaining = self.limit - mask.count_ones();
         let mut constraints = Vec::new();
 
+        let selected = values(mask, self.p);
+        let mut counts = [0_u8; 64];
+        for (index, &left) in selected.iter().enumerate() {
+            for &right in &selected[index..] {
+                counts[((left + right) % self.p) as usize] += 1;
+            }
+        }
         for sum in 0..self.p as usize {
+            if counts[sum] != 1 { continue; }
             let Some(options) = self.repair_options(sum, mask, remaining) else {
                 continue;
             };
@@ -222,6 +207,13 @@ impl Search {
             self.stats.cover_prunes += 1;
             return None;
         }
+        // Expensive normalization only after cheap arithmetic and cover pruning.
+        let key = self.canonical(mask);
+        if !self.memo.insert(key) {
+            self.stats.memo_hits += 1;
+            return None;
+        }
+        self.stats.max_memo = self.stats.max_memo.max(self.memo.len());
         constraints.sort_unstable_by_key(Vec::len);
         for addition in &constraints[0] {
             let next = mask | addition;
@@ -245,30 +237,22 @@ impl Search {
 }
 
 fn can_cover(constraints: &[Vec<u64>], chosen: u64, budget: u32) -> bool {
-    let mut best: Option<Vec<u64>> = None;
-    for options in constraints {
-        if options.iter().any(|option| *option & !chosen == 0) {
-            continue;
-        }
-        let mut next: Vec<u64> = options
-            .iter()
-            .map(|option| chosen | option)
-            .filter(|candidate| candidate.count_ones() <= budget)
-            .collect();
-        next.sort_unstable_by_key(|candidate| (candidate.count_ones(), *candidate));
-        next.dedup();
-        if next.is_empty() {
-            return false;
-        }
-        if best.as_ref().is_none_or(|current| next.len() < current.len()) {
-            best = Some(next);
+    let mut best = None;
+    let mut best_count = usize::MAX;
+    for (index, options) in constraints.iter().enumerate() {
+        if options.iter().any(|option| *option & !chosen == 0) { continue; }
+        let count = options.iter().filter(|option| (chosen | **option).count_ones() <= budget).count();
+        if count == 0 { return false; }
+        if count < best_count {
+            best = Some(index);
+            best_count = count;
         }
     }
-    let Some(next) = best else {
-        return true;
-    };
-    next.into_iter()
-        .any(|candidate| can_cover(constraints, candidate, budget))
+    let Some(index) = best else { return true; };
+    constraints[index].iter().any(|option| {
+        let next = chosen | *option;
+        next.count_ones() <= budget && can_cover(constraints, next, budget)
+    })
 }
 
 fn values(mask: u64, p: u32) -> Vec<u32> {
