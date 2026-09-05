@@ -45,6 +45,9 @@ a second implementation in another language and a different
 algorithm. Covering radius: exhaustive C, Python, or Rust check
 of a matrix. SAT: DIMACS plus DRAT (`kissat`, `drat-trim`).
 
+**Claim.** A quest that asserts a bound keeps `CLAIM.md` next to
+the verifier.
+
 **Screenshot.** GitHub PR walkthrough only. Upload to a secret
 gist so github.com renders the image. Problem notes cite the
 committed figure.

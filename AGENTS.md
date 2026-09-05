@@ -10,13 +10,15 @@ Stephen Wu is the human author. Models go in the README ledger.
 One folder per problem under `problems/<slug>/`.
 
 ```
-PROBLEM.md        statement and what would count as a new bound
-ATTACK.md         chronological attempts
-WALKTHROUGH.md    discovery notes, not a cleaned proof
-RESEARCH.md       papers, OEIS, failed lookups
-compute/          verifier plus certificate
-compute/q<n>/     one quest
-lean/             lemmas for this problem, if any
+PROBLEM.md              statement and what would count as a new bound
+ATTACK.md               chronological attempts
+WALKTHROUGH.md          discovery notes, not a cleaned proof
+RESEARCH.md             papers, OEIS, failed lookups
+compute/                verifier plus certificate
+compute/LEAVES.md       live finite-handle queue (open / certified / residue)
+compute/q<n>/           one quest
+compute/q<n>/CLAIM.md   exact inequality this quest asserts (if any)
+lean/                   lemmas for this problem, if any
 ```
 
 Keep `ATTACK.md` chronological. Walkthrough beats:
@@ -37,6 +39,11 @@ Read `PROBLEM.md` and the published record first. arXiv is the
 record; fetch and replay before trusting a number. Forum numbers
 (MSE, Reddit, MathOverflow, AlphaXiv) are leads, not citations.
 
+Before attacking, also read `compute/LEAVES.md`. If it is missing,
+create it from the finite handles already in `PROBLEM.md`. Prefer
+an `open` leaf. One leaf per quest. If you invent a new finite
+handle, add a LEAVES row before hunting.
+
 A new bound is a verified finite improvement of a published
 record. An incomplete search is not a lower bound. Do not invent
 a status noun beyond these two:
@@ -46,9 +53,23 @@ a status noun beyond these two:
 - residue — incomplete search (holes, SAT UNKNOWN, timeout). Not a
   lower bound.
 
+LEAVES rows use `open` | `certified` | `residue` | `blocked`.
+`certified` is a dent; `residue` is the same leftover as above.
+
 A quest is a named campaign, not a result. Its code lives in
 `compute/q<n>/`. ATTACK.md may say q3. Do not write "quest" on
 README, explainers, PROBLEM, WALKTHROUGH, or other human pages.
+
+Every quest that asserts a finite outcome keeps
+`compute/q<n>/CLAIM.md`: the exact inequality or predicate, the
+prior record, and what would falsify it. `run_all.sh` exit 0 means
+the CLAIM holds. PROBLEM and README quote the CLAIM; do not
+paraphrase a different number. A residue wrap still updates
+LEAVES to `residue` and may keep the CLAIM that was attempted.
+
+Lean is optional in `problems/<slug>/lean/` for finite algebraic
+or modular claims. Do not require Lean for SAT, search, or
+anneals.
 
 README and explainers use ordinary English; ATTACK, WALKTHROUGH,
 PROBLEM status lines, and skills may use dent and residue.
