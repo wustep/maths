@@ -131,3 +131,12 @@ Chronological attempts, newest last. A failed attack belongs here too.
   kill-and-resume, all reproducing the 11-step decision.
 - Re-run launched with the checkpoint; a monitor auto-resumes on any further
   crash. Result pending.
+
+## 2026-09-06 — wrap (residue)
+
+- No live agent; the crash-safe 13-step re-run never returned a complete
+  decision for \(20!\), \(21!\), \(22!\), or \(37\#\).
+- Certified dent kept: \(\tau(29\#)=\tau(31\#)=12\), with replayable
+  witnesses and the 11-/12-step controls.
+- Polynomial table \(T(k)\) for \(k\le 6\) kept. Conjecture untouched.
+- Status of the 13-step handle: residue (incomplete search), not a bound.

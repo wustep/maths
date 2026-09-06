@@ -54,10 +54,10 @@ Empty beats mean the quest is not done.
    decisions replay the contest record. `compute/q2`: the polynomial
    table \(T(k)=1,1,2,3,3,4,5\) for \(k\le 6\), with the surprise that
    six steps already give five integer zeros through
-   \(x\bigl((x^2-2)^2-x^2\bigr)\). (13-step run: pending.)
+   \(x\bigl((x^2-2)^2-x^2\bigr)\). (13-step run: residue — incomplete.)
 
 6. Proven vs still open — proven: \(\tau(29\#)=\tau(31\#)=12\), the
    replayed values \(\tau(n!)\) for \(13\le n\le 19\), \(T(k)\) for
-   \(k\le 6\). Pending: the 13-step decision for \(20!\), \(21!\),
-   \(22!\). Open: everything Smale asked; nothing here touches the
-   conjecture or the growth of \(\tau(k!)\).
+   \(k\le 6\). Residue: the 13-step decision for \(20!\), \(21!\),
+   \(22!\) (and \(37\#\)) did not finish. Open: everything Smale asked;
+   nothing here touches the conjecture or the growth of \(\tau(k!)\).
