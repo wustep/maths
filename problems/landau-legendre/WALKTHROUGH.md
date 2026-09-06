@@ -100,11 +100,60 @@ Rust generated the edge witnesses with 128-bit endpoint arithmetic. Python
 then recomputed every least prime through a different deterministic base set.
 The top-20 table is derived only after those rows pass.
 
-## 6. Proven vs still open
+## 6. The q3 false start
 
-Assuming RH, $0.22525$ replaces the printed $0.2253$ as a certified threshold
-for primes between consecutive $(2+d)$-powers for every real $x\geq1$. That
-is the dent.
+The first thought was to print more digits of the q1 root. The old splice
+condition changes sign at
+$0.22524401991936525179\ldots$, so a nearby rational above that number would
+immediately beat $0.22525$.
+
+That would be valid, but it would not use all of the published inequality.
+Condition (5) arose by dropping terms from inequality (6), and the paper says
+the resulting test is only sufficient. The discarded part is tiny at a
+splice near $2.8\cdot10^{12}$, but the remaining q1 margin was tinier.
+
+## 7. The second click
+
+For an exponent $\alpha$ strictly between $2$ and $3$, the third derivative
+of $z^\alpha$ is positive. Taylor's theorem therefore supplies a positive
+quadratic term:
+
+$$
+(x+1)^\alpha-x^\alpha
+>\alpha x^{\alpha-1}
++\frac{\alpha(\alpha-1)}2x^{\alpha-2}.
+$$
+
+This is exactly the scale needed. At the splice, the correction is about
+$2.19\cdot10^{-13}$ relative to the leading term. It outweighs the failure
+of the old log test at $d=0.22524401991935$.
+
+## 8. Certifying the retained term
+
+Set $\alpha=2+d$, $X=N^{2/\alpha}$, and $A=X^{d/2}$. The exact certificate
+does not approximate either fractional power directly. It proves the coarse
+bounds
+
+$$
+2\cdot10^{12}<X<2.8\cdot10^{12},\qquad25<A<26
+$$
+
+by comparing rational enclosures of logarithms. These bounds give a rational
+lower bound on the retained correction. The old condition has a negative
+certified log margin, but adding
+$\log(1+t)\geq t/(1+t)$ leaves more than
+$1.51\cdot10^{-14}$.
+
+The remaining question was whether the improvement survived beyond one
+point. Differentiating the strengthened sufficient expression reduces that
+question to another sign. Its deliberately coarse rational lower bound is
+greater than $1.93$, so the expression increases for every $x\geq X$.
+
+## 9. Proven vs still open
+
+Assuming RH, $0.22524401991935$ is a certified threshold for primes between
+consecutive $(2+d)$-powers for every real $x\geq1$. It improves the q1 value
+$0.22525$, which had already improved the printed $0.2253$. That is the dent.
 
 The final 100,000 square intervals below $2^{64}$ have an independent
 Oppermann replay and a reproducible near-miss table. The public OLC checkout

@@ -156,3 +156,32 @@ Replay commands:
 problems/landau-legendre/compute/q1/run_all.sh
 problems/landau-legendre/compute/q1/replay_olc.sh /path/to/olc
 ```
+
+## 2026-09-04: quadratic-term refinement
+
+- Chamberland and Straub,
+  [*Weakening the Legendre Conjecture*, arXiv:2602.22502v1](https://arxiv.org/abs/2602.22502),
+  was refetched with `scripts/arxiv_fetch.py`. The arXiv metadata still list
+  v1, dated 26 February 2026. The
+  [full HTML, Section 3](https://arxiv.org/html/2602.22502v1) was replayed at
+  inequalities (5) and (6). The proof states that (5) is sufficient for (6),
+  while (6) is the actual comparison needed to invoke the RH short-interval
+  theorem.
+- Searches for the strings `0.22525` and `0.225244` together with the paper
+  title found no later relevant arXiv result. This is a search result, not a
+  priority claim.
+- The q3 exact certificate verifies
+  $d=4504880398387/20000000000000=0.22524401991935$. Its upper bound for the
+  old condition (5) log margin is negative, below
+  $-2.0321572\cdot10^{-13}$. Retaining the positive quadratic Taylor term
+  from (6) gives a certified log margin above
+  $1.5199\cdot10^{-14}$ and a derivative lower bound above $1.9355$.
+- A separate C `long double` implementation obtains the corresponding
+  margins $-2.0328270\cdot10^{-13}$, $1.5617425\cdot10^{-14}$, and
+  $1.9603180$. The exact rational verifier is authoritative.
+
+Replay command:
+
+```bash
+problems/landau-legendre/compute/q3/run_all.sh
+```
