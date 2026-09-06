@@ -38,5 +38,6 @@
 | [grok-2026-08-29-hilbert16-d8-q5/](grok-2026-08-29-hilbert16-d8-q5/) | Grok 4.6 leftover even-BFS remainder and odd size 5; stopped incomplete |
 
 | [cursor-grok-2026-08-27-caccetta-q22/](cursor-grok-2026-08-27-caccetta-q22/) | leftover SAT through n=131 |
+| [fable-2026-09-02-smale-tau-q1/](fable-2026-09-02-smale-tau-q1/) | Smale 4 τ-conjecture: mint, exhaustive straight-line-program search for factorials and primorials, polynomial table |
 
 Agent runbook: [`/AGENTS.md`](../AGENTS.md).

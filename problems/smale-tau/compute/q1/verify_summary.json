@@ -1,0 +1,74 @@
+[
+ {
+  "file": "decide12.json",
+  "name": "13!",
+  "steps": 11,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "14!",
+  "steps": 11,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "15!",
+  "steps": 12,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "16!",
+  "steps": 12,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "17!",
+  "steps": 12,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "18!",
+  "steps": 12,
+  "status": "not reachable within 12 steps (search claim)"
+ },
+ {
+  "file": "decide12.json",
+  "name": "19!",
+  "steps": 12,
+  "status": "not reachable within 12 steps (search claim)"
+ },
+ {
+  "file": "decide12.json",
+  "name": "20!",
+  "steps": 12,
+  "status": "not reachable within 12 steps (search claim)"
+ },
+ {
+  "file": "decide12.json",
+  "name": "21!",
+  "steps": 12,
+  "status": "not reachable within 12 steps (search claim)"
+ },
+ {
+  "file": "decide12.json",
+  "name": "22!",
+  "steps": 12,
+  "status": "not reachable within 12 steps (search claim)"
+ },
+ {
+  "file": "decide12.json",
+  "name": "29#",
+  "steps": 12,
+  "status": "verified"
+ },
+ {
+  "file": "decide12.json",
+  "name": "31#",
+  "steps": 12,
+  "status": "verified"
+ }
+]
