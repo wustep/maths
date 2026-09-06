@@ -82,7 +82,9 @@ User-facing prose follows `.claude/skills/writing`.
 
 Update the problem-folder files. If status changed, update the
 README Problems row. When you run something, add a row to the
-README “Which model ran what” table. For a dated campaign, add a
+README “Which model ran what” table. Ledger cells name the model
+(and date), never OpenAI plan/workspace labels such as 20xx or
+wustep. For a dated campaign, add a
 folder under `notes/` like `notes/supergrok-2026-08-17/` (REPORT +
 prompts; JSONL logs stay local / gitignored).
 
