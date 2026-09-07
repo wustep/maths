@@ -916,3 +916,51 @@ unchanged. $N_0(Z)-Z$ bounded still open.
 
 Replay: `problems/simon-ionization-excess/compute/q13/run_all.sh`.
 
+## 2026-09-06–07 — q14: a small rational certificate
+
+Read the published record and q1–q13 notes before selecting a leaf.
+Created `compute/LEAVES.md` and committed an attempted claim of
+$N_c(Z)<1.1005Z+3.933Z^{1/3}$ for $Z\ge4$ before searching.
+HPS still lists v1 only; the fetch script and HTML supplied the
+Theorem 4.2 and Section 7 inputs. Nam and the later bosonic paper
+do not beat the HPS leading coefficient. URLs are in RESEARCH.md.
+
+The earlier PSD-plus-nonnegative probes tried removing all positive
+off-diagonal entries or clipping negative eigenvalues. Their failure
+does not exclude another decomposition. q14 instead maximized a
+strict common margin in a semidefinite program at target $0.912$.
+The 37 bins use rational edges close to the geometric aspect-ten
+grid. A rational global kernel floor $0.8941$ avoids algebraic
+rounding in the matrix reconstruction.
+
+Clarabel returned `optimal_inaccurate`, with a positive candidate
+margin. That status was not used as a certificate. Rounding supplied
+two witnesses: a rational symmetric matrix and a separate rational
+Gram factor. Python checked positive definiteness by exact Schur
+complements and all entrywise residuals. Rust rebuilt the kernel
+using a different bin calculation and checked the Gram residuals
+with outward integer intervals. Both residuals exceed $10^{-5}$.
+Both checks imply $\beta_3\ge0.9087$ after the reweighting error
+and mass-stationary cut at aspect ten.
+
+Each implementation independently checks the HPS coefficients and
+the published $1.1184<b(3)<1.1185$ window. The rational Python
+remainder ceiling is below $3.933$; Rust uses the coarser verified
+HPS constant $c<1.5855$ and still proves the same printed remainder.
+No earlier face dump, success flag, or numerical minimizer is a
+premise of the new bound.
+
+Dent:
+
+$$
+N_c(Z)<1.1005Z+3.933Z^{1/3}\qquad(Z\ge4).
+$$
+
+This beats the notebook leading $1.1006$ and the HPS printed leading
+$1.1185$. The bounded-excess conjecture remains open. The proof,
+certificate, independent verifiers, and rejection controls are in
+`compute/q14/`. The search stopped after this certificate, as requested.
+
+Replay: `problems/simon-ionization-excess/compute/q14/run_all.sh`.
+Exit 0 means `compute/q14/CLAIM.md` holds. Covering and all `share/`
+folders were left untouched.

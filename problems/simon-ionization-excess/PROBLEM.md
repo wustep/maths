@@ -2,8 +2,8 @@
 
 - Slug: `simon-ionization-excess`
 - List: Simon 2000 #9 (Coulomb energies); 1984 10(a) if useful
-- Solver: Cursor Grok 4.6 xhigh
-- Status: dent of the printed leading 1.1185 and of the later notebook leadings 1.1118, 1.1057, 1.1035, 1.1026, 1.1021, 1.1020, 1.1017, 1.1013, 1.1010. Same HPS chain: $N_c<1.1006Z+3.933\,Z^{1/3}$ for $Z\ge 4$. q1 remainder dent unchanged. Ionization conjecture open.
+- Solver: GPT-6 Astra (2026-09-07); earlier runs credited in README.
+- Status: dent of the printed leading 1.1185 and the notebook leading 1.1006. Same HPS chain: $N_c(Z)<1.1005Z+3.933Z^{1/3}$ for $Z\ge4$. Exact claim and falsifier: [q14/CLAIM.md](compute/q14/CLAIM.md). Ionization conjecture open.
 - Area: Mathematical physics / many-body Schrödinger
 - Sources: Simon 2000 #9; Simon 1984 10(a),(d); Lewin, charged quantum particles
 - Started: 2026-08-27
@@ -321,6 +321,27 @@ with the mass-opt cut cannot beat $1.1006$ and is leftover.
 $1.1168$ stays withdrawn. Finite-$Z$ integers and $N_0(Z)-Z$
 stay leftover. Replay:
 `problems/simon-ionization-excess/compute/q13/run_all.sh`.
+
+## 2026-09-07 — rational matrix certificates
+
+Two independent finite verifiers establish
+
+$$
+N_c(Z)<1.1005Z+3.933Z^{1/3}\qquad(Z\ge4).
+$$
+
+This is the inequality in [q14/CLAIM.md](compute/q14/CLAIM.md).
+A raised target $0.912$ on 37 rational bins proves
+$\beta_3\ge0.9087$. Python verifies a positive-definite matrix
+and its entrywise nonnegative remainder with exact rational
+arithmetic. Rust checks a separate Gram witness using outward
+integer intervals. The same mass-stationary cut at aspect ten
+extends the compact result, and each implementation independently
+checks the HPS constants. The proof and replay require no earlier
+face-enumeration certificate. The leading 1.1005 improves q13's
+1.1006 and HPS's printed 1.1185; bounded excess remains open.
+
+Replay: `problems/simon-ionization-excess/compute/q14/run_all.sh`.
 
 ## What would count as a new bound
 

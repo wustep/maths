@@ -207,3 +207,49 @@ Discovery notes, not a cleaned proof. Beats: `refs/walkthrough-style.md`.
 5. Computer search — stored $R=10$, $n=37$ faces at target $0.9119$ ($137{,}438{,}953{,}471$, copositive, $0$ skips, $\min m^\top Mm>6\cdot 10^{-4}$, $\min\varphi=0.912085$); Gray enumerator about $5.7\cdot 10^6$ masks/s at the end, 1832 kB RSS; stdlib rebuild of $A$ to $10^{-15}$; C and Rust on the $10/11$ grid; mass-opt scan, min $Q=0.9249>10/11$; interval §7 in `tighten_leading.py`.
 
 6. Proven vs still open — printed leading $1.1010$ moves to $1.1006$. Remainders $2.953$, $3.892$, $3.9781$ stay. $R\le 9$ with the mass-opt cut is residue. $1.1168$ stays withdrawn. Finite-$Z$ integers unchanged (Lieb). $N_0(Z)-Z$ bounded open.
+
+## 2026-09-07 — the decomposition was still available
+
+0. What was missing — the 37-bin target still had unused room, but
+another full face enumeration was expensive. The degree of freedom
+was the positive-semidefinite part of the compact matrix. The
+existing notes had tested two choices for that matrix, not all choices.
+
+1. Named false starts — the earlier positive-off-diagonal removal
+and spectral clipping both failed. Those were useful probes, but
+they did not prove that a PSD-plus-nonnegative decomposition was
+impossible. The new SDP also returned `optimal_inaccurate`; accepting
+that status would have left a gap.
+
+2. The useful failure — the failed formulas suggested optimizing the
+decomposition itself. The solver warning made a rational certificate
+necessary. It was possible to use rational bin edges and a slightly
+weaker rational floor for the kernel while retaining enough slack.
+
+3. The click — maximize a common positive margin for the matrix and
+its entrywise remainder. At target $0.912$, this produced a candidate
+that survived rational rounding. A second witness came from a rounded
+Gram factor. The two finite proofs could then use different arithmetic.
+
+4. The argument — Python proved positive definiteness by exact
+elimination. Rust verified the separate sum-of-squares witness using
+outward integer intervals. Both reconstructed every bin pair and
+proved the reweighting loss small enough for $\beta_3\ge0.9087$.
+The existing mass-stationary argument at aspect ten supplied the
+global extension. The HPS constants simplified because the powers
+of $\pi$ cancel, leaving rational power comparisons.
+
+5. Computer search — one 37-bin SDP, followed by two finite matrix
+checks. `compute/q14/certificate.json` contains both rational witnesses.
+The replay uses Python's standard library and Rust, and rejects missing
+or damaged certificates. No earlier enumeration is required.
+
+6. Proven vs still open — dent:
+
+$$
+N_c(Z)<1.1005Z+3.933Z^{1/3}\qquad(Z\ge4).
+$$
+
+The leading coefficient improves 1.1006. The bounded-excess conjecture
+remains open. The campaign stopped with the certified improvement;
+larger partitions and stronger targets were not searched.

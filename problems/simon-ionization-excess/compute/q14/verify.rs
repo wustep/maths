@@ -110,6 +110,21 @@ fn main() {
     }}
     assert!(smallest>I::rat(1,100000).h);
     let q=(0..n).map(|i|e[i+1].div(e[i])).reduce(max).unwrap();
+    // Independently confirm the exact compact gamma printed in PROOF.md.
+    // All stored edges are multiples of 10^-12; compare neighboring ratios
+    // by integer cross-products, then clear the scalar denominators.
+    let ticks:Vec<i128>=edges.iter().map(|edge| {
+        let pair:Vec<_>=edge.text().split('/').collect();
+        let numerator:i128=pair[0].parse().unwrap();
+        let denominator:i128=if pair.len()==2 {pair[1].parse().unwrap()} else {1};
+        assert!(denominator>0 && 1_000_000_000_000_i128%denominator==0);
+        numerator*(1_000_000_000_000_i128/denominator)
+    }).collect();
+    let (mut qn,mut qd)=(1_i128,1_i128);
+    for k in 0..n { if ticks[k+1]*qd>qn*ticks[k] {qn=ticks[k+1]; qd=ticks[k];} }
+    let gn=114*10000*(qn+qd)-125*1059*(qn-qd);
+    let gd=125*10000*(qn+qd);
+    assert_eq!(gn*6382236648346000_i128,gd*5799575951378799_i128);
     let tv=q.sub(I::int(1)).div(q.add(I::int(1)));
     let gamma=phi.sub(tv.mul(I::int(1).sub(floor)));
     let beta=I::rat(9087,10000);
