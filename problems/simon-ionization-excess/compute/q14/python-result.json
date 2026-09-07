@@ -1,0 +1,16 @@
+{
+  "status": "dent",
+  "n": 37,
+  "matrix_entries_checked": 1369,
+  "beta_lower": "9087/10000",
+  "compact_gamma_exact": "5799575951378799/6382236648346000",
+  "compact_gamma_approx": 0.908705877097459,
+  "min_pivot_approx": 0.00016704029759939977,
+  "residual_lower": "1/100000",
+  "residual_gt_1e-5": true,
+  "leading_upper": "1.1005",
+  "remainder_upper": "3.933",
+  "hps_remainder_rational_upper": "37521634746040375337416621849296173101919/9541350000000000000000000000000000000000",
+  "hps_remainder_approx": 3.932528913208338,
+  "inequality": "N_c(Z) < 1.1005 Z + 3.933 Z^(1/3), Z >= 4"
+}
