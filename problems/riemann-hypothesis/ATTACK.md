@@ -110,3 +110,84 @@ Chronological attempts, newest last.
   normalization and zero-count transfer.
 - If the candidate appears on arXiv, replay that version from a clean source
   tree and compare its statement and hashes with this pinned lead.
+
+## 2026-09-08 — q2: finish the finite regeneration
+
+- Read the complete earlier record and code before choosing the existing
+  candidate. Created `compute/LEAVES.md`, with q1 as residue and q2 as the
+  open certification leaf, and pinned the exact attempted inequality in
+  `q2/CLAIM.md`. Refetched and read Polymath 15 arXiv:1904.12438v2 and
+  Platt–Trudgian arXiv:2004.09765v1. The comparison remains the published
+  upper bound $1/5$; no rounded-table improvement is used.
+- Rebuilt the pinned original producer and ran all 23 segments sequentially,
+  checking the complete output against the candidate archives with a
+  constant-memory parser. All 3,149,013 rows matched. Every segment was
+  fresh, with no uncertain or nonpositive row. Total wall time was
+  4265.578 seconds; the recorded peak including the launcher was 17892 KiB.
+- Wrote an independent direct convolution in Rust. It merges divisor
+  streams and collects coefficients before taking absolute values, with
+  exact Euler prime weights and the exact target time and height. At
+  $N=690988$ it consumed 22,111,616 pairs and obtained
+  $7.9136674559415674362357141606253997\cdot10^{-7}$ within the printed Arb
+  enclosure. This check took 73.064 seconds. Repeating that initialization
+  at every index would be impractical.
+- An enumerator-only optimization of the original producer was drafted and
+  compiled, but it was not used for the certificate or a timing claim. The
+  unchanged producer finished its full sweep. The unused optimization was
+  removed from the final working files.
+
+## 2026-09-08 — q2: a second complete finite algorithm
+
+- The useful reduction was to hold the exponent nodes fixed while the
+  cutoff changes. The absolute convolution sums are positive Laplace sums,
+  so their eighth derivatives have a simple support bound. Eight-node
+  interpolation with an explicit factorial remainder can therefore replace
+  millions of independent initializations.
+- Increasing the cutoff adds exactly one pair $(d,N)$ for each divisor.
+  The Rust implementation reconstructs the old coefficient at $dN$ and
+  updates each fixed node by the difference of absolute values. This is a
+  different algorithm from the original producer's Taylor moments and frozen
+  gamma weights. The proof is in `q2/INTERPOLATION.md`.
+- All four independent ranges completed in 600.144 seconds. Each contains
+  every required integer, and their union is exactly
+  $690988\ldots3840000$. The recorded peak including the launcher was
+  10688 KiB. Both complete implementations give global floor
+  $791366/10^{12}$ at $N=690988$.
+- A Python dictionary convolution checked 100 small cases. Sixteen
+  deliberately malformed certificates were rejected. Tests included a
+  duplicate independent row and a false original floor with their
+  transcript hashes updated to match, so hash agreement alone cannot pass.
+- The exact finite margin after the uniform approximation error is
+  $557871094787662151/10^{24}>0$. The finite result alone is not the
+  Lambda inequality: height, tail, barrier, and analytic transfer remain
+  separate gates.
+
+## 2026-09-08 — q2: analytic review and fresh transfer checks
+
+- Reviewed the native convolution and normalization, the upper Dini
+  derivative at a coefficient zero, the divisor-pattern coverage, window
+  directions, correction monotonicity, infinite-tail caps, and barrier
+  homotopy against the pinned source and published formulas.
+- The positive-time theorem extends to zero on the fixed barrier rectangle
+  by dominated convergence, nonvanishing of the normalizer, and continuity
+  of the fixed-index finite sum. This supplies the implication left open
+  by q1's explicit zero-time scope note.
+- Derived the identity between the barrier coefficient polynomial and
+  Polymath's $f_t$, including both outer factors and the conjugated branch.
+  The coefficient generator's older nonholomorphic quadrature only chooses
+  a matrix size; the mandatory separate factorial remainder certifies the
+  selected size. Its geometric denominators are positive because
+  $|\log(n/(N/2))|<13$ on the complete support.
+- Fresh Arb finite-error and tail runs passed at 256 and 512 bits. The
+  Dini height transfer passed at 180 and 256 bits over all four prime
+  schedules; normalizer/correction and window checks passed. The Python
+  interval tail also passed.
+- The historical stored assembly first failed because its hard-coded gcc
+  call could not find the temporary FLINT headers. Correcting compiler
+  search paths made it pass. That historical checker buffered about 1 GB,
+  so the normal reproduction path now omits it and uses this folder's
+  complete streaming assembly instead.
+- Started a fresh barrier replay, including the full coefficient matrix,
+  truncation error, uniform error, and all closed prisms. It shares the
+  exclusive heavy-job lock with the numerical lanes and the archival
+  assembly. The candidate is not promoted while this replay is unfinished.
