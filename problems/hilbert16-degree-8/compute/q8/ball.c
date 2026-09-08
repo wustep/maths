@@ -59,7 +59,9 @@ static void dfs(int first, int depth) {
 int main(int argc, char **argv) {
     if (argc < 3 || argc > 4) return 2;
     radius = atoi(argv[2]); trace = argc == 4 && !strcmp(argv[3], "trace");
-    if (radius < 0 || radius > 6) return 2;
+    /* At radius <=3 there are at most 15,226 evaluations, less than
+       the 16,384 slots even if every evaluated tree were distinct. */
+    if (radius < 0 || radius > 3) return 2;
     FILE *f = load_task(argv[1]);
     if (npts != 45 || F != 256) return 2;
     int ns; char tag[32];

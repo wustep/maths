@@ -70,8 +70,8 @@ fn main() {
     }
     assert_eq!(used.len(),45);
 
-    // Reflect the mesh in the two axes. Each complementary region
-    // retracts onto its graph of monochromatic vertices and edges.
+    // Reflect the mesh in the two axes. Region connectivity and
+    // orientation-reversing loops are detected by monochromatic edges.
     let mut vertices = BTreeMap::new();
     for x in -8i128..=8 {
         for y in -8i128..=8 {
