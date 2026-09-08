@@ -1,0 +1,5 @@
+# These bytes are retained exactly; whitespace cleanup would break their hashes.
+certificate/** -whitespace linguist-generated=true
+vendor/** -whitespace linguist-vendored=true
+# Plotting libraries emit their own SVG and CSV whitespace.
+figures/** -whitespace linguist-generated=true
