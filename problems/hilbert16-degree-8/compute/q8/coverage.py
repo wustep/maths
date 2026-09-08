@@ -6,6 +6,7 @@ histogram is trusted: the entire domain is regenerated and recomputed.
 """
 import argparse
 from collections import Counter
+from itertools import combinations
 import json
 from math import comb
 from pathlib import Path
@@ -18,9 +19,32 @@ from common import (HERE, baseline, canon, code_scheme, digest, plan, seeds,
 from tcurve import TCurve, validate_triangulation
 
 
+def check_flip_domain(rows, seedlist):
+    """Separate pair-of-triangles enumeration using crossing determinants."""
+    def det(a,b,c):
+        return (b[0]-a[0])*(c[1]-a[1]) - (b[1]-a[1])*(c[0]-a[0])
+    actual = set()
+    for i, seed in enumerate(seedlist):
+        tris = unpack(seed)[0]
+        for t,u in combinations(tris,2):
+            shared = set(t)&set(u)
+            if len(shared) != 2:
+                continue
+            a,b = sorted(shared)
+            c, = set(t)-shared
+            d, = set(u)-shared
+            if det(a,b,c)*det(a,b,d)<0 and det(c,d,a)*det(c,d,b)<0:
+                assert abs(det(a,c,d)) == abs(det(b,c,d)) == 1
+                actual.add((i, (a,b), tuple(sorted((c,d)))))
+    planned = {(r['seed'], tuple(map(tuple,r['removed'])), tuple(map(tuple,r['added'])))
+               for r in rows}
+    assert len(planned)==len(rows) and planned==actual, 'flip domain mismatch'
+
+
 def audit(path):
     saved = json.loads(Path(path).read_text())
     rows, seedlist = plan(), seeds()
+    check_flip_domain(rows, seedlist)
     assert saved['provenance'] == dict(radius=3, plan_sha256=digest(rows),
                                       seeds_sha256=digest(seedlist), sources=source_hashes())
     assert saved['planned_tasks'] == len(rows)
@@ -60,12 +84,13 @@ def main():
     args = ap.parse_args()
     saved = audit(args.manifest)
     if args.replay:
-        assert saved['complete'], 'full replay requires a completed manifest'
         with tempfile.TemporaryDirectory(prefix='h16-q8-replay-') as tmp:
             path = Path(tmp) / 'coverage.json'
-            subprocess.run([sys.executable, str(HERE/'search.py'), '--output', str(path)],check=True)
+            p = subprocess.run([sys.executable, str(HERE/'search.py'), '--output', str(path),
+                                '--max-tasks', str(len(saved['tasks']))])
+            assert p.returncode in (0,2,3), 'search replay failed'
             assert json.loads(path.read_text()) == saved, 'fresh exhaustive replay differs'
-        print('PASS: fresh exhaustive replay matches every saved frequency')
+        print('PASS: fresh replay of the recorded domain matches every saved frequency')
     return 0
 
 

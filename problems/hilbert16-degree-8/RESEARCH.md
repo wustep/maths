@@ -409,3 +409,12 @@ lower bound. Bound still ≥ 2,384.
   `1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`.
   This checks the cited baseline; it is not a claim to have surveyed
   every later paper on real octics.
+
+The q8 parent replay completed successfully: 2,367/2,367 published
+certificates and 17/17 prior additions. The new Python/Rust pair also
+accepted every member of that 2,384 baseline. The new scheme
+⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ passes both verifiers and is absent from the
+archive's TYPE fields and filenames and from the seventeen additions.
+Thus the verified notebook count is now at least 2,385, improving the
+paper's 2,367 by eighteen in total and the prior notebook count by one.
+Neither open maximal deep nest is decided.

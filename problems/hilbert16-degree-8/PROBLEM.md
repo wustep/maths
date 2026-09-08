@@ -5,9 +5,10 @@
 - Solver: Claude Fable, then Claude Opus 5 (Claude Code)
 - Status: open. Degree 8 is the first degree where the isotopy
   classification is unfinished. Six M-schemes are algebraically
-  undecided; the non-maximal census is a lower bound, and we moved
-  that lower bound by one (dent C below). Hilbert 16(a) itself is
-  untouched.
+  undecided. Certified dent (C), 2026-09-08: number of nonempty
+  degree-eight T-curve schemes ≥ 2,385 (`compute/q8/CLAIM.md`).
+  Eighteen verified schemes are outside the paper's 2,367; the
+  latest is ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩. Hilbert 16(a) itself is untouched.
 - Area: Real algebraic geometry / topology of real plane curves
 - Sources: Orevkov GAFA 12 (2002); Itenberg–Viro (1996); Viro
   arXiv:math/0611382; Geiselmann–Joswig–Kastner–Mundinger–Pokutta–
@@ -275,3 +276,27 @@ Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q7/run_all.sh && python3 q7/collect.py`
 
 Hilbert 16(a) in degree 8 remains open.
+
+## Dent (2026-09-08, one flip and three sign changes)
+
+**Number of nonempty degree-eight T-curve schemes ≥ 2,385.** This is
+exactly the inequality in [`compute/q8/CLAIM.md`](compute/q8/CLAIM.md).
+The new scheme is **⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩**, with twenty ovals and
+(p,n) = (5,15). It is outside both the 2,367 schemes of Geiselmann
+et al., arXiv:2602.06888v4, §4.3, and the seventeen additions already
+verified in this notebook.
+
+The witness changes one diagonal of the paper's certificate for
+⟨5 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, then changes three signs. Its new integer
+lifting passes all 2,688 global strict inequalities with minimum
+slack 4. Python traces curve segments in the projective plane and
+its double cover; Rust reconstructs connected monochromatic regions
+and their nesting tree. Both independently recover the new scheme.
+
+The search stopped on this construction after 82 of 1,190 sign
+balls, 1,248,532 evaluations counting repetitions. The 1,108 other
+balls remain unsearched. Neither preferred 22-oval deep nest is
+decided. Hilbert 16(a) in degree eight remains open.
+
+Replay from the repository root:
+`sh problems/hilbert16-degree-8/compute/q8/run_all.sh`.

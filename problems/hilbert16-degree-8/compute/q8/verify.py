@@ -9,6 +9,9 @@ import subprocess
 from common import HERE, PTS, baseline, canon, code_scheme, triangulation
 from tcurve import TCurve, check_convexity, validate_triangulation
 
+if not __debug__:
+    raise RuntimeError('verification requires assertions; remove -O/PYTHONOPTIMIZE')
+
 
 def build_rust():
     exe = HERE / 'work/verify_regions'
