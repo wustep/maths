@@ -6,6 +6,7 @@ from itertools import combinations
 import json
 import subprocess
 import tarfile
+from unittest.mock import patch
 
 from common import (HERE, ROOT, PTS, baseline, canon, code_scheme, flips,
                     parse_pcom, scheme_code, seeds, unpack, write_task)
@@ -59,6 +60,10 @@ def main():
     bad = copy.deepcopy(seedlist[0])
     bad['scheme'] = '<4 u 1<2 u 1<14>>>'
     reject(lambda: both(bad, exe), 'forced open-nest answer')
+    forced = subprocess.CompletedProcess([], 0,
+                f'22 {scheme_code(bad["scheme"])}\n', '')
+    with patch('verify.subprocess.run', return_value=forced):
+        reject(lambda: both(seedlist[0], exe), 'independent checker disagreement')
     for mutation in ('sign', 'height', 'duplicate', 'point'):
         bad = copy.deepcopy(seedlist[0])
         if mutation == 'sign':

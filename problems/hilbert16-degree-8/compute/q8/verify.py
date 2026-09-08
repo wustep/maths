@@ -20,6 +20,7 @@ def build_rust():
 
 def decode(cert):
     assert cert.get('degree', 8) == 8
+    assert len(cert['heights']) == len(cert['signs']) == 45, 'wrong domain size'
     tris = triangulation(cert['triangles'])
     heights = {tuple(map(int, k.split(','))): Fraction(v)
                for k,v in cert['heights'].items()}
