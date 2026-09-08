@@ -1,0 +1,26 @@
+{
+  "rows_per_implementation": 3149013,
+  "first_N": 690988,
+  "last_N": 3840000,
+  "original_minimum12": 791366,
+  "original_at": 690988,
+  "independent_minimum12": 791366,
+  "independent_at": 690988,
+  "uniform_error_upper": "233494905212337849/1000000000000000000000000",
+  "original_margin_lower": "557871094787662151/1000000000000000000000000",
+  "independent_margin_lower": "557871094787662151/1000000000000000000000000"
+}
+PASS: two complete finite implementations; analytic assembly is separate
+{
+  "prisms": 883,
+  "recomputed_margin_lower": "9877147997663578324352968163450789/19000000000000000000000000000000000",
+  "maximum_winding_absolute": "454000000330872245021211/200000000000000000000000000000000000000",
+  "regenerated_coefficient_components": 7688,
+  "target": "893927/5000000",
+  "prior_record": "1/5",
+  "published_height": 3000175332800,
+  "height_surplus": "350479773/2"
+}
+PASS: analytic transcript interfaces and exact criterion arithmetic
+PASS: retained complete certificate; arithmetic regeneration is the two-argument mode
+PASS CLAIM: Lambda <= 893927/5000000 = 0.1787854 < 1/5

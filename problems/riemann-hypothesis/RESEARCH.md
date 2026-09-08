@@ -56,3 +56,32 @@ are implementation leads.
 - [K. M., `dbn_upper_bound`](https://github.com/km-git-acc/dbn_upper_bound).
   Opened as an older implementation lead for the Polymath 15 computation. No
   number from this repository was promoted into the record.
+
+## 2026-09-08 — independent certification campaign
+
+- Reopened [Polymath 15, arXiv:1904.12438v2](https://arxiv.org/abs/1904.12438v2)
+  and fetched its [PDF](https://arxiv.org/pdf/1904.12438v2) with the repository
+  helper. Read Theorems 1.2 and 1.3, the error definitions, and the barrier
+  approximation. PDF SHA-256:
+  `60d0d2d381227d32f98535a5c43dedb86e333a9006d6819f0bdebdd734085603`.
+- Reopened [Platt–Trudgian, arXiv:2004.09765v1](https://arxiv.org/abs/2004.09765v1)
+  and fetched its [PDF](https://arxiv.org/pdf/2004.09765v1). Theorem 1 and
+  Corollary 2 remain the zero-height input and published upper endpoint used
+  here. PDF SHA-256:
+  `3362f66af9fa9373977eee70e2282ec33989d5d8b97e0852df9e32cc25b52885`.
+- Reopened and cloned [the candidate repository](https://github.com/judegomila/dbn-lambda-01787854-candidate-audit).
+  Its current HEAD is still the q1 pin
+  `a74738deb6d5e0f76887cb36901da08b68dca705`. Read the producer, proof notes,
+  native binding, window and height transfers, tail lemma, and barrier source.
+  Its use of the word proof is the author's claim, not independent acceptance.
+- Searches for the exact candidate number with “arxiv” and for a 2026
+  de Bruijn–Newman upper bound did not locate an arXiv version of the candidate.
+  Search results included the author's website, the existing notebook, and
+  unrelated de Bruijn sequence papers. No search-result number was adopted
+  as a new baseline.
+- Completed the independent reproduction at the same pin. Both full finite
+  algorithms and all fresh analytic numerical lanes passed. The source-level
+  review also checks the barrier polynomial identity, geometric remainder
+  denominators, and zero-time continuation. The result is recorded in
+  `compute/q2/CLAIM.md`; this local verification does not change the
+  candidate's arXiv or peer-review publication status.

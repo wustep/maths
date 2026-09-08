@@ -1,8 +1,9 @@
 # Riemann hypothesis
 
 - Slug: `riemann-hypothesis`
-- Status: open — q1 residue; published explicit window
-  $0\leq\Lambda\leq0.2$ unchanged
+- Status: open — q2 dent;
+  $0\leq\Lambda\leq893927/5000000=0.1787854<1/5$;
+  prior published upper bound $0.2$
 - Area: analytic number theory
 - Classifications: Hilbert 8(a), Smale 1, Clay Millennium Prize Problem
 - Started: 2026-08-30
@@ -49,17 +50,41 @@ opposite finite handle.
 
 ## What would count as a new bound
 
-A dent is a strict, checkable inequality $\Lambda<c<0.2$ whose zero-height,
-finite, tail, barrier, and analytic inputs have all been independently
-replayed against a published source. Arithmetic on rounded table entries is
-insufficient. An off-arXiv claim remains a lead until it enters the published
-record and the full certificate is independently reproduced.
+A dent is a checkable inequality $\Lambda\leq c<0.2$ whose zero-height,
+finite, tail, barrier, and analytic inputs have all been checked against
+published theorems, with independent finite verification. Arithmetic on
+rounded table entries is insufficient. An off-arXiv target is credited as
+an earlier candidate; its complete certificate and analytic transfer must
+be independently checked before this folder asserts it.
 
 Rodgers–Tao already give the exact lower endpoint $\Lambda\geq0$. A stricter
 lower bound would contradict RH, so replaying an older negative Lehmer-pair
 bound cannot move the present record.
 
 ## Current result
+
+The complete certificate in [`compute/q2/CLAIM.md`](compute/q2/CLAIM.md)
+establishes
+
+$$
+\Lambda\leq\frac{893927}{5000000}=0.1787854<\frac15.
+$$
+
+The candidate value and construction are due to Jude Gomila. This notebook
+freshly regenerated all 3,149,013 finite rows, checked the complete range
+with a new Rust interpolation algorithm, and reproduced the height, error,
+tail, and full 883-prism barrier computations. The analytic review includes
+the closed zero-time limit and the normalization of the finite sums.
+Both full finite algorithms give floor $791366/10^{12}$; subtracting the
+uniform error leaves the exact positive margin
+$557871094787662151/10^{24}$.
+
+The comparison is with Platt–Trudgian's published $1/5$ bound. The independent
+algorithms share Arb, and the mathematical review is by GPT-6 Astra, not
+an external human referee. The proof and these independence boundaries are
+recorded in [`compute/q2/NOTE.md`](compute/q2/NOTE.md). RH remains open.
+
+## Earlier checks
 
 The rounded Polymath Table 1 parameters $(t_0,y_0)=(0.186,0.16733)$ satisfy
 
@@ -70,12 +95,12 @@ $$
 but those printed decimals do not certify the extra digits. The published
 theorem remains $\Lambda\leq0.2$.
 
-The off-arXiv $0.1787854$ candidate passed its stored assembly review here.
+In q1, the off-arXiv $0.1787854$ candidate passed its stored assembly review here.
 Fresh Arb computations reproduced its finite-error majorant, infinite tail,
 and 883-prism barrier at two precisions where applicable. The stored finite
 range of 3,149,013 rows was parsed, and a fresh producer run matched its first
 row; the remaining rows were not regenerated. The analytic bridge was not
-independently reviewed. This is residue rather than a dent. The exact small
+independently reviewed. That campaign ended as residue. The exact small
 checks and retained fresh logs are in
 [`compute/q1/`](compute/q1/).
 
