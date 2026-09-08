@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Fresh, sequential replay of the pinned height/error/tail/barrier lanes.
 
-The upstream stored assembly is an additional consistency check. Numerical
-lanes are then rerun from source, including the full barrier coefficients.
+Numerical lanes are rerun from source, including the full barrier coefficients.
+The historical stored assembly is optional: it buffers about 1 GiB and is
+redundant with this campaign's streaming finite and analytic assembly checks.
 Requires a Python interpreter with the upstream mpmath/sympy dependencies.
 """
 import argparse
@@ -27,6 +28,7 @@ def main():
     p.add_argument('upstream',type=Path); p.add_argument('output',type=Path)
     p.add_argument('--lock',type=Path,required=True)
     p.add_argument('--flint-prefix',type=Path)
+    p.add_argument('--stored-review',action='store_true')
     args=p.parse_args(); root=args.upstream.resolve(); out=args.output.resolve()
     if subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()!=PIN:
         raise SystemExit('FAIL: upstream pin')
@@ -42,9 +44,14 @@ def main():
         env['FLINT_INCLUDE_DIR']=str(prefix/'include')
         env['FLINT_LIB_DIR']=str(lib)
         env['CPPFLAGS']='-I'+str(prefix/'include/x86_64-linux-gnu')
+        # The upstream independent constant checker invokes gcc directly.
+        # GCC's standard search variables also cover that unmodified call.
+        env['CPATH']=os.pathsep.join(map(str,[prefix/'include',prefix/'include/x86_64-linux-gnu']))
+        env['LIBRARY_PATH']=str(lib)
+        env['LD_LIBRARY_PATH']=str(lib)
         includes=['-I'+str(prefix/'include'),'-I'+str(prefix/'include/x86_64-linux-gnu')]
         links=['-L'+str(lib),'-Wl,-rpath,'+str(lib)]
-    jobs=[('stored-review',['bash',str(root/'verify.sh')])]
+    jobs=[('stored-review',['bash',str(root/'verify.sh')])] if args.stored_review else []
     for stem in ['prop410','tail']:
         jobs.append((stem,['bash',str(root/f'scripts/run_{stem}_arb.sh'),str(out/stem)]))
     for bits in (180,256):
