@@ -1,10 +1,11 @@
 # Riemann hypothesis: independent verification campaign
 
-The target is $\Lambda\leq893927/5000000=0.1787854$, compared with the
+The certificate establishes $\Lambda\leq893927/5000000=0.1787854<1/5$, compared with the
 published Platt–Trudgian upper bound $1/5$. The number and candidate
-construction are due to Jude Gomila. This campaign is completing the
+construction are due to Jude Gomila. This campaign completes the
 finite regeneration and analytic review left by the earlier notebook run.
-The fresh barrier is still running; the bound is not yet asserted.
+Both complete finite algorithms and all fresh analytic lanes passed,
+including the entire closed barrier and independent rational assembly.
 
 Work lives in
 [`compute/q2/`](../../problems/riemann-hypothesis/compute/q2/).
@@ -38,8 +39,25 @@ truncation accuracy.
 
 Fresh C/Arb error and tail runs at 256 and 512 bits have passed, as have
 the 180/256-bit height-transfer runs, the correction/normalizer checks,
-and the Python interval tail. The whole barrier has been queued and is
-regenerating its coefficient matrix and closed-prism cover.
+and the Python interval tail. The whole barrier completed in 1153.983
+seconds, including coefficient regeneration. All 7,688 components fit
+their serialization balls, all 883 closed prisms passed, and the minimum
+independently recomputed margin exceeds $0.5198$. The uniform error is
+less than $0.000356523011600040<1/800$.
+
+The complete compressed evidence occupies about 47 MiB. The retained
+certificate verifier checks both full finite streams and every closed
+prism with exact rational parsing. Its initial generic failure-word check
+mistook the historical summary `PASS: 30  FAIL: 0` for a failure; the parser
+now recognizes that exact zero-failure form and still rejects a nonzero
+failure count. No numerical inequality was weakened.
+
+The final `run_all.sh` certificate replay exited 0. Its output is retained
+in `compute/q2/run_all_result.txt`. Fresh arithmetic was run through the
+individual sequential component drivers; the two-argument orchestration
+was not repeated after those successful full runs. Shell syntax and the
+component commands were checked. A final diff audit confirmed that every
+other README claim and every other problem folder remained unchanged.
 
 The two main finite programs use little memory and ran sequentially under
 an exclusive lock. The historical stored assembly unexpectedly buffered

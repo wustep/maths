@@ -1,0 +1,17 @@
+PASS rejected missing final prism
+PASS rejected duplicate prism index
+PASS rejected time seam gap
+PASS rejected nonzero winding
+PASS rejected false time allowance
+PASS rejected nonpositive boundary modulus
+PASS rejected missing completion marker
+PASS rejected invalid ball [1 +/- -1]
+PASS rejected invalid ball nan
+PASS rejected invalid ball [+/- inf]
+PASS rejected finite floor below error
+PASS rejected finite wrong index
+PASS rejected finite missing completion
+PASS rejected independent duplicate index with matching hash
+PASS rejected truncated coefficient matrix
+PASS rejected coefficient outside serialization ball
+PASS 16 malformed-certificate rejection cases

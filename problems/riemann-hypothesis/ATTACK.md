@@ -191,3 +191,27 @@ Chronological attempts, newest last.
   truncation error, uniform error, and all closed prisms. It shares the
   exclusive heavy-job lock with the numerical lanes and the archival
   assembly. The candidate is not promoted while this replay is unfinished.
+
+## 2026-09-08 — q2: complete certificate and dent
+
+- The fresh barrier completed in 1153.983 seconds. All 7,688 regenerated
+  components fit their serialization balls. All 883 closed prisms passed,
+  with independently recomputed minimum margin greater than $0.5198$ and
+  winding intervals certifying zero. The exact closed endpoint is covered.
+- The new assembly initially rejected the historical line
+  `PASS: 30  FAIL: 0` as a generic failure marker. Recognizing that exact
+  zero-failure summary fixed the parser; a nonzero failure count is still
+  rejected. No interval gate or numerical bound was relaxed.
+- The complete original and independent finite streams, fresh analytic
+  logs, coefficient matrix, execution manifests, and exact summaries are
+  retained under `q2/certificate/`, about 47 MiB compressed. Archival
+  assembly and replay passed. The plot retains exact minima over all
+  1,538 bins, covering every finite index.
+- Dent: $\Lambda\leq893927/5000000=0.1787854<1/5$, relative to the published
+  Platt–Trudgian bound. Gomila is credited for the earlier candidate and
+  its construction. This campaign contributes the second complete finite
+  algorithm and analytic audit. Shared Arb dependence and the absence of
+  external human peer review are explicit in the note.
+- The final `run_all.sh` certificate replay exited 0 with the exact CLAIM.
+  Its output is retained in `q2/run_all_result.txt`. The other README
+  claims and all other problem folders were checked unchanged.

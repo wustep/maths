@@ -1,0 +1,12 @@
+{
+  "rows_per_implementation": 3149013,
+  "first_N": 690988,
+  "last_N": 3840000,
+  "original_minimum12": 791366,
+  "original_at": 690988,
+  "independent_minimum12": 791366,
+  "independent_at": 690988,
+  "uniform_error_upper": "233494905212337849/1000000000000000000000000",
+  "original_margin_lower": "557871094787662151/1000000000000000000000000",
+  "independent_margin_lower": "557871094787662151/1000000000000000000000000"
+}

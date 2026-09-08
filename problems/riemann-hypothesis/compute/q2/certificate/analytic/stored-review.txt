@@ -1,0 +1,480 @@
+RESULT: SHA-256 SEAL PASS (443 stable files)
+[PASS] external exposition PDF exists
+[PASS] external exposition exact byte size
+[PASS] external exposition exact SHA-256
+[PASS] external exposition is the expected PDF generation
+[PASS] cross-check exists
+[PASS] cross-check binds PDF SHA-256
+[PASS] cross-check binds baseline tag
+[PASS] cross-check binds baseline commit
+[PASS] cross-check records sealed P7 floor
+[PASS] cross-check records sealed P5 floor
+[PASS] cross-check records tail lower direction
+[PASS] cross-check preserves proof status
+[PASS] sealed finite log retains P7 floor
+[PASS] sealed finite log retains P5 floor
+[PASS] 256-bit tail log retains cap admissibility
+[PASS] 256-bit tail log retains two-sided D corridor
+[PASS] 256-bit tail log retains positive normalized margin
+[PASS] 512-bit tail log retains cap admissibility
+[PASS] 512-bit tail log retains two-sided D corridor
+[PASS] 512-bit tail log retains positive normalized margin
+TOTAL CHECKS RUN: 20
+RESULT: EXTERNAL EXPOSITION INTEGRITY AND CROSS-CHECK PASS
+STATUS: supplied draft with required corrections; not an external acceptance report.
+[PASS] CANDIDATE_PARAMETERS.md publishes 0.000000233494905212337849
+[PASS] PROOF_NOTE.md publishes 0.000000233494905212337849
+[PASS] README.md publishes 0.000000233494905212337849
+[PASS] MAXIMUM_CHECKS.md publishes 0.000000233494905212337849
+[PASS] BARRIER_CERTIFICATE.md publishes 0.000356523011600040
+[PASS] CANDIDATE_PARAMETERS.md publishes 0.000356523011600040
+[PASS] PROOF_NOTE.md publishes 0.000356523011600040
+[PASS] README.md publishes 0.000356523011600040
+[PASS] the sharp constant is still recorded below the loose allowance
+[PASS] prop410 program is present
+[PASS] prop410 reports its own PASS
+[PASS] prop410 recomputes E_max = 0.000000233494905212337849
+[PASS] prop410 certifies the summed budget at the published digits
+[PASS] prop62 program is present
+[PASS] prop62 compiles under the sealed toolchain
+[PASS] prop62 reports its own PASS
+[PASS] prop62 certifies the sharp constant 0.000356523011600040
+TOTAL CHECKS RUN: 17
+RESULT: INDEPENDENT CROSS-CHECK PASS
+STATUS: agreement on published constants (prop62 cross-written, prop410 same-backend replay); not a proof of either proposition.
+[PASS] prop410_arb_256.log: 31/31, Emax<=2.33494905212337848893636565949353E-7, margin>5.57871094787662151106363434050647E-7
+[PASS] prop410_arb_512.log: 31/31, Emax<=2.33494905212337848893546398874354E-7, margin>5.57871094787662151106453601125646E-7
+[PASS] authoritative Arb prop410 source and document bindings hold
+RESULT: SEALED ARB PROP410 CERTIFICATES PASS
+Dockerfile: OK
+README.md: OK
+REPRODUCE_FLINT.md: OK
+THEOREM_MAP.json: OK
+THEOREM_MAP.md: OK
+certificates/certified1875/windslab165_corner_secondline/check_containment.py: OK
+certificates/certified1875/windslab165_corner_secondline/run_corner.sh: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0.log: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_100001_120000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_120001_140000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_140001_160000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_160001_180000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_180001_200000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_1_20000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_200001_220000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_20001_40000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_220001_240000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_240001_260000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_260001_280000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_280001_300000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_300001_320000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_320001_340000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_340001_360000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_360001_380000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_380001_400000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_400001_420000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_40001_60000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_420001_440000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_440001_460000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_460001_480000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_480001_500000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_500001_520000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_520001_540000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_540001_560000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_560001_580000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_580001_600000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_600001_620000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_60001_80000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_620001_640000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_640001_660000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_660001_680000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_680001_690988.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_80001_100000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c0_combined.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1.log: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_100001_120000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_120001_140000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_140001_160000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_160001_180000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_180001_200000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_1_20000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_200001_220000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_20001_40000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_220001_240000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_240001_260000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_260001_280000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_280001_300000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_300001_320000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_320001_340000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_340001_360000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_360001_380000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_380001_400000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_400001_420000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_40001_60000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_420001_440000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_440001_460000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_460001_480000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_480001_500000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_500001_520000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_520001_540000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_540001_560000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_560001_580000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_580001_600000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_600001_620000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_60001_80000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_620001_640000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_640001_660000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_660001_680000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_680001_690988.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_80001_100000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r1_c1_combined.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3.log: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_100001_120000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_120001_140000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_140001_160000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_160001_180000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_180001_200000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_1_20000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_200001_220000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_20001_40000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_220001_240000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_240001_260000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_260001_280000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_280001_300000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_300001_320000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_320001_340000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_340001_360000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_360001_380000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_380001_400000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_400001_420000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_40001_60000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_420001_440000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_440001_460000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_460001_480000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_480001_500000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_500001_520000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_520001_540000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_540001_560000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_560001_580000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_580001_600000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_600001_620000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_60001_80000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_620001_640000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_640001_660000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_660001_680000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_680001_690988.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_80001_100000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r223_c3_combined.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2.log: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_100001_120000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_120001_140000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_140001_160000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_160001_180000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_180001_200000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_1_20000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_200001_220000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_20001_40000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_220001_240000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_240001_260000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_260001_280000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_280001_300000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_300001_320000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_320001_340000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_340001_360000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_360001_380000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_380001_400000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_400001_420000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_40001_60000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_420001_440000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_440001_460000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_460001_480000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_480001_500000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_500001_520000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_520001_540000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_540001_560000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_560001_580000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_580001_600000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_600001_620000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_60001_80000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_620001_640000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_640001_660000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_660001_680000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_680001_690988.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_80001_100000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r492_c2_combined.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2.log: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_100001_120000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_120001_140000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_140001_160000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_160001_180000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_180001_200000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_1_20000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_200001_220000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_20001_40000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_220001_240000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_240001_260000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_260001_280000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_280001_300000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_300001_320000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_320001_340000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_340001_360000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_360001_380000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_380001_400000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_400001_420000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_40001_60000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_420001_440000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_440001_460000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_460001_480000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_480001_500000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_500001_520000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_520001_540000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_540001_560000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_560001_580000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_580001_600000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_600001_620000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_60001_80000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_620001_640000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_640001_660000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_660001_680000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_680001_690988.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_80001_100000.json: OK
+certificates/certified1875/windslab165_corner_secondline/runs/r71_c2_combined.json: OK
+certificates/certified1875/windslab165_corner_secondline/select_rects.py: OK
+certificates/certified1875/windslab165_corner_secondline/tloop_6e12_y165.txt: OK
+certificates/certified1875/windslab165_corner_secondline/verify.sh: OK
+certificates/certified1875/windslab165_corner_secondline/verify_run_log_tmpcopy.txt: OK
+certificates/certified1875/windslab165_corner_secondline/verify_run_log_tmpcopy2.txt: OK
+certificates/certified1875/windslab165_corner_secondline/windrect_corner_iv.py: OK
+certificates/certified1875/windslab165_v2/TloopthreadedV4.c: OK
+certificates/certified1875/windslab165_v2/anchor_fresh.txt: OK
+certificates/certified1875/windslab165_v2/anchor_time.txt: OK
+certificates/certified1875/windslab165_v2/banked_tloop_6e12_y1809.txt: OK
+certificates/certified1875/windslab165_v2/storedsums_6e12.txt: OK
+certificates/certified1875/windslab165_v2/time_y165.txt: OK
+certificates/certified1875/windslab165_v2/tloop: OK
+certificates/certified1875/windslab165_v2/tloop_6e12_y165.txt: OK
+certificates/certified1875/windslab165_v2/verify_run_log_tmpcopy.txt: OK
+certificates/certified1875/windslab165_v2/verify_run_log_tmpcopy2.txt: OK
+certificates/certified1875/windslab165_v2/verify_windslab165.py: OK
+certificates/certified1965/site_glue/SITE_GLUE.md: OK
+certificates/certified1965/site_glue/verify_run_log.txt: OK
+certificates/certified1965/site_glue/verify_site_glue.py: OK
+certificates/certified1965/site_glue_secondline/SECOND_LINE.md: OK
+certificates/certified1965/site_glue_secondline/run_log.txt: OK
+certificates/certified1965/site_glue_secondline/run_log_tmpcopy.txt: OK
+certificates/certified1965/site_glue_secondline/siteglue_pureint.py: OK
+certificates/certified1965/site_glue_secondline/verify.sh: OK
+certificates/record/binding/RECORD_BINDING.md: OK
+certificates/record/binding/verify_clean_copy_log.txt: OK
+certificates/record/binding/verify_log.txt: OK
+certificates/record/binding/verify_record_binding.py: OK
+certificates/record/binding_secondline/RECBIND_SECONDLINE.md: OK
+certificates/record/binding_secondline/recbind_secondline_iv.py: OK
+certificates/record/binding_secondline/run_log.txt: OK
+certificates/record/binding_secondline/run_log_tmpcopy.txt: OK
+certificates/record/binding_secondline/verify.sh: OK
+certificates/record/criterion_theorem/THEOREM_LAMBDA_CRITERION.md: OK
+certificates/record/criterion_theorem/verify_criterion.py: OK
+certificates/record/criterion_theorem/verify_log.txt: OK
+certificates/record/error_terms_audit/ERROR_TERMS_AUDIT.md: OK
+certificates/record/error_terms_audit/verify_error_audit.py: OK
+certificates/record/error_terms_audit/verify_log.txt: OK
+paper/README.md: OK
+PASS A1 symbolic: 1/2 + i*z(s)/2 == s
+PASS A2 symbolic: Re z = 2T
+PASS A3 symbolic: Im z = 1 - 2 sigma
+PASS A4 critical line maps to y=0
+PASS A5 numeric: |H0(2*gamma1)| < 1e-30 and |H0(2*gamma1+0.5)| > 1e-6 * scale
+PASS B1 Lambda = t0 + y0^2/2 = 0.19999966445 exactly
+PASS B2 Lambda < 0.2
+PASS B3 X/2 = 2500000097429 exactly and <= T_PT
+PASS B4 margin T_PT - X/2 = 500175235371
+PASS B5 canopy validity y0^2 + 2 t0 <= 1
+PASS B6 (ii)-range nonempty y0^2 <= 1 - 2 t0
+PASS B7 region (eq. `region`): 0 < t0 <= 1/2, X >= 200
+PASS B8 slab superset: sqrt(1-y0^2) <= 1 i.e. y0^2 >= 0
+PASS B9 N constant = 630783 on slab (interval arithmetic)
+PASS C1 Cor3.1 Lambda = 0.197262405 exactly
+PASS C2 Cor3.1 X'/2 = 3000000092913.5 <= T_PT, margin 175239886.5
+PASS C3 Cor3.1 validity: y0'^2 + 2 t0' = 0.39452481 <= 1 and y0'^2 <= 1 - 2 t0'
+PASS C4 Cor3.2 Lambda = 0.197 exactly
+PASS C5 Cor3.2 validity: y0''^2 + 2 t0'' = 0.394 <= 1 and y0''^2 <= 1 - 2 t0''
+PASS C6 region containment: 0.039 >= 0.1809^2 and 0.1775 <= 0.1809
+PASS C7 admissibility ceiling: X' <= 2*T_PT = 6000350665600
+PASS D1 0.19-row needs T >= X/2 = 10000000065626 > T_PT
+PASS D2 ratio in (3.33313, 3.33314)
+
+ALL CHECKS PASSED (criterion_theorem package)
+PASS [0.20-row barrier corner] N agree (630783)
+PASS [0.20-row barrier corner] (20) gamma T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row barrier corner] (21) Re s_* T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row barrier corner] (22) kappa T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row barrier corner] (23) eA+eB T1xT2 overlap+endpoints agree to 1e-6
+PASS [0.20-row barrier corner] (24) eC0 T1xT2 overlap+endpoints agree to 1e-6
+   N=630783  gamma<= 0.107388920399386  Re s_*>= 1.82565371914697  kappa<= 3.11233787871095e-15
+   eA+eB <= 4.45755342295454e-12   eC0 <= 1.0306754114217e-7   total <= 1.03071998695593e-7
+PASS [0.20-row barrier corner] eA+eB+eC0 upper end < 1e-3
+PASS [0.20-row slab top] N agree (630783)
+PASS [0.20-row slab top] (20) gamma T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row slab top] (21) Re s_* T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row slab top] (22) kappa T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.20-row slab top] (23) eA+eB T1xT2 overlap+endpoints agree to 1e-6
+PASS [0.20-row slab top] (24) eC0 T1xT2 overlap+endpoints agree to 1e-6
+   N=630783  gamma<= 1.61735669647742e-6  Re s_*>= 1.06677358705091  kappa<= 9.99999961029602e-16
+   eA+eB <= 2.81552432648603e-11   eC0 <= 1.01504049448184e-6   total <= 1.0150686497251e-6
+PASS [0.20-row slab top] eA+eB+eC0 upper end < 1e-3
+PASS [campaign interior] N agree (661570)
+PASS [campaign interior] (20) gamma T1xT2 overlap+endpoints agree to 1e-12
+PASS [campaign interior] (21) Re s_* T1xT2 overlap+endpoints agree to 1e-12
+PASS [campaign interior] (22) kappa T1xT2 overlap+endpoints agree to 1e-12
+PASS [campaign interior] (23) eA+eB T1xT2 overlap+endpoints agree to 1e-6
+PASS [campaign interior] (24) eC0 T1xT2 overlap+endpoints agree to 1e-6
+   N=661570  gamma<= 0.0688053004132711  Re s_*>= 1.60517793604491  kappa<= 2.7272727272757e-15
+   eA+eB <= 9.32002125874291e-12   eC0 <= 3.82206727632809e-7   total <= 3.82216047654068e-7
+PASS [campaign interior] eA+eB+eC0 upper end < 1e-3
+PASS [0.197-site (0.1809 row)] N agree (690988)
+PASS [0.197-site (0.1809 row)] (20) gamma T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site (0.1809 row)] (21) Re s_* T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site (0.1809 row)] (22) kappa T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site (0.1809 row)] (23) eA+eB T1xT2 overlap+endpoints agree to 1e-6
+PASS [0.197-site (0.1809 row)] (24) eC0 T1xT2 overlap+endpoints agree to 1e-6
+   N=690988  gamma<= 0.0881477087069745  Re s_*>= 1.80662968179519  kappa<= 2.72706741554227e-15
+   eA+eB <= 4.10775296056188e-12   eC0 <= 1.0026822017604e-7   total <= 1.00272327929e-7
+PASS [0.197-site (0.1809 row)] eA+eB+eC0 upper end < 1e-3
+PASS [0.197-site tuned params] N agree (690988)
+PASS [0.197-site tuned params] (20) gamma T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site tuned params] (21) Re s_* T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site tuned params] (22) kappa T1xT2 overlap+endpoints agree to 1e-12
+PASS [0.197-site tuned params] (23) eA+eB T1xT2 overlap+endpoints agree to 1e-6
+PASS [0.197-site tuned params] (24) eC0 T1xT2 overlap+endpoints agree to 1e-6
+   N=690988  gamma<= 0.0705564328159757  Re s_*>= 1.79206168888141  kappa<= 2.92105824286767e-15
+   eA+eB <= 4.20855309056953e-12   eC0 <= 1.04590777103001e-7   total <= 1.04594985656091e-7
+PASS [0.197-site tuned params] eA+eB+eC0 upper end < 1e-3
+PASS FLAG repo 6.92/(x-6.66) < paper 6.92/(x-12) (strict, certified)
+PASS FLAG mismatch magnitude relative < 2e-12 at campaign x
+
+ALL CHECKS PASSED (error_terms_audit package)
+PASS C0a extraction exact-bracket of 1/3 (0 < gaps < 2^-248)
+PASS C0b extraction of exactly representable X is exact
+U1 uniform margin X - sup_t ws(N0,t) >= 5377392.8789 (FLOOR truncation of exact endpoint rational)
+PASS U1 window-N0 start < X uniformly in t0 in [0,0.1809], margin >= 5377392.8789
+U2 uniform margin inf_t ws(N0+1,t) - (X+1) >= 11989041.1415 (FLOOR truncation of exact endpoint rational)
+PASS U2 window-(N0+1) start > X+1 uniformly in t0 in [0,0.1809], margin >= 11989041.1415
+PASS U3 printed digit strings EQUAL certified thresholds (no transcription drift)
+PASS S1 N(x,t) = 690988 constant on slab [X,X+1] x [0,0.1809] (pinned earlier, re-asserted)
+PASS S2 N(ws(N0,t)+1, t) = N0 at t = 0
+PASS S2 N(ws(N0,t)+1, t) = N0 at t = 1809/10000
+PASS R1 0.1965-row functional arithmetic t0 + y0^2/2 = 1965/10000 EXACTLY
+PASS R2 0.1965-row criterion validity y0^2 + 2 t0 = 393/1000 <= 1
+PASS R3 0.1965-row range condition y0^2 <= 1 - 2 t0
+PASS R4 0.1965-row slab containment: y0^2 >= (1809/10000)^2 and t0 <= 1809/10000
+PASS R5 admissibility X/2 <= T_PT exactly (PT2021)
+R6 point margin X - ws(N0, 0.1770) >= 5377393.0179 (FLOOR truncation of exact endpoint rational)
+PASS R6 0.1965-row window-N0 start < X, margin >= 5377393.0179
+R7 point margin ws(N0+1, 0.1770) - (X+1) >= 11989041.1446 (FLOOR truncation of exact endpoint rational)
+PASS R7 0.1965-row window-(N0+1) start > X+1, margin >= 11989041.1446
+PASS R8 printed digit strings EQUAL certified thresholds (no transcription drift)
+PASS G rung t0 = 81/500 lies in [0, 1809/10000] (uniform U1/U2 + S1 apply)
+PASS G rung t0 = 161/1000 lies in [0, 1809/10000] (uniform U1/U2 + S1 apply)
+PASS G rung t0 = 4/25 lies in [0, 1809/10000] (uniform U1/U2 + S1 apply)
+TOTAL CHECKS RUN: 19
+RESULT: ALL PASS
+import audit OK: ['fractions', 'math']
+
+TOTAL CHECKS RUN: 30
+PASS: 30  FAIL: 0
+RESULT: ALL PASS
+VERIFY OK: siteglue second line reproduces (30/30, pinned literals machine-derived)
+[01] E0a floor_trunc(+1.23456,4) == 1.2345                      PASS 
+[02] E0b floor_trunc(+0.99999,4) == 0.9999                      PASS 
+[03] E0c floor_trunc(-1.23451,4) == -1.2346 (floor, not toward-zero) PASS 
+[04] E0d floor_trunc(-1.20000,4) == -1.2000 (exact stays exact) PASS 
+[05] G1 md5 TloopthreadedV4.c (pinned source)                   PASS 
+[06] G2 md5 storedsums_6e12.txt (pinned input matrix)           PASS 
+[07] G3 md5 tloop binary (bit-identical rebuild pinned by rejecting verifier) PASS 
+[08] G4 md5 tloop_6e12_y165.txt (the y=0.165 leg log)           PASS 
+[09] G5 md5 banked_tloop_6e12_y1809.txt (banked barrier_hunter-s2 artifact) PASS 
+[10] G6 md5 anchor_fresh.txt (verified wildcard-s31 fresh anchor rerun) PASS 
+[11] G7 exactly one header line                                 PASS 
+[12] G8 header == slab [6000000185827,6000000185828], N=690988, y0=0.165..1, t=0..0.1809 PASS |Processing the barrier for X= 6000000185827.0000000000000000...|
+[13] G9 all 492 Rectangle lines parse; count == 492             PASS count=492
+[14] G10 indices 1..492 contiguous                              PASS 
+[15] G11 t-march starts at 0 and is STRICTLY monotone increasing PASS 
+[16] G12 every per-rectangle winding field is the exact string 0.0000000000 PASS 
+[17] G13 overall winding line present once and == 0.000000      PASS |Overall winding number: 0.000000|
+[18] G14 cpu/wall line == '857.702 189.055'                     PASS 
+[19] G15 min 5th field (min-mesh |(A+B)/B0_eff|) attained at Rectangle(492) PASS 
+[20] G16 halo guard: printed-tail beyond 10 places (0.000000000051305) > 1e-18 PASS 
+[21] G17 machine floor-10 truncation of min-mesh == 1.4714692759 PASS 
+[22] G18a final t printed string == 0.17354959427234065989      PASS 
+[23] G18b halo guard for final t: tail > 1e-18                  PASS 
+[24] G18c machine floor-10 truncation of final t == 0.1735495942 PASS 
+[25] G19 anchor projections: 444 Rectangle lines + 1 Overall line each PASS 
+[26] G20 fresh anchor rerun byte-identical to banked artifact on all 445 lines PASS 
+[27] G21 banked anchor cpu/wall == 255.515/33.8; fresh == 672.509/190.56 PASS 
+[28] G22 timings DISTINCT while projections identical (genuine rerun law) PASS 
+[29] G23 anchor header: same slab/N/t-range, y0 = 0.1809..1 (the banked floor) PASS 
+[30] G24 extension is strict: 492 rects at y-floor 0.165 vs 444 at 0.1809 PASS 
+[31] G25 heightlever t0 = 14913/80000 - (33/200)^2/2 == 108/625 == 0.1728 EXACT PASS 
+[32] G26 mass172 t0 = 18634552/10^8 - (1652/10^4)^2/2 == 1727/10000 EXACT PASS 
+[33] G27 both t0 inside certified t-range [0, 1809/10^4]        PASS 
+[34] G28 both row heights on/above certified y-floor 33/200 = 0.165 PASS 
+TOTAL CHECKS RUN: 34
+RESULT: ALL PASS
+[DOCUMENTARY] windslab corner second line is provenance-checked but
+[DOCUMENTARY] is not run as a target gate; it samples only five corners
+RESULT: VENDORED UPSTREAM ARITHMETIC REPLAY PASS
+NOTICE: THIS IS ARTIFACT REPLAY, NOT THEOREM VALIDATION
+--- P: executed prerequisite certificates
+[PASS] P1 stored interval logs  exit=0; RESULT: STORED INTERVAL LOGS PASS
+[PASS] P2 all 3,149,013 finite rows and corrected error units  exit=0; RESULT PASS: full finite Triangle weld B=893927/5000000 rows=3149013 N=690988..3840000 gaps=0 overlaps=0 UNCERT=0 T_floor=0.000000791366 Emax=0.000000233494905212337849 binding_floor=0.000000557871094787
+[PASS] P3 30 direct non-amortized finite singleton rows  exit=0; RESULT: DIRECT SINGLETON CERTIFICATES PASS
+[PASS] P4 native Triangle-to-|f_t| binding  exit=0; RESULT: ALL PASS
+[PASS] P5 continuous window-freeze and finite/tail site seam  exit=0; RESULT: ALL PASS; CERTIFIED WINDOW-FREEZE CONCLUSION: at t0=129/800, for every integer N in [690988,3840000] and every x in [x_N(t0),x_(N+1)(t0)), the producer's frozen gamma and kappa values are upper bounds and its frozen sigma value is a lower bound, uniformly for y in [sqrt(87677/2500000),sqrt(271/400)]. The criterion start X+sqrt(1-y0^2) lies strictly inside W_N0, so the finite windows cover from that closed start through x_(Nmid+1) with only the final right endpoint excluded.
+[PASS] P6 native normalizer/correction at 180 bits  exit=0; RESULT ALL PASS precision 180
+[PASS] P7 native normalizer/correction at 256 bits  exit=0; RESULT ALL PASS precision 256
+[PASS] P8 target tail source-patch provenance  exit=0; RESULT: TAIL PATCH PROVENANCE PASS
+[PASS] P9 independent Python interval tail at 160 bits  exit=0; RESULT: ALL PASS
+[PASS] P10 independent Python interval tail at 256 bits  exit=0; RESULT: ALL PASS
+[PASS] P11 standalone 256/512-bit FLINT/Arb tail certificates  exit=0; RESULT: SEALED INDEPENDENT ARB TAIL CERTIFICATES PASS
+[PASS] P12 portable Linux/GCC/FLINT 3.0.1 883-prism barrier certificate  exit=0; RESULT: ALL PASS; BARRIER CONCLUSION: H_t is zero-free on the complete closed slab [X,X+1] x [0.1809,1] x [0,0.16125].
+[PASS] P13 macOS/Clang/FLINT 3.6.0 883-prism cross-check  exit=0; RESULT: ALL PASS; BARRIER CONCLUSION: H_t is zero-free on the complete closed slab [X,X+1] x [0.1809,1] x [0,0.16125].
+[PASS] P14 exact H0-to-zeta symmetry/sign map  exit=0; RESULT: CRITERION SIGN MAP PASS
+[PASS] P15 conservative Proposition 6.6(vi) error-constant weld  exit=0; RESULT: CONSERVATIVE ERROR-CONSTANT WELD PASS
+[PASS] P16 sealed Arb Dini y-transfer (numerator y-monotonicity) certificates  exit=0; RESULT: SEALED TRIANGLE Y-DINI CERTIFICATES PASS
+[PASS] P17 authoritative 256/512-bit FLINT/Arb Proposition 4.10 error budget  exit=0; RESULT: SEALED ARB PROP410 CERTIFICATES PASS
+--- A: exact candidate and criterion domain
+[PASS] A1 exact candidate identity
+[PASS] A2 exact decimal is 0.1787854
+[PASS] A3 theorem time domain
+[PASS] A4 final-height interval is nonempty
+[PASS] A5 curved barrier edges are correctly ordered
+[PASS] A6 theorem abscissa domain
+--- I: Theorem 1.2 hypothesis (i), verified zeta height
+[CITED THEOREM INPUT] Platt--Trudgian Theorem 1 verifies RH through T_PT=3000175332800.
+[CITED CLASSICAL INPUT] eta(sigma)>0 and eta(sigma)=(1-2^(1-sigma))*zeta(sigma) give no real zeta zero for 0<sigma<1; s=1 is a pole.
+[PASS] I1 X/2 is within the verified height
+[PASS] I2 exact verified-height margin
+--- II: Theorem 1.2 hypothesis (ii), final-time right half-line
+[PASS] II1 finite row count
+[PASS] II2 finite t-boxes contain the exact t0
+[PASS] II3 tail lower box strictly straddles y0
+[PASS] II4 tail extended box minimally covers the final height
+[PASS] II5 finite and tail share the complete N=3840000 window  finite=[x*,x_3840001), tail=[x_3840000,infinity)
+[PASS] II6 the half-open/closed-left union has no endpoint gap  x_3840001 belongs to the tail lane
+--- III: Theorem 1.2 hypothesis (iii), closed barrier
+[PASS] III1 barrier floor lies strictly below y0
+[PASS] III2 exact barrier-floor squared margin
+[PASS] III3 required horizontal width lies in the closed unit strip
+[PASS] III4 barrier time top is exactly t0
+[PASS] III5 the whole curved vertical interval is inside [0.1809,1]
+--- W: canonical criterion weld
+[CITED THEOREM INPUT] Polymath Theorem 1.2: hypotheses (i), (ii), and (iii) imply Lambda <= t0+y0^2/2.
+[PASS] W1 hypothesis (i) exact domain and height predicates
+[PASS] W2 hypothesis (ii) finite+tail certificates and coverage predicates
+[PASS] W3 hypothesis (iii) dual barrier certificates and containment predicates
+[PASS] W4 final rational substitution
+TOTAL CHECKS RUN: 40
+RESULT: UNCONDITIONAL PROOF ASSEMBLY PASS
+CONCLUSION: Lambda <= 893927/5000000 = 0.1787854.
+STATUS: computer-assisted unconditional proof; not yet peer reviewed.
+RESULT: STORED UNCONDITIONAL-PROOF REVIEW PASS

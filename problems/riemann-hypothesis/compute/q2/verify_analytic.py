@@ -41,7 +41,11 @@ def digest(p):
 def clean(path,terminal):
     value=path.read_text()
     require(value.strip() and terminal in value,'missing analytic result: '+str(path))
-    require(not re.search(r'\[FAIL\]|FAIL:|RESULT:.*(?:FAILED|FAIL\b)|Traceback|aborted',value),
+    # One historical subchecker prints a zero-failure count in this exact
+    # format. A nonzero count, or any actual failure record, still rejects.
+    decisive='\n'.join(line for line in value.splitlines()
+                       if not re.fullmatch(r'PASS: \d+  FAIL: 0',line))
+    require(not re.search(r'\[FAIL\]|FAIL:|RESULT:.*(?:FAILED|FAIL\b)|Traceback|aborted',decisive),
             'failed analytic output: '+str(path))
     return value
 

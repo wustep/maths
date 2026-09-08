@@ -1,9 +1,10 @@
 # Independent certification of the 0.1787854 candidate
 
-The exact target and current status are in [`CLAIM.md`](CLAIM.md).
-Both complete finite implementations have finished. The fresh closed-barrier
-replay is still running; no improved bound is asserted until it and the
-final assembly pass.
+The complete certificate establishes
+$\Lambda\leq893927/5000000=0.1787854<1/5$;
+[`CLAIM.md`](CLAIM.md) states the exact inequality and falsifier.
+Both complete finite implementations, all fresh analytic lanes, and the
+independent certificate assembly have passed.
 
 The candidate is due to Jude Gomila. This folder adds a new complete finite
 algorithm and an analytic audit. [`NOTE.md`](NOTE.md) develops the argument,
@@ -22,7 +23,7 @@ git clone https://github.com/judegomila/dbn-lambda-01787854-candidate-audit.git 
 git -C candidate checkout a74738deb6d5e0f76887cb36901da08b68dca705
 ```
 
-After the certificate is complete, this checks both entire retained finite
+This checks both entire retained finite
 streams, all coefficient containments, all 883 prism inequalities, and the
 analytic interfaces. It requires Python 3.11 or later and git:
 
@@ -83,6 +84,12 @@ evidence; the content checks enforce coverage and decisive inequalities.
 - `archive_results.py`, `check_certificate.py`: retention and replay of
   complete evidence. Lane manifests retain `claim_certified: false` or
   `certifies_claim: false` because an individual lane is insufficient.
+
+The complete compressed certificate occupies about 47 MiB. The
+[`finite-floor figure`](figures/finite-floors.svg),
+[`PDF`](figures/finite-floors.pdf), and
+[`exact bin data`](figures/finite-floors.csv) show the two verified floors;
+the drawing is not a proof input.
 
 An incomplete range, nonpositive margin, failed interval comparison,
 altered numerical source, missing analytic input, or unfinished barrier

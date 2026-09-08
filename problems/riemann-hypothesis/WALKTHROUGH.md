@@ -113,7 +113,7 @@ The same small verifier also redoes the 2011 Lehmer formula from four printed
 zero ordinates. Python decimal arithmetic and a separate C floating-point
 path both recover the paper's $-1.14541\cdot10^{-11}$ scale.
 
-## 6. Proven and still open
+## 6. At the end of the first campaign
 
 The source papers establish
 
@@ -205,7 +205,7 @@ normalizer is continuous and nonzero, and the integer index stays constant.
 Thus the uniform positive-time error estimate survives at zero. There is
 no need to assert a limit over an unbounded horizontal region.
 
-## What the second campaign has established so far
+## What the second campaign established
 
 Both complete finite verifications and the fresh height, error, and tail
 checks have passed. Their finite margin after approximation error is
@@ -213,7 +213,16 @@ exactly bounded below by $557871094787662151/10^{24}>0$. The analytic
 transfer is documented in `compute/q2/ANALYTIC_REVIEW.md`, and a mathematical
 note is in `compute/q2/NOTE.md`.
 
-The fresh barrier replay and final complete-certificate assembly are still
-running. Until they finish, `compute/q2/CLAIM.md` remains an attempted
-inequality. The candidate number belongs to Gomila; this campaign's new
-work is its complete independent finite verification and analytic audit.
+The fresh barrier then completed all 883 prisms, with minimum independently
+recomputed margin above $0.5198$. All 7,688 coefficient components were
+regenerated. The complete assembly passed, establishing
+
+$$
+\Lambda\leq\frac{893927}{5000000}=0.1787854<\frac15.
+$$
+
+The candidate number belongs to Gomila; this campaign's new work is its
+complete independent finite verification and analytic audit. The full
+evidence is retained, and `compute/q2/CLAIM.md` states the certified
+inequality. The algorithms share Arb and the review is by GPT-6 Astra;
+external human peer review is not claimed. RH remains open.

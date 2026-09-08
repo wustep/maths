@@ -1,0 +1,64 @@
+--- A: exact criterion containment
+[PASS] A1 exact candidate row
+[PASS] A2 certified y-floor is below the target y0  squared margin=234599/100000000
+[PASS] A3 certified t-top contains target t0
+[PASS] A4 required x-width is below one
+[PASS] A5 curved lower edge remains above slab floor
+[PASS] A6 curved upper edge remains inside slab
+--- B: constant N on the complete closed slab
+[PASS] B1 floor(sqrt(x/4pi+t/16)) is constant  sqrt-box=[690988.309643027761314832801504141693253482448375344443241367794025383404543988298, 690988.309643092636215966990399838311707310812583878807136189401766432196048283842]
+--- C: independent uniform Theorem 1.3 error majorant
+[PASS] C1 N^2<q gives both heat cancellation and the gamma*n^y bound
+[PASS] C2 2*log(N)<log(q) independently confirms N^2<q
+[PASS] C3 equation (23) coarse bound is below 4.3e-7
+[PASS] C4 conservative e_C0 bound is below 3.57e-4
+[PASS] C5 total error is below the C verifier's 0.00125 allowance  uniform upper=0.000356941711099506718767511
+--- D: fail-closed C source contract
+[PASS] D1 both numerical quadratures check their return status
+[PASS] D2 minimum modulus uses interval min
+[PASS] D3 serialized coefficients receive relative-or-absolute 1e-20 balls
+[PASS] D4 the independently bounded Taylor remainder enters every value
+[PASS] D5 spatial interpolation uses Dz/[2(num-1)]
+[PASS] D6 time derivative is enclosed on each complete closed prism
+[PASS] D7 decisive inequality includes space, time, and H/B error
+[PASS] D8 full winding intervals must prove the integer zero
+[PASS] D9 C allowance is the independently discharged 0.00125
+[PASS] D10 success is impossible without terminal coverage
+[PASS] D11 quadrature callbacks preserve the complex variable
+[PASS] D12 quadrature callbacks use fail-closed analytic log and powers
+[PASS] D13 every integral exercises order=1 while finite-head calls use order=0
+[PASS] D14 Lemma 8.4 sums use an exact 16-term head and decreasing-tail integral
+[PASS] D15 increasing and decreasing spatial factors use conservative endpoints
+[PASS] D16 every derivative-envelope theorem gate is fail-closed
+[PASS] D17 derivative-box theorem documents endpoints, discrete tail, and analytic quadrature
+--- E: sealed closed-prism evidence
+[PASS] E1 barrier log exists and is nonempty  /tmp/rh-q2-analytic-v2/barrier/barrier_target_closed.log
+[PASS] E2 log contains no failure marker
+[PASS] E3 log records constant N corners
+[PASS] E4 log encloses the exact 0.00125 allowance with negligible radius
+[PASS] E5 every prism line parses and the deterministic cover has 883 prisms  lines=883 parsed=883
+[PASS] E6 prism identifiers are consecutive
+[PASS] E7 every printed prism quantity passes its sign/type gate
+[PASS] E8 every prism inequality is independently recomputed from printed balls  minimum recomputed lower=0.519849894613872543374989997
+[PASS] E9 adjacent closed-prism seam strings are byte-identical
+[PASS] E10 the first prism begins at the exact t=0 token
+[PASS] E11 the final prism encloses t0=0.16125
+[PASS] E12 every per-prism winding enclosure lies in (-1/4,1/4)  max abs endpoint=2.270000001654361225106055E-15
+[PASS] E13 first prism records the exact-head derivative ceilings  Dz=9600.0000000000000000 Dt=52726.000000000000000
+[PASS] E14 log contains no unrecognized nonblank record
+[PASS] E15 unique headers, aggregate gates, result, and timing are ordered
+[PASS] E16 aggregate winding interval certifies the integer zero  aggregate=(Decimal('-8.95E-13'), Decimal('8.95E-13'))
+[PASS] E17 aggregate coverage token equals the final prism endpoint
+--- F: coefficient, Taylor-tail, and Arb error provenance
+[PASS] F1 factorial Taylor-tail log exists and is nonempty  /tmp/rh-q2-analytic-v2/barrier/storedsum_taylor_tail.log
+[PASS] F2 factorial Taylor-tail upper is strictly below 1e-20  upper=1.954234593244761064018340862560443E-22
+[PASS] F3 stored-sum provenance log exists and is nonempty  /tmp/rh-q2-analytic-v2/barrier/storedsum_provenance.log
+[PASS] F4 all 7,688 regenerated stored components fit their archived balls
+[PASS] F5 regenerated interval matrix exists and is nonempty  /tmp/rh-q2-analytic-v2/barrier/storedsum_interval_regenerated.txt
+[PASS] F6 regenerated matrix retains all 7,688 nonzero radii
+[PASS] F7 independent Arb uniform-error log exists  /tmp/rh-q2-analytic-v2/barrier/uniform_error.log
+[PASS] F8 Arb independently certifies the conservative error below 0.00125  upper=0.0003565230116000396683802985102688090540476294
+TOTAL CHECKS RUN: 54
+RESULT: ALL PASS
+BARRIER CONCLUSION: H_t is zero-free on the complete closed slab [X,X+1] x [0.1809,1] x [0,0.16125].
+RESULT: FRESH CLOSED-BARRIER REPLAY PASS

@@ -1,0 +1,5 @@
+PASS dictionary direct sums vs interpolation: primes=2, N=6..30
+PASS dictionary direct sums vs interpolation: primes=3, N=6..30
+PASS dictionary direct sums vs interpolation: primes=4, N=6..30
+PASS dictionary direct sums vs interpolation: primes=5, N=6..30
+PASS 100 independent finite regression cases; this is not a Lambda certificate

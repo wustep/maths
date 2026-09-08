@@ -246,7 +246,8 @@ normalization, height reduction, tail reduction, and boundary homotopy
 withstand this review. Two complete finite implementations have now checked
 every required index; the second uses the interpolation theorem proved in
 `INTERPOLATION.md`. The fresh analytic replay and its exact-rational
-interface checker must also finish before `CLAIM.md` can be certified.
+interface checker have also finished successfully. Together these establish
+the inequality in `CLAIM.md`, using the cited published theorems.
 
 The review is by GPT-6 Astra, separately from the candidate's supplied
 proof notes. It is not a report of external human review. The numerical

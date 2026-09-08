@@ -1,0 +1,150 @@
+{
+  "claim_certified": false,
+  "upstream_pin": "a74738deb6d5e0f76887cb36901da08b68dca705",
+  "runs": [
+    {
+      "name": "stored-review",
+      "command": [
+        "bash",
+        "/tmp/rh-q2-upstream/verify.sh"
+      ],
+      "returncode": 0,
+      "wall_seconds": 102.5,
+      "stdout_sha256": "a2cc1e53c67a0f11f5f8d03a462d14739da5e3814495e8d200e23847393caab5",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "prop410",
+      "command": [
+        "bash",
+        "/tmp/rh-q2-upstream/scripts/run_prop410_arb.sh",
+        "/tmp/rh-q2-analytic-v2/prop410"
+      ],
+      "returncode": 0,
+      "wall_seconds": 0.695,
+      "stdout_sha256": "158b8d4f4b03198c490af3ddfeeb4a314d5bf2cae361bb4ca5481945a09488e8",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "tail",
+      "command": [
+        "bash",
+        "/tmp/rh-q2-upstream/scripts/run_tail_arb.sh",
+        "/tmp/rh-q2-analytic-v2/tail"
+      ],
+      "returncode": 0,
+      "wall_seconds": 1.839,
+      "stdout_sha256": "a66c6f1fd75cc941f7d683ae57f17a589ae4965837541098ef061bdbcfcf20ba",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "compile-dini-180",
+      "command": [
+        "cc",
+        "-O2",
+        "-DPREC=180",
+        "-I/tmp/rh-q2-deps/usr/include",
+        "-I/tmp/rh-q2-deps/usr/include/x86_64-linux-gnu",
+        "/tmp/rh-q2-upstream/verifiers/verify_triangle_y_dini_arb.c",
+        "-L/tmp/rh-q2-deps/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/tmp/rh-q2-deps/usr/lib/x86_64-linux-gnu",
+        "-lflint",
+        "-lm",
+        "-o",
+        "/tmp/rh-q2-analytic-v2/dini-180"
+      ],
+      "returncode": 0,
+      "wall_seconds": 0.317,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "dini-180",
+      "command": [
+        "/tmp/rh-q2-analytic-v2/dini-180"
+      ],
+      "returncode": 0,
+      "wall_seconds": 11.873,
+      "stdout_sha256": "13a8ee8195ae3733d0ee3b89cbac208c472653aa93eca3d1a9152e0f2c279113",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "compile-dini-256",
+      "command": [
+        "cc",
+        "-O2",
+        "-DPREC=256",
+        "-I/tmp/rh-q2-deps/usr/include",
+        "-I/tmp/rh-q2-deps/usr/include/x86_64-linux-gnu",
+        "/tmp/rh-q2-upstream/verifiers/verify_triangle_y_dini_arb.c",
+        "-L/tmp/rh-q2-deps/usr/lib/x86_64-linux-gnu",
+        "-Wl,-rpath,/tmp/rh-q2-deps/usr/lib/x86_64-linux-gnu",
+        "-lflint",
+        "-lm",
+        "-o",
+        "/tmp/rh-q2-analytic-v2/dini-256"
+      ],
+      "returncode": 0,
+      "wall_seconds": 0.246,
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "dini-256",
+      "command": [
+        "/tmp/rh-q2-analytic-v2/dini-256"
+      ],
+      "returncode": 0,
+      "wall_seconds": 11.788,
+      "stdout_sha256": "3052695283b6a36db4fdaa22bdc1396fc2762705fa3e584bb6d2a22f5b3da14a",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "normalizer-correction",
+      "command": [
+        "/tmp/rh-q2-venv/bin/python",
+        "/tmp/rh-q2-upstream/verifiers/verify_triangle_normalizer_corr_iv.py",
+        "--prec",
+        "256"
+      ],
+      "returncode": 0,
+      "wall_seconds": 0.282,
+      "stdout_sha256": "54666b58969367a9b0b2843e8b6689dd606854d19ead55f96f9a0b9c1541cca0",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "window",
+      "command": [
+        "/tmp/rh-q2-venv/bin/python",
+        "/tmp/rh-q2-upstream/verifiers/verify_window_freeze.py"
+      ],
+      "returncode": 0,
+      "wall_seconds": 0.311,
+      "stdout_sha256": "11a62e477d74766ea6df41554ba34f9f6c497257545f7c323763ec11df6dd03d",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "tail-python",
+      "command": [
+        "/tmp/rh-q2-venv/bin/python",
+        "/tmp/rh-q2-upstream/verifiers/verify_tail_1787854_256.py"
+      ],
+      "returncode": 0,
+      "wall_seconds": 30.758,
+      "stdout_sha256": "5e9702b88a2e0798ab21bcab15ea81855f1c28b0b3d8875bfd888194d6cab379",
+      "maxrss_kib": 1023064
+    },
+    {
+      "name": "barrier",
+      "command": [
+        "bash",
+        "/tmp/rh-q2-upstream/scripts/run_barrier_replay.sh",
+        "/tmp/rh-q2-analytic-v2/barrier"
+      ],
+      "returncode": 0,
+      "wall_seconds": 1153.983,
+      "stdout_sha256": "264d21f2f0c4625db313de4e6c670cf2d83f5db08a85661673a66208faf25c9b",
+      "maxrss_kib": 1023064
+    }
+  ]
+}

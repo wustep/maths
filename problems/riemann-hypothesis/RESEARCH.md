@@ -79,3 +79,9 @@ are implementation leads.
   Search results included the author's website, the existing notebook, and
   unrelated de Bruijn sequence papers. No search-result number was adopted
   as a new baseline.
+- Completed the independent reproduction at the same pin. Both full finite
+  algorithms and all fresh analytic numerical lanes passed. The source-level
+  review also checks the barrier polynomial identity, geometric remainder
+  denominators, and zero-time continuation. The result is recorded in
+  `compute/q2/CLAIM.md`; this local verification does not change the
+  candidate's arXiv or peer-review publication status.

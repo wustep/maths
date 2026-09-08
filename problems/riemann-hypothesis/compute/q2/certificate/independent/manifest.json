@@ -1,0 +1,94 @@
+{
+  "certifies_claim": false,
+  "sources": {
+    "direct.rs": "77e5f0dad18d6723af9603dd99f9f2861865b260d04731f02c8e4f03af3644f0",
+    "interpolate.rs": "e738f2b6242d6a0da17590f08184ef64321ecc2ac41ab6d3bc9cc72ef64568b9",
+    "ball.rs": "2b94e5b378a584acb3a4d9c39c873ddd4fb9402545068c2fab0adeb096ada293",
+    "arb_bridge.c": "c08df7353d146da2abff428c01b6aed3ac2659e7c69dc05d16b7e6e1b5f46562",
+    "run_independent.py": "1a9c3223e1714db84b2a3de3f8627ee86f16b2715289ae56392a0b3bdeeeb061"
+  },
+  "binaries": {
+    "direct": "f9732381f3b527921298336cb71e5d69c426a98fda14394fed649d646e708521",
+    "interpolate": "0f45037230b066cd8caa21f00e41395997c417a90eaf29dce47afd6f0dd87224"
+  },
+  "runs": [
+    {
+      "name": "direct-first",
+      "command": [
+        "/tmp/rh-q2-build/direct",
+        "690988",
+        "5",
+        "192"
+      ],
+      "returncode": 0,
+      "wall_seconds": 73.064,
+      "maxrss_kib": 10688,
+      "stdout_sha256": "b5e791886d9054f9681d05d12400387f87d267b3e2ac71fb529f42f96304f53a",
+      "stderr_sha256": "2cdfb6848bb302e7794356c98044a669e5c3363ad7c0f6167175236f2cedcb79"
+    },
+    {
+      "name": "interpolation-690988-728999",
+      "command": [
+        "/tmp/rh-q2-build/interpolate",
+        "690988",
+        "728999",
+        "5",
+        "8",
+        "192"
+      ],
+      "returncode": 0,
+      "wall_seconds": 177.099,
+      "maxrss_kib": 10688,
+      "stdout_sha256": "350377d85046969b8715fb0f8940e3a2a368d5fa3a3988ed9eea6e9e54b0e11b",
+      "stderr_sha256": "3e22c82a38c50c530fb93c4da3930027af4f2f90cad0e17937028edbcfba9434"
+    },
+    {
+      "name": "interpolation-729000-818999",
+      "command": [
+        "/tmp/rh-q2-build/interpolate",
+        "729000",
+        "818999",
+        "4",
+        "8",
+        "192"
+      ],
+      "returncode": 0,
+      "wall_seconds": 106.395,
+      "maxrss_kib": 10688,
+      "stdout_sha256": "9a51d80455881ca880578ec214ad3ddc1475d5d3a6d5eeb3e94a957617508ec6",
+      "stderr_sha256": "d95dfdbbe7e9444391ad5bf2b3ebdfd9b4bd5f5b63e9d754684ec9d80aaf5a51"
+    },
+    {
+      "name": "interpolation-819000-1027999",
+      "command": [
+        "/tmp/rh-q2-build/interpolate",
+        "819000",
+        "1027999",
+        "3",
+        "8",
+        "192"
+      ],
+      "returncode": 0,
+      "wall_seconds": 78.598,
+      "maxrss_kib": 10688,
+      "stdout_sha256": "5489e98d71b2b2a8163a6fc75858215e3d04c7aed907c63969fb96c2dbad74ba",
+      "stderr_sha256": "cd6db527793d1cd149a019f74831dadd4984139bb2ddb68f69e916a055e6db26"
+    },
+    {
+      "name": "interpolation-1028000-3840000",
+      "command": [
+        "/tmp/rh-q2-build/interpolate",
+        "1028000",
+        "3840000",
+        "2",
+        "8",
+        "192"
+      ],
+      "returncode": 0,
+      "wall_seconds": 238.052,
+      "maxrss_kib": 10688,
+      "stdout_sha256": "dfca124b16936dc1bc6af3e39b5b3797b4f082a892b8c5805435c9e6d3aecef7",
+      "stderr_sha256": "e222bae367722157b6a1d652fa1d0fd6e079347055c5d58dae3e453d2bce5fa1"
+    }
+  ]
+}

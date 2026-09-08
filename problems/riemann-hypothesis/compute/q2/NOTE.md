@@ -1,9 +1,9 @@
 # Independent verification of an upper bound for the de Bruijn–Newman constant
 
 Stephen Wu. Computational implementation and analytic audit: GPT-6 Astra,
-2026-09-08. Draft pending completion of the fresh closed-barrier replay.
+2026-09-08. Computer-assisted verification; no external peer review claimed.
 
-The target of this note is
+The certificate establishes
 
 $$
 \Lambda\leq\frac{893927}{5000000}=0.1787854<\frac15.
@@ -40,7 +40,7 @@ bound $\Lambda\geq0$ is known, and RH would say $\Lambda=0$.
 Theorem 1.2 of [Polymath 15](https://arxiv.org/abs/1904.12438v2) gives
 $\Lambda\leq t_0+y_0^2/2$ from three statements:
 
-1. Zeta has no zero in $\Re s\geq(1+y_0)/2$, $0\leq\Im s\leq X/2$.
+1. Zeta has no zero in $(1+y_0)/2\leq\Re s\leq1$, $0\leq\Im s\leq X/2$.
 2. $H_{t_0}(x+iy)\ne0$ for $x\geq X+\sqrt{1-y_0^2}$ and
    $y_0\leq y\leq\sqrt{1-2t_0}$.
 3. $H_t(x+iy)\ne0$ when $0\leq t\leq t_0$,
@@ -220,6 +220,13 @@ with the minimum floor at $N=690988$. The two implementations share
 FLINT/Arb. They are independent algorithms and source implementations,
 not independent transcendental libraries.
 
+![Certified finite floors from both complete algorithms](figures/finite-floors.svg)
+
+Each step is the minimum integer floor over an inclusive bin of at most
+2,048 indices. The vertical lines mark changes of Euler prime set. The
+dotted line is the uniform approximation error ceiling. The exact bin
+data and an exportable PDF are in `figures/`.
+
 ## 4. Passing from the sampled height to a region
 
 The height step concerns a finite sum of absolute values. It cannot be
@@ -356,6 +363,11 @@ decreasing integral tail. The replay requires all 883 consecutive prisms
 to finish. An independent rational parser recomputes each inequality,
 checks all seams, and checks both closed endpoints.
 
+The fresh replay completed all 883 prisms. The smallest independently
+recomputed margin exceeds $0.5198$, and all 7,688 regenerated coefficient
+components fit their serialization balls. The uniform approximation error
+is less than $0.000356523011600040<1/800$.
+
 The positive-time restriction in the approximation theorem also needs
 attention. On this fixed compact rectangle the integrand defining $H_t$
 is dominated, for $0\leq t\leq t_0$, by
@@ -384,7 +396,7 @@ enclosures. The analytic audit is source-level mathematical review by
 the named model. These are the actual independence boundaries of this
 computer-assisted argument.
 
-Once all three criterion inputs are certified, their exact substitution is
+All three criterion inputs are now certified. Exact substitution gives
 
 $$
 \Lambda\leq\frac{129}{800}+\frac12\frac{87677}{2500000}
