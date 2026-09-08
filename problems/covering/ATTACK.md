@@ -563,3 +563,11 @@ Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
 `python3 compute/verify_certificate.py compute/H_r10_n50.txt` → PASS,
 1024/1024, rank 10, radius exactly 2.
 
+
+## 2026-09-08 — H_OK 9-block (3,0)-partition → ℓ₂(18,3)≤151
+
+- Request from Davydov–Marcugini–Pambianco: coarsen the Theorem 7.1 (3,1)-partition of $H_{OK}$ from 11 blocks to 9, so Construction QM$_4^3$ can take $m=3$ and give $[151,133]_2 3$ instead of the table's $153$ at $r=18$.
+- SAT (Glucose) finds a $(3,0)$-partition into 9 blocks and proves $(3,1)$ into 9 is UNSAT. Dependent triple $h_6+h_9+h_{16}=0$ must share a block in every 9-block solution, so $\ell=1$ is impossible at $p=9$.
+- Explicit labels [`compute/partition_H_OK_p9_ell0.txt`](compute/partition_H_OK_p9_ell0.txt); seed matrix [`compute/H_OK_r9_n18.txt`](compute/H_OK_r9_n18.txt). Independent check: `python3 compute/verify_H_OK_p9.py` (512/512).
+- Builder [`compute/build_qm43_p9.py`](compute/build_qm43_p9.py) emits [`compute/H_R3_r18_n151.txt`](compute/H_R3_r18_n151.txt). Independent C sweep: **262144/262144** at radius 3 (`verify_radius3_matrix`, $r=18$, $n=151$). Thus $\ell_2(18,3)\le 151$, improving $153$ by 2.
+- Reproduction: `compute/run_qm43_p9_checks.sh`. No claim that $p(H_{OK},1)\le 9$.

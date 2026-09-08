@@ -53,6 +53,7 @@ Theorem-only from the $r=28$ seed: $\ell_2(40,2)\le 1671167$, $\ell_2(42,2)\le 3
 ## Certified finite bounds (quest q6b, 2026-08-19)
 
 - Exact 3-sum: every vector of $\mathbb F_2^{10}$ is a sum of exactly three distinct columns of the 50-set (1024/1024).
+- $\ell_2(18,3)\le 151$ (table 153) — [`compute/H_R3_r18_n151.txt`](compute/H_R3_r18_n151.txt). QM$_4^3$ from a 9-block $(3,0)$-partition of $H_{OK}$. Full $2^{18}$ radius-3 sweep.
 - $\ell_2(26,3)\le 817$ (paper 818) — [`compute/H_R3_r26_n817.txt`](compute/H_R3_r26_n817.txt). Full $2^{26}$ radius-3 sweep.
 - $p(H)\le 64$ on the $r=28$ matrix — [`compute/partition_r28_n26111_p64.txt`](compute/partition_r28_n26111_p64.txt). Unlocks theorem-only $\ell_2(40,2)\le 1671167$.
 
