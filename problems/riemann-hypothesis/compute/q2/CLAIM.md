@@ -38,8 +38,8 @@ Successful diagnostics alone must leave a nonzero exit status.
 
 ## Falsifier and certificate rejection
 
-A rigorous example of nonreal zeros of the deformed function at the target
-time would falsify the inequality. A missing interval, invalid error bound,
+A rigorous example of a nonreal zero of $H_{893927/5000000}$ would falsify
+the inequality. A missing interval, invalid error bound,
 unproved analytic implication, failed independent check, or substituted
 rounded parameter rejects this certificate; it does not by itself disprove
 the target inequality.

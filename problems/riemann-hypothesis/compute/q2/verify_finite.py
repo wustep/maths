@@ -6,6 +6,7 @@ Reading successful old logs alone is not a fresh numerical verification.
 """
 import argparse
 from fractions import Fraction
+import gzip
 import hashlib
 import json
 from pathlib import Path
@@ -19,7 +20,12 @@ def require(ok,message):
     if not ok: raise ValueError(message)
 
 def digest(path):
-    with path.open('rb') as f: return hashlib.file_digest(f,'sha256').hexdigest()
+    with (gzip.open(path.with_suffix(path.suffix+'.gz'),'rb')
+          if not path.exists() else path.open('rb')) as f:
+        return hashlib.file_digest(f,'sha256').hexdigest()
+
+def transcript(path):
+    return path.open() if path.exists() else gzip.open(path.with_suffix(path.suffix+'.gz'),'rt')
 
 def c_rows(root):
     manifest=json.loads((root/'progress.json').read_text())
@@ -32,7 +38,7 @@ def c_rows(root):
         path=root/f'N{lo}-{hi}.txt'
         require(digest(path)==entry['sha256'],'C transcript hash')
         next_n=lo; minimum=10**12; finished=False
-        with path.open() as f:
+        with transcript(path) as f:
             tbox='16125/100000 16125/100000' if k==6 else '161250000/1000000000 161250001/1000000000'
             require(next(f)==f'TBOX {tbox}\n','C time box')
             require(next(f)=='WEIGHT TRIANGLE\n','C weight branch')
@@ -62,7 +68,7 @@ def rust_rows(root):
             require(digest(root/(entry['name']+suffix))==entry[key],'Rust transcript hash')
     for lo,hi,k in LEGS:
         name=f'interpolation-{lo}-{hi}'
-        with (root/(name+'.txt')).open() as f:
+        with transcript(root/(name+'.txt')) as f:
             require(next(f)==f'INTERPOLATION first={lo} last={hi} primes={k} nodes=8 bits=192 t=129/800 y2=87677/2500000\n','Rust parameters')
             minimum=10**12; at=lo; next_n=lo; finished=False
             for line in f:

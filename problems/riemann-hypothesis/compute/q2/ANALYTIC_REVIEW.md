@@ -1,9 +1,9 @@
 # Analytic review of the pinned candidate
 
-This review does not certify the attempted upper bound. It separates the
-parts of the mathematical transfer checked here from the finite obligations
-that still need a complete independent implementation. The candidate and
-its new lemmas belong to Jude Gomila; this folder is a reproduction and audit.
+This review checks the mathematical transfer separately from its numerical
+obligations. `CLAIM.md` gives the current certification status. The candidate
+and its new lemmas belong to Jude Gomila; this folder is a reproduction and
+audit with a new independent finite algorithm.
 
 The source is commit `a74738deb6d5e0f76887cb36901da08b68dca705` of
 [the candidate repository](https://github.com/judegomila/dbn-lambda-01787854-candidate-audit).
@@ -172,6 +172,15 @@ and requires strict interval comparisons. Its quadrature callbacks keep
 complex arguments when an analytic enclosure is requested. The finite
 head plus decreasing integral tail addresses the discrete-sum issue.
 
+The coefficient generator also has an older quadrature used to choose the
+number of Taylor terms. Its projection of complex inputs is not a certified
+holomorphic quadrature. It is not needed as an error estimate here: after
+the size is selected, every coefficient is a finite Arb sum, and a separate
+factorial remainder calculation proves that the selected 62-by-62 size
+suffices. Both the matrix containment check and that independent remainder
+are mandatory. The derivative-bound quadratures used by the barrier have
+the repaired complex callbacks described above.
+
 The error constant used in all current candidate lanes is the conservative
 $179/50+173/25=21/2$. It follows from Proposition 6.6(vi) by replacing
 $x-8.52$ with the smaller positive denominator $x-12$ and using
@@ -181,10 +190,13 @@ constant in equation (24).
 ## What this review establishes
 
 The parameter transfer, zero-time limit, window directions, native
-normalization, and stated interpolation argument withstand this review.
-The review does not make independently regenerated numerical bounds out
-of every stored or source-derived intermediate. In particular, a full
-source replay of the finite sweep and a direct check at its weakest row
-are different in scope from a second complete finite verifier. The latter
-must cover every required index and all dependent transfers before this
-folder can assert `CLAIM.md`.
+normalization, height reduction, tail reduction, and boundary homotopy
+withstand this review. Two complete finite implementations have now checked
+every required index; the second uses the interpolation theorem proved in
+`INTERPOLATION.md`. The fresh analytic replay and its exact-rational
+interface checker must also finish before `CLAIM.md` can be certified.
+
+The review is by GPT-6 Astra, separately from the candidate's supplied
+proof notes. It is not a report of external human review. The numerical
+implementations share Arb where stated; repeating a precision does not
+create a second implementation.
