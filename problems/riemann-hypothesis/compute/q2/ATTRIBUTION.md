@@ -16,6 +16,13 @@ are not relicensed by this folder. The recorded arithmetic outputs were
 generated during this campaign. The upstream project credits the Polymath
 15 software and subsequent contributors in its own notices.
 
+The candidate's original documentation, certificates, and transcripts use
+[CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); that notice is
+retained in `vendor/LICENSE-DOCS`. The explanations here are independently
+written and the numerical outputs freshly generated, with the candidate's
+mathematical inputs credited above. No reserved-rights manuscript or
+unlicensed independent source has been copied into this folder.
+
 The new Rust interpolation algorithm, direct convolution, Python dictionary
 check, rational certificate parser, orchestration, and analytic audit were
 written for Stephen Wu's notebook by GPT-6 Astra on 2026-09-08. The root
