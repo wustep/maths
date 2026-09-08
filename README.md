@@ -197,6 +197,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Shannon $C_7$ 5th power / new-shape 368 search | `problems/c7-shannon/compute/q4` | Grok 4.6 | 2026-08-27 |
 | Landau 3 (Legendre), conditional exponent and edge replay | `problems/landau-legendre` | GPT-5.6 Sol | 2026-09-04 |
 | Riemann hypothesis / q1 heat-flow and Lehmer replay | `problems/riemann-hypothesis/compute/q1` | GPT-5.6 Sol | 2026-08-30 |
+| Riemann hypothesis / independent candidate certification | `problems/riemann-hypothesis/compute/q2` | GPT-6 Astra | 2026-09-08 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-09-03 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
