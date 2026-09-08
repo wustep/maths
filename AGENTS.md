@@ -77,6 +77,8 @@ Independently verify every claimed number. Cite the record you
 beat, or say you did not beat it.
 
 User-facing prose follows `.claude/skills/writing`.
+Process meta lives in `notes/process/LEARNINGS.md`. Dated folders
+under `notes/` stay as run logs.
 
 ## What to update
 
