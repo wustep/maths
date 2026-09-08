@@ -148,6 +148,58 @@ The source-level reduction has been reviewed here. A stored cell summary
 or a repeated precision of that source is not a second implementation of
 the complete reduction.
 
+## The barrier polynomial represents the required finite sum
+
+This is a separate algebraic check from reproducing the coefficient file.
+Set $a=\log(N/2)$, $\beta=(1-i(X+1/2))/2$, and $\ell_n=\log n-a$.
+The regenerated matrix entries are exactly the finite sums
+
+$$
+c_{e,j}=\sum_{n=1}^N n^{-\beta}
+\frac{\ell_n^e}{e!}\frac{(\ell_n^2/4)^j}{j!}.
+$$
+
+After the two exponential series are restored, evaluating this matrix at
+$(w,t)$ represents
+
+$$
+P(w,t)=\sum_{n=1}^N n^{-\beta}
+\exp(w\ell_n+t\ell_n^2/4).
+$$
+
+For any argument $u$ used by the code, put
+$v=\beta-u-t\alpha(u)/2$. Expanding the square and collecting the
+$\log n$ and $a$ terms gives the exact identity
+
+$$
+e^{a(v+ta/4)}P(v+ta/2,t)
+=\sum_{n=1}^N b_t(n)n^{-u-t\alpha(u)/2}.
+$$
+
+This checks the outer powers as well as both shifts in the polynomial
+argument. In the source, `s=(1-y+ix)/2`. The `bsums` branch takes $u=1-s$;
+the `asums` branch takes $u=\overline s$ and is conjugated afterwards.
+The multiplier `afac` equals $M_t(s)/M_t(1-s)=\gamma$; the constant
+normalization difference between `H01` and the paper's $M_0$ cancels in
+this ratio. Since
+
+$$
+\overline{s_*}+\kappa-y=s+\frac t2\alpha(s),
+$$
+
+the final `bsums + afac*conj(asums)` is exactly the $f_t$ in Polymath
+equation (14), up to the separately enclosed two-series remainder.
+
+The remainder proof has positive geometric denominators: here
+$|\ell_n|\leq\log345494<13$, so its quantities
+$A=0.66|\ell_n|$ and $B=0.05\ell_n^2$ satisfy
+$A<8.58<63$ and $B<8.45<63$. For the first omitted term 62, both
+$1-A/63$ and $1-B/63$ are positive. The rectangular product remainder
+is bounded by $e^B I_A+e^A I_B$, where $I_A,I_B$ are the two geometric
+factorial tails. The bound on the combined outer prefactors is deliberately
+loose but conservative. The separate uniform interval calculation checks
+both alpha arguments and the exact gamma multiplier on the whole box.
+
 ## Tail and barrier review
 
 The tail's fixed-left endpoint cap follows from decreasing summands and
