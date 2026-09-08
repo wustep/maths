@@ -27,6 +27,16 @@ $1.1010$.
 enumerator at the same split and target, and replaces printed
 $1.1010$ by $1.1006$.
 
+`q14/` proves $N_c(Z)<1.1005Z+3.933Z^{1/3}$ for $Z\ge4$ with
+two independently verified rational matrix witnesses. Its replay
+needs only Python's standard library and `rustc`:
+
+```bash
+./q14/run_all.sh
+```
+
+The historical driver below covers q1–q8 only:
+
 ```bash
 ./run_all.sh
 ```

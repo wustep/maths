@@ -215,3 +215,32 @@ Independent replay this pass: `compute/q11/verify_lift.py` (recon $\gamma=0.9083
 
 Failed / unchanged: APS PRA 29 full text still not obtained; 2207.08328v2 body still not a record. No paper opened this pass proves $N_c\le Z+C$.
 
+## 2026-09-06–07 — q14 record and analytic inputs
+
+- [HPS abstract](https://arxiv.org/abs/2504.18487). Opened before
+  searching and checked again at wrap. Submission history still lists
+  v1 only, 25 April 2025. The stated leading coefficient is 1.1185.
+- [HPS full HTML, v1](https://arxiv.org/html/2504.18487v1). Fetched
+  with `scripts/arxiv_fetch.py` and downloaded for formula extraction.
+  Read Theorem 4.2, the radial quotient, and equations (7.23)–(7.35).
+  Theorem 4.2 permits radialization at $s=3$; Section 7 supplies the
+  passage from a lower bound on the variational constant to the
+  electron bound. It does not contain the new rational compact
+  certificate. Both new verifiers replay the printed $b(3)$ window.
+- [arXiv metadata for the fetched version](https://export.arxiv.org/api/query?id_list=2504.18487v1&max_results=1).
+  The fetch script returned the title, authors and 25 April 2025
+  version date before extracting the full text.
+- [Nam abstract](https://arxiv.org/abs/1009.2367). Latest version is
+  v3, 26 November 2011. Its $1.22Z+3Z^{1/3}$ bound does not improve
+  the HPS leading coefficient.
+- [Benguria–González-Brantes abstract](https://arxiv.org/abs/2511.07582)
+  and [full HTML, v1](https://arxiv.org/html/2511.07582v1). The
+  statistics-independent bound improves Lieb in its stated range;
+  its leading coefficient 1.4811 does not improve HPS for fermions.
+
+Searches for the excess-charge leading coefficient and for the
+notebook's 1.1006 found no later independent record to replace HPS.
+This is the scope of the literature check, not an exhaustive novelty
+theorem. The q14 certificate improves both that published bound and
+the stated notebook comparison. The new proof does not depend on
+previous face-enumeration logs.
