@@ -133,6 +133,8 @@ def main():
     p.add_argument('--summary',type=Path)
     args=p.parse_args(); root=args.upstream; out=args.output
     require(subprocess.check_output(['git','-C',str(root),'rev-parse','HEAD'],text=True).strip()==PIN,'upstream pin')
+    require(not subprocess.check_output(['git','-C',str(root),'status','--porcelain','--untracked-files=all'],text=True),
+            'upstream checkout must remain clean')
     manifest=json.loads((out/'manifest.json').read_text())
     names=['prop410','tail','compile-dini-180','dini-180',
            'compile-dini-256','dini-256','normalizer-correction','window','tail-python','barrier']

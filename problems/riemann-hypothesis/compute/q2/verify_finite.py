@@ -11,7 +11,7 @@ import hashlib
 import json
 from pathlib import Path
 import re
-from regenerate import SEGMENTS, SOURCE_SHA
+from regenerate import SEGMENTS, SOURCE_SHA, PIN
 from run_independent import LEGS
 
 ERROR=Fraction(233494905212337849,10**24)
@@ -29,10 +29,15 @@ def transcript(path):
 
 def c_rows(root):
     manifest=json.loads((root/'progress.json').read_text())
+    require(manifest['pin']==PIN,'C upstream pin')
     require(manifest['source_sha256']==SOURCE_SHA,'C source pin')
     require(len(manifest['segments'])==len(SEGMENTS),'C segment count')
     for definition,entry in zip(SEGMENTS,manifest['segments']):
         lo,hi,k,bits,order,width=definition
+        times=[16125,16125,100000] if k==6 else [161250000,161250001,1000000000]
+        parameters=[str(lo),str(hi),*map(str,times),'350708','10000000',
+                    str(k),str(bits),str(order),width,'t']
+        require(entry['command'][1:]==parameters,'C exact invocation parameters')
         require((entry['first_N'],entry['last_N'],entry['rows'])==(lo,hi,hi-lo+1),'C manifest coverage')
         require(entry['reused'] is False,'C transcript must come from a fresh run')
         path=root/f'N{lo}-{hi}.txt'
@@ -60,8 +65,15 @@ def c_rows(root):
 
 def rust_rows(root):
     manifest=json.loads((root/'manifest.json').read_text())
+    here=Path(__file__).resolve().parent
+    source_names={'direct.rs','interpolate.rs','ball.rs','arb_bridge.c','run_independent.py'}
+    require(set(manifest['sources'])==source_names,'Rust numerical source set')
+    for name in source_names:
+        require(digest(here/name)==manifest['sources'][name],'Rust executed source hash')
     names=['direct-first']+[f'interpolation-{lo}-{hi}' for lo,hi,_ in LEGS]
     require([r['name'] for r in manifest['runs']]==names,'Rust run list')
+    commands=[['690988','5','192']]+[[str(lo),str(hi),str(k),'8','192'] for lo,hi,k in LEGS]
+    require([r['command'][1:] for r in manifest['runs']]==commands,'Rust exact invocation parameters')
     for entry in manifest['runs']:
         require(entry['returncode']==0,'Rust unsuccessful run')
         for suffix,key in [('.txt','stdout_sha256'),('.stderr.txt','stderr_sha256')]:
