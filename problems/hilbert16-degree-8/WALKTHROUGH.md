@@ -427,3 +427,39 @@ adds and drops even splits, however long, cannot be the construction
 that realises \(\langle 5\sqcup 1\langle 6\rangle\sqcup 1\langle 9\rangle\rangle\)
 or the two open (19,3) nests from the published collections that
 share their odd skeleton.
+
+## 18. One diagonal changes the available scheme
+
+The missing degree of freedom was the triangulation. The earlier
+completed sweeps varied signs or compatible split collections in
+fixed neighborhoods. This time we kept a much smaller sign ball
+and changed one diagonal first. The interrupted attempt had written
+that route down but had left no saved search outputs.
+
+The first candidate appeared after 82 balls. Start with the paper's
+⟨5 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ certificate, replace the diagonal joining
+(2,3) to (6,0) with the one joining (3,2) to (5,1), and change the
+signs at (0,0), (0,1) and (7,0). The recomputed scheme is
+⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩. It has two fewer exterior ovals and is
+absent from the paper's archive and our seventeen additions.
+
+There was still a gap between that picture and an algebraic curve.
+The old lifting violates two inequalities after the flip. The
+projection method in `haas.regularize` then failed to find a new
+lifting in 200,000 steps. That failure was useful because it isolated
+the remaining question: could this particular mesh carry a strict
+convex lifting? It did not answer that question negatively.
+
+A linear feasibility solver found one. Clearing its denominators
+produced small integer heights, and exact arithmetic checked all
+2,688 inequalities with slack at least 4. At that point Viro's
+patchworking hypothesis was satisfied. A second implementation in
+Rust recovered the same nesting tree by connecting monochromatic
+vertices and identifying the outside region, independently of the
+Python segment-tracing code.
+
+The certificate proves that the number of nonempty degree-eight
+T-curve schemes is at least 2,385. The search log records 1,248,532
+evaluations, but the proof needs only this one witness. We stopped
+there, leaving 1,108 planned balls unsearched. The construction has
+twenty ovals; neither open maximal deep nest is decided.

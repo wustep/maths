@@ -1157,3 +1157,65 @@ and added nothing.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh run_all.sh &&
 sh q7/run_all.sh && python3 q7/collect.py`.
+
+## 2026-09-08 — q8: a new scheme from a diagonal flip
+
+GPT-6 Astra resumed the uncommitted CLAIM, ROUTES, `common.py` and
+`ball.c` from the interrupted session. There were no saved search
+results to resume. The recovered files were committed before further
+work. The arXiv record is still v4 (31 Aug 2026); §4.3 still reports
+2,367 nonempty T-schemes. The freshly downloaded archive is bytewise
+identical to the local copy. Parent `run_all.sh` passed: 2,367/2,367,
+17/17, and its remaining controls. The baseline B ∪ A has size 2,384.
+
+The selected leaf changes geometry and signs together. The 38
+published M-certificates and seventeen additions have 1,190 seed/flip
+pairs. Each radius-three ball has 15,226 signs. No symmetry quotient
+or cross-seed deduplication was used. All combinatorial flips were
+eligible, so the searched domain contains all regular flips; an
+individual candidate still needs its own strict lifting.
+
+### Discovery
+
+The C search stopped on task 81 (zero-based), after 82 complete
+balls and 1,248,532 evaluations. There were 807 distinct schemes,
+806 already in B ∪ A and one new:
+**⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩**. That scheme occurs 79 times in the final
+ball. The retained witness comes from
+`deg8/o22-p07-n15/(5v1(3)v1(12)).pcom`: replace diagonal
+[(2,3),(6,0)] with [(3,2),(5,1)], and flip signs at (0,0), (0,1)
+and (7,0). Python recomputed the same topology before any lifting
+claim was made.
+
+The old lifting fails two strict inequalities on the changed mesh.
+`haas.regularize` with 200,000 projection steps and seed 0 failed to
+obtain a lifting. We did not interpret that as nonregularity. A
+SciPy 1.18.1 / HiGHS feasibility solve succeeded; clearing rational
+denominators gave integer heights in [-1,290,0]. Every one of the
+2,688 global strict lifting inequalities passes, with minimum slack
+4. `q8/lift_candidate.py` records the solve; replaying the certificate
+requires no numerical packages.
+
+### Certification
+
+Python's rational plane checks and curve-segment/double-cover
+algorithm agree with a new Rust implementation using barycentric
+determinants and a monochromatic vertex graph. Rust finds the
+nonorientable outside region by parity around graph cycles, then
+roots the region adjacency tree there. The full nesting tree agrees,
+not just the number of ovals. Both implementations accepted all
+2,384 baseline schemes as positive controls.
+
+The gate rejects a published scheme, a prior addition, a falsely
+claimed open nest, an injected disagreement between verifiers, and
+malformed signs, heights, points and triangles. A forced search
+answer is emitted when removed from the known set. All 1,036 sign
+masks at radius at most two on a changed mesh agree with a separate
+Python enumeration and topology computation. `q8/run_all.sh` exits
+zero for the new certificate.
+
+**Dent:** number of nonempty degree-eight T-curve schemes ≥ 2,385.
+The exact claim and witness are in `q8/CLAIM.md` and
+`q8/certs/new_schemes.json`. Search stopped on certification. The
+1,108 remaining balls are unsearched; neither open deep nest is
+decided. No algebraic exclusion is claimed.
