@@ -1,0 +1,13 @@
+# Ostergard--Kaikkonen [18,9]_2 radius-3 seed H_OK=[I_9 M_OK]
+# arXiv:2511.02542 Theorem 6.4 / (6.10); M_OK last word recovered as 1CE (paper OCR: ICE).
+# LSB-first: bit i of a column integer is row i+1.
+# 9 rows, 18 columns.
+1 0 0 0 0 0 0 0 0 1 1 0 1 0 0 0 1 1
+0 1 0 0 0 0 0 0 0 1 0 1 0 0 1 0 1 1
+0 0 1 0 0 0 0 0 0 0 1 0 1 0 1 0 0 1
+0 0 0 1 0 0 0 0 0 1 1 1 1 0 1 0 0 0
+0 0 0 0 1 0 0 0 0 0 1 0 1 1 0 0 0 0
+0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 1 1 1
+0 0 0 0 0 0 1 0 0 0 1 1 0 1 0 0 1 1
+0 0 0 0 0 0 0 1 0 0 0 0 1 1 0 0 0 1
+0 0 0 0 0 0 0 0 1 0 0 1 1 1 0 1 1 0

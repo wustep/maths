@@ -1,0 +1,7 @@
+# (3,0)-partition of H_OK into 9 blocks.
+# H_OK = [I_9 | M_OK], M_OK last word 1CE (arXiv:2511.02542 (6.10), OCR ICE).
+# One label per column (0-based block ids), left to right.
+# Blocks (1-based columns): {14,18}, {5,11,13}, {1}, {12}, {8}, {2,4,10}, {3}, {6,9,16,17}, {7,15}.
+# Not a (3,1)-partition: columns 6,9,16 share a block. SAT-UNSAT for p=9, ell=1.
+# Unlocks QM_4^3 with m=3: n=8*(18+1)-1=151, r=18.
+2 5 6 5 1 7 8 4 7 5 1 3 1 0 8 7 7 0
