@@ -331,6 +331,7 @@ Parent 17/17 still the folder bound. q4 finished the depth-3
 three-split 12/12 and left the even-split BFS queue at 1,167,098.
 Bound still ≥ 2,384.
 
+
 ## 2026-08-29 — freshness check (q5 resume)
 
 Re-fetched after the leftover walk was interrupted. **Nothing about
@@ -390,3 +391,21 @@ even components remain unenumerated (counts \(8.8\times 10^{10}\),
 \(2.5\times 10^{11}\), \(2.0\times 10^{11}\)). Compatible odd
 6-tuples number 174,457,166 (count only). Incomplete search, not a
 lower bound. Bound still ≥ 2,384.
+
+## 2026-09-08 — q8 record replay
+
+- Opened <https://arxiv.org/abs/2602.06888>: still v4, 31 Aug 2026.
+- Fetched <https://arxiv.org/pdf/2602.06888v4> with
+  `scripts/arxiv_fetch.py`, saved the PDF and read its extracted text.
+  Section 4.3 still reports 2,367 nonempty schemes as a lower bound;
+  Table 1 marks the same six algebraically undecided schemes, and
+  Question 31 leaves 39 maximal T-schemes undecided. Theorem 21
+  still permits only the four listed parity pairs for maximal T-curves.
+- <https://arxiv.org/html/2602.06888v4> returned 404; the PDF supplied
+  the full text.
+- Opened <https://github.com/dmg-lab/CombinatorialPatchworking> and
+  downloaded <https://raw.githubusercontent.com/dmg-lab/CombinatorialPatchworking/main/deg8.pcoms.txz>.
+  The archive matches the local copy byte for byte, SHA-256
+  `1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`.
+  This checks the cited baseline; it is not a claim to have surveyed
+  every later paper on real octics.

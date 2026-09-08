@@ -100,3 +100,34 @@ def write_task(tris, signs, path, known=None):
         f.write('SEEDS 1\n' + ' '.join(str(signs[p]) for p in PTS) + '\n')
         f.write(f'KNOWN {len(known)}\n' + ' '.join(str(scheme_code(s)) for s in sorted(known)) + '\n')
     return cx
+
+def plan():
+    """No symmetry quotient: repetitions across seeds remain explicit."""
+    out = []
+    for i, c in enumerate(seeds()):
+        for removed, added, tris in flips(unpack(c)[0]):
+            out.append(dict(seed=i, removed=removed, added=added,
+                            triangulation_sha256=digest(tris)))
+    return out
+
+def task_tris(row, seed):
+    for removed, added, tris in flips(unpack(seed)[0]):
+        if list(map(list, removed)) == list(map(list, row['removed'])):
+            assert digest(tris) == row['triangulation_sha256']
+            assert list(map(list, added)) == list(map(list, row['added']))
+            return tris
+    raise ValueError('recorded flip is not available')
+
+def atomic_json(path, value):
+    path = Path(path)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    tmp = path.with_suffix(path.suffix + '.tmp')
+    tmp.write_text(json.dumps(value, sort_keys=True, indent=1) + '\n')
+    tmp.replace(path)
+
+def source_hashes():
+    paths = ['q8/ball.c', 'q8/common.py', 'q8/search.py', 'tcore.h',
+             'fastcx.py', 'export_span.py', 'haas.py', 'notation.py',
+             'replay_census.py', 'tcurve.py', 'data/deg8.pcoms.txz',
+             'certs/new_schemes.json', 'census_schemes.txt']
+    return {p: hashlib.sha256((ROOT / p).read_bytes()).hexdigest() for p in paths}
