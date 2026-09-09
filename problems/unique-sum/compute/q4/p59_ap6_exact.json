@@ -1,0 +1,17 @@
+{
+  "p": 59,
+  "bound": 14,
+  "initial_ap": 6,
+  "status": "UNSAT",
+  "source": "verify_exact.rs",
+  "source_sha256": "ffb026af4140ee1174dae30cf91b0cf5449b0db8bcf389a576b21e957b9c3ac5",
+  "node_limit": 3000000,
+  "wall_limit_seconds": 60.0,
+  "address_space_limit_mib": 1536,
+  "timed_out": false,
+  "exit_code": 0,
+  "stdout": "p=59 limit=14 status=UNSAT initial_ap=6 nodes=391264 memo_hits=9972 cover_prunes=299375 memo=13477 seconds=16.658374\n",
+  "stderr": "",
+  "seconds": 16.66543757900945,
+  "max_rss_kib": 40768
+}

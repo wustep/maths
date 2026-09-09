@@ -1,0 +1,15 @@
+{
+  "p": 59,
+  "bound": 14,
+  "initial_ap": 5,
+  "forbid_ap": 0,
+  "status": "UNKNOWN",
+  "reason": "interrupted_at_user_wrap_request",
+  "node_limit": 100000000,
+  "wall_limit_seconds": 300,
+  "exit_code": 130,
+  "stdout": "",
+  "source": "cover_search.c",
+  "source_sha256": "e5043b9224181092caac2ded46e06de408a9a261408311f408bafa1bf2b83e0f",
+  "binary_sha256": "d135dac732c4ff12a0d30c930625812b3a08517135f59946fcbe15716e27039e"
+}

@@ -1,0 +1,23 @@
+{
+  "p": 59,
+  "bound": 14,
+  "atmost": true,
+  "depth": 12,
+  "initial_ap": 5,
+  "sumset_bound": false,
+  "solver": "cadical195",
+  "conflict_budget": 20000000,
+  "status": "UNSAT",
+  "witness": null,
+  "statistics": {
+    "restarts": 308098,
+    "conflicts": 14448284,
+    "decisions": 18475282,
+    "propagations": 5374612031
+  },
+  "cnf_sha256": "ed9345066d6ccee27f88d3cc1a4f90bacdad595e1907bcec7f058172bd3b890e",
+  "variables": 44028,
+  "clauses": 129306,
+  "seconds": 1474.9113112349878,
+  "max_rss_kib": 130188
+}

@@ -1,0 +1,1 @@
+{"status":"UNKNOWN","p":79,"cardinality":16,"seed":20260905,"requested_restarts":500,"steps_per_restart":100000,"proposals":50000000,"best_unique":2,"sumset_size":55,"cpu_seconds":8.492494,"witness":[5,7,12,23,24,28,32,33,39,40,50,56,59,60,67,75]}
