@@ -42,3 +42,27 @@
   controls agree with complete subset enumeration through 13, including
   named midpoint roots and progression avoidance. These controls test the
   implementation; they are not a lower bound at 59.
+
+### Wrap at the user's request
+
+- AP4 Rust timed out after 600 seconds and returned UNKNOWN through the
+  harness. It emitted no node count. `p59_ap4_exact.json` records the cap,
+  source hash, binary hash, and termination; this is not an exclusion.
+- The later AP5 CaDiCaL artifact arrived during wrap. It reports UNSAT
+  after 14,448,284 conflicts in 1,474.911 seconds. A fresh formula build
+  matches its SHA-256, 44,028 variables, and 129,306 clauses. The earlier
+  five-million-conflict UNKNOWN artifact is retained as well. The completed
+  SAT and Rust runs now agree on the AP5 restriction; no DRAT proof is retained.
+- The experimental C AP5 run was interrupted with exit 130 at the user's
+  request. Its UNKNOWN record is `p59_ap5_cover_interrupted.json`; it adds
+  no exclusion. No further heavy job was started.
+- The midpoint partition audit checked 2,054 small sets and every affine
+  identification at 59. It leaves 25 AP4-free classes, or 27 AP4-but-AP5-free
+  classes for that part of the ladder. These classes were prepared, not
+  searched. The C controls checked 104 decisions against enumeration of
+  10,364 subsets through 13.
+- The wrap retains only $m(59)\le15$ as an unrestricted local bound. OEIS
+  already reports equality, so there is no dent. LEAVES records residue;
+  unrestricted size at most 14 remains open here. The full replay driver
+  includes the long AP5 SAT check, but only lightweight verification was
+  rerun during wrap. The PR is to remain unmerged.

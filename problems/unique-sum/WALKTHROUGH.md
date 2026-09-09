@@ -270,3 +270,48 @@ At $p=59$, the saved 15-set proves only $m(59)\le15$. A node-limited run at
 size at most 14 stopped `UNKNOWN` after 100,000,000 nodes and 72,327,605
 memoized states in 523.030 seconds. The exact value at 59 therefore remains open in this notebook;
 the incomplete run is not a lower bound.
+
+## 9. The 2026-09-09 progression ladder
+
+The missing degree of freedom was the second representation of each selected
+endpoint's diagonal. The affine root {-1,0,1} supports 0, but its other
+selected points still need midpoint witnesses. Naming those witnesses gives
+small, explicit families to search. It does not remove the separate
+requirement to repair off-diagonal unique sums.
+
+Two obstacles persisted. The full size-at-most-14 search had no decision,
+and a SAT replay of the five-term progression family stopped at its first
+conflict budget. The Rust repair-cover search did finish that restricted
+family, as well as the six-term family. Moving to four terms was harder:
+the next Rust run reached its 600-second limit without a decision.
+
+That failure made the leftover concrete. If every set containing an AP4
+could be excluded, a remaining normalized set would avoid AP4. The selected
+point 1 must be the midpoint of one of 29 distinct endpoint pairs. Three
+choices already create an AP4; the other 26 roots fall into 25 affine
+classes. An alternative ladder starts from the completed AP5 exclusion:
+there are 27 named classes containing the normalized AP4 and avoiding AP5,
+followed by the same 25 AP4-free classes. A direct audit checks the pair
+lists, the affine maps, and coverage on small sets. It does not search those
+classes or prove that they are impossible.
+
+A C implementation was prepared to complete a chosen root. It computes
+ordered counts by reflection intersections and asks whether all currently
+unique sums can be repaired within the remaining cardinality budget. Its
+104 small control decisions agree with full subset enumeration through 13.
+The first run at 59 was interrupted when the user requested a wrap, so the
+C code supplies controls and a reproducible next step, with no completed
+exclusion at 59.
+
+During wrap, the later independent SAT artifact arrived with AP5 UNSAT.
+Its formula hash matches a fresh build of the audited encoding; the Rust
+and SAT runs agree on that restricted predicate. The earlier UNKNOWN log
+remains alongside it. The exact artifacts and falsifiers are in
+[`compute/q4/CLAIM.md`](compute/q4/CLAIM.md), and the argument for the
+partitions and completion search is in [`compute/q4/METHOD.md`](compute/q4/METHOD.md).
+
+The publication boundary also moved. OEIS now reports exact values through
+73, including m(59)=15. The local witness still proves only $m(59)\le15$,
+and the local unrestricted lower search is incomplete. This continuation
+did not improve a published bound. It stopped at the user's request with
+the named cases available for a future run.

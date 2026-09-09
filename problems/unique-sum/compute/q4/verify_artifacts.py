@@ -48,6 +48,8 @@ def main():
     upper = json.loads((HERE.parent/'q3/p59_upper.json').read_text())
     assert upper['p'] == 59 and upper['cardinality'] == 15
     rows.append(check(args.rust_binary, 59, upper['witness'], expected_support=upper['sumset_size']))
+    rows.append(check(args.rust_binary, 59,
+                      [0,1,3,4,5,9,13,15,16,21,29,33,45,58], expected_unique=1))
     source = json.loads((HERE/'published_oeis.json').read_text())
     data = list(map(int, source['data'].split(',')))
     assert data == [3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16]

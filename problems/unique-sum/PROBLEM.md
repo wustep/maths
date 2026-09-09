@@ -96,6 +96,12 @@ and against $(\log p)^2$.
 
 ## Computations
 
+**Finite status (2026-09-09): residue.** The unrestricted question
+whether $m(59)\le14$ remains open locally. The AP5 and AP6 subfamilies are
+excluded; AP4 timed out, and the audited midpoint classes have not been
+searched. These restricted results do not imply an unrestricted lower bound.
+See [`compute/q4/CLAIM.md`](compute/q4/CLAIM.md) for the exact predicates and
+[`compute/q4/run_all.sh`](compute/q4/run_all.sh) for the full replay.
 
 ## Figures
 

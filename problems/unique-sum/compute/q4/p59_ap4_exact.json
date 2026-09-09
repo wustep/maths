@@ -1,0 +1,18 @@
+{
+  "p": 59,
+  "bound": 14,
+  "initial_ap": 4,
+  "status": "UNKNOWN",
+  "source": "verify_exact.rs",
+  "source_sha256": "ffb026af4140ee1174dae30cf91b0cf5449b0db8bcf389a576b21e957b9c3ac5",
+  "binary_sha256": "3702c843e4f2ef14803fec0f330ef37b3433940f3213906310cd8d546de5c71a",
+  "node_limit": 100000000,
+  "wall_limit_seconds": 600.0,
+  "address_space_limit_mib": 1536,
+  "timed_out": true,
+  "exit_code": -9,
+  "stdout": "",
+  "stderr": "",
+  "seconds": 600.1041489390191,
+  "max_rss_kib": 186900
+}

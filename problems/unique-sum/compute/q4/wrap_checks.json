@@ -1,0 +1,77 @@
+{
+  "status": "VALID_WRAP_CHECKS",
+  "date": "2026-09-09",
+  "full_long_replay_run_at_wrap": false,
+  "checks": {
+    "witnesses": {
+      "exact_table_extended": false,
+      "status": "VALID_ARTIFACTS",
+      "checks": 26
+    },
+    "rust_controls": {
+      "limit_exit": 3,
+      "status": "VALID_EXACT_CONTROLS",
+      "checks": 24
+    },
+    "c_controls": {
+      "status": "VALID_COVER_CONTROLS",
+      "subsets": 10364,
+      "source_sha256": "e5043b9224181092caac2ded46e06de408a9a261408311f408bafa1bf2b83e0f",
+      "limit_exit": 3,
+      "checks": 104
+    },
+    "partition": {
+      "status": "VALID_PARTITION",
+      "small_sets_checked": 2054,
+      "partition_source_sha256": "230ab95b3da42ba03b61efc28ba9d6fb3f4aaf5dc16778c93001ee3ad7490ce8",
+      "families": [
+        {
+          "p": 59,
+          "initial_ap": 3,
+          "forbid_ap": 4,
+          "center": 1,
+          "pairs": 29,
+          "forbidden_roots": 3,
+          "representatives": 25
+        },
+        {
+          "p": 59,
+          "initial_ap": 4,
+          "forbid_ap": 5,
+          "center": 58,
+          "pairs": 29,
+          "forbidden_roots": 2,
+          "representatives": 27
+        }
+      ]
+    },
+    "encoding": {
+      "assignments": 116032,
+      "brute_force_minima": {
+        "3": 3,
+        "5": 4,
+        "7": 5,
+        "11": 7
+      },
+      "formulas": 248,
+      "status": "VALID_ENCODING"
+    },
+    "sat_artifact_formula_checks": [
+      {
+        "artifact": "sat_p59_ap5_le14.json",
+        "reported_status": "UNKNOWN",
+        "cnf_sha256": "ed9345066d6ccee27f88d3cc1a4f90bacdad595e1907bcec7f058172bd3b890e",
+        "dimensions_match": true,
+        "solver_rerun_at_wrap": false
+      },
+      {
+        "artifact": "sat_p59_ap5_le14_cadical20m.json",
+        "reported_status": "UNSAT",
+        "cnf_sha256": "ed9345066d6ccee27f88d3cc1a4f90bacdad595e1907bcec7f058172bd3b890e",
+        "dimensions_match": true,
+        "solver_rerun_at_wrap": false
+      }
+    ],
+    "rust_artifact_source_hashes_match": true
+  }
+}

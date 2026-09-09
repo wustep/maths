@@ -65,7 +65,8 @@ timeout, and `midpoint_cases.py` saves a manifest after every completed case.
 A case without a result remains unsearched. No absent or interrupted case
 counts as an exclusion.
 
-For the current certified predicates, run:
+For the current certified predicates, use Python with `requirements.txt`
+installed and run:
 
 ```bash
 bash problems/unique-sum/compute/q4/run_all.sh
@@ -75,3 +76,6 @@ This replays witnesses, controls, and the AP5 exclusion. It does not turn
 the incomplete unrestricted search into a lower bound. There is no retained
 DRAT proof object; the lower-search evidence consists of source and reruns.
 The exact assertion and its falsifiers are in [`CLAIM.md`](CLAIM.md).
+The AP5 SAT replay can take about 25 minutes. It was not restarted during
+the user-requested wrap. The experimental C search was stopped and its
+small controls are retained; it has no completed exclusion at 59.
