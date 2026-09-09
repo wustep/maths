@@ -77,6 +77,9 @@ Independently verify every claimed number. Cite the record you
 beat, or say you did not beat it.
 
 User-facing prose follows `.claude/skills/writing`.
+Hunt loop and steals: `notes/process/LOOP.md`, `notes/process/STEALS.md`.
+Polarity on a leaf (construction / barrier / alternate-model) is how you
+attack, not a new status noun. Recipe: `.claude/skills/hunt`.
 
 ## What to update
 
