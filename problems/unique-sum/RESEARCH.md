@@ -62,3 +62,11 @@
   statement is used in this continuation. The browser's
   [OEIS page](https://oeis.org/A398173) request timed out; curl of the JSON
   entry succeeded.
+
+- During the same-day continuation, reopened the
+  [Bedert abstract](https://arxiv.org/abs/2303.15134) and
+  [Cao–Yuan abstract](https://arxiv.org/abs/2608.06728), and reread the
+  previously fetched Bedert PDF text. A fresh curl of the
+  [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  exactly matches the saved 20-term record. The ordinary OEIS page again
+  timed out in the browser. The work below concerns finite replay only.
