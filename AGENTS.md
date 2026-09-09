@@ -26,7 +26,7 @@ Keep `ATTACK.md` chronological. Walkthrough beats:
 `lean-toolchain` pins Lean 4.32.0. Lemmas live in the problem folder.
 
 Starting a problem: mint with `scripts/new-problem.sh <slug>`;
-recipes in `.claude/skills/` (`new-problem`, `literature`,
+recipes in `.claude/skills/` (`new-problem`, `literature`, `hunt`,
 `markdown-latex`, `compute`, `writing`);
 fetch a paper with `python3 scripts/arxiv_fetch.py <id>` (optional
 `--research problems/<slug>/RESEARCH.md`); OEIS via
@@ -77,9 +77,9 @@ Independently verify every claimed number. Cite the record you
 beat, or say you did not beat it.
 
 User-facing prose follows `.claude/skills/writing`.
-Hunt loop and steals: `notes/process/LOOP.md`, `notes/process/STEALS.md`.
-Polarity on a leaf (construction / barrier / alternate-model) is how you
-attack, not a new status noun. Recipe: `.claude/skills/hunt`.
+The hunt loop (leaf, polarity, claim, dual-check, outcome, steal) is
+`notes/process/LOOP.md`; method steals accumulate in
+`notes/process/STEALS.md`.
 
 ## What to update
 

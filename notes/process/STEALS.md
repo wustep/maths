@@ -1,20 +1,7 @@
 # Steals
 
-Append-only method steals. Newest at the bottom.
+Append-only method log. Newest at the bottom.
 When a route dies or a dent certifies, write one paragraph another agent can reuse.
-
-## 2026-09-09 — meta distill (Jig + fluid blowup)
-
-- Insight is the product: prefer dents that teach a reusable finite handle, not only a smaller decimal.
-- Replay prior art first (fetch + re-run the published record), then lift.
-- Exact ansatz / closed-form certificate before optimizer dumps when both exist.
-- Measurement ≠ proof: anneal/PINN/SAT UNKNOWN are residue until a verifier closes them.
-- Staged q-folders: tighten one leaf while prior certificates stay intact.
-- Dead route → residual leaf in LEAVES; method ceilings are first-class progress.
-
-Sources: [Jig](https://jig.so/); Tao 2026-09-07 fluid blowup with smooth forcing; Alpöge–Buckmaster–Coiculescu IPM/Boussinesq/Euler PDFs.
-
-Shared log. Every solver and watcher appends here. Newest at the bottom.
 
 ## 2026-08-16 overnight (Codex gpt-5.6-sol Max)
 
@@ -24,11 +11,6 @@ Shared log. Every solver and watcher appends here. Newest at the bottom.
 - Lean lemmas that restate (m-1)(m+1)=n! are not novel.
 - Write RESEARCH.md with URLs actually opened.
 - Keep compute/ to one verifier plus the certificate.
-
-## Cross-talk
-
-When a solver finds a method (seeded local search, cyclic template, SAT
-encoding), write one paragraph here so the other solver can steal it.
 
 ## 2026-08-16 C7 fifth power (Grok 4.6)
 
@@ -51,3 +33,14 @@ encoding), write one paragraph here so the other solver can steal it.
 ## 2026-08-16 vdw-w27 (Grok 4.6)
 
 The published \(W(2,7)>3703\) coloring is the Paley 2-coloring of \(\mathbb Z/617\mathbb Z\) unfolded six times plus one extra bit. It does not extend: color \(0\) at \(3704\) completes the class-\(2\) progression of difference \(617\), color \(1\) completes six other 7-APs, and flipping any class-\(2\) point creates a difference-\(11\) (or \(285\)) 7-AP. Cadical with a real at-most-\(k\) encoding refuted \(\le 6\) flips of that seed and also refuted rewriting the last period (\(619\) free bits) of the five-period prefix. A homemade sequential counter that only implied “at least \(j\) flips” one way was unsound — the \(s\) variables could be set true freely and over-forbid flips; use `pysat.card.CardEnc.atmost`. Herwig’s zip without the turn is just the \(617\) cycle repeated; the turned zip has complementary halves (the exact condition that makes difference-\(617\) 7-APs alternate) but CEGAR stayed at \(\sim 11000\) cyclic 7-APs. No QR prime in \(619..50000\) has monochromatic run \(\le 6\). Seeded min-conflicts from the \(3703\) coloring repeatedly stalls at one leftover 7-AP — treat that as a local cage, not as evidence that \(3704\) is impossible.
+
+## 2026-09-09 — meta distill (Jig + fluid blowup)
+
+- Insight is the product: prefer dents that teach a reusable finite handle, not only a smaller decimal.
+- Replay prior art first (fetch + re-run the published record), then lift.
+- Exact ansatz / closed-form certificate before optimizer dumps when both exist.
+- Measurement ≠ proof: anneal/PINN/SAT UNKNOWN are residue until a verifier closes them.
+- Staged q-folders: tighten one leaf while prior certificates stay intact.
+- Dead route → residual leaf in LEAVES; method ceilings are first-class progress.
+
+Sources: [Jig progress](https://jig.so/guide/progress.md) and [gates](https://jig.so/guide/gates.md); [Tao 2026-09-07](https://terrytao.wordpress.com/2026/09/07/finite-time-blowup-with-smooth-forcing-term-for-the-incompressible-porous-medium-boussinesq-and-incompressible-euler-equations/) on Alpöge–Buckmaster–Coiculescu ([IPM](https://cims.nyu.edu/~tristanb/ipm.pdf), [Boussinesq](https://cims.nyu.edu/~tristanb/boussinesq.pdf), [Euler](https://cims.nyu.edu/~tristanb/euler.pdf)).
