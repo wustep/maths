@@ -1,0 +1,10 @@
+{
+  "schema_version": 1,
+  "claim": "m(61) = 15; this 15-set is the upper half",
+  "p": 61,
+  "cardinality": 15,
+  "witness": [0, 1, 2, 3, 4, 6, 15, 21, 22, 24, 42, 49, 55, 56, 58],
+  "sumset_size": 46,
+  "source": "OEIS A398173 example a(17)",
+  "producer": "published example; independently checked"
+}

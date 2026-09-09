@@ -94,3 +94,17 @@
   Its README claims $m(59)=15$ with hash-bound CaDiCaL LRAT ledgers for
   $k=2..14$. That is a published-adjacent lead, not a proof object
   replayed in q5. The notebook's lower half is the named-cover search.
+
+## 2026-09-09 — q6 record check
+
+- Reopened the [Bedert abstract](https://arxiv.org/abs/2303.15134) and the
+  [Cao–Yuan abstract](https://arxiv.org/abs/2608.06728). No finite table;
+  versions unchanged.
+- `scripts/arxiv_fetch.py` on both ids and `scripts/oeis_lookup.py A398173`
+  again. Curl of the
+  [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  still has 20 terms through 73, including $m(61)=15$ with example
+  $\{0,1,2,3,4,6,15,21,22,24,42,49,55,56,58\}$ as a(17).
+  `compute/q6/published_oeis.json` stores that snapshot. The example is
+  a lead until the local ordered-count check; that check passed.
+

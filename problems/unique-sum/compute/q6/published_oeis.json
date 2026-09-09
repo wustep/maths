@@ -1,0 +1,12 @@
+{
+  "retrieved": "2026-09-09",
+  "source": "https://oeis.org/search?q=id%3AA398173&fmt=json",
+  "number": 398173,
+  "data": "3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16",
+  "nterms": 20,
+  "m61": 15,
+  "example_m61": [0, 1, 2, 3, 4, 6, 15, 21, 22, 24, 42, 49, 55, 56, 58],
+  "ext": [
+    "a(16)-a(20) from Pawel Kwaczynski, Aug 08 2026"
+  ]
+}

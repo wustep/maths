@@ -6,8 +6,8 @@
 - Run: recovered `q1-overnight` history
 - Model: gpt-5.6-sol max
 - Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: invalidated historical computation; current continuation in section 10
-- Problem status: open; the exact table is independently replayed through $p=59$
+- Argument status: invalidated historical computation; current continuation in section 11
+- Problem status: open; the exact table is independently replayed through $p=61$
 
 ## 0. What was actually missing
 
@@ -366,3 +366,16 @@ Locally $m(59)=15$, matching OEIS A398173. That is a record match, not a
 new bound. The exact table at 61 through 73 is still only published, not
 independently replayed here. Primes from 79 onward are absent from the
 record. Green's #27 remains open.
+
+## 11. The 2026-09-09 table step at 61
+
+The q5 engines already take any odd prime below 64. At 61 the published
+15-set contains an AP5, so the leftover after that family is again a
+list of named midpoint classes. Annealing size 14 and an unrestricted
+C search for a 15-set from $\{-1,0,1\}$ both failed to produce a
+witness; the published set was checked directly instead. AP5 at size 14
+is UNSAT in C and in Rust. Completing 28 AP4-but-not-AP5 classes and 26
+AP4-free classes, each in both languages, excludes every smaller size.
+Locally $m(61)=15$, matching OEIS, new to this notebook. Not a new
+bound. The next primes 67, 71, 73 sit above the 64-bit mask.
+

@@ -97,3 +97,22 @@
   OEIS already publishes that term, so there is no dent. The leftover at
   59 is exhausted. The next local exact handles are 61 through 73 and the
   unpublished primes from 79.
+
+## 2026-09-09 — q6: exact table at 61
+
+- Reopened Bedert arXiv:2303.15134v2 and Cao–Yuan arXiv:2608.06728v1
+  (abstracts). OEIS A398173 is still 20 terms through 73, with $m(61)=15$
+  and example $\{0,1,2,3,4,6,15,21,22,24,42,49,55,56,58\}$. Python and
+  Rust both accept that 15-set.
+- Construction probes died. Annealing size 14 stopped at two unique sums.
+  The q5 C search from $\{-1,0,1\}$ at bound 15 hit 2,000,000 nodes
+  UNKNOWN without a witness. The published 15-set contains an AP5, so the
+  useful root was the five-term progression, not the unrestricted AP3
+  start.
+- The same AP ladder then transferred. AP5 at size 14: C UNSAT
+  (810,493 nodes, 87s) and Rust UNSAT (1,476,025 nodes, 105s). All 28
+  AP4-but-not-AP5 named classes and all 26 AP4-free classes returned
+  UNSAT in C, then again in Rust (4-point class 170s). That is
+  $m(61)=15$ locally, matching OEIS, new to the notebook table. Not a
+  dent. Primes 67 and later need a mask wider than 64 bits.
+

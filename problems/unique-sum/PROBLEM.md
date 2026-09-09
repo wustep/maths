@@ -6,7 +6,7 @@
 - Area: Additive combinatorics
 - Sources: Green 100 #27; Bedert, Combinatorica 2024 (arXiv:2303.15134v2); Cao–Yuan, arXiv:2608.06728v1 (Aug 2026); OEIS A398173
 - Started: 2026-08-16
-- Finite campaign: local exact replay through $p=59$; published table through $p=73$
+- Finite campaign: local exact replay through $p=61$; published table through $p=73$
 
 ## In general
 
@@ -35,11 +35,11 @@ The finite campaign is separate from that asymptotic gap. OEIS A398173 now
 records $m(p)$ through $p=73$, including $m(59)=15$ (checked 2026-09-09).
 The witnesses in `compute/` match its first 15 terms, and a second,
 progression-driven implementation independently excludes every smaller size
-through $p=53$. At $p=59$ the same 15-element set still gives the upper
-bound, and a completed named-midpoint exclusion now rules out every set of
-size at most 14. That is the local equality $m(59)=15$, matching the
-published table; it is not an improvement of the record. The precise local
-claim is in [`compute/q5/CLAIM.md`](compute/q5/CLAIM.md). The first prime
+through $p=53$. Named-midpoint exclusions now give the local equalities
+$m(59)=15$ and $m(61)=15$, matching the published table; they are not
+improvements of the record. The precise claims are in
+[`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
+[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md). The first prime
 absent from the published exact table is 79. Extending
 the exact table to every prime $p\le 200$, plotting it against $\log p$ and
 $(\log p)^2$, and describing the extremal sets remains useful finite work.
@@ -96,13 +96,12 @@ and against $(\log p)^2$.
 
 ## Computations
 
-**Finite status (2026-09-09): local exact value matching the record.**
-$m(59)=15$. The 15-set is checked in two languages. Every set of size at
-most 14 is excluded by the AP5 ceiling together with the 27 AP4-but-not-AP5
-named midpoint classes and the 25 AP4-free classes; C and Rust agree on
-every class. This matches OEIS A398173 and does not improve it. See
-[`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
-[`compute/q5/run_all.sh`](compute/q5/run_all.sh).
+**Finite status (2026-09-09): local exact values matching the record.**
+$m(59)=15$ and $m(61)=15$. Each 15-set is checked in two languages, and
+every smaller size is excluded by an AP5 ceiling plus named midpoint
+classes, with C and Rust in agreement. This matches OEIS A398173 and does
+not improve it. See [`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
+[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md).
 
 ## Figures
 
