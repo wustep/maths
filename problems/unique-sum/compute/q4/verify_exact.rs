@@ -227,11 +227,18 @@ impl Search {
         None
     }
 
-    fn run(&mut self) -> Option<u64> {
+    fn run(&mut self, initial_ap: u32) -> Option<u64> {
         if self.limit < 3 {
             return None;
         }
-        let initial = 1_u64 | (1_u64 << 1) | (1_u64 << (self.p - 1));
+        // The first r entries of 0,1,-1,2,-2,... form an r-term progression.
+        // Any set containing such a progression has an affine image containing
+        // this root. For r>3 the decision is restricted to that family.
+        let mut initial = 1_u64;
+        for index in 1..initial_ap {
+            let point = if index % 2 == 1 { (index + 1) / 2 } else { self.p - index / 2 };
+            initial |= 1_u64 << point;
+        }
         self.dfs(initial)
     }
 }
@@ -261,8 +268,8 @@ fn values(mask: u64, p: u32) -> Vec<u32> {
 
 fn main() {
     let args: Vec<String> = env::args().collect();
-    if !(3..=4).contains(&args.len()) {
-        eprintln!("usage: {} PRIME LIMIT [NODE_LIMIT]", args[0]);
+    if !(3..=5).contains(&args.len()) {
+        eprintln!("usage: {} PRIME LIMIT [NODE_LIMIT [INITIAL_AP]]", args[0]);
         std::process::exit(2);
     }
     let p: u32 = args[1].parse().expect("PRIME must be an integer");
@@ -275,9 +282,14 @@ fn main() {
         eprintln!("NODE_LIMIT must be positive");
         std::process::exit(2);
     }
+    let initial_ap: u32 = args.get(4).map_or(3, |raw| raw.parse().expect("INITIAL_AP"));
+    if initial_ap < 3 || initial_ap > p {
+        eprintln!("INITIAL_AP must be between 3 and PRIME");
+        std::process::exit(2);
+    }
     let started = Instant::now();
     let mut search = Search::new(p, limit, node_limit);
-    let result = search.run();
+    let result = search.run(initial_ap);
     let status = if result.is_some() {
         "SAT"
     } else if search.stopped_early {
@@ -286,7 +298,7 @@ fn main() {
         "UNSAT"
     };
     println!(
-        "p={p} limit={limit} status={} nodes={} memo_hits={} cover_prunes={} memo={} seconds={:.6}",
+        "p={p} limit={limit} status={} initial_ap={initial_ap} nodes={} memo_hits={} cover_prunes={} memo={} seconds={:.6}",
         status,
         search.stats.nodes,
         search.stats.memo_hits,

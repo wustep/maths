@@ -24,7 +24,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 from search_green_m_p import assert_admissible, build_exact_cnf
 
 
-def formula(p: int, bound: int, depth: int, atmost: bool):
+def formula(p: int, bound: int, depth: int, atmost: bool, initial_ap: int = 3, sumset_bound: bool = False):
     cnf, selected, pool = build_exact_cnf(p, bound)
     if atmost:
         # Reuse precisely the predicate and root clauses from the producer.
@@ -36,6 +36,21 @@ def formula(p: int, bound: int, depth: int, atmost: bool):
     order = [0]
     for value in range(1, (p + 1) // 2):
         order.extend([value, p - value])
+    # These first entries are a contiguous arithmetic progression. If a set
+    # contains an initial_ap-term progression, its full affine lex maximum
+    # also has these entries selected. initial_ap > 3 restricts the domain.
+    for residue in order[:initial_ap]:
+        cnf.append([selected[residue]])
+    if sumset_bound:
+        # Every represented sum needs >=2 unordered pairs; at most b(b+1)/2
+        # pairs are available. z_s says that some pair represents s.
+        support = [pool.id() for _ in range(p)]
+        for left in range(p):
+            for right in range(left, p):
+                cnf.append([-selected[left], -selected[right], support[(left+right) % p]])
+        cap = min(p, bound * (bound + 1) // 4)
+        cnf.extend(CardEnc.atmost(support, bound=cap, vpool=pool,
+                                 encoding=EncType.seqcounter).clauses)
     for multiplier in range(1, p):
         for translation in range(p):
             if multiplier == 1 and translation == 0:
@@ -61,6 +76,8 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument('p', type=int)
     ap.add_argument('bound', type=int)
+    ap.add_argument('--initial-ap', type=int, default=3)
+    ap.add_argument('--sumset-bound', action='store_true')
     ap.add_argument('--depth', type=int, default=12)
     ap.add_argument('--atmost', action='store_true')
     ap.add_argument('--conflicts', type=int, default=1000000)
@@ -69,12 +86,13 @@ def main() -> int:
     ap.add_argument('--dimacs', type=Path)
     args = ap.parse_args()
     if (args.p < 3 or args.p % 2 == 0 or any(args.p % n == 0 for n in range(2, int(args.p**0.5)+1))
-            or not 0 <= args.depth <= args.p or args.conflicts < 1):
+            or not 0 <= args.depth <= args.p or args.conflicts < 1
+            or not 3 <= args.initial_ap <= args.p):
         ap.error('require an odd prime, 0 <= depth <= p, positive conflicts')
     # Hard per-process virtual-memory ceiling, comfortably below 2 GiB RSS.
     resource.setrlimit(resource.RLIMIT_AS, (1536 * 1024**2, 1536 * 1024**2))
     start = monotonic()
-    cnf, selected = formula(args.p, args.bound, args.depth, args.atmost)
+    cnf, selected = formula(args.p, args.bound, args.depth, args.atmost, args.initial_ap, args.sumset_bound)
     if args.dimacs:
         cnf.to_file(str(args.dimacs))
     digest = hashlib.sha256(cnf.to_dimacs().encode()).hexdigest()
@@ -91,7 +109,7 @@ def main() -> int:
             if not args.atmost:
                 assert len(witness) == args.bound
         report = dict(p=args.p, bound=args.bound, atmost=args.atmost,
-                      depth=args.depth, solver=args.solver,
+                      depth=args.depth, initial_ap=args.initial_ap, sumset_bound=args.sumset_bound, solver=args.solver,
                       conflict_budget=args.conflicts,
                       status='SAT' if result else 'UNKNOWN' if result is None else 'UNSAT',
                       witness=witness, statistics=solver.accum_stats(),

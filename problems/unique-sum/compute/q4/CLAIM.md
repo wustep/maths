@@ -1,6 +1,6 @@
 # q4 claim ledger
 
-Status: residue while the search runs. No new bound is asserted.
+Status: residue. No improvement of the published record is asserted.
 
 The inherited certificate `../q3/p59_upper.json` gives
 
@@ -8,10 +8,23 @@ $$
 m(59)\le15.
 $$
 
-Its 225 ordered pairs were checked again with `../q3/verify_upper.py`.
-All 15 saved witnesses through 53 also passed the existing direct verifier.
-The published exact prefix is OEIS A398173; q4 has not extended it.
+Both the Python ordered-pair check and the independent Rust reflection check
+replay this witness. OEIS A398173 now publishes m(59)=15 and exact values
+through 73 (`published_oeis.json`). The local exact table still ends at 53;
+a replay at 59 would match an existing record.
 
-Target: decide existence at size at most 14, then independently replay every
-lower exclusion needed for an exact value. `UNKNOWN` and bounded heuristic
-searches do not imply any lower bound.
+The target remains existence of a set of size at most 14 at 59. UNKNOWN
+never excludes any size. A complete lower search must cover sizes 2 through
+14, without assuming monotonicity in cardinality.
+
+The current Rust run has completely excluded the restricted family of
+sets of size at most 14 containing a five-term arithmetic progression with
+nonzero difference. `p59_ap5_exact.json` records that run. Independent SAT
+replay is pending, so no dual-check claim for that restricted family is
+made yet. The unrestricted size-at-most-14 leaf remains open.
+
+Falsifiers: a unique unordered representation in the saved 15-set falsifies
+the upper certificate. A valid set of size at most 14 containing such a
+five-term progression falsifies the restricted exclusion. Any valid set
+of size at most 14 settles the construction target, but its failure to
+appear in a capped run does not imply a lower bound.
