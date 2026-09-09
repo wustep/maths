@@ -19,9 +19,10 @@ never excludes any size. A complete lower search must cover sizes 2 through
 
 The current Rust run has completely excluded the restricted family of
 sets of size at most 14 containing a five-term arithmetic progression with
-nonzero difference. `p59_ap5_exact.json` records that run. Independent SAT
-replay is pending, so no dual-check claim for that restricted family is
-made yet. The unrestricted size-at-most-14 leaf remains open.
+nonzero difference. `p59_ap5_exact.json` records that run. The independent SAT replay
+finished `UNKNOWN` after 5,000,000 conflicts in 456.150 seconds
+(`sat_p59_ap5_le14.json`). It does not confirm the restricted exclusion;
+no dual-check claim is made yet. The unrestricted size-at-most-14 leaf remains open.
 
 Falsifiers: a unique unordered representation in the saved 15-set falsifies
 the upper certificate. A valid set of size at most 14 containing such a

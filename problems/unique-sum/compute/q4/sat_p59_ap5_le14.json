@@ -1,0 +1,23 @@
+{
+  "p": 59,
+  "bound": 14,
+  "atmost": true,
+  "depth": 12,
+  "initial_ap": 5,
+  "sumset_bound": false,
+  "solver": "cadical195",
+  "conflict_budget": 5000000,
+  "status": "UNKNOWN",
+  "witness": null,
+  "statistics": {
+    "restarts": 125899,
+    "conflicts": 5000000,
+    "decisions": 6801207,
+    "propagations": 2554836410
+  },
+  "cnf_sha256": "ed9345066d6ccee27f88d3cc1a4f90bacdad595e1907bcec7f058172bd3b890e",
+  "variables": 44028,
+  "clauses": 129306,
+  "seconds": 456.14997952000704,
+  "max_rss_kib": 113476
+}

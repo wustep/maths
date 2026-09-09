@@ -26,3 +26,19 @@
 - The independent size-at-most-14 run stopped `UNKNOWN` after exactly 100,000,000 nodes (72,327,605 memoized states) in 523.030 seconds. This incomplete run is not a lower bound. A CaDiCaL 1.9.5 exact-size-14 run was also manually stopped without a decision after 37:01 wall time (34:49 CPU).
 - Kissat 4.0.4, CaDiCaL 3.0.0, and MapleChrono exact-size-14 runs were each stopped without a decision after about 30 minutes wall time. The solver timeouts are not certificates.
 - Heuristic search reached a 14-set with one unique sum. Every normalized 14-set within four swaps of that near miss was checked (49,168,350 sets); none worked. This neighborhood search is also not a lower bound.
+
+## 2026-09-09 — q4: AP ladder and named midpoint covers
+
+- Reopened the source record: OEIS already reports m(59)=15 and values
+  through 73. A lower replay at 59 would match that record. The checked
+  15-set remains the only local bound at 59.
+- The inherited Rust AP5 exclusion visited 1,559,513 nodes. Its pending
+  CaDiCaL replay finished UNKNOWN at 5,000,000 conflicts; the saved SAT
+  result does not independently confirm UNSAT.
+- Started the AP4 case with the Rust repair-cover search, a 600-second
+  wall limit and a 100-million-node limit. One heavy search runs at a time.
+- Added a C completion checker using reflection intersections for ordered
+  sum counts, a fixed 128 MiB cache, and a sumset-support cap. Its first
+  controls agree with complete subset enumeration through 13, including
+  named midpoint roots and progression avoidance. These controls test the
+  implementation; they are not a lower bound at 59.
