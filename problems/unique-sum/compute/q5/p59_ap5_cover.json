@@ -1,0 +1,19 @@
+{
+  "p": 59,
+  "bound": 14,
+  "initial_ap": 5,
+  "forbid_ap": 0,
+  "root_mask": "0x600000000000007",
+  "status": "UNSAT",
+  "node_limit": 3000000,
+  "nodes": 925228,
+  "memo_hits": 7378,
+  "cover_prunes": 845625,
+  "ap_prunes": 0,
+  "support_prunes": 377,
+  "seconds": 85.038437,
+  "max_rss_kib": 84572,
+  "witness": [],
+  "source": "cover_search.c",
+  "source_sha256": "b95c0ec12245aebfb8c4eb71b5413bc834ba20b6815277f32eca9f7630a78845"
+}

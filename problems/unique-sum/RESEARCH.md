@@ -70,3 +70,27 @@
   [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
   exactly matches the saved 20-term record. The ordinary OEIS page again
   timed out in the browser. The work below concerns finite replay only.
+
+## 2026-09-09 — q5 record check
+
+- Opened the [Bedert abstract](https://arxiv.org/abs/2303.15134) and the
+  [HTML of v2](https://arxiv.org/html/2303.15134v2). Definition 1 is the
+  unordered unique-sum predicate; section 2 states that a unique sum is
+  exactly $1\le r_A(g)\le 2$. Theorems 3 and 5 are the $\omega(p)\log p$
+  lower bound and the $(\log p)^2$ upper bound. No finite table.
+- Opened the [Cao–Yuan abstract](https://arxiv.org/abs/2608.06728) and the
+  [HTML of v1](https://arxiv.org/html/2608.06728v1). Theorem 1.1 is
+  $m(p)\gg\log p\log\log p$. Theorem 1.3 is the ternary symmetric-square
+  upper bound with leading constant $1/(2(\log_2 3)^2)$. Unsubscripted
+  logs are natural. The paper does not decide $m(59)$.
+- `scripts/arxiv_fetch.py` on both ids (metadata only) matched those
+  abstracts. `scripts/oeis_lookup.py A398173` returned the sequence name
+  and a truncated prefix. A curl of the
+  [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  again has 20 terms through 73:
+  `3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16`.
+  `compute/q5/published_oeis.json` stores that snapshot.
+- Opened [unique-sum-free-cert](https://github.com/pawelkwaczynski/unique-sum-free-cert).
+  Its README claims $m(59)=15$ with hash-bound CaDiCaL LRAT ledgers for
+  $k=2..14$. That is a published-adjacent lead, not a proof object
+  replayed in q5. The notebook's lower half is the named-cover search.

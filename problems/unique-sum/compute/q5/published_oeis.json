@@ -1,0 +1,14 @@
+{
+  "retrieved": "2026-09-09",
+  "source": "https://oeis.org/search?q=id%3AA398173&fmt=json",
+  "number": 398173,
+  "data": "3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16",
+  "nterms": 20,
+  "name": "a(n) is the minimum size of a subset of Z/pZ with at least 2 elements and no unique sum, where p is the n-th odd prime.",
+  "example_m59": "{0, 1, 2, 3, 4, 5, 9, 10, 16, 25, 27, 32, 42, 44, 48}",
+  "ext": [
+    "a(12)-a(14) from Sean A. Irvine, Jul 27 2026",
+    "a(15) from Pawel Kwaczynski, Jul 29 2026",
+    "a(16)-a(20) from Pawel Kwaczynski, Aug 08 2026"
+  ]
+}

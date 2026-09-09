@@ -66,3 +66,34 @@
   unrestricted size at most 14 remains open here. The full replay driver
   includes the long AP5 SAT check, but only lightweight verification was
   rerun during wrap. The PR is to remain unmerged.
+
+## 2026-09-09 — q5: named midpoint covers after the AP5 ceiling
+
+- Reopened Bedert arXiv:2303.15134v2 (Definition 1; ordered $r_A\in\{1,2\}$
+  forbidden) and Cao–Yuan arXiv:2608.06728v1 (Theorems 1.1–1.3). OEIS
+  A398173 still has 20 terms through 73, with $m(59)=15$. Kwaczyński's
+  certificate repository reports the same finite values; it is a lead, not
+  a proof object replayed here.
+- Construction first. Every 14-subset of both checked 15-sets has unique
+  sums. One- and two-swap neighborhoods of 31 seeds (2,812,351 sets) and
+  then the three-swap neighborhood (162,932,311 sets) kept a best of one
+  unique sum, the inherited near-miss
+  $\{0,1,3,4,5,9,13,15,16,21,29,33,45,58\}$. No 14-set. The 15-sets both
+  contain an AP6, so shrinking them stays in the family q4 already
+  excluded at size 14.
+- Searched the leftover named classes with a RAM-light C completion
+  checker (one-point repairs first; cover test at remaining $\le 7$).
+  Controls still match full subset enumeration through 13. All 27
+  AP4-but-not-AP5 representatives returned UNSAT (339.7 seconds total, max
+  60.6 seconds, max RSS 61 MiB). All 25 AP4-free representatives returned
+  UNSAT (406.2 seconds, including the 4-point root in 66.4 seconds).
+- Dual: the independent Rust brancher, using unordered pair counts rather
+  than reflection intersections, returned UNSAT on the same 52 roots
+  (max 144.7 seconds on the 4-point class). q5 also replayed the AP5
+  ceiling: Rust 1,559,513 nodes UNSAT (the q4 count) and C 925,228 nodes
+  UNSAT.
+- Combined with the inherited AP5 exclusion, that is an unrestricted
+  exclusion of sizes 2 through 14. With the 15-set, $m(59)=15$ locally.
+  OEIS already publishes that term, so there is no dent. The leftover at
+  59 is exhausted. The next local exact handles are 61 through 73 and the
+  unpublished primes from 79.

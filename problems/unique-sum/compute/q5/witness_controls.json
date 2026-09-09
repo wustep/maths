@@ -1,0 +1,1 @@
+{"checks": [{"cardinality": 15, "ordered_pairs": 225, "p": 59, "unique_sums": []}, {"cardinality": 14, "ordered_pairs": 196, "p": 59, "unique_sums": [57]}, {"cardinality": 15, "ordered_pairs": 225, "p": 59, "unique_sums": []}], "status": "VALID_ARTIFACTS"}
