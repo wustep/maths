@@ -45,3 +45,20 @@
   Watson for retained lower proofs.
 - Opening the linked [Zenodo DOI](https://doi.org/10.5281/zenodo.22067683)
   failed in the browser; a GitHub API directory request returned HTTP 403.
+
+## 2026-09-09 — resumed q4 record check
+
+- The [full OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  again returns 20 terms through 73, unchanged from the saved September 5
+  snapshot. The notebook's local replay through 53 is not the current
+  publication boundary. In particular, OEIS reports m(59)=15.
+- Reopened [Kwaczyński's certificate repository](https://github.com/pawelkwaczynski/unique-sum-free-cert)
+  and [Watson's notes](https://github.com/mkwatson/unique-sums-notes).
+  Both acknowledge the later finite values. Their verification and retained
+  proof claims are source reports, not proof objects replayed in this run.
+- Fetched [Bedert v2](https://arxiv.org/pdf/2303.15134v2) with
+  `scripts/arxiv_fetch.py 2303.15134v2 --text pdf` and read Definition 1.
+  Both ordered multiplicities 1 and 2 are forbidden. No new asymptotic
+  statement is used in this continuation. The browser's
+  [OEIS page](https://oeis.org/A398173) request timed out; curl of the JSON
+  entry succeeded.
