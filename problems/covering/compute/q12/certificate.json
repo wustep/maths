@@ -1,0 +1,166 @@
+{
+  "seed": {
+    "r": 12,
+    "n": 37,
+    "rank": 12,
+    "covering_radius": 3,
+    "covered_le0_to_le3": [
+      1,
+      38,
+      591,
+      4096
+    ],
+    "nonempty_zero_representations_le3": 0
+  },
+  "unique_representation_conflict_edges": 466,
+  "forced_singletons_one_based": [
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    27,
+    29,
+    30,
+    31,
+    35
+  ],
+  "obstruction_syndrome_lsb_integer": 277,
+  "all_obstruction_representations_one_based": [
+    [
+      1,
+      13,
+      15
+    ],
+    [
+      2,
+      15,
+      37
+    ],
+    [
+      14,
+      17,
+      23
+    ],
+    [
+      15,
+      18,
+      26
+    ],
+    [
+      18,
+      20,
+      33
+    ],
+    [
+      18,
+      22,
+      28
+    ],
+    [
+      21,
+      23,
+      24
+    ],
+    [
+      21,
+      34,
+      36
+    ],
+    [
+      23,
+      32,
+      36
+    ],
+    [
+      24,
+      32,
+      34
+    ]
+  ],
+  "ell0_minimum_blocks": 18,
+  "ell1_ell2_ell3": "impossible for every block count: syndrome zero",
+  "partition_p18_one_based": [
+    [
+      3
+    ],
+    [
+      4
+    ],
+    [
+      5
+    ],
+    [
+      6
+    ],
+    [
+      7
+    ],
+    [
+      8
+    ],
+    [
+      9
+    ],
+    [
+      10
+    ],
+    [
+      11
+    ],
+    [
+      12
+    ],
+    [
+      27
+    ],
+    [
+      29
+    ],
+    [
+      30
+    ],
+    [
+      31
+    ],
+    [
+      35
+    ],
+    [
+      1,
+      2,
+      16,
+      20,
+      21,
+      23,
+      34
+    ],
+    [
+      14,
+      17,
+      18,
+      24,
+      26,
+      32,
+      36,
+      37
+    ],
+    [
+      13,
+      15,
+      19,
+      22,
+      25,
+      28,
+      33
+    ]
+  ],
+  "at_m4_indicator_capacity": 17,
+  "target_length_not_constructed": 607,
+  "published_length_arxiv_2511_02542v1_table7_1_r24": 618
+}

@@ -571,3 +571,9 @@ Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
 - Explicit labels [`compute/partition_H_OK_p9_ell0.txt`](compute/partition_H_OK_p9_ell0.txt); seed matrix [`compute/H_OK_r9_n18.txt`](compute/H_OK_r9_n18.txt). Independent check: `python3 compute/verify_H_OK_p9.py` (512/512).
 - Builder [`compute/build_qm43_p9.py`](compute/build_qm43_p9.py) emits [`compute/H_R3_r18_n151.txt`](compute/H_R3_r18_n151.txt). Independent C sweep: **262144/262144** at radius 3 (`verify_radius3_matrix`, $r=18$, $n=151$). Thus $\ell_2(18,3)\le 151$, improving $153$ by 2.
 - Reproduction: `compute/run_qm43_p9_checks.sh`. No claim that $p(H_{OK},1)\le 9$.
+
+## 2026-09-10 — OK37 (3,0) partition residue (q12)
+
+- Alexander’s ask: coarsen the Östergård–Kaikkonen $[37,25]_2$ $R=3$ seed ($H=[I_{12}\mid M]$, $M$ hex `B16`) to $p\le 17$ so QM$_4^3$ at $m=4$ could hit $\ell_2(24,3)\le 607$ vs table 618.
+- **Residue, no dent.** Cadical: min $(3,0)$-partition size is $p=18$; every $p\le 17$ UNSAT. Explicit labels [`compute/partition_H_OK37_p18_ell0.txt`](compute/partition_H_OK37_p18_ell0.txt) (15 singletons + $7+7+8$). No dependent triples ⇒ $\ell\ge 1$ impossible at any $p$. QM$_4^3\to 607$ does **not** apply.
+- Verify: `python3 -c "from ok37_seed import ok37_columns, is_partition_3ell; labels=[int(x) for line in open('partition_H_OK37_p18_ell0.txt') if not line.startswith('#') for x in line.split()]; print(is_partition_3ell(ok37_columns(), labels, 0), len(set(labels)))"` from `compute/` → `True 18`. Campaign: [`compute/q12/`](compute/q12/), note [`compute/NOTES_OK37_p17.md`](compute/NOTES_OK37_p17.md).
