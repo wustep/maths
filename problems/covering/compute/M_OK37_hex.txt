@@ -1,0 +1,2 @@
+# MSB-first hex columns of M (25 cols); paper Table 2 with B16 not BI6
+BFF 727 977 93B 6B9 51D AAE 9B8 85B A2D B16 9C5 AE2 6E2 371 5B8 2DC 16E B7 45B 62D 716 38B 5C5 7FF
