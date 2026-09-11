@@ -577,3 +577,26 @@ Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
 - Alexander’s ask: coarsen the Östergård–Kaikkonen $[37,25]_2$ $R=3$ seed ($H=[I_{12}\mid M]$, $M$ hex `B16`) to $p\le 17$ so QM$_4^3$ at $m=4$ could hit $\ell_2(24,3)\le 607$ vs table 618.
 - **Residue, no dent.** Cadical: min $(3,0)$-partition size is $p=18$; every $p\le 17$ UNSAT. Explicit labels [`compute/partition_H_OK37_p18_ell0.txt`](compute/partition_H_OK37_p18_ell0.txt) (15 singletons + $7+7+8$). No dependent triples ⇒ $\ell\ge 1$ impossible at any $p$. QM$_4^3\to 607$ does **not** apply.
 - Verify: `python3 -c "from ok37_seed import ok37_columns, is_partition_3ell; labels=[int(x) for line in open('partition_H_OK37_p18_ell0.txt') if not line.startswith('#') for x in line.split()]; print(is_partition_3ell(ok37_columns(), labels, 0), len(set(labels)))"` from `compute/` → `True 18`. Campaign: [`compute/q12/`](compute/q12/), note [`compute/NOTES_OK37_p17.md`](compute/NOTES_OK37_p17.md).
+
+## 2026-09-11 — q13: inherited partition of the 817 seed and QM$_4^3$
+
+- **Dent:** $\ell_2(44,3)\le52351$, improving Table 7.2's 52415 by 64.
+- The apparent search problem collapsed under Theorem 7.3 (7.4). The existing
+  817-column QM$_5^3$ matrix already has a 34-block $(3,0)$-partition: its 23
+  Golay $A$-blocks, the 10 certified blocks of the embedded 50-column matrix,
+  and its one $W_5$ block.
+- The partition was materialized as
+  [`compute/q13/partition_r26_n817_p34.txt`](compute/q13/partition_r26_n817_p34.txt)
+  and refined, without merging, to the 65 blocks in
+  [`compute/q13/partition_r26_n817_p65.txt`](compute/q13/partition_r26_n817_p65.txt).
+  These receive all indicators in $\mathbb F_{64}\cup\{*\}$.
+- Independent C sweeps: coarse partition 321037/67108864 through two columns
+  and 67108864/67108864 through three; refined partition 321067/67108864 and
+  67108864/67108864. Peak syndrome bitmap: 8388608 bytes.
+- [`compute/q13/H_R3_r44_n52351.txt`](compute/q13/H_R3_r44_n52351.txt) has
+  rank 44 and 52351 distinct nonzero columns. The C verifier independently
+  checks $x^6+x+1$, all 65 indicators, and all 52351 $D_3$ or
+  $A(h,\beta)$ identities. Theorem 6.1, (6.4), (6.8) supplies the covering
+  implication; no $2^{44}$ syndrome sweep was attempted.
+- Replay: `compute/q13/run_all.sh` from the problem folder. Exit 0 means the
+  exact claim in [`compute/q13/CLAIM.md`](compute/q13/CLAIM.md) holds.
