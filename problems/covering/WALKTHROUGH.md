@@ -325,3 +325,55 @@ The nearest unfinished hole in these families is $n=38$ at $r=9$, not 49
 at $r=10$: seventeen kernel-block classes, every one floors at the same
 14 missing incidences, none decided. That is residue, not a bound.
 
+---
+
+## Reopening at 817: the partition was already in the construction
+
+The number that looked missing was 34. The notebook had a certified
+$26$ by $817$ radius-3 matrix, and QM₄³ at $m=6$ would turn it into
+$64(817+1)-1=52351$ columns, 64 below the published value at redundancy 44.
+But the lift needed a $(3,0)$-partition into at most 65 blocks. The matrix file
+had no such labels attached to it.
+
+The recent OK37 attempt made the obvious next move look like another partition
+search: enumerate one-, two-, and three-column representations, encode block
+colours, and ask SAT to coarsen them. That route had just settled a 37-column
+seed at 18 rather than the needed 17. Scaling the same representation encoding
+to 817 columns would have attacked the bookkeeping before reading how those
+817 columns were made.
+
+That failure was useful because it put the emphasis on provenance. The 817
+matrix is not an opaque set. It came from QM₅³, with a perfect Golay seed
+and the notebook's 50-column radius-2 matrix sitting inside its D₄ block.
+The proof of QM₅³ states the output partition count explicitly:
+
+$$
+p(H_C,0)\le p(H_0,0)+p(\mathcal H_{2m})+1.
+$$
+
+Then the click is only the substitution. The Golay partition is trivial, so it
+contributes 23 blocks. The embedded 50-column matrix has its certified
+10-block partition. The Hamming W₅ columns form one more block. Thus
+$23+10+1=34$. What appeared to be a new colouring problem was an omitted
+artifact of the old construction.
+
+The labels follow the column order of the existing builder. The first 31
+W₅ columns share one block; the next 50 columns inherit their ten labels;
+and each of the 23 groups of 32 Golay lifts is one block. A refinement cannot
+destroy a representation whose columns already lie in distinct blocks. Split
+the first Golay group in two and split the 31 Hamming columns into singletons:
+$34+1+30=65$. Those 65 blocks can now receive, one each, every indicator in
+$\mathbb F_{64}\cup\{*\}$.
+
+The computer check keeps the large space out of memory. A standalone C program
+uses an 8 MiB bitset and enumerates every allowed singleton, pair, and triple
+of the 817 seed columns. The 34-block labels cover all 67,108,864 syndromes;
+so do the 65 refined labels. It then checks the field
+$\mathbb F_2[x]/(x^6+x+1)$, rank and distinctness, and every one of the 52,351
+columns against either D₃ or $A(h,\beta)$. The construction theorem, not a
+$2^{44}$ bitmap, carries that finite seed certificate to the output.
+
+What is proved is the upper bound
+$\ell_2(44,3)\le52351<52415$. The output has covering radius exactly three:
+the theorem gives at most three, while the radius-two volume is smaller than
+$2^{44}$. Nothing here proves optimality, and none is claimed.

@@ -2,9 +2,9 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: $\ell_2(10,2)\le 50$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
+- Status: $\ell_2(10,2)\le 50$ and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
 - Area: Coding theory
-- Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Table 5.1); Kaikkonen–Rosendahl
+- Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Tables 5.1, 7.2); Kaikkonen–Rosendahl
 - Started: 2026-08-16
 - Tonight: finite-cex — beat a documented small $\ell_2(r,2)$ length, emit H and an exhaustive radius-2 certificate
 
@@ -123,6 +123,25 @@ decided: $n=23,24,25$ are exhausted at $r=8$, so the family reproduces
 $\ell_2(8,2)\le26$ and provably cannot beat it. At $r=10$ its own best is 54;
 the record 50 is not in the family. $n=38$ at $r=9$ is search residue.
 $\ell_2(10,2)\le49$ remains open.
+
+## Certified finite bound (2026-09-11)
+
+The existing $26$ by $817$ radius-3 matrix has an inherited 34-block
+$(3,0)$-partition: 23 Golay $A$-blocks, 10 blocks from its embedded
+$10$ by $50$ radius-2 matrix, and one $W_5$ block. An exhaustive compact-bitset
+check covers all $2^{26}$ seed syndromes, both before and after refining to 65
+blocks. Construction QM$_4^3$ with $m=6$ then gives a $44$ by $52351$ matrix,
+proving
+
+$$
+\ell_2(44,3)\le52351.
+$$
+
+Davydov–Marcugini–Pambianco, arXiv:2511.02542v1, Table 7.2 gives 52415, so
+the improvement is 64 columns. The explicit matrix, partitions, manifest,
+Python constructor, and independent C verifier are in [`compute/q13/`](compute/q13/).
+The verifier checks every construction column; it does not sweep $2^{44}$
+syndromes and makes no optimality claim.
 
 ## What a solution looks like
 

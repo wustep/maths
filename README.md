@@ -69,7 +69,23 @@ $$
 $$
 
 (not enumerated). Same seed plus Golay gives
-$\ell_2(18,3)\le 151$ (table 153); $\ell_2(26,3)\le 817$ (paper 818).
+
+$$
+\ell_2(18,3)\le 151,\qquad \ell_2(26,3)\le 817
+$$
+
+(table 153 and paper 818, respectively).
+
+The 817-column matrix inherits a 34-block $(3,0)$-partition. Refining it to
+65 blocks and applying $\mathrm{QM}_4^3$ at $m=6$ gives
+
+$$
+\ell_2(44,3)\le 52351
+$$
+
+against Table 7.2's 52415. The certificate exhausts the $2^{26}$ seed
+partition and checks all 52,351 construction columns; it does not sweep
+$2^{44}$ syndromes.
 
 $\mathrm{QM}_4^4$ with the same 50-set gives a blockwise
 certificate for $2^{31}$.
@@ -93,7 +109,8 @@ $$
 `run_qm5_checks.sh`, `run_qm35_checks.sh`,
 `run_p64_checks.sh`, `run_p28_checks.sh`, `run_qm44_checks.sh`,
 `run_q7c_checks.sh`, `run_qm21_checks.sh`, and
-`run_qm43_checks.sh`.
+`run_qm43_checks.sh`. Replay the redundancy-44 construction with
+`problems/covering/compute/q13/run_all.sh`.
 
 Replay:
 
@@ -111,7 +128,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | Folder | Status |
 | --- | --- |
 | [erdos-szekeres-seven](problems/erdos-szekeres-seven) | The published record is $33 \leq ES(7) \leq 113$. The classical 32-point witness is independently replayed in Python and C. A compact signotope encoding has a checked small DRAT proof; its full 33-vertex run returned `UNKNOWN` after 300 seconds, so no bound changed. |
-| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(18,3)\le 151,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. q10 prescribes an automorphism instead of perturbing the 50: order 7 is settled at $r=10$ for every fixed-space dimension, and with orders 11, 17, 31, 73, 127 also excluded, any 49-set has a $\{2,3,5\}$-group of automorphisms. At $r=11$ no invariant set below the record 79 exists for orders 11, 17 or 23. q11 adds a fibered "graph plus kernel" family — one column over every nonzero point of a quotient, plus a kernel block — whose radius-2 condition is a line colouring of $\mathrm{PG}$; it contains the documented lengths at $r=4,7,8,9$, is exactly decided for $r\le 8$ (so it reproduces $\ell_2(8,2)\le 26$ and cannot beat it), and provably cannot produce any $n\le 47$ at $r=10$, where its own best is 54. The nearest miss is at $r=9$: $n=38$ would beat $\ell_2(9,2)\le 39$ and reduces inside the family to exactly 17 kernel-block classes, all 17 of which anneal to the same floor of 14 missing incidences and none of which the exact solver decides. |
+| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(18,3)\le 151,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26206,\ \ell_2(44,3)\le52351$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. The redundancy-44 radius-3 construction improves Table 7.2's 52415 by 64, with an exhaustive $2^{26}$ seed-partition check and a columnwise lift identity. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. q10 prescribes an automorphism instead of perturbing the 50: order 7 is settled at $r=10$ for every fixed-space dimension, and with orders 11, 17, 31, 73, 127 also excluded, any 49-set has a $\{2,3,5\}$-group of automorphisms. At $r=11$ no invariant set below the record 79 exists for orders 11, 17 or 23. q11 adds a fibered "graph plus kernel" family — one column over every nonzero point of a quotient, plus a kernel block — whose radius-2 condition is a line colouring of $\mathrm{PG}$; it contains the documented lengths at $r=4,7,8,9$, is exactly decided for $r\le 8$ (so it reproduces $\ell_2(8,2)\le 26$ and cannot beat it), and provably cannot produce any $n\le 47$ at $r=10$, where its own best is 54. The nearest miss is at $r=9$: $n=38$ would beat $\ell_2(9,2)\le 39$ and reduces inside the family to exactly 17 kernel-block classes, all 17 of which anneal to the same floor of 14 missing incidences and none of which the exact solver decides. |
 | [brocard](problems/brocard) | Four infinite prime-offset families excluded by Wilson's theorem: $n=p-2$ or $p-3$ for primes $p\equiv3,5\pmod 8$ (with $p>3$ in the second form). Conjecture open. |
 | [unique-sum](problems/unique-sum) | Independently replayed through $p=53$; OEIS A398173 now publishes through 73. At $p=59$, a checked 15-set gives $m(59)\le15$; the local size-at-most-14 search remains incomplete. No published bound improved. |
 | [three-in-line](problems/three-in-line) | Replayed Heule's rct4 142-set at $n=71$: $D(71)=142$. At the first current hole, $n=75$, an audited rct4 portfolio ended without a 150-set. |
@@ -175,7 +192,8 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Problem | Folder | Models | When |
 | --- | --- | --- | --- |
 | Erdős–Szekeres ES(7) | `problems/erdos-szekeres-seven` | GPT-5.6 Sol | 2026-08-23 |
-| covering | `problems/covering` | Sol 5.6, Opus 5, Fable 5, Grok 4.6, Claude Opus 5, Maths, GPT-6 Astra | 2026-08-16–09-10 |
+| covering | `problems/covering` | Sol 5.6, Opus 5, Fable 5, Grok 4.6, Claude Opus 5, Maths, GPT-6 Astra | 2026-08-16–09-11 |
+| covering redundancy-44 QM$_4^3$ lift | `problems/covering/compute/q13` | GPT-6 Astra | 2026-09-11 |
 | Brocard–Ramanujan | `problems/brocard` | Sol 5.6 | 2026-08-16 |
 | Brocard–Ramanujan prime-offset modular families | `problems/brocard/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | unique-sum mod p | `problems/unique-sum` | GPT-6 Astra | 2026-09-09 |

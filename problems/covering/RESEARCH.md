@@ -67,3 +67,26 @@ quotient-flat: $|S\cap\ker q|$ stays in $3..27$ (51-set) and $3..26$ (50-set)
 around a mean of $n/4$. Together with q4's 79 exhausted subgroup classes at
 $n=49$, the object that would be a 49 is not a lift, not a symmetry orbit, and
 (q4) not within 5 swaps of the known near-misses.
+
+## 2026-09-11 (radius-3 continuation)
+
+- [Davydov–Marcugini–Pambianco, arXiv:2511.02542v1, Construction QM and
+  Section 6](https://arxiv.org/html/2511.02542v1#S6) — Definition 3.2 makes
+  refinements of an $(R,\ell)$-partition harmless; Theorem 6.1 (6.4), (6.8)
+  gives QM₄³ subject to
+
+  $$
+  n=2^m(n_0+1)-1,\qquad n_0\ge2^m+1\ge p(H_0,\ell_0).
+  $$
+
+- [Theorem 7.3 and equation (7.4)](https://arxiv.org/html/2511.02542v1#S7)
+  give the inherited QM₅³ partition
+
+  $$
+  p(H_C,0)\le p(H_0,0)+p(\mathcal H_{2m})+1.
+  $$
+
+  For the notebook's 817-column construction this is $23+10+1=34$.
+- [Table 7.2](https://arxiv.org/html/2511.02542v1#S7.T2) lists 52415 at
+  redundancy 44 and covering radius 3. The certified 52351 construction
+  improves that published upper bound by 64.

@@ -10,7 +10,7 @@ the settled OK37 partition obstruction.
 | radius2-r10-n49-aut | q10 | residue | Odd-order exclusions leave the 2-group case; no 49-column matrix. |
 | radius2-fibered | q11 | residue | Fibered-family searches leave r=9, n=38 unresolved; no improvement. |
 | radius3-ok37-p17 | q12 | residue | Min (3,0)-partition of OK37 is p=18 (Cadical); all p≤17 UNSAT; no dependent triples ⇒ ℓ≥1 impossible. QM_4^3 m=4 needs p≤17 for n=607 — does not apply. |
-| radius3-r44-qm43-from817 | q13 | open | Check a 34-block (3,0)-partition of the existing r=26, n=817 matrix; refine to 65 indicators and apply QM_4^3 at m=6. Target ℓ₂(44,3)≤52351 versus Table 7.2's 52415. |
+| radius3-r44-qm43-from817 | q13 | certified | $\ell_2(44,3)\le52351<52415$: the inherited 34-block $(3,0)$-partition and its 65-block refinement cover all $2^{26}$ seed syndromes; the QM$_4^3$ identity is checked column by column. |
 
 Earlier certified constructions and their replays remain indexed in
 `../PROBLEM.md`; their campaign directories predate this leaf.
