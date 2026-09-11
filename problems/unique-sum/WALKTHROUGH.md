@@ -6,8 +6,8 @@
 - Run: recovered `q1-overnight` history
 - Model: gpt-5.6-sol max
 - Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: invalidated historical computation; current continuation in section 8
-- Problem status: open; the exact table is independently replayed through $p=53$
+- Argument status: invalidated historical computation; current continuation in section 11
+- Problem status: open; the exact table is independently replayed through $p=61$
 
 ## 0. What was actually missing
 
@@ -189,8 +189,8 @@ evidence for a new asymptotic theorem.
   boundary run visited 333,555,078 nodes and returned `UNSAT`.
 - **Not claimed.** We do not classify all extremal sets, extract an infinite
   construction, improve either known asymptotic bound, or infer growth from
-  the two least-squares lines. At $p=59$ we only know a checked 15-set here;
-  the size-at-most-14 search is incomplete. The overall problem remains open.
+  the two least-squares lines. The overall problem remains open. (Section 10
+  later completed the local value at $p=59$.)
 - **Certificate scope.** There is no Lean or DRAT proof object. The finite
   certificate is computational and replayable: a SAT-produced witness table,
   direct arithmetic checks, and an independent exact branching algorithm.
@@ -268,8 +268,8 @@ so this replays $m(53)=14$, already published in A398173.
 
 At $p=59$, the saved 15-set proves only $m(59)\le15$. A node-limited run at
 size at most 14 stopped `UNKNOWN` after 100,000,000 nodes and 72,327,605
-memoized states in 523.030 seconds. The exact value at 59 therefore remains open in this notebook;
-the incomplete run is not a lower bound.
+memoized states in 523.030 seconds. That incomplete run is not a lower bound.
+Section 10 later finished the named-cover leftover.
 
 ## 9. The 2026-09-09 progression ladder
 
@@ -315,3 +315,67 @@ The publication boundary also moved. OEIS now reports exact values through
 and the local unrestricted lower search is incomplete. This continuation
 did not improve a published bound. It stopped at the user's request with
 the named cases available for a future run.
+
+## 10. The 2026-09-09 named covers
+
+### What was actually missing
+
+The missing search was not another membership SAT run. q4 had already
+named the leftover: after the AP5 family is excluded, every remaining
+normalized 14-set is in one of 27 AP4-but-not-AP5 midpoint classes or
+one of 25 AP4-free classes. Those classes had been audited, not searched.
+
+### False starts and the useful failure
+
+Seeding from the 15-sets failed for a structural reason. Both witnesses
+contain an AP6. Any 14-subset therefore still contains a long progression,
+and q4 had already excluded that family through size 14. One-, two-, and
+three-swap neighborhoods of 31 seeds (162,932,311 fourteen-sets) never
+beat the inherited near-miss of one unique sum. That neighborhood is a
+finite diagnostic; it taught that the construction side of the boundary
+sits away from the known 15-sets, in the AP5-free leftover.
+
+### The click
+
+A six-point named root leaves eight free places, so the completion
+checker hits its cover test immediately. The first such class returned
+UNSAT in seconds. The four-point AP4-free root, which looked like the
+hard case, returned UNSAT in about a minute. The leftover was finite
+and small enough to finish.
+
+### The argument, in the order it was run
+
+Affine-normalize to $\{-1,0,1\}$. If the set contains an AP5, map that
+progression to the five-term root; that family is UNSAT through size 14
+in Rust and in C. Otherwise, if it contains an AP4, map to
+$\{-1,0,1,2\}$ and name a midpoint pair for $-1$: 27 classes, all UNSAT.
+Otherwise name a midpoint pair for the still-unsupported point $1$: 25
+classes, all UNSAT. Every admissible set is balanced, so those named
+pairs exist. C uses reflection intersections; Rust uses unordered pair
+counts. They agree on every representative.
+
+### Computer search
+
+AP5: Rust 1,559,513 nodes, C 925,228 nodes, both UNSAT. AP4-but-not-AP5:
+27/27 UNSAT in both languages, max RSS 61 MiB. AP4-free: 25/25 UNSAT,
+including the 4-point root. No class timed out. No 14-set appeared.
+
+### Proven vs still open
+
+Locally $m(59)=15$, matching OEIS A398173. That is a record match, not a
+new bound. The exact table at 61 through 73 is still only published, not
+independently replayed here. Primes from 79 onward are absent from the
+record. Green's #27 remains open.
+
+## 11. The 2026-09-09 table step at 61
+
+The q5 engines already take any odd prime below 64. At 61 the published
+15-set contains an AP5, so the leftover after that family is again a
+list of named midpoint classes. Annealing size 14 and an unrestricted
+C search for a 15-set from $\{-1,0,1\}$ both failed to produce a
+witness; the published set was checked directly instead. AP5 at size 14
+is UNSAT in C and in Rust. Completing 28 AP4-but-not-AP5 classes and 26
+AP4-free classes, each in both languages, excludes every smaller size.
+Locally $m(61)=15$, matching OEIS, new to this notebook. Not a new
+bound. The next primes 67, 71, 73 sit above the 64-bit mask.
+

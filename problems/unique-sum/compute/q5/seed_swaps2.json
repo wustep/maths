@@ -1,0 +1,11 @@
+{
+  "status": "UNKNOWN",
+  "p": 59,
+  "cardinality": 14,
+  "swaps": 2,
+  "seeds": 31,
+  "evaluated": 2812351,
+  "best_unique": 1,
+  "cpu_seconds": 4.243803,
+  "witness": [0, 1, 3, 4, 5, 9, 13, 15, 16, 21, 29, 33, 45, 58]
+}

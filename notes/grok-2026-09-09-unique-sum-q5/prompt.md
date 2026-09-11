@@ -1,0 +1,3 @@
+Standing /goal: novel certified dent on unique-sum (Green #27 finite table), leaf decide m(59)≤14. Keep attacking until a number moves, leftover exhausted, or tokens low — then wrap residue and open unmerged PR. Do not merge.
+
+Prefer alternate Grok-style routes vs raw membership SAT: seed from near-miss 14-sets / four-swap neighborhoods, affine {-1,0,1}, named midpoint cover, AP-length ladder from the restricted ceiling. One heavy job at a time, RAM-light. Covering frozen. Put new work in compute/q5/. Dual-check any dent. arXiv is the record. ONE unique-sum folder row in README (Grok 4.6 / 2026-09-09).

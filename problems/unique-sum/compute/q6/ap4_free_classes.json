@@ -1,0 +1,956 @@
+{
+  "p": 61,
+  "bound": 14,
+  "initial_ap": 3,
+  "forbid_ap": 4,
+  "center": 1,
+  "source_sha256": "b95c0ec12245aebfb8c4eb71b5413bc834ba20b6815277f32eca9f7630a78845",
+  "binary_sha256": "045b2ea84b0685088ff3cd222a845ac075927c32f42abd8cac33d148fecd68d6",
+  "partition_source_sha256": "d4fdda92856835efefda41af1f53d7f977531c11c79ed8090e8e400989db2fa6",
+  "status": "UNSAT",
+  "conditional": true,
+  "cases": [
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "root": [
+        0,
+        1,
+        2,
+        60
+      ],
+      "root_mask": "0x1000000000000007",
+      "forbidden_progression": true
+    },
+    {
+      "pair": [
+        3,
+        60
+      ],
+      "root": [
+        0,
+        1,
+        3,
+        60
+      ],
+      "root_mask": "0x100000000000000b",
+      "representative": 1,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x100000000000000b",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 295501,
+        "memo_hits": 1051,
+        "cover_prunes": 103791,
+        "ap_prunes": 180750,
+        "support_prunes": 44,
+        "seconds": 83.980511,
+        "max_rss_kib": 37400,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        4,
+        59
+      ],
+      "root": [
+        0,
+        1,
+        4,
+        59,
+        60
+      ],
+      "root_mask": "0x1800000000000013",
+      "forbidden_progression": true
+    },
+    {
+      "pair": [
+        5,
+        58
+      ],
+      "root": [
+        0,
+        1,
+        5,
+        58,
+        60
+      ],
+      "root_mask": "0x1400000000000023",
+      "representative": 3,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1400000000000023",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 65911,
+        "memo_hits": 73,
+        "cover_prunes": 23205,
+        "ap_prunes": 40423,
+        "support_prunes": 12,
+        "seconds": 17.377984,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        6,
+        57
+      ],
+      "root": [
+        0,
+        1,
+        6,
+        57,
+        60
+      ],
+      "root_mask": "0x1200000000000043",
+      "representative": 4,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1200000000000043",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 60991,
+        "memo_hits": 39,
+        "cover_prunes": 22366,
+        "ap_prunes": 36538,
+        "support_prunes": 15,
+        "seconds": 19.573318,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        7,
+        56
+      ],
+      "root": [
+        0,
+        1,
+        7,
+        56,
+        60
+      ],
+      "root_mask": "0x1100000000000083",
+      "representative": 5,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1100000000000083",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 59311,
+        "memo_hits": 42,
+        "cover_prunes": 20463,
+        "ap_prunes": 36812,
+        "support_prunes": 14,
+        "seconds": 18.67489,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        8,
+        55
+      ],
+      "root": [
+        0,
+        1,
+        8,
+        55,
+        60
+      ],
+      "root_mask": "0x1080000000000103",
+      "representative": 6,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1080000000000103",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 62581,
+        "memo_hits": 49,
+        "cover_prunes": 22314,
+        "ap_prunes": 38114,
+        "support_prunes": 13,
+        "seconds": 18.541946,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        9,
+        54
+      ],
+      "root": [
+        0,
+        1,
+        9,
+        54,
+        60
+      ],
+      "root_mask": "0x1040000000000203",
+      "representative": 7,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1040000000000203",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 60811,
+        "memo_hits": 54,
+        "cover_prunes": 21923,
+        "ap_prunes": 36794,
+        "support_prunes": 10,
+        "seconds": 18.106275,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        10,
+        53
+      ],
+      "root": [
+        0,
+        1,
+        10,
+        53,
+        60
+      ],
+      "root_mask": "0x1020000000000403",
+      "representative": 8,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1020000000000403",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 60811,
+        "memo_hits": 40,
+        "cover_prunes": 21505,
+        "ap_prunes": 37230,
+        "support_prunes": 8,
+        "seconds": 17.814533,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        11,
+        52
+      ],
+      "root": [
+        0,
+        1,
+        11,
+        52,
+        60
+      ],
+      "root_mask": "0x1010000000000803",
+      "representative": 9,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1010000000000803",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 63301,
+        "memo_hits": 58,
+        "cover_prunes": 22820,
+        "ap_prunes": 38304,
+        "support_prunes": 9,
+        "seconds": 18.94653,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        12,
+        51
+      ],
+      "root": [
+        0,
+        1,
+        12,
+        51,
+        60
+      ],
+      "root_mask": "0x1008000000001003",
+      "representative": 10,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1008000000001003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 59821,
+        "memo_hits": 61,
+        "cover_prunes": 20947,
+        "ap_prunes": 36806,
+        "support_prunes": 10,
+        "seconds": 17.991949,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        13,
+        50
+      ],
+      "root": [
+        0,
+        1,
+        13,
+        50,
+        60
+      ],
+      "root_mask": "0x1004000000002003",
+      "representative": 11,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1004000000002003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 57781,
+        "memo_hits": 45,
+        "cover_prunes": 20496,
+        "ap_prunes": 35305,
+        "support_prunes": 5,
+        "seconds": 17.013191,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        14,
+        49
+      ],
+      "root": [
+        0,
+        1,
+        14,
+        49,
+        60
+      ],
+      "root_mask": "0x1002000000004003",
+      "representative": 12,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1002000000004003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 63361,
+        "memo_hits": 81,
+        "cover_prunes": 22409,
+        "ap_prunes": 38742,
+        "support_prunes": 12,
+        "seconds": 18.595588,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        15,
+        48
+      ],
+      "root": [
+        0,
+        1,
+        15,
+        48,
+        60
+      ],
+      "root_mask": "0x1001000000008003",
+      "representative": 13,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1001000000008003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 62251,
+        "memo_hits": 75,
+        "cover_prunes": 22010,
+        "ap_prunes": 38080,
+        "support_prunes": 10,
+        "seconds": 17.339094,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        16,
+        47
+      ],
+      "root": [
+        0,
+        1,
+        16,
+        47,
+        60
+      ],
+      "root_mask": "0x1000800000010003",
+      "representative": 14,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000800000010003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 58351,
+        "memo_hits": 48,
+        "cover_prunes": 21077,
+        "ap_prunes": 35264,
+        "support_prunes": 10,
+        "seconds": 16.482868,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        17,
+        46
+      ],
+      "root": [
+        0,
+        1,
+        17,
+        46,
+        60
+      ],
+      "root_mask": "0x1000400000020003",
+      "representative": 15,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000400000020003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 65461,
+        "memo_hits": 70,
+        "cover_prunes": 23362,
+        "ap_prunes": 39820,
+        "support_prunes": 21,
+        "seconds": 18.828369,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        18,
+        45
+      ],
+      "root": [
+        0,
+        1,
+        18,
+        45,
+        60
+      ],
+      "root_mask": "0x1000200000040003",
+      "representative": 16,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000200000040003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 62371,
+        "memo_hits": 47,
+        "cover_prunes": 21849,
+        "ap_prunes": 38380,
+        "support_prunes": 11,
+        "seconds": 18.156052,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        19,
+        44
+      ],
+      "root": [
+        0,
+        1,
+        19,
+        44,
+        60
+      ],
+      "root_mask": "0x1000100000080003",
+      "representative": 17,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000100000080003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 61561,
+        "memo_hits": 73,
+        "cover_prunes": 22205,
+        "ap_prunes": 37221,
+        "support_prunes": 10,
+        "seconds": 18.480527,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        20,
+        43
+      ],
+      "root": [
+        0,
+        1,
+        20,
+        43,
+        60
+      ],
+      "root_mask": "0x1000080000100003",
+      "representative": 18,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000080000100003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 48751,
+        "memo_hits": 20,
+        "cover_prunes": 16586,
+        "ap_prunes": 30512,
+        "support_prunes": 8,
+        "seconds": 15.350336,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        21,
+        42
+      ],
+      "root": [
+        0,
+        1,
+        21,
+        42,
+        60
+      ],
+      "root_mask": "0x1000040000200003",
+      "representative": 19,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000040000200003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 57691,
+        "memo_hits": 85,
+        "cover_prunes": 20244,
+        "ap_prunes": 35435,
+        "support_prunes": 4,
+        "seconds": 15.352035,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        22,
+        41
+      ],
+      "root": [
+        0,
+        1,
+        22,
+        41,
+        60
+      ],
+      "root_mask": "0x1000020000400003",
+      "representative": 20,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000020000400003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 54151,
+        "memo_hits": 55,
+        "cover_prunes": 18354,
+        "ap_prunes": 33932,
+        "support_prunes": 5,
+        "seconds": 14.067179,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        23,
+        40
+      ],
+      "root": [
+        0,
+        1,
+        23,
+        40,
+        60
+      ],
+      "root_mask": "0x1000010000800003",
+      "representative": 21,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000010000800003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 51361,
+        "memo_hits": 41,
+        "cover_prunes": 17965,
+        "ap_prunes": 31636,
+        "support_prunes": 7,
+        "seconds": 14.940073,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        24,
+        39
+      ],
+      "root": [
+        0,
+        1,
+        24,
+        39,
+        60
+      ],
+      "root_mask": "0x1000008001000003",
+      "representative": 22,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000008001000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 62791,
+        "memo_hits": 59,
+        "cover_prunes": 22437,
+        "ap_prunes": 38198,
+        "support_prunes": 4,
+        "seconds": 18.861453,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        25,
+        38
+      ],
+      "root": [
+        0,
+        1,
+        25,
+        38,
+        60
+      ],
+      "root_mask": "0x1000004002000003",
+      "representative": 23,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000004002000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 58201,
+        "memo_hits": 39,
+        "cover_prunes": 20245,
+        "ap_prunes": 35961,
+        "support_prunes": 8,
+        "seconds": 17.444833,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        26,
+        37
+      ],
+      "root": [
+        0,
+        1,
+        26,
+        37,
+        60
+      ],
+      "root_mask": "0x1000002004000003",
+      "representative": 24,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000002004000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 63301,
+        "memo_hits": 61,
+        "cover_prunes": 22581,
+        "ap_prunes": 38545,
+        "support_prunes": 4,
+        "seconds": 18.704076,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        27,
+        36
+      ],
+      "root": [
+        0,
+        1,
+        27,
+        36,
+        60
+      ],
+      "root_mask": "0x1000001008000003",
+      "representative": 25,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000001008000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 61261,
+        "memo_hits": 35,
+        "cover_prunes": 22097,
+        "ap_prunes": 37075,
+        "support_prunes": 9,
+        "seconds": 19.251985,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        28,
+        35
+      ],
+      "root": [
+        0,
+        1,
+        28,
+        35,
+        60
+      ],
+      "root_mask": "0x1000000810000003",
+      "representative": 26,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000000810000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 60181,
+        "memo_hits": 32,
+        "cover_prunes": 21178,
+        "ap_prunes": 36957,
+        "support_prunes": 7,
+        "seconds": 17.949102,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        29,
+        34
+      ],
+      "root": [
+        0,
+        1,
+        29,
+        34,
+        60
+      ],
+      "root_mask": "0x1000000420000003",
+      "representative": 27,
+      "result": {
+        "p": 61,
+        "bound": 14,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x1000000420000003",
+        "status": "UNSAT",
+        "node_limit": 10000000,
+        "nodes": 59821,
+        "memo_hits": 45,
+        "cover_prunes": 21230,
+        "ap_prunes": 36545,
+        "support_prunes": 7,
+        "seconds": 18.605079,
+        "max_rss_kib": 18180,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 240.0
+      }
+    },
+    {
+      "pair": [
+        30,
+        33
+      ],
+      "root": [
+        0,
+        1,
+        30,
+        33,
+        60
+      ],
+      "root_mask": "0x1000000240000003",
+      "representative": 19
+    },
+    {
+      "pair": [
+        31,
+        32
+      ],
+      "root": [
+        0,
+        1,
+        31,
+        32,
+        60
+      ],
+      "root_mask": "0x1000000180000003",
+      "forbidden_progression": true
+    }
+  ]
+}

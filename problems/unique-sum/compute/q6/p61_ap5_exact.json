@@ -1,0 +1,15 @@
+{
+  "p": 61,
+  "bound": 14,
+  "initial_ap": 5,
+  "forbid_ap": 0,
+  "status": "UNSAT",
+  "nodes": 1476025,
+  "memo_hits": 37476,
+  "cover_prunes": 1224600,
+  "ap_prunes": 0,
+  "memo": 49030,
+  "seconds": 105.134008,
+  "source": "../q5/verify_exact.rs",
+  "source_sha256": "578429e967dce189ea29f0d7385373a1a852079b81d6592219d900d68d1bae39"
+}
