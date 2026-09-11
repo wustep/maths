@@ -17,7 +17,8 @@ proofs are:
 | $5^7 1^8$ | 3 | 3, 4 | `certs/proofs/p5_c7_k3.drat.gz` |
 
 Each compressed DRAT was checked by the pinned `drat-trim` build, then
-replayed by regenerating the CNF and checking again.
+replayed by regenerating the CNF and checking again. The proof blobs
+are not in the git tree; see `../STORAGE.md`.
 
 Together with q2 and q3, a hypothetical $(5,5,43)$-graph can have
 automorphism-group order with prime divisors only among 2, 3, and 5, and if

@@ -9,7 +9,7 @@ python3 -m venv .venv && .venv/bin/pip install sympy python-sat
 ./run_verify.sh
 ```
 
-`run_verify.sh` rebuilds the unit-distance graph from `509_parts.vtx` (must get 509 vertices and 2442 edges) and checks `color509.drat` against a freshly generated 4-coloring CNF.
+`run_verify.sh` rebuilds the unit-distance graph from `509_parts.vtx` (must get 509 vertices and 2442 edges). If `color509.drat` is present locally, it also checks that proof against a freshly generated 4-coloring CNF. The DRAT is not in the git tree; see `STORAGE.md`.
 
 Vertex-criticality of a degree-4 deletion:
 

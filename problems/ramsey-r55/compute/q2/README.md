@@ -77,4 +77,5 @@ two-edit extension census, is:
 PATH="$PWD/.venv/bin:$PATH" ./run_all.sh
 ```
 
-Collected certificate: `certs/q2_summary.json`.
+Collected certificate: `certs/q2_summary.json`. Compressed DRATs
+are not in the git tree; see `../STORAGE.md`.

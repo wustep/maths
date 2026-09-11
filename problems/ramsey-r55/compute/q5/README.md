@@ -16,8 +16,8 @@ stored proof at $k=4$ covers $k=0$ as well.
 | $5^4 1^{23}$ | 4 | 0, 4 | `certs/proofs/p5_c4_k4.drat.xz` |
 
 The compressed DRAT was checked by the pinned `drat-trim` build, then
-replayed by regenerating the CNF and checking again. gzip of the same
-bytes exceeds GitHub's blob limit; the stored file is `xz -9`.
+replayed by regenerating the CNF and checking again. The proof blob
+is not in the git tree; see `../STORAGE.md`.
 
 Together with q2, q3, and q4, a hypothetical $(5,5,43)$-graph can have
 automorphism-group order with prime divisors only among 2, 3, and 5,

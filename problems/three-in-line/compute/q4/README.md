@@ -4,10 +4,13 @@ This campaign searches for 150 points on the $75\times75$ grid in
 Flammenkamp's `rct4` symmetry class. The shared encoder fixes the
 anti-diagonal empty and selects one diagonal two-orbit and 37 four-orbits.
 
-The audited formula has 996,434 variables and 2,398,895 clauses. The
-`n73-best-embedding.txt` phase seed is a checked 146-point rct4 set translated
-into the interior of the 75-grid; it has no bad lines but cannot be completed
-without moving points. `search_small_repair.py` exactly exhausts candidates
+The audited formula has 996,434 variables and 2,398,895 clauses
+(`n75-rct4-audit.json`). The 41 MB DIMACS file is not in the git
+tree; regenerate it with `../search_sat.py --n 75 --write-cnf`
+(see `STORAGE.md`). The `n73-best-embedding.txt` phase seed is a
+checked 146-point rct4 set translated into the interior of the
+75-grid; it has no bad lines but cannot be completed without
+moving points. `search_small_repair.py` exactly exhausts candidates
 that change at most two of its selected orbits while preserving every row and
 column count.
 

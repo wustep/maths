@@ -16,7 +16,8 @@ stored proof at $k=2$ covers $k=3$ as well.
 | $5^5 1^{18}$ | 2 | 2, 3 | `certs/proofs/p5_c5_k2.drat.gz` |
 
 The trimmed DRAT was checked by the pinned `drat-trim` build, then
-replayed by regenerating the CNF and checking again. gzip -9 is 57MB.
+replayed by regenerating the CNF and checking again. The proof blob
+is not in the git tree; see `../STORAGE.md`.
 
 Together with q2, q3, q4, and q5, a hypothetical $(5,5,43)$-graph can
 have automorphism-group order with prime divisors only among 2, 3, and

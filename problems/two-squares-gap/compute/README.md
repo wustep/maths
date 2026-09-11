@@ -18,8 +18,9 @@ python3 compute/verify_exhaustive.py --N 2000000 --out compute/exhaustive_a3_2e6
 # Stored witnesses for every danger-zone top with m <= 250.
 python3 compute/verify_a3_cert.py compute/a3_cert_m250.json
 
-# Same, m <= 2000 (gunzip first). About 1e6 witnesses.
-# python3 -c "import gzip,shutil; gzip.open('compute/a3_cert_m2000.json.gz')"  # or gzip -dk
+# m <= 2000 is a ~1e6-witness dump. It is not in the tree.
+# Rebuild, then verify:
+# python3 compute/certify_a3.py --m-max 2000 --out compute/a3_cert_m2000.json
 # python3 compute/verify_a3_cert.py compute/a3_cert_m2000.json
 
 # Re-run the danger-zone search with no stored witnesses.

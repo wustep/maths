@@ -1,4 +1,5 @@
-Small DRAT proofs for n=18, d=6 cubes that finished quickly.
+Small n=18, d=6 cubes that finished quickly. The DRAT bytes are
+not in the git tree; paired CNFs remain. See `../../STORAGE.md`.
 
 Replay, from `compute/q1/` after `./build_solvers.sh`:
 
