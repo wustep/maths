@@ -12,3 +12,21 @@ __pycache__/
 tmp/
 .cache/
 .vercel
+
+# Bulky regenerable SAT / graph-census dumps. Prefer a tiny summary
+# JSON plus the encoder/solver scripts. Do not commit multi-MB proofs.
+*.drat
+*.drat.gz
+*.drat.xz
+*.cnf
+*.g6
+**/certs/proofs/*.tar.gz
+
+# Exceptions: tiny load-bearing cores / graph witnesses already in tree.
+!problems/covering/compute/q12/atmost17_core.cnf
+!problems/covering/compute/q12/atmost17_core.drat
+!problems/ramsey-r55/compute/q2/certs/local_best2.g6
+!problems/ramsey-r55/compute/refs/r55_42some.g6
+
+# Regenerable bulk witness dump (see two-squares-gap/compute/README.md).
+problems/two-squares-gap/compute/a3_cert_m2000.json.gz

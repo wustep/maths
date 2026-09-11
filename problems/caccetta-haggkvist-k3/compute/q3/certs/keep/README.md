@@ -1,11 +1,13 @@
-DRAT proofs for exact Caccetta–Häggkvist triangle orders from n=38
-through n=72.
+Cube index for exact Caccetta–Häggkvist triangle orders from n=38
+through n=72. The DRAT bytes are not in the git tree; see
+`../../STORAGE.md`.
 
 A d-outregular oriented graph has n d arcs, so some in-degree is
 at least d. Relabel that vertex as 0. The exact statement reduces
-to cubes k=|N⁻(0)| ≥ d. Each stored cube is UNSAT with a DRAT.
-Replay regenerates the CNF from `encode.py` and checks the proof;
-do not trust leftover `certs/*.cnf` scratch files.
+to cubes k=|N⁻(0)| ≥ d. Each cube was UNSAT with a DRAT. Local
+replay regenerates the CNF from `encode.py` and checks a
+regenerated proof; do not trust leftover `certs/*.cnf` scratch
+files.
 
 ```
 cd problems/caccetta-haggkvist-k3/compute/q3

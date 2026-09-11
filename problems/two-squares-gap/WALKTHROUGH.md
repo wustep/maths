@@ -118,9 +118,9 @@ The range $m\le 8000$ is $n\le 1.024\cdot 10^{15}$.
 
 - `compute/exhaustive_a3_5e6.json` — exact exception set on
   $[1,5\cdot 10^6]$.
-- `compute/a3_cert_m250.json` and `compute/a3_cert_m2000.json.gz` —
-  stored $(n,a,b,s)$ witnesses, checker
-  `compute/verify_a3_cert.py`.
+- `compute/a3_cert_m250.json` — stored $(n,a,b,s)$ witnesses,
+  checker `compute/verify_a3_cert.py`. Rebuild $m\le 2000$ with
+  `certify_a3.py --m-max 2000` (not in the tree).
 - `compute/a3_summary_m8000.json` — $16\,011\,993$ tops, $0$ unsaved.
 - `compute/min_p_m8000.json` — least $p=u-u'$ on the even Shiu
   curve; max $p=40$ at $m=2862$.

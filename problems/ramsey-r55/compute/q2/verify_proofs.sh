@@ -3,6 +3,11 @@
 set -eu
 cd "$(dirname "$0")"
 
+if [ ! -f certs/proofs/orbit_n43_p11_c1.drat.gz ]; then
+  echo "proof blobs not in tree; see ../STORAGE.md" >&2
+  exit 2
+fi
+
 if [ ! -x work/drat-trim-bin ]; then
   ./build_tools.sh
 fi

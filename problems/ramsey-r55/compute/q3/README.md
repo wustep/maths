@@ -21,8 +21,9 @@ following representatives cover every degree-feasible value of $k$.
 | $7^6 1^1$ | 3 | exhaustive 787-case DRUP certificate |
 
 The direct instances reuse `../q2/orbit_sat.py` and its generic cycle/phase
-symmetry breaking. Each compressed proof in `certs/proofs/` was checked by
-the pinned `drat-trim` build.
+symmetry breaking. Each compressed proof was checked by the pinned
+`drat-trim` build. The proof blobs are not in the git tree; the
+JSON manifests stay. See `../STORAGE.md`.
 
 The maximum-cycle formula is q2's byte-identical CNF with SHA-256
 `b090bb65d208161ea2ac949f976571108baee3dc723a097a8afd05f3b4318206`.

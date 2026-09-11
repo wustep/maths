@@ -71,6 +71,11 @@ Lean is optional in `problems/<slug>/lean/` for finite algebraic
 or modular claims. Do not require Lean for SAT, search, or
 anneals.
 
+Do not commit bulk `*.drat` / `*.cnf` / `*.g6` (or packed proof
+shards). Prefer a tiny summary JSON plus a regenerator. Multiple
+worktrees are fine; do not copy giant cert trees into every
+campaign. See `.gitignore` and `problems/*/compute/STORAGE.md`.
+
 README and explainers use ordinary English; ATTACK, WALKTHROUGH,
 PROBLEM status lines, and skills may use dent and residue.
 Independently verify every claimed number. Cite the record you

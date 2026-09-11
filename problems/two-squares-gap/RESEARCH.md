@@ -62,10 +62,10 @@ on an explicit range. It is **not** a proof for all large $n$, and
 it is **not** Green’s $1/10$.
 
 Independently verified stored witnesses: every danger-zone top with
-$m\le 2000$ (so all $n\le 4\cdot 10^{12}$ in the classification),
-file `compute/a3_cert_m2000.json.gz`. The same searcher reports
-zero unsaved tops for $m\le 8000$, which is the $1.024\cdot 10^{15}$
-range.
+$m\le 250$ in `compute/a3_cert_m250.json`. The $m\le 2000$ dump
+(~1e6 witnesses) is regenerable with `certify_a3.py --m-max 2000`
+and is not in the tree. The same searcher reports zero unsaved
+tops for $m\le 8000$, which is the $1.024\cdot 10^{15}$ range.
 
 ## Classification (integer)
 

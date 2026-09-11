@@ -12,15 +12,15 @@ python3 ind_fork.py        # rebuild IndT, IndV, Fork
 
 ## Replay SAT + DRAT
 
+Cube DRATs are not in the git tree. The JSON under each
+`q*/certs/keep/` is the cube index. See `STORAGE.md`.
+
 `kissat` and `drat-trim` are compiled in this folder.
 
 ```
 ./kissat --time=10 $(python3 encode_ch.py --n 9 --d 3 | tee /tmp/x.cnf >/dev/null; echo /tmp/x.cnf)
-# recorded proofs:
-./drat-trim certs/ch-12-4-sb.cnf certs/ch-12-4-sb.drat   # s VERIFIED
-./drat-trim certs/ch-15-5-sb.cnf certs/ch-15-5-sb.drat
-./drat-trim certs/ch-16-6-sb.cnf certs/ch-16-6-sb.drat
-./drat-trim certs/ch-17-6-sb.cnf certs/ch-17-6-sb.drat
+# after regenerating a local proof:
+# ./drat-trim /tmp/x.cnf certs/ch-12-4-sb.drat   # s VERIFIED
 ```
 
 `encode_ch.py` writes a DIMACS instance: oriented, no C₃, out-regular of degree `d`, $N^+(0)=\{1,\ldots,d\}$, lex order on out-neighbourhoods (disable with `--no-sb`).

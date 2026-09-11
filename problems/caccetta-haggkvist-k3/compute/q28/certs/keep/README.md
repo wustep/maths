@@ -1,3 +1,5 @@
+The DRAT bytes are not in the git tree. The JSON in this folder is the cube index. See `../../STORAGE.md`.
+
 DRAT proofs for exact Caccetta–Häggkvist triangle leftover orders
 from n=137 onward. q27 stays the n=136 store.
 

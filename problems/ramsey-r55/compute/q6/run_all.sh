@@ -3,6 +3,11 @@
 set -euo pipefail
 cd "$(dirname "$0")"
 
+if [[ ! -f certs/proofs/p5_c5_k2.drat.gz ]]; then
+  echo "proof blobs not in tree; see ../STORAGE.md" >&2
+  exit 2
+fi
+
 if [[ ! -x ../q2/work/drat-trim-bin ]]; then
   ../q2/build_tools.sh
 fi

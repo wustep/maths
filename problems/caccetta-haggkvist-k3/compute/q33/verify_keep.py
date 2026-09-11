@@ -69,6 +69,13 @@ def replay_one(n: int, d: int, k: int, drat_bin: Path) -> dict:
 
 
 def main():
+    if not any(KEEP.glob("ch-*-*-k*.drat")):
+        print(
+            "no local DRATs in certs/keep/; cube index is the committed "
+            "summary/replay JSON. See compute/STORAGE.md",
+            flush=True,
+        )
+        return
     drat_bin = find_bin("drat-trim")
     orders = orders_from_keep()
     if not orders:

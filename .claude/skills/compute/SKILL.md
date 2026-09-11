@@ -43,7 +43,9 @@ quotes the file.
 **Certificate.** Verifier plus witness in `compute/`. A new bound gets
 a second implementation in another language and a different
 algorithm. Covering radius: exhaustive C, Python, or Rust check
-of a matrix. SAT: DIMACS plus DRAT (`kissat`, `drat-trim`).
+of a matrix. SAT: DIMACS plus DRAT (`kissat`, `drat-trim`). Do
+not commit the bulk `*.drat` / `*.cnf` / `*.g6`; keep a summary
+JSON and the script that rebuilds the proof.
 
 **Claim.** A quest that asserts a bound keeps `CLAIM.md` next to
 the verifier.
