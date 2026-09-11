@@ -2,6 +2,7 @@
 
 | Folder | What |
 | --- | --- |
+| [process/](process/) | Living process notes: house rules, Jig progress shapes, fluid-blowup meta |
 | [lists/](lists/) | Problem lists: the 50, Hilbert, Smale, Landau, Simon |
 | [picks/](picks/) | Which ones we tried and why |
 | [supergrok-2026-08-17/](supergrok-2026-08-17/) | Dated SuperGrok run (REPORT + prompts; logs stay local) |
