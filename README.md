@@ -197,6 +197,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Brocard–Ramanujan | `problems/brocard` | Sol 5.6 | 2026-08-16 |
 | Brocard–Ramanujan prime-offset modular families | `problems/brocard/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | unique-sum mod p | `problems/unique-sum` | Grok 4.6 | 2026-09-09 |
+| unique-sum / q7 source review, stopped before search | `problems/unique-sum/compute/q7` | GPT-6 Astra | 2026-09-12 |
 | no-three-in-line n=71 | `problems/three-in-line` | Sol 5.6 | 2026-08-16 |
 | no-three-in-line n=71 certificate replay | `problems/three-in-line/compute/q3` | GPT-5.6 Sol | 2026-08-23 |
 | no-three-in-line n=75 search | `problems/three-in-line/compute/q4` | GPT-5.6 Sol | 2026-08-23 |

@@ -103,6 +103,10 @@ classes, with C and Rust in agreement. This matches OEIS A398173 and does
 not improve it. See [`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
 [`compute/q6/CLAIM.md`](compute/q6/CLAIM.md).
 
+The 2026-09-12 continuation stopped at source review, before any search.
+It produced no new bound or table extension; the decision at 79 remains
+unfinished. See [`compute/q7/CLAIM.md`](compute/q7/CLAIM.md).
+
 ## Figures
 
 Table through $p=53$: [`figures/m_p.png`](figures/m_p.png).
