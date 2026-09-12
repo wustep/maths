@@ -379,3 +379,12 @@ AP4-free classes, each in both languages, excludes every smaller size.
 Locally $m(61)=15$, matching OEIS, new to this notebook. Not a new
 bound. The next primes 67, 71, 73 sit above the 64-bit mask.
 
+
+## 12. The 2026-09-12 stop before computation
+
+The missing step was a search beyond the machine word: both inherited
+engines reject 67 and larger primes. The browser record still ended at
+73, making 79 the first possible table extension. Shell source fetches
+failed on sandbox DNS and the escalation call was interrupted at cutoff.
+No wider engine or search followed. There was no mathematical discovery
+or new proof in this run; the leftover is the entire decision at 79.
