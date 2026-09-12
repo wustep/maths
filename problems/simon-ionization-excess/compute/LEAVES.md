@@ -20,6 +20,7 @@ independent certifications by q14. One assigned leaf per campaign.
 | Aspect-ten, 37-bin mask enumeration | q12 | residue | Incomplete enumeration; superseded by q13, never a bound by itself. |
 | Aspect-ten, 37-bin Gray enumeration | q13 | certified | Recorded $N_c<1.1006Z+3.933Z^{1/3}$ for $Z\ge4$. |
 | Exact copositivity certificate for a raised compact target | q14 | certified | Target $0.912$ on 37 rational bins, two independently checked matrix witnesses; $N_c<1.1005Z+3.933Z^{1/3}$ for $Z\ge4$. See [CLAIM.md](q14/CLAIM.md). |
+| Refined compact partition reaching the aspect-ten cut | q15 | open | Try 40 rational bins at target $0.9124$; certify compact $\gamma\ge10/11$, then $N_c(Z)<1.1Z+3.933Z^{1/3}$ for $Z\ge4$. See [CLAIM.md](q15/CLAIM.md). |
 | Sharper endpoint-moment cut | unassigned | open | Certify an improvement on $R/(R+1)$ and combine with a compact bound. |
 | Further HPS remainder optimization | unassigned | open | Certify improved constants over the full stated $Z$ range. |
 | Finite-$Z$ integer exclusion | unassigned | open | Exclude a previously allowed electron count; existing small-$Z$ probes did not improve Lieb. |
