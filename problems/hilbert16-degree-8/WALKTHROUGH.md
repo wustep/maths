@@ -463,3 +463,44 @@ T-curve schemes is at least 2,385. The search log records 1,248,532
 evaluations, but the proof needs only this one witness. We stopped
 there, leaving 1,108 planned balls unsearched. The construction has
 twenty ovals; neither open maximal deep nest is decided.
+
+## 19. The leftover balls were the same move, not a new idea
+
+What was missing was not another neighbourhood of signs on a fixed
+mesh. The q8 search had written down 1,190 one-flip balls and then
+stopped at the first new scheme. The leftover 1,108 balls were
+already a finite handle: the same plan hash, the same seeds, just
+the tasks that had not been run.
+
+The useful failure was the extra domain. Flipping the new q8
+certificate itself, then changing at most three signs, produced
+513 schemes and nothing outside the 2,385. Iterating on the new
+mesh was the wrong next step. The productive direction was the
+rest of the original list, starting with the unused flips of
+nearby (7,15) M-certificates.
+
+The click is that the a=3 hole is a pattern, not a one-off.
+⟨a ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩ was missing a=3 and present at a=0,1,2,4,5.
+⟨a ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ was missing a=3 in exactly the same way. Task
+107, from the paper's ⟨5 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ certificate, fills it.
+Two other meshes, from ⟨8 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ and
+⟨8 ⊔ 2⟨1⟩ ⊔ 1⟨9⟩⟩, produce four further schemes that are likewise
+absent from the census and the prior additions, including a
+three-step family ⟨5 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩,
+⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩ on one triangulation.
+
+Computer search: six workers finished all 1,108 leftover balls
+(16,870,408 evaluations) and a seventh finished the 21 extra flips
+of the q8 certificate. Eleven tasks emitted a scheme outside the
+2,385; five of those schemes are distinct. One-flip balls of those
+five certificates (115 balls) then filled ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩
+and a parallel family ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ at a=2,3,4. Each
+got an integer lifting from a linear feasibility solve, then the
+same two independent topology checks as q8. The (19,3) block of the
+leftover plan (123 balls) was among the finished tasks and hit
+neither open nest.
+
+What is proved: nine further nonempty degree-eight T-curve schemes,
+so the lower bound is at least 2,394, and the 1,190-ball q8 domain
+is now completely searched. What remains open: Hilbert 16(a) in
+degree eight, and both undecided (19,3) deep nests.

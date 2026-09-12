@@ -1219,3 +1219,62 @@ The exact claim and witness are in `q8/CLAIM.md` and
 `q8/certs/new_schemes.json`. Search stopped on certification. The
 1,108 remaining balls are unsearched; neither open deep nest is
 decided. No algebraic exclusion is claimed.
+
+## 2026-09-12 — q9: leftover one-flip balls
+
+Grok 4.6, new branch from `origin/main`. Record re-fetched:
+arXiv:2602.06888 still **v4, 31 Aug 2026**; §4.3 still 2,367 nonempty
+T-schemes as a lower bound. The published archive was downloaded
+again and matches SHA-256
+`1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`.
+HTML for v4 is not offered; the abs page and the archive check the
+cited numbers. Baseline B ∪ A ∪ Q has size 2,385.
+
+The selected leaf is the 1,108 unsearched balls of the q8 plan
+(tasks 82–1,189), plus a disjoint extra domain of one-flip balls of
+the q8 certificate. Code in `compute/q9/`. Replay:
+`sh q9/run_all.sh`. Search does not stop on a candidate. Six light
+workers partitioned the leftover; a seventh worker took the extra
+21 balls.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| remaining q8 balls, tasks 82–1,189 | 16,870,408 | **1,108/1,108 complete**; five schemes outside B ∪ A ∪ Q |
+| one-flip balls of the q8 certificate | 319,746 | **21/21 complete**; 0 new |
+| of which published (19,3) M-certificates | 1,872,798 | **123/123 complete**; neither open nest |
+| one-flip balls of those five certificates | 1,750,990 | **115/115 complete**; four further schemes |
+
+### Discovery
+
+Five schemes, eleven tasks, three meshes. SciPy 1.18.1 / HiGHS
+produced an integer lifting on each mesh; exact arithmetic then
+checked all 2,688 global strict inequalities.
+
+| scheme | ovals | (p,n) | min slack | first task | seed |
+| --- | --- | --- | --- | --- | --- |
+| ⟨3 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ | 20 | (5,15) | 16 | 107 | ⟨5 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ |
+| ⟨5 ⊔ 1⟨2⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ | 20 | (8,12) | 8 | 267 | ⟨8 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨7⟩⟩ |
+| ⟨5 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩ | 20 | (8,12) | 2 | 313 | ⟨8 ⊔ 2⟨1⟩ ⊔ 1⟨9⟩⟩ |
+| ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩ | 19 | (7,12) | 2 | 313 | same mesh |
+| ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩ | 18 | (6,12) | 2 | 313 | same mesh |
+
+⟨3 ⊔ 1⟨5⟩ ⊔ 1⟨10⟩⟩ fills the a=3 hole in a family that already had
+a=0,1,2,4,5 among the census and the seventeen additions — the same
+pattern as the q8 scheme in ⟨a ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩. Python and Rust
+agree on every nesting tree. Absence is checked against the
+replayed 2,367, the archive filenames, the seventeen, and Q.
+
+One-flip balls of those five certificates (115 balls, 1,750,990
+evaluations) then produced four more schemes:
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩,
+⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩, ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩.
+
+**Dent:** number of nonempty degree-eight T-curve schemes ≥ 2,394.
+The exact claim and witnesses are in `q9/CLAIM.md` and
+`q9/certs/new_schemes.json`. The leftover q8 domain is now
+finished, not merely prefixed. Neither open deep nest is decided.
+No algebraic exclusion is claimed.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh q9/run_all.sh`.

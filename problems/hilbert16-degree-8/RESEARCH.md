@@ -418,3 +418,25 @@ archive's TYPE fields and filenames and from the seventeen additions.
 Thus the verified notebook count is now at least 2,385, improving the
 paper's 2,367 by eighteen in total and the prior notebook count by one.
 Neither open maximal deep nest is decided.
+
+## 2026-09-12 — q9 record replay
+
+- Opened <https://arxiv.org/abs/2602.06888>: still v4, 31 Aug 2026.
+  Comments still "major revision, 37 pages". The abs page does not
+  restate the 2,367 figure; that number lives in the PDF body.
+- <https://arxiv.org/html/2602.06888v4> returned "No HTML for
+  2602.06888v4". The v3 HTML remains the last HTML conversion and
+  is not this version.
+- Downloaded
+  <https://raw.githubusercontent.com/dmg-lab/CombinatorialPatchworking/main/deg8.pcoms.txz>
+  (125,932 bytes). SHA-256
+  `1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`,
+  matching the hash recorded in q8 coverage provenance. This checks
+  the cited baseline; it is not a claim to have surveyed every later
+  paper on real octics.
+
+The q8 certificate still verifies, so the notebook count starts at
+2,385. Nine further schemes in `compute/q9/certs/new_schemes.json`
+are absent from the archive TYPE fields and filenames and from the
+seventeen plus Q, which is why the verified count is now at least
+2,394. Neither open maximal deep nest is decided.
