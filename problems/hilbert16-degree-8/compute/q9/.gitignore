@@ -1,0 +1,4 @@
+work/
+certs/shards/
+__pycache__/
+*.pyc
