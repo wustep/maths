@@ -253,3 +253,17 @@ $$
 The leading coefficient improves 1.1006. The bounded-excess conjecture
 remains open. The campaign stopped with the certified improvement;
 larger partitions and stronger targets were not searched.
+
+## 2026-09-12 — the 40-bin attempt stopped before search
+
+The remaining degree of freedom was the partition size: a smaller
+reweighting error might let the compact estimate reach the existing
+$10/11$ cutoff. The proposed calculation used 40 bins and target
+$0.9124$. This was a candidate, not a computed lower bound.
+
+Dependency setup failed on sandbox DNS, and the escalated tool call
+remained pending until the cutoff interruption. There was no numerical
+false start, useful solver failure, or new argument to report: the
+SDP did not run. The completed computer work was the independent
+Python and Rust replay of q14. Its leading $1.1005$ remains certified;
+the proposed $1.1$ and bounded excess remain unproved.

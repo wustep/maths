@@ -1,6 +1,8 @@
 # q15 claim — reaching the aspect-ten cut
 
-Status: attempted; no new bound until both independent verifiers pass.
+Status: residue at the midnight cutoff on 2026-09-12. No new bound.
+The SDP search did not run and no q15 certificate or verifier was
+produced. The certified leading coefficient remains 1.1005.
 
 For the fermionic Coulomb Hamiltonian and critical electron count
 defined in PROBLEM.md, the target is
@@ -16,19 +18,19 @@ The published comparison is Hundertmark–Pattakos–Schulz,
 with leading coefficient 1.1185 and remainder coefficient 4
 on the same range.
 
-The finite handle uses 40 rational bins covering $[1,10]$, with
+The proposed finite handle uses 40 rational bins covering $[1,10]$, with
 target $\varphi=2281/2500=0.9124$. A positive-semidefinite plus
 entrywise nonnegative decomposition would bound the compact radial
-quotient. After its reweighting error, the target is at least
+quotient. After its reweighting error, the intended target is at least
 $10/11$. The existing mass-stationary argument gives $Q>10/11$
 for larger used-support aspect. This would prove $\beta_3\ge10/11$;
 the HPS Section 7 calculation must then certify the displayed bound.
 
-The intended replay checks separate rational matrix and Gram
-witnesses in Python and Rust. Numerical solver status is never a
-premise. `run_all.sh` exits 0 only when every finite check and the
-claimed HPS constants pass; missing, invalid, or incomplete
-certificates return nonzero.
+Certification would require separate rational matrix and Gram
+witnesses checked in Python and Rust. Numerical solver status is
+never a premise. The present `run_all.sh` returns 2 with an explicit
+missing-certificate message. It cannot report success for this
+unfinished claim. The target inequality above is not established.
 
 Falsifier: a valid bound-state example violating the displayed
 inequality disproves it. An invalid matrix inequality, uncovered
