@@ -244,3 +244,23 @@ This is the scope of the literature check, not an exhaustive novelty
 theorem. The q14 certificate improves both that published bound and
 the stated notebook comparison. The new proof does not depend on
 previous face-enumeration logs.
+
+## 2026-09-12 — q15 record check and cutoff
+
+- [HPS abstract](https://arxiv.org/abs/2504.18487): submission
+  history still lists v1 only, dated 25 April 2025.
+- [HPS full HTML, v1](https://arxiv.org/html/2504.18487v1): fetched
+  with `scripts/arxiv_fetch.py`; read Theorem 4.2, Proposition 2.5,
+  and Section 7 through (7.35). These supply the radialization and
+  scalar chain, not a 40-bin certificate. Both q14 implementations
+  replayed the published $1.1184<b(3)<1.1185$ window.
+- [Nam abstract](https://arxiv.org/abs/1009.2367): earlier bound
+  with leading 1.22; not an improvement on the stated HPS record.
+- [Benguria–González-Brantes abstract](https://arxiv.org/abs/2511.07582):
+  bosonic / statistics-independent comparison, not a better
+  fermionic leading coefficient.
+
+A search for the HPS authors, ionization bounds, and leading 1.1185
+found no later improved fermionic coefficient in the sources checked.
+This is a limited record check. The proposed 40-bin search did not
+run before the user stopped the campaign; no new bound is asserted.

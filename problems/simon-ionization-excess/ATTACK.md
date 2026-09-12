@@ -964,3 +964,28 @@ certificate, independent verifiers, and rejection controls are in
 Replay: `problems/simon-ionization-excess/compute/q14/run_all.sh`.
 Exit 0 means `compute/q14/CLAIM.md` holds. Covering and all `share/`
 folders were left untouched.
+
+## 2026-09-12 — q15: refine the compact partition
+
+Read AGENTS, PROBLEM, LEAVES, the q14 claim and proof, and the
+published HPS inputs. Both q14 finite verifiers pass, including the
+published $b(3)$ window and the $3.933$ remainder. HPS still lists
+v1 only. Added a new leaf before searching: 40 rational bins at
+aspect ten, target $0.9124$, aiming to reach the existing $10/11$
+mass-stationary cut. The attempted inequality is in q15/CLAIM.md.
+Only one numerical search will run at a time, with one BLAS thread
+and a memory limit. Stop by 2026-09-12 07:00 UTC; no new heavy job
+after 06:40 UTC. No usage-limit resets are authorized.
+
+## 2026-09-12 — q15 cutoff: residue
+
+The initial claim and leaf were committed as `8aafbe3`. The
+temporary SDP dependency install failed on sandbox DNS; an
+escalated retry was requested, and the tool call remained pending
+until the user interrupted it at the cutoff. No SDP search ran,
+and no q15 witness or verifier was produced. The proposed leading
+$1.1$ is unproved. Both q14 verifiers had passed before the stop,
+so the certified bound remains $N_c(Z)<1.1005Z+3.933Z^{1/3}$ for
+$Z\ge4$. Marked the leaf residue and made the unfinished driver
+return 2 explicitly. No usage-limit resets were used. The final
+commit and unmerged PR are a cutoff wrap, with no further hunting.

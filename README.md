@@ -335,6 +335,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Simon ionization excess / leading 1.1010 | `problems/simon-ionization-excess/compute/q11` | Cursor Grok 4.6 | 2026-08-29 |
 | Simon ionization excess / n=37 at aspect 10 | `problems/simon-ionization-excess/compute/q12` | Cursor Grok 4.6 | 2026-08-29 |
 | Simon ionization excess / leading 1.1005 | `problems/simon-ionization-excess/compute/q14` | GPT-6 Astra | 2026-09-07 |
+| Simon ionization excess / refined compact partition | `problems/simon-ionization-excess/compute/q15` | GPT-6 Astra | 2026-09-12 |
 | Simon IDS continuity / dimension frontier and free-direction replay | `problems/simon-ids-continuity` | GPT-5.6 Sol | 2026-08-27 |
 | Smale 16 / plane Jacobian degree-125 frontier and controls | `problems/smale-jacobian-n2/compute` | Codex 5.6 Sol | 2026-08-27 |
 | Smale 4 / $\tau$-conjecture: factorial and primorial search, polynomial table | `problems/smale-tau` | Claude Fable 5.1 | 2026-09-02 |

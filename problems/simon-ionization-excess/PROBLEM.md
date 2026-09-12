@@ -345,6 +345,10 @@ Replay: `problems/simon-ionization-excess/compute/q14/run_all.sh`.
 
 ## What would count as a new bound
 
+The 2026-09-12 attempt with 40 bins stopped before numerical search
+and produced no new certificate. The bound above remains unchanged;
+see [q15/CLAIM.md](compute/q15/CLAIM.md) for the unproved target.
+
 A verified inequality that strictly improves a published record, with a replayable certificate. Examples: a leading coefficient below $1.1185$ for all large $Z$; a remainder strictly below the printed $3.90$ or $4$ on the HPS range; $N_c\le Z+C$ for a universal $C$; a unique exact $N_0(Z)$ for some $Z>1$ that the published inequalities do not already settle.
 
 ## What does not count
