@@ -6,7 +6,7 @@ from math import comb
 from pathlib import Path
 
 from common import (HERE, LEFTOVER_PLAN_SHA, LEFTOVER_SEEDS_SHA, atomic_json,
-                    baseline, digest, leftover_plan, leftover_seeds)
+                    baseline, canon, digest, leftover_plan, leftover_seeds)
 
 
 def load_shards(pattern):
@@ -65,35 +65,55 @@ def merge_leftover():
     return summary, novel
 
 
-def merge_followup():
-    known = baseline()
-    path = HERE / 'work/followup.json'
-    if not path.exists():
+def merge_followup(exclude=()):
+    known = baseline() | set(exclude)
+    shards = load_shards('work/followup[0-9].json')
+    if not shards:
         return dict(complete=False, n_tasks=0, candidate_schemes=[])
-    saved = json.loads(path.read_text())
     expected = sum(comb(45, k) for k in range(4))
-    assert saved['provenance']['domain'] == 'q10-certificate-flips'
-    assert saved['complete']
+    by_id = {}
     total = Counter()
-    for t in saved['tasks']:
-        assert t['complete'] and t['evals'] == expected
-        total.update(t['counts'])
-    extra_known = set(saved['provenance'].get('extra_schemes', []))
+    extra_known = set()
+    plan_sha = seeds_sha = None
+    for path, saved in shards:
+        assert saved['provenance']['domain'] == 'q10-certificate-flips'
+        assert saved['complete']
+        if plan_sha is None:
+            plan_sha = saved['provenance']['plan_sha256']
+            seeds_sha = saved['provenance']['seeds_sha256']
+        else:
+            assert saved['provenance']['plan_sha256'] == plan_sha
+            assert saved['provenance']['seeds_sha256'] == seeds_sha
+        extra_known |= set(saved['provenance'].get('extra_schemes', []))
+        for t in saved['tasks']:
+            assert t['id'] not in by_id, f'duplicate followup task {t["id"]}'
+            assert t['complete'] and t['evals'] == expected
+            by_id[t['id']] = t
+            total.update(t['counts'])
     novel = sorted(set(total) - known - extra_known - {'<>'})
-    summary = dict(planned=len(saved['tasks']), complete=True, n_tasks=len(saved['tasks']),
-                   evaluations=saved['evaluations'], n_schemes=len(total),
-                   candidate_schemes=novel)
-    compact = dict(summary, tasks=[compact_task(t) for t in saved['tasks']])
+    summary = dict(planned=len(by_id), complete=True, n_tasks=len(by_id),
+                   evaluations=sum(t['evals'] for t in by_id.values()),
+                   n_schemes=len(total), candidate_schemes=novel,
+                   shards=[str(p.relative_to(HERE)) for p, _ in shards])
+    compact = dict(summary, tasks=[compact_task(by_id[i]) for i in sorted(by_id)])
     atomic_json(HERE / 'certs/coverage_followup.json', compact)
     return summary
 
 
 def main():
     leftover, novel = merge_leftover()
-    followup = merge_followup()
+    followup = merge_followup(exclude=novel)
+    cert_path = HERE / 'certs/new_schemes.json'
+    schemes = []
+    if cert_path.exists():
+        schemes = [canon(c['scheme']) for c in json.loads(cert_path.read_text())]
+        assert set(schemes) == set(novel) | set(followup.get('candidate_schemes', []))
     out = dict(leftover=leftover, followup=followup,
                q9_claim='../q9/CLAIM.md',
                baseline=2394,
+               n_new=len(schemes),
+               bound=2394 + len(schemes),
+               schemes=schemes,
                candidate_schemes=sorted(set(novel) | set(followup.get('candidate_schemes', []))))
     atomic_json(HERE / 'certs/summary.json', out)
     print(json.dumps(out, indent=2, sort_keys=True))

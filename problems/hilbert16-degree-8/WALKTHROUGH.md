@@ -504,3 +504,33 @@ What is proved: nine further nonempty degree-eight T-curve schemes,
 so the lower bound is at least 2,394, and the 1,190-ball q8 domain
 is now completely searched. What remains open: Hilbert 16(a) in
 degree eight, and both undecided (19,3) deep nests.
+
+## 2026-09-20 — leftover seeds, not leftover balls
+
+What was missing was not another 1,190-ball plan. q9 had already
+finished that domain and then one-flip of its first five
+certificates. The four schemes that followup produced were never
+used as seeds. That is a smaller copy of the q8 stop: a finite
+list of unimodular flips, written down, half-run.
+
+The useful observation is the a-hole again. ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩
+occupied a=2,3,4 after q9 and not a=1. Task 15, from
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, fills a=1. The first ball, on the same
+seed, also opens a new family ⟨a ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩ at a=1,2,3.
+
+The click is that feeding the new certificates back as seeds is
+the same move q9 made once and then dropped. One-flip of the six
+leftover certificates fills a=0 of ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, a=4
+of ⟨a ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩, a=1 of ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩, and
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩. The seven followup certificates were not
+fed back; that leftover is recorded, not searched.
+
+Computer search: two workers finished all 106 leftover balls
+(1,613,956 evaluations). A second pair finished 169 one-flip balls
+of the six leftover certificates (2,573,194 evaluations). Thirteen
+distinct schemes outside the 2,394, each with an integer lifting
+and the same two independent topology checks as q8/q9.
+
+What is proved: thirteen further nonempty degree-eight T-curve
+schemes, so the lower bound is at least 2,407. What remains open:
+Hilbert 16(a) in degree eight, and both undecided (19,3) deep nests.

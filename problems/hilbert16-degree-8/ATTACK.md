@@ -1294,5 +1294,48 @@ q9 followup certificates that were never used as one-flip seeds:
 ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩,
 ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩, ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩.
 Each ball is every sign change of Hamming weight at most three
-(15,226 signs). Code in `compute/q10/`. Search does not stop on a
-candidate. Two light workers partition the 106 balls.
+(15,226 signs). Code in `compute/q10/`. Replay:
+`sh q10/run_all.sh`. Search does not stop on a candidate. Two light
+workers partitioned the leftover; a second pair took one-flip balls
+of the six leftover certificates.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| leftover q9-followup balls | 1,613,956 | **106/106 complete**; six schemes outside B ∪ A ∪ Q ∪ N |
+| one-flip balls of those six certificates | 2,573,194 | **169/169 complete**; seven further schemes |
+
+### Discovery
+
+Six schemes, three meshes, from the leftover 106. SciPy 1.18.1 /
+HiGHS produced an integer lifting on each mesh; exact arithmetic
+then checked all 2,688 global strict inequalities.
+
+| scheme | ovals | (p,n) | min slack | first task | seed |
+| --- | --- | --- | --- | --- | --- |
+| ⟨1 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩ | 16 | (4,12) | 2 | 0 | ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩ |
+| ⟨2 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩ | 17 | (5,12) | 2 | 0 | same mesh |
+| ⟨3 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩ | 18 | (6,12) | 2 | 0 | same mesh |
+| ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ | 17 | (4,13) | 8 | 15 | same seed, different flip |
+| ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩ | 19 | (5,14) | 2 | 41 | ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ |
+| ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩ | 20 | (6,14) | 2 | 41 | same mesh |
+
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ fills the a=1 hole in the family q9 had at
+a=2,3,4. Python and Rust agree on every nesting tree. Absence is
+checked against the replayed 2,367, the archive filenames, the
+seventeen, Q, and N.
+
+One-flip balls of those six certificates (169 balls, 2,573,194
+evaluations) then produced seven more:
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩,
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩,
+⟨4 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩, ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩,
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩.
+
+**Dent:** number of nonempty degree-eight T-curve schemes ≥ 2,407.
+The exact claim and witnesses are in `q10/CLAIM.md` and
+`q10/certs/new_schemes.json`. Neither open deep nest is decided.
+No algebraic exclusion is claimed.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh q10/run_all.sh`.

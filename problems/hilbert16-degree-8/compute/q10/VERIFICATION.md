@@ -8,8 +8,8 @@ projective plane and its double cover. Rust reconstructs
 monochromatic regions from barycentric determinants and a vertex
 graph. Both must recover the same nesting tree, the claimed tree
 must match it, and that tree must be nonempty and absent from the
-2,367 published schemes, the seventeen parent additions, the q8
-scheme ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, and the nine q9 schemes.
+2,394-scheme baseline (2,367 published, seventeen parent additions,
+the q8 scheme ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, and the nine q9 schemes).
 
 `controls.py --full-baseline` checks all published certificates,
 the seventeen additions, the q8 scheme and the nine q9 schemes with
@@ -19,7 +19,7 @@ damage signs, heights, points and triangles. A forced-discovery
 control and a radius-two Python/C trace of 1,036 sign masks are
 unchanged from q8.
 
-Coverage of the 106 leftover balls is separate.
+Coverage of the 106 leftover balls, and of the 169 followup balls, is separate.
 `collect.py` merges shard manifests into a compact summary.
 `coverage.py` audits that summary against the leftover plan. Neither
 command certifies a new scheme. `run_all.sh` returns zero only after
