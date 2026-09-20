@@ -1,0 +1,3284 @@
+{
+ "candidate_schemes": [
+  "<1 u 1<1> u 1<3> u 1<9>>",
+  "<1 u 2<1> u 1<10>>",
+  "<2 u 1<1> u 1<4> u 1<9>>",
+  "<2 u 2<1> u 1<10>>",
+  "<3 u 1<1> u 1<4> u 1<9>>",
+  "<3 u 2<1> u 1<10>>"
+ ],
+ "complete": true,
+ "evaluations": 1613956,
+ "extra_ids": [],
+ "missing_ids": [],
+ "n_schemes": 650,
+ "n_tasks": 106,
+ "planned": 106,
+ "shards": [
+  "work/shard0.json",
+  "work/shard1.json"
+ ],
+ "tasks": [
+  {
+   "added": [
+    [
+     1,
+     1
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365694003841,
+     "code": 14603168424
+    },
+    {
+     "bits": 24365694003877,
+     "code": 57552841384
+    },
+    {
+     "bits": 24365694003943,
+     "code": 229351533224
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 0,
+   "n_schemes": 311,
+   "novel": [
+    "<1 u 2<1> u 1<10>>",
+    "<2 u 2<1> u 1<10>>",
+    "<3 u 2<1> u 1<10>>"
+   ],
+   "removed": [
+    [
+     0,
+     0
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "9d3e2f2e23cfb10b2fb7beb0f1b1d4e9dc740ba2ad159004c0d0eaa99e955d4d"
+  },
+  {
+   "added": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 1,
+   "n_schemes": 300,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "827fda961523bc2096e003d1aa95cd92264648024edf1a4bfb230269372c3859"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 2,
+   "n_schemes": 298,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "2b5cdb5b12a2b4e8bfea0113efabfd6c846733e16d2d1c7df467418a06641dcf"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 3,
+   "n_schemes": 321,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "11cf8aee85b02782e13f91f57b6e1f79acaeefc769918db50eb20542452d42ab"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 4,
+   "n_schemes": 329,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "191fa52e12774fd32278f05d115706cdbda4320856ebf2b2e17588af33125735"
+  },
+  {
+   "added": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 5,
+   "n_schemes": 326,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "f412dc3d9a55e231d0811fe686a7875636a2efeb814fa648ed083b5b2fa440b8"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 6,
+   "n_schemes": 336,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "43e21f3f63a1d5d258d982200bcb8272fe39aea986a51198b4d02a495db397ac"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 7,
+   "n_schemes": 333,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "b1e3e3163dd50f44e3134f0628193fadf09a56f84bbc7b440ffc2982b0f1840f"
+  },
+  {
+   "added": [
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 8,
+   "n_schemes": 316,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "2df92831c6fe240bcdc2a099b6423c3c3e4102405ae8793f2d75551432ec008e"
+  },
+  {
+   "added": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 9,
+   "n_schemes": 304,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "3eca95c74def082a417285292ba3e2f7165574539d6285b7a64429d04d074349"
+  },
+  {
+   "added": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 10,
+   "n_schemes": 300,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "19705748132972ac20f59f3886a621bd2636770fb567f4b13c28d62aab63c4b1"
+  },
+  {
+   "added": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 11,
+   "n_schemes": 334,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "7358948c90036f7c89296e7b462f0c1065427aacf4b9c4dcb333afc95cee7c69"
+  },
+  {
+   "added": [
+    [
+     2,
+     2
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 12,
+   "n_schemes": 308,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     1
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "af910f17125cbeb9b2a2d7b5f0cfbf5f5664b2dcc1ffaaeadb0daddcb3ce9132"
+  },
+  {
+   "added": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 13,
+   "n_schemes": 272,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "aa21dc61628e9603d37d8bf942d8afeb555d856e75af1c65454157b99505949a"
+  },
+  {
+   "added": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 14,
+   "n_schemes": 278,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "f9e5e45f5300a0161996f44d1ffd59e1c89c605ca73ebfaa1af3d5230f2e2c98"
+  },
+  {
+   "added": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696100865,
+     "code": 58428402344
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 15,
+   "n_schemes": 343,
+   "novel": [
+    "<1 u 1<1> u 1<3> u 1<9>>"
+   ],
+   "removed": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "49fe1efb114a2adb764f5dcc62a98c3051e94ded65406e8828d9e5c83b4f3089"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 16,
+   "n_schemes": 305,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "614f9242937091c6fa515076fc4037a670c32d73a754d8c0f4834f93c6c877f6"
+  },
+  {
+   "added": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 17,
+   "n_schemes": 274,
+   "novel": [],
+   "removed": [
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "0cd9fc26b993a188f025107555e04d6d690ba9050639269d073198c6190e3418"
+  },
+  {
+   "added": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 18,
+   "n_schemes": 330,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "814b7882c7fc8d12aeef22c805873e4e376076f4a66cc3ece9fdf4f446fc21a4"
+  },
+  {
+   "added": [
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 19,
+   "n_schemes": 322,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "941a53b3a99a65eda96ee58218e0ed55b686325c23ddf8935f6c2fb20d0eeeb1"
+  },
+  {
+   "added": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 20,
+   "n_schemes": 320,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     3
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "414a5f96e189e32567bdcb6c7ec8e2b589191e05674b2b2db747c90e36104f36"
+  },
+  {
+   "added": [
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 21,
+   "n_schemes": 307,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "7840bcfd01714024e267059c59a0aaa7ee6af75836966745c3f0c6152b34f654"
+  },
+  {
+   "added": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 22,
+   "n_schemes": 323,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "cbe2f27f944297d9a1cb5460a24369c25043f9acee44bcb8dfed946e88325086"
+  },
+  {
+   "added": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 23,
+   "n_schemes": 331,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "167923c3f8a0fb68534cad679fa4017488145e248594c845f98cd48a63852e83"
+  },
+  {
+   "added": [
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 24,
+   "n_schemes": 334,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "9fd40cb5cdf594d8e4b7821732f2225f8969ac91cf646232ab376280ac6d506f"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 25,
+   "n_schemes": 328,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "b23d8ace1e0988849c4ba00ac7e133e16b0deb529a16efc4123fb65256358710"
+  },
+  {
+   "added": [
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 26,
+   "n_schemes": 335,
+   "novel": [],
+   "removed": [
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "d52cf38c9717acbc8e27d1426625a35949e7d1709746e0eddaf0726d30a8d21b"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 27,
+   "n_schemes": 328,
+   "novel": [],
+   "removed": [
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 0,
+   "triangulation_sha256": "5a777f3a787ea0089c8465a3e4be629c91a9d5fbe17b56a21f58cf86d50ee35b"
+  },
+  {
+   "added": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696100865,
+     "code": 58428402344
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 28,
+   "n_schemes": 339,
+   "novel": [
+    "<1 u 1<1> u 1<3> u 1<9>>"
+   ],
+   "removed": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "49fe1efb114a2adb764f5dcc62a98c3051e94ded65406e8828d9e5c83b4f3089"
+  },
+  {
+   "added": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 29,
+   "n_schemes": 347,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "2f8a2a420632bc9e12fee0bc1efb69c59084472ca010cc34ea5d427d05e7f762"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 30,
+   "n_schemes": 323,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "8cc116430632792e54e49f0275ed2c5d4e559af7d6e1c96ea6eb0f5f8fad245a"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 31,
+   "n_schemes": 328,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "e1b50637cda53c6358576a96717bd47b5c66812fb2a9d8041570afaf9be2b206"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 32,
+   "n_schemes": 357,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "ade28d284b810170fb2a79e8d67c91856813418e85929ed294f36d82c8ac4b63"
+  },
+  {
+   "added": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 33,
+   "n_schemes": 351,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "54913f715375c730707dfceaba07ca47b88e84e0e1a478ec807dd0b575e8d96b"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 34,
+   "n_schemes": 362,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "a050b8521c37d2330bdb70b857fe6a453799f44bb1c31b35fe3feffd16a3016b"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 35,
+   "n_schemes": 352,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "9ce5d7edad8bdea394124b30fc392a8220a856bb07aaa8bd66543b3f1de76630"
+  },
+  {
+   "added": [
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 36,
+   "n_schemes": 356,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "f2a64b7dab0e6a3b0da6cb32593fb48e7043a158766160de461d312cb69e41dd"
+  },
+  {
+   "added": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 37,
+   "n_schemes": 319,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "bf39ae1ee4dcf3c86a81aa4bcf284431e7b215d4711d7d166f350d9cbfb72e85"
+  },
+  {
+   "added": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 38,
+   "n_schemes": 341,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "052844e1c210b0299f2d73e52b35ff7f9b8bef518cfdaefa8803eeb7fd25e3e6"
+  },
+  {
+   "added": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 39,
+   "n_schemes": 310,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "62f31864b7119ac802d1561a2ccb41244f9aa85999f1ee731d6e0ba1f4ea576d"
+  },
+  {
+   "added": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 40,
+   "n_schemes": 323,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "7358948c90036f7c89296e7b462f0c1065427aacf4b9c4dcb333afc95cee7c69"
+  },
+  {
+   "added": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696133761,
+     "code": 920911522472
+    },
+    {
+     "bits": 24365696133635,
+     "code": 3669690591912
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 41,
+   "n_schemes": 349,
+   "novel": [
+    "<2 u 1<1> u 1<4> u 1<9>>",
+    "<3 u 1<1> u 1<4> u 1<9>>"
+   ],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "6394edb5f91c3c3e30b59c3971201160ee478f07554fc3ba9284224f91fc564a"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 42,
+   "n_schemes": 341,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "6dc144156206d150e14d47036bc0331d010e9eb73e2eb51176ea2dbef8dd63ed"
+  },
+  {
+   "added": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 43,
+   "n_schemes": 238,
+   "novel": [],
+   "removed": [
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "e326e7c5d6d0acd6a40896d59f41e30a81b0a4477439a0d6f1921db60bc97832"
+  },
+  {
+   "added": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 44,
+   "n_schemes": 347,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "5852bb1f231dbed362a649b9968dc865526f4d9391bcacec63c5a72c9095527f"
+  },
+  {
+   "added": [
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 45,
+   "n_schemes": 345,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "0c97cab222282ebb866a5705b618f1c5a92bf39e00e85efcbb49dfdbf45283dd"
+  },
+  {
+   "added": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 46,
+   "n_schemes": 342,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     3
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "640b83118bff622bdef7f8a764c95802d9800ef30a4fff7c4ec693a46b2e623a"
+  },
+  {
+   "added": [
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 47,
+   "n_schemes": 331,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "7d0d832a86592232aaf6616d14a137bfce1d735edc966525c8fa44371ae5064e"
+  },
+  {
+   "added": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 48,
+   "n_schemes": 348,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "85f8438575883ac00dc1f45a9215264efeffd4417971500982fe1e1be5f7cbd5"
+  },
+  {
+   "added": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 49,
+   "n_schemes": 357,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "a33785436edd79dc9bffeff5c5a2a0f3a6c3dca75774ccf737ba2255cf948ee8"
+  },
+  {
+   "added": [
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 50,
+   "n_schemes": 357,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "8b5c08440787e345345a194f0a9b411a3765c6dc11ffd07269aa53ed4d56305b"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 51,
+   "n_schemes": 358,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "c1d120049c13d4db45dc0b556dd9f284d403a4b6d6fd428dab62da1c1b6760f4"
+  },
+  {
+   "added": [
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 52,
+   "n_schemes": 357,
+   "novel": [],
+   "removed": [
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "dfa13aa6da9e1b30d0e6161c472e593955b7edcd28b7324855cf1e01dd91946c"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 53,
+   "n_schemes": 358,
+   "novel": [],
+   "removed": [
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 1,
+   "triangulation_sha256": "d42d158c82279c50e1aca76511b96eebb07cf5c716643fee890aa37916e01cd0"
+  },
+  {
+   "added": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696100865,
+     "code": 58428402344
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 54,
+   "n_schemes": 343,
+   "novel": [
+    "<1 u 1<1> u 1<3> u 1<9>>"
+   ],
+   "removed": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "49fe1efb114a2adb764f5dcc62a98c3051e94ded65406e8828d9e5c83b4f3089"
+  },
+  {
+   "added": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 55,
+   "n_schemes": 360,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "2f8a2a420632bc9e12fee0bc1efb69c59084472ca010cc34ea5d427d05e7f762"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 56,
+   "n_schemes": 336,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "8cc116430632792e54e49f0275ed2c5d4e559af7d6e1c96ea6eb0f5f8fad245a"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 57,
+   "n_schemes": 337,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "e1b50637cda53c6358576a96717bd47b5c66812fb2a9d8041570afaf9be2b206"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 58,
+   "n_schemes": 344,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "ade28d284b810170fb2a79e8d67c91856813418e85929ed294f36d82c8ac4b63"
+  },
+  {
+   "added": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 59,
+   "n_schemes": 351,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "54913f715375c730707dfceaba07ca47b88e84e0e1a478ec807dd0b575e8d96b"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 60,
+   "n_schemes": 362,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "a050b8521c37d2330bdb70b857fe6a453799f44bb1c31b35fe3feffd16a3016b"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 61,
+   "n_schemes": 355,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "9ce5d7edad8bdea394124b30fc392a8220a856bb07aaa8bd66543b3f1de76630"
+  },
+  {
+   "added": [
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 62,
+   "n_schemes": 353,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "f2a64b7dab0e6a3b0da6cb32593fb48e7043a158766160de461d312cb69e41dd"
+  },
+  {
+   "added": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 63,
+   "n_schemes": 334,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "bf39ae1ee4dcf3c86a81aa4bcf284431e7b215d4711d7d166f350d9cbfb72e85"
+  },
+  {
+   "added": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 64,
+   "n_schemes": 350,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "052844e1c210b0299f2d73e52b35ff7f9b8bef518cfdaefa8803eeb7fd25e3e6"
+  },
+  {
+   "added": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 65,
+   "n_schemes": 322,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "62f31864b7119ac802d1561a2ccb41244f9aa85999f1ee731d6e0ba1f4ea576d"
+  },
+  {
+   "added": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 66,
+   "n_schemes": 334,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "7358948c90036f7c89296e7b462f0c1065427aacf4b9c4dcb333afc95cee7c69"
+  },
+  {
+   "added": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696133761,
+     "code": 920911522472
+    },
+    {
+     "bits": 24365696133637,
+     "code": 3669690591912
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 67,
+   "n_schemes": 375,
+   "novel": [
+    "<2 u 1<1> u 1<4> u 1<9>>",
+    "<3 u 1<1> u 1<4> u 1<9>>"
+   ],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "6394edb5f91c3c3e30b59c3971201160ee478f07554fc3ba9284224f91fc564a"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 68,
+   "n_schemes": 338,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "6dc144156206d150e14d47036bc0331d010e9eb73e2eb51176ea2dbef8dd63ed"
+  },
+  {
+   "added": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 69,
+   "n_schemes": 251,
+   "novel": [],
+   "removed": [
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "e326e7c5d6d0acd6a40896d59f41e30a81b0a4477439a0d6f1921db60bc97832"
+  },
+  {
+   "added": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 70,
+   "n_schemes": 360,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "5852bb1f231dbed362a649b9968dc865526f4d9391bcacec63c5a72c9095527f"
+  },
+  {
+   "added": [
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 71,
+   "n_schemes": 358,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "0c97cab222282ebb866a5705b618f1c5a92bf39e00e85efcbb49dfdbf45283dd"
+  },
+  {
+   "added": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 72,
+   "n_schemes": 357,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     3
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "640b83118bff622bdef7f8a764c95802d9800ef30a4fff7c4ec693a46b2e623a"
+  },
+  {
+   "added": [
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 73,
+   "n_schemes": 341,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "7d0d832a86592232aaf6616d14a137bfce1d735edc966525c8fa44371ae5064e"
+  },
+  {
+   "added": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 74,
+   "n_schemes": 365,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "85f8438575883ac00dc1f45a9215264efeffd4417971500982fe1e1be5f7cbd5"
+  },
+  {
+   "added": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 75,
+   "n_schemes": 372,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "a33785436edd79dc9bffeff5c5a2a0f3a6c3dca75774ccf737ba2255cf948ee8"
+  },
+  {
+   "added": [
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 76,
+   "n_schemes": 373,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "8b5c08440787e345345a194f0a9b411a3765c6dc11ffd07269aa53ed4d56305b"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 77,
+   "n_schemes": 373,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "c1d120049c13d4db45dc0b556dd9f284d403a4b6d6fd428dab62da1c1b6760f4"
+  },
+  {
+   "added": [
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 78,
+   "n_schemes": 374,
+   "novel": [],
+   "removed": [
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "dfa13aa6da9e1b30d0e6161c472e593955b7edcd28b7324855cf1e01dd91946c"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 79,
+   "n_schemes": 373,
+   "novel": [],
+   "removed": [
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 2,
+   "triangulation_sha256": "d42d158c82279c50e1aca76511b96eebb07cf5c716643fee890aa37916e01cd0"
+  },
+  {
+   "added": [
+    [
+     1,
+     1
+    ],
+    [
+     2,
+     3
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696100869,
+     "code": 58428402344
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 80,
+   "n_schemes": 342,
+   "novel": [
+    "<1 u 1<1> u 1<3> u 1<9>>"
+   ],
+   "removed": [
+    [
+     0,
+     0
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "49fe1efb114a2adb764f5dcc62a98c3051e94ded65406e8828d9e5c83b4f3089"
+  },
+  {
+   "added": [
+    [
+     0,
+     2
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 81,
+   "n_schemes": 359,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     2
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "2f8a2a420632bc9e12fee0bc1efb69c59084472ca010cc34ea5d427d05e7f762"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 82,
+   "n_schemes": 339,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     3
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "8cc116430632792e54e49f0275ed2c5d4e559af7d6e1c96ea6eb0f5f8fad245a"
+  },
+  {
+   "added": [
+    [
+     0,
+     4
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 83,
+   "n_schemes": 339,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "e1b50637cda53c6358576a96717bd47b5c66812fb2a9d8041570afaf9be2b206"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 84,
+   "n_schemes": 350,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "ade28d284b810170fb2a79e8d67c91856813418e85929ed294f36d82c8ac4b63"
+  },
+  {
+   "added": [
+    [
+     0,
+     5
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 85,
+   "n_schemes": 334,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "54913f715375c730707dfceaba07ca47b88e84e0e1a478ec807dd0b575e8d96b"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 86,
+   "n_schemes": 330,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "a050b8521c37d2330bdb70b857fe6a453799f44bb1c31b35fe3feffd16a3016b"
+  },
+  {
+   "added": [
+    [
+     0,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 87,
+   "n_schemes": 355,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "9ce5d7edad8bdea394124b30fc392a8220a856bb07aaa8bd66543b3f1de76630"
+  },
+  {
+   "added": [
+    [
+     0,
+     8
+    ],
+    [
+     1,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 88,
+   "n_schemes": 353,
+   "novel": [],
+   "removed": [
+    [
+     0,
+     7
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "f2a64b7dab0e6a3b0da6cb32593fb48e7043a158766160de461d312cb69e41dd"
+  },
+  {
+   "added": [
+    [
+     2,
+     0
+    ],
+    [
+     2,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 89,
+   "n_schemes": 332,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "bf39ae1ee4dcf3c86a81aa4bcf284431e7b215d4711d7d166f350d9cbfb72e85"
+  },
+  {
+   "added": [
+    [
+     2,
+     1
+    ],
+    [
+     2,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 90,
+   "n_schemes": 349,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     0
+    ],
+    [
+     3,
+     3
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "052844e1c210b0299f2d73e52b35ff7f9b8bef518cfdaefa8803eeb7fd25e3e6"
+  },
+  {
+   "added": [
+    [
+     1,
+     3
+    ],
+    [
+     2,
+     4
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 91,
+   "n_schemes": 329,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     2
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "62f31864b7119ac802d1561a2ccb41244f9aa85999f1ee731d6e0ba1f4ea576d"
+  },
+  {
+   "added": [
+    [
+     1,
+     4
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 92,
+   "n_schemes": 328,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "7358948c90036f7c89296e7b462f0c1065427aacf4b9c4dcb333afc95cee7c69"
+  },
+  {
+   "added": [
+    [
+     1,
+     6
+    ],
+    [
+     2,
+     5
+    ]
+   ],
+   "candidates": [
+    {
+     "bits": 24365696133635,
+     "code": 3669690591912
+    },
+    {
+     "bits": 24365696133767,
+     "code": 920911522472
+    }
+   ],
+   "complete": true,
+   "evals": 15226,
+   "id": 93,
+   "n_schemes": 369,
+   "novel": [
+    "<2 u 1<1> u 1<4> u 1<9>>",
+    "<3 u 1<1> u 1<4> u 1<9>>"
+   ],
+   "removed": [
+    [
+     1,
+     5
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "6394edb5f91c3c3e30b59c3971201160ee478f07554fc3ba9284224f91fc564a"
+  },
+  {
+   "added": [
+    [
+     0,
+     7
+    ],
+    [
+     2,
+     6
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 94,
+   "n_schemes": 338,
+   "novel": [],
+   "removed": [
+    [
+     1,
+     6
+    ],
+    [
+     1,
+     7
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "6dc144156206d150e14d47036bc0331d010e9eb73e2eb51176ea2dbef8dd63ed"
+  },
+  {
+   "added": [
+    [
+     2,
+     5
+    ],
+    [
+     3,
+     5
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 95,
+   "n_schemes": 245,
+   "novel": [],
+   "removed": [
+    [
+     2,
+     6
+    ],
+    [
+     3,
+     4
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "e326e7c5d6d0acd6a40896d59f41e30a81b0a4477439a0d6f1921db60bc97832"
+  },
+  {
+   "added": [
+    [
+     3,
+     1
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 96,
+   "n_schemes": 351,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "5852bb1f231dbed362a649b9968dc865526f4d9391bcacec63c5a72c9095527f"
+  },
+  {
+   "added": [
+    [
+     3,
+     3
+    ],
+    [
+     4,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 97,
+   "n_schemes": 355,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     2
+    ],
+    [
+     4,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "0c97cab222282ebb866a5705b618f1c5a92bf39e00e85efcbb49dfdbf45283dd"
+  },
+  {
+   "added": [
+    [
+     4,
+     1
+    ],
+    [
+     4,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 98,
+   "n_schemes": 351,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     3
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "640b83118bff622bdef7f8a764c95802d9800ef30a4fff7c4ec693a46b2e623a"
+  },
+  {
+   "added": [
+    [
+     4,
+     2
+    ],
+    [
+     4,
+     3
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 99,
+   "n_schemes": 333,
+   "novel": [],
+   "removed": [
+    [
+     3,
+     5
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "7d0d832a86592232aaf6616d14a137bfce1d735edc966525c8fa44371ae5064e"
+  },
+  {
+   "added": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 100,
+   "n_schemes": 363,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "85f8438575883ac00dc1f45a9215264efeffd4417971500982fe1e1be5f7cbd5"
+  },
+  {
+   "added": [
+    [
+     4,
+     3
+    ],
+    [
+     5,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 101,
+   "n_schemes": 364,
+   "novel": [],
+   "removed": [
+    [
+     4,
+     4
+    ],
+    [
+     5,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "a33785436edd79dc9bffeff5c5a2a0f3a6c3dca75774ccf737ba2255cf948ee8"
+  },
+  {
+   "added": [
+    [
+     5,
+     1
+    ],
+    [
+     6,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 102,
+   "n_schemes": 370,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     6,
+     0
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "8b5c08440787e345345a194f0a9b411a3765c6dc11ffd07269aa53ed4d56305b"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     6,
+     2
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 103,
+   "n_schemes": 370,
+   "novel": [],
+   "removed": [
+    [
+     5,
+     2
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "c1d120049c13d4db45dc0b556dd9f284d403a4b6d6fd428dab62da1c1b6760f4"
+  },
+  {
+   "added": [
+    [
+     6,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 104,
+   "n_schemes": 373,
+   "novel": [],
+   "removed": [
+    [
+     6,
+     1
+    ],
+    [
+     7,
+     0
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "dfa13aa6da9e1b30d0e6161c472e593955b7edcd28b7324855cf1e01dd91946c"
+  },
+  {
+   "added": [
+    [
+     6,
+     1
+    ],
+    [
+     8,
+     0
+    ]
+   ],
+   "candidates": [],
+   "complete": true,
+   "evals": 15226,
+   "id": 105,
+   "n_schemes": 370,
+   "novel": [],
+   "removed": [
+    [
+     7,
+     0
+    ],
+    [
+     7,
+     1
+    ]
+   ],
+   "seed": 3,
+   "triangulation_sha256": "d42d158c82279c50e1aca76511b96eebb07cf5c716643fee890aa37916e01cd0"
+  }
+ ]
+}
