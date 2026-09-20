@@ -1278,3 +1278,21 @@ finished, not merely prefixed. Neither open deep nest is decided.
 No algebraic exclusion is claimed.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh q9/run_all.sh`.
+
+## 2026-09-20 — q10: leftover one-flip of the four q9 followup certificates
+
+Grok 4.6, new branch from `origin/main`. Record re-fetched:
+arXiv:2602.06888 still **v4, 31 Aug 2026**; §4.3 still 2,367 nonempty
+T-schemes as a lower bound. The published archive was downloaded
+again and matches SHA-256
+`1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`
+(2,367 `.pcom` files, 38 of them 22-oval). Baseline B ∪ A ∪ Q ∪ N
+has size 2,394.
+
+The selected leaf is the 106 unimodular one-flip balls of the four
+q9 followup certificates that were never used as one-flip seeds:
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩, ⟨4 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩,
+⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩, ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩.
+Each ball is every sign change of Hamming weight at most three
+(15,226 signs). Code in `compute/q10/`. Search does not stop on a
+candidate. Two light workers partition the 106 balls.
