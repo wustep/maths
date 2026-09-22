@@ -20,7 +20,7 @@ a falsely claimed open nest, and damage signs, heights, points and
 triangles. A forced-discovery control and a radius-two Python/C
 trace of 1,036 sign masks are unchanged from q8.
 
-Coverage of the 205 leftover balls, and of any followup balls, is
+Coverage of the 205 leftover balls, and of the 150 followup balls, is
 separate. `collect.py` merges shard manifests into a compact
 summary. `coverage.py` audits that summary against the leftover
 plan. Neither command certifies a new scheme. `run_all.sh` returns

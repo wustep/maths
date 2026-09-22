@@ -481,3 +481,9 @@ certificates.
 The notebook count starts at 2,407. The selected leaf is the
 unsearched one-flip neighbourhood of the seven q10 followup
 certificates.
+
+Eight schemes in `compute/q11/certs/new_schemes.json` are absent
+from the archive TYPE fields and filenames and from the seventeen
+plus Q, N, and the thirteen q10 schemes, which is why the verified
+count is now at least 2,415. Neither open maximal deep nest is
+decided.

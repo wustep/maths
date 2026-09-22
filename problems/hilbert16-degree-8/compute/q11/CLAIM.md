@@ -1,6 +1,6 @@
-# q11 claim — schemes beyond the q10 census
+# q11 claim — eight schemes beyond the q10 census
 
-Status: open hunt (2026-09-22). Selected leaf:
+Status: certified dent (2026-09-22). Selected leaf:
 `q11: one-flip radius-three of the seven q10 followup certificates`
 in `../LEAVES.md`.
 
@@ -17,30 +17,49 @@ The verified predicate is the existence of certificates (T, h, s)
 such that T is a primitive triangulation of the 45 lattice points of
 8Δ₂, h is an exact strict convex lifting for T, s assigns a sign ±1
 to every lattice point, and the recomputed real scheme S(T,s) is
-not in B ∪ A ∪ Q ∪ N ∪ K. Certificates, if any, live in
-`certs/new_schemes.json`. This would establish the exact inequality
+not in B ∪ A ∪ Q ∪ N ∪ K. Eight such certificates are in
+`certs/new_schemes.json`. This establishes the exact inequality
 
-    number of nonempty degree-eight T-curve schemes ≥ 2,407 + k
+    number of nonempty degree-eight T-curve schemes ≥ 2,415.
 
-for k the number of distinct verified schemes outside the baseline.
+Witnesses, each with an integer lifting and independent Python/Rust
+topology checks:
 
-The two preferred targets remain ⟨4 ⊔ 1⟨2 ⊔ 1⟨14⟩⟩⟩ and
+- ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ (18 ovals, (p,n) = (4,14))
+- ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ (19 ovals, (p,n) = (5,14))
+- ⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ (16 ovals, (p,n) = (3,13))
+- ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩ (16 ovals, (p,n) = (3,13))
+- ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩ (19 ovals, (p,n) = (4,15))
+- ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩ (19 ovals, (p,n) = (4,15))
+- ⟨1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩ (17 ovals, (p,n) = (3,14))
+- ⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ (17 ovals, (p,n) = (3,14))
+
+All 2,688 global strict lifting inequalities pass on each witness
+(minimum slack 8, 8, 8, 4, 8, 8, 8, 8 respectively).
+Python's curve-segment computation and Rust's monochromatic-region
+graph independently recover the same nesting forest. Each scheme is
+absent from the archive's TYPE fields and filenames, the replayed B,
+the seventeen additions A, Q, N, and K.
+
+The two preferred targets were ⟨4 ⊔ 1⟨2 ⊔ 1⟨14⟩⟩⟩ and
 ⟨14 ⊔ 1⟨2 ⊔ 1⟨4⟩⟩⟩. A regular patchwork realizing either would
 also decide its algebraic realizability. No search failure will be
-reported as an algebraic exclusion.
+reported as an algebraic exclusion. Neither preferred target is
+decided by this result.
 
-Finite search domain:
+Finite search domains:
 
 1. One-flip radius-three balls of the seven q10 followup certificates
    ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩,
    ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩,
    ⟨4 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩, ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩,
    ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩.
-   These seven were produced by q10 followup and were never used as
-   one-flip seeds. Plan hash `43c0f0d9227d1672f9521e9d3cc7cb8d9a04113be47a827a60826614ee10b31a`,
-   205 balls, 3,121,330 evaluations counting repetitions.
-2. If (1) produces a new certificate, one-flip radius-three balls of
-   that certificate, recorded separately.
+   Plan hash `43c0f0d9227d1672f9521e9d3cc7cb8d9a04113be47a827a60826614ee10b31a`.
+   Each ball is one unimodular diagonal flip followed by all sign
+   changes of Hamming weight at most three. All 205 finished
+   (3,121,330 evaluations) and produced the first five witnesses.
+2. One-flip radius-three balls of those five certificates: 150 balls,
+   2,283,900 evaluations, three further witnesses.
 
 Falsifiers of a proposed certificate: a missing/extra lattice point,
 nonprimitive or overlapping cells, a failed strict lifting inequality,

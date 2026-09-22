@@ -534,3 +534,32 @@ and the same two independent topology checks as q8/q9.
 What is proved: thirteen further nonempty degree-eight T-curve
 schemes, so the lower bound is at least 2,407. What remains open:
 Hilbert 16(a) in degree eight, and both undecided (19,3) deep nests.
+
+## 2026-09-22 — the seven unused followups
+
+The missing degree of freedom was again the unused followup
+certificates, not a larger radius. q10 finished one-flip of six
+leftover meshes and left seven schemes unseeded. That list is 205
+unimodular flips, written down before the search.
+
+A false start is treating search failure on either open nest as
+information: every ball here is 16–19 ovals. The useful failure is
+that the a-holes keep filling from the same one-flip move.
+⟨a ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ occupied a=1,2,3,4 after q10; task 17
+fills a=0. The same mesh opens ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ at a=1,2.
+
+The click is feeding those five leftover certificates back as seeds,
+the move q10 made once and then dropped. One-flip of the five fills
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩, a=0 of ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩, and
+a=0 of ⟨a ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩. The three followup certificates
+were not fed back; that leftover is recorded, not searched.
+
+Computer search: two workers finished all 205 leftover balls
+(3,121,330 evaluations). A second pair finished 150 one-flip balls
+of the five leftover certificates (2,283,900 evaluations). Eight
+distinct schemes outside the 2,407, each with an integer lifting
+and the same two independent topology checks as q8–q10.
+
+What is proved: eight further nonempty degree-eight T-curve
+schemes, so the lower bound is at least 2,415. What remains open:
+Hilbert 16(a) in degree eight, and both undecided (19,3) deep nests.
