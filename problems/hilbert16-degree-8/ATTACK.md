@@ -1339,3 +1339,63 @@ The exact claim and witnesses are in `q10/CLAIM.md` and
 No algebraic exclusion is claimed.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh q10/run_all.sh`.
+
+## 2026-09-22 — q11: leftover one-flip of the seven q10 followup certificates
+
+Grok 4.6, new branch from `origin/main`. Record re-fetched:
+arXiv:2602.06888 still **v4, 31 Aug 2026**; §4.3 still 2,367 nonempty
+T-schemes as a lower bound. The published archive was downloaded
+again and matches SHA-256
+`1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`
+(2,367 `.pcom` files, 38 of them 22-oval). Baseline B ∪ A ∪ Q ∪ N together with the thirteen q10 schemes
+has size 2,407.
+
+The selected leaf is the 205 unimodular one-flip balls of the seven
+q10 followup certificates that were never used as one-flip seeds:
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨9⟩⟩,
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩, ⟨3 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩,
+⟨4 ⊔ 2⟨1⟩ ⊔ 1⟨10⟩⟩, ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩,
+⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩.
+Each ball is every sign change of Hamming weight at most three
+(15,226 signs). Code in `compute/q11/`. Replay:
+`sh q11/run_all.sh`. Search does not stop on a candidate. Two light
+workers partitioned the leftover; a second pair took one-flip balls
+of the five leftover certificates.
+
+### Finished searches
+
+| search | evals | result |
+| --- | --- | --- |
+| leftover q10-followup balls | 3,121,330 | **205/205 complete**; five schemes outside B ∪ A ∪ Q ∪ N ∪ K |
+| one-flip balls of those five certificates | 2,283,900 | **150/150 complete**; three further schemes |
+
+### Discovery
+
+Five schemes, three meshes, from the leftover 205. SciPy 1.15.3 /
+HiGHS produced an integer lifting on each mesh; exact arithmetic
+then checked all 2,688 global strict inequalities.
+
+| scheme | ovals | (p,n) | min slack | first task | seed |
+| --- | --- | --- | --- | --- | --- |
+| ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ | 18 | (4,14) | 8 | 17 | ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩ |
+| ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ | 19 | (5,14) | 8 | 17 | same mesh |
+| ⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ | 16 | (3,13) | 8 | 17 | same mesh |
+| ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩ | 16 | (3,13) | 4 | 75 | ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩ |
+| ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩ | 19 | (4,15) | 8 | 167 | ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩ |
+
+⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩ fills the a=0 hole in the family q9/q10 had at
+a=1,2,3,4. Python and Rust agree on every nesting tree. Absence is
+checked against the replayed 2,367, the archive filenames, the
+seventeen, Q, N, and K.
+
+One-flip balls of those five certificates (150 balls, 2,283,900
+evaluations) then produced three more:
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩,
+⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩.
+
+**Dent:** number of nonempty degree-eight T-curve schemes ≥ 2,415.
+The exact claim and witnesses are in `q11/CLAIM.md` and
+`q11/certs/new_schemes.json`. Neither open deep nest is decided.
+No algebraic exclusion is claimed.
+
+Replay: `cd problems/hilbert16-degree-8/compute && sh q11/run_all.sh`.

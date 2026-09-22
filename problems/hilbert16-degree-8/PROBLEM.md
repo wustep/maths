@@ -5,11 +5,12 @@
 - Solver: Claude Fable, then Claude Opus 5 (Claude Code)
 - Status: open. Degree 8 is the first degree where the isotopy
   classification is unfinished. Six M-schemes are algebraically
-  undecided. Certified dent (C), 2026-09-20: number of nonempty
-  degree-eight T-curve schemes ≥ 2,407 (`compute/q10/CLAIM.md`).
-  Forty verified schemes are outside the paper's 2,367
+  undecided. Certified dent (C), 2026-09-22: number of nonempty
+  degree-eight T-curve schemes ≥ 2,415 (`compute/q11/CLAIM.md`).
+  Forty-eight verified schemes are outside the paper's 2,367
   (seventeen parent additions, the q8 scheme, nine q9 schemes,
-  and thirteen more). Hilbert 16(a) itself is untouched.
+  thirteen q10 schemes, and eight more). Hilbert 16(a) itself is
+  untouched.
 - Area: Real algebraic geometry / topology of real plane curves
 - Sources: Orevkov GAFA 12 (2002); Itenberg–Viro (1996); Viro
   arXiv:math/0611382; Geiselmann–Joswig–Kastner–Mundinger–Pokutta–
@@ -362,3 +363,33 @@ Hilbert 16(a) in degree eight remains open.
 
 Replay from the repository root:
 `sh problems/hilbert16-degree-8/compute/q10/run_all.sh`.
+
+## Dent (2026-09-22, leftover followup one-flip)
+
+**Number of nonempty degree-eight T-curve schemes ≥ 2,415.** This is
+exactly the inequality in [`compute/q11/CLAIM.md`](compute/q11/CLAIM.md).
+Eight schemes lie outside both the 2,367 of Geiselmann et al.,
+arXiv:2602.06888v4, §4.3, the seventeen prior additions, the q8
+scheme ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, the nine q9 schemes, and the thirteen
+q10 schemes:
+
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩, ⟨2 ⊔ 1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩,
+⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨9⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨2⟩ ⊔ 1⟨10⟩⟩,
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨5⟩ ⊔ 1⟨9⟩⟩, ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩,
+⟨1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩.
+
+Each witness changes one diagonal of a previously certified mesh,
+then at most three signs. Integer liftings pass all 2,688 global
+strict inequalities. Python traces curve segments; Rust reconstructs
+connected monochromatic regions. Both recover the claimed nesting
+tree, and each scheme is absent from the archive and from the
+previous 2,407.
+
+The 205 leftover one-flip balls of the seven q10 followup certificates
+all finished (3,121,330 evaluations) and produced five of the
+eight. One-flip balls of those five certificates produced the
+other three. Neither preferred 22-oval deep nest is decided.
+Hilbert 16(a) in degree eight remains open.
+
+Replay from the repository root:
+`sh problems/hilbert16-degree-8/compute/q11/run_all.sh`.
