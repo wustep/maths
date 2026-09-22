@@ -461,3 +461,23 @@ seventeen plus Q, which is why the verified count is now at least
 The notebook count starts at 2,394. The selected leaf is the
 unsearched one-flip neighbourhood of the four q9 followup
 certificates.
+
+## 2026-09-22 — q11 record replay
+
+- Opened <https://arxiv.org/abs/2602.06888>: still v4, 31 Aug 2026.
+  Comments still "major revision, 37 pages". The abs page does not
+  restate the 2,367 figure; that number lives in the PDF body.
+- Opened <https://arxiv.org/pdf/2602.06888v4>. Section 4.3 still
+  reports "2,367 distinct nonempty real schemes as T-curves" as a
+  lower bound. HTML for v4 is not offered; the v3 HTML still has
+  the same 2,367 figure in §5.3.
+- Copied `deg8.pcoms.txz` (125,932 bytes) from the q10 worktree and
+  checked SHA-256
+  `1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`.
+  The archive contains 2,367 `.pcom` files, 38 of them 22-oval. This
+  checks the cited baseline; it is not a claim to have surveyed
+  every later paper on real octics.
+
+The notebook count starts at 2,407. The selected leaf is the
+unsearched one-flip neighbourhood of the seven q10 followup
+certificates.
