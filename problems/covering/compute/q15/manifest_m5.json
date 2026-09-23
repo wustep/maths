@@ -1,0 +1,13 @@
+{
+  "claim": "ell_2(41,3) <= 26175",
+  "construction": "QM_4^3, Theorem 6.1 (6.4), (6.8)",
+  "field_modulus_hex": "0x25",
+  "improvement": 63,
+  "length": 26175,
+  "output_sha256": "f154d52e54e325f86ab0ddf52b8577529f23029d12e634250f93e1f909f7454c",
+  "partition33_sha256": "937629a19366cbd5bc5726bb91e48f72a59c58b20a20e78ea4ee9881b96828a9",
+  "published_length": 26238,
+  "rank": 41,
+  "seed_blocks": 33,
+  "seed_sha256": "f71724f8164d39389f0ac53d832c6049da93bd96f8f2d1048981a19ca666ae67"
+}
