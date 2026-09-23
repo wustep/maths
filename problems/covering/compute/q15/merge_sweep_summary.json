@@ -1,0 +1,19 @@
+{
+  "best_failed_covered": 67108768,
+  "format": "covering-q15-single-merge-sweep-v1",
+  "partition": "compute/q13/partition_r26_n817_p34.txt",
+  "safe_merges": [
+    [
+      7,
+      31
+    ],
+    [
+      15,
+      24
+    ]
+  ],
+  "search_tool": "compute/q15/search_merges.c",
+  "seed": "compute/H_R3_r26_n817.txt",
+  "syndromes": 67108864,
+  "tested_merges": 561
+}

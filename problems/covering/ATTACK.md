@@ -651,3 +651,14 @@ from that seed and inserting one or two new columns?
 
 No dent. The two local neighborhoods are excluded, but an unrelated 49-set
 remains possible. This is residue and no lower bound for $\ell_2(10,2)$.
+
+## 2026-09-23 — q15: redundancy-47 refinement of the same seed
+
+- Independently of q16, an exhaustive single-merge sweep of the inherited
+  34-block partition also found the safe pairs 7+31 and 15+24. Using 15+24
+  recovers the same $\ell_2(41,3)\le26175$ already certified in q16.
+- A 129-block refinement of the seed then permits QM$_4^3$ at $m=7$, giving
+  a $47\times104703$ matrix. The C verifier checks the seed sweep, field,
+  rank, distinct columns, and all 104703 lift identities.
+  **Dent:** $\ell_2(47,3)\le104703$, improving the published 104831 by 128.
+- Replay: `sh compute/q15/run_all.sh` from `problems/covering/`.

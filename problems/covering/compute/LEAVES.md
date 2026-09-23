@@ -16,6 +16,7 @@ the settled OK37 partition obstruction.
 | radius3-r26-delete817 | q16 | blocked | All 817 columns are essential: each occurs in a unique representation of some syndrome, both for the 33-block partition and without block restrictions. No one-column deletion can retain radius 3. |
 | radius3-r24-small-seed | q16 | open | Search a new $r=12$ radius-3 seed with a $p\le17$ $(3,0)$-partition and $n\le37$; the settled OK37 seed cannot meet $p\le17$. |
 | radius2-r10-n49-two-block | q16 | open | Test simultaneous replacements of two quotient blocks of the certified 50-set, outside q9's single-block replacement family. |
+| radius3-r47-qm43-from817 | q15 | certified | A 129-block refinement of the 817-column seed gives $\ell_2(47,3)\le104703<104831$ (paper). Output matrix checked column by column; seed covered by a full $2^{26}$ sweep. The companion $\ell_2(41,3)\le26175$ via merge 15+24 coincides with q16.
 
 Earlier certified constructions and their replays remain indexed in
 `../PROBLEM.md`; their campaign directories predate this leaf.

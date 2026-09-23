@@ -109,3 +109,15 @@ $n=49$, the object that would be a 49 is not a lift, not a symmetry orbit, and
   covering codes*, arXiv:2511.02542](https://arxiv.org/abs/2511.02542), the
   earlier 51-column table context. No new published 49-column claim was
   identified in these sources.
+
+## 2026-09-23 (q15 radius-3 continuations)
+
+- Opened [Davydov–Marcugini–Pambianco, arXiv:2511.02542v1,
+  Theorem 6.1](https://arxiv.org/html/2511.02542v1#S6) and
+  [Table 7.2](https://arxiv.org/html/2511.02542v1#S7.T2). Equation (6.4)
+  requires all $2^m+1$ indicators for QM$_4^3$ and
+  $n_0\ge2^m+1\ge p(H_0,0)$; equation (6.8) gives
+  $n=2^m(n_0+1)-1$. The table lists 26238 at redundancy 41 and 104831 at
+  redundancy 47. The 817-column seed and its verified partitions give 26175
+  and 104703, respectively.
+
