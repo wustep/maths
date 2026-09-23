@@ -95,3 +95,17 @@ $n=49$, the object that would be a 49 is not a lift, not a symmetry orbit, and
 
 - [Davydov–Marcugini–Pambianco–Wu, arXiv:2609.16078v1](https://arxiv.org/html/2609.16078) is the current radius-2 continuation. Its Theorems 2.1–2.2 include the 50-column seed and the resulting $f(2)\le1.27002$ family. It does not supply the radius-3 redundancy-41 bound pursued here.
 - [Davydov–Marcugini–Pambianco, arXiv:2511.02542v1, Table 7.2](https://arxiv.org/html/2511.02542v1#S7.T2) records $\ell_2(41,3)\le26238$ and $\ell_2(24,3)\le618$. Theorem 6.1, (6.4), (6.8) is the QM$_4^3$ covering implication used here. The q16 certificate gives $\ell_2(41,3)\le26175$.
+
+## 2026-09-23 (q14 record check)
+
+- Opened [Wu, *Covering 1024 syndromes with 50 columns*,
+  arXiv:2608.27494](https://arxiv.org/abs/2608.27494). Its abstract states
+  $\ell_2(10,2)\le50$ and identifies the notebook's published matrix pin.
+- Opened [Davydov–Marcugini–Pambianco–Wu, *Further results on binary codes of
+  covering radius 2 and saturating sets in projective spaces*,
+  arXiv:2609.16078](https://arxiv.org/abs/2609.16078). The September 2026
+  draft uses the 50-column seed at redundancy 10.
+- Reopened [Davydov–Marcugini–Pambianco, *New upper bounds for binary linear
+  covering codes*, arXiv:2511.02542](https://arxiv.org/abs/2511.02542), the
+  earlier 51-column table context. No new published 49-column claim was
+  identified in these sources.

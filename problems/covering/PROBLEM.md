@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: $\ell_2(10,2)\le 50$, $\ell_2(41,3)\le26175$, and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
+- Status: $\ell_2(10,2)\le 50$, $\ell_2(41,3)\le26175$, and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 and q14 residue); $f(2)$ open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Tables 5.1, 7.2); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -37,6 +37,15 @@ $$
 \ell_2(10,2)\le 50
 $$
 and does **not** determine $f(2)$. An $n=49$ anneal left 7 uncovered syndromes — an incomplete search, not a lower bound.
+
+
+## Local 49-column switches (quest q14, 2026-09-23)
+
+Exact enumeration around the published 50-set rules out every two-delete/one-add
+candidate (all 1,194,375 leave at least nine uncovered syndromes) and every
+three-delete/two-add completion (all 19,600 deletion triples fail). The exact
+restricted predicate and replay are in [`compute/q14/CLAIM.md`](compute/q14/CLAIM.md).
+This is residue, not a lower bound; $\ell_2(10,2)\le49$ remains open.
 
 
 ## Certified finite bounds (quest q5, 2026-08-19)

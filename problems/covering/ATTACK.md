@@ -626,3 +626,28 @@ Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
   retains radius 3. This does not exclude a different 816-column matrix.
 - The separate small-seed $r=24$ and two-block $r=10$ handles remain open.
   Replay: `sh compute/q16/run_all.sh` from `problems/covering/`.
+
+## 2026-09-23 — q14: exact local switches around the 50-set
+
+Target: $\ell_2(10,2)\le49$. The published 50-column seed is
+[Wu, arXiv:2608.27494](https://arxiv.org/abs/2608.27494), also used in the
+September Davydov–Marcugini–Pambianco–Wu draft. This campaign asks a new
+finite question: can a 49-set be reached by deleting two or three columns
+from that seed and inserting one or two new columns?
+
+- [`compute/q14/switch_2to1.c`](compute/q14/switch_2to1.c) exhausts all 1,225
+  deletion pairs and 1,194,375 insertions. The best has **nine holes**: delete
+  zero-based indices 0 and 21 and insert syndrome column 1. Independent
+  [`verify_best.py`](compute/q14/verify_best.py) finds rank 10, 1,015/1,024
+  syndromes covered, holes 8, 40, 349, 381, 584, 616, 797, 829, 931.
+- [`compute/q14/switch_3to2.c`](compute/q14/switch_3to2.c) exhausts all
+  19,600 deletion triples and 19,129,600 first insertions. For each one, any
+  valid second insertion must cover the first remaining hole $h$, so it must
+  be $h$, $h+x$, or $h+b$ for one of the 47 retained base columns $b$.
+  Exhausting those 937,350,400 constrained second-column checks gives **no
+  cover**. The smallest hole count after just the first insertion is 27.
+- Replay: [`compute/q14/run_all.sh`](compute/q14/run_all.sh). The 50-column
+  source certificate still passes its independent full $2^{10}$ sweep.
+
+No dent. The two local neighborhoods are excluded, but an unrelated 49-set
+remains possible. This is residue and no lower bound for $\ell_2(10,2)$.
