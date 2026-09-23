@@ -120,4 +120,3 @@ $n=49$, the object that would be a 49 is not a lift, not a symmetry orbit, and
   $n=2^m(n_0+1)-1$. The table lists 26238 at redundancy 41 and 104831 at
   redundancy 47. The 817-column seed and its verified partitions give 26175
   and 104703, respectively.
-

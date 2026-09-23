@@ -12,3 +12,10 @@ and checks every output column and rank in C. Peak syndrome bitmap is 8 MiB.
 The output syndromes at redundancies 41 and 47 are certified by Theorem 6.1,
 not enumerated. The matrices are retained as generators plus hashes to avoid
 committing two large text files.
+
+`merge_sweep_summary.json` records the complete 561-pair search of single
+merges of the inherited 34 blocks. To regenerate its rows, compile
+`search_merges.c` from this problem folder and run it for first-block
+arguments 0 through 32. The only safe pairs are 7+31 and 15+24. This
+exhausts single merges of this partition; it does not rule out other
+33-block partitions.
