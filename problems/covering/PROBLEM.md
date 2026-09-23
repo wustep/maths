@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: $\ell_2(10,2)\le 50$, $\ell_2(41,3)\le26175$, and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 and q14 residue); $f(2)$ open
+- Status: $\ell_2(10,2)\le 50$, $\ell_2(41,3)\le26175$, $\ell_2(44,3)\le52351$, and $\ell_2(47,3)\le104703$ certified; $n=49$ still open (q9–q11 and q14 residue); $f(2)$ open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Tables 5.1, 7.2); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -171,6 +171,20 @@ that all 817 seed columns are essential for radius 3, even without partition
 restrictions, so deleting one column from this seed cannot improve it.
 Replay: [`compute/q16/run_all.sh`](compute/q16/run_all.sh); exact statement:
 [`compute/q16/CLAIM.md`](compute/q16/CLAIM.md).
+
+## Certified finite bound at redundancy 47 (2026-09-23, q15)
+
+A 129-block refinement of the same 817-column seed permits QM$_4^3$ with
+$m=7$. An independent C verifier checks the seed partition and every
+column of the resulting $47\times104703$ matrix. Therefore
+
+$$
+\ell_2(47,3)\le104703.
+$$
+
+This improves the published Table 7.2 length 104831 by 128. Replay:
+[`compute/q15/run_all.sh`](compute/q15/run_all.sh); exact statement:
+[`compute/q15/CLAIM.md`](compute/q15/CLAIM.md).
 
 ## What a solution looks like
 
