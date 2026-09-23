@@ -2,7 +2,7 @@
 
 - Slug: `covering`
 - Solver: Codex `gpt-5.6-sol` Max (2026-08-16 overnight). Grok watched only.
-- Status: $\ell_2(10,2)\le 50$ and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
+- Status: $\ell_2(10,2)\le 50$, $\ell_2(41,3)\le26175$, and $\ell_2(44,3)\le52351$ certified; $n=49$ still open (q9–q11 residue); $f(2)$ open
 - Area: Coding theory
 - Sources: Green 100 #40; Cohen et al., *Covering Codes*; Davydov–Marcugini–Pambianco, arXiv:2511.02542 (Tables 5.1, 7.2); Kaikkonen–Rosendahl
 - Started: 2026-08-16
@@ -142,6 +142,26 @@ the improvement is 64 columns. The explicit matrix, partitions, manifest,
 Python constructor, and independent C verifier are in [`compute/q13/`](compute/q13/).
 The verifier checks every construction column; it does not sweep $2^{44}$
 syndromes and makes no optimality claim.
+
+## Certified finite bound (2026-09-23)
+
+The inherited 34-block $(3,0)$-partition of the $26\times817$ radius-3 seed
+admits two valid single merges among all 561 block pairs. Merging blocks 7
+and 31 gives 33 blocks, which permits QM$_4^3$ with $m=5$. An independent C
+verifier sweeps all $2^{26}$ seed syndromes under the merged partition and
+checks every column of the resulting $41\times26175$ matrix. Therefore
+
+$$
+\ell_2(41,3)\le26175.
+$$
+
+This improves the published Table 7.2 length 26238 by 63 and the notebook's
+earlier 26206 by 31. The theorem carries the seed certificate to redundancy
+41; no $2^{41}$ sweep is claimed. An exact representation count also shows
+that all 817 seed columns are essential for radius 3, even without partition
+restrictions, so deleting one column from this seed cannot improve it.
+Replay: [`compute/q16/run_all.sh`](compute/q16/run_all.sh); exact statement:
+[`compute/q16/CLAIM.md`](compute/q16/CLAIM.md).
 
 ## What a solution looks like
 

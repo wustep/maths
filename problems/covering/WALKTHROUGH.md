@@ -377,3 +377,39 @@ What is proved is the upper bound
 $\ell_2(44,3)\le52351<52415$. The output has covering radius exactly three:
 the theorem gives at most three, while the radius-two volume is smaller than
 $2^{44}$. Nothing here proves optimality, and none is claimed.
+
+## One block too many at redundancy 41
+
+The 34-block partition above left a narrow gap. At $m=5$, the field plus
+$*$ has only 33 indicators; at $m=6$, it has 65. The latter gives the
+redundancy-44 construction, but the former would land at redundancy 41 with
+length 26,175. The missing degree of freedom was one merge of two inherited
+blocks, not a new field or seed matrix.
+
+The earlier fixed-matrix partition attack on the 37-column
+Östergård–Kaikkonen seed had shown that its required 17-block threshold is
+impossible. That failure did not say anything about merging the 817-column
+seed. Nor did the radius-2 single-block replacements speak to this radius-3
+partition. The useful lesson was to test the exact partition condition before
+building another large lift.
+
+The test counted all admissible three-column representations of each seed
+syndrome. A proposed merge only destroys representations that use one column
+from each of the two merged blocks. If any representation survives, the
+syndrome remains covered. All 561 block pairs could therefore be tested
+against the same representation counts. Two survived: $(7,31)$ and $(15,24)$.
+The first was carried forward, giving 33 blocks.
+
+The independent check then swept all $2^{26}$ seed syndromes under the new
+labels, verified the field $\mathbb F_2[x]/(x^5+x^2+1)$, and compared each of
+the 26,175 output columns with the QM$_4^3$ formula. The construction theorem
+turns that finite seed certificate into
+$\ell_2(41,3)\le26175<26238$. It also improves the notebook's earlier 26206.
+The large output syndrome space was not enumerated.
+
+We next asked whether simply deleting a seed column would make the lift
+shorter still. Counting representations revealed a sharper obstruction:
+every one of the 817 columns is needed by at least one uniquely represented
+syndrome, even when block labels are ignored. That closes deletion from this
+particular seed. Other 816-column matrices, a different small radius-3 seed,
+and the 49-column radius-2 problem remain open.
