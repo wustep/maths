@@ -90,3 +90,8 @@ $n=49$, the object that would be a 49 is not a lift, not a symmetry orbit, and
 - [Table 7.2](https://arxiv.org/html/2511.02542v1#S7.T2) lists 52415 at
   redundancy 44 and covering radius 3. The certified 52351 construction
   improves that published upper bound by 64.
+
+## 2026-09-23 (q16 paper survey)
+
+- [Davydov–Marcugini–Pambianco–Wu, arXiv:2609.16078v1](https://arxiv.org/html/2609.16078) is the current radius-2 continuation. Its Theorems 2.1–2.2 include the 50-column seed and the resulting $f(2)\le1.27002$ family. It does not supply the radius-3 redundancy-41 bound pursued here.
+- [Davydov–Marcugini–Pambianco, arXiv:2511.02542v1, Table 7.2](https://arxiv.org/html/2511.02542v1#S7.T2) records $\ell_2(41,3)\le26238$ and $\ell_2(24,3)\le618$. Theorem 6.1, (6.4), (6.8) is the QM$_4^3$ covering implication used here. The q16 certificate gives $\ell_2(41,3)\le26175$.

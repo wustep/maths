@@ -11,6 +11,11 @@ $$
 The November 2025 table (Davydov–Marcugini–Pambianco,
 arXiv:2511.02542, Table 5.1) had $\ell_2(10,2)\le 51$.
 
+At radius 3, a 33-block partition of the existing 817-column seed and
+Construction QM$_4^3$ give $\ell_2(41,3)\le26175$, improving Table 7.2's
+26238 by 63 columns. The certificate checks all $2^{26}$ seed syndromes and
+every output column; replay with [`compute/q16/run_all.sh`](compute/q16/run_all.sh).
+
 ## The seed argument
 
 The certificate is a $10\times 50$ parity-check matrix,
@@ -65,4 +70,3 @@ Three construction families, none of them a neighbour-search on the
 
 Code: [`compute/q9/`](compute/q9/), [`compute/q10/`](compute/q10/),
 [`compute/q11/`](compute/q11/).
-

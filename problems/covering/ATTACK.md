@@ -600,3 +600,29 @@ Replay of the certified 50-set on wrap (2026-08-21, late morning PT):
   implication; no $2^{44}$ syndrome sweep was attempted.
 - Replay: `compute/q13/run_all.sh` from the problem folder. Exit 0 means the
   exact claim in [`compute/q13/CLAIM.md`](compute/q13/CLAIM.md) holds.
+
+## 2026-09-23 — q16: merge inherited blocks before the radius-3 lift
+
+- Started from q13's inherited 34-block $(3,0)$-partition of the 817-column
+  radius-3 seed. Unlike q13's refinement to 65 indicators at $m=6$, the
+  target was a coarsening to 33 blocks so QM$_4^3$ could run at $m=5$ and
+  redundancy 41. Candidate length: $32(817+1)-1=26175$.
+- [`compute/q16/search_merges.c`](compute/q16/search_merges.c) counted all
+  80,992,858 admissible three-column representations and tested every 561
+  unordered block merge. Exactly two pass: zero-based pairs $(7,31)$ and
+  $(15,24)$. The other 559 have at least one syndrome whose every admissible
+  representation is destroyed by that merge. This excludes only single
+  merges of this particular partition.
+- Chose $(7,31)$. The independent verifier checks rank, field arithmetic,
+  all 26,175 output identities, and all 67,108,864 seed syndromes under the
+  33-block partition. It reports 321,037 syndromes through two columns and
+  full coverage through three. **Dent:** $\ell_2(41,3)\le26175$, compared
+  with the published 26238 and the notebook's earlier 26206.
+- Follow-up deletion screen: among the 67,108,864 syndromes, 59,867,904 have
+  a unique representation by at most three columns from distinct merged
+  blocks. All 817 columns occur in such a representation. Without any block
+  restriction, 59,734,976 syndromes have a unique representation, still
+  involving every column. Thus no single deletion of this 817-column seed
+  retains radius 3. This does not exclude a different 816-column matrix.
+- The separate small-seed $r=24$ and two-block $r=10$ handles remain open.
+  Replay: `sh compute/q16/run_all.sh` from `problems/covering/`.
