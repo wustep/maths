@@ -1,6 +1,6 @@
 /* Exact one-merge test for q13's 34-block (3,0) partition.
  * Build from the problem folder: cc -O3 -std=c11 search_merges.c -o /tmp/search_merges
- * At most ~300 MiB RAM. No SAT or incomplete cutoffs.
+ * At most ~600 MiB RAM. No SAT or incomplete cutoffs.
  */
 #define main q13_original_main
 #include "../q13/verify_q13.c"

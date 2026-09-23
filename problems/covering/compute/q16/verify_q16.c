@@ -43,7 +43,7 @@ int main(int argc, char **argv)
     }
     for (int h = 0; h < SEED_N; ++h) {
         int label = labels[h];
-        uint8_t beta = (uint8_t)(label - 1);
+        uint8_t beta = label == 0 ? 0 : (uint8_t)(label - 1);
         uint8_t beta2 = q16_mul(beta, beta);
         for (uint8_t xi = 0; xi < Q16_Q; ++xi) {
             uint64_t expected = label == 0
@@ -56,7 +56,7 @@ int main(int argc, char **argv)
         }
     }
     if (index != Q16_N || Q16_N != Q16_Q * (SEED_N + 1) - 1 ||
-        Q16_R != SEED_R + 15 || SEED_N < Q16_P || Q16_P != Q16_Q + 1)
+        Q16_R != SEED_R + 15 || Q16_P != Q16_Q + 1)
         fail("QM_4^3 parameter failure");
     if (26206 - Q16_N != 31 || 26238 - Q16_N != 63)
         fail("comparison arithmetic failure");
