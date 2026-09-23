@@ -19,3 +19,24 @@ searches:
    deletion or one-block repair.
 
 The first handle is the smallest exact finite test and has a 31-column prize.
+
+## Outcome
+
+The exact merge sweep tested all 561 pairs. Two preserve the $(3,0)$
+partition: (7,31) and (15,24). The first is committed as
+[`partition_r26_n817_p33.txt`](partition_r26_n817_p33.txt). The independent
+full seed sweep and lift identity check prove the inequality in
+[`CLAIM.md`](CLAIM.md). Replay with `sh compute/q16/run_all.sh` from the problem
+folder.
+
+A follow-up exact deletion screen counts every representation by at most
+three distinct seed columns. Every one of the 817 columns participates in a
+unique representation of at least one syndrome. This holds with the 33-block
+restriction (59,867,904 uniquely represented syndromes) and without it
+(59,734,976). Thus no one-column deletion of this particular seed can retain
+radius 3, even if the partition is discarded. This does not exclude a
+different 816-column matrix.
+
+The search code is [`search_merges.c`](search_merges.c); run it from the
+repository root after compiling with `cc -O3 -std=c11` and pass the 817-column
+seed and q13 34-block partition. The scan is exact and uses about 600 MiB.
