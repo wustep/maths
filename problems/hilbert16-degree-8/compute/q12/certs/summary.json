@@ -1,0 +1,26 @@
+{
+ "baseline": 2415,
+ "bound": 2415,
+ "candidate_schemes": [],
+ "followup": {
+  "candidate_schemes": [],
+  "complete": false,
+  "n_tasks": 0
+ },
+ "leftover": {
+  "candidate_schemes": [],
+  "complete": true,
+  "evaluations": 1416018,
+  "extra_ids": [],
+  "missing_ids": [],
+  "n_schemes": 552,
+  "n_tasks": 93,
+  "planned": 93,
+  "shards": [
+   "work/shard0.json"
+  ]
+ },
+ "n_new": 0,
+ "q11_claim": "../q11/CLAIM.md",
+ "schemes": []
+}

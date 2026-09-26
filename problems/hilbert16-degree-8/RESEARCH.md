@@ -487,3 +487,29 @@ from the archive TYPE fields and filenames and from the seventeen
 plus Q, N, and the thirteen q10 schemes, which is why the verified
 count is now at least 2,415. Neither open maximal deep nest is
 decided.
+
+## 2026-09-26 — q12 record replay
+
+- Opened <https://arxiv.org/abs/2602.06888>: still v4, 31 Aug 2026.
+  Comments still "major revision, 37 pages". The abs page does not
+  restate the 2,367 figure; that number lives in the PDF body.
+- Opened <https://arxiv.org/html/2602.06888v4>: "No HTML for
+  2602.06888v4".
+- Opened <https://arxiv.org/pdf/2602.06888v4>. Section 4.3 still
+  reports "2,367 distinct nonempty real schemes as T-curves" as a
+  lower bound ("as the search is not exhaustive, this is a lower
+  bound"). Theorem 21 is unchanged.
+- Copied `deg8.pcoms.txz` (125,932 bytes) from the q11 worktree and
+  checked SHA-256
+  `1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`.
+  The archive contains 2,367 `.pcom` files, 38 of them 22-oval. This
+  checks the cited baseline; it is not a claim to have surveyed
+  every later paper on real octics.
+
+The notebook count starts at 2,415. The selected leaf is the
+unsearched one-flip neighbourhood of the three q11 followup
+certificates.
+
+All 93 leftover balls finished (1,416,018 evaluations). No scheme
+outside the 2,415 appeared. Neither open maximal deep nest is
+decided. The bound is unchanged.

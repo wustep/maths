@@ -18,13 +18,15 @@ classification record. They are not exclusions of algebraic schemes.
 | q9: remaining 1,108 balls of the q8 one-flip radius-three domain | certified | `q9/CLAIM.md`: number of nonempty degree-eight T-curve schemes ≥ 2,394. Nine schemes outside B ∪ A ∪ {⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩}. All 1,108 leftover balls finished; 115 one-flip balls of those certificates added four more; 21 flips of the q8 certificate added nothing. Neither open nest appeared. |
 | q10: one-flip radius-three of the four q9 followup certificates | certified | `q10/CLAIM.md`: number of nonempty degree-eight T-curve schemes ≥ 2,407. Thirteen schemes outside B ∪ A ∪ Q ∪ N. All 106 leftover balls finished; 169 one-flip balls of those six certificates added seven more. Neither open nest appeared. |
 | q11: one-flip radius-three of the seven q10 followup certificates | certified | `q11/CLAIM.md`: number of nonempty degree-eight T-curve schemes ≥ 2,415. Eight schemes outside B ∪ A ∪ Q ∪ N ∪ K. All 205 leftover balls finished; 150 one-flip balls of those five certificates added three more. Neither open nest appeared. |
+| q12: one-flip radius-three of the three q11 followup certificates | residue | 93 balls, 1,416,018 evaluations, no scheme outside B ∪ A ∪ Q ∪ N ∪ K ∪ L. Plan hash `544498c92d5c94d04a0c087f8c6424080120da7420c4108a07a15691c744c912`. Neither open nest appeared. |
 | Algebraic obstruction outside combinatorial patchworking | open | Neither undecided (19,3) deep nest is decided. T-curve nonexistence alone would not decide algebraic nonexistence. |
 
 The covering problem is frozen. One heavy process at a time; no
 unbounded BFS queue. The 1,190-ball one-flip domain is finished, as
 is the leftover one-flip of the four q9 followup certificates, the
-one-flip of the six leftover q10 certificates, and the leftover
-one-flip of the seven q10 followup certificates. Further progress
+one-flip of the six leftover q10 certificates, the leftover
+one-flip of the seven q10 followup certificates, and the leftover
+one-flip of the three q11 followup certificates. Further progress
 is a scheme outside the 2,415, a decision of either open (19,3)
-nest, or a new recorded finite handle. One-flip of the three q11
-followup certificates is the next leftover of the same method.
+nest, or a new recorded finite handle. The one-flip followup chain
+has no unused leftover certificate.

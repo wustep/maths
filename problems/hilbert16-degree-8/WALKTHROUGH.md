@@ -563,3 +563,29 @@ and the same two independent topology checks as q8–q10.
 What is proved: eight further nonempty degree-eight T-curve
 schemes, so the lower bound is at least 2,415. What remains open:
 Hilbert 16(a) in degree eight, and both undecided (19,3) deep nests.
+
+## 2026-09-26 — the three unused followups finish empty
+
+The missing degree of freedom was again the unused followup
+certificates. q11 finished one-flip of five leftover meshes and
+left three schemes unseeded. That list is 93 unimodular flips,
+written down before the search.
+
+A false start is expecting the a-hole pattern to continue
+automatically. q9–q11 kept filling `a=0` of a neighbouring family
+by feeding leftover certificates back as seeds. Here the same move
+on ⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩, and
+⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩ produced 552 schemes, all already among the
+2,415. No new a-hole filled.
+
+The useful failure is that this one-flip followup chain now has no
+unused leftover certificate. Two-flip, radius four, or a different
+seed family would be a new handle, not a leftover of this one.
+
+Computer search: one worker finished all 93 leftover balls
+(1,416,018 evaluations). Zero schemes outside the 2,415. No
+integer lifting was required.
+
+What is proved: the 93-ball neighbourhood is empty of new nonempty
+schemes. The lower bound stays at least 2,415. What remains open:
+Hilbert 16(a) in degree eight, and both undecided (19,3) deep nests.
