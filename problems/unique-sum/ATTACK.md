@@ -139,4 +139,7 @@
 - Named midpoint partitions at bound 15: 31 AP4-but-not-AP5 and 29
   AP4-free classes at 67; 33 and 31 at 71; 34 and 32 at 73. Dual
   lower replay of those classes is the remaining half of the leaf.
+- AP5 at 67, size 15: C UNSAT after 6,066,228 nodes in 2,941 seconds
+  (RSS 137 MiB). Independent Rust replay of that ceiling is the live
+  job.
 

@@ -379,3 +379,47 @@ AP4-free classes, each in both languages, excludes every smaller size.
 Locally $m(61)=15$, matching OEIS, new to this notebook. Not a new
 bound. The next primes 67, 71, 73 sit above the 64-bit mask.
 
+## 12. The 2026-09-26 mask widening
+
+### What was actually missing
+
+The leftover was not a new SAT encoding. The q5/q6 engines stored each
+set as a 64-bit word and refused every prime at 64 or above. The same
+completion argument works for 67, 71, 73, and 79 once the mask is 128
+bits wide.
+
+### False starts and the useful failure
+
+Annealing size 15 at those three primes, 400 million proposals each,
+stopped at one unique sum. Size 16 at 79 stopped at two. Those
+neighborhoods are diagnostics. They taught that a dent by construction
+is not sitting next to a random 15-set, and that the published 16-sets
+(each containing an AP of length at least 6) are the right upper
+witnesses to check first.
+
+### The click
+
+Port the q5 engines, not the predicate. Ordered reflection counts in C
+and unordered pair repairs in Rust are already dual. The 128-bit
+negative, rotate, and hex root parsing are the only new arithmetic.
+The q6 AP5 ceiling at 61 is the regression: both languages returned
+UNSAT with the same node counts as q6 (810,493 and 1,476,025).
+
+### The argument, in the order it was run
+
+Check the three OEIS 16-sets directly. Partition the size-at-most-15
+leftover by AP length, exactly as at 59 and 61: AP5, then named
+midpoint classes for AP4-but-not-AP5, then AP4-free. Affine class
+counts at bound 15 are 31+29 at 67, 33+31 at 71, 34+32 at 73.
+
+### Computer search
+
+Upper half: three 16-sets, Python and Rust. Construction probes:
+UNKNOWN. Dual lower replay of the named classes is the live job.
+
+### Proven vs still open
+
+The 16-sets prove $m(67),m(71),m(73)\le 16$, matching OEIS A398173.
+That is not a new bound. Size at most 15 is still the open half of the
+leaf. The first unpublished prime remains 79. Green's #27 remains open.
+
