@@ -141,5 +141,8 @@
   lower replay of those classes is the remaining half of the leaf.
 - AP5 at 67, size 15: C UNSAT after 6,066,228 nodes in 2,941 seconds
   (RSS 137 MiB); Rust UNSAT after 11,192,593 nodes in 3,380 seconds
-  (RSS 138 MiB). Named AP4-but-not-AP5 classes at 67 are the live job.
+  (RSS 138 MiB).
+- AP4-but-not-AP5 at 67: all 31 named midpoint classes UNSAT in C
+  (12,962 seconds total, max 2,124 seconds on a 5-point root, max RSS
+  132 MiB). AP4-free classes at 67 are the live job.
 
