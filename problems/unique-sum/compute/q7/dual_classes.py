@@ -20,9 +20,22 @@ def main():
     payload = dict(p=family['p'], bound=family['bound'], initial_ap=family['initial_ap'],
                    forbid_ap=family['forbid_ap'], center=family['center'],
                    source=args.family.name, status='UNKNOWN', duals=[])
+    done = set()
+    if args.output.exists():
+        try:
+            old = json.loads(args.output.read_text())
+        except json.JSONDecodeError:
+            old = None
+        if old and old.get('p') == family['p'] and old.get('bound') == family['bound']:
+            kept = [row for row in old.get('duals', []) if row.get('status') == 'UNSAT']
+            payload['duals'] = kept
+            done = {row['case'] for row in kept}
     args.output.write_text(json.dumps(payload, indent=2)+'\n')
     for i, row in enumerate(family['cases']):
         if row.get('representative') != i:
+            continue
+        if i in done:
+            print(f"dual case={i} pair={row['pair']} status=UNSAT skip", flush=True)
             continue
         command = [str(args.binary.resolve()), str(family['p']), str(family['bound']),
                    str(args.nodes), str(family['initial_ap']), str(family['forbid_ap']),

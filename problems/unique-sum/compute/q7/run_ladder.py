@@ -51,51 +51,69 @@ def main():
             return 3
         return 0
 
-    run([python, HERE/'run_cover.py', cover, str(p), str(bound),
-         '--initial-ap', '5', '--forbid-ap', '0',
-         '--nodes', str(args.ap5_nodes), '--seconds', str(args.ap5_seconds),
-         '--output', ap5_c], f'p={p} AP5 C')
-    rc = decide(ap5_c, f'p={p} AP5 C')
-    if rc:
-        return rc
+    def skip_unsat(path, what):
+        if not path.exists():
+            return False
+        try:
+            payload = json.loads(path.read_text())
+        except json.JSONDecodeError:
+            return False
+        if payload.get('status') != 'UNSAT':
+            return False
+        print(f'# skip {what} (stored UNSAT)', flush=True)
+        return True
 
-    run([python, HERE/'run_exact.py', exact, str(p), str(bound),
-         '--initial-ap', '5', '--forbid-ap', '0',
-         '--nodes', str(args.ap5_nodes), '--seconds', str(args.ap5_seconds),
-         '--source', HERE/'verify_exact.rs', '--output', ap5_r], f'p={p} AP5 Rust')
-    rc = decide(ap5_r, f'p={p} AP5 Rust')
-    if rc:
-        return rc
+    if not skip_unsat(ap5_c, f'p={p} AP5 C'):
+        run([python, HERE/'run_cover.py', cover, str(p), str(bound),
+             '--initial-ap', '5', '--forbid-ap', '0',
+             '--nodes', str(args.ap5_nodes), '--seconds', str(args.ap5_seconds),
+             '--output', ap5_c], f'p={p} AP5 C')
+        rc = decide(ap5_c, f'p={p} AP5 C')
+        if rc:
+            return rc
 
-    run([python, HERE/'midpoint_cases.py', cover, str(p), str(bound),
-         '--initial-ap', '4', '--forbid-ap', '5', '--center', str(p-1),
-         '--nodes', str(args.class_nodes), '--seconds-per-case', str(args.class_seconds),
-         '--output', ap4], f'p={p} AP4-not-AP5 C')
-    rc = decide(ap4, f'p={p} AP4-not-AP5 C')
-    if rc:
-        return rc
+    if not skip_unsat(ap5_r, f'p={p} AP5 Rust'):
+        run([python, HERE/'run_exact.py', exact, str(p), str(bound),
+             '--initial-ap', '5', '--forbid-ap', '0',
+             '--nodes', str(args.ap5_nodes), '--seconds', str(args.ap5_seconds),
+             '--source', HERE/'verify_exact.rs', '--output', ap5_r], f'p={p} AP5 Rust')
+        rc = decide(ap5_r, f'p={p} AP5 Rust')
+        if rc:
+            return rc
 
-    run([python, HERE/'midpoint_cases.py', cover, str(p), str(bound),
-         '--initial-ap', '3', '--forbid-ap', '4', '--center', '1',
-         '--nodes', str(args.class_nodes), '--seconds-per-case', str(args.class_seconds),
-         '--output', free], f'p={p} AP4-free C')
-    rc = decide(free, f'p={p} AP4-free C')
-    if rc:
-        return rc
+    if not skip_unsat(ap4, f'p={p} AP4-not-AP5 C'):
+        run([python, HERE/'midpoint_cases.py', cover, str(p), str(bound),
+             '--initial-ap', '4', '--forbid-ap', '5', '--center', str(p-1),
+             '--nodes', str(args.class_nodes), '--seconds-per-case', str(args.class_seconds),
+             '--output', ap4], f'p={p} AP4-not-AP5 C')
+        rc = decide(ap4, f'p={p} AP4-not-AP5 C')
+        if rc:
+            return rc
 
-    run([python, HERE/'dual_classes.py', exact, ap4,
-         '--nodes', str(args.class_nodes), '--seconds', str(args.dual_seconds),
-         '--output', dual_ap4], f'p={p} AP4-not-AP5 Rust dual')
-    rc = decide(dual_ap4, f'p={p} AP4-not-AP5 Rust dual')
-    if rc:
-        return rc
+    if not skip_unsat(free, f'p={p} AP4-free C'):
+        run([python, HERE/'midpoint_cases.py', cover, str(p), str(bound),
+             '--initial-ap', '3', '--forbid-ap', '4', '--center', '1',
+             '--nodes', str(args.class_nodes), '--seconds-per-case', str(args.class_seconds),
+             '--output', free], f'p={p} AP4-free C')
+        rc = decide(free, f'p={p} AP4-free C')
+        if rc:
+            return rc
 
-    run([python, HERE/'dual_classes.py', exact, free,
-         '--nodes', str(args.class_nodes), '--seconds', str(args.dual_seconds),
-         '--output', dual_free], f'p={p} AP4-free Rust dual')
-    rc = decide(dual_free, f'p={p} AP4-free Rust dual')
-    if rc:
-        return rc
+    if not skip_unsat(dual_ap4, f'p={p} AP4-not-AP5 Rust dual'):
+        run([python, HERE/'dual_classes.py', exact, ap4,
+             '--nodes', str(args.class_nodes), '--seconds', str(args.dual_seconds),
+             '--output', dual_ap4], f'p={p} AP4-not-AP5 Rust dual')
+        rc = decide(dual_ap4, f'p={p} AP4-not-AP5 Rust dual')
+        if rc:
+            return rc
+
+    if not skip_unsat(dual_free, f'p={p} AP4-free Rust dual'):
+        run([python, HERE/'dual_classes.py', exact, free,
+             '--nodes', str(args.class_nodes), '--seconds', str(args.dual_seconds),
+             '--output', dual_free], f'p={p} AP4-free Rust dual')
+        rc = decide(dual_free, f'p={p} AP4-free Rust dual')
+        if rc:
+            return rc
 
     print(f'LADDER_COMPLETE p={p} bound={bound}', flush=True)
     return 0

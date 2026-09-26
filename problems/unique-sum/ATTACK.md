@@ -148,4 +148,7 @@
 - AP4-free at 67: all 29 named midpoint classes UNSAT in C (14,991
   seconds total, max 2,287 seconds on the 4-point root, max RSS
   121 MiB). Independent Rust duals of both families are the live job.
+- The first campaign wrapper was killed at a 10-hour cap after C
+  finished and before any Rust dual returned. Resume skips stored
+  UNSAT artifacts and continues from the duals.
 
