@@ -1,7 +1,7 @@
 # Walkthrough — Landau 4, certified prefix and Iwaniec P2s
 
 - Problem: `problems/landau-n2-plus-1`
-- Date: 2026-08-17; extended 2026-09-04
+- Date: 2026-08-17; extended 2026-09-04 and 2026-09-26
 - Argument status: independently replayable finite computation
 - Problem status: open; infinitude of primes $n^2+1$ is not claimed
 
@@ -17,7 +17,7 @@ A new prime not on the published list we cite would have been a construction.
 That list is complete through $m^2+1<6.25\times 10^{28}$. We did not beat it.
 The missing finite object was a replayable census past $N=10^6$ that hits the
 next Wolf $\pi_q(10^k)$ rows, together with the $\Omega=2$ list on the same
-range.
+range. The $N=10^8$ extension hits $\pi_q(10^{16})$.
 
 ## 1. False starts
 
@@ -116,7 +116,7 @@ Wolf, arXiv:0803.1456, tabulated $\pi_q(10^k)$ through $k=20$.
 OEIS A083844 continues that column through $k=28$. Grantham–Graves,
 arXiv:2502.03513, computed every prime $m^2+1\le 6.25\times 10^{28}$.
 A construction tonight would have been a prime with $n$ beyond that
-range. The $N=10^7$ census matches Wolf through $10^{14}$ instead.
+range. The $N=10^8$ census matches Wolf through $10^{16}$ instead.
 
 ## 5. Computer search
 
@@ -133,6 +133,13 @@ Replay the $N=10^7$ extension from `compute/q2/`:
 
 ```bash
 compute/q2/run_all.sh
+```
+
+Replay the $N=10^8$ extension from `compute/q3/` (regenerates the
+gitignored lists):
+
+```bash
+compute/q3/run_all.sh
 ```
 
 The sieve writes `compute/prime_n.txt` (54110 values of $n$) and
@@ -167,6 +174,24 @@ $1{:}456362$, $2{:}1334083$, $3{:}1590647$, $4{:}1041493$, $5{:}425651$,
 $6{:}120548$, $7{:}25585$, $8{:}4724$, $9{:}747$, $10{:}139$, $11{:}18$,
 $12{:}4$. The $N=10^6$ prefix of both lists is the committed $N=10^6$ pair.
 
+At $N=10^8$, from `compute/q3/` (segmented C residue sieve, 147 s, 93 MB
+RSS; independent C trial-plus-Pollard verifier, 742 s; streaming Python
+multiply-back plus Wolf/OEIS):
+
+| object | count |
+| ---: | ---: |
+| $n$ with $n^2+1$ prime | 3954181 |
+| $\Omega(n^2+1)=2$ | 12172983 |
+| Iwaniec $P_2$ (union) | 16127164 |
+| $\omega\le 2$ composites (wrong predicate) | 12914417 |
+
+The $\Omega$ histogram on the 50000001 live $n$ at $N=10^8$ is a partition:
+$1{:}3954181$, $2{:}12172983$, $3{:}15562537$, $4{:}11140174$, $5{:}5081818$,
+$6{:}1610082$, $7{:}386099$, $8{:}75996$, $9{:}13352$, $10{:}2346$, $11{:}355$,
+$12{:}64$, $13{:}14$. The $N=10^7$ prefix of both lists is the certified
+q2 pair. The lists themselves are regenerable and gitignored; counts and
+SHA-256 live in `compute/q3/n2p1.json`.
+
 The $\Omega$ histogram on the 500001 live $n$ is a partition:
 $1{:}54110$, $2{:}147612$, $3{:}161065$, $4{:}94019$, $5{:}33209$,
 $6{:}8151$, $7{:}1541$, $8{:}242$, $9{:}44$, $10{:}8$.
@@ -185,6 +210,8 @@ $\#\{n:n^2+1<10^k\}$:
 | $10^{12}$ | 54110 | 54110 |
 | $10^{13}$ | 156081 | 156081 |
 | $10^{14}$ | 456362 | 456362 |
+| $10^{15}$ | 1339875 | 1339875 |
+| $10^{16}$ | 3954181 | 3954181 |
 
 The first 10000 terms of `prime_n.txt` are the OEIS A005574 b-file; the
 10000th $n$ is 158704. First primes
@@ -205,6 +232,9 @@ Bateman–Horn at selected $N$, from `compute/comparison.json`:
 | $2\cdot 10^6$ | 102205 | 102312.04 | 0.9990 |
 | $5\cdot 10^6$ | 239185 | 239309.07 | 0.9995 |
 | $10^7$ | 456362 | 456409.53 | 0.9999 |
+| $2\cdot 10^7$ | 872121 | 872370.61 | 0.9997 |
+| $5\cdot 10^7$ | 2059567 | 2060327.13 | 0.9996 |
+| $10^8$ | 3954181 | 3955300.85 | 0.9997 |
 
 The Wolf-li form at $N=10^6$ is 53970.55. OEIS A331942 predicts 53970.
 A truncated Euler product for $C_q$ through $2\cdot 10^6$ recovers
@@ -222,6 +252,11 @@ SHA-256 of the $N=10^7$ lists in `compute/q2/` (also in `compute/q2/n2p1.json`):
 - `prime_n.txt`: `31207a4a146e862e3a55882a8395b94567d8cc49292a935df7624ac915011409`
 - `p2_omega2.txt`: `aa7f83c18bbe68419888212bb6e1fe7b5787949e6084a553bdc9d03bbcd56f5a`
 
+SHA-256 of the $N=10^8$ lists regenerated in `compute/q3/` (also in `compute/q3/n2p1.json`):
+
+- `prime_n.txt`: `ab3ea9a1215a6fd95dec7c1065712d1f2786870ebdc94bc587ff06a4dfee158b`
+- `p2_omega2.txt`: `74184d390df2ac94bac46d504bc63911c125ef6014b8593171f512c27e61dc3a`
+
 The six-prime Miller–Rabin set without 17 only covers $n^2+1<3.474\times 10^{12}$ (OEIS A014233). That is enough for $N=10^6$ and not enough for $N=10^7$. The working bases are now $2,3,5,7,11,13,17,19,23$, which cover $3.825\times 10^{18}$.
 
 ## 6. Proven vs still open
@@ -230,10 +265,12 @@ Proven here, as a finite computation: there are exactly 54110 integers
 $n$ with $1\le n\le 10^6$ and $n^2+1$ prime, and exactly 147612
 further $n$ in that range with $\Omega(n^2+1)=2$. Extending the same
 classification, there are exactly 456362 such primes with $n\le 10^7$
-and exactly 1334083 further $n$ in that range with $\Omega(n^2+1)=2$.
-The $N=10^7$ lists sit in `compute/q2/` and are re-derived by the C
-trial-plus-Pollard verifier and by `verify.py`. The prime count equals
-Wolf's $\pi_q(10^{14})$. The count tracks the Bateman–Horn main term to
+and exactly 1334083 further $n$ in that range with $\Omega(n^2+1)=2$,
+and exactly 3954181 such primes with $n\le 10^8$ and exactly 12172983
+further $n$ in that range with $\Omega(n^2+1)=2$. The $N=10^8$ counts
+sit in `compute/q3/n2p1.json` and are re-derived by the C
+trial-plus-Pollard verifier. The prime count equals Wolf's
+$\pi_q(10^{16})$. The count tracks the Bateman–Horn main term to
 a few parts in $10^4$. None of that is a lower bound on the number of
 such primes for all $N$, and none of it is infinitude.
 

@@ -1,0 +1,13 @@
+{
+  "n_max": 100000000,
+  "producer": "verify_n2p1.c",
+  "algorithm": "miller-rabin every even n; trial<=2003 plus Pollard Omega",
+  "seconds": 742.417176,
+  "primes_claimed": 3954181,
+  "primes_found": 3954181,
+  "extra": 0,
+  "missing": 0,
+  "p2_rows": 12172983,
+  "complete_miss": 0,
+  "complete_extra": 0
+}

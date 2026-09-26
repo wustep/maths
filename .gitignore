@@ -30,3 +30,10 @@ tmp/
 
 # Regenerable bulk witness dump (see two-squares-gap/compute/README.md).
 problems/two-squares-gap/compute/a3_cert_m2000.json.gz
+
+# Landau q3 lists: P2 file is several hundred MB at N=10^8. Regenerator is
+# problems/landau-n2-plus-1/compute/q3/sieve_n2p1.c; hashes in n2p1.json.
+problems/landau-n2-plus-1/compute/q3/prime_n.txt
+problems/landau-n2-plus-1/compute/q3/p2_omega2.txt
+problems/landau-n2-plus-1/compute/q3/sieve_n2p1
+problems/landau-n2-plus-1/compute/q3/verify_n2p1

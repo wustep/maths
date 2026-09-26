@@ -150,7 +150,7 @@ Explainers: [HTML](problems/covering/explainer.html),
 | [c7-shannon](problems/c7-shannon) | Verified Polak–Schrijver 367-set in $C_7^{\boxtimes 5}$. No 368. Missing a letter in any coordinate caps the set at 345. Hamming distance 11 from the published set is empty. No improvement. |
 | [riemann-hypothesis](problems/riemann-hypothesis) | Clay Riemann hypothesis; also Hilbert 8(a) and Smale 1. Independent verification of Gomila's candidate gives $$0\leq\Lambda\leq\frac{893927}{5000000}=0.1787854<\frac15.$$ Two complete finite algorithms, fresh error/tail/barrier computations, and an analytic review are retained in [the certificate and note](problems/riemann-hypothesis/compute/q2). Prior published upper bound: $0.2$ (Platt–Trudgian). RH remains open. |
 | [landau-legendre](problems/landau-legendre) | Landau 3. Assuming RH, primes occur between consecutive $(2+\delta)$-powers for every real $x\geq1$ when $\delta\geq0.22524401991935$, improving the earlier notebook threshold $0.22525$ and the printed $0.2253$. Both Oppermann halves were independently replayed for the last 100,000 square intervals below $2^{64}$. The published finite record remains $n=7.05\cdot10^{13}$, and Legendre's conjecture remains open. |
-| [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 456362 primes $n^2+1$ for $n\le 10^7$, matching Wolf $\pi_q(10^{14})$. Infinitude open. |
+| [landau-n2-plus-1](problems/landau-n2-plus-1) | Landau 4. Certified 3954181 primes $n^2+1$ for $n\le 10^8$, matching Wolf $\pi_q(10^{16})$. Infinitude open. |
 | [sidon-second-term](problems/sidon-second-term) | Independent 11-kernel certificate: $$F(N)\le N^{1/2}+0.94301\,N^{1/4}+O(1)$$. Beats Hou–Zhao arXiv:2607.01169v2 (0.9435). |
 | [chowla-cosine](problems/chowla-cosine) | $K(n)\ge n^{1/7}/18$ for all $n\ge 1$. Does not beat Bedert $n^{1/5-o(1)}$. |
 | [unit-distance-509](problems/unit-distance-509) | Rebuilt Parts 509, 5-chromatic and vertex-critical. No smaller graph found. Record still 509. |
@@ -229,6 +229,7 @@ transcript recreation live under [notes/](notes/). Agent runbook:
 | Riemann hypothesis / q1 heat-flow and Lehmer replay | `problems/riemann-hypothesis/compute/q1` | GPT-5.6 Sol | 2026-08-30 |
 | Riemann hypothesis / independent candidate certification | `problems/riemann-hypothesis/compute/q2` | GPT-6 Astra | 2026-09-08 |
 | Landau 4 ($n^2+1$ primes) | `problems/landau-n2-plus-1` | SuperGrok 4.6 | 2026-09-03 |
+| Landau 4 ($n^2+1$ primes), $n\le 10^8$ census | `problems/landau-n2-plus-1/compute/q3` | Grok 4.6 | 2026-09-26 |
 | unit-distance 509 | `problems/unit-distance-509` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term | `problems/sidon-second-term` | SuperGrok 4.6 | 2026-08-17 |
 | Sidon second term, free-histogram certificate | `problems/sidon-second-term/compute/q1` | SuperGrok 4.6 | 2026-08-27 |

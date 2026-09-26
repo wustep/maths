@@ -1,0 +1,27 @@
+{
+  "n_max": 100000000,
+  "count_prime": 3954181,
+  "count_p2_omega_eq_2_composite": 12172983,
+  "count_iwaniec_p2": 16127164,
+  "count_omega_le2_composite_diagnostic": 12914417,
+  "unsplit": 0,
+  "omega_hist": {
+    "1": 3954181,
+    "2": 12172983,
+    "3": 15562537,
+    "4": 11140174,
+    "5": 5081818,
+    "6": 1610082,
+    "7": 386099,
+    "8": 75996,
+    "9": 13352,
+    "10": 2346,
+    "11": 355,
+    "12": 64,
+    "13": 14
+  },
+  "seconds_sieve": 2.317769224,
+  "seconds_classify": 144.940052935,
+  "rss_kb": 95520,
+  "producer": "sieve_n2p1.c"
+}

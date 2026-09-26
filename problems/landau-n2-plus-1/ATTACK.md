@@ -135,3 +135,67 @@ The replayable objects are `compute/q2/prime_n.txt`,
 `compute/q2/p2_omega2.txt`, the Wolf match through $10^{14}$, and
 `compute/q2/comparison.json`. RSS 56 MB. No new prime.
 
+## 2026-09-26 — literature before $N=10^8$
+
+Re-opened Wolf arXiv:0803.1456v3 HTML Table I: $\pi_q(10^{16})=3954181$.
+OEIS A083844 $a(16)=3954181$. Grantham–Graves arXiv:2502.03513 Table 1
+repeats that row and continues to $6.25\times 10^{28}$. Miller–Rabin
+bases $2,3,5,7,11,13,17,19,23$ still cover $n^2+1\le 10^{16}+1$
+(A014233 $a(9)=3.825\times 10^{18}$). $10^{16}+1$ is composite, so
+$\#\{n\le 10^8:n^2+1\text{ prime}\}$ is the same integer as
+$\pi_q(10^{16})$.
+
+## 2026-09-26 — segmented C sieve at $N=10^8$
+
+`compute/q3/sieve_n2p1.c` is the q2 residue algorithm in strips of
+five million even $n$ (about 50 MB leftover plus precomputed
+$\sqrt{-1}\bmod q$). Identity against the committed $N=10^6$ lists
+in one strip and in five strips of $10^5$ even $n$. Smoke at
+$N=2000$: 209 primes, 432 $\Omega=2$ rows.
+
+Then $N=10^8$, 147 s, RSS 93 MB. First strip $n\le 10^7$ reproduced
+the certified q2 counts (456362 primes, 1334083 $\Omega=2$). Full
+range:
+
+- primes: 3954181
+- $\Omega=2$ composites: 12172983
+- Iwaniec $P_2$: 16127164
+- $\omega\le 2$ composites: 12914417
+- unsplit: 0
+- $\Omega$ histogram on the 50000001 live $n$ partitions:
+  $1{:}3954181$, $2{:}12172983$, $3{:}15562537$, $4{:}11140174$,
+  $5{:}5081818$, $6{:}1610082$, $7{:}386099$, $8{:}75996$, $9{:}13352$,
+  $10{:}2346$, $11{:}355$, $12{:}64$, $13{:}14$
+
+Wolf / A083844 match for $k=6,\ldots,16$, including the new row
+$\pi_q(10^{16})=3954181$. Prefix of both lists equals the certified
+$N=10^7$ files. Bateman–Horn at $N=10^8$: $C_q\int=3955300.85$,
+count/BH $=0.99972$. Last prime $n=99999966$, $n^2+1=9999993200001157$,
+matches OEIS A083846 $a(16)$.
+
+## 2026-09-26 — independent C verifier
+
+`compute/q3/verify_n2p1.c`: Miller–Rabin every even $n$, multiply-back
+every P2 row, trial primes $\le 2003$ plus Pollard of every even
+$n^2+1$. Different algorithm from the residue sieve. Bitsets for
+membership (12.5 MB). 742 s:
+
+- primes claimed=3954181 found=3954181 extra=0 missing=0
+- 12172983 P2 rows multiply back
+- complete P2 scan miss=0 extra=0
+
+Streaming Python `verify_py.py` (different language): every claimed
+prime retested, every P2 row multiplied back, OEIS A005574 prefix,
+Wolf rows through $10^{16}$. Completeness of the $P_2$ census is the
+C trial-plus-Pollard pass.
+
+Dent: independently certified extension past $N=10^7$ matching Wolf
+$\pi_q(10^{16})=3954181$, plus a complete $\Omega=2$ list on the same
+range. Did not produce a prime off Wolf/Grantham. Infinitude not claimed.
+
+## 2026-09-26 — stop
+
+The replayable objects are `compute/q3/n2p1.json`, the Wolf match
+through $10^{16}$, and `compute/q3/run_all.sh` (regenerates the
+gitignored lists). RSS 93 MB. No new prime.
+
