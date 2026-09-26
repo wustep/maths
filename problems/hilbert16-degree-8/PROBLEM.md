@@ -9,8 +9,10 @@
   degree-eight T-curve schemes ≥ 2,415 (`compute/q11/CLAIM.md`).
   Forty-eight verified schemes are outside the paper's 2,367
   (seventeen parent additions, the q8 scheme, nine q9 schemes,
-  thirteen q10 schemes, and eight more). Hilbert 16(a) itself is
-  untouched.
+  thirteen q10 schemes, and eight more). Residue, 2026-09-26: the
+  leftover one-flip of the three unused q11 followup certificates
+  finished with no further scheme (`compute/q12/certs/coverage_leftover.json`).
+  Hilbert 16(a) itself is untouched.
 - Area: Real algebraic geometry / topology of real plane curves
 - Sources: Orevkov GAFA 12 (2002); Itenberg–Viro (1996); Viro
   arXiv:math/0611382; Geiselmann–Joswig–Kastner–Mundinger–Pokutta–
@@ -393,3 +395,20 @@ Hilbert 16(a) in degree eight remains open.
 
 Replay from the repository root:
 `sh problems/hilbert16-degree-8/compute/q11/run_all.sh`.
+
+## Close (2026-09-26, leftover followup one-flip)
+
+The bound is unchanged. The q11 certificates still replay, so the
+census lower bound stays **≥ 2,415**. No candidate for a new scheme.
+
+One-flip radius-three of the three unused q11 followup certificates
+finished 93/93 (1,416,018 evaluations,
+`compute/q12/certs/coverage_leftover.json`). Every scheme found is
+already among the 2,415. Neither open nest appeared. That is a
+finished sweep of this leftover, not a lower bound.
+
+Replay from the repository root:
+`python3 problems/hilbert16-degree-8/compute/q12/controls.py` and
+`python3 problems/hilbert16-degree-8/compute/q12/coverage.py`.
+
+Hilbert 16(a) in degree 8 remains open.

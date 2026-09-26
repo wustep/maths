@@ -4,7 +4,7 @@
 | --- | --- | --- |
 | One-flip radius-three of the seven q10 followup certificates | certified dent; domain finished | 205 balls, five schemes outside B ∪ A ∪ Q ∪ N ∪ K. Plan and seed hashes match the leftover seven. |
 | One-flip radius-three of those five certificates | certified dent; domain finished | 150 balls, three further schemes. |
-| One-flip of the three followup certificates | unsearched | The next leftover of the same method. |
+| One-flip of the three followup certificates | residue in q12 | 93 balls, no scheme outside the 2,415. |
 | Two-flip, or radius four, of the same meshes | unsearched | Larger than this campaign. |
 | Algebraic obstruction of either open (19,3) nest | open | Search failure here is not exclusion. |
 

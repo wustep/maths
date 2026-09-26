@@ -1,0 +1,29 @@
+# What the two checks establish
+
+The geometry and topology checks are the same pair as in
+[`../q8/VERIFICATION.md`](../q8/VERIFICATION.md). A certificate
+supplies all 45 lattice points, 64 primitive triangles, integer
+heights, and 45 signs. Python traces curve segments in the
+projective plane and its double cover. Rust reconstructs
+monochromatic regions from barycentric determinants and a vertex
+graph. Both must recover the same nesting tree, the claimed tree
+must match it, and that tree must be nonempty and absent from the
+2,415-scheme baseline (2,367 published, seventeen parent additions,
+the q8 scheme ⟨3 ⊔ 1⟨3⟩ ⊔ 1⟨12⟩⟩, the nine q9 schemes, the
+thirteen q10 schemes, and the eight q11 schemes).
+
+`controls.py --full-baseline` checks all published certificates,
+the seventeen additions, the q8 scheme, the nine q9 schemes, the
+thirteen q10 schemes and the eight q11 schemes with both
+implementations. Default controls check the 55 seeds, q8, q9, q10
+and q11, reject those known schemes and a falsely claimed open nest,
+and damage signs, heights, points and triangles. A forced-discovery
+control and a radius-two Python/C trace of 1,036 sign masks are
+unchanged from q8.
+
+Coverage of the 93 leftover balls is separate. `collect.py` merges
+shard manifests into a compact summary. `coverage.py` audits that
+summary against the leftover plan. Neither command certifies a new
+scheme. `run_all.sh` returns zero only after the existence predicate
+in `CLAIM.md` passes. This leftover produced no certificate, so
+`run_all.sh` must not exit zero.

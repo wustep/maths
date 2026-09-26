@@ -37,6 +37,7 @@
 | [grok-2026-08-29-hilbert16-d8-q4/](grok-2026-08-29-hilbert16-d8-q4/) | Grok 4.6 leftover (19,3) nests after the ranks 22–26 thicken |
 | [grok-2026-08-29-hilbert16-d8-q5/](grok-2026-08-29-hilbert16-d8-q5/) | Grok 4.6 leftover even-BFS remainder and odd size 5; stopped incomplete |
 | [grok-2026-09-22-hilbert16-q11/](grok-2026-09-22-hilbert16-q11/) | Grok 4.6 leftover one-flip of seven q10 followup certificates; bound at least 2,415 |
+| [grok-2026-09-26-hilbert16-q12/](grok-2026-09-26-hilbert16-q12/) | Grok 4.6 leftover one-flip of three q11 followup certificates; bound still at least 2,415 |
 
 | [cursor-grok-2026-08-27-caccetta-q22/](cursor-grok-2026-08-27-caccetta-q22/) | leftover SAT through n=131 |
 | [fable-2026-09-02-smale-tau-q1/](fable-2026-09-02-smale-tau-q1/) | Smale 4 τ-conjecture: mint, exhaustive straight-line-program search for factorials and primorials, polynomial table |

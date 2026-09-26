@@ -1399,3 +1399,37 @@ The exact claim and witnesses are in `q11/CLAIM.md` and
 No algebraic exclusion is claimed.
 
 Replay: `cd problems/hilbert16-degree-8/compute && sh q11/run_all.sh`.
+
+## 2026-09-26 — q12: leftover one-flip of the three q11 followup certificates
+
+Grok 4.6, new branch from `origin/main`. Record re-fetched:
+arXiv:2602.06888 still **v4, 31 Aug 2026**; §4.3 still 2,367 nonempty
+T-schemes as a lower bound. HTML for v4 is not offered. The published
+archive was copied from the q11 worktree and matches SHA-256
+`1c48052be79722b775f533df27f8604afee03e31f78dc3a5765af7ebd7b94afd`
+(2,367 `.pcom` files, 38 of them 22-oval). Baseline B ∪ A ∪ Q ∪ N ∪ K
+together with the eight q11 schemes has size 2,415.
+
+The selected leaf is the 93 unimodular one-flip balls of the three
+q11 followup certificates that were never used as one-flip seeds:
+⟨1 ⊔ 1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨10⟩⟩, ⟨1⟨1⟩ ⊔ 1⟨4⟩ ⊔ 1⟨9⟩⟩,
+⟨1⟨1⟩ ⊔ 1⟨3⟩ ⊔ 1⟨10⟩⟩.
+Each ball is every sign change of Hamming weight at most three
+(15,226 signs). Code in `compute/q12/`. Search does not stop on a
+candidate. One light worker ran the leftover.
+
+### Finished search
+
+| search | evals | result |
+| --- | --- | --- |
+| leftover q11-followup balls | 1,416,018 | **93/93 complete**; no scheme outside B ∪ A ∪ Q ∪ N ∪ K ∪ L |
+
+The 552 schemes that appeared are already among the 2,415. Neither
+preferred 22-oval nest appeared. No algebraic exclusion is claimed.
+The one-flip followup chain has no unused leftover certificate.
+
+**Residue:** number of nonempty degree-eight T-curve schemes remains
+≥ 2,415. The existence claim in `q12/CLAIM.md` is not established.
+Coverage: `q12/certs/coverage_leftover.json`.
+
+Replay: `cd problems/hilbert16-degree-8/compute && python3 q12/controls.py && python3 q12/coverage.py`.
