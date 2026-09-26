@@ -144,5 +144,8 @@
   (RSS 138 MiB).
 - AP4-but-not-AP5 at 67: all 31 named midpoint classes UNSAT in C
   (12,962 seconds total, max 2,124 seconds on a 5-point root, max RSS
-  132 MiB). AP4-free classes at 67 are the live job.
+  132 MiB).
+- AP4-free at 67: all 29 named midpoint classes UNSAT in C (14,991
+  seconds total, max 2,287 seconds on the 4-point root, max RSS
+  121 MiB). Independent Rust duals of both families are the live job.
 
