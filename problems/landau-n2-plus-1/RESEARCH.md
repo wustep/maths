@@ -87,3 +87,19 @@ Failed lookups this run:
 - Iwaniec, *Invent. Math.* 47 (1978) is not on arXiv; not re-fetched.
 
 A new prime off Grantham still needs $n\gtrsim 2.5\times 10^{14}$. Not attempted. The Iwaniec $P_2$ census is not in Wolf, OEIS A083844, or Grantham–Graves.
+
+## 2026-09-26 session log
+
+Opened, this run:
+
+- https://arxiv.org/abs/0803.1456 — Wolf v3. Hunt for primes $m^2+1<10^{20}$. `arxiv_fetch.py` succeeded.
+- https://arxiv.org/html/0803.1456v3 — Table I: $\pi_q(10^{16})=3954181$, $\pi_q(10^{15})=1339875$, $\pi_q(10^{14})=456362$. $C_q=1.372813462818246\ldots$.
+- https://arxiv.org/abs/2502.03513 — Grantham–Graves. All primes $m^2+1$ up to $6.25\times 10^{28}$. `arxiv_fetch.py` succeeded.
+- https://arxiv.org/html/2502.03513v1 — Table 1 repeats Wolf through $10^{20}$ and continues; $\pi_q(10^{16})=3954181$, $\pi_q(6.25\times 10^{28})=5342656862803$. Triple sieve; Goldbach other-other checked to that bound.
+- https://oeis.org/A083844 — $a(16)=3954181$, $a(14)=456362$, $a(28)=2199894223892$. Matches Wolf Table I and Grantham Table 1 on the overlapping powers.
+- https://oeis.org/A014233 — $a(9)=3825123056546413051$. Bases $2,3,5,7,11,13,17,19,23$ cover every odd $n$ below that bound, hence every $n^2+1$ with $n\le 10^8$.
+- Local `compute/refs/b083844.txt` (synthesized b-file): line 16 is $3954181$, matching the OEIS entry opened this run.
+
+Failed lookups this run: none of the arXiv fetches 429'd. Iwaniec 1978 still not on arXiv; not re-fetched.
+
+A new prime off Grantham still needs $n\gtrsim 2.5\times 10^{14}$. Not attempted. The Iwaniec $P_2$ census at $n\le 10^8$ is not in those sources.
