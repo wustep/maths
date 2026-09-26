@@ -140,6 +140,6 @@
   AP4-free classes at 67; 33 and 31 at 71; 34 and 32 at 73. Dual
   lower replay of those classes is the remaining half of the leaf.
 - AP5 at 67, size 15: C UNSAT after 6,066,228 nodes in 2,941 seconds
-  (RSS 137 MiB). Independent Rust replay of that ceiling is the live
-  job.
+  (RSS 137 MiB); Rust UNSAT after 11,192,593 nodes in 3,380 seconds
+  (RSS 138 MiB). Named AP4-but-not-AP5 classes at 67 are the live job.
 
