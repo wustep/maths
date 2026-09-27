@@ -1,12 +1,12 @@
 # Sets with no unique sum mod p
 
 - Slug: `unique-sum`
-- Solver: GPT-5.6 Sol (2026-08-16 and 2026-08-23); GPT-6 Astra (2026-09-09 continuation); Grok 4.6 (2026-09-09 continuation).
+- Solver: GPT-5.6 Sol (2026-08-16 and 2026-08-23); GPT-6 Astra (2026-09-09 continuation); Grok 4.6 (2026-09-09 and 2026-09-26 continuation).
 - Status: open
 - Area: Additive combinatorics
 - Sources: Green 100 #27; Bedert, Combinatorica 2024 (arXiv:2303.15134v2); Cao–Yuan, arXiv:2608.06728v1 (Aug 2026); OEIS A398173
 - Started: 2026-08-16
-- Finite campaign: local exact replay through $p=61$; published table through $p=73$
+- Finite campaign: local exact replay through $p=67$; published table through $p=73$
 
 ## In general
 
@@ -36,10 +36,12 @@ records $m(p)$ through $p=73$, including $m(59)=15$ (checked 2026-09-09).
 The witnesses in `compute/` match its first 15 terms, and a second,
 progression-driven implementation independently excludes every smaller size
 through $p=53$. Named-midpoint exclusions now give the local equalities
-$m(59)=15$ and $m(61)=15$, matching the published table; they are not
-improvements of the record. The precise claims are in
-[`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
-[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md). The first prime
+$m(59)=15$, $m(61)=15$, and $m(67)=16$, matching the published table;
+they are not improvements of the record. The precise claims are in
+[`compute/q5/CLAIM.md`](compute/q5/CLAIM.md),
+[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md), and
+[`compute/q7/CLAIM.md`](compute/q7/CLAIM.md). Dual lower replay at 71
+and 73 is unfinished. The first prime
 absent from the published exact table is 79. Extending
 the exact table to every prime $p\le 200$, plotting it against $\log p$ and
 $(\log p)^2$, and describing the extremal sets remains useful finite work.
@@ -96,12 +98,14 @@ and against $(\log p)^2$.
 
 ## Computations
 
-**Finite status (2026-09-09): local exact values matching the record.**
-$m(59)=15$ and $m(61)=15$. Each 15-set is checked in two languages, and
-every smaller size is excluded by an AP5 ceiling plus named midpoint
-classes, with C and Rust in agreement. This matches OEIS A398173 and does
-not improve it. See [`compute/q5/CLAIM.md`](compute/q5/CLAIM.md) and
-[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md).
+**Finite status (2026-09-26): local exact values matching the record.**
+$m(59)=15$, $m(61)=15$, and $m(67)=16$. Each extremal set is checked in
+two languages, and every smaller size is excluded by an AP5 ceiling plus
+named midpoint classes, with C and Rust in agreement. This matches OEIS
+A398173 and does not improve it. Dual lower replay at 71 and 73 is
+unfinished. See [`compute/q5/CLAIM.md`](compute/q5/CLAIM.md),
+[`compute/q6/CLAIM.md`](compute/q6/CLAIM.md), and
+[`compute/q7/CLAIM.md`](compute/q7/CLAIM.md).
 
 ## Figures
 
