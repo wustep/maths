@@ -152,5 +152,7 @@
   finished and before any Rust dual returned. Resume skips stored
   UNSAT artifacts and continues from the duals.
 - AP4-but-not-AP5 at 67: all 31 Rust duals UNSAT (15,464 seconds
-  total, max 2,381 seconds). The AP4-free Rust dual is the live job.
+  total, max 2,381 seconds).
+- The AP4-free 4-point dual hit a 4,200-second wall (UNKNOWN, not an
+  exclusion). Retry that family with a 10,800-second wall.
 

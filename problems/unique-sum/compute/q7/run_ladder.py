@@ -28,7 +28,7 @@ def main():
     ap.add_argument('--ap5-seconds', type=float, default=10800)
     ap.add_argument('--class-nodes', type=int, default=20000000)
     ap.add_argument('--class-seconds', type=float, default=3600)
-    ap.add_argument('--dual-seconds', type=float, default=4200)
+    ap.add_argument('--dual-seconds', type=float, default=10800)
     args = ap.parse_args()
     p, bound = args.p, args.bound
     cover, exact = args.cover.resolve(), args.exact.resolve()
