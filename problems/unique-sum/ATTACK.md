@@ -155,4 +155,8 @@
   total, max 2,381 seconds).
 - The AP4-free 4-point dual hit a 4,200-second wall (UNKNOWN, not an
   exclusion). Retry that family with a 10,800-second wall.
+- AP4-free Rust dual at 67: all 29 representatives UNSAT, including the
+  4-point class in 5,115 seconds. Dual $m(67)=16$ matching OEIS. Not a
+  dent. Dual lower replay at 71 and 73, and the unpublished prime 79,
+  remain unfinished.
 

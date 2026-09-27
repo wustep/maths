@@ -6,8 +6,8 @@
 - Run: recovered `q1-overnight` history
 - Model: gpt-5.6-sol max
 - Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: invalidated historical computation; current continuation in section 11
-- Problem status: open; the exact table is independently replayed through $p=61$
+- Argument status: invalidated historical computation; current continuation in section 12
+- Problem status: open; the exact table is independently replayed through $p=67$
 
 ## 0. What was actually missing
 
@@ -414,12 +414,16 @@ counts at bound 15 are 31+29 at 67, 33+31 at 71, 34+32 at 73.
 
 ### Computer search
 
-Upper half: three 16-sets, Python and Rust. Construction probes:
-UNKNOWN. Dual lower replay of the named classes is the live job.
+Upper half: three 16-sets, Python and Rust. Construction probes at
+size 15: UNKNOWN. Dual AP-length ladder at 67: AP5, 31 AP4-but-not-AP5
+classes, and 29 AP4-free classes, each UNSAT in C and in Rust. The
+4-point AP4-free dual needed a longer wall than 4,200 seconds; it
+returned UNSAT in 5,115 seconds on a 10,800-second retry. Dual lower
+replay at 71 and 73 was not started.
 
 ### Proven vs still open
 
-The 16-sets prove $m(67),m(71),m(73)\le 16$, matching OEIS A398173.
-That is not a new bound. Size at most 15 is still the open half of the
-leaf. The first unpublished prime remains 79. Green's #27 remains open.
+Locally $m(67)=16$, matching OEIS, new to this notebook. Not a new
+bound. The 16-sets at 71 and 73 remain upper bounds only. The first
+unpublished prime remains 79. Green's #27 remains open.
 

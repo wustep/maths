@@ -34,3 +34,6 @@ The full AP-length ladder for one prime is
 ```bash
 python3 problems/unique-sum/compute/q7/run_ladder.py COVER EXACT P 15
 ```
+
+At 67 that ladder is stored and dual-complete. Dual lower replay at 71
+and 73 is the leftover of this leaf.
