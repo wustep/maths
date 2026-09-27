@@ -151,4 +151,6 @@
 - The first campaign wrapper was killed at a 10-hour cap after C
   finished and before any Rust dual returned. Resume skips stored
   UNSAT artifacts and continues from the duals.
+- AP4-but-not-AP5 at 67: all 31 Rust duals UNSAT (15,464 seconds
+  total, max 2,381 seconds). The AP4-free Rust dual is the live job.
 
