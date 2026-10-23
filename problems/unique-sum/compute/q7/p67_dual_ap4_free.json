@@ -1,0 +1,359 @@
+{
+  "p": 67,
+  "bound": 15,
+  "initial_ap": 3,
+  "forbid_ap": 4,
+  "center": 1,
+  "source": "p67_ap4_free_classes.json",
+  "status": "UNSAT",
+  "duals": [
+    {
+      "case": 1,
+      "pair": [
+        3,
+        66
+      ],
+      "root_mask": "0x4000000000000000b",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 5114.8780410219915,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=4015322 memo_hits=16637 cover_prunes=1689599 ap_prunes=2187128 memo=120784 seconds=5114.867678\n"
+    },
+    {
+      "case": 3,
+      "pair": [
+        5,
+        64
+      ],
+      "root_mask": "0x50000000000000023",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 927.782883035019,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=719071 memo_hits=2692 cover_prunes=308539 ap_prunes=385994 memo=21768 seconds=927.777011\n"
+    },
+    {
+      "case": 4,
+      "pair": [
+        6,
+        63
+      ],
+      "root_mask": "0x48000000000000043",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1200.1183907600062,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=761113 memo_hits=2979 cover_prunes=328896 ap_prunes=406110 memo=23030 seconds=1200.111419\n"
+    },
+    {
+      "case": 5,
+      "pair": [
+        7,
+        62
+      ],
+      "root_mask": "0x44000000000000083",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 996.6243048069882,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=645560 memo_hits=2184 cover_prunes=270853 ap_prunes=352913 memo=19547 seconds=996.617755\n"
+    },
+    {
+      "case": 6,
+      "pair": [
+        8,
+        61
+      ],
+      "root_mask": "0x42000000000000103",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1253.4340676039865,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=943075 memo_hits=4237 cover_prunes=402296 ap_prunes=507886 memo=28520 seconds=1253.426782\n"
+    },
+    {
+      "case": 7,
+      "pair": [
+        9,
+        60
+      ],
+      "root_mask": "0x41000000000000203",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1256.85508062999,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=875372 memo_hits=3401 cover_prunes=376351 ap_prunes=469029 memo=26489 seconds=1256.847807\n"
+    },
+    {
+      "case": 8,
+      "pair": [
+        10,
+        59
+      ],
+      "root_mask": "0x40800000000000403",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1311.0055136999872,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=964426 memo_hits=3827 cover_prunes=413844 ap_prunes=517478 memo=29164 seconds=1310.997823\n"
+    },
+    {
+      "case": 9,
+      "pair": [
+        11,
+        58
+      ],
+      "root_mask": "0x40400000000000803",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1303.398381209001,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=926839 memo_hits=3366 cover_prunes=394382 ap_prunes=500968 memo=28043 seconds=1303.390743\n"
+    },
+    {
+      "case": 10,
+      "pair": [
+        12,
+        57
+      ],
+      "root_mask": "0x40200000000001003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1370.5482272160007,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=1025575 memo_hits=3841 cover_prunes=435512 ap_prunes=555051 memo=31022 seconds=1370.540796\n"
+    },
+    {
+      "case": 11,
+      "pair": [
+        13,
+        56
+      ],
+      "root_mask": "0x40100000000002003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1301.518650936021,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=923704 memo_hits=3257 cover_prunes=393881 ap_prunes=498527 memo=27948 seconds=1301.511588\n"
+    },
+    {
+      "case": 12,
+      "pair": [
+        14,
+        55
+      ],
+      "root_mask": "0x40080000000004003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1340.0678691079956,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=903706 memo_hits=2914 cover_prunes=384622 ap_prunes=488735 memo=27342 seconds=1340.060290\n"
+    },
+    {
+      "case": 13,
+      "pair": [
+        15,
+        54
+      ],
+      "root_mask": "0x40040000000008003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1357.4107558790129,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=973798 memo_hits=2882 cover_prunes=413898 ap_prunes=527452 memo=29456 seconds=1357.404499\n"
+    },
+    {
+      "case": 14,
+      "pair": [
+        16,
+        53
+      ],
+      "root_mask": "0x40020000000010003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1387.423244575999,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=969970 memo_hits=2719 cover_prunes=415679 ap_prunes=522141 memo=29347 seconds=1387.415835\n"
+    },
+    {
+      "case": 15,
+      "pair": [
+        17,
+        52
+      ],
+      "root_mask": "0x40010000000020003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1350.9248620920116,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=998581 memo_hits=2726 cover_prunes=424262 ap_prunes=541275 memo=30213 seconds=1350.838739\n"
+    },
+    {
+      "case": 16,
+      "pair": [
+        18,
+        51
+      ],
+      "root_mask": "0x40008000000040003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1182.9479422019795,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=797974 memo_hits=1847 cover_prunes=344196 ap_prunes=427686 memo=24143 seconds=1182.940975\n"
+    },
+    {
+      "case": 17,
+      "pair": [
+        19,
+        50
+      ],
+      "root_mask": "0x40004000000080003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1250.728495430987,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=926113 memo_hits=2457 cover_prunes=391130 ap_prunes=504378 memo=28009 seconds=1250.721376\n"
+    },
+    {
+      "case": 18,
+      "pair": [
+        20,
+        49
+      ],
+      "root_mask": "0x40002000000100003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1444.2037669940037,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=1052912 memo_hits=2863 cover_prunes=448069 ap_prunes=569993 memo=31862 seconds=1444.196783\n"
+    },
+    {
+      "case": 19,
+      "pair": [
+        21,
+        48
+      ],
+      "root_mask": "0x40001000000200003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1346.457053614984,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=988054 memo_hits=2404 cover_prunes=419894 ap_prunes=535746 memo=29883 seconds=1346.450083\n"
+    },
+    {
+      "case": 20,
+      "pair": [
+        22,
+        47
+      ],
+      "root_mask": "0x40000800000400003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1287.673558665003,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=857605 memo_hits=2022 cover_prunes=359804 ap_prunes=469758 memo=25954 seconds=1287.666541\n"
+    },
+    {
+      "case": 21,
+      "pair": [
+        23,
+        46
+      ],
+      "root_mask": "0x40000400000800003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1167.1754550549958,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=944197 memo_hits=2131 cover_prunes=402551 ap_prunes=510794 memo=28559 seconds=1167.168308\n"
+    },
+    {
+      "case": 22,
+      "pair": [
+        24,
+        45
+      ],
+      "root_mask": "0x40000200001000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 963.0449006929994,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=763324 memo_hits=1643 cover_prunes=309082 ap_prunes=429380 memo=23106 seconds=963.038074\n"
+    },
+    {
+      "case": 23,
+      "pair": [
+        25,
+        44
+      ],
+      "root_mask": "0x40000100002000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1219.3329793229932,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=852325 memo_hits=2073 cover_prunes=352712 ap_prunes=471633 memo=25786 seconds=1219.325242\n"
+    },
+    {
+      "case": 24,
+      "pair": [
+        26,
+        43
+      ],
+      "root_mask": "0x40000080004000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1285.1104106409766,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=891232 memo_hits=2099 cover_prunes=374224 ap_prunes=487858 memo=26963 seconds=1285.103611\n"
+    },
+    {
+      "case": 25,
+      "pair": [
+        27,
+        42
+      ],
+      "root_mask": "0x40000040008000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1296.4853249950102,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=908702 memo_hits=2378 cover_prunes=380040 ap_prunes=498679 memo=27488 seconds=1296.478185\n"
+    },
+    {
+      "case": 26,
+      "pair": [
+        28,
+        41
+      ],
+      "root_mask": "0x40000020010000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1235.0687595889904,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=852292 memo_hits=2707 cover_prunes=347680 ap_prunes=476024 memo=25794 seconds=1235.061459\n"
+    },
+    {
+      "case": 27,
+      "pair": [
+        29,
+        40
+      ],
+      "root_mask": "0x40000010020000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1231.9910457219812,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=947563 memo_hits=3362 cover_prunes=395164 ap_prunes=520289 memo=28666 seconds=1231.984395\n"
+    },
+    {
+      "case": 28,
+      "pair": [
+        30,
+        39
+      ],
+      "root_mask": "0x40000008040000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1175.1927268430009,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=971125 memo_hits=4016 cover_prunes=405840 ap_prunes=531768 memo=29387 seconds=1175.185727\n"
+    },
+    {
+      "case": 29,
+      "pair": [
+        31,
+        38
+      ],
+      "root_mask": "0x40000004080000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 1090.6868242049823,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=902135 memo_hits=4331 cover_prunes=372403 ap_prunes=497979 memo=27287 seconds=1090.680298\n"
+    },
+    {
+      "case": 30,
+      "pair": [
+        32,
+        37
+      ],
+      "root_mask": "0x40000002100000003",
+      "status": "UNSAT",
+      "timed_out": false,
+      "seconds": 987.7893495000026,
+      "stdout": "p=67 limit=15 status=UNSAT initial_ap=3 forbid_ap=4 nodes=754975 memo_hits=2956 cover_prunes=309310 ap_prunes=419793 memo=22852 seconds=987.782857\n"
+    }
+  ]
+}
