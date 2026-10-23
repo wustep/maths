@@ -116,3 +116,16 @@
   $m(61)=15$ locally, matching OEIS, new to the notebook table. Not a
   dent. Primes 67 and later need a mask wider than 64 bits.
 
+## 2026-09-12 — q7: cutoff before search
+
+- Reopened OEIS A398173 in the browser. Its 20 terms still end at 73;
+  selected the existing open handle at 79. The source was checked, but
+  its numerical claims were not replayed in q7.
+- Read q5–q6 and identified the below-64 engine restriction. No mask
+  widening, construction probe, or lower search ran.
+- Shell paper and OEIS fetches failed on sandbox DNS. An escalation call
+  remained pending until the user interrupted at midnight. No successful
+  shell fetch was returned; no new fetch was started during wrap.
+- Residue: no q7 inequality, witness, exclusion, or table extension.
+  q5 and q6 remain the inherited local replay. No banked reset was used.
+  `compute/q7/CLAIM.md` records the scope; its driver exits 3 immediately.
