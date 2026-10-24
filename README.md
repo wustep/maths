@@ -136,12 +136,69 @@ Standalone writeup in [problems/covering/result](problems/covering/result).
 Explainers: [HTML](problems/covering/explainer.html),
 [PDF](problems/covering/explainer.pdf).
 
+#### Papers
+
+The 50-column seed and the radius-3 lifts above now appear in a joint
+paper with the authors of the table they improve:
+
+- A. A. Davydov, S. Marcugini, F. Pambianco, S. Wu, *Further results on
+  binary linear covering codes and saturating sets in projective spaces*,
+  [arXiv:2609.16078](https://arxiv.org/abs/2609.16078) (v2, October 2026).
+  Submitted to IEEE Transactions on Information Theory.
+- S. Wu, *Covering 1024 syndromes with 50 columns*,
+  [arXiv:2608.27494](https://arxiv.org/abs/2608.27494) (August 2026).
+  The writeup of the 50-column seed.
+
+The tables cited above (Tables 5.1 and 7.2) come from the preprint of
+A. A. Davydov, S. Marcugini, F. Pambianco, *New upper bounds for binary
+linear covering codes*, IEEE Transactions on Information Theory 72(10),
+7439–7454, October 2026,
+[doi:10.1109/TIT.2026.3716379](https://doi.org/10.1109/TIT.2026.3716379)
+(preprint [arXiv:2511.02542](https://arxiv.org/abs/2511.02542)).
+
+The joint paper turns the finite constructions into two infinite
+families:
+
+$$
+\ell_2(r,2)\le 51\cdot 2^{r/2-5}-1\quad(r=10,18,20\text{ and even }r\ge 28),\qquad
+\ell_2(r,3)\le 818\cdot 2^{(r-26)/3}-1\quad(r=26\text{ and }r=3t-1\ge 41).
+$$
+
+At radius 2 each member is $2^{r/2-5}$ shorter than the earlier
+family. At radius 3 the saving is 63 at redundancy 41 and
+$2^{(r-26)/3}$ from redundancy 44 on. The small members are the
+notebook certificates:
+
+$$
+\ell_2(10,2)\le 50,\ \ell_2(18,2)\le 815,\ \ell_2(20,2)\le 1631,\ \ell_2(28,2)\le 26111,\
+\ell_2(26,3)\le 817,\ \ell_2(41,3)\le 26175,\ \ell_2(44,3)\le 52351,\ \ell_2(47,3)\le 104703.
+$$
+
+Certificates: redundancy 41 in
+[`compute/q16`](problems/covering/compute/q16/CLAIM.md) (33-block merge of
+the 817-column seed), redundancy 44 in
+[`compute/q13`](problems/covering/compute/q13/CLAIM.md)
+([#185](https://github.com/wustep/maths/pull/185)), redundancy 47 in
+[`compute/q15`](problems/covering/compute/q15/CLAIM.md). At redundancy 36
+the radius-2 family gives 417791, shorter than the notebook's
+theorem-only 418271 above.
+
+The families give the asymptotic covering densities
+
+$$
+\bar\mu(2)\le \frac{2601}{2048}<1.27002,\qquad \bar\mu(3)\le 1.35935,
+$$
+
+and the same numbers bound the constants $f(2)$ and $f(3)$ in Green's
+Open Problem 40. The earlier values were about 1.3203 and 1.3643
+(arXiv:2511.02542).
+
 ## Problems
 
 | Folder | Status |
 | --- | --- |
 | [erdos-szekeres-seven](problems/erdos-szekeres-seven) | The published record is $33 \leq ES(7) \leq 113$. The classical 32-point witness is independently replayed in Python and C. A compact signotope encoding has a checked small DRAT proof; its full 33-vertex run returned `UNKNOWN` after 300 seconds, so no bound changed. |
-| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(18,3)\le 151,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26175,\ \ell_2(44,3)\le52351,\ \ell_2(47,3)\le104703$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. The redundancy-44 radius-3 construction improves Table 7.2's 52415 by 64, with an exhaustive $2^{26}$ seed-partition check and a columnwise lift identity. A 33-block merge of the same seed gives the redundancy-41 radius-3 bound 26175, improving Table 7.2's 26238 by 63, with the same seed-sweep and lift-identity checks. A 129-block refinement of the same seed (q15) gives the redundancy-47 bound 104703, improving Table 7.2's 104831 by 128. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. q10 prescribes an automorphism instead of perturbing the 50: order 7 is settled at $r=10$ for every fixed-space dimension, and with orders 11, 17, 31, 73, 127 also excluded, any 49-set has a $\{2,3,5\}$-group of automorphisms. At $r=11$ no invariant set below the record 79 exists for orders 11, 17 or 23. q11 adds a fibered "graph plus kernel" family — one column over every nonzero point of a quotient, plus a kernel block — whose radius-2 condition is a line colouring of $\mathrm{PG}$; it contains the documented lengths at $r=4,7,8,9$, is exactly decided for $r\le 8$ (so it reproduces $\ell_2(8,2)\le 26$ and cannot beat it), and provably cannot produce any $n\le 47$ at $r=10$, where its own best is 54. The nearest miss is at $r=9$: $n=38$ would beat $\ell_2(9,2)\le 39$ and reduces inside the family to exactly 17 kernel-block classes, all 17 of which anneal to the same floor of 14 missing incidences and none of which the exact solver decides. q14 exhausts two local neighborhoods of the 50-set (every two-delete/one-add and three-delete/two-add switch leaves holes); $n=49$ remains open. |
+| [covering](problems/covering) | $$\ell_2(10,2)\le 50,\ \ell_2(18,3)\le 151,\ \ell_2(21,3)\le 303,\ \ell_2(26,2)\le 13070,\ \ell_2(26,3)\le 817,\ \ell_2(31,4)\le 689,\ \ell_2(36,2)\le 418271,\ \ell_2(38,3)\le 13102,\ \ell_2(41,3)\le 26175,\ \ell_2(44,3)\le52351,\ \ell_2(47,3)\le104703$$; $\mathrm{QM}\ 22/24/28$ and $$p(H_{18})\le 17,\ p(H_{20})\le 14,\ p(H_{26})\le 19,\ p(H_{28})\le 28$$. The redundancy-44 radius-3 construction improves Table 7.2's 52415 by 64, with an exhaustive $2^{26}$ seed-partition check and a columnwise lift identity. A 33-block merge of the same seed gives the redundancy-41 radius-3 bound 26175, improving Table 7.2's 26238 by 63, with the same seed-sweep and lift-identity checks. A 129-block refinement of the same seed (q15) gives the redundancy-47 bound 104703, improving Table 7.2's 104831 by 128. $n=49$ still 7 holes; q9 recovers the 2003 Kaikkonen–Rosendahl 51-set, shows 51 and 50 are not lifts of the $r=8$ record in any of the 174251 quotients, and exhaustively rules out 271127 of the 279034 single-block shrinks of the 50-set with block width $\le 12$. q10 prescribes an automorphism instead of perturbing the 50: order 7 is settled at $r=10$ for every fixed-space dimension, and with orders 11, 17, 31, 73, 127 also excluded, any 49-set has a $\{2,3,5\}$-group of automorphisms. At $r=11$ no invariant set below the record 79 exists for orders 11, 17 or 23. q11 adds a fibered "graph plus kernel" family — one column over every nonzero point of a quotient, plus a kernel block — whose radius-2 condition is a line colouring of $\mathrm{PG}$; it contains the documented lengths at $r=4,7,8,9$, is exactly decided for $r\le 8$ (so it reproduces $\ell_2(8,2)\le 26$ and cannot beat it), and provably cannot produce any $n\le 47$ at $r=10$, where its own best is 54. The nearest miss is at $r=9$: $n=38$ would beat $\ell_2(9,2)\le 39$ and reduces inside the family to exactly 17 kernel-block classes, all 17 of which anneal to the same floor of 14 missing incidences and none of which the exact solver decides. q14 exhausts two local neighborhoods of the 50-set (every two-delete/one-add and three-delete/two-add switch leaves holes); $n=49$ remains open. These constructions are in the joint paper [arXiv:2609.16078](https://arxiv.org/abs/2609.16078) with Davydov, Marcugini, and Pambianco. |
 | [brocard](problems/brocard) | Four infinite prime-offset families excluded by Wilson's theorem: $n=p-2$ or $p-3$ for primes $p\equiv3,5\pmod 8$ (with $p>3$ in the second form). Conjecture open. |
 | [unique-sum](problems/unique-sum) | Independently replayed through $p=61$, matching OEIS A398173 at 59 and 61 (the OEIS table continues through 73). Checked 15-sets and completed exclusions of every smaller size give $m(59)=15$ and $m(61)=15$. No published bound improved. |
 | [three-in-line](problems/three-in-line) | Replayed Heule's rct4 142-set at $n=71$: $D(71)=142$. At the first current hole, $n=75$, an audited rct4 portfolio ended without a 150-set. |
