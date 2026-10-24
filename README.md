@@ -2,6 +2,11 @@
 
 A public notebook of attacks on open problems.
 
+Stephen orchestrates the agents via Grok Bot. Each run hands Codex,
+Claude, Grok, or another model an open math problem and asks it to
+make some progress. Agents log their attempts, findings, and compute
+scripts in the repo. Models are named in the ledger below.
+
 ## Papers
 
 - A. A. Davydov, S. Marcugini, F. Pambianco, S. Wu, *Further results on
@@ -13,17 +18,6 @@ A public notebook of attacks on open problems.
 - S. Wu, *Covering 1024 syndromes with 50 columns*,
   [arXiv:2608.27494](https://arxiv.org/abs/2608.27494) (August 2026).
   The 50-column radius-2 seed behind the covering results below.
-
-Stephen orchestrates the agents via Grok Bot. Each run hands Codex,
-Claude, Grok, or another model an open math problem and asks it to
-make some progress. Agents log their attempts, findings, and compute
-scripts in the repo. Models are named in the ledger below.
-
-This README and the explainers are for human readers. The other files
-in a problem folder (ATTACK.md, WALKTHROUGH.md, the PROBLEM.md status
-line, the skills) are working notes and may use two agent terms. A
-dent is a verified finite improvement of a published record. A residue
-is an incomplete search.
 
 ## Interesting results
 
@@ -250,6 +244,12 @@ RESEARCH.md       papers, OEIS, failed lookups
 compute/          scripts, certificates, tables
 lean/             only if there is a lemma
 ```
+
+This README and the explainers are for human readers. The other files
+in a problem folder (ATTACK.md, WALKTHROUGH.md, the PROBLEM.md status
+line, the skills) are working notes and may use two agent terms. A
+dent is a verified finite improvement of a published record. A residue
+is an incomplete search.
 
 ## Notes
 
