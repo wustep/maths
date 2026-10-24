@@ -2,6 +2,18 @@
 
 A public notebook of attacks on open problems.
 
+## Papers
+
+- A. A. Davydov, S. Marcugini, F. Pambianco, S. Wu, *Further results on
+  binary linear covering codes and saturating sets in projective spaces*,
+  [arXiv:2609.16078](https://arxiv.org/abs/2609.16078) (v2, October 2026).
+  New upper bounds on the binary covering length function at radii 2 and 3,
+  built from this notebook's covering certificates. Submitted to IEEE
+  Transactions on Information Theory.
+- S. Wu, *Covering 1024 syndromes with 50 columns*,
+  [arXiv:2608.27494](https://arxiv.org/abs/2608.27494) (August 2026).
+  The 50-column radius-2 seed behind the covering results below.
+
 Stephen orchestrates the agents via Grok Bot. Each run hands Codex,
 Claude, Grok, or another model an open math problem and asks it to
 make some progress. Agents log their attempts, findings, and compute
@@ -136,28 +148,11 @@ Standalone writeup in [problems/covering/result](problems/covering/result).
 Explainers: [HTML](problems/covering/explainer.html),
 [PDF](problems/covering/explainer.pdf).
 
-#### Papers
+#### In the joint paper
 
-The 50-column seed and the radius-3 lifts above now appear in a joint
-paper with the authors of the table they improve:
-
-- A. A. Davydov, S. Marcugini, F. Pambianco, S. Wu, *Further results on
-  binary linear covering codes and saturating sets in projective spaces*,
-  [arXiv:2609.16078](https://arxiv.org/abs/2609.16078) (v2, October 2026).
-  Submitted to IEEE Transactions on Information Theory.
-- S. Wu, *Covering 1024 syndromes with 50 columns*,
-  [arXiv:2608.27494](https://arxiv.org/abs/2608.27494) (August 2026).
-  The writeup of the 50-column seed.
-
-The tables cited above (Tables 5.1 and 7.2) come from the preprint of
-A. A. Davydov, S. Marcugini, F. Pambianco, *New upper bounds for binary
-linear covering codes*, IEEE Transactions on Information Theory 72(10),
-7439–7454, October 2026,
-[doi:10.1109/TIT.2026.3716379](https://doi.org/10.1109/TIT.2026.3716379)
-(preprint [arXiv:2511.02542](https://arxiv.org/abs/2511.02542)).
-
-The joint paper turns the finite constructions into two infinite
-families:
+The joint paper [arXiv:2609.16078](https://arxiv.org/abs/2609.16078)
+(see Papers at the top) turns these finite constructions into two
+infinite families:
 
 $$
 \ell_2(r,2)\le 51\cdot 2^{r/2-5}-1\quad(r=10,18,20\text{ and even }r\ge 28),\qquad
@@ -190,8 +185,13 @@ $$
 $$
 
 and the same numbers bound the constants $f(2)$ and $f(3)$ in Green's
-Open Problem 40. The earlier values were about 1.3203 and 1.3643
-(arXiv:2511.02542).
+Open Problem 40. The earlier values were about 1.3203 and 1.3643.
+
+Tables 5.1 and 7.2 cited above come from A. A. Davydov, S. Marcugini,
+F. Pambianco, *New upper bounds for binary linear covering codes*,
+IEEE Transactions on Information Theory 72(10), 7439–7454, October 2026,
+[doi:10.1109/TIT.2026.3716379](https://doi.org/10.1109/TIT.2026.3716379)
+(preprint [arXiv:2511.02542](https://arxiv.org/abs/2511.02542)).
 
 ## Problems
 
