@@ -1,0 +1,18 @@
+{
+  "format": "q2-n49-guided-checkpoint-v1",
+  "status": "search residue",
+  "redundancy": 10,
+  "length": 49,
+  "best_uncovered": 7,
+  "rank": 10,
+  "elapsed_seconds": 2400.004156,
+  "worker": 1,
+  "mode": 1,
+  "worker_seed": "cb69126a70ef271d",
+  "iteration": 9,
+  "columns_decimal": [2, 4, 10, 16, 25, 32, 64, 65, 128, 169, 172, 206, 223, 240, 241, 256, 261, 268, 317, 413, 424, 438, 446, 459, 474, 512, 519, 520, 571, 594, 595, 667, 682, 687, 698, 709, 724, 738, 739, 771, 782, 806, 902, 939, 948, 951, 956, 960, 977],
+  "uncovered_syndromes_decimal": [24, 161, 184, 429, 437, 783, 790],
+  "representation_multiplicities": {"0": 7, "1": 933, "2": 9, "3": 40, "4": 20, "5": 15},
+  "source_checkpoint": "compute/q6a_kr51_minus2_seed.json",
+  "warning": "A zero is only a candidate until independently verified."
+}

@@ -432,3 +432,16 @@ group=compute/q4/groups/cyc_L21_t3_3_1__3_1__7_1.grp generators=1 orbits=95 clas
 orbit sizes: 21^40 7^8 3^40 1^7
 max_single_classes=4 max_pair_classes=6 target_n=49
 RESULT group=compute/q4/groups/cyc_L21_t3_3_1__3_1__7_1.grp n=49 witnesses=0 nodes=3540840547 (exhausted: no invariant covering)
+=== q6a certified continuation 2026-08-19
+RESULT group=compute/q4/groups/cyc_L21_t4_21_1.grp n=49 witnesses=0 nodes=10633 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L3_t0_3_1__3_1__3_1__3_1__3_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+RESULT group=compute/q4/groups/cyc_L5_t2_5_1__5_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+RESULT group=compute/q4/groups/cyc_L9_t0_3_1__3_1__9_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+RESULT group=compute/q4/groups/cyc_L9_t2_3_1__9_1.grp n=49 witnesses=0 nodes=388577103 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L9_t4_9_1.grp n=49 witnesses=0 nodes=1415451027 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L35_t0_5_1__7_1__7_1.grp n=49 witnesses=0 nodes=256 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L35_t0_5_1__7_1__7_3.grp n=49 witnesses=0 nodes=264 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L35_t3_5_1__7_1.grp n=49 witnesses=0 nodes=4598175 (exhausted: no invariant covering)
+RESULT group=compute/q4/groups/cyc_L45_t0_5_1__9_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+RESULT group=compute/q4/groups/cyc_L45_t0_9_1__15_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)
+RESULT group=compute/q4/groups/cyc_L63_t1_7_1__9_1.grp n=49 witnesses=0 nodes=0 (budget infeasible: no orbit multiset sums to 49)

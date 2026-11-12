@@ -45,7 +45,9 @@ typedef struct {
     int missing;
     int singletons;
     long weighted_missing;
+    long collisions;
     int weights[SPACE];
+    int xor_sum;
 } State;
 
 typedef struct {
@@ -65,6 +67,7 @@ static double time_limit = 60.0;
 static uint64_t master_seed = UINT64_C(0x243F6A8885A308D3);
 static const char *input_path = "compute/H_r10_n50.txt";
 static const char *output_path = "compute/q2_search_checkpoint.json";
+static int forbid_zero_xor = 0;
 static struct timespec start_clock;
 static volatile sig_atomic_t stop_requested = 0;
 static pthread_mutex_t best_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -232,6 +235,8 @@ static void change_count(State *state, int syndrome, int delta) {
     } else if (before == 2 && after == 1) {
         ++state->singletons;
     }
+    state->collisions +=
+        (long)after * (after - 1) / 2 - (long)before * (before - 1) / 2;
     state->counts[syndrome] = after;
 }
 
@@ -246,6 +251,7 @@ static void initialize_state(State *state, const int *columns) {
     for (int index = 0; index < N; ++index) {
         int column = state->columns[index];
         state->member[column] = 1;
+        state->xor_sum ^= column;
         ++state->counts[column];
         for (int previous = 0; previous < index; ++previous) {
             ++state->counts[column ^ state->columns[previous]];
@@ -254,6 +260,7 @@ static void initialize_state(State *state, const int *columns) {
     state->missing = 0;
     state->singletons = 0;
     state->weighted_missing = 0;
+    state->collisions = 0;
     for (int syndrome = 0; syndrome < SPACE; ++syndrome) {
         if (state->counts[syndrome] == 0) {
             zero_add(state, syndrome);
@@ -261,6 +268,8 @@ static void initialize_state(State *state, const int *columns) {
         } else if (state->counts[syndrome] == 1) {
             ++state->singletons;
         }
+        state->collisions +=
+            (long)state->counts[syndrome] * (state->counts[syndrome] - 1) / 2;
     }
 }
 
@@ -290,6 +299,7 @@ static void apply_swap(State *state, int slot, int added) {
     state->member[removed] = 0;
     state->member[added] = 1;
     state->columns[slot] = added;
+    state->xor_sum ^= removed ^ added;
 }
 
 static void undo_swap(State *state, int slot, int removed) {
@@ -299,6 +309,7 @@ static void undo_swap(State *state, int slot, int removed) {
     state->member[added] = 0;
     state->member[removed] = 1;
     state->columns[slot] = removed;
+    state->xor_sum ^= added ^ removed;
 }
 
 static long objective(const State *state, int mode) {
@@ -314,8 +325,15 @@ static long objective(const State *state, int mode) {
         case 3:
             return 96L * state->missing + state->singletons;
         case 4:
-        default:
             return 8L * state->missing + state->singletons;
+        case 7:
+            return state->collisions;
+        case 8:
+            return 8L * state->missing + state->collisions;
+        case 9:
+            return 32L * state->missing + state->collisions;
+        default:
+            return state->missing;
     }
 }
 
@@ -500,6 +518,10 @@ static void kick_state(State *state, uint64_t *rng, int swaps) {
     for (int step = 0; step < swaps; ++step) {
         int slot = (int)(rng_next(rng) % N);
         int proposal = random_available(state, rng);
+        while (forbid_zero_xor &&
+               (state->xor_sum ^ state->columns[slot] ^ proposal) == 0) {
+            proposal = random_available(state, rng);
+        }
         apply_swap(state, slot, proposal);
     }
 }
@@ -592,6 +614,10 @@ static void *search_worker(void *argument) {
             }
             slot = (int)(rng_next(&rng) % N);
             removed = state.columns[slot];
+            while (forbid_zero_xor &&
+                   (state.xor_sum ^ removed ^ proposal) == 0) {
+                proposal = random_available(&state, &rng);
+            }
             apply_swap(&state, slot, proposal);
             trial_objective = objective(&state, worker->mode);
             if (selected_slot < 0 || trial_objective < selected_objective ||
@@ -703,7 +729,7 @@ static uint64_t parse_seed(const char *text) {
 static void usage(const char *program) {
     fprintf(stderr,
             "usage: %s [--seconds N] [--threads N] [--seed N] "
-            "[--input PATH] [--output PATH]\n",
+            "[--input PATH] [--output PATH] [--forbid-zero-xor]\n",
             program);
 }
 
@@ -722,6 +748,8 @@ int main(int argc, char **argv) {
             input_path = argv[++index];
         } else if (strcmp(argv[index], "--output") == 0 && index + 1 < argc) {
             output_path = argv[++index];
+        } else if (strcmp(argv[index], "--forbid-zero-xor") == 0) {
+            forbid_zero_xor = 1;
         } else {
             usage(argv[0]);
             return 2;
@@ -742,13 +770,15 @@ int main(int argc, char **argv) {
         return 2;
     }
     fprintf(stdout,
-            "q2 n=49 search: threads=%d seconds=%.3f master_seed=0x%016llx\n",
-            thread_count, time_limit, (unsigned long long)master_seed);
+            "q2 n=49 search: threads=%d seconds=%.3f master_seed=0x%016llx "
+            "forbid_zero_xor=%d\n",
+            thread_count, time_limit, (unsigned long long)master_seed,
+            forbid_zero_xor);
     fflush(stdout);
     for (int index = 0; index < thread_count; ++index) {
         uint64_t seed_state = master_seed + (uint64_t)index;
         workers[index].worker_id = index;
-        workers[index].mode = index % 7;
+        workers[index].mode = forbid_zero_xor ? 7 + index % 3 : index % 7;
         workers[index].seed = splitmix64(&seed_state);
         workers[index].best_missing = SPACE;
         if (pthread_create(&threads[index], NULL, search_worker, &workers[index]) != 0) {

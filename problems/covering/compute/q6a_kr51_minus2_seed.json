@@ -1,0 +1,9 @@
+{
+  "format": "q6a-kr51-minus-two-seed-v1",
+  "status": "search seed",
+  "redundancy": 10,
+  "length": 49,
+  "source": "result/data/kr_r10_n51.txt with columns 40 and 47 (zero-based) deleted",
+  "best_uncovered": 23,
+  "columns_decimal": [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 438, 806, 206, 902, 446, 956, 474, 10, 240, 421, 977, 771, 519, 667, 738, 790, 185, 317, 169, 424, 960, 520, 939, 65, 176, 595, 709, 739, 687, 594, 948, 223, 285, 241, 724, 459, 413, 571, 172]
+}

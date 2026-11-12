@@ -1,0 +1,20 @@
+{
+  "format": "q2-n49-search-checkpoint-v1",
+  "status": "search residue",
+  "redundancy": 10,
+  "length": 49,
+  "best_uncovered": 7,
+  "rank": 10,
+  "elapsed_seconds": 60.000333,
+  "worker": 3,
+  "mode": 3,
+  "worker_seed": "6136cc00ecc652ce",
+  "iteration": 2102771,
+  "columns_decimal": [1, 2, 15, 32, 65, 68, 86, 104, 124, 128, 166, 183, 190, 205, 212, 222, 234, 247, 256, 320, 341, 357, 361, 366, 373, 391, 428, 438, 502, 527, 528, 576, 584, 604, 608, 636, 717, 754, 771, 789, 817, 821, 855, 878, 897, 927, 940, 979, 981],
+  "columns_hex": ["001", "002", "00F", "020", "041", "044", "056", "068", "07C", "080", "0A6", "0B7", "0BE", "0CD", "0D4", "0DE", "0EA", "0F7", "100", "140", "155", "165", "169", "16E", "175", "187", "1AC", "1B6", "1F6", "20F", "210", "240", "248", "25C", "260", "27C", "2CD", "2F2", "303", "315", "331", "335", "357", "36E", "381", "39F", "3AC", "3D3", "3D5"],
+  "uncovered_syndromes_decimal": [116, 309, 407, 628, 726, 951, 963],
+  "uncovered_syndromes_hex": ["074", "135", "197", "274", "2D6", "3B7", "3C3"],
+  "representation_multiplicities": {"0": 7, "1": 933, "2": 9, "3": 40, "4": 20, "5": 15},
+  "source_matrix": "compute/H_r10_n50.txt",
+  "warning": "A zero residue is only a candidate until independently verified."
+}

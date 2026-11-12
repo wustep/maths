@@ -1,0 +1,8 @@
+q2 n=49 search: threads=4 seconds=60.000 master_seed=0x7777777777777777
+best uncovered=9 fragile=886 worker=1 mode=1 iteration=0 elapsed=0.000
+best uncovered=7 fragile=933 worker=3 mode=3 iteration=922532 elapsed=2.993
+finished: elapsed=60.001 best_uncovered=7
+worker=0 mode=0 iterations=33481615 accepted=1467030 best=9 fragile=886
+worker=1 mode=1 iterations=15283283 accepted=670112 best=9 fragile=886
+worker=2 mode=2 iterations=20163609 accepted=849959 best=9 fragile=886
+worker=3 mode=3 iterations=14452923 accepted=138326 best=7 fragile=933

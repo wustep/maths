@@ -67,6 +67,10 @@ static double time_limit = 60.0;
 static uint64_t master_seed = UINT64_C(0xA4093822299F31D0);
 static const char *input_path = "compute/q2_direct_20260819_a.json";
 static const char *output_path = "compute/q2_guided_checkpoint.json";
+static int preserve_hole_span_fibers = 0;
+static unsigned char hole_span[V];
+static int hole_span_points[V];
+static int hole_span_size = 0;
 static struct timespec start_clock;
 static volatile sig_atomic_t stop_requested = 0;
 static pthread_mutex_t best_mutex = PTHREAD_MUTEX_INITIALIZER;
@@ -316,6 +320,27 @@ static int independently_missing(const int *columns, int *holes, int *histogram)
     return missing;
 }
 
+static void build_hole_span(void) {
+    int holes[V];
+    int missing = independently_missing(input_columns, holes, NULL);
+    memset(hole_span, 0, sizeof(hole_span));
+    hole_span[0] = 1;
+    hole_span_points[0] = 0;
+    hole_span_size = 1;
+    for (int index = 0; index < missing; ++index) {
+        int before = hole_span_size;
+        for (int position = 0; position < before; ++position) {
+            int value = hole_span_points[position] ^ holes[index];
+            if (!hole_span[value]) {
+                hole_span[value] = 1;
+                hole_span_points[hole_span_size++] = value;
+            }
+        }
+    }
+    printf("preserving quotient fibers modulo initial hole span of size %d\n",
+           hole_span_size);
+}
+
 static void write_checkpoint_locked(void) {
     char temporary[4096];
     int columns[N];
@@ -502,6 +527,10 @@ static Move best_guided_move(State *state, int target, int mode,
         }
         for (int slot = 0; slot < N; ++slot) {
             Move candidate;
+            if (preserve_hole_span_fibers &&
+                !hole_span[added ^ state->columns[slot]]) {
+                continue;
+            }
             candidate.added = added;
             candidate.deleted_slot = slot;
             candidate.resulting_missing = state->missing + damage_missing[slot];
@@ -554,7 +583,17 @@ static int random_available(const State *state, uint64_t *rng) {
 static void kick(State *state, uint64_t *rng, int swaps) {
     for (int step = 0; step < swaps; ++step) {
         int slot = (int)(rng_next(rng) % N);
-        int added = random_available(state, rng);
+        int added;
+        if (preserve_hole_span_fibers) {
+            do {
+                int delta = hole_span_points[
+                    rng_next(rng) % (uint64_t)hole_span_size
+                ];
+                added = state->columns[slot] ^ delta;
+            } while (added <= 0 || state->member[added]);
+        } else {
+            added = random_available(state, rng);
+        }
         apply_swap(state, slot, added);
     }
 }
@@ -676,7 +715,8 @@ static uint64_t parse_seed(const char *text) {
 static void usage(const char *program) {
     fprintf(stderr,
             "usage: %s [--seconds N] [--threads N] [--seed N] "
-            "[--input CHECKPOINT.json] [--output PATH]\n", program);
+            "[--input CHECKPOINT.json] [--output PATH] "
+            "[--preserve-hole-span-fibers]\n", program);
 }
 
 int main(int argc, char **argv) {
@@ -694,6 +734,8 @@ int main(int argc, char **argv) {
             input_path = argv[++index];
         } else if (strcmp(argv[index], "--output") == 0 && index + 1 < argc) {
             output_path = argv[++index];
+        } else if (strcmp(argv[index], "--preserve-hole-span-fibers") == 0) {
+            preserve_hole_span_fibers = 1;
         } else {
             usage(argv[0]);
             return 2;
@@ -701,6 +743,9 @@ int main(int argc, char **argv) {
     }
     if (!read_checkpoint(input_path)) {
         return 2;
+    }
+    if (preserve_hole_span_fibers) {
+        build_hole_span();
     }
     signal(SIGINT, handle_signal);
     signal(SIGTERM, handle_signal);
