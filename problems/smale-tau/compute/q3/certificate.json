@@ -1,0 +1,56 @@
+{
+  "bound": 50000,
+  "exact_table": true,
+  "tau_histogram": {
+    "0": 1,
+    "1": 1,
+    "2": 2,
+    "3": 5,
+    "4": 17,
+    "5": 75,
+    "6": 418,
+    "7": 2653,
+    "8": 14023,
+    "9": 29026,
+    "10": 3779
+  },
+  "nodes_per_depth": [
+    1,
+    2,
+    8,
+    59,
+    663,
+    10609,
+    225219,
+    6057298,
+    199290037
+  ],
+  "reached_cumulative": [
+    1,
+    2,
+    4,
+    9,
+    26,
+    102,
+    562,
+    4363,
+    46154,
+    652227
+  ],
+  "prime_count": 5133,
+  "prime_counterexamples": 69,
+  "prime_counterexample_cost_pairs": {
+    "7,8": 2,
+    "8,9": 37,
+    "9,10": 30
+  },
+  "published_counterexamples_below_5000": [
+    3359,
+    3623,
+    4909,
+    4943
+  ],
+  "explicit_witnesses": 3887,
+  "table_sha256": "fa448421cb5e021db1f9dc93d4ec73eb030c9dbb6f6c42ec4a4bd927ab1fed84",
+  "witnesses_sha256": "60c319aa8d757572e341b77a47cc786b1e0205b096c91a975aa872f8e81305c2"
+}
