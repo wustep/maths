@@ -1,0 +1,15 @@
+{
+  "p": 67,
+  "bound": 15,
+  "initial_ap": 5,
+  "forbid_ap": 0,
+  "root_mask": null,
+  "status": "UNKNOWN",
+  "timed_out": true,
+  "wall_limit_seconds": 1800.0,
+  "node_limit": 20000000,
+  "seconds": 1800.1094086850062,
+  "source": "cover_search.c",
+  "source_sha256": "8074dc552e57df899177ad25b3dce0e372a339d5b2f3c0deb4e3c53b3dd854ab",
+  "binary_sha256": "a74e2a5ee64c07c48745081765496d1fb2c874796413638da8040837f5892153"
+}

@@ -1,0 +1,659 @@
+{
+  "p": 67,
+  "bound": 15,
+  "initial_ap": 3,
+  "forbid_ap": 4,
+  "center": 1,
+  "source_sha256": "1fcf20bf92e761e97224439857c4acd087cab7fe48da054160f009835eb7e880",
+  "binary_sha256": "2af2e5f459fe203908fe1f26b63552835243a8590b24a4eafbbe97e2a41e63eb",
+  "partition_source_sha256": "44f2002d4a2f8f3c868e6affbc3b32aa192ab1337d323c550c2865da3ecdf1a6",
+  "status": "UNKNOWN",
+  "conditional": true,
+  "cases": [
+    {
+      "pair": [
+        0,
+        2
+      ],
+      "root": [
+        0,
+        1,
+        2,
+        66
+      ],
+      "root_mask": "0x40000000000000007",
+      "forbidden_progression": true
+    },
+    {
+      "pair": [
+        3,
+        66
+      ],
+      "root": [
+        0,
+        1,
+        3,
+        66
+      ],
+      "root_mask": "0x4000000000000000b",
+      "representative": 1
+    },
+    {
+      "pair": [
+        4,
+        65
+      ],
+      "root": [
+        0,
+        1,
+        4,
+        65,
+        66
+      ],
+      "root_mask": "0x60000000000000013",
+      "forbidden_progression": true
+    },
+    {
+      "pair": [
+        5,
+        64
+      ],
+      "root": [
+        0,
+        1,
+        5,
+        64,
+        66
+      ],
+      "root_mask": "0x50000000000000023",
+      "representative": 3,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x50000000000000023",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 497443,
+        "memo_hits": 777,
+        "cover_prunes": 166987,
+        "ap_prunes": 314579,
+        "support_prunes": 3,
+        "seconds": 398.459072,
+        "max_rss_kib": 60844,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        6,
+        63
+      ],
+      "root": [
+        0,
+        1,
+        6,
+        63,
+        66
+      ],
+      "root_mask": "0x48000000000000043",
+      "representative": 4,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x48000000000000043",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 477181,
+        "memo_hits": 411,
+        "cover_prunes": 163818,
+        "ap_prunes": 298462,
+        "support_prunes": 3,
+        "seconds": 435.244531,
+        "max_rss_kib": 58628,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        7,
+        62
+      ],
+      "root": [
+        0,
+        1,
+        7,
+        62,
+        66
+      ],
+      "root_mask": "0x44000000000000083",
+      "representative": 5,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x44000000000000083",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 434446,
+        "memo_hits": 376,
+        "cover_prunes": 141418,
+        "ap_prunes": 279476,
+        "support_prunes": 0,
+        "seconds": 387.115549,
+        "max_rss_kib": 54084,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        8,
+        61
+      ],
+      "root": [
+        0,
+        1,
+        8,
+        61,
+        66
+      ],
+      "root_mask": "0x42000000000000103",
+      "representative": 6,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x42000000000000103",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 474112,
+        "memo_hits": 610,
+        "cover_prunes": 159222,
+        "ap_prunes": 299890,
+        "support_prunes": 0,
+        "seconds": 409.077067,
+        "max_rss_kib": 58132,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        9,
+        60
+      ],
+      "root": [
+        0,
+        1,
+        9,
+        60,
+        66
+      ],
+      "root_mask": "0x41000000000000203",
+      "representative": 7,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x41000000000000203",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 472000,
+        "memo_hits": 509,
+        "cover_prunes": 159458,
+        "ap_prunes": 297720,
+        "support_prunes": 1,
+        "seconds": 445.989945,
+        "max_rss_kib": 57768,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        10,
+        59
+      ],
+      "root": [
+        0,
+        1,
+        10,
+        59,
+        66
+      ],
+      "root_mask": "0x40800000000000403",
+      "representative": 8,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x40800000000000403",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 476026,
+        "memo_hits": 552,
+        "cover_prunes": 159656,
+        "ap_prunes": 301376,
+        "support_prunes": 0,
+        "seconds": 410.657677,
+        "max_rss_kib": 58432,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        11,
+        58
+      ],
+      "root": [
+        0,
+        1,
+        11,
+        58,
+        66
+      ],
+      "root_mask": "0x40400000000000803",
+      "representative": 9,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x40400000000000803",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 432697,
+        "memo_hits": 390,
+        "cover_prunes": 143561,
+        "ap_prunes": 275620,
+        "support_prunes": 1,
+        "seconds": 368.091213,
+        "max_rss_kib": 54228,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        12,
+        57
+      ],
+      "root": [
+        0,
+        1,
+        12,
+        57,
+        66
+      ],
+      "root_mask": "0x40200000000001003",
+      "representative": 10,
+      "result": {
+        "p": 67,
+        "bound": 15,
+        "initial_ap": 3,
+        "forbid_ap": 4,
+        "root_mask": "0x40200000000001003",
+        "status": "UNSAT",
+        "node_limit": 20000000,
+        "nodes": 471769,
+        "memo_hits": 687,
+        "cover_prunes": 159939,
+        "ap_prunes": 296844,
+        "support_prunes": 2,
+        "seconds": 469.040827,
+        "max_rss_kib": 57764,
+        "witness": [],
+        "timed_out": false,
+        "wall_limit_seconds": 3600.0
+      }
+    },
+    {
+      "pair": [
+        13,
+        56
+      ],
+      "root": [
+        0,
+        1,
+        13,
+        56,
+        66
+      ],
+      "root_mask": "0x40100000000002003",
+      "representative": 11
+    },
+    {
+      "pair": [
+        14,
+        55
+      ],
+      "root": [
+        0,
+        1,
+        14,
+        55,
+        66
+      ],
+      "root_mask": "0x40080000000004003",
+      "representative": 12
+    },
+    {
+      "pair": [
+        15,
+        54
+      ],
+      "root": [
+        0,
+        1,
+        15,
+        54,
+        66
+      ],
+      "root_mask": "0x40040000000008003",
+      "representative": 13
+    },
+    {
+      "pair": [
+        16,
+        53
+      ],
+      "root": [
+        0,
+        1,
+        16,
+        53,
+        66
+      ],
+      "root_mask": "0x40020000000010003",
+      "representative": 14
+    },
+    {
+      "pair": [
+        17,
+        52
+      ],
+      "root": [
+        0,
+        1,
+        17,
+        52,
+        66
+      ],
+      "root_mask": "0x40010000000020003",
+      "representative": 15
+    },
+    {
+      "pair": [
+        18,
+        51
+      ],
+      "root": [
+        0,
+        1,
+        18,
+        51,
+        66
+      ],
+      "root_mask": "0x40008000000040003",
+      "representative": 16
+    },
+    {
+      "pair": [
+        19,
+        50
+      ],
+      "root": [
+        0,
+        1,
+        19,
+        50,
+        66
+      ],
+      "root_mask": "0x40004000000080003",
+      "representative": 17
+    },
+    {
+      "pair": [
+        20,
+        49
+      ],
+      "root": [
+        0,
+        1,
+        20,
+        49,
+        66
+      ],
+      "root_mask": "0x40002000000100003",
+      "representative": 18
+    },
+    {
+      "pair": [
+        21,
+        48
+      ],
+      "root": [
+        0,
+        1,
+        21,
+        48,
+        66
+      ],
+      "root_mask": "0x40001000000200003",
+      "representative": 19
+    },
+    {
+      "pair": [
+        22,
+        47
+      ],
+      "root": [
+        0,
+        1,
+        22,
+        47,
+        66
+      ],
+      "root_mask": "0x40000800000400003",
+      "representative": 20
+    },
+    {
+      "pair": [
+        23,
+        46
+      ],
+      "root": [
+        0,
+        1,
+        23,
+        46,
+        66
+      ],
+      "root_mask": "0x40000400000800003",
+      "representative": 21
+    },
+    {
+      "pair": [
+        24,
+        45
+      ],
+      "root": [
+        0,
+        1,
+        24,
+        45,
+        66
+      ],
+      "root_mask": "0x40000200001000003",
+      "representative": 22
+    },
+    {
+      "pair": [
+        25,
+        44
+      ],
+      "root": [
+        0,
+        1,
+        25,
+        44,
+        66
+      ],
+      "root_mask": "0x40000100002000003",
+      "representative": 23
+    },
+    {
+      "pair": [
+        26,
+        43
+      ],
+      "root": [
+        0,
+        1,
+        26,
+        43,
+        66
+      ],
+      "root_mask": "0x40000080004000003",
+      "representative": 24
+    },
+    {
+      "pair": [
+        27,
+        42
+      ],
+      "root": [
+        0,
+        1,
+        27,
+        42,
+        66
+      ],
+      "root_mask": "0x40000040008000003",
+      "representative": 25
+    },
+    {
+      "pair": [
+        28,
+        41
+      ],
+      "root": [
+        0,
+        1,
+        28,
+        41,
+        66
+      ],
+      "root_mask": "0x40000020010000003",
+      "representative": 26
+    },
+    {
+      "pair": [
+        29,
+        40
+      ],
+      "root": [
+        0,
+        1,
+        29,
+        40,
+        66
+      ],
+      "root_mask": "0x40000010020000003",
+      "representative": 27
+    },
+    {
+      "pair": [
+        30,
+        39
+      ],
+      "root": [
+        0,
+        1,
+        30,
+        39,
+        66
+      ],
+      "root_mask": "0x40000008040000003",
+      "representative": 28
+    },
+    {
+      "pair": [
+        31,
+        38
+      ],
+      "root": [
+        0,
+        1,
+        31,
+        38,
+        66
+      ],
+      "root_mask": "0x40000004080000003",
+      "representative": 29
+    },
+    {
+      "pair": [
+        32,
+        37
+      ],
+      "root": [
+        0,
+        1,
+        32,
+        37,
+        66
+      ],
+      "root_mask": "0x40000002100000003",
+      "representative": 30
+    },
+    {
+      "pair": [
+        33,
+        36
+      ],
+      "root": [
+        0,
+        1,
+        33,
+        36,
+        66
+      ],
+      "root_mask": "0x40000001200000003",
+      "representative": 21
+    },
+    {
+      "pair": [
+        34,
+        35
+      ],
+      "root": [
+        0,
+        1,
+        34,
+        35,
+        66
+      ],
+      "root_mask": "0x40000000c00000003",
+      "forbidden_progression": true
+    }
+  ]
+}
