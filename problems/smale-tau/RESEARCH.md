@@ -119,3 +119,37 @@ snippets are leads, not citations.
   the permanent. Not opened.
 - Blum–Cucker–Shub–Smale, *Complexity and Real Computation* (1998): not
   available here; cited through Smale's essay and Bürgisser.
+
+## 2026-09-25 — q3: table extension and a new published comparison
+
+- Reopened [Markström's abstract](https://arxiv.org/abs/1306.3091) and
+  [v4 full text](https://arxiv.org/html/1306.3091v4), fetched with
+  `scripts/arxiv_fetch.py`. Figure 1 ends at nine steps: 652,227 reached
+  positive integers and initial interval 10,266. This is the census
+  control, not a new record to claim from merely printing a longer table.
+- Reopened [OEIS A173419](https://oeis.org/A173419) and
+  [Mathar's example list](https://oeis.org/A173419/a173419.txt).
+  The entry links Patanè's paper and reports four prime counterexamples
+  below 5,000. The printed b-file still ends at 1,800.
+- [A141414 JSON record](https://oeis.org/search?q=id%3AA141414&fmt=json),
+  retrieved with the repository helper and then curl: later terms include
+  74,587, 1,015,453, 12,550,793. The last two are attributed to Gil Dogon
+  in 2013. [A140361](https://oeis.org/A140361) makes 1 and 2 free, so its
+  cost is one less than our cost for integers greater than 1. Thus 74,587
+  is the listed first cost-11 integer. The ordinary A141414 page failed
+  in the browser; a first direct API request returned HTTP 403. The
+  repository helper's user agent succeeded. These entries rule out
+  claiming a new initial-interval record at 50,000.
+- Patanè, [*Counterexamples to a conjecture of Kamenetsky on OEIS
+  A173419*, arXiv:2609.28512v1](https://arxiv.org/abs/2609.28512v1),
+  submitted September 21. Fetched and read the
+  [full PDF](https://arxiv.org/pdf/2609.28512v1); HTML was unavailable.
+  Theorem 1 and Table 1 classify exactly four primes below 5,000 with
+  $\tau(p)<\tau(p-1)$. Its depth-eight exclusions and eighteen
+  depth-nine values give concrete replay controls. q3 extends this
+  classification using the integer-table handle.
+- [HAL landing page](https://hal.science/hal-05756029) failed in the
+  browser; [HAL document request](https://hal.science/hal-05756029/document)
+  was superseded by the arXiv PDF. The browser could not open the
+  [paper's code link](https://github.com/patan3saro/A173419-counterexample).
+  No claim here depends on running that repository.
