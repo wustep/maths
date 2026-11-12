@@ -1,0 +1,31 @@
+{
+  "status": "UNKNOWN",
+  "p": 79,
+  "cardinality": 17,
+  "seed": 20260926,
+  "requested_restarts": 2000,
+  "steps_per_restart": 200000,
+  "proposals": 400000000,
+  "best_unique": 1,
+  "sumset_size": 55,
+  "cpu_seconds": 74.635607,
+  "witness": [
+    4,
+    7,
+    9,
+    14,
+    18,
+    23,
+    24,
+    35,
+    40,
+    46,
+    51,
+    55,
+    56,
+    60,
+    69,
+    72,
+    77
+  ]
+}

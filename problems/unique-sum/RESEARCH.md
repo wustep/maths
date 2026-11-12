@@ -108,3 +108,37 @@
   `compute/q6/published_oeis.json` stores that snapshot. The example is
   a lead until the local ordered-count check; that check passed.
 
+## 2026-09-26 — q7 record check
+
+- Opened the [Bedert abstract](https://arxiv.org/abs/2303.15134) and the
+  [HTML of v2](https://arxiv.org/html/2303.15134v2). Definition 1 is
+  unordered unique-sum; section 2 states that a unique sum is exactly
+  $1\le r_A(g)\le 2$. Theorems 3 and 5 are the $\omega(p)\log p$ lower
+  bound and the $(\log p)^2$ upper bound. No finite table. Version still
+  v2 (19 Sep 2023).
+- Opened the [Cao–Yuan abstract](https://arxiv.org/abs/2608.06728) and
+  the [HTML of v1](https://arxiv.org/html/2608.06728v1). Theorem 1.1 is
+  $m(p)\gg\log p\log\log p$. Theorem 1.3 is the ternary symmetric-square
+  upper bound with leading constant $1/(2(\log_2 3)^2)=0.1990361769\ldots$.
+  Unsubscripted logs are natural. The paper does not decide $m(67)$,
+  $m(71)$, $m(73)$, or $m(79)$. Version still v1 (7 Aug 2026).
+- `scripts/arxiv_fetch.py` on both ids and `scripts/oeis_lookup.py A398173`.
+  The [OEIS page](https://oeis.org/A398173) and the
+  [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  still have 20 terms through 73:
+  `3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16`,
+  revision 48 dated 2026-09-19. Examples:
+  $m(67)=16$ as $\{0,1,2,3,4,5,6,7,11,14,15,25,26,50,53,54\}$;
+  $m(71)=16$ as $\{0,1,2,3,4,5,7,8,12,31,45,46,57,59,61,64\}$;
+  $m(73)=16$ as $\{0,1,2,3,4,5,8,9,13,21,23,25,29,44,45,65\}$.
+  `compute/q7/published_oeis.json` stores that snapshot. Direct
+  ordered-count checks of the three 16-sets passed; they are leads for
+  the lower half until the named-cover search finishes.
+- Opened [unique-sum-free-cert](https://github.com/pawelkwaczynski/unique-sum-free-cert)
+  and its [witnesses.json](https://raw.githubusercontent.com/pawelkwaczynski/unique-sum-free-cert/main/witnesses/witnesses.json).
+  The README claims $m(67)=m(71)=m(73)=16$ with hash-bound SAT ledgers
+  for every $k$ below those values, finished on LUMI-C. That is a
+  published-adjacent lead, not a proof object replayed in q7. The
+  notebook's lower half is the 128-bit named-cover search. The first
+  prime absent from both OEIS and that README is 79.
+

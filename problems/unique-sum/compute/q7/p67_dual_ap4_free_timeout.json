@@ -1,0 +1,23 @@
+{
+  "p": 67,
+  "bound": 15,
+  "initial_ap": 3,
+  "forbid_ap": 4,
+  "center": 1,
+  "source": "p67_ap4_free_classes.json",
+  "status": "UNKNOWN",
+  "duals": [
+    {
+      "case": 1,
+      "pair": [
+        3,
+        66
+      ],
+      "root_mask": "0x4000000000000000b",
+      "status": "UNKNOWN",
+      "timed_out": false,
+      "seconds": 4198.485872198013,
+      "stdout": "p=67 limit=15 status=UNKNOWN initial_ap=3 forbid_ap=4 nodes=3338240 memo_hits=13182 cover_prunes=1394475 ap_prunes=1829171 memo=100533 seconds=4198.475757\n"
+    }
+  ]
+}

@@ -6,8 +6,8 @@
 - Run: recovered `q1-overnight` history
 - Model: gpt-5.6-sol max
 - Date: 2026-08-16 (America/Los_Angeles)
-- Argument status: invalidated historical computation; current continuation in section 11
-- Problem status: open; the exact table is independently replayed through $p=61$
+- Argument status: invalidated historical computation; current continuation in section 12
+- Problem status: open; the exact table is independently replayed through $p=67$
 
 ## 0. What was actually missing
 
@@ -378,4 +378,52 @@ is UNSAT in C and in Rust. Completing 28 AP4-but-not-AP5 classes and 26
 AP4-free classes, each in both languages, excludes every smaller size.
 Locally $m(61)=15$, matching OEIS, new to this notebook. Not a new
 bound. The next primes 67, 71, 73 sit above the 64-bit mask.
+
+## 12. The 2026-09-26 mask widening
+
+### What was actually missing
+
+The leftover was not a new SAT encoding. The q5/q6 engines stored each
+set as a 64-bit word and refused every prime at 64 or above. The same
+completion argument works for 67, 71, 73, and 79 once the mask is 128
+bits wide.
+
+### False starts and the useful failure
+
+Annealing size 15 at those three primes, 400 million proposals each,
+stopped at one unique sum. Size 16 at 79 stopped at two. Those
+neighborhoods are diagnostics. They taught that a dent by construction
+is not sitting next to a random 15-set, and that the published 16-sets
+(each containing an AP of length at least 6) are the right upper
+witnesses to check first.
+
+### The click
+
+Port the q5 engines, not the predicate. Ordered reflection counts in C
+and unordered pair repairs in Rust are already dual. The 128-bit
+negative, rotate, and hex root parsing are the only new arithmetic.
+The q6 AP5 ceiling at 61 is the regression: both languages returned
+UNSAT with the same node counts as q6 (810,493 and 1,476,025).
+
+### The argument, in the order it was run
+
+Check the three OEIS 16-sets directly. Partition the size-at-most-15
+leftover by AP length, exactly as at 59 and 61: AP5, then named
+midpoint classes for AP4-but-not-AP5, then AP4-free. Affine class
+counts at bound 15 are 31+29 at 67, 33+31 at 71, 34+32 at 73.
+
+### Computer search
+
+Upper half: three 16-sets, Python and Rust. Construction probes at
+size 15: UNKNOWN. Dual AP-length ladder at 67: AP5, 31 AP4-but-not-AP5
+classes, and 29 AP4-free classes, each UNSAT in C and in Rust. The
+4-point AP4-free dual needed a longer wall than 4,200 seconds; it
+returned UNSAT in 5,115 seconds on a 10,800-second retry. Dual lower
+replay at 71 and 73 was not started.
+
+### Proven vs still open
+
+Locally $m(67)=16$, matching OEIS, new to this notebook. Not a new
+bound. The 16-sets at 71 and 73 remain upper bounds only. The first
+unpublished prime remains 79. Green's #27 remains open.
 

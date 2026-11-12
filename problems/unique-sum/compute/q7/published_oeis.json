@@ -1,0 +1,22 @@
+{
+  "retrieved": "2026-09-26",
+  "source": "https://oeis.org/search?q=id%3AA398173&fmt=json",
+  "page": "https://oeis.org/A398173",
+  "number": 398173,
+  "data": "3,4,5,7,7,8,9,10,11,11,12,13,13,13,14,15,15,16,16,16",
+  "nterms": 20,
+  "revision": 48,
+  "time": "2026-09-19T07:39:56-04:00",
+  "keyword": "nonn,hard,more,changed",
+  "m67": 16,
+  "m71": 16,
+  "m73": 16,
+  "example_m67": [0, 1, 2, 3, 4, 5, 6, 7, 11, 14, 15, 25, 26, 50, 53, 54],
+  "example_m71": [0, 1, 2, 3, 4, 5, 7, 8, 12, 31, 45, 46, 57, 59, 61, 64],
+  "example_m73": [0, 1, 2, 3, 4, 5, 8, 9, 13, 21, 23, 25, 29, 44, 45, 65],
+  "ext": [
+    "a(12)-a(14) from Sean A. Irvine, Jul 27 2026",
+    "a(15) from Pawel Kwaczynski, Jul 29 2026",
+    "a(16)-a(20) from Pawel Kwaczynski, Aug 08 2026"
+  ]
+}

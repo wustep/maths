@@ -116,3 +116,47 @@
   $m(61)=15$ locally, matching OEIS, new to the notebook table. Not a
   dent. Primes 67 and later need a mask wider than 64 bits.
 
+## 2026-09-26 — q7: 128-bit ladder at 67, 71, 73
+
+- Reopened Bedert arXiv:2303.15134v2 (Definition 1; ordered $r_A\in\{1,2\}$
+  forbidden) and Cao–Yuan arXiv:2608.06728v1 (Theorems 1.1–1.3). OEIS
+  A398173 is still 20 terms through 73, revision 48 dated 2026-09-19,
+  with $m(67)=m(71)=m(73)=16$ and the three published 16-sets. Kwaczyński's
+  certificate repository reports the same finite values with hash-bound
+  SAT ledgers; it is a lead, not a proof object replayed here. Draft PR
+  #187 recorded a cutoff before search and is not duplicated.
+- Widened the q5/q6 engines to 128-bit masks. Small exhaustive controls
+  still match subset enumeration. The 128-bit C and Rust engines replay
+  the q6 AP5 ceiling at 61: C UNSAT after 810,493 nodes (RSS 79 MiB),
+  Rust UNSAT after 1,476,025 nodes (RSS 108 MiB), matching the q6 counts.
+- Python ordered-pair enumeration and the independent Rust reflection
+  checker both accept the three OEIS 16-sets (sumsets 51, 54, 55). Each
+  contains an AP of length at least 6, so shrinking them stays in the
+  AP5 family.
+- Construction probes (400 million proposals each) stopped at one unique
+  sum for size 15 at 67, 71, and 73, and at two unique sums for size 16
+  at 79. Those failures are not a lower bound.
+- Named midpoint partitions at bound 15: 31 AP4-but-not-AP5 and 29
+  AP4-free classes at 67; 33 and 31 at 71; 34 and 32 at 73. Dual
+  lower replay of those classes is the remaining half of the leaf.
+- AP5 at 67, size 15: C UNSAT after 6,066,228 nodes in 2,941 seconds
+  (RSS 137 MiB); Rust UNSAT after 11,192,593 nodes in 3,380 seconds
+  (RSS 138 MiB).
+- AP4-but-not-AP5 at 67: all 31 named midpoint classes UNSAT in C
+  (12,962 seconds total, max 2,124 seconds on a 5-point root, max RSS
+  132 MiB).
+- AP4-free at 67: all 29 named midpoint classes UNSAT in C (14,991
+  seconds total, max 2,287 seconds on the 4-point root, max RSS
+  121 MiB). Independent Rust duals of both families are the live job.
+- The first campaign wrapper was killed at a 10-hour cap after C
+  finished and before any Rust dual returned. Resume skips stored
+  UNSAT artifacts and continues from the duals.
+- AP4-but-not-AP5 at 67: all 31 Rust duals UNSAT (15,464 seconds
+  total, max 2,381 seconds).
+- The AP4-free 4-point dual hit a 4,200-second wall (UNKNOWN, not an
+  exclusion). Retry that family with a 10,800-second wall.
+- AP4-free Rust dual at 67: all 29 representatives UNSAT, including the
+  4-point class in 5,115 seconds. Dual $m(67)=16$ matching OEIS. Not a
+  dent. Dual lower replay at 71 and 73, and the unpublished prime 79,
+  remain unfinished.
+
