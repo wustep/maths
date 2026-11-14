@@ -108,3 +108,20 @@
   `compute/q6/published_oeis.json` stores that snapshot. The example is
   a lead until the local ordered-count check; that check passed.
 
+## 2026-09-12 — q7 source review before cutoff
+
+- Opened [OEIS A398173](https://oeis.org/A398173) in the browser. The
+  displayed 20 terms still end at 73; 79 is absent. This source check
+  did not replay the table's optimality claims.
+- Opened the [Bedert abstract](https://arxiv.org/abs/2303.15134) and
+  [v2 HTML](https://arxiv.org/html/2303.15134v2). Read Definition 1 and
+  the unique-sum convention; no finite improvement was extracted.
+- Also requested the [Cao–Yuan abstract](https://arxiv.org/abs/2608.06728),
+  [v1 HTML](https://arxiv.org/html/2608.06728v1),
+  [Kwaczyński repository](https://github.com/pawelkwaczynski/unique-sum-free-cert),
+  and [Watson notes](https://github.com/mkwatson/unique-sums-notes) in the
+  same browser batch. No new claim in this campaign relies on them.
+- Shell fetches with `arxiv_fetch.py` for both papers and curl of the
+  [OEIS JSON entry](https://oeis.org/search?q=id%3AA398173&fmt=json)
+  failed on sandbox DNS. The escalation call was interrupted at cutoff;
+  no successful shell fetch result was returned. No further fetch ran.
