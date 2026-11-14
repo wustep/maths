@@ -19,6 +19,9 @@ second insertion that can cover the first remaining syndrome is enumerated,
 so this search is complete within that neighborhood. These negative results
 do not rule out an unrelated 49-set.
 
+`audit_switch.py` independently compares the hole-update identity against a
+flat pair-XOR sweep in 256 deterministic three-delete/two-add cases.
+
 Replay from `problems/covering`:
 
 ```sh

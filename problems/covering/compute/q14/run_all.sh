@@ -3,6 +3,7 @@ set -eu
 cd "$(dirname "$0")/../../"
 python3 compute/verify_certificate.py
 python3 compute/q14/verify_best.py
+python3 compute/q14/audit_switch.py
 cc -O3 -Wall -Wextra -o /tmp/q14_switch compute/q14/switch_2to1.c
 cc -O3 -Wall -Wextra -o /tmp/q14_switch3 compute/q14/switch_3to2.c
 two=$(/tmp/q14_switch compute/H_r10_n50.txt)
